@@ -1,0 +1,4365 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Goldtect.ASTreeView</name>
+    </assembly>
+    <members>
+        <member name="T:Goldtect.ASContextMenuHelper">
+            <exclude/>
+        </member>
+        <member name="T:Goldtect.ASContextMenuItem">
+            <summary>
+            Context menu item class for ASContextMenu control
+            </summary>
+        </member>
+        <member name="T:Goldtect.ASContextMenu">
+            <summary>
+            A context menu control for ASP.Net
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASContextMenu.ForceRenderInitialScript">
+            <summary>
+            Forces the render initial script. Especially for this kind of situation: astreeview in a updatepanel which UpdateMode=Conditional, and a trigger calls this update panel's Update() methods. before call Update(), you need call ForceRenderIntialScript first.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASContextMenu.IsInUpdateAsyncPostback">
+            <summary>
+            Determines whether [is in update async postback].
+            </summary>
+            <returns>
+            	<c>true</c> if [is in update async postback]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Goldtect.ASContextMenu.IsControlInPartialRendering">
+            <summary>
+            Determines whether control is in partial rendering.
+            </summary>
+            <returns>
+            	<c>true</c> if control is in partial rendering otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Goldtect.ASContextMenu.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            RenderContents
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Goldtect.ASContextMenu.OnPreRender(System.EventArgs)">
+            <summary>
+            OnPreRender
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:Goldtect.ASContextMenu.MenuItems">
+            <summary>
+            MenuItems
+            </summary>
+        </member>
+        <member name="P:Goldtect.ASContextMenu.AttachCssClass">
+            <summary>
+            AttachCssClass
+            </summary>
+        </member>
+        <member name="P:Goldtect.ASContextMenu.EnableDebugMode">
+            <summary>
+            EnableDebugMode
+            </summary>
+        </member>
+        <member name="P:Goldtect.ASContextMenu.PreventDefault">
+            <summary>
+            PreventDefault
+            </summary>
+        </member>
+        <member name="P:Goldtect.ASContextMenu.PreventForms">
+            <summary>
+            PreventForms
+            </summary>
+        </member>
+        <member name="T:Goldtect.ASDropDownTreeView">
+            <summary>
+            The ASDropDownTreeView class.
+            </summary>
+        </member>
+        <member name="T:Goldtect.ASTreeView">
+            <summary>
+            A full functinal treeview control for ASP.Net.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeView.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Goldtect.ASTreeView"/> class.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeView.GetClientTreeObjectId">
+            <summary>
+            Gets the client tree object id.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.GetExpandAllScript">
+            <summary>
+            Gets the expand all client side script.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.GetCollapseAllScript">
+            <summary>
+            Gets the collapse all client side script.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.GetToggleExpandCollapseAllScript">
+            <summary>
+            Gets the toggle expand collapse all client side script.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.GetSelectedNode">
+            <summary>
+            Gets the selected node.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.GetCheckedNodes">
+            <summary>
+            Gets the checked nodes.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.GetCheckedNodes(System.Boolean)">
+            <summary>
+            Gets the checked nodes.
+            </summary>
+            <param name="includeHalfChecked">if set to <c>true</c> [include half checked].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.TraverseTreeNode(Goldtect.ASTreeViewNode,Goldtect.ASTreeView.ASTreeNodeHandlerDelegate)">
+             <summary>
+             Traverses the tree node.
+             Usage:
+            		ASTreeView.ASTreeNodeHandlerDelegate nodeDelegate = delegate( ASTreeViewNode node )
+            		{
+            			Console.Write( node.NodeValue );
+            		};
+            
+            		astvMyTree.TraverseTreeNode( this.astvMyTree.RootNode, nodeDelegate );
+             </summary>
+             <param name="parent">The parent.</param>
+             <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeView.TraverseTreeUL(System.Web.UI.HtmlControls.HtmlGenericControl,Goldtect.ASTreeView.ASTreeULHandlerDelegate)">
+            <summary>
+            Traverses the tree UL.
+            Usage:
+            	base.TraverseTreeUL( base.ulASTreeView, new ASTreeULHandlerDelegate( delegate( HtmlGenericControl parentUL )
+            	{
+            		foreach( Control c in parentUL.Controls )
+            		{
+            			if( c is HtmlGenericControl )
+            			{
+            				HtmlGenericControl li = (HtmlGenericControl)c;
+            				foreach( Control liChild in li.Controls )
+            				{
+            					if( liChild is HtmlImage )
+            					{
+            						HtmlImage hiCheckbox = (HtmlImage)liChild;
+            						if( hiCheckbox.Attributes["icon-type"] == ( (int)ASTreeViewIconType.Checkbox ).ToString() )
+            							hiCheckbox.Attributes.Add( "onclick", "alert('checkbox clicked!')" );
+            					}
+            				}
+            			}
+            		}
+            	} ) );
+            </summary>
+            <param name="parentUl">The parent ul.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeView.GetTreeViewXML">
+            <summary>
+            Gets the tree view XML.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.CollapseAll">
+            <summary>
+            Collapses all tree nodes.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeView.ExpandAll">
+            <summary>
+            Expands all tree nodes.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeView.ExpandToDepth(System.Int32)">
+            <summary>
+            Expands to depth.
+            </summary>
+            <param name="depth">The depth.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeView.ForceRenderInitialScript">
+            <summary>
+            Forces the render initial script. Especially for this kind of situation: astreeview in a updatepanel which UpdateMode=Conditional, and a trigger calls this update panel's Update() methods. before call Update(), you need call ForceRenderIntialScript first.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeView.ClearNodesCheck">
+            <summary>
+            Clears the nodes check.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeView.ClearNodesSelection">
+            <summary>
+            Clears the nodes selection.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeView.SelectNode(System.String)">
+            <summary>
+            Selects the node.
+            </summary>
+            <param name="nodeValue">The node value.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeView.CheckNodes(System.String[])">
+            <summary>
+            Checks the nodes.
+            </summary>
+            <param name="nodeValues">The node values.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeView.CheckNodes(System.String[],System.Boolean)">
+            <summary>
+            Checks the nodes.
+            </summary>
+            <param name="nodeValues">The node values.</param>
+            <param name="isRecursive">if set to <c>true</c> [is recursive].</param>
+        </member>
+        <member name="M:Goldtect.ASTreeView.UnCheckNodes(System.String[])">
+            <summary>
+            UnCheck the check nodes.
+            </summary>
+            <param name="nodeValues">The node values.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeView.UnCheckNodes(System.String[],System.Boolean)">
+            <summary>
+            Uncheck the check nodes.
+            </summary>
+            <param name="nodeValues">The node values.</param>
+            <param name="isRecursive">if set to <c>true</c> [is recursive].</param>
+        </member>
+        <member name="M:Goldtect.ASTreeView.SetNodeCheckStateRecursive(Goldtect.ASTreeViewNode,Goldtect.ASTreeViewCheckboxState)">
+            <summary>
+            Sets the node check state recursive.
+            </summary>
+            <param name="node">The node.</param>
+            <param name="state">The state.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeView.FindByValue(System.String)">
+            <summary>
+            Finds the by value. Return the first node found. return null if nothing found.
+            </summary>
+            <param name="nodeValue">The node value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.FindByText(System.String)">
+            <summary>
+            Finds the by text. Return the first node found. return null if nothing found.
+            </summary>
+            <param name="nodeText">The node text.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.InitializeControls">
+            <summary>
+            Initializes the controls.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeView.LoadTreeNodes">
+            <summary>
+            Loads the tree nodes.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeView.IsInPostback">
+            <summary>
+            return true is in postback or async postback
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.IsInUpdateAsyncPostback">
+            <summary>
+            Determines whether [is in update async postback].
+            </summary>
+            <returns>
+            	<c>true</c> if [is in update async postback]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.RenderSelectedNodeContainer(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Renders the selected node container.
+            </summary>
+            <param name="writer">The writer.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeView.RenderCheckedNodeContainer(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Renders the checked node container.
+            </summary>
+            <param name="writer">The writer.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeView.CreateTreeControls">
+            <summary>
+            Creates the tree controls.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeView.AddTreeViewToControlSet">
+            <summary>
+            Adds the tree view to control set.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeView.ManageRootNodePostBack">
+            <summary>
+            Manages the root node post back.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeView.ManageRootNodeProperty">
+            <summary>
+            Manages the root node property.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeView.GenerateTree">
+            <summary>
+            Generates the tree.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeView.GenerateAllNodesDepth">
+            <summary>
+            Generates all nodes depth.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeView.ManageExpendDepth">
+            <summary>
+            Manages the expend depth.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeView.ExpandNode(Goldtect.ASTreeViewNode,System.Int32,System.Int32)">
+            <summary>
+            Expands the node.
+            </summary>
+            <param name="node">The node.</param>
+            <param name="depth">The depth.</param>
+            <param name="curDepth">The cur depth.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeView.GenerateContextMenu">
+            <summary>
+            Generates the context menu.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeView.SetStyle">
+            <summary>
+            Sets the style.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeView.IsControlPostbackKey(System.String,System.String)">
+            <summary>
+            Determines whether [is control postback key] [the specified control unique id].
+            </summary>
+            <param name="controlUniqueId">The control unique id.</param>
+            <param name="postbackKey">The postback key.</param>
+            <returns>
+            	<c>true</c> if [is control postback key] [the specified control unique id]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.GenerateOnNodeDragAndDropStartScript">
+            <summary>
+            Generates the on node drag drop start script.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.GenerateOnNodeDragAndDropCompletingScript">
+            <summary>
+            Generates the on node drag drop complete script.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.GenerateOnNodeDragAndDropCompletedScript">
+            <summary>
+            Generates the on node drag drop complete script.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.GenerateOnNodeAddedScript">
+            <summary>
+            Generates the on node added script.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.GenerateOnNodeEditedScript">
+            <summary>
+            Generates the on node edited script.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.GenerateOnNodeDeletedScript">
+            <summary>
+            Generates the on node deleted script.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.GenerateOnNodeOpenedAndClosedScript">
+            <summary>
+            Generates the on node opened and closed script.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.GenerateAddNodeDataValueProviderScript">
+            <summary>
+            Generates the add node data value provider script.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.GenerateOnNodeSelectedScript">
+            <summary>
+            Generates the on node selected script.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.GenerateOnNodeCheckedScript">
+            <summary>
+            Generates the on node checked script.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.GenerateOnNodesBoundScript">
+            <summary>
+            Generates the on nodes boundcript.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.GenerateIsNodesBoundScript">
+            <summary>
+            Generates the is nodes bound script.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.GenerateASTreeViewInitialScript">
+            <summary>
+            Generates the ASTreeView initial script.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.GenerateASTreeViewScript">
+            <summary>
+            Generates the AS tree view script.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.ProcessImageUrl(System.String)">
+            <summary>
+            Processes the image URL.
+            </summary>
+            <param name="url">The URL.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.OnLoad(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Web.UI.Control.Load"></see> event.
+            </summary>
+            <param name="e">The <see cref="T:System.EventArgs"></see> object that contains the event data.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeView.LoadIsBound">
+            <summary>
+            Loads the is bound.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeView.OnInit(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Web.UI.Control.Init"></see> event.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"></see> object that contains the event data.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeView.CreateChildControls">
+            <summary>
+            Called by the ASP.NET page framework to notify server controls that use composition-based implementation to create any child controls they contain in preparation for posting back or rendering.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeView.OnPreRender(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Web.UI.Control.PreRender"></see> event.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"></see> object that contains the event data.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeView.SetIsBound">
+            <summary>
+            Sets the is bound.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeView.IsControlInPartialRendering">
+            <summary>
+            Determines whether control is in partial rendering.
+            </summary>
+            <returns>
+            	<c>true</c> if control is in partial rendering otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.LoadViewState(System.Object)">
+            <summary>
+            Restores view-state information from a previous request that was saved with the <see cref="M:System.Web.UI.WebControls.WebControl.SaveViewState"></see> method.
+            </summary>
+            <param name="savedState">An object that represents the control state to restore.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeView.SaveViewState">
+            <summary>
+            Saves any state that was modified after the <see cref="M:System.Web.UI.WebControls.Style.TrackViewState"></see> method was invoked.
+            </summary>
+            <returns>
+            An object that contains the current view state of the control; otherwise, if there is no view state associated with the control, null.
+            </returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.RenderBeginTag(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Renders the HTML opening tag of the control to the specified writer. This method is used primarily by control developers.
+            </summary>
+            <param name="writer">A <see cref="T:System.Web.UI.HtmlTextWriter"></see> that represents the output stream to render HTML content on the client.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeView.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Renders the contents of the control to the specified writer. This method is used primarily by control developers.
+            </summary>
+            <param name="writer">A <see cref="T:System.Web.UI.HtmlTextWriter"></see> that represents the output stream to render HTML content on the client.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeView.RenderEndTag(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Renders the HTML closing tag of the control into the specified writer. This method is used primarily by control developers.
+            </summary>
+            <param name="writer">A <see cref="T:System.Web.UI.HtmlTextWriter"></see> that represents the output stream to render HTML content on the client.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeView.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Renders the control to the specified HTML writer.
+            </summary>
+            <param name="writer">The <see cref="T:System.Web.UI.HtmlTextWriter"></see> object that receives the control content.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeView.DataBind">
+            <summary>
+            Binds a data source to the invoked server control and all its child controls.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeView.FireNodeSelectedEvent">
+            <summary>
+            Fires the node selected event.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeView.FireNodeCheckedEvent">
+            <summary>
+            Fires the node checked event.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeView.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            When implemented by a class, processes postback data for an ASP.NET server control.
+            </summary>
+            <param name="postDataKey">The key identifier for the control.</param>
+            <param name="postCollection">The collection of all incoming name values.</param>
+            <returns>
+            true if the server control's state changes as a result of the postback; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Goldtect.ASTreeView.RaisePostDataChangedEvent">
+            <summary>
+            When implemented by a class, signals the server control to notify the ASP.NET application that the state of the control has changed.
+            </summary>
+        </member>
+        <member name="P:Goldtect.ASTreeView.ID">
+            <summary>
+            Gets or sets the programmatic identifier assigned to the server control.
+            </summary>
+            <value></value>
+            <returns>The programmatic identifier assigned to the control.</returns>
+        </member>
+        <member name="P:Goldtect.ASTreeView.Version">
+            <summary>
+            Gets the version of the ASTreeView Control.
+            </summary>
+            <value>The version.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableAutoLinkScriptFiles">
+            <summary>
+            Gets or sets a value indicating whether [enable auto link script files].
+            </summary>
+            <value>
+            	<c>true</c> if [enable auto link script files]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.BasePath">
+            <summary>
+            Gets or sets the base path. The base path is the folder which contains the astreeview client side stuff.
+            </summary>
+            <value>The base path.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.ImagePath">
+            <summary>
+            Gets or sets the image path. The default value of ImagePath is BasePath + 'images/'
+            </summary>
+            <value>The image path.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.StyleFile">
+            <summary>
+            Gets or sets the style file. It's obsolete since automatically linking the style file feature is cancelled.
+            </summary>
+            <value>The style file.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.ScriptFile">
+            <summary>
+            Gets or sets the script file. It's obsolete since automatically linking the script file feature is cancelled.
+            </summary>
+            <value>The script file.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableDebugMode">
+            <summary>
+            Gets or sets a value indicating whether [enable debug mode].
+            </summary>
+            <value><c>true</c> if [enable debug mode]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.Separator">
+            <summary>
+            Gets or sets the separator. To set the separator for client html container, normally just keep it as default.
+            </summary>
+            <value>The separator.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.AutoPostBack">
+            <summary>
+            Gets or sets a value indicating whether [auto post back].
+            </summary>
+            <value><c>true</c> if [auto post back]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableParentNodeSelection">
+            <summary>
+            Gets or sets a value indicating whether parent node is selectable.
+            </summary>
+            <value>
+            	<c>true</c> if [enable parent node selection]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableParentNodeExpand">
+            <summary>
+            Gets or sets a value indicating whether expand the node if click on it.
+            </summary>
+            <value>
+            	<c>true</c> if [enable parent node expand]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.OnNodeSelectedScript">
+            <summary>
+            Gets or sets the on node selected script.
+            Usage:
+            
+            OnNodeSelectedScript="nodeSelectHandler(elem);"
+            
+            function nodeSelectHandler(elem){
+            	var val = "selected node:" + elem.parentNode.getAttribute("treeNodeValue");
+            	alert( val );
+            }
+            </summary>
+            <value>The on node selected script.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.OnNodeCheckedScript">
+            <summary>
+            Gets or sets the on node checked script.
+            Usage:
+            
+            OnNodeCheckedScript="nodeCheckHandler(elem);"
+            
+            function nodeCheckHandler(elem){
+            	var cs = elem.parentNode.getAttribute("checkedState");
+            	var csStr = "";
+            	switch(cs){
+            		case "0":
+            		csStr = "checked";
+            		break;
+            		case "1":
+            		csStr = "half checked";
+            		break;
+            		case "2":
+            		csStr = "unchecked";
+            		break;
+            	}
+            	var val = csStr +" node:" + elem.parentNode.getAttribute("treeNodeValue");
+            	alert( val );
+            }
+            </summary>
+            <value>The on node checked script.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.OnNodeDragAndDropStartScript">
+            <summary>
+            Gets or sets the on node drag and drop start script.
+            Usage:
+            
+            OnNodeDragAndDropStartScript="dndStartHandler(elem);"
+            
+            function dndStartHandler( elem ){
+            	alert( elem.getAttribute("treeNodeValue") );
+            }
+            </summary>
+            <value>The on node drag and drop start script.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableOnNodeDragAndDropStartScriptReturn">
+            <summary>
+            Gets or sets a value indicating whether to add 'return' before OnNodeDragAndDropStartScript.
+            </summary>
+            <value>
+            	<c>true</c> if [enable on node drag and drop start script return]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.OnNodeDragAndDropCompletingScript">
+            <summary>
+            Gets or sets the on node drag and drop completing script.
+            Usage:
+            
+            OnNodeDragAndDropCompletingScript="dndCompletingHandler(elem);"
+            
+            function dndCompletingHandler( elem ){
+            	alert( elem.getAttribute("treeNodeValue") );
+            }
+            </summary>
+            <value>The on node drag and drop completing script.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableOnNodeDragAndDropCompletingScriptReturn">
+            <summary>
+            Gets or sets a value indicating whether to add 'return' before OnNodeDragAndDropCompletingScript
+            </summary>
+            <value>
+            	<c>true</c> if [enable on node drag and drop complete script return]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.OnNodeDragAndDropCompletedScript">
+            <summary>
+            Gets or sets the on node drag and drop completed script.
+            OnNodeDragAndDropCompletedScript="dndCompletedHandler(elem);"
+            
+            function dndCompletedHandler( elem ){
+            	alert( elem.getAttribute("treeNodeValue") );
+            }
+            </summary>
+            <value>The on node drag and drop completed script.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.OnNodeAddedScript">
+            <summary>
+            Gets or sets the on node added script.
+            Usage:
+            
+            OnNodeAddedScript="addedHandler(elem);"
+            
+            function addedHandler( elem ){
+            	alert( elem.getAttribute("treeNodeValue") );
+            }
+            </summary>
+            <value>The on node added script.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableOnNodeAddedScriptReturn">
+            <summary>
+            EnableOnNodeAddedScriptReturn
+            </summary>
+        </member>
+        <member name="P:Goldtect.ASTreeView.OnNodeEditedScript">
+            <summary>
+            Gets or sets the on node edited script.
+            Usage:
+            
+            OnNodeEditedScript="editedHandler(elem);"
+            
+            function editedHandler( elem ){
+            	alert( elem.getAttribute("treeNodeValue") );
+            }
+            </summary>
+            <value>The on node edited script.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableOnNodeEditedScriptReturn">
+            <summary>
+            EnableOnNodeEditedScriptReturn
+            </summary>
+        </member>
+        <member name="P:Goldtect.ASTreeView.OnNodeDeletedScript">
+            <summary>
+            Gets or sets the on node deleted script.
+            Usage:
+            
+            OnNodeDeletedScript="deletedHandler( val );"
+            
+            function deletedHandler( val ){
+            	alert( val );
+            }
+            </summary>
+            <value>The on node deleted script.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableOnNodeDeletedScriptReturn">
+            <summary>
+            EnableOnNodeDeletedScriptReturn
+            </summary>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableOnNodeOpenedAndClosedReturn">
+            <summary>
+            Gets or sets a value indicating whether [enable on node opened and closed return].
+            </summary>
+            <value>
+            	<c>true</c> if [enable on node opened and closed return]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableNodeSelection">
+            <summary>
+            Gets or sets a value indicating whether the node is selectable.
+            </summary>
+            <value><c>true</c> if [enable node selection]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableDragDrop">
+            <summary>
+            Gets or sets a value indicating whether the end user and drag and drop nodes.
+            </summary>
+            <value><c>true</c> if [enable drag drop]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableDragDropOnIcon">
+            <summary>
+            EnableDragDropOnIcon
+            </summary>
+        </member>
+        <member name="P:Goldtect.ASTreeView.RelatedTrees">
+            <summary>
+            Gets or sets the related trees. End user and drag drop the nodes from current tree to the related trees.
+            </summary>
+            <value>The related trees.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableSaveStateEveryStep">
+            <summary>
+            Gets or sets a value indicating whether client side should save the whole tree state on every change.
+            </summary>
+            <value>
+            	<c>true</c> if [enable save state every step]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableNodeIcon">
+            <summary>
+            Gets or sets a value indicating whether to display node icons.
+            </summary>
+            <value><c>true</c> if [enable node icon]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableCustomizedNodeIcon">
+            <summary>
+            Gets or sets a value indicating whether to use the customized node icons.
+            </summary>
+            <value>
+            	<c>true</c> if [enable customized node icon]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableRightToLeftRender">
+            <summary>
+            Gets or sets a value indicating whether to render the tree node from right to left.
+            </summary>
+            <value>
+            	<c>true</c> if [enable right to left render]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableManageJSError">
+            <summary>
+            Gets or sets a value indicating whether the astreeview should manage the javascript error cause by onXXX script properties.
+            </summary>
+            <value>
+            	<c>true</c> if [enable manage JS error]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableMultiLineEdit">
+            <summary>
+            Gets or sets a value indicating whether to display a textarea when editing nodes.
+            </summary>
+            <value>
+            	<c>true</c> if [enable multi line edit]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableEscapeInput">
+            <summary>
+            Gets or sets a value indicating whether to escape the html tag for node editing.
+            </summary>
+            <value><c>true</c> if [enable escape input]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableStripAjaxResponse">
+            <summary>
+            Gets or sets a value indicating whether to stripe ajax response, that is to get the partial of the ajax response. This can be useful when to use the astreeview in a custom server side control.
+            </summary>
+            <value>
+            	<c>true</c> if [enable strip ajax response]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.StripAjaxResponseRegex">
+            <summary>
+            Gets or sets the regular expression for ajax response striping. 
+            </summary>
+            <value>The strip ajax response regex.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.AjaxResponseStartTag">
+            <summary>
+            Gets or sets the ajax response start tag.
+            </summary>
+            <value>The ajax response start tag.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.AjaxResponseEndTag">
+            <summary>
+            Gets or sets the ajax response end tag.
+            </summary>
+            <value>The ajax response end tag.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableTreeNodesViewState">
+            <summary>
+            Gets or sets a value indicating whether to whole treeview state should be save in viewstate, if you want a lower html size rendering to client, turn it off, but it may cause lose of treenodes if the user perform a postback while the page is not fully loaded.
+            </summary>
+            <value>
+            	<c>true</c> if EnableTreeNodesViewState; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableFixedDepthDragDrop">
+            <summary>
+            Gets or sets a value indicating whether the nodes can be dragged and dropped only it the depth which is same as the nodes'. Please note if the EnableFixedParentDragDrop is true, EnableFixedDepthDragDrop is true.
+            </summary>
+            <value>
+            	<c>true</c> if [enable fixed depth drag drop]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableFixedParentDragDrop">
+            <summary>
+            Gets or sets a value indicating whether the nodes are only can be drag drop under their parent.
+            </summary>
+            <value>
+            	<c>true</c> if [enable fixed parent drag drop]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableHorizontalLock">
+            <summary>
+            Gets or sets a value indicating whether to lock horizontal movement.
+            </summary>
+            <value>
+            	<c>true</c> if [enable horizontal lock]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableContainerDragDrop">
+            <summary>
+            EnableContainerDragDrop
+            </summary>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableThreeStateCheckbox">
+            <summary>
+            Gets or sets a value indicating whether to enable three state checkbox. Please note that if EnableLeafOnlyCheckbox=true, then EnableThreeStateCheckbox will automatically be false;
+            </summary>
+            <value>
+            	<c>true</c> if [enable three state checkbox]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableLeafOnlyCheckbox">
+            <summary>
+            Gets or sets a value indicating whether to enable leaf only checkbox.
+            </summary>
+            <value>
+            	<c>true</c> if [enable leaf only checkbox]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnablePersistentTreeState">
+            <summary>
+            Gets or sets a value indicating whether to submit the whole treeview state, values on postback. If you want to regenerate treeview on every postback, you may set it false. Generally it should be true to keep the treeview state on postback.
+            </summary>
+            <value>
+            	<c>true</c> if [enable persistent tree state]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.OnNodeOpenedAndClosedScript">
+            <summary>
+            Gets or sets the on node opened and closed script.
+            Usage:
+            
+            OnNodeOpenedAndClosedScript="nodeOpenedAndClosedHandler( state, elem );"
+            
+            function nodeOpenedAndClosedHandler( state, elem ){
+            	alert( state );
+            	alert( elem );
+            }
+            </summary>
+            <value>The on node opened and closed script.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableXmlValidation">
+            <summary>
+            Gets or sets a value indicating whether to enable xml validation.
+            </summary>
+            <value>
+            	<c>true</c> if xml validation enabled; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.DataSourceDescriptor">
+            <summary>
+            Gets or sets the data source descriptor. Datasource descriptor converts datasource to treeview nodes.
+            </summary>
+            <value>The data source descriptor.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.DataSource">
+            <summary>
+            Gets or sets the data source. 
+            </summary>
+            <value>The data source.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.DataTableRootNodeValue">
+            <summary>
+            Gets or sets the data table root node value. When you set a datatable as datasource to astreeview, the astreeview need to know from which line of data it should start to convert to tree nodes.
+            </summary>
+            <value>The data table root node value.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.TreeNodesState">
+            <summary>
+            Gets or sets the state of the tree nodes in viewstate.
+            </summary>
+            <value>The state of the tree nodes.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.IsBound">
+            <summary>
+            Gets or sets a value indicating whether this instance is bound.
+            </summary>
+            <value>
+              <c>true</c> if this instance is bound; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableRoot">
+            <summary>
+            Gets or sets a value indicating whether to display a node as the root root node of the tree.
+            </summary>
+            <value><c>true</c> if [enable root]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.RootNode">
+            <summary>
+            Gets or sets the root node.
+            </summary>
+            <value>The root node.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.RootNodeText">
+            <summary>
+            Gets or sets the root node text.
+            </summary>
+            <value>The root node text.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.RootNodeValue">
+            <summary>
+            Gets or sets the root node value.
+            </summary>
+            <value>The root node value.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.TreeViewHelper">
+            <summary>
+            Gets the tree view helper.
+            </summary>
+            <value>The tree view helper.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableCheckbox">
+            <summary>
+            Gets or sets a value indicating whether to display check box.
+            </summary>
+            <value><c>true</c> if [enable checkbox]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.ImgCheckboxChecked">
+            <summary>
+            Gets or sets the checkbox checked icon.
+            </summary>
+            <value>The img checkbox checked.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.ImgCheckboxHalfChecked">
+            <summary>
+            Gets or sets the checkbox half-checked icon.
+            </summary>
+            <value>The img checkbox half checked.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.ImgCheckboxUnchecked">
+            <summary>
+            Gets or sets the checkbox unchecked icon.
+            </summary>
+            <value>The img checkbox unchecked.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.CssClassCheckbox">
+            <summary>
+            Gets or sets the CSS class of checkbox.
+            </summary>
+            <value>The CSS class checkbox.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.CssClassCheckboxTextNode">
+            <summary>
+            CssClassCheckboxTextNode
+            </summary>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableTheme">
+            <summary>
+            Gets or sets a value indicating whether to use theme.
+            </summary>
+            <value><c>true</c> if [enable theme]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.Theme">
+            <summary>
+            Gets or sets the theme of the treeview.
+            </summary>
+            <value>The theme.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.ThemeCssFile">
+            <summary>
+            Gets the theme CSS file.
+            </summary>
+            <value>The theme CSS file.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.CssClass">
+            <summary>
+            Gets or sets the Cascading Style Sheet (CSS) class rendered by the Web server control on the client.
+            </summary>
+            <value></value>
+            <returns>The CSS class rendered by the Web server control on the client. The default is <see cref="F:System.String.Empty"></see>.</returns>
+        </member>
+        <member name="P:Goldtect.ASTreeView.CssClassTextNode">
+            <summary>
+            CssClassTextNode
+            </summary>
+        </member>
+        <member name="P:Goldtect.ASTreeView.CssClassTextNodeContainer">
+            <summary>
+            CssClassTextNodeContainer
+            </summary>
+        </member>
+        <member name="P:Goldtect.ASTreeView.DefaultFolderIcon">
+            <summary>
+            Gets or sets the default folder icon.
+            </summary>
+            <value>The default folder icon.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.DefaultFolderOpenIcon">
+            <summary>
+            Gets or sets the default folder open icon.
+            </summary>
+            <value>The default folder open icon.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.DefaultNodeIcon">
+            <summary>
+            Gets or sets the default node icon.
+            </summary>
+            <value>The default node icon.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.CssClassIcon">
+            <summary>
+            Gets or sets the CSS class of the icons.
+            </summary>
+            <value>The CSS class icon.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.ImgPlusIcon">
+            <summary>
+            Gets or sets the open icon of the node.
+            </summary>
+            <value>The img plus icon.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.ImgMinusIcon">
+            <summary>
+            Gets or sets the close icon of the node.
+            </summary>
+            <value>The img minus icon.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.CssClassPlusMinusIcon">
+            <summary>
+            Gets or sets the CSS class of the open and close icon of the tree node.
+            </summary>
+            <value>The CSS class plus minus icon.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.CssClassPlusMinusTextNode">
+            <summary>
+            CssClassPlusMinusTextNode
+            </summary>
+        </member>
+        <member name="P:Goldtect.ASTreeView.ImgDragDropIndicator">
+            <summary>
+            Gets or sets the drag drop indicator icon.
+            </summary>
+            <value>The img drag drop indicator.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.ImgDragDropIndicatorSub">
+            <summary>
+            Gets or sets the drag drop indicator sub icon.
+            </summary>
+            <value>The img drag drop indicator sub.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.ContextMenu">
+            <summary>
+            Gets the context menu object.
+            </summary>
+            <value>The context menu.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.ContextMenuClientID">
+            <summary>
+            Gets the context menu client ID.
+            </summary>
+            <value>The context menu client ID.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableContextMenu">
+            <summary>
+            Gets or sets a value indicating whether to enable context menu.
+            </summary>
+            <value><c>true</c> if [enable context menu]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableContextMenuAdd">
+            <summary>
+            Gets or sets a value indicating whether to enable the "Add" menu. Tree scope.
+            </summary>
+            <value>
+            	<c>true</c> if [enable context menu add]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableContextMenuEdit">
+            <summary>
+            Gets or sets a value indicating whether to enable the "Edit" menu. Tree scope.
+            </summary>
+            <value>
+            	<c>true</c> if [enable context menu edit]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableContextMenuDelete">
+            <summary>
+            Gets or sets a value indicating whether to enable the "Delete" menu. Tree scope.
+            </summary>
+            <value>
+            	<c>true</c> if [enable context menu delete]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.ContextMenuTargetCssClass">
+            <summary>
+            Gets the context menu target CSS class for attaching context menu to node.
+            </summary>
+            <value>The context menu target CSS class.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.ContextMenuAddText">
+            <summary>
+            Gets or sets the context menu add text.
+            </summary>
+            <value>The context menu add text.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.ContextMenuEditText">
+            <summary>
+            Gets or sets the context menu edit text.
+            </summary>
+            <value>The context menu edit text.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.ContextMenuDeleteText">
+            <summary>
+            Gets or sets the context menu delete text.
+            </summary>
+            <value>The context menu delete text.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.ContextMenuAddCommandName">
+            <summary>
+            Gets or sets the name of the context menu add command.
+            </summary>
+            <value>The name of the context menu add command.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.ContextMenuEditCommandName">
+            <summary>
+            Gets or sets the name of the context menu edit command.
+            </summary>
+            <value>The name of the context menu edit command.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.ContextMenuDeleteCommandName">
+            <summary>
+            Gets or sets the name of the context menu delete command.
+            </summary>
+            <value>The name of the context menu delete command.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.TagKey">
+            <summary>
+            Gets the <see cref="T:System.Web.UI.HtmlTextWriterTag"></see> value that corresponds to this Web server control. This property is used primarily by control developers.
+            </summary>
+            <value></value>
+            <returns>One of the <see cref="T:System.Web.UI.HtmlTextWriterTag"></see> enumeration values.</returns>
+        </member>
+        <member name="P:Goldtect.ASTreeView.SelectedNodeString">
+            <summary>
+            Gets or sets the selected node string.
+            </summary>
+            <value>The selected node string.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.CheckedNodeString">
+            <summary>
+            Gets or sets the checked node string.
+            </summary>
+            <value>The checked node string.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableTreeLines">
+            <summary>
+            Gets or sets a value indicating whether tree lines.
+            </summary>
+            <value><c>true</c> if [enable tree lines]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.CssClassLineVertical">
+            <summary>
+            Gets or sets the CSS class for vertical line.
+            </summary>
+            <value>The CSS class line vertical.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.CssClassLineRoot">
+            <summary>
+            Gets or sets the CSS class for root line.
+            </summary>
+            <value>The CSS class line root.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.CssClassLineTop">
+            <summary>
+            Gets or sets the CSS class for top line.
+            </summary>
+            <value>The CSS class line top.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.CssClassLineMiddle">
+            <summary>
+            Gets or sets the CSS class for middle line.
+            </summary>
+            <value>The CSS class line middle.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.CssClassLineBottom">
+            <summary>
+            Gets or sets the CSS class for bottom line.
+            </summary>
+            <value>The CSS class line bottom.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.CssClassLineNone">
+            <summary>
+            Gets or sets the CSS class for no line.
+            </summary>
+            <value>The CSS class line none.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EnableAjaxOnEditDelete">
+            <summary>
+            Gets or sets a value indicating whether to enable ajax on edit and delete.
+            </summary>
+            <value>
+            	<c>true</c> if [enable ajax on edit delete]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.AddNodeProvider">
+            <summary>
+            Gets or sets the add node provider.
+            The provider is to render a piece of html to the client, usually is a ul element.
+            for example:
+            	HtmlGenericControl ulRoot = new HtmlGenericControl( "ul" );
+            	astvMyTree.TreeViewHelper.ConvertTree( ulRoot, root, false );
+            	foreach( Control c in ulRoot.Controls )
+            		c.RenderControl( writer );
+            </summary>
+            <value>The add node provider.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.AddNodePromptMessage">
+            <summary>
+            Gets or sets the add node prompt message.
+            </summary>
+            <value>The add node prompt message.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.AddNodePromptDefaultValue">
+            <summary>
+            Gets or sets the add node default value.
+            </summary>
+            <value>The add node default value of adding a new node.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.AddNodeDataValueProvider">
+            <summary>
+            Gets or sets the cutomized function which return a name of the new node.
+            </summary>
+            <value>The add node prompt message.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.AdditionalAddRequestParameters">
+            <summary>
+            Gets or sets the additional add request parameters. in json format, like {'a':'b', 'c','c'}
+            </summary>
+            <value>The additional add request parameters.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.EditNodeProvider">
+            <summary>
+            Gets or sets the edit node provider.
+            The edit provider should return a result code to the client.
+            For example:
+            protected override void Render( HtmlTextWriter writer )
+            {
+            	if( this.returnCode == ASTreeViewAjaxReturnCode.OK )
+            		writer.Write( (int)this.returnCode );
+            	else
+            		writer.Write( this.errorMessage );
+            }
+            </summary>
+            <value>The edit node provider.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.AdditionalEditRequestParameters">
+            <summary>
+            Gets or sets the additional edit request parameters. in json format, like {'a':'b', 'c','c'}
+            </summary>
+            <value>The additional edit request parameters.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.DeleteNodeProvider">
+            <summary>
+            Gets or sets the delete node provider.
+            The delete provider should return a result code.
+            For example:
+            protected override void Render( HtmlTextWriter writer )
+            {
+            	if( this.returnCode == ASTreeViewAjaxReturnCode.OK )
+            		writer.Write( (int)this.returnCode );
+            	else
+            		writer.Write( this.errorMessage );
+            }
+            </summary>
+            <value>The delete node provider.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.DeleteNodePromptMessage">
+            <summary>
+            Gets or sets the delete node prompt message.
+            </summary>
+            <value>The delete node prompt message.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.DeleteNodeWithSubPromptMessage">
+            <summary>
+            Gets or sets the delete node with sub prompt message.
+            </summary>
+            <value>The delete node with sub prompt message.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.AdditionalDeleteRequestParameters">
+            <summary>
+            Gets or sets the additional delete request parameters. in json format, like {'a':'b', 'c','c'}.
+            </summary>
+            <value>The additional delete request parameters.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.LoadNodesProvider">
+            <summary>
+            Gets or sets the load nodes provider.
+            The load nodes provider should renturn one or more UL elements.
+            For example:
+            	HtmlGenericControl ulRoot = new HtmlGenericControl( "ul" );
+            	astvMyTree.TreeViewHelper.ConvertTree( ulRoot, root, false );
+            	foreach( Control c in ulRoot.Controls )
+            		c.RenderControl( writer );
+            </summary>
+            <value>The load nodes provider.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.VirtualNodePlaceHolderText">
+            <summary>
+            Gets or sets the text displayed while loading nodes.
+            </summary>
+            <value>The virtual node place holder text.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.AdditionalLoadNodesRequestParameters">
+            <summary>
+            Gets or sets the additional load nodes request parameters. in json format, like {'a':'b', 'c','c'}.
+            </summary>
+            <value>The additional load nodes request parameters.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.CssClassAjaxIndicatorContainer">
+            <summary>
+            Gets or sets the CSS class of ajax indicator container.
+            </summary>
+            <value>The CSS class ajax indicator container.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.AjaxIndicatorContainerID">
+            <summary>
+            Gets or sets the ajax indicator container ID.
+            </summary>
+            <value>The ajax indicator container ID.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.AjaxIndicatorText">
+            <summary>
+            Gets or sets the ajax indicator text.
+            </summary>
+            <value>The ajax indicator text.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.MaxDepth">
+            <summary>
+            Gets or sets the max depth of the treeview.
+            </summary>
+            <value>The max depth.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.MaxDepthReachedMessage">
+            <summary>
+            Gets or sets the max depth reached message.
+            </summary>
+            <value>The max depth reached message.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeView.ExpandDepth">
+            <summary>
+            Gets or sets the expand depth of the treeview.
+            </summary>
+            <value>The expand depth.</value>
+        </member>
+        <member name="E:Goldtect.ASTreeView.OnSelectedNodeChanged">
+            <summary>
+            Occurs when [on selected node changed].
+            </summary>
+        </member>
+        <member name="E:Goldtect.ASTreeView.OnCheckedNodeChanged">
+            <summary>
+            Occurs when [on checked node changed].
+            </summary>
+        </member>
+        <member name="T:Goldtect.ASTreeView.ASTreeNodeHandlerDelegate">
+            <exclude/>
+        </member>
+        <member name="T:Goldtect.ASTreeView.ASTreeULHandlerDelegate">
+            <exclude/>
+        </member>
+        <member name="M:Goldtect.ASDropDownTreeView.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Goldtect.ASDropDownTreeView"/> class.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASDropDownTreeView.OnInit(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Web.UI.Control.Init"></see> event.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"></see> object that contains the event data.</param>
+        </member>
+        <member name="M:Goldtect.ASDropDownTreeView.CreateChildControls">
+            <summary>
+            Called by the ASP.NET page framework to notify server controls that use composition-based implementation to create any child controls they contain in preparation for posting back or rendering.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASDropDownTreeView.AddTreeViewToControlSet">
+            <summary>
+            Adds the tree view to control set.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASDropDownTreeView.OnLoad(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Web.UI.Control.Load"></see> event.
+            </summary>
+            <param name="e">The <see cref="T:System.EventArgs"></see> object that contains the event data.</param>
+        </member>
+        <member name="M:Goldtect.ASDropDownTreeView.OnPreRender(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Web.UI.Control.PreRender"></see> event.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"></see> object that contains the event data.</param>
+        </member>
+        <member name="M:Goldtect.ASDropDownTreeView.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Renders the contents of the control to the specified writer. This method is used primarily by control developers.
+            </summary>
+            <param name="writer">A <see cref="T:System.Web.UI.HtmlTextWriter"></see> that represents the output stream to render HTML content on the client.</param>
+        </member>
+        <member name="M:Goldtect.ASDropDownTreeView.InitializeControls">
+            <summary>
+            Initializes the controls.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASDropDownTreeView.InitializeValidator">
+            <summary>
+            Initializes the validator.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASDropDownTreeView.ProcessImageUrl(System.String)">
+            <summary>
+            Processes the image URL.
+            </summary>
+            <param name="url">The URL.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASDropDownTreeView.ValidateCheckSelect">
+            <summary>
+            Validates the check select.
+            </summary>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.TagKey">
+            <summary>
+            Gets the <see cref="T:System.Web.UI.HtmlTextWriterTag"></see> value that corresponds to this Web server control. This property is used primarily by control developers.
+            </summary>
+            <value></value>
+            <returns>One of the <see cref="T:System.Web.UI.HtmlTextWriterTag"></see> enumeration values.</returns>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.Width">
+            <summary>
+            Gets or sets the width of the Web server control.
+            </summary>
+            <value></value>
+            <returns>A <see cref="T:System.Web.UI.WebControls.Unit"></see> that represents the width of the control. The default is <see cref="F:System.Web.UI.WebControls.Unit.Empty"></see>.</returns>
+            <exception cref="T:System.ArgumentException">The width of the Web server control was set to a negative value. </exception>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.DropDownTreeBasePath">
+            <summary>
+            Gets or sets the drop down tree base path.
+            </summary>
+            <value>The drop down tree base path.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.EnableHalfCheckedAsChecked">
+            <summary>
+            Gets or sets a value indicating whether to regard half checked nodes as checked.
+            </summary>
+            <value>
+            	<c>true</c> if [enable half checked as checked]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.EnableCloseOnOutsideClick">
+            <summary>
+            Gets or sets a value indicating whether to enable close on outside click.
+            </summary>
+            <value>
+            	<c>true</c> if [enable close on outside click]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.InitialDropdownText">
+            <summary>
+            Gets or sets the initial dropdown text.
+            </summary>
+            <value>The initial dropdown text.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.DropdownText">
+            <summary>
+            Gets or sets the dropdown text.
+            </summary>
+            <value>The dropdown text.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.InitialDropdownOpen">
+            <summary>
+            Gets or sets a value indicating whether [initial dropdown open].
+            </summary>
+            <value><c>true</c> if [initial dropdown open]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.OpenByClickText">
+            <summary>
+            Gets or sets a value indicating whether [open by click text].
+            </summary>
+            <value><c>true</c> if [open by click text]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.DropdownIconUp">
+            <summary>
+            Gets or sets the dropdown icon up.
+            </summary>
+            <value>The dropdown icon up.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.DropdownIconDown">
+            <summary>
+            Gets or sets the dropdown icon down.
+            </summary>
+            <value>The dropdown icon down.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.DropdownIconUpDisabled">
+            <summary>
+            Gets or sets the dropdown icon up disabled.
+            </summary>
+            <value>The dropdown icon up disabled.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.DropdownIconDownDisabled">
+            <summary>
+            Gets or sets the dropdown icon down disabled.
+            </summary>
+            <value>The dropdown icon down disabled.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.EnableCloseOnNodeSelection">
+            <summary>
+            Gets or sets a value indicating whether [enable close on node selection].
+            </summary>
+            <value>
+            	<c>true</c> if [enable close on node selection]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.MaxDropdownHeight">
+            <summary>
+            DropdownHeight
+            </summary>
+            <value>The height of the max dropdown.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.OnNodeSelectedScript">
+            <summary>
+            Gets or sets the on node selected script.
+            Usage:
+            
+            OnNodeSelectedScript="nodeSelectHandler(elem);"
+            
+            function nodeSelectHandler(elem){
+            	var val = "selected node:" + elem.parentNode.getAttribute("treeNodeValue");
+            	alert( val );
+            }
+            </summary>
+            <value>The on node selected script.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.OnNodeCheckedScript">
+            <summary>
+            Gets or sets the on node checked script.
+            Usage:
+            
+            OnNodeCheckedScript="nodeCheckHandler(elem);"
+            
+            function nodeCheckHandler(elem){
+            	var cs = elem.parentNode.getAttribute("checkedState");
+            	var csStr = "";
+            	switch(cs){
+            		case "0":
+            		csStr = "checked";
+            		break;
+            		case "1":
+            		csStr = "half checked";
+            		break;
+            		case "2":
+            		csStr = "unchecked";
+            		break;
+            	}
+            	var val = csStr +" node:" + elem.parentNode.getAttribute("treeNodeValue");
+            	alert( val );
+            }
+            </summary>
+            <value>The on node checked script.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.EnableOnDropDownClickScriptReturn">
+            <summary>
+            Gets or sets a value indicating whether [enable on drop down click script return].
+            </summary>
+            <value>
+            	<c>true</c> if [enable on drop down click script return]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.OnDropDownClickScript">
+            <summary>
+            Gets or sets the on drop down click script.
+            </summary>
+            <value>
+            The on drop down click script.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.CssClassDropdownBoxContainer">
+            <summary>
+            Gets or sets the CSS class dropdown box container.
+            </summary>
+            <value>The CSS class dropdown box container.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.CssClassDropdownTreeObjectContainer">
+            <summary>
+            Gets or sets the CSS class dropdown tree object container.
+            </summary>
+            <value>The CSS class dropdown tree object container.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.CssClassDropdownBox">
+            <summary>
+            Gets or sets the CSS class dropdown box.
+            </summary>
+            <value>The CSS class dropdown box.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.CssClassDropdownBoxDisabled">
+            <summary>
+            Gets or sets the CSS class dropdown box disabled.
+            </summary>
+            <value>The CSS class dropdown box disabled.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.CssClassDropdownTree">
+            <summary>
+            Gets or sets the CSS class dropdown tree.
+            </summary>
+            <value>The CSS class dropdown tree.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.CssClassDropdownIconA">
+            <summary>
+            Gets or sets the CSS class dropdown icon A.
+            </summary>
+            <value>The CSS class dropdown icon A.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.CssClassDropdownIcon">
+            <summary>
+            Gets or sets the CSS class dropdown icon.
+            </summary>
+            <value>The CSS class dropdown icon.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.CssClassDropdownIconTD">
+            <summary>
+            Gets or sets the CSS class dropdown icon TD.
+            </summary>
+            <value>The CSS class dropdown icon TD.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.CssClassDropdownIconTDDisabled">
+            <summary>
+            Gets or sets the CSS class dropdown icon TD disabled.
+            </summary>
+            <value>The CSS class dropdown icon TD disabled.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.CssClassDropdownTextContainer">
+            <summary>
+            Gets or sets the CSS class dropdown text container.
+            </summary>
+            <value>The CSS class dropdown text container.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.CssClassDropdownTextContainerDisabled">
+            <summary>
+            Gets or sets the CSS class dropdown text container disabled.
+            </summary>
+            <value>The CSS class dropdown text container disabled.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.EnableForceServerSideValidate">
+            <summary>
+            Gets or sets a value indicating whether [enable force server side validate].
+            </summary>
+            <value>
+            	<c>true</c> if [enable force server side validate]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.RequiredValidatorColor">
+            <summary>
+            Gets or sets the color of the required validator.
+            </summary>
+            <value>The color of the required validator.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.RequiredValidatorDisplay">
+            <summary>
+            Gets or sets the required validator display.
+            </summary>
+            <value>The required validator display.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.RequiredValidatorErrorMessage">
+            <summary>
+            Gets or sets the required validator error message.
+            </summary>
+            <value>The required validator error message.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.RequiredValidatorText">
+            <summary>
+            RequiredValidatorText
+            </summary>
+            <value>The required validator text.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.EnableRequiredValidator">
+            <summary>
+            Gets or sets a value indicating whether [enable required validator].
+            </summary>
+            <value>
+            	<c>true</c> if [enable required validator]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.RequiredValidatorValidationGroup">
+            <summary>
+            Gets or sets the required validator validation group.
+            </summary>
+            <value>The required validator validation group.</value>
+        </member>
+        <member name="P:Goldtect.ASDropDownTreeView.CssClassRequiredValidator">
+            <summary>
+            Gets or sets the CSS class required validator.
+            </summary>
+            <value>The CSS class required validator.</value>
+        </member>
+        <member name="T:Goldtect.ASTreeViewDataSourceDescriptor">
+            <summary>
+            Data Source Descriptor for ASTreeView control to populate treeview from datasource. 
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeViewDataSourceDescriptor.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Goldtect.ASTreeViewDataSourceDescriptor"/> class.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeViewDataSourceDescriptor.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Goldtect.ASTreeViewDataSourceDescriptor"/> class.
+            </summary>
+            <param name="nodeTextColumn">The node text column.</param>
+            <param name="nodeValueColumn">The node value column.</param>
+            <param name="parentNodeValueColumn">The parent node value column.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeViewDataSourceDescriptor.BuildTreeFromDataSource(Goldtect.ASTreeViewNode,System.Object,System.Object)">
+            <summary>
+            Builds the tree from data source.
+            </summary>
+            <param name="parentNode">The parent node.</param>
+            <param name="dataSource">The data source.</param>
+            <param name="parentNodeValue">The parent node value.</param>
+        </member>
+        <member name="P:Goldtect.ASTreeViewDataSourceDescriptor.NodeValueColumnName">
+            <summary>
+            Gets or sets the name of the node value column.
+            </summary>
+            <value>The name of the node value column.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewDataSourceDescriptor.ParentNodeValueColumnName">
+            <summary>
+            Gets or sets the name of the parent node value column.
+            </summary>
+            <value>The name of the parent node value column.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewDataSourceDescriptor.NodeTextColumnName">
+            <summary>
+            Gets or sets the name of the node text column.
+            </summary>
+            <value>The name of the node text column.</value>
+        </member>
+        <member name="T:Goldtect.ASTreeViewDataTableColumnDescriptor">
+            <summary>
+            ASTreeView DataTable Column Descriptor. Populates the ASTreeView with a datatable as datasource.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeViewDataTableColumnDescriptor.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Goldtect.ASTreeViewDataTableColumnDescriptor"/> class.
+            </summary>
+            <param name="nodeTextColumn">The node text column.</param>
+            <param name="nodeValueColumn">The node value column.</param>
+            <param name="parentNodeValueColumn">The parent node value column.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeViewDataTableColumnDescriptor.BuildTreeFromDataSource(Goldtect.ASTreeViewNode,System.Object,System.Object)">
+            <summary>
+            Builds the tree from data source.
+            </summary>
+            <param name="parentNode">The parent node.</param>
+            <param name="dataSource">The data source.</param>
+            <param name="parentNodeValue">The parent node value.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeViewDataTableColumnDescriptor.GetString(System.Object,System.Boolean)">
+            <summary>
+            Gets the string.
+            </summary>
+            <param name="o">The o.</param>
+            <param name="useToString">if set to <c>true</c> [use to string].</param>
+            <returns></returns>
+        </member>
+        <member name="P:Goldtect.ASTreeViewDataTableColumnDescriptor.AddSingleQuotationOnQuery">
+            <summary>
+            Gets or sets a value indicating whether to add single quotation on query.
+            </summary>
+            <value>
+            	<c>true</c> if [add single quotation on query]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Goldtect.ASTreeViewCheckboxState">
+            <exclude/>
+        </member>
+        <member name="T:Goldtect.ASTreeViewNodeOpenState">
+            <exclude/>
+        </member>
+        <member name="T:Goldtect.ASTreeViewNodeType">
+            <exclude/>
+        </member>
+        <member name="T:Goldtect.ASTreeViewIconType">
+            <exclude/>
+        </member>
+        <member name="T:Goldtect.ASTreeViewAjaxReturnCode">
+            <exclude/>
+        </member>
+        <member name="T:Goldtect.ASTreeViewInvalidStateException">
+             <summary>
+             ASTreeView Invalid State Exception
+             </summary>
+            <exclude/>
+        </member>
+        <member name="M:Goldtect.ASTreeViewInvalidStateException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Goldtect.ASTreeViewInvalidStateException"/> class.
+            </summary>
+            <param name="msg">The MSG.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeViewInvalidStateException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Goldtect.ASTreeViewInvalidStateException"/> class.
+            </summary>
+            <param name="msg">The MSG.</param>
+            <param name="inner">The inner.</param>
+        </member>
+        <member name="T:Goldtect.ASTreeViewInvalidDataSourceException">
+             <summary>
+             ASTreeView Invalid DataSource Exception
+             </summary>
+            <exclude/>
+        </member>
+        <member name="M:Goldtect.ASTreeViewInvalidDataSourceException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Goldtect.ASTreeViewInvalidDataSourceException"/> class.
+            </summary>
+            <param name="msg">The MSG.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeViewInvalidDataSourceException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Goldtect.ASTreeViewInvalidDataSourceException"/> class.
+            </summary>
+            <param name="msg">The MSG.</param>
+            <param name="inner">The inner.</param>
+        </member>
+        <member name="T:Goldtect.ASTreeViewHelper">
+             <summary>
+             The ASTreeView Helper
+             </summary>
+            <exclude/>
+        </member>
+        <member name="M:Goldtect.ASTreeViewHelper.ParseJsonTree(Goldtect.ASTreeViewNode,System.String)">
+            <summary>
+            Parses the json tree.
+            </summary>
+            <param name="root">The root.</param>
+            <param name="treeJsonString">The tree json string.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeViewHelper.ParseJsonToNode(Goldtect.Utilities.Json.JsonObject)">
+            <summary>
+            Parses the json to node.
+            </summary>
+            <param name="joTreeNode">The jo tree node.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeViewHelper.ParseJsonTreeRecursive(Goldtect.ASTreeViewNode,Goldtect.Utilities.Json.JsonArray)">
+            <summary>
+            Parses the json tree recursive.
+            </summary>
+            <param name="parent">The parent.</param>
+            <param name="treeJson">The tree json.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeViewHelper.ConvertTree(System.Web.UI.HtmlControls.HtmlGenericControl,Goldtect.ASTreeViewNode,System.Boolean)">
+            <summary>
+            Converts the tree.
+            </summary>
+            <param name="ulTree">The ul tree.</param>
+            <param name="root">The root.</param>
+            <param name="includeRoot">if set to <c>true</c> [include root].</param>
+        </member>
+        <member name="M:Goldtect.ASTreeViewHelper.ConvertTreeRecursive(System.Web.UI.HtmlControls.HtmlGenericControl,Goldtect.ASTreeViewNode)">
+            <summary>
+            Converts the tree recursive.
+            </summary>
+            <param name="ulParent">The ul parent.</param>
+            <param name="node">The node.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeViewHelper.AddAdditionalAttributes(System.Web.UI.WebControls.WebControl,System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+            <summary>
+            Adds the additional attributes.
+            </summary>
+            <param name="control">The control.</param>
+            <param name="attrs">The attrs.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeViewHelper.ConvertNode(Goldtect.ASTreeViewNode)">
+            <summary>
+            Converts the node.
+            </summary>
+            <param name="node">The node.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeViewHelper.ConvertCheckbox(Goldtect.ASTreeViewNode)">
+            <summary>
+            Converts the checkbox.
+            </summary>
+            <param name="node">The node.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeViewHelper.ManageCheckboxState(Goldtect.ASTreeViewNode)">
+            <summary>
+            Manages the state of the check box.
+            </summary>
+            <param name="node">The node.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeViewHelper.GetNodeJsonString(Goldtect.ASTreeViewNode)">
+            <summary>
+            Gets the node json string.
+            </summary>
+            <param name="node">The node.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeViewHelper.GetNodeJson(Goldtect.ASTreeViewNode)">
+            <summary>
+            Gets the node json.
+            </summary>
+            <param name="node">The node.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeViewHelper.ObfuscateScript(System.String)">
+            <summary>
+            Obfuscates the script.
+            </summary>
+            <param name="source">The source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeViewHelper.MinifyScript(System.String)">
+            <summary>
+            Minifies the script.
+            </summary>
+            <param name="source">The source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeViewHelper.GetTreeViewXML">
+            <summary>
+            Gets the tree view XML.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeViewHelper.CreateXMLNodeRecursive(System.Xml.XmlNode,Goldtect.ASTreeViewNode)">
+            <summary>
+            Creates the XML node recursive.
+            </summary>
+            <param name="xmlParentNode">The XML parent node.</param>
+            <param name="treeNode">The tree node.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeViewHelper.FindControlRecursive(System.Web.UI.Control,System.String)">
+            <summary>
+            Finds a Control recursively. Note finds the first match and exists
+            </summary>
+            <param name="ContainerCtl"></param>
+            <param name="IdToFind"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Goldtect.ASTreeViewHelper.CurrentTreeView">
+            <summary>
+            Gets or sets the current astreeview object.
+            </summary>
+            <value>The current tree view.</value>
+        </member>
+        <member name="T:Goldtect.ASTreeViewLinkNode">
+            <summary>
+            HyperLink node type of ASTreeView. It generates hyperlinks as tree nodes.
+            </summary>
+        </member>
+        <member name="T:Goldtect.ASTreeViewNode">
+            <summary>
+            Node class of ASTreeView. It generates LinkButton as tree nodes.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeViewNode.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Goldtect.ASTreeViewNode"/> class.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeViewNode.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Goldtect.ASTreeViewNode"/> class.
+            </summary>
+            <param name="nodeTextValue">The node text value.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeViewNode.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Goldtect.ASTreeViewNode"/> class.
+            </summary>
+            <param name="nodeText">The node text.</param>
+            <param name="nodeValue">The node value.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeViewNode.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Goldtect.ASTreeViewNode"/> class.
+            </summary>
+            <param name="nodeText">The node text.</param>
+            <param name="nodeValue">The node value.</param>
+            <param name="nodeIcon">The node icon.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeViewNode.#ctor(System.String,System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Goldtect.ASTreeViewNode"/> class.
+            </summary>
+            <param name="nodeText">The node text.</param>
+            <param name="nodeValue">The node value.</param>
+            <param name="nodeIcon">The node icon.</param>
+            <param name="virtualNodesCount">The virtual nodes count.</param>
+            <param name="virtualParentKey">The virtual parent key.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeViewNode.AppendChild(Goldtect.ASTreeViewNode)">
+            <summary>
+            Appends the child.
+            </summary>
+            <param name="child">The child.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeViewNode.Insert(System.Int32,Goldtect.ASTreeViewNode)">
+            <summary>
+            Inserts the specified index.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="node">The node.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeViewNode.Remove(Goldtect.ASTreeViewNode)">
+            <summary>
+            Removes the specified node.
+            </summary>
+            <param name="node">The node.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeViewNode.RemoveAt(System.Int32)">
+            <summary>
+            Removes at.
+            </summary>
+            <param name="index">The index.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeViewNode.Clear">
+            <summary>
+            Clears this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeViewNode.IndexOf(Goldtect.ASTreeViewNode)">
+            <summary>
+            Indexes the of.
+            </summary>
+            <param name="node">The node.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.ASTreeViewNode.ContainsOffspring(Goldtect.ASTreeViewNode)">
+            <summary>
+            Determines whether the specified node contains offspring.
+            </summary>
+            <param name="node">The node.</param>
+            <returns>
+            	<c>true</c> if the specified node contains offspring; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Goldtect.ASTreeViewNode.ContainsOffspring(System.String,System.String)">
+            <summary>
+            Determines whether the specified node text contains offspring.
+            </summary>
+            <param name="nodeText">The node text.</param>
+            <param name="nodeValue">The node value.</param>
+            <returns>
+            	<c>true</c> if the specified node text contains offspring; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Goldtect.ASTreeViewNode.ContainsOffspring(System.String)">
+            <summary>
+            Determines whether the specified node value contains offspring.
+            </summary>
+            <param name="nodeValue">The node value.</param>
+            <returns>
+            	<c>true</c> if the specified node value contains offspring; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Goldtect.ASTreeViewNode.Contains(Goldtect.ASTreeViewNode)">
+            <summary>
+            Determines whether [contains] [the specified node].
+            </summary>
+            <param name="node">The node.</param>
+            <returns>
+            	<c>true</c> if [contains] [the specified node]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Goldtect.ASTreeViewNode.Contains(System.String,System.String)">
+            <summary>
+            Determines whether [contains] [the specified node text].
+            </summary>
+            <param name="nodeText">The node text.</param>
+            <param name="nodeValue">The node value.</param>
+            <returns>
+            	<c>true</c> if [contains] [the specified node text]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Goldtect.ASTreeViewNode.Contains(System.String)">
+            <summary>
+            Determines whether [contains] [the specified node value].
+            </summary>
+            <param name="nodeValue">The node value.</param>
+            <returns>
+            	<c>true</c> if [contains] [the specified node value]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Goldtect.ASTreeViewNode.SetParent(Goldtect.ASTreeViewNode)">
+            <summary>
+            Sets the parent.
+            </summary>
+            <param name="parent">The parent.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeViewNode.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:Goldtect.ASTreeViewNode.ToString(System.Boolean)">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <param name="recursive">if set to <c>true</c> [recursive].</param>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNode.ParentNode">
+            <summary>
+            Gets or sets the parent node.
+            </summary>
+            <value>The parent node.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNode.ChildNodes">
+            <summary>
+            Gets the child nodes.
+            </summary>
+            <value>The child nodes.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNode.NodeText">
+            <summary>
+            Gets or sets the node text.
+            </summary>
+            <value>The node text.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNode.NodeValue">
+            <summary>
+            Gets or sets the node value.
+            </summary>
+            <value>The node value.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNode.CheckedState">
+            <summary>
+            Gets or sets the state of the checked.
+            </summary>
+            <value>The state of the checked.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNode.OpenState">
+            <summary>
+            Gets or sets the state of the open.
+            </summary>
+            <value>The state of the open.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNode.Selected">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Goldtect.ASTreeViewNode"/> is selected.
+            </summary>
+            <value><c>true</c> if selected; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNode.EnableEditContextMenu">
+            <summary>
+            Gets or sets a value indicating whether to enable edit context menu on this node.
+            </summary>
+            <value>
+            	<c>true</c> if [enable edit context menu]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNode.EnableDeleteContextMenu">
+            <summary>
+            Gets or sets a value indicating whether to enable delete context menu on this node.
+            </summary>
+            <value>
+            	<c>true</c> if [enable delete context menu]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNode.EnableAddContextMenu">
+            <summary>
+            Gets or sets a value indicating whether to enable add context menu on this node.
+            </summary>
+            <value>
+            	<c>true</c> if [enable add context menu]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNode.NodeType">
+            <summary>
+            Gets the type of the node.
+            </summary>
+            <value>The type of the node.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNode.NodeIcon">
+            <summary>
+            Gets or sets the node icon.
+            </summary>
+            <value>The node icon.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNode.EnableDragDrop">
+            <summary>
+            Gets or sets a value indicating whether to enable drag and drop on this node.
+            </summary>
+            <value><c>true</c> if [enable drag drop]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNode.EnableSiblings">
+            <summary>
+            Gets or sets a value indicating whether enable sibleing. This property only work on the root node.
+            </summary>
+            <value><c>true</c> if [enable siblings]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNode.EnableChildren">
+            <summary>
+            Gets or sets a value indicating whether this node can have children.
+            </summary>
+            <value><c>true</c> if [enable children]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNode.EnableCheckbox">
+            <summary>
+            Gets or sets a value indicating whether to display the checkbox for the node.
+            </summary>
+            <value><c>true</c> if [enable checkbox]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNode.EnableSelection">
+            <summary>
+            Gets or sets a value indicating whether the node is selectable.
+            </summary>
+            <value><c>true</c> if [enable selection]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNode.AdditionalAttributes">
+            <summary>
+            Gets or sets the additional attributes on this node.
+            </summary>
+            <value>The additional attributes.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNode.IsVirtualNode">
+            <summary>
+            Gets or sets a value indicating whether this instance is virtual node.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is virtual node; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNode.VirtualNodesCount">
+            <summary>
+            Gets or sets the virtual nodes count. The virtual node count is a number which indicates how many children this node has.
+            </summary>
+            <value>The virtual nodes count.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNode.VirtualParentKey">
+            <summary>
+            Gets or sets the virtual parent key. This property is used when performing loading ajax calls.
+            </summary>
+            <value>The virtual parent key.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNode.NodeDepth">
+            <summary>
+            Gets or sets the depth.
+            </summary>
+            <value>The depth.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNode.EnableOpenClose">
+            <summary>
+            Gets or sets a value indicating whether [enable open close].
+            </summary>
+            <value><c>true</c> if [enable open close]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="M:Goldtect.ASTreeViewLinkNode.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Goldtect.ASTreeViewLinkNode"/> class.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeViewLinkNode.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Goldtect.ASTreeViewLinkNode"/> class.
+            </summary>
+            <param name="nodeText">The node text.</param>
+            <param name="nodeValue">The node value.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeViewLinkNode.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Goldtect.ASTreeViewLinkNode"/> class.
+            </summary>
+            <param name="nodeText">The node text.</param>
+            <param name="nodeValue">The node value.</param>
+            <param name="navigateUrl">The navigate URL.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeViewLinkNode.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Goldtect.ASTreeViewLinkNode"/> class.
+            </summary>
+            <param name="nodeText">The node text.</param>
+            <param name="nodeValue">The node value.</param>
+            <param name="navigateUrl">The navigate URL.</param>
+            <param name="nodeIcon">The node icon.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeViewLinkNode.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Goldtect.ASTreeViewLinkNode"/> class.
+            </summary>
+            <param name="nodeText">The node text.</param>
+            <param name="nodeValue">The node value.</param>
+            <param name="navigateUrl">The navigate URL.</param>
+            <param name="target">The target.</param>
+            <param name="tooltip">The tooltip.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeViewLinkNode.#ctor(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Goldtect.ASTreeViewLinkNode"/> class.
+            </summary>
+            <param name="nodeText">The node text.</param>
+            <param name="nodeValue">The node value.</param>
+            <param name="navigateUrl">The navigate URL.</param>
+            <param name="target">The target.</param>
+            <param name="tooltip">The tooltip.</param>
+            <param name="nodeIcon">The node icon.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeViewLinkNode.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Goldtect.ASTreeViewLinkNode"/> class.
+            </summary>
+            <param name="nodeText">The node text.</param>
+            <param name="nodeValue">The node value.</param>
+            <param name="navigateUrl">The navigate URL.</param>
+            <param name="target">The target.</param>
+            <param name="tooltip">The tooltip.</param>
+            <param name="nodeIcon">The node icon.</param>
+            <param name="virtualNodesCount">The virtual nodes count.</param>
+            <param name="virtualParentKey">The virtual parent key.</param>
+        </member>
+        <member name="P:Goldtect.ASTreeViewLinkNode.NodeType">
+            <summary>
+            Gets the type of the node.
+            </summary>
+            <value>The type of the node.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewLinkNode.NavigateUrl">
+            <summary>
+            Gets or sets the navigate URL.
+            </summary>
+            <value>The navigate URL.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewLinkNode.Target">
+            <summary>
+            Gets or sets the target.
+            </summary>
+            <value>The target.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewLinkNode.Tooltip">
+            <summary>
+            Gets or sets the tooltip.
+            </summary>
+            <value>The tooltip.</value>
+        </member>
+        <member name="T:Goldtect.ASTreeViewNodeCheckedEventHandler">
+            <exclude/>
+        </member>
+        <member name="T:Goldtect.ASTreeViewNodeCheckedEventArgs">
+             <summary>
+             ASTreeView Node Checked EventArgs
+             </summary>
+            <exclude/>
+        </member>
+        <member name="M:Goldtect.ASTreeViewNodeCheckedEventArgs.#ctor(System.String,System.String,Goldtect.ASTreeViewCheckboxState)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Goldtect.ASTreeViewNodeCheckedEventArgs"/> class.
+            </summary>
+            <param name="nodeText">The node text.</param>
+            <param name="nodeValue">The node value.</param>
+            <param name="checkedState">State of the checked.</param>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNodeCheckedEventArgs.NodeText">
+            <summary>
+            Gets the node text.
+            </summary>
+            <value>The node text.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNodeCheckedEventArgs.NodeValue">
+            <summary>
+            Gets the node value.
+            </summary>
+            <value>The node value.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNodeCheckedEventArgs.CheckedState">
+            <summary>
+            Gets the state of the checked.
+            </summary>
+            <value>The state of the checked.</value>
+        </member>
+        <member name="T:Goldtect.ASTreeViewNodeSelectedEventHandler">
+            <exclude/>
+        </member>
+        <member name="T:Goldtect.ASTreeViewNodeSelectedEventArgs">
+             <summary>
+             ASTreeView Node Selected EventArgs
+             </summary>
+            <exclude/>
+        </member>
+        <member name="M:Goldtect.ASTreeViewNodeSelectedEventArgs.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Goldtect.ASTreeViewNodeSelectedEventArgs"/> class.
+            </summary>
+            <param name="nodeText">The node text.</param>
+            <param name="nodeValue">The node value.</param>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNodeSelectedEventArgs.NodeText">
+            <summary>
+            Gets the node text.
+            </summary>
+            <value>The node text.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewNodeSelectedEventArgs.NodeValue">
+            <summary>
+            Gets the node value.
+            </summary>
+            <value>The node value.</value>
+        </member>
+        <member name="T:Goldtect.ASTreeViewTextNode">
+            <summary>
+            Text Node for ASTreeView. It generates any html as tree node.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeViewTextNode.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Goldtect.ASTreeViewLinkNode"/> class.
+            </summary>
+            <param name="nodeText">The node text.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeViewTextNode.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Goldtect.ASTreeViewLinkNode"/> class.
+            </summary>
+            <param name="nodeText">The node text.</param>
+            <param name="nodeValue">The node value.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeViewTextNode.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Goldtect.ASTreeViewLinkNode"/> class.
+            </summary>
+        </member>
+        <member name="P:Goldtect.ASTreeViewTextNode.NodeType">
+            <summary>
+            Gets the type of the node.
+            </summary>
+            <value>The type of the node.</value>
+        </member>
+        <member name="T:Goldtect.ASTreeViewTheme">
+            <summary>
+            Theme class of ASTreeView. It applies different themes for ASTreeView.
+            </summary>
+        </member>
+        <member name="P:Goldtect.ASTreeViewTheme.BasePath">
+            <summary>
+            Gets or sets the base path.
+            </summary>
+            <value>The base path.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewTheme.ImagePath">
+            <summary>
+            Gets or sets the image path.
+            </summary>
+            <value>The image path.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewTheme.CssFile">
+            <summary>
+            Gets or sets the CSS file.
+            </summary>
+            <value>The CSS file.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewTheme.CssClass">
+            <summary>
+            Gets or sets the CSS class.
+            </summary>
+            <value>The CSS class.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewTheme.DefaultFolderIcon">
+            <summary>
+            Gets or sets the default folder icon.
+            </summary>
+            <value>The default folder icon.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewTheme.DefaultFolderOpenIcon">
+            <summary>
+            Gets or sets the default folder open icon.
+            </summary>
+            <value>The default folder open icon.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewTheme.DefaultNodeIcon">
+            <summary>
+            Gets or sets the default node icon.
+            </summary>
+            <value>The default node icon.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewTheme.CssClassIcon">
+            <summary>
+            Gets or sets the CSS class icon.
+            </summary>
+            <value>The CSS class icon.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewTheme.ImgPlusIcon">
+            <summary>
+            Gets or sets the img plus icon.
+            </summary>
+            <value>The img plus icon.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewTheme.ImgMinusIcon">
+            <summary>
+            Gets or sets the img minus icon.
+            </summary>
+            <value>The img minus icon.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewTheme.CssClassPlusMinusIcon">
+            <summary>
+            Gets or sets the CSS class plus minus icon.
+            </summary>
+            <value>The CSS class plus minus icon.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewTheme.ImgCheckboxChecked">
+            <summary>
+            Gets or sets the img checkbox checked.
+            </summary>
+            <value>The img checkbox checked.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewTheme.ImgCheckboxHalfChecked">
+            <summary>
+            Gets or sets the img checkbox half checked.
+            </summary>
+            <value>The img checkbox half checked.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewTheme.ImgCheckboxUnchecked">
+            <summary>
+            Gets or sets the img checkbox unchecked.
+            </summary>
+            <value>The img checkbox unchecked.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewTheme.CssClassCheckbox">
+            <summary>
+            Gets or sets the CSS class checkbox.
+            </summary>
+            <value>The CSS class checkbox.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewTheme.ImgDragDropIndicator">
+            <summary>
+            Gets or sets the img drag drop indicator.
+            </summary>
+            <value>The img drag drop indicator.</value>
+        </member>
+        <member name="P:Goldtect.ASTreeViewTheme.ImgDragDropIndicatorSub">
+            <summary>
+            Gets or sets the img drag drop indicator sub.
+            </summary>
+            <value>The img drag drop indicator sub.</value>
+        </member>
+        <member name="T:Goldtect.ASTreeViewXMLDescriptor">
+            <summary>
+            ASTreeView XML Descriptor. Populates the ASTreeView with an xml as datasource.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeViewXMLDescriptor.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Goldtect.ASTreeViewXMLDescriptor"/> class.
+            </summary>
+        </member>
+        <member name="M:Goldtect.ASTreeViewXMLDescriptor.BuildTreeFromDataSource(Goldtect.ASTreeViewNode,System.Object,System.Object)">
+            <summary>
+            Builds the tree from data source.
+            </summary>
+            <param name="parentNode">The parent node.</param>
+            <param name="dataSource">The data source.</param>
+            <param name="parentNodeValue">The parent node value.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeViewXMLDescriptor.ConvertXmlNodeRecursive(Goldtect.ASTreeViewNode,System.Xml.XmlNode)">
+            <summary>
+            Converts the XML node recursive.
+            </summary>
+            <param name="parentNode">The parent node.</param>
+            <param name="node">The node.</param>
+        </member>
+        <member name="M:Goldtect.ASTreeViewXMLDescriptor.ConvertXmlNodeToTreeNode(System.Xml.XmlNode)">
+            <summary>
+            Converts the XML node to tree node.
+            </summary>
+            <param name="node">The node.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Goldtect.ASUpdatePanel.RegisterInlineClientScripts">
+            <summary>
+            If the updatepanel shall parse and append inline scripts, default true
+            </summary>
+        </member>
+        <member name="T:Goldtect.Utilities.JavaScriptMinifier">
+            <exclude/>
+        </member>
+        <member name="T:Goldtect.Utilities.JavaScriptObfuscator">
+            <exclude/>
+        </member>
+        <member name="T:Goldtect.Utilities.Json.Disposable">
+            <summary>
+            Defines a base for a class which implements the Disposable pattern. This class
+            is abstract.
+            </summary>    
+        </member>
+        <member name="M:Goldtect.Utilities.Json.Disposable.Dispose(System.Boolean)">
+            <summary>
+            Disposes of this instance.
+            </summary>
+            <param name="disposing">True if being called explicitly, otherwise; false
+            to indicate being called implicitly by the GC.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.Disposable.CheckDisposed">
+            <summary>
+            Helper method to throw a <see cref="T:System.ObjectDisposedException"/>
+            if this instance has been disposed of.
+            </summary>
+        </member>
+        <member name="P:Goldtect.Utilities.Json.Disposable.IsDisposed">
+            <summary>
+            Gets a value indicating if this instance has been disposed of.
+            </summary>
+        </member>
+        <member name="T:Goldtect.Utilities.Json.IJsonArray">
+            <summary>
+            Defines a JavaScript Object Notation Array data type.
+            </summary>
+        </member>
+        <member name="T:Goldtect.Utilities.Json.IJsonType">
+            <summary>
+            Defines a JavaScript Object Notation data type.
+            </summary>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.IJsonType.Write(Goldtect.Utilities.Json.IJsonWriter)">
+            <summary>
+            Writes the contents of the Json type using the specified
+            <see cref="T:Goldtect.Utilities.Json.IJsonWriter"/>.
+            </summary>
+            <param name="writer">The Json writer.</param>
+        </member>
+        <member name="P:Goldtect.Utilities.Json.IJsonType.JsonTypeCode">
+            <summary>
+            Gets the <see cref="T:Goldtect.Utilities.Json.JsonTypeCode"/> of the type.
+            </summary>
+        </member>
+        <member name="T:Goldtect.Utilities.Json.IJsonBoolean">
+            <summary>
+            Defines a JavaScipt Object Notation Boolean data type.
+            </summary>
+        </member>
+        <member name="P:Goldtect.Utilities.Json.IJsonBoolean.Value">
+            <summary>
+            Gets the value of the Json boolean.
+            </summary>
+        </member>
+        <member name="T:Goldtect.Utilities.Json.IJsonNull">
+            <summary>
+            Defines a JavaScipt Object Notation Null.
+            </summary>
+        </member>
+        <member name="T:Goldtect.Utilities.Json.IJsonNumber">
+            <summary>
+            Defines a JavaScipt Object Notation Number data type.
+            </summary>
+        </member>
+        <member name="P:Goldtect.Utilities.Json.IJsonNumber.Value">
+            <summary>
+            Gets the value of the Json number.
+            </summary>
+        </member>
+        <member name="T:Goldtect.Utilities.Json.IJsonObject">
+            <summary>
+            Defines a JavaScript Object Notation Object data type.
+            </summary>
+        </member>
+        <member name="T:Goldtect.Utilities.Json.IJsonString">
+            <summary>
+            Defines a JavaScipt Object Notation String data type.
+            </summary>
+        </member>
+        <member name="P:Goldtect.Utilities.Json.IJsonString.Value">
+            <summary>
+            Gets the value of the Json string.
+            </summary>
+        </member>
+        <member name="T:Goldtect.Utilities.Json.IJsonWriter">
+            <summary>
+            Defines a JavaScript Object Notation writer.
+            </summary>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.IJsonWriter.WriteBeginArray">
+            <summary>
+            Writes the start of an array to the underlying data stream.
+            </summary>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.IJsonWriter.WriteEndArray">
+            <summary>
+            Writes the end of an array to the underlying data stream.
+            </summary>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.IJsonWriter.WriteBeginObject">
+            <summary>
+            Writes the start of an object to the underlying data stream.
+            </summary>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.IJsonWriter.WriteEndObject">
+            <summary>
+            Writes the end of an object to the underlying data stream.
+            </summary>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.IJsonWriter.WriteName(System.String)">
+            <summary>
+            Writes a object property name to the underlying data stream.
+            </summary>
+            <param name="value">The property name.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.IJsonWriter.WriteValue(System.String)">
+            <summary>
+            Writes a raw string value to the underlying data stream.
+            </summary>
+            <param name="value">The string to write.</param>
+        </member>
+        <member name="T:Goldtect.Utilities.Json.IndentedJsonWriter">
+            <summary>
+            Provided support for writing JavaScript Object Notation data types to an
+            underlying <see cref="T:System.IO.TextWriter"/> whilst indenting the output.
+            </summary>   
+        </member>
+        <member name="T:Goldtect.Utilities.Json.JsonWriter">
+            <summary>
+            Provided support for writing JavaScript Object Notation data types to an
+            underlying <see cref="T:System.IO.TextWriter"/>.
+            </summary>    
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonWriter.BeginArray">
+            <summary>
+            Defines the start of an array. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonWriter.EndArray">
+            <summary>
+            Defines the end of an array. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonWriter.BeginObject">
+            <summary>
+            Defines the start of an object. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonWriter.EndObject">
+            <summary>
+            Defines the end of an object. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonWriter.ValueSeperator">
+            <summary>
+            Defines the value seperator. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonWriter.NameSeperator">
+            <summary>
+            Defines the object property name and value seperator. This field is constant.
+            </summary>       
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonWriter.#ctor">
+            <summary>
+            Initialises a new instance of then JsonWriter class using a
+            <see cref="T:System.IO.StringWriter"/> as the underlying 
+            <see cref="T:System.IO.TextWriter"/>.
+            </summary>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonWriter.#ctor(System.IO.TextWriter,System.Boolean)">
+            <summary>
+            Initialises a new instance of the JsonWriter class and specifies
+            the underlying <see cref="T:System.IO.TextWriter"/> and a value indicating
+            if the instance owns the specified TextWriter.
+            </summary>
+            <param name="writer">The underlying text writer.</param>
+            <param name="ownsWriter">True if this instance owns the specified TextWriter,
+            otherwise; false.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonWriter.WriteBeginArray">
+            <summary>
+            Writes the start of an array to the underlying data stream.
+            </summary>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonWriter.WriteEndArray">
+            <summary>
+            Writes the end of an array to the underlying data stream.
+            </summary>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonWriter.WriteBeginObject">
+            <summary>
+            Writes the start of an object to the underlying data stream.
+            </summary>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonWriter.WriteEndObject">
+            <summary>
+            Writes the end of an object to the underlying data stream.
+            </summary>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonWriter.WriteName(System.String)">
+            <summary>
+            Writes a object property name to the underlying data stream.
+            </summary>
+            <param name="value">The property name.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonWriter.WriteValue(System.String)">
+            <summary>
+            Writes a raw string value to the underlying data stream.
+            </summary>
+            <param name="value">The string to write.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonWriter.Close">
+            <summary>
+            Closes this writer.
+            </summary>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonWriter.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> representation of this instance.
+            </summary>
+            <returns>A <see cref="T:System.String"/> representation of this instance.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonWriter.PreWrite(Goldtect.Utilities.Json.JsonTokenType)">
+            <summary>
+            Performs any assertions and / or write operations needed before the specified
+            token is written to the underlying stream.
+            </summary>
+            <param name="token">The next token to be written.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonWriter.PostWrite(Goldtect.Utilities.Json.JsonTokenType)">
+            <summary>
+            Performs any post write operations needed after the specified
+            token has been written to the underlying stream.
+            </summary>
+            <param name="token">The token written.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonWriter.Dispose(System.Boolean)">
+            <summary>
+            Disposed of this instance.
+            </summary>
+            <param name="disposing">True if being called explicitly, otherwise; false
+            to indicate being called implicitly by the GC.</param>
+        </member>
+        <member name="P:Goldtect.Utilities.Json.JsonWriter.CurrentToken">
+            <summary>
+            Gets or sets the current lexical JsonToken.
+            </summary>
+        </member>
+        <member name="P:Goldtect.Utilities.Json.JsonWriter.CurrentStruct">
+            <summary>
+            Peeks at the top structure on the 
+            <see cref="P:Goldtect.Utilities.Json.JsonWriter.StructStack"/>.
+            </summary>
+        </member>
+        <member name="P:Goldtect.Utilities.Json.JsonWriter.StructStack">
+            <summary>
+            Gets the stack of structure types. DO NOT push 
+            <see cref="F:Goldtect.Utilities.Json.JsonStructType.None"/> onto the stack.
+            </summary>
+        </member>
+        <member name="P:Goldtect.Utilities.Json.JsonWriter.OwnsWriter">
+            <summary>
+            Gets a value indicating if this instance owns it's 
+            <see cref="P:Goldtect.Utilities.Json.JsonWriter.Writer"/>.
+            </summary>
+        </member>
+        <member name="P:Goldtect.Utilities.Json.JsonWriter.Writer">
+            <summary>
+            Gets the underlying <see cref="T:System.IO.TextWriter"/>.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonWriter.ST.SOK">
+            <summary>
+            State OK.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonWriter.ST.ERR">
+            <summary>
+            Error.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonWriter.ST.AIO">
+            <summary>
+            Assert in object.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonWriter.ST.AIA">
+            <summary>
+            Assert in array.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonWriter.ST.AIS">
+            <summary>
+            Assert in struct.
+            </summary>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.IndentedJsonWriter.#ctor">
+            <summary>
+            Initialises a new instance of then IndentedJsonWriter class using a
+            <see cref="T:System.IO.StringWriter"/> as the underlying 
+            <see cref="T:System.IO.TextWriter"/>.
+            </summary>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.IndentedJsonWriter.#ctor(System.IO.TextWriter,System.Boolean)">
+            <summary>
+            Initialises a new instance of the IndentedJsonWriter class and specifies
+            the underlying <see cref="T:System.IO.TextWriter"/> and a value indicating
+            if the instance owns the specified TextWriter.
+            </summary>
+            <param name="writer">The underlying text writer.</param>
+            <param name="ownsWriter">True if this instance owns the specified TextWriter,
+            otherwise; false.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.IndentedJsonWriter.PreWrite(Goldtect.Utilities.Json.JsonTokenType)">
+            <summary>
+            Performs any assertions and / or write operations needed before the specified
+            token is written to the underlying stream.
+            </summary>
+            <param name="token">The next token to be written.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.IndentedJsonWriter.WriteIndent">
+            <summary>
+            Writes the indent to the underlying stream.
+            </summary>
+        </member>
+        <member name="P:Goldtect.Utilities.Json.IndentedJsonWriter.IndentString">
+            <summary>
+            Gets or sets the string used to indent the output.
+            </summary>
+        </member>
+        <member name="P:Goldtect.Utilities.Json.IndentedJsonWriter.IndentLevel">
+            <summary>
+            Gets or sets the indent level.
+            </summary>
+        </member>
+        <member name="T:Goldtect.Utilities.Json.JsonArray">
+            <summary>
+            Represents a JavaScript Object Notation Array data type which contains a 
+            collection of <see cref="T:Goldtect.Utilities.Json.IJsonType"/>s.
+            </summary>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonArray.InsertItem(System.Int32,Goldtect.Utilities.Json.IJsonType)">
+            <summary>
+            Inserts the specified <paramref name="item"/> into this collection at the
+            specified <paramref name="index"/>.
+            </summary>
+            <param name="index">The index at which to insert the item.</param>
+            <param name="item">The item to insert.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonArray.SetItem(System.Int32,Goldtect.Utilities.Json.IJsonType)">
+            <summary>
+            Replaces an item at the specified <paramref name="index"/>.
+            </summary>
+            <param name="index">The index of the item to replace.</param>
+            <param name="item">The replacement item.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonArray.ValidateItem(Goldtect.Utilities.Json.IJsonType)">
+            <summary>
+            Validates the specified <paramref name="item"/> before insertion or 
+            setting.
+            </summary>
+            <param name="item">The item to validate.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonArray.#ctor">
+            <summary>
+            Inialises a new instance of the JsonArray class.
+            </summary>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonArray.Write(Goldtect.Utilities.Json.IJsonWriter)">
+            <summary>
+            Writes the contents of this Json type using the specified
+            <see cref="T:Goldtect.Utilities.Json.IJsonWriter"/>.
+            </summary>
+            <param name="writer">The Json writer.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonArray.Add(System.String)">
+            <summary>
+            Adds the specified item to this collection.
+            </summary>
+            <param name="item">The item to add.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonArray.Add(System.Boolean)">
+            <summary>
+            Adds the specified item to this collection.
+            </summary>
+            <param name="item">The item to add.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonArray.Add(System.Byte)">
+            <summary>
+            Adds the specified item to this collection.
+            </summary>
+            <param name="item">The item to add.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonArray.Add(System.SByte)">
+            <summary>
+            Adds the specified item to this collection.
+            </summary>
+            <param name="item">The item to add.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonArray.Add(System.Int16)">
+            <summary>
+            Adds the specified item to this collection.
+            </summary>
+            <param name="item">The item to add.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonArray.Add(System.UInt16)">
+            <summary>
+            Adds the specified item to this collection.
+            </summary>
+            <param name="item">The item to add.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonArray.Add(System.Int32)">
+            <summary>
+            Adds the specified item to this collection.
+            </summary>
+            <param name="item">The item to add.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonArray.Add(System.UInt32)">
+            <summary>
+            Adds the specified item to this collection.
+            </summary>
+            <param name="item">The item to add.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonArray.Add(System.Int64)">
+            <summary>
+            Adds the specified item to this collection.
+            </summary>
+            <param name="item">The item to add.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonArray.Add(System.UInt64)">
+            <summary>
+            Adds the specified item to this collection.
+            </summary>
+            <param name="item">The item to add.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonArray.Add(System.Double)">
+            <summary>
+            Adds the specified item to this collection.
+            </summary>
+            <param name="item">The item to add.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonArray.op_Implicit(Goldtect.Utilities.Json.JsonNull)~Goldtect.Utilities.Json.JsonArray">
+            <summary>
+            Implicit conversion operator.
+            </summary>
+            <param name="value">JsonNull value.</param>
+            <returns>This method always returns null.</returns>
+        </member>
+        <member name="P:Goldtect.Utilities.Json.JsonArray.JsonTypeCode">
+            <summary>
+            Returns the JsonTypeCode for this instance.
+            </summary>
+        </member>
+        <member name="T:Goldtect.Utilities.Json.JsonBoolean">
+            <summary>
+            Represents a JavaScript Object Notation Boolean data type. This class 
+            cannot be inherited.
+            </summary>
+        </member>
+        <member name="T:Goldtect.Utilities.Json.JsonTypeSkeleton">
+            <summary>
+            Defines a base class for most Json types. This class is abstract.
+            </summary>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonTypeSkeleton.#ctor(Goldtect.Utilities.Json.JsonTypeCode)">
+            <summary>
+            Initialises a new instance of the JsonTypeSkeleton class and specifies the 
+            type code.
+            </summary>
+            <param name="typeCode">The type code.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonTypeSkeleton.Write(Goldtect.Utilities.Json.IJsonWriter)">
+            <summary>
+            When overriden in a derived class; writes the contents of the Json type 
+            to the specified <see cref="T:Goldtect.Utilities.Json.IJsonWriter"/>.
+            </summary>
+            <param name="writer">The Json writer.</param>
+        </member>
+        <member name="P:Goldtect.Utilities.Json.JsonTypeSkeleton.JsonTypeCode">
+            <summary>
+            Gets the type code of this Json type.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonBoolean.TrueString">
+            <summary>
+            Defines the Json true string. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonBoolean.FalseString">
+            <summary>
+            Defines the Json false string. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonBoolean.True">
+            <summary>
+            Defines a true JsonBoolean instance. This field is readonly.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonBoolean.False">
+            <summary>
+            Defines a false JsonBoolean instance. This field is readonly.
+            </summary>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonBoolean.Write(Goldtect.Utilities.Json.IJsonWriter)">
+            <summary>
+            Writes the contents of this Json type using the specified
+            <see cref="T:Goldtect.Utilities.Json.IJsonWriter"/>.
+            </summary>
+            <param name="writer">The Json writer.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonBoolean.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> representation of this JsonBoolean instance.
+            </summary>
+            <returns> <see cref="T:System.String"/> representation of this JsonBoolean instance</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonBoolean.Equals(System.Object)">
+            <summary>
+            Returns a indicating whether this instance is equal to the specified
+            <see cref="T:System.Object"/>.
+            </summary>
+            <param name="obj">The object to compare.</param>
+            <returns>True if the specified object is equal to this instance, otherwise;
+            false.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonBoolean.Equals(Goldtect.Utilities.Json.JsonBoolean)">
+            <summary>
+            Returns a indicating whether this instance is equal to the specified
+            JsonBoolean.
+            </summary>
+            <param name="other">The value to compare.</param>
+            <returns>True if the specified instance is equal to this instance, otherwise;
+            false.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonBoolean.Equals(Goldtect.Utilities.Json.IJsonBoolean)">
+            <summary>
+            Returns a indicating whether this instance is equal to the specified
+            <see cref="T:Goldtect.Utilities.Json.IJsonBoolean"/>.
+            </summary>
+            <param name="other">The value to compare.</param>
+            <returns>True if the specified instance is equal to this instance, otherwise;
+            false.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonBoolean.Equals(System.Boolean)">
+            <summary>
+            Returns a indicating whether this instance is equal to the specified
+            <see cref="T:System.Boolean"/>.
+            </summary>
+            <param name="other">The value to compare.</param>
+            <returns>True if the specified bool is equal to this instance, otherwise;
+            false.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonBoolean.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>A hash code for this instance.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonBoolean.Get(System.Boolean)">
+            <summary>
+            Returns a static JsonBoolean instance representing <paramref name="value"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>A static JsonBoolean instance representing <paramref name="value"/>.
+            </returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonBoolean.Equals(Goldtect.Utilities.Json.JsonBoolean,Goldtect.Utilities.Json.JsonBoolean)">
+            <summary>
+            Determines if the two <see cref="T:Goldtect.Utilities.Json.JsonBoolean"/>s are
+            equal.
+            </summary>
+            <param name="a">The first JsonBoolean.</param>
+            <param name="b">The second JsonBoolean.</param>
+            <returns>True if the JsonBooleans are equal, otherwise; false.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonBoolean.op_Equality(Goldtect.Utilities.Json.JsonBoolean,Goldtect.Utilities.Json.JsonBoolean)">
+            <summary>
+            Equality operator.
+            </summary>
+            <param name="a">The first JsonBoolean.</param>
+            <param name="b">The second JsonBoolean.</param>
+            <returns>True if the JsonBooleans are equal, otherwise; false.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonBoolean.op_Inequality(Goldtect.Utilities.Json.JsonBoolean,Goldtect.Utilities.Json.JsonBoolean)">
+            <summary>
+            Inequality operator.
+            </summary>
+            <param name="a">The first JsonBoolean.</param>
+            <param name="b">The second JsonBoolean.</param>
+            <returns>True if the JsonBooleans are not equal, otherwise; false.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonBoolean.op_Implicit(System.Boolean)~Goldtect.Utilities.Json.JsonBoolean">
+            <summary>
+            Implicit <see cref="T:System.Boolean"/> conversion operator.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonBoolean.op_Implicit(Goldtect.Utilities.Json.JsonNull)~Goldtect.Utilities.Json.JsonBoolean">
+            <summary>
+            Implicit <see cref="T:Goldtect.Utilities.Json.JsonNull"/> conversion operator.
+            </summary>
+            <param name="value"></param>
+            <returns>This method always returns null.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonBoolean.op_Explicit(Goldtect.Utilities.Json.JsonBoolean)~System.Boolean">
+            <summary>
+            Explicit <see cref="T:Goldtect.Utilities.Json.JsonBoolean"/> conversion operator.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonBoolean.#ctor(System.Boolean)">
+            <summary>
+            Initialises a new instance of the JsonBoolean class and specifies the 
+            value.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="P:Goldtect.Utilities.Json.JsonBoolean.Value">
+            <summary>
+            Gets the value of this JsonBoolean.
+            </summary>
+        </member>
+        <member name="T:Goldtect.Utilities.Json.JsonNull">
+            <summary>
+            Represents a Json null value. This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonNull.NullString">
+            <summary>
+            Defines the JsonNull string. This field is constant.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonNull.Null">
+            <summary>
+            Defines a JsonNull instance. This field is readonly.
+            </summary>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNull.Write(Goldtect.Utilities.Json.IJsonWriter)">
+            <summary>
+            Writes the contents of this Json type using the specified
+            <see cref="T:Goldtect.Utilities.Json.IJsonWriter"/>.
+            </summary>
+            <param name="writer">The Json writer.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNull.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> representation of this JsonNull instance.
+            </summary>
+            <returns> <see cref="T:System.String"/> representation of this JsonNull instance.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNull.Equals(System.Object)">
+            <summary>
+            Returns a indicating whether this instance is equal to the specified
+            <see cref="T:System.Object"/>.
+            </summary>
+            <param name="obj">The object to compare.</param>
+            <returns>True if the specified object is equal to this instance, otherwise;
+            false.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNull.Equals(Goldtect.Utilities.Json.JsonNull)">
+            <summary>
+            Returns a indicating whether this instance is equal to the specified
+            JsonNull.
+            </summary>
+            <param name="other">The value to compare.</param>
+            <returns>True if the specified instance is equal to this instance, otherwise;
+            false.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNull.Equals(Goldtect.Utilities.Json.IJsonNull)">
+            <summary>
+            Returns a indicating whether this instance is equal to the specified
+            <see cref="T:Goldtect.Utilities.Json.IJsonNull"/>.
+            </summary>
+            <param name="other">The value to compare.</param>
+            <returns>True if the specified instance is equal to this instance, otherwise;
+            false.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNull.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>A hash code for this instance.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNull.Map``1(Goldtect.Utilities.Json.IJsonType)">
+            <summary>
+            Maps the specified value to the type of the type paramater.
+            </summary>
+            <typeparam name="T">The type to map to.</typeparam>
+            <param name="value">The value to map.</param>
+            <returns>The mapped value if not logically null, otherwise the default value of 
+            <typeparamref name="T"/>.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNull.#ctor">
+            <summary>
+            Initialises a new instance of the JsonNull class.
+            </summary>
+        </member>
+        <member name="T:Goldtect.Utilities.Json.JsonNumber">
+            <summary>
+            Represents a JavaScript Object Notation Number data type. This class cannot 
+            be inherited.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonNumber.MinValue">
+            <summary>
+            Defines the smallest Json number. This field is readonly.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonNumber.Zero">
+            <summary>
+            Defines a Json number with a value of zero. This field is readonly.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonNumber.MaxValue">
+            <summary>
+            Defines the lasrgest Json number. This field is readonly.
+            </summary>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.#ctor(System.Byte)">
+            <summary>
+            Initialises a new instance of the JsonNumber class and specifies the 
+            value.
+            </summary>
+            <param name="value">The value of the new instance.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.#ctor(System.SByte)">
+            <summary>
+            Initialises a new instance of the JsonNumber class and specifies the 
+            value.
+            </summary>
+            <param name="value">The value of the new instance.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.#ctor(System.Int16)">
+            <summary>
+            Initialises a new instance of the JsonNumber class and specifies the 
+            value.
+            </summary>
+            <param name="value">The value of the new instance.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.#ctor(System.UInt16)">
+            <summary>
+            Initialises a new instance of the JsonNumber class and specifies the 
+            value.
+            </summary>
+            <param name="value">The value of the new instance.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.#ctor(System.Int32)">
+            <summary>
+            Initialises a new instance of the JsonNumber class and specifies the 
+            value.
+            </summary>
+            <param name="value">The value of the new instance.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.#ctor(System.UInt32)">
+            <summary>
+            Initialises a new instance of the JsonNumber class and specifies the 
+            value.
+            </summary>
+            <param name="value">The value of the new instance.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.#ctor(System.Int64)">
+            <summary>
+            Initialises a new instance of the JsonNumber class and specifies the 
+            value.
+            </summary>
+            <param name="value">The value of the new instance.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.#ctor(System.UInt64)">
+            <summary>
+            Initialises a new instance of the JsonNumber class and specifies the 
+            value.
+            </summary>
+            <param name="value">The value of the new instance.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.#ctor(System.Double)">
+            <summary>
+            Initialises a new instance of the JsonNumber class and specifies the 
+            value.
+            </summary>
+            <param name="value">The value of the new instance.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.Write(Goldtect.Utilities.Json.IJsonWriter)">
+            <summary>
+            Writes the contents of this Json type using the specified
+            <see cref="T:Goldtect.Utilities.Json.IJsonWriter"/>.
+            </summary>
+            <param name="writer">The Json writer.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> representation of this JsonNumber instance.
+            </summary>
+            <returns> <see cref="T:System.String"/> representation of this JsonNumber instance</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            Returns a <see cref="T:System.String"/> representation of this JsonNumber instance.
+            </summary>
+            <param name="format">The format.</param>
+            <param name="formatProvider">The culture specific format provider.</param>
+            <returns> <see cref="T:System.String"/> representation of this JsonNumber instance</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.Equals(System.Object)">
+            <summary>
+            Returns a indicating whether this instance is equal to the specified
+            <see cref="T:System.Object"/>.
+            </summary>
+            <param name="obj">The object to compare.</param>
+            <returns>True if the specified object is equal to this instance, otherwise;
+            false.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.Equals(Goldtect.Utilities.Json.JsonNumber)">
+            <summary>
+            Returns a indicating whether this instance is equal to the specified
+            JsonNumber.
+            </summary>
+            <param name="other">The value to compare.</param>
+            <returns>True if the specified instance is equal to this instance, otherwise;
+            false.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.Equals(Goldtect.Utilities.Json.IJsonNumber)">
+            <summary>
+            Returns a indicating whether this instance is equal to the specified
+            <see cref="T:Goldtect.Utilities.Json.IJsonNumber"/>.
+            </summary>
+            <param name="other">The value to compare.</param>
+            <returns>True if the specified instance is equal to this instance, otherwise;
+            false.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.Equals(System.Double)">
+            <summary>
+            Returns a indicating whether this instance is equal to the specified
+            <see cref="T:System.Double"/>.
+            </summary>
+            <param name="other">The value to compare.</param>
+            <returns>True if the specified double is equal to this instance, otherwise;
+            false.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.CompareTo(Goldtect.Utilities.Json.JsonNumber)">
+            <summary>
+            Returns a value indicating equality with the specified instance.
+            </summary>
+            <param name="other">The JsonNumber to compare.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.CompareTo(Goldtect.Utilities.Json.IJsonNumber)">
+            <summary>
+            Returns a value indicating equality with the specified instance.
+            </summary>
+            <param name="other">The <see cref="T:Goldtect.Utilities.Json.IJsonNumber"/> to compare.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.CompareTo(System.Double)">
+            <summary>
+            Returns a value indicating equality with the specified <see cref="T:System.Double"/>.
+            </summary>
+            <param name="other">The Double to compare.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>A hash code for this instance.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.Equals(Goldtect.Utilities.Json.JsonNumber,Goldtect.Utilities.Json.JsonNumber)">
+            <summary>
+            Determines if the two <see cref="T:Goldtect.Utilities.Json.JsonNumber"/>s are
+            equal.
+            </summary>
+            <param name="a">The first JsonNumber.</param>
+            <param name="b">The second JsonNumber.</param>
+            <returns>True if the JsonNumbers are equal, otherwise; false.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.op_Equality(Goldtect.Utilities.Json.JsonNumber,Goldtect.Utilities.Json.JsonNumber)">
+            <summary>
+            Equality operator.
+            </summary>
+            <param name="a">The first JsonNumber.</param>
+            <param name="b">The second JsonNumber.</param>
+            <returns>True if the JsonNumbers are equal, otherwise; false.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.op_Inequality(Goldtect.Utilities.Json.JsonNumber,Goldtect.Utilities.Json.JsonNumber)">
+            <summary>
+            Inequality operator.
+            </summary>
+            <param name="a">The first JsonNumber.</param>
+            <param name="b">The second JsonNumber.</param>
+            <returns>True if the JsonNumbers are not equal, otherwise; false.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.op_Implicit(System.Byte)~Goldtect.Utilities.Json.JsonNumber">
+            <summary>
+            Implict conversion operator.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.op_Implicit(System.SByte)~Goldtect.Utilities.Json.JsonNumber">
+            <summary>
+            Implict conversion operator.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.op_Implicit(System.Int16)~Goldtect.Utilities.Json.JsonNumber">
+            <summary>
+            Implict conversion operator.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.op_Implicit(System.UInt16)~Goldtect.Utilities.Json.JsonNumber">
+            <summary>
+            Implict conversion operator.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.op_Implicit(System.Int32)~Goldtect.Utilities.Json.JsonNumber">
+            <summary>
+            Implict conversion operator.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.op_Implicit(System.UInt32)~Goldtect.Utilities.Json.JsonNumber">
+            <summary>
+            Implict conversion operator.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.op_Implicit(System.Int64)~Goldtect.Utilities.Json.JsonNumber">
+            <summary>
+            Implict conversion operator.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.op_Implicit(System.UInt64)~Goldtect.Utilities.Json.JsonNumber">
+            <summary>
+            Implict conversion operator.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.op_Implicit(System.Double)~Goldtect.Utilities.Json.JsonNumber">
+            <summary>
+            Implict conversion operator.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.op_Implicit(Goldtect.Utilities.Json.JsonNull)~Goldtect.Utilities.Json.JsonNumber">
+            <summary>
+            Implicit conversion operator.
+            </summary>
+            <param name="value"></param>
+            <returns>This method always returns null.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.op_Explicit(Goldtect.Utilities.Json.JsonNumber)~System.Double">
+            <summary>
+            Explicit conversion operator.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.op_Explicit(Goldtect.Utilities.Json.JsonNumber)~System.Byte">
+            <summary>
+            Explicit conversion operator.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.op_Explicit(Goldtect.Utilities.Json.JsonNumber)~System.SByte">
+            <summary>
+            Explicit conversion operator.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.op_Explicit(Goldtect.Utilities.Json.JsonNumber)~System.Int16">
+            <summary>
+            Explicit conversion operator.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.op_Explicit(Goldtect.Utilities.Json.JsonNumber)~System.UInt16">
+            <summary>
+            Explicit conversion operator.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.op_Explicit(Goldtect.Utilities.Json.JsonNumber)~System.Int32">
+            <summary>
+            Explicit conversion operator.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.op_Explicit(Goldtect.Utilities.Json.JsonNumber)~System.UInt32">
+            <summary>
+            Explicit conversion operator.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.op_Explicit(Goldtect.Utilities.Json.JsonNumber)~System.Int64">
+            <summary>
+            Explicit conversion operator.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonNumber.op_Explicit(Goldtect.Utilities.Json.JsonNumber)~System.UInt64">
+            <summary>
+            Explicit conversion operator.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Goldtect.Utilities.Json.JsonNumber.Value">
+            <summary>
+            Gets the value of this JsonNumber.
+            </summary>
+        </member>
+        <member name="T:Goldtect.Utilities.Json.JsonObject">
+            <summary>
+            Represents a JavaScript Object Notation Object data type which contains a 
+            collection of <see cref="T:Goldtect.Utilities.Json.IJsonType"/>s accessed by key.
+            </summary>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonObject.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Deserialisation constructor.
+            </summary>
+            <param name="info">The object containing the data needed to deserialise an instance.</param>
+            <param name="context">The boejct which specifies the source of the deserialisation.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonObject.#ctor">
+            <summary>
+            Inialises a new instance of the JsonObject class.
+            </summary>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonObject.Write(Goldtect.Utilities.Json.IJsonWriter)">
+            <summary>
+            Writes the contents of this Json type using the specified
+            <see cref="T:Goldtect.Utilities.Json.IJsonWriter"/>.
+            </summary>
+            <param name="writer">The Json writer.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonObject.Add(System.String,System.String)">
+            <summary>
+            Adds the specified key and item to this dictionary.
+            </summary>
+            <param name="key">The key of the item</param>
+            <param name="item">The value of the item.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonObject.Add(System.String,System.Boolean)">
+            <summary>
+            Adds the specified key and item to this dictionary.
+            </summary>
+            <param name="key">The key of the item</param>
+            <param name="item">The value of the item.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonObject.Add(System.String,System.Byte)">
+            <summary>
+            Adds the specified key and item to this dictionary.
+            </summary>
+            <param name="key">The key of the item</param>
+            <param name="item">The value of the item.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonObject.Add(System.String,System.SByte)">
+            <summary>
+            Adds the specified key and item to this dictionary.
+            </summary>
+            <param name="key">The key of the item</param>
+            <param name="item">The value of the item.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonObject.Add(System.String,System.Int16)">
+            <summary>
+            Adds the specified key and item to this dictionary.
+            </summary>
+            <param name="key">The key of the item</param>
+            <param name="item">The value of the item.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonObject.Add(System.String,System.UInt16)">
+            <summary>
+            Adds the specified key and item to this dictionary.
+            </summary>
+            <param name="key">The key of the item</param>
+            <param name="item">The value of the item.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonObject.Add(System.String,System.Int32)">
+            <summary>
+            Adds the specified key and item to this dictionary.
+            </summary>
+            <param name="key">The key of the item</param>
+            <param name="item">The value of the item.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonObject.Add(System.String,System.UInt32)">
+            <summary>
+            Adds the specified key and item to this dictionary.
+            </summary>
+            <param name="key">The key of the item</param>
+            <param name="item">The value of the item.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonObject.Add(System.String,System.Int64)">
+            <summary>
+            Adds the specified key and item to this dictionary.
+            </summary>
+            <param name="key">The key of the item</param>
+            <param name="item">The value of the item.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonObject.Add(System.String,System.UInt64)">
+            <summary>
+            Adds the specified key and item to this dictionary.
+            </summary>
+            <param name="key">The key of the item</param>
+            <param name="item">The value of the item.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonObject.Add(System.String,System.Double)">
+            <summary>
+            Adds the specified key and item to this dictionary.
+            </summary>
+            <param name="key">The key of the item</param>
+            <param name="item">The value of the item.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonObject.op_Implicit(Goldtect.Utilities.Json.JsonNull)~Goldtect.Utilities.Json.JsonObject">
+            <summary>
+            Implicit conversion operator.
+            </summary>
+            <param name="value"></param>
+            <returns>This method always returns null.</returns>
+        </member>
+        <member name="P:Goldtect.Utilities.Json.JsonObject.JsonTypeCode">
+            <summary>
+            Returns the JsonTypeCode for this instance.
+            </summary>
+        </member>
+        <member name="T:Goldtect.Utilities.Json.JsonParser">
+            <summary>
+            Provided support for parsing JavaScript Object Notation data types from
+            an underlying <see cref="T:System.IO.TextReader"/>.
+            </summary>    
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonParser.#ctor(System.IO.TextReader,System.Boolean)">
+            <summary>
+            Initialises a new instance of the JsonParser class and specifies the source
+            <see cref="T:System.IO.TextReader"/> and a value indicating if the instance
+            owns the specified TextReader.
+            </summary>
+            <param name="rdr">The underlying TextReader.</param>
+            <param name="ownsReader">True if this instance owns the TextReader, otherwise; 
+            false.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonParser.NextToken">
+            <summary>
+            Classifies the next token on the underlying stream.
+            </summary>
+            <returns>The classification of the next token from the underlying stream.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonParser.ParseBoolean">
+            <summary>
+            Parses a <see cref="T:Goldtect.Utilities.Json.JsonBoolean"/> from the underlying
+            stream.
+            </summary>
+            <returns>The parsed JsonBoolean.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonParser.ParseNull">
+            <summary>
+            Parses a <see cref="T:Goldtect.Utilities.Json.JsonNull"/> from the underlying
+            stream.
+            </summary>
+            <returns>The parsed JsonNull.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonParser.ParseNumber">
+            <summary>
+            Parses a <see cref="T:Goldtect.Utilities.Json.JsonNumber"/> from the underlying
+            stream.
+            </summary>
+            <returns>The parsed JsonNumber.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonParser.ParseObject">
+            <summary>
+            Parses a <see cref="T:Goldtect.Utilities.Json.JsonObject"/> and all contained types 
+            from the underlying stream.
+            </summary>
+            <returns>The parsed JsonObject.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonParser.ParseArray">
+            <summary>
+            Parses a <see cref="T:Goldtect.Utilities.Json.JsonArray"/> and all contained types 
+            from the underlying stream.
+            </summary>
+            <returns>The parsed JsonArray.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonParser.ParseString">
+            <summary>
+            Parses a <see cref="T:Goldtect.Utilities.Json.JsonString"/> from the underlying stream.
+            </summary>
+            <returns>The parsed JsonString.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonParser.ParseNext">
+            <summary>
+            Parses the next type from the underlying stream.
+            </summary>
+            <returns>The next type from the underlying stream.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonParser.ParseNext(Goldtect.Utilities.Json.JsonParser.TokenType)">
+            <summary>
+            Parses the specified <paramref name="type"/> from the underlying stream.
+            </summary>
+            <param name="type">The type to parse.</param>
+            <returns>The type parsed from the underlying stream.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonParser.Close">
+            <summary>
+            Closes this parser.
+            </summary>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonParser.Peek">
+            <summary>
+            Peeks at and returns a single character from the underlying stream.
+            </summary>
+            <returns>The character, otherwise; -1 if the end of the stream has been reached.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonParser.Peek(System.Boolean)">
+            <summary>
+            Peeks at the next character from the underlying stream and specifies a value
+            which indicates whether white space characters should be advanced over.
+            </summary>
+            <param name="skipWhite">True to skip white space characters, otherwise; false.</param>
+            <returns>The next character from the underlying stream, or -1 if the end
+            has been reached.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonParser.Read">
+            <summary>
+            Reads and returns a single character from the underlying stream.
+            </summary>
+            <returns>The character, otherwise; -1 if the end of the stream has been reached.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonParser.Read(System.Boolean)">
+            <summary>
+            Reads the next character from the underlying stream and specified a value
+            which indicates whether white space characters should be skipped.
+            </summary>
+            <param name="skipWhite">True to skip white space characters, otherwise; false.</param>
+            <returns>The next character from the underlying stream, or -1 if the end
+            has been reached.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonParser.AssertDepth(System.Int32)">
+            <summary>
+            Asserts that the specified depth does not exceed 
+            <see cref="P:Goldtect.Utilities.Json.JsonParser.MaximumDepth"/>. If the depth has been
+            exceeded, a <see cref="T:System.FormatException"/> is thrown.
+            </summary>
+            <param name="depth">The depth.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonParser.Dispose(System.Boolean)">
+            <summary>
+            Disposed of this instance.
+            </summary>
+            <param name="disposing">True if being called explicitly, otherwise; false
+            to indicate being called implicitly by the GC.</param>
+        </member>
+        <member name="P:Goldtect.Utilities.Json.JsonParser.Depth">
+            <summary>
+            Gets the current depth of the parser.
+            </summary>
+        </member>
+        <member name="P:Goldtect.Utilities.Json.JsonParser.MaximumDepth">
+            <summary>
+            Gets or sets the maximum depth of structures before a 
+            <see cref="T:System.FormatException"/> is thrown.
+            </summary>
+        </member>
+        <member name="P:Goldtect.Utilities.Json.JsonParser.OwnsReader">
+            <summary>
+            Gets a value indicating if this instance owns it's 
+            <see cref="P:Goldtect.Utilities.Json.TextParser.Reader"/>.
+            </summary>
+        </member>
+        <member name="P:Goldtect.Utilities.Json.JsonParser.Reader">
+            <summary>
+            Gets the underlying <see cref="T:System.IO.TextReader"/>.
+            </summary>
+        </member>
+        <member name="T:Goldtect.Utilities.Json.JsonParser.TokenType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonParser.TokenType.BeginArray">
+            <summary>
+            Begin array token.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonParser.TokenType.EndArray">
+            <summary>
+            End array token.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonParser.TokenType.BeginObject">
+            <summary>
+            Begin object token.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonParser.TokenType.EndObject">
+            <summary>
+            End object token.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonParser.TokenType.ValueSeperator">
+            <summary>
+            Member seperator token
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonParser.TokenType.NameSeperator">
+            <summary>
+            Object property name / value seperator token.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonParser.TokenType.String">
+            <summary>
+            Start of string token.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonParser.TokenType.Number">
+            <summary>
+            Start of number token.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonParser.TokenType.Boolean">
+            <summary>
+            Start of boolean token.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonParser.TokenType.Null">
+            <summary>
+            Start of null token.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonParser.TokenType.EOF">
+            <summary>
+            End of input token.
+            </summary>
+        </member>
+        <member name="T:Goldtect.Utilities.Json.JsonParser.SpState">
+            <summary>
+            Structure parse state.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonParser.SpState.Initial">
+            <summary>
+            Initial.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonParser.SpState.ReqValue">
+            <summary>
+            A value is required.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonParser.SpState.SepValid">
+            <summary>
+            A seperator is currently valid.
+            </summary>
+        </member>
+        <member name="T:Goldtect.Utilities.Json.JsonString">
+            <summary>
+            Represents a JavaScript Object Notation String data type. This class cannot 
+            be inherited.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonString.Empty">
+            <summary>
+            Defines an empty JsonString. This field is readonly.
+            </summary>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonString.#ctor(System.String)">
+            <summary>
+            Initialises a new instance of the JsonString class and specifies the
+            value.
+            </summary>
+            <param name="value">The value of the instance.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonString.Write(Goldtect.Utilities.Json.IJsonWriter)">
+            <summary>
+            Writes the contents of this Json type using the specified
+            <see cref="T:Goldtect.Utilities.Json.IJsonWriter"/>.
+            </summary>
+            <param name="writer">The Json writer.</param>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonString.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> representation of this JsonString 
+            instance.
+            </summary>
+            <returns> <see cref="T:System.String"/> representation of this JsonString 
+            instance.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonString.Equals(System.Object)">
+            <summary>
+            Returns a indicating whether this instance is equal to the specified
+            <see cref="T:System.Object"/>.
+            </summary>
+            <param name="obj">The object to compare.</param>
+            <returns>True if the specified object is equal to this instance, otherwise;
+            false.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonString.Equals(Goldtect.Utilities.Json.JsonString)">
+            <summary>
+            Returns a indicating whether this instance is equal to the specified
+            JsonString.
+            </summary>
+            <param name="other">The value to compare.</param>
+            <returns>True if the specified instance is equal to this instance, otherwise;
+            false.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonString.Equals(Goldtect.Utilities.Json.IJsonString)">
+            <summary>
+            Returns a indicating whether this instance is equal to the specified
+            <see cref="T:Goldtect.Utilities.Json.IJsonString"/>.
+            </summary>
+            <param name="other">The value to compare.</param>
+            <returns>True if the specified instance is equal to this instance, otherwise;
+            false.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonString.Equals(System.String)">
+            <summary>
+            Returns a indicating whether this instance is equal to the specified
+            <see cref="T:System.String"/>.
+            </summary>
+            <param name="other">The value to compare.</param>
+            <returns>True if the specified instance is equal to this instance, otherwise;
+            false.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonString.CompareTo(Goldtect.Utilities.Json.JsonString)">
+            <summary>
+            Returns a value indicating equality with the specified instance.
+            </summary>
+            <param name="other">The JsonNumber to compare.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonString.CompareTo(Goldtect.Utilities.Json.IJsonString)">
+            <summary>
+            Returns a value indicating equality with the specified
+            <see cref="T:Goldtect.Utilities.Json.IJsonString"/>.
+            </summary>
+            <param name="other">The <see cref="T:Goldtect.Utilities.Json.IJsonString"/> to 
+            compare.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonString.CompareTo(System.String)">
+            <summary>
+            Returns a value indicating equality with the specified <see cref="T:System.String"/>.
+            </summary>
+            <param name="other">The String to compare.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonString.GetHashCode">
+            <summary>
+            Returns a hash code for this JsonString.
+            </summary>
+            <returns>A hash code for this JsonString.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonString.Equals(Goldtect.Utilities.Json.JsonString,Goldtect.Utilities.Json.JsonString)">
+            <summary>
+            Determines if the two <see cref="T:Goldtect.Utilities.Json.JsonString"/>s are
+            equal.
+            </summary>
+            <param name="a">The first JsonString.</param>
+            <param name="b">The second JsonString.</param>
+            <returns>True if the JsonStrings are equal, otherwise; false.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonString.op_Equality(Goldtect.Utilities.Json.JsonString,Goldtect.Utilities.Json.JsonString)">
+            <summary>
+            Equality operator.
+            </summary>
+            <param name="a">The first JsonString.</param>
+            <param name="b">The second JsonString.</param>
+            <returns>True if the JsonStrings are equal, otherwise; false.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonString.op_Inequality(Goldtect.Utilities.Json.JsonString,Goldtect.Utilities.Json.JsonString)">
+            <summary>
+            Inequality operator.
+            </summary>
+            <param name="a">The first JsonString.</param>
+            <param name="b">The second JsonString.</param>
+            <returns>True if the JsonStrings are not equal, otherwise; false.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonString.op_Implicit(System.String)~Goldtect.Utilities.Json.JsonString">
+            <summary>
+            Implicit conversion operator.
+            </summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted value.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonString.op_Implicit(Goldtect.Utilities.Json.JsonNull)~Goldtect.Utilities.Json.JsonString">
+            <summary>
+            Implicit conversion operator.
+            </summary>
+            <param name="value">The value to convert.</param>
+            <returns>This method always returns null.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonString.op_Explicit(Goldtect.Utilities.Json.JsonString)~System.String">
+            <summary>
+            Explicit conversion operator.
+            </summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted value.</returns>
+        </member>
+        <member name="M:Goldtect.Utilities.Json.JsonString.Encode(System.String)">
+            <summary>
+            Encodes the specified <see cref="T:System.String"/>.
+            </summary>
+            <param name="s">The string to encode.</param>
+            <returns>The encoded string.</returns>
+        </member>
+        <member name="P:Goldtect.Utilities.Json.JsonString.Value">
+            <summary>
+            Gets the un-encoded value of the this JsonString.
+            </summary>
+        </member>
+        <member name="P:Goldtect.Utilities.Json.JsonString.EncodedValue">
+            <summary>
+            Gets the encoded value of this JsonString.
+            </summary>
+        </member>
+        <member name="T:Goldtect.Utilities.Json.JsonStructType">
+            <summary>
+            Defines the JavaScript Object Notation structure types.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonStructType.None">
+            <summary>
+            No structure.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonStructType.Array">
+            <summary>
+            A Json array structure.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonStructType.Object">
+            <summary>
+            A Json object structure.
+            </summary>
+        </member>
+        <member name="T:Goldtect.Utilities.Json.JsonTokenType">
+            <summary>
+            Defines the high level Json tokens.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonTokenType.None">
+            <summary>
+            No token.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonTokenType.BeginArray">
+            <summary>
+            The start of array token.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonTokenType.EndArray">
+            <summary>
+            The end of array token.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonTokenType.BeginObject">
+            <summary>
+            The start of object token.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonTokenType.EndObject">
+            <summary>
+            The end of object token.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonTokenType.Name">
+            <summary>
+            An object property name token.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonTokenType.Value">
+            <summary>
+            A value token.
+            </summary>
+        </member>
+        <member name="T:Goldtect.Utilities.Json.JsonTypeCode">
+            <summary>
+            Defines the different types of Json structures and primitives.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonTypeCode.String">
+            <summary>
+            A unicode encoded string.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonTypeCode.Number">
+            <summary>
+            A number.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonTypeCode.Boolean">
+            <summary>
+            A boolean value represented by literal "true" and "false".
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonTypeCode.Null">
+            <summary>
+            A null value.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonTypeCode.Object">
+            <summary>
+            A structured object containing zero or more name/value pairs, delimited by 
+            curly brackets.
+            </summary>
+        </member>
+        <member name="F:Goldtect.Utilities.Json.JsonTypeCode.Array">
+            <summary>
+            An unordered collection of values, delimted by square brackets.
+            </summary>
+        </member>
+    </members>
+</doc>

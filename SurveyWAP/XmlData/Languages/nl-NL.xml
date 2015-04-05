@@ -1,0 +1,3453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data version="1.0" id="1" name="ControlCodeTitle">
+    <value>Enqu&#234;te Webcontrol: asp.net code</value>
+  </data>
+  <data version="1.0" id="2" name="PageDirectiveInfo">
+    <value>Neem de volgende code in de aspx paginas op om de enqu&#234;te weer te geven:</value>
+  </data>
+  <data version="1.0" id="3" name="TagPrefixInfo">
+    <value>&lt;%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="Votations.NSurvey.WebControls" %&gt;</value>
+  </data>
+  <data version="1.0" id="4" name="QuickLinkInfo">
+    <value>De enqu&#234;te kan gepubliceerd worden met behulp van de volgende link:</value>
+  </data>
+  <data version="1.0" id="5" name="SurveyCodePreviewTitle">
+    <value>Voorbeeld Enqu&#234;te</value>
+  </data>
+  <data version="1.0" id="6" name="EditQuestionTitle">
+    <value>Vraag bewerken</value>
+  </data>
+  <data version="1.0" id="7" name="SelectionModeLabel">
+    <value>Keuze instelling:</value>
+  </data>
+  <data version="1.0" id="8" name="DisplayModeLabel">
+    <value>Weergave instelling:</value>
+  </data>
+  <data version="1.0" id="9" name="ColumnNumberLabel">
+    <value>Aantal kolommen:</value>
+  </data>
+  <data version="1.0" id="10" name="RandomizeAnswersLabel">
+    <value>Willekeurige antwoordvolgorde:</value>
+  </data>
+  <data version="1.0" id="11" name="MinSelectionLabel">
+    <value>Min. aantal keuzes:</value>
+  </data>
+  <data version="1.0" id="12" name="MaxSelectionAllowed">
+    <value>Max. aantal keuzes:</value>
+  </data>
+  <data version="1.0" id="13" name="UpdateQuestionButton">
+    <value>Wijzigen</value>
+  </data>
+  <data version="1.0" id="14" name="AddNewSelectionTitle">
+    <value>Voeg nieuwe keuze/ veld toe</value>
+  </data>
+  <data version="1.0" id="15" name="DescriptionLabel">
+    <value>Tekst omschrijving:</value>
+  </data>
+  <data version="1.0" id="16" name="ImageURLLabel">
+    <value>Afbeelding URL:</value>
+  </data>
+  <data version="1.0" id="17" name="AddAnswerButton">
+    <value>Toevoegen</value>
+  </data>
+  <data version="1.0" id="18" name="OrderHeader">
+    <value>Volgorde</value>
+  </data>
+  <data version="1.0" id="19" name="SelectedHeader">
+    <value>Geselecteerd</value>
+  </data>
+  <data version="1.0" id="20" name="AnswerTextHeader">
+    <value>Tekst</value>
+  </data>
+  <data version="1.0" id="21" name="DefaultTextHeader">
+    <value>Tekst waarde*</value>
+  </data>
+  <data version="1.0" id="22" name="DefaultTextLabel">
+    <value>Standaard tekstwaarde*</value>
+  </data>
+  <data version="1.0" id="23" name="ImageURLHeader">
+    <value>Afbeelding URL</value>
+  </data>
+  <data version="1.0" id="24" name="TypeHeader">
+    <value>Soort</value>
+  </data>
+  <data version="1.0" id="25" name="RatingHeader">
+    <value>Beoordeling</value>
+  </data>
+  <data version="1.0" id="26" name="UpdateText">
+    <value>Wijzigen</value>
+  </data>
+  <data version="1.0" id="27" name="CancelText">
+    <value>Annuleren</value>
+  </data>
+  <data version="1.0" id="28" name="EditText">
+    <value>Bewerken</value>
+  </data>
+  <data version="1.0" id="29" name="OkText">
+    <value>OK</value>
+  </data>
+  <data version="1.0" id="30" name="ButtonDeleteColumn">
+    <value>Verwijderen</value>
+  </data>
+  <data version="1.0" id="31" name="UnlimitedSelectionOption">
+    <value>Onbeperkt</value>
+  </data>
+  <data version="1.0" id="32" name="NoSelectionRequiredOption">
+    <value>Geen</value>
+  </data>
+  <data version="1.0" id="33" name="SurveyExportTitle">
+    <value>Gegevens exporteren</value>
+  </data>
+  <data version="1.0" id="34" name="FieldDelimiterLabel">
+    <value>Veld scheidingsteken:</value>
+  </data>
+  <data version="1.0" id="35" name="TextDelimiterLabel">
+    <value>Tekst scheidingsteken:</value>
+  </data>
+  <data version="1.0" id="36" name="ExportFromDateLabel">
+    <value>Exporteren vanaf:</value>
+  </data>
+  <data version="1.0" id="37" name="ExportToDateLabel">
+    <value>Exporteren tot: </value>
+  </data>
+  <data version="1.0" id="38" name="ExportDataButton">
+    <value>Exporteer CSV</value>
+  </data>
+  <data version="1.0" id="39" name="FieldReportTitle">
+    <value>Overzicht Tekstveldgegevens - Pagina</value>
+  </data>
+  <data version="1.0" id="40" name="NextPageLinkButton">
+    <value>Volgende pagina &gt;&gt;</value>
+  </data>
+  <data version="1.0" id="41" name="PreviousPageLinkButton">
+    <value>&lt;&lt; Vorige pagina</value>
+  </data>
+  <data version="1.0" id="42" name="DetailsColumn">
+    <value>Details</value>
+  </data>
+  <data version="1.0" id="43" name="DeleteColumn">
+    <value>Verwijderen</value>
+  </data>
+  <data version="1.0" id="44" name="FilterBuilderTitle">
+    <value>Resultatenfilter Editor</value>
+  </data>
+  <data version="1.0" id="45" name="SelectFilteraLabel">
+    <value>Kies een Filter om te bewerken:</value>
+  </data>
+  <data version="1.0" id="46" name="CreateFilterHyperLink">
+    <value>Klik hier om een nieuw Filter aan te maken ...</value>
+  </data>
+  <data version="1.0" id="47" name="SelectFilterMessage">
+    <value>[Kies een filter]</value>
+  </data>
+  <data version="1.0" id="48" name="FilterNameLabel">
+    <value>Filter naam :</value>
+  </data>
+  <data version="1.0" id="49" name="RuleOperatorLabel">
+    <value>Voorwaarde operator :</value>
+  </data>
+  <data version="1.0" id="50" name="AndOperator">
+    <value>AND</value>
+  </data>
+  <data version="1.0" id="51" name="OrOperator">
+    <value>OR</value>
+  </data>
+  <data version="1.0" id="52" name="NewRuleTitle">
+    <value>Voeg nieuwe regel aan Filter toe</value>
+  </data>
+  <data version="1.0" id="53" name="AnswerLabel">
+    <value>Antwoord: </value>
+  </data>
+  <data version="1.0" id="54" name="FilterText">
+    <value>Tekst: </value>
+  </data>
+  <data version="1.0" id="55" name="FilterRulesTitle">
+    <value>Filter regels</value>
+  </data>
+  <data version="1.0" id="56" name="AddRuleButton">
+    <value>Voeg nieuwe regel toe</value>
+  </data>
+  <data version="1.0" id="57" name="UpdateFilterButton">
+    <value>Wijzig Filter</value>
+  </data>
+  <data version="1.0" id="58" name="DeleteFilterButton">
+    <value>Verwijder Filter</value>
+  </data>
+  <data version="1.0" id="59" name="CreatefilterButton">
+    <value>Maak Filter</value>
+  </data>
+  <data version="1.0" id="60" name="DeleteRuleInfo">
+    <value>Verwijder Regel</value>
+  </data>
+  <data version="1.0" id="61" name="AddNewFilterTitle">
+    <value>Voeg nieuw filter toe</value>
+  </data>
+  <data version="1.0" id="62" name="EditFilterTitle">
+    <value>Opties filter bewerken</value>
+  </data>
+  <data version="1.0" id="63" name="TextEntryInfo">
+    <value>(Tekst opgave)</value>
+  </data>
+  <data version="1.0" id="64" name="SelectionInfo">
+    <value>(Selectie)</value>
+  </data>
+  <data version="1.0" id="65" name="FilterRuleNoAnswer">
+    <value>Respondenten die antwoordden op &lt;b&gt;{0}&lt;/b&gt;</value>
+  </data>
+  <data version="1.0" id="66" name="FilterRuleAnswer">
+    <value>Respondenten die antwoordden op &lt;b&gt;{0}&lt;/b&gt; op &lt;b&gt;{1}&lt;/b&gt;</value>
+  </data>
+  <data version="1.0" id="67" name="FilterRuleAnswerWithText">
+    <value>Respondenten die antwoordden op &lt;b&gt;{0}&lt;/b&gt; met &lt;b&gt;{1}&lt;/b&gt; en met een antwoordwaarde van &lt;b&gt;{2}&lt;/b&gt;</value>
+  </data>
+  <data version="1.0" id="68" name="AnyAnswerMessage">
+    <value>Ieder antwoord</value>
+  </data>
+  <data version="1.0" id="69" name="FilterRuleAddedMessage">
+    <value>Filter regel toegevoegd</value>
+  </data>
+  <data version="1.0" id="70" name="FilterRuleDeletedMessage">
+    <value>Filter regel verwijderd</value>
+  </data>
+  <data version="1.0" id="71" name="FilterDeletedMessage">
+    <value>Filter verwijderd</value>
+  </data>
+  <data version="1.0" id="72" name="InvalidFilterDescriptionMessage">
+    <value>Geef omschrijving filter</value>
+  </data>
+  <data version="1.0" id="73" name="FilterUpdatedMessage">
+    <value>Filter gewijzigd</value>
+  </data>
+  <data version="1.0" id="74" name="SelectQuestionMessage">
+    <value>[Kies een vraag]</value>
+  </data>
+  <data version="1.0" id="75" name="SurveyStatisticsTitle">
+    <value>Enqu&#234;te statistieken</value>
+  </data>
+  <data version="1.0" id="76" name="SurveyCreationDateLabel">
+    <value>Aanmaak datum:</value>
+  </data>
+  <data version="1.0" id="77" name="LastSurveyEntryLabel">
+    <value>Laatste respondent op:</value>
+  </data>
+  <data version="1.0" id="78" name="SurveyDisplayTimesLabel">
+    <value>Aantal keer bekeken:</value>
+  </data>
+  <data version="1.0" id="79" name="SurveyResultsDisplayTimesLabel">
+    <value>Resultaat tijden tonen:</value>
+  </data>
+  <data version="1.0" id="80" name="SurveyNumberOfVotesLabel">
+    <value>Aantal respondenten:</value>
+  </data>
+  <data version="1.0" id="81" name="SurveyMonthlyStatsLabel">
+    <value>Maandelijkse aantallen:</value>
+  </data>
+  <data version="1.0" id="82" name="ResetVotesButton">
+    <value>Wis stemmen</value>
+  </data>
+  <data version="1.0" id="83" name="ResetVotesConfirmationMessage">
+    <value>Alle stemmen wissen? Stemmen kunnen niet meer teruggehaald worden na verwijdering</value>
+  </data>
+  <data version="1.0" id="84" name="NoEntriesRecordedInfo">
+    <value>Geen resultaten aanwezig</value>
+  </data>
+  <data version="1.0" id="85" name="NoEntries">
+    <value>Geen Respondenten</value>
+  </data>
+  <data version="1.0" id="86" name="EntriesNumber">
+    <value>{0} respondenten</value>
+  </data>
+  <data version="1.0" id="87" name="NewQuestionTitle">
+    <value>Nieuwe vraag</value>
+  </data>
+  <data version="1.0" id="88" name="QuestionLabel">
+    <value>Vraag:</value>
+  </data>
+  <data version="1.0" id="89" name="MatrixQuestionOption">
+    <value>Matrix vraag</value>
+  </data>
+  <data version="1.0" id="90" name="SingleQuestionOption">
+    <value>Enkelvoudige vraag</value>
+  </data>
+  <data version="1.0" id="91" name="AddQuestionButton">
+    <value>Nieuwe vraag/tekst</value>
+  </data>
+  <data version="1.0" id="92" name="StaticTextTitle">
+    <value>Nieuwe statische tekst</value>
+  </data>
+  <data version="1.0" id="93" name="FreeTextLabel">
+    <value>Vrije tekst</value>
+  </data>
+  <data version="1.0" id="94" name="AddStaticButton">
+    <value>Statische tekst toevoegen</value>
+  </data>
+  <data version="1.0" id="95" name="TypeLabel">
+    <value>Type</value>
+  </data>
+  <data version="1.0" id="96" name="MissingQuestionMessage">
+    <value>Opvoeren tekst voor de vraag</value>
+  </data>
+  <data version="1.0" id="97" name="MissingStaticQuestionMessage">
+    <value>Opvoeren tekst voor de statische vraag</value>
+  </data>
+  <data version="1.0" id="98" name="ProcessInfoLabel">
+    <value>De verwerking kan even duren en is afhankelijk van de laad- en netwerkinstellingen</value>
+  </data>
+  <data version="1.0" id="99" name="PleaseWaitInfo">
+    <value>Wachten aub, enqu&#234;te uitnodigingen worden verzonden ....</value>
+  </data>
+  <data version="1.0" id="100" name="AllInvitationSendMessage">
+    <value>Alle uitnodigingen verzonden. Kies de optie mailing status of mailing log voor details of fouten ...</value>
+  </data>
+  <data version="1.0" id="101" name="PendingEmailsTitle">
+    <value>Uitstaande e-mails - Pagina</value>
+  </data>
+  <data version="1.0" id="102" name="BoundColumnEmail">
+    <value>E-mail</value>
+  </data>
+  <data version="1.0" id="103" name="BoundColumnRequestDate">
+    <value>Verzend datum</value>
+  </data>
+  <data version="1.0" id="104" name="NoEmailInvitationInfo">
+    <value>Geen uitstaande e-mailuitnodigingen, maar uitnodigingen kunnen verzonden worden met de mailing optie</value>
+  </data>
+  <data version="1.0" id="105" name="ValidatedEmailTitle">
+    <value>Reacties op e-mailuitnodigingen - Pagina</value>
+  </data>
+  <data version="1.0" id="106" name="DeleteRequestButton">
+    <value>Geselecteerde uitnodigingen verwijderen</value>
+  </data>
+  <data version="1.0" id="107" name="NoEmailAnswered">
+    <value>Er zijn nog geen reacties op de uitnodigingen.</value>
+  </data>
+  <data version="1.0" id="108" name="BoundColumnAnswerDate">
+    <value>Reactiedatum</value>
+  </data>
+  <data version="1.0" id="109" name="PreviousPendingPageLinkButton">
+    <value>&lt;&lt; Vorige pagina</value>
+  </data>
+  <data version="1.0" id="110" name="NextPendingPageLinkButton">
+    <value>Volgende pagina &gt;&gt;</value>
+  </data>
+  <data version="1.0" id="111" name="PreviousAnsweredPageLinkButton">
+    <value>&lt;&lt; Vorige pagina</value>
+  </data>
+  <data version="1.0" id="112" name="NextAnsweredPageLinkButton">
+    <value>Volgende pagina &gt;&gt;</value>
+  </data>
+  <data version="1.0" id="113" name="DeleteVoterButton">
+    <value>Verwijder geselecteerde respondenten</value>
+  </data>
+  <data version="1.0" id="114" name="ViewReport">
+    <value>Rapportage tonen</value>
+  </data>
+  <data version="1.0" id="115" name="DeleteVoterConfirmationMessage">
+    <value>Respondent en antwoorden worden definitief verwijderd. Hestel niet mogelijk na verwijdering</value>
+  </data>
+  <data version="1.0" id="116" name="BranchingHyperLink">
+    <value>Bewerken vertakking</value>
+  </data>
+  <data version="1.0" id="117" name="InsertHyperLink">
+    <value>Nieuwe vraag</value>
+  </data>
+  <data version="1.0" id="118" name="InsertLineBreakButton">
+    <value>Nieuwe lijn</value>
+  </data>
+  <data version="1.0" id="119" name="PageTitle">
+    <value>Pagina</value>
+  </data>
+  <data version="1.0" id="120" name="EditHyperLink">
+    <value>Bewerk vraag</value>
+  </data>
+  <data version="1.0" id="121" name="InsertPageBreakButton">
+    <value>Nieuwe pagina</value>
+  </data>
+  <data version="1.0" id="122" name="InsertQuestionButton">
+    <value>Toevoegen nieuwe/ bestaande vraag</value>
+  </data>
+  <data version="1.0" id="123" name="DeleteQuestionConfirmationMessage">
+    <value>Vraag definitief verwijderen?</value>
+  </data>
+  <data version="1.0" id="124" name="SurveyResultsTitle">
+    <value>Enqu&#234;te resultaten</value>
+  </data>
+  <data version="1.0" id="125" name="QuestionsResultsDisplaylabel">
+    <value>Te tonen vragenresultaten</value>
+  </data>
+  <data version="1.0" id="126" name="ResultsLayoutLabel">
+    <value>Layout Resultaten:</value>
+  </data>
+  <data version="1.0" id="127" name="ColumnChartOption">
+    <value>Kolommen diagram</value>
+  </data>
+  <data version="1.0" id="128" name="HTMLChartOption">
+    <value>HTML diagram</value>
+  </data>
+  <data version="1.0" id="129" name="ApplyFilterLabel">
+    <value>Filter toepassen:</value>
+  </data>
+  <data version="1.0" id="130" name="FilterEditorHyperLink">
+    <value>Klik hier om een nieuw filter te bewerken / maken</value>
+  </data>
+  <data version="1.0" id="131" name="DisplayAllResultsMessage">
+    <value>[Alle resultaten tonen (laden kan even duren)]</value>
+  </data>
+  <data version="1.0" id="132" name="InvitationMailingTitle">
+    <value>Mailing Enqu&#234;te</value>
+  </data>
+  <data version="1.0" id="133" name="FromLabel">
+    <value>Van :</value>
+  </data>
+  <data version="1.0" id="134" name="ToLabel">
+    <value>Naar :</value>
+  </data>
+  <data version="1.0" id="135" name="FromNameLabel">
+    <value>Van naam:</value>
+  </data>
+  <data version="1.0" id="136" name="SubjectLabel">
+    <value>Onderwerp:</value>
+  </data>
+  <data version="1.0" id="137" name="SubjectTextBox">
+    <value>Neem deel aan deze enqu&#234;te</value>
+  </data>
+  <data version="1.0" id="138" name="FromNameTextBox">
+    <value>Achternaam Voornaam</value>
+  </data>
+  <data version="1.0" id="139" name="EmailInvitationLabel">
+    <value>Email uitnodigingenlijst - komma gescheiden: email@dom.com, email2@dom.com, etc. :</value>
+  </data>
+  <data version="1.0" id="140" name="InvitationMessageLabel">
+    <value>Uitnodiging:</value>
+  </data>
+  <data version="1.0" id="141" name="AnonymousLabel">
+    <value>Anoniem versturen:</value>
+  </data>
+  <data version="1.0" id="142" name="SendInvitationButton">
+    <value>Verzend Mailing</value>
+  </data>
+  <data version="1.0" id="143" name="InvitationMessageTextBox">
+    <value>
+      Hallo,
+      &lt;br /&gt;&lt;br /&gt;
+      We willen u graag uitnodigen deel te nemen aan de enqu&#234;te "{0}".
+      &lt;br /&gt;&lt;br /&gt;
+      Kopieer de volgende link aub naar uw webbrowser: &lt;br /&gt;
+      {1}
+      &lt;br /&gt;&lt;br /&gt;
+      Of geef de volgende persoonlijke enqu&#234;tecode op indien nodig:
+      [--invitationid-]
+      &lt;br /&gt;&lt;br /&gt;
+      Met vriendelijke groet,&lt;br /&gt;
+      [Voornaam Achternaam]
+    </value>
+  </data>
+  <data version="1.0" id="144" name="SurveyInformationTitle">
+    <value>Enqu&#234;te Basisinstellingen</value>
+  </data>
+  <data version="1.0" id="145" name="SurveyTitleLabel">
+    <value>Titel :</value>
+  </data>
+  <data version="1.0" id="146" name="OpeningDateLabel">
+    <value>Startdatum :</value>
+  </data>
+  <data version="1.0" id="147" name="DateForExampleInfo">
+    <value>bijv.: </value>
+  </data>
+  <data version="1.0" id="148" name="CloseDateLabel">
+    <value>Sluitingsdatum :</value>
+  </data>
+  <data version="1.0" id="149" name="ActiveSurveyLabel">
+    <value>Actief:</value>
+  </data>
+  <data version="1.0" id="150" name="ArchivedLabel">
+    <value>Gearchiveerd:</value>
+  </data>
+  <data version="1.0" id="151" name="SecuritySettingsTitle">
+    <value>Beveiligings instellingen</value>
+  </data>
+  <data version="1.0" id="152" name="IPBlockingLabel">
+    <value>IP blokkade:</value>
+  </data>
+  <data version="1.0" id="153" name="CookieBlockingLabel">
+    <value>Cookie blokkade:</value>
+  </data>
+  <data version="1.0" id="154" name="ExpirationInfo">
+    <value>verloopt na</value>
+  </data>
+  <data version="1.0" id="155" name="MinutesInfo">
+    <value>minuten</value>
+  </data>
+  <data version="1.0" id="156" name="OnlyInvitedEmailsLabel">
+    <value>Alleen deelname indien per mail uitgenodigd:</value>
+  </data>
+  <data version="1.0" id="157" name="OverrideSecurityInfo">
+    <value>(dit overruled alle beveiligingsinstellingen)</value>
+  </data>
+  <data version="1.0" id="158" name="PrivacySettingsTitle">
+    <value>Instellingen Voltoo&#239;ng Enqu&#234;te</value>
+  </data>
+  <data version="1.0" id="159" name="RedirectionURLLabel">
+    <value>Doorverwijzing URL :</value>
+  </data>
+  <data version="1.0" id="160" name="ThanksMessageLabel">
+    <value>Slotbericht Enqu&#234;te:</value>
+  </data>
+  <data version="1.0" id="161" name="SurveyPasswordLabel">
+    <value>Enqu&#234;te wachtwoord:</value>
+  </data>
+  <data version="1.0" id="162" name="CreateSurveyButton">
+    <value>Maak Enqu&#234;te</value>
+  </data>
+  <data version="1.0" id="163" name="ApplyChangesButton">
+    <value>Wijzigen</value>
+  </data>
+  <data version="1.0" id="164" name="DeleteButton">
+    <value>Verwijder</value>
+  </data>
+  <data version="1.0" id="165" name="CloneButton">
+    <value>Kopi&#235;ren</value>
+  </data>
+  <data version="1.0" id="166" name="SurveyDeletedMessage">
+    <value>Enqu&#234;te is verwijderd</value>
+  </data>
+  <data version="1.0" id="167" name="SurveyUpdatedMessage">
+    <value>Enqu&#234;te informatie is bijgewerkt</value>
+  </data>
+  <data version="1.0" id="168" name="DeleteSurveyConfirmationMessage">
+    <value>Enqu&#234;te definitief verwijderen?</value>
+  </data>
+  <data version="1.0" id="169" name="InvalidOpeningDate">
+    <value>Ongeldig formaat openingsdatum</value>
+  </data>
+  <data version="1.0" id="170" name="InvalidClosingDate">
+    <value>Ongeldig formaat sluitingsdatum</value>
+  </data>
+  <data version="1.0" id="171" name="AnswerTypeBuilderTitle">
+    <value>Antwoordtype ontwerper</value>
+  </data>
+  <data version="1.0" id="172" name="TypeToEditLabel">
+    <value>Kies type om te bewerken:</value>
+  </data>
+  <data version="1.0" id="173" name="BuiltInTypeNotEditedLabel">
+    <value>(ingebouwde typen kunnen niet bewerkt worden)</value>
+  </data>
+  <data version="1.0" id="174" name="CreateTypeHyperLink">
+    <value>Klik hier om een nieuw type te maken ...</value>
+  </data>
+  <data version="1.0" id="175" name="CreateATypeMessage">
+    <value>Type aanmaken</value>
+  </data>
+  <data version="1.0" id="176" name="SelectTypeMessage">
+    <value>[Selecteer een type]</value>
+  </data>
+  <data version="1.0" id="177" name="FieldNameLabel">
+    <value>Veld naam:</value>
+  </data>
+  <data version="1.0" id="178" name="XMLDataSourceLabel">
+    <value>Kies Xml databron:</value>
+  </data>
+  <data version="1.0" id="179" name="XmlFileNameLabel">
+    <value>Xml bestandsnaam:</value>
+  </data>
+  <data version="1.0" id="180" name="AllowSelectionLabel">
+    <value>Toestaan selecteren:</value>
+  </data>
+  <data version="1.0" id="181" name="FieldEntryLabel">
+    <value>Invoer veld:</value>
+  </data>
+  <data version="1.0" id="182" name="FieldWidthLabel">
+    <value>Veld breedte:</value>
+  </data>
+  <data version="1.0" id="183" name="FieldHeightLabel">
+    <value>Veld hoogte:</value>
+  </data>
+  <data version="1.0" id="184" name="FieldLengthLabel">
+    <value>Veld max. lengte:</value>
+  </data>
+  <data version="1.0" id="185" name="ShownInResultsLabel">
+    <value>Veld tonen in resultaten:</value>
+  </data>
+  <data version="1.0" id="186" name="JavascriptFunctionLabel">
+    <value>Javascript functie naam:</value>
+  </data>
+  <data version="1.0" id="187" name="JavascriptErrorMessageLabel">
+    <value>Fout melding:</value>
+  </data>
+  <data version="1.0" id="188" name="JavascriptCodeLabel">
+    <value>Javascript code :</value>
+  </data>
+  <data version="1.0" id="189" name="CreateTypeButton">
+    <value>Type maken</value>
+  </data>
+  <data version="1.0" id="190" name="DeleteTypeButton">
+    <value>Type verwijderen</value>
+  </data>
+  <data version="1.0" id="191" name="NewAnswerTypeTitle">
+    <value>Nieuw antwoordtype maken</value>
+  </data>
+  <data version="1.0" id="192" name="EditAnswerTypeTitle">
+    <value>Antwoordtype bewerken</value>
+  </data>
+  <data version="1.0" id="193" name="MissingAnswerTypeTitleMessage">
+    <value>Naam opgeven voor het type</value>
+  </data>
+  <data version="1.0" id="194" name="MissingTypeMessage">
+    <value>Kies een type</value>
+  </data>
+  <data version="1.0" id="195" name="InvalidFieldLengthMessage">
+    <value>Getal opgeven voor de veldlengte</value>
+  </data>
+  <data version="1.0" id="196" name="AnswerTypeInUse">
+    <value>Dit type wordt gebruikt door 1 of meer antwoorden en kan niet worden verwijderd voordat het type van de antwoorden gewijzigd is</value>
+  </data>
+  <data version="1.0" id="197" name="InvalidFieldHeightMessage">
+    <value>Getal opgeven voor de veldhoogte</value>
+  </data>
+  <data version="1.0" id="198" name="InvalidFieldWidthMessage">
+    <value>Getal opgeven voor de veldbreedte</value>
+  </data>
+  <data version="1.0" id="199" name="MissingXmlDataSourceMessage">
+    <value>Bestandsnaam opgeven voor de databron</value>
+  </data>
+  <data version="1.0" id="200" name="AnswerTypeUpdatedMessage">
+    <value>Type bijgewerkt</value>
+  </data>
+  <data version="1.0" id="201" name="VoterInformationTitle">
+    <value>Gegevens Respondent</value>
+  </data>
+  <data version="1.0" id="202" name="VoterDBIDLabel">
+    <value>Respondent Database ID :</value>
+  </data>
+  <data version="1.0" id="203" name="VoterEmailLabel">
+    <value>E-mail respondent :</value>
+  </data>
+  <data version="1.0" id="204" name="VoterIPAddressLabel">
+    <value>IP adres :</value>
+  </data>
+  <data version="1.0" id="205" name="VoteRecordedLabel">
+    <value>Ingezonden op:</value>
+  </data>
+  <data version="1.0" id="206" name="TimeToTakeLabel">
+    <value>Tijd voor invullen enqu&#234;te:</value>
+  </data>
+  <data version="1.0" id="207" name="SurveyAnswersTitle">
+    <value>Enqu&#234;te antwoorden</value>
+  </data>
+  <data version="1.0" id="208" name="AnonymousVoteInfo">
+    <value>Anoniem</value>
+  </data>
+  <data version="1.0" id="209" name="AnswerNotAnsweredMessage">
+    <value>Niet beantwoord</value>
+  </data>
+  <data version="1.0" id="210" name="SelectionUpdatedMessage">
+    <value>Selectie / veld is bijgewerkt</value>
+  </data>
+  <data version="1.0" id="211" name="SelectionDeletedMessage">
+    <value>Selectie / veld is bijgewerkt</value>
+  </data>
+  <data version="1.0" id="212" name="SelectionAddedMessage">
+    <value>Nieuwe selectie toegevoegd</value>
+  </data>
+  <data version="1.0" id="213" name="OptionsUpdatedMessage">
+    <value>Opties zijn bijgewerkt</value>
+  </data>
+  <data version="1.0" id="214" name="VerticalItemText">
+    <value>Verticaal</value>
+  </data>
+  <data version="1.0" id="215" name="HorizontalItemText">
+    <value>Horizontaal</value>
+  </data>
+  <data version="1.0" id="216" name="RadioButtonSelection">
+    <value>Radiobutton (enkelvoudig)</value>
+  </data>
+  <data version="1.0" id="217" name="CheckBoxSelection">
+    <value>Checkbox (meervoudig)</value>
+  </data>
+  <data version="1.0" id="218" name="DropDownListSelection">
+    <value>DropDownLijst (enkelvoudig)</value>
+  </data>
+  <data version="1.0" id="219" name="MatrixSingleSelection">
+    <value>Matrix enkelvoudig</value>
+  </data>
+  <data version="1.0" id="220" name="StaticTextSelection">
+    <value>Statische tekst</value>
+  </data>
+  <data version="1.0" id="221" name="MatrixMultipleSelection">
+    <value>Matrix meervoudig</value>
+  </data>
+  <data version="1.0" id="222" name="SelectionTextType">
+    <value>Selectie - Tekst</value>
+  </data>
+  <data version="1.0" id="223" name="SelectionOtherType">
+    <value>Selectie - Overig</value>
+  </data>
+  <data version="1.0" id="224" name="FieldBasicType">
+    <value>Veld - Basis</value>
+  </data>
+  <data version="1.0" id="225" name="XMLCountryList">
+    <value>XML - Landen lijst</value>
+  </data>
+  <data version="1.0" id="226" name="XMLUSStatesList">
+    <value>XML - VS Statenlijst</value>
+  </data>
+  <data version="1.0" id="227" name="BooleanType">
+    <value>Boolean</value>
+  </data>
+  <data version="1.0" id="228" name="FieldRequiredType">
+    <value>Veld - Verplicht</value>
+  </data>
+  <data version="1.0" id="229" name="FieldLargeType">
+    <value>Veld - Groot</value>
+  </data>
+  <data version="1.0" id="230" name="FieldCalendarType">
+    <value>Veld - Kalender</value>
+  </data>
+  <data version="1.0" id="231" name="FieldEmailType">
+    <value>Veld - Email</value>
+  </data>
+  <data version="1.0" id="232" name="MultipleChoicesMatrixLabel">
+    <value>Multiple choice matrix :</value>
+  </data>
+  <data version="1.0" id="233" name="EditMatrixQuestionTitle">
+    <value>Bewerk matrix vraag</value>
+  </data>
+  <data version="1.0" id="234" name="InsertNewTitle">
+    <value>Toevoegen nieuw</value>
+  </data>
+  <data version="1.0" id="235" name="RowLabel">
+    <value>Rij</value>
+  </data>
+  <data version="1.0" id="236" name="AddRowButton">
+    <value>Rij toevoegen</value>
+  </data>
+  <data version="1.0" id="237" name="ColumnLabel">
+    <value>Kolom</value>
+  </data>
+  <data version="1.0" id="238" name="AddColumnButton">
+    <value>Kolom toevoegen</value>
+  </data>
+  <data version="1.0" id="239" name="CurrentRowsColumnsTitle">
+    <value>Huidige rijen en kolommen</value>
+  </data>
+  <data version="1.0" id="240" name="RowsHeader">
+    <value>Rijen</value>
+  </data>
+  <data version="1.0" id="241" name="UpdateRowTextHeader">
+    <value>Bijwerken</value>
+  </data>
+  <data version="1.0" id="242" name="CancelRowTextHeader">
+    <value>Annuleren</value>
+  </data>
+  <data version="1.0" id="243" name="EditRowTextHeader">
+    <value>Bewerken</value>
+  </data>
+  <data version="1.0" id="244" name="DeleteRowText">
+    <value>Verwijderen</value>
+  </data>
+  <data version="1.0" id="245" name="AnswerHeader">
+    <value>Kolommen</value>
+  </data>
+  <data version="1.0" id="246" name="ColTypeHeader">
+    <value>Type</value>
+  </data>
+  <data version="1.0" id="247" name="ColRatingHeader">
+    <value>Waardering</value>
+  </data>
+  <data version="1.0" id="248" name="UpdateColTextHeader">
+    <value>Bijwerken</value>
+  </data>
+  <data version="1.0" id="249" name="CancelColTextHeader">
+    <value>Annuleren</value>
+  </data>
+  <data version="1.0" id="250" name="EditColTextHeader">
+    <value>Bewerken</value>
+  </data>
+  <data version="1.0" id="251" name="DeleteColText">
+    <value>Verwijderen</value>
+  </data>
+  <data version="1.0" id="252" name="RowMissingQuestionMessage">
+    <value>Tekst opvoeren voor de gekoppelde vraag</value>
+  </data>
+  <data version="1.0" id="253" name="MatrixRowUpdatedMessage">
+    <value>Rij is bijgewerkt</value>
+  </data>
+  <data version="1.0" id="254" name="MatrixRowDeletedMessage">
+    <value>Rij is verwijderd</value>
+  </data>
+  <data version="1.0" id="255" name="MatrixRowAddedMessage">
+    <value>Nieuwe rij toegevoegd</value>
+  </data>
+  <data version="1.0" id="256" name="MatrixColumnAddedMessage">
+    <value>Nieuwe kolom toegevoegd</value>
+  </data>
+  <data version="1.0" id="257" name="MatrixColumnUpdatedMessage">
+    <value>Kolom bijgewerkt</value>
+  </data>
+  <data version="1.0" id="258" name="MatrixColumnDeletedMessage">
+    <value>Kolom verwijderd</value>
+  </data>
+  <data version="1.0" id="259" name="BranchingRuleNoAnswer">
+    <value>Respondenten die antwoorden op &lt;b&gt;{0}&lt;/b&gt; worden doorgestuurd naar &lt;b&gt;{1}&lt;/b&gt;</value>
+  </data>
+  <data version="1.0" id="260" name="BranchingRuleNoAnswerNot">
+    <value>Respondenten die niet antwoorden op &lt;b&gt;{0}&lt;/b&gt; worden doorgestuurd naar &lt;b&gt;{1}&lt;/b&gt;</value>
+  </data>
+  <data version="1.0" id="261" name="BranchingRuleAnswer">
+    <value>Respondenten die antwoorden op &lt;b&gt;{0}&lt;/b&gt; met &lt;b&gt;{1}&lt;/b&gt; worden doorgestuurd naar &lt;b&gt;{2}&lt;/b&gt;</value>
+  </data>
+  <data version="1.0" id="262" name="BranchingRuleAnswerNot">
+    <value>Respondenten die niet antwoorden op &lt;b&gt;{0}&lt;/b&gt; met &lt;b&gt;{1}&lt;/b&gt; worden doorgestuurd naar &lt;b&gt;{2}&lt;/b&gt;</value>
+  </data>
+  <data version="1.0" id="263" name="BranchingRuleAnswerWithText">
+    <value>Respondenten die antwoorden op &lt;b&gt;{0}&lt;/b&gt; met &lt;b&gt;{1}&lt;/b&gt; {2} &lt;b&gt;{3}&lt;/b&gt; worden doorgestuurd naar &lt;b&gt;{4}&lt;/b&gt;</value>
+  </data>
+  <data version="1.0" id="264" name="BranchingRuleAnswerWithTextNot">
+    <value>Respondenten die niet antwoorden op &lt;b&gt;{0}&lt;/b&gt; met &lt;b&gt;{1}&lt;/b&gt; {2} &lt;b&gt;{3}&lt;/b&gt; worden doorgestuurd naar &lt;b&gt;{4}&lt;/b&gt;</value>
+  </data>
+  <data version="1.0" id="265" name="AddNewBranchingTitle">
+    <value>Nieuwe vertakkingsregel toevoegen aan pagina {0}</value>
+  </data>
+  <data version="1.0" id="266" name="ConditionalLabel">
+    <value>Voorwaarde:</value>
+  </data>
+  <data version="1.0" id="267" name="ConditionalMessageLabel">
+    <value>Bericht bij verzenden:</value>
+  </data>
+  <data version="1.0" id="268" name="FilterTextLabel">
+    <value>Tekst:</value>
+  </data>
+  <data version="1.0" id="269" name="PageTargetLabel">
+    <value>Ga naar pagina:</value>
+  </data>
+  <data version="1.0" id="270" name="BranchingRulesTitle">
+    <value>Vertakkingsregels</value>
+  </data>
+  <data version="1.0" id="271" name="EvaluationConditionInfo">
+    <value>Eerste voorwaarde waaraan voldaan wordt, vertakt naar de doelpagina</value>
+  </data>
+  <data version="1.0" id="272" name="AnsweredConditionOption">
+    <value>Beantwoord</value>
+  </data>
+  <data version="1.0" id="273" name="NotAnsweredConditionOption">
+    <value>Niet beantwoord</value>
+  </data>
+  <data version="1.0" id="274" name="BranchingRuleAddedMessage">
+    <value>Nieuwe vertakkingsregel toegevoegd</value>
+  </data>
+  <data version="1.0" id="275" name="BranchingRuleDeletedMessage">
+    <value>Vertakkingsregel verwijderd</value>
+  </data>
+  <data version="1.0" id="276" name="SurveysHyperLink">
+    <value>Enqu&#234;tes</value>
+  </data>
+  <data version="1.0" id="277" name="ListSurveyHyperLink">
+    <value>Overzicht Enqu&#234;tes</value>
+  </data>
+  <data version="1.0" id="278" name="NewSurveyHyperLink">
+    <value>Nieuwe enqu&#234;te</value>
+  </data>
+  <data version="1.0" id="279" name="SurveyOptionsHyperlink">
+    <value>Instellingen</value>
+  </data>
+  <data version="1.0" id="280" name="SurveyInformationHyperlink">
+    <value>Enqu&#234;te Instellingen</value>
+  </data>
+  <data version="1.0" id="281" name="SurveyStatsHyperlink">
+    <value>Statistieken</value>
+  </data>
+  <data version="1.0" id="282" name="SurveyLayoutHyperlink">
+    <value>Enqu&#234;te Layout</value>
+  </data>
+  <data version="1.0" id="283" name="SurveyBuilderHyperlink">
+    <value>Enqu&#234;te Ontwerpen</value>
+  </data>
+  <data version="1.0" id="284" name="TypeBuilderHyperlink">
+    <value>Antwoord Types</value>
+  </data>
+  <data version="1.0" id="285" name="FieldReportHyperLink">
+    <value>Klik hier om ingevulde velden en individuele rapportages te bekijken</value>
+  </data>
+  <data version="1.0" id="286" name="ResultsReportHyperlink">
+    <value>Resultaten</value>
+  </data>
+  <data version="1.0" id="287" name="ExportDataHyperlink">
+    <value>data export</value>
+  </data>
+  <data version="1.0" id="288" name="MailingHyperlink">
+    <value>Mailing</value>
+  </data>
+  <data version="1.0" id="289" name="MailingStatusHyperlink">
+    <value>Mailing status</value>
+  </data>
+  <data version="1.0" id="290" name="ASPNETCodeHyperlink">
+    <value>Web</value>
+  </data>
+  <data version="1.0" id="291" name="NSurveyAuthenticationTitle">
+    <value>Inloggen </value>
+  </data>
+  <data version="1.0" id="292" name="LoginLabel">
+    <value>Inlognaam</value>
+  </data>
+  <data version="1.0" id="293" name="PasswordLabel">
+    <value>Wachtwoord</value>
+  </data>
+  <data version="1.0" id="294" name="ValidateCredentialsButton">
+    <value>Inloggen</value>
+  </data>
+  <data version="1.0" id="295" name="InvalidLoginPasswordMessage">
+    <value>Ongeldige Inloggegevens</value>
+  </data>
+  <data version="1.0" id="296" name="SurveyBuilderTitle">
+    <value>Enqu&#234;te Ontwerpformulier</value>
+  </data>
+  <data version="1.0" id="297" name="FieldEntriesLabel">
+    <value>Resultaten invoer velden:</value>
+  </data>
+  <data version="1.0" id="298" name="ResultsOrderLabel">
+    <value>Volgorde resultaten:</value>
+  </data>
+  <data version="1.0" id="299" name="AnswerOrderOption">
+    <value>Antwoord volgorde</value>
+  </data>
+  <data version="1.0" id="300" name="AscendingOrderOption">
+    <value>Oplopende antwoordnummering</value>
+  </data>
+  <data version="1.0" id="301" name="DescendingOrderOption">
+    <value>Aflopende antwoordnummering</value>
+  </data>
+  <data version="1.0" id="302" name="NoSurveysAvailableMessage">
+    <value>Selecteer of cre&#235;r een enqu&#234;te.</value>
+  </data>
+  <data version="1.1" id="303" name="SurveySecurityHyperlink">
+    <value>Beveiliging</value>
+  </data>
+  <data version="1.1" id="304" name="SurveySecurityTitle">
+    <value>Enqu&#234;te beveiliging</value>
+  </data>
+  <data version="1.1" id="305" name="SurveyAddAdinTitle">
+    <value>Beveiligingsopties</value>
+  </data>
+  <data version="1.1" id="306" name="AddAddinButton">
+    <value>Toevoegen</value>
+  </data>
+  <data version="1.1" id="307" name="AvailableAddInsLabel">
+    <value>Beschikbare opties</value>
+  </data>
+  <data version="1.1" id="308" name="InsertAddInHyperLink">
+    <value>Beveiliging toevoegen</value>
+  </data>
+  <data version="1.1" id="309" name="DisableAddInLinkButton">
+    <value>Uitzetten</value>
+  </data>
+  <data version="1.1" id="310" name="EnableAddInLinkButton">
+    <value>Aanzetten</value>
+  </data>
+  <data version="1.1" id="311" name="AddInDisabledLabel">
+    <value>Deze beveiliging is tijdelijk uitgezet voor deze enqu&#234;te. De enqu&#234;te invulgegevens zijn nog beschikbaar via de rapportage- en exportfuncties.</value>
+  </data>
+  <data version="1.1" id="312" name="AddInAdminNotAvailableMessage">
+    <value>Bij deze optie horen geen zichtbare beheerschermen.</value>
+  </data>
+  <data version="1.1" id="313" name="NoAddInAvailableMessage">
+    <value>[Geen opties meer beschikbaar]</value>
+  </data>
+  <data version="1.1" id="314" name="UnAuthentifiedUserActionLabel">
+    <value>Actie bij onjuiste autorisatie:</value>
+  </data>
+  <data version="1.1" id="315" name="ShowThankYouText">
+    <value>Slotbericht tonen</value>
+  </data>
+  <data version="1.1" id="316" name="HideSurveyText">
+    <value>Enqu&#234;te verbergen</value>
+  </data>
+  <data version="1.2" id="317" name="EntryNotificationLabel">
+    <value>Berichtgevingswijze:</value>
+  </data>
+  <data version="1.2" id="318" name="ProgressDisplayLabel">
+    <value>Voortgang enqu&#234;te tonen:</value>
+  </data>
+  <data version="1.2" id="319" name="EnableNavigationLabel">
+    <value>Pagina navigatie:</value>
+  </data>
+  <data version="1.2" id="320" name="EnableResumeLabel">
+    <value>Opties voor onderbreken:</value>
+  </data>
+  <data version="1.2" id="321" name="NoneNotificationText">
+    <value>Geen bericht</value>
+  </data>
+  <data version="1.2" id="322" name="ShortNotificationText">
+    <value>Kort bericht</value>
+  </data>
+  <data version="1.2" id="323" name="ReportNotificationText">
+    <value>Volledige rapportage</value>
+  </data>
+  <data version="1.2" id="324" name="NoProgressText">
+    <value>Voortgang niet tonen</value>
+  </data>
+  <data version="1.2" id="325" name="PageNumberText">
+    <value>Paginanummers tonen</value>
+  </data>
+  <data version="1.2" id="326" name="ProgressPercentageText">
+    <value>Voortgangspercentage tonen</value>
+  </data>
+  <data version="1.2" id="327" name="InvalidFromEmail">
+    <value>Van e-mail moet een geldig e-mailadres zijn</value>
+  </data>
+  <data version="1.2" id="328" name="InvalidToEmail">
+    <value>Aan e-mail moet een geldig e-mailadres zijn</value>
+  </data>
+  <data version="1.2" id="329" name="NotificationSettingsTitle">
+    <value>Instellingen Berichtgeving</value>
+  </data>
+  <data version="1.2" id="330" name="ToEmailNotificationLabel">
+    <value>E-mail naar:</value>
+  </data>
+  <data version="1.2" id="331" name="FromEmailNotificationLabel">
+    <value>E-mail van:</value>
+  </data>
+  <data version="1.2" id="332" name="NotificationSubjectLabel">
+    <value>Onderwerp e-mail:</value>
+  </data>
+  <data version="1.2" id="333" name="FieldHiddenType">
+    <value>Veld - Verborgen</value>
+  </data>
+  <data version="1.2" id="334" name="CopyExistingQuestionTitle">
+    <value>Bestaande vraag kopi&#235;ren</value>
+  </data>
+  <data version="1.2" id="335" name="CopyExistingQuestionButton">
+    <value>Vraag kopi&#235;ren naar deze enqu&#234;te</value>
+  </data>
+  <data version="1.2" id="336" name="NoQuestionToCopyAvailableMessage">
+    <value>[Geen vragen aanwezig]</value>
+  </data>
+  <data version="1.2" id="337" name="SelectSurveyMessage">
+    <value>[Kies enqu&#234;te]</value>
+  </data>
+  <data version="1.2" id="338" name="SaveProgressEntriesLabel">
+    <value>Nog onvolledige enqu&#234;tes:</value>
+  </data>
+  <data version="1.2" id="339" name="DeleteSaveProgressLinkButton">
+    <value>Verwijder alle onvolledige enqu&#234;tes</value>
+  </data>
+  <data version="1.2" id="340" name="PipeHelpLabel">
+    <value>
+      *bijzondere codes kunnen worden meegegeven die tijdens het invullen vervangen worden door de bijbehorende tekstwaarde:&lt;br /&gt;
+      ##yourquerystringvariablename##&lt;/b&gt;&lt;br /&gt;
+      @@yoursessionvariablename@@&lt;br /&gt;
+      &amp;&amp;yourcookievariablename&amp;&amp;&lt;br /&gt;
+      %%servervariablename%%
+    </value>
+  </data>
+  <data version="1.3" id="341" name="EnableRandomHyperlink">
+    <value>Aanzetten willekeurig</value>
+  </data>
+  <data version="1.3" id="342" name="DisableRandomHyperlink">
+    <value>Uitzetten willekeurig</value>
+  </data>
+  <data version="1.3" id="343" name="EnableSubmitHyperlink">
+    <value>Aanzetten verzenden</value>
+  </data>
+  <data version="1.3" id="344" name="DisableSubmitHyperlink">
+    <value>Uitzetten verzenden</value>
+  </data>
+  <data version="1.3" id="345" name="CompareQuestionLabel">
+    <value>Vergelijkings vraag:</value>
+  </data>
+  <data version="1.3" id="346" name="BaseQuestionLabel">
+    <value>Basis vraag:</value>
+  </data>
+  <data version="1.3" id="347" name="SurveyCrossTabTitle">
+    <value>Enqu&#234;te Kruistabel resultaten</value>
+  </data>
+  <data version="1.3" id="348" name="CrossTabNotAnsweredMessage">
+    <value>Niet beantwoord</value>
+  </data>
+  <data version="1.3" id="349" name="CrossTabVotesTotalMessage">
+    <value>Totaal</value>
+  </data>
+  <data version="1.3" id="350" name="BaseQuestionChoiceLabel">
+    <value>Kies aub een basisvraag</value>
+  </data>
+  <data version="1.3" id="351" name="CompareQuestionChoiceLabel">
+    <value>Kies aub een vergelijkingsvraag</value>
+  </data>
+  <data version="1.3" id="352" name="CrossTableResultsLiteral">
+    <value>Kruistabelresulaten</value>
+  </data>
+  <data version="1.3" id="353" name="CrossTabHyperlink">
+    <value>Klik hier om een kruistabel resultatenset te maken</value>
+  </data>
+  <data version="1.4" id="354" name="ResumeNotAllowedText">
+    <value>Onderbreking / voortzetting niet toegestaan</value>
+  </data>
+  <data version="1.4" id="355" name="AutomaticResumeText">
+    <value>Automatisch cookie opslaan voor voortzetting</value>
+  </data>
+  <data version="1.4" id="356" name="ManualResumeText">
+    <value>Handmatig (gebruiker moet code invullen bij voortzetting)</value>
+  </data>
+  <data version="1.4" id="357" name="GraphicResultsReportHyperlink">
+    <value>Grafisch rapport</value>
+  </data>
+  <data version="1.4" id="358" name="TextFieldsResultsReportHyperlink">
+    <value>Tekstveld data</value>
+  </data>
+  <data version="1.4" id="359" name="CrossTabResultsReportHyperlink">
+    <value>Kruistabel</value>
+  </data>
+  <data version="1.4" id="360" name="ClearQuestionAnswersConfirmationMessage">
+    <value>Antwoorden van deze vraag definitief verwijderen?</value>
+  </data>
+  <data version="1.4" id="361" name="ClearQuestionAnswersButton">
+    <value>Wis antwoorden</value>
+  </data>
+  <data version="1.4" id="362" name="ClearPageAnswersButton">
+    <value>Wis antwoorden</value>
+  </data>
+  <data version="1.4" id="363" name="ClearPageAnswersConfirmationMessage">
+    <value>Antwoorden bij deze pagina definitief verwijderen?</value>
+  </data>
+  <data version="1.4" id="364" name="EditAnswersLinkButton">
+    <value>Ga naar bewerken antwoorden</value>
+  </data>
+  <data version="1.4" id="365" name="ReadOnlyAnswersLinkButton">
+    <value>Ga naar alleen lezen antwoorden</value>
+  </data>
+  <data version="1.4" id="366" name="EditVoterAnswersTitle">
+    <value>Bewerken antwoorden</value>
+  </data>
+  <data version="1.4" id="367" name="FieldPasswordType">
+    <value>Veld - Wachtwoord</value>
+  </data>
+  <data version="1.4" id="368" name="AnswersOverviewTitle">
+    <value>Overzicht antwoorden</value>
+  </data>
+  <data version="1.4" id="369" name="AddNewAnswerTitle">
+    <value>Nieuw antwoord toevoegen</value>
+  </data>
+  <data version="1.4" id="370" name="EditAnswerTitle">
+    <value>Bewerken instellingen antwoord</value>
+  </data>
+  <data version="1.4" id="371" name="AnswerEditorHyperlink">
+    <value>Antwoorden</value>
+  </data>
+  <data version="1.4" id="372" name="SingleQuestionAnswerEditorTitle">
+    <value>Antwoorden beheer</value>
+  </data>
+  <data version="1.4" id="373" name="SingleQuestionCannotBeEditedMessage">
+    <value>Antwoorden bij deze vraag kunnen niet bewerkt worden</value>
+  </data>
+  <data version="1.4" id="374" name="EditAnswersHyperLink">
+    <value>Bewerk antwoord</value>
+  </data>
+  <data version="1.4" id="375" name="EditAnswersButton">
+    <value>Toevoegen / Bewerken antwoorden</value>
+  </data>
+  <data version="1.4" id="376" name="EditQuestionButton">
+    <value>Bewerken vraag</value>
+  </data>
+  <data version="1.4" id="377" name="DeleteAnswerConfirmationMessage">
+    <value>Antwoord definitief verwijderen?</value>
+  </data>
+  <data version="1.4" id="378" name="DeleteTokenConfirmationMessage">
+    <value>Weet u zeker dat u de Tokens wilt verwijderen?</value>
+  </data>
+  <data version="1.4" id="379" name="AnswerRatingLabel">
+    <value>Waardering:</value>
+  </data>
+  <data version="1.4" id="380" name="SelectedAnswersLabel">
+    <value>Standaard keuze:</value>
+  </data>
+  <data version="1.4" id="381" name="AnswerURLLabel">
+    <value>Url afbeelding:</value>
+  </data>
+  <data version="1.4" id="382" name="ScoreLabel">
+    <value>Aantal punten Score:</value>
+  </data>
+  <data version="1.4" id="383" name="UpdateAnswerButton">
+    <value>Bijwerken</value>
+  </data>
+  <data version="1.4" id="384" name="DeleteAnswerButton">
+    <value>Verwijderen</value>
+  </data>
+  <data version="1.4" id="385" name="CancelAnswerButton">
+    <value>Annuleren</value>
+  </data>
+  <data version="1.4" id="386" name="AnswerTextLabel">
+    <value>Antwoord tekst:</value>
+  </data>
+  <data version="1.4" id="387" name="AnswerTypeLabel">
+    <value>Type : </value>
+  </data>
+  <data version="1.4" id="388" name="ScoredLabel">
+    <value>Score :</value>
+  </data>
+  <data version="1.4" id="389" name="ScoredEqualConditionOption">
+    <value>Score</value>
+  </data>
+  <data version="1.4" id="390" name="ScoredLessConditionOption">
+    <value>Score minder dan</value>
+  </data>
+  <data version="1.4" id="391" name="ScoredGreaterConditionOption">
+    <value>Score groter dan</value>
+  </data>
+  <data version="1.4" id="392" name="ScoredRangeConditionOperator">
+    <value>Score tussen</value>
+  </data>
+  <data version="1.4" id="393" name="ScoreNotNumericMessage">
+    <value>Scores moeten numeriek zijn</value>
+  </data>
+  <data version="1.4" id="394" name="BranchingRuleScoreEqual">
+    <value>Invullers die &lt;b&gt;{0}&lt;/b&gt; scoren op &lt;b&gt;{1}&lt;/b&gt; worden doorgestuurd naar &lt;b&gt;{2}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="395" name="BranchingRuleScoreLess">
+    <value>Invullers die &lt;b&gt;minder dan {0}&lt;/b&gt; scoren op &lt;b&gt;{1}&lt;/b&gt; worden doorgestuurd naar &lt;b&gt;{2}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="396" name="BranchingRuleScoreGreater">
+    <value>Invullers die &lt;b&gt;meer dan {0}&lt;/b&gt; scoren op &lt;b&gt;{1}&lt;/b&gt; worden doorgestuurd naar &lt;b&gt;{2}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="397" name="BranchingRuleScoreRange">
+    <value>Invullers die &lt;b&gt;tussen {0} en {1}&lt;/b&gt; scoren op &lt;b&gt;{2}&lt;/b&gt; worden doorgestuurd naar &lt;b&gt;{3}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="398" name="VoterScoreTotalLabel">
+    <value>Score totaal: </value>
+  </data>
+  <data version="1.4" id="399" name="QuestionScoreLabel">
+    <value>Score: </value>
+  </data>
+  <data version="1.4" id="400" name="SelectQuestionConditionMessage">
+    <value>[Kies voorwaarde voor tonen]</value>
+  </data>
+  <data version="1.4" id="401" name="SurveyQuestionConditionOption">
+    <value>Vraag beantwoord</value>
+  </data>
+  <data version="1.4" id="402" name="SurveyScoredEqualConditionOption">
+    <value>Score totaal is</value>
+  </data>
+  <data version="1.4" id="403" name="SurveyScoredLessConditionOption">
+    <value>Score totaal is minder dan</value>
+  </data>
+  <data version="1.4" id="404" name="SurveyScoredGreaterConditionOption">
+    <value>Score totaal is meer dan</value>
+  </data>
+  <data version="1.4" id="405" name="SurveyScoredRangeConditionOperator">
+    <value>Score totaal tussen</value>
+  </data>
+  <data version="1.4" id="406" name="MessageConditionAddedMessage">
+    <value>Bericht voorwaarde toegevoegd</value>
+  </data>
+  <data version="1.4" id="407" name="MessageConditionScoreEqual">
+    <value>Toon "&lt;b&gt;{0}&lt;/b&gt;" wanneer de score totaal &lt;b&gt;{1}&lt;/b&gt; is</value>
+  </data>
+  <data version="1.4" id="408" name="MessageConditionScoreLess">
+    <value>Toon "&lt;b&gt;{0}&lt;/b&gt;" wanneer de score totaal &lt;b&gt; minder is dan {1}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="409" name="MessageConditionScoreGreater">
+    <value>Toon "&lt;b&gt;{0}&lt;/b&gt;" wanneer de score totaal &lt;b&gt;groter is dan {1}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="410" name="MessageConditionScoreRange">
+    <value>Toon "&lt;b&gt;{0}&lt;/b&gt;" wanneer de score totaal &lt;b&gt;tussen {1} en {2} is&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="411" name="MessageConditionQuestionScoreEqual">
+    <value>Toon "&lt;b&gt;{0}&lt;/b&gt;" aan degenen die &lt;b&gt;{1}&lt;/b&gt; gescoord hebben op &lt;b&gt;{2}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="412" name="MessageConditionQuestionScoreLess">
+    <value>Toon "&lt;b&gt;{0}&lt;/b&gt;" aan degenen die &lt;b&gt;minder gescoord hebben dan {1}&lt;/b&gt; op &lt;b&gt;{2}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="413" name="MessageConditionQuestionScoreGreater">
+    <value>Toon "&lt;b&gt;{0}&lt;/b&gt;" aan degenen die &lt;b&gt;meer gescoord hebben dan {1}&lt;/b&gt; op &lt;b&gt;{2}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="414" name="MessageConditionQuestionScoreRange">
+    <value>Toon "&lt;b&gt;{0}&lt;/b&gt;" aan degenen die &lt;b&gt;gescoord hebben tussen {1} en {2}&lt;/b&gt; on &lt;b&gt;{3}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="415" name="MessageConditionQuestionNoAnswer">
+    <value>Toon "&lt;b&gt;{0}&lt;/b&gt;" aan degenen die geantwoord hebben op &lt;b&gt;{1}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="416" name="MessageConditionQuestionNoAnswerNot">
+    <value>Toon "&lt;b&gt;{0}&lt;/b&gt;" aan degenen die niet geantwoord hebben op &lt;b&gt;{1}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="417" name="MessageConditionQuestionAnswer">
+    <value>Toon "&lt;b&gt;{0}&lt;/b&gt;" aan degenen die geantwoord hebben op &lt;b&gt;{1}&lt;/b&gt; met &lt;b&gt;{2}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="418" name="MessageConditionQuestionAnswerNot">
+    <value>Toon "&lt;b&gt;{0}&lt;/b&gt;" aan degenen die niet geantwoord hebben op &lt;b&gt;{1}&lt;/b&gt; met &lt;b&gt;{2}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="419" name="MessageConditionQuestionAnswerWithText">
+    <value>Toon "&lt;b&gt;{0}&lt;/b&gt;" aan degenen die geantwoord hebben op &lt;b&gt;{1}&lt;/b&gt; met &lt;b&gt;{2}&lt;/b&gt; {3} &lt;b&gt;{4}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="420" name="MessageConditionQuestionAnswerWithTextNot">
+    <value>Toon "&lt;b&gt;{0}&lt;/b&gt;" aan degenen die niet geantwoord hebben op &lt;b&gt;{1}&lt;/b&gt; met &lt;b&gt;{2}&lt;/b&gt; {3} &lt;b&gt;{4}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="421" name="EvaluationMessageConditionInfo">
+    <value>*Eerste voorwaarde waaraan wordt voldaan nadat de respondent de antwoorden heeft verzonden zorgt voor tonen van het "Dank u" bericht</value>
+  </data>
+  <data version="1.4" id="422" name="AddMessageConditionButton">
+    <value>Toevoegen nieuwe voorwaarde bericht</value>
+  </data>
+  <data version="1.4" id="423" name="UpdateConditionTitle">
+    <value>Bijwerken voorwaarde bericht</value>
+  </data>
+  <data version="1.4" id="424" name="AddNewConditionTitle">
+    <value>Toevoegen nieuwe voorwaarde bericht tonen</value>
+  </data>
+  <data version="1.4" id="425" name="DeleteConditionInfo">
+    <value>Verwijderen voorwaarde</value>
+  </data>
+  <data version="1.4" id="426" name="EditConditionInfo">
+    <value>Bewerken voorwaarde</value>
+  </data>
+  <data version="1.4" id="427" name="PrivacySettingsHyperlink">
+    <value>Privacy</value>
+  </data>
+  <data version="1.4" id="428" name="SurveySettingsHyperlink">
+    <value>Enqu&#234;te</value>
+  </data>
+  <data version="1.4" id="429" name="ApplyPrivacyButton">
+    <value>Toepassen</value>
+  </data>
+  <data version="1.4" id="430" name="ThanksMessageConditionTitle">
+    <value>Voorwaarden slotbericht tonen*</value>
+  </data>
+  <data version="1.4" id="431" name="AddNewConditionHyperLink">
+    <value>Nieuwe voorwaarde toevoegen</value>
+  </data>
+  <data version="1.4" id="432" name="VoterUserNameLabel">
+    <value>.NET gebruikersnaam:</value>
+  </data>
+  <data version="1.4" id="433" name="ContextUserNameDisabled">
+    <value>Uitgezet</value>
+  </data>
+  <data version="1.4" id="434" name="ScoreHeader">
+    <value>Score</value>
+  </data>
+  <data version="1.4" id="435" name="AddNewAnswerButton">
+    <value>Nieuw antwoord toevoegen</value>
+  </data>
+  <data version="1.4" id="436" name="ScoreRangeLabel">
+    <value>tussen</value>
+  </data>
+  <data version="1.4" id="437" name="ScoreTagLabel">
+    <value>Toon score totaal door ::score:: aan bericht toe te voegen</value>
+  </data>
+  <data version="1.5" id="438" name="QuestionPipeAliasLabel">
+    <value>Doorsluis alias :</value>
+  </data>
+  <data version="1.5" id="439" name="AnswerPipeAliasLabel">
+    <value>Doorsluis alias</value>
+  </data>
+  <data version="1.5" id="440" name="TheLibraryHyperlink">
+    <value>Bibliotheek</value>
+  </data>
+  <data version="1.5" id="441" name="LibraryTitle">
+    <value>Beheer Bibliotheken</value>
+  </data>
+  <data version="1.5" id="442" name="AddNewLibraryButton">
+    <value>Bibliotheek Toevoegen</value>
+  </data>
+  <data version="1.5" id="443" name="DeleteLibraryConfirmationMessage">
+    <value>Hiermee worden ook alle sjablonen verwijderd. Definitief verwijderen?</value>
+  </data>
+  <data version="1.5" id="444" name="DeleteLibraryButton">
+    <value>Verwijder bibliotheek</value>
+  </data>
+  <data version="1.5" id="445" name="UpdateLibraryButton">
+    <value>Bijwerken bibliotheek</value>
+  </data>
+  <data version="1.5" id="446" name="LibraryNameLabel">
+    <value>Naam:</value>
+  </data>
+  <data version="1.5" id="447" name="MissingLibraryNameMessage">
+    <value>Ontbrekende bibliotheeknaam</value>
+  </data>
+  <data version="1.5" id="448" name="UpdatedLibraryNameMessage">
+    <value>Bibliotheek bijgewerkt</value>
+  </data>
+  <data version="1.5" id="449" name="DeletedLibraryNameMessage">
+    <value>Bibliotheek verwijderd</value>
+  </data>
+  <data version="1.5" id="450" name="AddedLibraryNameMessage">
+    <value>Bibliotheek toegevoegd</value>
+  </data>
+  <data version="1.5" id="451" name="EditLibraryInfo">
+    <value>Bewerken</value>
+  </data>
+  <data version="1.5" id="452" name="AddLibraryTitle">
+    <value>Toevoegen bibliotheek</value>
+  </data>
+  <data version="1.5" id="453" name="UpdateLibraryTitle">
+    <value>Bijwerken bibliotheek</value>
+  </data>
+  <data version="1.5" id="454" name="QuestionTemplatesTitle">
+    <value>Vragen sjablonen</value>
+  </data>
+  <data version="1.5" id="455" name="LocalLibraryHyperLink">
+    <value>Vragen Bibliotheek</value>
+  </data>
+  <data version="1.5" id="456" name="CopyExistingQuestionToLibraryButton">
+    <value>Kopieer vraag naar deze bibliotheek</value>
+  </data>
+  <data version="1.5" id="457" name="NewLibraryQuestionTitle">
+    <value>Nieuwe vraag aan de {0} bibliotheek toevoegen</value>
+  </data>
+  <data version="1.5" id="458" name="AddQuestionToLibraryButton">
+    <value>Vraag aan bibliotheek toevoegen</value>
+  </data>
+  <data version="1.5" id="459" name="ExportButton">
+    <value>Exporteer XML</value>
+  </data>
+  <data version="1.5" id="460" name="DisplayAnswersOfLabel">
+    <value>Toon antwoorden van:</value>
+  </data>
+  <data version="1.5" id="461" name="SelectQuestionFromLibraryMessage">
+    <value>[Kies vraag uit bibliotheek]</value>
+  </data>
+  <data version="1.5" id="462" name="StaticTextQuestionOption">
+    <value>Statische vrije tekst</value>
+  </data>
+  <data version="1.5" id="463" name="ImportQuestionTitle">
+    <value>Importeer XML vraag</value>
+  </data>
+  <data version="1.5" id="464" name="ExportSurveyButton">
+    <value>Exporteer XML</value>
+  </data>
+  <data version="1.5" id="465" name="ImportSurveyTitle">
+    <value>Importeer enqu&#234;te via XML</value>
+  </data>
+  <data version="1.5" id="466" name="ImportXMLButton">
+    <value>Importeer XML</value>
+  </data>
+  <data version="1.5" id="467" name="VoterExportXMLButton">
+    <value>Exporteer XML</value>
+  </data>
+  <data version="1.5" id="468" name="SelectSourceMessage">
+    <value>[Kies vragenbron]</value>
+  </data>
+  <data version="1.5" id="469" name="LibraryOption">
+    <value>Kopieer vragen uit een bibliotheek</value>
+  </data>
+  <data version="1.5" id="470" name="SurveyOption">
+    <value>Kopieer vragen uit een enqu&#234;te</value>
+  </data>
+  <data version="1.5" id="471" name="SelectLibraryMessage">
+    <value>[Kies bibliotheek]</value>
+  </data>
+  <data version="1.5" id="472" name="AnswerReportNotificationText">
+    <value>Alleen antwoorden rapportage</value>
+  </data>
+  <data version="1.5" id="473" name="ExportXMLButton">
+    <value>Exporteer XML</value>
+  </data>
+  <data version="1.6" id="474" name="UsersManagerHyperlink">
+    <value>Gebruikers</value>
+  </data>
+  <data version="1.6" id="475" name="RolesManagerHyperlink">
+    <value>Rollen</value>
+  </data>
+  <data version="1.6" id="476" name="UsersManagerTitle">
+    <value>Gebruikers beheer</value>
+  </data>
+  <data version="1.6" id="477" name="UserToEditLabel">
+    <value>Selecteer een gebruiker om te bewerken</value>
+  </data>
+  <data version="1.6" id="478" name="SelectUserMessage">
+    <value>[Kies een gebruiker]</value>
+  </data>
+  <data version="1.6" id="479" name="CreateAUserMessage">
+    <value>[Maak eerst een gebruikers aan]</value>
+  </data>
+  <data version="1.6" id="480" name="DeleteUserButton">
+    <value>Verwijder gebruiker</value>
+  </data>
+  <data version="1.6" id="481" name="NewUserTitle">
+    <value>Nieuwe gebruiker</value>
+  </data>
+  <data version="1.6" id="482" name="EditUserTitle">
+    <value>Bewerk gebruikersgegevens</value>
+  </data>
+  <data version="1.6" id="483" name="CreateNewUserButton">
+    <value>Aanmaken nieuwe gebruiker</value>
+  </data>
+  <data version="1.6" id="484" name="InvalidEmailMessage">
+    <value>Onjuist e-mailadres!</value>
+  </data>
+  <data version="1.6" id="485" name="UserNameRequiredMessage">
+    <value>Gebruikersnaam aub opgeven</value>
+  </data>
+  <data version="1.6" id="486" name="PasswordRequiredMessage">
+    <value>Wachtwoord is verplicht!</value>
+  </data>
+  <data version="1.6" id="487" name="UserUpdatedMessage">
+    <value>Gebruikersgegevens bijgewerkt</value>
+  </data>
+  <data version="1.6" id="488" name="DeleteUserConfirmationMessage">
+    <value>Deze gebruiker definitief verwijderen? Let op: enqu&#234;tes gekoppeld aan deze gebruiker worden niet verwijderd</value>
+  </data>
+  <data version="1.6" id="489" name="UserNameTakenMessage">
+    <value>Deze naam is al in gebruik</value>
+  </data>
+  <data version="1.6" id="490" name="CannotDeleteLastAdminMessage">
+    <value>Tenminste 1 gebruiker moet beheerder zijn</value>
+  </data>
+  <data version="1.6" id="491" name="CreateUserHyperLink">
+    <value>Klik hier om een nieuwe gebruiker aan te maken</value>
+  </data>
+  <data version="1.6" id="492" name="UserSurveyAssignedLabel">
+    <value>Toegewezen Enqu&#234;tes</value>
+  </data>
+  <data version="1.6" id="493" name="UnAssignedSurveysLabel">
+    <value>Niet toegewezen Enqu&#234;tes</value>
+  </data>
+  <data version="1.6" id="494" name="AssignedSurveysLabel">
+    <value>Toegewezen aan gebruiker</value>
+  </data>
+  <data version="1.6" id="495" name="UserNameLabel">
+    <value>Gebruikersnaam:</value>
+  </data>
+  <data version="1.6" id="496" name="UserPasswordLabel">
+    <value>Wachtwoord:</value>
+  </data>
+  <data version="1.6" id="497" name="UserFirstNameLabel">
+    <value>Voornaam:</value>
+  </data>
+  <data version="1.6" id="498" name="UserLastNameLabel">
+    <value>Achternaam:</value>
+  </data>
+  <data version="1.6" id="499" name="UserEmailLabel">
+    <value>Email:</value>
+  </data>
+  <data version="1.6" id="500" name="UserIsAdministratorLabel">
+    <value>Beheerder:</value>
+  </data>
+  <data version="1.6" id="501" name="AssignAllSurveysLabel">
+    <value>Alle enqu&#234;tes toewijzen:</value>
+  </data>
+  <data version="1.6" id="502" name="RolesLabel">
+    <value>Rollen:</value>
+  </data>
+  <data version="1.6" id="503" name="AvailableRolesLabel">
+    <value>Beschikbare rollen:</value>
+  </data>
+  <data version="1.6" id="504" name="UserRolesLabel">
+    <value>Rollen van deze gebruiker:</value>
+  </data>
+  <data version="1.6" id="505" name="RolesManagerTitle">
+    <value>Rollen administratie</value>
+  </data>
+  <data version="1.6" id="506" name="RolesToEditLabel">
+    <value>Kies een rol om te bewerken</value>
+  </data>
+  <data version="1.6" id="507" name="CreateRoleHyperLink">
+    <value>Nieuwe rol aanmaken</value>
+  </data>
+  <data version="1.6" id="508" name="CreateARoleMessage">
+    <value>[Maak eerst een nieuwe rol aan]</value>
+  </data>
+  <data version="1.6" id="509" name="SelectRoleMessage">
+    <value>[Kies een rol]</value>
+  </data>
+  <data version="1.6" id="510" name="RoleNameLabel">
+    <value>Rol naam :</value>
+  </data>
+  <data version="1.6" id="511" name="DeleteRoleConfirmationMessage">
+    <value>Deze rol definitief verwijderen? Gebruikers gekoppeld aan deze rol verliezen ook hun rechten</value>
+  </data>
+  <data version="1.6" id="512" name="DeleteRoleButton">
+    <value>Rol verwijderen</value>
+  </data>
+  <data version="1.6" id="513" name="CreateNewRoleButton">
+    <value>Maak nieuwe rol</value>
+  </data>
+  <data version="1.6" id="514" name="NewRoleTitle">
+    <value>Nieuwe rol</value>
+  </data>
+  <data version="1.6" id="515" name="EditRoleTitle">
+    <value>Rol bewerken</value>
+  </data>
+  <data version="1.6" id="516" name="RoleNameRequiredMessage">
+    <value>Rolnaam verplicht!</value>
+  </data>
+  <data version="1.6" id="517" name="RoleUpdatedMessage">
+    <value>Rolgegevens bijgewerkt</value>
+  </data>
+  <data version="1.6" id="518" name="RoleRightsLabel">
+    <value>Rechten voor deze rol:</value>
+  </data>
+  <data version="1.6" id="519" name="CreateSurveyRight">
+    <value>Enqu&#234;te Aanmaken</value>
+  </data>
+  <data version="1.6" id="520" name="DeleteSurveyRight">
+    <value>Enqu&#234;te Verwijderen</value>
+  </data>
+  <data version="1.6" id="521" name="ChangeSurveySettingsRight">
+    <value>Wijzig Enqu&#234;te instellingen</value>
+  </data>
+  <data version="1.6" id="522" name="ApplySurveySettingsRight">
+    <value>Instellingen toepassen</value>
+  </data>
+  <data version="1.6" id="523" name="ExportSurveyXmlRight">
+    <value>XML enqu&#234;te export</value>
+  </data>
+  <data version="1.6" id="524" name="AccessSurveySettingsRight">
+    <value>Toegang Instellingen</value>
+  </data>
+  <data version="1.6" id="525" name="CloneSurveyRight">
+    <value>Enqu&#234;te Kopi&#235;ren</value>
+  </data>
+  <data version="1.6" id="526" name="AccessPrivacySettingsRight" mimetype="">
+    <value>Toegang Voltooien</value>
+  </data>
+  <data version="1.6" id="527" name="AccessSecuritySettingsRight">
+    <value>Toegang Beveiliging</value>
+  </data>
+  <data version="1.6" id="528" name="AccessStatsRight">
+    <value>Toegang Statistieken</value>
+  </data>
+  <data version="1.6" id="529" name="ResetVotesRight">
+    <value>Wis Respondent</value>
+  </data>
+  <data version="1.6" id="530" name="DeleteUnvalidateEntriesRight">
+    <value>Wissen onvolledige enqu&#234;te</value>
+  </data>
+  <data version="1.6" id="531" name="AccessFormBuilderRight">
+    <value>Enqu&#234;te Bewerken</value>
+  </data>
+  <data version="1.6" id="532" name="AccessAnswerTypeEditorRight">
+    <value>Antwoordtypes bewerken</value>
+  </data>
+  <data version="1.6" id="533" name="AccessReportsRight">
+    <value>Toegang Rapportages</value>
+  </data>
+  <data version="1.6" id="534" name="CreateResultsFilterRight">
+    <value>Resultaatfilter maken</value>
+  </data>
+  <data version="1.6" id="535" name="AccessFieldEntriesRight">
+    <value>Toegang invulgegevens</value>
+  </data>
+  <data version="1.6" id="536" name="EditVoterEntriesRight">
+    <value>Antwoorden bewerken</value>
+  </data>
+  <data version="1.6" id="537" name="DeleteVoterEntriesRight">
+    <value>Antwoorden verwijderen</value>
+  </data>
+  <data version="1.6" id="538" name="AccessCrossTabRight">
+    <value>Toegang kruistabellen</value>
+  </data>
+  <data version="1.6" id="539" name="AccessExportRight">
+    <value>Toegang data export</value>
+  </data>
+  <data version="1.6" id="540" name="AccessMailingRight">
+    <value>Toegang Mailingen</value>
+  </data>
+  <data version="1.6" id="541" name="AccessMessageLabel">
+    <value>
+      Onbevoegd. Toegang is geweigerd wegens ongeldige legitimatie gegevens.
+    </value>
+  </data>
+  <data version="1.6" id="542" name="AccessASPNetCodeRight">
+    <value>Toegang Preview en Web</value>
+  </data>
+  <data version="1.6" id="543" name="AccessUserManagerRight">
+    <value>Toegang gebruikersbeheer</value>
+  </data>
+  <data version="1.6" id="544" name="AccessLibraryRight">
+    <value>Toegang bibliotheek</value>
+  </data>
+  <data version="1.6" id="545" name="NoSurveysAndNoRightMessage">
+    <value>Geen enqu&#234;tes beschikbaar en geen rechten om enqu&#234;tes te maken. Neem aub contact op met de beheerder van de enqu&#234;te.</value>
+  </data>
+  <data version="1.6" id="546" name="LogOutHyperlink">
+    <value>Uitloggen</value>
+  </data>
+  <data version="1.6" id="547" name="CopyQuestionFromLibraryRight">
+    <value>Bibliotheekvragen toevoegen</value>
+  </data>
+  <data version="1.6" id="548" name="CopyQuestionFromAllSurveyRight">
+    <value>Enqu&#234;tevragen toevoegen</value>
+  </data>
+  <data version="1.6" id="549" name="MakeBuiltInButton">
+    <value>Standaard maken</value>
+  </data>
+  <data version="1.6" id="550" name="DeleteBuiltInTypeConfirmationMessage">
+    <value>Standaard antwoord type definitief verwijderen?</value>
+  </data>
+  <data version="1.6" id="551" name="MakeBuiltInConfirmationMessage">
+    <value>Dit type definitief standaard maken? Standaard typen kunnen niet teruggedraaid worden en zijn beschikbaar voor alle gebruikers van de administratietool</value>
+  </data>
+  <data version="1.6" id="552" name="ApplyBuiltInChangesConfirmationMessage">
+    <value>Wijzigingen definitief toepassen op dit standaard type? Wijzigingen kunnen andere administratiegebruikers beinvloeden</value>
+  </data>
+  <data version="1.6" id="553" name="AddNewSkipLogicTitle">
+    <value>Toevoegen nieuwe logica regel aan deze vraag</value>
+  </data>
+  <data version="1.6" id="554" name="SkipLogicRulesTitle">
+    <value>Regels verspringen</value>
+  </data>
+  <data version="1.6" id="555" name="EditSkipLogicHyperLink">
+    <value>Verspring</value>
+  </data>
+  <data version="1.6" id="556" name="SkipLogicEvaluationConditionInfo">
+    <value>Eerste voorwaarde waaraan wordt voldaan zal deze vraag verbergen</value>
+  </data>
+  <data version="1.6" id="557" name="SkipLogicRuleAddedMessage">
+    <value>Regel verspringen toegevoegd</value>
+  </data>
+  <data version="1.6" id="558" name="SkipLogicRuleNoAnswer">
+    <value>Verbergen voor invullers die niet antwoorden op &lt;b&gt;{0}&lt;/b&gt;</value>
+  </data>
+  <data version="1.6" id="559" name="SkipLogicRuleNoAnswerNot">
+    <value>Verbergen voor invullers die niet antwoorden op &lt;b&gt;{0}&lt;/b&gt;</value>
+  </data>
+  <data version="1.6" id="560" name="SkipLogicRuleAnswer">
+    <value>Verbergen voor invullers die antwoorden op &lt;b&gt;{0}&lt;/b&gt; met &lt;b&gt;{1}&lt;/b&gt;</value>
+  </data>
+  <data version="1.6" id="561" name="SkipLogicRuleAnswerNot">
+    <value>Verbergen voor invullers die niet antwoorden op &lt;b&gt;{0}&lt;/b&gt; met &lt;b&gt;{1}&lt;/b&gt;</value>
+  </data>
+  <data version="1.6" id="562" name="SkipLogicRuleAnswerWithText">
+    <value>Verbergen voor invullers die antwoorden op &lt;b&gt;{0}&lt;/b&gt; met &lt;b&gt;{1}&lt;/b&gt; {2} &lt;b&gt;{3}&lt;/b&gt;</value>
+  </data>
+  <data version="1.6" id="563" name="SkipLogicRuleAnswerWithTextNot">
+    <value>Verbergen voor invullers die niet antwoorden op &lt;b&gt;{0}&lt;/b&gt; met &lt;b&gt;{1}&lt;/b&gt; {2} &lt;b&gt;{3}&lt;/b&gt;</value>
+  </data>
+  <data version="1.6" id="564" name="SkipLogicRuleScoreEqual">
+    <value>Verbergen voor invullers die &lt;b&gt;{0}&lt;/b&gt; scoren op &lt;b&gt;{1}&lt;/b&gt;</value>
+  </data>
+  <data version="1.6" id="565" name="SkipLogicRuleScoreLess">
+    <value>Verbergen voor invullers die &lt;b&gt;minder dan {0}&lt;/b&gt; scoren op &lt;b&gt;{1}&lt;/b&gt;</value>
+  </data>
+  <data version="1.6" id="566" name="SkipLogicRuleScoreGreater">
+    <value>Verbergen voor invullers die &lt;b&gt;meer dan {0}&lt;/b&gt; scoren op &lt;b&gt;{1}&lt;/b&gt;</value>
+  </data>
+  <data version="1.6" id="567" name="SkipLogicRuleScoreRange">
+    <value>Verbergen voor invullers die &lt;b&gt;tussen {0} en {1}&lt;/b&gt; scoren op &lt;b&gt;{2}&lt;/b&gt;</value>
+  </data>
+  <data version="1.6" id="568" name="ManageLibraryRight">
+    <value>Bibliotheek beheren</value>
+  </data>
+  <data version="1.6" id="569" name="EqualsOperator">
+    <value>Is gelijk aan</value>
+  </data>
+  <data version="1.6" id="570" name="ContainsOperator">
+    <value>Bevat</value>
+  </data>
+  <data version="1.6" id="571" name="GreaterThanOperator">
+    <value>Groter dan</value>
+  </data>
+  <data version="1.6" id="572" name="LessThanOperator">
+    <value>Kleiner dan</value>
+  </data>
+  <data version="1.6" id="573" name="TextEvaluationConditionLabel">
+    <value>Voorwaarde</value>
+  </data>
+  <data version="1.6" id="574" name="DisableQuestionNumbering">
+    <value>Vragen nummeren uitzetten</value>
+  </data>
+  <data version="1.6" id="575" name="DataSourceLabel">
+    <value>Gebruik een gegevensbron:</value>
+  </data>
+  <data version="1.6" id="576" name="XmlDataSourceOption">
+    <value>Xml bestand</value>
+  </data>
+  <data version="1.6" id="577" name="NoneDataSourceOption">
+    <value>Geen</value>
+  </data>
+  <data version="1.6" id="578" name="SqlDataSourceOption">
+    <value>Sql query</value>
+  </data>
+  <data version="1.6" id="579" name="SelectionRequiredLabel">
+    <value>Keuze verplicht:</value>
+  </data>
+  <data version="1.6" id="580" name="SqlQueryLabel">
+    <value>Sql query* :</value>
+  </data>
+  <data version="1.6" id="581" name="SqlQueryInfoLabel">
+    <value>&lt;br /&gt;*Eerste twee kolommen van het queryresutaat worden gebruikt als de waarde en tekst in de dropdown lijst&lt;br /&gt;**Gebruik het "exec" commando om een stored procedure aan te roepen&lt;br /&gt;***Waardes van vorige vragen kunnen worden gebruikt in de sql query door de doorsluis-optie te gebruiken</value>
+  </data>
+  <data version="1.6" id="582" name="MissingQueryDataSourceMessage">
+    <value>SQL query ontbreekt</value>
+  </data>
+  <data version="1.6" id="583" name="OnlySelectQueryAllowedMessage">
+    <value>Alleen select queries zijn toegestaan, delete update en truncate commando's zijn verboden</value>
+  </data>
+  <data version="1.6" id="584" name="SqlAnswerTypesEditionRight">
+    <value>SqlAntwoordType toegang</value>
+  </data>
+  <data version="1.6" id="585" name="SqlAnswerTypeAccessDeniedMessage">
+    <value>Geen autorisaties om een sql gebaseerd antwoord type te maken/ bewerken</value>
+  </data>
+  <data version="1.6" id="586" name="AllowXmlImportRight">
+    <value>Xml import</value>
+  </data>
+  <data version="1.6" id="587" name="NoAnonymousRightsMessage">
+    <value>Geen autorisaties als enqu&#234;tegebruiker voor toegang tot deze opties.</value>
+  </data>
+  <data version="1.7" id="588" name="SubscriberXMLList">
+    <value>Abonnee - XML lijst</value>
+  </data>
+  <data version="1.7" id="589" name="EndSurveyOption">
+    <value>Einde enqu&#234;te</value>
+  </data>
+  <data version="1.7" id="590" name="BranchingRulePage">
+    <value>pagina {0}</value>
+  </data>
+  <data version="1.7" id="591" name="BranchingRuleEndSurvey">
+    <value>einde enqu&#234;te</value>
+  </data>
+  <data version="1.7" id="592" name="TakeSurveyRight">
+    <value>Respondent enqu&#234;te</value>
+  </data>
+  <data version="1.7" id="593" name="TakeSurveyTitle">
+    <value>Enqu&#234;te invullen</value>
+  </data>
+  <data version="1.7" id="594" name="TakeSurveyHyperLink">
+    <value>Invullen enqu&#234;te</value>
+  </data>
+  <data version="1.7" id="595" name="AnswerSubscribedLabel">
+    <value>Ontvanger van:</value>
+  </data>
+  <data version="1.7" id="596" name="AnswerPublishersLabel">
+    <value>Verzender antwoorden</value>
+  </data>
+  <data version="1.7" id="597" name="RegExValidationLabel">
+    <value>Controle RegEx door server:</value>
+  </data>
+  <data version="1.7" id="598" name="MandatoryLabel">
+    <value>Verplicht:</value>
+  </data>
+  <data version="1.7" id="599" name="NoRegExValidationOption">
+    <value>Geen validatie</value>
+  </data>
+  <data version="1.7" id="600" name="AccessRegExEditorRight">
+    <value>Toegang RegEx</value>
+  </data>
+  <data version="1.7" id="601" name="RegExLibHyperLink">
+    <value>Regex bibliotheek</value>
+  </data>
+  <data version="1.7" id="602" name="RegExLibraryTitle">
+    <value>Regular expressions bibliotheek</value>
+  </data>
+  <data version="1.7" id="603" name="CreateRegExHyperLink">
+    <value>Klik hier om een nieuwe regex te maken</value>
+  </data>
+  <data version="1.7" id="604" name="RegExToEditLabel">
+    <value>Kies een regex om te bewerken:</value>
+  </data>
+  <data version="1.7" id="605" name="CreateARegExMessage">
+    <value>[Maak a regex]</value>
+  </data>
+  <data version="1.7" id="606" name="SelectRegExMessage">
+    <value>[Kies een regex]</value>
+  </data>
+  <data version="1.7" id="607" name="TestRegExTitle">
+    <value>Test een regular expression</value>
+  </data>
+  <data version="1.7" id="608" name="TextRegExButton">
+    <value>Test expressie</value>
+  </data>
+  <data version="1.7" id="609" name="RegularExpressionLabel">
+    <value>Regular expression :</value>
+  </data>
+  <data version="1.7" id="610" name="TestExpressionValueLabel">
+    <value>Testwaarde:</value>
+  </data>
+  <data version="1.7" id="611" name="CreateNewRegExButton">
+    <value>Maak regex</value>
+  </data>
+  <data version="1.7" id="612" name="RegExErrorMessageLabel">
+    <value>Foutmelding:</value>
+  </data>
+  <data version="1.7" id="613" name="DeleteRegExConfirmationMessage">
+    <value>Regex definitief verwijderen?</value>
+  </data>
+  <data version="1.7" id="614" name="CreateRegExOptionTitleLabel">
+    <value>Maak regex</value>
+  </data>
+  <data version="1.7" id="615" name="EditRegExOptionTitleLabel">
+    <value>Bewerk regex</value>
+  </data>
+  <data version="1.7" id="616" name="RegExAddedMessage">
+    <value>Regex toegevoegd</value>
+  </data>
+  <data version="1.7" id="617" name="RegExRequiredMessage">
+    <value>Regular expression invullen aub.</value>
+  </data>
+  <data version="1.7" id="618" name="RegExTestValueRequiredMessage">
+    <value>Een regex en een testwaarde is nodig om de juistheid van de regex te testen</value>
+  </data>
+  <data version="1.7" id="619" name="RegExPassedMessage">
+    <value>Regex correct, de enqu&#234;te zal geen foutmelding weergeven</value>
+  </data>
+  <data version="1.7" id="620" name="RegExFailedMessage">
+    <value>Regex niet correct, de enqu&#234;te zal een foutmelding weergeven</value>
+  </data>
+  <data version="1.7" id="621" name="RegExNameLabel">
+    <value>Naam:</value>
+  </data>
+  <data version="1.7" id="622" name="RegExNameRequiredMessage">
+    <value>Naam verplicht</value>
+  </data>
+  <data version="1.7" id="623" name="MakeBuiltInRegExButton">
+    <value>Standaard maken</value>
+  </data>
+  <data version="1.7" id="624" name="CancelRegExButton">
+    <value>Annuleren</value>
+  </data>
+  <data version="1.7" id="625" name="RegExUpdatedMessage">
+    <value>Regex bijgewerkt</value>
+  </data>
+  <data version="1.7" id="626" name="RegExDeleteedMessage">
+    <value>Regex verwijderd</value>
+  </data>
+  <data version="1.7" id="627" name="DeleteBuiltInRegExConfirmationMessage">
+    <value>Deze regex definitief verwijderen? Het verwijderen van een standaard regex kan de enqu&#234;te van een andere gebruiker beschadigen</value>
+  </data>
+  <data version="1.7" id="628" name="ApplyBuiltInRegExChangesConfirmationMessage">
+    <value>Wijzigingen definitief toepassen? Het wijzigen van een standaard regex kan de enqu&#234;te van een andere gebruiker beschadigen</value>
+  </data>
+  <data version="1.7" id="629" name="MakeBuiltInRegExConfirmationMessage">
+    <value>Deze regex definitief als standaard opnemen? Standaard regex kunnen niet worden teruggedraaid en zijn voor alle gebruikers beschikbaar</value>
+  </data>
+  <data version="1.7" id="630" name="RegExBuiltInConvertedMessage">
+    <value>Regex is gewijzigd in een standaard regex</value>
+  </data>
+  <data version="1.7" id="631" name="UnsignedIntegerRegEx">
+    <value>Unsigned integer</value>
+  </data>
+  <data version="1.7" id="632" name="InternetWebURLRegEx">
+    <value>Internet URL</value>
+  </data>
+  <data version="1.7" id="633" name="EuroDateRegEx">
+    <value>Datum (dd/mm/jjjj)</value>
+  </data>
+  <data version="1.7" id="634" name="USDateRegEx">
+    <value>Datum (mm/dd/jjjj)</value>
+  </data>
+  <data version="1.7" id="635" name="EmailRegEx">
+    <value>E-mail</value>
+  </data>
+  <data version="1.7" id="636" name="RegExLibComHyperLink">
+    <value>Ga naar http://www.regexlib.com voor meer regular expressions</value>
+  </data>
+  <data version="1.7" id="637" name="ImportUsersHyperlink">
+    <value>Importeren</value>
+  </data>
+  <data version="1.7" id="638" name="ImportUsersTitle">
+    <value>Gebruikers Importeren</value>
+  </data>
+  <data version="1.7" id="639" name="ImportUsersButton">
+    <value>Importeren</value>
+  </data>
+  <data version="1.7" id="640" name="UserImportedMessage">
+    <value>Gebruikers zijn opgeslagen in de database</value>
+  </data>
+  <data version="1.7" id="641" name="ImportUserLabel">
+    <value>Importeer CSV gegevens:</value>
+  </data>
+  <data version="1.7" id="642" name="DeleteRegExButton">
+    <value>Verwijder</value>
+  </data>
+  <data version="1.7" id="643" name="ImportInfo1Label">
+    <value>Importformat is o.b.v. komma gescheiden waardes. Op elke nieuwe regel moet een nieuwe gebruiker staan.</value>
+  </data>
+  <data version="1.7" id="644" name="ImportInfo2Label">
+    <value>Voorbeeld 1: Gebruikersnaam,Wachtwoord,Voornaam,Achternaam,Emailadres &lt;br /&gt;</value>
+  </data>
+  <data version="1.7" id="645" name="ImportInfo3Label">
+    <value>Voorbeeld 2: Gebruikersnaam,Wachtwoord,,, (totaal 4 komma's) </value>
+  </data>
+  <data version="1.7" id="646" name="ColMandatoryHeader">
+    <value>Verplicht</value>
+  </data>
+  <data version="1.8" id="647" name="FileManagerHyperLink">
+    <value>Bestandsbeheer</value>
+  </data>
+  <data version="1.8" id="648" name="AccessFileManagerRight">
+    <value>Toegang bestandsbeheer</value>
+  </data>
+  <data version="1.8" id="649" name="DeleteFilesButton">
+    <value>Verwijder geselecteerde bestanden</value>
+  </data>
+  <data version="1.8" id="650" name="DeleteFilesConfirmationMessage">
+    <value>Geselecteerde bestanden definitief verwijderen?</value>
+  </data>
+  <data version="1.8" id="651" name="UploadedFilesTitle">
+    <value>Bestanden geupload - Pagina </value>
+  </data>
+  <data version="1.8" id="652" name="BoundColumnFileName">
+    <value>Bestandsnaam</value>
+  </data>
+  <data version="1.8" id="653" name="BoundColumnFileType">
+    <value>Type</value>
+  </data>
+  <data version="1.8" id="654" name="BoundColumnFileSize">
+    <value>Omvang</value>
+  </data>
+  <data version="1.8" id="655" name="BoundColumnUploadDate">
+    <value>Upload datum</value>
+  </data>
+  <data version="1.8" id="656" name="BoundColumnPostedBy">
+    <value>Ingezonden door</value>
+  </data>
+  <data version="1.8" id="657" name="PreviousValidatedPageLinkButton">
+    <value>&lt;&lt; vorige pagina</value>
+  </data>
+  <data version="1.8" id="658" name="NextValidatedPageLinkButton">
+    <value>volgende pagina &gt;&gt;</value>
+  </data>
+  <data version="1.8" id="659" name="FileVoterDetailsButton">
+    <value>Details</value>
+  </data>
+  <data version="1.8" id="660" name="FileDownloadButton">
+    <value>Downloaden</value>
+  </data>
+  <data version="1.8" id="661" name="ExportFilesTitle">
+    <value>Exporteer alle bestanden naar de serverdirectorie</value>
+  </data>
+  <data version="1.8" id="662" name="ServerPathLabel">
+    <value>Volledige directoriepad:</value>
+  </data>
+  <data version="1.8" id="663" name="ExportFilesButton">
+    <value>Exporteer bestanden</value>
+  </data>
+  <data version="1.8" id="664" name="PathExampleLabel">
+    <value>Rootdirectorie van huidige webapplicatie: {0}</value>
+  </data>
+  <data version="1.8" id="665" name="PleaseEnterPathMessage">
+    <value>Bestandsmap verplicht</value>
+  </data>
+  <data version="1.8" id="666" name="PathNotExistMessage">
+    <value>Ongeldig pad, kan de map niet vinden. Controleer of de opgegeven directorie op de server bestaat</value>
+  </data>
+  <data version="1.8" id="667" name="FilesWrittenMessage">
+    <value>{0} mb aan bestanden zijn geexporteerd naar de server's directorie : {1}</value>
+  </data>
+  <data version="1.8" id="668" name="ExportFilesConfirmationMessage">
+    <value>Controleer of de IIS gebruiker schrijfrechten heeft voor de directorie die u hebt opgegeven en let op dat bestaande bestanden niet worden overschreven door Nieuwe Exportbestanden</value>
+  </data>
+  <data version="1.8" id="669" name="CreateGroupsLabel">
+    <value>Groepsmap bestanden:</value>
+  </data>
+  <data version="1.8" id="670" name="NoSubDirectoryOption">
+    <value>Geen submap groepen</value>
+  </data>
+  <data version="1.8" id="671" name="VoterSubDirectoryOption">
+    <value>Invuller-ID submap groepen</value>
+  </data>
+  <data version="1.8" id="672" name="GuidSubDirectoryOption">
+    <value>Bestands Guid submap groepen</value>
+  </data>
+  <data version="1.8" id="673" name="ExportFilesRight">
+    <value>Exporteer bestanden</value>
+  </data>
+  <data version="1.8" id="674" name="ExtendedFileUploadType">
+    <value>Uitgebreid - Upload bestand</value>
+  </data>
+  <data version="1.8" id="675" name="ExtendedFreeTextBoxType">
+    <value>Veld - Editor</value>
+  </data>
+  <data version="1.8" id="676" name="RichFieldLabel">
+    <value>Editor veld :</value>
+  </data>
+  <data version="1.8" id="677" name="MailingLogHyperlink">
+    <value>Mailing log</value>
+  </data>
+  <data version="1.8" id="678" name="DeleteLogsButton">
+    <value>Verwijder geselecteerde logs</value>
+  </data>
+  <data version="1.8" id="679" name="DeleteLogsButtonConfirmationMessage">
+    <value>Geselecteerde regels definief verwijderen?</value>
+  </data>
+  <data version="1.8" id="680" name="MailingLogTitle">
+    <value>Mailing log - Pagina</value>
+  </data>
+  <data version="1.8" id="681" name="BoundColumnLogEmail">
+    <value>E-mail</value>
+  </data>
+  <data version="1.8" id="682" name="BoundColumnLogExceptionType">
+    <value>Type</value>
+  </data>
+  <data version="1.8" id="683" name="BoundColumnLogExceptionMessage">
+    <value>Bericht</value>
+  </data>
+  <data version="1.8" id="684" name="BoundColumnErrorDate">
+    <value>Ingelogd</value>
+  </data>
+  <data version="1.8" id="685" name="PreviousLogPageLinkButton">
+    <value>&lt;&lt; vorige pagina</value>
+  </data>
+  <data version="1.8" id="686" name="NextLogPageLinkButton">
+    <value>volgende pagina &gt;&gt;</value>
+  </data>
+  <data version="1.8" id="687" name="RepeatableSectionsLabel">
+    <value>Herhaalbare onderdelen</value>
+  </data>
+  <data version="1.8" id="688" name="RepeatModeLabel">
+    <value>Wijze van herhaling:</value>
+  </data>
+  <data version="1.8" id="689" name="RepeatNoneOption">
+    <value>Niet toegestaan</value>
+  </data>
+  <data version="1.8" id="690" name="RepeatSectionOption">
+    <value>Herhaling volledig antwoord</value>
+  </data>
+  <data version="1.8" id="691" name="GridRepeatSectionOption">
+    <value>Herhalingsraster</value>
+  </data>
+  <data version="1.8" id="692" name="AddRepeatSectionLabel">
+    <value>Linktekst Toevoegen:</value>
+  </data>
+  <data version="1.8" id="693" name="DeleteRepeatSectionLabel">
+    <value>Linktekst Verwijderen:</value>
+  </data>
+  <data version="1.8" id="694" name="UpdateRepeatSectionLabel">
+    <value>Linktekst Bijwerken:</value>
+  </data>
+  <data version="1.8" id="695" name="GridAnswersLabel">
+    <value>Antwoorden tonen in raster:</value>
+  </data>
+  <data version="1.8" id="696" name="SectionOptionsUpdatedMessage">
+    <value>Herhalingsopties zijn bijgewerkt</value>
+  </data>
+  <data version="1.8" id="697" name="NoFileUploadedMessage">
+    <value>Geen bestand geupload</value>
+  </data>
+  <data version="1.8" id="698" name="EditRepeatSectionLabel">
+    <value>Linktekst Bewerken</value>
+  </data>
+  <data version="1.8" id="699" name="MinSelectionMatrixLabel">
+    <value>Min. selecties per rij :</value>
+  </data>
+  <data version="1.8" id="700" name="MaxSelectionMatrixAllowedLabel">
+    <value>Max. selecties per rij :</value>
+  </data>
+  <data version="1.8" id="701" name="AllowMultipleMatrixSectionsLabel">
+    <value>Herhaalbare matrix:</value>
+  </data>
+  <data version="1.8" id="702" name="MaxSectionAllowedLabel">
+    <value>Max. aantal herhalingen:</value>
+  </data>
+  <data version="1.8" id="703" name="MaxSectionAllowedUnlimitedOption">
+    <value>Onbeperkt</value>
+  </data>
+  <data version="1.8" id="704" name="UpdateSectionsButton">
+    <value>Bijwerken herhalingsmogelijkheden</value>
+  </data>
+  <data version="1.8" id="705" name="EditExtendedSettingsTitle">
+    <value>Uitgebreide instellingen</value>
+  </data>
+  <data version="1.9" id="706" name="MultiLanguagesTitle">
+    <value>Instellingen Meertaligheid</value>
+  </data>
+  <data version="1.9" id="707" name="EnableMultiLanguagesLabel">
+    <value>Aanzetten meertaligheid:</value>
+  </data>
+  <data version="1.9" id="708" name="MultiLanguagesModeLabel">
+    <value>Meertaligheidsmodus :</value>
+  </data>
+  <data version="1.9" id="709" name="EnabledLanguagesLabel">
+    <value>Beschikbare talen:</value>
+  </data>
+  <data version="1.9" id="710" name="AccessMultiLanguagesRight">
+    <value>Toegang meertaligheid</value>
+  </data>
+  <data version="1.9" id="711" name="AccessHelpFiles">
+    <value>Toegang helpmenu</value>
+  </data>
+  <data version="1.9" id="712" name="HelpFilesHyperlink">
+    <value>Help Bestanden</value>
+  </data>
+  <data version="1.9" id="713" name="MultiLanguagesHyperLink">
+    <value>Meertaligheid Enqu&#234;te</value>
+  </data>
+  <data version="1.9" id="714" name="AfrikaansLanguage">
+    <value>Afrikaans</value>
+  </data>
+  <data version="1.9" id="715" name="AlbanianLanguage">
+    <value>Albaans</value>
+  </data>
+  <data version="1.9" id="716" name="ArabicLanguage">
+    <value>Arabisch</value>
+  </data>
+  <data version="1.9" id="717" name="ArmenianLanguage">
+    <value>Armeneens</value>
+  </data>
+  <data version="1.9" id="718" name="AzeriLanguage">
+    <value>Azeri</value>
+  </data>
+  <data version="1.9" id="719" name="BasqueLanguage">
+    <value>Baskisch</value>
+  </data>
+  <data version="1.9" id="720" name="BelarusianLanguage">
+    <value>Witrussisch</value>
+  </data>
+  <data version="1.9" id="721" name="BulgarianLanguage">
+    <value>Bulgaars</value>
+  </data>
+  <data version="1.9" id="722" name="CatalanLanguage">
+    <value>Catalaans</value>
+  </data>
+  <data version="1.9" id="723" name="ChineseLanguage">
+    <value>Chinees / 中文（简体</value>
+  </data>
+  <data version="1.9" id="724" name="CroatianLanguage">
+    <value>Kroatisch</value>
+  </data>
+  <data version="1.9" id="725" name="CzechLanguage">
+    <value>Tsjechisch</value>
+  </data>
+  <data version="1.9" id="726" name="DanishLanguage">
+    <value>Deens</value>
+  </data>
+  <data version="1.9" id="727" name="DhivehiLanguage">
+    <value>Dhivehi</value>
+  </data>
+  <data version="1.9" id="728" name="DutchLanguage">
+    <value>Nederlands</value>
+  </data>
+  <data version="1.9" id="729" name="EnglishLanguage">
+    <value>Engels</value>
+  </data>
+  <data version="1.9" id="730" name="EstonianLanguage">
+    <value>Ests</value>
+  </data>
+  <data version="1.9" id="731" name="FaroeseLanguage">
+    <value>Faroes</value>
+  </data>
+  <data version="1.9" id="732" name="FarsiLanguage">
+    <value>Farsi</value>
+  </data>
+  <data version="1.9" id="733" name="FinishLanguage">
+    <value>Fins</value>
+  </data>
+  <data version="1.9" id="734" name="FrenchLanguage">
+    <value>Frans / Français</value>
+  </data>
+  <data version="1.9" id="735" name="GalicianLanguage">
+    <value>Galicisch</value>
+  </data>
+  <data version="1.9" id="736" name="GeorgianLanguage">
+    <value>Georgisch</value>
+  </data>
+  <data version="1.9" id="737" name="GermanLanguage">
+    <value>Duits / Deutsch</value>
+  </data>
+  <data version="1.9" id="738" name="GreekLanguage">
+    <value>Grieks</value>
+  </data>
+  <data version="1.9" id="739" name="GujaratiLanguage">
+    <value>Gujarati</value>
+  </data>
+  <data version="1.9" id="740" name="HebrewLanguage">
+    <value>Hebreews</value>
+  </data>
+  <data version="1.9" id="741" name="HindiLanguage">
+    <value>Hindi</value>
+  </data>
+  <data version="1.9" id="742" name="HungarianLanguage">
+    <value>Hongaars / Magyar</value>
+  </data>
+  <data version="1.9" id="743" name="IcelandicLanguage">
+    <value>Ijslands</value>
+  </data>
+  <data version="1.9" id="744" name="IndonesianLanguage">
+    <value>Indonesisch</value>
+  </data>
+  <data version="1.9" id="745" name="ItalianLanguage">
+    <value>Italiaans / Italiano</value>
+  </data>
+  <data version="1.9" id="746" name="JapaneseLanguage">
+    <value>Japans / 日本語</value>
+  </data>
+  <data version="1.9" id="747" name="KannadaLanguage">
+    <value>Cannadees</value>
+  </data>
+  <data version="1.9" id="748" name="KazakhLanguage">
+    <value>Kazachs</value>
+  </data>
+  <data version="1.9" id="749" name="KonkaniLanguage">
+    <value>Konkani</value>
+  </data>
+  <data version="1.9" id="750" name="KoreanLanguage">
+    <value>Koreaans / 한국어</value>
+  </data>
+  <data version="1.9" id="751" name="KyrgyzLanguage">
+    <value>Kyrgizisch</value>
+  </data>
+  <data version="1.9" id="752" name="LatvianLanguage">
+    <value>Lets</value>
+  </data>
+  <data version="1.9" id="753" name="MacedonianLanguage">
+    <value>Macedonisch</value>
+  </data>
+  <data version="1.9" id="754" name="MalayLanguage">
+    <value>Malay</value>
+  </data>
+  <data version="1.9" id="755" name="MarathiLanguage">
+    <value>Marathi</value>
+  </data>
+  <data version="1.9" id="756" name="MongolianLanguage">
+    <value>Mongools</value>
+  </data>
+  <data version="1.9" id="757" name="NorwegianLanguage">
+    <value>Noors</value>
+  </data>
+  <data version="1.9" id="758" name="PolishLanguage">
+    <value>Pools</value>
+  </data>
+  <data version="1.9" id="759" name="PortugueseLanguage">
+    <value>Portugees / Português</value>
+  </data>
+  <data version="1.9" id="760" name="PunjabiLanguage">
+    <value>Punjabi</value>
+  </data>
+  <data version="1.9" id="761" name="RomanianLanguage">
+    <value>Roemeens</value>
+  </data>
+  <data version="1.9" id="762" name="RussianLanguage">
+    <value>Russisch</value>
+  </data>
+  <data version="1.9" id="763" name="SanskritLanguage">
+    <value>Sanskriet</value>
+  </data>
+  <data version="1.9" id="764" name="SlovakLanguage">
+    <value>Slovaaks</value>
+  </data>
+  <data version="1.9" id="765" name="SlovenianLanguage">
+    <value>Sloveens</value>
+  </data>
+  <data version="1.9" id="766" name="SpanishLanguage">
+    <value>Spaans</value>
+  </data>
+  <data version="1.9" id="767" name="SwahiliLanguage">
+    <value>Swahili</value>
+  </data>
+  <data version="1.9" id="768" name="SwedishLanguage">
+    <value>Zweeds</value>
+  </data>
+  <data version="1.9" id="769" name="SyriacLanguage">
+    <value>Syrisch</value>
+  </data>
+  <data version="1.9" id="770" name="TamilLanguage">
+    <value>Tamil</value>
+  </data>
+  <data version="1.9" id="771" name="TatarLanguage">
+    <value>Tatar</value>
+  </data>
+  <data version="1.9" id="772" name="TeluguLanguage">
+    <value>Telugu</value>
+  </data>
+  <data version="1.9" id="773" name="ThaiLanguage">
+    <value>Thais</value>
+  </data>
+  <data version="1.9" id="774" name="TurkishLanguage">
+    <value>Turks</value>
+  </data>
+  <data version="1.9" id="775" name="UkrainianLanguage">
+    <value>Ukrainsch</value>
+  </data>
+  <data version="1.9" id="776" name="UrduLanguage">
+    <value>Urdu</value>
+  </data>
+  <data version="1.9" id="777" name="UzbekLanguage">
+    <value>Uzbeeks</value>
+  </data>
+  <data version="1.9" id="778" name="VietnameseLanguage">
+    <value>Vietnamees</value>
+  </data>
+  <data version="1.9" id="779" name="LithuanianLanguage">
+    <value>Litouws</value>
+  </data>
+  <data version="1.9" id="780" name="SerbianLanguage">
+    <value>Servisch</value>
+  </data>
+  <data version="1.9" id="781" name="LanguageDisabledMessage">
+    <value>Taal is verwijderd</value>
+  </data>
+  <data version="1.9" id="782" name="LanguageEnabledMessage">
+    <value>Taal is toegevoegd</value>
+  </data>
+  <data version="1.9" id="783" name="DefaultLanguageLabel">
+    <value>Standaard taal:</value>
+  </data>
+  <data version="1.9" id="784" name="EditionLanguageLabel">
+    <value>Taal versie:</value>
+  </data>
+  <data version="1.9" id="785" name="UserSelectionOption">
+    <value>Door gebruikerkeuze bepalen</value>
+  </data>
+  <data version="1.9" id="786" name="BrowserDetectionOption">
+    <value>Door browser bepalen</value>
+  </data>
+  <data version="1.9" id="787" name="QueryStringLanguageOption">
+    <value>Door query bepalen</value>
+  </data>
+  <data version="1.9" id="788" name="CookieLanguageOption">
+    <value>Door cookie bepalen</value>
+  </data>
+  <data version="1.9" id="789" name="SessionLanguageOption">
+    <value>Door session bepalen</value>
+  </data>
+  <data version="1.9" id="790" name="LanguageDefaultText">
+    <value>(Standaard taal)</value>
+  </data>
+  <data version="1.9" id="791" name="OneDefaultLanguageRequiredMessage">
+    <value>Tenminste 1 standaard taal is verplicht</value>
+  </data>
+  <data version="1.9" id="792" name="VariableNameLabel">
+    <value>Naam variabele:</value>
+  </data>
+  <data version="1.9" id="793" name="VariableNameInfoLabel">
+    <value>De te tonen taal invullen. bijv.: en-US, fr-FR etc .. </value>
+  </data>
+  <data version="1.9" id="794" name="VariableNameUpdateButton">
+    <value>Bijwerken</value>
+  </data>
+  <data version="1.9" id="795" name="LanguageUndefined">
+    <value>Standaard taal</value>
+  </data>
+  <data version="1.9" id="796" name="VoterLanguageLabel">
+    <value>Taal respondent:</value>
+  </data>
+  <data version="1.9" id="797" name="LanguageFilterLabel">
+    <value>Taal filter:</value>
+  </data>
+  <data version="1.9" id="798" name="DateRangeLabel">
+    <value>Periode:</value>
+  </data>
+  <data version="1.9" id="799" name="DateToRangeLabel">
+    <value>tot</value>
+  </data>
+  <data version="1.9" id="800" name="ApplyRangeButton">
+    <value>Toepassen</value>
+  </data>
+  <data version="1.9" id="801" name="AllLanguagesFilterOption">
+    <value>Alle talen</value>
+  </data>
+  <data version="1.9" id="802" name="PreviewSurveyLanguageLabel">
+    <value>Kies taalversie ontwerp:</value>
+  </data>
+  <data version="1.9" id="803" name="PreviewLibraryLanguageLabel">
+    <value>Kies enqu&#234;te-taal bibliotheek:</value>
+  </data>
+  <data version="1.9" id="804" name="PieChartOption">
+    <value>Circel diagram</value>
+  </data>
+  <data version="1.9.1" id="805" name="CSVExportOption">
+    <value>CSV formaat</value>
+  </data>
+  <data version="1.9.1" id="806" name="XmlExportOption">
+    <value>Xml formaat</value>
+  </data>
+  <data version="1.9.1" id="807" name="KeepCarriageOption">
+    <value>Houd carriage / returns</value>
+  </data>
+  <data version="1.9.1" id="808" name="OnlyReturnOption">
+    <value>Alleen return char</value>
+  </data>
+  <data version="1.9.1" id="809" name="UserDefinedCROption">
+    <value>Eigen character</value>
+  </data>
+  <data version="1.9.1" id="810" name="ReplaceCarriageLabel">
+    <value>Vervang CR : </value>
+  </data>
+  <data version="1.9.1" id="811" name="ExportTypeLabel">
+    <value>Export formaat: </value>
+  </data>
+  <data version="1.9.1" id="812" name="MessageConditionLabel">
+    <value>Voorwaarde:</value>
+  </data>
+  <data version="1.9.1" id="813" name="UpdateMessageConditionButton">
+    <value>Bijwerken voorwaarde bericht</value>
+  </data>
+  <data version="1.9.1" id="814" name="ConditionCancelButton">
+    <value>Annuleren / Terug</value>
+  </data>
+  <data version="1.9.1" id="815" name="AddLibraryButton">
+    <value>Toevoegen bibliotheek</value>
+  </data>
+  <data version="1.0" id="816" name="ListSelection">
+    <value>[Kies een antwoord]</value>
+  </data>
+  <data version="1.0" id="817" name="NextPage">
+    <value>Volgende pagina &gt;&gt;</value>
+  </data>
+  <data version="1.0" id="818" name="SubmitSurvey">
+    <value>Verzenden</value>
+  </data>
+  <data version="1.0" id="819" name="MinAnswerSelection">
+    <value>Tenminste {0} antwoord(en) moet(en) gekozen zijn!</value>
+  </data>
+  <data version="1.0" id="820" name="MaxAnswerSelection">
+    <value>Het maximale aantal antwoorden is {0}!</value>
+  </data>
+  <data version="1.0" id="821" name="RatingResults">
+    <value>Gemiddelde score: {0} / {1}</value>
+  </data>
+  <data version="1.0" id="822" name="TotalOfVotes">
+    <value>Totaal aantal invullers: {0}</value>
+  </data>
+  <data version="1.0" id="823" name="AlreadyVotedMessage">
+    <value>U hebt de enqu&#234;te al ingevuld!</value>
+  </data>
+  <data version="1.0" id="824" name="ThankYouMessage">
+    <value>Bedankt voor uw deelname aan deze enqu&#234;te!</value>
+  </data>
+  <data version="1.0" id="825" name="ClosedMessage">
+    <value>Enqu&#234;te is gesloten sinds {0}</value>
+  </data>
+  <data version="1.0" id="826" name="OpenMessage">
+    <value>Enqu&#234;te is nog niet gestart en wordt geopend op {0}</value>
+  </data>
+  <data version="1.0" id="827" name="PageNumber">
+    <value>Pagina {0} / {1}</value>
+  </data>
+  <data version="1.0" id="828" name="EnterPasswordMessage">
+    <value>Enqu&#234;te wachtwoord aub invullen:</value>
+  </data>
+  <data version="1.0" id="829" name="SubmitPassword">
+    <value>Toegang Enqu&#234;te</value>
+  </data>
+  <data version="1.0" id="830" name="InvalidPasswordMessage">
+    <value>Foutief wachtwoord!</value>
+  </data>
+  <data version="1.0" id="831" name="FieldRequiredMessage">
+    <value>{0} is verplicht!</value>
+  </data>
+  <data version="1.0" id="832" name="InvalidCalendarDateMessage">
+    <value>{0} bevat ongeldige datum, aub nogmaals invullen, bijv. : {1}!</value>
+  </data>
+  <data version="1.0" id="833" name="EnterUIdMessage">
+    <value>Enqu&#234;tecode aub invullen:</value>
+  </data>
+  <data version="1.0" id="834" name="EnterTokenMessage">
+    <value>Vul uw Enqu&#234;te Beveiliging Token in:</value>
+  </data>
+  <data version="1.0" id="835" name="InvalidUIdMessage">
+    <value>Enqu&#234;tecode is ongeldig of is al gebruikt!</value>
+  </data>
+  <data version="1.0" id="836" name="InvalidTokenMessage">
+    <value>Token is ongeldig of is al gebruikt!</value>
+  </data>
+  <data version="1.0" id="837" name="SubmitToken">
+    <value>Vul Token in</value>
+  </data>
+  <data version="1.0" id="838" name="SubmitUId">
+    <value>Toegang Enqu&#234;te</value>
+  </data>
+  <data version="1.0" id="839" name="JSInvalidField">
+    <value>Veld aub invullen!</value>
+  </data>
+  <data version="1.0" id="840" name="JSInvalidEmail">
+    <value>E-mailadres aub invullen!</value>
+  </data>
+  <data version="1.1" id="841" name="EmailCodeProtection">
+    <value>E-mailcode beveiliging</value>
+  </data>
+  <data version="1.1" id="842" name="CookieProtection">
+    <value>Cookie beveiliging</value>
+  </data>
+  <data version="1.1" id="843" name="PasswordProtection">
+    <value>Wachtwoord beveiliging</value>
+  </data>
+  <data version="1.1" id="844" name="IPProtection">
+    <value>IP beveiliging</value>
+  </data>
+  <data version="1.1" id="845" name="CookieExpiresLabel">
+    <value>Cookie verloopt na:</value>
+  </data>
+  <data version="1.1" id="846" name="IPExpiresLabel">
+    <value>IP verloopt na:</value>
+  </data>
+  <data version="1.1" id="847" name="InvalidIPExpireTime">
+    <value>Ongeldige uiterste datum IP verlopen, moet numeriek zijn!</value>
+  </data>
+  <data version="1.1" id="848" name="InvalidCookieExpireTime">
+    <value>Ongeldige uiterste datum Cookie verlopen!</value>
+  </data>
+  <data version="1.2" id="849" name="PreviousPage">
+    <value>&lt;&lt; Vorige pagina</value>
+  </data>
+  <data version="1.2" id="850" name="SaveProgress">
+    <value>Opslaan Gegevens</value>
+  </data>
+  <data version="1.2" id="851" name="ProgressSaved">
+    <value>De tussentijdse enqu&#234;tegegevens zijn opgeslagen</value>
+  </data>
+  <data version="1.2" id="852" name="ProgressNotSaved">
+    <value>Gebruik van cookies is uitgezet, om uw antwoorden op te slaan moet u de cookies optie activeren en uw browser herstarten</value>
+  </data>
+  <data version="1.2" id="853" name="ShortNotificationMessage">
+    <value>
+      Hallo,
+      &lt;br /&gt;&lt;br /&gt;
+      Dit is een automatisch bericht. Een nieuwe enqu&#234;teuitslag is opgeslagen. &lt;br /&gt;
+      De detailgegevens zijn beschikbaar via de enqu&#234;te administratie omgeving.
+      &lt;br /&gt;&lt;br /&gt;
+      Vriendelijke groet
+    </value>
+  </data>
+  <data version="1.2" id="854" name="NotificationSubject">
+    <value>Nieuwe toegang voor "{0}" is geregistreerd</value>
+  </data>
+  <data version="1.4" id="855" name="ResumeProgress">
+    <value>Vervolg Enqu&#234;te</value>
+  </data>
+  <data version="1.4" id="856" name="SubmitResumeUId">
+    <value>Antwoorden Ophalen</value>
+  </data>
+  <data version="1.4" id="857" name="EnterResumeUIdMessage">
+    <value>Persoonlijke voortgangscode invullen:</value>
+  </data>
+  <data version="1.4" id="858" name="SubmitCancelResume">
+    <value>Annuleren</value>
+  </data>
+  <data version="1.4" id="859" name="InvalidResumeUId">
+    <value>Voortzettingscode is ongeldig of is al gebruikt!</value>
+  </data>
+  <data version="1.4" id="860" name="SuccessResumeUId">
+    <value>De enqu&#234;te is klaar om verder te vervolgen</value>
+  </data>
+  <data version="1.4" id="861" name="ManualProgressSaved">
+    <value>De enqu&#234;teresultaten zijn opgeslagen, voortzetting kan op ieder moment met behulp van de voortzettingscode.&lt;br /&gt;De voortzettingscode is: &lt;b&gt;{0}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="862" name="ASPNETSecurityContextProtection">
+    <value>ASP.net beveiliging</value>
+  </data>
+  <data version="1.4" id="863" name="MultipleSubmissionsLabel">
+    <value>Meerdere inzendingen toestaan</value>
+  </data>
+  <data version="1.4" id="864" name="ASPNETSecurityAddinDescription">
+    <value>Deze beveiliging controleert of de gebruiker ingelogd is via de asp.net beveiliging en slaat de gebruikersnaam op bij het verzenden van de antwoorden</value>
+  </data>
+  <data version="1.5" id="865" name="PipeValuesSeparator">
+    <value> en </value>
+  </data>
+  <data version="1.5" id="866" name="AnswerTypeAssemblyNotFoundMessage">
+    <value>&lt;b&gt;Antwoord maken niet gelukt!&lt;/b&gt;&lt;br /&gt;Opgegeven &lt;b&gt;{0} assembly niet gevonden&lt;/b&gt;. Controleer of deze assembly aanwezig is in de bin directorie en dat het correct is geregistreerd in de antwoordtype tabel van de enqu&#234;te database.</value>
+  </data>
+  <data version="1.5" id="867" name="AnswerTypeNotFoundMessage">
+    <value>&lt;b&gt;Antwoord maken niet gelukt!&lt;/b&gt;&lt;br /&gt;Opgegeven &lt;b&gt;{0} type niet gevonden in de &lt;/b&gt; DLL {1}. ontroleer of deze assembly aanwezig is in de bin directorie en dat het type correct is geregistreerd in de antwoordtype tabel van de enqu&#234;te database.</value>
+  </data>
+  <data version="1.6" id="868" name="XMLAnswerSelectionRequired">
+    <value>Een antwoord voor {0} is verplicht!</value>
+  </data>
+  <data version="v" id="869" name="SqlAnswerSelectionRequired">
+    <value>Een antwoord voor {0} is verplicht!</value>
+  </data>
+  <data version="1.7" id="870" name="NSurveySecurityAddinDescription">
+    <value>Deze beveiliging controleert of de gebruiker is ingelogd en slaat de gebruikernaam op bij het verzenden van de antwoorden</value>
+  </data>
+  <data version="1.7" id="871" name="NSurveySecurityContextProtection">
+    <value>Enqu&#234;te beveiliging</value>
+  </data>
+  <data version="1.7" id="872" name="RegExValidationFailedMessage">
+    <value>Ongeldig antwoord gegeven voor {0}</value>
+  </data>
+  <data version="1.7" id="873" name="InvalidEmailRegExMessage">
+    <value>{0} is geen geldig e-mailadres</value>
+  </data>
+  <data version="1.7" id="874" name="InvalidIntegerRegExMessage">
+    <value>{0} is niet numeriek</value>
+  </data>
+  <data version="1.7" id="875" name="InvalidEuroDateRegExMessage">
+    <value>{0} is geen geldige datum. dd/mm/jjjj verwacht</value>
+  </data>
+  <data version="1.7" id="876" name="InvalidUSDateRegExMessage">
+    <value>{0} is geen geldide datum. mm/dd/jjjj verwacht</value>
+  </data>
+  <data version="1.7" id="877" name="InvalidInternetUrlRegExMessage">
+    <value>{0} is geen geldige URL</value>
+  </data>
+  <data version="1.8" id="878" name="UploadFileRequiredMessage">
+    <value>{0} vereist dat tenminste 1 bestand wordt geupload</value>
+  </data>
+  <data version="1.8" id="879" name="UploadFileDownloadButton">
+    <value>Download</value>
+  </data>
+  <data version="1.8" id="880" name="UploadFileDeleteButton">
+    <value>Verwijder</value>
+  </data>
+  <data version="1.8" id="881" name="UploadFileUploadButton">
+    <value>Upload bestand</value>
+  </data>
+  <data version="1.8" id="882" name="UploadFileSizeFormat">
+    <value>mb</value>
+  </data>
+  <data version="1.8" id="883" name="MaxUploadFileNumberLabel">
+    <value>Max. aantal uploadbestanden:</value>
+  </data>
+  <data version="1.8" id="884" name="MaxUploadFileSizeLabel">
+    <value>Max. bestandsgrootte (bytes) :</value>
+  </data>
+  <data version="1.8" id="885" name="UnlimitedFileNumberOption">
+    <value>Onbeperkt</value>
+  </data>
+  <data version="1.8" id="886" name="AcceptedContentTypeLabel">
+    <value>Toegestane bestandtypen:</value>
+  </data>
+  <data version="1.8" id="887" name="AcceptedContentTypeExampleLabel">
+    <value>bijv.: image/gif, application/pdf</value>
+  </data>
+  <data version="1.8" id="888" name="UploadFileLimitReachedMessage">
+    <value>De limiet voor het aantal geuploade bestanden van {0} is bereikt. Limiet is {1}</value>
+  </data>
+  <data version="1.8" id="889" name="UploadFileToBigMessage">
+    <value>Geupload bestand voor {0} is te groot. De limiet is {1} mb</value>
+  </data>
+  <data version="1.8" id="890" name="ContentTypeNotAllowedMessage">
+    <value>Bestandstype van geupload bestand naar {0} is niet toegestaan</value>
+  </data>
+  <data version="1.8" id="891" name="FileUploadedMessage">
+    <value>Bestand geupload</value>
+  </data>
+  <data version="1.8" id="892" name="UploadFileDeletedMessage">
+    <value>Bestand verwijderd</value>
+  </data>
+  <data version="1.8" id="893" name="BreakModeLabel">
+    <value>Regeleinde stijl:</value>
+  </data>
+  <data version="1.8" id="894" name="TextBoxStyleLabel">
+    <value>TextBox stijl:</value>
+  </data>
+  <data version="1.8" id="895" name="FreeTextBoxLanguageLabel">
+    <value>Taal:</value>
+  </data>
+  <data version="1.8" id="896" name="FreeTextBoxWarningLabel">
+    <value>Controleer of op deze pagina voor deze control de ValidateRequest instructie op false staat.&lt;br /&gt;Ga naar &lt;a href='http://www.freetextbox.com' target='_blank'&gt;http://www.freetextbox.com&lt;/a&gt; voor de stand alone versie.&lt;br /&gt;</value>
+  </data>
+  <data version="1.8" id="897" name="ToolBarLayoutLabel">
+    <value>Werkbalk layout:</value>
+  </data>
+  <data version="1.8" id="898" name="ToolBarLayoutExampleLabel">
+    <value>bijv.: ParagraphMenu, FontFacesMenu, FontSizesMenu &lt;a href="http://wiki.freetextbox.com/default.aspx/FreeTextBoxWiki.ToolbarConfiguration" target="_blank"&gt;... Klik hier voor meer&lt;/a&gt;</value>
+  </data>
+  <data version="1.8" id="899" name="MinMatrixAnswerSelection">
+    <value>Tenminste {0} antwoord(en) moet(en) geselecteerd zijn in iedere rij</value>
+  </data>
+  <data version="1.8" id="900" name="MaxMatrixAnswerSelection">
+    <value>Het maximum aantal antwoorden per rij is {0}!</value>
+  </data>
+  <data version="1.8" id="901" name="AddSectionLinkText">
+    <value>toevoegen</value>
+  </data>
+  <data version="1.8" id="902" name="DeleteSectionLinkText">
+    <value>verwijder</value>
+  </data>
+  <data version="1.8" id="903" name="EditSectionLinkText">
+    <value>bewerken</value>
+  </data>
+  <data version="1.8" id="904" name="UpdateSectionLinkText">
+    <value>bijwerken</value>
+  </data>
+  <data version="1.8" id="905" name="SectionRequiredMessage">
+    <value>Tenminste 1 onderdeel moet worden toevoegd</value>
+  </data>
+  <data version="1.8" id="906" name="EntryQuotaProtection">
+    <value>Beperking aantal invullers</value>
+  </data>
+  <data version="1.8" id="907" name="MaxQuotaEntriesLabel">
+    <value>Maximum aantal invullers toegestaan:</value>
+  </data>
+  <data version="1.8" id="908" name="EntriesNumberLabel">
+    <value>Teller invullers:</value>
+  </data>
+  <data version="1.8" id="909" name="QuotaReachedLabel">
+    <value>Bericht aantal bereikt:</value>
+  </data>
+  <data version="1.8" id="910" name="QuotaReachedMessage">
+    <value>Het maximum aantal toegestane invullers is bereikt.</value>
+  </data>
+  <data version="1.8" id="911" name="ResetQuotaEntriesButton">
+    <value>Wis teller invullers</value>
+  </data>
+  <data version="1.9" id="912" name="SelectLanguageMessage">
+    <value>Kies uw taal:</value>
+  </data>
+  <data version="1.9" id="913" name="SubmitLanguageButton">
+    <value>Start</value>
+  </data>
+  <data version="1.2.2" id="914" name="HelpMessageLabel">
+    <value>&lt;b&gt;Survey&#8482; Project Helpbestanden zijn beperkt beschikbaar.&lt;/b&gt; &lt;br /&gt;&lt;br /&gt; Meer informatie over het gebruik van de Survey applicatie is te vinden via &lt;a href="http://www.surveyproject.org" title="Surveyproject Gemeenschapssite" target="_blank"&gt; http://www.surveyproject.org &lt;/a&gt;. Vragen kunnen daar worden gesteld.&lt;br /&gt; &lt;br /&gt; Voor downloads, broncode en technische achtergronden ga naar &lt;a href="http://survey.codeplex.com" title="Survey Project" target="_blank"&gt; http://survey.codeplex.com &lt;/a&gt;. &lt;br /&gt;</value>
+  </data>
+  <data version="1.2.2" id="915" name="Disclaimer">
+    <value>&lt;h4&gt;SURVEY&#8482; PROJECT is een webapplicatie voor online enqu&#234;tes en formulieren gebaseerd op de open source software NSurvey (&lt;a href="http://www.nsurvey.org" target="_blank"&gt;Thomas Zumbrunn&lt;/a&gt;, (c) 2004/2005). Survey&#8482; Project is gepubliceerd onder een GNU GENERAL PUBLIC LICENSE v.3, 29 June 2007. Het vernieuwde SURVEY&#8482; PROJECT is een initiatief van &lt;a href="http://www.fryslanwebservices.com" title="Fryslan Webservices Homepage" target="_blank"&gt;Fryslan Webservices&#8482; &lt;/a&gt;, copyright (c) 2009/2014. SURVEY&#8482; PROJECT is te vinden via &lt;a href="http://www.surveyproject.org" title="Survey Project Community Site" target="_blank"&gt;http://www.surveyproject.org&lt;/a&gt;.&lt;/h4&gt; </value>
+  </data>
+  <data version="1.2.2" id="916" name="Introduction">
+    <value>
+
+      Welkom, de Survey™ Project Webapplicatie is geactiveerd.
+      &lt;br /&gt;&lt;br /&gt;
+
+      Om de eerste keer in te loggen:&lt;br /&gt;
+      inlognaam = &lt;strong&gt;admin&lt;/strong&gt;&lt;br /&gt;
+      wachtwoord = &lt;strong&gt;admin&lt;/strong&gt;
+      &lt;br /&gt;&lt;br /&gt;
+      Maak vervolgens een nieuwe Enqu&#234;te aan en &lt;br /&gt;
+      volg de instructies via menuoptie Help/ Helpopties.
+      &lt;br /&gt;&lt;br /&gt;
+      U kunt nu beginnen met het gebruik van de online Survey™ tool.
+
+    </value>
+  </data>
+  <data version="1.2.2" id="917" name="SurveyInactive">
+    <value>Inactief</value>
+  </data>
+  <data version="1.2.2" id="918" name="SurveyActive">
+    <value>Actief</value>
+  </data>
+  <data version="1.2.2" id="919" name="SurveyTitle">
+    <value>Enqu&#234;te</value>
+  </data>
+  <data version="1.2.2" id="920" name="SurveyStatus">
+    <value>Status</value>
+  </data>
+  <data version="1.2.2" id="921" name="SurveyResponses">
+    <value>Reacties</value>
+  </data>
+  <data version="1.2.2" id="922" name="SurveyCreated">
+    <value>Gecreëerd</value>
+  </data>
+  <data version="1.2.2" id="923" name="SurveyDesign">
+    <value>Ontwerp</value>
+  </data>
+  <data version="1.2.2" id="924" name="SurveyDelete">
+    <value>Verwijderen</value>
+  </data>
+  <data version="1.2.2" id="925" name="SurveySecurity">
+    <value>Beveiliging</value>
+  </data>
+  <data version="1.2.2" id="926" name="SurveyEdit">
+    <value>Bewerken</value>
+  </data>
+  <data version="1.2.2" id="927" name="UsersTab">
+    <value>Gebruikers</value>
+  </data>
+  <data version="1.2.2" id="928" name="RolesTab">
+    <value>Rollen</value>
+  </data>
+  <data version="1.2.2" id="929" name="ImportUsersTab">
+    <value>Importeren</value>
+  </data>
+  <data version="1.2.2" id="930" name="UsersTabUserName">
+    <value>Gebruikersnaam</value>
+  </data>
+  <data version="1.2.2" id="931" name="UsersTabFirstName">
+    <value>Voornaam</value>
+  </data>
+  <data version="1.2.2" id="932" name="UsersTabLastName">
+    <value>Achternaam</value>
+  </data>
+  <data version="1.2.2" id="933" name="UsersTabEmail">
+    <value>E-mail</value>
+  </data>
+  <data version="1.2.2" id="934" name="UsersTabAdministrator">
+    <value>Administrator</value>
+  </data>
+  <data version="1.2.2" id="935" name="UsersTabEdit">
+    <value>Bewerken</value>
+  </data>
+  <data version="1.2.2" id="936" name="UsersTabApplyFilter">
+    <value>Gebruik filter</value>
+  </data>
+  <data version="1.2.2" id="937" name="SurveyListTabList">
+    <value>Enqu&#234;te Lijst</value>
+  </data>
+  <data version="1.2.2" id="938" name="SurveyListTabNew">
+    <value>Nieuwe Enqu&#234;te</value>
+  </data>
+  <data version="1.2.2" id="939" name="LibraryTabNewAdd">
+    <value>Nieuwe bibliotheek toevoegen</value>
+  </data>
+  <data version="1.2.2" id="940" name="LibraryTabEdit">
+    <value>Instellingen Bibliotheek</value>
+  </data>
+  <data version="1.2.2" id="941" name="LibraryTabNewName">
+    <value>Bibliotheek naam:</value>
+  </data>
+  <data version="1.2.2" id="942" name="LibraryTabNewDescription">
+    <value>Omschrijving:</value>
+  </data>
+  <data version="1.2.2" id="943" name="LibraryTabNewEnabledLanguages">
+    <value>Talen activeren:</value>
+  </data>
+  <data version="1.2.2" id="944" name="LibraryTabNewDefaultLanguage">
+    <value>Geactiveerde talen:</value>
+  </data>
+  <data version="1.2.2" id="945" name="LibraryTabNewAddLanguage">
+    <value>Voeg toe</value>
+  </data>
+  <data version="1.2.2" id="946" name="LibraryTabNewEditLanguage">
+    <value>Update</value>
+  </data>
+  <data version="2.0" id="947" name="LoggedInAs">
+    <value>Ingelogd: </value>
+  </data>
+  <data version="2.0" id="948" name="LibraryTabDelete">
+    <value>Verwijder bibliotheek</value>
+  </data>
+  <data version="2.0" id="949" name="LibraryTabDeleteConfirm">
+    <value>Weet u zeker dat u deze bibliotheek wilt verwijderen?</value>
+  </data>
+  <data version="2.0" id="950" name="IPRangeDeleteConfirm">
+    <value>Weet u zeker dat u dit IP Bereik wilt verwijderen?</value>
+  </data>
+  <data version="2.0" id="951" name="SurveyListDeleteConfirm">
+    <value>Weet u zeker dat u deze enqu&#234;te wilt verwijderen?</value>
+  </data>
+  <data version="2.0" id="952" name="SurveyInfo">
+    <value>Enqu&#234;te Instellingen</value>
+  </data>
+  <data version="2.0" id="953" name="SurveyInfoMultiLanguage">
+    <value>Meertalige Enqu&#234;te</value>
+  </data>
+  <data version="2.0" id="954" name="SurveyInfoCompletion">
+    <value>Voltoo&#239;ng Enqu&#234;te</value>
+  </data>
+  <data version="2.0" id="955" name="SurveyInfoLayout">
+    <value>Layout</value>
+  </data>
+  <data version="2.0" id="956" name="SurveySecurityForm">
+    <value>Formulier Beveiliging</value>
+  </data>
+  <data version="2.0" id="957" name="SurveySecurityFormToken">
+    <value>Token Beveiliging</value>
+  </data>
+  <data version="2.0" id="958" name="DesignerformBuilder">
+    <value>Enqu&#234;te Ontwerpen</value>
+  </data>
+  <data version="2.0" id="959" name="DesignerformQuestionGroups">
+    <value>Vraag Groepen</value>
+  </data>
+  <data version="2.0" id="960" name="DesignerformAnswerTypeEdit">
+    <value> Antwoord Types</value>
+  </data>
+  <data version="2.0" id="961" name="DesignerformRegexLib">
+    <value>Regex Bibliotheek</value>
+  </data>
+  <data version="2.0" id="962" name="GroupListDeleteConfirm">
+    <value>Weet u zeker dat u deze groep wilt verwijderen?</value>
+  </data>
+  <data version="2.0" id="963" name="GroupListDelete">
+    <value>Verwijderen</value>
+  </data>
+  <data version="2.0" id="964" name="GroupListEdit">
+    <value>Bewerken</value>
+  </data>
+  <data version="2.0" id="965" name="SurveyFormSecurityHyperlink">
+    <value>Formulier Beveiliging</value>
+  </data>
+  <data version="2.0" id="966" name="SurveyTokenSecurityHyperlink">
+    <value>Token Beveiliging</value>
+  </data>
+  <data version="2.0" id="967" name="LibraryListHyperlink">
+    <value>Overzicht Bibliotheken</value>
+  </data>
+  <data version="2.0" id="968" name="CreateLibraryHyperlink">
+    <value>Nieuwe Bibliotheek</value>
+  </data>
+  <data version="2.0" id="969" name="LibraryTemplateHyperlink">
+    <value>Bibliotheek Templates</value>
+  </data>
+  <data version="2.0" id="970" name="QuestionGroupsHyperlink">
+    <value>Vraag Groepen</value>
+  </data>
+  <data version="2.0" id="971" name="DesignerHyperlink">
+    <value>Ontwerper</value>
+  </data>
+  <data version="2.0" id="972" name="ResultsSMHyperlink">
+    <value>Resultaten</value>
+  </data>
+  <data version="2.0" id="973" name="FiltersHyperlink">
+    <value>Filters</value>
+  </data>
+  <data version="2.0" id="974" name="FileManagerHyperlink">
+    <value>Bestandsbeheer</value>
+  </data>
+  <data version="2.0" id="975" name="DataExportHyperlink">
+    <value>Data Export</value>
+  </data>
+  <data version="2.0" id="976" name="DataImportHyperlink">
+    <value>Data Import</value>
+  </data>
+  <data version="2.0" id="977" name="CampaignSMHyperlink">
+    <value>Campagne</value>
+  </data>
+  <data version="2.0" id="978" name="HelpSMHyperlink">
+    <value>Help</value>
+  </data>
+  <data version="2.0" id="979" name="AccountSMHyperlink">
+    <value>Accounts</value>
+  </data>
+  <data version="2.0" id="980" name="HelpOptionsHyperlink">
+    <value>Help Opties</value>
+  </data>
+  <data version="2.0" id="981" name="CampaignPreviewHyperlink">
+    <value>Preview</value>
+  </data>
+  <data version="2.0" id="982" name="CampaignLanguageLabel">
+    <value>Selecteer uw taal:</value>
+  </data>
+  <data version="2.0" id="983" name="MailingHyperlink">
+    <value>Mailing</value>
+  </data>
+  <data version="2.0" id="984" name="AccessQuestionGroupRight">
+    <value>Toegang Vraag Groepen</value>
+  </data>
+  <data version="2.0" id="985" name="MissingVariableMessage">
+    <value>Stel {0} in voordat u navigeert naar het Bibliotheek Onderhoud Scherm</value>
+  </data>
+  <data version="2.0" id="986" name="StartButtonPrompt">
+    <value>Start</value>
+  </data>
+  <data version="2.0" id="987" name="AliasLabel">
+    <value>Alias: </value>
+  </data>
+  <data version="2.0" id="988" name="HelpTextLabel">
+    <value>Help Tekst: </value>
+  </data>
+  <data version="2.0" id="989" name="ShowHelpTextLabel">
+    <value>Toon Help Tekst: </value>
+  </data>
+  <data version="2.0" id="990" name="GroupLabel">
+    <value>Groep: </value>
+  </data>
+  <data version="2.0" id="991" name="SubGroupLabel">
+    <value>Sub-Groep: </value>
+  </data>
+  <data version="2.0" id="992" name="CssLabel">
+    <value>Css template File: </value>
+  </data>
+  <data version="2.0" id="993" name="ImageLabel">
+    <value>Afbeelding File :</value>
+  </data>
+  <data version="2.0" id="994" name="HeaderLabel">
+    <value>Pagina Header :</value>
+  </data>
+  <data version="2.0" id="995" name="FooterLabel">
+    <value>Pagina Footer:</value>
+  </data>
+  <data version="2.0" id="996" name="DdlNoSelect">
+    <value>-Selecteer-</value>
+  </data>
+  <data version="2.0" id="997" name="EditCssTitle">
+    <value>Bewerk CSS </value>
+  </data>
+  <data version="2.0" id="998" name="GotoSurveyList">
+    <value>Ga naar enqu&#234;te lijst</value>
+  </data>
+  <data version="2.0" id="999" name="DataImportTitle">
+    <value>Data Import</value>
+  </data>
+  <data version="2.0" id="1000" name="IPRangeStartTitle">
+    <value>IP Bereik - Start</value>
+  </data>
+  <data version="2.0" id="1001" name="IPRangeEndTitle">
+    <value>IP Bereik - Eind</value>
+  </data>
+  <data version="2.0" id="1002" name="IPRangeFormTitle">
+    <value>IP Filter</value>
+  </data>
+  <data version="2.0" id="1003" name="TokenSecurityFormTitle">
+    <value>Token Beveiliging</value>
+  </data>
+  <data version="2.0" id="1004" name="ValidNumberPlease">
+    <value>Vul een geldig getal in</value>
+  </data>
+  <data version="2.0" id="1005" name="SaveVoterDataLabel">
+    <value>Anonieme toegang (antwoorden zijn niet gekoppeld aan een token)</value>
+  </data>
+  <data version="2.0" id="1006" name="IPRangeSecurityInEffect">
+    <value>IP Filter is in effect getreden</value>
+  </data>
+  <data version="2.0" id="1007" name="IPNotInRange">
+    <value>Uw IP adres valt niet binnen het acceptabele bereik.</value>
+  </data>
+  <data version="2.0" id="1008" name="SurveyIPRangeSecurityHyperlink">
+    <value>IP Filter</value>
+  </data>
+  <data version="2.0" id="1009" name="Exception">
+    <value>Er is een fout opgetreden</value>
+  </data>
+  <data version="2.0" id="1010" name="msgDeleteSelectedTokens">
+    <value>Weet u zeker dat u de geselecteerde tokens wilt verwijderen?</value>
+  </data>
+  <data version="2.0" id="1011" name="msgDeleteAllTokens">
+    <value>Weet u zeker dat u ALLE tokens wilt verwijderen?</value>
+  </data>
+  <data version="2.0" id="1012" name="lblExportTokens">
+    <value>Exporteer Tokens</value>
+  </data>
+  <data version="2.0" id="1013" name="lblDeleteAll">
+    <value>Alles verwijderen</value>
+  </data>
+  <data version="2.0" id="1014" name="lblDeleteSelected">
+    <value>Verwijder geselecteerd</value>
+  </data>
+  <data version="2.0" id="1015" name="lblApplyFilter">
+    <value>Gebruik filter</value>
+  </data>
+  <data version="2.0" id="1016" name="lblGenerate">
+    <value>Genereer</value>
+  </data>
+  <data version="2.0" id="1017" name="lblGenerateCount">
+    <value>Aantal Tokens :</value>
+  </data>
+  <data version="2.0" id="1018" name="lblNumberOfTokens">
+    <value>Aantal Tokens :</value>
+  </data>
+  <data version="2.0" id="1019" name="lblNumberOfTokensCreated">
+    <value>Aantal aangemaakte Tokens :</value>
+  </data>
+  <data version="2.0" id="1020" name="lblNumberOfTokensUsed">
+    <value>Aantal gebruikte Tokens :</value>
+  </data>
+  <data version="2.0" id="1021" name="lblNumberOfTokensAvailable">
+    <value>Aantal beschikbare Tokens :</value>
+  </data>
+  <data version="2.0" id="1022" name="lblByToken">
+    <value>Filter op Token</value>
+  </data>
+  <data version="2.0" id="1023" name="lblByTokenType">
+    <value>Filter op Token type</value>
+  </data>
+  <data version="2.0" id="1024" name="lblByIssuedDate">
+    <value>Filter op datum</value>
+  </data>
+  <data version="2.0" id="1025" name="HeaderFieldLabel">
+    <value>Header veld:</value>
+  </data>
+  <data version="2.0" id="1026" name="AnswerFieldlabel">
+    <value>Antwoord veld:</value>
+  </data>
+  <data version="2.0" id="1027" name="CSVAnswerExportStyle1">
+    <value>Exporteer elk antwoord als een Rij met een Kolom per Vraag</value>
+  </data>
+  <data version="2.0" id="1028" name="CSVAnswerExportStyle2">
+    <value>Exporteer elke reactie als een Rij met een Kolom per mogelijk antwoord voor elke Vraag</value>
+  </data>
+  <data version="2.0" id="1029" name="Question">
+    <value>Vraag</value>
+  </data>
+  <data version="2.0" id="1030" name="Question Display Order Number">
+    <value>Vraag Weergave Volgorde Nummer</value>
+  </data>
+  <data version="2.0" id="1031" name="Question ID">
+    <value>Vraag ID</value>
+  </data>
+  <data version="2.0" id="1032" name="Question Alias">
+    <value>Vraag Alias</value>
+  </data>
+  <data version="2.0" id="1033" name="Question ID Alias">
+    <value>Vraag ID Alias</value>
+  </data>
+  <data version="2.0" id="1034" name="Answer">
+    <value>Antwoord</value>
+  </data>
+  <data version="2.0" id="1035" name="Answer Display Order Number">
+    <value>Antwoord Weergave Volgorde Nummer</value>
+  </data>
+  <data version="2.0" id="1036" name="Answer ID">
+    <value>Antwoord ID</value>
+  </data>
+  <data version="2.0" id="1037" name="Answer Alias">
+    <value>Antwoord Alias</value>
+  </data>
+  <data version="2.0" id="1038" name="Answer ID Alias">
+    <value>Antwoord ID Alias</value>
+  </data>
+  <data version="2.0" id="1039" name="CSVEXPDataSelection">
+    <value>Data Selectie</value>
+  </data>
+  <data version="2.0" id="1040" name="CSVEXPGetAllDates">
+    <value>Alle data</value>
+  </data>
+  <data version="2.0" id="1041" name="CSVExpGetSelectedDates">
+    <value>Data binnen datumselectie</value>
+  </data>
+  <data version="2.0" id="1042" name="TextIdsMustBePresent">
+    <value>Elke Vraag en Antwoord in het importbestand moet een QuestionIdText en AnswerIdText hebben</value>
+  </data>
+  <data version="2.0" id="1043" name="SelectAFile">
+    <value> Selecteer een bestand  </value>
+  </data>
+  <data version="2.0" id="1044" name="ExportInstructions1">
+    <value>Opmerking: kies XML formaat om de geexporteerde gegevens te importeren naar deze of een andere Survey installatie.</value>
+  </data>
+  <data version="2.0" id="1045" name="LayoutLabel">
+    <value> Export Layout</value>
+  </data>
+  <data version="2.0" id="1046" name="FormatLayout">
+    <value>Format</value>
+  </data>
+  <data version="2.0" id="1047" name="MultiSeparator">
+    <value>Multiplechoice scheidingsteken:</value>
+  </data>
+  <data version="2.0" id="1048" name="ImportSuccessMsg">
+    <value>Importeren Geslaagd </value>
+  </data>
+  <data version="2.0" id="1049" name="AutoFilter">
+    <value>Filter automatisch aanmaken</value>
+  </data>
+  <data version="2.0" id="1050" name="AutoFilterMessage">
+    <value>
+      Opmerking: Bij het automatisch aanmaken wordt een filter aangemaakt voor elk antwoord dat een vraag kan hebben.&lt;br /&gt;
+      Het is alleen beschikbaar voor gesloten vragen (geen vrije tekst velden).
+    </value>
+  </data>
+  <data version="2.0" id="1051" name="AutoFilterQuestion">
+    <value>Filter automatisch aanmaken op basis van vraag:</value>
+  </data>
+  <data version="2.0" id="1052" name="AutoFilterQuestionNaming">
+    <value>Vraag Naamgeving:</value>
+  </data>
+  <data version="2.0" id="1053" name="AutoFilterAnswerLabel">
+    <value>Antwoord Naamgeving:</value>
+  </data>
+  <data version="2.0" id="1054" name="autoFilterMsg2">
+    <value>Filter naamgevingsschema:</value>
+  </data>
+  <data version="2.0" id="1055" name="btnAutoFilter">
+    <value>Genereer Filter</value>
+  </data>
+  <data version="2.0" id="1056" name="ImportFile">
+    <value>Importeer Bestand</value>
+  </data>
+  <data version="2.0" id="1057" name="DataSelection">
+    <value>Gegevens Selectie</value>
+  </data>
+  <data version="2.0" id="1058" name="ClosedSurveyMessage">
+    <value>Deze enqu&#234;te is gesloten.</value>
+  </data>
+  <data version="2.0" id="1059" name="InvalidSurveyUrl">
+    <value>De Url die u heeft opgegeven is ongeldig.</value>
+  </data>
+  <data version="2.0" id="1060" name="InvalidSurveyGuid">
+    <value>De GUID die u heeft opgegeven is ongeldig.</value>
+  </data>
+  <data version="2.0" id="1061" name="DeleteQuestionPageConfirmationMessage">
+    <value>Weet u zeker dat u deze pagina wilt verwijderen?</value>
+  </data>
+  <data version="2.0" id="1062" name="FriendlyLabel">
+    <value>Maak een gebruiksvriendelijke link (URL):</value>
+  </data>
+  <data version="2.0" id="1063" name="FriendlyUrl">
+    <value>Opmerking: URL indeling = http:// [UwWebSiteUrl] / survey.aspx / [&lt;b&gt;UwUrlNaam&lt;/b&gt;] </value>
+  </data>
+  <data version="2.0" id="1064" name="BtnFriendly">
+    <value>Opslaan</value>
+  </data>
+  <data version="2.0" id="1065" name="FriendlyNameUpdatedMsg">
+    <value>Gebruiksvriendelijke naam is bijgewerkt </value>
+  </data>
+  <data version="2.0" id="1066" name="FilterGeneratedMsg">
+    <value>Filters zijn gegenereerd </value>
+  </data>
+  <data version="2.0" id="1067" name="SurveyUrl">
+    <value>Enqu&#234;te Hyperlinks</value>
+  </data>
+  <data version="2.0" id="1068" name="ConditionalEndMessageHyperlink">
+    <value>Voorwaardelijk Eindbericht</value>
+  </data>
+  <data version="2.0" id="1069" name="InsertSecurityHyperLink">
+    <value>Beveiliging Toevoegen</value>
+  </data>
+  <data version="2.0" id="1070" name="CreateAnswerTypeHyperLink">
+    <value>Maak Antwoord Type</value>
+  </data>
+  <data version="2.0" id="1071" name="VoterReportHyperLink">
+    <value>Respondent Rapport</value>
+  </data>
+  <data version="2.0" id="1072" name="EditVoterReportHyperLink">
+    <value>Bewerk Kiezer Rapport</value>
+  </data>
+  <data version="2.0" id="1073" name="UserListTitle">
+    <value>Enqu&#234;te Gebruikers Lijst</value>
+  </data>
+  <data version="2.0" id="1074" name="TreeAddTitle">
+    <value>Map toevoegen</value>
+  </data>
+  <data version="2.0" id="1075" name="TreeDeleteTitle">
+    <value>Map verwijderen</value>
+  </data>
+  <data version="2.0" id="1076" name="TreeRenameTitle">
+    <value>Map Hernoemen</value>
+  </data>
+  <data version="2.0" id="1077" name="TreeDeleteMenu">
+    <value>Verwijderen</value>
+  </data>
+  <data version="2.0" id="1078" name="TreeCancelMenu">
+    <value>Cancel</value>
+  </data>
+  <data version="2.0" id="1079" name="TreeAddMenu">
+    <value>Toevoegen</value>
+  </data>
+  <data version="2.0" id="1080" name="TreeRenameMenu">
+    <value>Hernoemen</value>
+  </data>
+  <data version="2.0" id="1081" name="TreeOkMenu">
+    <value>OK</value>
+  </data>
+  <data version="2.0" id="1082" name="TreeDeleteSurvey">
+    <value>Verwijder enqu&#234;te</value>
+  </data>
+  <data version="2.0" id="1083" name="TreeDeleteFolderWarn">
+    <value>Verwijder map @REPLACE@  en alle onderliggende enqu&#234;tes?</value>
+  </data>
+  <data version="2.0" id="1084" name="TreeDeleteSurveyWarn">
+    <value>Let op: Verwijderen  @REPLACE@  schoont ook alle enqu&#234;te resultaten</value>
+  </data>
+  <data version="2.0" id="1085" name="LibraryName">
+    <value>Bibliotheeknaam</value>
+  </data>
+  <data version="2.0" id="1086" name="Description">
+    <value>Omschrijving</value>
+  </data>
+  <data version="2.0" id="1087" name="NumberOfQuestions">
+    <value>Aantal vragen</value>
+  </data>
+  <data version="2.0" id="1088" name="Search">
+    <value>Zoeken</value>
+  </data>
+  <data version="2.0" id="1089" name="Upload">
+    <value>Uploaden</value>
+  </data>
+  <data version="2.0" id="1090" name="AddNew">
+    <value>Nieuw toevoegen</value>
+  </data>
+  <data version="2.0" id="1091" name="autofilterInfo2Label">
+    <value>
+      Opmerking: De benaming van het filter volgt het schema [Question naming] | [Answer naming].&lt;/b&gt;&lt;br /&gt;
+      Alleen de eerste 32 letters van een Vraag en Antwoord worden als naam gebruikt.
+    </value>
+  </data>
+  <data version="2.0" id="1092" name="DefaultSurvey">
+    <value>Default Enqu&#234;te</value>
+  </data>
+  <data version="2.0" id="1093" name="SurveyImported">
+    <value>Enqu&#234;te geimporteerd</value>
+  </data>
+  <data version="2.0" id="1094" name="SurveyNotImported">
+    <value>Enqu&#234;te kan niet worden geimporteerd. Controleer het importbestand.</value>
+  </data>
+  <data version="2.0" id="1095" name="LibraryList">
+    <value>Bibliotheeklijst</value>
+  </data>
+  <data version="2.0" id="1096" name="NewTab">
+    <value>Nieuwe Bibliotheek</value>
+  </data>
+  <data version="2.0" id="1097" name="QGroupsExplain">
+    <value>Opmerking: Vraaggroepen worden zichtbaar op vraagniveau bij het instellen van de waarde optie.</value>
+  </data>
+  <data version="2.0" id="1098" name="AddNewGroup">
+    <value>Nieuw toevoegen</value>
+  </data>
+  <data version="2.0" id="1099" name="AddNewSubgroup">
+    <value>Nieuw toevoegen</value>
+  </data>
+  <data version="2.0" id="1100" name="DUPLICATEFOLDER">
+    <value>Dubbele mapnaam</value>
+  </data>
+  <data version="2.0" id="1101" name="DUPLICATETREEITEM">
+    <value>Dubbel Item</value>
+  </data>
+  <data version="2.0" id="1102" name="TREECANNOTMOVE">
+    <value>Item kan niet verplaats worden</value>
+  </data>
+  <data version="2.0" id="1103" name="SurveyExistsInFolder">
+    <value>Een enqu&#234;te met dezelfde naam bestaat in deze map.</value>
+  </data>
+  <data version="2.0" id="1104" name="SurveyImportDuplicate">
+    <value>Een enqu&#234;te met dezelfde naam bestaat al in deze map. Importeer naar een andere map.</value>
+  </data>
+  <data version="2.0" id="1105" name="DDLSelectValue">
+    <value>-- Kies een enqu&#234;te --</value>
+  </data>
+  <data version="2.0" id="1106" name="ChooseSurveyLabel">
+    <value>Selecteer een enqu&#234;te uit de lijst:</value>
+  </data>
+  <data version="2.0" id="1107" name="HelpGifTitle">
+    <value>Klik voor meer Informatie</value>
+  </data>
+  <data version="1.0" id="1108" name="FromLabelMail">
+    <value>Email van :</value>
+  </data>
+  <data version="1.0" id="1109" name="ToLabelMail">
+    <value>Email aan :</value>
+  </data>
+  <data version="1.0" id="1110" name="SliderRangeTextLabel">
+    <value>Schuifbalk Min/ Max waarde:</value>
+  </data>
+  <data version="1.0" id="1111" name="SliderValueTextLabel">
+    <value>Beginwaarde :</value>
+  </data>
+  <data version="1.0" id="1112" name="SliderMinTextLabel">
+    <value>Min waarde :</value>
+  </data>
+  <data version="1.0" id="1113" name="SliderMaxTextLabel">
+    <value>Max waarde :</value>
+  </data>
+  <data version="1.0" id="1114" name="SliderAnimateTextLabel">
+    <value>Animeren :</value>
+  </data>
+  <data version="1.0" id="1115" name="SliderStepTextLabel">
+    <value>Stappen :</value>
+  </data>
+  <data version="1.0" id="1116" name="FieldSliderType">
+    <value>Veld - Schuifbalk</value>
+  </data>
+  <data version="1.0" id="1117" name="MissingSurveyTitleMessage">
+    <value>Enqu&#234;te titel ontbreekt</value>
+  </data>
+  <data version="1.0" id="1118" name="MissingGroupNameMessage">
+    <value>A.u.b. Groepsnaam opgeven</value>
+  </data>
+  <data version="1.0" id="1119" name="MissingSubGroupNameMessage">
+    <value>A.u.b. Subgroepsnaam opgeven</value>
+  </data>
+  <data version="1.0" id="1120" name="GraphicalReports">
+    <value>Grafisch rapport</value>
+  </data>
+  <data version="1.0" id="1121" name="VoterReports">
+    <value>Textueel Rapport</value>
+  </data>
+  <data version="1.0" id="1122" name="CrossTabulationReports">
+    <value>Kruistabel Rapport</value>
+  </data>
+  <data version="1.0" id="1123" name="Prev">
+    <value> Vorige</value>
+  </data>
+  <data version="1.0" id="1124" name="Next">
+    <value> Volgende</value>
+  </data>
+  <data version="2.3" id="1125" name="MailStatusDetails">
+    <value>Details</value>
+  </data>
+  <data version="2.3" id="1126" name="SearchTitle">
+    <value>Doorzoek Enqu&#234;telijst</value>
+  </data>
+  <data version="2.3" id="1127" name="SurveyInformationTitle2">
+    <value>Naam Enqu&#234;te</value>
+  </data>
+  <data version="2.3" id="1128" name="ImportSurveyLiteral">
+    <value>Enqu&#234;te Importeren</value>
+  </data>
+  <data version="2.3" id="1129" name="LibraryDirectoryLegend">
+    <value>Overzicht Vragen Bibliotheken</value>
+  </data>
+  <data version="2.3" id="1130" name="QuestionGroupLegend">
+    <value>Vraag Groepen</value>
+  </data>
+  <data version="2.3" id="1131" name="UpdateVoterAnswersButton">
+    <value>Update Antwoorden</value>
+  </data>
+  <data version="2.3" id="1132" name="UserlistFilterOptionLiteral">
+    <value>Filter Opties:</value>
+  </data>
+  <data version="2.3" id="1133" name="SurveyLayoutLegend">
+    <value>Enqu&#234;te Layout</value>
+  </data>
+  <data version="2.3" id="1134" name="SurveyListPageNrLiteral">
+    <value>Pagina</value>
+  </data>
+</root>

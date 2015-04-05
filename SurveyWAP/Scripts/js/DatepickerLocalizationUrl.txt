@@ -1,0 +1,4 @@
+Datepicker url: http://jqueryui.com/demos/datepicker/
+
+The localization files are also available in the UI svn: http://jquery-ui.googlecode.com/svn/trunk/ui/i18n/
+

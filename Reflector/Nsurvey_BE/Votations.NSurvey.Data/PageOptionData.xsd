@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PageOptionData" targetNamespace="http://tempuri.org/PageOptionData.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PageOptionData.xsd" xmlns:mstns="http://tempuri.org/PageOptionData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="PageOptionData" msdata:IsDataSet="true">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="PageOptions">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="SurveyId" type="xs:int" />
+                            <xs:element name="PageNumber" type="xs:int" />
+                            <xs:element name="RandomizeQuestions" type="xs:boolean" minOccurs="0" />
+                            <xs:element name="EnableSubmitButton" type="xs:boolean" minOccurs="0" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+        </xs:complexType>
+        <xs:unique name="PageOptionDataKey1" msdata:PrimaryKey="true">
+            <xs:selector xpath=".//mstns:PageOptions" />
+            <xs:field xpath="mstns:SurveyId" />
+            <xs:field xpath="mstns:PageNumber" />
+        </xs:unique>
+    </xs:element>
+</xs:schema>

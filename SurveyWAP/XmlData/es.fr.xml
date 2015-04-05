@@ -1,0 +1,61 @@
+<?xml version="1.0" standalone="yes"?>
+<NSurveyDataSource xmlns="http://www.nsurvey.org/NSurveyDataSource.xsd">
+	<XmlDataSource>
+		<RunTimeAnswerLabel>
+		Region :
+		</RunTimeAnswerLabel>
+		<XmlAnswers>
+			<XmlAnswer><AnswerValue></AnswerValue><AnswerDescription>[Choisissez une region]</AnswerDescription></XmlAnswer> 
+			<XmlAnswer><AnswerValue>Alava</AnswerValue><AnswerDescription>Alava</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Albacete</AnswerValue><AnswerDescription>Albacete</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Alicante</AnswerValue><AnswerDescription>Alicante</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Almeria</AnswerValue><AnswerDescription>Almeria</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Asturies</AnswerValue><AnswerDescription>Asturies</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Avila</AnswerValue><AnswerDescription>Avila</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Badajoz</AnswerValue><AnswerDescription>Badajoz</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Baleares</AnswerValue><AnswerDescription>Baléares &#40;îles&#41;</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Barcelone</AnswerValue><AnswerDescription>Barcelone</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Burgos</AnswerValue><AnswerDescription>Burgos</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Caceres</AnswerValue><AnswerDescription>Caceres</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Cadix</AnswerValue><AnswerDescription>Cadix</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Castellon</AnswerValue><AnswerDescription>Castellon</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Ciudad Real</AnswerValue><AnswerDescription>Ciudad Real</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Cordoue</AnswerValue><AnswerDescription>Cordoue</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Cuenca</AnswerValue><AnswerDescription>Cuenca</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Girone</AnswerValue><AnswerDescription>Girone</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Grenade</AnswerValue><AnswerDescription>Grenade</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Guadalajara</AnswerValue><AnswerDescription>Guadalajara</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Guipuzcoa</AnswerValue><AnswerDescription>Guipuzcoa</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Huelva</AnswerValue><AnswerDescription>Huelva</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Huesca</AnswerValue><AnswerDescription>Huesca</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Jaen</AnswerValue><AnswerDescription>Jaen</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>La Corogne</AnswerValue><AnswerDescription>La Corogne</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>La Rioja</AnswerValue><AnswerDescription>La Rioja</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Las Palmas</AnswerValue><AnswerDescription>Las Palmas</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Leon</AnswerValue><AnswerDescription>Leon</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Lerida</AnswerValue><AnswerDescription>Lerida</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Madrid</AnswerValue><AnswerDescription>Madrid</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Malaga</AnswerValue><AnswerDescription>Malaga</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Murcie</AnswerValue><AnswerDescription>Murcie</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Navarre</AnswerValue><AnswerDescription>Navarre</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Orense</AnswerValue><AnswerDescription>Orense</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Palence</AnswerValue><AnswerDescription>Palence</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Province de Lugo</AnswerValue><AnswerDescription>Province de Lugo</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Province de Pontevedra</AnswerValue><AnswerDescription>Province de Pontevedra</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Salamanca</AnswerValue><AnswerDescription>Salamanca</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Santa Cruz de Tenerife</AnswerValue><AnswerDescription>Santa Cruz de Tenerife</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Santander</AnswerValue><AnswerDescription>Santander</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Saragosse</AnswerValue><AnswerDescription>Saragosse</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Ségovie</AnswerValue><AnswerDescription>Ségovie</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Séville</AnswerValue><AnswerDescription>Séville</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Soria</AnswerValue><AnswerDescription>Soria</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Tarragona</AnswerValue><AnswerDescription>Tarragona</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Teruel</AnswerValue><AnswerDescription>Teruel</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Toledo</AnswerValue><AnswerDescription>Toledo</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Valence</AnswerValue><AnswerDescription>Valencia</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Valladolid</AnswerValue><AnswerDescription>Valladolid</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Vizcaya</AnswerValue><AnswerDescription>Vizcaya</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Zamora</AnswerValue><AnswerDescription>Zamora</AnswerDescription></XmlAnswer>
+		</XmlAnswers>
+	</XmlDataSource>
+</NSurveyDataSource>		

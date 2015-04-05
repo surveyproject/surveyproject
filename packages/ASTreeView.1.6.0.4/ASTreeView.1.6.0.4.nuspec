@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>ASTreeView</id>
+    <version>1.6.0.4</version>
+    <title>ASTreeView</title>
+    <authors>JIN Weijie</authors>
+    <owners>JIN Weijie</owners>
+    <licenseUrl>http://www.astreeview.com/astreeviewdemo/License.aspx</licenseUrl>
+    <projectUrl>http://www.astreeview.com/</projectUrl>
+    <iconUrl>http://www.goldtect.com/favicon.ico</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Full functional treeview control for ASP.Net. Supports drag and drop, dynamic loading, context menu, tri-state checkbox, selection, xml import/export, themes, add/editing/deleting nodes with ajax, right to left display support. Demo: http://www.astreeview.com Samples: https://github.com/jinweijie/Goldtect.ASTreeViewSamples</description>
+    <summary>Full functional treeview control for ASP.Net supports drag and drop, dynamic loading, context menu, tri-state checkbox, selection, xml import/export, themes, add/editing/deleting nodes with ajax, right to left display.</summary>
+    <releaseNotes>Initial release to NuGet.org</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>treeview</tags>
+  </metadata>
+</package>

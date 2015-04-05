@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="InvitationLogData" targetNamespace="http://tempuri.org/InvitationLogData.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/InvitationLogData.xsd" xmlns:mstns="http://tempuri.org/InvitationLogData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="InvitationLogData" msdata:IsDataSet="true">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="InvitationLogs">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="InvitationLogId" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+                            <xs:element name="SurveyId" type="xs:int" minOccurs="0" />
+                            <xs:element name="EmailId" type="xs:int" minOccurs="0" />
+                            <xs:element name="ExceptionMessage" type="xs:string" minOccurs="0" />
+                            <xs:element name="ExceptionType" type="xs:string" minOccurs="0" />
+                            <xs:element name="ErrorDate" type="xs:dateTime" minOccurs="0" />
+                            <xs:element name="Email" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+        </xs:complexType>
+        <xs:unique name="InvitationLogDataKey1" msdata:PrimaryKey="true">
+            <xs:selector xpath=".//mstns:InvitationLogs" />
+            <xs:field xpath="mstns:InvitationLogId" />
+        </xs:unique>
+    </xs:element>
+</xs:schema>

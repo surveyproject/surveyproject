@@ -1,0 +1,1519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<!-- START NSURVEY ADMIN MESSAGES -->
+	<data name="ControlCodeTitle">
+		<value>Codice d'avvio ASP.net</value>
+	</data>
+	<data name="PageDirectiveInfo">
+		<value>Dovete includere la direttiva seguente nella pagina aspx che pubblicheranno il sondaggio</value>
+	</data>
+	<data name="TagPrefixInfo">
+		<value>&lt;%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="Votations.NSurvey.WebControls" %&gt;</value>
+	</data>
+	<data name="QuickLinkInfo">
+		<value>Potete anche utilizzare il seguente collegamento: </value>
+	</data>
+	<data name="SurveyCodePreviewTitle">
+		<value>Pre-visualizzazione del sondaggio: </value>
+	</data>
+	<data name="EditQuestionTitle">
+		<value>Modifica domanda</value>
+	</data>
+	<data name="SelectionModeLabel">
+		<value>Modalita di selezione: </value>
+	</data>
+	<data name="DisplayModeLabel">
+		<value>Modalita di visualizzazione:</value>
+	</data>
+	<data name="ColumnNumberLabel">
+		<value>Numero di colonne: </value>
+	</data>
+	<data name="RandomizeAnswersLabel">
+		<value>Ordina le risposta in modo casuale: </value>
+	</data>
+	<data name="AnswerRatingLabel">
+		<value>Valutazione delle risposte: </value>
+	</data>
+	<data name="MinSelectionLabel">
+		<value>Minimo di risposte necessarie: </value>
+	</data>
+	<data name="MaxSelectionAllowed">
+		<value>Massimo di risposte autorizzate: </value>
+	</data>
+	<data name="UpdateQuestionButton">
+		<value>Aggiornamento</value>
+	</data>
+	<data name="AddNewSelectionTitle">
+		<value>Aggiungere una nuova risposta/campi</value>
+	</data>
+	<data name="DescriptionLabel">
+		<value>Testo: </value>
+	</data>
+	<data name="ImageURLLabel">
+		<value>URL dell'immagine: </value>
+	</data>
+	<data name="AddAnswerButton">
+		<value>Aggiungere</value>
+	</data>
+	<data name="OrderHeader">
+		<value>Ordine</value>
+	</data>
+	<data name="SelectedHeader">
+		<value>Scelta</value>
+	</data>
+	<data name="AnswerTextHeader">
+		<value>Testo</value>
+	</data>
+	<data name="DefaultTextHeader">
+		<value>Valore del testo</value>
+	</data>
+	<data name="ImageURLHeader">
+		<value>URL dell'immagine</value>
+	</data>
+	<data name="TypeHeader">
+		<value>Tipo</value>
+	</data>
+	<data name="RatingHeader">
+		<value>Valutazione</value>
+	</data>
+	<data name="UpdateText">
+		<value>Aggiornamento</value>
+	</data>
+	<data name="CancelText">
+		<value>Annulla</value>
+	</data>
+	<data name="EditText">
+		<value>Modifica</value>
+	</data>
+	<data name="ButtonDeleteColumn">
+		<value>Cancella</value>
+	</data>
+	<data name="UnlimitedSelectionOption">
+		<value>Illimitata</value>
+	</data>
+	<data name="NoSelectionRequiredOption">
+		<value>Nessuno</value>
+	</data>
+	<data name="SurveyExportTitle">
+		<value>Esporta CSV delle risposte</value>
+	</data>
+	<data name="FieldDelimiterLabel">
+		<value>Separatore di campo: </value>
+	</data>
+	<data name="TextDelimiterLabel">
+		<value>Separatore di Testo: </value>
+	</data>
+	<data name="ExportFromDateLabel">
+		<value>Esporta il: </value>
+	</data>
+	<data name="ExportToDateLabel">
+		<value>A: </value>
+	</data>
+	<data name="ExportDataButton">
+		<value>Export CSV</value>
+	</data>
+	<data name="FieldReportTitle">
+		<value>Risultati dei campi - Pagina</value>
+	</data>
+	<data name="NextPageLinkButton">
+		<value>Pagina seguente &gt;&gt;</value>
+	</data>
+	<data name="PreviousPageLinkButton">
+		<value>&lt;&lt; Pagina precedente</value>
+	</data>
+	<data name="DetailsColumn">
+		<value>Dettagli</value>
+	</data>
+	<data name="DeleteColumn">
+		<value>Cancella</value>
+	</data>
+	<data name="FilterBuilderTitle">
+		<value>Editor del fitro per le risposte</value>
+	</data>
+	<data name="SelectFilteraLabel">
+		<value>Scegli un filtro da modificare/visualizzare: </value>
+	</data>
+	<data name="CreateFilterHyperLink">
+		<value>Premete qui per creare un nuovo filtro ...</value>
+	</data>
+	<data name="SelectFilterMessage">
+		<value>[Scegliete un filtro]</value>
+	</data>
+	<data name="FilterNameLabel">
+		<value>Nome del filtro: </value>
+	</data>
+	<data name="RuleOperatorLabel">
+		<value>Operatore logico: </value>
+	</data>
+	<data name="AndOperator">
+		<value>E</value>
+	</data>
+	<data name="OrOperator">
+		<value>O</value>
+	</data>
+	<data name="NewRuleTitle">
+		<value>Aggiungere una regola al filtro</value>
+	</data>
+	<data name="AnswerLabel">
+		<value>Risposta: </value>
+	</data>
+	<data name="FilterText">
+		<value>Contenuto del Testo: </value>
+	</data>
+	<data name="FilterRulesTitle">
+		<value>Regole del filtro</value>
+	</data>
+	<data name="AddRuleButton">
+		<value>Aggiungi regola</value>
+	</data>
+	<data name="UpdateFilterButton">
+		<value>Aggiornamento del filtro</value>
+	</data>
+	<data name="DeleteFilterButton">
+		<value>Cancella il filtro</value>
+	</data>
+	<data name="CreatefilterButton">
+		<value>Crea un filtro</value>
+	</data>
+	<data name="DeleteRuleInfo">
+		<value>Cancella  la regola</value>
+	</data>
+	<data name="AddNewFilterTitle">
+		<value>Aggiungi un nuovo filtro</value>
+	</data>
+	<data name="EditFilterTitle">
+		<value>Modifica le opzioni del filtro</value>
+	</data>
+	<data name="TextEntryInfo">
+		<value>(Entrata testo)</value>
+	</data>
+	<data name="SelectionInfo">
+		<value>(Selezione)</value>
+	</data>
+	<data name="FilterRuleNoAnswer">
+		<value>Persone che hanno risposto a &lt;b&gt;{0}&lt;/b&gt;</value>
+	</data>
+	<data name="FilterRuleAnswer">
+		<value>Persone che hanno risposto a &lt;b&gt;{0}&lt;/b&gt; con &lt;b&gt;{1}&lt;/b&gt;</value>
+	</data>
+	<data name="FilterRuleAnswerWithText">
+		<value>Persone che hanno risposto a &lt;b&gt;{0}&lt;/b&gt; con &lt;b&gt;{1}&lt;/b&gt; il cui testo contiene &lt;b&gt;{2}&lt;/b&gt;</value>
+	</data>
+	<data name="AnyAnswerMessage">
+		<value>Qualsiasi risposta</value>
+	</data>
+	<data name="FilterRuleAddedMessage">
+		<value>Regola aggiunta</value>
+	</data>
+	<data name="FilterRuleDeletedMessage">
+		<value>Regola cancellata</value>
+	</data>
+	<data name="FilterDeletedMessage">
+		<value>Filtro eliminato</value>
+	</data>
+	<data name="InvalidFilterDescriptionMessage">
+		<value>Volete inserire una descrizione per il vostro filtro</value>
+	</data>
+	<data name="FilterUpdatedMessage">
+		<value>Filtro aggiornato</value>
+	</data>
+	<data name="SelectQuestionMessage">
+		<value>[Scegliete una domanda]</value>
+	</data>
+	<data name="SurveyStatisticsTitle">
+		<value>Statistiche del sondaggio</value>
+	</data>
+	<data name="SurveyCreationDateLabel">
+		<value>Data di creazione: </value>
+	</data>
+	<data name="LastSurveyEntryLabel">
+		<value>Ultimo voto il: </value>
+	</data>
+	<data name="SurveyDisplayTimesLabel">
+		<value>Visualizzazioni del sondaggio: </value>
+	</data>
+	<data name="SurveyResultsDisplayTimesLabel">
+		<value>Visualizzazioni dei risultati: </value>
+	</data>
+	<data name="SurveyNumberOfVotesLabel">
+		<value>Numero di voti: </value>
+	</data>
+	<data name="SurveyMonthlyStatsLabel">
+		<value>Statistiche mensili: </value>
+	</data>
+	<data name="ResetVotesButton">
+		<value>Riduzione a zero dei voti</value>
+	</data>
+	<data name="ResetVotesConfirmationMessage">
+		<value>Sei sicuro di volere impostare a zero i voti? </value>
+	</data>
+	<data name="NoEntriesRecordedInfo">
+		<value>Nessun voto registrato per il momento</value>
+	</data>
+	<data name="NoEntries">
+		<value>Nessun voto</value>
+	</data>
+	<data name="EntriesNumber">
+		<value>{0} voti</value>
+	</data>
+	<data name="NewQuestionTitle">
+		<value>Nuova domanda</value>
+	</data>
+	<data name="QuestionLabel">
+		<value>domanda: </value>
+	</data>
+	<data name="MatrixQuestionOption">
+		<value>Domanda a Matrice</value>
+	</data>
+	<data name="SingleQuestionOption">
+		<value>Domanda Semplice</value>
+	</data>
+	<data name="AddQuestionButton">
+		<value>Aggiungere una nuova domanda</value>
+	</data>
+	<data name="StaticTextTitle">
+		<value>Nuovo testo Statico</value>
+	</data>
+	<data name="FreeTextLabel">
+		<value>Testo libero</value>
+	</data>
+	<data name="AddStaticButton">
+		<value>Aggiungere testo statico</value>
+	</data>
+	<data name="TypeLabel">
+		<value>Tipo</value>
+	</data>
+	<data name="MissingQuestionMessage">
+		<value>Vuoi inserire un testo per la domanda</value>
+	</data>
+	<data name="MissingStaticQuestionMessage">
+		<value>Vuoi inserire un testo per il testo libero</value>
+	</data>
+	<data name="ProcessInfoLabel">
+		<value>Questa operazione potrebbe impiegare un po' di tempo in funzione delle risorse disponibili.</value>
+	</data>
+	<data name="PleaseWaitInfo">
+		<value>.... Si prega di attendere: spedizione degli inviti in corso....</value>
+	</data>
+	<data name="AllInvitationSendMessage">
+		<value>Tutti gli inviti sono stati inviati. Puoi ritornare alla pagina di stato degli inviti...</value>
+	</data>
+	<data name="PendingEmailsTitle">
+		<value>Emails in attese - Pagina</value>
+	</data>
+	<data name="BoundColumnEmail">
+		<value>Email</value>
+	</data>
+	<data name="BoundColumnRequestDate">
+		<value>Data d'invito</value>
+	</data>
+	<data name="NoEmailInvitationInfo">
+		<value>Nessuna email in attesa ma potete utilizzare il tool d'invito al sondaggio per inviare inviti</value>
+	</data>
+	<data name="ValidatedEmailTitle">
+		<value>Risposte di emails convalidate - Pagina</value>
+	</data>
+	<data name="DeleteRequestButton">
+		<value>Cancella le richieste</value>
+	</data>
+	<data name="NoEmailAnswered">
+		<value>Nessuna email ha ancora risposto ai vostri inviti.</value>
+	</data>
+	<data name="BoundColumnAnswerDate">
+		<value>Risposta il</value>
+	</data>
+	<data name="PreviousPendingPageLinkButton">
+		<value>&lt;&lt; Pagina precedente</value>
+	</data>
+	<data name="NextPendingPageLinkButton">
+		<value>Pagina seguente &gt;&gt;</value>
+	</data>
+	<data name="PreviousAnsweredPageLinkButton">
+		<value>&lt;&lt; Pagina precedente</value>
+	</data>
+	<data name="NextAnsweredPageLinkButton">
+		<value>Pagina seguente &gt;&gt;</value>
+	</data>
+	<data name="DeleteVoterButton">
+		<value>Cancella il votante Scelto</value>
+	</data>
+	<data name="ViewReport">
+		<value>Vedere rapporto</value>
+	</data>
+	<data name="DeleteVoterConfirmationMessage">
+		<value>Questo cancellera il votante e tutte le sue risposte. Sei sicuro? </value>
+	</data>
+	<data name="BranchingHyperLink">
+		<value>Modifica collegamento</value>
+	</data>
+	<data name="InsertHyperLink">
+		<value>Inserisci domanda</value>
+	</data>
+	<data name="InsertLineBreakButton">
+		<value>Inserisci separazione</value>
+	</data>
+	<data name="DeleteButton">
+		<value>Cancella</value>
+	</data>
+	<data name="PageTitle">
+		<value>Pagina</value>
+	</data>
+	<data name="EditHyperLink">
+		<value>Modifica</value>
+	</data>
+	<data name="DeleteButton">
+		<value>Cancella</value>
+	</data>
+	<data name="CloneButton">
+		<value>Clona</value>
+	</data>
+	<data name="InsertHyperLink">
+		<value>Inserisci domanda</value>
+	</data>
+	<data name="InsertPageBreakButton">
+		<value>Inserisci salto di pagina</value>
+	</data>
+	<data name="InsertLineBreakButton">
+		<value>Inserire separazione</value>
+	</data>
+	<data name="DeleteQuestionConfirmationMessage">
+		<value>Sei sicuro di volere cancellare la domanda? </value>
+	</data>
+	<data name="SurveyResultsTitle">
+		<value>Risultati del sondaggio</value>
+	</data>
+	<data name="QuestionsResultsDisplaylabel">
+		<value>Visualizzazione dei risultati: </value>
+	</data>
+	<data name="ResultsLayoutLabel">
+		<value>Impaginazione dei risultati: </value>
+	</data>
+	<data name="ColumnChartOption">
+		<value>Grafico</value>
+	</data>
+	<data name="HTMLChartOption">
+		<value>HTML</value>
+	</data>
+	<data name="ApplyFilterLabel">
+		<value>Applica un filtro: </value>
+	</data>
+	<data name="FilterEditorHyperLink">
+		<value>Premete qui per modificare/creare nuovi filtri</value>
+	</data>
+	<data name="SelectFilterMessage">
+		<value>[Scegliete un filtro]</value>
+	</data>
+	<data name="SelectQuestionMessage">
+		<value>[Scegliete una domanda]</value>
+	</data>
+	<data name="DisplayAllResultsMessage">
+		<value>[Pubblica tutti i risultati]</value>
+	</data>
+	<data name="InvitationMailingTitle">
+		<value>Invio degli inviti al sondaggio</value>
+	</data>
+	<data name="FromLabel">
+		<value>Da: </value>
+	</data>
+	<data name="FromNameLabel">
+		<value>Cognome: </value>
+	</data>
+	<data name="SubjectLabel">
+		<value>Oggetto: </value>
+	</data>
+	<data name="SubjectTextBox">
+		<value>Sei stato invitato al mio sondaggio!</value>
+	</data>
+	<data name="FromNameTextBox">
+		<value>Cognome Nome</value>
+	</data>
+	<data name="InvitationMessageLabel">
+		<value>Messaggio d'invito al sondaggio: </value>
+	</data>
+	<data name="AnonymousLabel">
+		<value>Anonimato: </value>
+	</data>
+	<data name="SendInvitationButton">
+		<value>Invia gli inviti</value>
+	</data>
+	<data name="InvitationMessageTextBox">
+		<value>Buongiorno,sei stato invitato al sondaggio "{0}".
+
+Si prega di seguire il seguente collegamento per partecipare:  
+{1}
+
+Oppure inserisci il codice seguente se necessario: [--invitationid-]
+
+Grazie, 
+{2}</value>
+	</data>
+	<data name="SurveyInformationTitle">
+		<value>Informazione del sondaggio</value>
+	</data>
+	<data name="SurveyTitleLabel">
+		<value>Titolo: </value>
+	</data>
+	<data name="OpeningDateLabel">
+		<value>Data d'apertura: </value>
+	</data>
+	<data name="DateForExampleInfo">
+		<value>Ad Esempio: </value>
+	</data>
+	<data name="CloseDateLabel">
+		<value>Data di chiusura: </value>
+	</data>
+	<data name="ActiveSurveyLabel">
+		<value>Attivato: </value>
+	</data>
+	<data name="ArchivedLabel">
+		<value>Archiviato: </value>
+	</data>
+	<data name="SecuritySettingsTitle">
+		<value>Opzioni di sicurezza</value>
+	</data>
+	<data name="IPBlockingLabel">
+		<value>Blocca IP: </value>
+	</data>
+	<data name="CookieBlockingLabel">
+		<value>Blocco da cookie: </value>
+	</data>
+	<data name="ExpirationInfo">
+		<value>Scadenza dopo</value>
+	</data>
+	<data name="MinutesInfo">
+		<value>Minuti</value>
+	</data>
+	<data name="OnlyInvitedEmailsLabel">
+		<value>Solo gli utenti invitati via Email possono partecipare: </value>
+	</data>
+	<data name="OverrideSecurityInfo">
+		<value>(Prevale sulle altre opzioni di sicurezza)</value>
+	</data>
+	<data name="PrivacySettingsTitle">
+		<value>Opzioni di riservatezza</value>
+	</data>
+	<data name="RedirectionURLLabel">
+		<value>URL di ridirezione: </value>
+	</data>
+	<data name="ThanksMessageLabel">
+		<value>Messaggio di ringraziamento: </value>
+	</data>
+	<data name="SurveyPasswordLabel">
+		<value>Password d'accesso: </value>
+	</data>
+	<data name="CreateSurveyButton">
+		<value>Creare sondaggio!</value>
+	</data>
+	<data name="ApplyChangesButton">
+		<value>Aggiorna</value>
+	</data>
+	<data name="DeleteButton">
+		<value>Cancella</value>
+	</data>
+	<data name="CloneButton">
+		<value>Clona</value>
+	</data>
+	<data name="SurveyDeletedMessage">
+		<value>Il sondaggio Ã¨ stato appena cancellato</value>
+	</data>
+	<data name="SurveyUpdatedMessage">
+		<value>Il sondaggio Ã¨ stato appena aggiornato</value>
+	</data>
+	<data name="DeleteSurveyConfirmationMessage">
+		<value>Sei sicuro di volere cancellare questo sondaggio?</value>
+	</data>
+	<data name="InvalidIPExpireTime">
+		<value>Scadenza di IP invalido, deve essere digitale</value>
+	</data>
+	<data name="InvalidCookieExpireTime">
+		<value>Scadenza di cookie invalido, deve essere digitale</value>
+	</data>
+	<data name="InvalidOpeningDate">
+		<value>Formato di data d'apertura invalida</value>
+	</data>
+	<data name="InvalidClosingDate">
+		<value>Formato di data di chiusura invalida</value>
+	</data>
+	<data name="AnswerTypeBuilderTitle">
+		<value>Editor di tipo di risposta</value>
+	</data>
+	<data name="TypeToEditLabel">
+		<value>Scegliete un tipo da modificare/visualizzare: </value>
+	</data>
+	<data name="BuiltInTypeNotEditedLabel">
+		<value>(I tipi interni non possono essere modificati)</value>
+	</data>
+	<data name="CreateTypeHyperLink">
+		<value>Premete qui per creare un nuovo tipo...</value>
+	</data>
+	<data name="CreateATypeMessage">
+		<value>Vuoi creare un tipo</value>
+	</data>
+	<data name="SelectTypeMessage">
+		<value>[Scegli un tipo]</value>
+	</data>
+	<data name="FieldNameLabel">
+		<value>Nome del campo: </value>
+	</data>
+	<data name="XMLDataSourceLabel">
+		<value>Utilizza una fonte Xml: </value>
+	</data>
+	<data name="XmlFileNameLabel">
+		<value>Archivio Xml: </value>
+	</data>
+	<data name="AllowSelectionLabel">
+		<value>Autorizza la selezione: </value>
+	</data>
+	<data name="FieldEntryLabel">
+		<value>Campo testo: </value>
+	</data>
+	<data name="FieldWidthLabel">
+		<value>Larghezza: </value>
+	</data>
+	<data name="FieldHeightLabel">
+		<value>Altezza: </value>
+	</data>
+	<data name="FieldLengthLabel">
+		<value>Lunghezza massima: </value>
+	</data>
+	<data name="ShownInResultsLabel">
+		<value>Pubblicato nei risultati: </value>
+	</data>
+	<data name="JavascriptFunctionLabel">
+		<value>Nome della funzione javascript: </value>
+	</data>
+	<data name="JavascriptErrorMessageLabel">
+		<value>Messaggio d'errore: </value>
+	</data>
+	<data name="JavascriptCodeLabel">
+		<value>Codice javascript: </value>
+	</data>
+	<data name="ApplyChangesButton">
+		<value>Aggiorna</value>
+	</data>
+	<data name="CreateTypeButton">
+		<value>Creare tipo</value>
+	</data>
+	<data name="DeleteTypeButton">
+		<value>Cancella tipo</value>
+	</data>
+	<data name="NewAnswerTypeTitle">
+		<value>Crea un nuovo tipo di risposta</value>
+	</data>
+	<data name="EditAnswerTypeTitle">
+		<value>Modifica un tipo di risposta</value>
+	</data>
+	<data name="MissingAnswerTypeTitleMessage">
+		<value>Vuoi inserire un nome per il vostro tipo</value>
+	</data>
+	<data name="MissingTypeMessage">
+		<value>Vuoi scegliere un tipo</value>
+	</data>
+	<data name="InvalidFieldLengthMessage">
+		<value>Vuoi inserire un valore per la lunghezza del campo</value>
+	</data>
+	<data name="AnswerTypeInUse">
+		<value>Questo tipo Ã¨ utilizzato da una o piÃ¹ risposte e non puÃ² essere cancellato</value>
+	</data>
+	<data name="InvalidFieldHeightMessage">
+		<value>Vuoi inserire un valore per l'altezza del campo</value>
+	</data>
+	<data name="InvalidFieldWidthMessage">
+		<value>Vuoi inserire un valore per la larghezza del campo</value>
+	</data>
+	<data name="MissingXmlDataSourceMessage">
+		<value>Vuoi inserire un nome d'archivio per la vostra fonte Xml</value>
+	</data>
+	<data name="AnswerTypeUpdatedMessage">
+		<value>Tipo aggiornato</value>
+	</data>
+	<data name="VoterInformationTitle">
+		<value>Rapporto</value>
+	</data>
+	<data name="VoterDBIDLabel">
+		<value>ID votante:</value>
+	</data>
+	<data name="VoterEmailLabel">
+		<value>Email: </value>
+	</data>
+	<data name="VoterIPAddressLabel">
+		<value>Indirizzo IP: </value>
+	</data>
+	<data name="VoteRecordedLabel">
+		<value>Voto registrato: </value>
+	</data>
+	<data name="TimeToTakeLabel">
+		<value>Tempo impiegato: </value>
+	</data>
+	<data name="MinutesInfo">
+		<value>Minuti</value>
+	</data>
+	<data name="SurveyAnswersTitle">
+		<value>Risposte del sondaggio</value>
+	</data>
+	<data name="AnonymousVoteInfo">
+		<value>Anonimato</value>
+	</data>
+	<data name="AnswerNotAnsweredMessage">
+		<value>Non risposta</value>
+	</data>
+	<data name="SelectionUpdatedMessage">
+		<value>Selezione / Campo aggiornato</value>
+	</data>
+	<data name="SelectionDeletedMessage">
+		<value>Selezione / Campo cancellato</value>
+	</data>
+	<data name="SelectionAddedMessage">
+		<value>Nuova selezione aggiunta</value>
+	</data>
+	<data name="OptionsUpdatedMessage">
+		<value>Opzioni aggiornate</value>
+	</data>
+	<data name="VerticalItemText">
+		<value>Verticale</value>
+	</data>
+	<data name="HorizontalItemText">
+		<value>Orizzontale</value>
+	</data>
+	<data name="RadioButtonSelection">
+		<value>Bottone (singola risposta)</value>
+	</data>
+	<data name="CheckBoxSelection">
+		<value>CheckBox (risposte multiple)</value>
+	</data>
+	<data name="DropDownListSelection">
+		<value>Lista (una risposta)</value>
+	</data>
+	<data name="MatrixSingleSelection">
+		<value>Matrice</value>
+	</data>
+	<data name="StaticTextSelection">
+		<value>Testo statico</value>
+	</data>
+	<data name="MatrixMultipleSelection">
+		<value>Matrice multipla</value>
+	</data>
+	<data name="SelectionTextType">
+		<value>Selezione - Testo</value>
+	</data>
+	<data name="SelectionOtherType">
+		<value>Selezione - Altra</value>
+	</data>
+	<data name="FieldBasicType">
+		<value>Campo - Semplice</value>
+	</data>
+	<data name="XMLCountryList">
+		<value>XML - Lista paese</value>
+	</data>
+	<data name="XMLUSStatesList">
+		<value>XML - Stati US</value>
+	</data>
+	<data name="BooleanType">
+		<value>Booleano</value>
+	</data>
+	<data name="FieldRequiredType">
+		<value>Campo - Obbligatorio</value>
+	</data>
+	<data name="FieldLargeType">
+		<value>Campo - Grande</value>
+	</data>
+	<data name="FieldCalendarType">
+		<value>Campo - Calendario</value>
+	</data>
+	<data name="FieldEmailType">
+		<value>Campo - Email</value>
+	</data>
+	<data name="MultipleChoicesMatrixLabel">
+		<value>Scelta multipla: </value>
+	</data>
+	<data name="EditMatrixQuestionTitle">
+		<value>Modifica della domanda della matrice</value>
+	</data>
+	<data name="InsertNewTitle">
+		<value>Inserisci una</value>
+	</data>
+	<data name="RowLabel">
+		<value>Linea</value>
+	</data>
+	<data name="AddRowButton">
+		<value>Aggiungi linea</value>
+	</data>
+	<data name="ColumnLabel">
+		<value>Colonna</value>
+	</data>
+	<data name="AddColumnButton">
+		<value>Aggiungi colonna</value>
+	</data>
+	<data name="CurrentRowsColumnsTitle">
+		<value>Linee e colonne</value>
+	</data>
+	<data name="RowsHeader">
+		<value>Linee</value>
+	</data>
+	<data name="UpdateRowTextHeader">
+		<value>Aggiorna</value>
+	</data>
+	<data name="CancelRowTextHeader">
+		<value>Annulla</value>
+	</data>
+	<data name="EditRowTextHeader">
+		<value>Modifica</value>
+	</data>
+	<data name="DeleteRowText">
+		<value>Cancella</value>
+	</data>
+	<data name="AnswerHeader">
+		<value>Colonne</value>
+	</data>
+	<data name="ColTypeHeader">
+		<value>Tipo</value>
+	</data>
+	<data name="ColRatingHeader">
+		<value>Valutazione</value>
+	</data>
+	<data name="UpdateColTextHeader">
+		<value>Aggiorna</value>
+	</data>
+	<data name="CancelColTextHeader">
+		<value>Annulla</value>
+	</data>
+	<data name="EditColTextHeader">
+		<value>Modifica</value>
+	</data>
+	<data name="DeleteColText">
+		<value>Cancella</value>
+	</data>
+	<data name="RowMissingQuestionMessage">
+		<value>Vuoi inserire un testo per le vostre domande per bambini</value>
+	</data>
+	<data name="MatrixRowUpdatedMessage">
+		<value>Linea aggiornati</value>
+	</data>
+	<data name="MatrixRowDeletedMessage">
+		<value>Linea cancellata</value>
+	</data>
+	<data name="MatrixRowAddedMessage">
+		<value>Linea aggiunta</value>
+	</data>
+	<data name="MatrixColumnAddedMessage">
+		<value>Colonna aggiunta</value>
+	</data>
+	<data name="MatrixColumnUpdatedMessage">
+		<value>Colonna aggiornati</value>
+	</data>
+	<data name="MatrixColumnDeletedMessage">
+		<value>Colonna cancellata</value>
+	</data>
+	<data name="BranchingRuleNoAnswer">
+		<value>Persone che hanno risposto a &lt; b&gt;{0}&lt;/b&gt; sono ridirette verso la &lt;
+b&gt;pagina {1}&lt;/b&gt;</value>
+	</data>
+	<data name="BranchingRuleNoAnswerNot">
+		<value>Persone non che hanno risposto a &lt;b&gt;{0}&lt;/b &gt; sono ridirette
+verso la &lt;b&gt;pagina {1}&lt;/b&gt;</value>
+	</data>
+	<data name="BranchingRuleAnswer">
+		<value>Persone che hanno risposto a &lt;b&gt;{0}&lt;/b&gt; con &lt;b&gt;{1}&lt;/b&gt; sono ridirette verso la &lt;b&gt;pagina {2}&lt;/b&gt;</value>
+	</data>
+	<data name="BranchingRuleAnswerNot">
+		<value>Persone non che hanno risposto a &lt;b&gt;{0}&lt;/b&gt; con &lt;b&gt;{1}&lt;/b&gt; sono ridirette verso la &lt;b&gt;pagina {2}&lt;/b&gt;</value>
+	</data>
+	<data name="BranchingRuleAnswerWithText">
+		<value>Persone che hanno risposte a &lt;b&gt;{0}&lt;/b&gt; con &lt;b&gt;{1}&lt;/b&gt; ed un
+testo &lt;b&gt;{2}&lt;/b&gt; sono ridirette verso la &lt;b&gt;pagina {3}&lt;/b&gt;</value>
+	</data>
+	<data name="BranchingRuleAnswerWithTextNot">
+		<value>Persone non che hanno risposto a &lt;b&gt;{0}&lt;/b&gt; con &lt;b&gt;{1}&lt;/b&gt;
+ed un testo &lt; b&gt;{2}&lt;/b&gt; sono ridirette verso la &lt;b&gt;pagina
+{3}&lt;/b&gt;</value>
+	</data>
+	<data name="AddNewBranchingTitle">
+		<value>Aggiungi una regola d'allacciamento alla pagina {0}</value>
+	</data>
+	<data name="ConditionalLabel">
+		<value>Operatore condizionale: </value>
+	</data>
+	<data name="FilterTextLabel">
+		<value>Testo contiene: </value>
+	</data>
+	<data name="PageTargetLabel">
+		<value>Vai alla pagina: </value>
+	</data>
+	<data name="BranchingRulesTitle">
+		<value>Regola d'allacciamento</value>
+	</data>
+	<data name="EvaluationConditionInfo">
+		<value>Le condizioni sono valutate dall'alto in basso.</value>
+	</data>
+	<data name="AnsweredConditionOption">
+		<value>Risposta</value>
+	</data>
+	<data name="NotAnsweredConditionOption">
+		<value>Nessuna risposta</value>
+	</data>
+	<data name="BranchingRuleAddedMessage">
+		<value>Nuova regola aggiunta</value>
+	</data>
+	<data name="BranchingRuleDeletedMessage">
+		<value>Regola cancellata</value>
+	</data>
+	<data name="NewSurveyHyperLink">
+		<value>Nuovo</value>
+	</data>
+	<data name="SurveyOptionsHyperlink">
+		<value>Opzioni</value>
+	</data>
+	<data name="SurveyStatsHyperlink">
+		<value>Statistiche</value>
+	</data>
+	<data name="SurveyBuilderHyperlink">
+		<value>Editor domande</value>
+	</data>
+	<data name="TypeBuilderHyperlink">
+		<value>Gestione tipo</value>
+	</data>
+	<data name="FieldReportHyperLink">
+		<value>Premi qui per mdoficare i risultati, i testi dei campi ed i rapporti individuali</value>
+	</data>
+	<data name="ResultsReportHyperlink">
+		<value>Risultati</value>
+	</data>
+	<data name="ExportDataHyperlink">
+		<value>Esporta</value>
+	</data>
+	<data name="MailingHyperlink">
+		<value>Invita al sondaggio </value>
+	</data>
+	<data name="MailingStatusHyperlink">
+		<value>Stato degli inviti</value>
+	</data>
+	<data name="TargetCreateHyperlink">
+		<value>Crea Target</value>
+	</data>
+	<data name="ASPNETCodeHyperlink">
+		<value>Codice asp.net </value>
+	</data>
+	<data name="NSurveyAuthenticationTitle">
+		<value>Administration NSurvey</value>
+	</data>
+	<data name="LoginLabel">
+		<value>Login: </value>
+	</data>
+	<data name="PasswordLabel">
+		<value>Password: </value>
+	</data>
+	<data name="ValidateCredentialsButton">
+		<value>Convalida</value>
+	</data>
+	<data name="InvalidPasswordMessage">
+		<value>Login / password non valido</value>
+	</data>
+	<data name="SurveyBuilderTitle">
+		<value>Editor di domande</value>
+	</data>
+	<data name="FieldEntriesLabel">
+		<value>Risultati dei campi: </value>
+	</data>
+	<data name="ResultsOrderLabel">
+		<value>Selezione dei risultati: </value>
+	</data>
+	<data name="AnswerOrderOption">
+		<value>Ordine delle risposte</value>
+	</data>
+	<data name="AscendingOrderOption">
+		<value>Numero di risposte crescenti</value>
+	</data>
+	<data name="DescendingOrderOption">
+		<value>Numero di risposte decrescenti</value>
+	</data>
+	<!-- V1.1 Additions start here -->
+	<data name="SurveySecurityHyperLink">
+		<value>Security</value>
+	</data>
+	<data name="SurveySecurityTitle">
+		<value>Security sondaggio</value>
+	</data>
+	<data name="SurveyAddAdinTitle">
+		<value>Aggiungi security addin</value>
+	</data>
+	<data name="AddAddinButton">
+		<value>Aggiungi security addin al sondaggio</value>
+	</data>
+	<data name="AvailableAddInsLabel">
+		<value>Addin disponibili</value>
+	</data>
+	<data name="InsertAddInHyperLink">
+		<value>Insert security add in</value>
+	</data>
+	<data name="DisableAddInLinkButton">
+		<value>Disabilita</value>
+	</data>
+	<data name="EnableAddInLinkButton">
+		<value>Abilita</value>
+	</data>
+	<data name="AddInDisabledLabel">
+		<value>Questo addin e attualmente disabilitato per questo sondaggio ma i collegamenti ai dati dei votanti sono sempre disponibili nelle funzionalita di report ed export.</value>
+	</data>
+	<data name="AddInAdminNotAvailableMessage">
+		<value>Questo addin non dispone di nessuna interfaccia amministrativa.</value>
+	</data>
+	<data name="NoAddInAvailableMessage">
+		<value>[Non sono disponibili altri addin]</value>
+	</data>
+	<data name="MailingGroupLabel">
+		<value>Liste di Target:</value>
+	</data>
+	
+	<data name="LibraryTitle">
+		<value>Librerie</value>
+	</data>
+	<data name="UserAgeLabel">
+		<value>Eta: </value>
+	</data>
+	<data name="UserInterestsLabel">
+		<value>Interessi: </value>
+	</data>
+	<data name="UserOccupationLabel">
+		<value>Occupazione: </value>
+	</data>
+	<data name="SexLabel">
+		<value>Sesso: </value>
+	</data>
+	<data name="GeograficAreaLabel">
+		<value>Area Geografica: </value>
+	</data>
+	<data name="OrgUnitLabel">
+		<value>Unita Organizzativa: </value>
+	</data>
+	<data name="TargetNameLabel">
+		<value>Nome Target: </value>
+	</data>
+	<data name="BuildTargetButton">
+		<value>Costruisci Target</value>
+	</data>
+	<data name="GeograficAreaMessage">
+		<value>[Seleziona l'area Geografica]</value>
+	</data>
+	<data name="GeograficAreaDoesntExistsMessage">
+		<value>[Nessuna area Geografica disponibile]</value>
+	</data>
+	<data name="OrgUnitMessage">
+		<value>[Seleziona l'unita Organizzativa]</value>
+	</data>
+	<data name="OrgUnitDoesntExistsMessage">
+		<value>[Nessuna Unita Organizzativa disponibile]</value>
+	</data>
+	<data name="From">
+		<value>Da: </value>
+	</data>
+	<data name="To">
+		<value>A: </value>
+	</data>
+	<data name="TargetInsertControlTitleLabel">
+		<value>Inserire Target</value>
+	</data>
+	<data name="TargetUserDetailsTitleLabel">
+		<value>Dettagli del Target</value>
+	</data>
+	<data name="GoToTargetButton">
+		<value>Vai alla lista dei Target</value>
+	</data>
+	<data name="TargetDetailsTitleLabel">
+		<value>Dettagli Sui Target</value>
+	</data>
+	<data name="SaveProgressEntriesLabel">
+		<value>Votanti non validati</value>
+	</data>
+	<data name="NotificationSettingsTitle">
+		<value>Notifica risposte al Sondaggio</value>
+	</data>
+	<data name="ToEmailNotificationLabel">
+		<value>Da: </value>
+	</data>
+	<data name="FromEmailNotificationLabel">
+		<value>A: </value>
+	</data>
+	<data name="NotificationSubjectLabel">
+		<value>Oggetto: </value>
+	</data>
+	<data name="EntryNotificationLabel">
+		<value>ModalitÃ  di notifica: </value>
+	</data>
+	<data name="NoneNotificationText">
+		<value>Nessuna notifica</value>
+	</data>
+	<data name="ShortNotificationText">
+		<value>Messaggio breve</value>
+	</data>
+	<data name="ReportNotificationText">
+		<value>Report Completo</value>
+	</data>
+	<data name="AnswerReportNotificationText">
+		<value>Report con le sole risposte</value>
+	</data>
+	<data name="NoProgressText">
+		<value>Non visualizzare</value>
+	</data>
+	<data name="PageNumberText">
+		<value>Visualizza il numero della pagina</value>
+	</data>
+	<data name="ProgressPercentageText">
+		<value>Visualizza progresso percentuale</value>
+	</data>
+	<data name="ResumeNotAllowedText">
+		<value>Riprendi Sondaggio non consentito</value>
+	</data>
+	<data name="AutomaticResumeText">
+		<value>Salvataggio automatico di cookies</value>
+	</data>
+	<data name="ManualResumeText">
+		<value>ModalitÃ  manuale, l'utente immette il suo Codice Univoco sondaggio</value>
+	</data>
+	<data name="GraphicResultsReportHyperlink">
+		<value>Report grafico</value>
+	</data>
+	<data name="TextFieldsResultsReportHyperlink">
+		<value>Campi di testo</value>
+	</data>
+	<data name="CrossTabResultsReportHyperlink">
+		<value>Cross Tabulation</value>
+	</data>
+	<data name="ProgressDisplayLabel">
+		<value>PiÃ¨ di Pagina: </value>
+	</data>
+	<data name="EnableNavigationLabel">
+		<value>Naviga attraverso le pagine (precedente/prossima): </value>
+	</data>
+	<data name="EnableResumeLabel">
+		<value>Sessione di voto: </value>
+	</data>
+	<data name="ScoredLabel">
+		<value>Risposte a punteggio: </value>
+	</data>
+	<data name="LocalLibraryHyperLink">
+		<value>Libreria Locale</value>
+	</data>
+	<data name="AddNewLibraryButton">
+		<value>Add new library</value>
+	</data>
+	<data name="DeleteLibraryConfirmationMessage">
+		<value>This will also delete all templates inside. Are you sure you want to delete it ?</value>
+	</data>
+	<data name="DeleteLibraryButton">
+		<value>Cancella libreria</value>
+	</data>
+	<data name="UpdateLibraryButton">
+		<value>Aggiorna libreria</value>
+	</data>
+	<data name="LibraryNameLabel">
+		<value>Nome libreria:</value>
+	</data>
+	<data name="MissingLibraryNameMessage">
+		<value>Nome della libreria mancante</value>
+	</data>
+	<data name="UpdatedLibraryNameMessage">
+		<value>Libreria aggiornata</value>
+	</data>
+	<data name="LibraryNameMessage">
+		<value>Libreria eliminata</value>
+	</data>
+	<data name="AddedLibraryNameMessage">
+		<value>Libreria aggiunta</value>
+	</data>
+	<data name="EditLibraryInfo">
+		<value>Modifica</value>
+	</data>
+	<data name="TheLibraryHyperlink">
+		<value>Librerie di Sondaggi</value>
+	</data>
+	<data name="AddLibraryTitle">
+		<value>Aggiungi libreria</value>
+	</data>
+	<data name="UpdateLibraryTitle">
+		<value>Aggiorna Libreria</value>
+	</data>
+	<data name="ImportXMLButton">
+		<value>Importa (in formato XML)</value>
+	</data>
+	<data name="ExportSurveyButton">
+		<value>Esporta (in formato XML)</value>
+	</data>
+	<data name="DisableQuestionNumbering">
+		<value>DisabilitÃ  numerazione delle domande</value>
+	</data>
+	<data name="PrivacySettingsHyperlink">
+		<value>Messaggio di ringraziamento</value>
+	</data>
+	<data name="SurveySettingsHyperlink">
+		<value>Impostazioni Sondaggio</value>
+	</data>
+	<data name="ThanksMessageConditionTitle">
+		<value>Condizioni di visualizzazione del Messaggio di Ringraziamento*</value>
+	</data>
+	<data name="ApplyPrivacyButton">
+		<value>Imposta</value>
+	</data>
+	<data name="AddNewConditionHyperLink">
+		<value>Aggiungi una nuova condizione</value>
+	</data>
+	<data name="EvaluationMessageConditionInfo">
+		<value>*La prima condizione soddisfatta mostrerÃ  il suo messaggio di ringraziamento</value>
+	</data>
+	<data name="VoterScoreTotalLabel">
+		<value>Puntaggio totale: </value>
+	</data>
+	<data name="QuestionScoreLabel">
+		<value>Puntaggio: </value>
+	</data>
+	<data name="SelectQuestionConditionMessage">
+		<value>[Seleziona una condizione]</value>
+	</data>
+	<data name="SurveyQuestionConditionOption">
+		<value>Domanda risposta</value>
+	</data>
+	<data name="SurveyScoredEqualConditionOption">
+		<value>Il Punteggio totale Ã¨</value>
+	</data>
+	<data name="SurveyScoredLessConditionOption">
+		<value>Il Punteggio totale Ã¨ minore di</value>
+	</data>
+	<data name="SurveyScoredGreaterConditionOption">
+		<value>Il Punteggio totale Ã¨ maggiore di</value>
+	</data>
+	<data name="SurveyScoredRangeConditionOperator">
+		<value>Il Punteggio totale Ã¨ compreso tra</value>
+	</data>
+	<data name="MessageConditionAddedMessage">
+		<value>Condizione aggiunta</value>
+	</data>
+	<data name="AddMessageConditionButton">
+		<value>Aggingi nuova condizione</value>
+	</data>
+	<data name="AddNewConditionTitle">
+		<value>Aggiungi nuova condizione di visualizzazione del Messaggio</value>
+	</data>
+	<data name="EnableRandomHyperlink">
+		<value>Ordine Casuale Abilitato</value>
+	</data>
+	<data name="DisableRandomHyperlink">
+		<value>Ordine Casuale Disabilitato</value>
+	</data>
+	<data name="EnableSubmitHyperlink">
+		<value>Abilita</value>
+	</data>
+	<data name="DisableSubmitHyperlink">
+		<value>Disabilita</value>
+	</data>
+	<data name="AddNewSkipLogicTitle">
+		<value>Aggiungi regola di salto ad un'altra Domanda</value>
+	</data>
+	<data name="SkipLogicRulesTitle">
+		<value>Regola di salto domanda</value>
+	</data>
+	<data name="EditSkipLogicHyperLink">
+		<value>Regola di salto</value>
+	</data>
+	<data name="SkipLogicEvaluationConditionInfo">
+		<value>La prima condizione soddisfatta farÃ  saltare questa domanda</value>
+	</data>
+	<data name="SkipLogicRuleAddedMessage">
+		<value>Regola di salto inserita</value>
+	</data>
+	<data name="AnswersOverviewTitle">
+		<value>Risposte</value>
+	</data>
+	<data name="AddNewAnswerTitle">
+		<value>Aggiungi una nuova risposta</value>
+	</data>
+	<data name="EditAnswerTitle">
+		<value>Modifica impostazioni della risposta</value>
+	</data>
+	<data name="AnswerEditorHyperlink">
+		<value>Editor Risposte</value>
+	</data>
+	<data name="SingleQuestionAnswerEditorTitle">
+		<value>Editor Risposte della Domanda</value>
+	</data>
+	<data name="SingleQuestionCannotBeEditedMessage">
+		<value>Questa risposta non puÃ² essere creata</value>
+	</data>
+	<data name="EditAnswersHyperLink">
+		<value>Modifica risposta</value>
+	</data>
+	<data name="EditAnswersButton">
+		<value>Aggiungi / Modifica risposta</value>
+	</data>
+	<data name="EditQuestionButton">
+		<value>Modifica Domanda</value>
+	</data>
+	<data name="DeleteAnswerConfirmationMessage">
+		<value>Sei sicuro di voler cancellare questa risposta? </value>
+	</data>
+	<data name="DisplayAnswersOfLabel">
+		<value>Visualizza risposte: </value>
+	</data>
+	<data name="AddNewAnswerButton">
+		<value>Aggiungi nuova risposta</value>
+	</data>
+	<data name="AnswerTextLabel">
+		<value>Testo domanda: </value>
+	</data>
+	<data name="AnswerTypeLabel">
+		<value>Tipo: </value>
+	</data>
+	<data name="AnswerRatingLabel">
+		<value>Punteggio: </value>
+	</data>
+	<data name="SelectedAnswersLabel">
+		<value>Selezionata per default: </value>
+	</data>
+	<data name="AnswerURLLabel">
+		<value>URL Immagine: </value>
+	</data>
+	<data name="ScoreLabel">
+		<value>Punteggio: </value>
+	</data>
+	<data name="EditHyperLink">
+		<value>Modifica Domanda</value>
+	</data>
+	<data name="RegExValidationLabel">
+		<value>RegEx validazione lato server: </value>
+	</data>
+	<data name="MandatoryLabel">
+		<value>Obbligatorio: </value>
+	</data>
+	<data name="NoRegExValidationOption">
+		<value>Nessuna validazione</value>
+	</data>
+	<data name="AccessRegExEditorRight">
+		<value>RegEx Editor</value>
+	</data>
+	<data name="RegExLibHyperLink">
+		<value>Libreria espressioni regolari</value>
+	</data>
+	<data name="RegExLibraryTitle">
+		<value>Libreria espressioni regolari</value>
+	</data>
+	<data name="CreateRegExHyperLink">
+		<value>Clicca qui per creare una nuova regex</value>
+	</data>
+	<data name="RegExToEditLabel">
+		<value>Seleziona una regex da modificare / visualizzare: </value>
+	</data>
+	<data name="CreateARegExMessage">
+		<value>[Crea espressione regolare]</value>
+	</data>
+	<data name="SelectRegExMessage">
+		<value>[Seleziona a espressione regolare]</value>
+	</data>
+	<data name="TestRegExTitle">
+		<value>Prova espressione regolare</value>
+	</data>
+	<data name="TextRegExButton">
+		<value>Espressione di prova</value>
+	</data>
+	<data name="RegularExpressionLabel">
+		<value>Espressione regolare: </value>
+	</data>
+	<data name="TestExpressionValueLabel">
+		<value>Valore di prova: </value>
+	</data>
+	<data name="CreateNewRegExButton">
+		<value>Crea espressione regolare</value>
+	</data>
+	<data name="RegExErrorMessageLabel">
+		<value>Messaggio d'errore: </value>
+	</data>
+	<data name="DeleteRegExConfirmationMessage">
+		<value>Sei sicuro di voler eliminare questa espressione regolare? </value>
+	</data>
+	<data name="CreateRegExOptionTitleLabel">
+		<value>Crea regex</value>
+	</data>
+	<data name="EditRegExOptionTitleLabel">
+		<value>Modifica regex</value>
+	</data>
+	<data name="RegExAddedMessage">
+		<value>Regex aggiunta</value>
+	</data>
+	<data name="RegExRequiredMessage">
+		<value>Inserire un'espressione regolare</value>
+	</data>
+	<data name="RegExTestValueRequiredMessage">
+		<value>A regex and a test value is required to test the regex validity</value>
+	</data>
+	<data name="RegExPassedMessage">
+		<value>Regex validata</value>
+	</data>
+	<data name="RegExFailedMessage">
+		<value>Regex fallita</value>
+	</data>
+	<data name="RegExNameLabel">
+		<value>Nome :</value>
+	</data>
+	<data name="RegExNameRequiredMessage">
+		<value>Nome necessario</value>
+	</data>
+	<data name="MakeBuiltInRegExButton">
+		<value>Rendila built in</value>
+	</data>
+	<data name="CancelRegExButton">
+		<value>Cancella</value>
+	</data>
+	<data name="RegExUpdatedMessage">
+		<value>Regex aggiornata</value>
+	</data>
+	<data name="RegExDeleteedMessage">
+		<value>Regex eliminata</value>
+	</data>
+	<data name="DeleteBuiltInRegExConfirmationMessage">
+		<value>Sei sicuro di voler eliminare questa espressione regolare? </value>
+	</data>
+	<data name="ApplyBuiltInRegExChangesConfirmationMessage">
+		<value>Sei sicuro di voler fare queste modifiche? </value>
+	</data>
+	<data name="MakeBuiltInRegExConfirmationMessage">
+		<value>Sei sicuro di voler creare questa built in Regex? </value>
+	</data>
+	<data name="RegExBuiltInConvertedMessage">
+		<value>La Regex Ã¨ stata convertita ad un tipo built in</value>
+	</data>
+	<data name="UnsignedIntegerRegEx">
+		<value>Intero senza segno</value>
+	</data>
+	<data name="InternetWebURLRegEx">
+		<value>Internet web URL</value>
+	</data>
+	<data name="EuroDateRegEx">
+		<value>Data (dd/mm/yyyy)</value>
+	</data>
+	<data name="USDateRegEx">
+		<value>Data (mm/dd/yyyy)</value>
+	</data>
+	<data name="EmailRegEx">
+		<value>Email</value>
+	</data>
+	<data name="RegExLibComHyperLink">
+		<value>Vai su http://www.regexlib.com</value>
+	</data>
+	<data name="MandatoryLabel">
+		<value>Obbligatorio: </value>
+	</data>
+	<data name="ColMandatoryHeader">
+		<value>Obbligatorio</value>
+	</data>
+	<data name="BackToInvitationButton">
+		<value>Ritorna alla pagina degli Inviti</value>
+	</data>
+<!-- END NSURVEY ADMIN MESSAGES -->
+
+
+
+<!-- START NSURVEY WEB CONTROL MESSAGES -->
+    <data name="ListSelection">
+        <value>[Scegli una risposta]</value>
+    </data>
+    <data name="NextPage">
+        <value>Pagina seguente &gt;&gt;</value>
+    </data>
+    <data name="SubmitSurvey">
+        <value>Salva le risposte</value>
+    </data>
+    <data name="MinAnswerSelection">
+        <value>Scegli almeno {0} risposte!</value>
+    </data>
+    <data name="MaxAnswerSelection">
+        <value>Scegli al massimo {0} risposte!</value>
+    </data>
+    <data name="RatingResults">
+        <value>Valutazione media  : {0} / {1}</value>
+    </data>
+    <data name="TotalOfVotes">
+        <value>Totale dei voti : {0}</value>
+    </data>
+    <data name="AlreadyVotedMessage">
+        <value>Hai giÃ  dato il tuo voto!</value>
+    </data>
+    <data name="ThankYouMessage">
+        <value>Grazie di avere partecipato a questo sondaggio!</value>
+    </data>
+    <data name="ClosedMessage">
+        <value>Il sondaggio Ã¨ stato chiuso il {0}.</value>
+    </data>
+    <data name="OpenMessage">
+        <value>Il sondaggio sarÃ  attivo soltanto a partire dal {0}</value>
+    </data>
+    <data name="PageNumber">
+        <value>Pagina {0} / {1}</value>
+    </data>
+    <data name="EnterPasswordMessage">
+        <value>Vuoi inserie la password per accedere al sondaggio</value>
+    </data>
+    <data name="SubmitPassword">
+        <value>Password d'ordine</value>
+    </data>
+    <data name="InvalidPasswordMessage">
+        <value>Password invalida</value>
+    </data>
+    <data name="FieldRequiredMessage">
+        <value>{0} Ã¨ obbligatorio!</value>
+    </data>
+    <data name="InvalidCalendarDateMessage">
+        <value>{0} non ha date valide volete entrare una data valida,ad esempio : {1}!</value>
+    </data>
+    <data name="EnterUIdMessage">
+         <value>Inserisci il tuo codice dell'invito email: </value>
+    </data>
+    <data name="InvalidUIdMessage">
+         <value>Codice dell'invito non valido!</value>
+    </data>
+    <data name="SubmitUId">
+         <value>Ingresso nel Sondaggio</value>
+    </data>
+    <data name="JSInvalidField">
+        <value>Riempire il campo!</value>
+    </data>
+    <data name="JSInvalidEmail">
+        <value>Inserisci un indirizzo Email!</value>
+    </data>
+<!-- V1.1 changes starts here -->
+    <data name="EmailCodeProtection">
+        <value>Protezione via Email</value>
+    </data>
+    <data name="CookieProtection">
+        <value>Protezione con Cookie</value>
+    </data>
+    <data name="PasswordProtection">
+        <value>Protezione attraverso Password</value>
+    </data>
+    <data name="IPProtection">
+        <value>Protezione IP</value>
+    </data>
+    <data name="CookieExpiresLabel">
+        <value>Il Cookie scade dopo: </value>
+    </data>
+    <data name="ApplyChangesButton">
+        <value>Applica Cambiamenti</value>
+    </data>
+    <data name="MinutesInfo">
+        <value>Minuti</value>
+    </data>		
+    <data name="IPExpiresLabel">
+        <value>L'IP scade dopo: </value>
+    </data>
+    <data name="PasswordLabel">
+        <value>Password: </value>
+    </data>
+    <data name="InvalidIPExpireTime">
+        <value>Ora di scadenza dell'IP non valida, deve essere un valore numerico!</value>
+    </data>
+    <data name="InvalidCookieExpireTime">
+        <value>Ora di scadenza del Cookie non valida!</value>
+    </data>
+    <data name="OnlyInvitedEmailsLabel">
+        <value>Accesso ai soli utenti invitati: </value>
+    </data>
+
+<!-- END NSURVEY WEB CONTROL MESSAGES -->
+
+</root>

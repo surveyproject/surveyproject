@@ -1,0 +1,212 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="Votations.NSurvey.Wap"
+    CodeBehind="Wap.Master.cs" %>
+
+<%@ Register TagPrefix="uc1" TagName="FooterControl" Src="~/NsurveyAdmin/UserControls/FooterControl.ascx" %>
+<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="~/NsurveyAdmin/UserControls/HeaderControl.ascx" %>
+<%@ Register TagPrefix="uc1" TagName="SurveyTree" Src="~/NsurveyAdmin/UserControls/SurveyTreeControl.ascx" %>
+<%@ Register TagPrefix="uc1" TagName="LoginBox" Src="~/NSurveyAdmin/UserControls/LoginBox.ascx" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Survey&#8482; Project Webapplication</title>
+    <meta id="MetaDescription" name="DESCRIPTION" content="Survey Project is a free and open source webapplication to create surveys, questionnaires or (data entry) forms for gathering and processing data online." />
+    <meta id="MetaKeywords" name="KEYWORDS" content="survey project, survey, questionnaire, maker, tool, create, free, online, open source" />
+    <meta id="MetaCopyright" name="COPYRIGHT" content="(c) 2011-2014 &lt;href='http://www.fryslanwebservices.com'>Fryslan Webservices TM&lt;/a>" />
+    <meta id="MetaGenerator" name="GENERATOR" content="SurveyTM Project" />
+    <meta id="MetaAuthor" name="AUTHOR" content="Fryslan Webservices TM" />
+    <meta name="RESOURCE-TYPE" content="DOCUMENT" />
+    <meta name="DISTRIBUTION" content="GLOBAL" />
+    <meta name="ROBOTS" content="INDEX, FOLLOW" />
+    <meta name="REVISIT-AFTER" content="1 DAYS" />
+    <meta name="RATING" content="GENERAL" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)" />
+
+  
+    <link href="~/nsurveyadmin/css/nsurveyadmin.css" type="text/css" rel="stylesheet" />
+    <link href="~/nsurveyadmin/css/perfect-scrollbar.css" type="text/css" rel="stylesheet" />
+    <!-- All CSS for Survey 2.0 version is in survey20.css -->
+
+
+    <!--[if lte IE 7]>
+        <style type="text/css">
+            html .jquerycssmenu{height: 1%;} /*Holly Hack for IE7 and below*/
+        </style>
+    <![endif]-->
+
+    <link rel="SHORTCUT ICON" href="favicon.ico" type="image/x-icon" />
+
+    <script type="text/javascript">
+        var MenuArrowImages = { down: ['downarrowclass', '../Images/arrow-down.gif', 25], right: ['rightarrowclass', '../Images/arrow-right.gif'] };
+    </script>
+
+    <script type="text/javascript">
+
+        function noContextMenu() {
+            return false;
+        }
+        //document.onMouseDown = customRightMenu(event);
+
+        // block the Right Menu mouse option: 
+        
+        document.oncontextmenu = function () {
+
+            return false;
+            
+        }        
+        
+    </script>
+
+</head>
+<body>
+
+<!-- Tooltip Tipsy Jquery script -->
+      <script type="text/javascript">
+          $(function () {
+              $('#tooltip [title]').tipsy({ trigger: 'focus', gravity: 'w' });
+          });
+  </script>
+
+
+    <div id="container" style="position: relative; text-align: center; width: 1030px;
+        margin-left: auto; margin-right: auto; ">
+        <form id="MasterForm" runat="server">
+
+        <div id="Top" style="position: absolute; 
+           left: 0px; 
+           top: 0px;  
+           height: 120px; 
+           width:1025px;
+            background-color: #4169E1; 	
+            border: 2px; 
+            border-color: #ffffff;
+            border-style: outset;
+
+
+            -webkit-border-radius: 7px;
+            -moz-border-radius: 7px;
+            border-radius: 7px;" >
+
+ <!--        <div id="superTop" style="position: absolute; 
+           left: 0px; 
+           top: 0px;  
+           height: 25px; 
+           width:1021px;
+            background-color: #775CE2; 	
+            border: 1px; 
+            border-color: #9999FF;
+            border-style: solid;
+            -webkit-border-radius: 7px;
+            -moz-border-radius: 7px;
+            border-radius: 7px;" ><br /><br />&nbsp;</div>
+            -->
+
+
+            <asp:Panel id="logoPanel" runat="server"  CssClass="topCell logoPanel"> 
+
+                <a href="<%= Page.ResolveUrl("~")%>default.aspx" title="Survey&#8482; Project Homepage" target="_self">
+                 <asp:Image ID="spLogo" runat="server" ImageUrl="~/Images/SpLogo.png" AlternateText="SP Logo" />
+                </a>
+
+
+            </asp:Panel>
+
+
+        <div id="Header" class="gradient" style="position: absolute; left: 250px; top:-3px; height: 121px;
+            z-index:999;
+
+            padding: 0px -5px 2px 0px;
+
+            border-top: 2px white outset ; 
+            border-right: 0px white outset ; 
+            border-bottom: 2px white outset ; 
+
+            -webkit-border-top-right-radius: 7px;
+            -webkit-border-bottom-right-radius: 7px;
+            -moz-border-radius-topright: 7px;
+            -moz-border-radius-bottomright: 7px;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;  
+            
+            ">
+            <uc1:HeaderControl ID="Headercontrol1" runat="server"></uc1:HeaderControl>
+        </div>
+
+        </div>
+
+
+
+        <div id="leftNavDiv" style="position: absolute; left: 0px; top: 125px; width: 250px;
+            text-align: left; height:750px; overflow:auto; background: none repeat scroll 0 0 #EAEAEC;">
+
+            <uc1:SurveyTree ID="surveyTree1" runat="server"></uc1:SurveyTree>
+
+            <div id="banners" runat="server" visible="true" style="position:absolute; left: 15px; top: 10px; width: 235px;
+            text-align:center; height:auto; overflow:auto;">
+                <table title="Survey&#8482; Project Login">
+                    <tr>
+                        <td style="vertical-align:central;" colspan="2"><br /><img src="<%= Page.ResolveUrl("~")%>Images/surveys.png" title="Surveys & Webforms" width="85" height="85" alt="surveys" /></td>
+                        
+                    </tr>
+                    <tr>
+                        <td style="vertical-align:central;"><br /><img src="<%= Page.ResolveUrl("~")%>Images/layout.png" title="Layout & design" width="85" height="85"  alt="layout"/></td>
+                        <td style="vertical-align:central;"><br /><img src="<%= Page.ResolveUrl("~")%>Images/reports.png" title="Reports & Charts" width="85" height="85"  alt="reports" /></td>
+                    </tr>
+                                        <tr>
+                        <td style="vertical-align:central;"> <br /><img src="<%= Page.ResolveUrl("~")%>Images/help.png" title="Helpfiles" width="85" height="85" alt="helpfiles"/></td>
+                        <td style="vertical-align:central;"><br /><img src="<%= Page.ResolveUrl("~")%>Images/email.png" title="Campaigns & Mailings" width="85" height="85" alt="campaigns"/></td>
+                    </tr>
+                                        <tr>
+                        <td style="vertical-align:central;" colspan="2"><br /><img src="<%= Page.ResolveUrl("~")%>Images/inet.png" title="Online & Webbased" width="85" height="85" alt="Webbased"/></td>
+                        
+                    </tr>
+
+                    <tr>
+                        <td colspan="2"><br />
+                            <uc1:LoginBox ID="LoginBox1" runat="server"></uc1:LoginBox>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <div class="Social-Links" style="height: auto; margin-top:10px;">
+                                <a href="http://www.facebook.com/surveyproject" target="_blank" title="SP Facebook">
+                                    <img alt="facebook" src="<%= Page.ResolveUrl("~")%>Images/Spacer.gif" class="icoFacebook" /></a>
+                                <a href="http://t.co/ciC3YNV" target="_blank" title="SP LinkedIn">
+                                    <img alt="linkedIn" src="<%= Page.ResolveUrl("~")%>Images/Spacer.gif" class="icoIN" /></a>
+                                <a href="http://www.twitter.com/surveyprojects" target="_blank" title="SP Twitter">
+                                    <img alt="Twitter" src="<%= Page.ResolveUrl("~")%>Images/Spacer.gif" class="icoTwitter" /></a>
+                                <a href="http://www.youtube.com/TheSurveyProject" target="_blank" title="SP YouTube">
+                                    <img alt="YouTube" src="<%= Page.ResolveUrl("~")%>Images/Spacer.gif" class="icoYouTube" /></a>
+                            </div>
+
+
+
+                        </td>
+                    </tr>
+
+                </table>
+
+
+            </div>
+
+        </div>
+
+        <div id="Default" style="position: absolute; left: 250px; top: 125px; width: 778px;">
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="Server">
+                </asp:ContentPlaceHolder>
+      
+
+        </div>
+            <div id="footerDiv" class="footerDiv">
+                <table title="Survey&#8482; Project Disclaimer" id="footerTable">
+                    <uc1:FooterControl ID="Footercontrol1" runat="server"></uc1:FooterControl>
+                </table>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>

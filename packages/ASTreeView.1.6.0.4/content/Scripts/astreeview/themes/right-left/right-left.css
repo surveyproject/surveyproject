@@ -1,0 +1,81 @@
+.astreeview-tree .line-vertical
+{
+	background:url(images/astreeview-vertical-line.gif) repeat-y top right;
+}
+
+.astreeview-tree .line-root
+{
+	background:url(images/astreeview-root-line.gif) white no-repeat;
+	background-position:0px 2px;
+	background-position:0px 3px\9;
+	+background-position:0px 4px;
+	_background-position:0px 4px;
+}
+	
+.astreeview-tree .line-top
+{
+	background:url(images/astreeview-top-line.gif) white no-repeat right top;
+	background-position:right 1px;
+	background-position:right 2px\9;
+	_background-position:right 4px;
+}
+
+.astreeview-tree .line-middle
+{
+	background:url(images/astreeview-middle-line.gif) white no-repeat top right;
+}
+
+.astreeview-tree .line-bottom
+{
+	background:url(images/astreeview-bottom-line.gif) white no-repeat top right;
+}
+
+.astreeview-tree .line-none
+{
+
+}
+
+/*override astreeview.css*/
+	
+.astreeview-tree, .drag-container 
+{
+	text-align:right;
+}
+
+.astreeview-tree ul{	/* Sub menu groups */
+	
+	margin-right:-20px;	/* Left spacing */
+	padding-right:20px;
+	/*display:none;	 Initially hide sub nodes */
+	font-size:14px;
+}
+
+.drag-container ul{
+	
+	margin-right:20px;	/* Left spacing */
+	padding-right:0px;	
+}
+
+.astreeview-tree li, .drag-container li{
+	padding-right:20px;
+	margin-right:20;
+}
+
+.astreeview-tree .astreeview-plus-minus
+{
+	margin-right:-20px;
+}
+
+.astreeview-tree li a, .drag-container li a{	/* Node links */
+		color:#000;
+		text-decoration:none;
+		font-family:arial;
+		/*font-size:0.8em;*/
+		padding-left:0px;
+		padding-right:3px;
+		line-height:16px;
+		/*margin-left:2px;*/
+		font-size:14px;
+	}
+	
+	

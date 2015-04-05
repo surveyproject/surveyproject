@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LibraryData" targetNamespace="http://tempuri.org/LibraryData.xsd" xmlns:mstns="http://tempuri.org/LibraryData.xsd" xmlns="http://tempuri.org/LibraryData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="SurveyDevConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SurveyDevConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Votations.NSurvey.BE.Properties.Settings.GlobalReference.Default.SurveyDevConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="LibraryData" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="LibraryData" msprop:Generator_UserDSName="LibraryData">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Libraries" msprop:Generator_TableClassName="LibraryDataTable" msprop:Generator_TableVarName="tableLibrary" msprop:Generator_TablePropName="Library" msprop:Generator_RowDeletingName="LibraryRowDeleting" msprop:Generator_UserTableName="Library" msprop:Generator_RowChangingName="LibraryRowChanging" msprop:Generator_RowEvHandlerName="LibraryRowChangeEventHandler" msprop:Generator_RowDeletedName="LibraryRowDeleted" msprop:Generator_RowEvArgName="LibraryRowChangeEvent" msprop:Generator_RowChangedName="LibraryRowChanged" msprop:Generator_RowClassName="LibraryRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LibraryId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnLibraryId" msprop:Generator_ColumnPropNameInRow="LibraryId" msprop:Generator_ColumnPropNameInTable="LibraryIdColumn" msprop:Generator_UserColumnName="LibraryId" type="xs:int" />
+              <xs:element name="LibraryName" msprop:Generator_ColumnVarNameInTable="columnLibraryName" msprop:Generator_ColumnPropNameInRow="LibraryName" msprop:Generator_ColumnPropNameInTable="LibraryNameColumn" msprop:Generator_UserColumnName="LibraryName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1073741823" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DefaultLanguageCode" msprop:Generator_ColumnVarNameInTable="columnDefaultLanguageCode" msprop:Generator_ColumnPropNameInRow="DefaultLanguageCode" msprop:Generator_ColumnPropNameInTable="DefaultLanguageCodeColumn" msprop:Generator_UserColumnName="DefaultLanguageCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Library" />
+      <xs:field xpath="mstns:LibraryId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

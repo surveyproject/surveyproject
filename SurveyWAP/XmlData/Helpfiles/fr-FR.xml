@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data version="2.0" id="1" name="SurveyOptionsHelp">
+		<value>
+      &lt;b&gt;Survey Information: General Settings&lt;/b&gt;
+&lt;br /&gt;&lt;br /&gt;
+      The Settings options are used to setup and customize the survey's general behaviour:
+&lt;br /&gt;&lt;br /&gt;
+      &lt;b&gt;* Title&lt;/b&gt; &lt;br /&gt;
+      This is used mainly as logical information to distinguish one survey from the other in the administration tool. Its not used or shown on the survey control seen by the survey respondents.
+&lt;br /&gt;&lt;br /&gt;
+      &lt;b&gt;* Opening Date&lt;/b&gt; &lt;br /&gt;
+      This is the date as of which the survey will accept new entries. No entries will be accepted before that date. Leave blank if the survey has no particular opening date.
+&lt;br /&gt;&lt;br /&gt;
+      &lt;b&gt;* Active&lt;/b&gt; &lt;br /&gt;
+      This feature sets the SurveyID on the web control to -1. Once the SurveyID property is set to -1 the webcontrol will automatically take and use the activated survey in the database. There can be only one activated survey at one time. This way a survey can be changed any time without having to change the survey id from the page on which the web control code is added.
+&lt;br /&gt;&lt;br /&gt;
+      &lt;b&gt;* Closing Date&lt;/b&gt; &lt;br /&gt;
+      This is the date at which the survey will close and not accept any more entries. Leave blank if the survey has no deadline or a particular closing date.
+&lt;br /&gt;&lt;br /&gt;
+      &lt;b&gt;* Footer Progress Display&lt;/b&gt; &lt;br /&gt;
+      This determines what will be shown in the survey control footer. The choices are to show nothing or to show specific information on the current progress by selecting page numbers or percentage progress.
+&lt;br /&gt;&lt;br /&gt;
+      &lt;b&gt;* Disable Questions Numbering&lt;/b&gt; &lt;br /&gt;
+      Check this if the current question number on the left of each question in the survey control should not be shown.
+&lt;br /&gt;&lt;br /&gt;
+      &lt;b&gt;* Scored&lt;/b&gt; &lt;br /&gt;
+      This can be enabled in order to specify a score for each answer and then see the scores for each respondent. More information at: Score Introduction.
+&lt;br /&gt;&lt;br /&gt;
+      &lt;b&gt;* Previous / Next Page Navigation&lt;/b&gt; &lt;br /&gt;
+      This allows the user to navigate back and forth in the survey's pages while answering questions. By default the user can only move forward in the survey and cannot come back to change answers.
+&lt;br /&gt;&lt;br /&gt;
+      &lt;b&gt;* Resume Of Progress&lt;/b&gt; &lt;br /&gt;
+      This allows the user to save current answers and resume the survey at a later stage. We can either choose to save the unique code provided by Key Provider in the destination storage of the key provider. By default the Survey key provider's destination storage is a cookie, so when the respondent comes back he will not need to enter any code manually. The drawback of this approach is that he will need to resume the survey on the same computer when he saved the progress on.
+      We an also set the resume to manually, in this case a unique code will be provided as a text message on screen and he will be able to resume at any time and from anywhere and continue answering the survey by clicking the resume progress button.
+&lt;br /&gt;&lt;br /&gt;
+      &lt;b&gt;* Delete Button&lt;/b&gt; &lt;br /&gt;
+      This will delete a survey and all it's questions, answers and respondent answers. It is not possible to recover a survey once it has been deleted.
+&lt;br /&gt;&lt;br /&gt;
+      &lt;b&gt;* Clone Button&lt;/b&gt; &lt;br /&gt;
+      This will create a full copy of the survey settings and content (questions, answertypes etc.). The respondent answers are not copied to the cloned survey.
+&lt;br /&gt;&lt;br /&gt;
+      &lt;b&gt;* Xml Export Button&lt;/b&gt; &lt;br /&gt;
+      This will export the survey in XML in order to (re-)import it at a later time or on another Survey installation. For example a series of surveys could be created on a test server, exported and re-imported on a production server.
+</value>
+	</data>
+	<data version="2.0" id="2" name="NotificationsSettingsHelp">
+		<value>&lt;b&gt;The email notification&lt;/b&gt; features make it possible to receive an email message each time a new user has filled out a survey. Three types of notifications are available:
+&lt;br /&gt;&lt;br /&gt;
+      &lt;b&gt;* Short Message&lt;/b&gt; will send an email with a brief text stating that a new person has posted answers to the survey .
+&lt;br /&gt;
+      &lt;b&gt;* Full Entry&lt;/b&gt; will send a complete report where all respondent's answers will be shown including those that were not answered.
+&lt;br /&gt;
+      &lt;b&gt;* Answers Only&lt;/b&gt; will send a partial report where only respondent's answers will be shown.
+&lt;br /&gt;&lt;br /&gt;
+      Once the preferred notification type is chosen further (email)settings are shown:
+&lt;br /&gt;&lt;br /&gt;
+      &lt;b&gt;* Email From:&lt;/b&gt; the email address from which the notification will be send.
+&lt;br /&gt;
+      &lt;b&gt;* Email Notification To:&lt;/b&gt; the email address that will receive the notification.
+&lt;br /&gt;
+      &lt;b&gt;* Email Notification Subject:&lt;/b&gt; the subject of the notification email.
+&lt;br /&gt;&lt;br /&gt;
+      Before using the email Notification options make sure that the (SMTP) mail server is setup correctly. Either during the installation or after by checking the web.config file "mail server settings" in the SurveySetting section.
+    </value>
+	</data>
+	<data version="2.0" id="3" name="HelpFilesText">
+		<value>Integrated helpfiles will be part of the next version of the Survey 
+                             webapplication. The in between results of these helpfiles 
+                             are published to the Survey Wiki of the Community website. Please
+                             &lt;a href="http://www.surveyproject.info/en/Support/Helpfiles/Wiki/tabid/193/Default.aspx" target="_blank" title="Survey Project Wiki"&gt;
+                             check the Wiki&lt;/a&gt; menu.
+                             &lt;br /&gt;&lt;br /&gt;
+                             At the
+                             &lt;a href="http://www.surveyproject.info/en/Support/Helpfiles/Articles/tabid/194/Default.aspx" target="_blank" title="Survey Project Articles"&gt;
+                             Articles Menu option&lt;/a&gt; of the Survey Project Community site several articles can be found based on specific Survey 
+                             related issues and themes. 
+                             &lt;br /&gt;
+
+                             &lt;br /&gt;
+                             At the &lt;a href="http://www.youtube.com/user/TheSurveyProject" target="_blank" title="Survey Project Youtube Channel"&gt;
+                             Survey project YouTube Channel&lt;/a&gt; movies can be found with basic instructions on several subjects.&lt;br /&gt;
+                             &lt;br /&gt;
+                             Technical information can be found at the Survey Sourcecode website at
+                             &lt;a href="http://survey.codeplex.com" target="_blank" title="Survey Project Codeplex"&gt;
+                             http://survey.codeplex.com&lt;/a&gt;.
+                             &lt;br /&gt;
+                             &lt;br /&gt;
+                             Visit the &lt;a href="http://www.surveyproject.info/en/Forums/tabid/107/Default.aspx" target="_blank" title="Survey Project Forums"&gt;Forums section&lt;/a&gt; of the Community website to ask any questions.&lt;br /&gt;
+                             &lt;br /&gt;
+                             Contributions to the projects documentation and helpfiles are most welcome. If 
+                             you have any experience in this field or if you feel like joining the team
+                             &lt;a href="http://www.surveyproject.info/en/Project/Membership/tabid/118/Default.aspx" target="_blank" title="Survey Project Membership"&gt;
+                             please let us know&lt;/a&gt;.
+</value>
+	</data>
+	<data version="2.0" id="4" name="StartupSettings">
+		<value>
+                             - On first startup the login details are: username = admin; password = admin. Once logged in and once a survey is created,
+                             the password, username can be changed from the Accounts/ User List section. 
+                             
+                             &lt;br /&gt;&lt;br /&gt;
+                             - Some technical options and settings: Survey can run in "single user mode" (anonymous):
+                             open the web.config file and find the FormUserProviderSingleMode element for more
+                             information. 
+                             &lt;br /&gt;&lt;br /&gt;
+                             - Change the Mail server settings from the web.config file using a text editor.
+                             &lt;br /&gt;&lt;br /&gt;
+                             - Survey Samples: Two sample survey xml files are part of the Survey package [_FormSamples]. They can be imported after
+                             logging in [new survey / import survey from XML]. 
+                             &lt;br /&gt;&lt;br /&gt;
+                             - The Survey webapplication was
+                             rewritten to become W3C XHTML 1.0 Transitional compliant as much as possible with
+                             the exception of pages making use of third party components. 
+                             &lt;br /&gt;&lt;br /&gt;
+                             - The language setting
+                             of you webbrowser determine the xml languagefiles used to present webpage texts.
+                             This effect is caused by one of the settings in the web.config file: culture/ uiculture.
+                             If set to "auto" Survey will pick up the culture/ language of your browsersettings.
+                             To explicitely pick a specific culture/ language, replace "auto" with "en-US" or
+                             "nl-NL" for example.
+		</value>
+	</data>
+</root>

@@ -1,0 +1,326 @@
+___________________________________________________________________
+
+
+Changelog for Survey™ Project version 2.3
+
+___________________________________________________________________
+
+License Agreement for Survey™ Project version 2.3
+___________________________________________________________________
+
+Survey™ Project 2.3 - The open source web survey and form engine
+Copyright (c) 2009/2014 by Fryslan Webservices™ (FWS). (http://survey.codeplex.com)
+
+NSurvey - The web survey and form engine
+Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
+
+___________________________________________________________________
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 3
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, see <http://www.gnu.org/licenses/> 
+or write to the Free Software Foundation, Inc., 59 Temple Place - 
+Suite 330, Boston, MA  02111-1307, USA.
+
+You can contact the Survey™ Project by email mail@surveyproject.org 
+or go to http://www.surveyproject.org.
+
+___________________________________________________________________
+
+EXAMPLES
+- General:  (Name Developer) [.... description of fixed issue or feature......]
+- Bugfix:   (Name Developer) Work item [Number] - [ ... description .....]
+
+___________________________________________________________________
+
+LIST OF SURVEY PROJECT 2.3 Fixes & Changes
+
+
+I. New Features:
+
+1- complete overhaul of Administration tool userinterface:
+
+* Layout & graphics adjustments and changes;
+* Use of fieldset, ol/li, div, labels instead of tables & literals;
+* Introduction of new logo & header replacement;
+* Menu adjustments;
+* Login panel adjustments;
+* Introduction of Perfect Scrollbar;
+* Results menu: graphical reports - Columnchart & Piechart adjustments
+
+
+2- Survey userinterface adjustments & introduction of survey version for mobile devices as default for 
+
+* Mailings
+* Preview
+* Take Survey
+* Web - deployment url
+
+through the use of:
+
+* bootstrap 3.2.0
+* fontawesome 4.1.0
+* Modernizer 2.7.2
+* Respond 1.4.2
+* Html5shiv
+
+* new survey CSS file: surveymobile.css
+
+Original survey layout & css still available through use of menuoption Layout (nsurveyform.css) and as Legacy weblink through menuoption Campaigns/ Web 
+
+
+3- CSS cleanout & new files added
+
+4-Several new additions & corrections to XML language files (English, Dutch, German)
+
+5-New (sub)filter options on menuoption Results-Filters and Results/Reports-Graphical Reports (see PDF in Instructions Directory). 
+
+6- Additional new helpfiles (including instructions on the use of "Required Markers") and help tooltips.
+
+7- Required Markers made visible on Survey Formbuilder. Adjusted working of Required Markers on Question and Answer level.
+
+
+II. Technical upgrades:
+
+1- CKeditor 4.4.3 + skins;
+2- Jquery cleanout and upgrades to latest versions;
+3- ASTreeview 1.6.0.4;
+4- Introduction of Nuget Packages directory: 11 packages added;
+5- Introduction of Libary directory for third party DLL's;
+6- Permission to use ItextSharp 5.5.2 for next SP releases; testbutton added to menuoption Data Export - Export PDF
+7- Removal of Enterprise Library - Data customization + default EL (data/ custom) added as Nuget packages;
+
+
+III. Bugfixes
+
+1- Error on adding/ copying question to/ from library;
+2- Error on adding/ copying question to/ from survey;
+3- Error library: move question up/ down
+4- Sorting option on surveylist not working + responses column based on voters instead of nr. of times shown
+5- Error on deleting ip range (surveyiprange.cs)
+6- Error delete regexpression
+
+- Database script changes
+* removed redundant & legacy insert lines 
+* fieldorder adjustments to stored procedures
+* addition of filter/subfilter tablechange & stored procedures
+
+
+___________________________________________________________________
+
+PREVIOUS RELEASES
+____________________________________________________________________
+
+
+Release Survey™ Project 2.2 Fixes & Changes
+
+
+1. Replacement of FreeTextBox editor by CKeditor + Skins & Filemanager
+
+2. Repair of bug DBnull error on question insert into Libary
+
+3. Repair of bug password removed on update User (User manager)
+
+4. Repair of bug Survey Taker, on login not authorised message
+
+5. Repair of JS bug datepicker en-us script added 
+
+6. Remove redundant code/ files: surveyprivacy.ascx
+
+7.Major overhaul of Data Acces Layer (DAL) & MSSqlserver database provider:
+
+- added Enterprise Libraray DAAB v. 6.0 instead of MS Application Blocks
+- adjustments to SqlserverDAL project and database stored procedures
+
+8. Layout & design of frontpage and loginscreen adjustments
+
+9. After login Firstname/ Lastname shown instead of username only
+
+
+Release Survey™ Project 2.1
+
+Developer: FwsDevTest
+
+Fixed in Mercurial DevTestFork Repository:
+
+- New: Slider AnswerType added (Issue nr. 10088)
+
+- New: AnswerField Helpfiles added
+
+- New: Improved Errorhandling added (Issue nr. 10084)
+* Global error warningspage
+* HTTP error warningpage
+* Error logging to textfile
+* Error mail messaging
+
+- New: Improved security for login page
+
+- New: User password encryption changed to (salted) SHA256
+
+- New: User password rules changed (min./ max lenght, variation)
+
+- New: Survey password changed to SHA256 encryption
+
+- New: Survey password rules changed (min./ max lenght, variation)
+
+- New: Empty field checks and warning messages (Issue nr. 10079)
+
+- New: Max. lenght set on entry fields (Issue nr. 10080)
+
+- New: RegEx validators and warningmessage set on entry fields
+
+- New: Print preview & print option added to reports: a. voter reports; b. graphical reports
+
+- Fix #10099: Question export: multilanguage texts are not exported
+
+- Fix #10100: Question export: groups and sub-groups are not exported
+
+- Fix #10101: Survey Export: Groups and sub-groups are not exported
+
+- Fix #10092: Insert Question: order corrupted after insert
+
+- Fix #10071: System error when creating a new library and using a different UI language than
+
+- Fix #10070: Sorting of languages in language selection boxes is wrong
+
+- Fix #9081: Generated link to survey in Controlcode.aspx is wrong in case of https scheme
+
+- Fix #10087: SubmitSurvey button has wrong label text in multilanguage surveys
+
+- Fix: buttons for Language selection at the beginning of a Multilanguage survey and for the Survey Password must also have the css class .buttonStyle like all other buttons in the surveyform.
+
+- Fix: when export single question, multilanguage text is not exported.
+
+- Fix: copy multilanguage question with alias and help text: alias and help text are only copied in the main language and not in the other languages
+
+- Fix: import voters: The language Code was not imported for the Voters.
+
+- New: Three new actions at the top of the "Edit Question" page: 
+a) up action : if pressed, the "Edit Question" screen of the question before is shown 
+b) down action : if pressed, the "Edit Question" screen of the question after is shown
+ c): Clone: if pressed, the question is cloned and the "Edit question" screen of the cloned question is shown 
+d) Insert question: if pressed, the "New question" screen is shown.
+
+- Fix: when an answer option is on two lines, the indentation of the answers does not look good (the second line starts under the radio button, but it should be in line with the beginning of the text of the first line)
+
+- Fix: when a question is on two lines and the survey has activated question numbering, the indentation does not look good (the second line starts under the number, but it should be in line with the beginning of the text of the first line).
+
+- Fix: Header and Footer should be multilingual
+
+
+Release Survey™ 2.0
+
+Technical changes:
+- Use of Jquery, ASTreeview, Tabs, Tooltips and new menuprovider
+
+Features & Bugfixes:
+
+    Survey list and search function
+    Folder structure for surveys
+    New Menustructure
+    Library list
+    New Library fields
+    User list and search functions
+    Layout options for a survey with CSS, page header and footer
+    New IP filter security feature
+    Enhanced Token Management
+    New Question fields as ID, Alias, help text, group, subgroup
+    New Answer fields as ID and Alias
+    New Data Import features
+    Enhanced data export features
+    Enhanced filters
+    Friendly Url for surveys
+    Helpfiles and tooltips
+    Repaired Upload features
+
+
+
+Release Survey™ 1.2.3
+
+New Features & fixes:
+
+Technical upgrades:
+* upgrade to .NET 4.*
+* upgrade to C# 4.*
+* upgraded to Web Application Project (WAP) and added Wap.Master page to solution
+* Freetextbox upgrade to 3.3.1.
+
+Technical changes:
+- New (missing) stored procedure added: vts_spFileUnValidatedGetAll
+- Mailingpollstatus.aspx removed and added to Mailingpoll.aspx / cs
+
+Features & Bugfixes:
+- Freetextbox imagegallery option added
+- Fixed mailing issue: server url chopped because of Freetextbox setting
+- Added RegEx to mailmessage code to clean html-code from textfile version of mails
+- Wrong Url & Port in mailing corrected
+- New layout and CSS changes (preparation for new features like treeviewlist and new menustructure)
+- Logout url changed to default.aspx
+
+
+
+Release Survey™ 1.2.2
+
+New Features & fixes:
+
+Bug fixes & multilanguage changes:
+
+- changes were made to add all fixed texts of the administration tool to the XML language files;
+- with these changes the administation tool has become ready for complete multilanguage use;
+- Survey™ 1.2.2. is delivered with the updated en-EN and nl-NL / nl language files;
+- all other language files are not yet updated or completed: help and assistance is most welcome, you can share your efforts throught the community website.
+- for an explanation of the multilanguage settings see the Readme.txt file;
+
+
+
+Release Survey™ 1.2.1  is based on the original sources of the Nsurvey 1.9.1 application. 
+
+New Features & fixes:
+
+1. Final bits of code rewritten to become 100% .net 2.* compliant
+2. Bug fixes & several changes:
+- Reporting
+- Export data
+- Userimport
+- Conditional Endmessage
+- Library
+- Mailmessages now based on web.net.mail
+
+
+
+Release Survey™ 1.2.0  is based on the original sources of the Nsurvey 1.9 application. Compared to the Survey 1.1.0 version many new features are added. Most important is the implementation of multi-language options for both the survey forms and the administration tool.
+
+New Features:
+1. upgrade of third party dll's: freetextbox; webchart
+2. code and pages rewritten to become W3C XHTML 1.0 Transitional compliant as much as possible with the exception of pages making use of third party components
+3. code rewritten to become C# .Net 2.* compliant (99% finished)
+4. new answer types architecture
+5. possibility to integrate the FreeTextBox component into your forms or to include an advanced file upload type using the new extended answer item architecture
+6. You can now also turn your forms into a complete data entry system by allowing the end user to "duplicates" your question's answer items at will.
+7. extends result filtering
+8. new reporting capabilities
+9. more localisation options through xml language files and the ability to create multi-lingual forms
+10. option to use of regular expressions
+11. bugfixes e.g. matrix rows/columns issue
+
+
+Release Survey™ v. 1.1.0
+
+Major changes:
+- layout & graphics completely overhauled
+- several technical changes & repairs (e.g. matrix question issue solved)
+- adjustment of copyright notices
+- adjustment of Sql server scripts
+- most code rewritten to become compliant with W3C xhtml 1.1 transitional standards
+
+
+Release Survey™ v. 1.0.0 - adjusted webapplication based on the NSurvey 1.6 source package. Survey 1.0.0 is the takeoff version of the new Survey solution (formerly know as Nsurvey).

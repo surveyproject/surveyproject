@@ -1,0 +1,9 @@
+Special permission was given by Mr. Weijie JIN of ASTreeView (http://www.astreeview.com) on the 8th of April 2011 
+to the Survey™ Project to make use of the Astreeview Component (v. 1.5.9) as part of the Survey™ Project Webapplication 
+and for further distribution of the component as part of the Survey™ Project solution and sources.
+
+For further licensing details check: /Scripts/Javascript/AsTreeViewLicense.txt
+
+
+
+

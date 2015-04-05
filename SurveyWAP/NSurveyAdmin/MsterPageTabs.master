@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Wap.Master" AutoEventWireup="true" CodeBehind="MsterPageTabs.master.cs" Inherits="Votations.NSurvey.WebAdmin.NSurveyAdmin.MsterPageTabs" %>
+<asp:Content ID="ContentMasterTabs" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+<script type="text/javascript">
+        $(function () {
+            var obj = {
+                beforeActivate: function(event, ui) { 
+                    $("#mti").val(ui.newTab.index()); 
+                    $("#mtinvoke").val(1); 
+                    __doPostBack();
+                },
+
+                active: <%= selectedTabIndex %>
+            };
+
+            $("#mptabs").tabs(obj);
+        });
+    </script>
+
+
+    <input type="hidden" id="mti" name="mti" value="<%= selectedTabIndex %>" />
+    <input type="hidden" id="mtinvoke" name="mtinvoke" value="0" />
+    <div id="mptabs" class="mnuTabs">
+        <ul>
+        <%
+            for (int i = 0; i < DisplayTabs.Count; i++)
+            {
+             %>
+            <li><a href='#mptabs-1'><%=DisplayTabs.Keys[i]%></a></li>
+            <% } %>
+        </ul>
+        <div id="mptabs-1" style="overflow:auto; min-height:703px;">
+         <asp:ContentPlaceHolder runat="server" ID="ContentPlaceHolder1"></asp:ContentPlaceHolder>
+       </div>
+    </div>
+</asp:Content>

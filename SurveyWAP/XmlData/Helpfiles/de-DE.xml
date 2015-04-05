@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data version="2.0" id="1" name="SurveyOptionsHelp">
+		<value>&lt;b&gt;Informationen zur Umfrage: Allgemeine Einstellungen&lt;/b&gt; &lt;br /&gt;&lt;br /&gt; Die Einstellungsoptionen werden benutzt, um das allgemeine Verhalten der Umfrage einzurichten und anzupassen: &lt;br /&gt;&lt;br /&gt; &lt;b&gt;* Titel&lt;/b&gt; &lt;br /&gt; Dies dient vor allem als logische Information, um im Administration-Tool eine Umfrage von einer anderen zu unterscheiden. Sie werden nicht in der Umfragesteuerung, die der Teilnehmer bei der Umfrage sieht, benutzt oder angezeigt. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;* Beginndatum&lt;/b&gt; &lt;br /&gt; Dies ist das Datum, ab welchem die Umfrage neue Einträge akzeptiert. Vor diesem Datum werden keine Einträge akzeptiert. Lassen Sie dieses leer, falls die Umfrage kein bestimmtes Startdatum hat. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;* Aktiv&lt;/b&gt; &lt;br /&gt; Dieses Feature richtet die Umfrage-ID auf der Web-Steuerung ein, damit - sobald die Eigenschaft der Umfrage-ID eingerichtet ist - die Websteuerung automatisch die aktivierte Umfrage in der Datenbank hernimmt und verwendet. Es kann nur eine aktive Umfrage zu einem bestimmten Zeitpunkt vorhanden sein. Auf diese Weise kann eine Umfrage jederzeit geändert werden, ohne dass die Umfrage-ID auf der Seite geändert werden muss, auf welcher der Websteuerungs-Code hinzugefügt wurde. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;* Enddatum&lt;/b&gt; &lt;br /&gt; Dies ist das Datum, zu welchem die Umfrage geschlossen wird und keine Einträge mehr akzeptiert werden. Lassen Sie dieses leer, falls die Umfrage keinen Annahmeschluss oder kein bestimmtes Endedatum hat. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;* Fortschrittsanzeige in der Fußzeile&lt;/b&gt; &lt;br /&gt; Diese bestimmt, was in der Fußzeile der Umfragesteuerung angezeigt wird. Man kann wählen zwischen nichts anzuzeigen und bestimmte Informationen über den aktuellen Fortschritt durch Auswahl von Seitennummern oder prozentualem Fortschritt anzuzeigen. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;* Fragennummerierung deaktivieren&lt;/b&gt; &lt;br /&gt; Setzen Sie hier einen Haken, falls die aktuelle Fragenummer auf der linken Seite jeder Frage in der Umfragesteuerung nicht angezeigt werden soll. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;* Punktzahl&lt;/b&gt; &lt;br /&gt; Diese kann aktiviert werden, um eine bestimmte Punktzahl für jede Antwort festzulegen und um dann die Punktzahl für jeden Teilnehmer zu sehen. Weitere Informationen unter: Einführung zu Punktzahlen. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;* Navigation zur vorherigen/nächsten Seite &lt;/b&gt; &lt;br /&gt; Dies ermöglicht es dem Benutzer zwischen den Seiten der Umfrage vorwärts und rückwärts zu navigieren, während er die Fragen beantwortet. Standardmäßig kann der Benutzer in der Umfrage nur vorwärtsgehen und nicht zurück, um Antworten zu ändern. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;* Wiederaufnahme des Fortschritts&lt;/b&gt; &lt;br /&gt; Dies ermöglicht es dem Benutzer, aktuelle Antworten zu speichern und die Umfrage zu einem späteren Zeitpunkt fortzusetzen. Wir können uns dafür entscheiden, den spezifischen Code, der vom Schlüssel-Provider bereitgestellt wird, im Zielspeicher des Schlüssel-Providers zu speichern. Standardmäßig ist der Zielspeicher des Umfragechlüssel-Providers ein Cookie, damit der Teilnehmer, wenn er zurückkehrt, keinen Code manuell eingeben muss. Der Nachteil dieses Ansatzes ist der, dass er die Umfrage auf dem gleichen Computer fortsetzen muss, auf dem er den Fortschritt gespeichert hat. Wir können auch eine manuelle Fortsetzung einstellen. In diesem Fall wird ein spezifischer Code als Textnachricht auf dem Bildschirm zur Verfügung gestellt und er wird in der Lage sein, jederzeit und an jedem Ort die Umfrage durch Klicken auf die Schaltfläche Wiederaufnahme des Fortschritts wiederaufzunehmen und die Beantwortung der Umfrage fortzusetzen. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;* Schaltfläche Löschen&lt;/b&gt; &lt;br /&gt; Diese löscht eine Umfrage und alle ihre Fragen, Antworten und Antworten der Teilnehmer. Es ist nicht möglich, eine Umfrage wiederherzustellen, sobald sie gelöscht wurde. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;* Schaltfläche Kopieren&lt;/b&gt; &lt;br /&gt; Diese erstellt eine vollständige Kopie der Umfrageeinstellungen und Inhalte (Fragen, Antworttypen usw.). Die Antworten der Teilnehmer werden nicht in die kopierte Umfrage kopiert. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;* Schaltfläche XML-Export&lt;/b&gt; &lt;br /&gt; Dadurch wird die Umfrage in XML exportiert, um sie zu einem späteren Zeitpunkt (zurück) zu importieren oder in eine andere Umfrage-Installation zu importieren. Es kann zum Beispiel eine Serie von Umfragen auf einem Test-Server erstellt werden und auf einen Produktions-Server exportiert und zurückimportiert werden.</value>
+	</data>
+	<data version="2.0" id="2" name="NotificationsSettingsHelp">
+		<value>&lt;b&gt;Die E-Mail-Benachrichtigungs&lt;/b&gt;-Features ermöglichen es, jedes Mal, wenn ein neuer Benutzer eine Umfrage ausgefüllt hat, eine E-Mail-Nachricht zu erhalten. Es stehen drei Benachrichtigungstypen zur Verfügung: &lt;br /&gt;&lt;br /&gt; &lt;b&gt;* Kurznachricht&lt;/b&gt; sendet eine E-Mail mit einem kurzen Text, der besagt, dass eine neue Person Antworten auf die Umfrage gegeben hat. &lt;br /&gt; &lt;b&gt;* Vollständiger Eintrag&lt;/b&gt; sendet einen vollständigen Bericht, in welchem alle Antworten der Teilnehmer angezeigt werden, einschließlich der Teilnehmer, die nicht geantwortet haben. &lt;br /&gt; &lt;b&gt;* Nur Antworten&lt;/b&gt; sendet einen Teilbericht, in dem nur die Antworten der Teilnehmer angezeigt werden. &lt;br /&gt;&lt;br /&gt; Sobald der bevorzugte Benachrichtigungstyp ausgewählt wurde, werden weitere (E-Mail) Einstellungen angezeigt: &lt;br /&gt;&lt;br /&gt; &lt;b&gt;* E-Mail von:&lt;/b&gt; Die E-Mail-Adresse, von welcher die Benachrichtigung gesendet wird. &lt;br /&gt; &lt;b&gt;* E-Mail-Benachrichtigung an:&lt;/b&gt; Die E-Mail-Adresse, welche die Benachrichtigung erhält. &lt;br /&gt; &lt;b&gt;* Betreff der E-Mail-Benachrichtigung:&lt;/b&gt; Der Betreff der E-Mail-Benachrichtigung. &lt;br /&gt;&lt;br /&gt; Bevor Sie die E-Mail-Benachrichtigungs-Optionen benutzen, stellen Sie sicher dass der (SMTP) Mail-Server korrekt eingerichtet ist, entweder während der Installation oder danach durch Überprüfung der web.config-Datei "Mail-Server-Einstellungen" im Bereich Umfrage-Einstellungen.</value>
+	</data>
+	<data version="2.0" id="3" name="HelpFilesText">
+		<value>
+      The first integrated helpfiles have been added to this version of the Survey
+      webapplication. More information on all other Survey related subjects will be added gradually.
+      &lt;br /&gt;&lt;br /&gt;
+      The in between results of these helpfiles
+      will be published to the Survey Wiki of the Community website as well.  Please
+      &lt;a href="http://www.surveyproject.info/en/Support/Helpfiles/Wiki/tabid/193/Default.aspx" target="_blank" title="Survey Project Wiki"&gt;
+                             check the Wiki&lt;/a&gt; menu.
+                             &lt;br /&gt;&lt;br /&gt;
+                             At the
+                             &lt;a href="http://www.surveyproject.info/en/Support/Helpfiles/Articles/tabid/194/Default.aspx" target="_blank" title="Survey Project Articles"&gt;
+                             Articles Menu option&lt;/a&gt; of the Survey Project Community site several articles can be found based on specific Survey 
+                             related issues and themes. 
+                             &lt;br /&gt;
+
+                             &lt;br /&gt;
+                             At the &lt;a href="http://www.youtube.com/user/TheSurveyProject" target="_blank" title="Survey Project Youtube Channel"&gt;
+                             Survey project YouTube Channel&lt;/a&gt; movies can be found with basic instructions on several subjects.&lt;br /&gt;
+                             &lt;br /&gt;
+                             Technical information can be found at the Survey Sourcecode website at
+                             &lt;a href="http://survey.codeplex.com" target="_blank" title="Survey Project Codeplex"&gt;
+                             http://survey.codeplex.com&lt;/a&gt;.
+                             &lt;br /&gt;
+                             &lt;br /&gt;
+                             Visit the &lt;a href="http://www.surveyproject.info/en/Forums/tabid/107/Default.aspx" target="_blank" title="Survey Project Forums"&gt;Forums section&lt;/a&gt; of the Community website to ask any questions.&lt;br /&gt;
+                             &lt;br /&gt;
+                             Contributions to the projects documentation and helpfiles are most welcome. If 
+                             you have any experience in this field or if you feel like joining the team
+                             &lt;a href="http://www.surveyproject.info/en/Project/Membership/tabid/118/Default.aspx" target="_blank" title="Survey Project Membership"&gt;
+                             please let us know&lt;/a&gt;.
+</value>
+	</data>
+	<data version="2.0" id="4" name="StartupSettings">
+		<value>
+                             - On first startup the login details are: username = admin; password = admin. Once logged in and once a survey is created,
+                             the password, username can be changed from the Accounts/ User List section. 
+                             
+                             &lt;br /&gt;&lt;br /&gt;
+                             - Some technical options and settings: Survey can run in "single user mode" (anonymous):
+                             open the web.config file and find the FormUserProviderSingleMode element for more
+                             information. 
+                             &lt;br /&gt;&lt;br /&gt;
+                             - Change the Mail server settings from the web.config file using a text editor.
+                             &lt;br /&gt;&lt;br /&gt;
+                             - Survey Samples: Two sample survey xml files are part of the Survey package [_FormSamples]. They can be imported after
+                             logging in [new survey / import survey from XML]. 
+                             &lt;br /&gt;&lt;br /&gt;
+                             - The Survey webapplication was
+                             rewritten to become W3C XHTML 1.0 Transitional compliant as much as possible with
+                             the exception of pages making use of third party components. 
+                             &lt;br /&gt;&lt;br /&gt;
+                             - The language setting
+                             of you webbrowser determine the xml languagefiles used to present webpage texts.
+                             This effect is caused by one of the settings in the web.config file: culture/ uiculture.
+                             If set to "auto" Survey will pick up the culture/ language of your browsersettings.
+                             To explicitely pick a specific culture/ language, replace "auto" with "en-US" or
+                             "nl-NL" for example.
+		</value>
+	</data>
+</root>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="SurveyDevConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SurveyDevConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Votations.NSurvey.BE.Properties.Settings.GlobalReference.Default.SurveyDevConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vts_tbQuestion" msprop:Generator_TableClassName="vts_tbQuestionDataTable" msprop:Generator_TableVarName="tablevts_tbQuestion" msprop:Generator_TablePropName="vts_tbQuestion" msprop:Generator_RowDeletingName="vts_tbQuestionRowDeleting" msprop:Generator_UserTableName="vts_tbQuestion" msprop:Generator_RowChangingName="vts_tbQuestionRowChanging" msprop:Generator_RowEvHandlerName="vts_tbQuestionRowChangeEventHandler" msprop:Generator_RowDeletedName="vts_tbQuestionRowDeleted" msprop:Generator_RowEvArgName="vts_tbQuestionRowChangeEvent" msprop:Generator_RowChangedName="vts_tbQuestionRowChanged" msprop:Generator_RowClassName="vts_tbQuestionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="QuestionId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnQuestionId" msprop:Generator_ColumnPropNameInRow="QuestionId" msprop:Generator_ColumnPropNameInTable="QuestionIdColumn" msprop:Generator_UserColumnName="QuestionId" type="xs:int" />
+              <xs:element name="ParentQuestionId" msprop:Generator_ColumnVarNameInTable="columnParentQuestionId" msprop:Generator_ColumnPropNameInRow="ParentQuestionId" msprop:Generator_ColumnPropNameInTable="ParentQuestionIdColumn" msprop:Generator_UserColumnName="ParentQuestionId" type="xs:int" minOccurs="0" />
+              <xs:element name="SurveyId" msprop:Generator_ColumnVarNameInTable="columnSurveyId" msprop:Generator_ColumnPropNameInRow="SurveyId" msprop:Generator_ColumnPropNameInTable="SurveyIdColumn" msprop:Generator_UserColumnName="SurveyId" type="xs:int" minOccurs="0" />
+              <xs:element name="LibraryId" msprop:Generator_ColumnVarNameInTable="columnLibraryId" msprop:Generator_ColumnPropNameInRow="LibraryId" msprop:Generator_ColumnPropNameInTable="LibraryIdColumn" msprop:Generator_UserColumnName="LibraryId" type="xs:int" minOccurs="0" />
+              <xs:element name="LayoutModeId" msprop:Generator_ColumnVarNameInTable="columnLayoutModeId" msprop:Generator_ColumnPropNameInRow="LayoutModeId" msprop:Generator_ColumnPropNameInTable="LayoutModeIdColumn" msprop:Generator_UserColumnName="LayoutModeId" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="SelectionModeId" msprop:Generator_ColumnVarNameInTable="columnSelectionModeId" msprop:Generator_ColumnPropNameInRow="SelectionModeId" msprop:Generator_ColumnPropNameInTable="SelectionModeIdColumn" msprop:Generator_UserColumnName="SelectionModeId" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="ColumnsNumber" msprop:Generator_ColumnVarNameInTable="columnColumnsNumber" msprop:Generator_ColumnPropNameInRow="ColumnsNumber" msprop:Generator_ColumnPropNameInTable="ColumnsNumberColumn" msprop:Generator_UserColumnName="ColumnsNumber" type="xs:int" minOccurs="0" />
+              <xs:element name="QuestionText" msprop:Generator_ColumnVarNameInTable="columnQuestionText" msprop:Generator_ColumnPropNameInRow="QuestionText" msprop:Generator_ColumnPropNameInTable="QuestionTextColumn" msprop:Generator_UserColumnName="QuestionText" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DisplayOrder" msprop:Generator_ColumnVarNameInTable="columnDisplayOrder" msprop:Generator_ColumnPropNameInRow="DisplayOrder" msprop:Generator_ColumnPropNameInTable="DisplayOrderColumn" msprop:Generator_UserColumnName="DisplayOrder" type="xs:int" minOccurs="0" />
+              <xs:element name="MinSelectionRequired" msprop:Generator_ColumnVarNameInTable="columnMinSelectionRequired" msprop:Generator_ColumnPropNameInRow="MinSelectionRequired" msprop:Generator_ColumnPropNameInTable="MinSelectionRequiredColumn" msprop:Generator_UserColumnName="MinSelectionRequired" type="xs:int" minOccurs="0" />
+              <xs:element name="MaxSelectionAllowed" msprop:Generator_ColumnVarNameInTable="columnMaxSelectionAllowed" msprop:Generator_ColumnPropNameInRow="MaxSelectionAllowed" msprop:Generator_ColumnPropNameInTable="MaxSelectionAllowedColumn" msprop:Generator_UserColumnName="MaxSelectionAllowed" type="xs:int" minOccurs="0" />
+              <xs:element name="RatingEnabled" msprop:Generator_ColumnVarNameInTable="columnRatingEnabled" msprop:Generator_ColumnPropNameInRow="RatingEnabled" msprop:Generator_ColumnPropNameInTable="RatingEnabledColumn" msprop:Generator_UserColumnName="RatingEnabled" type="xs:boolean" />
+              <xs:element name="RandomizeAnswers" msprop:Generator_ColumnVarNameInTable="columnRandomizeAnswers" msprop:Generator_ColumnPropNameInRow="RandomizeAnswers" msprop:Generator_ColumnPropNameInTable="RandomizeAnswersColumn" msprop:Generator_UserColumnName="RandomizeAnswers" type="xs:boolean" />
+              <xs:element name="PageNumber" msprop:Generator_ColumnVarNameInTable="columnPageNumber" msprop:Generator_ColumnPropNameInRow="PageNumber" msprop:Generator_ColumnPropNameInTable="PageNumberColumn" msprop:Generator_UserColumnName="PageNumber" type="xs:int" minOccurs="0" />
+              <xs:element name="QuestionPipeAlias" msprop:Generator_ColumnVarNameInTable="columnQuestionPipeAlias" msprop:Generator_ColumnPropNameInRow="QuestionPipeAlias" msprop:Generator_ColumnPropNameInTable="QuestionPipeAliasColumn" msprop:Generator_UserColumnName="QuestionPipeAlias" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="QuestionIdText" msprop:Generator_ColumnVarNameInTable="columnQuestionIdText" msprop:Generator_ColumnPropNameInRow="QuestionIdText" msprop:Generator_ColumnPropNameInTable="QuestionIdTextColumn" msprop:Generator_UserColumnName="QuestionIdText" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HelpText" msprop:Generator_ColumnVarNameInTable="columnHelpText" msprop:Generator_ColumnPropNameInRow="HelpText" msprop:Generator_ColumnPropNameInTable="HelpTextColumn" msprop:Generator_UserColumnName="HelpText" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Alias" msprop:Generator_ColumnVarNameInTable="columnAlias" msprop:Generator_ColumnPropNameInRow="Alias" msprop:Generator_ColumnPropNameInTable="AliasColumn" msprop:Generator_UserColumnName="Alias" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="QuestionGroupID" msprop:Generator_ColumnVarNameInTable="columnQuestionGroupID" msprop:Generator_ColumnPropNameInRow="QuestionGroupID" msprop:Generator_ColumnPropNameInTable="QuestionGroupIDColumn" msprop:Generator_UserColumnName="QuestionGroupID" type="xs:int" minOccurs="0" />
+              <xs:element name="ShowHelpText" msprop:Generator_ColumnVarNameInTable="columnShowHelpText" msprop:Generator_ColumnPropNameInRow="ShowHelpText" msprop:Generator_ColumnPropNameInTable="ShowHelpTextColumn" msprop:Generator_UserColumnName="ShowHelpText" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vts_tbQuestion" />
+      <xs:field xpath="mstns:QuestionId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

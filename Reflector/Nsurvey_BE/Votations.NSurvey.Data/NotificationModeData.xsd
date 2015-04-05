@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NotificationModeData" targetNamespace="http://tempuri.org/NotificationModeData.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/NotificationModeData.xsd" xmlns:mstns="http://tempuri.org/NotificationModeData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NotificationModeData" msdata:IsDataSet="true">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="NotificationModes">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="NotificationModeID" type="xs:int" />
+                            <xs:element name="Description" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+        </xs:complexType>
+        <xs:unique name="NotificationModeDataKey1" msdata:PrimaryKey="true">
+            <xs:selector xpath=".//mstns:NotificationModes" />
+            <xs:field xpath="mstns:NotificationModeID" />
+        </xs:unique>
+    </xs:element>
+</xs:schema>

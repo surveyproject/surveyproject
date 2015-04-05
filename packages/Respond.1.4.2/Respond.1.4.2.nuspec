@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Respond</id>
+    <version>1.4.2</version>
+    <title>Respond JS</title>
+    <authors>Scott Jehl, Paul Irish, Nicholas Zakas</authors>
+    <owners>Scott Jehl, Paul Irish, Nicholas Zakas</owners>
+    <licenseUrl>https://github.com/scottjehl/Respond/blob/master/LICENSE-MIT</licenseUrl>
+    <projectUrl>https://github.com/scottjehl/Respond</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>The goal of this script is to provide a fast and lightweight (3kb minified / 1kb gzipped) script to enable responsive web designs in browsers that don't support CSS3 Media Queries - in particular, Internet Explorer 8 and under. It's written in such a way that it will probably patch support for other non-supporting browsers as well (more information on that soon).</description>
+    <summary>A fast &amp; lightweight polyfill for min/max-width CSS3 Media Queries (for IE 6-8, and more)</summary>
+    <releaseNotes />
+    <copyright>2012: Scott Jehl, Paul Irish, Nicholas Zakas</copyright>
+    <tags>Respond Media Queries</tags>
+  </metadata>
+</package>

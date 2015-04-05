@@ -1,0 +1,243 @@
+<xs:schema id="NSurveyQuestion" targetNamespace="http://www.nsurvey.org/nsurveyquestion.xsd" xmlns:mstns="http://www.nsurvey.org/nsurveyquestion.xsd" xmlns="http://www.nsurvey.org/nsurveyquestion.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified" msdata:schemafragmentcount="2">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="NSurveyQuestion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="NSurveyQuestion" msprop:Generator_UserDSName="NSurveyQuestion">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="AnswerType" msprop:Generator_TableClassName="AnswerTypeDataTable" msprop:Generator_TableVarName="tableAnswerType" msprop:Generator_RowChangedName="AnswerTypeRowChanged" msprop:Generator_TablePropName="AnswerType" msprop:Generator_RowDeletingName="AnswerTypeRowDeleting" msprop:Generator_RowChangingName="AnswerTypeRowChanging" msprop:Generator_RowEvHandlerName="AnswerTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="AnswerTypeRowDeleted" msprop:Generator_RowClassName="AnswerTypeRow" msprop:Generator_UserTableName="AnswerType" msprop:Generator_RowEvArgName="AnswerTypeRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" type="xs:string" msdata:Ordinal="7" />
+              <xs:element name="XMLDataSource" msprop:Generator_ColumnVarNameInTable="columnXMLDataSource" msprop:Generator_ColumnPropNameInRow="XMLDataSource" msprop:Generator_ColumnPropNameInTable="XMLDataSourceColumn" msprop:Generator_UserColumnName="XMLDataSource" type="xs:string" minOccurs="0" msdata:Ordinal="8" />
+              <xs:element name="JavascriptFunctionName" msprop:Generator_ColumnVarNameInTable="columnJavascriptFunctionName" msprop:Generator_ColumnPropNameInRow="JavascriptFunctionName" msprop:Generator_ColumnPropNameInTable="JavascriptFunctionNameColumn" msprop:Generator_UserColumnName="JavascriptFunctionName" type="xs:string" minOccurs="0" msdata:Ordinal="9" />
+              <xs:element name="JavascriptCode" msprop:Generator_ColumnVarNameInTable="columnJavascriptCode" msprop:Generator_ColumnPropNameInRow="JavascriptCode" msprop:Generator_ColumnPropNameInTable="JavascriptCodeColumn" msprop:Generator_UserColumnName="JavascriptCode" type="xs:string" minOccurs="0" msdata:Ordinal="10" />
+              <xs:element name="JavascriptErrorMessage" msprop:Generator_ColumnVarNameInTable="columnJavascriptErrorMessage" msprop:Generator_ColumnPropNameInRow="JavascriptErrorMessage" msprop:Generator_ColumnPropNameInTable="JavascriptErrorMessageColumn" msprop:Generator_UserColumnName="JavascriptErrorMessage" type="xs:string" minOccurs="0" msdata:Ordinal="11" />
+              <xs:element name="TypeNameSpace" msprop:Generator_ColumnVarNameInTable="columnTypeNameSpace" msprop:Generator_ColumnPropNameInRow="TypeNameSpace" msprop:Generator_ColumnPropNameInTable="TypeNameSpaceColumn" msprop:Generator_UserColumnName="TypeNameSpace" type="xs:string" msdata:Ordinal="12" />
+              <xs:element name="TypeAssembly" msprop:Generator_ColumnVarNameInTable="columnTypeAssembly" msprop:Generator_ColumnPropNameInRow="TypeAssembly" msprop:Generator_ColumnPropNameInTable="TypeAssemblyColumn" msprop:Generator_UserColumnName="TypeAssembly" type="xs:string" msdata:Ordinal="13" />
+              <xs:element name="DataSource" msprop:Generator_ColumnVarNameInTable="columnDataSource" msprop:Generator_ColumnPropNameInRow="DataSource" msprop:Generator_ColumnPropNameInTable="DataSourceColumn" msprop:Generator_UserColumnName="DataSource" type="xs:string" minOccurs="0" msdata:Ordinal="14" />
+            </xs:sequence>
+            <xs:attribute name="AnswerTypeID" form="unqualified" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnAnswerTypeID" msprop:Generator_ColumnPropNameInRow="AnswerTypeID" msprop:Generator_ColumnPropNameInTable="AnswerTypeIDColumn" msprop:Generator_UserColumnName="AnswerTypeID" type="xs:int" use="required" />
+            <xs:attribute name="FieldWidth" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnFieldWidth" msprop:Generator_ColumnPropNameInRow="FieldWidth" msprop:Generator_ColumnPropNameInTable="FieldWidthColumn" msprop:Generator_UserColumnName="FieldWidth" type="xs:int" />
+            <xs:attribute name="FieldHeight" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnFieldHeight" msprop:Generator_ColumnPropNameInRow="FieldHeight" msprop:Generator_ColumnPropNameInTable="FieldHeightColumn" msprop:Generator_UserColumnName="FieldHeight" type="xs:int" />
+            <xs:attribute name="FieldLength" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnFieldLength" msprop:Generator_ColumnPropNameInRow="FieldLength" msprop:Generator_ColumnPropNameInTable="FieldLengthColumn" msprop:Generator_UserColumnName="FieldLength" type="xs:int" />
+            <xs:attribute name="TypeMode" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnTypeMode" msprop:Generator_ColumnPropNameInRow="TypeMode" msprop:Generator_ColumnPropNameInTable="TypeModeColumn" msprop:Generator_UserColumnName="TypeMode" type="xs:int" />
+            <xs:attribute name="PublicFieldResults" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnPublicFieldResults" msprop:Generator_ColumnPropNameInRow="PublicFieldResults" msprop:Generator_ColumnPropNameInTable="PublicFieldResultsColumn" msprop:Generator_UserColumnName="PublicFieldResults" type="xs:boolean" />
+            <xs:attribute name="BuiltIn" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnBuiltIn" msprop:Generator_ColumnPropNameInRow="BuiltIn" msprop:Generator_ColumnPropNameInTable="BuiltInColumn" msprop:Generator_UserColumnName="BuiltIn" type="xs:boolean" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Question" msprop:Generator_TableClassName="QuestionDataTable" msprop:Generator_TableVarName="tableQuestion" msprop:Generator_RowChangedName="QuestionRowChanged" msprop:Generator_TablePropName="Question" msprop:Generator_RowDeletingName="QuestionRowDeleting" msprop:Generator_RowChangingName="QuestionRowChanging" msprop:Generator_RowEvHandlerName="QuestionRowChangeEventHandler" msprop:Generator_RowDeletedName="QuestionRowDeleted" msprop:Generator_RowClassName="QuestionRow" msprop:Generator_UserTableName="Question" msprop:Generator_RowEvArgName="QuestionRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="QuestionText" msprop:Generator_ColumnVarNameInTable="columnQuestionText" msprop:Generator_ColumnPropNameInRow="QuestionText" msprop:Generator_ColumnPropNameInTable="QuestionTextColumn" msprop:Generator_UserColumnName="QuestionText" type="xs:string" minOccurs="0" msdata:Ordinal="12" />
+              <xs:element name="QuestionPipeAlias" msprop:Generator_ColumnVarNameInTable="columnQuestionPipeAlias" msprop:Generator_ColumnPropNameInRow="QuestionPipeAlias" msprop:Generator_ColumnPropNameInTable="QuestionPipeAliasColumn" msprop:Generator_UserColumnName="QuestionPipeAlias" type="xs:string" minOccurs="0" msdata:Ordinal="13" />
+              <xs:element name="QuestionIdText" msprop:Generator_ColumnVarNameInTable="columnQuestionIdText" msprop:Generator_ColumnPropNameInRow="QuestionIdText" msprop:Generator_ColumnPropNameInTable="QuestionIdTextColumn" msprop:Generator_UserColumnName="QuestionIdText" type="xs:string" minOccurs="0" msdata:Ordinal="14" />
+              <xs:element name="Alias" msprop:Generator_ColumnVarNameInTable="columnAlias" msprop:Generator_ColumnPropNameInRow="Alias" msprop:Generator_ColumnPropNameInTable="AliasColumn" msprop:Generator_UserColumnName="Alias" type="xs:string" minOccurs="0" msdata:Ordinal="15" />
+              <xs:element name="HelpText" msprop:Generator_ColumnVarNameInTable="columnHelpText" msprop:Generator_ColumnPropNameInRow="HelpText" msprop:Generator_ColumnPropNameInTable="HelpTextColumn" msprop:Generator_UserColumnName="HelpText" type="xs:string" minOccurs="0" msdata:Ordinal="16" />
+              <xs:element name="ShowHelpText" msprop:Generator_ColumnVarNameInTable="columnShowHelpText" msprop:Generator_ColumnPropNameInRow="ShowHelpText" msprop:Generator_ColumnPropNameInTable="ShowHelpTextColumn" msprop:Generator_UserColumnName="ShowHelpText" type="xs:string" minOccurs="0" msdata:Ordinal="17" />
+              <xs:element name="QuestionGroupId" msprop:Generator_ColumnVarNameInTable="columnQuestionGroupId" msprop:Generator_ColumnPropNameInRow="QuestionGroupId" msprop:Generator_ColumnPropNameInTable="QuestionGroupIdColumn" msprop:Generator_UserColumnName="QuestionGroupId" type="xs:int" minOccurs="0" msdata:Ordinal="18" />
+              <xs:element name="Answer" msprop:Generator_TableClassName="AnswerDataTable" msprop:Generator_TableVarName="tableAnswer" msprop:Generator_RowChangedName="AnswerRowChanged" msprop:Generator_TablePropName="Answer" msprop:Generator_RowDeletingName="AnswerRowDeleting" msprop:Generator_RowChangingName="AnswerRowChanging" msprop:Generator_RowEvHandlerName="AnswerRowChangeEventHandler" msprop:Generator_RowDeletedName="AnswerRowDeleted" msprop:Generator_RowClassName="AnswerRow" msprop:Generator_UserTableName="Answer" msprop:Generator_RowEvArgName="AnswerRowChangeEvent" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="AnswerText" msprop:Generator_ColumnVarNameInTable="columnAnswerText" msprop:Generator_ColumnPropNameInRow="AnswerText" msprop:Generator_ColumnPropNameInTable="AnswerTextColumn" msprop:Generator_UserColumnName="AnswerText" type="xs:string" minOccurs="0" msdata:Ordinal="9" />
+                    <xs:element name="ImageURL" msprop:Generator_ColumnVarNameInTable="columnImageURL" msprop:Generator_ColumnPropNameInRow="ImageURL" msprop:Generator_ColumnPropNameInTable="ImageURLColumn" msprop:Generator_UserColumnName="ImageURL" type="xs:string" minOccurs="0" msdata:Ordinal="10" />
+                    <xs:element name="DefaultText" msprop:Generator_ColumnVarNameInTable="columnDefaultText" msprop:Generator_ColumnPropNameInRow="DefaultText" msprop:Generator_ColumnPropNameInTable="DefaultTextColumn" msprop:Generator_UserColumnName="DefaultText" type="xs:string" minOccurs="0" msdata:Ordinal="11" />
+                    <xs:element name="AnswerPipeAlias" msprop:Generator_ColumnVarNameInTable="columnAnswerPipeAlias" msprop:Generator_ColumnPropNameInRow="AnswerPipeAlias" msprop:Generator_ColumnPropNameInTable="AnswerPipeAliasColumn" msprop:Generator_UserColumnName="AnswerPipeAlias" type="xs:string" minOccurs="0" msdata:Ordinal="12" />
+                    <xs:element name="AnswerIdText" msprop:Generator_ColumnVarNameInTable="columnAnswerIdText" msprop:Generator_ColumnPropNameInRow="AnswerIdText" msprop:Generator_ColumnPropNameInTable="AnswerIdTextColumn" msprop:Generator_UserColumnName="AnswerIdText" type="xs:string" minOccurs="0" msdata:Ordinal="13" />
+                    <xs:element name="AnswerAlias" msprop:Generator_ColumnVarNameInTable="columnAnswerAlias" msprop:Generator_ColumnPropNameInRow="AnswerAlias" msprop:Generator_ColumnPropNameInTable="AnswerAliasColumn" msprop:Generator_UserColumnName="AnswerAlias" type="xs:string" minOccurs="0" msdata:Ordinal="14" />
+                    <xs:element name="SliderRange" msprop:Generator_ColumnVarNameInTable="columnSliderRange" msprop:Generator_ColumnPropNameInRow="SliderRange" msprop:Generator_ColumnPropNameInTable="SliderRangeColumn" msprop:Generator_UserColumnName="SliderRange" type="xs:string" minOccurs="0" msdata:Ordinal="15" />
+                    <xs:element name="SliderValue" msprop:Generator_ColumnVarNameInTable="columnSliderValue" msprop:Generator_ColumnPropNameInRow="SliderValue" msprop:Generator_ColumnPropNameInTable="SliderValueColumn" msprop:Generator_UserColumnName="SliderValue" type="xs:int" minOccurs="0" msdata:Ordinal="16" />
+                    <xs:element name="SliderMin" msprop:Generator_ColumnVarNameInTable="columnSliderMin" msprop:Generator_ColumnPropNameInRow="SliderMin" msprop:Generator_ColumnPropNameInTable="SliderMinColumn" msprop:Generator_UserColumnName="SliderMin" type="xs:int" minOccurs="0" msdata:Ordinal="17" />
+                    <xs:element name="SliderMax" msprop:Generator_ColumnVarNameInTable="columnSliderMax" msprop:Generator_ColumnPropNameInRow="SliderMax" msprop:Generator_ColumnPropNameInTable="SliderMaxColumn" msprop:Generator_UserColumnName="SliderMax" type="xs:int" minOccurs="0" msdata:Ordinal="18" />
+                    <xs:element name="SliderAnimate" msprop:Generator_ColumnVarNameInTable="columnSliderAnimate" msprop:Generator_ColumnPropNameInRow="SliderAnimate" msprop:Generator_ColumnPropNameInTable="SliderAnimateColumn" msprop:Generator_UserColumnName="SliderAnimate" type="xs:boolean" minOccurs="0" msdata:Ordinal="19" />
+                    <xs:element name="SliderStep" msprop:Generator_ColumnVarNameInTable="columnSliderStep" msprop:Generator_ColumnPropNameInRow="SliderStep" msprop:Generator_ColumnPropNameInTable="SliderStepColumn" msprop:Generator_UserColumnName="SliderStep" type="xs:int" minOccurs="0" msdata:Ordinal="20" />
+                    <xs:element name="OldId" msprop:Generator_ColumnVarNameInTable="columnOldId" msprop:Generator_ColumnPropNameInRow="OldId" msprop:Generator_ColumnPropNameInTable="OldIdColumn" msprop:Generator_UserColumnName="OldId" type="xs:int" minOccurs="0" msdata:Ordinal="21" />
+                    <xs:element name="AnswerProperty" msprop:Generator_TableClassName="AnswerPropertyDataTable" msprop:Generator_TableVarName="tableAnswerProperty" msprop:Generator_RowChangedName="AnswerPropertyRowChanged" msprop:Generator_TablePropName="AnswerProperty" msprop:Generator_RowDeletingName="AnswerPropertyRowDeleting" msprop:Generator_RowChangingName="AnswerPropertyRowChanging" msprop:Generator_RowEvHandlerName="AnswerPropertyRowChangeEventHandler" msprop:Generator_RowDeletedName="AnswerPropertyRowDeleted" msprop:Generator_RowClassName="AnswerPropertyRow" msprop:Generator_UserTableName="AnswerProperty" msprop:Generator_RowEvArgName="AnswerPropertyRowChangeEvent" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Properties" msprop:Generator_ColumnVarNameInTable="columnProperties" msprop:Generator_ColumnPropNameInRow="Properties" msprop:Generator_ColumnPropNameInTable="PropertiesColumn" msprop:Generator_UserColumnName="Properties" type="xs:base64Binary" minOccurs="0" msdata:Ordinal="1" />
+                        </xs:sequence>
+                        <xs:attribute name="AnswerId" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnAnswerId" msprop:Generator_ColumnPropNameInRow="AnswerId" msprop:Generator_ColumnPropNameInTable="AnswerIdColumn" msprop:Generator_UserColumnName="AnswerId" type="xs:int" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="QuestionId" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnQuestionId" msprop:Generator_ColumnPropNameInRow="QuestionId" msprop:Generator_ColumnPropNameInTable="QuestionIdColumn" msprop:Generator_UserColumnName="QuestionId" type="xs:int" />
+                  <xs:attribute name="AnswerTypeId" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnAnswerTypeId" msprop:Generator_ColumnPropNameInRow="AnswerTypeId" msprop:Generator_ColumnPropNameInTable="AnswerTypeIdColumn" msprop:Generator_UserColumnName="AnswerTypeId" type="xs:int" />
+                  <xs:attribute name="DisplayOrder" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnDisplayOrder" msprop:Generator_ColumnPropNameInRow="DisplayOrder" msprop:Generator_ColumnPropNameInTable="DisplayOrderColumn" msprop:Generator_UserColumnName="DisplayOrder" type="xs:int" />
+                  <xs:attribute name="ScorePoint" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnScorePoint" msprop:Generator_ColumnPropNameInRow="ScorePoint" msprop:Generator_ColumnPropNameInTable="ScorePointColumn" msprop:Generator_UserColumnName="ScorePoint" type="xs:int" />
+                  <xs:attribute name="RatePart" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnRatePart" msprop:Generator_ColumnPropNameInRow="RatePart" msprop:Generator_ColumnPropNameInTable="RatePartColumn" msprop:Generator_UserColumnName="RatePart" type="xs:boolean" />
+                  <xs:attribute name="Selected" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnSelected" msprop:Generator_ColumnPropNameInRow="Selected" msprop:Generator_ColumnPropNameInTable="SelectedColumn" msprop:Generator_UserColumnName="Selected" type="xs:boolean" />
+                  <xs:attribute name="AnswerId" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnAnswerId" msprop:Generator_ColumnPropNameInRow="AnswerId" msprop:Generator_ColumnPropNameInTable="AnswerIdColumn" msprop:Generator_UserColumnName="AnswerId" type="xs:int" use="required" />
+                  <xs:attribute name="RegularExpressionId" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnRegularExpressionId" msprop:Generator_ColumnPropNameInRow="RegularExpressionId" msprop:Generator_ColumnPropNameInTable="RegularExpressionIdColumn" msprop:Generator_UserColumnName="RegularExpressionId" type="xs:int" />
+                  <xs:attribute name="Mandatory" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnMandatory" msprop:Generator_ColumnPropNameInRow="Mandatory" msprop:Generator_ColumnPropNameInTable="MandatoryColumn" msprop:Generator_UserColumnName="Mandatory" type="xs:boolean" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ChildQuestion" msprop:Generator_TableClassName="ChildQuestionDataTable" msprop:Generator_TableVarName="tableChildQuestion" msprop:Generator_RowChangedName="ChildQuestionRowChanged" msprop:Generator_TablePropName="ChildQuestion" msprop:Generator_RowDeletingName="ChildQuestionRowDeleting" msprop:Generator_RowChangingName="ChildQuestionRowChanging" msprop:Generator_RowEvHandlerName="ChildQuestionRowChangeEventHandler" msprop:Generator_RowDeletedName="ChildQuestionRowDeleted" msprop:Generator_RowClassName="ChildQuestionRow" msprop:Generator_UserTableName="ChildQuestion" msprop:Generator_RowEvArgName="ChildQuestionRowChangeEvent" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="QuestionText" msprop:Generator_ColumnVarNameInTable="columnQuestionText" msprop:Generator_ColumnPropNameInRow="QuestionText" msprop:Generator_ColumnPropNameInTable="QuestionTextColumn" msprop:Generator_UserColumnName="QuestionText" type="xs:string" minOccurs="0" msdata:Ordinal="1" />
+                  </xs:sequence>
+                  <xs:attribute name="ParentQuestionId" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnParentQuestionId" msprop:Generator_ColumnPropNameInRow="ParentQuestionId" msprop:Generator_ColumnPropNameInTable="ParentQuestionIdColumn" msprop:Generator_UserColumnName="ParentQuestionId" type="xs:int" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="AnswerConnection" msprop:Generator_TableClassName="AnswerConnectionDataTable" msprop:Generator_TableVarName="tableAnswerConnection" msprop:Generator_RowChangedName="AnswerConnectionRowChanged" msprop:Generator_TablePropName="AnswerConnection" msprop:Generator_RowDeletingName="AnswerConnectionRowDeleting" msprop:Generator_RowChangingName="AnswerConnectionRowChanging" msprop:Generator_RowEvHandlerName="AnswerConnectionRowChangeEventHandler" msprop:Generator_RowDeletedName="AnswerConnectionRowDeleted" msprop:Generator_RowClassName="AnswerConnectionRow" msprop:Generator_UserTableName="AnswerConnection" msprop:Generator_RowEvArgName="AnswerConnectionRowChangeEvent" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="PublisherAnswerId" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnPublisherAnswerId" msprop:Generator_ColumnPropNameInRow="PublisherAnswerId" msprop:Generator_ColumnPropNameInTable="PublisherAnswerIdColumn" msprop:Generator_UserColumnName="PublisherAnswerId" type="xs:int" use="required" />
+                  <xs:attribute name="SubscriberAnswerId" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnSubscriberAnswerId" msprop:Generator_ColumnPropNameInRow="SubscriberAnswerId" msprop:Generator_ColumnPropNameInTable="SubscriberAnswerIdColumn" msprop:Generator_UserColumnName="SubscriberAnswerId" type="xs:int" use="required" />
+                  <xs:attribute name="QuestionId" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnQuestionId" msprop:Generator_ColumnPropNameInRow="QuestionId" msprop:Generator_ColumnPropNameInTable="QuestionIdColumn" msprop:Generator_UserColumnName="QuestionId" type="xs:int" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="QuestionSectionOption" msprop:Generator_TableClassName="QuestionSectionOptionDataTable" msprop:Generator_TableVarName="tableQuestionSectionOption" msprop:Generator_RowChangedName="QuestionSectionOptionRowChanged" msprop:Generator_TablePropName="QuestionSectionOption" msprop:Generator_RowDeletingName="QuestionSectionOptionRowDeleting" msprop:Generator_RowChangingName="QuestionSectionOptionRowChanging" msprop:Generator_RowEvHandlerName="QuestionSectionOptionRowChangeEventHandler" msprop:Generator_RowDeletedName="QuestionSectionOptionRowDeleted" msprop:Generator_RowClassName="QuestionSectionOptionRow" msprop:Generator_UserTableName="QuestionSectionOption" msprop:Generator_RowEvArgName="QuestionSectionOptionRowChangeEvent" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="AddSectionLinkText" msprop:Generator_ColumnVarNameInTable="columnAddSectionLinkText" msprop:Generator_ColumnPropNameInRow="AddSectionLinkText" msprop:Generator_ColumnPropNameInTable="AddSectionLinkTextColumn" msprop:Generator_UserColumnName="AddSectionLinkText" type="xs:string" minOccurs="0" msdata:Ordinal="3" />
+                    <xs:element name="DeleteSectionLinkText" msprop:Generator_ColumnVarNameInTable="columnDeleteSectionLinkText" msprop:Generator_ColumnPropNameInRow="DeleteSectionLinkText" msprop:Generator_ColumnPropNameInTable="DeleteSectionLinkTextColumn" msprop:Generator_UserColumnName="DeleteSectionLinkText" type="xs:string" minOccurs="0" msdata:Ordinal="4" />
+                    <xs:element name="EditSectionLinkText" msprop:Generator_ColumnVarNameInTable="columnEditSectionLinkText" msprop:Generator_ColumnPropNameInRow="EditSectionLinkText" msprop:Generator_ColumnPropNameInTable="EditSectionLinkTextColumn" msprop:Generator_UserColumnName="EditSectionLinkText" type="xs:string" minOccurs="0" msdata:Ordinal="5" />
+                    <xs:element name="UpdateSectionLinkText" msprop:Generator_ColumnVarNameInTable="columnUpdateSectionLinkText" msprop:Generator_ColumnPropNameInRow="UpdateSectionLinkText" msprop:Generator_ColumnPropNameInTable="UpdateSectionLinkTextColumn" msprop:Generator_UserColumnName="UpdateSectionLinkText" type="xs:string" minOccurs="0" msdata:Ordinal="6" />
+                    <xs:element name="QuestionSectionGridAnswer" msprop:Generator_TableClassName="QuestionSectionGridAnswerDataTable" msprop:Generator_TableVarName="tableQuestionSectionGridAnswer" msprop:Generator_RowChangedName="QuestionSectionGridAnswerRowChanged" msprop:Generator_TablePropName="QuestionSectionGridAnswer" msprop:Generator_RowDeletingName="QuestionSectionGridAnswerRowDeleting" msprop:Generator_RowChangingName="QuestionSectionGridAnswerRowChanging" msprop:Generator_RowEvHandlerName="QuestionSectionGridAnswerRowChangeEventHandler" msprop:Generator_RowDeletedName="QuestionSectionGridAnswerRowDeleted" msprop:Generator_RowClassName="QuestionSectionGridAnswerRow" msprop:Generator_UserTableName="QuestionSectionGridAnswer" msprop:Generator_RowEvArgName="QuestionSectionGridAnswerRowChangeEvent" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="QuestionId" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnQuestionId" msprop:Generator_ColumnPropNameInRow="QuestionId" msprop:Generator_ColumnPropNameInTable="QuestionIdColumn" msprop:Generator_UserColumnName="QuestionId" type="xs:int" use="required" />
+                        <xs:attribute name="AnswerId" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnAnswerId" msprop:Generator_ColumnPropNameInRow="AnswerId" msprop:Generator_ColumnPropNameInTable="AnswerIdColumn" msprop:Generator_UserColumnName="AnswerId" type="xs:int" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="QuestionId" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnQuestionId" msprop:Generator_ColumnPropNameInRow="QuestionId" msprop:Generator_ColumnPropNameInTable="QuestionIdColumn" msprop:Generator_UserColumnName="QuestionId" type="xs:int" use="required" />
+                  <xs:attribute name="MaxSections" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnMaxSections" msprop:Generator_ColumnPropNameInRow="MaxSections" msprop:Generator_ColumnPropNameInTable="MaxSectionsColumn" msprop:Generator_UserColumnName="MaxSections" type="xs:int" />
+                  <xs:attribute name="RepeatableSectionModeId" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnRepeatableSectionModeId" msprop:Generator_ColumnPropNameInRow="RepeatableSectionModeId" msprop:Generator_ColumnPropNameInTable="RepeatableSectionModeIdColumn" msprop:Generator_UserColumnName="RepeatableSectionModeId" type="xs:int" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="QuestionId" form="unqualified" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnQuestionId" msprop:Generator_ColumnPropNameInRow="QuestionId" msprop:Generator_ColumnPropNameInTable="QuestionIdColumn" msprop:Generator_UserColumnName="QuestionId" type="xs:int" use="required" />
+            <xs:attribute name="LayoutModeId" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnLayoutModeId" msprop:Generator_ColumnPropNameInRow="LayoutModeId" msprop:Generator_ColumnPropNameInTable="LayoutModeIdColumn" msprop:Generator_UserColumnName="LayoutModeId" type="xs:unsignedByte" />
+            <xs:attribute name="SelectionModeId" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnSelectionModeId" msprop:Generator_ColumnPropNameInRow="SelectionModeId" msprop:Generator_ColumnPropNameInTable="SelectionModeIdColumn" msprop:Generator_UserColumnName="SelectionModeId" type="xs:unsignedByte" />
+            <xs:attribute name="ColumnsNumber" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnColumnsNumber" msprop:Generator_ColumnPropNameInRow="ColumnsNumber" msprop:Generator_ColumnPropNameInTable="ColumnsNumberColumn" msprop:Generator_UserColumnName="ColumnsNumber" type="xs:int" />
+            <xs:attribute name="MinSelectionRequired" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnMinSelectionRequired" msprop:Generator_ColumnPropNameInRow="MinSelectionRequired" msprop:Generator_ColumnPropNameInTable="MinSelectionRequiredColumn" msprop:Generator_UserColumnName="MinSelectionRequired" type="xs:int" />
+            <xs:attribute name="MaxSelectionAllowed" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnMaxSelectionAllowed" msprop:Generator_ColumnPropNameInRow="MaxSelectionAllowed" msprop:Generator_ColumnPropNameInTable="MaxSelectionAllowedColumn" msprop:Generator_UserColumnName="MaxSelectionAllowed" type="xs:int" />
+            <xs:attribute name="RatingEnabled" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnRatingEnabled" msprop:Generator_ColumnPropNameInRow="RatingEnabled" msprop:Generator_ColumnPropNameInTable="RatingEnabledColumn" msprop:Generator_UserColumnName="RatingEnabled" type="xs:boolean" />
+            <xs:attribute name="RandomizeAnswers" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnRandomizeAnswers" msprop:Generator_ColumnPropNameInRow="RandomizeAnswers" msprop:Generator_ColumnPropNameInTable="RandomizeAnswersColumn" msprop:Generator_UserColumnName="RandomizeAnswers" type="xs:boolean" />
+            <xs:attribute name="SurveyId" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnSurveyId" msprop:Generator_ColumnPropNameInRow="SurveyId" msprop:Generator_ColumnPropNameInTable="SurveyIdColumn" msprop:Generator_UserColumnName="SurveyId" type="xs:int" />
+            <xs:attribute name="PageNumber" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnPageNumber" msprop:Generator_ColumnPropNameInRow="PageNumber" msprop:Generator_ColumnPropNameInTable="PageNumberColumn" msprop:Generator_UserColumnName="PageNumber" type="xs:int" />
+            <xs:attribute name="LibraryId" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnLibraryId" msprop:Generator_ColumnPropNameInRow="LibraryId" msprop:Generator_ColumnPropNameInTable="LibraryIdColumn" msprop:Generator_UserColumnName="LibraryId" type="xs:int" />
+            <xs:attribute name="DisplayOrder" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnDisplayOrder" msprop:Generator_ColumnPropNameInRow="DisplayOrder" msprop:Generator_ColumnPropNameInTable="DisplayOrderColumn" msprop:Generator_UserColumnName="DisplayOrder" type="xs:int" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RegularExpression" msprop:Generator_TableClassName="RegularExpressionDataTable" msprop:Generator_TableVarName="tableRegularExpression" msprop:Generator_RowChangedName="RegularExpressionRowChanged" msprop:Generator_TablePropName="RegularExpression" msprop:Generator_RowDeletingName="RegularExpressionRowDeleting" msprop:Generator_RowChangingName="RegularExpressionRowChanging" msprop:Generator_RowEvHandlerName="RegularExpressionRowChangeEventHandler" msprop:Generator_RowDeletedName="RegularExpressionRowDeleted" msprop:Generator_RowClassName="RegularExpressionRow" msprop:Generator_UserTableName="RegularExpression" msprop:Generator_RowEvArgName="RegularExpressionRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" type="xs:string" minOccurs="0" msdata:Ordinal="2" />
+              <xs:element name="RegExpression" msprop:Generator_ColumnVarNameInTable="columnRegExpression" msprop:Generator_ColumnPropNameInRow="RegExpression" msprop:Generator_ColumnPropNameInTable="RegExpressionColumn" msprop:Generator_UserColumnName="RegExpression" type="xs:string" minOccurs="0" msdata:Ordinal="3" />
+              <xs:element name="RegExMessage" msprop:Generator_ColumnVarNameInTable="columnRegExMessage" msprop:Generator_ColumnPropNameInRow="RegExMessage" msprop:Generator_ColumnPropNameInTable="RegExMessageColumn" msprop:Generator_UserColumnName="RegExMessage" type="xs:string" minOccurs="0" msdata:Ordinal="4" />
+            </xs:sequence>
+            <xs:attribute name="RegularExpressionId" form="unqualified" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnRegularExpressionId" msprop:Generator_ColumnPropNameInRow="RegularExpressionId" msprop:Generator_ColumnPropNameInTable="RegularExpressionIdColumn" msprop:Generator_UserColumnName="RegularExpressionId" type="xs:int" use="required" />
+            <xs:attribute name="BuiltIn" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnBuiltIn" msprop:Generator_ColumnPropNameInRow="BuiltIn" msprop:Generator_ColumnPropNameInTable="BuiltInColumn" msprop:Generator_UserColumnName="BuiltIn" type="xs:boolean" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MultiLanguageText" msprop:Generator_TableClassName="MultiLanguageTextDataTable" msprop:Generator_TableVarName="tableMultiLanguageText" msprop:Generator_TablePropName="MultiLanguageText" msprop:Generator_RowDeletingName="MultiLanguageTextRowDeleting" msprop:Generator_RowChangingName="MultiLanguageTextRowChanging" msprop:Generator_RowEvHandlerName="MultiLanguageTextRowChangeEventHandler" msprop:Generator_RowDeletedName="MultiLanguageTextRowDeleted" msprop:Generator_UserTableName="MultiLanguageText" msprop:Generator_RowChangedName="MultiLanguageTextRowChanged" msprop:Generator_RowEvArgName="MultiLanguageTextRowChangeEvent" msprop:Generator_RowClassName="MultiLanguageTextRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LanguageItemId" msprop:Generator_ColumnVarNameInTable="columnLanguageItemId" msprop:Generator_ColumnPropNameInRow="LanguageItemId" msprop:Generator_ColumnPropNameInTable="LanguageItemIdColumn" msprop:Generator_UserColumnName="LanguageItemId" type="xs:int" minOccurs="0" />
+              <xs:element name="LanguageCode" msprop:Generator_ColumnVarNameInTable="columnLanguageCode" msprop:Generator_ColumnPropNameInRow="LanguageCode" msprop:Generator_ColumnPropNameInTable="LanguageCodeColumn" msprop:Generator_UserColumnName="LanguageCode" type="xs:string" minOccurs="0" />
+              <xs:element name="LanguageMessageTypeId" msprop:Generator_ColumnVarNameInTable="columnLanguageMessageTypeId" msprop:Generator_ColumnPropNameInRow="LanguageMessageTypeId" msprop:Generator_ColumnPropNameInTable="LanguageMessageTypeIdColumn" msprop:Generator_UserColumnName="LanguageMessageTypeId" type="xs:int" minOccurs="0" />
+              <xs:element name="ItemText" msprop:Generator_ColumnVarNameInTable="columnItemText" msprop:Generator_ColumnPropNameInRow="ItemText" msprop:Generator_ColumnPropNameInTable="ItemTextColumn" msprop:Generator_UserColumnName="ItemText" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="QuestionGroups" msprop:Generator_TableClassName="QuestionGroupsDataTable" msprop:Generator_TableVarName="tableQuestionGroups" msprop:Generator_RowChangedName="QuestionGroupsRowChanged" msprop:Generator_TablePropName="QuestionGroups" msprop:Generator_RowDeletingName="QuestionGroupsRowDeleting" msprop:Generator_RowChangingName="QuestionGroupsRowChanging" msprop:Generator_RowEvHandlerName="QuestionGroupsRowChangeEventHandler" msprop:Generator_RowDeletedName="QuestionGroupsRowDeleted" msprop:Generator_RowClassName="QuestionGroupsRow" msprop:Generator_UserTableName="QuestionGroups" msprop:Generator_RowEvArgName="QuestionGroupsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" minOccurs="0" />
+              <xs:element name="ParentGroupId" msprop:Generator_ColumnVarNameInTable="columnParentGroupId" msprop:Generator_ColumnPropNameInRow="ParentGroupId" msprop:Generator_ColumnPropNameInTable="ParentGroupIdColumn" msprop:Generator_UserColumnName="ParentGroupId" type="xs:int" minOccurs="0" />
+              <xs:element name="GroupName" msprop:Generator_ColumnVarNameInTable="columnGroupName" msprop:Generator_ColumnPropNameInRow="GroupName" msprop:Generator_ColumnPropNameInTable="GroupNameColumn" msprop:Generator_UserColumnName="GroupName" type="xs:string" minOccurs="0" />
+              <xs:element name="DisplayOrder" msprop:Generator_ColumnVarNameInTable="columnDisplayOrder" msprop:Generator_ColumnPropNameInRow="DisplayOrder" msprop:Generator_ColumnPropNameInTable="DisplayOrderColumn" msprop:Generator_UserColumnName="DisplayOrder" type="xs:int" minOccurs="0" />
+              <xs:element name="OldId" msprop:Generator_ColumnVarNameInTable="columnOldId" msprop:Generator_ColumnPropNameInRow="OldId" msprop:Generator_ColumnPropNameInTable="OldIdColumn" msprop:Generator_UserColumnName="OldId" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="NSurveyQuestionKey3" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:AnswerType" />
+      <xs:field xpath="@AnswerTypeID" />
+    </xs:unique>
+    <xs:unique name="NSurveyQuestionKey7" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:AnswerProperty" />
+      <xs:field xpath="@AnswerId" />
+    </xs:unique>
+    <xs:unique name="NSurveyQuestionKey5" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Answer" />
+      <xs:field xpath="@AnswerId" />
+    </xs:unique>
+    <xs:unique name="NSurveyQuestionKey2" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:AnswerConnection" />
+      <xs:field xpath="@PublisherAnswerId" />
+      <xs:field xpath="@SubscriberAnswerId" />
+    </xs:unique>
+    <xs:unique name="NSurveyQuestionKey9" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:QuestionSectionGridAnswer" />
+      <xs:field xpath="@QuestionId" />
+      <xs:field xpath="@AnswerId" />
+    </xs:unique>
+    <xs:unique name="NSurveyQuestionKey8" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:QuestionSectionOption" />
+      <xs:field xpath="@QuestionId" />
+    </xs:unique>
+    <xs:unique name="NSurveyQuestionKey4">
+      <xs:selector xpath=".//mstns:Question" />
+      <xs:field xpath="@QuestionId" />
+    </xs:unique>
+    <xs:unique name="NSurveyQuestionKey6" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RegularExpression" />
+      <xs:field xpath="@RegularExpressionId" />
+    </xs:unique>
+    <xs:keyref name="QuestionQuestionSectionOption" refer="NSurveyQuestionKey4" msdata:IsNested="true" msprop:rel_Generator_UserChildTable="QuestionSectionOption" msprop:rel_Generator_ChildPropName="GetQuestionSectionOptionRows" msprop:rel_Generator_UserRelationName="QuestionQuestionSectionOption" msprop:rel_Generator_RelationVarName="relationQuestionQuestionSectionOption" msprop:rel_Generator_UserParentTable="Question" msprop:rel_Generator_ParentPropName="QuestionRow">
+      <xs:selector xpath=".//mstns:QuestionSectionOption" />
+      <xs:field xpath="@QuestionId" />
+    </xs:keyref>
+    <xs:keyref name="AnswerQuestionSectionGridAnswer" refer="NSurveyQuestionKey5" msprop:rel_Generator_UserChildTable="QuestionSectionGridAnswer" msprop:rel_Generator_ChildPropName="GetQuestionSectionGridAnswerRows" msprop:rel_Generator_UserRelationName="AnswerQuestionSectionGridAnswer" msprop:rel_Generator_RelationVarName="relationAnswerQuestionSectionGridAnswer" msprop:rel_Generator_UserParentTable="Answer" msprop:rel_Generator_ParentPropName="AnswerRow">
+      <xs:selector xpath=".//mstns:QuestionSectionGridAnswer" />
+      <xs:field xpath="@AnswerId" />
+    </xs:keyref>
+    <xs:keyref name="QuestionSectionOptionQuestionSectionGridAnswer" refer="NSurveyQuestionKey8" msdata:IsNested="true" msprop:rel_Generator_UserChildTable="QuestionSectionGridAnswer" msprop:rel_Generator_ChildPropName="GetQuestionSectionGridAnswerRows" msprop:rel_Generator_UserRelationName="QuestionSectionOptionQuestionSectionGridAnswer" msprop:rel_Generator_RelationVarName="relationQuestionSectionOptionQuestionSectionGridAnswer" msprop:rel_Generator_UserParentTable="QuestionSectionOption" msprop:rel_Generator_ParentPropName="QuestionSectionOptionRow">
+      <xs:selector xpath=".//mstns:QuestionSectionGridAnswer" />
+      <xs:field xpath="@QuestionId" />
+    </xs:keyref>
+    <xs:keyref name="PublisherAnswerConnection" refer="NSurveyQuestionKey5" msprop:rel_Generator_UserChildTable="AnswerConnection" msprop:rel_Generator_ChildPropName="GetAnswerConnectionRowsByPublisherAnswerConnection" msprop:rel_Generator_UserRelationName="PublisherAnswerConnection" msprop:rel_Generator_RelationVarName="relationPublisherAnswerConnection" msprop:rel_Generator_UserParentTable="Answer" msprop:rel_Generator_ParentPropName="AnswerRowByPublisherAnswerConnection">
+      <xs:selector xpath=".//mstns:AnswerConnection" />
+      <xs:field xpath="@PublisherAnswerId" />
+    </xs:keyref>
+    <xs:keyref name="SubscriberAnswerConnection" refer="NSurveyQuestionKey5" msprop:rel_Generator_UserChildTable="AnswerConnection" msprop:rel_Generator_ChildPropName="GetAnswerConnectionRowsBySubscriberAnswerConnection" msprop:rel_Generator_UserRelationName="SubscriberAnswerConnection" msprop:rel_Generator_RelationVarName="relationSubscriberAnswerConnection" msprop:rel_Generator_UserParentTable="Answer" msprop:rel_Generator_ParentPropName="AnswerRowBySubscriberAnswerConnection">
+      <xs:selector xpath=".//mstns:AnswerConnection" />
+      <xs:field xpath="@SubscriberAnswerId" />
+    </xs:keyref>
+    <xs:keyref name="QuestionAnswerConnection" refer="NSurveyQuestionKey4" msdata:IsNested="true" msprop:rel_Generator_UserChildTable="AnswerConnection" msprop:rel_Generator_ChildPropName="GetAnswerConnectionRows" msprop:rel_Generator_UserRelationName="QuestionAnswerConnection" msprop:rel_Generator_RelationVarName="relationQuestionAnswerConnection" msprop:rel_Generator_UserParentTable="Question" msprop:rel_Generator_ParentPropName="QuestionRow">
+      <xs:selector xpath=".//mstns:AnswerConnection" />
+      <xs:field xpath="@QuestionId" />
+    </xs:keyref>
+    <xs:keyref name="QuestionChildQuestion" refer="NSurveyQuestionKey4" msdata:IsNested="true" msprop:rel_Generator_UserChildTable="ChildQuestion" msprop:rel_Generator_ChildPropName="GetChildQuestionRows" msprop:rel_Generator_UserRelationName="QuestionChildQuestion" msprop:rel_Generator_RelationVarName="relationQuestionChildQuestion" msprop:rel_Generator_UserParentTable="Question" msprop:rel_Generator_ParentPropName="QuestionRow">
+      <xs:selector xpath=".//mstns:ChildQuestion" />
+      <xs:field xpath="@ParentQuestionId" />
+    </xs:keyref>
+    <xs:keyref name="AnswerTypeAnswer" refer="NSurveyQuestionKey3" msprop:rel_Generator_UserChildTable="Answer" msprop:rel_Generator_ChildPropName="GetAnswerRows" msprop:rel_Generator_UserRelationName="AnswerTypeAnswer" msprop:rel_Generator_RelationVarName="relationAnswerTypeAnswer" msprop:rel_Generator_UserParentTable="AnswerType" msprop:rel_Generator_ParentPropName="AnswerTypeRow">
+      <xs:selector xpath=".//mstns:Answer" />
+      <xs:field xpath="@AnswerTypeId" />
+    </xs:keyref>
+    <xs:keyref name="RegularExpressionAnswer" refer="NSurveyQuestionKey6" msprop:rel_Generator_UserChildTable="Answer" msprop:rel_Generator_ChildPropName="GetAnswerRows" msprop:rel_Generator_UserRelationName="RegularExpressionAnswer" msprop:rel_Generator_RelationVarName="relationRegularExpressionAnswer" msprop:rel_Generator_UserParentTable="RegularExpression" msprop:rel_Generator_ParentPropName="RegularExpressionRow">
+      <xs:selector xpath=".//mstns:Answer" />
+      <xs:field xpath="@RegularExpressionId" />
+    </xs:keyref>
+    <xs:keyref name="QuestionAnswer" refer="NSurveyQuestionKey4" msdata:IsNested="true" msprop:rel_Generator_UserChildTable="Answer" msprop:rel_Generator_ChildPropName="GetAnswerRows" msprop:rel_Generator_UserRelationName="QuestionAnswer" msprop:rel_Generator_RelationVarName="relationQuestionAnswer" msprop:rel_Generator_UserParentTable="Question" msprop:rel_Generator_ParentPropName="QuestionRow">
+      <xs:selector xpath=".//mstns:Answer" />
+      <xs:field xpath="@QuestionId" />
+    </xs:keyref>
+    <xs:keyref name="AnswerAnswerProperty" refer="NSurveyQuestionKey5" msdata:IsNested="true" msprop:rel_Generator_UserChildTable="AnswerProperty" msprop:rel_Generator_ChildPropName="GetAnswerPropertyRows" msprop:rel_Generator_UserRelationName="AnswerAnswerProperty" msprop:rel_Generator_RelationVarName="relationAnswerAnswerProperty" msprop:rel_Generator_UserParentTable="Answer" msprop:rel_Generator_ParentPropName="AnswerRow">
+      <xs:selector xpath=".//mstns:AnswerProperty" />
+      <xs:field xpath="@AnswerId" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

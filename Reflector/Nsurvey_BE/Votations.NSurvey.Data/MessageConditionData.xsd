@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="MessageConditionData" targetNamespace="http://tempuri.org/MessageConditionData.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/MessageConditionData.xsd" xmlns:mstns="http://tempuri.org/MessageConditionData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+    <xs:element name="MessageConditionData" msdata:IsDataSet="true">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="MessageConditions">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="MessageConditionId" msdata:ReadOnly="false" msdata:AutoIncrement="true" type="xs:int" />
+                            <xs:element name="MessageConditionalOperator" type="xs:int" minOccurs="0" />
+                            <xs:element name="SurveyId" type="xs:int" minOccurs="0" />
+                            <xs:element name="QuestionId" type="xs:int" minOccurs="0" />
+                            <xs:element name="ConditionalOperator" type="xs:int" minOccurs="0" />
+                            <xs:element name="AnswerId" type="xs:int" minOccurs="0" />
+                            <xs:element name="TextFilter" type="xs:string" minOccurs="0" />
+                            <xs:element name="ThankYouMessage" type="xs:string" minOccurs="0" />
+                            <xs:element name="Score" type="xs:int" minOccurs="0" />
+                            <xs:element name="ScoreMax" type="xs:int" minOccurs="0" />
+                            <xs:element name="ExpressionOperator" type="xs:int" minOccurs="0" msprop:nullValue="2" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

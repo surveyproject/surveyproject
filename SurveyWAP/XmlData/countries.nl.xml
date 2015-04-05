@@ -1,0 +1,247 @@
+<?xml version="1.0" standalone="yes"?>
+<NSurveyDataSource xmlns="http://www.nsurvey.org/NSurveyDataSource.xsd">
+	<XmlDataSource>
+		<XmlAnswers>
+		  <XmlAnswer><AnswerValue></AnswerValue><AnswerDescription>[Select Country]</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>AF</AnswerValue><AnswerDescription>Afghanistan</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>AL</AnswerValue><AnswerDescription>Albanie</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>DZ</AnswerValue><AnswerDescription>Algerije</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>AS</AnswerValue><AnswerDescription>Americaans Samoa</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>AD</AnswerValue><AnswerDescription>Andorra</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>AO</AnswerValue><AnswerDescription>Angola</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>AI</AnswerValue><AnswerDescription>Anguilla</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>AQ</AnswerValue><AnswerDescription>Antarctica</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>AG</AnswerValue><AnswerDescription>Antigua en Barbuda</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>AR</AnswerValue><AnswerDescription>Argentinie</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>AM</AnswerValue><AnswerDescription>Armenie</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>AW</AnswerValue><AnswerDescription>Aruba</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>AU</AnswerValue><AnswerDescription>Australie</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>AT</AnswerValue><AnswerDescription>Oostenrijk</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>AZ</AnswerValue><AnswerDescription>Azerbeijaan</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>BS</AnswerValue><AnswerDescription>Bahamas</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>BH</AnswerValue><AnswerDescription>Bahrein</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>BD</AnswerValue><AnswerDescription>Bangladesh</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>BB</AnswerValue><AnswerDescription>Barbados</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>BY</AnswerValue><AnswerDescription>Wit Rusland</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>BE</AnswerValue><AnswerDescription>Belgie</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>BZ</AnswerValue><AnswerDescription>Belize</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>BJ</AnswerValue><AnswerDescription>Benin</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>BM</AnswerValue><AnswerDescription>Bermuda</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>BT</AnswerValue><AnswerDescription>Bhutan</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>BO</AnswerValue><AnswerDescription>Bolivia</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>BA</AnswerValue><AnswerDescription>Bosnie en Herzegowina</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>BW</AnswerValue><AnswerDescription>Botswana</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>BV</AnswerValue><AnswerDescription>Bouvet Eiland</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>BR</AnswerValue><AnswerDescription>Brazilie</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>IO</AnswerValue><AnswerDescription>Brits Indische Oceaan Gebied</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>BN</AnswerValue><AnswerDescription>Brunei Darussalam</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>BG</AnswerValue><AnswerDescription>Bulgarije</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>BF</AnswerValue><AnswerDescription>Burkina Faso</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>BI</AnswerValue><AnswerDescription>Burundi</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>KH</AnswerValue><AnswerDescription>Cambodja</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>CM</AnswerValue><AnswerDescription>Kameroen</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>CA</AnswerValue><AnswerDescription>Canada</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>CV</AnswerValue><AnswerDescription>Kaap Verdie</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>KY</AnswerValue><AnswerDescription>Kaaiman Islands</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>CF</AnswerValue><AnswerDescription>Centraal Afrikaanse Republiek</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>TD</AnswerValue><AnswerDescription>Tjsaad</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>CL</AnswerValue><AnswerDescription>Chili</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>CN</AnswerValue><AnswerDescription>China</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>CX</AnswerValue><AnswerDescription>Christmas Island</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>CC</AnswerValue><AnswerDescription>Cocos (Keeling) Islands</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>CO</AnswerValue><AnswerDescription>Colombia</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>KM</AnswerValue><AnswerDescription>Comoros</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>CG</AnswerValue><AnswerDescription>Congo</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>CK</AnswerValue><AnswerDescription>Cook Islands</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>CR</AnswerValue><AnswerDescription>Costa Rica</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>CI</AnswerValue><AnswerDescription>Ivoorkust</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>HR</AnswerValue><AnswerDescription>Kroatie (Local Name: Hrvatska)</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>CU</AnswerValue><AnswerDescription>Cuba</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>CY</AnswerValue><AnswerDescription>Cyprus</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>CZ</AnswerValue><AnswerDescription>Tsjechische Republiek</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>DK</AnswerValue><AnswerDescription>Denemarken</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>DJ</AnswerValue><AnswerDescription>Djibouti</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>DM</AnswerValue><AnswerDescription>Dominica</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>DO</AnswerValue><AnswerDescription>Dominicaanse Republiek</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>TP</AnswerValue><AnswerDescription>Oost Timor</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>EC</AnswerValue><AnswerDescription>Ecuador</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>EG</AnswerValue><AnswerDescription>Egypte</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>SV</AnswerValue><AnswerDescription>El Salvador</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>GQ</AnswerValue><AnswerDescription>Equatoriaal Guinea</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>ER</AnswerValue><AnswerDescription>Eritrea</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>EE</AnswerValue><AnswerDescription>Estland</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>ET</AnswerValue><AnswerDescription>Ethiopie</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>FK</AnswerValue><AnswerDescription>Falkland Eilanden (Malvinas)</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>FO</AnswerValue><AnswerDescription>Faroer Eilanden</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>FJ</AnswerValue><AnswerDescription>Fiji</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>FI</AnswerValue><AnswerDescription>Finland</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>FR</AnswerValue><AnswerDescription>Frankrijk</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>GF</AnswerValue><AnswerDescription>Frans Guiana</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>PF</AnswerValue><AnswerDescription>Frans Polynesie</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>TF</AnswerValue><AnswerDescription>French Southern Territories</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>GA</AnswerValue><AnswerDescription>Gabon</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>GM</AnswerValue><AnswerDescription>Gambia</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>GE</AnswerValue><AnswerDescription>Georgie</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>DE</AnswerValue><AnswerDescription>Duitsland</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>GH</AnswerValue><AnswerDescription>Ghana</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>GI</AnswerValue><AnswerDescription>Gibraltar</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>GR</AnswerValue><AnswerDescription>Griekenland</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>GL</AnswerValue><AnswerDescription>Groenland</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>GD</AnswerValue><AnswerDescription>Grenada</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>GP</AnswerValue><AnswerDescription>Guadeloupe</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>GU</AnswerValue><AnswerDescription>Guam</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>GT</AnswerValue><AnswerDescription>Guatemala</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>GN</AnswerValue><AnswerDescription>Guinea</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>GW</AnswerValue><AnswerDescription>Guinea-Bissau</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>GY</AnswerValue><AnswerDescription>Guyana</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>HT</AnswerValue><AnswerDescription>Haiti</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>HM</AnswerValue><AnswerDescription>Heard And Mc Donald Islands</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>VA</AnswerValue><AnswerDescription>Het Vaticaan (Vatican City State)</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>HN</AnswerValue><AnswerDescription>Honduras</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>HK</AnswerValue><AnswerDescription>Hong Kong</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>HU</AnswerValue><AnswerDescription>Hongarije</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>IS</AnswerValue><AnswerDescription>Icel And</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>IN</AnswerValue><AnswerDescription>India</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>ID</AnswerValue><AnswerDescription>Indonesie</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>IR</AnswerValue><AnswerDescription>Iran (Islamic Republic Of)</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>IQ</AnswerValue><AnswerDescription>Irak</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>IE</AnswerValue><AnswerDescription>Ierland</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>IL</AnswerValue><AnswerDescription>Israel</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>IT</AnswerValue><AnswerDescription>Italie</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>JM</AnswerValue><AnswerDescription>Jamaica</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>JP</AnswerValue><AnswerDescription>Japan</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>JO</AnswerValue><AnswerDescription>Jordanie</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>KZ</AnswerValue><AnswerDescription>Kazakhstan</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>KE</AnswerValue><AnswerDescription>Kenya</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>KI</AnswerValue><AnswerDescription>Kiribati</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>KP</AnswerValue><AnswerDescription>Korea, Dem People'S Republic</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>KR</AnswerValue><AnswerDescription>Korea, Republic Of</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>KW</AnswerValue><AnswerDescription>Koeweit</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>KG</AnswerValue><AnswerDescription>Kyrgyzstan</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>LA</AnswerValue><AnswerDescription>Lao People'S Dem Republic</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>LV</AnswerValue><AnswerDescription>Letland</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>LB</AnswerValue><AnswerDescription>Libanon</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>LS</AnswerValue><AnswerDescription>Lesotho</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>LR</AnswerValue><AnswerDescription>Liberia</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>LY</AnswerValue><AnswerDescription>Libyan Arab Jamahiriya</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>LI</AnswerValue><AnswerDescription>Liechtenstein</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>LT</AnswerValue><AnswerDescription>Litouwen</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>LU</AnswerValue><AnswerDescription>Luxemburg</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>MO</AnswerValue><AnswerDescription>Macau</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>MK</AnswerValue><AnswerDescription>Macedonie</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>MG</AnswerValue><AnswerDescription>Madagascar</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>MW</AnswerValue><AnswerDescription>Malawi</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>MY</AnswerValue><AnswerDescription>Maleisie</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>MV</AnswerValue><AnswerDescription>Maldiven</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>ML</AnswerValue><AnswerDescription>Mali</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>MT</AnswerValue><AnswerDescription>Malta</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>MH</AnswerValue><AnswerDescription>Marshall Islands</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>MQ</AnswerValue><AnswerDescription>Martinique</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>MR</AnswerValue><AnswerDescription>Mauritanie</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>MU</AnswerValue><AnswerDescription>Mauritius</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>YT</AnswerValue><AnswerDescription>Mayotte</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>MX</AnswerValue><AnswerDescription>Mexico</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>FM</AnswerValue><AnswerDescription>Micronesia, Federated States</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>MD</AnswerValue><AnswerDescription>Moldovie, Republic Of</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>MC</AnswerValue><AnswerDescription>Monaco</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>MN</AnswerValue><AnswerDescription>Mongolie</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>MS</AnswerValue><AnswerDescription>Montserrat</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>MA</AnswerValue><AnswerDescription>Marokko</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>MZ</AnswerValue><AnswerDescription>Mozambique</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>MM</AnswerValue><AnswerDescription>Myanmar (Tibet)</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>NA</AnswerValue><AnswerDescription>Namibie</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>NR</AnswerValue><AnswerDescription>Nauru</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>NP</AnswerValue><AnswerDescription>Nepal</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>NL</AnswerValue><AnswerDescription>Nederland</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>AN</AnswerValue><AnswerDescription>Nederlandse Antillen</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>NC</AnswerValue><AnswerDescription>Nieuw Caledonia</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>NZ</AnswerValue><AnswerDescription>Nieuw Zeeland</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>NI</AnswerValue><AnswerDescription>Nicaragua</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>NE</AnswerValue><AnswerDescription>Niger</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>NG</AnswerValue><AnswerDescription>Nigeria</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>NU</AnswerValue><AnswerDescription>Niue</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>NF</AnswerValue><AnswerDescription>Norfolk Island</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>MP</AnswerValue><AnswerDescription>Northern Mariana Islands</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>NO</AnswerValue><AnswerDescription>Noorwegen</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>OM</AnswerValue><AnswerDescription>Oman</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>PK</AnswerValue><AnswerDescription>Pakistan</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>PW</AnswerValue><AnswerDescription>Palau</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>PA</AnswerValue><AnswerDescription>Panama</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>PG</AnswerValue><AnswerDescription>Papua New Guinea</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>PY</AnswerValue><AnswerDescription>Paraguay</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>PE</AnswerValue><AnswerDescription>Peru</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>PH</AnswerValue><AnswerDescription>Philippines</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>PN</AnswerValue><AnswerDescription>Pitcairn</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>PL</AnswerValue><AnswerDescription>Polen</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>PT</AnswerValue><AnswerDescription>Portugal</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>PR</AnswerValue><AnswerDescription>Puerto Rico</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>QA</AnswerValue><AnswerDescription>Qatar</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>RE</AnswerValue><AnswerDescription>Reunion</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>RO</AnswerValue><AnswerDescription>Roemenie</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>RU</AnswerValue><AnswerDescription>Rusland</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>RW</AnswerValue><AnswerDescription>Rwanda</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>KN</AnswerValue><AnswerDescription>Saint K Itts And Nevis</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>LC</AnswerValue><AnswerDescription>Saint Lucia</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>VC</AnswerValue><AnswerDescription>Saint Vincent, The Grenadines</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>WS</AnswerValue><AnswerDescription>Samoa</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>SM</AnswerValue><AnswerDescription>San Marino</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>ST</AnswerValue><AnswerDescription>Sao Tome And Principe</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>SA</AnswerValue><AnswerDescription>Saudi Arabie</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>SN</AnswerValue><AnswerDescription>Senegal</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>SC</AnswerValue><AnswerDescription>Seychelles</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>SL</AnswerValue><AnswerDescription>Sierra Leone</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>SG</AnswerValue><AnswerDescription>Singapore</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>SK</AnswerValue><AnswerDescription>Slovakije (Slovak Republic)</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>SI</AnswerValue><AnswerDescription>Slovenie</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>SB</AnswerValue><AnswerDescription>Solomon Islands</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>SO</AnswerValue><AnswerDescription>Somalia</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>ZA</AnswerValue><AnswerDescription>Zuid Afrika</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>GS</AnswerValue><AnswerDescription>South Georgia , S Sandwich Is.</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>ES</AnswerValue><AnswerDescription>Spanje</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>LK</AnswerValue><AnswerDescription>Sri Lanka</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>SH</AnswerValue><AnswerDescription>St. Helena</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>PM</AnswerValue><AnswerDescription>St. Pierre And Miquelon</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>SD</AnswerValue><AnswerDescription>Soedaan</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>SR</AnswerValue><AnswerDescription>Suriname</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>SJ</AnswerValue><AnswerDescription>Svalbard, Jan Mayen Islands</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>SZ</AnswerValue><AnswerDescription>Sw Aziland</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>SE</AnswerValue><AnswerDescription>Zweden</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>CH</AnswerValue><AnswerDescription>Zwitzerland</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>SY</AnswerValue><AnswerDescription>Syrian Arab Republic</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>TW</AnswerValue><AnswerDescription>Taiwan</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>TJ</AnswerValue><AnswerDescription>Tajikistan</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>TZ</AnswerValue><AnswerDescription>Tanzania, United Republic Of</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>TH</AnswerValue><AnswerDescription>Thailand</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>TG</AnswerValue><AnswerDescription>Togo</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>TK</AnswerValue><AnswerDescription>Tokelau</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>TO</AnswerValue><AnswerDescription>Tonga</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>TT</AnswerValue><AnswerDescription>Trinidad And Tobago</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>TN</AnswerValue><AnswerDescription>Tunisie</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>TR</AnswerValue><AnswerDescription>Turkije</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>TM</AnswerValue><AnswerDescription>Turkmenistan</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>TC</AnswerValue><AnswerDescription>Turks And Caicos Islands</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>TV</AnswerValue><AnswerDescription>Tuvalu</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>UG</AnswerValue><AnswerDescription>Oeganda</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>UA</AnswerValue><AnswerDescription>Oekraine</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>AE</AnswerValue><AnswerDescription>United Arab Emirates</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>GB</AnswerValue><AnswerDescription>Verenigd Koninkrijk</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>US</AnswerValue><AnswerDescription>Verenigde Staten</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>UM</AnswerValue><AnswerDescription>United States Minor Is.</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>UY</AnswerValue><AnswerDescription>Uruguay</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>UZ</AnswerValue><AnswerDescription>Uzbekistan</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>VU</AnswerValue><AnswerDescription>Vanuatu</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>VE</AnswerValue><AnswerDescription>Venezuela</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>VN</AnswerValue><AnswerDescription>Viet Nam</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>VG</AnswerValue><AnswerDescription>Virgin Islands (British)</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>VI</AnswerValue><AnswerDescription>Virgin Islands (U.S.)</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>WF</AnswerValue><AnswerDescription>Wallis en Futuna Eilanden</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>EH</AnswerValue><AnswerDescription>West Sahara</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>YE</AnswerValue><AnswerDescription>Yemen</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>YU</AnswerValue><AnswerDescription>Joegoslavie</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>ZR</AnswerValue><AnswerDescription>Zaire</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>ZM</AnswerValue><AnswerDescription>Zambia</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>ZW</AnswerValue><AnswerDescription>Zimbabwe</AnswerDescription></XmlAnswer> 
+		</XmlAnswers>	
+	</XmlDataSource>
+</NSurveyDataSource>
+	

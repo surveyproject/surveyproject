@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="WebSecurityAddInData" targetNamespace="http://tempuri.org/WebSecurityAddInData.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/WebSecurityAddInData.xsd" xmlns:mstns="http://tempuri.org/WebSecurityAddInData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+    <xs:element name="WebSecurityAddInData" msdata:IsDataSet="true">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="WebSecurityAddIns">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="WebSecurityAddInId" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+                            <xs:element name="Description" type="xs:string" minOccurs="0" msprop:nullValue="_null" />
+                            <xs:element name="BuiltIn" type="xs:boolean" minOccurs="0" />
+                            <xs:element name="TypeNameSpace" type="xs:string" minOccurs="0" />
+                            <xs:element name="TypeAssembly" type="xs:string" minOccurs="0" />
+                            <xs:element name="TypeMode" type="xs:int" minOccurs="0" />
+                            <xs:element name="SurveyID" type="xs:int" minOccurs="0" />
+                            <xs:element name="AddInOrder" type="xs:int" minOccurs="0" />
+                            <xs:element name="Disabled" type="xs:boolean" minOccurs="0" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+        </xs:complexType>
+        <xs:unique name="WebSecurityAddInDataKey1" msdata:PrimaryKey="true">
+            <xs:selector xpath=".//mstns:WebSecurityAddIns" />
+            <xs:field xpath="mstns:WebSecurityAddInId" />
+        </xs:unique>
+    </xs:element>
+</xs:schema>

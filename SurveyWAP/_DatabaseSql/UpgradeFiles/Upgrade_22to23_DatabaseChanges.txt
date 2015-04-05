@@ -1,0 +1,97 @@
+_______________________________________________________________________
+
+
+Databasechanges based on file comparison SP v. 2.2 and SP v. 2.3 Beta
+
+_______________________________________________________________________
+
+
+Notes: 
+
+- In case of upgrading an SP v. 2.2 database to v.2.3 the following changes have to be made. 
+Detailed code can be copied from the main SP v. 2.3 Beta SQl files.
+
+- DB upgrades are not formally supported. Always make sure to backup your databases first before making any changes or running scripts.
+
+
+***********************************************************************************
+
+- Added Subfilter queries (see separate files: SP22to23_DbUpgrade_ParentFilterFunction directory)
+
+- CREATE PROCEDURE [dbo].[vts_spQuestionCopyToLibrary] : order of tablefields changed (related to bugfix)
+
+- inserts removed: 
+
+INSERT [dbo].[vts_tbMultiLanguageText] ([LanguageItemId], [LanguageCode], [LanguageMessageTypeId], [ItemText]) VALUES (12, N'nl-NL', 13, N'AnswerEen Alias')
+GO
+INSERT [dbo].[vts_tbMultiLanguageText] ([LanguageItemId], [LanguageCode], [LanguageMessageTypeId], [ItemText]) VALUES (13, N'nl-NL', 13, N'AnswerOne AliasAnswerEen Alias')
+GO
+INSERT [dbo].[vts_tbMultiLanguageText] ([LanguageItemId], [LanguageCode], [LanguageMessageTypeId], [ItemText]) VALUES (14, N'nl-NL', 13, N'AnswerOne AliasAnswerEen Alias')
+GO
+INSERT [dbo].[vts_tbMultiLanguageText] ([LanguageItemId], [LanguageCode], [LanguageMessageTypeId], [ItemText]) VALUES (15, N'nl-NL', 13, N'AnswerOne AliasAnswerEen Alias')
+GO
+INSERT [dbo].[vts_tbMultiLanguageText] ([LanguageItemId], [LanguageCode], [LanguageMessageTypeId], [ItemText]) VALUES (16, N'nl-NL', 13, N'AnswerOne AliasAnswerEen Alias')
+GO
+INSERT [dbo].[vts_tbMultiLanguageText] ([LanguageItemId], [LanguageCode], [LanguageMessageTypeId], [ItemText]) VALUES (17, N'nl-NL', 13, N'AnswerOne AliasAnswerEen Alias')
+GO
+INSERT [dbo].[vts_tbMultiLanguageText] ([LanguageItemId], [LanguageCode], [LanguageMessageTypeId], [ItemText]) VALUES (18, N'nl-NL', 13, N'AnswerOne AliasAnswerEen Alias')
+GO
+INSERT [dbo].[vts_tbMultiLanguageText] ([LanguageItemId], [LanguageCode], [LanguageMessageTypeId], [ItemText]) VALUES (19, N'nl-NL', 13, N'AnswerOne AliasAnswerEen Alias')
+GO
+INSERT [dbo].[vts_tbMultiLanguageText] ([LanguageItemId], [LanguageCode], [LanguageMessageTypeId], [ItemText]) VALUES (20, N'nl-NL', 13, N'AnswerOne AliasAnswerEen Alias')
+GO
+INSERT [dbo].[vts_tbMultiLanguageText] ([LanguageItemId], [LanguageCode], [LanguageMessageTypeId], [ItemText]) VALUES (21, N'nl-NL', 13, N'AnswerOne AliasAnswerEen Alias')
+GO
+INSERT [dbo].[vts_tbMultiLanguageText] ([LanguageItemId], [LanguageCode], [LanguageMessageTypeId], [ItemText]) VALUES (22, N'nl-NL', 13, N'AnswerOne AliasAnswerEen Alias')
+GO
+INSERT [dbo].[vts_tbMultiLanguageText] ([LanguageItemId], [LanguageCode], [LanguageMessageTypeId], [ItemText]) VALUES (23, N'nl-NL', 13, N'AnswerOne AliasAnswerEen Alias')
+GO
+INSERT [dbo].[vts_tbMultiLanguageText] ([LanguageItemId], [LanguageCode], [LanguageMessageTypeId], [ItemText]) VALUES (24, N'nl-NL', 13, N'AnswerOne AliasAnswerEen Alias')
+GO
+INSERT [dbo].[vts_tbMultiLanguageText] ([LanguageItemId], [LanguageCode], [LanguageMessageTypeId], [ItemText]) VALUES (38, N'nl-NL', 13, N'AnswerOne AliasAnswerEen Alias')
+GO
+INSERT [dbo].[vts_tbMultiLanguageText] ([LanguageItemId], [LanguageCode], [LanguageMessageTypeId], [ItemText]) VALUES (40, N'nl-NL', 13, N'AnswerOne AliasAnswerEen Alias')
+GO
+INSERT [dbo].[vts_tbMultiLanguageText] ([LanguageItemId], [LanguageCode], [LanguageMessageTypeId], [ItemText]) VALUES (189, N'nl-NL', 14, N'Hallo NL<br>')
+GO
+INSERT [dbo].[vts_tbMultiLanguageText] ([LanguageItemId], [LanguageCode], [LanguageMessageTypeId], [ItemText]) VALUES (189, N'nl-NL', 15, N'Hallo NL')
+GO
+
+
+- added role Surveycreator + rolerights: 
+
+INSERT [dbo].[vts_tbRole] ([RoleId], [RoleName]) VALUES (7, N'Survey Creator')
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 1)
+GO
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 2)
+GO
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 3)
+GO
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 4)
+GO
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 5)
+GO
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 6)
+GO
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 7)
+GO
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 8)
+GO
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 12)
+GO
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 22)
+GO
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 25)
+GO
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 29)
+GO
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 34)
+GO
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 35)
+GO
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 38)
+GO
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 39)
+GO
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 40)
+GO

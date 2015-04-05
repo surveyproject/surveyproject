@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NSurveyVoter" targetNamespace="http://www.nsurvey.org/NSurveyVoter.xsd" xmlns:mstns="http://www.nsurvey.org/NSurveyVoter.xsd" xmlns="http://www.nsurvey.org/NSurveyVoter.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="NSurveyVoter" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="NSurveyVoter" msprop:Generator_UserDSName="NSurveyVoter">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Voter" msprop:Generator_TableClassName="VoterDataTable" msprop:Generator_TableVarName="tableVoter" msprop:Generator_TablePropName="Voter" msprop:Generator_RowDeletingName="VoterRowDeleting" msprop:Generator_UserTableName="Voter" msprop:Generator_RowChangingName="VoterRowChanging" msprop:Generator_RowEvHandlerName="VoterRowChangeEventHandler" msprop:Generator_RowDeletedName="VoterRowDeleted" msprop:Generator_RowEvArgName="VoterRowChangeEvent" msprop:Generator_RowChangedName="VoterRowChanged" msprop:Generator_RowClassName="VoterRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="VoterID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnVoterID" msprop:Generator_ColumnPropNameInRow="VoterID" msprop:Generator_ColumnPropNameInTable="VoterIDColumn" msprop:Generator_UserColumnName="VoterID" type="xs:int" />
+              <xs:element name="UID" msprop:Generator_ColumnVarNameInTable="columnUID" msprop:Generator_ColumnPropNameInRow="UID" msprop:Generator_ColumnPropNameInTable="UIDColumn" msprop:Generator_UserColumnName="UID" type="xs:string" minOccurs="0" />
+              <xs:element name="SurveyID" msprop:Generator_ColumnVarNameInTable="columnSurveyID" msprop:Generator_ColumnPropNameInRow="SurveyID" msprop:Generator_ColumnPropNameInTable="SurveyIDColumn" msprop:Generator_UserColumnName="SurveyID" type="xs:int" minOccurs="0" />
+              <xs:element name="ContextUserName" msprop:Generator_ColumnVarNameInTable="columnContextUserName" msprop:Generator_ColumnPropNameInRow="ContextUserName" msprop:Generator_ColumnPropNameInTable="ContextUserNameColumn" msprop:Generator_UserColumnName="ContextUserName" type="xs:string" minOccurs="0" />
+              <xs:element name="VoteDate" msprop:Generator_ColumnVarNameInTable="columnVoteDate" msprop:Generator_ColumnPropNameInRow="VoteDate" msprop:Generator_ColumnPropNameInTable="VoteDateColumn" msprop:Generator_UserColumnName="VoteDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="StartDate" msprop:Generator_ColumnVarNameInTable="columnStartDate" msprop:Generator_ColumnPropNameInRow="StartDate" msprop:Generator_ColumnPropNameInTable="StartDateColumn" msprop:Generator_UserColumnName="StartDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="IPSource" msprop:Generator_ColumnVarNameInTable="columnIPSource" msprop:Generator_ColumnPropNameInRow="IPSource" msprop:Generator_ColumnPropNameInTable="IPSourceColumn" msprop:Generator_UserColumnName="IPSource" type="xs:string" minOccurs="0" />
+              <xs:element name="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_UserColumnName="Email" type="xs:string" minOccurs="0" />
+              <xs:element name="LanguageCode" msprop:Generator_ColumnVarNameInTable="columnLanguageCode" msprop:Generator_ColumnPropNameInRow="LanguageCode" msprop:Generator_ColumnPropNameInTable="LanguageCodeColumn" msprop:Generator_UserColumnName="LanguageCode" type="xs:string" minOccurs="0" />
+              <xs:element name="Question" msprop:Generator_TableClassName="QuestionDataTable" msprop:Generator_TableVarName="tableQuestion" msprop:Generator_TablePropName="Question" msprop:Generator_RowDeletingName="QuestionRowDeleting" msprop:Generator_UserTableName="Question" msprop:Generator_RowChangingName="QuestionRowChanging" msprop:Generator_RowEvHandlerName="QuestionRowChangeEventHandler" msprop:Generator_RowDeletedName="QuestionRowDeleted" msprop:Generator_RowEvArgName="QuestionRowChangeEvent" msprop:Generator_RowChangedName="QuestionRowChanged" msprop:Generator_RowClassName="QuestionRow" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="QuestionText" msprop:Generator_ColumnVarNameInTable="columnQuestionText" msprop:Generator_ColumnPropNameInRow="QuestionText" msprop:Generator_ColumnPropNameInTable="QuestionTextColumn" msprop:Generator_UserColumnName="QuestionText" type="xs:string" minOccurs="0" />
+                    <xs:element name="VoterID" msprop:Generator_ColumnVarNameInTable="columnVoterID" msprop:Generator_ColumnPropNameInRow="VoterID" msprop:Generator_ColumnPropNameInTable="VoterIDColumn" msprop:Generator_UserColumnName="VoterID" type="xs:int" />
+                    <xs:element name="QuestionId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnQuestionId" msprop:Generator_ColumnPropNameInRow="QuestionId" msprop:Generator_ColumnPropNameInTable="QuestionIdColumn" msprop:Generator_UserColumnName="QuestionId" type="xs:int" />
+                    <xs:element name="QuestionIdText" msprop:Generator_ColumnVarNameInTable="columnQuestionIdText" msprop:Generator_ColumnPropNameInRow="QuestionIdText" msprop:Generator_ColumnPropNameInTable="QuestionIdTextColumn" msprop:Generator_UserColumnName="QuestionIdText" type="xs:string" minOccurs="0" />
+                    <xs:element name="QuestionAlias" msprop:Generator_ColumnVarNameInTable="columnQuestionAlias" msprop:Generator_ColumnPropNameInRow="QuestionAlias" msprop:Generator_ColumnPropNameInTable="QuestionAliasColumn" msprop:Generator_UserColumnName="QuestionAlias" type="xs:string" minOccurs="0" />
+                    <xs:element name="Answer" msprop:Generator_TableClassName="AnswerDataTable" msprop:Generator_TableVarName="tableAnswer" msprop:Generator_TablePropName="Answer" msprop:Generator_RowDeletingName="AnswerRowDeleting" msprop:Generator_UserTableName="Answer" msprop:Generator_RowChangingName="AnswerRowChanging" msprop:Generator_RowEvHandlerName="AnswerRowChangeEventHandler" msprop:Generator_RowDeletedName="AnswerRowDeleted" msprop:Generator_RowEvArgName="AnswerRowChangeEvent" msprop:Generator_RowChangedName="AnswerRowChanged" msprop:Generator_RowClassName="AnswerRow" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="AnswerID" msprop:Generator_ColumnVarNameInTable="columnAnswerID" msprop:Generator_ColumnPropNameInRow="AnswerID" msprop:Generator_ColumnPropNameInTable="AnswerIDColumn" msprop:Generator_UserColumnName="AnswerID" type="xs:int" />
+                          <xs:element name="Answer" msprop:Generator_ColumnVarNameInTable="columnAnswer" msprop:Generator_ColumnPropNameInRow="Answer" msprop:Generator_ColumnPropNameInTable="AnswerColumn" msprop:Generator_UserColumnName="Answer" type="xs:string" minOccurs="0" />
+                          <xs:element name="VoterAnswer" msprop:Generator_ColumnVarNameInTable="columnVoterAnswer" msprop:Generator_ColumnPropNameInRow="VoterAnswer" msprop:Generator_ColumnPropNameInTable="VoterAnswerColumn" msprop:Generator_UserColumnName="VoterAnswer" type="xs:string" minOccurs="0" />
+                          <xs:element name="VoterId" msprop:Generator_ColumnVarNameInTable="columnVoterId" msprop:Generator_ColumnPropNameInRow="VoterId" msprop:Generator_ColumnPropNameInTable="VoterIdColumn" msprop:Generator_UserColumnName="VoterId" type="xs:int" />
+                          <xs:element name="QuestionId" msprop:Generator_ColumnVarNameInTable="columnQuestionId" msprop:Generator_ColumnPropNameInRow="QuestionId" msprop:Generator_ColumnPropNameInTable="QuestionIdColumn" msprop:Generator_UserColumnName="QuestionId" type="xs:int" minOccurs="0" />
+                          <xs:element name="SectionNumber" msprop:Generator_ColumnVarNameInTable="columnSectionNumber" msprop:Generator_ColumnPropNameInRow="SectionNumber" msprop:Generator_ColumnPropNameInTable="SectionNumberColumn" msprop:Generator_UserColumnName="SectionNumber" type="xs:int" minOccurs="0" />
+                          <xs:element name="AnswerDisplayOrder" msprop:Generator_ColumnVarNameInTable="columnAnswerDisplayOrder" msprop:Generator_ColumnPropNameInRow="AnswerDisplayOrder" msprop:Generator_ColumnPropNameInTable="AnswerDisplayOrderColumn" msprop:Generator_UserColumnName="AnswerDisplayOrder" type="xs:int" minOccurs="0" />
+                          <xs:element name="AnswerAlias" msprop:Generator_ColumnVarNameInTable="columnAnswerAlias" msprop:Generator_ColumnPropNameInRow="AnswerAlias" msprop:Generator_ColumnPropNameInTable="AnswerAliasColumn" msprop:Generator_UserColumnName="AnswerAlias" type="xs:string" minOccurs="0" />
+                          <xs:element name="QuestionDisplayOrder" msprop:Generator_ColumnVarNameInTable="columnQuestionDisplayOrder" msprop:Generator_ColumnPropNameInRow="QuestionDisplayOrder" msprop:Generator_ColumnPropNameInTable="QuestionDisplayOrderColumn" msprop:Generator_UserColumnName="QuestionDisplayOrder" type="xs:int" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="NSurveyVoterKey1">
+      <xs:selector xpath=".//mstns:Question" />
+      <xs:field xpath="mstns:VoterID" />
+      <xs:field xpath="mstns:QuestionId" />
+    </xs:unique>
+    <xs:unique name="NSurveyVoterKey2" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Voter" />
+      <xs:field xpath="mstns:VoterID" />
+    </xs:unique>
+    <xs:keyref name="VoterQuestion" refer="NSurveyVoterKey2" msdata:IsNested="true" msprop:rel_Generator_UserChildTable="Question" msprop:rel_Generator_ChildPropName="GetQuestionRows" msprop:rel_Generator_ParentPropName="VoterRow" msprop:rel_Generator_UserRelationName="VoterQuestion" msprop:rel_Generator_RelationVarName="relationVoterQuestion" msprop:rel_Generator_UserParentTable="Voter" msdata:UpdateRule="None" msdata:DeleteRule="None">
+      <xs:selector xpath=".//mstns:Question" />
+      <xs:field xpath="mstns:VoterID" />
+    </xs:keyref>
+    <xs:keyref name="QuestionAnswer" refer="NSurveyVoterKey1" msdata:IsNested="true" msprop:rel_Generator_UserChildTable="Answer" msprop:rel_Generator_ChildPropName="GetAnswerRows" msprop:rel_Generator_ParentPropName="QuestionRowParent" msprop:rel_Generator_UserRelationName="QuestionAnswer" msprop:rel_Generator_RelationVarName="relationQuestionAnswer" msprop:rel_Generator_UserParentTable="Question" msdata:UpdateRule="None" msdata:DeleteRule="None">
+      <xs:selector xpath=".//mstns:Answer" />
+      <xs:field xpath="mstns:VoterId" />
+      <xs:field xpath="mstns:QuestionId" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

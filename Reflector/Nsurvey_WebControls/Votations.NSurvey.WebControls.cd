@@ -1,0 +1,758 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ClassDiagram Zoom="1" MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Delegate Name="Votations.NSurvey.WebControls.FormSessionEventHandler" Collapsed="False">
+    <Position X="0.5" Y="78.4" Width="1.942604" />
+    <Compartments />
+  </Delegate>
+  <Delegate Name="Votations.NSurvey.WebControls.FormQuestionEventHandler" Collapsed="False">
+    <Position X="0.5" Y="79.7" Width="1.995187" />
+    <Compartments />
+  </Delegate>
+  <Delegate Name="Votations.NSurvey.WebControls.FormNavigationEventHandler" Collapsed="False">
+    <Position X="0.5" Y="81" Width="2.082145" />
+    <Compartments />
+  </Delegate>
+  <Interface Name="Votations.NSurvey.WebControls.UI.IRegExValidator" Collapsed="False">
+    <Position X="0.5" Y="82.3" Width="2.36631" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+    </Compartments>
+  </Interface>
+  <Interface Name="Votations.NSurvey.WebControls.UI.ISelectionControl" Collapsed="False">
+    <Position X="0.5" Y="83.9" Width="1.438903" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+    </Compartments>
+  </Interface>
+  <Class Name="Votations.NSurvey.Data.PostedAnswerData" Collapsed="False">
+    <Position X="0.5" Y="85.5" Width="2.517799" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.FormItemEventArgs" Collapsed="False">
+    <Position X="0.5" Y="88.9" Width="2.592887" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.Data.PostedAnswerDataCollection" Collapsed="False">
+    <Position X="0.5" Y="91.1" Width="2.063346" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.FormNavigationEventArgs" Collapsed="False">
+    <Position X="0.5" Y="93.3" Width="3.225495" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Interface Name="Votations.NSurvey.WebControls.UI.IAnswerPublisher" Collapsed="False">
+    <Position X="0.5" Y="97.1" Width="1.454909" />
+    <Compartments />
+  </Interface>
+  <Interface Name="Votations.NSurvey.WebControls.UI.IMandatoryAnswer" Collapsed="False">
+    <Position X="0.5" Y="98.1" Width="1.516515" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+    </Compartments>
+  </Interface>
+  <Class Name="Votations.NSurvey.WebControls.FormQuestionEventArgs" Collapsed="False">
+    <Position X="0.5" Y="99.5" Width="3.060495" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Interface Name="Votations.NSurvey.WebControls.UI.IAnswerSubscriber" Collapsed="False">
+    <Position X="0.5" Y="101.7" Width="2.129416" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Interface>
+  <Class Name="Votations.NSurvey.Designer.AutoFormat" Collapsed="False">
+    <Position X="0.5" Y="103.2" Width="2.4259" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.FormSessionEventArgs" Collapsed="False">
+    <Position X="0.5" Y="106.9" Width="2.959733" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerFieldItem" Collapsed="False">
+    <Position X="0.5" Y="8" Width="3.199875" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Interface Name="Votations.NSurvey.Security.IWebSecurityAddIn" Collapsed="False">
+    <Position X="0.5" Y="109.3" Width="3.140749" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Events" Collapsed="False" />
+    </Compartments>
+  </Interface>
+  <Class Name="Votations.NSurvey.Helpers.PipeManager" Collapsed="False">
+    <Position X="0.5" Y="113.4" Width="1.971935" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.Security.NSurveyContextSecurityAddIn" Collapsed="False">
+    <Position X="0.5" Y="115.6" Width="3.140749" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+      <Compartment Name="Events" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerItem" Collapsed="False">
+    <Position X="0.5" Y="0.5" Width="3.381105" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+      <Compartment Name="Events" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Interface Name="Votations.NSurvey.WebControls.UI.IClientScriptValidator" Collapsed="False">
+    <Position X="0.5" Y="121.3" Width="2.134064" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Interface>
+  <Class Name="Votations.NSurvey.Helpers.XmlFileManager" Collapsed="False">
+    <Position X="0.5" Y="123.6" Width="2.469352" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Interface Name="Votations.NSurvey.WebControls.UI.IFieldItem" Collapsed="False">
+    <Position X="0.5" Y="126.3" Width="1.322008" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+    </Compartments>
+  </Interface>
+  <Class Name="Votations.NSurvey.Security.ASPNetContextSecurityAddIn" Collapsed="False">
+    <Position X="0.5" Y="128.1" Width="3.140749" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+      <Compartment Name="Events" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerBooleanItem" Collapsed="False">
+    <Position X="5.8" Y="8" Width="3.199875" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerProperties" Collapsed="False">
+    <Position X="0.5" Y="133.8" Width="2.367731" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.Security.CookieWebSecurityAddIn" Collapsed="False">
+    <Position X="0.5" Y="137.1" Width="3.140749" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+      <Compartment Name="Events" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerFieldPasswordItem" Collapsed="False">
+    <Position X="0.5" Y="14" Width="1.929928" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.Security.PasswordWebSecurityAddIn" Collapsed="False">
+    <Position X="0.5" Y="142.9" Width="3.140749" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+      <Compartment Name="Events" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerConnection" Collapsed="False">
+    <Position X="0.5" Y="149.1" Width="1.523605" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.Reporting.VoterReportGenerator" Collapsed="False">
+    <Position X="0.5" Y="18.5" Width="2.81987" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerFieldCalendarItem" Collapsed="False">
+    <Position X="2.7" Y="14" Width="2.274274" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.Security.UserAuthenticatedEventArgs" Collapsed="False">
+    <Position X="0.5" Y="151.1" Width="2.049435" />
+    <Compartments />
+  </Class>
+  <Delegate Name="Votations.NSurvey.WebControls.UI.AnswerPublisherEventHandler" Collapsed="False">
+    <Position X="0.5" Y="152.2" Width="2.134835" />
+    <Compartments />
+  </Delegate>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerConnectionsCollection" Collapsed="False">
+    <Position X="0.5" Y="153.5" Width="2.104005" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerItemCollection" Collapsed="False">
+    <Position X="0.5" Y="155.8" Width="1.6784" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.Security.WebSecurityAddInCollection" Collapsed="False">
+    <Position X="0.5" Y="158" Width="2.032409" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.Data.GridAnswerData" Collapsed="False">
+    <Position X="0.5" Y="160.2" Width="2.241725" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerItemEventArgs" Collapsed="False">
+    <Position X="0.5" Y="163.6" Width="2.884591" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.Security.WebSecurityAddInFactory" Collapsed="False">
+    <Position X="0.5" Y="165.7" Width="3.795045" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerDataSourceItem" Collapsed="False">
+    <Position X="9.4" Y="8" Width="2.970905" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.Security.EmailWebSecurityAddIn" Collapsed="False">
+    <Position X="0.5" Y="167.4" Width="3.140749" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+      <Compartment Name="Events" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.Data.GridAnswerDataCollection" Collapsed="False">
+    <Position X="0.5" Y="173.9" Width="1.920959" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerFieldHiddenItem" Collapsed="False">
+    <Position X="17.8" Y="8" Width="3.199875" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerItemInvalidEventArgs" Collapsed="False">
+    <Position X="0.5" Y="175.8" Width="3.477399" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Delegate Name="Votations.NSurvey.WebControls.UI.SectionAnswersEventHandler" Collapsed="False">
+    <Position X="0.5" Y="177.9" Width="2.247252" />
+    <Compartments />
+  </Delegate>
+  <Class Name="Votations.NSurvey.Data.GridAnswerDataConverter" Collapsed="False">
+    <Position X="0.5" Y="179.2" Width="1.916769" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.Reporting.VoterTextReportGenerator" Collapsed="False">
+    <Position X="0.5" Y="21.6" Width="3.260622" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerItemMessageEventArgs" Collapsed="False">
+    <Position X="0.5" Y="180.8" Width="3.739186" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerSubscriberXmlListItem" Collapsed="False">
+    <Position X="21.4" Y="8" Width="3.199875" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.ThirdPartyItems.FreeTextBoxAnswerItem" Collapsed="False">
+    <Position X="35.9" Y="10.6" Width="3.199875" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerTextItem" Collapsed="False">
+    <Position X="25" Y="8" Width="3.199875" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.Resources.ResourceManager" Collapsed="False">
+    <Position X="0.5" Y="183.2" Width="1.882614" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.Security.EntryQuotaSecurityAddIn" Collapsed="False">
+    <Position X="0.5" Y="185" Width="3.140749" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+      <Compartment Name="Events" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.SurveyBox" Collapsed="False">
+    <Position X="0.5" Y="191.5" Width="3.220446" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+      <Compartment Name="Events" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.Web.NSurveyContext" Collapsed="False">
+    <Position X="0.5" Y="220" Width="1.810832" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerListItem" Collapsed="False">
+    <Position X="28.6" Y="8" Width="3.199875" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.SurveyBoxDesigner" Collapsed="False">
+    <Position X="0.5" Y="222" Width="1.877834" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.SelectionRadioButton" Collapsed="False">
+    <Position X="0.5" Y="76.8" Width="1.672331" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Delegate Name="Votations.NSurvey.WebControls.FormEventHandler" Collapsed="False">
+    <Position X="0.5" Y="223.3" Width="1.698595" />
+    <Compartments />
+  </Delegate>
+  <Delegate Name="Votations.NSurvey.WebControls.UI.SelectionOverflowEventHandler" Collapsed="False">
+    <Position X="0.5" Y="224.7" Width="2.322824" />
+    <Compartments />
+  </Delegate>
+  <Class Name="Votations.NSurvey.WebControls.UI.MatrixChildCollection" Collapsed="False">
+    <Position X="0.5" Y="226" Width="1.807931" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.SectionAnswersGridItem" Collapsed="False">
+    <Position X="32.2" Y="8" Width="3.199875" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+      <Compartment Name="Events" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Delegate Name="Votations.NSurvey.WebControls.UI.ClientScriptGeneratedEventHandler" Collapsed="False">
+    <Position X="0.5" Y="228.2" Width="2.469616" />
+    <Compartments />
+  </Delegate>
+  <Class Name="Votations.NSurvey.Security.IPWebSecurityAddIn" Collapsed="False">
+    <Position X="0.5" Y="229.5" Width="3.140749" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+      <Compartment Name="Events" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.ExtendedAnswerItem" Collapsed="False">
+    <Position X="35.8" Y="8" Width="2.731891" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Delegate Name="Votations.NSurvey.WebControls.UI.InvalidAnswersEventHandler" Collapsed="False">
+    <Position X="0.5" Y="235.5" Width="2.651642" />
+    <Compartments />
+  </Delegate>
+  <Delegate Name="Votations.NSurvey.Security.UserAuthenticatedEventHandler" Collapsed="False">
+    <Position X="0.5" Y="236.8" Width="2.220505" />
+    <Compartments />
+  </Delegate>
+  <Class Name="Votations.NSurvey.WebControls.UI.QuestionItemInvalidAnswersEventArgs" Collapsed="False">
+    <Position X="0.5" Y="238.2" Width="2.574245" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.QuestionItemAnswersEventArgs" Collapsed="False">
+    <Position X="0.5" Y="239.9" Width="2.531872" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.QuestionItemCollection" Collapsed="False">
+    <Position X="0.5" Y="241.7" Width="1.759074" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.StaticQuestion" Collapsed="False">
+    <Position X="0.5" Y="30.5" Width="1.808761" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerSelectionItem" Collapsed="False">
+    <Position X="43.4" Y="8" Width="3.199875" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.SectionAnswersItemEventArgs" Collapsed="False">
+    <Position X="0.5" Y="243.9" Width="3.690202" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.ResultsBar" Collapsed="False">
+    <Position X="0.5" Y="246.4" Width="1.384743" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.SelectionCheckBox" Collapsed="False">
+    <Position X="0.5" Y="249.5" Width="1.557926" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.QuestionItemClientScriptEventArgs" Collapsed="False">
+    <Position X="0.5" Y="251.1" Width="2.387814" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerUploadItem" Collapsed="False">
+    <Position X="39.4" Y="10.6" Width="3.199875" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.RatingBar" Collapsed="False">
+    <Position X="0.5" Y="253.1" Width="1.667692" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerOtherFieldItem" Collapsed="False">
+    <Position X="43.5" Y="11.6" Width="3.199875" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.Section" Collapsed="False">
+    <Position X="0.5" Y="60.6" Width="3.508454" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+      <Compartment Name="Events" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.SectionCollection" Collapsed="False">
+    <Position X="0.5" Y="256.4" Width="1.45217" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.QuestionItem" Collapsed="False">
+    <Position X="0.5" Y="25.4" Width="2.283917" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerXmlItem" Collapsed="False">
+    <Position X="9.5" Y="10.1" Width="2.165993" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerSqlItem" Collapsed="False">
+    <Position X="13.4" Y="10.1" Width="2.165939" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.SingleQuestion" Collapsed="False">
+    <Position X="2.7" Y="54.5" Width="3.144123" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerSqlListItem" Collapsed="False">
+    <Position X="13.5" Y="11.9" Width="3.199875" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.CheckBoxQuestion" Collapsed="False">
+    <Position X="2.7" Y="59.3" Width="2.273522" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControlsFactories.AnswerItemFactory" Collapsed="False">
+    <Position X="0.5" Y="258.7" Width="3.113346" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerSection" Collapsed="False">
+    <Position X="0.5" Y="64.7" Width="3.144123" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerXmlListItem" Collapsed="False">
+    <Position X="9.5" Y="11.9" Width="3.199875" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.ActiveQuestion" Collapsed="False">
+    <Position X="2.6" Y="30.5" Width="3.508454" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+      <Compartment Name="Events" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControlsFactories.QuestionItemFactory" Collapsed="False">
+    <Position X="0.5" Y="261.1" Width="3.199337" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.CheckBoxAnswerSection" Collapsed="False">
+    <Position X="0.5" Y="69.1" Width="2.434494" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.DropDownQuestion" Collapsed="False">
+    <Position X="5.3" Y="59.3" Width="2.273522" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.ResultItem" Collapsed="False">
+    <Position X="0.5" Y="262.8" Width="2.292106" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControlsFactories.SubscriberItemFactory" Collapsed="False">
+    <Position X="0.5" Y="269.5" Width="3.687892" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.GlobalRadioButton" Collapsed="False">
+    <Position X="0.5" Y="71.4" Width="2.484284" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+      <Compartment Name="Events" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.GlobalConfig" Collapsed="False">
+    <Position X="0.5" Y="271.5" Width="2.565094" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.DropDownAnswerSection" Collapsed="False">
+    <Position X="3.2" Y="69.1" Width="2.734738" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.SectionQuestion" Collapsed="False">
+    <Position X="2.7" Y="41.3" Width="3.03654" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.RadioButtonQuestion" Collapsed="False">
+    <Position X="7.9" Y="59.3" Width="2.273522" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Delegate Name="Votations.NSurvey.WebControls.UI.AnswerPostedEventHandler" Collapsed="False">
+    <Position X="0.5" Y="275.7" Width="2.322824" />
+    <Compartments />
+  </Delegate>
+  <Delegate Name="Votations.NSurvey.WebControls.UI.SelectionRequiredEventHandler" Collapsed="False">
+    <Position X="0.5" Y="277" Width="2.322824" />
+    <Compartments />
+  </Delegate>
+  <Class Name="Votations.NSurvey.WebControls.UI.MatrixSection" Collapsed="False">
+    <Position X="9.6" Y="64.7" Width="2.617057" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.MatrixQuestion" Collapsed="False">
+    <Position X="11" Y="54.5" Width="3.064255" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.RadioButtonAnswerSection" Collapsed="False">
+    <Position X="6.4" Y="69.1" Width="2.434494" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.CheckBoxMatrixQuestion" Collapsed="False">
+    <Position X="11.1" Y="59.2" Width="2.136129" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.MatrixChildQuestion" Collapsed="False">
+    <Position X="15.3" Y="30.5" Width="2.160192" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+</ClassDiagram>

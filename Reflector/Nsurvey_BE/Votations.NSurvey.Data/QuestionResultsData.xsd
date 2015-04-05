@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="QuestionResultsData" targetNamespace="http://tempuri.org/QuestionResultsData.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/QuestionResultsData.xsd" xmlns:mstns="http://tempuri.org/QuestionResultsData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+    <xs:element name="QuestionResultsData" msdata:IsDataSet="true">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="Questions">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="QuestionId" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+                            <xs:element name="ParentQuestionId" type="xs:int" minOccurs="0" />
+                            <xs:element name="SurveyId" type="xs:int" minOccurs="0" />
+                            <xs:element name="SelectionModeId" type="xs:int" minOccurs="0" />
+                            <xs:element name="DisplayOrder" type="xs:int" minOccurs="0" />
+                            <xs:element name="QuestionText" type="xs:string" minOccurs="0" msprop:nullValue="_null" />
+                            <xs:element name="RatingEnabled" type="xs:boolean" minOccurs="0" />
+                            <xs:element name="ParentQuestionText" type="xs:string" minOccurs="0" msprop:nullValue="_null" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Answers">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="AnswerId" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+                            <xs:element name="QuestionId" type="xs:int" />
+                            <xs:element name="AnswerTypeId" type="xs:int" minOccurs="0" />
+                            <xs:element name="VoterCount" type="xs:int" minOccurs="0" />
+                            <xs:element name="TypeMode" type="xs:int" minOccurs="0" />
+                            <xs:element name="AnswerText" type="xs:string" minOccurs="0" />
+                            <xs:element name="RatePart" type="xs:boolean" minOccurs="0" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+        </xs:complexType>
+        <xs:unique name="QuestionResultsDataKey1" msdata:PrimaryKey="true">
+            <xs:selector xpath=".//mstns:Questions" />
+            <xs:field xpath="mstns:QuestionId" />
+        </xs:unique>
+        <xs:unique name="QuestionResultsDataKey2" msdata:PrimaryKey="true">
+            <xs:selector xpath=".//mstns:Answers" />
+            <xs:field xpath="mstns:AnswerId" />
+        </xs:unique>
+        <xs:keyref name="QuestionsAnswers" refer="QuestionResultsDataKey1">
+            <xs:selector xpath=".//mstns:Answers" />
+            <xs:field xpath="mstns:QuestionId" />
+        </xs:keyref>
+    </xs:element>
+</xs:schema>

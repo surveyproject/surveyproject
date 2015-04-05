@@ -1,0 +1,109 @@
+.jquerycssmenu{
+font: bold 12px Verdana;
+border-bottom: 1px solid black;
+padding-left: 15px; /*offset of tabs relative to browser left edge*/
+z-index: 666;
+overflow: visible;
+}
+
+.jquerycssmenu ul{
+margin: 0;
+padding: 0;
+list-style-type: none;
+z-index: 666;
+}
+
+/*Top level list items*/
+.jquerycssmenu ul li{
+position: relative;
+display: inline;
+float: left;
+}
+
+/*Top level menu link items style*/
+.jquerycssmenu ul li a{
+display: block;
+background: white url("../Images/tintblue.gif") top center repeat-x;; /*background of tabs (default state)*/
+padding: 5px 7px 4px 7px;
+margin-right: 3px; /*spacing between tabs*/
+border: 1px solid #778;
+border-bottom-width: 0;
+color: #2d2b2b;
+text-decoration: none;
+}
+
+.jquerycssmenu ul li a:hover{
+background-image: url("../Images/tintbluedark.gif") /*tab link background during hover state*/
+}
+	
+/*1st sub level menu*/
+.jquerycssmenu ul li ul{
+position: absolute;
+left: 0;
+display: block;
+visibility: hidden;
+border-top: 1px solid black;
+}
+
+/*Sub level menu list items (undo style from Top level List Items)*/
+.jquerycssmenu ul li ul li{
+display: list-item;
+float: none;
+}
+
+/*All subsequent sub menu levels vertical offset after 1st level sub menu */
+.jquerycssmenu ul li ul li ul{
+top: 0;
+}
+
+/* Sub level menu links style */
+.jquerycssmenu ul li ul li a{
+font: normal 13px Verdana;
+width: 160px; /*width of sub menus*/
+background: white;
+color: black;
+padding: 4px 5px;
+margin: 0;
+border-top-width: 0;
+border-bottom: 1px solid black;
+}
+
+.jquerycssmenu ul li ul li a:hover{ /*sub menus hover style*/
+background: #eff9ff;
+color: black;
+}
+
+/* ######### CSS classes applied to down and right arrow images  ######### */
+
+.downarrowclass{
+position: absolute;
+top: 7px;
+right: 5px;
+}
+
+.rightarrowclass{
+position: absolute;
+top: 5px;
+right: 5px;
+}
+
+.logouthyperlink
+{
+    font-size: 10px;
+    color: #571FC8;
+    font-weight:bold;
+}
+
+a.logouthyperlink, a.logouthyperlink:visited, a.logouthyperlink:active
+{
+    font-size: 10px;
+    color: #571FC8;
+    font-weight:bold;
+}
+a.logouthyperlink:hover
+{
+    font-size: 10px;
+    color: #e2e2e2;
+    text-decoration: none;
+        font-weight:bold;
+}

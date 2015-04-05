@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="yes"?>
+<NSurveyDataSource xmlns="http://www.nsurvey.org/NSurveyDataSource.xsd">
+	<XmlDataSource>
+		<RunTimeAnswerLabel>
+		Region :
+		</RunTimeAnswerLabel>
+		<XmlAnswers>
+			<XmlAnswer><AnswerValue></AnswerValue><AnswerDescription>[Choisissez une region]</AnswerDescription></XmlAnswer> 
+			<XmlAnswer><AnswerValue>Evora</AnswerValue><AnswerDescription>Evora</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Aveiro</AnswerValue><AnswerDescription>Aveiro</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Beja</AnswerValue><AnswerDescription>Beja</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Braga</AnswerValue><AnswerDescription>Braga</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Bragança</AnswerValue><AnswerDescription>Bragança</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Castelo Branco</AnswerValue><AnswerDescription>Castelo Branco</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Coimbra</AnswerValue><AnswerDescription>Coimbra</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Faro</AnswerValue><AnswerDescription>Faro</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Guarda</AnswerValue><AnswerDescription>Guarda</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Leiria</AnswerValue><AnswerDescription>Leiria</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Lisboa</AnswerValue><AnswerDescription>Lisboa</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Portalegre</AnswerValue><AnswerDescription>Portalegre</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Porto</AnswerValue><AnswerDescription>Porto</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Santarem</AnswerValue><AnswerDescription>Santarem</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Setubal</AnswerValue><AnswerDescription>Setubal</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Viana do Castelo</AnswerValue><AnswerDescription>Viana do Castelo</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Vila Real</AnswerValue><AnswerDescription>Vila Real</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Viseu</AnswerValue><AnswerDescription>Viseu</AnswerDescription></XmlAnswer>
+		</XmlAnswers>
+	</XmlDataSource>
+</NSurveyDataSource>		

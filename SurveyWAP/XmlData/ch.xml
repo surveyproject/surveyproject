@@ -1,0 +1,34 @@
+<?xml version="1.0" standalone="yes"?>
+<NSurveyDataSource xmlns="http://www.nsurvey.org/NSurveyDataSource.xsd">
+	<XmlDataSource>
+		<RunTimeAnswerLabel>
+		Canton :
+		</RunTimeAnswerLabel>
+		<XmlAnswers>
+		   <XmlAnswer><AnswerValue></AnswerValue><AnswerDescription>[Select Canton]</AnswerDescription></XmlAnswer> 
+		   <XmlAnswer><AnswerValue>Aargau</AnswerValue><AnswerDescription>Aargau</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Appenzell</AnswerValue><AnswerDescription>Appenzell</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Basel</AnswerValue><AnswerDescription>Basel</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Bern</AnswerValue><AnswerDescription>Bern</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Fribourg</AnswerValue><AnswerDescription>Fribourg</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Geneva</AnswerValue><AnswerDescription>Geneva</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Glarus</AnswerValue><AnswerDescription>Glarus</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Graubunden</AnswerValue><AnswerDescription>Graubunden</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Jura</AnswerValue><AnswerDescription>Jura</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Luzern</AnswerValue><AnswerDescription>Luzern</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Neuchatel</AnswerValue><AnswerDescription>Neuchatel</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Sankt Gallen</AnswerValue><AnswerDescription>Sankt Gallen</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Schaffhausen</AnswerValue><AnswerDescription>Schaffhausen</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Schwyz</AnswerValue><AnswerDescription>Schwyz</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Solothurn</AnswerValue><AnswerDescription>Solothurn</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Thurgau</AnswerValue><AnswerDescription>Thurgau</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Ticino</AnswerValue><AnswerDescription>Ticino</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Unterwalden</AnswerValue><AnswerDescription>Unterwalden</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Uri</AnswerValue><AnswerDescription>Uri</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Valais</AnswerValue><AnswerDescription>Valais</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Vaud</AnswerValue><AnswerDescription>Vaud</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Zurich</AnswerValue><AnswerDescription>Zurich</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Zug</AnswerValue><AnswerDescription>Zug</AnswerDescription></XmlAnswer>
+		</XmlAnswers>
+	</XmlDataSource>
+</NSurveyDataSource>		

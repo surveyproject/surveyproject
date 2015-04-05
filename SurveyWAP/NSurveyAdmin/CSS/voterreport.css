@@ -1,0 +1,98 @@
+﻿/*CSS Style sheets used on SP Voter report print options*/
+
+table.TableLayoutContainer
+{
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 12px;
+    color: black;
+    background-color: #ffffff;
+    border: 0px #082E44 solid;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    text-align: left;
+    width:100%;
+
+}
+
+.contentCell
+{
+	background-color: #ffffff;
+/*	width : 625px; */
+/*	height:745px; */
+	padding: 10px 10px 10px 10px;
+	margin: 0px 0px 0px 0px;
+	font-family: Arial, Verdana, sans-serif;
+/*	border-top: 1px #082E44 dotted; */
+	vertical-align: top;
+}
+
+
+.innerText
+{
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 23px;
+}
+
+
+.voterReport TD
+{
+    border-spacing: 4px;
+}
+
+.voterReport
+{
+    width: 675px;
+    border-width: 0px;
+}
+
+.titleFont
+{
+	font-family: Arial, Verdana, sans-serif;
+	font-size:14px;
+    color: #5720C6;
+	font-weight: bold;
+    text-transform:uppercase;
+    background-color:#e2e2e2;
+    padding: 3px 7px 3px 7px;
+    
+    border: 1px outset white ;
+    
+    border-radius: 0.25em;
+    -moz-border-radius: 0.30em;
+    -webkit-border-radius: 0.25em;
+
+}
+
+.invisible
+{
+    display: none;
+    }
+    
+    
+    .PrintImage
+{
+    display: none;
+    }
+    
+    
+/*.crossTabTable
+{
+    font-family: Arial, Verdana, sans-serif;
+    font-size: x-small;
+    color: black;
+    background-color: #FCFFFF;
+    border: 1px #3F3D3D solid;
+    width: 700px;
+}*/
+
+/*.crossTabBaseCell
+{
+    background-color: #D0E4FF;
+}
+
+.crossTabCompareCell
+{
+    background-color: #F7DCE0;
+}*/

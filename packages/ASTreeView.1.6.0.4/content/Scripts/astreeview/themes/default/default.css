@@ -1,0 +1,36 @@
+.astreeview-tree .line-vertical
+{
+	background:url(images/astreeview-vertical-line.gif) repeat-y 0px 0px;
+}
+
+.astreeview-tree .line-root
+{
+	background:url(images/astreeview-root-line.gif) white no-repeat;
+	background-position:0px 2px;
+	background-position:0px 3px\9;
+	+background-position:0px 4px;
+	_background-position:0px 4px;
+}
+	
+.astreeview-tree .line-top
+{
+	background:url(images/astreeview-top-line.gif) white no-repeat;
+	background-position:0px 1px;
+	background-position:0px 2px\9;
+	_background-position:0px 4px;
+}
+
+.astreeview-tree .line-middle
+{
+	background:url(images/astreeview-middle-line.gif) white no-repeat;
+}
+
+.astreeview-tree .line-bottom
+{
+	background:url(images/astreeview-bottom-line.gif) white no-repeat;
+}
+
+.astreeview-tree .line-none
+{
+
+}

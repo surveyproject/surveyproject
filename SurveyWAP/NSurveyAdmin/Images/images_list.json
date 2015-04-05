@@ -1,0 +1,23 @@
+	[
+		{
+			"thumb": "/sp21finaldev/NSurveyAdmin/Images/Small/image1_thumb.jpg",
+			"image": "/sp21finaldev/NSurveyAdmin/Images/Small/image1_200x150.jpg",
+			"folder": "Small"
+		},
+		{
+			"thumb": "/sp21finaldev/NSurveyAdmin/Images/Small/image2_thumb.jpg",
+			"image": "/sp21finaldev/NSurveyAdmin/Images/Small/image2_200x150.jpg",
+			"folder": "Small"
+		},
+
+		{
+			"thumb": "/sp21finaldev/NSurveyAdmin/Images/Large/image1_thumb.jpg",
+			"image": "/sp21finaldev/NSurveyAdmin/Images/Large/image1_full.jpg",
+			"folder": "Large"
+		},
+		{
+			"thumb": "/sp21finaldev/NSurveyAdmin/Images/Large/image2_thumb.jpg",
+			"image": "/sp21finaldev/NSurveyAdmin/Images/Large/image2_full.jpg",
+			"folder": "Large"
+		}
+	]

@@ -1,0 +1,151 @@
+<NSurveyForm xmlns="http://tempuri.org/NSurveyForm.xsd">
+  <AnswerType AnswerTypeID="1" FieldWidth="0" FieldHeight="0" FieldLength="0" TypeMode="1" PublicFieldResults="false" BuiltIn="true">
+    <Description>SelectionTextType</Description>
+    <TypeNameSpace>Votations.NSurvey.WebControls.UI.AnswerSelectionItem</TypeNameSpace>
+    <TypeAssembly>Votations.NSurvey.WebControls</TypeAssembly>
+  </AnswerType>
+  <Survey>
+    <SurveyID>1</SurveyID>
+    <ProgressDisplayModeId>2</ProgressDisplayModeId>
+    <ResumeModeID>1</ResumeModeID>
+    <Title>MultiLanguage Demo</Title>
+    <NavigationEnabled>true</NavigationEnabled>
+    <Scored>true</Scored>
+    <QuestionNumberingDisabled>false</QuestionNumberingDisabled>
+    <MultiLanguageModeId>1</MultiLanguageModeId>
+    <Activated>true</Activated>
+    <Archive>false</Archive>
+    <ResultsDisplayTimes>0</ResultsDisplayTimes>
+    <SurveyDisplayTimes>228</SurveyDisplayTimes>
+    <CreationDate>2012-07-21T04:13:32.557+02:00</CreationDate>
+  </Survey>
+  <Question QuestionId="1" LayoutModeId="2" SelectionModeId="5" ColumnsNumber="0" MinSelectionRequired="0" MaxSelectionAllowed="0" RatingEnabled="false" RandomizeAnswers="false" SurveyId="1" PageNumber="1" DisplayOrder="0">
+    <QuestionText>Multilanguage Demo Survey Staring point. After selecting your preferred language this text will be shown in the language of your choice. Questions and button texts will adjust to the preferred language. Browsersettings (default language) and the Survey web.config settings may influence the working of the surveys.&lt;br&gt;</QuestionText>
+    <QuestionPipeAlias />
+    <QuestionIDText>0</QuestionIDText>
+    <HelpText />
+    <Alias />
+    <ShowHelpText>False</ShowHelpText>
+    <OldQuestionId>94</OldQuestionId>
+  </Question>
+  <Question QuestionId="2" LayoutModeId="2" SelectionModeId="5" ColumnsNumber="0" MinSelectionRequired="0" MaxSelectionAllowed="0" RatingEnabled="false" RandomizeAnswers="false" SurveyId="1" PageNumber="3" DisplayOrder="2">
+    <QuestionText>Now submit and say goodbye!&lt;br&gt;</QuestionText>
+    <QuestionPipeAlias />
+    <QuestionIDText />
+    <ShowHelpText>False</ShowHelpText>
+    <OldQuestionId>95</OldQuestionId>
+  </Question>
+  <Question QuestionId="3" LayoutModeId="1" SelectionModeId="1" ColumnsNumber="0" MinSelectionRequired="0" MaxSelectionAllowed="0" RatingEnabled="false" RandomizeAnswers="false" SurveyId="1" PageNumber="2" DisplayOrder="1">
+    <QuestionText>Question One? English&lt;br&gt;</QuestionText>
+    <QuestionPipeAlias />
+    <QuestionIDText>1</QuestionIDText>
+    <HelpText>Question one English Help Text</HelpText>
+    <Alias>One</Alias>
+    <ShowHelpText>True</ShowHelpText>
+    <OldQuestionId>93</OldQuestionId>
+  </Question>
+  <Answer QuestionId="3" AnswerTypeId="1" DisplayOrder="1" ScorePoint="5" RatePart="false" Selected="false" AnswerId="286" Mandatory="false">
+    <AnswerText>Answer one</AnswerText>
+    <ImageURL />
+    <AnswerPipeAlias />
+    <AnswerIdText>A1</AnswerIdText>
+    <AnswerAlias>AnswerOne</AnswerAlias>
+    <OldAnswerId>286</OldAnswerId>
+  </Answer>
+  <Answer QuestionId="3" AnswerTypeId="1" DisplayOrder="2" ScorePoint="23" RatePart="false" Selected="false" AnswerId="287" Mandatory="false">
+    <AnswerText>Answer Two</AnswerText>
+    <ImageURL />
+    <AnswerPipeAlias />
+    <AnswerIdText>Atwee</AnswerIdText>
+    <AnswerAlias>Answer Two</AnswerAlias>
+    <OldAnswerId>287</OldAnswerId>
+  </Answer>
+  <MultiLanguageText>
+    <LanguageItemId>93</LanguageItemId>
+    <LanguageCode>nl-NL</LanguageCode>
+    <LanguageMessageTypeId>3</LanguageMessageTypeId>
+    <ItemText>Vraag Eén? Nederlands&lt;br&gt;</ItemText>
+  </MultiLanguageText>
+  <MultiLanguageText>
+    <LanguageItemId>93</LanguageItemId>
+    <LanguageCode>nl-NL</LanguageCode>
+    <LanguageMessageTypeId>11</LanguageMessageTypeId>
+    <ItemText>Vraag Eén Nederlandse Help tekst</ItemText>
+  </MultiLanguageText>
+  <MultiLanguageText>
+    <LanguageItemId>93</LanguageItemId>
+    <LanguageCode>nl-NL</LanguageCode>
+    <LanguageMessageTypeId>12</LanguageMessageTypeId>
+    <ItemText>One</ItemText>
+  </MultiLanguageText>
+  <MultiLanguageText>
+    <LanguageItemId>94</LanguageItemId>
+    <LanguageCode>nl-NL</LanguageCode>
+    <LanguageMessageTypeId>3</LanguageMessageTypeId>
+    <ItemText>Startpunt voor de Meertalige Demo Enquete. Na het kiezen van de voorkeurstaal wordt deze tekst getoont in de taal van uw keuze. Knop- en vraag teksten worden ook getoont in de voorkeurs taal. Browser instellingen (taal) en de survey web.config instellingen kunnen de werking van de enquete beinvloeden.&lt;br&gt;</ItemText>
+  </MultiLanguageText>
+  <MultiLanguageText>
+    <LanguageItemId>94</LanguageItemId>
+    <LanguageCode>nl-NL</LanguageCode>
+    <LanguageMessageTypeId>11</LanguageMessageTypeId>
+    <ItemText />
+  </MultiLanguageText>
+  <MultiLanguageText>
+    <LanguageItemId>94</LanguageItemId>
+    <LanguageCode>nl-NL</LanguageCode>
+    <LanguageMessageTypeId>12</LanguageMessageTypeId>
+    <ItemText />
+  </MultiLanguageText>
+  <MultiLanguageText>
+    <LanguageItemId>95</LanguageItemId>
+    <LanguageCode>nl-NL</LanguageCode>
+    <LanguageMessageTypeId>3</LanguageMessageTypeId>
+    <ItemText>Klik nu op verzenden en zeg vaarwel!&lt;br&gt;</ItemText>
+  </MultiLanguageText>
+  <MultiLanguageText>
+    <LanguageItemId>95</LanguageItemId>
+    <LanguageCode>nl-NL</LanguageCode>
+    <LanguageMessageTypeId>11</LanguageMessageTypeId>
+    <ItemText />
+  </MultiLanguageText>
+  <MultiLanguageText>
+    <LanguageItemId>95</LanguageItemId>
+    <LanguageCode>nl-NL</LanguageCode>
+    <LanguageMessageTypeId>12</LanguageMessageTypeId>
+    <ItemText />
+  </MultiLanguageText>
+  <MultiLanguageText>
+    <LanguageItemId>286</LanguageItemId>
+    <LanguageCode>nl-NL</LanguageCode>
+    <LanguageMessageTypeId>1</LanguageMessageTypeId>
+    <ItemText>Antwoord Een</ItemText>
+  </MultiLanguageText>
+  <MultiLanguageText>
+    <LanguageItemId>286</LanguageItemId>
+    <LanguageCode>nl-NL</LanguageCode>
+    <LanguageMessageTypeId>13</LanguageMessageTypeId>
+    <ItemText>AntwoordEen</ItemText>
+  </MultiLanguageText>
+  <MultiLanguageText>
+    <LanguageItemId>287</LanguageItemId>
+    <LanguageCode>nl-NL</LanguageCode>
+    <LanguageMessageTypeId>1</LanguageMessageTypeId>
+    <ItemText>Antwoord Twee</ItemText>
+  </MultiLanguageText>
+  <MultiLanguageText>
+    <LanguageItemId>287</LanguageItemId>
+    <LanguageCode>nl-NL</LanguageCode>
+    <LanguageMessageTypeId>13</LanguageMessageTypeId>
+    <ItemText>Antwoord twee</ItemText>
+  </MultiLanguageText>
+  <SurveyLanguage>
+    <SurveyId>9</SurveyId>
+    <LanguageCode>en-US</LanguageCode>
+    <DefaultLanguage>true</DefaultLanguage>
+  </SurveyLanguage>
+  <SurveyLanguage>
+    <SurveyId>9</SurveyId>
+    <LanguageCode>nl-NL</LanguageCode>
+    <DefaultLanguage>false</DefaultLanguage>
+  </SurveyLanguage>
+</NSurveyForm>

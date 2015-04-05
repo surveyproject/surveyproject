@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="VoterAnswersData" targetNamespace="http://tempuri.org/VoterAnswersData.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/VoterAnswersData.xsd" xmlns:mstns="http://tempuri.org/VoterAnswersData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+    <xs:element name="VoterAnswersData" msdata:IsDataSet="true">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="Voters">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="VoterId" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" />
+                            <xs:element name="SurveyId" type="xs:int" minOccurs="0" />
+                            <xs:element name="VoteDate" type="xs:dateTime" minOccurs="0" />
+                            <xs:element name="IPSource" type="xs:string" minOccurs="0" />
+                            <xs:element name="Validated" type="xs:boolean" minOccurs="0" />
+                            <xs:element name="StartDate" type="xs:dateTime" minOccurs="0" />
+                            <xs:element name="UId" type="xs:string" minOccurs="0" />
+                            <xs:element name="Email" type="xs:string" minOccurs="0" />
+                            <xs:element name="ResumeUID" type="xs:string" minOccurs="0" />
+                            <xs:element name="ProgressSaveDate" type="xs:dateTime" minOccurs="0" />
+                            <xs:element name="ResumeAtPageNumber" type="xs:int" minOccurs="0" />
+                            <xs:element name="ResumeQuestionNumber" type="xs:int" minOccurs="0" />
+                            <xs:element name="ResumeHighestPageNumber" type="xs:int" minOccurs="0" />
+                            <xs:element name="ContextUserName" type="xs:string" minOccurs="0" />
+                            <xs:element name="LanguageCode" type="xs:string" minOccurs="0" msprop:nullValue="_null" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="VotersAnswers">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="VoterId" type="xs:int" />
+                            <xs:element name="AnswerId" type="xs:int" />
+                            <xs:element name="QuestionId" type="xs:int" minOccurs="0" />
+                            <xs:element name="AnswerText" type="xs:string" minOccurs="0" msprop:nullValue="_null" />
+                            <xs:element name="SectionNumber" type="xs:int" minOccurs="0" />
+                            <xs:element name="TypeMode" type="xs:int" minOccurs="0" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+        </xs:complexType>
+        <xs:unique name="VoterAnswersDataKey1" msdata:PrimaryKey="true">
+            <xs:selector xpath=".//mstns:Voters" />
+            <xs:field xpath="mstns:VoterId" />
+        </xs:unique>
+        <xs:unique name="VoterAnswersDataKey2" msdata:PrimaryKey="true">
+            <xs:selector xpath=".//mstns:VotersAnswers" />
+            <xs:field xpath="mstns:VoterId" />
+            <xs:field xpath="mstns:AnswerId" />
+            <xs:field xpath="mstns:SectionNumber" />
+        </xs:unique>
+        <xs:keyref name="VoterAnswersRelation" refer="VoterAnswersDataKey1" msdata:UpdateRule="Cascade" msdata:AcceptRejectRule="None">
+            <xs:selector xpath=".//mstns:VotersAnswers" />
+            <xs:field xpath="mstns:VoterId" />
+        </xs:keyref>
+    </xs:element>
+</xs:schema>

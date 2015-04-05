@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<!-- START NSURVEY ADMIN MESSAGES -->
+
+<!-- END NSURVEY ADMIN MESSAGES -->
+
+
+
+<!-- START NSURVEY WEB CONTROL MESSAGES -->
+      <data name="ListSelection">
+        <value>[Escolha uma resposta]</value>
+    </data>
+    <data name="NextPage">
+        <value>Próxima página &gt;&gt;</value>
+    </data>
+    <data name="SubmitSurvey">
+        <value>Enviar questionário</value>
+    </data>
+    <data name="MinAnswerSelection">
+        <value>Escolha pelo menos {0} resposta(s)!</value>
+    </data>
+    <data name="MaxAnswerSelection">
+        <value>O número máximo de respostas é {0}!</value>
+    </data>
+    <data name="RatingResults">
+        <value>Classificação média : {0} / {1}</value>
+    </data>
+    <data name="TotalOfVotes">
+        <value>Total de votos : {0}</value>
+    </data>
+    <data name="AlreadyVotedMessage">
+        <value>Você já votou!</value>
+    </data>
+    <data name="ThankYouMessage">
+        <value>Obrigado por preencher o questionário!</value>
+    </data>
+    <data name="ClosedMessage">
+        <value>Este questionário terminou em {0}</value>
+    </data>
+    <data name="OpenMessage">
+        <value>O questionário ainda não está disponível. Estará aberto a partir de {0}</value>
+    </data>
+    <data name="PageNumber">
+        <value>Página {0} / {1}</value>
+    </data>
+    <data name="EnterPasswordMessage">
+        <value>Por favor introduza a password do questionário:</value>
+    </data>
+    <data name="SubmitPassword">
+        <value>Aceder ao questionário</value>
+    </data>
+    <data name="InvalidPasswordMessage">
+        <value>Password inválida!</value>
+    </data>
+    <data name="FieldRequiredMessage">
+        <value>{0} é de preenchimento obrigatório!</value>
+    </data>
+    <data name="InvalidCalendarDateMessage">
+        <value>{0} contém uma data inválida. por favor introduza uma data válida, ex. : {1}!</value>
+    </data>
+    <data name="EnterUIdMessage">
+        <value>por favor introduza o código que lhe foi enviado via email :</value>
+    </data>
+    <data name="InvalidUIdMessage">
+        <value>Código inválido ou já utilizado!</value>
+    </data>
+    <data name="SubmitUId">
+        <value>Aceder ao questionário</value>
+    </data>
+    <data name="JSInvalidField">
+        <value>Por favor preencha o campo!</value>
+    </data>
+    <data name="JSInvalidEmail">
+        <value>Por favor introduza um email!</value>
+    </data>
+    <!-- V1.1 changes starts here -->
+    <data name="EmailCodeProtection">
+        <value>Código de protecção via email</value>
+    </data>
+    <data name="CookieProtection">
+        <value>Protecção por cookie</value>
+    </data>
+    <data name="PasswordProtection">
+        <value>Protecção por Password</value>
+    </data>
+    <data name="IPProtection">
+        <value>Protecção por IP</value>
+    </data>
+    <data name="CookieExpiresLabel">
+        <value>Cookie expira em :</value>
+    </data>
+    <data name="ApplyChangesButton">
+        <value>Gravar alterações</value>
+    </data>
+    <data name="MinutesInfo">
+        <value>minutos</value>
+    </data>
+    <data name="IPExpiresLabel">
+        <value>IP expira em :</value>
+    </data>
+    <data name="PasswordLabel">
+        <value>Password :</value>
+    </data>
+    <data name="InvalidIPExpireTime">
+        <value>Tempo de expiração de  IP inválido, tem que ser um valor numérico !</value>
+    </data>
+    <data name="InvalidCookieExpireTime">
+        <value>Tempo de expiração de Cookie inválido !</value>
+    </data>
+    <data name="OnlyInvitedEmailsLabel">
+        <value>Apenas emails convidados podem responder ao questionário :</value>
+    </data>
+    <!-- V1.2 changes starts here -->
+    <data name="PreviousPage">
+        <value>&lt;&lt; Página anterior</value>
+    </data>
+    <data name="SaveProgress">
+        <value>Gravar estado</value>
+    </data>
+    <data name="ProgressSaved">
+        <value>O estado do questionário foi gravado no seu computador</value>
+    </data>
+    <data name="ProgressNotSaved">
+        <value>Não tem o sistema de cookies activo. Para poder gravar o estado do questionário, deve activar o sistema de cookies, reiniciar o browser e aceder ao questionário.</value>
+    </data>
+    <data name="VoterInformationTitle">
+        <value>Informação do eleitor</value>
+    </data>
+    <data name="VoterDBIDLabel">
+        <value> eleitor DB ID :</value>
+    </data>
+    <data name="VoterEmailLabel">
+        <value>Email do eleitor :</value>
+    </data>
+    <data name="VoterIPAddressLabel">
+        <value> Endereço IP :</value>
+    </data>
+    <data name="VoteRecordedLabel">
+        <value>Voto gravado em :</value>
+    </data>
+    <data name="TimeToTakeLabel">
+        <value>tempo de resposta ao questionário :</value>
+    </data>
+    <data name="SurveyAnswersTitle">
+        <value>Respostas do questionário</value>
+    </data>
+    <data name="AnswerNotAnsweredMessage">
+        <value>Não respondeu</value>
+    </data>
+    <data name="ShortNotificationMessage">
+        <value>Olá,
+
+isto é uma mensagem automática para o notificar de que foi gravada uma nova votação no questionário.
+Pode efectuar login na administração e verificar os detalhes. 
+Thanks
+</value>
+    </data>
+    <data name="NotificationSubject">
+        <value>Foi gravada uma nova votação em "{0}"</value>
+    </data>
+    <!-- V1.3 changes starts here (no changes)-->
+    <!-- V1.4 changes starts here -->
+    <data name="ResumeProgress">
+        <value>Continuar</value>
+    </data>
+    <data name="SubmitResumeUId">
+        <value>Restaurar respostas</value>
+    </data>
+    <data name="EnterResumeUIdMessage">
+        <value>Por favor introduza o seu código pessoal de resumo:</value>
+    </data>
+    <data name="SubmitCancelResume">
+        <value>Cancelar</value>
+    </data>
+    <data name="InvalidResumeUId">
+        <value>O código de resumo é inválido ou já foi utilizado!</value>
+    </data>
+    <data name="SuccessResumeUId">
+        <value>A sua sessão foi restaurada a partir do resumo</value>
+    </data>
+    <data name="ManualProgressSaved">
+        <value>O estado do seu questionário foi gravado. Pode continuar o seu preenchimento em qualquer altura, utilizando o código de resumo.&lt;br&gt;O seu código de resumo é : &lt;b&gt;{0}&lt;/b&gt;</value>
+    </data>
+    <data name="VoterScoreTotalLabel">
+        <value>Pontuação total : </value>
+    </data>
+    <data name="QuestionScoreLabel">
+        <value>Pontuação : </value>
+    </data>
+    <data name="ASPNETSecurityContextProtection">
+        <value>ASP.net security context</value>
+    </data>
+    <data name="MultipleSubmissionsLabel">
+        <value>Allow multiple submissions</value>
+    </data>
+    <data name="VoterUserNameLabel">
+        <value>ASP.net user name :</value>
+    </data>
+    <data name="ASPNETSecurityAddinDescription">
+        <value>This addin will check if the user is logged in using the asp.net security context and store his username on answers submission</value>
+    </data>
+    <!-- V1.5 changes starts here -->
+    <data name="PipeValuesSeparator">
+        <value> and </value>
+    </data>
+    <data name="AnswerTypeAssemblyNotFoundMessage">
+        <value>&lt;b&gt;Could not create answer!&lt;/b&gt;&lt;br&gt;Specified &lt;b&gt;{0} assembly could not be found&lt;/b&gt;. Make sure that this assembly is available in your bin directory and that the type is correcly registered in your nsurvey's database answertype table.</value>
+    </data>
+    <data name="AnswerTypeNotFoundMessage">
+        <value>&lt;b&gt;Could not create answer!&lt;/b&gt;&lt;br&gt;Specified &lt;b&gt;{0} type could not be found&lt;/b&gt; in assembly {1}. Make sure that this assembly is available in your bin directory and that the type is correcly registered in your nsurvey's database answertype table.</value>
+    </data>
+    <data name="AnswerTypeNotFoundMessage">
+        <value>&lt;b&gt;Could not create answer!&lt;/b&gt;&lt;br&gt;Specified &lt;b&gt;{0} type doesnt inherit from AnswerItem.</value>
+    </data>
+    <!-- V1.6 changes starts here -->
+    <data name="XMLAnswerSelectionRequired">
+        <value>É obrigatório seleccionar uma resposta para {0}!</value>
+    </data>
+    <data name="SqlAnswerSelectionRequired">
+        <value>É obrigatório seleccionar uma resposta para {0}</value>
+    </data>
+<!-- END NSURVEY WEB CONTROL MESSAGES -->
+
+</root>

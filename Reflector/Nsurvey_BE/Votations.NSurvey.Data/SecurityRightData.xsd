@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SecurityRightData" targetNamespace="http://tempuri.org/SecurityRightData.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/SecurityRightData.xsd" xmlns:mstns="http://tempuri.org/SecurityRightData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="SecurityRightData" msdata:IsDataSet="true">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="SecurityRight">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="SecurityRightId" type="xs:int" />
+                            <xs:element name="Description" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+        </xs:complexType>
+        <xs:unique name="SecurityRightDataKey1" msdata:PrimaryKey="true">
+            <xs:selector xpath=".//mstns:SecurityRight" />
+            <xs:field xpath="mstns:SecurityRightId" />
+        </xs:unique>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,11 @@
+D:\02_Programming\SurveyProjectDevelopment\SP20_Beta_01_20120225\Reflector\Nsurvey_Emailing\bin\Votations.NSurvey.EMailing.xml
+D:\02_Programming\SurveyProjectDevelopment\SP20_Beta_01_20120225\Reflector\Nsurvey_Emailing\bin\Votations.NSurvey.EMailing.dll
+D:\02_Programming\SurveyProjectDevelopment\SP20_Beta_01_20120225\Reflector\Nsurvey_Emailing\obj\Release\ResolveAssemblyReference.cache
+D:\02_Programming\SurveyProjectDevelopment\SP20_Beta_01_20120225\Reflector\Nsurvey_Emailing\obj\Release\Votations.NSurvey.EMailing.dll
+D:\02_Programming\SurveyProjectDevelopment\SP21\Reflector\Nsurvey_Emailing\bin\Votations.NSurvey.EMailing.xml
+D:\02_Programming\SurveyProjectDevelopment\SP21\Reflector\Nsurvey_Emailing\bin\Votations.NSurvey.EMailing.dll
+D:\02_Programming\SurveyProjectDevelopment\SP21\Reflector\Nsurvey_Emailing\obj\Release\ResolveAssemblyReference.cache
+D:\02_Programming\SurveyProjectDevelopment\SP21\Reflector\Nsurvey_Emailing\obj\Release\Votations.NSurvey.EMailing.dll
+H:\SurveyProject\Reflector\Nsurvey_Emailing\bin\Votations.NSurvey.EMailing.dll
+H:\SurveyProject\Reflector\Nsurvey_Emailing\obj\Release\Votations.NSurvey.EMailing.dll
+H:\SurveyProject\Reflector\Nsurvey_Emailing\obj\Release\Votations.NSurvey.EMailing.csprojResolveAssemblyReference.cache

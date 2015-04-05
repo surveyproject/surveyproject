@@ -1,0 +1,37 @@
+<?xml version="1.0" standalone="yes"?>
+<NSurveyDataSource xmlns="http://www.nsurvey.org/NSurveyDataSource.xsd">
+	<XmlDataSource>
+		<RunTimeAnswerLabel>
+		State :
+		</RunTimeAnswerLabel>
+		<XmlAnswers>
+		   <XmlAnswer><AnswerValue></AnswerValue><AnswerDescription>[Selecionar Estado]</AnswerDescription></XmlAnswer> 
+		   <XmlAnswer><AnswerValue>AC</AnswerValue><AnswerDescription>Acre</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>AL</AnswerValue><AnswerDescription>Alagoas</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>AP</AnswerValue><AnswerDescription>Amapá</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>AM</AnswerValue><AnswerDescription>Amazonas</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>BA</AnswerValue><AnswerDescription>Bahia</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>CE</AnswerValue><AnswerDescription>Ceará</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>DF</AnswerValue><AnswerDescription>Distrito Federal</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>ES</AnswerValue><AnswerDescription>Espírito Santo</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>GO</AnswerValue><AnswerDescription>Goiás</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>MA</AnswerValue><AnswerDescription>Maranhão</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>MT</AnswerValue><AnswerDescription>Mato Grosso</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>MS</AnswerValue><AnswerDescription>Mato Grosso do Sul</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>MG</AnswerValue><AnswerDescription>Minas Gerais</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>PA</AnswerValue><AnswerDescription>Pará</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>PB</AnswerValue><AnswerDescription>Paraíba</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>PR</AnswerValue><AnswerDescription>Paraná</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>PE</AnswerValue><AnswerDescription>Pernambuco</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>PI</AnswerValue><AnswerDescription>Piauí</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>RR</AnswerValue><AnswerDescription>Roraima</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>RO</AnswerValue><AnswerDescription>Rondônia</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>RJ</AnswerValue><AnswerDescription>Rio de Janeiro</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>RN</AnswerValue><AnswerDescription>Rio Grande do Norte</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>RS</AnswerValue><AnswerDescription>Rio Grande do Sul</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>SP</AnswerValue><AnswerDescription>São Paulo</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>SE</AnswerValue><AnswerDescription>Sergipe</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>TO</AnswerValue><AnswerDescription>Tocantins</AnswerDescription></XmlAnswer>
+		</XmlAnswers>
+	</XmlDataSource>
+</NSurveyDataSource>		

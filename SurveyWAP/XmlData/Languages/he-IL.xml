@@ -1,0 +1,2029 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<!-- START NSURVEY ADMIN MESSAGES -->
+	<data name="ControlCodeTitle">
+		<value>קוד asp.net</value>
+	</data>
+	<data name="PageDirectiveInfo">
+		<value>עליך לכלול גם את השורה הבאה בעמודי ה-aspx אשר יציגו את הסדר :</value>
+	</data>
+	<data name="TagPrefixInfo">
+		<value>&lt;%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="Votations.NSurvey.WebControls" %&gt;</value>
+	</data>
+	<data name="QuickLinkInfo">
+		<value>אפשרי גם להשתמש בלינק המהיר הבא:</value>
+	</data>
+	<data name="SurveyCodePreviewTitle">
+		<value>צפייה מראש בקוד הסקר</value>
+	</data>
+	<data name="EditQuestionTitle">
+		<value>ערוך שאלה</value>
+	</data>
+	<data name="SelectionModeLabel">
+		<value>מצב בחירה :</value>
+	</data>
+	<data name="DisplayModeLabel">
+		<value>מצב תצוגה :</value>
+	</data>
+	<data name="ColumnNumberLabel">
+		<value>מספר עמודות</value>
+	</data>
+	<data name="RandomizeAnswersLabel">
+		<value>הצג תשובות באופן רנדומלי</value>
+	</data>
+	<data name="AnswerRatingLabel">
+		<value>אפשר דירוג תשובות :</value>
+	</data>
+	<data name="MinSelectionLabel">
+		<value>מינימום תשובות לסימון</value>
+	</data>
+	<data name="MaxSelectionAllowed">
+		<value>מקסימום תשובות לסימון</value>
+	</data>
+	<data name="UpdateQuestionButton">
+		<value>ערוך</value>
+	</data>
+	<data name="AddNewSelectionTitle">
+		<value>הוסף בחירה/שדה חדשים</value>
+	</data>
+	<data name="DescriptionLabel">
+		<value>תיאור</value>
+	</data>
+	<data name="ImageURLLabel">
+		<value>כתובת התמונה</value>
+	</data>
+	<data name="AddAnswerButton">
+		<value>הוסף</value>
+	</data>
+	<data name="OrderHeader">
+		<value>מיין</value>
+	</data>
+	<data name="SelectedHeader">
+		<value>בחר</value>
+	</data>
+	<data name="AnswerTextHeader">
+		<value>טקסט</value>
+	</data>
+	<data name="DefaultTextHeader">
+		<value>שדה טקסט חובה</value>
+	</data>
+	<data name="ImageURLHeader">
+		<value>נתיב לתמונה</value>
+	</data>
+	<data name="TypeHeader">
+		<value>סוג</value>
+	</data>
+	<data name="RatingHeader">
+		<value>דירוג</value>
+	</data>
+	<data name="UpdateText">
+		<value>עדכן</value>
+	</data>
+	<data name="CancelText">
+		<value>בטל</value>
+	</data>
+	<data name="EditText">
+		<value>ערוך</value>
+	</data>
+	<data name="ButtonDeleteColumn">
+		<value>מחק</value>
+	</data>
+	<data name="UnlimitedSelectionOption">
+		<value>לא מוגבל</value>
+	</data>
+	<data name="NoSelectionRequiredOption">
+		<value>לא חובה לבחור תשובה</value>
+	</data>
+	<data name="SurveyExportTitle">
+		<value>ייצא נתונים</value>
+	</data>
+	<data name="FieldDelimiterLabel">
+		<value>שדה דילמטר</value>
+	</data>
+	<data name="TextDelimiterLabel">
+		<value>טקסט דילמטר</value>
+	</data>
+	<data name="ExportFromDateLabel">
+		<value>ייצא מ:</value>
+	</data>
+	<data name="ExportToDateLabel">
+		<value>ל:</value>
+	</data>
+	<data name="ExportDataButton">
+		<value>ייצא לקובץ CSV</value>
+	</data>
+	<data name="FieldReportTitle">
+		<value>דוח כניסות לשדה - עמוד</value>
+	</data>
+	<data name="NextPageLinkButton">
+		<value>שאלה הבאה</value>
+	</data>
+	<data name="PreviousPageLinkButton">
+		<value>שאלה קודמת</value>
+	</data>
+	<data name="DetailsColumn">
+		<value>פרטים</value>
+	</data>
+	<data name="DeleteColumn">
+		<value>מחק</value>
+	</data>
+	<data name="FilterBuilderTitle">
+		<value>בניית פילטרים לתוצאות</value>
+	</data>
+	<data name="SelectFilteraLabel">
+		<value>בחר פילטר לעריכה/צפיה :</value>
+	</data>
+	<data name="CreateFilterHyperLink">
+		<value>לחץ כאן ליצירת פילטר חדש ...</value>
+	</data>
+	<data name="SelectFilterMessage">
+		<value>[בחר פילטר]</value>
+	</data>
+	<data name="FilterNameLabel">
+		<value>שם פילטר :</value>
+	</data>
+	<data name="RuleOperatorLabel">
+		<value>אופרטור לחוק מותנה :</value>
+	</data>
+	<data name="AndOperator">
+		<value>וגם</value>
+	</data>
+	<data name="OrOperator">
+		<value>או</value>
+	</data>
+	<data name="NewRuleTitle">
+		<value>הוסף חוק חדש לפילטר</value>
+	</data>
+	<data name="AnswerLabel">
+		<value>תשובה :</value>
+	</data>
+	<data name="FilterText">
+		<value>טקסט :</value>
+	</data>
+	<data name="FilterRulesTitle">
+		<value>חוקי הפילטר</value>
+	</data>
+	<data name="AddRuleButton">
+		<value>הוסף חוק חדש</value>
+	</data>
+	<data name="UpdateFilterButton">
+		<value>עדכן פילטר</value>
+	</data>
+	<data name="DeleteFilterButton">
+		<value>מחק פילטר</value>
+	</data>
+	<data name="CreatefilterButton">
+		<value>צור פילטר</value>
+	</data>
+	<data name="DeleteRuleInfo">
+		<value>מחק חוק</value>
+	</data>
+	<data name="AddNewFilterTitle">
+		<value>הוסף פילטר חדש</value>
+	</data>
+	<data name="EditFilterTitle">
+		<value>ערוך את אפשרויות הפילטר</value>
+	</data>
+	<data name="TextEntryInfo">
+		<value>(הזנת טקסט)</value>
+	</data>
+	<data name="SelectionInfo">
+		<value>(בחירה)</value>
+	</data>
+	<data name="FilterRuleNoAnswer">
+		<value>מצביעים שאנו ל &lt;b&gt;{0}&lt;/b&gt;</value>
+	</data>
+	<data name="FilterRuleAnswer">
+		<value>מצביעים שאנו ל &lt;b&gt;{0}&lt;/b&gt; באמצעות &lt;b&gt;{1}&lt;/b&gt;</value>
+	</data>
+	<data name="FilterRuleAnswerWithText">
+		<value>מצביעים שאנו ל &lt;b&gt;{0}&lt;/b&gt; באמצעות &lt;b&gt;{1}&lt;/b&gt; ועם ערך כניסה של &lt;b&gt;{2}&lt;/b&gt;</value>
+	</data>
+	<data name="AnyAnswerMessage">
+		<value>כל תשובה</value>
+	</data>
+	<data name="FilterRuleAddedMessage">
+		<value>חוק הפילטר הוסף</value>
+	</data>
+	<data name="FilterRuleDeletedMessage">
+		<value>חוק הפילטר נמחק</value>
+	</data>
+	<data name="FilterDeletedMessage">
+		<value>הפילטר נמחק</value>
+	</data>
+	<data name="InvalidFilterDescriptionMessage">
+		<value>אנא הזן תיאור עבור הפילטר</value>
+	</data>
+	<data name="FilterUpdatedMessage">
+		<value>הפילטר התעדכן</value>
+	</data>
+	<data name="SelectQuestionMessage">
+		<value>[בחר שאלה]</value>
+	</data>
+	<data name="SurveyStatisticsTitle">
+		<value>סטטיסטיקה לסקר</value>
+	</data>
+	<data name="SurveyCreationDateLabel">
+		<value>תאריך יצירה :</value>
+	</data>
+	<data name="LastSurveyEntryLabel">
+		<value>כניסה אחרונה ב :</value>
+	</data>
+	<data name="SurveyDisplayTimesLabel">
+		<value>מספר הצגות :</value>
+	</data>
+	<data name="SurveyResultsDisplayTimesLabel">
+		<value>מספר הצגות של תוצאות :</value>
+	</data>
+	<data name="SurveyNumberOfVotesLabel">
+		<value>מספר מצביעים :</value>
+	</data>
+	<data name="SurveyMonthlyStatsLabel">
+		<value>סטטיסטיקה חודשית :</value>
+	</data>
+	<data name="ResetVotesButton">
+		<value>אפס הצבעות</value>
+	</data>
+	<data name="ResetVotesConfirmationMessage">
+		<value>האם אתה רוצה למחוק את ההצבעות )לא ניתן לשחזר לאחר המחיקה(</value>
+	</data>
+	<data name="NoEntriesRecordedInfo">
+		<value>אין כניסות בזמן זה</value>
+	</data>
+	<data name="NoEntries">
+		<value>אין כניסות</value>
+	</data>
+	<data name="EntriesNumber">
+		<value>{0} כניסות</value>
+	</data>
+	<data name="NewQuestionTitle">
+		<value>שאלה חדשה</value>
+	</data>
+	<data name="QuestionLabel">
+		<value>שאלה :</value>
+	</data>
+	<data name="MatrixQuestionOption">
+		<value>שאלה מטריציונית</value>
+	</data>
+	<data name="SingleQuestionOption">
+		<value>שאלה בודדת</value>
+	</data>
+	<data name="AddQuestionButton">
+		<value>הוסף שאלה/טקסט חדשים</value>
+	</data>
+	<data name="StaticTextTitle">
+		<value>טקסט סטטי חדש</value>
+	</data>
+	<data name="FreeTextLabel">
+		<value>טקסט חופשי</value>
+	</data>
+	<data name="AddStaticButton">
+		<value>הוסף טקסט סטטי</value>
+	</data>
+	<data name="TypeLabel">
+		<value>סוג</value>
+	</data>
+	<data name="MissingQuestionMessage">
+		<value>בבקשה הזן טקסט עבור השאלה</value>
+	</data>
+	<data name="MissingStaticQuestionMessage">
+		<value>בבקשה הזן טקסט עבור השאלה הסטטית</value>
+	</data>
+	<data name="ProcessInfoLabel">
+		<value>התהליך יכול לקחת זמן בהתבסס על העומס ותנאי הרשת</value>
+	</data>
+	<data name="PleaseWaitInfo">
+		<value>.... בבקשה המתן המערכת שולחת את ההזמנות ....</value>
+	</data>
+	<data name="AllInvitationSendMessage">
+		<value>כל ההזמנות נשלחו. אתה רשאי כעת להמשיך לעמוד סטטוס הדיוור ...</value>
+	</data>
+	<data name="PendingEmailsTitle">
+		<value>מיילים ממתינים - עמוד</value>
+	</data>
+	<data name="BoundColumnEmail">
+		<value>דואר אלקטרוני</value>
+	</data>
+	<data name="BoundColumnRequestDate">
+		<value>תאריך הבקשה</value>
+	</data>
+	<data name="NoEmailInvitationInfo">
+		<value>אין הזמנות ממתינות</value>
+	</data>
+	<data name="ValidatedEmailTitle">
+		<value>אישורים שנתקבלו - עמוד</value>
+	</data>
+	<data name="DeleteRequestButton">
+		<value>מחק את הבקשות המסומנות</value>
+	</data>
+	<data name="NoEmailAnswered">
+		<value>לא התקבלו אישורים עדיין</value>
+	</data>
+	<data name="BoundColumnAnswerDate">
+		<value>תאריך התשובה</value>
+	</data>
+	<data name="PreviousPendingPageLinkButton">
+		<value>&lt;&lt; עמוד קודם</value>
+	</data>
+	<data name="NextPendingPageLinkButton">
+		<value>עמוד הבא &gt;&gt;</value>
+	</data>
+	<data name="PreviousAnsweredPageLinkButton">
+		<value>&lt;&lt; עמוד קודם</value>
+	</data>
+	<data name="NextAnsweredPageLinkButton">
+		<value>עמוד הבא &gt;&gt;</value>
+	</data>
+	<data name="DeleteVoterButton">
+		<value>מחק מצביעים נבחרים</value>
+	</data>
+	<data name="ViewReport">
+		<value>ראה דוח</value>
+	</data>
+	<data name="DeleteVoterConfirmationMessage">
+		<value>זה ימחק את המצביע וכל התשובות. לא יהיה ניתן לשחזר את המצביע</value>
+	</data>
+	<data name="BranchingHyperLink">
+		<value>ערוך הסתעפות</value>
+	</data>
+	<data name="InsertHyperLink">
+		<value>הזן שאלה</value>
+	</data>
+	<data name="InsertLineBreakButton">
+		<value>הוסף שבירת שורה</value>
+	</data>
+	<data name="DeleteButton">
+		<value>מחק</value>
+	</data>
+	<data name="PageTitle">
+		<value>עמוד</value>
+	</data>
+	<data name="EditHyperLink">
+		<value>ערוך שאלה</value>
+	</data>
+	<data name="DeleteButton">
+		<value>מחק</value>
+	</data>
+	<data name="CloneButton">
+		<value>העתק</value>
+	</data>
+	<data name="InsertHyperLink">
+		<value>הזן שאלה</value>
+	</data>
+	<data name="InsertPageBreakButton">
+		<value>הוסף שבירת עמוד</value>
+	</data>
+	<data name="InsertLineBreakButton">
+		<value>הוסף שבירת שורה</value>
+	</data>
+	<data name="DeleteQuestionConfirmationMessage">
+		<value>האם אתה בטוח שאתה רוצה למחוק את השאלה??</value>
+	</data>
+	<data name="SurveyResultsTitle">
+		<value>תוצאות הסקר</value>
+	</data>
+	<data name="QuestionsResultsDisplaylabel">
+		<value>תוצאות שאלה להצגה</value>
+	</data>
+	<data name="ResultsLayoutLabel">
+		<value>צורת הצגת התוצאות :</value>
+	</data>
+	<data name="ColumnChartOption">
+		<value>דיאגרמה טורית</value>
+	</data>
+	<data name="HTMLChartOption">
+		<value>דיאגרמת Html</value>
+	</data>
+	<data name="ApplyFilterLabel">
+		<value>בחר פילטר :</value>
+	</data>
+	<data name="FilterEditorHyperLink">
+		<value>לחץ כאן לערוך או ליצור פילטרים חדשים</value>
+	</data>
+	<data name="DisplayAllResultsMessage">
+		<value>[הצג את כל התוצאות )יכול לקחת זמן(]</value>
+	</data>
+	<data name="InvitationMailingTitle">
+		<value>מייל הזמנה</value>
+	</data>
+	<data name="FromLabel">
+		<value>שולח :</value>
+	</data>
+	<data name="FromNameLabel">
+		<value>שם השולח:</value>
+	</data>
+	<data name="SubjectLabel">
+		<value>נושא :</value>
+	</data>
+	<data name="SubjectTextBox">
+		<value>בבקשה קח חלק בסקר</value>
+	</data>
+	<data name="FromNameTextBox">
+		<value>שם משפחה שם פרטי</value>
+	</data>
+	<data name="EmailInvitationLabel">
+		<value>רשימת הזמנות (המיילים חייבים להיות מופרדים ע"י פסיק) :</value>
+	</data>
+	<data name="InvitationMessageLabel">
+		<value>תוכן ההזמנה :</value>
+	</data>
+	<data name="AnonymousLabel">
+		<value>כניסות אנונימיות:</value>
+	</data>
+	<data name="SendInvitationButton">
+		<value>שלח הזמנה</value>
+	</data>
+	<data name="InvitationMessageTextBox">
+		<value>שלום, 
+הוזמנת להשתתף בסקר "{0}".
+
+בבקשה לחץ על הלינק להשתתפות : 
+{1}
+
+או הזן את הקוד האישי הבא אם נדרש : 
+[--מספר הזמנה-]
+
+הרבה תודה, 
+שם פרטי שם משפחה</value>
+	</data>
+	<data name="SurveyInformationTitle">
+		<value>פרטי הסקר</value>
+	</data>
+	<data name="SurveyTitleLabel">
+		<value>כותרת :</value>
+	</data>
+	<data name="OpeningDateLabel">
+		<value>תאריך פתיחה :</value>
+	</data>
+	<data name="DateForExampleInfo">
+		<value>לדוגמא :</value>
+	</data>
+	<data name="CloseDateLabel">
+		<value>תאריך סגירה :</value>
+	</data>
+	<data name="ActiveSurveyLabel">
+		<value>פעיל :</value>
+	</data>
+	<data name="ArchivedLabel">
+		<value>Archived :</value>
+	</data>
+	<data name="SecuritySettingsTitle">
+		<value>הגדרות אבטחה</value>
+	</data>
+	<data name="IPBlockingLabel">
+		<value>חסימת IP :</value>
+	</data>
+	<data name="CookieBlockingLabel">
+		<value>חסימת Cookie :</value>
+	</data>
+	<data name="ExpirationInfo">
+		<value>פוקע לאחר</value>
+	</data>
+	<data name="MinutesInfo">
+		<value>דקות</value>
+	</data>
+	<data name="OnlyInvitedEmailsLabel">
+		<value>רק מיילים מוזמנים יכולים להשתתף :</value>
+	</data>
+	<data name="OverrideSecurityInfo">
+		<value>(זה יגבר על הגדרות האבטחה)</value>
+	</data>
+	<data name="PrivacySettingsTitle">
+		<value>הגדרות פרטיות</value>
+	</data>
+	<data name="RedirectionURLLabel">
+		<value>URL להעברה :</value>
+	</data>
+	<data name="ThanksMessageLabel">
+		<value>הודעת תודה :</value>
+	</data>
+	<data name="SurveyPasswordLabel">
+		<value>סיסמת הסקר :</value>
+	</data>
+	<data name="CreateSurveyButton">
+		<value>צור סקר!</value>
+	</data>
+	<data name="ApplyChangesButton">
+		<value>בצע שינויים</value>
+	</data>
+	<data name="DeleteButton">
+		<value>מחק</value>
+	</data>
+	<data name="CloneButton">
+		<value>העתק</value>
+	</data>
+	<data name="SurveyDeletedMessage">
+		<value>הסקר נמחק</value>
+	</data>
+	<data name="SurveyUpdatedMessage">
+		<value>פרטי הסקר עודכנו</value>
+	</data>
+	<data name="DeleteSurveyConfirmationMessage">
+		<value>האם אתה בטוח שאתה רוצה למחוק את הסקר?</value>
+	</data>
+	<data name="InvalidIPExpireTime">
+		<value>תאריך פקיעה לא חוקי של IP, חייב להיות מספרי</value>
+	</data>
+	<data name="InvalidCookieExpireTime">
+		<value>תאריך פקיעה לא חוקי של Cookie</value>
+	</data>
+	<data name="InvalidOpeningDate">
+		<value>פורמט שגוי לתאריך פתיחה</value>
+	</data>
+	<data name="InvalidClosingDate">
+		<value>פורמט שגוי לתאריך סגירה</value>
+	</data>
+	<data name="AnswerTypeBuilderTitle">
+		<value>בניית סוג תשובה</value>
+	</data>
+	<data name="TypeToEditLabel">
+		<value>בחר סוג לעריכה/צפיה :</value>
+	</data>
+	<data name="BuiltInTypeNotEditedLabel">
+		<value>(לא ניתן לערוך סוגים בנויים מראש)</value>
+	</data>
+	<data name="CreateTypeHyperLink">
+		<value>לחץ כאן ליצירת סוג חדש...</value>
+	</data>
+	<data name="CreateATypeMessage">
+		<value>בבקשה צור סוג</value>
+	</data>
+	<data name="SelectTypeMessage">
+		<value>[בחר סוג]</value>
+	</data>
+	<data name="FieldNameLabel">
+		<value>שם שדה:</value>
+	</data>
+	<data name="XMLDataSourceLabel">
+		<value>השתמש ב Xml Datasource :</value>
+	</data>
+	<data name="XmlFileNameLabel">
+		<value>שם קובץ xml :</value>
+	</data>
+	<data name="AllowSelectionLabel">
+		<value>הרשה בחירה :</value>
+	</data>
+	<data name="FieldEntryLabel">
+		<value>כניסה לשדה :</value>
+	</data>
+	<data name="FieldWidthLabel">
+		<value>רוחב השדה :</value>
+	</data>
+	<data name="FieldHeightLabel">
+		<value>גובה השדה :</value>
+	</data>
+	<data name="FieldLengthLabel">
+		<value>אורך מקסימלי של השדה :</value>
+	</data>
+	<data name="ShownInResultsLabel">
+		<value>שדה מוצג בתוצאות :</value>
+	</data>
+	<data name="JavascriptFunctionLabel">
+		<value>שם פונקציית Javascript :</value>
+	</data>
+	<data name="JavascriptErrorMessageLabel">
+		<value>הודעת שגיאה :</value>
+	</data>
+	<data name="JavascriptCodeLabel">
+		<value>קוד Javascript :</value>
+	</data>
+	<data name="ApplyChangesButton">
+		<value>עדכן שינויים</value>
+	</data>
+	<data name="CreateTypeButton">
+		<value>צור סוג</value>
+	</data>
+	<data name="DeleteTypeButton">
+		<value>מחק סוג</value>
+	</data>
+	<data name="NewAnswerTypeTitle">
+		<value>צור סוג תשובה חדש</value>
+	</data>
+	<data name="EditAnswerTypeTitle">
+		<value>ערוך סוג תשובה</value>
+	</data>
+	<data name="MissingAnswerTypeTitleMessage">
+		<value>בבקשה הזן שם עבור הסוג שלך</value>
+	</data>
+	<data name="MissingTypeMessage">
+		<value>בבקשה בחר סוג</value>
+	</data>
+	<data name="InvalidFieldLengthMessage">
+		<value>בבקשה הזן מספר עבור אורך השדה</value>
+	</data>
+	<data name="AnswerTypeInUse">
+		<value>הסוג בשימוש ע"י תשובה אחת או יותר ולא יכול להמחק עד שישונה סוג התשובות</value>
+	</data>
+	<data name="InvalidFieldHeightMessage">
+		<value>בבקשה הזן מספר עבור גובה השדה</value>
+	</data>
+	<data name="InvalidFieldWidthMessage">
+		<value>בבקשה הזן מספר עבור רוחב השדה</value>
+	</data>
+	<data name="MissingXmlDataSourceMessage">
+		<value>בבקשה הזן שם קובץ עבור ה-datasource שלך</value>
+	</data>
+	<data name="AnswerTypeUpdatedMessage">
+		<value>הסוג התעדכן</value>
+	</data>
+	<data name="VoterInformationTitle">
+		<value>פרטי המצביע</value>
+	</data>
+	<data name="VoterDBIDLabel">
+		<value>מזהה המצביע :</value>
+	</data>
+	<data name="VoterEmailLabel">
+		<value>דואר אלקטרוני של המצביע :</value>
+	</data>
+	<data name="VoterIPAddressLabel">
+		<value>כתובת IP :</value>
+	</data>
+	<data name="VoteRecordedLabel">
+		<value>הצבעה נרשמה ב :</value>
+	</data>
+	<data name="TimeToTakeLabel">
+		<value>זמן לביצוע הסקר :</value>
+	</data>
+	<data name="SurveyAnswersTitle">
+		<value>תשובות הסקר</value>
+	</data>
+	<data name="AnonymousVoteInfo">
+		<value>אנונימי</value>
+	</data>
+	<data name="AnswerNotAnsweredMessage">
+		<value>לא נענתה</value>
+	</data>
+	<data name="SelectionUpdatedMessage">
+		<value>בחירה/ שדה עודכנו</value>
+	</data>
+	<data name="SelectionDeletedMessage">
+		<value>בחירה/שדה נמחקו</value>
+	</data>
+	<data name="SelectionAddedMessage">
+		<value>בחירה חדשה התווספה</value>
+	</data>
+	<data name="OptionsUpdatedMessage">
+		<value>האפשרויות עודכנו</value>
+	</data>
+	<data name="VerticalItemText">
+		<value>מאונך</value>
+	</data>
+	<data name="HorizontalItemText">
+		<value>מאוזן</value>
+	</data>
+	<data name="RadioButtonSelection">
+		<value>Radiobutton (בודד)</value>
+	</data>
+	<data name="CheckBoxSelection">
+		<value>Checkbox (מרובה)</value>
+	</data>
+	<data name="DropDownListSelection">
+		<value>DropDownList (בודד)</value>
+	</data>
+	<data name="MatrixSingleSelection">
+		<value>מטריצה בודדה</value>
+	</data>
+	<data name="StaticTextSelection">
+		<value>מידע סטטי</value>
+	</data>
+	<data name="MatrixMultipleSelection">
+		<value>מטריצה מרובה</value>
+	</data>
+	<data name="SelectionTextType">
+		<value>בחירה - טקסט</value>
+	</data>
+	<data name="SelectionOtherType">
+		<value>בחירה - אחר</value>
+	</data>
+	<data name="FieldBasicType">
+		<value>שדה - בסיסי</value>
+	</data>
+	<data name="XMLCountryList">
+		<value>XML - רשימת ארצות</value>
+	</data>
+	<data name="XMLUSStatesList">
+		<value>XML - מדינות בארה"ב</value>
+	</data>
+	<data name="BooleanType">
+		<value>בוליאני</value>
+	</data>
+	<data name="FieldRequiredType">
+		<value>שדה - חובה</value>
+	</data>
+	<data name="FieldLargeType">
+		<value>שדה - גדול</value>
+	</data>
+	<data name="FieldCalendarType">
+		<value>שדה - לוח שנה</value>
+	</data>
+	<data name="FieldEmailType">
+		<value>שדה - דואר אלקטרוני</value>
+	</data>
+	<data name="MultipleChoicesMatrixLabel">
+		<value>מטריצה מרובת ברירות :</value>
+	</data>
+	<data name="EditMatrixQuestionTitle">
+		<value>ערוך שאלה מטריציונית</value>
+	</data>
+	<data name="InsertNewTitle">
+		<value>הזן חדש</value>
+	</data>
+	<data name="RowLabel">
+		<value>שורה</value>
+	</data>
+	<data name="AddRowButton">
+		<value>הוסף שורה</value>
+	</data>
+	<data name="ColumnLabel">
+		<value>טור</value>
+	</data>
+	<data name="AddColumnButton">
+		<value>הוסף טור</value>
+	</data>
+	<data name="CurrentRowsColumnsTitle">
+		<value>שורות וטורים נוכחיים</value>
+	</data>
+	<data name="RowsHeader">
+		<value>שורות</value>
+	</data>
+	<data name="UpdateRowTextHeader">
+		<value>עדכן</value>
+	</data>
+	<data name="CancelRowTextHeader">
+		<value>בטל</value>
+	</data>
+	<data name="EditRowTextHeader">
+		<value>ערוך</value>
+	</data>
+	<data name="DeleteRowText">
+		<value>מחק</value>
+	</data>
+	<data name="AnswerHeader">
+		<value>טורים</value>
+	</data>
+	<data name="ColTypeHeader">
+		<value>סוג</value>
+	</data>
+	<data name="ColRatingHeader">
+		<value>דירוג</value>
+	</data>
+	<data name="UpdateColTextHeader">
+		<value>עדכן</value>
+	</data>
+	<data name="CancelColTextHeader">
+		<value>בטל</value>
+	</data>
+	<data name="EditColTextHeader">
+		<value>ערוך</value>
+	</data>
+	<data name="DeleteColText">
+		<value>מחק</value>
+	</data>
+	<data name="RowMissingQuestionMessage">
+		<value>בבקשה הזן טקסט עבור שאלת הבת</value>
+	</data>
+	<data name="MatrixRowUpdatedMessage">
+		<value>השורה עודכנה</value>
+	</data>
+	<data name="MatrixRowDeletedMessage">
+		<value>השורה נמחקה</value>
+	</data>
+	<data name="MatrixRowAddedMessage">
+		<value>שורה חדשה התווספה</value>
+	</data>
+	<data name="MatrixColumnAddedMessage">
+		<value>טור חדש התווסף</value>
+	</data>
+	<data name="MatrixColumnUpdatedMessage">
+		<value>הטור עודכן</value>
+	</data>
+	<data name="MatrixColumnDeletedMessage">
+		<value>הטור נמחק</value>
+	</data>
+	<data name="BranchingRuleNoAnswer">
+		<value>מצביעים שהצביעו ל &lt;b&gt;{0}&lt;/b&gt; מופנים לעמוד &lt;b&gt;עמוד {1}&lt;/b&gt;</value>
+	</data>
+	<data name="BranchingRuleNoAnswerNot">
+		<value>מצביעים שלא הצביעו ל &lt;b&gt;{0}&lt;/b&gt; מופנים לעמוד &lt;b&gt;עמוד {1}&lt;/b&gt;</value>
+	</data>
+	<data name="BranchingRuleAnswer">
+		<value>מצביעים שהצביעו ל &lt;b&gt;{0}&lt;/b&gt; עם &lt;b&gt;{1}&lt;/b&gt; מופנים לעמוד &lt;b&gt;עמוד {2}&lt;/b&gt;</value>
+	</data>
+	<data name="BranchingRuleAnswerNot">
+		<value>מצביעים שלא הצביעו ל &lt;b&gt;{0}&lt;/b&gt; עם &lt;b&gt;{1}&lt;/b&gt; מופנים לעמוד &lt;b&gt;עמוד {2}&lt;/b&gt;</value>
+	</data>
+	<data name="BranchingRuleAnswerWithText">
+		<value>מצביעים שהצביעו ל &lt;b&gt;{0}&lt;/b&gt; עם &lt;b&gt;{1}&lt;/b&gt; {2} &lt;b&gt;{3}&lt;/b&gt; מופנים לעמוד &lt;b&gt;עמוד {4}&lt;/b&gt;</value>
+	</data>
+	<data name="BranchingRuleAnswerWithTextNot">
+		<value>מצביעים שלא הצביעו ל &lt;b&gt;{0}&lt;/b&gt; עם &lt;b&gt;{1}&lt;/b&gt; {2} &lt;b&gt;{3}&lt;/b&gt; מופנים לעמוד &lt;b&gt;עמוד {4}&lt;/b&gt;</value>
+	</data>
+	<data name="AddNewBranchingTitle">
+		<value>הוסף חוק הסתעפות חדש לעמוד {0}</value>
+	</data>
+	<data name="ConditionalLabel">
+		<value>אופרטור מותנה :</value>
+	</data>
+	<data name="FilterTextLabel">
+		<value>טקסט :</value>
+	</data>
+	<data name="PageTargetLabel">
+		<value>לך לעמוד :</value>
+	</data>
+	<data name="BranchingRulesTitle">
+		<value>חוקי הסתעפות</value>
+	</data>
+	<data name="EvaluationConditionInfo">
+		<value>התנאי הראשון שייתקיים ייסתעף לעמוד המטרה שלו</value>
+	</data>
+	<data name="AnsweredConditionOption">
+		<value>נענה ע"י</value>
+	</data>
+	<data name="NotAnsweredConditionOption">
+		<value>לא נענה ע"י</value>
+	</data>
+	<data name="BranchingRuleAddedMessage">
+		<value>חוק הסתעפות התווסף</value>
+	</data>
+	<data name="BranchingRuleDeletedMessage">
+		<value>חוק הסתעפות נמחק</value>
+	</data>
+	<data name="NewSurveyHyperLink">
+		<value>סקר חדש</value>
+	</data>
+	<data name="SurveyOptionsHyperlink">
+		<value>הגדרות</value>
+	</data>
+	<data name="SurveyStatsHyperlink">
+		<value>סטטיסטיקות</value>
+	</data>
+	<data name="SurveyBuilderHyperlink">
+		<value>בניית טפסים</value>
+	</data>
+	<data name="TypeBuilderHyperlink">
+		<value>עריכת סוג תשובה</value>
+	</data>
+	<data name="FieldReportHyperLink">
+		<value>לחץ כאן לצפייה בכניסות לשדות ודוחות פרטניים</value>
+	</data>
+	<data name="ResultsReportHyperlink">
+		<value>דוח תוצאות</value>
+	</data>
+	<data name="ExportDataHyperlink">
+		<value>יצוא נתונים</value>
+	</data>
+	<data name="MailingHyperlink">
+		<value>דיוור</value>
+	</data>
+	<data name="MailingStatusHyperlink">
+		<value>סטטוס הדיוור</value>
+	</data>
+	<data name="ASPNETCodeHyperlink">
+		<value>קוד asp.net</value>
+	</data>
+	<data name="NSurveyAuthenticationTitle">
+		<value>הזדהות</value>
+	</data>
+	<data name="LoginLabel">
+		<value>שם משתמש :</value>
+	</data>
+	<data name="PasswordLabel">
+		<value>סיסמה:</value>
+	</data>
+	<data name="ValidateCredentialsButton">
+		<value>בדוק הרשאות</value>
+	</data>
+	<data name="InvalidPasswordMessage">
+		<value>פרטי הזדהות שגויים...נסה שוב...</value>
+	</data>
+	<data name="SurveyBuilderTitle">
+		<value>בניית טפסים</value>
+	</data>
+	<data name="FieldEntriesLabel">
+		<value>תוצאות לכניסות לשדה :</value>
+	</data>
+	<data name="ResultsOrderLabel">
+		<value>תוצאות לכניסות לשדה :</value>
+	</data>
+	<data name="ResultsOrderLabel">
+		<value>סדר התוצאות :</value>
+	</data>
+	<data name="AnswerOrderOption">
+		<value>סדר התשובות</value>
+	</data>
+	<data name="AscendingOrderOption">
+		<value>מספר תוצאות עולה</value>
+	</data>
+	<data name="DescendingOrderOption">
+		<value>מספר תוצאות יורד</value>
+	</data>
+	<data name="NoSurveysAvailableMessage">
+		<value>אין סקרים עדיין, לחץ כאן ליצירת הסקר הראשון</value>
+	</data>
+	<!-- V1.1 Additions start here -->
+	<data name="SurveySecurityHyperLink">
+		<value>אבטחה</value>
+	</data>
+	<data name="SurveySecurityTitle">
+		<value>אבטחה</value>
+	</data>
+	<data name="SurveyAddAdinTitle">
+		<value>הוסף תוספת אבטחה</value>
+	</data>
+	<data name="AddAddinButton">
+		<value>הוסף תוספת אבטחה לסקר</value>
+	</data>
+	<data name="AvailableAddInsLabel">
+		<value>תוספות אפשריות</value>
+	</data>
+	<data name="InsertAddInHyperLink">
+		<value>הוסף תוספת אבטחה</value>
+	</data>
+	<data name="DisableAddInLinkButton">
+		<value>נטרל</value>
+	</data>
+	<data name="EnableAddInLinkButton">
+		<value>הפעל</value>
+	</data>
+	<data name="AddInDisabledLabel">
+		<value>התוספת הזאת מנוטרלת כרגע עבור סקר זה אבל הנתונים למצביעים המקושרים שלו מאופשרים מפונקציות הדיווח והייצוא</value>
+	</data>
+	<data name="AddInAdminNotAvailableMessage">
+		<value>התוספת הזאת לא מספקת שום ממשק אנמיניסטרציה ויזואלי</value>
+	</data>
+	<data name="NoAddInAvailableMessage">
+		<value>[אין עוד תוספות אפשריות]</value>
+	</data>
+	<data name="UnAuthentifiedUserActionLabel">
+		<value>אם המשתמש לא זוהה ע"י תוספות האבטחה :</value>
+	</data>
+	<data name="ShowThankYouText">
+		<value>הצג הודעת תודה</value>
+	</data>
+	<data name="HideSurveyText">
+		<value>הסתר סקר</value>
+	</data>
+	<!-- V1.2 Additions start here -->
+	<data name="EntryNotificationLabel">
+		<value>סוג התראה :</value>
+	</data>
+	<data name="ProgressDisplayLabel">
+		<value>הצגת התקדמות :</value>
+	</data>
+	<data name="EnableNavigationLabel">
+		<value>ניווט הקודם/הבא :</value>
+	</data>
+	<data name="EnableResumeLabel">
+		<value>המשך תהליך :</value>
+	</data>
+	<data name="NoneNotificationText">
+		<value>ללא התראה</value>
+	</data>
+	<data name="ShortNotificationText">
+		<value>הודעה קצרה</value>
+	</data>
+	<data name="ReportNotificationText">
+		<value>דוח כניסות מלא</value>
+	</data>
+	<data name="NoProgressText">
+		<value>אל תראה התקדמות</value>
+	</data>
+	<data name="PageNumberText">
+		<value>הצג מספרי עמוד</value>
+	</data>
+	<data name="ProgressPercentageText">
+		<value>הצג אחוזי התקדמות</value>
+	</data>
+	<data name="InvalidFromEmail">
+		<value>מייל השולח חייב להיות חוקי</value>
+	</data>
+	<data name="InvalidToEmail">
+		<value>מייל מקבל ההתראה חייב להיות חוקי</value>
+	</data>
+	<data name="NotificationSettingsTitle">
+		<value>הגדרות התראה</value>
+	</data>
+	<data name="ToEmailNotificationLabel">
+		<value>מייל מקבל ההתראה :</value>
+	</data>
+	<data name="FromEmailNotificationLabel">
+		<value>שולח המייל :</value>
+	</data>
+	<data name="NotificationSubjectLabel">
+		<value>נושא מייל ההתראה :</value>
+	</data>
+	<data name="FieldHiddenType">
+		<value>שדה - נסתר</value>
+	</data>
+	<data name="CopyExistingQuestionTitle">
+		<value>העתק שאלה קיימת</value>
+	</data>
+	<data name="CopyExistingQuestionButton">
+		<value>העתק שאלה לסקר זה</value>
+	</data>
+	<data name="NoQuestionToCopyAvailableMessage">
+		<value>[אין שאלות אפשריות]</value>
+	</data>
+	<data name="SelectSurveyMessage">
+		<value>[בחר סקר]</value>
+	</data>
+	<data name="SaveProgressEntriesLabel">
+		<value>כניסות לא ולידיות :</value>
+	</data>
+	<data name="DeleteSaveProgressLinkButton">
+		<value>( מחק את כל הכניסות הלא ולידיות )</value>
+	</data>
+	<data name="PipeHelpLabel">
+		<value>*אתה יכול לציין ערכים מיוחדים שיוחלפו בזמן ריצה בערך טקסט :&lt;br&gt;
+##yourquerystringvariablename##&lt;/b&gt;&lt;br&gt;
+@@yoursessionvariablename@@&lt;br&gt;
+&amp;&amp;yourcookievariablename&amp;&amp;&lt;br&gt;
+%%servervariablename%%</value>
+	</data>
+	<!-- V1.3 Additions start here -->
+	<data name="EnableRandomHyperlink">
+		<value>הפעל רנדומליות</value>
+	</data>
+	<data name="DisableRandomHyperlink">
+		<value>נטרל רנדומליות</value>
+	</data>
+	<data name="EnableSubmitHyperlink">
+		<value>הפעל שליחה</value>
+	</data>
+	<data name="DisableSubmitHyperlink">
+		<value>נטרל שליחה</value>
+	</data>
+	<data name="CompareQuestionLabel">
+		<value>שאלה השוואתית :</value>
+	</data>
+	<data name="BaseQuestionLabel">
+		<value>שאלת בסיס :</value>
+	</data>
+	<data name="SurveyCrossTabTitle">
+		<value>תוצאות השוואתיות מוצלבות</value>
+	</data>
+	<data name="CrossTabNotAnsweredMessage">
+		<value>לא נענו</value>
+	</data>
+	<data name="CrossTabVotesTotalMessage">
+		<value>סהכ</value>
+	</data>
+	<data name="BaseQuestionChoiceLabel">
+		<value>בבקשה בחר שאלה בסיסית</value>
+	</data>
+	<data name="CompareQuestionChoiceLabel">
+		<value>בבקשה בחר שאלה השוואתית</value>
+	</data>
+	<data name="CrossTableResultsLiteral">
+		<value>תוצאות</value>
+	</data>
+	<data name="CrossTabHyperlink">
+		<value>לחץ כאן כדי לצור תוצאות של השוואה מוצלבת</value>
+	</data>
+	<!-- V1.4 Additions start here -->
+	<data name="ResumeNotAllowedText">
+		<value>אין</value>
+	</data>
+	<data name="AutomaticResumeText">
+		<value>שמירת cookie אוטומטית</value>
+	</data>
+	<data name="ManualResumeText">
+		<value>ידני )המשתמש חייב להזין קוד כדי להמשיך(</value>
+	</data>
+	<data name="GraphicResultsReportHyperlink">
+		<value>דוח גרפי</value>
+	</data>
+	<data name="TextFieldsResultsReportHyperlink">
+		<value>כניסות לשדות טקסט</value>
+	</data>
+	<data name="CrossTabResultsReportHyperlink">
+		<value>השוואה מוצלבת</value>
+	</data>
+	<data name="ClearQuestionAnswersConfirmationMessage">
+		<value>האם אתה בטוח שאתה רוצה לנקות את התשובות לשאלה? ?</value>
+	</data>
+	<data name="ClearQuestionAnswersButton">
+		<value>נקה תשובות לשאלה</value>
+	</data>
+	<data name="ClearPageAnswersButton">
+		<value>נקה תשובות לעמוד</value>
+	</data>
+	<data name="ClearPageAnswersConfirmationMessage">
+		<value>האם אתה בטוח שאתה רוצה לנקות את כל התשובות לעמוד ?</value>
+	</data>
+	<data name="EditAnswersLinkButton">
+		<value>עבור לעריכת תשובות המצביע</value>
+	</data>
+	<data name="ReadOnlyAnswersLinkButton">
+		<value>עבור לצפייה בתשובות המצביע</value>
+	</data>
+	<data name="EditVoterAnswersTitle">
+		<value>ערוך תשובות</value>
+	</data>
+	<data name="FieldPasswordType">
+		<value>שדה - סיסמה</value>
+	</data>
+	<data name="AnswersOverviewTitle">
+		<value>סקירת תשובות</value>
+	</data>
+	<data name="AddNewAnswerTitle">
+		<value>הוסף תשובה חדשה</value>
+	</data>
+	<data name="EditAnswerTitle">
+		<value>ערוך הגדרות תשובה</value>
+	</data>
+	<data name="AnswerEditorHyperlink">
+		<value>עורך תשובות</value>
+	</data>
+	<data name="SingleQuestionAnswerEditorTitle">
+		<value>עורך תשובות לשאלה</value>
+	</data>
+	<data name="SingleQuestionCannotBeEditedMessage">
+		<value>לא ניתן לערוך את התשובות לשאלה זו</value>
+	</data>
+	<data name="EditAnswersHyperLink">
+		<value>ערוך תשובות</value>
+	</data>
+	<data name="EditAnswersButton">
+		<value>הוסף/ערוך תשובות</value>
+	</data>
+	<data name="EditQuestionButton">
+		<value>ערוך שאלה</value>
+	</data>
+	<data name="DeleteAnswerConfirmationMessage">
+		<value>האם אתה בטוח שאתה רוצה למחוק את השאלה?</value>
+	</data>
+	<data name="AnswerRatingLabel">
+		<value>חלק של דירוג :</value>
+	</data>
+	<data name="SelectedAnswersLabel">
+		<value>נבחר באופן דיפולטי :</value>
+	</data>
+	<data name="AnswerURLLabel">
+		<value>URL לתמונה :</value>
+	</data>
+	<data name="ScoreLabel">
+		<value>נקודת ניקוד :</value>
+	</data>
+	<data name="UpdateAnswerButton">
+		<value>עדכן</value>
+	</data>
+	<data name="DeleteAnswerButton">
+		<value>מחק</value>
+	</data>
+	<data name="CancelAnswerButton">
+		<value>בטל</value>
+	</data>
+	<data name="AddAnswerButton">
+		<value>הוסף</value>
+	</data>
+	<data name="AnswerTextLabel">
+		<value>טקסט לתשובה :</value>
+	</data>
+	<data name="AnswerTypeLabel">
+		<value>סוג : </value>
+	</data>
+	<data name="ScoredLabel">
+		<value>ניקוד :</value>
+	</data>
+	<data name="ScoredEqualConditionOption">
+		<value>ניקוד</value>
+	</data>
+	<data name="ScoredLessConditionOption">
+		<value>ניקוד פחות מ</value>
+	</data>
+	<data name="ScoredGreaterConditionOption">
+		<value>ניקוד יותר מ</value>
+	</data>
+	<data name="ScoredRangeConditionOperator">
+		<value>ניקוד בין</value>
+	</data>
+	<data name="ScoreNotNumericMessage">
+		<value>הניקוד חייב להיות מספרי</value>
+	</data>
+	<data name="BranchingRuleScoreEqual">
+		<value>מצביעים שהשיגו ניקוד של  &lt;b&gt;{0}&lt;/b&gt; ב &lt;b&gt;{1}&lt;/b&gt; מופנים לעמוד &lt;b&gt;עמוד {2}&lt;/b&gt;</value>
+	</data>
+	<data name="BranchingRuleScoreLess">
+		<value>מצביעים שהשיגו ניקוד &lt;b&gt;פחות מ {0}&lt;/b&gt; ב &lt;b&gt;{1}&lt;/b&gt; מופנים לעמוד &lt;b&gt;עמוד {2}&lt;/b&gt;</value>
+	</data>
+	<data name="BranchingRuleScoreGreater">
+		<value>מצביעים שהשיגו ניקוד &lt;b&gt;יותר מ {0}&lt;/b&gt; ב &lt;b&gt;{1}&lt;/b&gt; מופנים לעמוד &lt;b&gt;עמוד {2}&lt;/b&gt;</value>
+	</data>
+	<data name="BranchingRuleScoreRange">
+		<value>מצביעים שהשיגו ניקוד &lt;b&gt;בין {0} ו- {1}&lt;/b&gt; ב &lt;b&gt;{2}&lt;/b&gt; מופנים לעמוד &lt;b&gt;עמוד {3}&lt;/b&gt;</value>
+	</data>
+	<data name="VoterScoreTotalLabel">
+		<value>ניקוד כולל : </value>
+	</data>
+	<data name="QuestionScoreLabel">
+		<value>ניקוד : </value>
+	</data>
+	<data name="SelectQuestionConditionMessage">
+		<value>[בחר תנאי]</value>
+	</data>
+	<data name="SurveyQuestionConditionOption">
+		<value>שאלה נענתה</value>
+	</data>
+	<data name="SurveyScoredEqualConditionOption">
+		<value>הניקוד הכולל הוא</value>
+	</data>
+	<data name="SurveyScoredLessConditionOption">
+		<value>הניקוד הכולל הוא פחות מ</value>
+	</data>
+	<data name="SurveyScoredGreaterConditionOption">
+		<value>הניקוד הכולל הוא יותר מ</value>
+	</data>
+	<data name="SurveyScoredRangeConditionOperator">
+		<value>הניקוד הכולל בין</value>
+	</data>
+	<data name="MessageConditionAddedMessage">
+		<value>תנאי להודעה התווסף</value>
+	</data>
+	<data name="MessageConditionScoreEqual">
+		<value>הראה "&lt;b&gt;{0}&lt;/b&gt;" לאילו שהשיגו ניקוד כולל של &lt;b&gt;{1}&lt;/b&gt;</value>
+	</data>
+	<data name="MessageConditionScoreLess">
+		<value>הראה "&lt;b&gt;{0}&lt;/b&gt;" לאילו שהשיגו ניקוד כולל &lt;b&gt;פחות מ {1}&lt;/b&gt;</value>
+	</data>
+	<data name="MessageConditionScoreGreater">
+		<value>הראה "&lt;b&gt;{0}&lt;/b&gt;" לאילו שהשיגו ניקוד כולל &lt;b&gt;יותר מ {1}&lt;/b&gt;</value>
+	</data>
+	<data name="MessageConditionScoreRange">
+		<value>הראה "&lt;b&gt;{0}&lt;/b&gt;" לאילו שהשיגו ניקוד כולל &lt;b&gt;בין {1} ו- {2}&lt;/b&gt;</value>
+	</data>
+	<data name="MessageConditionQuestionScoreEqual">
+		<value>הראה "&lt;b&gt;{0}&lt;/b&gt;" לאילו שהשיגו ניקוד כולל &lt;b&gt;{1}&lt;/b&gt; ב &lt;b&gt;{2}&lt;/b&gt;</value>
+	</data>
+	<data name="MessageConditionQuestionScoreLess">
+		<value>הראה "&lt;b&gt;{0}&lt;/b&gt;" לאילו שהשיגו ניקוד כולל &lt;b&gt;פחות מ {1}&lt;/b&gt; ב &lt;b&gt;{2}&lt;/b&gt;</value>
+	</data>
+	<data name="MessageConditionQuestionScoreGreater">
+		<value>הראה "&lt;b&gt;{0}&lt;/b&gt;" לאילו שהשיגו ניקוד כולל &lt;b&gt;יותר מ {1}&lt;/b&gt; ב &lt;b&gt;{2}&lt;/b&gt;</value>
+	</data>
+	<data name="MessageConditionQuestionScoreRange">
+		<value>הראה "&lt;b&gt;{0}&lt;/b&gt;" לאילו שהשיגו ניקוד כולל &lt;b&gt;בין {1} ו- {2}&lt;/b&gt; ב &lt;b&gt;{3}&lt;/b&gt;</value>
+	</data>
+	<data name="MessageConditionQuestionNoAnswer">
+		<value>הראה "&lt;b&gt;{0}&lt;/b&gt;" לאילו שענו ל &lt;b&gt;{1}&lt;/b&gt;</value>
+	</data>
+	<data name="MessageConditionQuestionNoAnswerNot">
+		<value>הראה "&lt;b&gt;{0}&lt;/b&gt;" לאילו שלא ענו ל &lt;b&gt;{1}&lt;/b&gt;</value>
+	</data>
+	<data name="MessageConditionQuestionAnswer">
+		<value>הראה "&lt;b&gt;{0}&lt;/b&gt;" שאילו שענו ל &lt;b&gt;{1}&lt;/b&gt; עם &lt;b&gt;{2}&lt;/b&gt;</value>
+	</data>
+	<data name="MessageConditionQuestionAnswerNot">
+		<value>הראה "&lt;b&gt;{0}&lt;/b&gt;" לאילו שלא ענו ל &lt;b&gt;{1}&lt;/b&gt; עם &lt;b&gt;{2}&lt;/b&gt;</value>
+	</data>
+	<data name="MessageConditionQuestionAnswerWithText">
+		<value>הראה "&lt;b&gt;{0}&lt;/b&gt;" שאילו שענו ל &lt;b&gt;{1}&lt;/b&gt; עם &lt;b&gt;{2}&lt;/b&gt; {3} &lt;b&gt;{4}&lt;/b&gt;</value>
+	</data>
+	<data name="MessageConditionQuestionAnswerWithTextNot">
+		<value>הראה "&lt;b&gt;{0}&lt;/b&gt;" לאילו שלא ענו ל &lt;b&gt;{1}&lt;/b&gt; עם &lt;b&gt;{2}&lt;/b&gt; {3} &lt;b&gt;{4}&lt;/b&gt;</value>
+	</data>
+	<data name="EvaluationMessageConditionInfo">
+		<value>*התנאי הראשון שמתקיים אחרי שהמשתמש העביר את תשובותיו יראה את הודעת התודה שלו</value>
+	</data>
+	<data name="AddMessageConditionButton">
+		<value>הוסף תנאי הודעה חדש</value>
+	</data>
+	<data name="UpdateConditionTitle">
+		<value>עדכן תנאי הודעה</value>
+	</data>
+	<data name="AddNewConditionTitle">
+		<value>הוסף תנאי חדש להוספת הודעה</value>
+	</data>
+	<data name="DeleteConditionInfo">
+		<value>מחק תנאי</value>
+	</data>
+	<data name="EditConditionInfo">
+		<value>ערוך תנאי</value>
+	</data>
+	<data name="PrivacySettingsHyperlink">
+		<value>הגדרות פרטיות</value>
+	</data>
+	<data name="SurveySettingsHyperlink">
+		<value>הגדרות הסקר</value>
+	</data>
+	<data name="ApplyPrivacyButton">
+		<value>החל</value>
+	</data>
+	<data name="ThanksMessageConditionTitle">
+		<value>תנאים להצגת הודעות תודה*</value>
+	</data>
+	<data name="AddNewConditionHyperLink">
+		<value>הוסף תנאי חדש</value>
+	</data>
+	<data name="VoterUserNameLabel">
+		<value>שם משתמש של ASP.net :</value>
+	</data>
+	<data name="ContextUserNameDisabled">
+		<value>מנוטרל</value>
+	</data>
+	<data name="ScoreHeader">
+		<value>ניקוד</value>
+	</data>
+	<data name="AddNewAnswerButton">
+		<value>הוסף תשובה חדשה</value>
+	</data>
+	<data name="CancelAnswerButton">
+		<value>בטל</value>
+	</data>
+	<data name="ScoreRangeLabel">
+		<value>עד</value>
+	</data>
+	<data name="ScoreTagLabel">
+		<value>הניקוד הכולל יכול להראות ע"י שימוש בתג ::score:: בהודעה שלך</value>
+	</data>
+	<!-- V1.5 Additions start here -->
+	<data name="QuestionPipeAliasLabel">
+		<value>Pipe alias :</value>
+	</data>
+	<data name="AnswerPipeAliasLabel">
+		<value>Pipe alias</value>
+	</data>
+	<data name="TheLibraryHyperlink">
+		<value>הספריה</value>
+	</data>
+	<data name="LibraryTitle">
+		<value>הספריה</value>
+	</data>
+	<data name="AddNewLibraryButton">
+		<value>הוסף ספריה חדשה</value>
+	</data>
+	<data name="DeleteLibraryConfirmationMessage">
+		<value>זה יימחק גם את כל התבניות בפנים. האם אתה בטוח שאתה רוצה למחוק אותן?</value>
+	</data>
+	<data name="DeleteLibraryButton">
+		<value>מחק ספריה</value>
+	</data>
+	<data name="UpdateLibraryButton">
+		<value>עדכן ספריה</value>
+	</data>
+	<data name="LibraryNameLabel">
+		<value>שם הספריה :</value>
+	</data>
+	<data name="MissingLibraryNameMessage">
+		<value>שם ספריה חסר</value>
+	</data>
+	<data name="UpdatedLibraryNameMessage">
+		<value>הספריה עודכנה</value>
+	</data>
+	<data name="DeletedLibraryNameMessage">
+		<value>הספריה נמחקה</value>
+	</data>
+	<data name="AddedLibraryNameMessage">
+		<value>הספריה התווספה</value>
+	</data>
+	<data name="EditLibraryInfo">
+		<value>ערוך</value>
+	</data>
+	<data name="AddLibraryTitle">
+		<value>הוסף ספריה חדשה</value>
+	</data>
+	<data name="UpdateLibraryTitle">
+		<value>עדכן ספריה</value>
+	</data>
+	<data name="QuestionTemplatesTitle">
+		<value>תבניות שאלה</value>
+	</data>
+	<data name="LocalLibraryHyperLink">
+		<value>ספריה מקומית</value>
+	</data>
+	<data name="CopyExistingQuestionToLibraryButton">
+		<value>העתק שאלה לספריה זו</value>
+	</data>
+	<data name="NewLibraryQuestionTitle">
+		<value>הוסף שאלה חדשה עבור ספריה {0}</value>
+	</data>
+	<data name="AddQuestionToLibraryButton">
+		<value>הוסף שאלה לספריה</value>
+	</data>
+	<data name="ExportButton">
+		<value>ייצא XML</value>
+	</data>
+	<data name="DisplayAnswersOfLabel">
+		<value>הצג תשובות של :</value>
+	</data>
+	<data name="SelectQuestionFromLibraryMessage">
+		<value>[בחר שאלה מספריה]</value>
+	</data>
+	<data name="StaticTextQuestionOption">
+		<value>טקסט חופשי סטטי</value>
+	</data>
+	<data name="ImportQuestionTitle">
+		<value>ייבא שאלת XML</value>
+	</data>
+	<data name="ImportXMLButton">
+		<value>ייבא XML</value>
+	</data>
+	<data name="ExportSurveyButton">
+		<value>ייצא XML</value>
+	</data>
+	<data name="ImportSurveyTitle">
+		<value>ייבא סקר מ-XML</value>
+	</data>
+	<data name="ImportXMLButton">
+		<value>ייבא XML</value>
+	</data>
+	<data name="VoterExportXMLButton">
+		<value>ייצא XML</value>
+	</data>
+	<data name="SelectSourceMessage">
+		<value>[בחר מקור שאלה]</value>
+	</data>
+	<data name="LibraryOption">
+		<value>העתק שאלות מספריה</value>
+	</data>
+	<data name="SurveyOption">
+		<value>העתק שאלות מסקר</value>
+	</data>
+	<data name="SelectLibraryMessage">
+		<value>[בחר ספריה]</value>
+	</data>
+	<data name="AnswerReportNotificationText">
+		<value>דוח תשובות בלבד</value>
+	</data>
+	<data name="ExportXMLButton">
+		<value>ייצא XML</value>
+	</data>
+	<!-- V1.6 Additions start here -->
+	<data name="UsersManagerHyperlink">
+		<value>משתמשים</value>
+	</data>
+	<data name="RolesManagerHyperlink">
+		<value>תפקידים</value>
+	</data>
+	<data name="UsersManagerTitle">
+		<value>ניהול משתמשים</value>
+	</data>
+	<data name="UserToEditLabel">
+		<value>בחר משתמש לעריכה</value>
+	</data>
+	<data name="SelectUserMessage">
+		<value>[בחר משתמש]</value>
+	</data>
+	<data name="CreateAUserMessage">
+		<value>[צור משתמש ראשית]</value>
+	</data>
+	<data name="DeleteUserButton">
+		<value>מחק משתמש</value>
+	</data>
+	<data name="NewUserTitle">
+		<value>משתמש חדש</value>
+	</data>
+	<data name="EditUserTitle">
+		<value>ערוך משתמש</value>
+	</data>
+	<data name="CreateNewUserButton">
+		<value>צור משתמש חדש</value>
+	</data>
+	<data name="InvalidEmailMessage">
+		<value>דואר אלקטרוני לא חוקי!</value>
+	</data>
+	<data name="UserNameRequiredMessage">
+		<value>אנא הכנס שם משתמש</value>
+	</data>
+	<data name="PasswordRequiredMessage">
+		<value>אנא הכנס סיסמה!</value>
+	</data>
+	<data name="UserUpdatedMessage">
+		<value>המשתמש עודכן</value>
+	</data>
+	<data name="DeleteUserConfirmationMessage">
+		<value>האם אתה בטוח שאתה מעוניין למחוק את המשתמש? סקרים המשויכים למשתמש לא יימחקו</value>
+	</data>
+	<data name="UserNameTakenMessage">
+		<value>שם המשתמש כבר קיים במערכת</value>
+	</data>
+	<data name="CannotDeleteLastAdminMessage">
+		<value>עליך להשאיר לפחות אדמיניסטרטור אחד</value>
+	</data>
+	<data name="CreateUserHyperLink">
+		<value>לחץ כאן ליצור משתמש חדש</value>
+	</data>
+	<data name="UserSurveyAssignedLabel">
+		<value>סקרים משוייכים</value>
+	</data>
+	<data name="UnAssignedSurveysLabel">
+		<value>סקרים לא משוייכים</value>
+	</data>
+	<data name="AssignedSurveysLabel">
+		<value>משוייכים למשתמש</value>
+	</data>
+	<data name="UserNameLabel">
+		<value>שם משתמש :</value>
+	</data>
+	<data name="UserPasswordLabel">
+		<value>סיסמה  :</value>
+	</data>
+	<data name="UserFirstNameLabel">
+		<value>שם פרטי :</value>
+	</data>
+	<data name="UserLastNameLabel">
+		<value>שם משפחה :</value>
+	</data>
+	<data name="UserEmailLabel">
+		<value>דואר אלקטרוני :</value>
+	</data>
+	<data name="UserIsAdministratorLabel">
+		<value>אדמיניסטרטור :</value>
+	</data>
+	<data name="AssignAllSurveysLabel">
+		<value>שייך את כל הסקרים :</value>
+	</data>
+	<data name="RolesLabel">
+		<value>תפקידים :</value>
+	</data>
+	<data name="AvailableRolesLabel">
+		<value>תפקידים אפשריים :</value>
+	</data>
+	<data name="UserRolesLabel">
+		<value>תפקידי המשתמש :</value>
+	</data>
+	<data name="RolesManagerTitle">
+		<value>ניהול תפקידים</value>
+	</data>
+	<data name="RolesToEditLabel">
+		<value>בחר תפקיד לעריכה</value>
+	</data>
+	<data name="CreateRoleHyperLink">
+		<value>לחץ כאן ליצירת תפקיד חדש</value>
+	</data>
+	<data name="CreateARoleMessage">
+		<value>[צור תפקיד ראשית]</value>
+	</data>
+	<data name="SelectRoleMessage">
+		<value>[בחר תפקיד]</value>
+	</data>
+	<data name="RoleNameLabel">
+		<value>שם התפקיד :</value>
+	</data>
+	<data name="DeleteRoleConfirmationMessage">
+		<value>האם אתה בטוח שאתה רוצה למחוק את התפקיד? משתמשים המשוייכים לתפקיד יאבדו את זכויותיהם</value>
+	</data>
+	<data name="DeleteRoleButton">
+		<value>מחק תפקיד</value>
+	</data>
+	<data name="CreateNewRoleButton">
+		<value>צור תפקיד חדש</value>
+	</data>
+	<data name="NewRoleTitle">
+		<value>תפקיד חדש</value>
+	</data>
+	<data name="EditRoleTitle">
+		<value>ערוך תפקיד</value>
+	</data>
+	<data name="RoleNameRequiredMessage">
+		<value>שם התפקיד הינו חובה!</value>
+	</data>
+	<data name="RoleUpdatedMessage">
+		<value>התפקיד עודכן</value>
+	</data>
+	<data name="RoleRightsLabel">
+		<value>זכויות התפקיד :</value>
+	</data>
+	<data name="CreateSurveyRight">
+		<value>יצירת סקר</value>
+	</data>
+	<data name="DeleteSurveyRight">
+		<value>מחיקת סקר</value>
+	</data>
+	<data name="ChangeSurveySettingsRight">
+		<value>שנה את הגדרות הסקר</value>
+	</data>
+	<data name="ApplySurveySettingsRight">
+		<value>החל הגדרות</value>
+	</data>
+	<data name="ExportSurveyXmlRight">
+		<value>ייצוא XML של הסקר</value>
+	</data>
+	<data name="AccessSurveySettingsRight">
+		<value>גישה להגדרות</value>
+	</data>
+	<data name="CloneSurveyRight">
+		<value>העתק סקר</value>
+	</data>
+	<data name="AccessPrivacySettingsRight" mimetype="">
+		<value>Privacy access</value>
+	</data>
+	<data name="AccessSecuritySettingsRight">
+		<value>גישה לאבטחה</value>
+	</data>
+	<data name="AccessStatsRight">
+		<value>גישה לסטטיסטיקות</value>
+	</data>
+	<data name="ResetVotesRight">
+		<value>איפוס הצבעות</value>
+	</data>
+	<data name="DeleteUnvalidateEntriesRight">
+		<value>מחק כניסות לא ולידיות</value>
+	</data>
+	<data name="AccessFormBuilderRight">
+		<value>בניית טפסים</value>
+	</data>
+	<data name="AccessAnswerTypeEditorRight">
+		<value>גישה לעורך סוגי התשובות</value>
+	</data>
+	<data name="AccessReportsRight">
+		<value>גישה לדוחות</value>
+	</data>
+	<data name="CreateResultsFilterRight">
+		<value>יצירת פילטר לתוצאות</value>
+	</data>
+	<data name="AccessFieldEntriesRight">
+		<value>גישה לכניסות לשדה</value>
+	</data>
+	<data name="EditVoterEntriesRight">
+		<value>ערוך כניסות מצביע</value>
+	</data>
+	<data name="DeleteVoterEntriesRight">
+		<value>מחק כניסות מצביע</value>
+	</data>
+	<data name="AccessCrossTabRight">
+		<value>גישה להשוואה מוצלבת</value>
+	</data>
+	<data name="AccessExportRight">
+		<value>גישה לייצוא נתונים</value>
+	</data>
+	<data name="AccessMailingRight">
+		<value>גישה לדיוור</value>
+	</data>
+	<data name="AccessASPNetCodeRight">
+		<value>גישה לקוד ASP.net</value>
+	</data>
+	<data name="AccessUserManagerRight">
+		<value>גישה לניהול משתמשים</value>
+	</data>
+	<data name="AccessLibraryRight">
+		<value>גישה לספריה</value>
+	</data>
+	<data name="NoSurveysAndNoRightMessage">
+		<value>אין לך סקרים או הרשאות לצור חדשים. נא צור קשר עם האדמיניסטרטור</value>
+	</data>
+	<data name="LogOutHyperlink">
+		<value>יציאה מן המערכת</value>
+	</data>
+	<data name="CopyQuestionFromLibraryRight">
+		<value>הזנת שאלות מן הספריה</value>
+	</data>
+	<data name="CopyQuestionFromAllSurveyRight">
+		<value>הזנת שאלות מכל סקר</value>
+	</data>
+	<data name="MakeBuiltInButton">
+		<value>הפוך לבנוי מראש</value>
+	</data>
+	<data name="DeleteBuiltInTypeConfirmationMessage">
+		<value>האם אתה מעוניין למחוק את סוג התשובה הבנוי מראש?</value>
+	</data>
+	<data name="MakeBuiltInConfirmationMessage">
+		<value>האם אתה מעוניין להפוך את הסוג הזה לבנוי מראש?</value>
+	</data>
+	<data name="ApplyBuiltInChangesConfirmationMessage">
+		<value>האם אתה בטוח שאתה רוצה להחיל שינויים עבור הסוג הבנוי מראש?</value>
+	</data>
+	<data name="AddNewSkipLogicTitle">
+		<value>הוסף לוגיקת דילוג חדשה עבור שאלה זו</value>
+	</data>
+	<data name="SkipLogicRulesTitle">
+		<value>תנאי לוגיקת דילוג</value>
+	</data>
+	<data name="EditSkipLogicHyperLink">
+		<value>לוגיקת דילוג</value>
+	</data>
+	<data name="SkipLogicEvaluationConditionInfo">
+		<value>התנאי הראשון שמתקיים יסתיר את השאלה הזאת</value>
+	</data>
+	<data name="SkipLogicRuleAddedMessage">
+		<value>לוגיקת הדילוג התווספה</value>
+	</data>
+	<data name="SkipLogicRuleNoAnswer">
+		<value>הסתר למצביעים שענו ל &lt;b&gt;{0}&lt;/b&gt;</value>
+	</data>
+	<data name="SkipLogicRuleNoAnswerNot">
+		<value>הסתר למצביעים שלא ענו ל &lt;b&gt;{0}&lt;/b&gt;</value>
+	</data>
+	<data name="SkipLogicRuleAnswer">
+		<value>הסתר למצביעים שענו ל &lt;b&gt;{0}&lt;/b&gt; עם &lt;b&gt;{1}&lt;/b&gt;</value>
+	</data>
+	<data name="SkipLogicRuleAnswerNot">
+		<value>הסתר למצביעים שלא ענו ל &lt;b&gt;{0}&lt;/b&gt; עם &lt;b&gt;{1}&lt;/b&gt;</value>
+	</data>
+	<data name="SkipLogicRuleAnswerWithText">
+		<value>הסתר למצביעים שענו ל &lt;b&gt;{0}&lt;/b&gt; עם &lt;b&gt;{1}&lt;/b&gt; {2} &lt;b&gt;{3}&lt;/b&gt;</value>
+	</data>
+	<data name="SkipLogicRuleAnswerWithTextNot">
+		<value>הסתר למצביעים שלא ענו ל &lt;b&gt;{0}&lt;/b&gt; עם &lt;b&gt;{1}&lt;/b&gt; {2} &lt;b&gt;{3}&lt;/b&gt;</value>
+	</data>
+	<data name="SkipLogicRuleScoreEqual">
+		<value>הסתר למצביעים שהשיגו ניקוד של &lt;b&gt;{0}&lt;/b&gt; ב &lt;b&gt;{1}&lt;/b&gt;</value>
+	</data>
+	<data name="SkipLogicRuleScoreLess">
+		<value>הסתר למצביעים שהשיגו ניקוד &lt;b&gt;פחות מ {0}&lt;/b&gt; ב &lt;b&gt;{1}&lt;/b&gt;</value>
+	</data>
+	<data name="SkipLogicRuleScoreGreater">
+		<value>הסתר למצביעים שהשיגו ניקוד &lt;b&gt;יותר מ {0}&lt;/b&gt; ב &lt;b&gt;{1}&lt;/b&gt;</value>
+	</data>
+	<data name="SkipLogicRuleScoreRange">
+		<value>הסתר למצביעים שהשיגו ניקוד &lt;b&gt;בין {0} ו- {1}&lt;/b&gt; ב &lt;b&gt;{2}&lt;/b&gt;</value>
+	</data>
+	<data name="ManageLibraryRight">
+		<value>ניהול ספריה</value>
+	</data>
+	<data name="EqualsOperator">
+		<value>שווה</value>
+	</data>
+	<data name="ContainsOperator">
+		<value>מכיל</value>
+	</data>
+	<data name="GreaterThanOperator">
+		<value>גדול מ</value>
+	</data>
+	<data name="LessThanOperator">
+		<value>קטן מ</value>
+	</data>
+	<data name="TextEvaluationConditionLabel">
+		<value>תנאי</value>
+	</data>
+	<data name="DisableQuestionNumbering">
+		<value>נטרל מיספור שאלות</value>
+	</data>
+	<data name="DataSourceLabel">
+		<value>השתמש ב-data source :</value>
+	</data>
+	<data name="XmlDataSourceOption">
+		<value>קובץ Xml</value>
+	</data>
+	<data name="NoneDataSourceOption">
+		<value>אין</value>
+	</data>
+	<data name="SqlDataSourceOption">
+		<value>שאילתת Sql</value>
+	</data>
+	<data name="SelectionRequiredLabel">
+		<value>דרושה בחירה :</value>
+	</data>
+	<data name="SqlQueryLabel">
+		<value>שאילתת Sql* :</value>
+	</data>
+	<data name="SqlQueryInfoLabel">
+		<value>&lt;br&gt;*First two columns of query results will be used as the value and text in the dropdown list&lt;br&gt;**Use the "exec" keyword if you want to call a stored procedure&lt;br&gt;***Values from previous questions can be piped in the sql query using the piping features</value>
+		
+	</data>
+	<data name="MissingQueryDataSourceMessage">
+		<value>שאילתת SQL חסרה</value>
+	</data>
+	<data name="OnlySelectQueryAllowedMessage">
+		<value>רק משפטי select מותרים</value>
+	</data>
+	<data name="SqlAnswerTypesEditionRight">
+		<value>ערכית סוגי תשובות של Sql</value>
+	</data>
+	<data name="SqlAnswerTypeAccessDeniedMessage">
+		<value>אין לך הרשאות לצור/לערוך סוג תשובה מבוסס Sql</value>
+	</data>
+	<data name="AllowXmlImportRight">
+		<value>ייבוא XML</value>
+	</data>
+	<data name="NoAnonymousRightsMessage">
+		<value>עליך להיות מזוהה כמשתמש על מנת שתהיה לך גישה לאפשרויות אילו.</value>
+	</data>
+<!-- END NSURVEY ADMIN MESSAGES -->
+
+
+
+<!-- START NSURVEY WEB CONTROL MESSAGES -->
+  	<data name="ListSelection">
+		<value>[בחר תשובה]</value>
+	</data>
+	<data name="NextPage">
+		<value>עמוד הבא &gt;&gt;</value>
+	</data>
+	<data name="SubmitSurvey">
+		<value>שלח סקר</value>
+	</data>
+	<data name="MinAnswerSelection">
+		<value>לפחות {0} תשובה/ות חייבות להיבחר!</value>
+	</data>
+	<data name="MaxAnswerSelection">
+		<value>המספר המקסימלי של התשובות הוא {0}!</value>
+	</data>
+	<data name="RatingResults">
+		<value>דירוג ממוצע : {0} / {1}</value>
+	</data>
+	<data name="TotalOfVotes">
+		<value>מספר הצבעות כולל : {0}</value>
+	</data>
+	<data name="AlreadyVotedMessage">
+		<value>כבר הצבעת!</value>
+	</data>
+	<data name="ThankYouMessage">
+		<value>תודה על שהשתתפת בסקר שלי!</value>
+	</data>
+	<data name="ClosedMessage">
+		<value>הסקר סגור מאז {0}</value>
+	</data>
+	<data name="OpenMessage">
+		<value>הסקר לא נפתח עדיין ויתחיל ב {0}</value>
+	</data>
+	<data name="PageNumber">
+		<value>עמוד {0} / {1}</value>
+	</data>
+	<data name="EnterPasswordMessage">
+		<value>בבקשה הזן את סיסמת הסקר :</value>
+	</data>
+	<data name="SubmitPassword">
+		<value>היכנס לסקר</value>
+	</data>
+	<data name="InvalidPasswordMessage">
+		<value>סיסמה לא תקינה!</value>
+	</data>
+	<data name="FieldRequiredMessage">
+		<value>השדה הוא חובה!</value>
+	</data>
+	<data name="InvalidCalendarDateMessage">
+		<value>ל-{0  {1}! יש תאריך לא תקין.נא הזן תאריך תקין. לדוגמא : {1}!</value>
+	</data>
+	<data name="EnterUIdMessage">
+		<value>בבקשה הזן את קוד ההזמנה במייל :</value>
+	</data>
+	<data name="SubmitUId">
+		<value>היכנס לסקר</value>
+	</data>
+	<data name="InvalidUIdMessage">
+		<value>קוד הזמנה לא חוקי!</value>
+	</data>
+	<!-- V1.1 changes starts here -->
+	<data name="EmailCodeProtection">
+		<value>הגנה באמצעות קוד</value>
+	</data>
+	<data name="CookieProtection">
+		<value>הגנה באמצעות Cookie </value>
+	</data>
+	<data name="PasswordProtection">
+		<value>הגנה באמצעות סיסמה</value>
+	</data>
+	<data name="IPProtection">
+		<value>הגנה באמצעות IP</value>
+	</data>
+	<data name="CookieExpiresLabel">
+		<value>Cookie  פוקעת לאחר :</value>
+	</data>
+	<data name="ApplyChangesButton">
+		<value>החל שינויים</value>
+	</data>
+	<data name="MinutesInfo">
+		<value>דקות</value>
+	</data>
+	<data name="IPExpiresLabel">
+		<value>IP פוקע לאחר :</value>
+	</data>
+	<data name="PasswordLabel">
+		<value>סיסמה:</value>
+	</data>
+	<data name="InvalidIPExpireTime">
+		<value>תוקף פקיעה לא חוקי של  IP !</value>
+	</data>
+	<data name="InvalidCookieExpireTime">
+		<value>תוקף פקיעה לא חוקי של Cookie  !</value>
+	</data>
+	<data name="OnlyInvitedEmailsLabel">
+		<value>רק מיילים מוזמנים יכולים להשתתף בסקר :</value>
+	</data>
+	
+	<!-- V1.2 changes starts here -->
+    <data name="PreviousPage">
+        <value>&lt;&lt; עמוד הקודם</value>
+    </data>
+    <data name="SaveProgress">
+        <value>שמור תהליך</value>
+    </data>
+    <data name="ProgressSaved">
+        <value>תהליך הסקר נשמר על המחשב שלך</value>
+    </data>
+    <data name="ProgressNotSaved">
+        <value>cookies אינן מאופשרות אצלך, לשמור את התהליך שלך אתה חייב לאפשר אותן ולהתחיל מחדש את הדפדפן שלך</value>
+    </data>
+    <data name="VoterInformationTitle">
+        <value>פרטי המצביע</value>
+    </data>
+    <data name="VoterDBIDLabel">
+        <value>מזהה מצביע :</value>
+    </data>
+    <data name="VoterEmailLabel">
+        <value>דואר אלקטרוני של המצביע :</value>
+    </data>
+    <data name="VoterIPAddressLabel">
+        <value>כתובת IP :</value>
+    </data>
+    <data name="VoteRecordedLabel">
+        <value>הצבעה הוקלטה ב :</value>
+    </data>
+    <data name="TimeToTakeLabel">
+        <value>זמן לביצוע הסקר :</value>
+    </data>
+    <data name="SurveyAnswersTitle">
+        <value>תשובות הסקר</value>
+    </data>
+    <data name="AnswerNotAnsweredMessage">
+        <value>לא נענתה</value>
+    </data>
+    <data name="ShortNotificationMessage">
+        <value>שלום,
+זאת הודעה אוטומטית להזכיר לך שכניסה חדשה נשמרה. אתה יכול להיכנס לניהול בכל זמן ולראות את כל הפרטים.
+תודה
+</value>
+    </data>
+    <data name="NotificationSubject">
+        <value>כניסה חדשה עבור "{0}" הוקלטה</value>
+    </data>
+    <!-- V1.3 changes starts here (no changes)-->
+    <!-- V1.4 changes starts here -->
+    <data name="ResumeProgress">
+        <value>שמור תהליך</value>
+    </data>
+    <data name="SubmitResumeUId">
+        <value>שחזר תשובות</value>
+    </data>
+    <data name="EnterResumeUIdMessage">
+        <value>בבקשה הזן את קוד השמירה האישי שלך :</value>
+    </data>
+    <data name="SubmitCancelResume">
+        <value>בטל</value>
+    </data>
+    <data name="InvalidResumeUId">
+        <value>קוד השמירה בלתי חוקי או כבר השתמשו בו!</value>
+    </data>
+    <data name="SuccessResumeUId">
+        <value>התשובות נשמרו</value>
+    </data>
+    <data name="ManualProgressSaved">
+        <value>התהליך נשמר, אתה יכול להמשיך אותו בכל זמן באמצעות קוד השמירה שלך.&lt;br&gt;קוד השמירה שלך הוא : &lt;b&gt;{0}&lt;/b&gt;</value>
+    </data>
+    <data name="VoterScoreTotalLabel">
+        <value>ניקוד כולל : </value>
+    </data>
+    <data name="QuestionScoreLabel">
+        <value>ניקוד : </value>
+    </data>
+    <data name="ASPNETSecurityContextProtection">
+        <value>ASP.net security context</value>
+    </data>
+    <data name="MultipleSubmissionsLabel">
+        <value>הרשה שליחות מרובות</value>
+    </data>
+    <data name="VoterUserNameLabel">
+        <value>שם משתמש של ASP.net :</value>
+    </data>
+    <data name="ASPNETSecurityAddinDescription">
+        <value>התוספת הזאת תבדוק האם המשתמש ביצע כניסה למערכת תוך שימוש ב-asp.net security context ותשמור את שם המשתמש שלו בשליחת התשובות</value>
+    </data>
+    <!-- V1.5 changes starts here -->
+    <data name="PipeValuesSeparator">
+        <value> ו- </value>
+    </data>
+    <data name="AnswerTypeAssemblyNotFoundMessage">
+        <value>&lt;b&gt;לא יכול ליצור את התשובה!&lt;/b&gt;&lt;br&gt;האסמבלי המצויין &lt;b&gt;{0} לא יכול להימצא&lt;/b&gt;. וודא שהאסמבלי זמין בספריית ה-bin שלך ושהסוג רשום באופן נכון בטבלת סוגי התשובות</value>
+    </data>
+    <data name="AnswerTypeNotFoundMessage">
+        <value>&lt;b&gt;לא יכול ליצור את התשובה!&lt;/b&gt;&lt;br&gt;הסוג המצויין &lt;b&gt;{0} לא יכול להימצא&lt;/b&gt; באסמבלי {1}. . וודא שהאסמבלי זמין בספריית ה-bin שלך ושהסוג רשום באופן נכון בטבלת סוגי התשובות</value>
+    </data>
+    <data name="AnswerTypeNotFoundMessage">
+        <value>&lt;b&gt;לא יכול ליצור את התשובה!&lt;/b&gt;&lt;br&gt;הסוג המצויין &lt;b&gt;{0} לא יורש מ.</value>
+    </data>
+    <!-- V1.6 changes starts here -->
+    <data name="XMLAnswerSelectionRequired">
+        <value>לפחות 1 תשובה/ות חייבות להיבחר!</value>
+    </data>
+    <data name="SqlAnswerSelectionRequired">
+        <value>לפחות 1 תשובה/ות חייבות להיבחר!</value>
+    </data>
+    <!-- V1.7 changes starts here -->
+    <data name="NSurveySecurityAddinDescription">
+        <value>התוספת תבדוק האם המשתמש ביצע כניסה למערכת ותשמור את שם המשתמש שלו בשליחת התשובות</value>
+    </data>
+    <data name="NSurveySecurityContextProtection">
+        <value>NSurvey security context</value>
+    </data>
+    <data name="RegExValidationFailedMessage">
+        <value>תשובה לא חוקית עבור השדה {0}</value>
+    </data>
+    <data name="InvalidEmailRegExMessage">
+        <value>השדה {0} אינו דואר אלקטרוני חוקי</value>
+    </data>
+    <data name="InvalidIntegerRegExMessage">
+        <value>השדה {0} אינו מספרי</value>
+    </data>
+    <data name="InvalidEuroDateRegExMessage">
+        <value>השדה {0} אינו תאריך חוקי. נדרש תאריך בפורמט dd/mm/yyyy</value>
+    </data>
+    <data name="InvalidUSDateRegExMessage">
+        <value>השדה {0} אינו תאריך חוקי. נדרש תאריך בפורמט mm/dd/yyyy</value>
+    </data>
+    <data name="InvalidInternetUrlRegExMessage">
+        <value>השדה {0} אינו URL חוקי</value>
+    </data>
+<!-- END NSURVEY WEB CONTROL MESSAGES -->
+
+</root>

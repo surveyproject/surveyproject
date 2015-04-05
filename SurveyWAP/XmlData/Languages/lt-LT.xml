@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<!-- START NSURVEY ADMIN MESSAGES -->
+
+<!-- END NSURVEY ADMIN MESSAGES -->
+
+
+
+<!-- START NSURVEY WEB CONTROL MESSAGES -->
+  	<data name="ListSelection">
+		<value>[Pasirinkti atsakymą]</value>
+	</data>
+	<data name="NextPage">
+		<value>Kitas puslapis &gt;&gt;</value>
+	</data>
+	<data name="SubmitSurvey">
+		<value>Baigti apklausą</value>
+	</data>
+	<data name="MinAnswerSelection">
+		<value>Turi buti pažymėta bent {0} atasakymas (-ai)!</value>
+	</data>
+	<data name="MaxAnswerSelection">
+		<value>Turi būti pažymėta ne daugiau kaip {0} atsakymas (-ai)!</value>
+	</data>
+	<data name="RatingResults">
+		<value>Vertinimų vidurkis : {0} / {1}</value>
+	</data>
+	<data name="TotalOfVotes">
+		<value>Viso balsavo : {0}</value>
+	</data>
+	<data name="AlreadyVotedMessage">
+		<value>Dėkojame, Jūsų atsakymą jau gavome!</value>
+	</data>
+	<data name="ThankYouMessage">
+		<value>Dėkojame, kad dalyvavote mūsų apklausoje!</value>
+	</data>
+	<data name="ClosedMessage">
+		<value>Ši apklausa uždaryta nuo {0}</value>
+	</data>
+	<data name="OpenMessage">
+		<value>Apklausa dar neatidaryta ir bus aktivi nuo {0}</value>
+	</data>
+	<data name="PageNumber">
+		<value>Puslapis {0} iš {1}</value>
+	</data>
+	<data name="EnterPasswordMessage">
+		<value>Įveskite slaptažodį:</value>
+	</data>
+	<data name="SubmitPassword">
+		<value>Pradėti apklausą</value>
+	</data>
+	<data name="InvalidPasswordMessage">
+		<value>Slaptažodis neteisingas!</value>
+	</data>
+	<data name="FieldRequiredMessage">
+		<value>{0} laukas būtinas!</value>
+	</data>
+	<data name="InvalidCalendarDateMessage">
+		<value>{0} neteisinga data, turi būti pvz.: {1}!</value>
+	</data>
+	<data name="EnterUIdMessage">
+		<value>Įveskite kvietimo kodą:</value>
+	</data>
+	<data name="InvalidUIdMessage">
+		<value>Neteisingas arba jau panaudotas indetifikacijos numeris!</value>
+	</data>
+	<data name="SubmitUId">
+		<value>Pradėti apklausą</value>
+	</data>
+	<data name="JSInvalidField">
+		<value>Neteisingas lauko formatas</value>
+	</data>
+	<data name="JSInvalidEmail">
+		<value>Neteisingas el. paštas. Prašome įvesti teisingą el. paštą</value>
+	</data>
+	<!-- V1.1 changes starts here -->
+	<data name="EmailCodeProtection">
+		<value>Apsaugoti kodu per e-mail</value>
+	</data>
+	<data name="CookieProtection">
+		<value>Apsaugoti cookie pagalba</value>
+	</data>
+	<data name="PasswordProtection">
+		<value>Apsaugoti slaptažodžiu</value>
+	</data>
+	<data name="IPProtection">
+		<value>Apsaugoti IP pagalba</value>
+	</data>
+	<data name="CookieExpiresLabel">
+		<value>Cookie galiojimo laikas pasibaigia po:</value>
+	</data>
+	<data name="ApplyChangesButton">
+		<value>Pritaikyti pakeitimus</value>
+	</data>
+	<data name="MinutesInfo">
+		<value>minutės</value>
+	</data>
+	<data name="IPExpiresLabel">
+		<value>IP galiojimo laikas pasibaigia:</value>
+	</data>
+	<data name="PasswordLabel">
+		<value>Slaptažodis:</value>
+	</data>
+	<data name="InvalidIPExpireTime">
+		<value>Neteisinga IP galiojimo laiko pabaiga, turi būti skaičius!</value>
+	</data>
+	<data name="InvalidCookieExpireTime">
+		<value>Neteisnga Cookie galiojimo laiko pabaiga</value>
+	</data>
+	<data name="OnlyInvitedEmailsLabel">
+		<value>Gali dalyvauti tik kviečiami dalyviai (el. paštas):</value>
+	</data>
+	<!-- V1.2 changes starts here -->
+	<data name="PreviousPage">
+		<value>&lt;&lt; Ankstesnis puslapis</value>
+	</data>
+	<data name="SaveProgress">
+		<value>Išsaugoti progresą</value>
+	</data>
+	<data name="ProgressSaved">
+		<value>Progresas neišsaugotas</value>
+	</data>
+	<data name="ProgressNotSaved">
+		<value>Jūsų Cookies naršyklėje neįjungti. Prašome įjungti šią funkciją ir prisijungti iš naujo</value>
+	</data>
+	<data name="VoterInformationTitle">
+		<value>Informacija apie balsuotoją</value>
+	</data>
+	<data name="VoterDBIDLabel">
+		<value>Dalyvio ID BDD:</value>
+	</data>
+	<data name="VoterEmailLabel">
+		<value>Dalyvio el. paštas:</value>
+	</data>
+	<data name="VoterIPAddressLabel">
+		<value>IP adresas:</value>
+	</data>
+	<data name="VoteRecordedLabel">
+		<value>Atsakymas įrašytas:</value>
+	</data>
+	<data name="TimeToTakeLabel">
+		<value>Laikas užpildyti anketai:</value>
+	</data>
+	<data name="SurveyAnswersTitle">
+		<value>Anketos atsakymai</value>
+	</data>
+	<data name="AnswerNotAnsweredMessage">
+		<value>Neatsakytas</value>
+	</data>
+	<data name="ShortNotificationMessage">
+		<value>Sveiki,
+
+Kviečiame dalyvauti mūsų apklausoje.
+
+Pagarbiai, 
+Sistemos administratorius
+
+</value>
+	</data>
+	<data name="NotificationSubject">
+		<value>"{0}" anketoje atsirado naujas atsakymų įrašas</value>
+	</data>
+	<!-- V1.3 changes starts here (no changes)-->
+	<!-- V1.4 changes starts here -->
+	<data name="ResumeProgress">
+		<value>Tęsti</value>
+	</data>
+	<data name="SubmitResumeUId">
+		<value>Tęsti atsakymus</value>
+	</data>
+	<data name="EnterResumeUIdMessage">
+		<value>Įveskite kodą tęsimui:</value>
+	</data>
+	<data name="SubmitCancelResume">
+		<value>Anuliuoti</value>
+	</data>
+	<data name="InvalidResumeUId">
+		<value>Neteisingas arba jau panaudotas kodas!</value>
+	</data>
+	<data name="SuccessResumeUId">
+		<value>Pratęsimas sėkmingas</value>
+	</data>
+	<data name="ManualProgressSaved">
+		<value>Pratęsimas išsaugotas, pratęsti galėsite įvedę kodą: &lt;b&gt;{0}&lt;/b&gt;</value>
+	</data>
+	<data name="VoterScoreTotalLabel">
+		<value>Atsakymų rezultatas:</value>
+	</data>
+	<data name="QuestionScoreLabel">
+		<value>Rezultatas:</value>
+	</data>
+	<data name="ASPNETSecurityContextProtection">
+		<value>ASP.net apsaugos kontekstas</value>
+	</data>
+	<data name="MultipleSubmissionsLabel">
+		<value>Leisti daug atsakymų</value>
+	</data>
+	<data name="VoterUserNameLabel">
+		<value>ASP.NET dalyvio vardas:</value>
+	</data>
+	<data name="ASPNETSecurityAddinDescription">
+		<value>Šis modulis patikrins ar vartotojas prisijungęs ASP.NET vartotojo vardu ir šiuo vardu saugos prisijungimo duomenis ir atsakimus</value>
+	</data>
+	<!-- V1.5 changes starts here -->
+	<data name="PipeValuesSeparator">
+		<value> ir </value>
+	</data>
+	<data name="AnswerTypeAssemblyNotFoundMessage">
+		<value>&lt;b&gt;Atsakymas!&lt;/b&gt;&lt;br&gt;&lt;b&gt;{0} assembly not found&lt;/b&gt;. patikrinkite, ar jis egzistuoja.</value>
+	</data>
+	<data name="AnswerTypeNotFoundMessage">
+		<value>&lt;b&gt;&lt;b&gt;Atsakymas!&lt;/b&gt;&lt;br&gt;&lt;b&gt; Tipas {0} nerastas {1}&lt;/b&gt;. patikrinkite, ar jis egzistuoja</value>
+	</data>
+	<data name="AnswerTypeNotFoundMessage">
+		<value>&lt;/b&gt;&lt;br&gt;Tipo atsakymas&lt;b&gt;{0} tipas nerastas AnswerItem.</value>
+	</data>
+	<!-- V1.6 changes starts here -->
+	<data name="XMLAnswerSelectionRequired">
+		<value>Atsakymas {0} būtinas!</value>
+	</data>
+	<data name="SqlAnswerSelectionRequired">
+		<value>Atsakymas {0} būtinas!</value>
+	</data>
+	<!-- V1.7 changes starts here -->
+	<data name="NSurveySecurityAddinDescription">
+		<value>Šis modulis patikrins ar vartotojas prisijungė prie NSurvey ir išsaugos jo prisijungimo informaciją</value>
+	</data>
+	<data name="NSurveySecurityContextProtection">
+		<value>NSurvey apsaugos kontekstas</value>
+	</data>
+	<data name="RegExValidationFailedMessage">
+		<value>Neteisingas atsakymas duotas {0}</value>
+	</data>
+	<data name="InvalidEmailRegExMessage">
+		<value>{0} neteisingas el. pašto adresas</value>
+	</data>
+	<data name="InvalidIntegerRegExMessage">
+		<value>{0} ne skaičius</value>
+	</data>
+	<data name="InvalidEuroDateRegExMessage">
+		<value>{0} neteisingas datos formatas. Turi būti dd/mm/yyyy </value>
+	</data>
+	<data name="InvalidUSDateRegExMessage">
+		<value>{0} neteisingas datos formatas. Turi būti mm/dd/yyyy </value>
+	</data>
+	<data name="InvalidInternetUrlRegExMessage">
+		<value>{0} neteisingas WEB adresas</value>
+	</data>
+<!-- END NSURVEY WEB CONTROL MESSAGES -->
+
+</root>

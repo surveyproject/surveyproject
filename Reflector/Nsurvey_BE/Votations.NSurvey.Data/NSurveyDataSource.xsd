@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NSurveyDataSource" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://www.nsurvey.org/NSurveyDataSource.xsd" xmlns:vts="http://tempuri.org/XmlAnswers.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" targetNamespace="http://www.nsurvey.org/NSurveyDataSource.xsd">
+    <xs:element name="NSurveyDataSource" msdata:IsDataSet="true">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="XmlDataSource">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="RunTimeAnswerLabel" type="xs:string" nillable="true" msprop:nullValue="_null" />
+                            <xs:element name="XmlAnswers">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="XmlAnswer">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="AnswerValue" minOccurs="0" type="xs:string" />
+                                                    <xs:element name="AnswerDescription" type="xs:string" minOccurs="0" />
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

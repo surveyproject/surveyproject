@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- START NSURVEY ADMIN MESSAGES -->
+    <!-- END NSURVEY ADMIN MESSAGES -->
+    <!-- START NSURVEY WEB CONTROL MESSAGES -->
+    <data name="ListSelection">
+        <value>[اختر جواباً]</value>
+    </data>
+    <data name="NextPage">
+        <value>&lt;&lt; الصفحة التالية</value>
+    </data>
+    <data name="SubmitSurvey">
+        <value>أرسل استطلاعك</value>
+    </data>
+    <data name="MinAnswerSelection">
+        <value>يجب أن تختار {0} جواباً على الأقل</value>
+    </data>
+    <data name="MaxAnswerSelection">
+        <value>الحد الأقصى للأجوبة هو {0} جواباً</value>
+    </data>
+    <data name="RatingResults">
+        <value>{معدل التقدير: {0}/{1</value>
+    </data>
+    <data name="TotalOfVotes">
+        <value>{عدد المصوتين : {0</value>
+    </data>
+    <data name="AlreadyVotedMessage">
+        <value>لقد صوتّ على هذا الاستبيان من قبل!</value>
+    </data>
+    <data name="ThankYouMessage">
+        <value>شكراً لمشاركتكم في هذا الاستبيان!</value>
+    </data>
+    <data name="ClosedMessage">
+        <value>{هذا الاستبيان مغلق منذ {0}</value>
+    </data>
+    <data name="OpenMessage">
+        <value>{الاستبيان غير مفعل بعد وسيتم تفعيله في {0</value>
+    </data>
+    <data name="PageNumber">
+        <value>{0} / {1} الصفحة</value>
+    </data>
+    <data name="EnterPasswordMessage">
+        <value>نرجو إدخال كلمة المرور لهذا الاستبيان</value>
+    </data>
+    <data name="SubmitPassword">
+        <value>أدخل الاستبيان</value>
+    </data>
+    <data name="InvalidPasswordMessage">
+        <value>كلمة المرور غير صحيحة</value>
+    </data>
+    <data name="FieldRequiredMessage">
+        <value>{0} إلزامي!</value>
+    </data>
+    <data name="InvalidCalendarDateMessage">
+        <value>{0} يحتوي تاريخاً غير صالح, رجاءً أدخل تاريخاً صحيحاً مثل : {1}!</value>
+    </data>
+    <data name="EnterUIdMessage">
+        <value>رجاءً أدخل كود الدعوة البريدية</value>
+    </data>
+    <data name="InvalidUIdMessage">
+        <value>كود الدعوة غير صحيح</value>
+    </data>
+    <data name="SubmitUId">
+        <value>أدخل الاستبيان</value>
+    </data>
+    <data name="JSInvalidField">
+        <value>الرجاء ملء الحقل!</value>
+    </data>
+    <data name="JSInvalidEmail">
+        <value>الرجاء إدخال البريد الالكتروني</value>
+    </data>
+    <!-- END NSURVEY WEB CONTROL MESSAGES -->
+</root>

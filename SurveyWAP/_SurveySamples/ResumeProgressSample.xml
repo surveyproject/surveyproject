@@ -1,0 +1,228 @@
+<NSurveyForm xmlns="http://tempuri.org/NSurveyForm.xsd">
+  <AnswerType AnswerTypeID="1" FieldWidth="0" FieldHeight="0" FieldLength="0" TypeMode="1" PublicFieldResults="false" BuiltIn="true">
+    <Description>SelectionTextType</Description>
+    <TypeNameSpace>Votations.NSurvey.WebControls.UI.AnswerSelectionItem</TypeNameSpace>
+    <TypeAssembly>Votations.NSurvey.WebControls</TypeAssembly>
+  </AnswerType>
+  <AnswerType AnswerTypeID="3" FieldWidth="20" FieldHeight="1" FieldLength="100" TypeMode="210" PublicFieldResults="false" BuiltIn="true">
+    <Description>FieldBasicType</Description>
+    <JavascriptFunctionName />
+    <JavascriptCode />
+    <JavascriptErrorMessage />
+    <TypeNameSpace>Votations.NSurvey.WebControls.UI.AnswerFieldItem</TypeNameSpace>
+    <TypeAssembly>Votations.NSurvey.WebControls</TypeAssembly>
+  </AnswerType>
+  <AnswerType AnswerTypeID="26" FieldWidth="20" FieldHeight="0" FieldLength="255" TypeMode="210" PublicFieldResults="false" BuiltIn="true">
+    <Description>FieldEmailType</Description>
+    <JavascriptFunctionName>EmailValid</JavascriptFunctionName>
+    <JavascriptCode>function EmailValid(sender) 
+{
+if (sender.value.length == 0)
+{
+   sender.focus();
+   return false;
+}
+else
+{
+  var emailRegEx = /^[a-zA-Z0-9._-]+@([a-zA-Z0-9.-]+\.)+[a-zA-Z0-9.-]{2,4}$/;
+  if (sender.value.match(emailRegEx) != null)
+  {
+   return true;
+  }
+  else
+  {
+   sender.focus();
+   return false;
+  }
+}
+}</JavascriptCode>
+    <JavascriptErrorMessage>JSInvalidEmail</JavascriptErrorMessage>
+    <TypeNameSpace>Votations.NSurvey.WebControls.UI.AnswerFieldItem</TypeNameSpace>
+    <TypeAssembly>Votations.NSurvey.WebControls</TypeAssembly>
+  </AnswerType>
+  <AnswerType AnswerTypeID="57" FieldWidth="20" FieldHeight="0" FieldLength="255" TypeMode="210" PublicFieldResults="false" BuiltIn="false">
+    <Description>FieldRequiredType</Description>
+    <JavascriptFunctionName>isFilled</JavascriptFunctionName>
+    <JavascriptCode>function isFilled(sender)
+{
+if (sender.value.length == 0)
+{
+   sender.focus();
+   return false;
+}
+else
+{
+   return true;
+}
+}</JavascriptCode>
+    <JavascriptErrorMessage>JSInvalidField</JavascriptErrorMessage>
+    <TypeNameSpace>Votations.NSurvey.WebControls.UI.AnswerFieldItem</TypeNameSpace>
+    <TypeAssembly>Votations.NSurvey.WebControls</TypeAssembly>
+  </AnswerType>
+  <Survey>
+    <SurveyID>1</SurveyID>
+    <ProgressDisplayModeId>2</ProgressDisplayModeId>
+    <ResumeModeID>3</ResumeModeID>
+    <Title>Resume Progress - Sample</Title>
+    <NavigationEnabled>true</NavigationEnabled>
+    <Scored>false</Scored>
+    <QuestionNumberingDisabled>false</QuestionNumberingDisabled>
+    <Activated>true</Activated>
+    <Archive>false</Archive>
+    <ResultsDisplayTimes>0</ResultsDisplayTimes>
+    <SurveyDisplayTimes>582</SurveyDisplayTimes>
+    <CreationDate>2012-07-21T04:11:48.427+02:00</CreationDate>
+  </Survey>
+  <Question QuestionId="1" LayoutModeId="1" SelectionModeId="1" ColumnsNumber="0" MinSelectionRequired="0" MaxSelectionAllowed="0" RatingEnabled="false" RandomizeAnswers="false" SurveyId="1" PageNumber="1" DisplayOrder="1">
+    <QuestionText>Please provide some information about &lt;strong&gt;yourself&lt;/strong&gt; :&lt;br/&gt;&lt;font size="1"&gt;we will keep all your information confidential&lt;/font&gt;</QuestionText>
+    <ShowHelpText>True</ShowHelpText>
+    <OldQuestionId>79</OldQuestionId>
+  </Question>
+  <Question QuestionId="2" LayoutModeId="2" SelectionModeId="1" ColumnsNumber="0" MinSelectionRequired="1" MaxSelectionAllowed="0" RatingEnabled="false" RandomizeAnswers="false" SurveyId="1" PageNumber="1" DisplayOrder="2">
+    <QuestionText>What's your favorite drink ?</QuestionText>
+    <QuestionPipeAlias>favoritedrink</QuestionPipeAlias>
+    <ShowHelpText>True</ShowHelpText>
+    <OldQuestionId>80</OldQuestionId>
+  </Question>
+  <Question QuestionId="3" LayoutModeId="1" SelectionModeId="1" ColumnsNumber="0" MinSelectionRequired="0" MaxSelectionAllowed="0" RatingEnabled="false" RandomizeAnswers="false" SurveyId="1" PageNumber="3" DisplayOrder="4">
+    <QuestionText>[[name]] why do you drink [[favoritedrink]] ?</QuestionText>
+    <ShowHelpText>True</ShowHelpText>
+    <OldQuestionId>81</OldQuestionId>
+  </Question>
+  <Question QuestionId="4" LayoutModeId="2" SelectionModeId="5" ColumnsNumber="0" MinSelectionRequired="0" MaxSelectionAllowed="0" RatingEnabled="false" RandomizeAnswers="false" SurveyId="1" PageNumber="2" DisplayOrder="3">
+    <QuestionText>Thanks &lt;STRONG&gt;[[name]]&lt;/STRONG&gt; do you see how nice its to personalize your form using Survey's answer piping features ? Go to the next page for a surprise ..</QuestionText>
+    <QuestionPipeAlias />
+    <ShowHelpText>True</ShowHelpText>
+    <OldQuestionId>82</OldQuestionId>
+  </Question>
+  <Question QuestionId="5" LayoutModeId="1" SelectionModeId="1" ColumnsNumber="0" MinSelectionRequired="0" MaxSelectionAllowed="0" RatingEnabled="false" RandomizeAnswers="false" SurveyId="1" PageNumber="3" DisplayOrder="5">
+    <QuestionText>You also pipe previous answers into fields as default values</QuestionText>
+    <QuestionPipeAlias />
+    <ShowHelpText>True</ShowHelpText>
+    <OldQuestionId>83</OldQuestionId>
+  </Question>
+  <Question QuestionId="6" LayoutModeId="1" SelectionModeId="1" ColumnsNumber="0" MinSelectionRequired="0" MaxSelectionAllowed="0" RatingEnabled="false" RandomizeAnswers="false" SurveyId="1" PageNumber="3" DisplayOrder="6">
+    <QuestionText>Why did you choose [[email]] as an email ?</QuestionText>
+    <ShowHelpText>True</ShowHelpText>
+    <OldQuestionId>84</OldQuestionId>
+  </Question>
+  <Question QuestionId="7" LayoutModeId="2" SelectionModeId="5" ColumnsNumber="0" MinSelectionRequired="0" MaxSelectionAllowed="0" RatingEnabled="false" RandomizeAnswers="false" SurveyId="1" PageNumber="4" DisplayOrder="7">
+    <QuestionText>- You have reached the final page. Please do not submit the final surveyresults yet.&lt;br&gt;&lt;br&gt;- Instead Save your progress and copy the resume code at the top of the page.&lt;br&gt;&lt;br&gt;- Next send the resumecode to Mr. X (email @email.com) for a review.&lt;br&gt;&lt;br&gt;- After approval you will get a message to apply any revisions and submit the final results.</QuestionText>
+    <QuestionPipeAlias />
+    <ShowHelpText>True</ShowHelpText>
+    <OldQuestionId>85</OldQuestionId>
+  </Question>
+  <Answer QuestionId="1" AnswerTypeId="26" DisplayOrder="1" ScorePoint="0" RatePart="false" Selected="false" AnswerId="263" RegularExpressionId="2" Mandatory="true">
+    <AnswerText>Email</AnswerText>
+    <ImageURL />
+    <AnswerPipeAlias>email</AnswerPipeAlias>
+    <OldAnswerId>263</OldAnswerId>
+  </Answer>
+  <Answer QuestionId="1" AnswerTypeId="57" DisplayOrder="2" ScorePoint="0" RatePart="false" Selected="false" AnswerId="264" Mandatory="true">
+    <AnswerText>Name :</AnswerText>
+    <ImageURL />
+    <AnswerPipeAlias>name</AnswerPipeAlias>
+    <OldAnswerId>264</OldAnswerId>
+  </Answer>
+  <Answer QuestionId="2" AnswerTypeId="1" DisplayOrder="1" ScorePoint="0" RatePart="false" Selected="false" AnswerId="265" Mandatory="false">
+    <AnswerText>Coca cola</AnswerText>
+    <ImageURL />
+    <DefaultText />
+    <AnswerPipeAlias />
+    <OldAnswerId>265</OldAnswerId>
+  </Answer>
+  <Answer QuestionId="2" AnswerTypeId="1" DisplayOrder="2" ScorePoint="0" RatePart="false" Selected="false" AnswerId="266" Mandatory="false">
+    <AnswerText>Pepsi</AnswerText>
+    <ImageURL />
+    <DefaultText />
+    <AnswerPipeAlias />
+    <OldAnswerId>266</OldAnswerId>
+  </Answer>
+  <Answer QuestionId="2" AnswerTypeId="1" DisplayOrder="3" ScorePoint="0" RatePart="false" Selected="false" AnswerId="267" Mandatory="false">
+    <AnswerText>Dr. Pepper</AnswerText>
+    <ImageURL />
+    <DefaultText />
+    <AnswerPipeAlias />
+    <OldAnswerId>267</OldAnswerId>
+  </Answer>
+  <Answer QuestionId="2" AnswerTypeId="1" DisplayOrder="4" ScorePoint="0" RatePart="false" Selected="false" AnswerId="268" Mandatory="false">
+    <AnswerText>Fanta</AnswerText>
+    <ImageURL />
+    <DefaultText />
+    <AnswerPipeAlias />
+    <OldAnswerId>268</OldAnswerId>
+  </Answer>
+  <Answer QuestionId="2" AnswerTypeId="1" DisplayOrder="5" ScorePoint="0" RatePart="false" Selected="false" AnswerId="269" Mandatory="false">
+    <AnswerText>Water</AnswerText>
+    <ImageURL />
+    <DefaultText />
+    <AnswerPipeAlias />
+    <OldAnswerId>269</OldAnswerId>
+  </Answer>
+  <Answer QuestionId="3" AnswerTypeId="1" DisplayOrder="1" ScorePoint="0" RatePart="false" Selected="false" AnswerId="270" Mandatory="false">
+    <AnswerText>it's sooo good</AnswerText>
+    <ImageURL />
+    <DefaultText />
+    <AnswerPipeAlias />
+    <OldAnswerId>270</OldAnswerId>
+  </Answer>
+  <Answer QuestionId="3" AnswerTypeId="1" DisplayOrder="2" ScorePoint="0" RatePart="false" Selected="false" AnswerId="271" Mandatory="false">
+    <AnswerText>I do like everyone else</AnswerText>
+    <ImageURL />
+    <DefaultText />
+    <AnswerPipeAlias />
+    <OldAnswerId>271</OldAnswerId>
+  </Answer>
+  <Answer QuestionId="3" AnswerTypeId="1" DisplayOrder="3" ScorePoint="0" RatePart="false" Selected="false" AnswerId="272" Mandatory="false">
+    <AnswerText>never asked myself why I drink [[favoritedrink]]</AnswerText>
+    <ImageURL />
+    <DefaultText />
+    <AnswerPipeAlias />
+    <OldAnswerId>272</OldAnswerId>
+  </Answer>
+  <Answer QuestionId="5" AnswerTypeId="3" DisplayOrder="1" ScorePoint="0" RatePart="false" Selected="false" AnswerId="273" Mandatory="true">
+    <AnswerText>This is your name :</AnswerText>
+    <ImageURL />
+    <DefaultText>[[name]]</DefaultText>
+    <AnswerPipeAlias />
+    <OldAnswerId>273</OldAnswerId>
+  </Answer>
+  <Answer QuestionId="6" AnswerTypeId="1" DisplayOrder="1" ScorePoint="0" RatePart="false" Selected="false" AnswerId="274" Mandatory="false">
+    <AnswerText>it's fun</AnswerText>
+    <ImageURL />
+    <DefaultText />
+    <AnswerPipeAlias />
+    <OldAnswerId>274</OldAnswerId>
+  </Answer>
+  <Answer QuestionId="6" AnswerTypeId="1" DisplayOrder="2" ScorePoint="0" RatePart="false" Selected="false" AnswerId="275" Mandatory="false">
+    <AnswerText>no other email than [[email]] was available</AnswerText>
+    <ImageURL />
+    <DefaultText />
+    <AnswerPipeAlias />
+    <OldAnswerId>275</OldAnswerId>
+  </Answer>
+  <RegularExpression RegularExpressionId="2">
+    <Description>EmailRegEx</Description>
+    <RegExpression>^((?&gt;[a-zA-Z\d!#$%&amp;'*+\-/=?^_`{|}~]+\x20*|"((?=[\x01-\x7f])[^"\\]|\\[\x01-\x7f])*"\x20*)*(?&lt;angle&gt;&lt;))?((?!\.)(?&gt;\.?[a-zA-Z\d!#$%&amp;'*+\-/=?^_`{|}~]+)+|"((?=[\x01-\x7f])[^"\\]|\\[\x01-\x7f])*")@(((?!-)[a-zA-Z\d\-]+(?&lt;!-)\.)+[a-zA-Z]{2,}|\[(((?(?&lt;!\[)\.)(25[0-5]|2[0-4]\d|[01]?\d?\d)){4}|[a-zA-Z\d\-]*[a-zA-Z\d]:((?=[\x01-\x7f])[^\\\[\]]|\\[\x01-\x7f])+)\])(?(angle)&gt;)$</RegExpression>
+    <RegExMessage>InvalidEmailRegExMessage</RegExMessage>
+    <BuiltIn>true</BuiltIn>
+  </RegularExpression>
+  <MultiLanguageText>
+    <LanguageItemId>264</LanguageItemId>
+    <LanguageCode>nl-NL</LanguageCode>
+    <LanguageMessageTypeId>13</LanguageMessageTypeId>
+    <ItemText>Apples Alias Dutch</ItemText>
+  </MultiLanguageText>
+  <MultiLanguageText>
+    <LanguageItemId>272</LanguageItemId>
+    <LanguageCode>af-ZA</LanguageCode>
+    <LanguageMessageTypeId>13</LanguageMessageTypeId>
+    <ItemText />
+  </MultiLanguageText>
+  <MultiLanguageText>
+    <LanguageItemId>272</LanguageItemId>
+    <LanguageCode>en-US</LanguageCode>
+    <LanguageMessageTypeId>13</LanguageMessageTypeId>
+    <ItemText />
+  </MultiLanguageText>
+</NSurveyForm>

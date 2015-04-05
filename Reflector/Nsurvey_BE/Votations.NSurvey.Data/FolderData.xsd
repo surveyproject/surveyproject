@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="FolderData" targetNamespace="http://tempuri.org/FolderData.xsd" xmlns:mstns="http://tempuri.org/FolderData.xsd" xmlns="http://tempuri.org/FolderData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="FolderData" msdata:IsDataSet="true" msdata:Locale="en" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="FolderData" msprop:Generator_UserDSName="FolderData">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TreeNodes" msprop:Generator_TableClassName="TreeNodesDataTable" msprop:Generator_TableVarName="tableTreeNodes" msprop:Generator_TablePropName="TreeNodes" msprop:Generator_RowDeletingName="TreeNodesRowDeleting" msprop:Generator_UserTableName="TreeNodes" msprop:Generator_RowChangingName="TreeNodesRowChanging" msprop:Generator_RowEvHandlerName="TreeNodesRowChangeEventHandler" msprop:Generator_RowDeletedName="TreeNodesRowDeleted" msprop:Generator_RowEvArgName="TreeNodesRowChangeEvent" msprop:Generator_RowChangedName="TreeNodesRowChanged" msprop:Generator_RowClassName="TreeNodesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ItemId" msprop:Generator_ColumnVarNameInTable="columnItemId" msprop:Generator_ColumnPropNameInRow="ItemId" msprop:Generator_ColumnPropNameInTable="ItemIdColumn" msprop:Generator_UserColumnName="ItemId" type="xs:string" minOccurs="0" />
+              <xs:element name="NodeName" msprop:Generator_ColumnVarNameInTable="columnNodeName" msprop:Generator_ColumnPropNameInRow="NodeName" msprop:Generator_ColumnPropNameInTable="NodeNameColumn" msprop:Generator_UserColumnName="NodeName" type="xs:string" minOccurs="0" />
+              <xs:element name="ParentFolderId" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="ParentFolderId" msprop:Generator_ColumnVarNameInTable="columnParentFolderId" msprop:Generator_ColumnPropNameInTable="ParentFolderIdColumn" msprop:Generator_UserColumnName="ParentFolderId" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

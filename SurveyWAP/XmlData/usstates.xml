@@ -1,0 +1,67 @@
+<?xml version="1.0" standalone="yes"?>
+<NSurveyDataSource xmlns="http://www.nsurvey.org/NSurveyDataSource.xsd">
+	<XmlDataSource>
+		<XmlAnswers>
+			   <XmlAnswer><AnswerValue></AnswerValue><AnswerDescription>[Select State]</AnswerDescription></XmlAnswer> 
+			   <XmlAnswer><AnswerValue>AL</AnswerValue><AnswerDescription>Alabama</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>AK</AnswerValue><AnswerDescription>Alaska</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>AS</AnswerValue><AnswerDescription>American Samoa</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>AZ</AnswerValue><AnswerDescription>Arizona</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>AR</AnswerValue><AnswerDescription>Arkansas</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>CA</AnswerValue><AnswerDescription>California</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>CO</AnswerValue><AnswerDescription>Colorado</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>CT</AnswerValue><AnswerDescription>Connecticut</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>DE</AnswerValue><AnswerDescription>Delaware</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>DC</AnswerValue><AnswerDescription>District of Columbia</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>FM</AnswerValue><AnswerDescription>Federated States of Micronesia</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>FL</AnswerValue><AnswerDescription>Florida</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>GA</AnswerValue><AnswerDescription>Georgia</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>GU</AnswerValue><AnswerDescription>Guam</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>HI</AnswerValue><AnswerDescription>Hawaii</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>ID</AnswerValue><AnswerDescription>Idaho</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>IL</AnswerValue><AnswerDescription>Illinois</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>IN</AnswerValue><AnswerDescription>Indiana</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>IA</AnswerValue><AnswerDescription>Iowa</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>KS</AnswerValue><AnswerDescription>Kansas</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>KY</AnswerValue><AnswerDescription>Kentucky</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>LA</AnswerValue><AnswerDescription>Louisiana</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>ME</AnswerValue><AnswerDescription>Maine</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>MH</AnswerValue><AnswerDescription>Marshall Islands</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>MD</AnswerValue><AnswerDescription>Maryland</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>MA</AnswerValue><AnswerDescription>Massachusetts</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>MI</AnswerValue><AnswerDescription>Michigan</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>MN</AnswerValue><AnswerDescription>Minnesota</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>MS</AnswerValue><AnswerDescription>Mississippi</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>MO</AnswerValue><AnswerDescription>Missouri</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>MT</AnswerValue><AnswerDescription>Montana</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>NE</AnswerValue><AnswerDescription>Nebraska</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>NV</AnswerValue><AnswerDescription>Nevada</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>NH</AnswerValue><AnswerDescription>New Hampshire</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>NJ</AnswerValue><AnswerDescription>New Jersey</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>NM</AnswerValue><AnswerDescription>New Mexico</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>NY</AnswerValue><AnswerDescription>New York</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>NC</AnswerValue><AnswerDescription>North Carolina</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>ND</AnswerValue><AnswerDescription>North Dakota</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>MP</AnswerValue><AnswerDescription>Northern Mariana Islands</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>OH</AnswerValue><AnswerDescription>Ohio</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>OK</AnswerValue><AnswerDescription>Oklahoma</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>OR</AnswerValue><AnswerDescription>Oregon</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>PW</AnswerValue><AnswerDescription>Palau</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>PA</AnswerValue><AnswerDescription>Pennsylvania</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>PR</AnswerValue><AnswerDescription>Puerto Rico</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>RI</AnswerValue><AnswerDescription>Rhode Island</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>SC</AnswerValue><AnswerDescription>South Carolina</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>SD</AnswerValue><AnswerDescription>South Dakota</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>TN</AnswerValue><AnswerDescription>Tennessee</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>TX</AnswerValue><AnswerDescription>Texas</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>UT</AnswerValue><AnswerDescription>Utah</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>VT</AnswerValue><AnswerDescription>Vermont</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>VI</AnswerValue><AnswerDescription>Virgin Islands</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>VA</AnswerValue><AnswerDescription>Virginia</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>WA</AnswerValue><AnswerDescription>Washington</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>WV</AnswerValue><AnswerDescription>West Virginia</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>WI</AnswerValue><AnswerDescription>Wisconsin</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>WY</AnswerValue><AnswerDescription>Wyoming</AnswerDescription></XmlAnswer>
+		</XmlAnswers>
+	</XmlDataSource>
+</NSurveyDataSource>

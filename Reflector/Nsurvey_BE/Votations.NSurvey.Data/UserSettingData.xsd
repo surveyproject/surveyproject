@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="UserSettingData" targetNamespace="http://tempuri.org/UserSettingData.xsd" xmlns:mstns="http://tempuri.org/UserSettingData.xsd" xmlns="http://tempuri.org/UserSettingData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="UserSettingData" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="UserSettingData" msprop:Generator_UserDSName="UserSettingData">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="UserSettings" msprop:Generator_TableClassName="UserSettingsDataTable" msprop:Generator_TableVarName="tableUserSettings" msprop:Generator_TablePropName="UserSettings" msprop:Generator_RowDeletingName="UserSettingsRowDeleting" msprop:Generator_UserTableName="UserSettings" msprop:Generator_RowChangingName="UserSettingsRowChanging" msprop:Generator_RowEvHandlerName="UserSettingsRowChangeEventHandler" msprop:Generator_RowDeletedName="UserSettingsRowDeleted" msprop:Generator_RowEvArgName="UserSettingsRowChangeEvent" msprop:Generator_RowChangedName="UserSettingsRowChanged" msprop:Generator_RowClassName="UserSettingsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserId" msprop:Generator_ColumnVarNameInTable="columnUserId" msprop:Generator_ColumnPropNameInRow="UserId" msprop:Generator_ColumnPropNameInTable="UserIdColumn" msprop:Generator_UserColumnName="UserId" type="xs:int" />
+              <xs:element name="IsAdmin" msprop:Generator_ColumnVarNameInTable="columnIsAdmin" msprop:Generator_ColumnPropNameInRow="IsAdmin" msprop:Generator_ColumnPropNameInTable="IsAdminColumn" msprop:Generator_UserColumnName="IsAdmin" type="xs:boolean" minOccurs="0" />
+              <xs:element name="GlobalSurveyAccess" msprop:Generator_ColumnVarNameInTable="columnGlobalSurveyAccess" msprop:Generator_ColumnPropNameInRow="GlobalSurveyAccess" msprop:Generator_ColumnPropNameInTable="GlobalSurveyAccessColumn" msprop:Generator_UserColumnName="GlobalSurveyAccess" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="UserSettingDataKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:UserSettings" />
+      <xs:field xpath="mstns:UserId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

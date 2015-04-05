@@ -1,0 +1,3465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data version="1.0" id="1" name="ControlCodeTitle">
+    <value>Survey Webcontrol: Asp.net Code</value>
+  </data>
+  <data version="1.0" id="2" name="PageDirectiveInfo">
+    <value>You must also include the following directive in the aspx pages that will display the survey :</value>
+  </data>
+  <data version="1.0" id="3" name="TagPrefixInfo">
+    <value>&lt;%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="Votations.NSurvey.WebControls" %&gt;</value>
+  </data>
+  <data version="1.0" id="4" name="QuickLinkInfo">
+    <value>Deployment URL:</value>
+  </data>
+  <data version="1.0" id="5" name="SurveyCodePreviewTitle">
+    <value>Survey Preview</value>
+  </data>
+  <data version="1.0" id="6" name="EditQuestionTitle">
+    <value>Edit question</value>
+  </data>
+  <data version="1.0" id="7" name="SelectionModeLabel">
+    <value>Selection mode :</value>
+  </data>
+  <data version="1.0" id="8" name="DisplayModeLabel">
+    <value>Display mode :</value>
+  </data>
+  <data version="1.0" id="9" name="ColumnNumberLabel">
+    <value>Number of columns :</value>
+  </data>
+  <data version="1.0" id="10" name="RandomizeAnswersLabel">
+    <value>Randomize answers order :</value>
+  </data>
+  <data version="1.0" id="11" name="MinSelectionLabel">
+    <value>Min. selections required :</value>
+  </data>
+  <data version="1.0" id="12" name="MaxSelectionAllowed">
+    <value>Max. selections allowed :</value>
+  </data>
+  <data version="1.0" id="13" name="UpdateQuestionButton">
+    <value>Update</value>
+  </data>
+  <data version="1.0" id="14" name="AddNewSelectionTitle">
+    <value>Add new selection / field</value>
+  </data>
+  <data version="1.0" id="15" name="DescriptionLabel">
+    <value>Description text :</value>
+  </data>
+  <data version="1.0" id="16" name="ImageURLLabel">
+    <value>Image URL :</value>
+  </data>
+  <data version="1.0" id="17" name="AddAnswerButton">
+    <value>Add</value>
+  </data>
+  <data version="1.0" id="18" name="OrderHeader">
+    <value>Order</value>
+  </data>
+  <data version="1.0" id="19" name="SelectedHeader">
+    <value>Selected</value>
+  </data>
+  <data version="1.0" id="20" name="AnswerTextHeader">
+    <value>Text</value>
+  </data>
+  <data version="1.0" id="21" name="DefaultTextHeader">
+    <value>Text value*</value>
+  </data>
+  <data version="1.0" id="22" name="DefaultTextLabel">
+    <value>Default text value*</value>
+  </data>
+  <data version="1.0" id="23" name="ImageURLHeader">
+    <value>Image URL</value>
+  </data>
+  <data version="1.0" id="24" name="TypeHeader">
+    <value>Type</value>
+  </data>
+  <data version="1.0" id="25" name="RatingHeader">
+    <value>Rating</value>
+  </data>
+  <data version="1.0" id="26" name="UpdateText">
+    <value>Update</value>
+  </data>
+  <data version="1.0" id="27" name="CancelText">
+    <value>Cancel</value>
+  </data>
+  <data version="1.0" id="28" name="EditText">
+    <value>Edit</value>
+  </data>
+  <data version="1.0" id="29" name="OkText">
+    <value>OK</value>
+  </data>
+  <data version="1.0" id="30" name="ButtonDeleteColumn">
+    <value>Delete</value>
+  </data>
+  <data version="1.0" id="31" name="UnlimitedSelectionOption">
+    <value>Unlimited</value>
+  </data>
+  <data version="1.0" id="32" name="NoSelectionRequiredOption">
+    <value>None</value>
+  </data>
+  <data version="1.0" id="33" name="SurveyExportTitle">
+    <value>Data export</value>
+  </data>
+  <data version="1.0" id="34" name="FieldDelimiterLabel">
+    <value>Field delimiter :</value>
+  </data>
+  <data version="1.0" id="35" name="TextDelimiterLabel">
+    <value>Text delimiter :</value>
+  </data>
+  <data version="1.0" id="36" name="ExportFromDateLabel">
+    <value>Export from :</value>
+  </data>
+  <data version="1.0" id="37" name="ExportToDateLabel">
+    <value>To :</value>
+  </data>
+  <data version="1.0" id="38" name="ExportDataButton">
+    <value>Export CSV</value>
+  </data>
+  <data version="1.0" id="39" name="FieldReportTitle">
+    <value>Field entries report - Page</value>
+  </data>
+  <data version="1.0" id="40" name="NextPageLinkButton">
+    <value>Next page &gt;&gt;</value>
+  </data>
+  <data version="1.0" id="41" name="PreviousPageLinkButton">
+    <value>&lt;&lt; Previous page</value>
+  </data>
+  <data version="1.0" id="42" name="DetailsColumn">
+    <value>Details</value>
+  </data>
+  <data version="1.0" id="43" name="DeleteColumn">
+    <value>Delete</value>
+  </data>
+  <data version="1.0" id="44" name="FilterBuilderTitle">
+    <value>Results filter builder</value>
+  </data>
+  <data version="1.0" id="45" name="SelectFilteraLabel">
+    <value>Select a filter to edit / view :</value>
+  </data>
+  <data version="1.0" id="46" name="CreateFilterHyperLink">
+    <value>Click here to create a new filter ...</value>
+  </data>
+  <data version="1.0" id="47" name="SelectFilterMessage">
+    <value>[Select a filter]</value>
+  </data>
+  <data version="1.0" id="48" name="FilterNameLabel">
+    <value>Filter name :</value>
+  </data>
+  <data version="1.0" id="49" name="RuleOperatorLabel">
+    <value>Conditional rule operator :</value>
+  </data>
+  <data version="1.0" id="50" name="AndOperator">
+    <value>AND</value>
+  </data>
+  <data version="1.0" id="51" name="OrOperator">
+    <value>OR</value>
+  </data>
+  <data version="1.0" id="52" name="NewRuleTitle">
+    <value>Add new rule to filter</value>
+  </data>
+  <data version="1.0" id="53" name="AnswerLabel">
+    <value>Answer :</value>
+  </data>
+  <data version="1.0" id="54" name="FilterText">
+    <value>Text :</value>
+  </data>
+  <data version="1.0" id="55" name="FilterRulesTitle">
+    <value>Filter rules</value>
+  </data>
+  <data version="1.0" id="56" name="AddRuleButton">
+    <value>Add new rule</value>
+  </data>
+  <data version="1.0" id="57" name="UpdateFilterButton">
+    <value>Update filter</value>
+  </data>
+  <data version="1.0" id="58" name="DeleteFilterButton">
+    <value>Delete filter</value>
+  </data>
+  <data version="1.0" id="59" name="CreatefilterButton">
+    <value>Create filter</value>
+  </data>
+  <data version="1.0" id="60" name="DeleteRuleInfo">
+    <value>Delete rule</value>
+  </data>
+  <data version="1.0" id="61" name="AddNewFilterTitle">
+    <value>Add new filter</value>
+  </data>
+  <data version="1.0" id="62" name="EditFilterTitle">
+    <value>Edit filter options</value>
+  </data>
+  <data version="1.0" id="63" name="TextEntryInfo">
+    <value>(Text entry)</value>
+  </data>
+  <data version="1.0" id="64" name="SelectionInfo">
+    <value>(Selection)</value>
+  </data>
+  <data version="1.0" id="65" name="FilterRuleNoAnswer">
+    <value>Voters who answered to &lt;b&gt;{0}&lt;/b&gt;</value>
+  </data>
+  <data version="1.0" id="66" name="FilterRuleAnswer">
+    <value>Voters who answered to &lt;b&gt;{0}&lt;/b&gt; with &lt;b&gt;{1}&lt;/b&gt;</value>
+  </data>
+  <data version="1.0" id="67" name="FilterRuleAnswerWithText">
+    <value>Voters who answered to &lt;b&gt;{0}&lt;/b&gt; with &lt;b&gt;{1}&lt;/b&gt; and with an entry value of &lt;b&gt;{2}&lt;/b&gt;</value>
+  </data>
+  <data version="1.0" id="68" name="AnyAnswerMessage">
+    <value>Any answer</value>
+  </data>
+  <data version="1.0" id="69" name="FilterRuleAddedMessage">
+    <value>Filter rule added</value>
+  </data>
+  <data version="1.0" id="70" name="FilterRuleDeletedMessage">
+    <value>Filter rule deleted</value>
+  </data>
+  <data version="1.0" id="71" name="FilterDeletedMessage">
+    <value>Filter deleted</value>
+  </data>
+  <data version="1.0" id="72" name="InvalidFilterDescriptionMessage">
+    <value>Please enter a description for your filter</value>
+  </data>
+  <data version="1.0" id="73" name="FilterUpdatedMessage">
+    <value>Filter updated</value>
+  </data>
+  <data version="1.0" id="74" name="SelectQuestionMessage">
+    <value>[Select a question]</value>
+  </data>
+  <data version="1.0" id="75" name="SurveyStatisticsTitle">
+    <value>Survey statistics</value>
+  </data>
+  <data version="1.0" id="76" name="SurveyCreationDateLabel">
+    <value>Creation date :</value>
+  </data>
+  <data version="1.0" id="77" name="LastSurveyEntryLabel">
+    <value>Last entry on :</value>
+  </data>
+  <data version="1.0" id="78" name="SurveyDisplayTimesLabel">
+    <value>Display times :</value>
+  </data>
+  <data version="1.0" id="79" name="SurveyResultsDisplayTimesLabel">
+    <value>Results display times :</value>
+  </data>
+  <data version="1.0" id="80" name="SurveyNumberOfVotesLabel">
+    <value>Number of voters :</value>
+  </data>
+  <data version="1.0" id="81" name="SurveyMonthlyStatsLabel">
+    <value>Monthly stats :</value>
+  </data>
+  <data version="1.0" id="82" name="ResetVotesButton">
+    <value>Reset votes</value>
+  </data>
+  <data version="1.0" id="83" name="ResetVotesConfirmationMessage">
+    <value>Do you really want to reset the votes ? Votes cannot be recovered once deleted</value>
+  </data>
+  <data version="1.0" id="84" name="NoEntriesRecordedInfo">
+    <value>No entries recorded at this time</value>
+  </data>
+  <data version="1.0" id="85" name="NoEntries">
+    <value>No entries</value>
+  </data>
+  <data version="1.0" id="86" name="EntriesNumber">
+    <value>{0} entries</value>
+  </data>
+  <data version="1.0" id="87" name="NewQuestionTitle">
+    <value>New question</value>
+  </data>
+  <data version="1.0" id="88" name="QuestionLabel">
+    <value>Question :</value>
+  </data>
+  <data version="1.0" id="89" name="MatrixQuestionOption">
+    <value>Matrix question</value>
+  </data>
+  <data version="1.0" id="90" name="SingleQuestionOption">
+    <value>Single question</value>
+  </data>
+  <data version="1.0" id="91" name="AddQuestionButton">
+    <value>Add new question / text</value>
+  </data>
+  <data version="1.0" id="92" name="StaticTextTitle">
+    <value>New static text</value>
+  </data>
+  <data version="1.0" id="93" name="FreeTextLabel">
+    <value>Free text</value>
+  </data>
+  <data version="1.0" id="94" name="AddStaticButton">
+    <value>Add static text</value>
+  </data>
+  <data version="1.0" id="95" name="TypeLabel">
+    <value>Type</value>
+  </data>
+  <data version="1.0" id="96" name="MissingQuestionMessage">
+    <value>Please enter some text for your question</value>
+  </data>
+  <data version="1.0" id="97" name="MissingStaticQuestionMessage">
+    <value>Please enter some text for your static question</value>
+  </data>
+  <data version="1.0" id="98" name="ProcessInfoLabel">
+    <value>This process can take time depending on the load and network conditions</value>
+  </data>
+  <data version="1.0" id="99" name="PleaseWaitInfo">
+    <value>.... Please wait system is sending survey invitations ....</value>
+  </data>
+  <data version="1.0" id="100" name="AllInvitationSendMessage">
+    <value>All invitations are sent. Please check the mailing status page or the Mailing Errorlog.</value>
+  </data>
+  <data version="1.0" id="101" name="PendingEmailsTitle">
+    <value>Pending emails - Page</value>
+  </data>
+  <data version="1.0" id="102" name="BoundColumnEmail">
+    <value>Email</value>
+  </data>
+  <data version="1.0" id="103" name="BoundColumnRequestDate">
+    <value>Request date</value>
+  </data>
+  <data version="1.0" id="104" name="NoEmailInvitationInfo">
+    <value>No email invitation pending but you can start sending invitations right now using the mailing tool</value>
+  </data>
+  <data version="1.0" id="105" name="ValidatedEmailTitle">
+    <value>Validated emails answers - Page</value>
+  </data>
+  <data version="1.0" id="106" name="DeleteRequestButton">
+    <value>Delete selected requests</value>
+  </data>
+  <data version="1.0" id="107" name="NoEmailAnswered">
+    <value>No emails have answered your invitations yet.</value>
+  </data>
+  <data version="1.0" id="108" name="BoundColumnAnswerDate">
+    <value>Answer date</value>
+  </data>
+  <data version="1.0" id="109" name="PreviousPendingPageLinkButton">
+    <value>&lt;&lt; Previous page</value>
+  </data>
+  <data version="1.0" id="110" name="NextPendingPageLinkButton">
+    <value>Next page &gt;&gt;</value>
+  </data>
+  <data version="1.0" id="111" name="PreviousAnsweredPageLinkButton">
+    <value>&lt;&lt; Previous page</value>
+  </data>
+  <data version="1.0" id="112" name="NextAnsweredPageLinkButton">
+    <value>Next page &gt;&gt;</value>
+  </data>
+  <data version="1.0" id="113" name="DeleteVoterButton">
+    <value>Delete selected voters</value>
+  </data>
+  <data version="1.0" id="114" name="ViewReport">
+    <value>View report</value>
+  </data>
+  <data version="1.0" id="115" name="DeleteVoterConfirmationMessage">
+    <value>This will delete the voter and all his answers. Voters cannot be recovered once deleted</value>
+  </data>
+  <data version="1.0" id="116" name="BranchingHyperLink">
+    <value>Edit branching</value>
+  </data>
+  <data version="1.0" id="117" name="InsertHyperLink">
+    <value>Insert question</value>
+  </data>
+  <data version="1.0" id="118" name="InsertLineBreakButton">
+    <value>Insert line break</value>
+  </data>
+  <data version="1.0" id="119" name="PageTitle">
+    <value>Page</value>
+  </data>
+  <data version="1.0" id="120" name="EditHyperLink">
+    <value>Edit question</value>
+  </data>
+  <data version="1.0" id="121" name="InsertPageBreakButton">
+    <value>Insert page break</value>
+  </data>
+  <data version="1.0" id="122" name="InsertQuestionButton">
+    <value>Insert new/ existing question</value>
+  </data>
+  <data version="1.0" id="123" name="DeleteQuestionConfirmationMessage">
+    <value>Are you sure your want to delete this question?</value>
+  </data>
+  <data version="1.0" id="124" name="SurveyResultsTitle">
+    <value>Survey results</value>
+  </data>
+  <data version="1.0" id="125" name="QuestionsResultsDisplaylabel">
+    <value>Question's results to display</value>
+  </data>
+  <data version="1.0" id="126" name="ResultsLayoutLabel">
+    <value>Results layout :</value>
+  </data>
+  <data version="1.0" id="127" name="ColumnChartOption">
+    <value>Column chart</value>
+  </data>
+  <data version="1.0" id="128" name="HTMLChartOption">
+    <value>HTML chart</value>
+  </data>
+  <data version="1.0" id="129" name="ApplyFilterLabel">
+    <value>Apply a filter :</value>
+  </data>
+  <data version="1.0" id="130" name="FilterEditorHyperLink">
+    <value>Click here to edit / create new filters</value>
+  </data>
+  <data version="1.0" id="131" name="DisplayAllResultsMessage">
+    <value>[Display all results (can take a while to load)]</value>
+  </data>
+  <data version="1.0" id="132" name="InvitationMailingTitle">
+    <value>Invitation mailing</value>
+  </data>
+  <data version="1.0" id="133" name="FromLabel">
+    <value>From :</value>
+  </data>
+  <data version="1.0" id="134" name="ToLabel">
+    <value>To :</value>
+  </data>
+  <data version="1.0" id="135" name="FromNameLabel">
+    <value>From name:</value>
+  </data>
+  <data version="1.0" id="136" name="SubjectLabel">
+    <value>Subject :</value>
+  </data>
+  <data version="1.0" id="137" name="SubjectTextBox">
+    <value>Please take part in my survey</value>
+  </data>
+  <data version="1.0" id="138" name="FromNameTextBox">
+    <value>LastName FirstName</value>
+  </data>
+  <data version="1.0" id="139" name="EmailInvitationLabel">
+    <value>Email invitation list - must be comma separated : email@dom.com, email2@dom.com, etc. </value>
+  </data>
+  <data version="1.0" id="140" name="InvitationMessageLabel">
+    <value>Invitation message :</value>
+  </data>
+  <data version="1.0" id="141" name="AnonymousLabel">
+    <value>Anonymous entries:</value>
+  </data>
+  <data version="1.0" id="142" name="SendInvitationButton">
+    <value>Send invitation</value>
+  </data>
+  <data version="1.0" id="143" name="InvitationMessageTextBox">
+    <value>
+      Dear Sir, Madam,
+      &lt;br /&gt;&lt;br /&gt;
+      We kindly invite you to participate in the "{0}" survey.
+      &lt;br /&gt;&lt;br /&gt;
+      Please open the following link in your webbrowser: &lt;br /&gt;
+      &lt;a href="{1}"&gt;{1}&lt;/a&gt;
+      &lt;br /&gt;&lt;br /&gt;
+      Or enter the following personal code if needed:
+      [--invitationid-]
+      &lt;br /&gt;&lt;br /&gt;
+      Kind regards,&lt;br /&gt;
+      {2}
+    </value>
+  </data>
+  <data version="1.0" id="144" name="SurveyInformationTitle">
+    <value>Survey Settings</value>
+  </data>
+  <data version="1.0" id="145" name="SurveyTitleLabel">
+    <value>Title :</value>
+  </data>
+  <data version="1.0" id="146" name="OpeningDateLabel">
+    <value>Opening date :</value>
+  </data>
+  <data version="1.0" id="147" name="DateForExampleInfo">
+    <value>e.g.: </value>
+  </data>
+  <data version="1.0" id="148" name="CloseDateLabel">
+    <value>Closing date :</value>
+  </data>
+  <data version="1.0" id="149" name="ActiveSurveyLabel">
+    <value>Active :</value>
+  </data>
+  <data version="1.0" id="150" name="ArchivedLabel">
+    <value>Archived :</value>
+  </data>
+  <data version="1.0" id="151" name="SecuritySettingsTitle">
+    <value>Security settings</value>
+  </data>
+  <data version="1.0" id="152" name="IPBlockingLabel">
+    <value>IP blocking :</value>
+  </data>
+  <data version="1.0" id="153" name="CookieBlockingLabel">
+    <value>Cookie blocking :</value>
+  </data>
+  <data version="1.0" id="154" name="ExpirationInfo">
+    <value>expires after</value>
+  </data>
+  <data version="1.0" id="155" name="MinutesInfo">
+    <value>&#160;&#160; minutes</value>
+  </data>
+  <data version="1.0" id="156" name="OnlyInvitedEmailsLabel">
+    <value>Only invited emails can participate :</value>
+  </data>
+  <data version="1.0" id="157" name="OverrideSecurityInfo">
+    <value>(this will override all security settings)</value>
+  </data>
+  <data version="1.0" id="158" name="PrivacySettingsTitle">
+    <value>Completion Settings</value>
+  </data>
+  <data version="1.0" id="159" name="RedirectionURLLabel">
+    <value>Redirection URL :</value>
+  </data>
+  <data version="1.0" id="160" name="ThanksMessageLabel">
+    <value>Survey Completion Message :</value>
+  </data>
+  <data version="1.0" id="161" name="SurveyPasswordLabel">
+    <value>Survey password :</value>
+  </data>
+  <data version="1.0" id="162" name="CreateSurveyButton">
+    <value>Create survey!</value>
+  </data>
+  <data version="1.0" id="163" name="ApplyChangesButton">
+    <value>Apply changes</value>
+  </data>
+  <data version="1.0" id="164" name="DeleteButton">
+    <value>Delete</value>
+  </data>
+  <data version="1.0" id="165" name="CloneButton">
+    <value>Clone</value>
+  </data>
+  <data version="1.0" id="166" name="SurveyDeletedMessage">
+    <value>Survey has been deleted</value>
+  </data>
+  <data version="1.0" id="167" name="SurveyUpdatedMessage">
+    <value>Survey information has been updated</value>
+  </data>
+  <data version="1.0" id="168" name="DeleteSurveyConfirmationMessage">
+    <value>Are you sure your want to delete this survey?</value>
+  </data>
+  <data version="1.0" id="169" name="InvalidOpeningDate">
+    <value>Invalid opening date format</value>
+  </data>
+  <data version="1.0" id="170" name="InvalidClosingDate">
+    <value>Invalid closing date format</value>
+  </data>
+  <data version="1.0" id="171" name="AnswerTypeBuilderTitle">
+    <value>Answer type builder</value>
+  </data>
+  <data version="1.0" id="172" name="TypeToEditLabel">
+    <value>Select a type to edit / view :</value>
+  </data>
+  <data version="1.0" id="173" name="BuiltInTypeNotEditedLabel">
+    <value>(built in types cannot be edited)</value>
+  </data>
+  <data version="1.0" id="174" name="CreateTypeHyperLink">
+    <value>Click here to create a new type ...</value>
+  </data>
+  <data version="1.0" id="175" name="CreateATypeMessage">
+    <value>Please create a type</value>
+  </data>
+  <data version="1.0" id="176" name="SelectTypeMessage">
+    <value>[Select a type]</value>
+  </data>
+  <data version="1.0" id="177" name="FieldNameLabel">
+    <value>Field name:</value>
+  </data>
+  <data version="1.0" id="178" name="XMLDataSourceLabel">
+    <value>Use an Xml Datasource :</value>
+  </data>
+  <data version="1.0" id="179" name="XmlFileNameLabel">
+    <value>Xml filename :</value>
+  </data>
+  <data version="1.0" id="180" name="AllowSelectionLabel">
+    <value>Allow selection :</value>
+  </data>
+  <data version="1.0" id="181" name="FieldEntryLabel">
+    <value>Field entry :</value>
+  </data>
+  <data version="1.0" id="182" name="FieldWidthLabel">
+    <value>Field width :</value>
+  </data>
+  <data version="1.0" id="183" name="FieldHeightLabel">
+    <value>Field height :</value>
+  </data>
+  <data version="1.0" id="184" name="FieldLengthLabel">
+    <value>Field max. length :</value>
+  </data>
+  <data version="1.0" id="185" name="ShownInResultsLabel">
+    <value>Field shown in results :</value>
+  </data>
+  <data version="1.0" id="186" name="JavascriptFunctionLabel">
+    <value>Javascript function name :</value>
+  </data>
+  <data version="1.0" id="187" name="JavascriptErrorMessageLabel">
+    <value>Error message :</value>
+  </data>
+  <data version="1.0" id="188" name="JavascriptCodeLabel">
+    <value>Javascript code :</value>
+  </data>
+  <data version="1.0" id="189" name="CreateTypeButton">
+    <value>Create type</value>
+  </data>
+  <data version="1.0" id="190" name="DeleteTypeButton">
+    <value>Delete type</value>
+  </data>
+  <data version="1.0" id="191" name="NewAnswerTypeTitle">
+    <value>Create new answer type</value>
+  </data>
+  <data version="1.0" id="192" name="EditAnswerTypeTitle">
+    <value>Edit answer type</value>
+  </data>
+  <data version="1.0" id="193" name="MissingAnswerTypeTitleMessage">
+    <value>Please enter a name for your type</value>
+  </data>
+  <data version="1.0" id="194" name="MissingTypeMessage">
+    <value>Please choose a type</value>
+  </data>
+  <data version="1.0" id="195" name="InvalidFieldLengthMessage">
+    <value>Please enter a number for your field length</value>
+  </data>
+  <data version="1.0" id="196" name="AnswerTypeInUse">
+    <value>Type is in use by one or more answers and cannot be deleted until the answer's type are changed</value>
+  </data>
+  <data version="1.0" id="197" name="InvalidFieldHeightMessage">
+    <value>Please enter a number for your field height</value>
+  </data>
+  <data version="1.0" id="198" name="InvalidFieldWidthMessage">
+    <value>Please enter a number for your field width</value>
+  </data>
+  <data version="1.0" id="199" name="MissingXmlDataSourceMessage">
+    <value>Please enter a file name for your datasource</value>
+  </data>
+  <data version="1.0" id="200" name="AnswerTypeUpdatedMessage">
+    <value>Type updated</value>
+  </data>
+  <data version="1.0" id="201" name="VoterInformationTitle">
+    <value>Voter information</value>
+  </data>
+  <data version="1.0" id="202" name="VoterDBIDLabel">
+    <value>Voter DB ID :</value>
+  </data>
+  <data version="1.0" id="203" name="VoterEmailLabel">
+    <value>Voter's Email :</value>
+  </data>
+  <data version="1.0" id="204" name="VoterIPAddressLabel">
+    <value>IP address :</value>
+  </data>
+  <data version="1.0" id="205" name="VoteRecordedLabel">
+    <value>Vote recorded on :</value>
+  </data>
+  <data version="1.0" id="206" name="TimeToTakeLabel">
+    <value>Time to take the survey :</value>
+  </data>
+  <data version="1.0" id="207" name="SurveyAnswersTitle">
+    <value>Survey answers</value>
+  </data>
+  <data version="1.0" id="208" name="AnonymousVoteInfo">
+    <value>Anonymous</value>
+  </data>
+  <data version="1.0" id="209" name="AnswerNotAnsweredMessage">
+    <value>Not answered</value>
+  </data>
+  <data version="1.0" id="210" name="SelectionUpdatedMessage">
+    <value>Selection / field has been updated</value>
+  </data>
+  <data version="1.0" id="211" name="SelectionDeletedMessage">
+    <value>Selection / field has been deleted</value>
+  </data>
+  <data version="1.0" id="212" name="SelectionAddedMessage">
+    <value>New selection added</value>
+  </data>
+  <data version="1.0" id="213" name="OptionsUpdatedMessage">
+    <value>Options have been updated</value>
+  </data>
+  <data version="1.0" id="214" name="VerticalItemText">
+    <value>Vertical</value>
+  </data>
+  <data version="1.0" id="215" name="HorizontalItemText">
+    <value>Horizontal</value>
+  </data>
+  <data version="1.0" id="216" name="RadioButtonSelection">
+    <value>Radiobutton (single)</value>
+  </data>
+  <data version="1.0" id="217" name="CheckBoxSelection">
+    <value>Checkbox (multiple)</value>
+  </data>
+  <data version="1.0" id="218" name="DropDownListSelection">
+    <value>DropDownList (single)</value>
+  </data>
+  <data version="1.0" id="219" name="MatrixSingleSelection">
+    <value>Matrix single</value>
+  </data>
+  <data version="1.0" id="220" name="StaticTextSelection">
+    <value>Static text information</value>
+  </data>
+  <data version="1.0" id="221" name="MatrixMultipleSelection">
+    <value>Matrix multiple</value>
+  </data>
+  <data version="1.0" id="222" name="SelectionTextType">
+    <value>Selection - Text</value>
+  </data>
+  <data version="1.0" id="223" name="SelectionOtherType">
+    <value>Selection - Other</value>
+  </data>
+  <data version="1.0" id="224" name="FieldBasicType">
+    <value>Field - Basic</value>
+  </data>
+  <data version="1.0" id="225" name="XMLCountryList">
+    <value>XML - Country list</value>
+  </data>
+  <data version="1.0" id="226" name="XMLUSStatesList">
+    <value>XML - US States</value>
+  </data>
+  <data version="1.0" id="227" name="BooleanType">
+    <value>Boolean</value>
+  </data>
+  <data version="1.0" id="228" name="FieldRequiredType">
+    <value>Field - Required</value>
+  </data>
+  <data version="1.0" id="229" name="FieldLargeType">
+    <value>Field - Large</value>
+  </data>
+  <data version="1.0" id="230" name="FieldCalendarType">
+    <value>Field - Calendar</value>
+  </data>
+  <data version="1.0" id="231" name="FieldEmailType">
+    <value>Field - Email</value>
+  </data>
+  <data version="1.0" id="232" name="MultipleChoicesMatrixLabel">
+    <value>Multiple choices matrix :</value>
+  </data>
+  <data version="1.0" id="233" name="EditMatrixQuestionTitle">
+    <value>Edit matrix question</value>
+  </data>
+  <data version="1.0" id="234" name="InsertNewTitle">
+    <value>Insert a new</value>
+  </data>
+  <data version="1.0" id="235" name="RowLabel">
+    <value>Row</value>
+  </data>
+  <data version="1.0" id="236" name="AddRowButton">
+    <value>Add row</value>
+  </data>
+  <data version="1.0" id="237" name="ColumnLabel">
+    <value>Column</value>
+  </data>
+  <data version="1.0" id="238" name="AddColumnButton">
+    <value>Add column</value>
+  </data>
+  <data version="1.0" id="239" name="CurrentRowsColumnsTitle">
+    <value>Current rows and columns</value>
+  </data>
+  <data version="1.0" id="240" name="RowsHeader">
+    <value>Rows</value>
+  </data>
+  <data version="1.0" id="241" name="UpdateRowTextHeader">
+    <value>Update</value>
+  </data>
+  <data version="1.0" id="242" name="CancelRowTextHeader">
+    <value>Cancel</value>
+  </data>
+  <data version="1.0" id="243" name="EditRowTextHeader">
+    <value>Edit</value>
+  </data>
+  <data version="1.0" id="244" name="DeleteRowText">
+    <value>Delete</value>
+  </data>
+  <data version="1.0" id="245" name="AnswerHeader">
+    <value>Columns</value>
+  </data>
+  <data version="1.0" id="246" name="ColTypeHeader">
+    <value>Type</value>
+  </data>
+  <data version="1.0" id="247" name="ColRatingHeader">
+    <value>Rating</value>
+  </data>
+  <data version="1.0" id="248" name="UpdateColTextHeader">
+    <value>Update</value>
+  </data>
+  <data version="1.0" id="249" name="CancelColTextHeader">
+    <value>Cancel</value>
+  </data>
+  <data version="1.0" id="250" name="EditColTextHeader">
+    <value>Edit</value>
+  </data>
+  <data version="1.0" id="251" name="DeleteColText">
+    <value>Delete</value>
+  </data>
+  <data version="1.0" id="252" name="RowMissingQuestionMessage">
+    <value>Please enter some text for your child question</value>
+  </data>
+  <data version="1.0" id="253" name="MatrixRowUpdatedMessage">
+    <value>Row has been updated</value>
+  </data>
+  <data version="1.0" id="254" name="MatrixRowDeletedMessage">
+    <value>Row has been deleted</value>
+  </data>
+  <data version="1.0" id="255" name="MatrixRowAddedMessage">
+    <value>New row has been added</value>
+  </data>
+  <data version="1.0" id="256" name="MatrixColumnAddedMessage">
+    <value>New column has been added</value>
+  </data>
+  <data version="1.0" id="257" name="MatrixColumnUpdatedMessage">
+    <value>Column has been updated</value>
+  </data>
+  <data version="1.0" id="258" name="MatrixColumnDeletedMessage">
+    <value>Column has been deleted</value>
+  </data>
+  <data version="1.0" id="259" name="BranchingRuleNoAnswer">
+    <value>Voters who did answer to &lt;b&gt;{0}&lt;/b&gt; are redirected to &lt;b&gt;{1}&lt;/b&gt;</value>
+  </data>
+  <data version="1.0" id="260" name="BranchingRuleNoAnswerNot">
+    <value>Voters who didn't answer to &lt;b&gt;{0}&lt;/b&gt; are redirected to &lt;b&gt;{1}&lt;/b&gt;</value>
+  </data>
+  <data version="1.0" id="261" name="BranchingRuleAnswer">
+    <value>Voters who did answer to &lt;b&gt;{0}&lt;/b&gt; with &lt;b&gt;{1}&lt;/b&gt; are redirected to &lt;b&gt;{2}&lt;/b&gt;</value>
+  </data>
+  <data version="1.0" id="262" name="BranchingRuleAnswerNot">
+    <value>Voters who didn't answer to &lt;b&gt;{0}&lt;/b&gt; with &lt;b&gt;{1}&lt;/b&gt; are redirected to &lt;b&gt;{2}&lt;/b&gt;</value>
+  </data>
+  <data version="1.0" id="263" name="BranchingRuleAnswerWithText">
+    <value>Voters who did answer to &lt;b&gt;{0}&lt;/b&gt; with &lt;b&gt;{1}&lt;/b&gt; {2} &lt;b&gt;{3}&lt;/b&gt; are redirected to &lt;b&gt;{4}&lt;/b&gt;</value>
+  </data>
+  <data version="1.0" id="264" name="BranchingRuleAnswerWithTextNot">
+    <value>Voters who didn't answer to &lt;b&gt;{0}&lt;/b&gt; with &lt;b&gt;{1}&lt;/b&gt; {2} &lt;b&gt;{3}&lt;/b&gt; are redirected to &lt;b&gt;{4}&lt;/b&gt;</value>
+  </data>
+  <data version="1.0" id="265" name="AddNewBranchingTitle">
+    <value>Add new branching rule to page {0}</value>
+  </data>
+  <data version="1.0" id="266" name="ConditionalLabel">
+    <value>Conditional operator :</value>
+  </data>
+  <data version="1.0" id="267" name="ConditionalMessageLabel">
+    <value>Message shown on submit :</value>
+  </data>
+  <data version="1.0" id="268" name="FilterTextLabel">
+    <value>Text :</value>
+  </data>
+  <data version="1.0" id="269" name="PageTargetLabel">
+    <value>Go to page :</value>
+  </data>
+  <data version="1.0" id="270" name="BranchingRulesTitle">
+    <value>Branching rules</value>
+  </data>
+  <data version="1.0" id="271" name="EvaluationConditionInfo">
+    <value>First condition that is met will branch to its target page</value>
+  </data>
+  <data version="1.0" id="272" name="AnsweredConditionOption">
+    <value>Answered</value>
+  </data>
+  <data version="1.0" id="273" name="NotAnsweredConditionOption">
+    <value>Not answered</value>
+  </data>
+  <data version="1.0" id="274" name="BranchingRuleAddedMessage">
+    <value>New branching rule added</value>
+  </data>
+  <data version="1.0" id="275" name="BranchingRuleDeletedMessage">
+    <value>Branching rule deleted</value>
+  </data>
+  <data version="1.0" id="276" name="SurveysHyperLink">
+    <value>Surveys</value>
+  </data>
+  <data version="1.0" id="277" name="ListSurveyHyperLink">
+    <value>Survey List</value>
+  </data>
+  <data version="1.0" id="278" name="NewSurveyHyperLink">
+    <value>Survey New</value>
+  </data>
+  <data version="1.0" id="279" name="SurveyOptionsHyperlink">
+    <value>Settings</value>
+  </data>
+  <data version="1.0" id="280" name="SurveyInformationHyperlink">
+    <value>Survey Settings</value>
+  </data>
+  <data version="1.0" id="281" name="SurveyStatsHyperlink">
+    <value>Statistics</value>
+  </data>
+  <data version="1.0" id="282" name="SurveyLayoutHyperlink">
+    <value>Layout</value>
+  </data>
+  <data version="1.0" id="283" name="SurveyBuilderHyperlink">
+    <value>Form Builder</value>
+  </data>
+  <data version="1.0" id="284" name="TypeBuilderHyperlink">
+    <value>Answer Type Editor</value>
+  </data>
+  <data version="1.0" id="285" name="FieldReportHyperLink">
+    <value>Click here to view fields entries and individual reports</value>
+  </data>
+  <data version="1.0" id="286" name="ResultsReportHyperlink">
+    <value>Reports</value>
+  </data>
+  <data version="1.0" id="287" name="ExportDataHyperlink">
+    <value>data export</value>
+  </data>
+  <data version="1.0" id="288" name="MailingHyperlink">
+    <value>Mailing</value>
+  </data>
+  <data version="1.0" id="289" name="MailingStatusHyperlink">
+    <value>Mailing Status</value>
+  </data>
+  <data version="1.0" id="290" name="ASPNETCodeHyperlink">
+    <value>Web</value>
+  </data>
+  <data version="1.0" id="291" name="NSurveyAuthenticationTitle">
+    <value>Sign In </value>
+  </data>
+  <data version="1.0" id="292" name="LoginLabel">
+    <value>Username</value>
+  </data>
+  <data version="1.0" id="293" name="PasswordLabel">
+    <value>Password</value>
+  </data>
+  <data version="1.0" id="294" name="ValidateCredentialsButton">
+    <value>Validate credentials</value>
+  </data>
+  <data version="1.0" id="295" name="InvalidLoginPasswordMessage">
+    <value>Invalid Login. Please try again.</value>
+  </data>
+  <data version="1.0" id="296" name="SurveyBuilderTitle">
+    <value>Form builder</value>
+  </data>
+  <data version="1.0" id="297" name="FieldEntriesLabel">
+    <value>Field entries results :</value>
+  </data>
+  <data version="1.0" id="298" name="ResultsOrderLabel">
+    <value>Results order :</value>
+  </data>
+  <data version="1.0" id="299" name="AnswerOrderOption">
+    <value>Answer order</value>
+  </data>
+  <data version="1.0" id="300" name="AscendingOrderOption">
+    <value>Ascending answers count</value>
+  </data>
+  <data version="1.0" id="301" name="DescendingOrderOption">
+    <value>Descending answers count</value>
+  </data>
+  <data version="1.0" id="302" name="NoSurveysAvailableMessage">
+    <value>No survey selected. Please create or choose a Survey first.</value>
+  </data>
+  <data version="1.1" id="303" name="SurveySecurityHyperlink">
+    <value>Security</value>
+  </data>
+  <data version="1.1" id="304" name="SurveySecurityTitle">
+    <value>Survey security</value>
+  </data>
+  <data version="1.1" id="305" name="SurveyAddAdinTitle">
+    <value>Add security addin</value>
+  </data>
+  <data version="1.1" id="306" name="AddAddinButton">
+    <value>Add security addin to survey</value>
+  </data>
+  <data version="1.1" id="307" name="AvailableAddInsLabel">
+    <value>Available addins</value>
+  </data>
+  <data version="1.1" id="308" name="InsertAddInHyperLink">
+    <value>Insert security add in</value>
+  </data>
+  <data version="1.1" id="309" name="DisableAddInLinkButton">
+    <value>Disable</value>
+  </data>
+  <data version="1.1" id="310" name="EnableAddInLinkButton">
+    <value>Enable</value>
+  </data>
+  <data version="1.1" id="311" name="AddInDisabledLabel">
+    <value>This add in is currently disabled for this survey but its linked voter data are still available from the report and export functions.</value>
+  </data>
+  <data version="1.1" id="312" name="AddInAdminNotAvailableMessage">
+    <value>This add in does not provide any visual administration interface.</value>
+  </data>
+  <data version="1.1" id="313" name="NoAddInAvailableMessage">
+    <value>[No more addins are available]</value>
+  </data>
+  <data version="1.1" id="314" name="UnAuthentifiedUserActionLabel">
+    <value>Action on invalid authorisation</value>
+  </data>
+  <data version="1.1" id="315" name="ShowThankYouText">
+    <value>Display thank you message</value>
+  </data>
+  <data version="1.1" id="316" name="HideSurveyText">
+    <value>Hide survey</value>
+  </data>
+  <data version="1.2" id="317" name="EntryNotificationLabel">
+    <value>Notification mode :</value>
+  </data>
+  <data version="1.2" id="318" name="ProgressDisplayLabel">
+    <value>Footer progress display :</value>
+  </data>
+  <data version="1.2" id="319" name="EnableNavigationLabel">
+    <value>Previous/next page navigation :</value>
+  </data>
+  <data version="1.2" id="320" name="EnableResumeLabel">
+    <value>Resume of progress :</value>
+  </data>
+  <data version="1.2" id="321" name="NoneNotificationText">
+    <value>No notification</value>
+  </data>
+  <data version="1.2" id="322" name="ShortNotificationText">
+    <value>Short message</value>
+  </data>
+  <data version="1.2" id="323" name="ReportNotificationText">
+    <value>Full entry report</value>
+  </data>
+  <data version="1.2" id="324" name="NoProgressText">
+    <value>Dont show progress</value>
+  </data>
+  <data version="1.2" id="325" name="PageNumberText">
+    <value>Show page numbers</value>
+  </data>
+  <data version="1.2" id="326" name="ProgressPercentageText">
+    <value>Show progress percentage</value>
+  </data>
+  <data version="1.2" id="327" name="InvalidFromEmail">
+    <value>From email must be a valid email</value>
+  </data>
+  <data version="1.2" id="328" name="InvalidToEmail">
+    <value>To email must be a valid email</value>
+  </data>
+  <data version="1.2" id="329" name="NotificationSettingsTitle">
+    <value>Notification settings</value>
+  </data>
+  <data version="1.2" id="330" name="ToEmailNotificationLabel">
+    <value>Email notification to :</value>
+  </data>
+  <data version="1.2" id="331" name="FromEmailNotificationLabel">
+    <value>Email from :</value>
+  </data>
+  <data version="1.2" id="332" name="NotificationSubjectLabel">
+    <value>Email notification subject :</value>
+  </data>
+  <data version="1.2" id="333" name="FieldHiddenType">
+    <value>Field - Hidden</value>
+  </data>
+  <data version="1.2" id="334" name="CopyExistingQuestionTitle">
+    <value>Copy existing question</value>
+  </data>
+  <data version="1.2" id="335" name="CopyExistingQuestionButton">
+    <value>Copy question to this survey</value>
+  </data>
+  <data version="1.2" id="336" name="NoQuestionToCopyAvailableMessage">
+    <value>[No questions available]</value>
+  </data>
+  <data version="1.2" id="337" name="SelectSurveyMessage">
+    <value>[Select survey]</value>
+  </data>
+  <data version="1.2" id="338" name="SaveProgressEntriesLabel">
+    <value>Unvalidated progress entries :</value>
+  </data>
+  <data version="1.2" id="339" name="DeleteSaveProgressLinkButton">
+    <value>Delete Unvalidated</value>
+  </data>
+  <data version="1.2" id="340" name="PipeHelpLabel">
+    <value>
+      *you can specify special values that will be replaced at runtime into the text value :&lt;br /&gt;
+      ##yourquerystringvariablename##&lt;/b&gt;&lt;br /&gt;
+      @@yoursessionvariablename@@&lt;br /&gt;
+      &amp;&amp;yourcookievariablename&amp;&amp;&lt;br /&gt;
+      %%servervariablename%%
+    </value>
+  </data>
+  <data version="1.3" id="341" name="EnableRandomHyperlink">
+    <value>Enable random</value>
+  </data>
+  <data version="1.3" id="342" name="DisableRandomHyperlink">
+    <value>Disable random</value>
+  </data>
+  <data version="1.3" id="343" name="EnableSubmitHyperlink">
+    <value>Enable submit</value>
+  </data>
+  <data version="1.3" id="344" name="DisableSubmitHyperlink">
+    <value>Disable submit</value>
+  </data>
+  <data version="1.3" id="345" name="CompareQuestionLabel">
+    <value>Compare question :</value>
+  </data>
+  <data version="1.3" id="346" name="BaseQuestionLabel">
+    <value>Base question :</value>
+  </data>
+  <data version="1.3" id="347" name="SurveyCrossTabTitle">
+    <value>Survey cross tabulation results</value>
+  </data>
+  <data version="1.3" id="348" name="CrossTabNotAnsweredMessage">
+    <value>No answered</value>
+  </data>
+  <data version="1.3" id="349" name="CrossTabVotesTotalMessage">
+    <value>Total</value>
+  </data>
+  <data version="1.3" id="350" name="BaseQuestionChoiceLabel">
+    <value>Please choose a base question</value>
+  </data>
+  <data version="1.3" id="351" name="CompareQuestionChoiceLabel">
+    <value>Please choose a compare question</value>
+  </data>
+  <data version="1.3" id="352" name="CrossTableResultsLiteral">
+    <value>Cross tabulation results</value>
+  </data>
+  <data version="1.3" id="353" name="CrossTabHyperlink">
+    <value>Click here to setup a cross tabulated results se</value>
+  </data>
+  <data version="1.4" id="354" name="ResumeNotAllowedText">
+    <value>Resume not allowed</value>
+  </data>
+  <data version="1.4" id="355" name="AutomaticResumeText">
+    <value>Automatic cookie saving / resume mode</value>
+  </data>
+  <data version="1.4" id="356" name="ManualResumeText">
+    <value>Manual mode (user must enter his code to resume)</value>
+  </data>
+  <data version="1.4" id="357" name="GraphicResultsReportHyperlink">
+    <value>graphical report</value>
+  </data>
+  <data version="1.4" id="358" name="TextFieldsResultsReportHyperlink">
+    <value>text fields entries</value>
+  </data>
+  <data version="1.4" id="359" name="CrossTabResultsReportHyperlink">
+    <value>cross tabulation</value>
+  </data>
+  <data version="1.4" id="360" name="ClearQuestionAnswersConfirmationMessage">
+    <value>Are you sure that you want to clear the answers of this question ?</value>
+  </data>
+  <data version="1.4" id="361" name="ClearQuestionAnswersButton">
+    <value>Clear question answers</value>
+  </data>
+  <data version="1.4" id="362" name="ClearPageAnswersButton">
+    <value>Clear page answers</value>
+  </data>
+  <data version="1.4" id="363" name="ClearPageAnswersConfirmationMessage">
+    <value>Are you sure that you want to clear all answers for this page ?</value>
+  </data>
+  <data version="1.4" id="364" name="EditAnswersLinkButton">
+    <value>Switch to voter's answers edit mode</value>
+  </data>
+  <data version="1.4" id="365" name="ReadOnlyAnswersLinkButton">
+    <value>Switch to voter's answers read only mode</value>
+  </data>
+  <data version="1.4" id="366" name="EditVoterAnswersTitle">
+    <value>Edit answers</value>
+  </data>
+  <data version="1.4" id="367" name="FieldPasswordType">
+    <value>Field - Password</value>
+  </data>
+  <data version="1.4" id="368" name="AnswersOverviewTitle">
+    <value>Answers overview</value>
+  </data>
+  <data version="1.4" id="369" name="AddNewAnswerTitle">
+    <value>Add new answer</value>
+  </data>
+  <data version="1.4" id="370" name="EditAnswerTitle">
+    <value>Edit answer settings</value>
+  </data>
+  <data version="1.4" id="371" name="AnswerEditorHyperlink">
+    <value>answers editor</value>
+  </data>
+  <data version="1.4" id="372" name="SingleQuestionAnswerEditorTitle">
+    <value>Question's answers editor</value>
+  </data>
+  <data version="1.4" id="373" name="SingleQuestionCannotBeEditedMessage">
+    <value>This question's answers cannot be edited</value>
+  </data>
+  <data version="1.4" id="374" name="EditAnswersHyperLink">
+    <value>Edit answers</value>
+  </data>
+  <data version="1.4" id="375" name="EditAnswersButton">
+    <value>Add / Edit answers</value>
+  </data>
+  <data version="1.4" id="376" name="EditQuestionButton">
+    <value>Edit question</value>
+  </data>
+  <data version="1.4" id="377" name="DeleteAnswerConfirmationMessage">
+    <value>Are you sure you whish to delete this answer ?</value>
+  </data>
+  <data version="1.4" id="378" name="DeleteTokenConfirmationMessage">
+    <value>Are you sure you whish to delete Tokens ?</value>
+  </data>
+  <data version="1.4" id="379" name="AnswerRatingLabel">
+    <value>Rating :</value>
+  </data>
+  <data version="1.4" id="380" name="SelectedAnswersLabel">
+    <value>Selected by default :</value>
+  </data>
+  <data version="1.4" id="381" name="AnswerURLLabel">
+    <value>Image URL :</value>
+  </data>
+  <data version="1.4" id="382" name="ScoreLabel">
+    <value>Score point :</value>
+  </data>
+  <data version="1.4" id="383" name="UpdateAnswerButton">
+    <value>Update</value>
+  </data>
+  <data version="1.4" id="384" name="DeleteAnswerButton">
+    <value>Delete</value>
+  </data>
+  <data version="1.4" id="385" name="CancelAnswerButton">
+    <value>Cancel</value>
+  </data>
+  <data version="1.4" id="386" name="AnswerTextLabel">
+    <value>Answer text :</value>
+  </data>
+  <data version="1.4" id="387" name="AnswerTypeLabel">
+    <value>Type : </value>
+  </data>
+  <data version="1.4" id="388" name="ScoredLabel">
+    <value>Scored :</value>
+  </data>
+  <data version="1.4" id="389" name="ScoredEqualConditionOption">
+    <value>Scored</value>
+  </data>
+  <data version="1.4" id="390" name="ScoredLessConditionOption">
+    <value>Scored less than</value>
+  </data>
+  <data version="1.4" id="391" name="ScoredGreaterConditionOption">
+    <value>Scored greater than</value>
+  </data>
+  <data version="1.4" id="392" name="ScoredRangeConditionOperator">
+    <value>Scored between</value>
+  </data>
+  <data version="1.4" id="393" name="ScoreNotNumericMessage">
+    <value>Scores must be numeric</value>
+  </data>
+  <data version="1.4" id="394" name="BranchingRuleScoreEqual">
+    <value>Voters who scored &lt;b&gt;{0}&lt;/b&gt; on &lt;b&gt;{1}&lt;/b&gt; are redirected to &lt;b&gt;{2}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="395" name="BranchingRuleScoreLess">
+    <value>Voters who scored &lt;b&gt;less than {0}&lt;/b&gt; on &lt;b&gt;{1}&lt;/b&gt; are redirected to &lt;b&gt;{2}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="396" name="BranchingRuleScoreGreater">
+    <value>Voters who scored &lt;b&gt;greater than {0}&lt;/b&gt; on &lt;b&gt;{1}&lt;/b&gt; are redirected to &lt;b&gt;{2}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="397" name="BranchingRuleScoreRange">
+    <value>Voters who scored &lt;b&gt;between {0} and {1}&lt;/b&gt; on &lt;b&gt;{2}&lt;/b&gt; are redirected to &lt;b&gt;{3}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="398" name="VoterScoreTotalLabel">
+    <value>Score total : </value>
+  </data>
+  <data version="1.4" id="399" name="QuestionScoreLabel">
+    <value>Score : </value>
+  </data>
+  <data version="1.4" id="400" name="SelectQuestionConditionMessage">
+    <value>[Select a show condition]</value>
+  </data>
+  <data version="1.4" id="401" name="SurveyQuestionConditionOption">
+    <value>Question answered</value>
+  </data>
+  <data version="1.4" id="402" name="SurveyScoredEqualConditionOption">
+    <value>Score total is</value>
+  </data>
+  <data version="1.4" id="403" name="SurveyScoredLessConditionOption">
+    <value>Score total is less than</value>
+  </data>
+  <data version="1.4" id="404" name="SurveyScoredGreaterConditionOption">
+    <value>Score total is greater than</value>
+  </data>
+  <data version="1.4" id="405" name="SurveyScoredRangeConditionOperator">
+    <value>Score total between</value>
+  </data>
+  <data version="1.4" id="406" name="MessageConditionAddedMessage">
+    <value>Message condition  updated</value>
+  </data>
+  <data version="1.4" id="407" name="MessageConditionScoreEqual">
+    <value>Show "&lt;b&gt;{0}&lt;/b&gt;" to those who scored a total of &lt;b&gt;{1}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="408" name="MessageConditionScoreLess">
+    <value>Show "&lt;b&gt;{0}&lt;/b&gt;" to those who scored a total &lt;b&gt;less than {1}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="409" name="MessageConditionScoreGreater">
+    <value>Show "&lt;b&gt;{0}&lt;/b&gt;" to those who scored a total &lt;b&gt;greater than {1}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="410" name="MessageConditionScoreRange">
+    <value>Show "&lt;b&gt;{0}&lt;/b&gt;" to those who scored a total &lt;b&gt;between {1} and {2}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="411" name="MessageConditionQuestionScoreEqual">
+    <value>Show "&lt;b&gt;{0}&lt;/b&gt;" to those who scored &lt;b&gt;{1}&lt;/b&gt; on &lt;b&gt;{2}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="412" name="MessageConditionQuestionScoreLess">
+    <value>Show "&lt;b&gt;{0}&lt;/b&gt;" to those who scored &lt;b&gt;less than {1}&lt;/b&gt; on &lt;b&gt;{2}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="413" name="MessageConditionQuestionScoreGreater">
+    <value>Show "&lt;b&gt;{0}&lt;/b&gt;" to those who scored &lt;b&gt;greater than {1}&lt;/b&gt; on &lt;b&gt;{2}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="414" name="MessageConditionQuestionScoreRange">
+    <value>Show "&lt;b&gt;{0}&lt;/b&gt;" to those who scored &lt;b&gt;between {1} and {2}&lt;/b&gt; on &lt;b&gt;{3}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="415" name="MessageConditionQuestionNoAnswer">
+    <value>Show "&lt;b&gt;{0}&lt;/b&gt;" to those who answered to &lt;b&gt;{1}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="416" name="MessageConditionQuestionNoAnswerNot">
+    <value>Show "&lt;b&gt;{0}&lt;/b&gt;" to those who didn't answer to &lt;b&gt;{1}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="417" name="MessageConditionQuestionAnswer">
+    <value>Show "&lt;b&gt;{0}&lt;/b&gt;" to those who answered to &lt;b&gt;{1}&lt;/b&gt; with &lt;b&gt;{2}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="418" name="MessageConditionQuestionAnswerNot">
+    <value>Show "&lt;b&gt;{0}&lt;/b&gt;" to those who didn't answer to &lt;b&gt;{1}&lt;/b&gt; with &lt;b&gt;{2}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="419" name="MessageConditionQuestionAnswerWithText">
+    <value>Show "&lt;b&gt;{0}&lt;/b&gt;" to those who answered to &lt;b&gt;{1}&lt;/b&gt; with &lt;b&gt;{2}&lt;/b&gt; {3} &lt;b&gt;{4}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="420" name="MessageConditionQuestionAnswerWithTextNot">
+    <value>Show "&lt;b&gt;{0}&lt;/b&gt;" to those who didn't answer to &lt;b&gt;{1}&lt;/b&gt; with &lt;b&gt;{2}&lt;/b&gt; {3} &lt;b&gt;{4}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="421" name="EvaluationMessageConditionInfo">
+    <value>*First condition that is met after the user posted his answers will show its "thank you" message</value>
+  </data>
+  <data version="1.4" id="422" name="AddMessageConditionButton">
+    <value>Add new message condition</value>
+  </data>
+  <data version="1.4" id="423" name="UpdateConditionTitle">
+    <value>Update message condition</value>
+  </data>
+  <data version="1.4" id="424" name="AddNewConditionTitle">
+    <value>Add new display message condition</value>
+  </data>
+  <data version="1.4" id="425" name="DeleteConditionInfo">
+    <value>Delete condition</value>
+  </data>
+  <data version="1.4" id="426" name="EditConditionInfo">
+    <value>Edit condition</value>
+  </data>
+  <data version="1.4" id="427" name="PrivacySettingsHyperlink">
+    <value>privacy</value>
+  </data>
+  <data version="1.4" id="428" name="SurveySettingsHyperlink">
+    <value>survey</value>
+  </data>
+  <data version="1.4" id="429" name="ApplyPrivacyButton">
+    <value>Apply</value>
+  </data>
+  <data version="1.4" id="430" name="ThanksMessageConditionTitle">
+    <value>Thanks messages display conditions*</value>
+  </data>
+  <data version="1.4" id="431" name="AddNewConditionHyperLink">
+    <value>Add new condition</value>
+  </data>
+  <data version="1.4" id="432" name="VoterUserNameLabel">
+    <value>ASP.net's user name :</value>
+  </data>
+  <data version="1.4" id="433" name="ContextUserNameDisabled">
+    <value>Disabled</value>
+  </data>
+  <data version="1.4" id="434" name="ScoreHeader">
+    <value>Score</value>
+  </data>
+  <data version="1.4" id="435" name="AddNewAnswerButton">
+    <value>Add new answer</value>
+  </data>
+  <data version="1.4" id="436" name="ScoreRangeLabel">
+    <value>and </value>
+  </data>
+  <data version="1.4" id="437" name="ScoreTagLabel">
+    <value>Score total can be shown using the ::score:: tag inside your message</value>
+  </data>
+  <data version="1.5" id="438" name="QuestionPipeAliasLabel">
+    <value>Pipe alias :</value>
+  </data>
+  <data version="1.5" id="439" name="AnswerPipeAliasLabel">
+    <value>Pipe alias</value>
+  </data>
+  <data version="1.5" id="440" name="TheLibraryHyperlink">
+    <value>the library</value>
+  </data>
+  <data version="1.5" id="441" name="LibraryTitle">
+    <value>The library</value>
+  </data>
+  <data version="1.5" id="442" name="AddNewLibraryButton">
+    <value>Add new library</value>
+  </data>
+  <data version="1.5" id="443" name="DeleteLibraryConfirmationMessage">
+    <value>This will also delete all templates inside. Are you sure you want to delete it ?</value>
+  </data>
+  <data version="1.5" id="444" name="DeleteLibraryButton">
+    <value>Delete library</value>
+  </data>
+  <data version="1.5" id="445" name="UpdateLibraryButton">
+    <value>Update library</value>
+  </data>
+  <data version="1.5" id="446" name="LibraryNameLabel">
+    <value>Library name :</value>
+  </data>
+  <data version="1.5" id="447" name="MissingLibraryNameMessage">
+    <value>Missing library name</value>
+  </data>
+  <data version="1.5" id="448" name="UpdatedLibraryNameMessage">
+    <value>Library updated</value>
+  </data>
+  <data version="1.5" id="449" name="DeletedLibraryNameMessage">
+    <value>Library deleted</value>
+  </data>
+  <data version="1.5" id="450" name="AddedLibraryNameMessage">
+    <value>Library added</value>
+  </data>
+  <data version="1.5" id="451" name="EditLibraryInfo">
+    <value>Edit</value>
+  </data>
+  <data version="1.5" id="452" name="AddLibraryTitle">
+    <value>Add new library</value>
+  </data>
+  <data version="1.5" id="453" name="UpdateLibraryTitle">
+    <value>Update library</value>
+  </data>
+  <data version="1.5" id="454" name="QuestionTemplatesTitle">
+    <value>Question templates</value>
+  </data>
+  <data version="1.5" id="455" name="LocalLibraryHyperLink">
+    <value>Question Libraries</value>
+  </data>
+  <data version="1.5" id="456" name="CopyExistingQuestionToLibraryButton">
+    <value>Copy question to this library</value>
+  </data>
+  <data version="1.5" id="457" name="NewLibraryQuestionTitle">
+    <value>Add a new question to the {0} library</value>
+  </data>
+  <data version="1.5" id="458" name="AddQuestionToLibraryButton">
+    <value>Add question to library</value>
+  </data>
+  <data version="1.5" id="459" name="ExportButton">
+    <value>Export XML</value>
+  </data>
+  <data version="1.5" id="460" name="DisplayAnswersOfLabel">
+    <value>Display answers of :</value>
+  </data>
+  <data version="1.5" id="461" name="SelectQuestionFromLibraryMessage">
+    <value>[Select question from library]</value>
+  </data>
+  <data version="1.5" id="462" name="StaticTextQuestionOption">
+    <value>Static free text</value>
+  </data>
+  <data version="1.5" id="463" name="ImportQuestionTitle">
+    <value>Import XML question</value>
+  </data>
+  <data version="1.5" id="464" name="ExportSurveyButton">
+    <value>Export XML</value>
+  </data>
+  <data version="1.5" id="465" name="ImportSurveyTitle">
+    <value>Import survey from XML</value>
+  </data>
+  <data version="1.5" id="466" name="ImportXMLButton">
+    <value>Import XML</value>
+  </data>
+  <data version="1.5" id="467" name="VoterExportXMLButton">
+    <value>Export XML</value>
+  </data>
+  <data version="1.5" id="468" name="SelectSourceMessage">
+    <value>[Select question source]</value>
+  </data>
+  <data version="1.5" id="469" name="LibraryOption">
+    <value>Copy questions from  a library</value>
+  </data>
+  <data version="1.5" id="470" name="SurveyOption">
+    <value>Copy questions from  a survey</value>
+  </data>
+  <data version="1.5" id="471" name="SelectLibraryMessage">
+    <value>[Select library]</value>
+  </data>
+  <data version="1.5" id="472" name="AnswerReportNotificationText">
+    <value>Answers only report</value>
+  </data>
+  <data version="1.5" id="473" name="ExportXMLButton">
+    <value>Export XML</value>
+  </data>
+  <data version="1.6" id="474" name="UsersManagerHyperlink">
+    <value>User List</value>
+  </data>
+  <data version="1.6" id="475" name="RolesManagerHyperlink">
+    <value>User Roles</value>
+  </data>
+  <data version="1.6" id="476" name="UsersManagerTitle">
+    <value>Users manager</value>
+  </data>
+  <data version="1.6" id="477" name="UserToEditLabel">
+    <value>Select a user to edit</value>
+  </data>
+  <data version="1.6" id="478" name="SelectUserMessage">
+    <value>[Select a user]</value>
+  </data>
+  <data version="1.6" id="479" name="CreateAUserMessage">
+    <value>[Create a user first]</value>
+  </data>
+  <data version="1.6" id="480" name="DeleteUserButton">
+    <value>Delete user</value>
+  </data>
+  <data version="1.6" id="481" name="NewUserTitle">
+    <value>New user</value>
+  </data>
+  <data version="1.6" id="482" name="EditUserTitle">
+    <value>Edit user</value>
+  </data>
+  <data version="1.6" id="483" name="CreateNewUserButton">
+    <value>Create new user</value>
+  </data>
+  <data version="1.6" id="484" name="InvalidEmailMessage">
+    <value>Invalid email!</value>
+  </data>
+  <data version="1.6" id="485" name="UserNameRequiredMessage">
+    <value>Please enter a user name</value>
+  </data>
+  <data version="1.6" id="486" name="PasswordRequiredMessage">
+    <value>Password: length min. 8 - max. 12; min. 1 small, 1 capital, 1 special, 1 number required</value>
+  </data>
+  <data version="1.6" id="487" name="UserUpdatedMessage">
+    <value>User has been updated</value>
+  </data>
+  <data version="1.6" id="488" name="DeleteUserConfirmationMessage">
+    <value>Are you sure you want to delete the user ? Note that surveys assigned to the user will not be deleted</value>
+  </data>
+  <data version="1.6" id="489" name="UserNameTakenMessage">
+    <value>This user name  has already been taken</value>
+  </data>
+  <data version="1.6" id="490" name="CannotDeleteLastAdminMessage">
+    <value>You must keep at least one user as an administrator </value>
+  </data>
+  <data version="1.6" id="491" name="CreateUserHyperLink">
+    <value>Click here to create a new user</value>
+  </data>
+  <data version="1.6" id="492" name="UserSurveyAssignedLabel">
+    <value>Assigned surveys :</value>
+  </data>
+  <data version="1.6" id="493" name="UnAssignedSurveysLabel">
+    <value>Unassigned surveys</value>
+  </data>
+  <data version="1.6" id="494" name="AssignedSurveysLabel">
+    <value>Assigned to user</value>
+  </data>
+  <data version="1.6" id="495" name="UserNameLabel">
+    <value>User name :</value>
+  </data>
+  <data version="1.6" id="496" name="UserPasswordLabel">
+    <value>User password  :</value>
+  </data>
+  <data version="1.6" id="497" name="UserFirstNameLabel">
+    <value>First name :</value>
+  </data>
+  <data version="1.6" id="498" name="UserLastNameLabel">
+    <value>Last name :</value>
+  </data>
+  <data version="1.6" id="499" name="UserEmailLabel">
+    <value>Email :</value>
+  </data>
+  <data version="1.6" id="500" name="UserIsAdministratorLabel">
+    <value>Administrator :</value>
+  </data>
+  <data version="1.6" id="501" name="AssignAllSurveysLabel">
+    <value>Assign all surveys :</value>
+  </data>
+  <data version="1.6" id="502" name="RolesLabel">
+    <value>Roles :</value>
+  </data>
+  <data version="1.6" id="503" name="AvailableRolesLabel">
+    <value>Available roles :</value>
+  </data>
+  <data version="1.6" id="504" name="UserRolesLabel">
+    <value>User's role :</value>
+  </data>
+  <data version="1.6" id="505" name="RolesManagerTitle">
+    <value>Roles manager</value>
+  </data>
+  <data version="1.6" id="506" name="RolesToEditLabel">
+    <value>Select role to edit/ view: </value>
+  </data>
+  <data version="1.6" id="507" name="CreateRoleHyperLink">
+    <value>Create New Role</value>
+  </data>
+  <data version="1.6" id="508" name="CreateARoleMessage">
+    <value>[Create a role first]</value>
+  </data>
+  <data version="1.6" id="509" name="SelectRoleMessage">
+    <value>[Select a role]</value>
+  </data>
+  <data version="1.6" id="510" name="RoleNameLabel">
+    <value>Role name :</value>
+  </data>
+  <data version="1.6" id="511" name="DeleteRoleConfirmationMessage">
+    <value>Are you sure you want to delete this role ? Users associated to this role will also loose their rights</value>
+  </data>
+  <data version="1.6" id="512" name="DeleteRoleButton">
+    <value>Delete role</value>
+  </data>
+  <data version="1.6" id="513" name="CreateNewRoleButton">
+    <value>Create new role</value>
+  </data>
+  <data version="1.6" id="514" name="NewRoleTitle">
+    <value>New role</value>
+  </data>
+  <data version="1.6" id="515" name="EditRoleTitle">
+    <value>Edit role</value>
+  </data>
+  <data version="1.6" id="516" name="RoleNameRequiredMessage">
+    <value>Role name required!</value>
+  </data>
+  <data version="1.6" id="517" name="RoleUpdatedMessage">
+    <value>Role has been updated</value>
+  </data>
+  <data version="1.6" id="518" name="RoleRightsLabel">
+    <value>Role's rights :</value>
+  </data>
+  <data version="1.6" id="519" name="CreateSurveyRight">
+    <value>Create survey</value>
+  </data>
+  <data version="1.6" id="520" name="DeleteSurveyRight">
+    <value>Delete survey</value>
+  </data>
+  <data version="1.6" id="521" name="ChangeSurveySettingsRight">
+    <value>Change survey settings</value>
+  </data>
+  <data version="1.6" id="522" name="ApplySurveySettingsRight">
+    <value>Apply settings</value>
+  </data>
+  <data version="1.6" id="523" name="ExportSurveyXmlRight">
+    <value>XML survey export</value>
+  </data>
+  <data version="1.6" id="524" name="AccessSurveySettingsRight">
+    <value>Settings access</value>
+  </data>
+  <data version="1.6" id="525" name="CloneSurveyRight">
+    <value>Clone survey</value>
+  </data>
+  <data version="1.6" id="526" name="AccessPrivacySettingsRight" mimetype="">
+    <value>Completion Access</value>
+  </data>
+  <data version="1.6" id="527" name="AccessSecuritySettingsRight">
+    <value>Security access</value>
+  </data>
+  <data version="1.6" id="528" name="AccessStatsRight">
+    <value>Stats access</value>
+  </data>
+  <data version="1.6" id="529" name="ResetVotesRight">
+    <value>Reset votes</value>
+  </data>
+  <data version="1.6" id="530" name="DeleteUnvalidateEntriesRight">
+    <value>Delete unvalidated entries</value>
+  </data>
+  <data version="1.6" id="531" name="AccessFormBuilderRight">
+    <value>Form builder access</value>
+  </data>
+  <data version="1.6" id="532" name="AccessAnswerTypeEditorRight">
+    <value>Answer type editor access</value>
+  </data>
+  <data version="1.6" id="533" name="AccessReportsRight">
+    <value>Report access</value>
+  </data>
+  <data version="1.6" id="534" name="CreateResultsFilterRight">
+    <value>Create results filter</value>
+  </data>
+  <data version="1.6" id="535" name="AccessFieldEntriesRight">
+    <value>Field entries access</value>
+  </data>
+  <data version="1.6" id="536" name="EditVoterEntriesRight">
+    <value>Edit voter entries</value>
+  </data>
+  <data version="1.6" id="537" name="DeleteVoterEntriesRight">
+    <value>Delete voter entries</value>
+  </data>
+  <data version="1.6" id="538" name="AccessCrossTabRight">
+    <value>Cross tabulation access</value>
+  </data>
+  <data version="1.6" id="539" name="AccessExportRight">
+    <value>Export data access</value>
+  </data>
+  <data version="1.6" id="540" name="AccessMailingRight">
+    <value>Mailing access</value>
+  </data>
+  <data version="1.6" id="541" name="AccessMessageLabel">
+    <value>
+      Unauthorized. Access is denied due to invalid credentials.
+    </value>
+  </data>
+  <data version="1.6" id="542" name="AccessASPNetCodeRight">
+    <value>Preview and Web access</value>
+  </data>
+  <data version="1.6" id="543" name="AccessUserManagerRight">
+    <value>User manager access</value>
+  </data>
+  <data version="1.6" id="544" name="AccessLibraryRight">
+    <value>Library access</value>
+  </data>
+  <data version="1.6" id="545" name="NoSurveysAndNoRightMessage">
+    <value>You have no surveys and no rights to create new ones. Please contact your survey administrator.</value>
+  </data>
+  <data version="1.6" id="546" name="LogOutHyperlink">
+    <value>Logout</value>
+  </data>
+  <data version="1.6" id="547" name="CopyQuestionFromLibraryRight">
+    <value>Insert questions from library</value>
+  </data>
+  <data version="1.6" id="548" name="CopyQuestionFromAllSurveyRight">
+    <value>Insert questions from survey</value>
+  </data>
+  <data version="1.6" id="549" name="MakeBuiltInButton">
+    <value>Make built in</value>
+  </data>
+  <data version="1.6" id="550" name="DeleteBuiltInTypeConfirmationMessage">
+    <value>You are about to delete a built in answer type. Are you sure you want to delete it?</value>
+  </data>
+  <data version="1.6" id="551" name="MakeBuiltInConfirmationMessage">
+    <value>Are you sure to make this type built in ? Built in type cannot be reversed and are available to all users for use</value>
+  </data>
+  <data version="1.6" id="552" name="ApplyBuiltInChangesConfirmationMessage">
+    <value>Are you sure you want to apply changes to this built in type ? Changes might affect other system users</value>
+  </data>
+  <data version="1.6" id="553" name="AddNewSkipLogicTitle">
+    <value>Add new skip logic to this question</value>
+  </data>
+  <data version="1.6" id="554" name="SkipLogicRulesTitle">
+    <value>Skip logic rules</value>
+  </data>
+  <data version="1.6" id="555" name="EditSkipLogicHyperLink">
+    <value>Skip logic</value>
+  </data>
+  <data version="1.6" id="556" name="SkipLogicEvaluationConditionInfo">
+    <value>First condition that is met will hide this question</value>
+  </data>
+  <data version="1.6" id="557" name="SkipLogicRuleAddedMessage">
+    <value>Skip logic rule added</value>
+  </data>
+  <data version="1.6" id="558" name="SkipLogicRuleNoAnswer">
+    <value>Hide to voters who did answer to &lt;b&gt;{0}&lt;/b&gt;</value>
+  </data>
+  <data version="1.6" id="559" name="SkipLogicRuleNoAnswerNot">
+    <value>Hide to voters who didn't answer to &lt;b&gt;{0}&lt;/b&gt;</value>
+  </data>
+  <data version="1.6" id="560" name="SkipLogicRuleAnswer">
+    <value>Hide to voters who did answer to &lt;b&gt;{0}&lt;/b&gt; with &lt;b&gt;{1}&lt;/b&gt;</value>
+  </data>
+  <data version="1.6" id="561" name="SkipLogicRuleAnswerNot">
+    <value>Hide to voters who didn't answer to &lt;b&gt;{0}&lt;/b&gt; with &lt;b&gt;{1}&lt;/b&gt;</value>
+  </data>
+  <data version="1.6" id="562" name="SkipLogicRuleAnswerWithText">
+    <value>Hide to voters who did answer to &lt;b&gt;{0}&lt;/b&gt; with &lt;b&gt;{1}&lt;/b&gt; {2} &lt;b&gt;{3}&lt;/b&gt;</value>
+  </data>
+  <data version="1.6" id="563" name="SkipLogicRuleAnswerWithTextNot">
+    <value>Hide to voters who didn't answer to &lt;b&gt;{0}&lt;/b&gt; with &lt;b&gt;{1}&lt;/b&gt; {2} &lt;b&gt;{3}&lt;/b&gt;</value>
+  </data>
+  <data version="1.6" id="564" name="SkipLogicRuleScoreEqual">
+    <value>Hide to voters who scored &lt;b&gt;{0}&lt;/b&gt; on &lt;b&gt;{1}&lt;/b&gt;</value>
+  </data>
+  <data version="1.6" id="565" name="SkipLogicRuleScoreLess">
+    <value>Hide to voters who scored &lt;b&gt;less than {0}&lt;/b&gt; on &lt;b&gt;{1}&lt;/b&gt;</value>
+  </data>
+  <data version="1.6" id="566" name="SkipLogicRuleScoreGreater">
+    <value>Hide to voters who scored &lt;b&gt;greater than {0}&lt;/b&gt; on &lt;b&gt;{1}&lt;/b&gt;</value>
+  </data>
+  <data version="1.6" id="567" name="SkipLogicRuleScoreRange">
+    <value>Hide to voters who scored &lt;b&gt;between {0} and {1}&lt;/b&gt; on &lt;b&gt;{2}&lt;/b&gt;</value>
+  </data>
+  <data version="1.6" id="568" name="ManageLibraryRight">
+    <value>Manage library</value>
+  </data>
+  <data version="1.6" id="569" name="EqualsOperator">
+    <value>Equals</value>
+  </data>
+  <data version="1.6" id="570" name="ContainsOperator">
+    <value>Contains</value>
+  </data>
+  <data version="1.6" id="571" name="GreaterThanOperator">
+    <value>Greater than</value>
+  </data>
+  <data version="1.6" id="572" name="LessThanOperator">
+    <value>Less than</value>
+  </data>
+  <data version="1.6" id="573" name="TextEvaluationConditionLabel">
+    <value>Evaluation condition</value>
+  </data>
+  <data version="1.6" id="574" name="DisableQuestionNumbering">
+    <value>Disable questions numbering</value>
+  </data>
+  <data version="1.6" id="575" name="DataSourceLabel">
+    <value>Use a data source :</value>
+  </data>
+  <data version="1.6" id="576" name="XmlDataSourceOption">
+    <value>Xml file</value>
+  </data>
+  <data version="1.6" id="577" name="NoneDataSourceOption">
+    <value>None</value>
+  </data>
+  <data version="1.6" id="578" name="SqlDataSourceOption">
+    <value>Sql query</value>
+  </data>
+  <data version="1.6" id="579" name="SelectionRequiredLabel">
+    <value>Selection required :</value>
+  </data>
+  <data version="1.6" id="580" name="SqlQueryLabel">
+    <value>Sql query* :</value>
+  </data>
+  <data version="1.6" id="581" name="SqlQueryInfoLabel">
+    <value>&lt;br /&gt;*First two columns of query results will be used as the value and text in the dropdown list&lt;br /&gt;**Use the "exec" keyword if you want to call a stored procedure&lt;br /&gt;***Values from previous questions can be piped in the sql query using the piping features</value>
+  </data>
+  <data version="1.6" id="582" name="MissingQueryDataSourceMessage">
+    <value>SQL query is missing</value>
+  </data>
+  <data version="1.6" id="583" name="OnlySelectQueryAllowedMessage">
+    <value>Only select queries are allowed, delete update and truncate keywords are forbidden</value>
+  </data>
+  <data version="1.6" id="584" name="SqlAnswerTypesEditionRight">
+    <value>Sql answer types edition</value>
+  </data>
+  <data version="1.6" id="585" name="SqlAnswerTypeAccessDeniedMessage">
+    <value>You don't have the credentials to create / edit a sql based answer type</value>
+  </data>
+  <data version="1.6" id="586" name="AllowXmlImportRight">
+    <value>Xml import</value>
+  </data>
+  <data version="1.6" id="587" name="NoAnonymousRightsMessage">
+    <value>You must be authentified as a survey user to access these features.</value>
+  </data>
+  <data version="1.7" id="588" name="SubscriberXMLList">
+    <value>Subscriber - XML list</value>
+  </data>
+  <data version="1.7" id="589" name="EndSurveyOption">
+    <value>End survey</value>
+  </data>
+  <data version="1.7" id="590" name="BranchingRulePage">
+    <value>page {0}</value>
+  </data>
+  <data version="1.7" id="591" name="BranchingRuleEndSurvey">
+    <value>end of survey</value>
+  </data>
+  <data version="1.7" id="592" name="TakeSurveyRight">
+    <value>Survey taker</value>
+  </data>
+  <data version="1.7" id="593" name="TakeSurveyTitle">
+    <value>Take survey</value>
+  </data>
+  <data version="1.7" id="594" name="TakeSurveyHyperLink">
+    <value>Take Survey</value>
+  </data>
+  <data version="1.7" id="595" name="AnswerSubscribedLabel">
+    <value>Subscribed to :</value>
+  </data>
+  <data version="1.7" id="596" name="AnswerPublishersLabel">
+    <value>Answer publishers</value>
+  </data>
+  <data version="1.7" id="597" name="RegExValidationLabel">
+    <value>RegEx server side validation :</value>
+  </data>
+  <data version="1.7" id="598" name="MandatoryLabel">
+    <value>Mandatory :</value>
+  </data>
+  <data version="1.7" id="599" name="NoRegExValidationOption">
+    <value>No validation</value>
+  </data>
+  <data version="1.7" id="600" name="AccessRegExEditorRight">
+    <value>RegEx editor access</value>
+  </data>
+  <data version="1.7" id="601" name="RegExLibHyperLink">
+    <value>Regex Library</value>
+  </data>
+  <data version="1.7" id="602" name="RegExLibraryTitle">
+    <value>Regular expressions library</value>
+  </data>
+  <data version="1.7" id="603" name="CreateRegExHyperLink">
+    <value>Click here to create a new regex</value>
+  </data>
+  <data version="1.7" id="604" name="RegExToEditLabel">
+    <value>Select a regex to edit / view :</value>
+  </data>
+  <data version="1.7" id="605" name="CreateARegExMessage">
+    <value>[Create a regex]</value>
+  </data>
+  <data version="1.7" id="606" name="SelectRegExMessage">
+    <value>[Select a regex]</value>
+  </data>
+  <data version="1.7" id="607" name="TestRegExTitle">
+    <value>Test a regular expression</value>
+  </data>
+  <data version="1.7" id="608" name="TextRegExButton">
+    <value>Test expression</value>
+  </data>
+  <data version="1.7" id="609" name="RegularExpressionLabel">
+    <value>Regular expression :</value>
+  </data>
+  <data version="1.7" id="610" name="TestExpressionValueLabel">
+    <value>Value to test :</value>
+  </data>
+  <data version="1.7" id="611" name="CreateNewRegExButton">
+    <value>Create regex</value>
+  </data>
+  <data version="1.7" id="612" name="RegExErrorMessageLabel">
+    <value>Error message :</value>
+  </data>
+  <data version="1.7" id="613" name="DeleteRegExConfirmationMessage">
+    <value>Are you sure to delete this regex ?</value>
+  </data>
+  <data version="1.7" id="614" name="CreateRegExOptionTitleLabel">
+    <value>Create regex</value>
+  </data>
+  <data version="1.7" id="615" name="EditRegExOptionTitleLabel">
+    <value>Edit regex</value>
+  </data>
+  <data version="1.7" id="616" name="RegExAddedMessage">
+    <value>Regex added</value>
+  </data>
+  <data version="1.7" id="617" name="RegExRequiredMessage">
+    <value>Please enter a regular expression</value>
+  </data>
+  <data version="1.7" id="618" name="RegExTestValueRequiredMessage">
+    <value>A regex and a test value is required to test the regex validity</value>
+  </data>
+  <data version="1.7" id="619" name="RegExPassedMessage">
+    <value>Regex passed, no error message will be thrown in the form</value>
+  </data>
+  <data version="1.7" id="620" name="RegExFailedMessage">
+    <value>Regex failed, an error message will be thrown in the form</value>
+  </data>
+  <data version="1.7" id="621" name="RegExNameLabel">
+    <value>Name :</value>
+  </data>
+  <data version="1.7" id="622" name="RegExNameRequiredMessage">
+    <value>A name is required</value>
+  </data>
+  <data version="1.7" id="623" name="MakeBuiltInRegExButton">
+    <value>Make built in</value>
+  </data>
+  <data version="1.7" id="624" name="CancelRegExButton">
+    <value>Cancel</value>
+  </data>
+  <data version="1.7" id="625" name="RegExUpdatedMessage">
+    <value>Regex updated</value>
+  </data>
+  <data version="1.7" id="626" name="RegExDeleteedMessage">
+    <value>Regex deleted</value>
+  </data>
+  <data version="1.7" id="627" name="DeleteBuiltInRegExConfirmationMessage">
+    <value>Are you sure to delete this regex ? Deleting a built in regex might change other users form behaviors</value>
+  </data>
+  <data version="1.7" id="628" name="ApplyBuiltInRegExChangesConfirmationMessage">
+    <value>Are you sure you want to apply these changes ? Changing a built in regex might break other users forms</value>
+  </data>
+  <data version="1.7" id="629" name="MakeBuiltInRegExConfirmationMessage">
+    <value>Are you sure to make this regex built in ? Built in regex cannot be reverted from the interface and will be available to all users</value>
+  </data>
+  <data version="1.7" id="630" name="RegExBuiltInConvertedMessage">
+    <value>Regex has been converted to a  built in regex</value>
+  </data>
+  <data version="1.7" id="631" name="UnsignedIntegerRegEx">
+    <value>Unsigned integer</value>
+  </data>
+  <data version="1.7" id="632" name="InternetWebURLRegEx">
+    <value>Internet web URL</value>
+  </data>
+  <data version="1.7" id="633" name="EuroDateRegEx">
+    <value>Date (dd/mm/yyyy)</value>
+  </data>
+  <data version="1.7" id="634" name="USDateRegEx">
+    <value>Date (mm/dd/yyyy)</value>
+  </data>
+  <data version="1.7" id="635" name="EmailRegEx">
+    <value>Email</value>
+  </data>
+  <data version="1.7" id="636" name="RegExLibComHyperLink">
+    <value>Check http://www.regexlib.com for more regular expressions</value>
+  </data>
+  <data version="1.7" id="637" name="ImportUsersHyperlink">
+    <value>Import Users</value>
+  </data>
+  <data version="1.7" id="638" name="ImportUsersTitle">
+    <value>Import users</value>
+  </data>
+  <data version="1.7" id="639" name="ImportUsersButton">
+    <value>Import users</value>
+  </data>
+  <data version="1.7" id="640" name="UserImportedMessage">
+    <value>Users were imported into database</value>
+  </data>
+  <data version="1.7" id="640" name="NoUserImportedMessage">
+    <value>No Users were imported into database</value>
+  </data>
+  <data version="1.7" id="641" name="ImportUserLabel">
+    <value>Import CSV data :</value>
+  </data>
+  <data version="1.7" id="642" name="DeleteRegExButton">
+    <value>Delete</value>
+  </data>
+  <data version="1.7" id="643" name="ImportInfo1Label">
+    <value>Import format are comma separated values. Each new line must contain a user to import.</value>
+  </data>
+  <data version="1.7" id="644" name="ImportInfo2Label">
+    <value>&lt;br /&gt;Example 1: UserName,Password,First name,Last name,Email &lt;br /&gt;</value>
+  </data>
+  <data version="1.7" id="645" name="ImportInfo3Label">
+    <value>Example 2: UserName,Password,,, (4 comma's in total)</value>
+  </data>
+  <data version="1.7" id="646" name="ColMandatoryHeader">
+    <value>Mandatory</value>
+  </data>
+  <data version="1.8" id="647" name="FileManagerHyperLink">
+    <value>file manager</value>
+  </data>
+  <data version="1.8" id="648" name="AccessFileManagerRight">
+    <value>File manager access</value>
+  </data>
+  <data version="1.8" id="649" name="DeleteFilesButton">
+    <value>Delete selected files</value>
+  </data>
+  <data version="1.8" id="650" name="DeleteFilesConfirmationMessage">
+    <value>Are you sure you want to delete selected files ?</value>
+  </data>
+  <data version="1.8" id="651" name="UploadedFilesTitle">
+    <value>Uploaded files - Page </value>
+  </data>
+  <data version="1.8" id="652" name="BoundColumnFileName">
+    <value>Filename</value>
+  </data>
+  <data version="1.8" id="653" name="BoundColumnFileType">
+    <value>Type</value>
+  </data>
+  <data version="1.8" id="654" name="BoundColumnFileSize">
+    <value>Size</value>
+  </data>
+  <data version="1.8" id="655" name="BoundColumnUploadDate">
+    <value>Upload date</value>
+  </data>
+  <data version="1.8" id="656" name="BoundColumnPostedBy">
+    <value>Posted by</value>
+  </data>
+  <data version="1.8" id="657" name="PreviousValidatedPageLinkButton">
+    <value>&lt;&lt; previous page</value>
+  </data>
+  <data version="1.8" id="658" name="NextValidatedPageLinkButton">
+    <value>next page &gt;&gt;</value>
+  </data>
+  <data version="1.8" id="659" name="FileVoterDetailsButton">
+    <value>Details</value>
+  </data>
+  <data version="1.8" id="660" name="FileDownloadButton">
+    <value>Download</value>
+  </data>
+  <data version="1.8" id="661" name="ExportFilesTitle">
+    <value>Export all files to server's directory</value>
+  </data>
+  <data version="1.8" id="662" name="ServerPathLabel">
+    <value>Full path on server :</value>
+  </data>
+  <data version="1.8" id="663" name="ExportFilesButton">
+    <value>Export files</value>
+  </data>
+  <data version="1.8" id="664" name="PathExampleLabel">
+    <value>Current web application root is : {0}</value>
+  </data>
+  <data version="1.8" id="665" name="PleaseEnterPathMessage">
+    <value>Path required</value>
+  </data>
+  <data version="1.8" id="666" name="PathNotExistMessage">
+    <value>Invalid path, could not find path. Make sure specified directory exists on the server</value>
+  </data>
+  <data version="1.8" id="667" name="FilesWrittenMessage">
+    <value>{0} mb of files have been exported to server's directory : {1}</value>
+  </data>
+  <data version="1.8" id="668" name="ExportFilesConfirmationMessage">
+    <value>Make sure that the user running IIS has the right to write to directory you have specified and note that any existing file will be replaced by the new exported one</value>
+  </data>
+  <data version="1.8" id="669" name="CreateGroupsLabel">
+    <value>Create file group directories :</value>
+  </data>
+  <data version="1.8" id="670" name="NoSubDirectoryOption">
+    <value>No sub-directory groups</value>
+  </data>
+  <data version="1.8" id="671" name="VoterSubDirectoryOption">
+    <value>Voter id sub-directory groups</value>
+  </data>
+  <data version="1.8" id="672" name="GuidSubDirectoryOption">
+    <value>File Guid sub-directory groups</value>
+  </data>
+  <data version="1.8" id="673" name="ExportFilesRight">
+    <value>Export files to server</value>
+  </data>
+  <data version="1.8" id="674" name="ExtendedFileUploadType">
+    <value>Extended - File upload</value>
+  </data>
+  <data version="1.8" id="675" name="ExtendedFreeTextBoxType">
+    <value>Field - Rich</value>
+  </data>
+  <data version="1.8" id="676" name="RichFieldLabel">
+    <value>Rich field :</value>
+  </data>
+  <data version="1.8" id="677" name="MailingLogHyperlink">
+    <value>Mailing Errorlog</value>
+  </data>
+  <data version="1.8" id="678" name="DeleteLogsButton">
+    <value>Delete selected logs</value>
+  </data>
+  <data version="1.8" id="679" name="DeleteLogsButtonConfirmationMessage">
+    <value>Are you sure you want to delete selected entries ?</value>
+  </data>
+  <data version="1.8" id="680" name="MailingLogTitle">
+    <value>Mailing Errorlog - Page </value>
+  </data>
+  <data version="1.8" id="681" name="BoundColumnLogEmail">
+    <value>Email</value>
+  </data>
+  <data version="1.8" id="682" name="BoundColumnLogExceptionType">
+    <value>Type</value>
+  </data>
+  <data version="1.8" id="683" name="BoundColumnLogExceptionMessage">
+    <value>Message</value>
+  </data>
+  <data version="1.8" id="684" name="BoundColumnErrorDate">
+    <value>Logged on</value>
+  </data>
+  <data version="1.8" id="685" name="PreviousLogPageLinkButton">
+    <value>&lt;&lt; previous page</value>
+  </data>
+  <data version="1.8" id="686" name="NextLogPageLinkButton">
+    <value>next page &gt;&gt;</value>
+  </data>
+  <data version="1.8" id="687" name="RepeatableSectionsLabel">
+    <value>Repeatable sections</value>
+  </data>
+  <data version="1.8" id="688" name="RepeatModeLabel">
+    <value>Repeat mode :</value>
+  </data>
+  <data version="1.8" id="689" name="RepeatNoneOption">
+    <value>No repeat allowed</value>
+  </data>
+  <data version="1.8" id="690" name="RepeatSectionOption">
+    <value>Full answers repeat</value>
+  </data>
+  <data version="1.8" id="691" name="GridRepeatSectionOption">
+    <value>Grid repeat</value>
+  </data>
+  <data version="1.8" id="692" name="AddRepeatSectionLabel">
+    <value>Add section link text :</value>
+  </data>
+  <data version="1.8" id="693" name="DeleteRepeatSectionLabel">
+    <value>Delete section link text :</value>
+  </data>
+  <data version="1.8" id="694" name="UpdateRepeatSectionLabel">
+    <value>Update section link text :</value>
+  </data>
+  <data version="1.8" id="695" name="GridAnswersLabel">
+    <value>Answers shown in grid :</value>
+  </data>
+  <data version="1.8" id="696" name="SectionOptionsUpdatedMessage">
+    <value>Section's options have been updated</value>
+  </data>
+  <data version="1.8" id="697" name="NoFileUploadedMessage">
+    <value>No file uploaded</value>
+  </data>
+  <data version="1.8" id="698" name="EditRepeatSectionLabel">
+    <value>Edit section link text</value>
+  </data>
+  <data version="1.8" id="699" name="MinSelectionMatrixLabel">
+    <value>Min. selections required per row :</value>
+  </data>
+  <data version="1.8" id="700" name="MaxSelectionMatrixAllowedLabel">
+    <value>Max. selections allowed per row :</value>
+  </data>
+  <data version="1.8" id="701" name="AllowMultipleMatrixSectionsLabel">
+    <value>Repeatable matrix section :</value>
+  </data>
+  <data version="1.8" id="702" name="MaxSectionAllowedLabel">
+    <value>Max. sections allowed :</value>
+  </data>
+  <data version="1.8" id="703" name="MaxSectionAllowedUnlimitedOption">
+    <value>Unlimited</value>
+  </data>
+  <data version="1.8" id="704" name="UpdateSectionsButton">
+    <value>Update repeatable options</value>
+  </data>
+  <data version="1.8" id="705" name="EditExtendedSettingsTitle">
+    <value>Extended settings</value>
+  </data>
+  <data version="1.9" id="706" name="MultiLanguagesTitle">
+    <value>Multi-languages settings</value>
+  </data>
+  <data version="1.9" id="707" name="EnableMultiLanguagesLabel">
+    <value>Enable multi-languages :</value>
+  </data>
+  <data version="1.9" id="708" name="MultiLanguagesModeLabel">
+    <value>Multi-languages mode :</value>
+  </data>
+  <data version="1.9" id="709" name="EnabledLanguagesLabel">
+    <value>Enabled languages :</value>
+  </data>
+  <data version="1.9" id="710" name="AccessMultiLanguagesRight">
+    <value>Multi-languages access</value>
+  </data>
+  <data version="1.9" id="711" name="AccessHelpFiles">
+    <value>Helpfiles access</value>
+  </data>
+  <data version="1.9" id="712" name="HelpFilesHyperlink">
+    <value>Help Files</value>
+  </data>
+  <data version="1.9" id="713" name="MultiLanguagesHyperLink">
+    <value>Multi Languages</value>
+  </data>
+  <data version="1.9" id="714" name="AfrikaansLanguage">
+    <value>Afrikaans</value>
+  </data>
+  <data version="1.9" id="715" name="AlbanianLanguage">
+    <value>Albanian</value>
+  </data>
+  <data version="1.9" id="716" name="ArabicLanguage">
+    <value>Arabic</value>
+  </data>
+  <data version="1.9" id="717" name="ArmenianLanguage">
+    <value>Armenian</value>
+  </data>
+  <data version="1.9" id="718" name="AzeriLanguage">
+    <value>Azeri</value>
+  </data>
+  <data version="1.9" id="719" name="BasqueLanguage">
+    <value>Basque</value>
+  </data>
+  <data version="1.9" id="720" name="BelarusianLanguage">
+    <value>Belarusian</value>
+  </data>
+  <data version="1.9" id="721" name="BulgarianLanguage">
+    <value>Bulgarian</value>
+  </data>
+  <data version="1.9" id="722" name="CatalanLanguage">
+    <value>Catalan</value>
+  </data>
+  <data version="1.9" id="723" name="ChineseLanguage">
+    <value>Chinese / 中文（简体</value>
+  </data>
+  <data version="1.9" id="724" name="CroatianLanguage">
+    <value>Croatian</value>
+  </data>
+  <data version="1.9" id="725" name="CzechLanguage">
+    <value>Czech</value>
+  </data>
+  <data version="1.9" id="726" name="DanishLanguage">
+    <value>Danish</value>
+  </data>
+  <data version="1.9" id="727" name="DhivehiLanguage">
+    <value>Dhivehi</value>
+  </data>
+  <data version="1.9" id="728" name="DutchLanguage">
+    <value>Dutch / Nederlands</value>
+  </data>
+  <data version="1.9" id="729" name="EnglishLanguage">
+    <value>English</value>
+  </data>
+  <data version="1.9" id="730" name="EstonianLanguage">
+    <value>Estonian</value>
+  </data>
+  <data version="1.9" id="731" name="FaroeseLanguage">
+    <value>Faroese</value>
+  </data>
+  <data version="1.9" id="732" name="FarsiLanguage">
+    <value>Farsi</value>
+  </data>
+  <data version="1.9" id="733" name="FinishLanguage">
+    <value>Finish</value>
+  </data>
+  <data version="1.9" id="734" name="FrenchLanguage">
+    <value>French / Français</value>
+  </data>
+  <data version="1.9" id="735" name="GalicianLanguage">
+    <value>Galician</value>
+  </data>
+  <data version="1.9" id="736" name="GeorgianLanguage">
+    <value>Georgian</value>
+  </data>
+  <data version="1.9" id="737" name="GermanLanguage">
+    <value>German / Deutsch</value>
+  </data>
+  <data version="1.9" id="738" name="GreekLanguage">
+    <value>Greek</value>
+  </data>
+  <data version="1.9" id="739" name="GujaratiLanguage">
+    <value>Gujarati</value>
+  </data>
+  <data version="1.9" id="740" name="HebrewLanguage">
+    <value>Hebrew</value>
+  </data>
+  <data version="1.9" id="741" name="HindiLanguage">
+    <value>Hindi</value>
+  </data>
+  <data version="1.9" id="742" name="HungarianLanguage">
+    <value>Hungarian / Magyar</value>
+  </data>
+  <data version="1.9" id="743" name="IcelandicLanguage">
+    <value>Icelandic</value>
+  </data>
+  <data version="1.9" id="744" name="IndonesianLanguage">
+    <value>Indonesian</value>
+  </data>
+  <data version="1.9" id="745" name="ItalianLanguage">
+    <value>Italian / Italiano</value>
+  </data>
+  <data version="1.9" id="746" name="JapaneseLanguage">
+    <value>Japanese / 日本語</value>
+  </data>
+  <data version="1.9" id="747" name="KannadaLanguage">
+    <value>Kannada</value>
+  </data>
+  <data version="1.9" id="748" name="KazakhLanguage">
+    <value>Kazakh</value>
+  </data>
+  <data version="1.9" id="749" name="KonkaniLanguage">
+    <value>Konkani</value>
+  </data>
+  <data version="1.9" id="750" name="KoreanLanguage">
+    <value>Korean / 한국어</value>
+  </data>
+  <data version="1.9" id="751" name="KyrgyzLanguage">
+    <value>Kyrgyz</value>
+  </data>
+  <data version="1.9" id="752" name="LatvianLanguage">
+    <value>Latvian</value>
+  </data>
+  <data version="1.9" id="753" name="MacedonianLanguage">
+    <value>Macedonian</value>
+  </data>
+  <data version="1.9" id="754" name="MalayLanguage">
+    <value>Malay</value>
+  </data>
+  <data version="1.9" id="755" name="MarathiLanguage">
+    <value>Marathi</value>
+  </data>
+  <data version="1.9" id="756" name="MongolianLanguage">
+    <value>Mongolian</value>
+  </data>
+  <data version="1.9" id="757" name="NorwegianLanguage">
+    <value>Norwegian</value>
+  </data>
+  <data version="1.9" id="758" name="PolishLanguage">
+    <value>Polish</value>
+  </data>
+  <data version="1.9" id="759" name="PortugueseLanguage">
+    <value>Portuguese / Português</value>
+  </data>
+  <data version="1.9" id="760" name="PunjabiLanguage">
+    <value>Punjabi</value>
+  </data>
+  <data version="1.9" id="761" name="RomanianLanguage">
+    <value>Romanian</value>
+  </data>
+  <data version="1.9" id="762" name="RussianLanguage">
+    <value>Russian</value>
+  </data>
+  <data version="1.9" id="763" name="SanskritLanguage">
+    <value>Sanskrit</value>
+  </data>
+  <data version="1.9" id="764" name="SlovakLanguage">
+    <value>Slovak</value>
+  </data>
+  <data version="1.9" id="765" name="SlovenianLanguage">
+    <value>Slovenian</value>
+  </data>
+  <data version="1.9" id="766" name="SpanishLanguage">
+    <value>Spanish</value>
+  </data>
+  <data version="1.9" id="767" name="SwahiliLanguage">
+    <value>Swahili</value>
+  </data>
+  <data version="1.9" id="768" name="SwedishLanguage">
+    <value>Swedish</value>
+  </data>
+  <data version="1.9" id="769" name="SyriacLanguage">
+    <value>Syriac</value>
+  </data>
+  <data version="1.9" id="770" name="TamilLanguage">
+    <value>Tamil</value>
+  </data>
+  <data version="1.9" id="771" name="TatarLanguage">
+    <value>Tatar</value>
+  </data>
+  <data version="1.9" id="772" name="TeluguLanguage">
+    <value>Telugu</value>
+  </data>
+  <data version="1.9" id="773" name="ThaiLanguage">
+    <value>Thai</value>
+  </data>
+  <data version="1.9" id="774" name="TurkishLanguage">
+    <value>Turkish</value>
+  </data>
+  <data version="1.9" id="775" name="UkrainianLanguage">
+    <value>Ukrainian</value>
+  </data>
+  <data version="1.9" id="776" name="UrduLanguage">
+    <value>Urdu</value>
+  </data>
+  <data version="1.9" id="777" name="UzbekLanguage">
+    <value>Uzbek</value>
+  </data>
+  <data version="1.9" id="778" name="VietnameseLanguage">
+    <value>Vietnamese</value>
+  </data>
+  <data version="1.9" id="779" name="LithuanianLanguage">
+    <value>Lithuanian</value>
+  </data>
+  <data version="1.9" id="780" name="Serbian Language">
+    <value>Serbian</value>
+  </data>
+  <data version="1.9" id="781" name="LanguageDisabledMessage">
+    <value>Language has been disabled</value>
+  </data>
+  <data version="1.9" id="782" name="LanguageEnabledMessage">
+    <value>Language has been enabled</value>
+  </data>
+  <data version="1.9" id="783" name="DefaultLanguageLabel">
+    <value>Default language :</value>
+  </data>
+  <data version="1.9" id="784" name="EditionLanguageLabel">
+    <value>Edition language :</value>
+  </data>
+  <data version="1.9" id="785" name="UserSelectionOption">
+    <value>User list selection</value>
+  </data>
+  <data version="1.9" id="786" name="BrowserDetectionOption">
+    <value>Detect from browser</value>
+  </data>
+  <data version="1.9" id="787" name="QueryStringLanguageOption">
+    <value>Get from querystring</value>
+  </data>
+  <data version="1.9" id="788" name="CookieLanguageOption">
+    <value>Get from cookie</value>
+  </data>
+  <data version="1.9" id="789" name="SessionLanguageOption">
+    <value>Get from session</value>
+  </data>
+  <data version="1.9" id="790" name="LanguageDefaultText">
+    <value>(Default language)</value>
+  </data>
+  <data version="1.9" id="791" name="OneDefaultLanguageRequiredMessage">
+    <value>You must keep at least one default language</value>
+  </data>
+  <data version="1.9" id="792" name="VariableNameLabel">
+    <value>Variable name :</value>
+  </data>
+  <data version="1.9" id="793" name="VariableNameInfoLabel">
+    <value>Must hold the language value to show. eg : en-US, fr-FR etc .. </value>
+  </data>
+  <data version="1.9" id="794" name="VariableNameUpdateButton">
+    <value>Update</value>
+  </data>
+  <data version="1.9" id="795" name="LanguageUndefined">
+    <value>Default language</value>
+  </data>
+  <data version="1.9" id="796" name="VoterLanguageLabel">
+    <value>Voter's language :</value>
+  </data>
+  <data version="1.9" id="797" name="LanguageFilterLabel">
+    <value>Language filter :</value>
+  </data>
+  <data version="1.9" id="798" name="DateRangeLabel">
+    <value>Date range :</value>
+  </data>
+  <data version="1.9" id="799" name="DateToRangeLabel">
+    <value>to</value>
+  </data>
+  <data version="1.9" id="800" name="ApplyRangeButton">
+    <value>Apply range</value>
+  </data>
+  <data version="1.9" id="801" name="AllLanguagesFilterOption">
+    <value>All languages</value>
+  </data>
+  <data version="1.9" id="802" name="PreviewSurveyLanguageLabel">
+    <value>Preview form in :</value>
+  </data>
+  <data version="1.9" id="803" name="PreviewLibraryLanguageLabel">
+    <value>Select Library Preview language:</value>
+  </data>
+  <data version="1.9" id="804" name="PieChartOption">
+    <value>Pie chart</value>
+  </data>
+  <data version="1.9.1" id="805" name="CSVExportOption">
+    <value>CSV format</value>
+  </data>
+  <data version="1.9.1" id="806" name="XmlExportOption">
+    <value>Xml format</value>
+  </data>
+  <data version="1.9.1" id="807" name="KeepCarriageOption">
+    <value>Keep carriage / returns</value>
+  </data>
+  <data version="1.9.1" id="808" name="OnlyReturnOption">
+    <value>Only return char</value>
+  </data>
+  <data version="1.9.1" id="809" name="UserDefinedCROption">
+    <value>Custom character</value>
+  </data>
+  <data version="1.9.1" id="810" name="ReplaceCarriageLabel">
+    <value>Replace CR : </value>
+  </data>
+  <data version="1.9.1" id="811" name="ExportTypeLabel">
+    <value>Export in : </value>
+  </data>
+  <data version="1.9.1" id="812" name="MessageConditionLabel">
+    <value>Condition :</value>
+  </data>
+  <data version="1.9.1" id="813" name="UpdateMessageConditionButton">
+    <value>Update message condition</value>
+  </data>
+  <data version="1.9.1" id="814" name="ConditionCancelButton">
+    <value>Cancel / Back</value>
+  </data>
+  <data version="1.9.1" id="815" name="AddLibraryButton">
+    <value>Add library</value>
+  </data>
+  <data version="1.0" id="816" name="ListSelection">
+    <value>[Select an answer]</value>
+  </data>
+  <data version="1.0" id="817" name="NextPage">
+    <value>Next page &gt;&gt;</value>
+  </data>
+  <data version="1.0" id="818" name="SubmitSurvey">
+    <value>Submit form</value>
+  </data>
+  <data version="1.0" id="819" name="MinAnswerSelection">
+    <value>At least {0} answer(s) must be selected!</value>
+  </data>
+  <data version="1.0" id="820" name="MaxAnswerSelection">
+    <value>The maximum of answers is {0}!</value>
+  </data>
+  <data version="1.0" id="821" name="RatingResults">
+    <value>Average rating : {0} / {1}</value>
+  </data>
+  <data version="1.0" id="822" name="TotalOfVotes">
+    <value>Total of votes : {0}</value>
+  </data>
+  <data version="1.0" id="823" name="AlreadyVotedMessage">
+    <value>You have already voted!</value>
+  </data>
+  <data version="1.0" id="824" name="ThankYouMessage">
+    <value>Thanks for taking my survey!</value>
+  </data>
+  <data version="1.0" id="825" name="ClosedMessage">
+    <value>Survey is closed since {0}</value>
+  </data>
+  <data version="1.0" id="826" name="OpenMessage">
+    <value>Survey is not open yet and will start on {0}</value>
+  </data>
+  <data version="1.0" id="827" name="PageNumber">
+    <value>Page {0} / {1}</value>
+  </data>
+  <data version="1.0" id="828" name="EnterPasswordMessage">
+    <value>Please enter the survey's password :</value>
+  </data>
+  <data version="1.0" id="829" name="SubmitPassword">
+    <value>Enter survey</value>
+  </data>
+  <data version="1.0" id="830" name="InvalidPasswordMessage">
+    <value>Invalid password!</value>
+  </data>
+  <data version="1.0" id="831" name="FieldRequiredMessage">
+    <value>{0} is required!</value>
+  </data>
+  <data version="1.0" id="832" name="InvalidCalendarDateMessage">
+    <value>{0} has an invalid date please enter a valid date, eg : {1}!</value>
+  </data>
+  <data version="1.0" id="833" name="EnterUIdMessage">
+    <value>Please enter your email invitation code :</value>
+  </data>
+  <data version="1.0" id="834" name="EnterTokenMessage">
+    <value>Please enter your Survey Security Token :</value>
+  </data>
+  <data version="1.0" id="835" name="InvalidUIdMessage">
+    <value>Invitation code is invalid or has already been used!</value>
+  </data>
+  <data version="1.0" id="836" name="InvalidTokenMessage">
+    <value>Token is invalid or has already been used!</value>
+  </data>
+  <data version="1.0" id="837" name="SubmitToken">
+    <value>Enter Token</value>
+  </data>
+  <data version="1.0" id="838" name="SubmitUId">
+    <value>Access Survey</value>
+  </data>
+  <data version="1.0" id="839" name="JSInvalidField">
+    <value>Please fill the field!</value>
+  </data>
+  <data version="1.0" id="840" name="JSInvalidEmail">
+    <value>Please enter an email!</value>
+  </data>
+  <data version="1.1" id="841" name="EmailCodeProtection">
+    <value>Email code protection</value>
+  </data>
+  <data version="1.1" id="842" name="CookieProtection">
+    <value>Cookie protection</value>
+  </data>
+  <data version="1.1" id="843" name="PasswordProtection">
+    <value>Password protection</value>
+  </data>
+  <data version="1.1" id="844" name="IPProtection">
+    <value>IP protection</value>
+  </data>
+  <data version="1.1" id="845" name="CookieExpiresLabel">
+    <value>Cookie expires after :</value>
+  </data>
+  <data version="1.1" id="846" name="IPExpiresLabel">
+    <value>IP expires after :</value>
+  </data>
+  <data version="1.1" id="847" name="InvalidIPExpireTime">
+    <value>Invalid IP expiration time, must be numeric !</value>
+  </data>
+  <data version="1.1" id="848" name="InvalidCookieExpireTime">
+    <value>Invalid Cookie expiration time !</value>
+  </data>
+  <data version="1.2" id="849" name="PreviousPage">
+    <value>&lt;&lt; Previous page</value>
+  </data>
+  <data version="1.2" id="850" name="SaveProgress">
+    <value>Save progress</value>
+  </data>
+  <data version="1.2" id="851" name="ProgressSaved">
+    <value>Your survey progress has been saved on your computer</value>
+  </data>
+  <data version="1.2" id="852" name="ProgressNotSaved">
+    <value>Your cookies are disabled, to save your progress you must activate them and restart your browser</value>
+  </data>
+  <data version="1.2" id="853" name="ShortNotificationMessage">
+    <value>
+      Hello,
+      &lt;br /&gt;&lt;br /&gt;
+      This is an automated Survey message to notify you that a new entry has been saved. &lt;br /&gt;
+      You can log into the administration at any time to see all details.&lt;br /&gt;
+      &lt;br /&gt;
+      Thanks
+    </value>
+  </data>
+  <data version="1.2" id="854" name="NotificationSubject">
+    <value>New entry for "{0}" has been recorded</value>
+  </data>
+  <data version="1.4" id="855" name="ResumeProgress">
+    <value>Resume progress</value>
+  </data>
+  <data version="1.4" id="856" name="SubmitResumeUId">
+    <value>Restore answers</value>
+  </data>
+  <data version="1.4" id="857" name="EnterResumeUIdMessage">
+    <value>Please enter your personal resume code :</value>
+  </data>
+  <data version="1.4" id="858" name="SubmitCancelResume">
+    <value>Cancel</value>
+  </data>
+  <data version="1.4" id="859" name="InvalidResumeUId">
+    <value>Resume code is invalid or has already been used!</value>
+  </data>
+  <data version="1.4" id="860" name="SuccessResumeUId">
+    <value>Your session has been restored for resume</value>
+  </data>
+  <data version="1.4" id="861" name="ManualProgressSaved">
+    <value>Your survey progress has been saved, you can resume it at any time using your resume code.&lt;br /&gt;Your resume code is : &lt;b&gt;{0}&lt;/b&gt;</value>
+  </data>
+  <data version="1.4" id="862" name="ASPNETSecurityContextProtection">
+    <value>ASP.net security context</value>
+  </data>
+  <data version="1.4" id="863" name="MultipleSubmissionsLabel">
+    <value>Allow multiple submissions</value>
+  </data>
+  <data version="1.4" id="864" name="ASPNETSecurityAddinDescription">
+    <value>This addin will check if the user is logged in using the asp.net security context and store his username on answers submission</value>
+  </data>
+  <data version="1.5" id="865" name="PipeValuesSeparator">
+    <value> and </value>
+  </data>
+  <data version="1.5" id="866" name="AnswerTypeAssemblyNotFoundMessage">
+    <value>&lt;b&gt;Could not create answer!&lt;/b&gt;&lt;br /&gt;Specified &lt;b&gt;{0} assembly could not be found&lt;/b&gt;. Make sure that this assembly is available in your bin directory and that the type is correcly registered in your survey's database answertype table.</value>
+  </data>
+  <data version="1.5" id="867" name="AnswerTypeNotFoundMessage">
+    <value>&lt;b&gt;Could not create answer!&lt;/b&gt;&lt;br /&gt;Specified &lt;b&gt;{0} type could not be found&lt;/b&gt; in assembly {1}. Make sure that this assembly is available in your bin directory and that the type is correcly registered in your survey's database answertype table.</value>
+  </data>
+  <data version="1.6" id="868" name="XMLAnswerSelectionRequired">
+    <value>An answer for {0} is required!</value>
+  </data>
+  <data version="1.6" id="869" name="SqlAnswerSelectionRequired">
+    <value>An answer for {0} is required!</value>
+  </data>
+  <data version="1.7" id="870" name="NSurveySecurityAddinDescription">
+    <value>This addin will check if the user is logged in Survey and store his username on answers submission</value>
+  </data>
+  <data version="1.7" id="871" name="NSurveySecurityContextProtection">
+    <value>Survey security context</value>
+  </data>
+  <data version="1.7" id="872" name="RegExValidationFailedMessage">
+    <value>Invalid answer given for {0}</value>
+  </data>
+  <data version="1.7" id="873" name="InvalidEmailRegExMessage">
+    <value>{0} is not a valid email</value>
+  </data>
+  <data version="1.7" id="874" name="InvalidIntegerRegExMessage">
+    <value>{0} is not numeric</value>
+  </data>
+  <data version="1.7" id="875" name="InvalidEuroDateRegExMessage">
+    <value>{0} is not a valid date. dd/mm/yyyy expected</value>
+  </data>
+  <data version="1.7" id="876" name="InvalidUSDateRegExMessage">
+    <value>{0} is not a valid date. mm/dd/yyyy expected</value>
+  </data>
+  <data version="1.7" id="877" name="InvalidInternetUrlRegExMessage">
+    <value>{0} is not a valid web URL</value>
+  </data>
+  <data version="1.8" id="878" name="UploadFileRequiredMessage">
+    <value>{0} requires that you upload at least one file</value>
+  </data>
+  <data version="1.8" id="879" name="UploadFileDownloadButton">
+    <value>download</value>
+  </data>
+  <data version="1.8" id="880" name="UploadFileDeleteButton">
+    <value>delete</value>
+  </data>
+  <data version="1.8" id="881" name="UploadFileUploadButton">
+    <value>upload file</value>
+  </data>
+  <data version="1.8" id="882" name="UploadFileSizeFormat">
+    <value>mb</value>
+  </data>
+  <data version="1.8" id="883" name="MaxUploadFileNumberLabel">
+    <value>Max. file upload number :</value>
+  </data>
+  <data version="1.8" id="884" name="MaxUploadFileSizeLabel">
+    <value>Max. file size (bytes) :</value>
+  </data>
+  <data version="1.8" id="885" name="UnlimitedFileNumberOption">
+    <value>Unlimited</value>
+  </data>
+  <data version="1.8" id="886" name="AcceptedContentTypeLabel">
+    <value>Accepted content types :</value>
+  </data>
+  <data version="1.8" id="887" name="AcceptedContentTypeExampleLabel">
+    <value>eg : image/gif, application/pdf</value>
+  </data>
+  <data version="1.8" id="888" name="UploadFileLimitReachedMessage">
+    <value>The uploaded file number limit of {0} has been reached. Limit is {1}</value>
+  </data>
+  <data version="1.8" id="889" name="UploadFileToBigMessage">
+    <value>Uploaded file for {0} is too big. Limit is {1} mb</value>
+  </data>
+  <data version="1.8" id="890" name="ContentTypeNotAllowedMessage">
+    <value>Content type of uploaded file in {0} is not accepted</value>
+  </data>
+  <data version="1.8" id="891" name="FileUploadedMessage">
+    <value>File uploaded</value>
+  </data>
+  <data version="1.8" id="892" name="UploadFileDeletedMessage">
+    <value>File deleted</value>
+  </data>
+  <data version="1.8" id="893" name="BreakModeLabel">
+    <value>Break mode :</value>
+  </data>
+  <data version="1.8" id="894" name="TextBoxStyleLabel">
+    <value>TextBox style :</value>
+  </data>
+  <data version="1.8" id="895" name="FreeTextBoxLanguageLabel">
+    <value>Language :</value>
+  </data>
+  <data version="1.8" id="896" name="FreeTextBoxWarningLabel">
+    <value>Make sure that the page hosting this control has its ValidateRequest directive set to false.&lt;br /&gt;Visit &lt;a href='http://www.freetextbox.com' target='_new'&gt;http://www.freetextbox.com&lt;/a&gt; for the stand alone version.&lt;br /&gt;</value>
+  </data>
+  <data version="1.8" id="897" name="ToolBarLayoutLabel">
+    <value>ToolBar layout  :</value>
+  </data>
+  <data version="1.8" id="898" name="ToolBarLayoutExampleLabel">
+    <value>eg : ParagraphMenu, FontFacesMenu, FontSizesMenu &lt;a href="http://wiki.freetextbox.com/default.aspx/FreeTextBoxWiki.ToolbarConfiguration" target="_new"&gt;... Click here for more&lt;/a&gt;</value>
+  </data>
+  <data version="1.8" id="899" name="MinMatrixAnswerSelection">
+    <value>At least {0} answer(s) must be selected in each row!</value>
+  </data>
+  <data version="1.8" id="900" name="MaxMatrixAnswerSelection">
+    <value>The maximum of answers in each row is {0}!</value>
+  </data>
+  <data version="1.8" id="901" name="AddSectionLinkText">
+    <value>add</value>
+  </data>
+  <data version="1.8" id="902" name="DeleteSectionLinkText">
+    <value>delete</value>
+  </data>
+  <data version="1.8" id="903" name="EditSectionLinkText">
+    <value>edit</value>
+  </data>
+  <data version="1.8" id="904" name="UpdateSectionLinkText">
+    <value>update</value>
+  </data>
+  <data version="1.8" id="905" name="SectionRequiredMessage">
+    <value>At least one section must be added</value>
+  </data>
+  <data version="1.8" id="906" name="EntryQuotaProtection">
+    <value>Entry number limitation</value>
+  </data>
+  <data version="1.8" id="907" name="MaxQuotaEntriesLabel">
+    <value>Max. entries allowed :</value>
+  </data>
+  <data version="1.8" id="908" name="EntriesNumberLabel">
+    <value>Entry count :</value>
+  </data>
+  <data version="1.8" id="909" name="QuotaReachedLabel">
+    <value>Quota reached message :</value>
+  </data>
+  <data version="1.8" id="910" name="QuotaReachedMessage">
+    <value>The maximum entries allowed by this form has been reached.</value>
+  </data>
+  <data version="1.8" id="911" name="ResetQuotaEntriesButton">
+    <value>Reset entry count</value>
+  </data>
+  <data version="1.9" id="912" name="SelectLanguageMessage">
+    <value>Please select your language :</value>
+  </data>
+  <data version="1.9" id="913" name="SubmitLanguageButton">
+    <value>Start</value>
+  </data>
+  <data version="1.2.2" id="914" name="HelpMessageLabel">
+    <value>&lt;b&gt;Official SP™ Helpfiles are not yet available.&lt;/b&gt; &lt;br /&gt;&lt;br /&gt; More information on the use of the Survey tool can be found at &lt;a href="http://www.surveyproject.org" title="Surveyproject Community site" target="_blank"&gt; http://www.surveyproject.org &lt;/a&gt;. You can go there to ask your questions as well.&lt;br /&gt; &lt;br /&gt; For downloads, sourcecode and more backgroundinformation you can go to &lt;a href="http://survey.codeplex.com" title="Survey Project" target="_blank"&gt; http://survey.codeplex.com &lt;/a&gt;. &lt;br /&gt;</value>
+  </data>
+  <data version="1.2.2" id="915" name="Disclaimer">
+    <value>&lt;h4&gt;SURVEY™ PROJECT is a webapplication for online surveys and webforms based on the open source software NSurvey. NSurvey was written by &lt;a href="http://www.nsurvey.org" target="_blank"&gt;Thomas Zumbrunn&lt;/a&gt;, (c) 2004/2005. SURVEY™ PROJECT is an initiative of &lt;a href="http://www.fryslanwebservices.com" title="Fryslan Webservices Homepage" target="_blank"&gt;Fryslan Webservices™ &lt;/a&gt;, copyright (c) 2009/2014. Survey™ Project is published under the GNU GENERAL PUBLIC LICENSE v.3, 29 June 2007. The open source SURVEY™ PROJECT can be found at &lt;a href="http://www.surveyproject.org" title="Survey Project Community Site" target="_blank"&gt;http://www.surveyproject.org&lt;/a&gt;.&lt;/h4&gt; </value>
+  </data>
+  <data version="1.2.2" id="916" name="Introduction">
+    <value>&lt;br /&gt;
+
+      Congratulations, &lt;br /&gt;&lt;br /&gt;
+      You have started the Survey™ Project Webapplication.
+      &lt;br /&gt;&lt;br /&gt;
+
+      On first login:&lt;br /&gt;&lt;br /&gt;
+      username = &lt;strong&gt;admin&lt;/strong&gt;&lt;br /&gt;
+      password = &lt;strong&gt;SP_admin01&lt;/strong&gt;
+      &lt;br /&gt;&lt;br /&gt;
+      Next create a new Survey and &lt;br /&gt;
+      follow the instructions at menu Help/ Helpoptions. &lt;br /&gt; &lt;br /&gt;Don't forget to change the default password.
+     &lt;br /&gt;
+      
+
+    </value>
+  </data>
+  <data version="1.2.2" id="917" name="SurveyInactive">
+    <value>Inactive</value>
+  </data>
+  <data version="1.2.2" id="918" name="SurveyActive">
+    <value>Active</value>
+  </data>
+  <data version="1.2.2" id="919" name="SurveyTitle">
+    <value>Survey</value>
+  </data>
+  <data version="1.2.2" id="920" name="SurveyStatus">
+    <value>Status</value>
+  </data>
+  <data version="1.2.2" id="921" name="SurveyResponses">
+    <value>Responses</value>
+  </data>
+  <data version="1.2.2" id="922" name="SurveyCreated">
+    <value>Created</value>
+  </data>
+  <data version="1.2.2" id="923" name="SurveyDesign">
+    <value>Design</value>
+  </data>
+  <data version="1.2.2" id="924" name="SurveyDelete">
+    <value>Delete</value>
+  </data>
+  <data version="1.2.2" id="925" name="SurveySecurity">
+    <value>Security</value>
+  </data>
+  <data version="1.2.2" id="926" name="SurveyEdit">
+    <value>Edit</value>
+  </data>
+  <data version="1.2.2" id="927" name="UsersTab">
+    <value>Users</value>
+  </data>
+  <data version="1.2.2" id="928" name="RolesTab">
+    <value>Roles</value>
+  </data>
+  <data version="1.2.2" id="929" name="ImportUsersTab">
+    <value>Import Users</value>
+  </data>
+  <data version="1.2.2" id="930" name="UsersTabUserName">
+    <value>User Name</value>
+  </data>
+  <data version="1.2.2" id="931" name="UsersTabFirstName">
+    <value>First Name</value>
+  </data>
+  <data version="1.2.2" id="932" name="UsersTabLastName">
+    <value>Last Name</value>
+  </data>
+  <data version="1.2.2" id="933" name="UsersTabEmail">
+    <value>Email</value>
+  </data>
+  <data version="1.2.2" id="934" name="UsersTabAdministrator">
+    <value>Administrator</value>
+  </data>
+  <data version="1.2.2" id="935" name="UsersTabEdit">
+    <value>Edit</value>
+  </data>
+  <data version="1.2.2" id="936" name="UsersTabApplyFilter">
+    <value>ApplyFilter</value>
+  </data>
+  <data version="1.2.2" id="937" name="SurveyListTabList">
+    <value>Survey List</value>
+  </data>
+  <data version="1.2.2" id="938" name="SurveyListTabNew">
+    <value>New Survey</value>
+  </data>
+  <data version="1.2.2" id="939" name="LibraryTabNewAdd">
+    <value>Add New library</value>
+  </data>
+  <data version="1.2.2" id="940" name="LibraryTabEdit">
+    <value>Edit library</value>
+  </data>
+  <data version="1.2.2" id="941" name="LibraryTabNewName">
+    <value>Library Name</value>
+  </data>
+  <data version="1.2.2" id="942" name="LibraryTabNewDescription">
+    <value>Description</value>
+  </data>
+  <data version="1.2.2" id="943" name="LibraryTabNewEnabledLanguages">
+    <value>Enabled languages:</value>
+  </data>
+  <data version="1.2.2" id="944" name="LibraryTabNewDefaultLanguage">
+    <value>Default languages:</value>
+  </data>
+  <data version="1.2.2" id="945" name="LibraryTabNewAddLanguage">
+    <value>Add</value>
+  </data>
+  <data version="1.2.2" id="946" name="LibraryTabNewEditLanguage">
+    <value>Update</value>
+  </data>
+  <data version="2.0" id="947" name="LoggedInAs">
+    <value>Logged in: </value>
+  </data>
+  <data version="2.0" id="948" name="LibraryTabDelete">
+    <value>Delete Library</value>
+  </data>
+  <data version="2.0" id="949" name="LibraryTabDeleteConfirm">
+    <value>Are you sure you want to delete this Library?</value>
+  </data>
+  <data version="2.0" id="950" name="IPRangeDeleteConfirm">
+    <value>Are you sure you want to delete this IP Range?</value>
+  </data>
+  <data version="2.0" id="951" name="SurveyListDeleteConfirm">
+    <value>Are you sure you want to delete this Survey?</value>
+  </data>
+  <data version="2.0" id="952" name="SurveyInfo">
+    <value>Settings</value>
+  </data>
+  <data version="2.0" id="953" name="SurveyInfoMultiLanguage">
+    <value>Multi Language</value>
+  </data>
+  <data version="2.0" id="954" name="SurveyInfoCompletion">
+    <value>Completion</value>
+  </data>
+  <data version="2.0" id="955" name="SurveyInfoLayout">
+    <value>Layout</value>
+  </data>
+  <data version="2.0" id="956" name="SurveySecurityForm">
+    <value>Form Security</value>
+  </data>
+  <data version="2.0" id="957" name="SurveySecurityFormToken">
+    <value>Token Security</value>
+  </data>
+  <data version="2.0" id="958" name="DesignerformBuilder">
+    <value>Form Builder</value>
+  </data>
+  <data version="2.0" id="959" name="DesignerformQuestionGroups">
+    <value>Question Groups</value>
+  </data>
+  <data version="2.0" id="960" name="DesignerformAnswerTypeEdit">
+    <value>
+      Answer Type Editor
+    </value>
+  </data>
+  <data version="2.0" id="961" name="DesignerformRegexLib">
+    <value>Regex Library</value>
+  </data>
+  <data version="2.0" id="962" name="GroupListDeleteConfirm">
+    <value>Are you sure you want to delete this Group?</value>
+  </data>
+  <data version="2.0" id="963" name="GroupListDelete">
+    <value>Delete</value>
+  </data>
+  <data version="2.0" id="964" name="GroupListEdit">
+    <value>Edit</value>
+  </data>
+  <data version="2.0" id="965" name="SurveyFormSecurityHyperlink">
+    <value>Form Security</value>
+  </data>
+  <data version="2.0" id="966" name="SurveyTokenSecurityHyperlink">
+    <value>Token Security</value>
+  </data>
+  <data version="2.0" id="967" name="LibraryListHyperlink">
+    <value>Library List</value>
+  </data>
+  <data version="2.0" id="968" name="CreateLibraryHyperlink">
+    <value>Library New</value>
+  </data>
+  <data version="2.0" id="969" name="LibraryTemplateHyperlink">
+    <value>Library Templates</value>
+  </data>
+  <data version="2.0" id="970" name="QuestionGroupsHyperlink">
+    <value>Question Groups</value>
+  </data>
+  <data version="2.0" id="971" name="DesignerHyperlink">
+    <value>Designer</value>
+  </data>
+  <data version="2.0" id="972" name="ResultsSMHyperlink">
+    <value>Results</value>
+  </data>
+  <data version="2.0" id="973" name="FiltersHyperlink">
+    <value>Filters</value>
+  </data>
+  <data version="2.0" id="974" name="FileManagerHyperlink">
+    <value>File Manager</value>
+  </data>
+  <data version="2.0" id="975" name="DataExportHyperlink">
+    <value>Data Export</value>
+  </data>
+  <data version="2.0" id="976" name="DataImportHyperlink">
+    <value>Data Import</value>
+  </data>
+  <data version="2.0" id="977" name="CampaignSMHyperlink">
+    <value>Campaigns</value>
+  </data>
+  <data version="2.0" id="978" name="HelpSMHyperlink">
+    <value>Help</value>
+  </data>
+  <data version="2.0" id="979" name="AccountSMHyperlink">
+    <value>Accounts</value>
+  </data>
+  <data version="2.0" id="980" name="HelpOptionsHyperlink">
+    <value>Help Options</value>
+  </data>
+  <data version="2.0" id="981" name="CampaignPreviewHyperlink">
+    <value>Preview</value>
+  </data>
+  <data version="2.0" id="982" name="CampaignLanguageLabel">
+    <value>Please Select Your Language :</value>
+  </data>
+  <data version="2.0" id="983" name="MailingHyperlink">
+    <value>Mailing</value>
+  </data>
+  <data version="2.0" id="984" name="AccessQuestionGroupRight">
+    <value>Access Question Groups</value>
+  </data>
+  <data version="2.0" id="985" name="MissingVariableMessage">
+    <value>Please set {0} before navigating to Library Maintenance Screen</value>
+  </data>
+  <data version="2.0" id="986" name="StartButtonPrompt">
+    <value>Start</value>
+  </data>
+  <data version="2.0" id="987" name="AliasLabel">
+    <value>Alias: </value>
+  </data>
+  <data version="2.0" id="988" name="HelpTextLabel">
+    <value>Help Text: </value>
+  </data>
+  <data version="2.0" id="989" name="ShowHelpTextLabel">
+    <value>Show Help Text: </value>
+  </data>
+  <data version="2.0" id="990" name="GroupLabel">
+    <value>Group: </value>
+  </data>
+  <data version="2.0" id="991" name="SubGroupLabel">
+    <value>Sub-Group: </value>
+  </data>
+  <data version="2.0" id="992" name="CssLabel">
+    <value>Css template File: </value>
+  </data>
+  <data version="2.0" id="993" name="ImageLabel">
+    <value>Image File :</value>
+  </data>
+  <data version="2.0" id="994" name="HeaderLabel">
+    <value>Page Header :</value>
+  </data>
+  <data version="2.0" id="995" name="FooterLabel">
+    <value>Page Footer:</value>
+  </data>
+  <data version="2.0" id="996" name="DdlNoSelect">
+    <value>-Select-</value>
+  </data>
+  <data version="2.0" id="997" name="EditCssTitle">
+    <value>Edit CSS </value>
+  </data>
+  <data version="2.0" id="998" name="GotoSurveyList">
+    <value>Go to survey list</value>
+  </data>
+  <data version="2.0" id="999" name="DataImportTitle">
+    <value>Data Import</value>
+  </data>
+  <data version="2.0" id="1000" name="IPRangeStartTitle">
+    <value>IP Range - Start</value>
+  </data>
+  <data version="2.0" id="1001" name="IPRangeEndTitle">
+    <value>IP Range - End</value>
+  </data>
+  <data version="2.0" id="1002" name="IPRangeFormTitle">
+    <value>IP Filter</value>
+  </data>
+  <data version="2.0" id="1003" name="TokenSecurityFormTitle">
+    <value>Token Security</value>
+  </data>
+  <data version="2.0" id="1004" name="ValidNumberPlease">
+    <value>Please Enter a valid Number</value>
+  </data>
+  <data version="2.0" id="1005" name="SaveVoterDataLabel">
+    <value>Anonymous entries (answers are not linked with token)</value>
+  </data>
+  <data version="2.0" id="1006" name="IPRangeSecurityInEffect">
+    <value>IP Filter is in effect</value>
+  </data>
+  <data version="2.0" id="1007" name="IPNotInRange">
+    <value>Your IP address is not in acceptable range.</value>
+  </data>
+  <data version="2.0" id="1008" name="SurveyIPRangeSecurityHyperlink">
+    <value> IP Filter</value>
+  </data>
+  <data version="2.0" id="1009" name="Exception">
+    <value> Exception Occurred</value>
+  </data>
+  <data version="2.0" id="1010" name="msgDeleteSelectedTokens">
+    <value>Are you sure you want to delete the selected tokens ?</value>
+  </data>
+  <data version="2.0" id="1011" name="msgDeleteAllTokens">
+    <value>Are you sure you want to delete ALL tokens ?</value>
+  </data>
+  <data version="2.0" id="1012" name="lblExportTokens">
+    <value>Export Tokens</value>
+  </data>
+  <data version="2.0" id="1013" name="lblDeleteAll">
+    <value>Delete All</value>
+  </data>
+  <data version="2.0" id="1014" name="lblDeleteSelected">
+    <value>DeleteSelected</value>
+  </data>
+  <data version="2.0" id="1015" name="lblApplyFilter">
+    <value>Apply Filter</value>
+  </data>
+  <data version="2.0" id="1016" name="lblGenerate">
+    <value>Generate</value>
+  </data>
+  <data version="2.0" id="1017" name="lblGenerateCount">
+    <value>Number of Tokens :</value>
+  </data>
+  <data version="2.0" id="1018" name="lblNumberOfTokens">
+    <value>Number of Tokens :</value>
+  </data>
+  <data version="2.0" id="1019" name="lblNumberOfTokensCreated">
+    <value>Number of Tokens Created :</value>
+  </data>
+  <data version="2.0" id="1020" name="lblNumberOfTokensUsed">
+    <value>Number of Tokens Used :</value>
+  </data>
+  <data version="2.0" id="1021" name="lblNumberOfTokensAvailable">
+    <value>Number of Tokens Available :</value>
+  </data>
+  <data version="2.0" id="1022" name="lblByToken">
+    <value>By Token</value>
+  </data>
+  <data version="2.0" id="1023" name="lblByTokenType">
+    <value>By Token Type</value>
+  </data>
+  <data version="2.0" id="1024" name="lblByIssuedDate">
+    <value>By Issued Date</value>
+  </data>
+  <data version="2.0" id="1025" name="HeaderFieldLabel">
+    <value>Header Field:</value>
+  </data>
+  <data version="2.0" id="1026" name="AnswerFieldlabel">
+    <value>Answer Field:</value>
+  </data>
+  <data version="2.0" id="1027" name="CSVAnswerExportStyle1">
+    <value>Export each response as a Row with one Column per Question</value>
+  </data>
+  <data version="2.0" id="1028" name="CSVAnswerExportStyle2">
+    <value>Export each response as a Row with one Column per possible answer to each Question</value>
+  </data>
+  <data version="2.0" id="1029" name="Question">
+    <value>Question</value>
+  </data>
+  <data version="2.0" id="1030" name="Question Display Order Number">
+    <value>Question Display Order Number</value>
+  </data>
+  <data version="2.0" id="1031" name="Question ID">
+    <value>Question ID</value>
+  </data>
+  <data version="2.0" id="1032" name="Question Alias">
+    <value>Question Alias</value>
+  </data>
+  <data version="2.0" id="1033" name="Question ID Alias">
+    <value>Question ID Alias</value>
+  </data>
+  <data version="2.0" id="1034" name="Answer">
+    <value>Answer</value>
+  </data>
+  <data version="2.0" id="1035" name="Answer Display Order Number">
+    <value>Answer Display Order Number</value>
+  </data>
+  <data version="2.0" id="1036" name="Answer ID">
+    <value>Answer ID</value>
+  </data>
+  <data version="2.0" id="1037" name="Answer Alias">
+    <value>Answer Alias</value>
+  </data>
+  <data version="2.0" id="1038" name="Answer ID Alias">
+    <value>Answer ID Alias</value>
+  </data>
+  <data version="2.0" id="1039" name="CSVEXPDataSelection">
+    <value>Data Selection</value>
+  </data>
+  <data version="2.0" id="1040" name="CSVEXPGetAllDates">
+    <value>all data</value>
+  </data>
+  <data version="2.0" id="1041" name="CSVExpGetSelectedDates">
+    <value>only data in selected date range</value>
+  </data>
+  <data version="2.0" id="1042" name="TextIdsMustBePresent">
+    <value>Every Question and Answer in the import file must have QuestionIdText and AnswerIdText</value>
+  </data>
+  <data version="2.0" id="1043" name="SelectAFile">
+    <value> Please Select a File  </value>
+  </data>
+  <data version="2.0" id="1044" name="ExportInstructions1">
+    <value>Note: XML format must be chosen to import the data to another Survey installation.</value>
+  </data>
+  <data version="2.0" id="1045" name="LayoutLabel">
+    <value> Export Layout</value>
+  </data>
+  <data version="2.0" id="1046" name="FormatLayout">
+    <value>Format</value>
+  </data>
+  <data version="2.0" id="1047" name="MultiSeparator">
+    <value>Multiple Choice Separator :</value>
+  </data>
+  <data version="2.0" id="1048" name="ImportSuccessMsg">
+    <value>Import Succeeded </value>
+  </data>
+  <data version="2.0" id="1049" name="AutoFilter">
+    <value>Auto-create Filter</value>
+  </data>
+  <data version="2.0" id="1050" name="AutoFilterMessage">
+    <value>
+      Note: Auto-create creates one filter for every answer a question can have.&lt;br /&gt;
+      It is available only for closed questions (no free text fields).
+    </value>
+  </data>
+  <data version="2.0" id="1051" name="AutoFilterQuestion">
+    <value>Auto-create filter based on question:</value>
+  </data>
+  <data version="2.0" id="1052" name="AutoFilterQuestionNaming">
+    <value>Question Naming:</value>
+  </data>
+  <data version="2.0" id="1053" name="AutoFilterAnswerLabel">
+    <value>Answer Naming:</value>
+  </data>
+  <data version="2.0" id="1054" name="autoFilterMsg2">
+    <value>Filter naming scheme:</value>
+  </data>
+  <data version="2.0" id="1055" name="btnAutoFilter">
+    <value>Generate Filter</value>
+  </data>
+  <data version="2.0" id="1056" name="ImportFile">
+    <value>Import File</value>
+  </data>
+  <data version="2.0" id="1057" name="DataSelection">
+    <value>Data Selection</value>
+  </data>
+  <data version="2.0" id="1058" name="ClosedSurveyMessage">
+    <value>This survey is closed.</value>
+  </data>
+  <data version="2.0" id="1058" name="InactiveSurveyMessage">
+    <value>This survey is Inactive.</value>
+  </data>
+  <data version="2.0" id="1059" name="InvalidSurveyUrl">
+    <value>The Url you supplied is invalid.</value>
+  </data>
+  <data version="2.0" id="1060" name="InvalidSurveyGuid">
+    <value>The Guid you supplied is invalid.</value>
+  </data>
+  <data version="2.0" id="1061" name="DeleteQuestionPageConfirmationMessage">
+    <value>Are you sure you want to delete this page ?</value>
+  </data>
+  <data version="2.0" id="1062" name="FriendlyLabel">
+    <value>Create Friendly Name Url :</value>
+  </data>
+  <data version="2.0" id="1063" name="FriendlyUrl">
+    <value>
+      Note: Friendly Url format = http:// [YourWebSiteUrl] / survey.aspx / [&lt;b&gt;YourFriendlyName&lt;/b&gt;]
+    </value>
+  </data>
+  <data version="2.0" id="1064" name="BtnFriendly">
+    <value>Save</value>
+  </data>
+  <data version="2.0" id="1065" name="FriendlyNameUpdatedMsg">
+    <value>Friendly name updated </value>
+  </data>
+  <data version="2.0" id="1066" name="FilterGeneratedMsg">
+    <value>Filters generated </value>
+  </data>
+  <data version="2.0" id="1066" name="FilterNotGeneratedMsg">
+    <value>No Filters were generated </value>
+  </data>
+  <data version="2.0" id="1067" name="SurveyUrl">
+    <value>Survey Hyperlinks</value>
+  </data>
+  <data version="2.0" id="1068" name="ConditionalEndMessageHyperlink">
+    <value>Conditional Endmessage</value>
+  </data>
+  <data version="2.0" id="1069" name="InsertSecurityHyperLink">
+    <value>Insert Security Addin</value>
+  </data>
+  <data version="2.0" id="1070" name="CreateAnswerTypeHyperLink">
+    <value>Create Answer Type</value>
+  </data>
+  <data version="2.0" id="1071" name="VoterReportHyperLink">
+    <value>Voter Report</value>
+  </data>
+  <data version="2.0" id="1072" name="EditVoterReportHyperLink">
+    <value>Edit Voter Report</value>
+  </data>
+  <data version="2.0" id="1073" name="UserListTitle">
+    <value>Survey Users List</value>
+  </data>
+  <data version="2.0" id="1074" name="TreeAddTitle">
+    <value>Add Folder</value>
+  </data>
+  <data version="2.0" id="1075" name="TreeDeleteTitle">
+    <value>Delete Folder</value>
+  </data>
+  <data version="2.0" id="1076" name="TreeRenameTitle">
+    <value>Rename Folder</value>
+  </data>
+  <data version="2.0" id="1077" name="TreeDeleteMenu">
+    <value>Delete</value>
+  </data>
+  <data version="2.0" id="1078" name="TreeCancelMenu">
+    <value>Cancel</value>
+  </data>
+  <data version="2.0" id="1079" name="TreeAddMenu">
+    <value>Add</value>
+  </data>
+  <data version="2.0" id="1080" name="TreeRenameMenu">
+    <value>Rename</value>
+  </data>
+  <data version="2.0" id="1081" name="TreeOkMenu">
+    <value>OK</value>
+  </data>
+  <data version="2.0" id="1082" name="TreeDeleteSurvey">
+    <value>Delete Survey</value>
+  </data>
+  <data version="2.0" id="1083" name="TreeDeleteFolderWarn">
+    <value>Delete folder: @REPLACE@  and all surveys under it</value>
+  </data>
+  <data version="2.0" id="1084" name="TreeDeleteSurveyWarn">
+    <value>Warning: Deleting  @REPLACE@  will remove all results also</value>
+  </data>
+  <data version="2.0" id="1085" name="LibraryName">
+    <value>Library Name</value>
+  </data>
+  <data version="2.0" id="1086" name="Description">
+    <value>Description</value>
+  </data>
+  <data version="2.0" id="1087" name="NumberOfQuestions">
+    <value>No of questions</value>
+  </data>
+  <data version="2.0" id="1088" name="Search">
+    <value>Search</value>
+  </data>
+  <data version="2.0" id="1089" name="Upload">
+    <value>Upload File</value>
+  </data>
+  <data version="2.0" id="1090" name="AddNew">
+    <value>Add New</value>
+  </data>
+  <data version="2.0" id="1091" name="autofilterInfo2Label">
+    <value>Note: The filter is named following the scheme [Question naming] | [Answer naming].&lt;/b&gt;&lt;br /&gt;
+      Only the first 32 characters are taken each for Question naming and for Answer naming.</value>
+  </data>
+  <data version="2.0" id="1092" name="DefaultSurvey">
+    <value>Default Survey</value>
+  </data>
+  <data version="2.0" id="1093" name="SurveyImported">
+    <value>Survey Imported</value>
+  </data>
+  <data version="2.0" id="1094" name="SurveyNotImported">
+    <value>Survey could not be imported.Please check your import file</value>
+  </data>
+  <data version="2.0" id="1095" name="LibraryList">
+    <value>Library List</value>
+  </data>
+  <data version="2.0" id="1096" name="NewTab">
+    <value>New Library</value>
+  </data>
+  <data version="2.0" id="1097" name="QGroupsExplain">
+    <value>Note: Question groups can be set on question level when the rating option is clicked.</value>
+  </data>
+  <data version="2.0" id="1098" name="AddNewGroup">
+   <value>Add New</value>
+  </data>
+  <data version="2.0" id="1099" name="AddNewSubgroup">
+   <value>Add New</value>
+  </data>
+  <data version="2.0" id="1100" name="DUPLICATEFOLDER">
+   <value>Duplicate Folder</value>
+  </data>
+  <data version="2.0" id="1101" name="DUPLICATETREEITEM">
+   <value>Duplicate Item</value>
+  </data>
+  <data version="2.0" id="1102" name="TREECANNOTMOVE">
+   <value>Cannot move the item</value>
+  </data>
+  <data version="2.0" id="1103" name="SurveyExistsInFolder">
+   <value>Survey with same names exists in Folder</value>
+  </data>
+  <data version="2.0" id="1104" name="SurveyImportDuplicate">
+    <value>Another survey with the same name exists in the folder.  Please import into different folder.</value>
+  </data>
+  <data version="2.0" id="1105" name="DDLSelectValue">
+   <value>--Please select a value--</value>
+  </data>
+  <data version="2.0" id="1106" name="ChooseSurveyLabel">
+    <value>Please choose a survey from the list:</value>
+  </data>
+  <data version="2.0" id="1107" name="HelpGifTitle">
+    <value>Click for more Information</value>
+  </data>
+  <data version="1.0" id="1108" name="FromLabelMail">
+    <value>From Email :</value>
+  </data>
+  <data version="1.0" id="1109" name="ToLabelMail">
+    <value>To :</value>
+  </data>
+  <data version="1.0" id="1110" name="SliderRangeTextLabel">
+    <value>Slider Min/ Max Range :</value>
+  </data>
+  <data version="1.0" id="1111" name="SliderValueTextLabel">
+    <value>Default Value :</value>
+  </data>
+  <data version="1.0" id="1112" name="SliderMinTextLabel">
+    <value>Min Value :</value>
+  </data>
+  <data version="1.0" id="1113" name="SliderMaxTextLabel">
+    <value>Max Value :</value>
+  </data>
+  <data version="1.0" id="1114" name="SliderAnimateTextLabel">
+    <value>Animate :</value>
+  </data>
+  <data version="1.0" id="1115" name="SliderStepTextLabel">
+    <value>Step :</value>
+  </data>
+  <data version="1.0" id="1116" name="FieldSliderType">
+    <value>Field - Slider</value>
+  </data>
+  <data version="1.0" id="1117" name="MissingSurveyTitleMessage">
+    <value>Please enter a title for your Survey</value>
+  </data>
+  <data version="1.0" id="1118" name="MissingGroupNameMessage">
+    <value>Please enter a name for the Group</value>
+  </data>
+  <data version="1.0" id="1119" name="MissingSubGroupNameMessage">
+    <value>Please enter a name for the SubGroup</value>
+  </data>
+  <data version="1.0" id="1120" name="GraphicalReports">
+    <value> Graphical Reports</value>
+  </data>
+  <data version="1.0" id="1121" name="VoterReports">
+    <value> Voter Reports</value>
+  </data>
+  <data version="1.0" id="1122" name="CrossTabulationReports">
+    <value> Cross Tabulation Reports</value>
+  </data>
+  <data version="1.0" id="1123" name="Prev">
+    <value> Previous</value>
+  </data>
+  <data version="1.0" id="1124" name="Next">
+    <value> Next</value>
+  </data>
+  <data version="2.3" id="1125" name="MailStatusDetails">
+    <value>Details</value>
+  </data>
+  <data version="2.3" id="1126" name="SearchTitle">
+    <value>Search Surveylist</value>
+  </data>
+  <data version="2.3" id="1127" name="SurveyInformationTitle2">
+    <value>Survey Title</value>
+  </data>
+  <data version="2.3" id="1128" name="ImportSurveyLiteral">
+    <value>Import Survey</value>
+  </data>
+  <data version="2.3" id="1129" name="LibraryDirectoryLegend">
+    <value>Libraries Directory</value>
+  </data>
+  <data version="2.3" id="1130" name="QuestionGroupLegend">
+    <value>Question Groups</value>
+  </data>
+  <data version="2.3" id="1131" name="UpdateVoterAnswersButton">
+    <value>Update Answers</value>
+  </data>
+  <data version="2.3" id="1132" name="UserlistFilterOptionLiteral">
+    <value>Userlist Filter Options</value>
+  </data>
+  <data version="2.3" id="1133" name="SurveyLayoutLegend">
+    <value>Survey Layout</value>
+  </data>
+  <data version="2.3" id="1134" name="SurveyListPageNrLiteral">
+    <value>You are viewing page</value>
+  </data>
+</root>

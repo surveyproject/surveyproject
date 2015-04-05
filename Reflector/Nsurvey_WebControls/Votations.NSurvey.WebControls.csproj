@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" xmlns:Conversion="urn:Conversion" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{30C36FDD-28EA-4855-B790-BDDD0678E1D0}</ProjectGuid>
+    <RootNamespace>Votations.NSurvey.WebControls</RootNamespace>
+    <AssemblyName>Votations.NSurvey.WebControls</AssemblyName>
+    <OutputType>Library</OutputType>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <NoConfig>false</NoConfig>
+    <SourceAnalysisOverrideSettingsFile>C:\Documents and Settings\Administrator\Application Data\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <TargetFrameworkProfile />
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <DocumentationFile>bin\Debug\Votations.NSurvey.WebControls.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <NoStdLib>false</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <OutputPath>bin\Debug\</OutputPath>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugType>Full</DebugType>
+    <DocumentationFile />
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <NoStdLib>false</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn />
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+    <OutputPath>bin\</OutputPath>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Votations.NSurvey.WebControls.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CKEditor.NET, Version=3.6.4.0, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Library\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <HintPath>System.Windows.Forms.dll</HintPath>
+      <Private />
+    </Reference>
+    <Reference Include="mscorlib">
+      <HintPath>mscorlib.dll</HintPath>
+      <Private />
+    </Reference>
+    <Reference Include="System.Web">
+      <HintPath>System.Web.dll</HintPath>
+      <Private />
+    </Reference>
+    <Reference Include="System.Design">
+      <HintPath>System.Design.dll</HintPath>
+      <Private />
+    </Reference>
+    <Reference Include="System">
+      <HintPath>System.dll</HintPath>
+      <Private />
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>System.Data.dll</HintPath>
+      <Private />
+    </Reference>
+    <Reference Include="System.Drawing">
+      <HintPath>System.Drawing.dll</HintPath>
+      <Private />
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>System.XML.dll</HintPath>
+      <Private />
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic">
+      <HintPath>Microsoft.VisualBasic.dll</HintPath>
+      <Private />
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Votations.NSurvey.Designer\AutoFormat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Votations.NSurvey.Helpers\PipeManager.cs" />
+    <Compile Include="Votations.NSurvey.Helpers\XmlFileManager.cs" />
+    <Compile Include="Votations.NSurvey.Reporting\VoterReportGenerator.cs" />
+    <Compile Include="Votations.NSurvey.Reporting\VoterTextReportGenerator.cs" />
+    <Compile Include="Votations.NSurvey.Resources\HelpfilesManager.cs" />
+    <Compile Include="Votations.NSurvey.Resources\ResourceManager.cs" />
+    <Compile Include="Votations.NSurvey.Security\IPRangeSecurityAddIn.cs" />
+    <Compile Include="Votations.NSurvey.Security\TokenSecurityAddIn.cs" />
+    <Compile Include="Votations.NSurvey.Security\IWebSecurityAddIn.cs" />
+    <Compile Include="Votations.NSurvey.Security\ASPNetContextSecurityAddIn.cs" />
+    <Compile Include="Votations.NSurvey.Security\CookieWebSecurityAddIn.cs" />
+    <Compile Include="Votations.NSurvey.Security\EmailWebSecurityAddIn.cs" />
+    <Compile Include="Votations.NSurvey.Security\EntryQuotaSecurityAddIn.cs" />
+    <Compile Include="Votations.NSurvey.Security\IPWebSecurityAddIn.cs" />
+    <Compile Include="Votations.NSurvey.Security\UserAuthenticatedEventHandler.cs" />
+    <Compile Include="Votations.NSurvey.Security\NSurveyContextSecurityAddIn.cs" />
+    <Compile Include="Votations.NSurvey.Security\PasswordWebSecurityAddIn.cs" />
+    <Compile Include="Votations.NSurvey.Security\UserAuthenticatedEventArgs.cs" />
+    <Compile Include="Votations.NSurvey.Security\WebSecurityAddInCollection.cs" />
+    <Compile Include="Votations.NSurvey.Security\WebSecurityAddInFactory.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.ThirdPartyItems\CkEditorControls.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.ThirdPartyItems\FreeTextBoxAnswerItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerFieldSliderItem.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\SectionQuestion.cs" />
+    <Compile Include="Votations.NSurvey.WebControls\GlobalRadioButton.cs" />
+    <Compile Include="Votations.NSurvey.WebControls\SurveyBox.cs" />
+    <Compile Include="Votations.NSurvey.Web\NSurveyContext.cs" />
+    <Compile Include="Votations.NSurvey.WebControls\FormItemEventArgs.cs" />
+    <Compile Include="Votations.NSurvey.WebControls\FormNavigationEventArgs.cs" />
+    <Compile Include="Votations.NSurvey.WebControls\FormQuestionEventArgs.cs" />
+    <Compile Include="Votations.NSurvey.WebControls\FormSessionEventArgs.cs" />
+    <Compile Include="Votations.NSurvey.WebControls\SurveyBoxDesigner.cs" />
+    <Compile Include="Votations.NSurvey.WebControls\FormEventHandler.cs" />
+    <Compile Include="Votations.NSurvey.WebControls\FormSessionEventHandler.cs" />
+    <Compile Include="Votations.NSurvey.WebControls\FormQuestionEventHandler.cs" />
+    <Compile Include="Votations.NSurvey.WebControls\FormNavigationEventHandler.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerProperties.cs" />
+    <Compile Include="Votations.NSurvey.Data\GridAnswerData.cs" />
+    <Compile Include="Votations.NSurvey.Data\GridAnswerDataCollection.cs" />
+    <Compile Include="Votations.NSurvey.Data\GridAnswerDataConverter.cs" />
+    <Compile Include="Votations.NSurvey.Data\PostedAnswerData.cs" />
+    <Compile Include="Votations.NSurvey.Data\PostedAnswerDataCollection.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\IAnswerPublisher.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\IMandatoryAnswer.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\IAnswerSubscriber.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\IClientScriptValidator.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\IFieldItem.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\IRegExValidator.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\ISelectionControl.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerItem.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerBooleanItem.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerConnection.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerConnectionsCollection.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerDataSourceItem.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerFieldItem.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerFieldCalendarItem.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerFieldHiddenItem.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerFieldPasswordItem.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerPublisherEventHandler.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerItemCollection.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerItemEventArgs.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerItemInvalidEventArgs.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerItemMessageEventArgs.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerListItem.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerSelectionItem.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerOtherFieldItem.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerSqlItem.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerSqlListItem.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerSubscriberXmlListItem.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerTextItem.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\ExtendedAnswerItem.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerUploadItem.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerXmlItem.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerXmlListItem.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\SectionAnswersEventHandler.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\SectionAnswersGridItem.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\SectionAnswersItemEventArgs.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\SelectionCheckBox.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\SelectionRadioButton.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\QuestionItemAnswersEventArgs.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\QuestionItemClientScriptEventArgs.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\QuestionItemInvalidAnswersEventArgs.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\QuestionItem.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\ActiveQuestion.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\MatrixQuestion.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\CheckBoxMatrixQuestion.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\MatrixChildQuestion.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\MatrixChildCollection.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\SingleQuestion.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\CheckBoxQuestion.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\DropDownQuestion.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\RadioButtonQuestion.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerPostedEventHandler.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\SelectionRequiredEventHandler.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\SelectionOverflowEventHandler.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\ClientScriptGeneratedEventHandler.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\InvalidAnswersEventHandler.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\QuestionItemCollection.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\StaticQuestion.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\RatingBar.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\ResultItem.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\ResultsBar.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\Section.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerSection.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\CheckBoxAnswerSection.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\DropDownAnswerSection.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\MatrixSection.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\RadioButtonAnswerSection.cs" />
+    <Compile Include="Votations.NSurvey.WebControls.UI\SectionCollection.cs" />
+    <Compile Include="Votations.NSurvey.WebControlsFactories\AnswerItemFactory.cs" />
+    <Compile Include="Votations.NSurvey.WebControlsFactories\QuestionItemFactory.cs" />
+    <Compile Include="Votations.NSurvey.WebControlsFactories\SubscriberItemFactory.cs" />
+    <Compile Include="Votations.NSurvey\GlobalConfig.cs" />
+    <EmbeddedResource Include="Votations.NSurvey.Designer.AutoFormat.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Votations.NSurvey.WebControls.SurveyBox.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Votations.NSurvey.WebControls.cd" />
+    <Content Include="Votations.NSurvey.WebControls\SurveyBox.bmp" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Nsurvey_BE\Votations.NSurvey.BE.csproj">
+      <Project>{ACC61153-273A-4098-8E23-ADF141D799EE}</Project>
+      <Name>Votations.NSurvey.BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nsurvey_BLL\Votations.NSurvey.BLL.csproj">
+      <Project>{5C283A71-276E-40CE-B07A-C6344CAD02B9}</Project>
+      <Name>Votations.NSurvey.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nsurvey_DAL\Votations.NSurvey.DAL.csproj">
+      <Project>{17D2197C-324F-48A6-895D-075FAF4A942E}</Project>
+      <Name>Votations.NSurvey.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nsurvey_Emailing\Votations.NSurvey.EMailing.csproj">
+      <Project>{7D02ED0F-6C2F-4550-B203-CA03D190A5E3}</Project>
+      <Name>Votations.NSurvey.EMailing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nsurvey_SQLServerDAL\Votations.NSurvey.SQLServerDAL.csproj">
+      <Project>{3050518F-8D14-4704-8092-1650B183E266}</Project>
+      <Name>Votations.NSurvey.SQLServerDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nsurvey_UserProvider\Votations.NSurvey.UserProvider.csproj">
+      <Project>{94EB9C0F-FB57-41A8-8175-F1E255912374}</Project>
+      <Name>Votations.NSurvey.UserProvider</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+</Project>

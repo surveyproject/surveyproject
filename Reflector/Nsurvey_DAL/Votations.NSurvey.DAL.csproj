@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" xmlns:Conversion="urn:Conversion" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{17D2197C-324F-48A6-895D-075FAF4A942E}</ProjectGuid>
+    <RootNamespace>Votations.NSurvey.DAL</RootNamespace>
+    <AssemblyName>Votations.NSurvey.DAL</AssemblyName>
+    <OutputType>Library</OutputType>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <PreBuildEvent />
+    <PostBuildEvent />
+    <NoConfig>false</NoConfig>
+    <TargetFrameworkProfile />
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <DocumentationFile>bin\Debug\Votations.NSurvey.DAL.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <NoStdLib>false</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <OutputPath>bin\Debug\</OutputPath>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugType>Full</DebugType>
+    <DocumentationFile />
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <NoStdLib>false</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn />
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+    <OutputPath>bin\</OutputPath>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Votations.NSurvey.DAL.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib">
+      <HintPath>mscorlib.dll</HintPath>
+      <Private />
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>System.Data.dll</HintPath>
+      <Private />
+    </Reference>
+    <Reference Include="System">
+      <HintPath>System.dll</HintPath>
+      <Private />
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Votations.NSurvey.DALFactory\AnswerFactory.cs" />
+    <Compile Include="Votations.NSurvey.DALFactory\AnswerTypeFactory.cs" />
+    <Compile Include="Votations.NSurvey.DALFactory\SurveyTokenFactory.cs" />
+    <Compile Include="Votations.NSurvey.DALFactory\SurveyIPRangeFactory.cs" />
+    <Compile Include="Votations.NSurvey.DALFactory\DbAccessFactory.cs" />
+    <Compile Include="Votations.NSurvey.DALFactory\FilterFactory.cs" />
+    <Compile Include="Votations.NSurvey.DALFactory\FolderFactory.cs" />
+    <Compile Include="Votations.NSurvey.DALFactory\LibraryFactory.cs" />
+    <Compile Include="Votations.NSurvey.DALFactory\MultiLanguageFactory.cs" />
+    <Compile Include="Votations.NSurvey.DALFactory\QuestionFactory.cs" />
+    <Compile Include="Votations.NSurvey.DALFactory\QuestionGroupFactory.cs" />
+    <Compile Include="Votations.NSurvey.DALFactory\RegularExpressionFactory.cs" />
+    <Compile Include="Votations.NSurvey.DALFactory\RoleFactory.cs" />
+    <Compile Include="Votations.NSurvey.DALFactory\SecurityAddInFactory.cs" />
+    <Compile Include="Votations.NSurvey.DALFactory\SurveyFactory.cs" />
+    <Compile Include="Votations.NSurvey.DALFactory\UserFactory.cs" />
+    <Compile Include="Votations.NSurvey.DALFactory\VoterFactory.cs" />
+    <Compile Include="Votations.NSurvey.IDAL\ISurveyAsset.cs" />
+    <Compile Include="Votations.NSurvey.IDAL\ISurveyToken.cs" />
+    <Compile Include="Votations.NSurvey.IDAL\ISurveyIPRange.cs" />
+    <Compile Include="Votations.NSurvey.IDAL\IAnswer.cs" />
+    <Compile Include="Votations.NSurvey.IDAL\IAnswerType.cs" />
+    <Compile Include="Votations.NSurvey.IDAL\IDbAccess.cs" />
+    <Compile Include="Votations.NSurvey.IDAL\IFilter.cs" />
+    <Compile Include="Votations.NSurvey.IDAL\IFolder.cs" />
+    <Compile Include="Votations.NSurvey.IDAL\ILibrary.cs" />
+    <Compile Include="Votations.NSurvey.IDAL\IMultiLanguage.cs" />
+    <Compile Include="Votations.NSurvey.IDAL\IQuestion.cs" />
+    <Compile Include="Votations.NSurvey.IDAL\IQuestionGroup.cs" />
+    <Compile Include="Votations.NSurvey.IDAL\IRegularExpression.cs" />
+    <Compile Include="Votations.NSurvey.IDAL\IRole.cs" />
+    <Compile Include="Votations.NSurvey.IDAL\ISecurityAddIn.cs" />
+    <Compile Include="Votations.NSurvey.IDAL\ISurvey.cs" />
+    <Compile Include="Votations.NSurvey.IDAL\ISurveyLayout.cs" />
+    <Compile Include="Votations.NSurvey.IDAL\IUser.cs" />
+    <Compile Include="Votations.NSurvey.IDAL\IVoter.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Nsurvey_BE\Votations.NSurvey.BE.csproj">
+      <Project>{ACC61153-273A-4098-8E23-ADF141D799EE}</Project>
+      <Name>Votations.NSurvey.BE</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+</Project>

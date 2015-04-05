@@ -1,0 +1,2205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9DF21751-1E80-4F33-9FB6-138FCD4A11CD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Votations.NSurvey.WebAdmin</RootNamespace>
+    <AssemblyName>Votations.NSurvey.WebAdmin</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Votations.NSurvey.WebAdmin.XML</DocumentationFile>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CKEditor.NET, Version=3.6.4.0, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Goldtect.ASTreeView">
+      <HintPath>..\packages\ASTreeView.1.6.0.4\lib\net40\Goldtect.ASTreeView.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\iTextSharp.5.5.2\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra, Version=5.5.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\itextsharp.xtra.5.5.2\lib\itextsharp.xtra.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebChart, Version=1.1.1.4, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\WebChart.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Code\RowSelectorColumnScript.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Filemanager\.gitignore" />
+    <Content Include="Filemanager\connectors\ashx\filemanager.ashx" />
+    <Content Include="Filemanager\images\accept.png" />
+    <Content Include="Filemanager\images\ajax-loader.gif" />
+    <Content Include="Filemanager\images\application_view_icons.png" />
+    <Content Include="Filemanager\images\application_view_list.png" />
+    <Content Include="Filemanager\images\bin_closed.png" />
+    <Content Include="Filemanager\images\bullet_arrow_down.png" />
+    <Content Include="Filemanager\images\bullet_arrow_up.png" />
+    <Content Include="Filemanager\images\download.png" />
+    <Content Include="Filemanager\images\fileicons\aac.png" />
+    <Content Include="Filemanager\images\fileicons\avi.png" />
+    <Content Include="Filemanager\images\fileicons\bmp.png" />
+    <Content Include="Filemanager\images\fileicons\chm.png" />
+    <Content Include="Filemanager\images\fileicons\css.png" />
+    <Content Include="Filemanager\images\fileicons\default.png" />
+    <Content Include="Filemanager\images\fileicons\dll.png" />
+    <Content Include="Filemanager\images\fileicons\doc.png" />
+    <Content Include="Filemanager\images\fileicons\docx.png" />
+    <Content Include="Filemanager\images\fileicons\fla.png" />
+    <Content Include="Filemanager\images\fileicons\gif.png" />
+    <Content Include="Filemanager\images\fileicons\htm.png" />
+    <Content Include="Filemanager\images\fileicons\html.png" />
+    <Content Include="Filemanager\images\fileicons\ini.png" />
+    <Content Include="Filemanager\images\fileicons\jar.png" />
+    <Content Include="Filemanager\images\fileicons\jpeg.png" />
+    <Content Include="Filemanager\images\fileicons\jpg.png" />
+    <Content Include="Filemanager\images\fileicons\js.png" />
+    <Content Include="Filemanager\images\fileicons\lasso.png" />
+    <Content Include="Filemanager\images\fileicons\mdb.png" />
+    <Content Include="Filemanager\images\fileicons\mov.png" />
+    <Content Include="Filemanager\images\fileicons\mp3.png" />
+    <Content Include="Filemanager\images\fileicons\mp4.png" />
+    <Content Include="Filemanager\images\fileicons\mpg.png" />
+    <Content Include="Filemanager\images\fileicons\ogg.png" />
+    <Content Include="Filemanager\images\fileicons\ogv.png" />
+    <Content Include="Filemanager\images\fileicons\other_image.png" />
+    <Content Include="Filemanager\images\fileicons\other_movie.png" />
+    <Content Include="Filemanager\images\fileicons\other_music.png" />
+    <Content Include="Filemanager\images\fileicons\other_music2.png" />
+    <Content Include="Filemanager\images\fileicons\pdf.png" />
+    <Content Include="Filemanager\images\fileicons\php.png" />
+    <Content Include="Filemanager\images\fileicons\png.png" />
+    <Content Include="Filemanager\images\fileicons\ppt.png" />
+    <Content Include="Filemanager\images\fileicons\py.png" />
+    <Content Include="Filemanager\images\fileicons\rb.png" />
+    <Content Include="Filemanager\images\fileicons\real.png" />
+    <Content Include="Filemanager\images\fileicons\reg.png" />
+    <Content Include="Filemanager\images\fileicons\rtf.png" />
+    <Content Include="Filemanager\images\fileicons\sql.png" />
+    <Content Include="Filemanager\images\fileicons\swf.png" />
+    <Content Include="Filemanager\images\fileicons\txt.png" />
+    <Content Include="Filemanager\images\fileicons\vbs.png" />
+    <Content Include="Filemanager\images\fileicons\wav.png" />
+    <Content Include="Filemanager\images\fileicons\webm.png" />
+    <Content Include="Filemanager\images\fileicons\wma.png" />
+    <Content Include="Filemanager\images\fileicons\wmv.png" />
+    <Content Include="Filemanager\images\fileicons\xls.png" />
+    <Content Include="Filemanager\images\fileicons\xlsx.png" />
+    <Content Include="Filemanager\images\fileicons\xml.png" />
+    <Content Include="Filemanager\images\fileicons\xsl.png" />
+    <Content Include="Filemanager\images\fileicons\zip.png" />
+    <Content Include="Filemanager\images\fileicons\_Close.png" />
+    <Content Include="Filemanager\images\fileicons\_Documents.png" />
+    <Content Include="Filemanager\images\fileicons\_Favorites.png" />
+    <Content Include="Filemanager\images\fileicons\_Image.png" />
+    <Content Include="Filemanager\images\fileicons\_Movie.png" />
+    <Content Include="Filemanager\images\fileicons\_Music.png" />
+    <Content Include="Filemanager\images\fileicons\_Net.png" />
+    <Content Include="Filemanager\images\fileicons\_Open.png" />
+    <Content Include="Filemanager\images\fileicons\_ProgramFiles.png" />
+    <Content Include="Filemanager\images\fileicons\_Works.png" />
+    <Content Include="Filemanager\images\folder_add.png" />
+    <Content Include="Filemanager\images\house.png" />
+    <Content Include="Filemanager\images\parentfolder.png" />
+    <Content Include="Filemanager\images\pencil.png" />
+    <Content Include="Filemanager\images\plus.png" />
+    <Content Include="Filemanager\images\reset.png" />
+    <Content Include="Filemanager\images\upload.png" />
+    <Content Include="Filemanager\images\wait30trans.gif" />
+    <Content Include="Filemanager\index.html" />
+    <Content Include="Filemanager\ReadMe.md" />
+    <Content Include="Filemanager\scripts\filemanager.config.js" />
+    <Content Include="Filemanager\scripts\filemanager.config.js - Copy.default" />
+    <Content Include="Filemanager\scripts\filemanager.js" />
+    <Content Include="Filemanager\scripts\filemanager.liveSearch.js" />
+    <Content Include="Filemanager\scripts\filemanager.liveSearch.min.js" />
+    <Content Include="Filemanager\scripts\filemanager.min.js" />
+    <Content Include="Filemanager\scripts\jquery-1.8.3.min.js" />
+    <Content Include="Filemanager\scripts\jquery.contextmenu\images\cut.png" />
+    <Content Include="Filemanager\scripts\jquery.contextmenu\images\door.png" />
+    <Content Include="Filemanager\scripts\jquery.contextmenu\images\page_white_copy.png" />
+    <Content Include="Filemanager\scripts\jquery.contextmenu\images\page_white_delete.png" />
+    <Content Include="Filemanager\scripts\jquery.contextmenu\images\page_white_edit.png" />
+    <Content Include="Filemanager\scripts\jquery.contextmenu\images\page_white_paste.png" />
+    <Content Include="Filemanager\scripts\jquery.contextmenu\jquery.contextMenu-1.01.css" />
+    <Content Include="Filemanager\scripts\jquery.contextmenu\jquery.contextMenu-1.01.js" />
+    <Content Include="Filemanager\scripts\jquery.filetree\images\application.png" />
+    <Content Include="Filemanager\scripts\jquery.filetree\images\code.png" />
+    <Content Include="Filemanager\scripts\jquery.filetree\images\css.png" />
+    <Content Include="Filemanager\scripts\jquery.filetree\images\db.png" />
+    <Content Include="Filemanager\scripts\jquery.filetree\images\directory.png" />
+    <Content Include="Filemanager\scripts\jquery.filetree\images\doc.png" />
+    <Content Include="Filemanager\scripts\jquery.filetree\images\file.png" />
+    <Content Include="Filemanager\scripts\jquery.filetree\images\film.png" />
+    <Content Include="Filemanager\scripts\jquery.filetree\images\flash.png" />
+    <Content Include="Filemanager\scripts\jquery.filetree\images\folder_open.png" />
+    <Content Include="Filemanager\scripts\jquery.filetree\images\html.png" />
+    <Content Include="Filemanager\scripts\jquery.filetree\images\java.png" />
+    <Content Include="Filemanager\scripts\jquery.filetree\images\linux.png" />
+    <Content Include="Filemanager\scripts\jquery.filetree\images\music.png" />
+    <Content Include="Filemanager\scripts\jquery.filetree\images\pdf.png" />
+    <Content Include="Filemanager\scripts\jquery.filetree\images\php.png" />
+    <Content Include="Filemanager\scripts\jquery.filetree\images\picture.png" />
+    <Content Include="Filemanager\scripts\jquery.filetree\images\ppt.png" />
+    <Content Include="Filemanager\scripts\jquery.filetree\images\psd.png" />
+    <Content Include="Filemanager\scripts\jquery.filetree\images\ruby.png" />
+    <Content Include="Filemanager\scripts\jquery.filetree\images\script.png" />
+    <Content Include="Filemanager\scripts\jquery.filetree\images\spinner.gif" />
+    <Content Include="Filemanager\scripts\jquery.filetree\images\txt.png" />
+    <Content Include="Filemanager\scripts\jquery.filetree\images\xls.png" />
+    <Content Include="Filemanager\scripts\jquery.filetree\images\zip.png" />
+    <Content Include="Filemanager\scripts\jquery.filetree\jqueryFileTree.css" />
+    <Content Include="Filemanager\scripts\jquery.filetree\jqueryFileTree.js" />
+    <Content Include="Filemanager\scripts\jquery.form-3.24.js" />
+    <Content Include="Filemanager\scripts\jquery.impromptu-3.2.min.js" />
+    <Content Include="Filemanager\scripts\jquery.splitter\hgrabber.gif" />
+    <Content Include="Filemanager\scripts\jquery.splitter\jquery.splitter-1.5.1.js" />
+    <Content Include="Filemanager\scripts\jquery.splitter\jquery.splitter.css" />
+    <Content Include="Filemanager\scripts\jquery.splitter\vgrabber.gif" />
+    <Content Include="Filemanager\scripts\jquery.tablesorter-2.7.2.min.js" />
+    <Content Include="Filemanager\scripts\languages\ca.js" />
+    <Content Include="Filemanager\scripts\languages\cs.js" />
+    <Content Include="Filemanager\scripts\languages\da.js" />
+    <Content Include="Filemanager\scripts\languages\de.js" />
+    <Content Include="Filemanager\scripts\languages\en-gb.js" />
+    <Content Include="Filemanager\scripts\languages\en.js" />
+    <Content Include="Filemanager\scripts\languages\es.js" />
+    <Content Include="Filemanager\scripts\languages\fi.js" />
+    <Content Include="Filemanager\scripts\languages\fr.js" />
+    <Content Include="Filemanager\scripts\languages\he.js" />
+    <Content Include="Filemanager\scripts\languages\hu.js" />
+    <Content Include="Filemanager\scripts\languages\it.js" />
+    <Content Include="Filemanager\scripts\languages\ja.js" />
+    <Content Include="Filemanager\scripts\languages\nl.js" />
+    <Content Include="Filemanager\scripts\languages\pl.js" />
+    <Content Include="Filemanager\scripts\languages\pt.js" />
+    <Content Include="Filemanager\scripts\languages\ru.js" />
+    <Content Include="Filemanager\scripts\languages\sv.js" />
+    <Content Include="Filemanager\scripts\languages\tr.js" />
+    <Content Include="Filemanager\scripts\languages\vn.js" />
+    <Content Include="Filemanager\scripts\languages\zh-cn.js" />
+    <Content Include="Filemanager\scripts\languages\zh-tw.js" />
+    <Content Include="Filemanager\styles\filemanager.css" />
+    <Content Include="Filemanager\styles\ie10.css" />
+    <Content Include="Filemanager\styles\ie8.css" />
+    <Content Include="Filemanager\styles\ie9.css" />
+    <Content Include="Filemanager\styles\reset.css" />
+    <Content Include="Filemanager\userfiles\welcome.txt" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="HttpErrorPage.aspx" />
+    <Content Include="Images\arrow-down.gif" />
+    <Content Include="Images\arrow-green-up.gif" />
+    <Content Include="Images\arrow-red-down.gif" />
+    <Content Include="Images\arrow-right.gif" />
+    <Content Include="Images\arrow_down.gif" />
+    <Content Include="Images\arrow_up.gif" />
+    <Content Include="Images\back_button.gif" />
+    <Content Include="Images\Bar\BarOff.gif" />
+    <Content Include="Images\Bar\BarOn_Black.gif" />
+    <Content Include="Images\Bar\BarOn_Blue.gif" />
+    <Content Include="Images\Bar\BarOn_BlueAdmin.gif" />
+    <Content Include="Images\Bar\BarOn_Cyan.gif" />
+    <Content Include="Images\Bar\BarOn_Green.gif" />
+    <Content Include="Images\Bar\BarOn_Grey.gif" />
+    <Content Include="Images\Bar\BarOn_Purple.gif" />
+    <Content Include="Images\Bar\BarOn_Red.gif" />
+    <Content Include="Images\Bar\BarOn_Yellow.gif" />
+    <Content Include="Images\Bar\NegativeRatingBar.gif" />
+    <Content Include="Images\Bar\PositiveRatingBar.gif" />
+    <Content Include="Images\CalendarIcon.gif" />
+    <Content Include="Images\close-icn.png" />
+    <Content Include="Images\csharp.png" />
+    <Content Include="Images\delete.gif" />
+    <Content Include="Images\edit.gif" />
+    <Content Include="Images\edit_pen.gif" />
+    <Content Include="Images\email.png" />
+    <Content Include="Images\help.gif" />
+    <Content Include="Images\help.png" />
+    <Content Include="Images\index-icon.png" />
+    <Content Include="Images\inet.png" />
+    <Content Include="Images\layout.png" />
+    <Content Include="Images\lock.gif" />
+    <Content Include="Images\menuseparator.gif" />
+    <Content Include="Images\NegativeRatingBar.gif" />
+    <Content Include="Images\PenSurvey.JPG" />
+    <Content Include="Images\PositiveRatingBar.gif" />
+    <Content Include="Images\Print_32X32_Standard.png" />
+    <Content Include="Images\reports.png" />
+    <Content Include="Images\small_help.gif" />
+    <Content Include="Images\SocialMedia.png" />
+    <Content Include="Images\Spacer.gif" />
+    <Content Include="Images\SpLogo.png" />
+    <Content Include="Images\spot_off.gif" />
+    <Content Include="Images\spot_on.gif" />
+    <Content Include="Images\submenuseparator.gif" />
+    <Content Include="Images\surveys.png" />
+    <Content Include="Images\tools.png" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="NSurveyAdmin\AccessDenied.aspx" />
+    <Content Include="NSurveyAdmin\AjaxWebMethodsProxy.aspx" />
+    <Content Include="NSurveyAdmin\BarChartReport.aspx" />
+    <Content Include="NSurveyAdmin\CampaignStart.aspx" />
+    <Content Include="NSurveyAdmin\ConditionalEndMessage.aspx" />
+    <Content Include="NSurveyAdmin\ControlCode.aspx" />
+    <Content Include="NSurveyAdmin\CSS\loginform.css" />
+    <Content Include="NSurveyAdmin\CSS\nsurveyform.css" />
+    <Content Include="NSurveyAdmin\CSS\perfect-scrollbar.css" />
+    <Content Include="NSurveyAdmin\CSS\surveymobile.css" />
+    <Content Include="NSurveyAdmin\CSS\surveypreview.css" />
+    <Content Include="NSurveyAdmin\CSS\voterreport.css" />
+    <Content Include="NSurveyAdmin\FilterCreator.aspx" />
+    <Content Include="NSurveyAdmin\FilterEditor.aspx" />
+    <Content Include="NSurveyAdmin\Help\About.aspx" />
+    <Content Include="NSurveyAdmin\Help\Completion Actions.aspx" />
+    <Content Include="NSurveyAdmin\Help\Field - Slider.aspx" />
+    <Content Include="NSurveyAdmin\Help\default.aspx" />
+    <Content Include="NSurveyAdmin\Help\Email Notification.aspx" />
+    <Content Include="NSurveyAdmin\Help\Field - Basic.aspx" />
+    <Content Include="NSurveyAdmin\Help\FieldT_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\Help on Help.aspx" />
+    <Content Include="NSurveyAdmin\Help\Insert Security AddIn.aspx" />
+    <Content Include="NSurveyAdmin\Help\Licence.aspx" />
+    <Content Include="NSurveyAdmin\Help\Multi-Languages Settings.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Advanced Completion.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Answer Type Creator.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Answer Type Editor.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Answers Editor.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\ASP.NET Security Context.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\AT_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Boolean.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Branching conditions.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Branching Tutorial.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Condition_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Constant Sum Tutorial.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\ConstantSum_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Cookie Protection.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Cross Tabulation.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Data Export.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\ED_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\EF_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\EMail Code Protection.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Entry Number Limitation.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Extended - File Upload.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\FBT_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Field - Calendar.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Field - Constant Sum.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Field - Email.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Field - Hidden.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Field - Large.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Field - Password.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Field - Ranking.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Field - Required.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Field - Rich.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\File Manager.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\File Upload Tutorial.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\FileUpload_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Form Architecture.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Form Builder Tutorial.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Free Text Report.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Graphic Reports.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\HowToBranch_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\HowToReport_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\HowToSkip_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Individual Reach For Multiple Answers.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Insert Question.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Insert Report Item.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\IP Protection.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\KP_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Library Directory.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Library Templates.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Mailing Log.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Mailing Status.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Matrix Grid Report.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Matrix Question Editor.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Matrix Question.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Matrix Rows _ Column Editor.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\ML_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Multi-Languages Tutorial.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\MultiLanguage_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Pass Protection.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\PipingTutorial.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Piping_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\PS_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Publisher_Subscriber_Tutorial.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\QL_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Question Editor.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Ranking Tutorial.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Ranking_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Rating Tutorial.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Rating_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Raw files installation.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\RD_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Regular Expression Editor.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Remote Server Deployment.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Repeatable Section Tutorial.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Repeatable_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Report Analysis.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Report Builder.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Report Filter Creation.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Report Filter Editor.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Report General Settings.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Report Item Editor.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Report Link Deployment.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Reporting Tutorial.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Report_Web Control Deployment.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\RI_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Roles Manager.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\RPRT_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\RSI_Introduction-2.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\RSI_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\RequiredMarker.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\SCE_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\SD_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Sections Management.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\SEC_Introduction-2.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Selection - Other.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Selection - Text.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\SelectionT_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Single Question.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Skip Logic Conditions.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Skip Logic Tutorial.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\SQLType_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Static Question.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Style Editor.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Subscriber - Xml List.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Survey Deployement.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Survey Form Builder.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Survey Mailing.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Survey Popup Window.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Survey Security Context.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Take Survey.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\TGenerator.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Tk Status.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Token Protection.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Token_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\User Creation Tool.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\User Import.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\User Manager.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Voter Entries List.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Voter Report Edit.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Voter report.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Web Control Deployment.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Xml - Country.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Xml - US States.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\XMLT_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\Requirements.aspx" />
+    <Content Include="NSurveyAdmin\Help\Score_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\Sec_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\Statistics.aspx" />
+    <Content Include="NSurveyAdmin\Help\Style_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\Survey Copyright and Disclaimer.aspx" />
+    <Content Include="NSurveyAdmin\Help\Survey Creation.aspx" />
+    <Content Include="NSurveyAdmin\Help\Survey General Settings.aspx" />
+    <Content Include="NSurveyAdmin\Help\Survey Security.aspx" />
+    <Content Include="NSurveyAdmin\Help\System Messages Manager.aspx" />
+    <Content Include="NSurveyAdmin\Help\Thanks Message Conditions.aspx" />
+    <Content Include="NSurveyAdmin\Help\UM_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\Web Control Style.aspx" />
+    <Content Include="NSurveyAdmin\Images\AccesAuthorisation.gif" />
+    <Content Include="NSurveyAdmin\Images\arrow-green-up.gif" />
+    <Content Include="NSurveyAdmin\Images\arrow-green-up.png" />
+    <Content Include="NSurveyAdmin\Images\arrow-red-down.gif" />
+    <Content Include="NSurveyAdmin\Images\arrow-red-down.png" />
+    <Content Include="NSurveyAdmin\Images\arrow_down.gif" />
+    <Content Include="NSurveyAdmin\Images\arrow_up.gif" />
+    <Content Include="NSurveyAdmin\Images\PDF-Icon_32.png" />
+    <Content Include="NSurveyAdmin\Images\Print_32X32_Standard.png" />
+    <Content Include="NSurveyAdmin\Login.aspx" />
+    <Content Include="NSurveyAdmin\SurveyIPSecurity.aspx" />
+    <Content Include="NSurveyAdmin\CreateSurvey.aspx" />
+    <Content Include="NSurveyAdmin\CSS\jquerycssmenu.css" />
+    <Content Include="NSurveyAdmin\CSS\nsurveyadmin.css" />
+    <Content Include="NSurveyAdmin\DataImport.aspx" />
+    <Content Include="NSurveyAdmin\EditMatrixQuestion.aspx" />
+    <Content Include="NSurveyAdmin\EditMultiLanguages.aspx" />
+    <Content Include="NSurveyAdmin\EditPageBranching.aspx" />
+    <Content Include="NSurveyAdmin\EditRegEx.aspx" />
+    <Content Include="NSurveyAdmin\EditSingleQuestion.aspx" />
+    <Content Include="NSurveyAdmin\EditSingleQuestionAnswers.aspx" />
+    <Content Include="NSurveyAdmin\EditSkipLogicRules.aspx" />
+    <Content Include="NSurveyAdmin\EditVoterReport.aspx" />
+    <Content Include="NSurveyAdmin\ExportData.aspx" />
+    <Content Include="NSurveyAdmin\FieldReporting.aspx" />
+    <Content Include="NSurveyAdmin\FileManager.aspx" />
+    <Content Include="NSurveyAdmin\GlobalStats.aspx" />
+    <Content Include="NSurveyAdmin\Help\index.aspx" />
+    <Content Include="NSurveyAdmin\Images\headerlogo.jpg" />
+    <Content Include="NSurveyAdmin\Images\linebreak.gif" />
+    <Content Include="NSurveyAdmin\Images\questiondownbutton.gif" />
+    <Content Include="NSurveyAdmin\Images\questionoptionsbackground.gif" />
+    <Content Include="NSurveyAdmin\Images\questionupbutton.gif" />
+    <Content Include="NSurveyAdmin\Images\smalldot.gif" />
+    <Content Include="NSurveyAdmin\Images\spacer.gif" />
+    <Content Include="NSurveyAdmin\Images\spot_file.gif" />
+    <Content Include="NSurveyAdmin\Images\spot_off.gif" />
+    <Content Include="NSurveyAdmin\Images\spot_on.gif" />
+    <Content Include="NSurveyAdmin\Images\spot_text.gif" />
+    <Content Include="NSurveyAdmin\Images\tintblue.gif" />
+    <Content Include="NSurveyAdmin\Images\tintbluedark.gif" />
+    <Content Include="NSurveyAdmin\InsertQuestion.aspx" />
+    <Content Include="NSurveyAdmin\InsertSecurityAddIn.aspx" />
+    <Content Include="NSurveyAdmin\LibraryDirectory.aspx" />
+    <Content Include="NSurveyAdmin\LibraryTemplates.aspx" />
+    <Content Include="NSurveyAdmin\LogOut.aspx" />
+    <Content Include="NSurveyAdmin\MailingLog.aspx" />
+    <Content Include="NSurveyAdmin\MailingPoll.aspx" />
+    <Content Include="NSurveyAdmin\MailingStatus.aspx" />
+    <Content Include="NSurveyAdmin\MultiLanguages.aspx" />
+    <Content Include="NSurveyAdmin\PieChartReport.aspx" />
+    <Content Include="NSurveyAdmin\QuestionGroups.aspx" />
+    <Content Include="NSurveyAdmin\ResultsCrossTabulation.aspx" />
+    <Content Include="NSurveyAdmin\ResultsReporting.aspx" />
+    <Content Include="NSurveyAdmin\RolesManager.aspx" />
+    <Content Include="NSurveyAdmin\SurveyContentBuilder.aspx" />
+    <Content Include="NSurveyAdmin\SurveyLayout.aspx" />
+    <Content Include="NSurveyAdmin\SurveyList.aspx" />
+    <Content Include="NSurveyAdmin\SurveyMailing.aspx" />
+    <Content Include="NSurveyAdmin\SurveyOptions.aspx" />
+    <Content Include="NSurveyAdmin\SurveyPrivacy.aspx" />
+    <Content Include="NSurveyAdmin\SurveySecurity.aspx" />
+    <Content Include="NSurveyAdmin\SurveySettings.aspx" />
+    <Content Include="NSurveyAdmin\SurveyTokenSecurity.aspx" />
+    <Content Include="NSurveyAdmin\TakeSurvey.aspx" />
+    <Content Include="NSurveyAdmin\TypeCreator.aspx" />
+    <Content Include="NSurveyAdmin\TypeEditor.aspx" />
+    <Content Include="NSurveyAdmin\UserControls\AnswerOptionControl.ascx" />
+    <Content Include="NSurveyAdmin\UserControls\LoginBox.ascx" />
+    <Content Include="NSurveyAdmin\UserControls\FilterOptionControl.ascx" />
+    <Content Include="NSurveyAdmin\UserControls\FooterControl.ascx" />
+    <Content Include="NSurveyAdmin\UserControls\HeaderControl.ascx" />
+    <Content Include="NSurveyAdmin\UserControls\LanguageListControl.ascx" />
+    <Content Include="NSurveyAdmin\UserControls\LibraryNew.ascx" />
+    <Content Include="NSurveyAdmin\UserControls\LibraryQuestionOptionsControl.ascx" />
+    <Content Include="NSurveyAdmin\UserControls\PageBranchingRulesControl.ascx" />
+    <Content Include="NSurveyAdmin\UserControls\PageBreakOptionsControl.ascx" />
+    <Content Include="NSurveyAdmin\UserControls\QuestionExtraLinks.ascx" />
+    <Content Include="NSurveyAdmin\UserControls\QuestionOptionsControl.ascx" />
+    <Content Include="NSurveyAdmin\UserControls\RolesManager.ascx" />
+    <Content Include="NSurveyAdmin\UserControls\RolesOptionsControl.ascx" />
+    <Content Include="NSurveyAdmin\UserControls\SecurityAddInOptionsControl.ascx" />
+    <Content Include="NSurveyAdmin\UserControls\SecurityAddInVoterReportControl.ascx" />
+    <Content Include="NSurveyAdmin\UserControls\SkipLogicRulesControl.ascx" />
+    <Content Include="NSurveyAdmin\UserControls\SurveyListControl.ascx" />
+    <Content Include="NSurveyAdmin\UserControls\SurveyMessageConditonsControl.ascx" />
+    <Content Include="NSurveyAdmin\UserControls\SurveyFormSecurity.ascx" />
+    <Content Include="NSurveyAdmin\UserControls\SurveyOptionControl.ascx" />
+    <Content Include="NSurveyAdmin\UserControls\SurveyTreeControl.ascx" />
+    <Content Include="NSurveyAdmin\UserControls\TypeOptionControl.ascx" />
+    <Content Include="NSurveyAdmin\UserControls\UpdateVoterPageBreakOptionsControl.ascx" />
+    <Content Include="NSurveyAdmin\UserControls\UpdateVoterQuestionOptionsControl.ascx" />
+    <Content Include="NSurveyAdmin\UserControls\UserImport.ascx" />
+    <Content Include="NSurveyAdmin\UserControls\UsersOptionsControl.ascx" />
+    <Content Include="NSurveyAdmin\UserCreator.aspx" />
+    <Content Include="NSurveyAdmin\UserImport.aspx" />
+    <Content Include="NSurveyAdmin\UsersManager.aspx" />
+    <Content Include="NSurveyAdmin\VoterReport.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="NSurveyAdmin\WarningScreen.aspx" />
+    <Content Include="Scripts\astreeview\astreeview.css" />
+    <Content Include="Scripts\astreeview\astreeview.min.js" />
+    <Content Include="Scripts\astreeview\contextmenu.css" />
+    <Content Include="Scripts\astreeview\contextmenu.min.js" />
+    <Content Include="Scripts\astreeview\dropdowntreeview.css" />
+    <Content Include="Scripts\astreeview\images\astreeview-bottom-line.gif" />
+    <Content Include="Scripts\astreeview\images\astreeview-checkbox-checked.gif" />
+    <Content Include="Scripts\astreeview\images\astreeview-checkbox-half-checked.gif" />
+    <Content Include="Scripts\astreeview\images\astreeview-checkbox-unchecked.gif" />
+    <Content Include="Scripts\astreeview\images\astreeview-dragDrop-indicator1.gif" />
+    <Content Include="Scripts\astreeview\images\astreeview-dragDrop-indicator2.gif" />
+    <Content Include="Scripts\astreeview\images\astreeview-folder-open.gif" />
+    <Content Include="Scripts\astreeview\images\astreeview-folder.gif" />
+    <Content Include="Scripts\astreeview\images\astreeview-li-bg.jpg" />
+    <Content Include="Scripts\astreeview\images\astreeview-middle-line.gif" />
+    <Content Include="Scripts\astreeview\images\astreeview-minus.gif" />
+    <Content Include="Scripts\astreeview\images\astreeview-node.gif" />
+    <Content Include="Scripts\astreeview\images\astreeview-plus.gif" />
+    <Content Include="Scripts\astreeview\images\astreeview-root-line.gif" />
+    <Content Include="Scripts\astreeview\images\astreeview-top-line.gif" />
+    <Content Include="Scripts\astreeview\images\astreeview-vertical-line.gif" />
+    <Content Include="Scripts\astreeview\images\windropdown-disabled.gif" />
+    <Content Include="Scripts\astreeview\images\windropdown.gif" />
+    <Content Include="Scripts\astreeview\themes\default\default.css" />
+    <Content Include="Scripts\astreeview\themes\default\images\astreeview-bottom-line.gif" />
+    <Content Include="Scripts\astreeview\themes\default\images\astreeview-checkbox-checked.gif" />
+    <Content Include="Scripts\astreeview\themes\default\images\astreeview-checkbox-half-checked.gif" />
+    <Content Include="Scripts\astreeview\themes\default\images\astreeview-checkbox-unchecked.gif" />
+    <Content Include="Scripts\astreeview\themes\default\images\astreeview-dragDrop-indicator1.gif" />
+    <Content Include="Scripts\astreeview\themes\default\images\astreeview-dragDrop-indicator2.gif" />
+    <Content Include="Scripts\astreeview\themes\default\images\astreeview-folder-open.gif" />
+    <Content Include="Scripts\astreeview\themes\default\images\astreeview-folder.gif" />
+    <Content Include="Scripts\astreeview\themes\default\images\astreeview-middle-line.gif" />
+    <Content Include="Scripts\astreeview\themes\default\images\astreeview-minus.gif" />
+    <Content Include="Scripts\astreeview\themes\default\images\astreeview-node.gif" />
+    <Content Include="Scripts\astreeview\themes\default\images\astreeview-plus.gif" />
+    <Content Include="Scripts\astreeview\themes\default\images\astreeview-root-line.gif" />
+    <Content Include="Scripts\astreeview\themes\default\images\astreeview-top-line.gif" />
+    <Content Include="Scripts\astreeview\themes\default\images\astreeview-vertical-line.gif" />
+    <Content Include="Scripts\astreeview\themes\macOS\images\astreeview-bottom-line.gif" />
+    <Content Include="Scripts\astreeview\themes\macOS\images\astreeview-checkbox-checked.gif" />
+    <Content Include="Scripts\astreeview\themes\macOS\images\astreeview-checkbox-half-checked.gif" />
+    <Content Include="Scripts\astreeview\themes\macOS\images\astreeview-checkbox-unchecked.gif" />
+    <Content Include="Scripts\astreeview\themes\macOS\images\astreeview-dragDrop-indicator1.gif" />
+    <Content Include="Scripts\astreeview\themes\macOS\images\astreeview-dragDrop-indicator2.gif" />
+    <Content Include="Scripts\astreeview\themes\macOS\images\astreeview-folder-open.gif" />
+    <Content Include="Scripts\astreeview\themes\macOS\images\astreeview-folder.gif" />
+    <Content Include="Scripts\astreeview\themes\macOS\images\astreeview-middle-line.gif" />
+    <Content Include="Scripts\astreeview\themes\macOS\images\astreeview-minus.gif" />
+    <Content Include="Scripts\astreeview\themes\macOS\images\astreeview-node.gif" />
+    <Content Include="Scripts\astreeview\themes\macOS\images\astreeview-plus.gif" />
+    <Content Include="Scripts\astreeview\themes\macOS\images\astreeview-root-line.gif" />
+    <Content Include="Scripts\astreeview\themes\macOS\images\astreeview-top-line.gif" />
+    <Content Include="Scripts\astreeview\themes\macOS\images\astreeview-vertical-line.gif" />
+    <Content Include="Scripts\astreeview\themes\macOS\macOS.css" />
+    <Content Include="Scripts\astreeview\themes\right-left\images\astreeview-bottom-line.gif" />
+    <Content Include="Scripts\astreeview\themes\right-left\images\astreeview-checkbox-checked.gif" />
+    <Content Include="Scripts\astreeview\themes\right-left\images\astreeview-checkbox-half-checked.gif" />
+    <Content Include="Scripts\astreeview\themes\right-left\images\astreeview-checkbox-unchecked.gif" />
+    <Content Include="Scripts\astreeview\themes\right-left\images\astreeview-dragDrop-indicator1.gif" />
+    <Content Include="Scripts\astreeview\themes\right-left\images\astreeview-dragDrop-indicator2.gif" />
+    <Content Include="Scripts\astreeview\themes\right-left\images\astreeview-folder-open.gif" />
+    <Content Include="Scripts\astreeview\themes\right-left\images\astreeview-folder.gif" />
+    <Content Include="Scripts\astreeview\themes\right-left\images\astreeview-middle-line.gif" />
+    <Content Include="Scripts\astreeview\themes\right-left\images\astreeview-minus.gif" />
+    <Content Include="Scripts\astreeview\themes\right-left\images\astreeview-node.gif" />
+    <Content Include="Scripts\astreeview\themes\right-left\images\astreeview-plus.gif" />
+    <Content Include="Scripts\astreeview\themes\right-left\images\astreeview-root-line.gif" />
+    <Content Include="Scripts\astreeview\themes\right-left\images\astreeview-top-line.gif" />
+    <Content Include="Scripts\astreeview\themes\right-left\images\astreeview-vertical-line.gif" />
+    <Content Include="Scripts\astreeview\themes\right-left\right-left.css" />
+    <Content Include="Scripts\astreeview\themes\vista\images\astreeview-bottom-line.gif" />
+    <Content Include="Scripts\astreeview\themes\vista\images\astreeview-checkbox-checked.gif" />
+    <Content Include="Scripts\astreeview\themes\vista\images\astreeview-checkbox-half-checked.gif" />
+    <Content Include="Scripts\astreeview\themes\vista\images\astreeview-checkbox-unchecked.gif" />
+    <Content Include="Scripts\astreeview\themes\vista\images\astreeview-dragDrop-indicator1.gif" />
+    <Content Include="Scripts\astreeview\themes\vista\images\astreeview-dragDrop-indicator2.gif" />
+    <Content Include="Scripts\astreeview\themes\vista\images\astreeview-folder-open.gif" />
+    <Content Include="Scripts\astreeview\themes\vista\images\astreeview-folder.gif" />
+    <Content Include="Scripts\astreeview\themes\vista\images\astreeview-middle-line.gif" />
+    <Content Include="Scripts\astreeview\themes\vista\images\astreeview-minus.gif" />
+    <Content Include="Scripts\astreeview\themes\vista\images\astreeview-node.gif" />
+    <Content Include="Scripts\astreeview\themes\vista\images\astreeview-plus.gif" />
+    <Content Include="Scripts\astreeview\themes\vista\images\astreeview-root-line.gif" />
+    <Content Include="Scripts\astreeview\themes\vista\images\astreeview-top-line.gif" />
+    <Content Include="Scripts\astreeview\themes\vista\images\astreeview-vertical-line.gif" />
+    <Content Include="Scripts\astreeview\themes\vista\vista.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\ckeditor\adapters\jquery.js" />
+    <Content Include="Scripts\ckeditor\build-config.js" />
+    <Content Include="Scripts\ckeditor\ckeditor.js" />
+    <Content Include="Scripts\ckeditor\config.js" />
+    <Content Include="Scripts\ckeditor\contents.css" />
+    <Content Include="Scripts\ckeditor\lang\af.js" />
+    <Content Include="Scripts\ckeditor\lang\ar.js" />
+    <Content Include="Scripts\ckeditor\lang\bg.js" />
+    <Content Include="Scripts\ckeditor\lang\bn.js" />
+    <Content Include="Scripts\ckeditor\lang\bs.js" />
+    <Content Include="Scripts\ckeditor\lang\ca.js" />
+    <Content Include="Scripts\ckeditor\lang\cs.js" />
+    <Content Include="Scripts\ckeditor\lang\cy.js" />
+    <Content Include="Scripts\ckeditor\lang\da.js" />
+    <Content Include="Scripts\ckeditor\lang\de.js" />
+    <Content Include="Scripts\ckeditor\lang\el.js" />
+    <Content Include="Scripts\ckeditor\lang\en-au.js" />
+    <Content Include="Scripts\ckeditor\lang\en-ca.js" />
+    <Content Include="Scripts\ckeditor\lang\en-gb.js" />
+    <Content Include="Scripts\ckeditor\lang\en.js" />
+    <Content Include="Scripts\ckeditor\lang\eo.js" />
+    <Content Include="Scripts\ckeditor\lang\es.js" />
+    <Content Include="Scripts\ckeditor\lang\et.js" />
+    <Content Include="Scripts\ckeditor\lang\eu.js" />
+    <Content Include="Scripts\ckeditor\lang\fa.js" />
+    <Content Include="Scripts\ckeditor\lang\fi.js" />
+    <Content Include="Scripts\ckeditor\lang\fo.js" />
+    <Content Include="Scripts\ckeditor\lang\fr-ca.js" />
+    <Content Include="Scripts\ckeditor\lang\fr.js" />
+    <Content Include="Scripts\ckeditor\lang\gl.js" />
+    <Content Include="Scripts\ckeditor\lang\gu.js" />
+    <Content Include="Scripts\ckeditor\lang\he.js" />
+    <Content Include="Scripts\ckeditor\lang\hi.js" />
+    <Content Include="Scripts\ckeditor\lang\hr.js" />
+    <Content Include="Scripts\ckeditor\lang\hu.js" />
+    <Content Include="Scripts\ckeditor\lang\id.js" />
+    <Content Include="Scripts\ckeditor\lang\is.js" />
+    <Content Include="Scripts\ckeditor\lang\it.js" />
+    <Content Include="Scripts\ckeditor\lang\ja.js" />
+    <Content Include="Scripts\ckeditor\lang\ka.js" />
+    <Content Include="Scripts\ckeditor\lang\km.js" />
+    <Content Include="Scripts\ckeditor\lang\ko.js" />
+    <Content Include="Scripts\ckeditor\lang\ku.js" />
+    <Content Include="Scripts\ckeditor\lang\lt.js" />
+    <Content Include="Scripts\ckeditor\lang\lv.js" />
+    <Content Include="Scripts\ckeditor\lang\mk.js" />
+    <Content Include="Scripts\ckeditor\lang\mn.js" />
+    <Content Include="Scripts\ckeditor\lang\ms.js" />
+    <Content Include="Scripts\ckeditor\lang\nb.js" />
+    <Content Include="Scripts\ckeditor\lang\nl.js" />
+    <Content Include="Scripts\ckeditor\lang\no.js" />
+    <Content Include="Scripts\ckeditor\lang\pl.js" />
+    <Content Include="Scripts\ckeditor\lang\pt-br.js" />
+    <Content Include="Scripts\ckeditor\lang\pt.js" />
+    <Content Include="Scripts\ckeditor\lang\ro.js" />
+    <Content Include="Scripts\ckeditor\lang\ru.js" />
+    <Content Include="Scripts\ckeditor\lang\si.js" />
+    <Content Include="Scripts\ckeditor\lang\sk.js" />
+    <Content Include="Scripts\ckeditor\lang\sl.js" />
+    <Content Include="Scripts\ckeditor\lang\sq.js" />
+    <Content Include="Scripts\ckeditor\lang\sr-latn.js" />
+    <Content Include="Scripts\ckeditor\lang\sr.js" />
+    <Content Include="Scripts\ckeditor\lang\sv.js" />
+    <Content Include="Scripts\ckeditor\lang\th.js" />
+    <Content Include="Scripts\ckeditor\lang\tr.js" />
+    <Content Include="Scripts\ckeditor\lang\tt.js" />
+    <Content Include="Scripts\ckeditor\lang\ug.js" />
+    <Content Include="Scripts\ckeditor\lang\uk.js" />
+    <Content Include="Scripts\ckeditor\lang\vi.js" />
+    <Content Include="Scripts\ckeditor\lang\zh-cn.js" />
+    <Content Include="Scripts\ckeditor\lang\zh.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\en-gb.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\id.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\km.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ko.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\si.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\th.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\tt.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\zh.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Scripts\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Scripts\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="Scripts\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Scripts\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Scripts\ckeditor\plugins\colordialog\dialogs\colordialog.js" />
+    <Content Include="Scripts\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Scripts\ckeditor\plugins\div\dialogs\div.js" />
+    <Content Include="Scripts\ckeditor\plugins\find\dialogs\find.js" />
+    <Content Include="Scripts\ckeditor\plugins\flash\dialogs\flash.js" />
+    <Content Include="Scripts\ckeditor\plugins\flash\images\placeholder.png" />
+    <Content Include="Scripts\ckeditor\plugins\forms\dialogs\button.js" />
+    <Content Include="Scripts\ckeditor\plugins\forms\dialogs\checkbox.js" />
+    <Content Include="Scripts\ckeditor\plugins\forms\dialogs\form.js" />
+    <Content Include="Scripts\ckeditor\plugins\forms\dialogs\hiddenfield.js" />
+    <Content Include="Scripts\ckeditor\plugins\forms\dialogs\radio.js" />
+    <Content Include="Scripts\ckeditor\plugins\forms\dialogs\select.js" />
+    <Content Include="Scripts\ckeditor\plugins\forms\dialogs\textarea.js" />
+    <Content Include="Scripts\ckeditor\plugins\forms\dialogs\textfield.js" />
+    <Content Include="Scripts\ckeditor\plugins\forms\images\hiddenfield.gif" />
+    <Content Include="Scripts\ckeditor\plugins\icons.png" />
+    <Content Include="Scripts\ckeditor\plugins\icons_hidpi.png" />
+    <Content Include="Scripts\ckeditor\plugins\iframe\dialogs\iframe.js" />
+    <Content Include="Scripts\ckeditor\plugins\iframe\images\placeholder.png" />
+    <Content Include="Scripts\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="Scripts\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="Scripts\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Scripts\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Scripts\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="Scripts\ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="Scripts\ckeditor\plugins\liststyle\dialogs\liststyle.js" />
+    <Content Include="Scripts\ckeditor\plugins\magicline\images\hidpi\icon.png" />
+    <Content Include="Scripts\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="Scripts\ckeditor\plugins\pagebreak\images\pagebreak.gif" />
+    <Content Include="Scripts\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Scripts\ckeditor\plugins\preview\preview.html" />
+    <Content Include="Scripts\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Scripts\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_address.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_blockquote.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_div.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_h1.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_h2.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_h3.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_h4.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_h5.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_h6.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_p.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_pre.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\dialogs\smiley.js" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\angel_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\angel_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\angry_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\angry_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\broken_heart.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\broken_heart.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\confused_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\confused_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\cry_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\cry_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\devil_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\devil_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\embaressed_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\embarrassed_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\embarrassed_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\envelope.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\envelope.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\heart.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\heart.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\kiss.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\kiss.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\lightbulb.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\lightbulb.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\omg_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\omg_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\regular_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\regular_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\sad_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\sad_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\shades_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\shades_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\teeth_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\teeth_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\thumbs_down.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\thumbs_down.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\thumbs_up.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\thumbs_up.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\tongue_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\tongue_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\tounge_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\wink_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\wink_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\ar.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\bg.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\en-gb.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\es.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\gl.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\hu.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\id.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\ja.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\km.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\pl.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\ru.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\si.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\sl.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\th.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\tt.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\uk.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\vi.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\zh.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Scripts\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Scripts\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="Scripts\ckeditor\plugins\templates\dialogs\templates.css" />
+    <Content Include="Scripts\ckeditor\plugins\templates\dialogs\templates.js" />
+    <Content Include="Scripts\ckeditor\plugins\templates\templates\default.js" />
+    <Content Include="Scripts\ckeditor\plugins\templates\templates\images\template1.gif" />
+    <Content Include="Scripts\ckeditor\plugins\templates\templates\images\template2.gif" />
+    <Content Include="Scripts\ckeditor\plugins\templates\templates\images\template3.gif" />
+    <Content Include="Scripts\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Scripts\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Scripts\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Scripts\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Scripts\ckeditor\plugins\wsc\dialogs\wsc_ie.js" />
+    <Content Include="Scripts\ckeditor\samples\ajax.html" />
+    <Content Include="Scripts\ckeditor\samples\api.html" />
+    <Content Include="Scripts\ckeditor\samples\appendto.html" />
+    <Content Include="Scripts\ckeditor\samples\assets\inlineall\logo.png" />
+    <Content Include="Scripts\ckeditor\samples\assets\outputxhtml\outputxhtml.css" />
+    <Content Include="Scripts\ckeditor\samples\assets\sample.jpg" />
+    <Content Include="Scripts\ckeditor\samples\assets\uilanguages\languages.js" />
+    <Content Include="Scripts\ckeditor\samples\datafiltering.html" />
+    <Content Include="Scripts\ckeditor\samples\divreplace.html" />
+    <Content Include="Scripts\ckeditor\samples\index.html" />
+    <Content Include="Scripts\ckeditor\samples\inlineall.html" />
+    <Content Include="Scripts\ckeditor\samples\inlinebycode.html" />
+    <Content Include="Scripts\ckeditor\samples\inlinetextarea.html" />
+    <Content Include="Scripts\ckeditor\samples\jquery.html" />
+    <Content Include="Scripts\ckeditor\samples\plugins\dialog\assets\my_dialog.js" />
+    <Content Include="Scripts\ckeditor\samples\plugins\dialog\dialog.html" />
+    <Content Include="Scripts\ckeditor\samples\plugins\enterkey\enterkey.html" />
+    <Content Include="Scripts\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.swf" />
+    <Content Include="Scripts\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\swfobject.js" />
+    <Content Include="Scripts\ckeditor\samples\plugins\htmlwriter\outputforflash.html" />
+    <Content Include="Scripts\ckeditor\samples\plugins\htmlwriter\outputhtml.html" />
+    <Content Include="Scripts\ckeditor\samples\plugins\magicline\magicline.html" />
+    <Content Include="Scripts\ckeditor\samples\plugins\toolbar\toolbar.html" />
+    <Content Include="Scripts\ckeditor\samples\plugins\wysiwygarea\fullpage.html" />
+    <Content Include="Scripts\ckeditor\samples\readonly.html" />
+    <Content Include="Scripts\ckeditor\samples\replacebyclass.html" />
+    <Content Include="Scripts\ckeditor\samples\replacebycode.html" />
+    <Content Include="Scripts\ckeditor\samples\sample.css" />
+    <Content Include="Scripts\ckeditor\samples\sample.js" />
+    <Content Include="Scripts\ckeditor\samples\tabindex.html" />
+    <Content Include="Scripts\ckeditor\samples\uicolor.html" />
+    <Content Include="Scripts\ckeditor\samples\uilanguages.html" />
+    <Content Include="Scripts\ckeditor\samples\xhtmlstyle.html" />
+    <Content Include="Scripts\ckeditor\skins\kama\dialog.css" />
+    <Content Include="Scripts\ckeditor\skins\kama\dialog_ie.css" />
+    <Content Include="Scripts\ckeditor\skins\kama\dialog_ie7.css" />
+    <Content Include="Scripts\ckeditor\skins\kama\dialog_ie8.css" />
+    <Content Include="Scripts\ckeditor\skins\kama\dialog_iequirks.css" />
+    <Content Include="Scripts\ckeditor\skins\kama\editor.css" />
+    <Content Include="Scripts\ckeditor\skins\kama\editor_ie.css" />
+    <Content Include="Scripts\ckeditor\skins\kama\editor_ie7.css" />
+    <Content Include="Scripts\ckeditor\skins\kama\editor_ie8.css" />
+    <Content Include="Scripts\ckeditor\skins\kama\editor_iequirks.css" />
+    <Content Include="Scripts\ckeditor\skins\kama\icons.png" />
+    <Content Include="Scripts\ckeditor\skins\kama\icons_hidpi.png" />
+    <Content Include="Scripts\ckeditor\skins\kama\images\dialog_sides.gif" />
+    <Content Include="Scripts\ckeditor\skins\kama\images\dialog_sides.png" />
+    <Content Include="Scripts\ckeditor\skins\kama\images\dialog_sides_rtl.png" />
+    <Content Include="Scripts\ckeditor\skins\kama\images\mini.gif" />
+    <Content Include="Scripts\ckeditor\skins\kama\images\sprites.png" />
+    <Content Include="Scripts\ckeditor\skins\kama\images\sprites_ie6.png" />
+    <Content Include="Scripts\ckeditor\skins\kama\images\toolbar_start.gif" />
+    <Content Include="Scripts\ckeditor\skins\kama\skin.js" />
+    <Content Include="Scripts\ckeditor\skins\moonocolor\dialog.css" />
+    <Content Include="Scripts\ckeditor\skins\moonocolor\dialog_ie.css" />
+    <Content Include="Scripts\ckeditor\skins\moonocolor\dialog_ie7.css" />
+    <Content Include="Scripts\ckeditor\skins\moonocolor\dialog_ie8.css" />
+    <Content Include="Scripts\ckeditor\skins\moonocolor\dialog_iequirks.css" />
+    <Content Include="Scripts\ckeditor\skins\moonocolor\dialog_opera.css" />
+    <Content Include="Scripts\ckeditor\skins\moonocolor\editor.css" />
+    <Content Include="Scripts\ckeditor\skins\moonocolor\editor_gecko.css" />
+    <Content Include="Scripts\ckeditor\skins\moonocolor\editor_ie.css" />
+    <Content Include="Scripts\ckeditor\skins\moonocolor\editor_ie7.css" />
+    <Content Include="Scripts\ckeditor\skins\moonocolor\editor_ie8.css" />
+    <Content Include="Scripts\ckeditor\skins\moonocolor\editor_iequirks.css" />
+    <Content Include="Scripts\ckeditor\skins\moonocolor\icons.png" />
+    <Content Include="Scripts\ckeditor\skins\moonocolor\icons_hidpi.png" />
+    <Content Include="Scripts\ckeditor\skins\moonocolor\images\arrow.png" />
+    <Content Include="Scripts\ckeditor\skins\moonocolor\images\close.png" />
+    <Content Include="Scripts\ckeditor\skins\moonocolor\images\hidpi\close.png" />
+    <Content Include="Scripts\ckeditor\skins\moonocolor\images\hidpi\lock-open.png" />
+    <Content Include="Scripts\ckeditor\skins\moonocolor\images\hidpi\lock.png" />
+    <Content Include="Scripts\ckeditor\skins\moonocolor\images\hidpi\refresh.png" />
+    <Content Include="Scripts\ckeditor\skins\moonocolor\images\lock-open.png" />
+    <Content Include="Scripts\ckeditor\skins\moonocolor\images\lock.png" />
+    <Content Include="Scripts\ckeditor\skins\moonocolor\images\refresh.png" />
+    <Content Include="Scripts\ckeditor\skins\moonocolor\skin.js" />
+    <Content Include="Scripts\ckeditor\skins\moono\dialog.css" />
+    <Content Include="Scripts\ckeditor\skins\moono\dialog_ie.css" />
+    <Content Include="Scripts\ckeditor\skins\moono\dialog_ie7.css" />
+    <Content Include="Scripts\ckeditor\skins\moono\dialog_ie8.css" />
+    <Content Include="Scripts\ckeditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="Scripts\ckeditor\skins\moono\editor.css" />
+    <Content Include="Scripts\ckeditor\skins\moono\editor_gecko.css" />
+    <Content Include="Scripts\ckeditor\skins\moono\editor_ie.css" />
+    <Content Include="Scripts\ckeditor\skins\moono\editor_ie7.css" />
+    <Content Include="Scripts\ckeditor\skins\moono\editor_ie8.css" />
+    <Content Include="Scripts\ckeditor\skins\moono\editor_iequirks.css" />
+    <Content Include="Scripts\ckeditor\skins\moono\icons.png" />
+    <Content Include="Scripts\ckeditor\skins\moono\icons_hidpi.png" />
+    <Content Include="Scripts\ckeditor\skins\moono\images\arrow.png" />
+    <Content Include="Scripts\ckeditor\skins\moono\images\close.png" />
+    <Content Include="Scripts\ckeditor\skins\moono\images\hidpi\close.png" />
+    <Content Include="Scripts\ckeditor\skins\moono\images\hidpi\lock-open.png" />
+    <Content Include="Scripts\ckeditor\skins\moono\images\hidpi\lock.png" />
+    <Content Include="Scripts\ckeditor\skins\moono\images\hidpi\refresh.png" />
+    <Content Include="Scripts\ckeditor\skins\moono\images\lock-open.png" />
+    <Content Include="Scripts\ckeditor\skins\moono\images\lock.png" />
+    <Content Include="Scripts\ckeditor\skins\moono\images\refresh.png" />
+    <Content Include="Scripts\ckeditor\styles.js" />
+    <Content Include="Scripts\css\base\images\animated-overlay.gif" />
+    <Content Include="Scripts\css\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Scripts\css\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Scripts\css\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Scripts\css\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Scripts\css\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Scripts\css\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Scripts\css\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Scripts\css\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Scripts\css\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Scripts\css\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Scripts\css\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Scripts\css\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Scripts\css\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Scripts\css\base\jquery-ui.css" />
+    <Content Include="Scripts\css\base\jquery.ui.accordion.css" />
+    <Content Include="Scripts\css\base\jquery.ui.all.css" />
+    <Content Include="Scripts\css\base\jquery.ui.autocomplete.css" />
+    <Content Include="Scripts\css\base\jquery.ui.base.css" />
+    <Content Include="Scripts\css\base\jquery.ui.button.css" />
+    <Content Include="Scripts\css\base\jquery.ui.core.css" />
+    <Content Include="Scripts\css\base\jquery.ui.datepicker.css" />
+    <Content Include="Scripts\css\base\jquery.ui.dialog.css" />
+    <Content Include="Scripts\css\base\jquery.ui.menu.css" />
+    <Content Include="Scripts\css\base\jquery.ui.progressbar.css" />
+    <Content Include="Scripts\css\base\jquery.ui.resizable.css" />
+    <Content Include="Scripts\css\base\jquery.ui.selectable.css" />
+    <Content Include="Scripts\css\base\jquery.ui.slider.css" />
+    <Content Include="Scripts\css\base\jquery.ui.spinner.css" />
+    <Content Include="Scripts\css\base\jquery.ui.tabs.css" />
+    <Content Include="Scripts\css\base\jquery.ui.theme.css" />
+    <Content Include="Scripts\css\base\jquery.ui.tooltip.css" />
+    <Content Include="Scripts\css\base\minified\images\animated-overlay.gif" />
+    <Content Include="Scripts\css\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Scripts\css\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Scripts\css\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Scripts\css\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Scripts\css\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Scripts\css\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Scripts\css\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Scripts\css\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Scripts\css\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Scripts\css\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Scripts\css\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Scripts\css\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Scripts\css\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Scripts\css\base\minified\jquery-ui.min.css" />
+    <Content Include="Scripts\css\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Scripts\css\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Scripts\css\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Scripts\css\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Scripts\css\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Scripts\css\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Scripts\css\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="Scripts\css\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Scripts\css\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Scripts\css\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Scripts\css\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Scripts\css\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="Scripts\css\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Scripts\css\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Scripts\css\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="Scripts\css\ui-core-base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Scripts\css\ui-core-base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Scripts\css\ui-core-base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Scripts\css\ui-core-base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Scripts\css\ui-core-base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Scripts\css\ui-core-base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Scripts\css\ui-core-base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Scripts\css\ui-core-base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Scripts\css\ui-core-base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Scripts\css\ui-core-base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Scripts\css\ui-core-base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Scripts\css\ui-core-base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Scripts\css\ui-core-base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Scripts\css\ui-core-base\jquery.ui.all.css" />
+    <Content Include="Scripts\css\ui-core-base\jquery.ui.base.css" />
+    <Content Include="Scripts\css\ui-core-base\jquery.ui.core.css" />
+    <Content Include="Scripts\css\ui-core-base\jquery.ui.theme.css" />
+    <Content Include="Scripts\Javascript\01_jquery\jquery-1.11.1.js" />
+    <Content Include="Scripts\Javascript\01_jquery\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Scripts\Javascript\cssmenu\jquerycssmenu.js" />
+    <Content Include="Scripts\Javascript\fileinput\jquery.fileinput.js" />
+    <Content Include="Scripts\Javascript\fileinput\jquery.fileinput.min.js" />
+    <Content Include="Scripts\Javascript\HTML5shiv\html5shiv.js" />
+    <Content Include="Scripts\Javascript\perfectscrollbar\jquery.mousewheel.js" />
+    <Content Include="Scripts\Javascript\perfectscrollbar\perfect-scrollbar.js" />
+    <Content Include="Scripts\Javascript\slider\slider.css" />
+    <Content Include="Scripts\Javascript\slider\slider.js" />
+    <Content Include="Scripts\Javascript\tooltip\javascripts\jquery.tipsy.js" />
+    <Content Include="Scripts\Javascript\tooltip\stylesheets\tipsy.css" />
+    <Content Include="Scripts\Javascript\ui\jquery-ui-1.8.12.custom.min.js" />
+    <Content Include="Scripts\Javascript\ui\jquery.ui.core.js" />
+    <Content Include="Scripts\Javascript\ui\jquery.ui.mouse.js" />
+    <Content Include="Scripts\Javascript\ui\jquery.ui.position.js" />
+    <Content Include="Scripts\Javascript\ui\jquery.ui.tabs.js" />
+    <Content Include="Scripts\Javascript\ui\jquery.ui.widget.js" />
+    <Content Include="Scripts\js\jquery.ui.datepicker-de-de.js" />
+    <Content Include="Scripts\js\jquery.ui.datepicker-de-CH.js" />
+    <Content Include="Scripts\js\jquery.ui.datepicker-en-us.js" />
+    <Content Include="Scripts\js\jquery.ui.datepicker-es.js" />
+    <Content Include="Scripts\js\jquery.ui.datepicker-fr.js" />
+    <Content Include="Scripts\js\jquery.ui.datepicker-de.js" />
+    <Content Include="Scripts\js\jquery.ui.datepicker-nl-BE.js" />
+    <Content Include="Scripts\js\jquery.ui.datepicker-nl.js" />
+    <Content Include="Scripts\modernizr-2.7.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Survey.aspx" />
+    <Content Include="SurveyMobile.aspx" />
+    <Content Include="XmlData\al.xml" />
+    <Content Include="XmlData\be.xml" />
+    <Content Include="XmlData\br.xml" />
+    <Content Include="XmlData\ch.fr.xml" />
+    <Content Include="XmlData\ch.xml" />
+    <Content Include="XmlData\countries.br.xml" />
+    <Content Include="XmlData\countries.fr.xml" />
+    <Content Include="XmlData\countries.nl.xml" />
+    <Content Include="XmlData\countries.xml" />
+    <Content Include="XmlData\de.fr.xml" />
+    <Content Include="XmlData\de.xml" />
+    <Content Include="XmlData\es.fr.xml" />
+    <Content Include="XmlData\es.xml" />
+    <Content Include="XmlData\fr.fr.xml" />
+    <Content Include="XmlData\fr.xml" />
+    <Content Include="XmlData\gb.fr.xml" />
+    <Content Include="XmlData\gb.xml" />
+    <Content Include="XmlData\Helpfiles\de-DE.xml" />
+    <Content Include="XmlData\Helpfiles\de.xml" />
+    <Content Include="XmlData\Helpfiles\en-US.xml" />
+    <Content Include="XmlData\Helpfiles\en.xml" />
+    <Content Include="XmlData\Helpfiles\fr-FR.xml" />
+    <Content Include="XmlData\Helpfiles\fr.xml" />
+    <Content Include="XmlData\Helpfiles\nl-NL.xml" />
+    <Content Include="XmlData\Helpfiles\nl.xml" />
+    <Content Include="XmlData\Helpfiles\pt-BR.xml" />
+    <Content Include="XmlData\Helpfiles\pt.xml" />
+    <Content Include="XmlData\Helpfiles\tr-TR.xml" />
+    <Content Include="XmlData\Helpfiles\tr.xml" />
+    <Content Include="XmlData\it.fr.xml" />
+    <Content Include="XmlData\it.xml" />
+    <Content Include="XmlData\Languages\ar.xml" />
+    <Content Include="XmlData\Languages\base.xml" />
+    <Content Include="XmlData\Languages\de-DE.xml" />
+    <Content Include="XmlData\Languages\de.xml" />
+    <Content Include="XmlData\Languages\en-US.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="XmlData\Languages\en.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="XmlData\Languages\fr-FR.xml" />
+    <Content Include="XmlData\Languages\fr.xml" />
+    <Content Include="XmlData\Languages\he-IL.xml" />
+    <Content Include="XmlData\Languages\it-IT.xml" />
+    <Content Include="XmlData\Languages\lt-LT.xml" />
+    <Content Include="XmlData\Languages\nl-NL.xml" />
+    <Content Include="XmlData\Languages\nl.xml" />
+    <Content Include="XmlData\Languages\pt-BR.xml" />
+    <Content Include="XmlData\Languages\pt-PT.xml" />
+    <Content Include="XmlData\Languages\pt.xml" />
+    <Content Include="XmlData\Languages\tr-TR.xml" />
+    <Content Include="XmlData\Languages\tr.xml" />
+    <Content Include="XmlData\nl.xml" />
+    <Content Include="XmlData\pt.fr.xml" />
+    <Content Include="XmlData\pt.xml" />
+    <Content Include="XmlData\us.fr.xml" />
+    <Content Include="XmlData\us.xml" />
+    <Content Include="XmlData\usstates.xml" />
+    <EmbeddedResource Include="NSurveyAdmin\EditMatrixQuestion.aspx.resx">
+      <DependentUpon>EditMatrixQuestion.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\FilterCreator.aspx.resx">
+      <DependentUpon>FilterCreator.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\FilterEditor.aspx.resx">
+      <DependentUpon>FilterEditor.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\Login.aspx.resx">
+      <DependentUpon>Login.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\SurveyContentBuilder.aspx.resx">
+      <DependentUpon>SurveyContentBuilder.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\SurveyMailing.aspx.resx">
+      <DependentUpon>SurveyMailing.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\UserControls\LoginBox.ascx.resx">
+      <DependentUpon>LoginBox.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\UserControls\FilterOptionControl.ascx.resx">
+      <DependentUpon>FilterOptionControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\UserControls\HeaderControl.ascx.resx">
+      <DependentUpon>HeaderControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\UserControls\LanguageListControl.ascx.resx">
+      <DependentUpon>LanguageListControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\UserControls\PageBreakOptionsControl.ascx.resx">
+      <DependentUpon>PageBreakOptionsControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\UserControls\QuestionOptionsControl.ascx.resx">
+      <DependentUpon>QuestionOptionsControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\UserControls\RolesOptionsControl.ascx.resx">
+      <DependentUpon>RolesOptionsControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\UserControls\SurveyListControl.ascx.resx">
+      <DependentUpon>SurveyListControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\UserControls\SurveyOptionControl.ascx.resx">
+      <DependentUpon>SurveyOptionControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\UserControls\UsersOptionsControl.ascx.resx">
+      <DependentUpon>UsersOptionsControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\UsersManager.aspx.resx">
+      <DependentUpon>UsersManager.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <Content Include="Wap.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code\ASyncMailing.cs" />
+    <Compile Include="Code\ASyncMailingReminder.cs" />
+    <Compile Include="Code\ASyncMailingState.cs" />
+    <Compile Include="Code\CheckBoxCtrlAdapter.cs" />
+    <Compile Include="Code\ExceptionUtility.cs" />
+    <Compile Include="Code\GlobalRadioButton.cs" />
+    <Compile Include="Code\LoginSecurity.cs" />
+    <Compile Include="Code\MenuSecurity.cs" />
+    <Compile Include="Code\PageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Code\RowSelectorColumn.cs" />
+    <Compile Include="Code\SyncDataStore.cs" />
+    <Compile Include="Code\UINavigator.cs" />
+    <Compile Include="Code\UITabList.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HttpErrorPage.aspx.cs">
+      <DependentUpon>HttpErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HttpErrorPage.aspx.designer.cs">
+      <DependentUpon>HttpErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\AccessDenied.aspx.cs">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\AccessDenied.aspx.designer.cs">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\AjaxWebMethodsProxy.aspx.cs">
+      <DependentUpon>AjaxWebMethodsProxy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\AjaxWebMethodsProxy.aspx.designer.cs">
+      <DependentUpon>AjaxWebMethodsProxy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\BarChartReport.aspx.cs">
+      <DependentUpon>BarChartReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\BarChartReport.aspx.designer.cs">
+      <DependentUpon>BarChartReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\CampaignStart.aspx.cs">
+      <DependentUpon>CampaignStart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\CampaignStart.aspx.designer.cs">
+      <DependentUpon>CampaignStart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\ConditionalEndMessage.aspx.cs">
+      <DependentUpon>ConditionalEndMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\ConditionalEndMessage.aspx.designer.cs">
+      <DependentUpon>ConditionalEndMessage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\ControlCode.aspx.cs">
+      <DependentUpon>ControlCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\ControlCode.aspx.designer.cs">
+      <DependentUpon>ControlCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\FilterCreator.aspx.cs">
+      <DependentUpon>FilterCreator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\FilterCreator.aspx.designer.cs">
+      <DependentUpon>FilterCreator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\FilterEditor.aspx.cs">
+      <DependentUpon>FilterEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\FilterEditor.aspx.designer.cs">
+      <DependentUpon>FilterEditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\Help\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\Help\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\SurveyIPSecurity.aspx.cs">
+      <DependentUpon>SurveyIPSecurity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\SurveyIPSecurity.aspx.designer.cs">
+      <DependentUpon>SurveyIPSecurity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\CreateSurvey.aspx.cs">
+      <DependentUpon>CreateSurvey.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\CreateSurvey.aspx.designer.cs">
+      <DependentUpon>CreateSurvey.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\DataImport.aspx.cs">
+      <DependentUpon>DataImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\DataImport.aspx.designer.cs">
+      <DependentUpon>DataImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\EditMatrixQuestion.aspx.cs">
+      <DependentUpon>EditMatrixQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\EditMatrixQuestion.aspx.designer.cs">
+      <DependentUpon>EditMatrixQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\EditMultiLanguages.aspx.cs">
+      <DependentUpon>EditMultiLanguages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\EditMultiLanguages.aspx.designer.cs">
+      <DependentUpon>EditMultiLanguages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\EditPageBranching.aspx.cs">
+      <DependentUpon>EditPageBranching.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\EditPageBranching.aspx.designer.cs">
+      <DependentUpon>EditPageBranching.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\EditRegEx.aspx.cs">
+      <DependentUpon>EditRegEx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\EditRegEx.aspx.designer.cs">
+      <DependentUpon>EditRegEx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\EditSingleQuestion.aspx.cs">
+      <DependentUpon>EditSingleQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\EditSingleQuestion.aspx.designer.cs">
+      <DependentUpon>EditSingleQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\EditSingleQuestionAnswers.aspx.cs">
+      <DependentUpon>EditSingleQuestionAnswers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\EditSingleQuestionAnswers.aspx.designer.cs">
+      <DependentUpon>EditSingleQuestionAnswers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\EditSkipLogicRules.aspx.cs">
+      <DependentUpon>EditSkipLogicRules.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\EditSkipLogicRules.aspx.designer.cs">
+      <DependentUpon>EditSkipLogicRules.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\EditVoterReport.aspx.cs">
+      <DependentUpon>EditVoterReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\EditVoterReport.aspx.designer.cs">
+      <DependentUpon>EditVoterReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\ExportData.aspx.cs">
+      <DependentUpon>ExportData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\ExportData.aspx.designer.cs">
+      <DependentUpon>ExportData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\FieldReporting.aspx.cs">
+      <DependentUpon>FieldReporting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\FieldReporting.aspx.designer.cs">
+      <DependentUpon>FieldReporting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\FileManager.aspx.cs">
+      <DependentUpon>FileManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\FileManager.aspx.designer.cs">
+      <DependentUpon>FileManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\GlobalStats.aspx.cs">
+      <DependentUpon>GlobalStats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\GlobalStats.aspx.designer.cs">
+      <DependentUpon>GlobalStats.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\Help\Index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\Help\Index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\InsertQuestion.aspx.cs">
+      <DependentUpon>InsertQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\InsertQuestion.aspx.designer.cs">
+      <DependentUpon>InsertQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\InsertSecurityAddIn.aspx.cs">
+      <DependentUpon>InsertSecurityAddIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\InsertSecurityAddIn.aspx.designer.cs">
+      <DependentUpon>InsertSecurityAddIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\LibraryDirectory.aspx.cs">
+      <DependentUpon>LibraryDirectory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\LibraryDirectory.aspx.designer.cs">
+      <DependentUpon>LibraryDirectory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\LibraryTemplates.aspx.cs">
+      <DependentUpon>LibraryTemplates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\LibraryTemplates.aspx.designer.cs">
+      <DependentUpon>LibraryTemplates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\LogOut.aspx.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\LogOut.aspx.designer.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\MailingLog.aspx.cs">
+      <DependentUpon>MailingLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\MailingLog.aspx.designer.cs">
+      <DependentUpon>MailingLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\MailingPoll.aspx.cs">
+      <DependentUpon>MailingPoll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\MailingPoll.aspx.designer.cs">
+      <DependentUpon>MailingPoll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\MailingStatus.aspx.cs">
+      <DependentUpon>MailingStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\MailingStatus.aspx.designer.cs">
+      <DependentUpon>MailingStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\MsterPageTabs.master.cs">
+      <DependentUpon>MsterPageTabs.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\MsterPageTabs.master.designer.cs">
+      <DependentUpon>MsterPageTabs.master</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\MultiLanguages.aspx.cs">
+      <DependentUpon>MultiLanguages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\MultiLanguages.aspx.designer.cs">
+      <DependentUpon>MultiLanguages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\PieChartReport.aspx.cs">
+      <DependentUpon>PieChartReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\PieChartReport.aspx.designer.cs">
+      <DependentUpon>PieChartReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\QuestionGroups.aspx.cs">
+      <DependentUpon>QuestionGroups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\QuestionGroups.aspx.designer.cs">
+      <DependentUpon>QuestionGroups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\ResultsCrossTabulation.aspx.cs">
+      <DependentUpon>ResultsCrossTabulation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\ResultsCrossTabulation.aspx.designer.cs">
+      <DependentUpon>ResultsCrossTabulation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\ResultsReporting.aspx.cs">
+      <DependentUpon>ResultsReporting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\ResultsReporting.aspx.designer.cs">
+      <DependentUpon>ResultsReporting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\RolesManager.aspx.cs">
+      <DependentUpon>RolesManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\RolesManager.aspx.designer.cs">
+      <DependentUpon>RolesManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\SurveyContentBuilder.aspx.cs">
+      <DependentUpon>SurveyContentBuilder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\SurveyContentBuilder.aspx.designer.cs">
+      <DependentUpon>SurveyContentBuilder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\SurveyLayout.aspx.cs">
+      <DependentUpon>SurveyLayout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\SurveyLayout.aspx.designer.cs">
+      <DependentUpon>SurveyLayout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\SurveyList.aspx.cs">
+      <DependentUpon>SurveyList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\SurveyList.aspx.designer.cs">
+      <DependentUpon>SurveyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\SurveyMailing.aspx.cs">
+      <DependentUpon>SurveyMailing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\SurveyMailing.aspx.designer.cs">
+      <DependentUpon>SurveyMailing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\SurveyOptions.aspx.cs">
+      <DependentUpon>SurveyOptions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\SurveyOptions.aspx.designer.cs">
+      <DependentUpon>SurveyOptions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\SurveyPrivacy.aspx.cs">
+      <DependentUpon>SurveyPrivacy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\SurveyPrivacy.aspx.designer.cs">
+      <DependentUpon>SurveyPrivacy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\SurveySecurity.aspx.cs">
+      <DependentUpon>SurveySecurity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\SurveySecurity.aspx.designer.cs">
+      <DependentUpon>SurveySecurity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\SurveySettings.aspx.cs">
+      <DependentUpon>SurveySettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\SurveySettings.aspx.designer.cs">
+      <DependentUpon>SurveySettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\SurveyTokenSecurity.aspx.cs">
+      <DependentUpon>SurveyTokenSecurity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\SurveyTokenSecurity.aspx.designer.cs">
+      <DependentUpon>SurveyTokenSecurity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\TakeSurvey.aspx.cs">
+      <DependentUpon>TakeSurvey.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\TakeSurvey.aspx.designer.cs">
+      <DependentUpon>TakeSurvey.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\TypeCreator.aspx.cs">
+      <DependentUpon>TypeCreator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\TypeCreator.aspx.designer.cs">
+      <DependentUpon>TypeCreator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\TypeEditor.aspx.cs">
+      <DependentUpon>TypeEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\TypeEditor.aspx.designer.cs">
+      <DependentUpon>TypeEditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\AnswerOptionControl.ascx.cs">
+      <DependentUpon>AnswerOptionControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\AnswerOptionControl.ascx.designer.cs">
+      <DependentUpon>AnswerOptionControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\LoginBox.ascx.cs">
+      <DependentUpon>LoginBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\LoginBox.ascx.designer.cs">
+      <DependentUpon>LoginBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\FilterOptionControl.ascx.cs">
+      <DependentUpon>FilterOptionControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\FilterOptionControl.ascx.designer.cs">
+      <DependentUpon>FilterOptionControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\FooterControl.ascx.cs">
+      <DependentUpon>FooterControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\FooterControl.ascx.designer.cs">
+      <DependentUpon>FooterControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\HeaderControl.ascx.cs">
+      <DependentUpon>HeaderControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\HeaderControl.ascx.designer.cs">
+      <DependentUpon>HeaderControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\LanguageListControl.ascx.cs">
+      <DependentUpon>LanguageListControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\LanguageListControl.ascx.designer.cs">
+      <DependentUpon>LanguageListControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\LibraryNew.ascx.cs">
+      <DependentUpon>LibraryNew.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\LibraryNew.ascx.designer.cs">
+      <DependentUpon>LibraryNew.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\LibraryQuestionOptionsControl.ascx.cs">
+      <DependentUpon>LibraryQuestionOptionsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\LibraryQuestionOptionsControl.ascx.designer.cs">
+      <DependentUpon>LibraryQuestionOptionsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\PageBranchingRulesControl.ascx.cs">
+      <DependentUpon>PageBranchingRulesControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\PageBranchingRulesControl.ascx.designer.cs">
+      <DependentUpon>PageBranchingRulesControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\PageBreakOptionsControl.ascx.cs">
+      <DependentUpon>PageBreakOptionsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\PageBreakOptionsControl.ascx.designer.cs">
+      <DependentUpon>PageBreakOptionsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\QuestionExtraLinks.ascx.cs">
+      <DependentUpon>QuestionExtraLinks.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\QuestionExtraLinks.ascx.designer.cs">
+      <DependentUpon>QuestionExtraLinks.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\QuestionOptionsControl.ascx.cs">
+      <DependentUpon>QuestionOptionsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\QuestionOptionsControl.ascx.designer.cs">
+      <DependentUpon>QuestionOptionsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\RolesManager.ascx.cs">
+      <DependentUpon>RolesManager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\RolesManager.ascx.designer.cs">
+      <DependentUpon>RolesManager.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\RolesOptionsControl.ascx.cs">
+      <DependentUpon>RolesOptionsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\RolesOptionsControl.ascx.designer.cs">
+      <DependentUpon>RolesOptionsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\SecurityAddInOptionsControl.ascx.cs">
+      <DependentUpon>SecurityAddInOptionsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\SecurityAddInOptionsControl.ascx.designer.cs">
+      <DependentUpon>SecurityAddInOptionsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\SecurityAddInVoterReportControl.ascx.cs">
+      <DependentUpon>SecurityAddInVoterReportControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\SecurityAddInVoterReportControl.ascx.designer.cs">
+      <DependentUpon>SecurityAddInVoterReportControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\SkipLogicRulesControl.ascx.cs">
+      <DependentUpon>SkipLogicRulesControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\SkipLogicRulesControl.ascx.designer.cs">
+      <DependentUpon>SkipLogicRulesControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\SurveyListControl.ascx.cs">
+      <DependentUpon>SurveyListControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\SurveyListControl.ascx.designer.cs">
+      <DependentUpon>SurveyListControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\SurveyMessageConditonsControl.ascx.cs">
+      <DependentUpon>SurveyMessageConditonsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\SurveyMessageConditonsControl.ascx.designer.cs">
+      <DependentUpon>SurveyMessageConditonsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\SurveyFormSecurity.ascx.cs">
+      <DependentUpon>SurveyFormSecurity.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\SurveyFormSecurity.ascx.designer.cs">
+      <DependentUpon>SurveyFormSecurity.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\SurveyOptionControl.ascx.cs">
+      <DependentUpon>SurveyOptionControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\SurveyOptionControl.ascx.designer.cs">
+      <DependentUpon>SurveyOptionControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\SurveyTreeControl.ascx.cs">
+      <DependentUpon>SurveyTreeControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\SurveyTreeControl.ascx.designer.cs">
+      <DependentUpon>SurveyTreeControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\TypeOptionControl.ascx.cs">
+      <DependentUpon>TypeOptionControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\TypeOptionControl.ascx.designer.cs">
+      <DependentUpon>TypeOptionControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\UpdateVoterPageBreakOptionsControl.ascx.cs">
+      <DependentUpon>UpdateVoterPageBreakOptionsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\UpdateVoterPageBreakOptionsControl.ascx.designer.cs">
+      <DependentUpon>UpdateVoterPageBreakOptionsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\UpdateVoterQuestionOptionsControl.ascx.cs">
+      <DependentUpon>UpdateVoterQuestionOptionsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\UpdateVoterQuestionOptionsControl.ascx.designer.cs">
+      <DependentUpon>UpdateVoterQuestionOptionsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\UserImport.ascx.cs">
+      <DependentUpon>UserImport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\UserImport.ascx.designer.cs">
+      <DependentUpon>UserImport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\UsersOptionsControl.ascx.cs">
+      <DependentUpon>UsersOptionsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\UsersOptionsControl.ascx.designer.cs">
+      <DependentUpon>UsersOptionsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserCreator.aspx.cs">
+      <DependentUpon>UserCreator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserCreator.aspx.designer.cs">
+      <DependentUpon>UserCreator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserImport.aspx.cs">
+      <DependentUpon>UserImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserImport.aspx.designer.cs">
+      <DependentUpon>UserImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UsersManager.aspx.cs">
+      <DependentUpon>UsersManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UsersManager.aspx.designer.cs">
+      <DependentUpon>UsersManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\VoterReport.aspx.cs">
+      <DependentUpon>VoterReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\VoterReport.aspx.designer.cs">
+      <DependentUpon>VoterReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\WarningScreen.aspx.cs">
+      <DependentUpon>WarningScreen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\WarningScreen.aspx.designer.cs">
+      <DependentUpon>WarningScreen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Survey.aspx.cs">
+      <DependentUpon>Survey.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Survey.aspx.designer.cs">
+      <DependentUpon>Survey.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SurveyMobile.aspx.cs">
+      <DependentUpon>SurveyMobile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SurveyMobile.aspx.designer.cs">
+      <DependentUpon>SurveyMobile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wap.Master.cs">
+      <DependentUpon>Wap.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wap.Master.designer.cs">
+      <DependentUpon>Wap.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="NSurveyAdmin\Images\UserImg\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Reflector\Nsurvey_BE\Votations.NSurvey.BE.csproj">
+      <Project>{ACC61153-273A-4098-8E23-ADF141D799EE}</Project>
+      <Name>Votations.NSurvey.BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reflector\Nsurvey_BLL\Votations.NSurvey.BLL.csproj">
+      <Project>{5C283A71-276E-40CE-B07A-C6344CAD02B9}</Project>
+      <Name>Votations.NSurvey.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reflector\Nsurvey_DAL\Votations.NSurvey.DAL.csproj">
+      <Project>{17D2197C-324F-48A6-895D-075FAF4A942E}</Project>
+      <Name>Votations.NSurvey.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reflector\Nsurvey_Emailing\Votations.NSurvey.EMailing.csproj">
+      <Project>{7D02ED0F-6C2F-4550-B203-CA03D190A5E3}</Project>
+      <Name>Votations.NSurvey.EMailing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reflector\Nsurvey_SQLServerDAL\Votations.NSurvey.SQLServerDAL.csproj">
+      <Project>{3050518F-8D14-4704-8092-1650B183E266}</Project>
+      <Name>Votations.NSurvey.SQLServerDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reflector\Nsurvey_UserProvider\Votations.NSurvey.UserProvider.csproj">
+      <Project>{94EB9C0F-FB57-41A8-8175-F1E255912374}</Project>
+      <Name>Votations.NSurvey.UserProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reflector\Nsurvey_WebControls\Votations.NSurvey.WebControls.csproj">
+      <Project>{30C36FDD-28EA-4855-B790-BDDD0678E1D0}</Project>
+      <Name>Votations.NSurvey.WebControls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="NSurveyAdmin\AccessDenied.aspx.resx">
+      <DependentUpon>AccessDenied.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\BarChartReport.aspx.resx">
+      <DependentUpon>BarChartReport.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\ConditionalEndMessage.aspx.resx">
+      <DependentUpon>ConditionalEndMessage.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\ControlCode.aspx.resx">
+      <DependentUpon>ControlCode.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\CreateSurvey.aspx.resx">
+      <DependentUpon>CreateSurvey.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\EditMultiLanguages.aspx.resx">
+      <DependentUpon>EditMultiLanguages.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\EditPageBranching.aspx.resx">
+      <DependentUpon>EditPageBranching.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\EditRegEx.aspx.resx">
+      <DependentUpon>EditRegEx.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\EditSingleQuestion.aspx.resx">
+      <DependentUpon>EditSingleQuestion.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\EditSingleQuestionAnswers.aspx.resx">
+      <DependentUpon>EditSingleQuestionAnswers.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\EditSkipLogicRules.aspx.resx">
+      <DependentUpon>EditSkipLogicRules.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\EditVoterReport.aspx.resx">
+      <DependentUpon>EditVoterReport.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\ExportData.aspx.resx">
+      <DependentUpon>ExportData.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\FieldReporting.aspx.resx">
+      <DependentUpon>FieldReporting.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\FileManager.aspx.resx">
+      <DependentUpon>FileManager.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\GlobalStats.aspx.resx">
+      <DependentUpon>GlobalStats.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\InsertQuestion.aspx.resx">
+      <DependentUpon>InsertQuestion.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\InsertSecurityAddIn.aspx.resx">
+      <DependentUpon>InsertSecurityAddIn.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\LibraryDirectory.aspx.resx">
+      <DependentUpon>LibraryDirectory.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\LibraryTemplates.aspx.resx">
+      <DependentUpon>LibraryTemplates.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\LogOut.aspx.resx">
+      <DependentUpon>LogOut.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\MailingLog.aspx.resx">
+      <DependentUpon>MailingLog.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\MailingPoll.aspx.resx">
+      <DependentUpon>MailingPoll.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\MailingStatus.aspx.resx">
+      <DependentUpon>MailingStatus.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\MultiLanguages.aspx.resx">
+      <DependentUpon>MultiLanguages.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\PieChartReport.aspx.resx">
+      <DependentUpon>PieChartReport.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\ResultsCrossTabulation.aspx.resx">
+      <DependentUpon>ResultsCrossTabulation.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\ResultsReporting.aspx.resx">
+      <DependentUpon>ResultsReporting.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\RolesManager.aspx.resx">
+      <DependentUpon>RolesManager.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\SurveyOptions.aspx.resx">
+      <DependentUpon>SurveyOptions.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\SurveyPrivacy.aspx.resx">
+      <DependentUpon>SurveyPrivacy.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\SurveySecurity.aspx.resx">
+      <DependentUpon>SurveySecurity.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\TakeSurvey.aspx.resx">
+      <DependentUpon>TakeSurvey.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\TypeCreator.aspx.resx">
+      <DependentUpon>TypeCreator.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\TypeEditor.aspx.resx">
+      <DependentUpon>TypeEditor.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\UserControls\AnswerOptionControl.ascx.resx">
+      <DependentUpon>AnswerOptionControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\UserControls\FooterControl.ascx.resx">
+      <DependentUpon>FooterControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\UserControls\LibraryQuestionOptionsControl.ascx.resx">
+      <DependentUpon>LibraryQuestionOptionsControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\UserControls\PageBranchingRulesControl.ascx.resx">
+      <DependentUpon>PageBranchingRulesControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\UserControls\SecurityAddInOptionsControl.ascx.resx">
+      <DependentUpon>SecurityAddInOptionsControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\UserControls\SecurityAddInVoterReportControl.ascx.resx">
+      <DependentUpon>SecurityAddInVoterReportControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\UserControls\SkipLogicRulesControl.ascx.resx">
+      <DependentUpon>SkipLogicRulesControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\UserControls\SurveyMessageConditonsControl.ascx.resx">
+      <DependentUpon>SurveyMessageConditonsControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\UserControls\TypeOptionControl.ascx.resx">
+      <DependentUpon>TypeOptionControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\UserControls\UpdateVoterPageBreakOptionsControl.ascx.resx">
+      <DependentUpon>UpdateVoterPageBreakOptionsControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\UserControls\UpdateVoterQuestionOptionsControl.ascx.resx">
+      <DependentUpon>UpdateVoterQuestionOptionsControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\UserCreator.aspx.resx">
+      <DependentUpon>UserCreator.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\UserImport.aspx.resx">
+      <DependentUpon>UserImport.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NSurveyAdmin\VoterReport.aspx.resx">
+      <DependentUpon>VoterReport.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NSurveyAdmin\MsterPageTabs.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\astreeview\themes\macOS\images\mac_leopard.rar" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\astreeview\README.MD" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\astreeview\images\bak_no_used_folder_icon.rar" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\ckeditor\skins\moono\readme.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\ckeditor\samples\sample_posteddata.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.fla" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\ckeditor\samples\assets\posteddata.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\ckeditor\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\ckeditor\plugins\wsc\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\ckeditor\plugins\wsc\LICENSE.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\ckeditor\plugins\scayt\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\ckeditor\plugins\scayt\LICENSE.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\ckeditor\LICENSE.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\ckeditor\composer.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\ckeditor\CHANGES.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\ckeditor\bower.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\ckeditor\skins\moonocolor\readme.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\ckeditor\skins\kama\readme.md" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4976</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://[yourwebserver]/[sp23dev]</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

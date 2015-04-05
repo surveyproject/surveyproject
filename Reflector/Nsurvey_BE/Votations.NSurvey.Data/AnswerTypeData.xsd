@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AnswerTypeData" targetNamespace="http://tempuri.org/AnswerTypeData.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/AnswerTypeData.xsd" xmlns:mstns="http://tempuri.org/AnswerTypeData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+    <xs:element name="AnswerTypeData" msdata:IsDataSet="true">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="AnswerTypes">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="AnswerTypeId" msdata:ReadOnly="false" msdata:AutoIncrement="true" type="xs:int" />
+                            <xs:element name="Description" type="xs:string" minOccurs="0" />
+                            <xs:element name="FieldWidth" type="xs:int" minOccurs="0" msprop:nullValue="0" />
+                            <xs:element name="FieldHeight" type="xs:int" minOccurs="0" msprop:nullValue="0" />
+                            <xs:element name="FieldLength" type="xs:int" minOccurs="0" msprop:nullValue="0" />
+                            <xs:element name="TypeMode" type="xs:int" minOccurs="0" msprop:nullValue="0" />
+                            <xs:element name="XmlDataSource" type="xs:string" minOccurs="0" msprop:nullValue="_null" />
+                            <xs:element name="PublicFieldResults" type="xs:boolean" minOccurs="0" msprop:nullValue="false" />
+                            <xs:element name="JavascriptFunctionName" type="xs:string" minOccurs="0" msprop:nullValue="_null" />
+                            <xs:element name="JavascriptCode" type="xs:string" minOccurs="0" msprop:nullValue="_null" />
+                            <xs:element name="JavascriptErrorMessage" type="xs:string" minOccurs="0" msprop:nullValue="_null" />
+                            <xs:element name="TypeAssembly" type="xs:string" minOccurs="0" />
+                            <xs:element name="TypeNameSpace" type="xs:string" minOccurs="0" />
+                            <xs:element name="BuiltIn" type="xs:boolean" minOccurs="0" />
+                            <xs:element name="DataSource" type="xs:string" minOccurs="0" msprop:nullValue="_null" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+        </xs:complexType>
+        <xs:unique name="AnswerTypeDataKey1" msdata:PrimaryKey="true">
+            <xs:selector xpath=".//mstns:AnswerTypes" />
+            <xs:field xpath="mstns:AnswerTypeId" />
+        </xs:unique>
+    </xs:element>
+</xs:schema>

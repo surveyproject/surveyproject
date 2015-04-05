@@ -1,0 +1,52 @@
+<?xml version="1.0" standalone="yes"?>
+<NSurveyDataSource xmlns="http://www.nsurvey.org/NSurveyDataSource.xsd">
+  <XmlDataSource>
+    <RunTimeAnswerLabel>Region :</RunTimeAnswerLabel>
+    <XmlAnswers>
+      <XmlAnswer>
+        <AnswerValue></AnswerValue>
+        <AnswerDescription>[Select Region]</AnswerDescription>
+      </XmlAnswer>     
+      <XmlAnswer>
+        <AnswerValue>Antwerpen</AnswerValue>
+        <AnswerDescription>Antwerpen</AnswerDescription>
+      </XmlAnswer>
+      <XmlAnswer>
+        <AnswerValue>Vlaams-Brabant</AnswerValue>
+        <AnswerDescription>Vlaams-Brabant</AnswerDescription>
+      </XmlAnswer>
+      <XmlAnswer>
+        <AnswerValue>Hainaut</AnswerValue>
+        <AnswerDescription>Hainaut</AnswerDescription>
+      </XmlAnswer>
+      <XmlAnswer>
+        <AnswerValue>Liege</AnswerValue>
+        <AnswerDescription>Liege</AnswerDescription>
+      </XmlAnswer>
+      <XmlAnswer>
+        <AnswerValue>Limburg</AnswerValue>
+        <AnswerDescription>Limburg</AnswerDescription>
+      </XmlAnswer>
+      <XmlAnswer>
+        <AnswerValue>Luxembourg</AnswerValue>
+        <AnswerDescription>Luxembourg</AnswerDescription>
+      </XmlAnswer>
+      <XmlAnswer>
+        <AnswerValue>Namur</AnswerValue>
+        <AnswerDescription>Namur</AnswerDescription>
+      </XmlAnswer>
+      <XmlAnswer>
+        <AnswerValue>Oost-Vlaanderen</AnswerValue>
+        <AnswerDescription>Oost-Vlaanderen</AnswerDescription>
+      </XmlAnswer>
+      <XmlAnswer>
+        <AnswerValue>Waals-Brabant</AnswerValue>
+        <AnswerDescription>Waals-Brabant</AnswerDescription>
+      </XmlAnswer>
+      <XmlAnswer>
+        <AnswerValue>West-Vlaanderen</AnswerValue>
+        <AnswerDescription>West-Vlaanderen</AnswerDescription>
+      </XmlAnswer>
+    </XmlAnswers>
+  </XmlDataSource>
+</NSurveyDataSource>

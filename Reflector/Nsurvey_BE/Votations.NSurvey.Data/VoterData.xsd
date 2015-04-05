@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="VoterData" targetNamespace="http://tempuri.org/VoterData.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/VoterData.xsd" xmlns:mstns="http://tempuri.org/VoterData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="VoterData" msdata:IsDataSet="true">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="Voters">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="VoterId" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" />
+                            <xs:element name="SurveyId" type="xs:int" minOccurs="0" />
+                            <xs:element name="VoteDate" type="xs:dateTime" minOccurs="0" />
+                            <xs:element name="Email" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

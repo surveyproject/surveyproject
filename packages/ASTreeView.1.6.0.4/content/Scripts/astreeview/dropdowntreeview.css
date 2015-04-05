@@ -1,0 +1,14 @@
+.defaultDropdownBoxContainer{}
+.defaultDropdownBox{ background-color:#fff; border:1px solid #ababab;cursor:default; }
+.defaultDropdownTreeObjectContainer{}
+.defaultDropdownTree{ background-color:#fff; border-right:1px solid #ababab;border-bottom:1px solid black;border-left:1px solid black; }
+.defaultDropdownIconA{ cursor:default; }
+.defaultDropdownIconA:hover{border:0px;}
+.defaultDropdownIconTD{width:17px;}
+.defaultDropdownTextContainer{width:100%;padding:0px;margin:0px;white-space:nowrap;overflow:hidden;}
+.defaultDropdownIcon{border:0px;}
+
+/*for disabled*/
+.defaultDropdownBoxDisabled{background-color:#eee; border:1px solid #ababab;cursor:default; }
+.defaultDropdownIconTDDisabled{width:17px;background-color:#eee;}
+.defaultDropdownTextContainerDisabled{width:100%;padding:0px;margin:0px;white-space:nowrap;overflow:hidden;background-color:#eee;}

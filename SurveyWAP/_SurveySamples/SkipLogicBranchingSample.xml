@@ -1,0 +1,131 @@
+<NSurveyForm xmlns="http://tempuri.org/NSurveyForm.xsd">
+  <AnswerType AnswerTypeID="1" FieldWidth="0" FieldHeight="0" FieldLength="0" TypeMode="1" PublicFieldResults="false" BuiltIn="true">
+    <Description>SelectionTextType</Description>
+    <TypeNameSpace>Votations.NSurvey.WebControls.UI.AnswerSelectionItem</TypeNameSpace>
+    <TypeAssembly>Votations.NSurvey.WebControls</TypeAssembly>
+  </AnswerType>
+  <AnswerType AnswerTypeID="55" TypeMode="88" PublicFieldResults="false" BuiltIn="false">
+    <Description>XMLUSStatesList</Description>
+    <XMLDataSource>usstates.xml</XMLDataSource>
+    <TypeNameSpace>Votations.NSurvey.WebControls.UI.AnswerXmlListItem</TypeNameSpace>
+    <TypeAssembly>Votations.NSurvey.WebControls</TypeAssembly>
+  </AnswerType>
+  <Survey>
+    <SurveyID>1</SurveyID>
+    <ProgressDisplayModeId>2</ProgressDisplayModeId>
+    <ResumeModeID>1</ResumeModeID>
+    <Title>Skip Logic &amp; Branching Survey</Title>
+    <NavigationEnabled>false</NavigationEnabled>
+    <Scored>true</Scored>
+    <QuestionNumberingDisabled>false</QuestionNumberingDisabled>
+    <Activated>true</Activated>
+    <Archive>false</Archive>
+    <ResultsDisplayTimes>0</ResultsDisplayTimes>
+    <SurveyDisplayTimes>1590</SurveyDisplayTimes>
+    <CreationDate>2012-07-21T04:13:00.78+02:00</CreationDate>
+  </Survey>
+  <Question QuestionId="1" LayoutModeId="2" SelectionModeId="5" ColumnsNumber="0" MinSelectionRequired="0" MaxSelectionAllowed="0" RatingEnabled="false" RandomizeAnswers="false" SurveyId="1" PageNumber="1" DisplayOrder="1">
+    <QuestionText>&lt;u&gt;&lt;b&gt;Welcome to the Skip logic &amp;amp; Branching Survey!&lt;br&gt;&lt;/b&gt;&lt;/u&gt;&lt;br&gt;This Survey demonstrates the use of the branching and skip logic features with which to create conditional questions and show respondents the next set of questions based on their current answer choice selection.&lt;br&gt;&lt;br&gt;&lt;b&gt;Skip logic&lt;/b&gt;&lt;br&gt;- Set on question level: question hidden/ skipped if answer to previous question meets criteria&lt;br&gt;- See page 4, question "&lt;b&gt;Does your company meet the criteria..?&lt;/b&gt;" --&amp;gt; question will be hidden if the anwer to the page 1 question "&lt;b&gt;Is this the first question..?&lt;/b&gt;" = &lt;b&gt;If yes, .....&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Branching&lt;/b&gt;&lt;br&gt;- Set on page level: answer to question will redirect to page x or y.&lt;br&gt;- See page 3. Voters who did answer to &lt;b&gt;Have you heard of branching? &lt;/b&gt; with &lt;b&gt;For sure....&lt;/b&gt; are redirected to &lt;b&gt;end of survey&lt;/b&gt;&lt;br&gt;&lt;br&gt;Now try for yourself.&lt;br&gt;&lt;br&gt;</QuestionText>
+    <QuestionPipeAlias />
+    <ShowHelpText>True</ShowHelpText>
+    <OldQuestionId>86</OldQuestionId>
+  </Question>
+  <Question QuestionId="2" LayoutModeId="1" SelectionModeId="1" ColumnsNumber="0" MinSelectionRequired="0" MaxSelectionAllowed="0" RatingEnabled="false" RandomizeAnswers="false" SurveyId="1" PageNumber="2" DisplayOrder="2">
+    <QuestionText>Is this the first question?&lt;br&gt;</QuestionText>
+    <ShowHelpText>True</ShowHelpText>
+    <OldQuestionId>87</OldQuestionId>
+  </Question>
+  <Question QuestionId="3" SelectionModeId="5" ColumnsNumber="0" MinSelectionRequired="0" MaxSelectionAllowed="0" RatingEnabled="false" RandomizeAnswers="false" SurveyId="1" PageNumber="5" DisplayOrder="7">
+    <QuestionText>This is the end, now click the submit button!&lt;br&gt;</QuestionText>
+    <ShowHelpText>True</ShowHelpText>
+    <OldQuestionId>88</OldQuestionId>
+  </Question>
+  <Question QuestionId="4" LayoutModeId="1" SelectionModeId="1" ColumnsNumber="0" MinSelectionRequired="0" MaxSelectionAllowed="0" RatingEnabled="false" RandomizeAnswers="false" SurveyId="1" PageNumber="4" DisplayOrder="5">
+    <QuestionText>Does your company meet this criterium?&lt;br&gt;</QuestionText>
+    <ShowHelpText>True</ShowHelpText>
+    <OldQuestionId>89</OldQuestionId>
+  </Question>
+  <Question QuestionId="5" LayoutModeId="1" SelectionModeId="3" ColumnsNumber="0" MinSelectionRequired="0" MaxSelectionAllowed="0" RatingEnabled="false" RandomizeAnswers="false" SurveyId="1" PageNumber="3" DisplayOrder="3">
+    <QuestionText>test dropdown?&lt;br&gt;</QuestionText>
+    <QuestionPipeAlias />
+    <ShowHelpText>True</ShowHelpText>
+    <OldQuestionId>90</OldQuestionId>
+  </Question>
+  <Question QuestionId="6" LayoutModeId="1" SelectionModeId="1" ColumnsNumber="0" MinSelectionRequired="0" MaxSelectionAllowed="0" RatingEnabled="false" RandomizeAnswers="false" SurveyId="1" PageNumber="4" DisplayOrder="6">
+    <QuestionText>Why is this so easy?&lt;br&gt;</QuestionText>
+    <ShowHelpText>True</ShowHelpText>
+    <OldQuestionId>91</OldQuestionId>
+  </Question>
+  <Question QuestionId="7" LayoutModeId="1" SelectionModeId="1" ColumnsNumber="0" MinSelectionRequired="0" MaxSelectionAllowed="0" RatingEnabled="false" RandomizeAnswers="false" SurveyId="1" PageNumber="3" DisplayOrder="4">
+    <QuestionText>Have you heard of branching?&lt;br&gt;</QuestionText>
+    <ShowHelpText>True</ShowHelpText>
+    <OldQuestionId>92</OldQuestionId>
+  </Question>
+  <Answer QuestionId="2" AnswerTypeId="1" DisplayOrder="1" ScorePoint="10" RatePart="false" Selected="false" AnswerId="276" Mandatory="false">
+    <AnswerText>If yes say so...</AnswerText>
+    <ImageURL />
+    <AnswerPipeAlias />
+    <OldAnswerId>276</OldAnswerId>
+  </Answer>
+  <Answer QuestionId="2" AnswerTypeId="1" DisplayOrder="2" ScorePoint="0" RatePart="false" Selected="false" AnswerId="277" Mandatory="false">
+    <AnswerText>If no say so .....</AnswerText>
+    <ImageURL />
+    <AnswerPipeAlias />
+    <OldAnswerId>277</OldAnswerId>
+  </Answer>
+  <Answer QuestionId="4" AnswerTypeId="1" DisplayOrder="1" ScorePoint="10" RatePart="false" Selected="false" AnswerId="278" Mandatory="false">
+    <AnswerText>Yes</AnswerText>
+    <ImageURL />
+    <DefaultText />
+    <AnswerPipeAlias />
+    <OldAnswerId>278</OldAnswerId>
+  </Answer>
+  <Answer QuestionId="4" AnswerTypeId="1" DisplayOrder="2" ScorePoint="0" RatePart="false" Selected="false" AnswerId="279" Mandatory="false">
+    <AnswerText>No</AnswerText>
+    <ImageURL />
+    <DefaultText />
+    <AnswerPipeAlias />
+    <OldAnswerId>279</OldAnswerId>
+  </Answer>
+  <Answer QuestionId="4" AnswerTypeId="1" DisplayOrder="3" ScorePoint="5" RatePart="false" Selected="false" AnswerId="280" Mandatory="false">
+    <AnswerText>Sometimes</AnswerText>
+    <ImageURL />
+    <DefaultText />
+    <AnswerPipeAlias />
+    <OldAnswerId>280</OldAnswerId>
+  </Answer>
+  <Answer QuestionId="5" AnswerTypeId="55" DisplayOrder="1" ScorePoint="0" RatePart="false" Selected="false" AnswerId="281" Mandatory="true">
+    <AnswerText />
+    <ImageURL />
+    <AnswerPipeAlias />
+    <OldAnswerId>281</OldAnswerId>
+  </Answer>
+  <Answer QuestionId="6" AnswerTypeId="1" DisplayOrder="1" ScorePoint="0" RatePart="false" Selected="false" AnswerId="282" Mandatory="false">
+    <AnswerText>It's not...</AnswerText>
+    <ImageURL />
+    <DefaultText />
+    <AnswerPipeAlias />
+    <OldAnswerId>282</OldAnswerId>
+  </Answer>
+  <Answer QuestionId="6" AnswerTypeId="1" DisplayOrder="2" ScorePoint="0" RatePart="false" Selected="false" AnswerId="283" Mandatory="false">
+    <AnswerText>It just is...</AnswerText>
+    <ImageURL />
+    <DefaultText />
+    <AnswerPipeAlias />
+    <OldAnswerId>283</OldAnswerId>
+  </Answer>
+  <Answer QuestionId="7" AnswerTypeId="1" DisplayOrder="1" ScorePoint="0" RatePart="false" Selected="false" AnswerId="284" Mandatory="false">
+    <AnswerText>No idea really...</AnswerText>
+    <ImageURL />
+    <DefaultText />
+    <AnswerPipeAlias />
+    <OldAnswerId>284</OldAnswerId>
+  </Answer>
+  <Answer QuestionId="7" AnswerTypeId="1" DisplayOrder="2" ScorePoint="0" RatePart="false" Selected="false" AnswerId="285" Mandatory="false">
+    <AnswerText>For sure....</AnswerText>
+    <ImageURL />
+    <DefaultText />
+    <AnswerPipeAlias />
+    <OldAnswerId>285</OldAnswerId>
+  </Answer>
+</NSurveyForm>

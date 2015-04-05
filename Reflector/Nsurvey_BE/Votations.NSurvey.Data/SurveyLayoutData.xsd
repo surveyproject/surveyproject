@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SurveyLayoutData" targetNamespace="http://tempuri.org/SurveyLayoutData.xsd" xmlns:mstns="http://tempuri.org/SurveyLayoutData.xsd" xmlns="http://tempuri.org/SurveyLayoutData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="SurveyDevConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SurveyDevConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Votations.NSurvey.BE.Properties.Settings.GlobalReference.Default.SurveyDevConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="SurveyLayoutData" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="SurveyLayoutData" msprop:Generator_UserDSName="SurveyLayoutData">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="SurveyLayout" msprop:Generator_TableClassName="SurveyLayoutDataTable" msprop:Generator_TableVarName="tableSurveyLayout" msprop:Generator_TablePropName="SurveyLayout" msprop:Generator_RowDeletingName="SurveyLayoutRowDeleting" msprop:Generator_UserTableName="SurveyLayout" msprop:Generator_RowChangingName="SurveyLayoutRowChanging" msprop:Generator_RowEvHandlerName="SurveyLayoutRowChangeEventHandler" msprop:Generator_RowDeletedName="SurveyLayoutRowDeleted" msprop:Generator_RowEvArgName="SurveyLayoutRowChangeEvent" msprop:Generator_RowChangedName="SurveyLayoutRowChanged" msprop:Generator_RowClassName="SurveyLayoutRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SurveyId" msprop:Generator_ColumnVarNameInTable="columnSurveyId" msprop:Generator_ColumnPropNameInRow="SurveyId" msprop:Generator_ColumnPropNameInTable="SurveyIdColumn" msprop:Generator_UserColumnName="SurveyId" type="xs:int" />
+              <xs:element name="SurveyHeaderText" msprop:Generator_ColumnVarNameInTable="columnSurveyHeaderText" msprop:Generator_ColumnPropNameInRow="SurveyHeaderText" msprop:Generator_ColumnPropNameInTable="SurveyHeaderTextColumn" msprop:Generator_UserColumnName="SurveyHeaderText" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SurveyFooterText" msprop:Generator_ColumnVarNameInTable="columnSurveyFooterText" msprop:Generator_ColumnPropNameInRow="SurveyFooterText" msprop:Generator_ColumnPropNameInTable="SurveyFooterTextColumn" msprop:Generator_UserColumnName="SurveyFooterText" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SurveyCss" msprop:Generator_ColumnVarNameInTable="columnSurveyCss" msprop:Generator_ColumnPropNameInRow="SurveyCss" msprop:Generator_ColumnPropNameInTable="SurveyCssColumn" msprop:Generator_UserColumnName="SurveyCss" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SurveyLayout" />
+      <xs:field xpath="mstns:SurveyId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

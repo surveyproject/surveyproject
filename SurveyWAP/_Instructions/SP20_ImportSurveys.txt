@@ -1,0 +1,30 @@
+_______________________________________________________________________________________
+
+
+Instruction on how to Import Survey v. 1.* XML files into the Survey v.2.0 Application
+
+_______________________________________________________________________________________
+
+
+To convert a 1.* survey xml file make the following changes manually (use Notepad or any other texteditor):
+
+1) The very first line should be replaced with <NSurveyForm xmlns="http://tempuri.org/NSurveyForm.xsd">
+
+2) Every Question should have a ShowHelpText tag added as shown below:
+
+   <Question QuestionId="5" LayoutModeId="1" SelectionModeId="1" ColumnsNumber="0" MinSelectionRequired="0" MaxSelectionAllowed="0" RatingEnabled="false" RandomizeAnswers="false" SurveyId="1" PageNumber="3" DisplayOrder="5">
+      <QuestionText>You also pipe previous answers into fields as default values</QuestionText>
+      <QuestionPipeAlias />
+      <Answer QuestionId="5" AnswerTypeId="3" DisplayOrder="1" ScorePoint="0" RatePart="false" Selected="false" AnswerId="160" Mandatory="true">
+        <AnswerText>This is your name :</AnswerText>
+        <ImageURL />
+        <DefaultText>[[name]]</DefaultText>
+        <AnswerPipeAlias />
+      </Answer>
+      <ShowHelpText>true</ShowHelpText>
+    </Question>
+
+3) Next log in to the Survey Application, menuoption Surveys/ New Survey/ Import Survey from XML
+
+
+_______________________________________________________________________________________

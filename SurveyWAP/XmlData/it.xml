@@ -1,0 +1,116 @@
+<?xml version="1.0" standalone="yes"?>
+<NSurveyDataSource xmlns="http://www.nsurvey.org/NSurveyDataSource.xsd">
+	<XmlDataSource>
+		<RunTimeAnswerLabel>
+		Region :
+		</RunTimeAnswerLabel>
+		<XmlAnswers>
+			<XmlAnswer><AnswerValue></AnswerValue><AnswerDescription>[Select Region]</AnswerDescription></XmlAnswer> 
+			<XmlAnswer><AnswerValue>Agrigento</AnswerValue><AnswerDescription>Agrigento</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Alessandria</AnswerValue><AnswerDescription>Alessandria</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Ancona</AnswerValue><AnswerDescription>Ancona</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Aosta</AnswerValue><AnswerDescription>Aosta</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Arezzo</AnswerValue><AnswerDescription>Arezzo</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Ascoli Piceno</AnswerValue><AnswerDescription>Ascoli Piceno</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Asti</AnswerValue><AnswerDescription>Asti</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Avellino</AnswerValue><AnswerDescription>Avellino</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Bari</AnswerValue><AnswerDescription>Bari</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Belluno</AnswerValue><AnswerDescription>Belluno</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Benevento</AnswerValue><AnswerDescription>Benevento</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Bergamo</AnswerValue><AnswerDescription>Bergamo</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Biella</AnswerValue><AnswerDescription>Biella</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Bologna</AnswerValue><AnswerDescription>Bologna</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Bolzano</AnswerValue><AnswerDescription>Bolzano</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Brescia</AnswerValue><AnswerDescription>Brescia</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Brindisi</AnswerValue><AnswerDescription>Brindisi</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Cagliari</AnswerValue><AnswerDescription>Cagliari</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Caltanissetta</AnswerValue><AnswerDescription>Caltanissetta</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Campobasso</AnswerValue><AnswerDescription>Campobasso</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Caserta</AnswerValue><AnswerDescription>Caserta</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Catania</AnswerValue><AnswerDescription>Catania</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Catanzaro</AnswerValue><AnswerDescription>Catanzaro</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Chieti</AnswerValue><AnswerDescription>Chieti</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Como</AnswerValue><AnswerDescription>Como</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Cosenza</AnswerValue><AnswerDescription>Cosenza</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Cremona</AnswerValue><AnswerDescription>Cremona</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Crotone</AnswerValue><AnswerDescription>Crotone</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Cuneo</AnswerValue><AnswerDescription>Cuneo</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Enna</AnswerValue><AnswerDescription>Enna</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Ferrara</AnswerValue><AnswerDescription>Ferrara</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Firenze</AnswerValue><AnswerDescription>Firenze</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Foggia</AnswerValue><AnswerDescription>Foggia</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Forlì-Cesena</AnswerValue><AnswerDescription>Forlì-Cesena</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Frosinone</AnswerValue><AnswerDescription>Frosinone</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Genova</AnswerValue><AnswerDescription>Genova</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Gorizia</AnswerValue><AnswerDescription>Gorizia</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Grosseto</AnswerValue><AnswerDescription>Grosseto</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Imperia</AnswerValue><AnswerDescription>Imperia</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Isernia</AnswerValue><AnswerDescription>Isernia</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>La Spezia</AnswerValue><AnswerDescription>La Spezia</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Aquila</AnswerValue><AnswerDescription>Aquila</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Latina</AnswerValue><AnswerDescription>Latina</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Lecce</AnswerValue><AnswerDescription>Lecce</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Lecco</AnswerValue><AnswerDescription>Lecco</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Livorno</AnswerValue><AnswerDescription>Livorno</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Lodi</AnswerValue><AnswerDescription>Lodi</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Lucca</AnswerValue><AnswerDescription>Lucca</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Macerata</AnswerValue><AnswerDescription>Macerata</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Mantova</AnswerValue><AnswerDescription>Mantova</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Massa Carrara</AnswerValue><AnswerDescription>Massa Carrara</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Matera</AnswerValue><AnswerDescription>Matera</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Messina</AnswerValue><AnswerDescription>Messina</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Milano</AnswerValue><AnswerDescription>Milano</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Modena</AnswerValue><AnswerDescription>Modena</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Napoli</AnswerValue><AnswerDescription>Napoli</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Novara</AnswerValue><AnswerDescription>Novara</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Nuoro</AnswerValue><AnswerDescription>Nuoro</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Oristano</AnswerValue><AnswerDescription>Oristano</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Padova</AnswerValue><AnswerDescription>Padova</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Palermo</AnswerValue><AnswerDescription>Palermo</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Parma</AnswerValue><AnswerDescription>Parma</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Pavia</AnswerValue><AnswerDescription>Pavia</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Pavia</AnswerValue><AnswerDescription>Pavia</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Perugia</AnswerValue><AnswerDescription>Perugia</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Pesaro e Urbino</AnswerValue><AnswerDescription>Pesaro e Urbino</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Pescara</AnswerValue><AnswerDescription>Pescara</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Piacenza</AnswerValue><AnswerDescription>Piacenza</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Pisa</AnswerValue><AnswerDescription>Pisa</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Pistoia</AnswerValue><AnswerDescription>Pistoia</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Pordenone</AnswerValue><AnswerDescription>Pordenone</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Potenza</AnswerValue><AnswerDescription>Potenza</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Prato</AnswerValue><AnswerDescription>Prato</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Ragusa</AnswerValue><AnswerDescription>Ragusa</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Ravenna</AnswerValue><AnswerDescription>Ravenna</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Reggio Calabria</AnswerValue><AnswerDescription>Reggio Calabria</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Reggio Emilia</AnswerValue><AnswerDescription>Reggio Emilia</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Rieti</AnswerValue><AnswerDescription>Rieti</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Rimini</AnswerValue><AnswerDescription>Rimini</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Roma</AnswerValue><AnswerDescription>Roma</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Rovigo</AnswerValue><AnswerDescription>Rovigo</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Salerno</AnswerValue><AnswerDescription>Salerno</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Sassari</AnswerValue><AnswerDescription>Sassari</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Savona</AnswerValue><AnswerDescription>Savona</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Siena</AnswerValue><AnswerDescription>Siena</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Siracusa</AnswerValue><AnswerDescription>Siracusa</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Sondrio</AnswerValue><AnswerDescription>Sondrio</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Taranto</AnswerValue><AnswerDescription>Taranto</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Teramo</AnswerValue><AnswerDescription>Teramo</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Terni</AnswerValue><AnswerDescription>Terni</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Torino</AnswerValue><AnswerDescription>Torino</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Trapani</AnswerValue><AnswerDescription>Trapani</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Trento</AnswerValue><AnswerDescription>Trento</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Treviso</AnswerValue><AnswerDescription>Treviso</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Trieste</AnswerValue><AnswerDescription>Trieste</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Udine</AnswerValue><AnswerDescription>Udine</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Varese</AnswerValue><AnswerDescription>Varese</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Venezia</AnswerValue><AnswerDescription>Venezia</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Verbano-Cusio-Ossola</AnswerValue><AnswerDescription>Verbano-Cusio-Ossola</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Vercelli</AnswerValue><AnswerDescription>Vercelli</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Vercellio</AnswerValue><AnswerDescription>Vercellio</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Verona</AnswerValue><AnswerDescription>Verona</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Vibo Valentia</AnswerValue><AnswerDescription>Vibo Valentia</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Vicenza</AnswerValue><AnswerDescription>Vicenza</AnswerDescription></XmlAnswer>
+			<XmlAnswer><AnswerValue>Viterbo</AnswerValue><AnswerDescription>Viterbo</AnswerDescription></XmlAnswer>
+		</XmlAnswers>
+	</XmlDataSource>
+</NSurveyDataSource>			

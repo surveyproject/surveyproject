@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="MatrixChildQuestionData" targetNamespace="http://tempuri.org/MatrixChildQuestionData.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/MatrixChildQuestionData.xsd" xmlns:mstns="http://tempuri.org/MatrixChildQuestionData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+    <xs:element name="MatrixChildQuestionData" msdata:IsDataSet="true">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="ChildQuestions">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="QuestionId" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" />
+                            <xs:element name="ParentQuestionId" type="xs:int" minOccurs="0" />
+                            <xs:element name="SelectionModeId" type="xs:int" minOccurs="0" />
+                            <xs:element name="QuestionText" type="xs:string" minOccurs="0" />
+                            <xs:element name="DisplayOrder" type="xs:int" minOccurs="0" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Answers">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="AnswerId" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" />
+                            <xs:element name="QuestionId" type="xs:int" />
+                            <xs:element name="AnswerText" type="xs:string" minOccurs="0" />
+                            <xs:element name="ImageUrl" type="xs:string" minOccurs="0" />
+                            <xs:element name="TypeMode" type="xs:int" minOccurs="0" />
+                            <xs:element name="FieldWidth" type="xs:int" minOccurs="0" />
+                            <xs:element name="FieldLength" type="xs:int" minOccurs="0" />
+                            <xs:element name="FieldHeight" type="xs:int" minOccurs="0" />
+                            <xs:element name="VoteCount" type="xs:int" minOccurs="0" />
+                            <xs:element name="XmlDatasource" type="xs:string" minOccurs="0" msprop:nullValue="_null" />
+                            <xs:element name="Selected" type="xs:boolean" minOccurs="0" />
+                            <xs:element name="DefaultText" type="xs:string" minOccurs="0" />
+                            <xs:element name="UserSelected" type="xs:boolean" minOccurs="0" />
+                            <xs:element name="UserText" type="xs:string" minOccurs="0" />
+                            <xs:element name="DataSource" type="xs:string" minOccurs="0" msprop:nullValue="_null" />
+                            <xs:element name="Mandatory" type="xs:boolean" minOccurs="0" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+        </xs:complexType>
+        <xs:unique name="MatrixChildQuestionsKey1" msdata:PrimaryKey="true">
+            <xs:selector xpath=".//mstns:ChildQuestions" />
+            <xs:field xpath="mstns:QuestionId" />
+        </xs:unique>
+        <xs:unique name="MatrixChildQuestionsKey2" msdata:PrimaryKey="true">
+            <xs:selector xpath=".//mstns:Answers" />
+            <xs:field xpath="mstns:AnswerId" />
+        </xs:unique>
+        <xs:keyref name="ChildQuestionAnswers" refer="MatrixChildQuestionsKey1">
+            <xs:selector xpath=".//mstns:Answers" />
+            <xs:field xpath="mstns:QuestionId" />
+        </xs:keyref>
+    </xs:element>
+</xs:schema>

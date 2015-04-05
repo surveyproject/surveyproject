@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ProgressModeData" targetNamespace="http://tempuri.org/ProgressModeData.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/ProgressModeData.xsd" xmlns:mstns="http://tempuri.org/ProgressModeData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="ProgressModeData" msdata:IsDataSet="true">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="ProgressDisplayModes">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ProgressDisplayModeId" type="xs:int" />
+                            <xs:element name="Description" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+        </xs:complexType>
+        <xs:unique name="ProgressModeDataKey1" msdata:PrimaryKey="true">
+            <xs:selector xpath=".//mstns:ProgressDisplayModes" />
+            <xs:field xpath="mstns:ProgressDisplayModeId" />
+        </xs:unique>
+    </xs:element>
+</xs:schema>

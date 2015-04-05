@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="yes"?>
+<NSurveyDataSource xmlns="http://www.nsurvey.org/NSurveyDataSource.xsd">
+	<XmlDataSource>
+		<RunTimeAnswerLabel>
+		Region :
+		</RunTimeAnswerLabel>
+		<XmlAnswers>
+		   <XmlAnswer><AnswerValue></AnswerValue><AnswerDescription>[Select Region]</AnswerDescription></XmlAnswer> 
+		   <XmlAnswer><AnswerValue>England</AnswerValue><AnswerDescription>England</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Northern Ireland</AnswerValue><AnswerDescription>Northern Ireland</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Scotland</AnswerValue><AnswerDescription>Scotland</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Wales</AnswerValue><AnswerDescription>Wales</AnswerDescription></XmlAnswer>
+		</XmlAnswers>
+	</XmlDataSource>
+</NSurveyDataSource>

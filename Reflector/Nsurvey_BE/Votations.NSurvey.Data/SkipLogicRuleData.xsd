@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SkipLogicRuleData" targetNamespace="http://tempuri.org/SkipLogicRuleData.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/SkipLogicRuleData.xsd" xmlns:mstns="http://tempuri.org/SkipLogicRuleData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+    <xs:element name="SkipLogicRuleData" msdata:IsDataSet="true">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="SkipLogicRules">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="SkipLogicRuleId" type="xs:int" msdata:AutoIncrement="true" />
+                            <xs:element name="SkipQuestionId" type="xs:int" minOccurs="0" />
+                            <xs:element name="ConditionalOperator" type="xs:int" minOccurs="0" />
+                            <xs:element name="AnswerId" type="xs:int" minOccurs="0" />
+                            <xs:element name="QuestionId" type="xs:int" minOccurs="0" />
+                            <xs:element name="TextFilter" type="xs:string" minOccurs="0" />
+                            <xs:element name="Score" type="xs:int" minOccurs="0" />
+                            <xs:element name="ScoreMax" type="xs:int" minOccurs="0" />
+                            <xs:element name="ExpressionOperator" type="xs:int" minOccurs="0" msprop:nullValue="2" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+        </xs:complexType>
+        <xs:unique name="SkipLogicRuleDataKey1" msdata:PrimaryKey="true">
+            <xs:selector xpath=".//mstns:SkipLogicRules" />
+            <xs:field xpath="mstns:SkipLogicRuleId" />
+        </xs:unique>
+    </xs:element>
+</xs:schema>

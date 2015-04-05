@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone="yes"?>
+<NSurveyDataSource xmlns="http://www.nsurvey.org/NSurveyDataSource.xsd">
+	<XmlDataSource>
+		<RunTimeAnswerLabel>
+		Lander :
+		</RunTimeAnswerLabel>
+		<XmlAnswers>
+		   <XmlAnswer><AnswerValue></AnswerValue><AnswerDescription>[Choisissez un land]</AnswerDescription></XmlAnswer> 
+		   <XmlAnswer><AnswerValue>Baden-Württemberg</AnswerValue><AnswerDescription>Baden-Württemberg</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Bayern</AnswerValue><AnswerDescription>Bayern</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Berlin</AnswerValue><AnswerDescription>Berlin</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Brandenburg</AnswerValue><AnswerDescription>Brandenburg</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Bremen</AnswerValue><AnswerDescription>Bremen</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Hamburg</AnswerValue><AnswerDescription>Hamburg</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Hessen</AnswerValue><AnswerDescription>Hessen</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Mecklenburg-Vorpommern</AnswerValue><AnswerDescription>Mecklenburg-Vorpommern</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Niedersachsen</AnswerValue><AnswerDescription>Niedersachsen</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Nordrhein-Westfalen</AnswerValue><AnswerDescription>Nordrhein-Westfalen</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Rheinland-Pfalz</AnswerValue><AnswerDescription>Rheinland-Pfalz</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Saarland</AnswerValue><AnswerDescription>Saarland</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Sachsen</AnswerValue><AnswerDescription>Sachsen</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Sachsen-Anhalt</AnswerValue><AnswerDescription>Sachsen-Anhalt</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Schleswig-Holstein</AnswerValue><AnswerDescription>Schleswig-Holstein</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Thuringen</AnswerValue><AnswerDescription>Thuringen</AnswerDescription></XmlAnswer>
+		</XmlAnswers>
+	</XmlDataSource>
+</NSurveyDataSource>

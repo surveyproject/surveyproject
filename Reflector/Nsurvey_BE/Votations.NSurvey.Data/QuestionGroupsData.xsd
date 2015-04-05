@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="QuestionGroupsData" targetNamespace="http://tempuri.org/QuestionGroups.xsd" xmlns:mstns="http://tempuri.org/QuestionGroups.xsd" xmlns="http://tempuri.org/QuestionGroups.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="QuestionGroupsData" msdata:IsDataSet="true" msdata:Locale="en" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="QuestionGroupsData" msprop:Generator_UserDSName="QuestionGroupsData">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="QuestionGroups" msdata:Locale="en" msprop:Generator_TableClassName="QuestionGroupsDataTable" msprop:Generator_TableVarName="tableQuestionGroups" msprop:Generator_TablePropName="QuestionGroups" msprop:Generator_RowDeletingName="QuestionGroupsRowDeleting" msprop:Generator_UserTableName="QuestionGroups" msprop:Generator_RowChangingName="QuestionGroupsRowChanging" msprop:Generator_RowEvHandlerName="QuestionGroupsRowChangeEventHandler" msprop:Generator_RowDeletedName="QuestionGroupsRowDeleted" msprop:Generator_RowEvArgName="QuestionGroupsRowChangeEvent" msprop:Generator_RowChangedName="QuestionGroupsRowChanged" msprop:Generator_RowClassName="QuestionGroupsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="GroupName" msprop:Generator_ColumnVarNameInTable="columnGroupName" msprop:Generator_ColumnPropNameInRow="GroupName" msprop:Generator_ColumnPropNameInTable="GroupNameColumn" msprop:Generator_UserColumnName="GroupName" type="xs:string" minOccurs="0" />
+              <xs:element name="ParentGroupID" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="ParentGroupID" msprop:Generator_ColumnVarNameInTable="columnParentGroupID" msprop:Generator_ColumnPropNameInTable="ParentGroupIDColumn" msprop:Generator_UserColumnName="ParentGroupID" type="xs:anyType" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
