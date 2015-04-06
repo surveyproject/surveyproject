@@ -9,8 +9,7 @@ CKEDITOR.editorConfig = function( config ) {
     // config.uiColor = '#AADC6E';
 
     // set path to filemanager:
-    config.filebrowserBrowseUrl = '/sp23dev/Filemanager/index.html';
-
+    config.filebrowserBrowseUrl = CKEDITOR_BASEPATH + 'Filemanager/index.html';
 
 
 };

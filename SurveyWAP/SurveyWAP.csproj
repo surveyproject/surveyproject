@@ -46,6 +46,7 @@
     <DocumentationFile>bin\Votations.NSurvey.WebAdmin.XML</DocumentationFile>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
     <Prefer32Bit>false</Prefer32Bit>
+    <PublishDatabases>false</PublishDatabases>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CKEditor.NET, Version=3.6.4.0, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL">
@@ -77,6 +78,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -88,10 +90,6 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="WebChart, Version=1.1.1.4, Culture=neutral">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Library\WebChart.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Code\RowSelectorColumnScript.js" />
@@ -102,166 +100,8 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="default.aspx" />
+    <Content Include="DwsReport.aspx" />
     <Content Include="favicon.ico" />
-    <Content Include="Filemanager\.gitignore" />
-    <Content Include="Filemanager\connectors\ashx\filemanager.ashx" />
-    <Content Include="Filemanager\images\accept.png" />
-    <Content Include="Filemanager\images\ajax-loader.gif" />
-    <Content Include="Filemanager\images\application_view_icons.png" />
-    <Content Include="Filemanager\images\application_view_list.png" />
-    <Content Include="Filemanager\images\bin_closed.png" />
-    <Content Include="Filemanager\images\bullet_arrow_down.png" />
-    <Content Include="Filemanager\images\bullet_arrow_up.png" />
-    <Content Include="Filemanager\images\download.png" />
-    <Content Include="Filemanager\images\fileicons\aac.png" />
-    <Content Include="Filemanager\images\fileicons\avi.png" />
-    <Content Include="Filemanager\images\fileicons\bmp.png" />
-    <Content Include="Filemanager\images\fileicons\chm.png" />
-    <Content Include="Filemanager\images\fileicons\css.png" />
-    <Content Include="Filemanager\images\fileicons\default.png" />
-    <Content Include="Filemanager\images\fileicons\dll.png" />
-    <Content Include="Filemanager\images\fileicons\doc.png" />
-    <Content Include="Filemanager\images\fileicons\docx.png" />
-    <Content Include="Filemanager\images\fileicons\fla.png" />
-    <Content Include="Filemanager\images\fileicons\gif.png" />
-    <Content Include="Filemanager\images\fileicons\htm.png" />
-    <Content Include="Filemanager\images\fileicons\html.png" />
-    <Content Include="Filemanager\images\fileicons\ini.png" />
-    <Content Include="Filemanager\images\fileicons\jar.png" />
-    <Content Include="Filemanager\images\fileicons\jpeg.png" />
-    <Content Include="Filemanager\images\fileicons\jpg.png" />
-    <Content Include="Filemanager\images\fileicons\js.png" />
-    <Content Include="Filemanager\images\fileicons\lasso.png" />
-    <Content Include="Filemanager\images\fileicons\mdb.png" />
-    <Content Include="Filemanager\images\fileicons\mov.png" />
-    <Content Include="Filemanager\images\fileicons\mp3.png" />
-    <Content Include="Filemanager\images\fileicons\mp4.png" />
-    <Content Include="Filemanager\images\fileicons\mpg.png" />
-    <Content Include="Filemanager\images\fileicons\ogg.png" />
-    <Content Include="Filemanager\images\fileicons\ogv.png" />
-    <Content Include="Filemanager\images\fileicons\other_image.png" />
-    <Content Include="Filemanager\images\fileicons\other_movie.png" />
-    <Content Include="Filemanager\images\fileicons\other_music.png" />
-    <Content Include="Filemanager\images\fileicons\other_music2.png" />
-    <Content Include="Filemanager\images\fileicons\pdf.png" />
-    <Content Include="Filemanager\images\fileicons\php.png" />
-    <Content Include="Filemanager\images\fileicons\png.png" />
-    <Content Include="Filemanager\images\fileicons\ppt.png" />
-    <Content Include="Filemanager\images\fileicons\py.png" />
-    <Content Include="Filemanager\images\fileicons\rb.png" />
-    <Content Include="Filemanager\images\fileicons\real.png" />
-    <Content Include="Filemanager\images\fileicons\reg.png" />
-    <Content Include="Filemanager\images\fileicons\rtf.png" />
-    <Content Include="Filemanager\images\fileicons\sql.png" />
-    <Content Include="Filemanager\images\fileicons\swf.png" />
-    <Content Include="Filemanager\images\fileicons\txt.png" />
-    <Content Include="Filemanager\images\fileicons\vbs.png" />
-    <Content Include="Filemanager\images\fileicons\wav.png" />
-    <Content Include="Filemanager\images\fileicons\webm.png" />
-    <Content Include="Filemanager\images\fileicons\wma.png" />
-    <Content Include="Filemanager\images\fileicons\wmv.png" />
-    <Content Include="Filemanager\images\fileicons\xls.png" />
-    <Content Include="Filemanager\images\fileicons\xlsx.png" />
-    <Content Include="Filemanager\images\fileicons\xml.png" />
-    <Content Include="Filemanager\images\fileicons\xsl.png" />
-    <Content Include="Filemanager\images\fileicons\zip.png" />
-    <Content Include="Filemanager\images\fileicons\_Close.png" />
-    <Content Include="Filemanager\images\fileicons\_Documents.png" />
-    <Content Include="Filemanager\images\fileicons\_Favorites.png" />
-    <Content Include="Filemanager\images\fileicons\_Image.png" />
-    <Content Include="Filemanager\images\fileicons\_Movie.png" />
-    <Content Include="Filemanager\images\fileicons\_Music.png" />
-    <Content Include="Filemanager\images\fileicons\_Net.png" />
-    <Content Include="Filemanager\images\fileicons\_Open.png" />
-    <Content Include="Filemanager\images\fileicons\_ProgramFiles.png" />
-    <Content Include="Filemanager\images\fileicons\_Works.png" />
-    <Content Include="Filemanager\images\folder_add.png" />
-    <Content Include="Filemanager\images\house.png" />
-    <Content Include="Filemanager\images\parentfolder.png" />
-    <Content Include="Filemanager\images\pencil.png" />
-    <Content Include="Filemanager\images\plus.png" />
-    <Content Include="Filemanager\images\reset.png" />
-    <Content Include="Filemanager\images\upload.png" />
-    <Content Include="Filemanager\images\wait30trans.gif" />
-    <Content Include="Filemanager\index.html" />
-    <Content Include="Filemanager\ReadMe.md" />
-    <Content Include="Filemanager\scripts\filemanager.config.js" />
-    <Content Include="Filemanager\scripts\filemanager.config.js - Copy.default" />
-    <Content Include="Filemanager\scripts\filemanager.js" />
-    <Content Include="Filemanager\scripts\filemanager.liveSearch.js" />
-    <Content Include="Filemanager\scripts\filemanager.liveSearch.min.js" />
-    <Content Include="Filemanager\scripts\filemanager.min.js" />
-    <Content Include="Filemanager\scripts\jquery-1.8.3.min.js" />
-    <Content Include="Filemanager\scripts\jquery.contextmenu\images\cut.png" />
-    <Content Include="Filemanager\scripts\jquery.contextmenu\images\door.png" />
-    <Content Include="Filemanager\scripts\jquery.contextmenu\images\page_white_copy.png" />
-    <Content Include="Filemanager\scripts\jquery.contextmenu\images\page_white_delete.png" />
-    <Content Include="Filemanager\scripts\jquery.contextmenu\images\page_white_edit.png" />
-    <Content Include="Filemanager\scripts\jquery.contextmenu\images\page_white_paste.png" />
-    <Content Include="Filemanager\scripts\jquery.contextmenu\jquery.contextMenu-1.01.css" />
-    <Content Include="Filemanager\scripts\jquery.contextmenu\jquery.contextMenu-1.01.js" />
-    <Content Include="Filemanager\scripts\jquery.filetree\images\application.png" />
-    <Content Include="Filemanager\scripts\jquery.filetree\images\code.png" />
-    <Content Include="Filemanager\scripts\jquery.filetree\images\css.png" />
-    <Content Include="Filemanager\scripts\jquery.filetree\images\db.png" />
-    <Content Include="Filemanager\scripts\jquery.filetree\images\directory.png" />
-    <Content Include="Filemanager\scripts\jquery.filetree\images\doc.png" />
-    <Content Include="Filemanager\scripts\jquery.filetree\images\file.png" />
-    <Content Include="Filemanager\scripts\jquery.filetree\images\film.png" />
-    <Content Include="Filemanager\scripts\jquery.filetree\images\flash.png" />
-    <Content Include="Filemanager\scripts\jquery.filetree\images\folder_open.png" />
-    <Content Include="Filemanager\scripts\jquery.filetree\images\html.png" />
-    <Content Include="Filemanager\scripts\jquery.filetree\images\java.png" />
-    <Content Include="Filemanager\scripts\jquery.filetree\images\linux.png" />
-    <Content Include="Filemanager\scripts\jquery.filetree\images\music.png" />
-    <Content Include="Filemanager\scripts\jquery.filetree\images\pdf.png" />
-    <Content Include="Filemanager\scripts\jquery.filetree\images\php.png" />
-    <Content Include="Filemanager\scripts\jquery.filetree\images\picture.png" />
-    <Content Include="Filemanager\scripts\jquery.filetree\images\ppt.png" />
-    <Content Include="Filemanager\scripts\jquery.filetree\images\psd.png" />
-    <Content Include="Filemanager\scripts\jquery.filetree\images\ruby.png" />
-    <Content Include="Filemanager\scripts\jquery.filetree\images\script.png" />
-    <Content Include="Filemanager\scripts\jquery.filetree\images\spinner.gif" />
-    <Content Include="Filemanager\scripts\jquery.filetree\images\txt.png" />
-    <Content Include="Filemanager\scripts\jquery.filetree\images\xls.png" />
-    <Content Include="Filemanager\scripts\jquery.filetree\images\zip.png" />
-    <Content Include="Filemanager\scripts\jquery.filetree\jqueryFileTree.css" />
-    <Content Include="Filemanager\scripts\jquery.filetree\jqueryFileTree.js" />
-    <Content Include="Filemanager\scripts\jquery.form-3.24.js" />
-    <Content Include="Filemanager\scripts\jquery.impromptu-3.2.min.js" />
-    <Content Include="Filemanager\scripts\jquery.splitter\hgrabber.gif" />
-    <Content Include="Filemanager\scripts\jquery.splitter\jquery.splitter-1.5.1.js" />
-    <Content Include="Filemanager\scripts\jquery.splitter\jquery.splitter.css" />
-    <Content Include="Filemanager\scripts\jquery.splitter\vgrabber.gif" />
-    <Content Include="Filemanager\scripts\jquery.tablesorter-2.7.2.min.js" />
-    <Content Include="Filemanager\scripts\languages\ca.js" />
-    <Content Include="Filemanager\scripts\languages\cs.js" />
-    <Content Include="Filemanager\scripts\languages\da.js" />
-    <Content Include="Filemanager\scripts\languages\de.js" />
-    <Content Include="Filemanager\scripts\languages\en-gb.js" />
-    <Content Include="Filemanager\scripts\languages\en.js" />
-    <Content Include="Filemanager\scripts\languages\es.js" />
-    <Content Include="Filemanager\scripts\languages\fi.js" />
-    <Content Include="Filemanager\scripts\languages\fr.js" />
-    <Content Include="Filemanager\scripts\languages\he.js" />
-    <Content Include="Filemanager\scripts\languages\hu.js" />
-    <Content Include="Filemanager\scripts\languages\it.js" />
-    <Content Include="Filemanager\scripts\languages\ja.js" />
-    <Content Include="Filemanager\scripts\languages\nl.js" />
-    <Content Include="Filemanager\scripts\languages\pl.js" />
-    <Content Include="Filemanager\scripts\languages\pt.js" />
-    <Content Include="Filemanager\scripts\languages\ru.js" />
-    <Content Include="Filemanager\scripts\languages\sv.js" />
-    <Content Include="Filemanager\scripts\languages\tr.js" />
-    <Content Include="Filemanager\scripts\languages\vn.js" />
-    <Content Include="Filemanager\scripts\languages\zh-cn.js" />
-    <Content Include="Filemanager\scripts\languages\zh-tw.js" />
-    <Content Include="Filemanager\styles\filemanager.css" />
-    <Content Include="Filemanager\styles\ie10.css" />
-    <Content Include="Filemanager\styles\ie8.css" />
-    <Content Include="Filemanager\styles\ie9.css" />
-    <Content Include="Filemanager\styles\reset.css" />
-    <Content Include="Filemanager\userfiles\welcome.txt" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
@@ -271,6 +111,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="GoogleMaps.aspx" />
     <Content Include="HttpErrorPage.aspx" />
     <Content Include="Images\arrow-down.gif" />
     <Content Include="Images\arrow-green-up.gif" />
@@ -300,11 +141,13 @@
     <Content Include="Images\email.png" />
     <Content Include="Images\help.gif" />
     <Content Include="Images\help.png" />
+    <Content Include="Images\ImpulseScores1.jpg" />
     <Content Include="Images\index-icon.png" />
     <Content Include="Images\inet.png" />
     <Content Include="Images\layout.png" />
     <Content Include="Images\lock.gif" />
     <Content Include="Images\menuseparator.gif" />
+    <Content Include="Images\mscharts_temp\msc_cntr_0.txt" />
     <Content Include="Images\NegativeRatingBar.gif" />
     <Content Include="Images\PenSurvey.JPG" />
     <Content Include="Images\PositiveRatingBar.gif" />
@@ -323,13 +166,14 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="NSurveyAdmin\AccessDenied.aspx" />
     <Content Include="NSurveyAdmin\AjaxWebMethodsProxy.aspx" />
-    <Content Include="NSurveyAdmin\BarChartReport.aspx" />
     <Content Include="NSurveyAdmin\CampaignStart.aspx" />
+    <Content Include="NSurveyAdmin\ColumnChartReport.aspx" />
     <Content Include="NSurveyAdmin\ConditionalEndMessage.aspx" />
     <Content Include="NSurveyAdmin\ControlCode.aspx" />
     <Content Include="NSurveyAdmin\CSS\loginform.css" />
     <Content Include="NSurveyAdmin\CSS\nsurveyform.css" />
     <Content Include="NSurveyAdmin\CSS\perfect-scrollbar.css" />
+    <Content Include="NSurveyAdmin\CSS\resultsreport.css" />
     <Content Include="NSurveyAdmin\CSS\surveymobile.css" />
     <Content Include="NSurveyAdmin\CSS\surveypreview.css" />
     <Content Include="NSurveyAdmin\CSS\voterreport.css" />
@@ -491,6 +335,7 @@
     <Content Include="NSurveyAdmin\Images\PDF-Icon_32.png" />
     <Content Include="NSurveyAdmin\Images\Print_32X32_Standard.png" />
     <Content Include="NSurveyAdmin\Login.aspx" />
+    <Content Include="NSurveyAdmin\Settings.aspx" />
     <Content Include="NSurveyAdmin\SurveyIPSecurity.aspx" />
     <Content Include="NSurveyAdmin\CreateSurvey.aspx" />
     <Content Include="NSurveyAdmin\CSS\jquerycssmenu.css" />
@@ -509,7 +354,6 @@
     <Content Include="NSurveyAdmin\FileManager.aspx" />
     <Content Include="NSurveyAdmin\GlobalStats.aspx" />
     <Content Include="NSurveyAdmin\Help\index.aspx" />
-    <Content Include="NSurveyAdmin\Images\headerlogo.jpg" />
     <Content Include="NSurveyAdmin\Images\linebreak.gif" />
     <Content Include="NSurveyAdmin\Images\questiondownbutton.gif" />
     <Content Include="NSurveyAdmin\Images\questionoptionsbackground.gif" />
@@ -531,7 +375,6 @@
     <Content Include="NSurveyAdmin\MailingPoll.aspx" />
     <Content Include="NSurveyAdmin\MailingStatus.aspx" />
     <Content Include="NSurveyAdmin\MultiLanguages.aspx" />
-    <Content Include="NSurveyAdmin\PieChartReport.aspx" />
     <Content Include="NSurveyAdmin\QuestionGroups.aspx" />
     <Content Include="NSurveyAdmin\ResultsCrossTabulation.aspx" />
     <Content Include="NSurveyAdmin\ResultsReporting.aspx" />
@@ -565,6 +408,7 @@
     <Content Include="NSurveyAdmin\UserControls\SecurityAddInOptionsControl.ascx" />
     <Content Include="NSurveyAdmin\UserControls\SecurityAddInVoterReportControl.ascx" />
     <Content Include="NSurveyAdmin\UserControls\SkipLogicRulesControl.ascx" />
+    <Content Include="NSurveyAdmin\UserControls\SurveyBoxControl.ascx" />
     <Content Include="NSurveyAdmin\UserControls\SurveyListControl.ascx" />
     <Content Include="NSurveyAdmin\UserControls\SurveyMessageConditonsControl.ascx" />
     <Content Include="NSurveyAdmin\UserControls\SurveyFormSecurity.ascx" />
@@ -581,6 +425,7 @@
     <Content Include="NSurveyAdmin\VoterReport.aspx" />
     <Content Include="Global.asax" />
     <Content Include="NSurveyAdmin\WarningScreen.aspx" />
+    <Content Include="ResultsReport.aspx" />
     <Content Include="Scripts\astreeview\astreeview.css" />
     <Content Include="Scripts\astreeview\astreeview.min.js" />
     <Content Include="Scripts\astreeview\contextmenu.css" />
@@ -675,6 +520,162 @@
     <Content Include="Scripts\ckeditor\ckeditor.js" />
     <Content Include="Scripts\ckeditor\config.js" />
     <Content Include="Scripts\ckeditor\contents.css" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\accept.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\ajax-loader.gif" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\application_view_icons.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\application_view_list.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\bin_closed.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\bullet_arrow_down.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\bullet_arrow_up.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\download.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\aac.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\avi.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\bmp.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\chm.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\css.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\default.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\dll.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\doc.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\docx.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\fla.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\gif.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\htm.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\html.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\ini.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\jar.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\jpeg.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\jpg.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\js.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\lasso.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\mdb.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\mov.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\mp3.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\mp4.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\mpg.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\ogg.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\ogv.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\other_image.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\other_movie.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\other_music.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\other_music2.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\pdf.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\php.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\png.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\ppt.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\py.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\rb.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\real.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\reg.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\rtf.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\sql.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\swf.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\txt.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\vbs.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\wav.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\webm.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\wma.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\wmv.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\xls.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\xlsx.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\xml.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\xsl.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\zip.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\_Close.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\_Documents.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\_Favorites.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\_Image.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\_Movie.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\_Music.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\_Net.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\_Open.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\_ProgramFiles.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\fileicons\_Works.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\folder_add.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\house.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\parentfolder.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\pencil.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\plus.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\reset.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\upload.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\images\wait30trans.gif" />
+    <Content Include="Scripts\ckeditor\Filemanager\index.html" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\filemanager.config.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\filemanager.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\filemanager.liveSearch.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\filemanager.liveSearch.min.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\filemanager.min.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery-1.8.3.min.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.contextmenu\images\cut.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.contextmenu\images\door.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.contextmenu\images\page_white_copy.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.contextmenu\images\page_white_delete.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.contextmenu\images\page_white_edit.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.contextmenu\images\page_white_paste.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.contextmenu\jquery.contextMenu-1.01.css" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.contextmenu\jquery.contextMenu-1.01.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.filetree\images\application.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.filetree\images\code.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.filetree\images\css.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.filetree\images\db.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.filetree\images\directory.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.filetree\images\doc.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.filetree\images\file.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.filetree\images\film.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.filetree\images\flash.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.filetree\images\folder_open.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.filetree\images\html.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.filetree\images\java.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.filetree\images\linux.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.filetree\images\music.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.filetree\images\pdf.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.filetree\images\php.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.filetree\images\picture.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.filetree\images\ppt.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.filetree\images\psd.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.filetree\images\ruby.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.filetree\images\script.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.filetree\images\spinner.gif" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.filetree\images\txt.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.filetree\images\xls.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.filetree\images\zip.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.filetree\jqueryFileTree.css" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.filetree\jqueryFileTree.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.form-3.24.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.impromptu-3.2.min.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.splitter\hgrabber.gif" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.splitter\jquery.splitter-1.5.1.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.splitter\jquery.splitter.css" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.splitter\vgrabber.gif" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\jquery.tablesorter-2.7.2.min.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\languages\ca.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\languages\cs.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\languages\da.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\languages\de.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\languages\en-gb.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\languages\en.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\languages\es.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\languages\fi.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\languages\fr.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\languages\he.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\languages\hu.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\languages\it.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\languages\ja.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\languages\nl.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\languages\pl.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\languages\pt.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\languages\ru.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\languages\sv.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\languages\tr.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\languages\vn.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\languages\zh-cn.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\languages\zh-tw.js" />
+    <Content Include="Scripts\ckeditor\Filemanager\styles\filemanager.css" />
+    <Content Include="Scripts\ckeditor\Filemanager\styles\ie10.css" />
+    <Content Include="Scripts\ckeditor\Filemanager\styles\ie8.css" />
+    <Content Include="Scripts\ckeditor\Filemanager\styles\ie9.css" />
+    <Content Include="Scripts\ckeditor\Filemanager\styles\reset.css" />
+    <Content Include="Scripts\ckeditor\Filemanager\userfiles\NewFws\sql.png" />
+    <Content Include="Scripts\ckeditor\Filemanager\userfiles\welcome.txt" />
     <Content Include="Scripts\ckeditor\lang\af.js" />
     <Content Include="Scripts\ckeditor\lang\ar.js" />
     <Content Include="Scripts\ckeditor\lang\bg.js" />
@@ -1137,6 +1138,8 @@
     <Content Include="Scripts\Javascript\cssmenu\jquerycssmenu.js" />
     <Content Include="Scripts\Javascript\fileinput\jquery.fileinput.js" />
     <Content Include="Scripts\Javascript\fileinput\jquery.fileinput.min.js" />
+    <Content Include="Scripts\Javascript\google\SearchAddress.css" />
+    <Content Include="Scripts\Javascript\google\SearchAddress.js" />
     <Content Include="Scripts\Javascript\HTML5shiv\html5shiv.js" />
     <Content Include="Scripts\Javascript\perfectscrollbar\jquery.mousewheel.js" />
     <Content Include="Scripts\Javascript\perfectscrollbar\perfect-scrollbar.js" />
@@ -1163,6 +1166,7 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
+    <None Include="Scripts\_references.js" />
     <Content Include="Survey.aspx" />
     <Content Include="SurveyMobile.aspx" />
     <Content Include="XmlData\al.xml" />
@@ -1294,8 +1298,22 @@
     <Compile Include="Code\SyncDataStore.cs" />
     <Compile Include="Code\UINavigator.cs" />
     <Compile Include="Code\UITabList.cs" />
+    <Compile Include="DwsReport.aspx.cs">
+      <DependentUpon>DwsReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DwsReport.aspx.designer.cs">
+      <DependentUpon>DwsReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GoogleMaps.aspx.cs">
+      <DependentUpon>GoogleMaps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GoogleMaps.aspx.designer.cs">
+      <DependentUpon>GoogleMaps.aspx</DependentUpon>
     </Compile>
     <Compile Include="HttpErrorPage.aspx.cs">
       <DependentUpon>HttpErrorPage.aspx</DependentUpon>
@@ -1318,19 +1336,19 @@
     <Compile Include="NSurveyAdmin\AjaxWebMethodsProxy.aspx.designer.cs">
       <DependentUpon>AjaxWebMethodsProxy.aspx</DependentUpon>
     </Compile>
-    <Compile Include="NSurveyAdmin\BarChartReport.aspx.cs">
-      <DependentUpon>BarChartReport.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="NSurveyAdmin\BarChartReport.aspx.designer.cs">
-      <DependentUpon>BarChartReport.aspx</DependentUpon>
-    </Compile>
     <Compile Include="NSurveyAdmin\CampaignStart.aspx.cs">
       <DependentUpon>CampaignStart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NSurveyAdmin\CampaignStart.aspx.designer.cs">
       <DependentUpon>CampaignStart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\ColumnChartReport.aspx.cs">
+      <DependentUpon>ColumnChartReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\ColumnChartReport.aspx.designer.cs">
+      <DependentUpon>ColumnChartReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="NSurveyAdmin\ConditionalEndMessage.aspx.cs">
       <DependentUpon>ConditionalEndMessage.aspx</DependentUpon>
@@ -1373,6 +1391,13 @@
     </Compile>
     <Compile Include="NSurveyAdmin\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\Settings.aspx.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\Settings.aspx.designer.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
     </Compile>
     <Compile Include="NSurveyAdmin\SurveyIPSecurity.aspx.cs">
       <DependentUpon>SurveyIPSecurity.aspx</DependentUpon>
@@ -1555,13 +1580,6 @@
     </Compile>
     <Compile Include="NSurveyAdmin\MultiLanguages.aspx.designer.cs">
       <DependentUpon>MultiLanguages.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="NSurveyAdmin\PieChartReport.aspx.cs">
-      <DependentUpon>PieChartReport.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="NSurveyAdmin\PieChartReport.aspx.designer.cs">
-      <DependentUpon>PieChartReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="NSurveyAdmin\QuestionGroups.aspx.cs">
       <DependentUpon>QuestionGroups.aspx</DependentUpon>
@@ -1794,6 +1812,13 @@
     <Compile Include="NSurveyAdmin\UserControls\SkipLogicRulesControl.ascx.designer.cs">
       <DependentUpon>SkipLogicRulesControl.ascx</DependentUpon>
     </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\SurveyBoxControl.ascx.cs">
+      <DependentUpon>SurveyBoxControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\UserControls\SurveyBoxControl.ascx.designer.cs">
+      <DependentUpon>SurveyBoxControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="NSurveyAdmin\UserControls\SurveyListControl.ascx.cs">
       <DependentUpon>SurveyListControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1900,6 +1925,13 @@
       <DependentUpon>WarningScreen.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultsReport.aspx.cs">
+      <DependentUpon>ResultsReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResultsReport.aspx.designer.cs">
+      <DependentUpon>ResultsReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Survey.aspx.cs">
       <DependentUpon>Survey.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1924,6 +1956,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Deployment\" />
+    <Folder Include="Images\mscharts_temp\charts_0\" />
     <Folder Include="NSurveyAdmin\Images\UserImg\" />
   </ItemGroup>
   <ItemGroup>
@@ -1959,9 +1993,6 @@
   <ItemGroup>
     <EmbeddedResource Include="NSurveyAdmin\AccessDenied.aspx.resx">
       <DependentUpon>AccessDenied.aspx.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NSurveyAdmin\BarChartReport.aspx.resx">
-      <DependentUpon>BarChartReport.aspx.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NSurveyAdmin\ConditionalEndMessage.aspx.resx">
       <DependentUpon>ConditionalEndMessage.aspx.cs</DependentUpon>
@@ -2031,9 +2062,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NSurveyAdmin\MultiLanguages.aspx.resx">
       <DependentUpon>MultiLanguages.aspx.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NSurveyAdmin\PieChartReport.aspx.resx">
-      <DependentUpon>PieChartReport.aspx.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NSurveyAdmin\ResultsCrossTabulation.aspx.resx">
       <DependentUpon>ResultsCrossTabulation.aspx.cs</DependentUpon>
@@ -2170,6 +2198,21 @@
   <ItemGroup>
     <Content Include="Scripts\ckeditor\skins\kama\readme.md" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\ckeditor\Filemanager\.gitignore" />
+    <Content Include="Scripts\ckeditor\Filemanager\connectors\ashx\filemanager.ashx" />
+    <Content Include="Scripts\ckeditor\Filemanager\ReadMe.md" />
+    <Content Include="Scripts\ckeditor\Filemanager\scripts\filemanager.config.js - Copy.default" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\SurveyProjectPublish.pubxml" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -2185,7 +2228,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>4976</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://[yourwebserver]/[sp23dev]</IISUrl>
+          <IISUrl>http://localhost/sp24dev</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -2195,11 +2238,19 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <PropertyGroup>
+    <Extension>zip</Extension>
+    <SPFileName>SurveyProject</SPFileName>
+    <PackageName>SurveyProject</PackageName>
+    <MSBuildCommunityTasksPath>$(SolutionDir)\.build</MSBuildCommunityTasksPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildCommunityTasksPath)\MSBuild.Community.Tasks.targets" />
+  <Import Project="BuildScripts\ModulePackage.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
-  <Target Name="AfterBuild">
-  </Target>
   -->
+  <Target Name="AfterBuild" DependsOnTargets="SurveyProjectPackage">
+  </Target>
 </Project>

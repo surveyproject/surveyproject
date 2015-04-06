@@ -131,6 +131,7 @@
     <Compile Include="Votations.NSurvey.WebControls.ThirdPartyItems\FreeTextBoxAnswerItem.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Votations.NSurvey.WebControls.UI\AnswerFieldAddressItem.cs" />
     <Compile Include="Votations.NSurvey.WebControls.UI\AnswerFieldSliderItem.cs" />
     <Compile Include="Votations.NSurvey.WebControls.UI\SectionQuestion.cs" />
     <Compile Include="Votations.NSurvey.WebControls\GlobalRadioButton.cs" />

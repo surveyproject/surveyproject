@@ -77,8 +77,8 @@ namespace Votations.NSurvey.WebAdmin
 
 				// Header.SurveyId = SurveyId;
              ((Wap)Master.Master).HeaderControl.SurveyId = SurveyId;
-				PendingEmailsDataGrid.CurrentPageIndex = 1;
-				AnsweredEmailsDatagrid.CurrentPageIndex = 1;
+				//PendingEmailsDataGrid.CurrentPageIndex = 1;
+				//AnsweredEmailsDatagrid.CurrentPageIndex = 1;
 				PreviousPendingPageLinkButton.Enabled = false;
 				BindPendingData();
 				BindAnsweredData();
@@ -119,25 +119,29 @@ namespace Votations.NSurvey.WebAdmin
 		/// </summary>
 		private void BindPendingData()
 		{
-			int totalRecords = 0,
-				totalPages = 0;
-			PendingEmailsDataGrid.DataMember = "InvitationQueues";
-			PendingEmailsDataGrid.DataSource = new Voters().GetVotersInvitationQueue(SurveyId, PendingEmailsDataGrid.CurrentPageIndex,25, out totalRecords);
-			PendingEmailsDataGrid.DataBind();
-			CurrentPendingPageLabel.Text = PendingEmailsDataGrid.CurrentPageIndex.ToString();
+
+            int totalRecords = 0,
+                totalPages = 0;
+            
+                
+                PendingEmailsDataGrid.DataMember = "InvitationQueues";
+                PendingEmailsDataGrid.DataSource = new Voters().GetVotersInvitationQueue(SurveyId, CurrentPageIndex, PendingEmailsDataGrid.PageSize, out totalRecords);
+                PendingEmailsDataGrid.DataBind();
+                      
+			CurrentPendingPageLabel.Text = (CurrentPageIndex+1 ).ToString();
 
 			if (totalRecords > 0)
 			{
 				NoPending.Visible = false;
 				pendinglist.Visible = true;
 
-				if ((totalRecords%25) == 0)
+                if ((totalRecords % (PendingEmailsDataGrid.PageSize)) == 0)
 				{
-					totalPages = totalRecords/25;
+                    totalPages = totalRecords / (PendingEmailsDataGrid.PageSize);
 				}
 				else
 				{
-					totalPages = (totalRecords/25) + 1;
+                    totalPages = (totalRecords / (PendingEmailsDataGrid.PageSize)) + 1;
 				}
 				TotalPendingPagesLabel.Text = totalPages.ToString();
 			}
@@ -167,22 +171,22 @@ namespace Votations.NSurvey.WebAdmin
 				totalPages = 0;
 			AnsweredEmailsDatagrid.DataMember = "Voters";
 			AnsweredEmailsDatagrid.DataKeyField = "VoterID";
-			AnsweredEmailsDatagrid.DataSource = new Voters().GetVotersInvitationAnswered(SurveyId, AnsweredEmailsDatagrid.CurrentPageIndex,25, out totalRecords);
+            AnsweredEmailsDatagrid.DataSource = new Voters().GetVotersInvitationAnswered(SurveyId, CurrentPageIndex, AnsweredEmailsDatagrid.PageSize, out totalRecords);
 			AnsweredEmailsDatagrid.DataBind();
-			CurrentAnsweredPageLabel.Text = AnsweredEmailsDatagrid.CurrentPageIndex.ToString();
+			CurrentAnsweredPageLabel.Text = (CurrentPageIndex+1).ToString();
 
 			if (totalRecords > 0)
 			{
 				NoAnswersPlaceHolder.Visible = false;
 				AnswersPlaceHolder.Visible = true;
 
-				if ((totalRecords%25) == 0)
+                if ((totalRecords % (AnsweredEmailsDatagrid.PageSize) )== 0)
 				{
-					totalPages = totalRecords/25;
+                    totalPages = totalRecords / (AnsweredEmailsDatagrid.PageSize);
 				}
 				else
 				{
-					totalPages = (totalRecords/25) + 1;
+                    totalPages = (totalRecords / (AnsweredEmailsDatagrid.PageSize)) + 1;
 				}
 				TotalAnsweredPagesLabel.Text = totalPages.ToString();
 			}
@@ -241,27 +245,39 @@ namespace Votations.NSurvey.WebAdmin
 			if (currentPage < totalPages)
 			{
 
-				PendingEmailsDataGrid.CurrentPageIndex++;
-
+			   //PendingEmailsDataGrid.CurrentPageIndex++;
+                CurrentPageIndex++;
 				// Get the data for the DataGrid.
-				BindPendingData();
 
+                BindPendingData();
 				// Should we disable the previous link?
-				if (PendingEmailsDataGrid.CurrentPageIndex <= totalPages)
+				if (CurrentPageIndex +1<= totalPages)
 				{
 
 					PreviousPendingPageLinkButton.Enabled = true;
 				}
 
 				// Should we enable the next link?
-				if (PendingEmailsDataGrid.CurrentPageIndex == totalPages || totalPages == 1)
+				if (CurrentPageIndex +1== totalPages || totalPages == 1)
 				{
 
 					NextPendingPageLinkButton.Enabled = false;
 				}
+                
 			}		
 		}
-
+        private int CurrentPageIndex
+        {
+            get
+            {
+                if (ViewState["CurrentPageIndex"] == null) return 0;
+                else  return  int.Parse(ViewState["CurrentPageIndex"].ToString());
+            }
+            set
+            {
+                ViewState["CurrentPageIndex"] = value;
+            }
+        }
 		private void PreviousPendingPageLinkButton_Click(object sender, System.EventArgs e)
 		{
 			// Declare local data members.
@@ -269,16 +285,16 @@ namespace Votations.NSurvey.WebAdmin
 			int totalPages = int.Parse(TotalPendingPagesLabel.Text);
 
 			// Decrement the current page index.
-			if (currentPage > 1)
+			if (currentPage >= 1)
 			{
 
-				PendingEmailsDataGrid.CurrentPageIndex--;
-
+				//PendingEmailsDataGrid.CurrentPageIndex--;
+                CurrentPageIndex--;
 				// Get the data for the DataGrid.
 				BindPendingData();
 
 				// Should we disable the previous link?
-				if (PendingEmailsDataGrid.CurrentPageIndex == 1)
+				if (CurrentPageIndex+1 == 1)
 				{
 
 					PreviousPendingPageLinkButton.Enabled = false;
@@ -320,16 +336,17 @@ namespace Votations.NSurvey.WebAdmin
 			int totalPages = int.Parse(TotalAnsweredPagesLabel.Text);
 
 			// Decrement the current page index.
-			if (currentPage > 1)
+			if (currentPage >= 1)
 			{
 
-				AnsweredEmailsDatagrid.CurrentPageIndex--;
+				//AnsweredEmailsDatagrid.CurrentPageIndex--;
+                CurrentPageIndex--;
 
 				// Get the data for the DataGrid.
 				BindAnsweredData();
 
 				// Should we disable the previous link?
-				if (AnsweredEmailsDatagrid.CurrentPageIndex == 1)
+				if (CurrentPageIndex+1 == 1)
 				{
 
 					PreviousAnsweredPageLinkButton.Enabled = false;
@@ -354,20 +371,21 @@ namespace Votations.NSurvey.WebAdmin
 			if (currentPage < totalPages)
 			{
 
-				AnsweredEmailsDatagrid.CurrentPageIndex++;
+				//AnsweredEmailsDatagrid.CurrentPageIndex++;
+                CurrentPageIndex++;
 
 				// Get the data for the DataGrid.
 				BindAnsweredData();
 
 				// Should we disable the previous link?
-				if (AnsweredEmailsDatagrid.CurrentPageIndex <= totalPages)
+				if (CurrentPageIndex+1 <= totalPages)
 				{
 
 					PreviousAnsweredPageLinkButton.Enabled = true;
 				}
 
 				// Should we enable the next link?
-				if (AnsweredEmailsDatagrid.CurrentPageIndex == totalPages || totalPages == 1)
+				if (CurrentPageIndex+1 == totalPages || totalPages == 1)
 				{
 
 					NextAnsweredPageLinkButton.Enabled = false;

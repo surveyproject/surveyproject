@@ -34,6 +34,7 @@ namespace Votations.NSurvey.WebAdmin
             }
             return id;
         }
+
         private int GetIdFromQueryStr()
         {
             Guid guid;
@@ -53,11 +54,14 @@ namespace Votations.NSurvey.WebAdmin
                 MessageLabel.Visible = true; return -1;
             }
         }
+
         private int GetSurveyId()
         {
             if (Request[Votations.NSurvey.Constants.Constants.QRYSTRGuid] != null) return GetIdFromQueryStr();
             return GetIdFromUrl();
         }
+
+
         void Page_Load(Object sender, EventArgs e)
         {
 

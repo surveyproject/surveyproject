@@ -78,6 +78,15 @@ namespace Votations.NSurvey.WebAdmin
             RecreateControls(DdlDynamicName);
             UITabList.SetResultsTabs((MsterPageTabs)Page.Master, UITabList.ResultTabs.Reports);
 
+            if (LayoutDropDownList.SelectedValue != "2")
+            {
+                ThreeDeeDropDownList.Visible = true;
+            }
+            else
+            {
+                ThreeDeeDropDownList.Visible = false;
+            }
+
 			SetupSecurity();
 			LocalizePage();
 
@@ -105,7 +114,13 @@ namespace Votations.NSurvey.WebAdmin
 
 				LayoutDropDownList.Items.Add(new ListItem(GetPageResource("ColumnChartOption"),"1"));
 				LayoutDropDownList.Items.Add(new ListItem(GetPageResource("HTMLChartOption"),"2"));
-				LayoutDropDownList.Items.Add(new ListItem(GetPageResource("PieChartOption"),"3"));
+				LayoutDropDownList.Items.Add(new ListItem("Bubble Chart","3"));
+                LayoutDropDownList.Items.Add(new ListItem("Bar Chart", "4"));
+                LayoutDropDownList.Items.Add(new ListItem("Pie Chart", "5"));
+
+                ThreeDeeDropDownList.Items.Add(new ListItem("3D", "1"));
+                ThreeDeeDropDownList.Items.Add(new ListItem("2D", "2"));                   
+
 				FilterEditorHyperLink.Text = GetPageResource("FilterEditorHyperLink");
 				FilterEditorHyperLink.NavigateUrl = UINavigator.FilterEditor + "?SurveyId=" + SurveyId +"&menuindex="+MenuIndex;
 			
@@ -225,10 +240,15 @@ namespace Votations.NSurvey.WebAdmin
 				{
 					BuildHtmlResults(int.Parse(QuestionsDropDownList.SelectedValue));
 				}
-				else if (LayoutDropDownList.SelectedValue == "3")
-				{
-					BuildPieChartResults(int.Parse(QuestionsDropDownList.SelectedValue));
-				}
+                //else if (LayoutDropDownList.SelectedValue == "3")
+                //{
+                //    //BuildPieChartResults(int.Parse(QuestionsDropDownList.SelectedValue));
+                //    BuildBarChartResults(int.Parse(QuestionsDropDownList.SelectedValue));
+                //}
+                //else if (LayoutDropDownList.SelectedValue == "4")
+                //{
+                //    BuildBarChartResults(int.Parse(QuestionsDropDownList.SelectedValue));
+                //}
 				else
 				{
 					BuildChartColumnResults(int.Parse(QuestionsDropDownList.SelectedValue));
@@ -259,26 +279,45 @@ namespace Votations.NSurvey.WebAdmin
 			{
 				ChartRepeater.Visible = false;
 				SingleChartImage.Visible = true;
-                SingleChartImage.ImageUrl = Server.HtmlDecode("BarChartReport.aspx?questionid="+questionId+"&filterid="+GetFilterId().ToString()+"&SortOrder="+ResultsOrderDropDownList.SelectedValue+"&LanguageCode="+LanguagesDropdownlist.SelectedValue);
+                //SingleChartImage.ImageUrl = Server.HtmlDecode("BarChartReport.aspx?questionid="+questionId+"&filterid="+GetFilterId().ToString()+"&SortOrder="+ResultsOrderDropDownList.SelectedValue+"&LanguageCode="+LanguagesDropdownlist.SelectedValue);
+                SingleChartImage.ImageUrl = Server.HtmlDecode("ColumnChartReport.aspx?questionid=" + questionId + "&filterid=" + GetFilterId().ToString() + "&SortOrder=" + ResultsOrderDropDownList.SelectedValue + "&LanguageCode=" + LanguagesDropdownlist.SelectedValue + "&ChartType=" + LayoutDropDownList.SelectedValue + "&Enable3D=" + ThreeDeeDropDownList.SelectedValue);
 			}
 		}
 
-		void BuildPieChartResults(int questionId)
-		{
-			if (questionId == 0)
-			{
-				ChartRepeater.Visible = true;
-				SingleChartImage.Visible = false;
-				ChartRepeater.DataSource = new Questions().GetQuestionListWithSelectableAnswers(SurveyId);
-				ChartRepeater.DataBind();
-			}
-			else
-			{
-				ChartRepeater.Visible = false;
-				SingleChartImage.Visible = true;
-                SingleChartImage.ImageUrl = Server.HtmlDecode("PieChartReport.aspx?questionid="+questionId+"&filterid="+GetFilterId().ToString()+"&SortOrder="+ResultsOrderDropDownList.SelectedValue+"&LanguageCode="+LanguagesDropdownlist.SelectedValue);
-			}
-		}
+        //void BuildBarChartResults(int questionId)
+        //{
+        //    if (questionId == 0)
+        //    {
+        //        ChartRepeater.Visible = true;
+        //        SingleChartImage.Visible = false;
+        //        ChartRepeater.DataSource = new Questions().GetQuestionListWithSelectableAnswers(SurveyId);
+        //        ChartRepeater.DataBind();
+        //    }
+        //    else
+        //    {
+        //        ChartRepeater.Visible = false;
+        //        SingleChartImage.Visible = true;
+        //        //SingleChartImage.ImageUrl = Server.HtmlDecode("BarChartReport.aspx?questionid="+questionId+"&filterid="+GetFilterId().ToString()+"&SortOrder="+ResultsOrderDropDownList.SelectedValue+"&LanguageCode="+LanguagesDropdownlist.SelectedValue);
+        //        SingleChartImage.ImageUrl = Server.HtmlDecode("ColumnChartReport.aspx?questionid=" + questionId + "&filterid=" + GetFilterId().ToString() + "&SortOrder=" + ResultsOrderDropDownList.SelectedValue + "&LanguageCode=" + LanguagesDropdownlist.SelectedValue + "&ChartType=" + LayoutDropDownList.SelectedValue +"&Enable3D=" + ThreeDeeDropDownList.SelectedValue);
+        //    }
+        //}
+
+        //void BuildPieChartResults(int questionId)
+        //{
+        //    if (questionId == 0)
+        //    {
+        //        ChartRepeater.Visible = true;
+        //        SingleChartImage.Visible = false;
+        //        ChartRepeater.DataSource = new Questions().GetQuestionListWithSelectableAnswers(SurveyId);
+        //        ChartRepeater.DataBind();
+        //    }
+        //    else
+        //    {
+        //        ChartRepeater.Visible = false;
+        //        SingleChartImage.Visible = true;
+        //        SingleChartImage.ImageUrl = Server.HtmlDecode("PieChartReport.aspx?questionid="+questionId+"&filterid="+GetFilterId().ToString()+"&SortOrder="+ResultsOrderDropDownList.SelectedValue+"&LanguageCode="+LanguagesDropdownlist.SelectedValue);
+        //    }
+        //}
 
 		#region Web Form Designer generated code
 		override protected void OnInit(EventArgs e)
@@ -302,6 +341,7 @@ namespace Votations.NSurvey.WebAdmin
 			this.LanguagesDropdownlist.SelectedIndexChanged += new System.EventHandler(this.LanguagesDropdownlist_SelectedIndexChanged);
 			this.ApplyRangeButton.Click += new System.EventHandler(this.ApplyRangeButton_Click);
 			this.FilterDropDownList.SelectedIndexChanged += new System.EventHandler(this.FilterDropDownList_SelectedIndexChanged);
+            this.ThreeDeeDropDownList.SelectedIndexChanged += new System.EventHandler(this.QuestionsDropDownList_SelectedIndexChanged);
 			this.Load += new System.EventHandler(this.Page_Load);
 
 		}
@@ -317,7 +357,8 @@ namespace Votations.NSurvey.WebAdmin
 				}
 				else if (LayoutDropDownList.SelectedValue == "3")
 				{
-					BuildPieChartResults(int.Parse(QuestionsDropDownList.SelectedValue));
+					//BuildPieChartResults(int.Parse(QuestionsDropDownList.SelectedValue));
+                    BuildChartColumnResults(int.Parse(QuestionsDropDownList.SelectedValue));
 				}
 				else
 				{
@@ -365,7 +406,8 @@ namespace Votations.NSurvey.WebAdmin
 			}
 			else if (LayoutDropDownList.SelectedValue == "3")
 			{
-				BuildPieChartResults(int.Parse(QuestionsDropDownList.SelectedValue));
+				//BuildPieChartResults(int.Parse(QuestionsDropDownList.SelectedValue));
+                BuildChartColumnResults(int.Parse(QuestionsDropDownList.SelectedValue));
 			}
 			else
 			{
@@ -381,7 +423,8 @@ namespace Votations.NSurvey.WebAdmin
 			}
 			else if (LayoutDropDownList.SelectedValue == "3")
 			{
-				BuildPieChartResults(int.Parse(QuestionsDropDownList.SelectedValue));
+				//BuildPieChartResults(int.Parse(QuestionsDropDownList.SelectedValue));
+                BuildChartColumnResults(int.Parse(QuestionsDropDownList.SelectedValue));
 			}
 			else
 			{
@@ -391,12 +434,21 @@ namespace Votations.NSurvey.WebAdmin
 
 		protected string GetFileName()
 		{
-			if (LayoutDropDownList.SelectedValue == "3")
-			{
-				return "PieChartReport.aspx";
-			}
-			return "BarChartReport.aspx";
+            //if (LayoutDropDownList.SelectedValue == "3")
+            //{
+            //    return "PieChartReport.aspx";
+            //}
+			return "ColumnChartReport.aspx";
 		}
+
+        protected string GetChartType()
+        {
+            if (LayoutDropDownList.SelectedValue == "4")
+            {
+                return "Bar";
+            }
+            return "Column";
+        }
 
 
         private void RecreateControls(string ctrlPrefix)

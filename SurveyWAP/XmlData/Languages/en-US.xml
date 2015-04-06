@@ -3462,4 +3462,7 @@
   <data version="2.3" id="1134" name="SurveyListPageNrLiteral">
     <value>You are viewing page</value>
   </data>
+  <data version="2.3" id="1135" name="GeneralSettingsHyperlink">
+    <value>General Settings</value>
+  </data>
 </root>

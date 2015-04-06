@@ -1,11 +1,11 @@
 // Assembly Votations.NSurvey.WebControls, Version 2.2
 
-[assembly: System.Reflection.AssemblyVersion("2.3.0.0")]
+[assembly: System.Reflection.AssemblyVersion("2.4.0.0")]
 [assembly: System.Reflection.AssemblyDelaySign(false)]
 [assembly: System.Reflection.AssemblyKeyName("")]
 [assembly: System.Reflection.AssemblyKeyFile(@"")]
 [assembly: System.Reflection.AssemblyTitle("Survey WebControls assembly")]
-[assembly: System.Reflection.AssemblyDescription("Survey™ Project 2.3")]
+[assembly: System.Reflection.AssemblyDescription("Survey™ Project 2.4")]
 [assembly: System.Reflection.AssemblyConfiguration("")]
 [assembly: System.Reflection.AssemblyCompany("Fryslan Webservices™")]
 [assembly: System.Reflection.AssemblyProduct("Survey™ Project Webapplication")]

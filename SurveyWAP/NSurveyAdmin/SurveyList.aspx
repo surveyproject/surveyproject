@@ -60,7 +60,8 @@
 
             <div class="rounded_corners" style="width: 750px; margin-left: 7px; margin-top: 10px;">
                         <asp:GridView ID="gridSurveys" Width="100%" runat="server" AutoGenerateColumns="False" AllowSorting="True"
-                            ShowHeaderWhenEmpty="true" OnSorting="gvSurveys_Sorting" AlternatingRowStyle-BackColor="#FFF6BB" ShowFooter="True" AllowPaging="false" OnPageIndexChanging="gridSurveys_PageIndexChanging" PageSize="2" FooterStyle-BackColor="#FFDF12" FooterStyle-BorderStyle="None" FooterStyle-BorderColor="#E2E2E2">
+                            ShowHeaderWhenEmpty="true" OnSorting="gvSurveys_Sorting" AlternatingRowStyle-BackColor="#FFF6BB" ShowFooter="True" AllowPaging="True"  OnPageIndexChanging="gridSurveys_PageIndexChanging" PageSize="10" FooterStyle-BackColor="#FFDF12" FooterStyle-BorderStyle="None" FooterStyle-BorderColor="#E2E2E2">
+                            
                             <Columns>
                                 <asp:TemplateField HeaderText="Survey" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#e2e2e2" HeaderStyle-BorderColor="#e2e2e2" HeaderStyle-ForeColor="#5720C6"  HeaderStyle-HorizontalAlign="Center" ItemStyle-Wrap="true" ItemStyle-Width="25%" ItemStyle-BorderWidth="1px" ItemStyle-BorderStyle="Solid" ItemStyle-BorderColor="#E2E2E2">
                                     <HeaderTemplate>
@@ -188,7 +189,7 @@
                 </div>
 
             <div class="rounded_corners" style="width: 750px; text-align: center; margin-left: 7px; margin-top: 10px;">
-                <i><asp:Literal ID="SurveyListPageNrLiteral" runat="server" EnableViewState="false">You are viewing page</asp:Literal> <%=gridSurveys.PageIndex + 1%> / <%=gridSurveys.PageCount%> </i>
+                <i><asp:Literal ID="SurveyListPageNrLiteral" runat="server"  EnableViewState="false">You are viewing page</asp:Literal> <%=gridSurveys.PageIndex + 1%> / <%=gridSurveys.PageCount%> </i>
             </div>
             <!-- code to be added later: 
             <div class="rounded_corners" style="width: 750px; text-align: center; margin-left: 7px; margin-top: 10px;">

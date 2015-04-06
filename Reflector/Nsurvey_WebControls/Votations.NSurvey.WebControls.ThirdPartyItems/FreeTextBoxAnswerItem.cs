@@ -1,6 +1,9 @@
 using CKEditor;
 //using FreeTextBoxControls;
 using System;
+using System.Reflection;
+
+using System.Web;
 using System.Text.RegularExpressions;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -102,7 +105,26 @@ namespace Votations.NSurvey.WebControls.ThirdPartyItems
                 this.Controls.Add(new LiteralControl("<br />"));
             }
             this._freeTextBox.ID = "FreeTextBox";
-            this._freeTextBox.BasePath = "~/Scripts/ckeditor";
+
+            //addition so support the use of CkEditor on the SurveBox DNN Module:
+
+            // determine sitename of webapplication: Survey Project or  DotNetNuke
+            //string SiteName = System.Web.Configuration.WebConfigurationManager.AppSettings["SiteName"];
+
+            string SiteName = string.IsNullOrEmpty(System.Web.Configuration.WebConfigurationManager.AppSettings["SiteName"]) ? "0" : System.Web.Configuration.WebConfigurationManager.AppSettings["SiteName"];
+
+            if (SiteName == "Survey Project")
+            {
+                this._freeTextBox.BasePath = "~/Scripts/ckeditor";
+            }
+            else
+            {
+                this._freeTextBox.BasePath = "~/Desktopmodules/SurveyBox/Scripts/ckeditor";
+            }
+
+            //this._freeTextBox.BasePath = "~/Scripts/ckeditor";
+            //this._freeTextBox.BasePath = "~/Desktopmodules/SurveyBox/Scripts/ckeditor";
+
             this._freeTextBox.Width = this.FieldWidth;
             this._freeTextBox.Height = this.FieldHeight;
 

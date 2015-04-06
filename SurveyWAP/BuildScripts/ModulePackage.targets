@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="windows-1252"?>
+
+<!-- WARNING, WARNING, WARNING -->
+<!-- REMEMBER THAT IF YOU MODIFY THE TARGETS FILE YOU NEED TO CLOSE/OPEN THE PROJECT FOR THE CHANGES TO TAKE EFFECT -->
+
+<Project ToolsVersion="4.0.30319" DefaultTargets="Release" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="MSBuild.Community.Tasks.Targets" />
+
+  <UsingTask TaskName="TransformXml"
+             AssemblyFile="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\Web\Microsoft.Web.Publishing.Tasks.dll"/>
+
+  <!-- create web.config for release-->
+  <PropertyGroup>
+    <ProjectPath>$(MSBuildProjectDirectory)</ProjectPath>
+    <DeployPath>$(MSBuildProjectDirectory)\Deployment</DeployPath>
+    <TransformInputFile>$(ProjectPath)\Web.config</TransformInputFile>
+    <TransformFile>$(ProjectPath)\Web.$(Configuration).config</TransformFile>
+    <TransformOutputFile>$(DeployPath)\Web.config</TransformOutputFile>
+    <StackTraceEnabled>False</StackTraceEnabled>
+  </PropertyGroup>
+
+  <Target Name="SurveyProjectPackage" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <TransformXml Source="$(TransformInputFile)"
+                  Transform="$(TransformFile)"
+                  Destination="$(TransformOutputFile)"
+                  StackTrace="$(StackTraceEnabled)" />
+   
+    <!-- get the SP version from the surveyproject.sp file-->    
+
+    <XmlRead
+                    Prefix="n"
+                    Namespace="http://schemas.microsoft.com/developer/msbuild/2003"
+                    XPath="surveyproject/packages/package[1]/@version"
+                    XmlFileName="$(SPFileName).sp">
+      <Output TaskParameter="Value" PropertyName="Version" />
+    </XmlRead>
+
+    <!--in VS 2012 we exclude folders -->
+    <ItemGroup>
+      <InstallInclude Include="**\*.aspx" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
+      <InstallInclude Include="**\*.ascx" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
+      <InstallInclude Include="**\*.asax" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
+      <InstallInclude Include="**\*.css" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
+      <InstallInclude Include="**\*.ico" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
+      <InstallInclude Include="**\*.master" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
+      <InstallInclude Include="**\*.txt" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
+
+      <InstallInclude Include="**\_DatabaseSql\**" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
+      <InstallInclude Include="**\_Instructions\**" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
+      <InstallInclude Include="**\_SurveySamples\**" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
+      <InstallInclude Include="**\App_Browsers\**" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
+      <InstallInclude Include="**\App_Data\**" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
+      <InstallInclude Include="**\Content\**" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
+      <InstallInclude Include="**\fonts\**" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
+      <InstallInclude Include="**\Images\**" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
+      <InstallInclude Include="**\XmlData\**" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
+      <InstallInclude Include="**\Scripts\**" Exclude="BuildScripts\**;Code\**;install\**;obj\**;" />
+    </ItemGroup>
+
+
+    <CreateItem Include="**\bin\*.dll">
+      <Output TaskParameter="Include" ItemName="Assemblies" />
+    </CreateItem>
+    
+    <CreateItem Include="**\Deployment\web.config">
+      <Output TaskParameter="Include" ItemName="WebConfig" />
+    </CreateItem>    
+
+    <Copy SourceFiles="@(Assemblies)" DestinationFolder="$(MSBuildProjectDirectory)\Package\bin"/>
+    <Copy SourceFiles="@(WebConfig)" DestinationFolder="$(MSBuildProjectDirectory)\Package"/>
+    <Copy SourceFiles="@(InstallInclude)" DestinationFolder="$(MSBuildProjectDirectory)\Package\%(RecursiveDir)" />
+
+    <CreateItem Include="$(MSBuildProjectDirectory)\Package\**\*.*">
+      <Output TaskParameter="Include" ItemName="OutputContent" />
+    </CreateItem>
+
+    <!-- Create the Install zip package -->
+    <Zip Files="@(OutputContent)" WorkingDirectory="$(MSBuildProjectDirectory)\Package" ZipFileName="$(PackageName)_$(Version)_Install.$(Extension)" />
+    <!-- Copy the Install zip package to the install folder -->
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\$(PackageName)_$(Version)_Install.$(Extension)" DestinationFolder="install/" />
+
+    <!-- Clean temp files and directories-->
+    <RemoveDir Directories ="$(MSBuildProjectDirectory)\Package" />
+    <Delete Files="$(MSBuildProjectDirectory)\$(PackageName)_$(Version)_Install.$(Extension)" />
+    <Delete Files="$(MSBuildProjectDirectory)\Deployment\web.config" />
+
+  </Target>  
+
+</Project>

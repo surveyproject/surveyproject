@@ -124,6 +124,7 @@ namespace Votations.NSurvey.WebAdmin
           //  ((PageBase)Page).ShowNormalMessage(MessageLabel,((PageBase)Page).GetPageResource("ThanksMessageLabel"));
 			EditionLanguageLabel.Text = GetPageResource("EditionLanguageLabel");
             ThanksMessageLabel.Text = GetPageResource("ThanksMessageLabel");
+            RedirectionURLTextBox.ToolTip = ((PageBase)Page).GetPageHelpfiles("ResultsReportRedirectHelp");
 		}
 
 		/// <summary>

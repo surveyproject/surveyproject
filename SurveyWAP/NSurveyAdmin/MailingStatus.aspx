@@ -23,7 +23,7 @@
            
           <asp:placeholder id="pendinglist" runat="server">
        <li>    <div class="rounded_corners">
-          <asp:datagrid id="PendingEmailsDataGrid" runat="server" PageSize="1" AllowCustomPaging="True" AutoGenerateColumns="False" Width="100%">
+          <asp:datagrid id="PendingEmailsDataGrid" runat="server" PageSize="3" AllowPaging="False" AutoGenerateColumns="False" Width="100%" EnableViewState="False" >
           <AlternatingItemStyle BackColor="#FFF6BB">
           </AlternatingItemStyle>
           
@@ -71,8 +71,8 @@
         <asp:Literal id="ValidatedEmailTitle" runat="server" EnableViewState="False">Validated emails answers - Page</asp:Literal>
                    
 
-            <asp:label id="CurrentAnsweredPageLabel" runat="server">1</asp:label>&nbsp;/
-            <asp:label id="TotalAnsweredPagesLabel" runat="server">1</asp:label>
+            <asp:label id="CurrentAnsweredPageLabel" runat="server"></asp:label>&nbsp;/
+            <asp:label id="TotalAnsweredPagesLabel" runat="server"></asp:label>
  </legend><br />
 <ol>
      
@@ -86,7 +86,7 @@
             <asp:placeholder id="AnswersPlaceHolder" runat="server">
 <li>
                 <div class="rounded_corners">
-            <asp:datagrid id="AnsweredEmailsDatagrid" runat="server" border="0" AutoGenerateColumns="False" Width="100%">
+            <asp:datagrid id="AnsweredEmailsDatagrid" runat="server" border="0" AllowPaging="False" Pagesize="3" AutoGenerateColumns="False" Width="100%">
             <AlternatingItemStyle BackColor="#FFF6BB">
             </AlternatingItemStyle>
             

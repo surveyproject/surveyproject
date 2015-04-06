@@ -109,6 +109,7 @@
     <Compile Include="Votations.NSurvey.DataAccess\QuestionGroups.cs" />
     <Compile Include="Votations.NSurvey.DataAccess\Questions.cs" />
     <Compile Include="Votations.NSurvey.DataAccess\RegularExpressions.cs" />
+    <Compile Include="Votations.NSurvey.DataAccess\Reports.cs" />
     <Compile Include="Votations.NSurvey.DataAccess\Roles.cs" />
     <Compile Include="Votations.NSurvey.DataAccess\SecurityAddIns.cs" />
     <Compile Include="Votations.NSurvey.DataAccess\Surveys.cs" />

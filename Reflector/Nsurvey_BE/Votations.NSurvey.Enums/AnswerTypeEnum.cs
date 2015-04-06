@@ -21,6 +21,7 @@ namespace Votations.NSurvey.Enums
             SubscriberXMLList = 29,
             ExtendedFileUploadType = 30,
             ExtendedFreeTextBoxType = 31,
+            FieldAddressType = 55,
             FieldSliderType = 56
         }
 }

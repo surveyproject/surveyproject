@@ -1,119 +1,62 @@
 ________________________________________________________________________________________________
 
 
-Survey™ Project v. 2.3 - BETA - The open source webapplication for online surveys and webforms
+Survey™ Project v. 2.4 - The open source webapplication for online surveys and webforms
 
 ________________________________________________________________________________________________
 
 
-Available release packages for the Survey™ Project v. 2.3 solution:
+Available release packages for the Survey™ Project v. 2.4 solution:
 
 - Install		: http://survey.codeplex.com/Release/ProjectReleases.aspx
 - Upgrade		: see advise below
-- Source		: v. 2.3 available soon at http://survey.codeplex.com
-- MS WebApp gallery	: Survey™ Project 2.0 available
+- Source		: v. 2.3 available at http://survey.codeplex.com
+
+- MS WebApp gallery	: Survey™ Project 2.3 available soon
 
 ________________________________________________________________________________________________
 
 New Features & Fixes:
 
-SP 2.3. BETA - status: 2014/09/03
+SP 2.4. - status: 2014/.....
 
 
 I. New Features:
-
-1- complete overhaul of Administration tool userinterface:
-
-* Layout & graphics adjustments and changes;
-* Use of fieldset, ol/li, div, labels instead of tables & literals;
-* Introduction of new logo & header replacement;
-* Menu adjustments;
-* Login panel adjustments;
-* Introduction of Perfect Scrollbar;
-* Results menu: graphical reports - Columnchart & Piechart adjustments
-
-
-2- Survey userinterface adjustments & introduction of survey version for mobile devices as default for 
-
-* Mailings
-* Preview
-* Take Survey
-* Web - deployment url
-
-through the use of:
-
-* bootstrap 3.2.0
-* fontawesome 4.1.0
-* Modernizer 2.7.2
-* Respond 1.4.2
-* Html5shiv
-
-* new survey CSS file: surveymobile.css
-
-Original survey layout & css still available through use of menuoption Layout (nsurveyform.css) and as Legacy weblink through menuoption Campaigns/ Web 
-
-
-3- CSS cleanout & new files added
-
-
-4-Several new additions & corrections to XML language files (English, Dutch, German)
-
-
-5-New (sub)filter options on menuoption Results-Filters and Results/Reports-Graphical Reports (see PDF in Instructions Directory). 
-
-
-6- Additional new helpfiles (including instructions on the use of "Required Markers") and help tooltips.
-
-
-7- Required Markers made visible on Survey Formbuilder. Adjusted working of Required Markers on Question and Answer level.
 
 
 
 II. Technical upgrades:
 
-1- CKeditor 4.4.3 + skins;
-2- Jquery cleanout and upgrades to latest versions;
-3- ASTreeview 1.6.0.4;
-
-4- Introduction of Nuget Packages directory: 11 packages added;
-5- Introduction of Libary directory for third party DLL's;
-6- Permission to use ItextSharp 5.5.2 for next SP releases; testbutton added to menuoption Data Export - Export PDF
-
-7- Removal of Enterprise Library - Data customization + default EL (data/ custom) added as Nuget packages;
+1 - 
 
 
 III. Bugfixes
 
-1- Error on adding/ copying question to/ from library;
-2- Error on adding/ copying question to/ from survey;
-3- Error library: move question up/ down
-4- Sorting option on surveylist not working + responses column based on voters instead of nr. of times shown
-5- Error on deleting ip range (surveyiprange.cs)
-6- Error delete regexpression
+1- 
 
 - Database script changes
-* removed redundant & legacy insert lines 
-* fieldorder adjustments to stored procedures
-* addition of filter/subfilter tablechange & stored procedures
+
+
+
 
 
 For information and questions visit the Survey™ Project community site at http://www.surveyproject.org.
 
 ________________________________________________________________________________________________
 
-Instructions "Survey™ Project 2.3 Install package" - NEW INSTALLATION
+Instructions "Survey™ Project 2.4 Install package" - NEW INSTALLATION
 
 
 1. SYSTEM REQUIREMENTS
 
 Clientside:
-- Tested Browsertypes IE11 ; Firefox 31.0 >; Chrome 36.0.1985.143 
+- Tested Browsertypes IE11 ; Firefox 33.* >; Chrome 38.* 
 
 Serverside:
-- .NET Framework 4.* or higher must be installed
+- .NET Framework 4.5 or higher must be installed
 - IIS webserver (7.5 or higer)
 - SMTP mailserver account
-- MsSqlserver 2008 R2 or 2012 database
+- MsSqlserver 2012 database
 - supported Operating Systems are Windows7 or >, Windows Server 2008/2012
 - you must have administrator privileges on your computer 
 
@@ -122,7 +65,7 @@ Free downloads available at http://www.asp.net/downloads/
 
 2. FILES
 - download zipped install package to your computer
-- right click file: check Properties/ Unblock
+- right click file: check Properties --> Unblock
 - unzip files to (new) file directory (e.g. C:/Survey/..)
 
 
@@ -135,7 +78,7 @@ Option 1.
 
 Option 2. 
 - Create a WebApplication in IIS and follow the steps of option 1.
-- Add the Webapplication to the proper Applicationpool using .NET 4.* and Integrated Pipeline Mode
+- Add the Webapplication to the proper Applicationpool using .NET 4.5 and Integrated Pipeline Mode
 
 
 4. DATABASE
@@ -143,7 +86,7 @@ Option 2.
 "Existing DB installation"
 - start MS SQL Server (using Enterprise Manager or your tool of choice )**
 - create a new empty database
-- open sql file 'SurveyProject_2.3_BETA_ExistingDBInstall_Mssql2012.sql' from the '_DatabaseSql' SP website directory in a query window
+- open sql file 'SurveyProject_2.4_BETA_ExistingDBInstall_Mssql2012.sql' from the '_DatabaseSql' SP website directory in a query window
 - change USE [yourdatabasename] command to the name of your database
 - run the SQL query
 - check to see if the database was created correctly
@@ -161,6 +104,52 @@ of the root application directory (this allows the application to create files/f
 If using Windows 2003 - IIS6
 - the {Server}/NetworkService user account must have Read, Write and Change Control 
 of the root application directory (this allows the application to create files/folders ) 
+
+
+
+
+---------- NEW ------------
+
+CREATE SETTINGS THROUGH SP SETTINGS PAGE
+
+- browse to http://[nameofyourwebserver]/[NameOfSurveySite] or your hosting URL in your web browser
+- the application will start running
+- next open the settings.aspx page: http://[nameofyourwebserver]/[NameOfSurveySite]/setttings.aspx
+
+This will open the General Settings administration page for the SP installation with the following options:
+
+
+a. DATABASE CONNECTION STRINGS
+	- edit the connectionstring(s) to match your SP database;
+	- on submit the connectionstring section of the web.config file will be encrypted
+	- to unencrypt the connection strings section of the web.config file click button Decrypt
+
+
+b. DEFAULT DB CONNECTION
+	- select / edit the default db connectionstring to use;
+	- click button submit to save the changes
+
+
+c. SMTP MAILSETTINGS
+	- edit the SMTP Server settings
+	- on submit the NsurveySettings section (including Smtp) of the web.config file will be encrypted
+	- to unencrypt the NsurveySettings section of the web.config file click button Decrypt
+
+d. MISCELLANEOUS SETTINGS
+	- edit miscellaneous settings:
+		* Set SP installation to Single User mode
+		* Allow the use of Sqlbased Answertypes	
+		* Set timeout on Uploaded Files
+		* Set session timeout on uploaded Files
+ 
+	- on submit the NsurveySettings section (including Smtp) of the web.config file will be encrypted
+	- to unencrypt the NsurveySettings section of the web.config file click button Decrypt
+	
+
+
+---------- OLD ------------
+
+CREATE SETTINGS MANUALLY
 
 
 6. DATABASE CONNECTION
@@ -188,7 +177,7 @@ of the root application directory (this allows the application to create files/f
 		<add key="NSurveySMTPServerAuthUserName" value="" />
 		<add key="NSurveySMTPServerAuthPassword" value="" />
 
-                <add key="NSurveySMTPServerEnableSsl" value="false"/>  
+       		<add key="NSurveySMTPServerEnableSsl" value="false"/>  
 
 8. CULTURE/UICULTURE
 - The language setting of your webbrowser will determine the XML languagefiles used to translate webpage texts. 
@@ -197,25 +186,12 @@ of the root application directory (this allows the application to create files/f
 - To explicitely pick a culture/ language, replace auto with "en-US" or "nl-NL" for example. 
 
 
-9. CKeditor & Filemanager
-a- Set server path in Filemanager\Scripts\filemanager.config.js -->
-
-        "serverRoot": "[your webserver]",
-        "fileRoot": "",
-
-Check instructions at: https://github.com/simogeo/Filemanager/wiki/Filemanager-configuration-file
-
-b- Set server path in CKeditor\config.js
-
-    config.filebrowserBrowseUrl = '/[your webserver]/Filemanager/index.html';
-
-
-10. START SURVEY
+9. START SURVEY
 - browse to http://[nameofyourwebserver]/[NameOfSurveySite] or your hosting URL in your web browser
 - the application will start running
 
 
-11. DEFAULT LOGIN
+10. DEFAULT LOGIN
 - on first login use:
 	Username: admin
 	Password: SP_admin01
@@ -224,10 +200,10 @@ b- Set server path in CKeditor\config.js
 ________________________________________________________________________________________________
 
 
-Instructions on "Survey™ 2.3 Install package" - UPGRADE EXISTING INSTALLATION
+Instructions on "Survey™ 2.4 Install package" - UPGRADE EXISTING INSTALLATION
 
 
-WARNING: SP 2.3 BETA does not formally support upgrading from previous versions.If you decide to upgrade a previous version, make sure to create backups first.
+WARNING: SP 2.4 BETA does not formally support upgrading from previous versions.If you decide to upgrade a previous version, make sure to create backups first.
 
 
 Webfiles:

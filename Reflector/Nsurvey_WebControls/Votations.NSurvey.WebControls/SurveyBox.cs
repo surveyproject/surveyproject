@@ -1534,12 +1534,18 @@ namespace Votations.NSurvey.WebControls
             }
             if ((this._redirectionURL != null) && (this._redirectionURL.Length != 0))
             {
+
+                HttpContext.Current.Session["voterid"] = this.VoterAnswers.Voters[0].VoterId;
                 this.Context.Response.Redirect(this._redirectionURL);
+
+                // url + voterid for resultsreport:
+                //this.Context.Response.Redirect(this._redirectionURL+ "&voterid="+ this.VoterAnswers.Voters[0].VoterId);
             }
             else
             {
                 this.BuildThanksBox(true);
             }
+            // hold clearing of viewstate to get voterid for resultsreport:
             this.VoterAnswers.Clear();
         }
 

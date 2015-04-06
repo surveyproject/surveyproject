@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Votations.NSurvey.DAL</name>
+    </assembly>
+    <members>
+        <member name="T:Votations.NSurvey.DALFactory.AnswerFactory">
+            <summary>
+            Factory implementation for the answer DAL object
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.DALFactory.AnswerTypeFactory">
+            <summary>
+            Factory implementation for the answer DAL object
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.DALFactory.DbAccessFactory">
+            <summary>
+            Factory implementation for the SQL helper DAL object
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.DALFactory.FilterFactory">
+            <summary>
+            Factory implementaion for the filter DAL object
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.DALFactory.LibraryFactory">
+            <summary>
+            Factory implementaion for the answer DAL object
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.DALFactory.MultiLanguageFactory">
+            <summary>
+            Factory implementaion for the mutli language DAL object
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.DALFactory.QuestionFactory">
+            <summary>
+            Factory implementaion for the question DAL object
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.DALFactory.RegularExpressionFactory">
+            <summary>
+            Factory implementaion for the regular expression DAL object
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.DALFactory.RoleFactory">
+            <summary>
+            Factory implementaion for the role DAL object
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.DALFactory.SecurityAddInFactory">
+            <summary>
+            Factory implementaion for the web security Addins DAL object
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.DALFactory.SurveyFactory">
+            <summary>
+            Factory implementation for the survey DAL object
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.DALFactory.UserFactory">
+            <summary>
+            Factory implementaion for the user DAL object
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.DALFactory.VoterFactory">
+            <summary>
+            Factory implementaion for the voter DAL object
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.IDAL.IReport">
+            <summary>
+            Report interface for the Report DAL.
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.IDAL.IAnswer">
+            <summary>
+            Interface for the answer DAL.
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.IDAL.IAnswerType">
+            <summary>
+            Interface for the answer DAL.
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.IDAL.IDbAccess">
+            <summary>
+            SQL helper interface for the voter DAL.
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.IDAL.IFilter">
+            <summary>
+            Interface for the Filters / rules.
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.IDAL.ILibrary">
+            <summary>
+            Interface for the answer DAL.
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.IDAL.IMultiLanguage">
+            <summary>
+            interface for the multi languages DAL.
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.IDAL.IQuestion">
+            <summary>
+            Interface for the question DAL.
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.IDAL.IRegularExpression">
+            <summary>
+            Interface for the regular expression DAL.
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.IDAL.IRole">
+            <summary>
+            interface for the role DAL.
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.IDAL.ISecurityAddIn">
+            <summary>
+            Interface for the web security addins DAL
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.IDAL.ISurvey">
+            <summary>
+            Interface for the survey DAL
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.IDAL.IUser">
+            <summary>
+            User interface for the user DAL.
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.IDAL.IVoter">
+            <summary>
+            Voter interface for the voter DAL.
+            </summary>
+        </member>
+    </members>
+</doc>

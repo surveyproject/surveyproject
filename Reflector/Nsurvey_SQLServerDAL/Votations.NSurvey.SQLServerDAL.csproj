@@ -95,6 +95,7 @@
     <Compile Include="Votations.NSurvey.SQLServerDAL\DbConnection.cs" />
     <Compile Include="Votations.NSurvey.SQLServerDAL\Answer.cs" />
     <Compile Include="Votations.NSurvey.SQLServerDAL\AnswerType.cs" />
+    <Compile Include="Votations.NSurvey.SQLServerDAL\Report.cs" />
     <Compile Include="Votations.NSurvey.SQLServerDAL\SpSqlDatabase.cs" />
     <Compile Include="Votations.NSurvey.SQLServerDAL\SurveyAsset.cs" />
     <Compile Include="Votations.NSurvey.SQLServerDAL\Survey.cs" />

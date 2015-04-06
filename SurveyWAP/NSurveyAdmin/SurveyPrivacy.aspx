@@ -38,8 +38,9 @@
            </li><li>
                                         <strong>
                                             <asp:Label ID="RedirectionURLLabel" runat="server"  AssociatedControlID="RedirectionURLTextBox" EnableViewState="False"></asp:Label></strong>
-
+                 <div id="tooltip">
                                         <asp:TextBox ID="RedirectionURLTextBox" width="225px" runat="server"></asp:TextBox>
+                     </div>
   </li><li>
                                         
                                             <asp:Label ID="ThanksMessageLabel" AssociatedControlID="ThankYouCKEditor" runat="server" EnableViewState="False"></asp:Label>

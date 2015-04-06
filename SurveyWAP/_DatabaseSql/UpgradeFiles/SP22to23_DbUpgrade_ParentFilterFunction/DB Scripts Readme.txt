@@ -1,1 +1,0 @@
-Please run first vts_tbFilter.sql and then after the other scripts.

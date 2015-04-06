@@ -64,7 +64,7 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
                 data.Surveys.DefaultView.Sort = SurveyListOrder;
                 gridSurveys.DataSource = data.Surveys.DefaultView;
             } else
-                gridSurveys.DataSource = data.Surveys.OrderByDescending(x => x.Activated).ThenBy(x => x.Title);
+                gridSurveys.DataSource = data.Surveys.OrderByDescending(x => x.Activated).ThenBy(x => x.Title).ToList();
  
             gridSurveys.DataBind();
    

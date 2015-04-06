@@ -1,0 +1,1692 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Votations.NSurvey.SQLServerDAL</name>
+    </assembly>
+    <members>
+        <member name="P:Votations.NSurvey.SQLServerDAL.DbConnection.db">
+            <summary>
+            Create Database and connect: see web.config file dataConfiguration defaultDatabase=
+            </summary>     
+        </member>
+        <member name="T:Votations.NSurvey.SQLServerDAL.Answer">
+            <summary>
+            SQL Server DAL implementation.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.AddAnswer(Votations.NSurvey.Data.AnswerData)">
+            <summary>
+            Adds a new answer to the question specified by the question id property in the database
+            </summary>
+            <param name="newAnswer">Answer object with information about what to add. Only Id must be ommited</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.AddMatrixAnswer(Votations.NSurvey.Data.AnswerData)">
+            <summary>
+            Adds a new answer to the matrix question specified by the question id property in the database
+            </summary>
+            <param name="newAnswer">Answer object with information about what to add. Only Id must be ommited</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.DeleteAnswer(System.Int32)">
+            <summary>
+            Remove the answer from the database
+            </summary>
+            <param name="answerId">Answer to delete from the database</param>
+            <returns>true if successfull</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.DeleteAnswerFile(System.Int32,System.String)">
+            <summary>
+            delete all file data
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.DeleteAnswerProperties(System.Int32)">
+            <summary>
+            Deletes the persisted answer properties from the DB
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.DeleteMatrixAnswer(System.Int32)">
+            <summary>
+            Remove one answer column of the matrix from the database
+            </summary>
+            <param name="answerId">Answer column to delete from the database</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.GetAnswerById(System.Int32,System.String)">
+            <summary>
+            Return an answer object that reflects the database answer
+            </summary>
+            <param name="answerId">Id of the answer you need</param>
+            <returns>An answer object with the current database values</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.GetAnswerFile(System.Int32,System.String)">
+            <summary>
+            Get all details of the file
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.GetAnswerFileCount(System.String)">
+            <summary>
+            Get the count of files in a group
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.GetAnswerFileData(System.Int32,System.String)">
+            <summary>
+            Returns the stream of the requested file
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.GetAnswers(System.Int32,System.String)">
+            <summary>
+            Get all answers from a give question
+            </summary>
+            <param name="questionId">question which is owning the answers</param>
+            <param name="languageCode">Language in which to return the answers, -1 act as the default language</param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.GetAnswersList(System.Int32)">
+            <summary>
+            Get a light list of answers for the given question
+            </summary>
+            <param name="questionId">question which is owning the answers</param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.GetAnswersScoreTotal(System.String)">
+            <summary>
+            Return the total score of the given answers
+            </summary>
+            <param name="answersIdValues">CSV of answer ids to get the total score from</param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.GetAnswerTypeMode(System.Int32)">
+            <summary>
+            Returns the answer type mode of the answer 
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.GetGuidFiles(System.String)">
+            <summary>
+            Get a list of all files associated with this guidto
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.GetInsertAnswerCommand(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Creates and return an insert command for an answer
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.GetInsertAnswerConnectionCommand(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Creates and return an insert command for an answer connection
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.GetInsertAnswerPropertyCommand(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Creates and return an insert command for an answer property
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.GetPublishersList(System.Int32)">
+            <summary>
+            Get a list of answers that can be subscribed to
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.GetSelectableAnswers(System.Int32)">
+            <summary>
+            Get all answers for a given question that can be selected 
+            </summary>
+            <param name="questionId">question which is owning the answers</param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.GetSubscriptionList(System.Int32)">
+            <summary>
+            Get a list of answers to which the answer has subscribed to
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.GetUnValidatedFileAnswers(System.Int32,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Returns all the files that have not yet been validated
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.GetValidatedFileAnswers(System.Int32,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Returns all the files that have already been validated
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.MoveAnswerDown(System.Int32)">
+            <summary>
+            Moves down the answer's display position 
+            </summary>
+            <param name="answerId"></param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.MoveAnswerUp(System.Int32)">
+            <summary>
+            Moves up the answer's display position 
+            </summary>
+            <param name="answerId"></param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.RestoreAnswerProperties(System.Int32)">
+            <summary>
+            Returns the stream of the requested answer properties
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.StoreAnswerFile(System.String,System.String,System.Int32,System.String,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Stores a file in the database
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.StoreAnswerProperties(System.Int32,System.Byte[])">
+            <summary>
+            Stores a file in the database
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.SubscribeToPublisher(System.Int32,System.Int32)">
+            <summary>
+            Subscribe to a new answer publisher
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.UnSubscribeFromPublisher(System.Int32,System.Int32)">
+            <summary>
+            Unsubscribe from the given answer publisher
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.UpdateAnswer(Votations.NSurvey.Data.AnswerData,System.String)">
+            <summary>
+            Update the answer in the database
+            </summary>
+            <param name="updatedAnswer">Answer to update, must specify the answer id</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Answer.UpdateMatrixAnswer(Votations.NSurvey.Data.AnswerData,System.String)">
+            <summary>
+            Update the matrix answer in the database
+            </summary>
+            <param name="updatedAnswer">Answer to update, must specify the answer id</param>
+        </member>
+        <member name="T:Votations.NSurvey.SQLServerDAL.AnswerType">
+            <summary>
+            SQL Server DAL implementation.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.AnswerType.AddAnswerType(Votations.NSurvey.Data.AnswerTypeData,System.Int32)">
+            <summary>
+            Adds a new answer type in the database
+            </summary>
+            <param name="newAnswerType">Answer type object with information about what to add. Only Id must be ommited</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.AnswerType.AssignAnswerTypeToUser(System.Int32,System.Int32)">
+            <summary>
+            Assign the answer type to the user
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.AnswerType.DeleteAnswerType(System.Int32)">
+            <summary>
+            Remove the answer type from the database
+            </summary>
+            <param name="answerTypeId">Answer type to delete from the database</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.AnswerType.GetAnswerTypeById(System.Int32)">
+            <summary>
+            Return an answer type object that reflects the database answer type
+            </summary>
+            <param name="answerTypeId">Id of the answer type you need</param>
+            <returns>An answer type object with the current database values</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.AnswerType.GetAnswerTypes">
+            <summary>
+            Returns all the answer type available
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.AnswerType.GetAnswerTypesList">
+            <summary>
+            Returns a list of answer types list
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.AnswerType.GetAssignedAnswerTypesList(System.Int32,System.Int32)">
+            <summary>
+            Returns a list of answer types available to the user
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.AnswerType.GetEditableAnswerTypesList">
+            <summary>
+            Returns a list of answer types that can be edited from the
+            admin interface
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.AnswerType.GetEditableAssignedAnswerTypesList(System.Int32)">
+            <summary>
+            Returns a list of answer types available to the user and that can 
+            be edited from the admin interface
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.AnswerType.GetInsertAnswerTypeCommand(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.Int32)">
+            <summary>
+            Creates and return an insert command for an answer type
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.AnswerType.IsAnswerTypeInUse(System.Int32)">
+            <summary>
+            Check if the answer type is in use by an answer
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.AnswerType.SetBuiltInAnswerType(System.Int32)">
+            <summary>
+            Makes the answer type as builtin
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.AnswerType.UpdateAnswerType(Votations.NSurvey.Data.AnswerTypeData)">
+            <summary>
+            Update the answer type in the database
+            </summary>
+            <param name="updatedAnswerType">Answer type to update, must specify the answer type id</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Report.GetReportScores(System.Int32,System.Int32)">
+            <summary>
+            Returns all the scores for the report
+            </summary>
+            <param name="surveyId"></param>
+            <param name="_voterId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Votations.NSurvey.SQLServerDAL.SpSqlDatabase">
+            <summary>
+            Extends Enterprise library SqlDatabase class
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.SpSqlDatabase.LoadDataSetWithoutAcceptChanges(System.String,System.Data.DataSet,System.String[],System.Object[])">
+            <summary>
+            Comment Step one:
+            </summary>
+            <param name="storedProcedureName">1</param>
+            <param name="dataSet">2</param>
+            <param name="tableNames">3</param>
+            <param name="parameterValues">4</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.SpSqlDatabase.LoadDataSetWithoutAcceptChanges(System.Data.Common.DbCommand,System.Data.DataSet,System.String[])">
+            <summary>
+            Comment step 2
+            </summary>
+            <param name="command">1</param>
+            <param name="dataSet">2</param>
+            <param name="tableNames">3</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.SpSqlDatabase.DoLoadDataSetWithoutAcceptChanges(System.Data.IDbCommand,System.Data.DataSet,System.String[])">
+            <summary>
+            Method adjusted: AcceptChangesDuringFill added to set Rowstate to added
+            </summary>
+            <param name="command">command</param>
+            <param name="dataSet">dataset</param>
+            <param name="tableNames">tablenames</param>
+        </member>
+        <member name="T:Votations.NSurvey.SQLServerDAL.SurveyAsset">
+            <summary>
+            SQL Server DAL implementation.
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.SQLServerDAL.Survey">
+            <summary>
+            SQL Server DAL implementation.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.#cctor">
+            <summary>
+            Survey Class Constructor : empty
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetAllSurveysByFolderId(System.Nullable{System.Int32})">
+            <summary>
+            
+            </summary>
+            <param name="folderId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetAllSurveysList">
+            <summary>
+            Get a survey list with only the survey id and title
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetAllSurveysByTitle(System.String,System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            Get a survey list with only the survey id and title with matching title
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.CloneSurvey(System.Int32)">
+            <summary>
+            Clone the given survey and returns its clone
+            </summary>
+            <param name="surveyId">Id of the survey you want to clone</param>
+            <returns>A SurveyData dataset object with the current database values of the clone</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetArchivedSurveys">
+            <summary>
+            Get all surveys that have been flaged as archived
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetSurveyById(System.Int32,System.String)">
+            <summary>
+            Return a survey object that reflects the database survey
+            </summary>
+            <param name="surveyId">Id of the survey you need</param>
+            <returns>A survey object with the current database values</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.SurveyExists(System.String)">
+            <summary>
+            Check if a survey exists in the database
+            </summary>
+            <returns>true if the survey exists</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.IsSurveyPasswordValid(System.Int32,System.String)">
+            <summary>
+            Check if the given password is valid for the survey
+            </summary>
+            <param name="surveyId">Id of the protected survey</param>
+            <param name="password">the password to check for</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetActivatedSurvey">
+            <summary>
+            Return a survey object that reflects the current activated survey. 
+            IE: The survey that shows up when the surveybox has a surveyid value of 
+            0
+            </summary>
+            <returns>A survey object with the current database values</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetUnAssignedSurveysList(System.Int32)">
+            <summary>
+            Get a survey list not assigned to the user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetAssignedSurveysList(System.Int32)">
+            <summary>
+            Get a survey list assigned to the user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.TotalOfSurveys">
+            <summary>
+            Returns the total of surveys stored in the database
+            </summary>
+            <returns>Total of surveys</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.DeleteSurveyById(System.Int32)">
+            <summary>
+            Remove the survey and all its question / answers from the database
+            </summary>
+            <param name="surveyId">Survey to delete from the database</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.ResetVotes(System.Int32)">
+            <summary>
+            Sets all answers and vote count to 0
+            </summary>
+            <param name="surveyId">Survey ID</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.AssignUserToSurvey(System.Int32,System.Int32)">
+            <summary>
+            Assigns a new user to a survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.UnAssignUserFromSurvey(System.Int32,System.Int32)">
+            <summary>
+            UnAssigns a user from a survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.InsertPageBreak(System.Int32,System.Int32)">
+            <summary>
+            Insert a new page break
+            </summary>
+            <param name="surveyId">Survey ID</param>
+            <param name="displayOrder">Where we will insert the page break</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.MovePageBreakUp(System.Int32,System.Int32)">
+            <summary>
+            Move a page break up
+            </summary>
+            <param name="surveyId">ID of the survey to which we add the page break</param>
+            <param name="pageNumber">Page break to move up</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.MovePageBreakDown(System.Int32,System.Int32)">
+            <summary>
+            Move a page break Down
+            </summary>
+            <param name="surveyId">ID of the survey to which we add the page break</param>
+            <param name="pageNumber">Page break to move down</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.DeletePageBreak(System.Int32,System.Int32)">
+            <summary>
+            Deletes a page break
+            </summary>
+            <param name="surveyId">Survey ID</param>
+            <param name="pageNumber">Page numbe to delete</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetFirstSurveyId">
+            <summary>
+            Retrieves the first survey ID available in the DB
+            </summary>
+            <returns>
+            If found the survey ID else -1
+            </returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetFirstSurveyId(System.Int32)">
+            <summary>
+            Retrieves the first survey ID for user available in the DB
+            </summary>
+            <returns>
+            If found the survey ID else -1
+            </returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.CheckSurveyUser(System.Int32,System.Int32)">
+            <summary>
+            Check if the user has this survey assigned
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetPagesNumber(System.Int32)">
+            <summary>
+            Returns the total of pages in the survey
+            </summary>
+            <param name="surveyId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetSurveyIdFromGuid(System.Guid)">
+            <summary>
+            Returns the total of pages in the survey
+            </summary>
+            <param name="surveyId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.AddSurvey(Votations.NSurvey.Data.SurveyData)">
+            <summary>
+            Adds a new survey to the database
+            </summary>
+            <param name="newSurvey">Survey object with information about what to add. Only Id must be ommited</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetInsertSurveyCommand(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Creates and return an insert command for a survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.AddBranchingRule(Votations.NSurvey.Data.BranchingRuleData)">
+            <summary>
+            Add a new branching rule to the survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.AddMessageCondition(Votations.NSurvey.Data.MessageConditionData)">
+            <summary>
+            Add a new condition to show a given thank you message
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.UpdateMessageCondition(Votations.NSurvey.Data.MessageConditionData)">
+            <summary>
+            Updates a message condition
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetSurveyMessageConditions(System.Int32)">
+            <summary>
+            returns the thank you message contions for the given survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.DeleteMessageConditionById(System.Int32)">
+            <summary>
+            Deletes the message condition
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.IncrementSurveyViews(System.Int32,System.Int32)">
+            <summary>
+            Increment the number of time a survey has been viewed
+            </summary>
+            <param name="surveyId">Id of the survey to increment views</param>
+            <param name="incrementNumber">number of views to add</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.IncrementResultsViews(System.Int32,System.Int32)">
+            <summary>
+            Increment the number of time the survey's result has been viewed
+            </summary>
+            <param name="surveyId">Id of the survey to increment result view</param>
+            <param name="incrementNumber">number of views to add</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetSurveyPageBranchingRules(System.Int32,System.Int32)">
+            <summary>
+            returns the branching rules for the given page of the survey
+            </summary>
+            <param name="surveyId"></param>
+            <param name="pageNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetSurveyPageBranchingRulesDetails(System.Int32,System.Int32)">
+            <summary>
+            returns the branching rules for the given page with all
+            their details
+            </summary>
+            <param name="surveyId"></param>
+            <param name="pageNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetSurveyBranchingRules(System.Int32)">
+            <summary>
+            returns the branching rules for the given survey
+            </summary>
+            <param name="surveyId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.DeleteBranchingRuleById(System.Int32)">
+            <summary>
+            Deletes the branching rules 
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.UpdateSurvey(Votations.NSurvey.Data.SurveyData,System.String)">
+            <summary>
+            Update the database with the given survey
+            </summary>
+            <param name="updatedSurvey">survey to update, must contain the surveyid</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetCookieExpiration(System.Int32)">
+            <summary>
+            Get the number of minutes after which the security cookie 
+            expires
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.UpdateCookieExpiration(System.Int32,System.Int32)">
+            <summary>
+            Update the cookie expiration time
+            </summary>
+            <param name="surveyId"></param>
+            <param name="cookieExpires"></param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.UpdateIPExpiration(System.Int32,System.Int32)">
+            <summary>
+            Update the ip expiration time
+            </summary>
+            <param name="surveyId"></param>
+            <param name="ipExpires"></param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.UpdateAccessPassword(System.Int32,System.String)">
+            <summary>
+            Update the survey access password
+            </summary>
+            <param name="surveyId"></param>
+            <param name="accessPassword"></param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetIPExpiration(System.Int32)">
+            <summary>
+            Get the number of minutes after which the security IP 
+            expires
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetSurveyPassword(System.Int32)">
+            <summary>
+            Get the access password of the survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.UpdateOnlyInvited(System.Int32,System.Boolean)">
+            <summary>
+            Update the survey only invited status
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.UpdateSaveTokenUserData(System.Int32,System.Boolean)">
+            <summary>
+            Update the survey only invited status
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.IsSurveyEmailInviteOnly(System.Int32)">
+            <summary>
+            Get the invited status of the survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.IsSurveySaveTokenUserData(System.Int32)">
+            <summary>
+            Get Save Token User status of the survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.UpdateUnAuthentifiedUserActions(System.Int32,System.Int32)">
+            <summary>
+            Updates the survey to a new unAuthentified user action
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetSurveyUnAuthentifiedUserAction(System.Int32)">
+            <summary>
+            Get the actions that is set for the given survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.HasPageBranching(System.Int32,System.Int32)">
+            <summary>
+            Returns true if the page has any branching rule
+            associated with it
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetSurveyProgressModes">
+            <summary>
+            Returns a list of available progress modes
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetSurveyNotificationModes">
+            <summary>
+            Returns a list of available email notification mode
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetSurveyPageOptions(System.Int32,System.Int32)">
+            <summary>
+            Retrieves the options that were setup for the page
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.UpdateSurveyPageOptions(Votations.NSurvey.Data.PageOptionData)">
+            <summary>
+            Update the options that were setup for the page
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetSurveyResumeModes">
+            <summary>
+            Returns a list of available resume modes
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetSurveyMessageCondition(System.Int32)">
+            <summary>
+            returns the thank you message conditions for the given survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.IsSurveyScored(System.Int32)">
+            <summary>
+            Check if survey has been set to be scored
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.AspSecurityAllowsMultipleSubmissions(System.Int32)">
+            <summary>
+            Check if the survey allows multiple submission
+            for the same username 
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.UpdateAspSecuritySettings(System.Int32,System.Boolean)">
+            <summary>
+            Update the security settings
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.NSurveyAllowsMultipleSubmissions(System.Int32)">
+            <summary>
+            Check if the survey allows multiple submission
+            for the same nsurvey username 
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.UpdateNSurveySecuritySettings(System.Int32,System.Boolean)">
+            <summary>
+            Update the nsurvey security settings
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetSurveyPipeDataFromQuestionId(System.Int32)">
+            <summary>
+            Returns all the data need to handle 
+            and process question / answer piping
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetFormForExport(System.Int32)">
+            <summary>
+            Returns all the survey, questions, answers
+            for a survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.ImportSurveys(Votations.NSurvey.Data.NSurveyForm,System.Int32,System.Int32)">
+            <summary>
+            Import the given surveys into the DB
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.IncreaseQuotaEntries(System.Int32)">
+            <summary>
+            Increase the current entries number calculated
+            against the max. quota
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.ResetQuotaEntries(System.Int32)">
+            <summary>
+            Resets the current entries number calculated
+            against the max. quota
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.DeleteQuotaSettings(System.Int32)">
+            <summary>
+            Deletes survey's quotas
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.GetQuotaSettings(System.Int32)">
+            <summary>
+            Retrieves the quota of the survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.UpdateQuotaSettings(Votations.NSurvey.Data.SurveyEntryQuotaData)">
+            <summary>
+            Updates or creates if it doesnt exists 
+            quota settings for the survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Survey.SetFriendlyName(System.Int32,System.String)">
+            <summary>
+            Disable survey's multi language features
+            </summary>
+            <param name="surveyId"></param>
+        </member>
+        <member name="T:Votations.NSurvey.SQLServerDAL.DbAccess">
+            <summary>
+            Sql Server DAL implementation.
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.SQLServerDAL.Filter">
+            <summary>
+            SQL Server DAL implementation.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Filter.AddFilter(Votations.NSurvey.Data.FilterData)">
+            <summary>
+            Adds a new filter
+            </summary>
+            <param name="newFilter"></param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Filter.AddRule(Votations.NSurvey.Data.FilterRuleData)">
+            <summary>
+            Adds a new filter rule
+            </summary>
+            <param name="newRule"></param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Filter.DeleteFilter(System.Int32)">
+            <summary>
+            Deletes the given filter
+            </summary>
+            <param name="filterId"></param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Filter.DeleteRule(System.Int32)">
+            <summary>
+            Deletes the given filter rule
+            </summary>
+            <param name="ruleId"></param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Filter.UpdateFilter(Votations.NSurvey.Data.FilterData)">
+            <summary>
+            Update the filter options
+            </summary>
+            <param name="updatedFilter"></param>
+        </member>
+        <member name="T:Votations.NSurvey.SQLServerDAL.Library">
+            <summary>
+            SQL Server DAL implementation.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Library.AddLibrary(Votations.NSurvey.Data.LibraryData)">
+            <summary>
+            Adds a new library in the database
+            </summary>
+            <param name="newAnswerType">Library object with information about what to add. Only Id must be ommited</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Library.DeleteLibrary(System.Int32)">
+            <summary>
+            Remove the library from the database
+            </summary>
+            <param name="libaryid">library to delete from the database</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Library.GetLibraries">
+            <summary>
+            Returns all available libraries
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Library.GetLibraryById(System.Int32)">
+            <summary>
+            Return a library object that reflects the database library
+            </summary>
+            <param name="answerTypeId">Id of the library you need</param>
+            <returns>An Library data object with the current database values</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Library.UpdateLibrary(Votations.NSurvey.Data.LibraryData)">
+            <summary>
+            Update the library in the database
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.SQLServerDAL.MultiLanguage">
+            <summary>
+            SQL Server DAL implementation.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.MultiLanguage.CheckSurveyLanguage(System.Int32,System.String)">
+            <summary>
+            Check if the language code is enabled for the survey
+            and if its not returns the default enabled language code
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.MultiLanguage.DeleteSurveyLanguage(System.Int32,System.String,System.String)">
+            <summary>
+            Deletes a language from the survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.MultiLanguage.DisableMultiLanguage(System.Int32)">
+            <summary>
+            Disable survey's multi language features
+            </summary>
+            <param name="surveyId"></param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.MultiLanguage.GetMultiLanguageMode(System.Int32)">
+            <summary>
+            Returns current mode
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.MultiLanguage.GetMultiLanguages">
+            <summary>
+            Returns all languages that can be enabled
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.MultiLanguage.GetSurveyLanguages(System.Int32,System.String)">
+            <summary>
+            Returns all enabled languages
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.MultiLanguage.UpdateMultiLanguage(System.Int32,Votations.NSurvey.Data.MultiLanguageMode,System.String)">
+            <summary>
+            Updates the current multi language mode that defines how 
+            the user selects his language
+            </summary>
+            <param name="surveyId"></param>
+            <param name="languageMode"></param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.MultiLanguage.UpdateSurveyLanguage(System.Int32,System.String,System.Boolean,System.String)">
+            <summary>
+            Adds a language to a survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.MultiLanguage.AddMultiLanguageText(System.Int32,System.String,System.Int32,System.String)">
+            <summary>
+            Adds a language to a survey
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.SQLServerDAL.Question">
+            <summary>
+            SQL Server DAL implementation.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.AddChildQuestion(Votations.NSurvey.Data.MatrixChildQuestionData)">
+            <summary>
+            Adds a new child question to the parent question specified by the parent questio id in the database
+            </summary>
+            <param name="newChildQuestion">Question object with information about what to add. Only Id must be ommited</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.AddQuestion(Votations.NSurvey.Data.QuestionData)">
+            <summary>
+            Adds a new question to the survey specified by the survey id in the database
+            </summary>
+            <param name="newQuestion">Question object with information about what to add. Only Id must be ommited</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.AddQuestionSectionGridAnswers(System.Int32,System.Int32)">
+            <summary>
+            Adds a new answer to be shown in the section grid
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.AddSkipLogicRule(Votations.NSurvey.Data.SkipLogicRuleData)">
+            <summary>
+            Add a new skip logic rule
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.CheckQuestionUser(System.Int32,System.Int32)">
+            <summary>
+            Check if the user has this question assigned
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.CloneQuestionById(System.Int32)">
+            <summary>
+            Clones a question in the DB and returns the cloned question object 
+            </summary>
+            <param name="questionId">Id of the question you want to clone</param>
+            <returns>A questiondata object with the cloned question</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.CopyQuestionById(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Copy a question to the given target survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.CopyQuestionToLibrary(System.Int32,System.Int32)">
+            <summary>
+            Copy a question to the library
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.DeleteMatrixAnswers(System.Int32)">
+            <summary>
+            Remove all the matrix answers from the database
+            </summary>
+            <param name="parentQuestionId">Matrix question id</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.DeleteQuestionById(System.Int32)">
+            <summary>
+            Remove the question and all its answers from the database
+            </summary>
+            <param name="questionId">Question to delete from the database</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.DeleteQuestionSectionGridAnswers(System.Int32,System.Int32)">
+            <summary>
+            Delete an answer to be shown in the section grid
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.DeleteQuestionSectionOptions(System.Int32)">
+            <summary>
+            Deletes the question's sections option
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.DeleteSkipLogicRuleById(System.Int32)">
+            <summary>
+            Deletes the skip logic rule
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetAnswerableQuestionList(System.Int32)">
+            <summary>
+            Returns a question list that can be answered 
+            </summary>
+            <param name="surveyId">Survey id from which you want to retrieve the questions</param>
+            <returns>A question object collection</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetAnswerableQuestionList(System.Int32,System.Int32)">
+            <summary>
+            Returns a question list of the given page that can be answered 
+            </summary>
+            <param name="surveyId">Survey id from which you want to retrieve the questions</param>
+            <returns>A question object collection</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetAnswerableQuestionListInPageRange(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Returns a question list of the given page range that can be answered 
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetAnswerableQuestionListWithoutChilds(System.Int32)">
+            <summary>
+            Returns a question list that can be answered without their childs
+            </summary>
+            <param name="surveyId">Survey id from which you want to retrieve the questions</param>
+            <returns>A question object collection</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetAnswerableQuestionWithoutChilds(System.Int32)">
+            <summary>
+            Returns the questions that can be answered without their childs
+            </summary>
+            <param name="surveyId">Survey id from which you want to retrieve the questions</param>
+            <returns>A question object collection</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetAnswerableSingleQuestionListWithoutChilds(System.Int32)">
+            <summary>
+            Returns a question list that can be answered and that don't have any questions
+            </summary>
+            <param name="surveyId">Survey id from which you want to retrieve the questions</param>
+            <returns>A question object collection</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetCrossTabResults(System.Int32,System.Int32)">
+            <summary>
+            returns a results set with the compare question's answers number of voter 
+            that have also answered the base question answer
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetInsertChildQuestionCommand(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Creates and return an insert command for a question
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetInsertQuestionCommand(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Creates and return an insert command for a question
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetInsertQuestionSectionCommand(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String)">
+            <summary>
+            Creates and return an insert command for a question's section
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetInsertQuestionSectionGridAnswersCommand(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Creates and return an insert command for a question's grid section answers
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetLibraryAnswerableSingleQuestionListWithoutChilds(System.Int32)">
+            <summary>
+            Returns a question list for the given library 
+            that can be answered and that don't have any child questions
+            </summary>
+            <returns>A question object collection</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetLibraryQuestionList(System.Int32)">
+            <summary>
+            Returns all question listed in the library
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetLibraryQuestionListWithoutChilds(System.Int32)">
+            <summary>
+            Returns all question listed in the library without their child questions
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetLibraryQuestions(System.Int32,System.String)">
+            <summary>
+            Returns all question listed in the library with their details
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetMatrixChildQuestions(System.Int32,System.String)">
+            <summary>
+            Returns all question childs from the question
+            </summary>
+            <param name="parentQuestionId">Question id from which you want to retrieve the child questions</param>
+            <returns>A question object collection</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetPagedQuestions(System.Int32,System.Int32,System.String)">
+            <summary>
+            Returns the question until next page break is encountered
+            </summary>
+            <param name="surveyId">Survey id from which you want to retrieve the paged questions</param>
+            <param name="pageNumber">Page number to retrieve</param>
+            <returns>A question object collection</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetQuestionAnswerConnections(System.Int32)">
+            <summary>
+            Returns all question's answer subscribers
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetQuestionById(System.Int32,System.String)">
+            <summary>
+            Return a question object that reflects the database question
+            </summary>
+            <param name="questionId">Id of the question you need</param>
+            <returns>A questiondata object with the current database values</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetQuestionForExport(System.Int32)">
+            <summary>
+            Returns all question details, answers and answer types
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetQuestionHierarchy(System.Int32)">
+            <summary>
+            Returns all question including their childs
+            </summary>
+            <param name="surveyId">Survey id from which you want to retrieve the questions and childs</param>
+            <returns>A question object collection with all their childs</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetQuestionLayoutModes">
+            <summary>
+            Return the layout modes available
+            </summary>
+            <returns>A questionlayoutmodedata object with the current layout values</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetQuestionListForPageRange(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Returns a question list of all available questions
+            in the given page range
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetQuestionListWithSelectableAnswers(System.Int32)">
+            <summary>
+            Returns a question list with only text, questionid and display order field 
+            from the given survey that have at leat one selectable answer type
+            </summary>
+            <param name="surveyId">Survey id from which you want to retrieve the questions</param>
+            <returns>A question object collection</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetQuestionListWithSelectableAnswers(System.Int32,System.Int32)">
+            <summary>
+            Returns a question list with only text, questionid and display order field 
+            from the given survey that have at leat one selectable answer type
+            </summary>
+            <param name="surveyId">Survey id from which you want to retrieve the questions</param>
+            <param name="pageNumber">Page from which we need the questions</param>
+            <returns>A question object collection</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetQuestionResults(System.Int32,System.Int32,System.String,System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Returns the question and its answers results
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetQuestions(System.Int32,System.String)">
+            <summary>
+            Returns all question from the given survey
+            </summary>
+            <param name="surveyId">Survey id from which you want to retrieve the questions</param>
+            <returns>A question object collection</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetQuestionsAnswers(System.Int32)">
+            <summary>
+            Returns all question and all their answers from the given survey
+            </summary>
+            <param name="surveyId">Survey id from which you want to retrieve the questions and answers</param>
+            <returns>A question object collection with all answers</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetQuestionSectionGridAnswers(System.Int32)">
+            <summary>
+            Get all answerids to show in the grid
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetQuestionSectionOptions(System.Int32,System.String)">
+            <summary>
+            Return the options available for the question's section
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetQuestionSkipLogicRules(System.Int32)">
+            <summary>
+            Retrieves the skip logic rules for this question
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetSelectableQuestionSelectionModes">
+            <summary>
+            Return the selection mode available for user selection
+            </summary>
+            <returns>A questionselectionmode object with the current selections options</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetTotalCrossTabResults(System.Int32,System.Int32)">
+            <summary>
+            returns a results set with the total of compare question's answers number of voter 
+            that have answered or not answered the base question answers
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.GetUnansweredCrossTabResults(System.Int32,System.Int32)">
+            <summary>
+            returns a results set with the compare question's answers number of voter 
+            that have not answered the base question answers
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.ImportQuestions(Votations.NSurvey.Data.NSurveyQuestion,System.Int32)">
+            <summary>
+            Import the given questions into the DB
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.MoveQuestionPositionDown(System.Int32)">
+            <summary>
+            Move the give question's display position down
+            </summary>
+            <param name="questionId">ID of the question to change the position</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.MoveQuestionPositionUp(System.Int32)">
+            <summary>
+            Move the give question's display position up
+            </summary>
+            <param name="questionId">ID of the question to change the position</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.UpdateChildQuestion(Votations.NSurvey.Data.MatrixChildQuestionData,System.String)">
+            <summary>
+            Update the child question in the database
+            </summary>
+            <param name="updatedChildQuestion">question to update, must contain the question id</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.UpdateQuestion(Votations.NSurvey.Data.QuestionData,System.String)">
+            <summary>
+            Update the question in the database
+            </summary>
+            <param name="updatedQuestion">question to update, must contain the question id</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.UpdateQuestionSectionOptions(Votations.NSurvey.Data.QuestionSectionOptionData,System.String)">
+            <summary>
+            updates a section options, creates it if it doesnt exists
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.MoveQuestionUp(System.Int32)">
+            <summary>
+            Move question in display order for current library one position up
+            </summary>
+            <param name="questionId">question id</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Question.MoveQuestionDown(System.Int32)">
+            <summary>
+            Move question in display order for current library one position down
+            </summary>
+            <param name="questionId">question id</param>
+        </member>
+        <member name="T:Votations.NSurvey.SQLServerDAL.RegularExpression">
+            <summary>
+            SQL Server DAL implementation.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.RegularExpression.AddRegularExpression(Votations.NSurvey.Data.RegularExpressionData,System.Int32)">
+            <summary>
+            Adds a new regular expression to the database
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.RegularExpression.DeleteRegularExpressionById(System.Int32)">
+            <summary>
+            Remove the regular expression 
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.RegularExpression.GetAllRegularExpressionsList">
+            <summary>
+            Retrieves all regular expression from the database
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.RegularExpression.GetEditableRegularExpressionsListOfUser(System.Int32)">
+            <summary>
+            Retrieves all regular expression from the database assigned to a user
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.RegularExpression.GetInsertRegularExpressionCommand(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.Int32)">
+            <summary>
+            Creates and return an insert command for an answer type
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.RegularExpression.GetRegularExpressionById(System.Int32)">
+            <summary>
+            Retrieves regular expression details from the database
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.RegularExpression.GetRegularExpressionsOfUser(System.Int32,System.Int32)">
+            <summary>
+            Retrieves all regular expression from the database assigned to a user
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.RegularExpression.SetBuiltInRegularExpression(System.Int32)">
+            <summary>
+            Set regular expression to be built in
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.RegularExpression.UpdateRegularExpression(Votations.NSurvey.Data.RegularExpressionData)">
+            <summary>
+            Updates regular expressions data
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.SQLServerDAL.Role">
+            <summary>
+            SQL Server DAL implementation.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Role.AddRightToRole(System.Int32,System.Int32)">
+            <summary>
+            Adds a new right to a role
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Role.AddRole(Votations.NSurvey.Data.RoleData)">
+            <summary>
+            Adds a new role to the database
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Role.AddRoleToUser(System.Int32,System.Int32)">
+            <summary>
+            Add a new role to the user
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Role.DeleteRoleById(System.Int32)">
+            <summary>
+            Remove the role 
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Role.DeleteRoleRights(System.Int32)">
+            <summary>
+            delete a role's security rights
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Role.DeleteUserRole(System.Int32,System.Int32)">
+            <summary>
+            Deletes a user's role
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Role.GetAllRolesList">
+            <summary>
+            Retrieves all roles from the database
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Role.GetRoleById(System.Int32)">
+            <summary>
+            Retrieves role details from the database
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Role.GetRolesOfUser(System.Int32)">
+            <summary>
+            Retrieves all roles from the database assigned to a user
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Votations.NSurvey.SQLServerDAL.Role.GetSecurityRightList" -->
+        <member name="M:Votations.NSurvey.SQLServerDAL.Role.GetUnassignedRolesToUser(System.Int32)">
+            <summary>
+            Retrieves all roles from the database not assigned to a user
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Role.UpdateRole(Votations.NSurvey.Data.RoleData)">
+            <summary>
+            Updates roles data
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.SQLServerDAL.SecurityAddIn">
+            <summary>
+            SQL Server DAL implementation.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.SecurityAddIn.AddSecurityAddInToSurvey(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Adds the given security addin to the survey
+            </summary>
+            <param name="surveyId"></param>
+            <param name="addInId"></param>
+            <param name="addInOrder"></param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.SecurityAddIn.DeleteWebSecurityAddIn(System.Int32,System.Int32)">
+            <summary>
+            Deletes the given security addin from the survey
+            </summary>
+            <param name="surveyId"></param>
+            <param name="addInOrder"></param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.SecurityAddIn.DisableWebSecurityAddIn(System.Int32,System.Int32)">
+            <summary>
+            Disables the given addins
+            </summary>
+            <param name="surveyId"></param>
+            <param name="addInId"></param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.SecurityAddIn.EnableWebSecurityAddIn(System.Int32,System.Int32)">
+            <summary>
+            Enables the given addins
+            </summary>
+            <param name="surveyId"></param>
+            <param name="addInId"></param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.SecurityAddIn.GetAvailableAddIns(System.Int32)">
+            <summary>
+            Returns the available addins (addins that are not already in use) 
+            for the survey
+            </summary>
+            <param name="surveyId"></param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.SecurityAddIn.GetEnabledWebSecurityAddIns(System.Int32)">
+            <summary>
+            Get only security addins that are enabled for the survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.SecurityAddIn.GetSurveyAddInById(System.Int32,System.Int32)">
+            <summary>
+            Return a AddIn object that reflects the database addin data
+            </summary>
+            <param name="addInId">Id of the addin you need</param>
+            <returns>A WebSecurityAddInData object with the current database values</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.SecurityAddIn.GetUnAuthentifiedUserActions">
+            <summary>
+            Get a list of all available actions
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.SecurityAddIn.GetWebSecurityAddIns(System.Int32)">
+            <summary>
+            Get all security addins available for the survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.SecurityAddIn.MoveWebSecurityAddInDown(System.Int32,System.Int32)">
+            <summary>
+            Move the addin priority down
+            </summary>
+            <param name="surveyId"></param>
+            <param name="addInOrder"></param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.SecurityAddIn.MoveWebSecurityAddInUp(System.Int32,System.Int32)">
+            <summary>
+            Move the addin priority up
+            </summary>
+            <param name="surveyId"></param>
+            <param name="addInOrder"></param>
+        </member>
+        <member name="T:Votations.NSurvey.SQLServerDAL.SurveyLayout">
+            <summary>
+            SQL Server DAL implementation.
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.SQLServerDAL.User">
+            <summary>
+            SQL Server DAL implementation.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.User.AddUser(Votations.NSurvey.Data.NSurveyUserData)">
+            <summary>
+            Adds a new users to the database
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.User.AddUserSettings(Votations.NSurvey.Data.UserSettingData)">
+            <summary>
+            Adds a new users settings to the database
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.User.DeleteUserById(System.Int32)">
+            <summary>
+            Remove the user 
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.User.GetAdminCount">
+            <summary>
+            Retrieves the number of admins in the database
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.User.GetAllUsersList">
+            <summary>
+            Retrieves all users from the database
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.User.GetAllUsersListByFilter(System.String,System.String,System.String,System.String,System.Nullable{System.Int32})">
+            <summary>
+            Retrieves all users from the database by filter
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.User.GetNSurveyUserData(System.String,System.String)">
+            <summary>
+            Retrieves the user if any available
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.User.GetUserById(System.Int32)">
+            <summary>
+            Retrieves users details from the database
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.User.GetUserByIdFromUserName(System.String)">
+            <summary>
+            Retrieves users id from its username
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.User.GetUserSecurityRights(System.Int32)">
+            <summary>
+            Retrieves an array of the security rights of the user
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.User.GetUserSettings(System.Int32)">
+            <summary>
+            Get user settings 
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.User.IsAdministrator(System.Int32)">
+            <summary>
+            Checks if the given user is an administrator
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.User.UpdateUser(Votations.NSurvey.Data.NSurveyUserData)">
+            <summary>
+            Updates users data
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.User.UpdateUserSettings(Votations.NSurvey.Data.UserSettingData)">
+            <summary>
+            Updates users settings
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.SQLServerDAL.Voter">
+            <summary>
+            SQL Server DAL implementation.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.AddVoter(Votations.NSurvey.Data.VoterAnswersData)">
+            <summary>
+            Add a new voter and his answers to the database 
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.AddVoterInvitation(System.Int32,System.String,System.Boolean,System.String)">
+            <summary>
+            Queue an invitation request for a future voter
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.CheckIfVoterIPExists(System.Int32,System.String)">
+            <summary>
+            
+            Checks if the given IP has already been registered
+            in the expiration time lapse
+            </summary>
+            <param name="surveyId"></param>
+            <param name="voterIP"></param>
+            <param name="IPExpires"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.CheckIfVoterUIdExists(System.Int32,System.String)">
+            <summary>
+            Checks if the given UID has already been registered
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.DeleteInvitationLog(System.Int32)">
+            <summary>
+            Deletes the log of the invitation
+            </summary>
+            <param name="invitationLogId"></param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.DeleteUnvalidatedVoters(System.Int32)">
+            <summary>
+            Deletes all unvalidated entries
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.DeleteVoterAnswers(System.Int32)">
+            <summary>
+            Delete all answer a voter gave for the survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.DeleteVoterById(System.Int32)">
+            <summary>
+            Delete a voter and all its answers
+            </summary>
+            <param name="voterId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.DeleteVoterInvitation(System.Int32,System.Int32)">
+            <summary>
+            Deletes the email from the survey invitation queue
+            </summary>
+            <param name="surveyId"></param>
+            <param name="emailId"></param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.DeleteVoterInvitation(System.Int32,System.String)">
+            <summary>
+            Deletes the email from the survey invitation queue
+            </summary>
+            <param name="surveyId"></param>
+            <param name="emailId"></param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.DeleteVoterPageAnswers(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Delete all answer a voter gave for the page
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.DeleteVoterQuestionAnswers(System.Int32,System.Int32)">
+            <summary>
+            Delete all answer a voter gave for the question
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.DeleteVoterResumeSession(System.Int32,System.String)">
+            <summary>
+            Deletes a voter resume session
+            from the database
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.DeleteVoters(System.Int32)">
+            <summary>
+            Delete all voter and all its answers for the survey
+            </summary>
+            <param name="surveyId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.GetDayStats(System.Int32,System.DateTime)">
+            <summary>
+            Get number of voters for the given date
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.GetEmailUId(System.Int32,System.String)">
+            <summary>
+            returns the guid from the queue for the given email and survey id
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.GetForCSVExport(System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            Returns all data needed to create a CSV
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.GetForExport(System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            Returns all the answers of the voters
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.GetInvitationLogs(System.Int32,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Returns all the invitation logs
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.GetMonthlyStats(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Get voter's statistics for the given month and year
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.GetUnvalidatedVotersCount(System.Int32)">
+            <summary>
+            returns the number of unvalidated entries (saved progress)
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.GetVoterAnswers(System.Int32)">
+            <summary>
+            Get voter's answers and voter details
+            </summary>
+            <param name="voterId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.GetVotersCompleteEntries(System.Int32,System.Int32,System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            Returns all the entries text / selections of the voters
+            </summary>
+            <param name="surveyId"></param>
+            <param name="pageNumber"></param>
+            <param name="pageSize"></param>
+            <param name="startDate"></param>
+            <param name="endDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.GetVotersInvitationAnswered(System.Int32,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Returns all voters who have answered an invitation 
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.GetVotersInvitationQueue(System.Int32,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Returns the invitation queue of the survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.GetVotersTextEntries(System.Int32,System.Int32,System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            Returns all the text entries of the voters
+            </summary>
+            <param name="surveyId"></param>
+            <param name="pageNumber"></param>
+            <param name="pageSize"></param>
+            <param name="startDate"></param>
+            <param name="endDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.HasUserNameVoted(System.Int32,System.String)">
+            <summary>
+            Check if the username has already taken the survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.IsUIdValid(System.String)">
+            <summary>
+            Check if the given Uid is valid
+            </summary>
+            <param name="UId"></param>
+            <returns>returns the Survey id of the Uid if its valid else returns -1</returns>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.LogInvitationError(Votations.NSurvey.Data.InvitationLogData)">
+            <summary>
+            logs the exception that occured for the invitation in the db
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.ResumeVoterAnswers(System.Int32,System.String)">
+            <summary>
+            Get the voter's data and answers to resume a session
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.SetVoterUId(System.Int32,System.String)">
+            <summary>
+            Set the give uid to the voter
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.UpdateVoter(Votations.NSurvey.Data.VoterAnswersData)">
+            <summary>
+            Updates voter's answer
+            </summary>
+            <param name="voterAnswers">Voter and all his answers information</param>
+        </member>
+        <member name="M:Votations.NSurvey.SQLServerDAL.Voter.UpdateVoterUserName(System.Int32,System.String)">
+            <summary>
+            Update the asp.net username of the voter
+            </summary>
+        </member>
+    </members>
+</doc>

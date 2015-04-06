@@ -142,6 +142,10 @@ namespace Votations.NSurvey.WebAdmin.UserControls
                 {
                     mnuMain.Items[menuIndex].ChildItems.Add(new MenuItem(((PageBase)Page).GetPageResource("SurveyOptionsHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.SurveyOptionsLink, SurveyId)));
 
+                    if (((PageBase)Page).NSurveyUser.Identity.IsAdmin)
+                        mnuMain.Items[menuIndex].ChildItems[mnuMain.Items[menuIndex].ChildItems.Count - 1].ChildItems.
+                            Add(new MenuItem(((PageBase)Page).GetPageResource("GeneralSettingsHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.GeneralSettingsLink, SurveyId)));
+
                     if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessSurveySettings))
                         mnuMain.Items[menuIndex].ChildItems[mnuMain.Items[menuIndex].ChildItems.Count - 1].ChildItems.
                             Add(new MenuItem(((PageBase)Page).GetPageResource("SurveyInformationHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.SurveyOptionsLink, SurveyId)));

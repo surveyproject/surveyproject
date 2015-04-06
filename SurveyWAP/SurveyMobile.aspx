@@ -63,7 +63,6 @@
                 </vts:SurveyBox>
 
       </div>
-
     </form>
         </div>
 

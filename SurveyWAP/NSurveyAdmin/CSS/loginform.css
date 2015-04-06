@@ -8,12 +8,12 @@
           span.fa-sign-in:before { 
 
             font-family: FontAwesome; 
-            font-size: 1.4em;
+            /*font-size: 1.4em; */
             font-style: normal;
             color: #fff;
             content: "\f090"; 
             margin-left: 5%;
-            vertical-align:middle;
+            /* vertical-align:middle; */
             line-height: 20px;
           }
 

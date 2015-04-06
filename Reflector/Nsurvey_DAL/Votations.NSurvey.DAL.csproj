@@ -80,6 +80,7 @@
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="Votations.NSurvey.DALFactory\AnswerFactory.cs" />
     <Compile Include="Votations.NSurvey.DALFactory\AnswerTypeFactory.cs" />
+    <Compile Include="Votations.NSurvey.DALFactory\ReportFactory.cs" />
     <Compile Include="Votations.NSurvey.DALFactory\SurveyTokenFactory.cs" />
     <Compile Include="Votations.NSurvey.DALFactory\SurveyIPRangeFactory.cs" />
     <Compile Include="Votations.NSurvey.DALFactory\DbAccessFactory.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="Votations.NSurvey.DALFactory\SurveyFactory.cs" />
     <Compile Include="Votations.NSurvey.DALFactory\UserFactory.cs" />
     <Compile Include="Votations.NSurvey.DALFactory\VoterFactory.cs" />
+    <Compile Include="Votations.NSurvey.IDAL\IReport.cs" />
     <Compile Include="Votations.NSurvey.IDAL\ISurveyAsset.cs" />
     <Compile Include="Votations.NSurvey.IDAL\ISurveyToken.cs" />
     <Compile Include="Votations.NSurvey.IDAL\ISurveyIPRange.cs" />

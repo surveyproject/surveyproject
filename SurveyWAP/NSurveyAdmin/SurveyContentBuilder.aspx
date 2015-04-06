@@ -1,5 +1,4 @@
-﻿<%@ Register TagPrefix="uc1" TagName="FooterControl" Src="UserControls/FooterControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
+﻿
 
 <%@ Page Language="c#" MasterPageFile="MsterPageTabs.master" ValidateRequest="false"
     AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.SurveyContentBuilder"

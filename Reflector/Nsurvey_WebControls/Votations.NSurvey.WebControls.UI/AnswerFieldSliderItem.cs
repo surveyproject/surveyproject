@@ -65,12 +65,24 @@ namespace Votations.NSurvey.WebControls.UI
                 + "').val('' + $('#slider-range-min-" + Convert.ToString(answer.Answers[0].AnswerId)
                 + "').slider('value')); });"
                 + "</script>";
-            
-            // add secundary jquery scripts:
-           this.Page.ClientScript.RegisterClientScriptInclude(this.GetType(), "jquery.ui.core.js", ResolveUrl("~/Scripts/Javascript/ui/jquery.ui.core.js") );
-           this.Page.ClientScript.RegisterClientScriptInclude(this.GetType(), "jquery.ui.widget.js", ResolveUrl("~/Scripts/Javascript/ui/jquery.ui.widget.js"));
-           this.Page.ClientScript.RegisterClientScriptInclude(this.GetType(), "jquery.ui.mouse.js", ResolveUrl("~/Scripts/Javascript/ui/jquery.ui.mouse.js"));
 
+
+            // determine use on SP or DNN:
+            string SiteName = string.IsNullOrEmpty(System.Web.Configuration.WebConfigurationManager.AppSettings["SiteName"]) ? "0" : System.Web.Configuration.WebConfigurationManager.AppSettings["SiteName"];
+
+            // add secundary jquery scripts:
+            if (SiteName == "Survey Project")
+            {
+                this.Page.ClientScript.RegisterClientScriptInclude(this.GetType(), "jquery.ui.core.js", ResolveUrl("~/Scripts/Javascript/ui/jquery.ui.core.js"));
+                this.Page.ClientScript.RegisterClientScriptInclude(this.GetType(), "jquery.ui.widget.js", ResolveUrl("~/Scripts/Javascript/ui/jquery.ui.widget.js"));
+                this.Page.ClientScript.RegisterClientScriptInclude(this.GetType(), "jquery.ui.mouse.js", ResolveUrl("~/Scripts/Javascript/ui/jquery.ui.mouse.js"));
+            }
+            else
+            {
+                this.Page.ClientScript.RegisterClientScriptInclude(this.GetType(), "jquery.ui.core.js", ResolveUrl("~/Desktopmodules/SurveyBox/Scripts/Javascript/ui/jquery.ui.core.js"));
+                this.Page.ClientScript.RegisterClientScriptInclude(this.GetType(), "jquery.ui.widget.js", ResolveUrl("~/Desktopmodules/SurveyBox/Scripts/Javascript/ui/jquery.ui.widget.js"));
+                this.Page.ClientScript.RegisterClientScriptInclude(this.GetType(), "jquery.ui.mouse.js", ResolveUrl("~/Desktopmodules/SurveyBox/Scripts/Javascript/ui/jquery.ui.mouse.js"));
+            }
 
             // add .css files:
            this.Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
@@ -78,20 +90,40 @@ namespace Votations.NSurvey.WebControls.UI
            HtmlGenericControl css = new HtmlGenericControl("link");
            css.Attributes.Add("rel", "stylesheet");
            css.Attributes.Add("type", "text/css");
-           css.Attributes.Add("href", ResolveUrl("~/Scripts/css/ui-core-base/jquery.ui.all.css"));
+           if (SiteName == "Survey Project")
+           {
+                css.Attributes.Add("href", ResolveUrl("~/Scripts/css/ui-core-base/jquery.ui.all.css"));
+           }
+           else
+           {
+               css.Attributes.Add("href", ResolveUrl("~/Desktopmodules/SurveyBox/Scripts/css/ui-core-base/jquery.ui.all.css"));
+           }
            Page.Header.Controls.Add(css);
 
            css = new HtmlGenericControl("link");
            css.Attributes.Add("rel", "stylesheet");
            css.Attributes.Add("type", "text/css");
-           //css.Attributes.Add("href", ResolveUrl("~/Scripts/css/custom-theme/jquery-ui-1.8.12.custom.css"));
-           css.Attributes.Add("href", ResolveUrl("~/Scripts/css/base/jquery.ui.all.css"));
+           if (SiteName == "Survey Project")
+           {
+                css.Attributes.Add("href", ResolveUrl("~/Scripts/css/base/jquery.ui.all.css"));
+           }
+           else
+           {
+               css.Attributes.Add("href", ResolveUrl("~/Desktopmodules/SurveyBox/Scripts/css/base/jquery.ui.all.css"));
+           }
            Page.Header.Controls.Add(css);
 
            css = new HtmlGenericControl("link");
            css.Attributes.Add("rel", "stylesheet");
            css.Attributes.Add("type", "text/css");
-           css.Attributes.Add("href", ResolveUrl("~/Scripts/javascript/slider/slider.css"));
+           if (SiteName == "Survey Project")
+           {
+               css.Attributes.Add("href", ResolveUrl("~/Scripts/javascript/slider/slider.css"));
+           }
+           else
+           {
+               css.Attributes.Add("href", ResolveUrl("~/Desktopmodules/SurveyBox/Scripts/javascript/slider/slider.css"));
+           }
            Page.Header.Controls.Add(css);
 
 
@@ -102,14 +134,28 @@ namespace Votations.NSurvey.WebControls.UI
 
            HtmlGenericControl javascriptControl = new HtmlGenericControl("script");
            javascriptControl.Attributes.Add("type", "text/Javascript");
-           javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/JavaScript/01_jquery/jquery-1.11.1.js"));
+           if (SiteName == "Survey Project")
+           {
+               javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/JavaScript/01_jquery/jquery-1.11.1.js"));
+           }
+           else
+           {
+               javascriptControl.Attributes.Add("src", ResolveUrl("~/Desktopmodules/SurveyBox/Scripts/JavaScript/01_jquery/jquery-1.11.1.js"));
+           }
            Page.Header.Controls.Add(javascriptControl);
 
            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
 
            javascriptControl = new HtmlGenericControl("script");
            javascriptControl.Attributes.Add("type", "text/Javascript");
-           javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/JavaScript/ui/jquery-ui-1.10.4.js"));
+           if (SiteName == "Survey Project")
+           {
+               javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/JavaScript/ui/jquery-ui-1.10.4.js"));
+           }
+           else
+           {
+               javascriptControl.Attributes.Add("src", ResolveUrl("~/Desktopmodules/SurveyBox/Scripts/JavaScript/ui/jquery-ui-1.10.4.js"));
+           }
            Page.Header.Controls.Add(javascriptControl);
 
            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));

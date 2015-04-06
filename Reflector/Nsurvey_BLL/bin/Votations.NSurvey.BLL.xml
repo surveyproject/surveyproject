@@ -1,0 +1,1878 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Votations.NSurvey.BLL</name>
+    </assembly>
+    <members>
+        <member name="T:Votations.NSurvey.BusinessRules.Answer">
+            <summary>
+            Contains the business rules that are used for an answer.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Answer.AddAnswer(Votations.NSurvey.Data.AnswerData)">
+            <summary>
+            Adds a new answer to the question specified by the question id property in the database
+            </summary>
+            <param name="newAnswer">Answer object with information about what to add. Only Id must be ommited</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Answer.AddMatrixAnswer(Votations.NSurvey.Data.AnswerData)">
+            <summary>
+            Adds a new answer to the matrix question specified by the question id property in the database
+            </summary>
+            <param name="newAnswer">Answer object with information about what to add. Only Id must be ommited</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Answer.DeleteAnswer(System.Int32)">
+            <summary>
+            Remove the answer from the database
+            </summary>
+            <param name="answerId">Answer to delete from the database</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Answer.DeleteAnswerFile(System.Int32,System.String)">
+            <summary>
+            delete all file data
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Answer.DeleteAnswerProperties(System.Int32)">
+            <summary>
+            Deletes the persisted answer properties from the DB
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Answer.DeleteMatrixAnswer(System.Int32)">
+            <summary>
+            Remove one answer column of the matrix from the database
+            </summary>
+            <param name="answerId">Answer column to delete from the database</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Answer.ExportAnswerFilesToDirectory(System.Int32,System.String,Votations.NSurvey.Data.FileExportMode)">
+            <summary>
+            Export the files of the survey to the directory and 
+            returns the total of bytes exported
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Answer.MoveAnswerDown(System.Int32)">
+            <summary>
+            Moves down the answer's display position 
+            </summary>
+            <param name="answerId"></param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Answer.MoveAnswerUp(System.Int32)">
+            <summary>
+            Moves up the answer's display position 
+            </summary>
+            <param name="answerId"></param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Answer.StoreAnswerFile(System.String,System.String,System.Int32,System.String,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Stores a file in the database
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Answer.StoreAnswerProperties(System.Int32,System.Byte[])">
+            <summary>
+            Stores properties in the database
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Answer.SubscribeToPublisher(System.Int32,System.Int32)">
+            <summary>
+            Subscribe to a new answer publisher
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Answer.UnSubscribeFromPublisher(System.Int32,System.Int32)">
+            <summary>
+            Unsubscribe from the given answer publisher
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Answer.UpdateAnswer(Votations.NSurvey.Data.AnswerData,System.String)">
+            <summary>
+            Update the answer in the database
+            </summary>
+            <param name="updatedAnswer">Answer to update, must specify the answer id</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Answer.UpdateMatrixAnswer(Votations.NSurvey.Data.AnswerData,System.String)">
+            <summary>
+            Update the matrix column in the database
+            </summary>
+            <param name="updatedAnswer">Answer to update, must specify the answer id</param>
+        </member>
+        <member name="T:Votations.NSurvey.BusinessRules.AnswerType">
+            <summary>
+            Contains the business rules that are used for an answer type.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.AnswerType.AddAnswerType(Votations.NSurvey.Data.AnswerTypeData,System.Int32)">
+            <summary>
+            Adds a new answer type in the database
+            </summary>
+            <param name="newAnswerType">Answer type object with information about what to add. Only Id must be ommited</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.AnswerType.AssignAnswerTypeToUser(System.Int32,System.Int32)">
+            <summary>
+            Assign the answer type to the user
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.AnswerType.DeleteAnswerType(System.Int32)">
+            <summary>
+            Remove the answer type from the database
+            </summary>
+            <param name="answerTypeId">Answer type to delete from the database</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.AnswerType.SetBuiltInAnswerType(System.Int32)">
+            <summary>
+            Makes the answer type as builtin
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.AnswerType.UpdateAnswerType(Votations.NSurvey.Data.AnswerTypeData)">
+            <summary>
+            Update the answer type in the database
+            </summary>
+            <param name="updatedAnswerType">Answer type to update, must specify the answer type id</param>
+        </member>
+        <member name="T:Votations.NSurvey.BusinessRules.SurveyToken">
+            <summary>
+            Contains the business rules that are used for Survey IP Range
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.BusinessRules.SurveyIPRange">
+            <summary>
+            Contains the business rules that are used for Survey IP Range
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.BusinessRules.Filter">
+            <summary>
+            Contains the business rules that are used for a filter.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Filter.AddFilter(Votations.NSurvey.Data.FilterData)">
+            <summary>
+            Adds a new filter
+            </summary>
+            <param name="newFilter"></param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Filter.AddRule(Votations.NSurvey.Data.FilterRuleData)">
+            <summary>
+            Adds a new filter rule
+            </summary>
+            <param name="newRule"></param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Filter.DeleteFilter(System.Int32)">
+            <summary>
+            Deletes the given filter
+            </summary>
+            <param name="filterId"></param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Filter.DeleteRule(System.Int32)">
+            <summary>
+            Deletes the given filter rule
+            </summary>
+            <param name="ruleId"></param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Filter.UpdateFilter(Votations.NSurvey.Data.FilterData)">
+            <summary>
+            Update the filter options
+            </summary>
+            <param name="updatedFilter"></param>
+        </member>
+        <member name="T:Votations.NSurvey.BusinessRules.Library">
+            <summary>
+            Contains the business rules that are used for an answer type.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Library.AddLibrary(Votations.NSurvey.Data.LibraryData)">
+            <summary>
+            Adds a new library in the database
+            </summary>
+            <param name="newAnswerType">Library object with information about what to add. Only Id must be ommited</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Library.DeleteLibrary(System.Int32)">
+            <summary>
+            Remove the library from the database
+            </summary>
+            <param name="libaryid">library to delete from the database</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Library.UpdateLibrary(Votations.NSurvey.Data.LibraryData)">
+            <summary>
+            Update the library in the database
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.DataAccess.MultiLanguage">
+            <summary>
+            Contains the business rules multi language database data.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.MultiLanguage.CheckSurveyLanguage(System.Int32,System.String)">
+            <summary>
+            Check if the language code is enabled for the survey
+            and if its not returns the default enabled language code
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.MultiLanguage.DeleteSurveyLanguage(System.Int32,System.String,System.String)">
+            <summary>
+            Deletes a language from the survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.MultiLanguage.DisableMultiLanguage(System.Int32)">
+            <summary>
+            Disable survey's multi language features
+            </summary>
+            <param name="surveyId"></param>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.MultiLanguage.UpdateMultiLanguage(System.Int32,Votations.NSurvey.Data.MultiLanguageMode,System.String)">
+            <summary>
+            Updates the current multi language mode that defines how 
+            the user selects his language
+            </summary>
+            <param name="surveyId"></param>
+            <param name="languageMode"></param>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.MultiLanguage.UpdateSurveyLanguage(System.Int32,System.String,System.Boolean,System.String)">
+            <summary>
+            Adds a language to a survey
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.BusinessRules.Question">
+            <summary>
+            Contains the business rules that are used for a question.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.AddChildQuestion(Votations.NSurvey.Data.MatrixChildQuestionData)">
+            <summary>
+            Adds a new child question to the parent question specified by the parent questio id in the database
+            </summary>
+            <param name="newChildQuestion">Question object with information about what to add. Only Id must be ommited</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.AddDefaultMatrixQuestion(System.Int32,System.String,System.String)">
+            <summary>
+            Adds a matrix question to the library
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.AddDefaultMatrixQuestion(System.Int32,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Insert a matrix parent question with hardcoded default values
+            </summary>
+            <param name="surveyId">ID of the survey to which belongs the question</param>
+            <param name="displayOrder">Order in which the question will be displayed</param>
+            <param name="PageNumber">Page number to which the questions belongs</param>
+            <param name="questionText">The main question's text</param>
+            <returns>The full matrix parent question</returns>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.AddDefaultSingleQuestion(System.Int32,System.String,System.String)">
+            <summary>
+            Insert a single question to the library
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.AddDefaultSingleQuestion(System.Int32,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Insert a single question with hardcoded default values
+            </summary>
+            <param name="surveyId">ID of the survey to which belongs the question</param>
+            <param name="displayOrder">Order in which the question will be displayed</param>
+            <param name="pageNumber">Page number to which the questions belongs</param>
+            <param name="questionText">The question's text</param>
+            <returns>The full static question</returns>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.AddQuestion(Votations.NSurvey.Data.QuestionData)">
+            <summary>
+            Adds a new question to the poll specified by the poll id in the database
+            </summary>
+            <param name="newQuestion">Question object with information about what to add. Only Id must be ommited</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.AddQuestionSectionGridAnswers(System.Int32,System.Int32)">
+            <summary>
+            Adds a new answer to be shown in the section grid
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.AddSkipLogicRule(Votations.NSurvey.Data.SkipLogicRuleData)">
+            <summary>
+            Add a new skip logic rule
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.AddStaticInformationText(System.Int32,System.String,System.String)">
+            <summary>
+            Insert a new static question to the library
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.AddStaticInformationText(System.Int32,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Insert a new static question 
+            </summary>
+            <param name="surveyId">ID of the survey to which belongs the question</param>
+            <param name="displayOrder">Order in which the question will be displayed</param>
+            <param name="informationText">Static text</param>
+            <returns>The full static question</returns>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.CheckQuestionUser(System.Int32,System.Int32)">
+            <summary>
+            Check if the user has this question assigned
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.CloneQuestionById(System.Int32)">
+            <summary>
+            Clones a question and its answers 
+            and returns the cloned question object 
+            </summary>
+            <param name="questionId">Id of the question you want to clone</param>
+            <returns>A questiondata object with the cloned question</returns>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.CopyQuestionById(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Copy a question to the given target survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.CopyQuestionToLibrary(System.Int32,System.Int32)">
+            <summary>
+            Copy a question to the library
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.DeleteMatrixAnswers(System.Int32)">
+            <summary>
+            Remove all the matrix answers from the database
+            </summary>
+            <param name="parentQuestionId">Matrix question id</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.DeleteQuestionById(System.Int32)">
+            <summary>
+            Remove the question and all its answers from the database
+            </summary>
+            <param name="questionId">Question to delete from the database</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.DeleteQuestionSectionGridAnswers(System.Int32,System.Int32)">
+            <summary>
+            Delete an answer to be shown in the section grid
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.DeleteQuestionSectionOptions(System.Int32)">
+            <summary>
+            Deletes the question's sections option
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.DeleteSkipLogicRuleById(System.Int32)">
+            <summary>
+            Deletes the skip logic rule
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.GetDefaultQuestion">
+            <summary>
+            Creates a new question entity with all
+            required default values 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.ImportQuestions(Votations.NSurvey.Data.NSurveyQuestion,System.Int32)">
+            <summary>
+            Import the given questions into the DB
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.MoveQuestionPositionDown(System.Int32)">
+            <summary>
+            Move the give question's display position down
+            </summary>
+            <param name="questionId">ID of the question to change the position</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.MoveQuestionPositionUp(System.Int32)">
+            <summary>
+            Move the give question's display position up
+            </summary>
+            <param name="questionId">ID of the question to change the position</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.SkipQuestion(System.Int32,Votations.NSurvey.Data.VoterAnswersData,System.Boolean)">
+            <summary>
+            Check if we need to hide / skip the question depending on the
+            skip logic rules rules
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.TurnOverPrimaryKeys(Votations.NSurvey.Data.NSurveyQuestion)">
+            <summary>
+            Invert main table keys signs to avoid key collisions on insertion
+            of new row with existing keys in the dataset that have not 
+            yet been updated with their "live" DB key.
+            Changes will casade to child tables
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.UpdateChildQuestion(Votations.NSurvey.Data.MatrixChildQuestionData,System.String)">
+            <summary>
+            Update the child question in the database
+            </summary>
+            <param name="updatedChildQuestion">question to update, must contain the question id</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.UpdateQuestion(Votations.NSurvey.Data.QuestionData,System.String)">
+            <summary>
+            Update the question in the database
+            </summary>
+            <param name="updatedQuestion">question to update, must contain the question id</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Question.UpdateQuestionSectionOptions(Votations.NSurvey.Data.QuestionSectionOptionData,System.String)">
+            <summary>
+            updates a section options, creates it if it doesnt exists
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.BusinessRules.RegularExpression">
+            <summary>
+            Contains the business rules that are used for a regular expression
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.RegularExpression.AddRegularExpression(Votations.NSurvey.Data.RegularExpressionData,System.Int32)">
+            <summary>
+            Adds a new regular expression to the database
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.RegularExpression.DeleteRegularExpressionById(System.Int32)">
+            <summary>
+            Remove the regular expression 
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.RegularExpression.SetBuiltInRegularExpression(System.Int32)">
+            <summary>
+            Makes the regular expression as builtin
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.RegularExpression.UpdateRegularExpression(Votations.NSurvey.Data.RegularExpressionData)">
+            <summary>
+            Updates regular expressions data
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.BusinessRules.Role">
+            <summary>
+            Contains the business rules that are used for a role
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Role.AddRightToRole(System.Int32,System.Int32)">
+            <summary>
+            Adds a new right to a role
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Role.AddRole(Votations.NSurvey.Data.RoleData)">
+            <summary>
+            Adds a new role to the database
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Role.AddRoleToUser(System.Int32,System.Int32)">
+            <summary>
+            Add a new role to the user
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Role.DeleteRoleById(System.Int32)">
+            <summary>
+            Remove the role 
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Role.DeleteRoleRights(System.Int32)">
+            <summary>
+            Adds a new right to a role
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Role.DeleteUserRole(System.Int32,System.Int32)">
+            <summary>
+            Deletes a user's role
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Role.UpdateRole(Votations.NSurvey.Data.RoleData)">
+            <summary>
+            Updates roles data
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.BusinessRules.SecurityAddIn">
+            <summary>
+            Provides the business rules for the security addins's data.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.SecurityAddIn.AddSecurityAddInToSurvey(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Adds the given security addin to the survey
+            </summary>
+            <param name="surveyId"></param>
+            <param name="addInId"></param>
+            <param name="addInOrder"></param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.SecurityAddIn.DeleteWebSecurityAddIn(System.Int32,System.Int32)">
+            <summary>
+            Deletes the given security addin from the survey
+            </summary>
+            <param name="surveyId"></param>
+            <param name="addInOrder"></param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.SecurityAddIn.DisableWebSecurityAddIn(System.Int32,System.Int32)">
+            <summary>
+            Disables the given addins
+            </summary>
+            <param name="surveyId"></param>
+            <param name="addInId"></param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.SecurityAddIn.EnableWebSecurityAddIn(System.Int32,System.Int32)">
+            <summary>
+            Enables the given addins
+            </summary>
+            <param name="surveyId"></param>
+            <param name="addInId"></param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.SecurityAddIn.MoveWebSecurityAddInDown(System.Int32,System.Int32)">
+            <summary>
+            Move the addin priority down
+            </summary>
+            <param name="surveyId"></param>
+            <param name="addInOrder"></param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.SecurityAddIn.MoveWebSecurityAddInUp(System.Int32,System.Int32)">
+            <summary>
+            Move the addin priority up
+            </summary>
+            <param name="surveyId"></param>
+            <param name="addInOrder"></param>
+        </member>
+        <member name="T:Votations.NSurvey.BusinessRules.Survey">
+            <summary>
+            Contains the business rules that are used for a survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.AddBranchingRule(Votations.NSurvey.Data.BranchingRuleData)">
+            <summary>
+            Add a new branching rule to the survey
+            </summary>
+            <param name="newBranchingRule"></param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.AddMessageCondition(Votations.NSurvey.Data.MessageConditionData)">
+            <summary>
+            Add a new condition to show a given thank you message
+            </summary>
+            <param name="newBranchingRule"></param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.AddSurvey(Votations.NSurvey.Data.SurveyData)">
+            <summary>
+            Adds a new survey to the database
+            </summary>
+            <param name="newSurvey">Survey object with information about what to add. Only Id must be ommited</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.AssignUserToSurvey(System.Int32,System.Int32)">
+            <summary>
+            Assigns a new user to a survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.CheckSurveyUser(System.Int32,System.Int32)">
+            <summary>
+            Check if the user has this survey assigned
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.CloneSurvey(System.Int32)">
+            <summary>
+            Clone the given survey and returns its clone
+            </summary>
+            <param name="surveyId">Id of the survey you want to clone</param>
+            <returns>A SurveyData dataset object with the current database values of the clone</returns>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.DeleteBranchingRuleById(System.Int32)">
+            <summary>
+            Deletes the branching rules 
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.DeleteMessageConditionById(System.Int32)">
+            <summary>
+            Deletes the message condition
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.DeletePageBreak(System.Int32,System.Int32)">
+            <summary>
+            deletes a page break
+            </summary>
+            <param name="surveyId">ID of the survey to which we add the page break</param>
+            <param name="pageNumber">Page number delete</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.DeleteQuotaSettings(System.Int32)">
+            <summary>
+            Deletes survey's quotas
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.DeleteSurveyById(System.Int32)">
+            <summary>
+            Remove the survey and all its question / answers from the database
+            </summary>
+            <param name="surveyId">Survey to delete from the database</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.GetNextPage(System.Int32,System.Int32,Votations.NSurvey.Data.VoterAnswersData,System.Boolean)">
+            <summary>
+            Get next page depending depending on the
+            branching rules
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.GetPreviousPage(System.Int32,System.Int32,Votations.NSurvey.Data.VoterAnswersData,System.Boolean)">
+            <summary>
+            Returns the previous page index of the page specified 
+            as a parameter and based the voter's answers
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.GetScoreTotal(Votations.NSurvey.Data.VoterAnswersData)">
+            <summary>
+            Calculate the total score of the current answers set
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.GetThanksMessage(System.Int32,Votations.NSurvey.Data.VoterAnswersData,System.Boolean)">
+            <summary>
+            Get conditional thanks message based
+            on user's answers
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.ImportSurveys(Votations.NSurvey.Data.NSurveyForm,System.Int32,System.Int32)">
+            <summary>
+            Import the given surveys into the DB
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.IncreaseQuotaEntries(System.Int32)">
+            <summary>
+            Increase the current entries number calculated
+            against the max. quota
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.IncrementResultsViews(System.Int32,System.Int32)">
+            <summary>
+            Increment the number of time the survey's result has been viewed
+            </summary>
+            <param name="surveyId">Id of the survey to increment result view</param>
+            <param name="incrementNumber">number of views to add</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.IncrementSurveyViews(System.Int32,System.Int32)">
+            <summary>
+            Increment the number of time a survey has been viewed
+            </summary>
+            <param name="surveyId">Id of the survey to increment views</param>
+            <param name="incrementNumber">number of views to add</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.InsertPageBreak(System.Int32,System.Int32)">
+            <summary>
+            Adds a new survey page break
+            </summary>
+            <param name="surveyId">ID of the survey to which we add the page break</param>
+            <param name="displayOrder">Position of the page break</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.InsertSurveyLineBreak(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Adds a new survey line break, which is currently a static question
+            with a html hr tag in it.
+            </summary>
+            <param name="surveyId">ID of the survey to which we add the line break</param>
+            <param name="displayOrder">Position of the line break</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.MovePageBreakDown(System.Int32,System.Int32)">
+            <summary>
+            Move a page break Down
+            </summary>
+            <param name="surveyId">ID of the survey to which we add the page break</param>
+            <param name="PageNumber">Page break to move down</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.MovePageBreakUp(System.Int32,System.Int32)">
+            <summary>
+            Move a page break up
+            </summary>
+            <param name="surveyId">ID of the survey to which we add the page break</param>
+            <param name="PageNumber">Page break to move up</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.ParseThankYouMessage(System.String,System.Int32)">
+            <summary>
+            Parse the given string and replace any
+            available templates by their runtime values
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.ResetQuotaEntries(System.Int32)">
+            <summary>
+            Resets the current entries number calculated
+            against the max. quota
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.ResetVotes(System.Int32)">
+            <summary>
+            Sets all answers and vote count to 0
+            </summary>
+            <param name="surveyId">Survey ID</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.TurnOverPrimaryKeys(Votations.NSurvey.Data.NSurveyForm)">
+            <summary>
+            Invert main table keys signs to avoid key collisions on insertion
+            of new row with existing keys in the dataset that have not 
+            yet been updated with their "live" DB key.
+            Changes will casade to child tables
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.UnAssignUserFromSurvey(System.Int32,System.Int32)">
+            <summary>
+            UnAssigns a user from a survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.UpdateAccessPassword(System.Int32,System.String)">
+            <summary>
+            Update the survey access password
+            </summary>
+            <param name="surveyId"></param>
+            <param name="accessPassword"></param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.UpdateAspSecuritySettings(System.Int32,System.Boolean)">
+            <summary>
+            Updates asp.net settings
+            </summary>
+            <param name="surveyId"></param>
+            <param name="allowMultipleSubmissions"></param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.UpdateCookieExpiration(System.Int32,System.Int32)">
+            <summary>
+            Update the cookie expiration time
+            </summary>
+            <param name="surveyId"></param>
+            <param name="cookieExpires"></param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.UpdateIPExpiration(System.Int32,System.Int32)">
+            <summary>
+            Update the ip expiration time
+            </summary>
+            <param name="surveyId"></param>
+            <param name="ipExpires"></param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.UpdateMessageCondition(Votations.NSurvey.Data.MessageConditionData)">
+            <summary>
+            Updates a message condition
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.UpdateNSurveySecuritySettings(System.Int32,System.Boolean)">
+            <summary>
+            Update the nsurvey security settings
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.UpdateOnlyInvited(System.Int32,System.Boolean)">
+            <summary>
+            Update the survey only invited status
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.UpdateSaveTokenUserDate(System.Int32,System.Boolean)">
+            <summary>
+            Update the survey Save Token User  Data flag
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.UpdateQuotaSettings(Votations.NSurvey.Data.SurveyEntryQuotaData)">
+            <summary>
+            Updates or creates if it doesnt exists 
+            quota settings for the survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.UpdateSurvey(Votations.NSurvey.Data.SurveyData,System.String)">
+            <summary>
+            Update the database with the given survey
+            </summary>
+            <param name="updatedSurvey">survey to update, must contain the surveyid</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.UpdateSurveyPageOptions(Votations.NSurvey.Data.PageOptionData)">
+            <summary>
+            Update the options that were setup for the page
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Survey.UpdateUnAuthentifiedUserActions(System.Int32,System.Int32)">
+            <summary>
+            Updates the survey to a new unAuthentified user action
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Votations.NSurvey.BusinessRules.User">
+            <summary>
+            Contains the business rules that are used for a user
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.User.AddUserSettings(Votations.NSurvey.Data.UserSettingData)">
+            <summary>
+            Add users settings
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.User.DeleteUserById(System.Int32)">
+            <summary>
+            Deletes the user from the db
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.User.GenerateSalt">
+            <summary>
+            Generate Password Salt Int to add to password
+            </summary>
+            <returns>Salt Int</returns>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.User.EncryptUserPassword(System.String)">
+            <summary>
+            Encrypts the user's password
+            </summary>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.User.CheckUserPassword(System.String)">
+            <summary>
+            check user password
+            </summary>
+            <param name="password">submitted password</param>
+            <returns>hashed password</returns>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.User.UpdateUser(Votations.NSurvey.Data.NSurveyUserData)">
+            <summary>
+            UPdate user
+            </summary>
+            <param name="updatedUser">updateuser</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.User.UpdateUserSettings(Votations.NSurvey.Data.UserSettingData)">
+            <summary>
+            Updates users settings
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.BusinessRules.Voter">
+            <summary>
+            Contains the business rules that are used for a Voter
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Voter.AddVoter(Votations.NSurvey.Data.VoterAnswersData)">
+            <summary>
+            Adds a new voter
+            </summary>
+            <param name="voterAnswers">Voter and all his answers information</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Voter.DeleteInvitationLog(System.Int32)">
+            <summary>
+            Deletes the log of the invitation
+            </summary>
+            <param name="invitationLogId"></param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Voter.DeleteUnvalidatedVoters(System.Int32)">
+            <summary>
+            Deletes all unvalidated entries
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Voter.DeleteVoterAnswers(System.Int32)">
+            <summary>
+            Delete all answer a voter gave for the survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Voter.DeleteVoterById(System.Int32)">
+            <summary>
+            Delete a voter and all its answers
+            </summary>
+            <param name="voterId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Voter.DeleteVoterInvitation(System.Int32,System.Int32)">
+            <summary>
+            Deletes the email from the survey invitation queue
+            </summary>
+            <param name="surveyId"></param>
+            <param name="emailId"></param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Voter.DeleteVoterInvitation(System.Int32,System.String)">
+            <summary>
+            Deletes the email from the survey invitation queue
+            </summary>
+            <param name="surveyId"></param>
+            <param name="emailId"></param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Voter.DeleteVoterPageAnswers(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Delete all answer a voter gave for the page
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Voter.DeleteVoterQuestionAnswers(System.Int32,System.Int32)">
+            <summary>
+            Delete all answer a voter gave for the question
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Voter.DeleteVoterResumeSession(System.Int32,System.String)">
+            <summary>
+            Deletes a voter resume session
+            from the database
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Voter.DeleteVoters(System.Int32)">
+            <summary>
+            Delete all voter and all its answers for the survey
+            </summary>
+            <param name="surveyId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Voter.GenerateResumeUId">
+            <summary>
+            returns a unique identifier
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Voter.GenerateResumeUId(System.Int32)">
+            <summary>
+            returns a unique identifier of a given length
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Voter.GenerateUId">
+            <summary>
+            returns a unique identifier
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Voter.GenerateVoterInvitationUId(System.Int32,System.String,System.Boolean)">
+            <summary>
+            Queue an invitation request for a future voter and 
+            returns the generate UID
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Voter.IsUIdValid(System.String)">
+            <summary>
+            Check if the given Uid is valid
+            </summary>
+            <param name="UId"></param>
+            <returns>returns the Survey id of the Uid if its valid else returns -1</returns>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Voter.LogInvitationError(Votations.NSurvey.Data.InvitationLogData)">
+            <summary>
+            logs the exception that occured for the invitation in the db
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Voter.SaveVoterProgress(Votations.NSurvey.Data.VoterAnswersData)">
+            <summary>
+            Saves the current voter progress and his answers to the database 
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Voter.SetVoterUId(System.Int32,System.String)">
+            <summary>
+            Set the give uid to the voter
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Voter.UpdateVoter(Votations.NSurvey.Data.VoterAnswersData)">
+            <summary>
+            Updates voter's answer
+            </summary>
+            <param name="voterAnswers">Voter and all his answers information</param>
+        </member>
+        <member name="M:Votations.NSurvey.BusinessRules.Voter.UpdateVoterUserName(System.Int32,System.String)">
+            <summary>
+            Update the asp.net username of the voter
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.DataAccess.Answers">
+            <summary>
+            Contains the methods to access answers database data.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Answers.GetAnswerById(System.Int32,System.String)">
+            <summary>
+            Return an answer object that reflects the database answer
+            </summary>
+            <param name="answeriD">Id of the answer you need</param>
+            <returns>An answer object with the current database values</returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Answers.GetAnswerFile(System.Int32,System.String)">
+            <summary>
+            Get the details of the file
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Answers.GetAnswerFileCount(System.String)">
+            <summary>
+            Get the count of files in a group
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Answers.GetAnswerFileData(System.Int32,System.String)">
+            <summary>
+            Get the binarie data of the file
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Answers.GetAnswers(System.Int32,System.String)">
+            <summary>
+            Get all answers for a given question
+            </summary>
+            <param name="questionId">question which is owning the answers</param>
+            <param name="languageId">Language in which to return the answers, -1 act as the default language</param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Answers.GetAnswersList(System.Int32)">
+            <summary>
+            Get a list of answers for the given question
+            </summary>
+            <param name="questionId">question which is owning the answers</param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Answers.GetAnswersScoreTotal(System.String)">
+            <summary>
+            Return the total score of the given answers
+            </summary>
+            <param name="answersIdValues">CSV of answer ids to get the total score from</param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Answers.GetAnswerTypeMode(System.Int32)">
+            <summary>
+            returns the type mode of the answer
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Answers.GetGuidFiles(System.String)">
+            <summary>
+            Get a list of all files associated with this guidto
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Answers.GetPublishersList(System.Int32)">
+            <summary>
+            Get a list of answers that can be subscribed to
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Answers.GetQuestionPublishersList(System.Int32)">
+            <summary>
+            Get a list of answers that are acting as a publisher
+            in the question
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Answers.GetRandomAnswers(System.Int32,System.Int32,System.String)">
+            <summary>
+            Get all answers and randomize them
+            </summary>
+            <param name="questionId">question which is owning the answers</param>
+            <param name="randomSeed"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Answers.GetSelectableAnswers(System.Int32)">
+            <summary>
+            Get all answers for a given question that can be selected 
+            </summary>
+            <param name="questionId">question which is owning the answers</param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Answers.GetSubscriptionList(System.Int32)">
+            <summary>
+            Get a list of answers to which the answer has subscribed to
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Answers.GetUnValidatedFileAnswers(System.Int32,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Returns all the files that have not yet been validated
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Answers.GetValidatedFileAnswers(System.Int32,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Returns all the files that have already been validated
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Answers.RestoreAnswerProperties(System.Int32)">
+            <summary>
+            Restores properties in the database
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.DataAccess.AnswerTypes">
+            <summary>
+            Contains the methods to access answer types database data.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.AnswerTypes.GetAnswerTypeById(System.Int32)">
+            <summary>
+            Return an answer type object that reflects the database answer type
+            </summary>
+            <param name="answerTypeId">Id of the answer type you need</param>
+            <returns>An answer type object with the current database values</returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.AnswerTypes.GetAnswerTypes">
+            <summary>
+            Returns all the answer type available
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.AnswerTypes.GetAnswerTypesList">
+            <summary>
+            Returns a list of answer types list
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.AnswerTypes.GetAssignedAnswerTypesList(System.Int32,System.Int32)">
+            <summary>
+            Returns a list of answer types available to the user
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.AnswerTypes.GetEditableAnswerTypesList">
+            <summary>
+            Returns a list of answer types that can be edited from the
+            admin interface
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.AnswerTypes.GetEditableAssignedAnswerTypesList(System.Int32)">
+            <summary>
+            Returns a list of answer types available to the user and that can 
+            be edited from the admin interface
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.DataAccess.DbAccess">
+            <summary>
+            Provides an abstraction layer to access
+            common DB read / write features
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.DbAccess.ExecuteDataset(System.String)">
+            <summary>
+            Execute a SqlCommand (that returns a resultset and takes no parameters) against the provided SqlConnection. 
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.DataAccess.Filters">
+            <summary>
+            Contains the business rules that are used for a filter.
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.DataAccess.Libraries">
+            <summary>
+            Contains the methods to access answer types database data.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Libraries.GetLibraries">
+            <summary>
+            Returns all available libraries
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Libraries.GetLibraryById(System.Int32)">
+            <summary>
+            Return a library object that reflects the database library
+            </summary>
+            <param name="answerTypeId">Id of the library you need</param>
+            <returns>An Library data object with the current database values</returns>
+        </member>
+        <member name="T:Votations.NSurvey.DataAccess.MultiLanguages">
+            <summary>
+            Contains the methods to access multi language database data.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.MultiLanguages.GetMultiLanguageMode(System.Int32)">
+            <summary>
+            Returns current mode
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.MultiLanguages.GetMultiLanguages">
+            <summary>
+            Get all languages available
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.MultiLanguages.GetSurveyLanguages(System.Int32,System.String)">
+            <summary>
+            Get all enabled languages for the survey
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.DataAccess.Questions">
+            <summary>
+            Contains the methods to access questions database data
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetAnswerableQuestionList(System.Int32)">
+            <summary>
+            Returns a question list that can be answered 
+            </summary>
+            <param name="surveyId">Survey id from which you want to retrieve the questions</param>
+            <returns>A question object collection</returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetAnswerableQuestionList(System.Int32,System.Int32)">
+            <summary>
+            Returns a question list of the given page that can be answered 
+            </summary>
+            <param name="surveyId">Survey id from which you want to retrieve the questions</param>
+            <returns>A question object collection</returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetAnswerableQuestionListInPageRange(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Returns a question list of the given page range that can be answered 
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetAnswerableQuestionListWithoutChilds(System.Int32)">
+            <summary>
+            Returns a question list that can be answered without their child questions
+            </summary>
+            <param name="surveyId">Survey id from which you want to retrieve the questions</param>
+            <returns>A question object collection</returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetAnswerableQuestionWithoutChilds(System.Int32)">
+            <summary>
+            Returns the questions that can be answered without their childs
+            </summary>
+            <param name="surveyId">Survey id from which you want to retrieve the questions</param>
+            <returns>A question object collection</returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetAnswerableSingleQuestionListWithoutChilds(System.Int32)">
+            <summary>
+            Returns a question list that can be answered and that don't have any questions
+            </summary>
+            <param name="surveyId">Survey id from which you want to retrieve the questions</param>
+            <returns>A question object collection</returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetCrossTabResults(System.Int32,System.Int32)">
+            <summary>
+            returns a results set with the compare question's answers number of voter 
+            that have also answered the base question answer
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetLibraryAnswerableSingleQuestionListWithoutChilds(System.Int32)">
+            <summary>
+            Returns a question list for the given library 
+            that can be answered and that don't have any child questions
+            </summary>
+            <returns>A question object collection</returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetLibraryQuestionList(System.Int32)">
+            <summary>
+            Returns all question listed in the library
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetLibraryQuestionListWithoutChilds(System.Int32)">
+            <summary>
+            Returns all question listed in the library without their child questions
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetLibraryQuestions(System.Int32,System.String)">
+            <summary>
+            Returns all question listed in the library
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetMatrixChildQuestions(System.Int32,System.String)">
+            <summary>
+            Returns all child question from the given question
+            </summary>
+            <param name="parentQuestionId">Parent question id from which you want to retrieve the questions</param>
+            <returns>A question object collection</returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetPagedQuestions(System.Int32,System.Int32,System.String)">
+            <summary>
+            Returns the question until next page break is encountered
+            </summary>
+            <param name="surveyId">Survey id from which you want to retrieve the paged questions</param>
+            <param name="pageNumber">Page to retrieve</param>
+            <returns>A question object collection</returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetQuestionAnswerConnections(System.Int32)">
+            <summary>
+            Returns all question's answer subscribers
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetQuestionById(System.Int32,System.String)">
+            <summary>
+            Return a question object that reflects the database question
+            </summary>
+            <param name="questionId">Id of the question you need</param>
+            <returns>A questiondata object with the current database values</returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetQuestionForExport(System.Int32)">
+            <summary>
+            Returns all question details, answers and answer types
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetQuestionHierarchy(System.Int32)">
+            <summary>
+            Returns all question including their childs
+            </summary>
+            <param name="surveyId">Survey id from which you want to retrieve the questions and childs</param>
+            <returns>A question object collection with all their childs</returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetQuestionLayoutModes">
+            <summary>
+            Return the layout modes available
+            </summary>
+            <returns>A questionlayoutmodedata object with the current layout values</returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetQuestionListForPageRange(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Returns a question list of all available questions
+            in the given page range
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetQuestionListWithSelectableAnswers(System.Int32)">
+            <summary>
+            Returns a question list with only text, questionid and display order field 
+            from the given survey that have at leat one selectable answer type
+            </summary>
+            <param name="surveyId">Survey id from which you want to retrieve the questions</param>
+            <returns>A question object collection</returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetQuestionListWithSelectableAnswers(System.Int32,System.Int32)">
+            <summary>
+            Returns a question list of the given page with only text, questionid and display order field 
+            from the given survey that have at leat one selectable answer type
+            </summary>
+            <param name="surveyId">Survey id from which you want to retrieve the questions</param>
+            <returns>A question object collection</returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetQuestionResults(System.Int32,System.Int32,System.String,System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Returns the question and its answers results
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetQuestions(System.Int32,System.Boolean)">
+            <summary>
+            Returns all question from the given survey with title
+            cleaned up from any html tag
+            </summary>
+            <param name="surveyId">Survey id from which you want to retrieve the questions</param>
+            <returns>A question object collection</returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetQuestions(System.Int32,System.String)">
+            <summary>
+            Returns all question from the given survey
+            </summary>
+            <param name="surveyId">Survey id from which you want to retrieve the questions</param>
+            <returns>A question object collection</returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetQuestionsAnswers(System.Int32)">
+            <summary>
+            Returns all question and all their answers from the given survey
+            </summary>
+            <param name="surveyId">Survey id from which you want to retrieve the questions and answers</param>
+            <returns>A question object collection with all answers</returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetQuestionSectionGridAnswers(System.Int32)">
+            <summary>
+            Get all answerids to show in the grid
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetQuestionSectionOptions(System.Int32,System.String)">
+            <summary>
+            Return the options available for the question's section
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetQuestionSkipLogicRules(System.Int32)">
+            <summary>
+            Retrieves the skip logic rules for this question
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetRandomPagedQuestions(System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            Get the questions until next page break is encountered and 
+            return them in a random them
+            </summary>
+            <param name="surveyId">Survey id from which you want to retrieve the paged questions</param>
+            <param name="pageNumber">Page to retrieve</param>
+            <returns>A question object collection</returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetSelectableQuestionSelectionModes">
+            <summary>
+            Return the selection mode available for a singe question type
+            </summary>
+            <returns>A questionselectionmode object with the current selections options</returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetTotalCrossTabResults(System.Int32,System.Int32)">
+            <summary>
+            returns a results set with the total of compare question's answers number of voter 
+            that have answered or not answered the base question answers
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.GetUnansweredCrossTabResults(System.Int32,System.Int32)">
+            <summary>
+            returns a results set with the compare question's answers number of voter 
+            that have not answered the base question answers
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.ParseHTMLTagsFromQuestionText(System.String,System.Int32)">
+            <summary>
+            Parse HTML tags from the question text
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Questions.ParseHTMLTagsFromQuestionText(Votations.NSurvey.Data.QuestionData,System.Int32)">
+            <summary>
+            Parse HTML tags from the question collection
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.DataAccess.RegularExpressions">
+            <summary>
+            Provides the method to access the RegularExpression's data.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.RegularExpressions.GetAllRegularExpressionsList">
+            <summary>
+            Retrieves all regular expressions from the database
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.RegularExpressions.GetEditableRegularExpressionsListOfUser(System.Int32)">
+            <summary>
+            Retrieves all regular expressions from the database that can be edited 
+            by the user
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.RegularExpressions.GetRegularExpressionById(System.Int32)">
+            <summary>
+            Retrieves regular expression details from the database
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.RegularExpressions.GetRegularExpressionsOfUser(System.Int32,System.Int32)">
+            <summary>
+            Retrieves all regular expressions from the database assigned to a user
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.DataAccess.Reports">
+            <summary>
+            Provides the method to access the reports's data.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Reports.GetReportScores(System.Int32,System.Int32)">
+            <summary>
+            Returns all the text entries of the voters
+            </summary>
+            <param name="surveyId"></param>
+            <param name="voterId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Votations.NSurvey.DataAccess.Roles">
+            <summary>
+            Provides the method to access the role's data.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Roles.GetAllRolesList">
+            <summary>
+            Retrieves all role from the database
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Roles.GetRoleById(System.Int32)">
+            <summary>
+            Retrieves role details from the database
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Roles.GetRolesOfUser(System.Int32)">
+            <summary>
+            Retrieves all role from the database assigned to a user
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Roles.GetSecurityRightList">
+            <summary>
+            retrieve the list of available security rights
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Roles.GetUnassignedRolesToUser(System.Int32)">
+            <summary>
+            Retrieves all role from the database not assigned to a user
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.DataAccess.SecurityAddIns">
+            <summary>
+            Provides the method to access the security addins's data.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.SecurityAddIns.GetAddInById(System.Int32,System.Int32)">
+            <summary>
+            Return a AddIn object that reflects the database addin data
+            </summary>
+            <param name="addInId">Id of the addin you need</param>
+            <returns>A WebSecurityAddInData object with the current database values</returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.SecurityAddIns.GetAvailableAddIns(System.Int32)">
+            <summary>
+            Returns the available addins (addins that are not already in use) 
+            for the survey
+            </summary>
+            <param name="surveyId"></param>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.SecurityAddIns.GetEnabledWebSecurityAddIns(System.Int32)">
+            <summary>
+            Get all ony security addins that are enabled for the survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.SecurityAddIns.GetUnAuthentifiedUserActions">
+            <summary>
+            Get a list of all available actions
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.SecurityAddIns.GetWebSecurityAddIns(System.Int32)">
+            <summary>
+            Get all security addins available for the survey
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.DataAccess.Surveys">
+            <summary>
+            Contains the methods to access surveys database data
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.AspSecurityAllowsMultipleSubmissions(System.Int32)">
+            <summary>
+            Check if the survey allows multiple submission
+            for the same username 
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetActivatedSurvey">
+            <summary>
+            Return a survey object that reflects the current activated poll. 
+            IE: The survey that shows up when the surveybox has a surveyid value of 
+            0
+            </summary>
+            <returns>A surveydata dataset with the current database values</returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetAllSurveys">
+            <summary>
+            Retrieves all surveys details from the database
+            </summary>
+            <returns>A SurveyData dataset</returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetAllSurveysList">
+            <summary>
+            Get a survey list with only the survey id and title
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetAllSurveysByTitle(System.String,System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            Get a survey list with only the survey id and title filtered by title
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetArchivedSurveys">
+            <summary>
+            Retrieves all archived surveys from the database
+            </summary>
+            <returns>A SurveyData dataset of all archived surveys</returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetSurveyIdFromGuid(System.Guid)">
+            <summary>
+            Retrieves all archived surveys from the database
+            </summary>
+            <returns>A SurveyData dataset of all archived surveys</returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetAssignedSurveysList(System.Int32)">
+            <summary>
+            Get a survey list assigned to the user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetCookieExpiration(System.Int32)">
+            <summary>
+            Get the number of minutes after which the security cookie 
+            expires
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetFirstSurveyId">
+            <summary>
+            Retrieves the first survey ID available in the DB
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetFirstSurveyId(System.Int32)">
+            <summary>
+            Retrieves the first survey ID available for the user in the DB
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetFormForExport(System.Int32)">
+            <summary>
+            Returns all the survey, questions, answers
+            for a survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetIPExpiration(System.Int32)">
+            <summary>
+            Get the number of minutes after which the security IP 
+            expires
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetPagesNumber(System.Int32)">
+            <summary>
+            Returns the total of pages in the survey
+            </summary>
+            <param name="surveyId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetQuotaSettings(System.Int32)">
+            <summary>
+            Retrieves the quota of the survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetSurveyBranchingRules(System.Int32)">
+            <summary>
+            returns the branching rules for the given survey
+            </summary>
+            <param name="surveyId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetSurveyById(System.Int32,System.String)">
+            <summary>
+            Return a survey object that reflects the database poll
+            </summary>
+            <param name="surveyId">Id of the survey you need</param>
+            <returns>A SurveyData dataset object with the current database values</returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetSurveyMessageCondition(System.Int32)">
+            <summary>
+            returns the thank you message conditions for the given survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetSurveyMessageConditions(System.Int32)">
+            <summary>
+            returns the thank you message conditions for the given survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetSurveyNotificationModes">
+            <summary>
+            Returns a list of available email notification mode
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetSurveyPageBranchingRules(System.Int32,System.Int32)">
+            <summary>
+            returns the branching rules for the given page of the survey
+            </summary>
+            <param name="surveyId"></param>
+            <param name="pageNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetSurveyPageBranchingRulesDetails(System.Int32,System.Int32)">
+            <summary>
+            returns the branching rules for the given page with all
+            their details
+            </summary>
+            <param name="surveyId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetSurveyPageOptions(System.Int32,System.Int32)">
+            <summary>
+            Retrieves the options that were setup for the page
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetSurveyPassword(System.Int32)">
+            <summary>
+            Get the access password of the survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetSurveyPipeDataFromQuestionId(System.Int32)">
+            <summary>
+            Returns all the data need to handle 
+            and process question / answer piping
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetSurveyProgressModes">
+            <summary>
+            Returns a list of available progress modes
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetSurveyResumeModes">
+            <summary>
+            Returns a list of available resume modes
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetSurveyUnAuthentifiedUserAction(System.Int32)">
+            <summary>
+            Get the actions that is set for the given survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.GetUnAssignedSurveysList(System.Int32)">
+            <summary>
+            Get a survey list not assigned to the user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.HasPageBranching(System.Int32,System.Int32)">
+            <summary>
+            Returns true if the page has any branching rule
+            associated with it
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.IsSurveyOnlyInvited(System.Int32)">
+            <summary>
+            Check if the survey only accept entries from
+            users with email codes
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.IsSurveySaveTokenUserData(System.Int32)">
+            <summary>
+            Check if the survey sAves Token User Data
+            
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.IsSurveyPasswordValid(System.Int32,System.String)">
+            <summary>
+            Check if the given password is valid for the survey
+            </summary>
+            <param name="surveyId">Id of the protected survey</param>
+            <param name="password">the password to check for</param>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.IsSurveyScored(System.Int32)">
+            <summary>
+            Check if survey has been set to be scored
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.NSurveyAllowsMultipleSubmissions(System.Int32)">
+            <summary>
+            Check if the survey allows multiple submission
+            for the same nsurvey username 
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Surveys.TotalOfSurveys">
+            <summary>
+            Returns the total of surveys stored in the database
+            </summary>
+            <returns>Total of surveys</returns>
+        </member>
+        <member name="T:Votations.NSurvey.DataAccess.Users">
+            <summary>
+            Provides the method to access the user's data.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Users.GetAdminCount">
+            <summary>
+            Retrieves the number of admins in the database
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Users.GetAllUsersList">
+            <summary>
+            Retrieves all users from the database
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Users.GetNSurveyUserData(System.String,System.String)">
+            <summary>
+            Retrieves the user if any available
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Users.GetUserById(System.Int32)">
+            <summary>
+            Retrieves users details from the database
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Users.GetUserByIdFromUserName(System.String)">
+            <summary>
+            Retrieves the user id, returns -1 if not found
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Users.GetUserSecurityRights(System.Int32)">
+            <summary>
+            Retrieves an array of the security rights of the user
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Users.GetUserSettings(System.Int32)">
+            <summary>
+            Get user settings 
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Users.IsAdministrator(System.Int32)">
+            <summary>
+            Checks if the given user is an administrator
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.DataAccess.Voters">
+            <summary>
+            Provides the method to access the voter's data.
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Voters.CheckIfVoterIPExists(System.Int32,System.String)">
+            <summary>
+            Checks if the given IP has already been registered
+            in the expiration time lapse
+            </summary>
+            <param name="surveyId"></param>
+            <param name="voterIP"></param>
+            <param name="IPExpires"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Voters.CheckIfVoterUIdExists(System.Int32,System.String)">
+            <summary>
+            Checks if the given UID has already been registered
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Voters.GetCSVExport(System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            Returns a CSV formatted string with all voters answers
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Voters.GetDayStats(System.Int32,System.DateTime)">
+            <summary>
+            Get number of voters for the given date
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Voters.GetEmailUId(System.Int32,System.String)">
+            <summary>
+            returns the guid from the queue for the given email and survey id
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Voters.GetForExport(System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            Returns all the answers of the voters
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Voters.GetInvitationLogs(System.Int32,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Returns all the logged message during a mailing
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Voters.GetMonthlyStats(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Get voter's statistics for the given month and year
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Voters.GetUnvalidatedVotersCount(System.Int32)">
+            <summary>
+            returns the number of unvalidated entries (saved progress)
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Voters.GetVoterAnswers(System.Int32)">
+            <summary>
+            Get voter's answers and voter details
+            </summary>
+            <param name="voterId"></param>
+            <returns>voterAnswers</returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Voters.GetVotersCompleteEntries(System.Int32,System.Int32,System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            Returns all the entries (text / selections) of the voters
+            </summary>
+            <param name="surveyId"></param>
+            <param name="pageNumber"></param>
+            <param name="pageSize"></param>
+            <param name="startDate"></param>
+            <param name="endDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Voters.GetVotersInvitationAnswered(System.Int32,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Returns all voters who have answered an invitation 
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Voters.GetVotersInvitationQueue(System.Int32,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Returns the invitation queue of the survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Voters.GetVotersTextEntries(System.Int32,System.Int32,System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            Returns all the text entries of the voters
+            </summary>
+            <param name="surveyId"></param>
+            <param name="pageNumber"></param>
+            <param name="pageSize"></param>
+            <param name="startDate"></param>
+            <param name="endDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Voters.HasUserNameVoted(System.Int32,System.String)">
+            <summary>
+            Check if the username has already taken the survey
+            </summary>
+        </member>
+        <member name="M:Votations.NSurvey.DataAccess.Voters.ResumeVoterAnswers(System.Int32,System.String)">
+            <summary>
+            Get the voter's data and answers to resume a session
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.SurveyNotFoundException">
+            <summary>
+            Thrown when a given survey is not found in the 
+            database.
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.SurveyExistsFoundException">
+            <summary>
+            Thrown when a given survey already exists in the 
+            database.
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.QuestionNotFoundException">
+            <summary>
+            Thrown when a given question is not found in the 
+            database.
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.VoterNotFoundException">
+            <summary>
+            Thrown when a given voter is not found in the 
+            database.
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.AnswerNotFoundException">
+            <summary>
+            Thrown when a given answer is not found in the 
+            database.
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.AnswerTypeInUseException">
+            <summary>
+            Thrown when a given answer type is already in use by an
+            answer.
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.FilterNotFoundException">
+            <summary>
+            Thrown when a given Filter is not found in the 
+            database.
+            </summary>
+        </member>
+        <member name="T:Votations.NSurvey.UserAuthenticationFailedException">
+            <summary>
+            Thrown when a given voter is not found in the 
+            database.
+            </summary>
+        </member>
+    </members>
+</doc>

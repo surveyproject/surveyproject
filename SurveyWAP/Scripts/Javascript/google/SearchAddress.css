@@ -1,0 +1,70 @@
+﻿/*Google Maps : search address & markers CSS*/
+
+    html, body, #map-canvas {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+      #map-canvas
+      {
+
+          width:480px; 
+          height: 300px; 
+          margin-left: auto;
+          margin-right: auto
+
+      }
+
+      #panel {
+        position: relative;
+        top: 5px;
+        margin-left: auto;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        width: 100%;
+        height:100%;
+      }
+
+      #locationField, #controls {
+        position: relative;
+        width: 480px;
+      }
+      #autocomplete {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        width: 99%;
+      }
+      .label {
+        text-align: right;
+        font-weight: bold;
+        width: 100px;
+        color: #303030;
+      }
+      #address {
+        border: 1px solid #000090;
+        background-color: #f0f0ff;
+        width: 480px;
+        padding-right: 2px;
+      }
+      #address td {
+        font-size: 10pt;
+      }
+      .field {
+        width: 99%;
+        height: 25px;
+      }
+      .slimField {
+        width: 80px;
+      }
+      .wideField {
+        width: 200px;
+      }
+      #locationField {
+        height: 20px;
+        margin-bottom: 2px;
+      }

@@ -20,7 +20,7 @@
                 <hr style="color:#e2e2e2;" />
                 <br />
                 Once the respondents have finished answering the survey and submitted their answers
-                Survey can be setup to trigger a completion action to run at the end of the survey. 
+                the survey can be set to trigger a "completion action" to run at the end of the survey. 
                 Available completion actions are:<br />
                 <br />
                 <b>&quot;Thank you&quot; Message Action</b><br />
@@ -35,13 +35,13 @@
                 and when the update button is clicked the text will be assigned to the selected
                 language.<br />
                 <br />
-                This feature is only available if Survey's <a href="Multi-Languages Settings.aspx" title="Multi Languages">Multi Languages Settings</a>
+                This feature is only available if the survey's <a href="Multi-Languages Settings.aspx" title="Multi Languages">Multi Languages Settings</a>
                 are activated.<br />
                 <br />
                 * Thanks Message<br />
                 This is the message that will be shown to the end user once the survey is completed.
                 <br />
-                <br />
+                <br /> <br />
                 <b>URL Redirection Action</b><br />
                 <br />
                 This action will redirect the user to a specific page or URL once the survey is completed.<br />
@@ -51,7 +51,7 @@
                 which the &quot;Thank You&quot; message text is edited and in which language it
                 will be shown.<br />
                 <br />
-                This feature is only available if Survey's <a href="Multi-Languages Settings.aspx" title="Multi Languages">Multi Languages Settings</a>
+                This feature is only available if survey's <a href="Multi-Languages Settings.aspx" title="Multi Languages">Multi Languages Settings</a>
                 are activated.<br />
                 <br />
                 * Thanks Message<br />
@@ -63,6 +63,20 @@
                 * Redirection URL<br />
                 This is the URL to which the user will be redirected. It must be in following format: http://www.yourdomain.com or 
                 http://www.youdomain.com/yourpage.aspx<br />
+                                <br />
+                <br />
+                <b>Results Report Redirection URL</b><br />
+                <br />
+                This action will redirect the user to the Resultsreport page once the survey is completed. Through the resultsreport the respondent
+                will get an overview of all survey questions, the answers submitted by the respondent and scores. An option to print the report is shown on the page.
+                                <br />
+                <br />
+                * To set the correct Resultsreport redirection URL go to menuoption: Campaigns/ Web/ .. Deployment URL <br />
+                * copy the surveyid part of the url (e.g. surveyid=bb058c21-861d-450e-a2a5-4601467a59ca )<br />
+                * go back to the Completion menu<br />
+                * type the following url including questionmark: resultsreport.aspx?<br />
+                * paste the surveyid at the end of the typed part<br /><br />
+                URL Endresult: resultsreport.aspx?surveyid=bb058c21-861d-450e-a2a5-4601467a59ca 
                 <br />
                 <br />
                 <hr style="color:#e2e2e2;" />

@@ -18,3 +18,17 @@ D:\02_Programming\SurveyTest\Source_Survey_21Beta_TS\Reflector\Nsurvey_Emailing\
 D:\02_Programming\SurveyTest\Source_Survey_21Beta_TS\Reflector\Nsurvey_Emailing\obj\Debug\Votations.NSurvey.EMailing.dll
 D:\02_Programming\SurveyTest\Source_Survey_21Beta_TS\Reflector\Nsurvey_Emailing\obj\Debug\Votations.NSurvey.EMailing.pdb
 D:\02_Programming\SurveyTest\Source_Survey_21Beta_TS\Reflector\Nsurvey_Emailing\obj\Debug\Votations.NSurvey.EMailing.csprojResolveAssemblyReference.cache
+D:\02_Programming\SurveyProjectDevelopment\SP_MainDevelopment\Reflector\Nsurvey_Emailing\bin\Debug\Votations.NSurvey.EMailing.dll
+D:\02_Programming\SurveyProjectDevelopment\SP_MainDevelopment\Reflector\Nsurvey_Emailing\bin\Debug\Votations.NSurvey.EMailing.pdb
+D:\02_Programming\SurveyProjectDevelopment\SP_MainDevelopment\Reflector\Nsurvey_Emailing\obj\Debug\Votations.NSurvey.EMailing.dll
+D:\02_Programming\SurveyProjectDevelopment\SP_MainDevelopment\Reflector\Nsurvey_Emailing\obj\Debug\Votations.NSurvey.EMailing.pdb
+D:\04_Development\SpDevOnline\Sp24DevOnlineClone\Reflector\Nsurvey_Emailing\bin\Debug\Votations.NSurvey.EMailing.dll
+D:\04_Development\SpDevOnline\Sp24DevOnlineClone\Reflector\Nsurvey_Emailing\bin\Debug\Votations.NSurvey.EMailing.pdb
+D:\04_Development\SpDevOnline\Sp24DevOnlineClone\Reflector\Nsurvey_Emailing\obj\Debug\Votations.NSurvey.EMailing.dll
+D:\04_Development\SpDevOnline\Sp24DevOnlineClone\Reflector\Nsurvey_Emailing\obj\Debug\Votations.NSurvey.EMailing.pdb
+D:\04_Development\SpDevOnline\Sp24DevOnlineClone\Reflector\Nsurvey_Emailing\obj\Debug\Votations.NSurvey.EMailing.csprojResolveAssemblyReference.cache
+D:\02_Programming\_MsGitTfs\Repos\SurveyProjectDevOnline\Reflector\Nsurvey_Emailing\bin\Debug\Votations.NSurvey.EMailing.dll
+D:\02_Programming\_MsGitTfs\Repos\SurveyProjectDevOnline\Reflector\Nsurvey_Emailing\bin\Debug\Votations.NSurvey.EMailing.pdb
+D:\02_Programming\_MsGitTfs\Repos\SurveyProjectDevOnline\Reflector\Nsurvey_Emailing\obj\Debug\Votations.NSurvey.EMailing.dll
+D:\02_Programming\_MsGitTfs\Repos\SurveyProjectDevOnline\Reflector\Nsurvey_Emailing\obj\Debug\Votations.NSurvey.EMailing.pdb
+D:\02_Programming\_MsGitTfs\Repos\SurveyProjectDevOnline\Reflector\Nsurvey_Emailing\obj\Debug\Votations.NSurvey.EMailing.csprojResolveAssemblyReference.cache

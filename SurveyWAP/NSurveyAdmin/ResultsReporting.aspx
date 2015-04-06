@@ -83,6 +83,8 @@
 
                                         <asp:DropDownList ID="LayoutDropDownList" runat="server" AutoPostBack="True">
                                         </asp:DropDownList>
+                                        <asp:DropDownList ID="ThreeDeeDropDownList" Width="45" runat="server" Visible="false" AutoPostBack="True">
+                                        </asp:DropDownList>
               </li><li>
                                             <asp:Label ID="ResultsOrderLabel" runat="server" AssociatedControlID="ResultsOrderDropDownList" >Results order :</asp:Label>
 
@@ -121,7 +123,7 @@
                                         <br />
                                         <asp:Repeater ID="ChartRepeater" runat="server">
                                             <ItemTemplate>
-                                                <img alt="chartrepeater" class="rounded_corners" Width="100%" src='<%#GetFileName()%>?questionId=<%#DataBinder.Eval(Container.DataItem, "QuestionID")%>&FilterId=<%=GetFilterId().ToString()%>&SortOrder=<%=ResultsOrderDropDownList.SelectedValue%>&LanguageCode=<%=LanguagesDropdownlist.SelectedValue%>&StartDate=<%=StartDateTextBox.Text%>&EndDate=<%=EndDateTextBox.Text%>'>
+                                                <img alt="chartrepeater" class="rounded_corners" Width="100%" src='<%#GetFileName()%>?questionId=<%#DataBinder.Eval(Container.DataItem, "QuestionID")%>&FilterId=<%=GetFilterId().ToString()%>&SortOrder=<%=ResultsOrderDropDownList.SelectedValue%>&LanguageCode=<%=LanguagesDropdownlist.SelectedValue%>&StartDate=<%=StartDateTextBox.Text%>&EndDate=<%=EndDateTextBox.Text%>&ChartType=<%=LayoutDropDownList.SelectedValue%>&Enable3D=<%=ThreeDeeDropDownList.SelectedValue%>'>
                                                 <br />
                                                 <br />
                                             </ItemTemplate>

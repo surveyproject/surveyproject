@@ -204,6 +204,7 @@ table.TlcFront{background:url(../../images/PenSurvey.JPG) repeat-x center #fff;b
 .rounded_corners td{padding:3px}
 .scm{background:#7c8fe3;border-radius:5px;color:#fff;font-weight:700;margin-left:0;margin-right:.7em;padding:2px 7px 2px 5px;text-align:left;width:30%;-moz-border-radius:5px;-webkit-border-radius:5px}
 .selected{background:#852b91;color:#fff}
+.SettingsValueLabel{background-color:#FFFEB0; font-size:0.8em; padding:5px; border: solid 1px #FFDF0F; border-radius:5px; display:block;}
 .Social-Links{padding:15px 0 0;text-align:center}
 .Social-Links a{margin:0 0 0 5px}
 .StandardButton{width:80px}
@@ -220,9 +221,9 @@ a.level3,a.level3:link,a.level3:visited,a.level3:active{border:solid #000 1px;co
 a.level3:hover{border:solid #000 1px;color:#4B44D3;font-weight:700}
 a[id*="gvIPRanges"].IPLink{color:Blue;text-align:center}
 a[id*="lbAddNew"].IPLink{color:Blue}
-fieldset input,select{vertical-align:top;width:42%}
+/* fieldset input,select{vertical-align:top;width:42%} */
 fieldset li{background:#ffdf0f;border-radius:5px;list-style:none;margin:2px 0 0 10px;padding:15px;-moz-border-radius:5px;-webkit-border-radius:5px}
 fieldset ol{margin:0 2px 9px;padding:2px;width:98%}
-fieldset>fieldset input,select{vertical-align:top;width:42%}
+/* fieldset>fieldset input,select{vertical-align:top;width:42%} */
 fieldset>fieldset label{float:left;font-weight:700;margin-left:.7em;margin-right:.7em;padding-top:.2em;text-align:left;width:33%}
 input[id*="lvTokens"]{border:none;margin-right:10px}

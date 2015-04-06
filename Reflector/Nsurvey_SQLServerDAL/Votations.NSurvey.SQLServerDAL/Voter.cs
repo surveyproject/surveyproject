@@ -601,30 +601,17 @@ namespace Votations.NSurvey.SQLServerDAL
         public VoterData GetVotersInvitationAnswered(int surveyId, int pageNumber, int pageSize, out int totalRecords)
         {
             VoterData dataSet = new VoterData();
-
-            //SqlParameter[] commandParameters = new SqlParameter[] 
-            //{ new SqlParameter("@SurveyID", surveyId), 
-            //    new SqlParameter("@CurrentPage", pageNumber), 
-            //    new SqlParameter("@PageSize", pageSize), 
-            //    new SqlParameter("@TotalRecords", SqlDbType.Int) };
-            //commandParameters[3].Direction = ParameterDirection.Output;
-
-            ArrayList commandParameters = new ArrayList();
-            {
-                commandParameters.Add(new SqlParameter("@SurveyId", surveyId).SqlValue);
-                commandParameters.Add(new SqlParameter("@CurrentPage", pageNumber).SqlValue);
-                commandParameters.Add(new SqlParameter("@PageSize", pageSize).SqlValue);
-                commandParameters.Add(new SqlParameter("@TotalRecords", SqlDbType.Int){Direction = ParameterDirection.Output}.SqlValue);
-            }
-
-            DbConnection.db.LoadDataSet("vts_spVoterInvitationAnsweredGetAll", dataSet, new string[] { "Voters" }, commandParameters.ToArray());
-            //totalRecords = int.Parse(commandParameters[3].ToString());
-            //note: output parameter redundant, no longer used; cannot be combined with dataSet output;
-
-
-            totalRecords = dataSet.Voters.Rows.Count;
-
+            DbCommand dbCommand = DbConnection.db.GetStoredProcCommand("vts_spVoterInvitationAnsweredGetAll");
+            DbConnection.db.AddOutParameter(dbCommand, "@TotalRecords", DbType.Int32, 0);
+            DbConnection.db.AddInParameter(dbCommand, "@SurveyId", DbType.Int32, surveyId);
+            DbConnection.db.AddInParameter(dbCommand, "@CurrentPage", DbType.Int32, pageNumber);
+            DbConnection.db.AddInParameter(dbCommand, "@PageSize", DbType.Int32, pageSize);
+            DbConnection.db.LoadDataSet(dbCommand, dataSet, "Voters");
+            totalRecords = (int)DbConnection.db.GetParameterValue(dbCommand, "@TotalRecords");
             return dataSet;
+            
+
+            
         }
 
         /// <summary>
@@ -634,29 +621,14 @@ namespace Votations.NSurvey.SQLServerDAL
         {
             InvitationQueueData dataSet = new InvitationQueueData();
 
-            //SqlParameter[] commandParameters = new SqlParameter[] 
-            //{   new SqlParameter("@TotalRecords", SqlDbType.Int){Direction = ParameterDirection.Output},
-            //    new SqlParameter("@SurveyID", SqlDbType.Int){SqlValue = surveyId}, 
-            //    new SqlParameter("@CurrentPage", SqlDbType.Int){SqlValue=pageNumber}, 
-            //    new SqlParameter("@PageSize", SqlDbType.Int){SqlValue=pageSize} };
-
-            //commandParameters[0].Direction = ParameterDirection.Output;
-
-            ArrayList commandParameters = new ArrayList();
-            {
-                commandParameters.Add(new SqlParameter("@TotalRecords", SqlDbType.Int) { Direction = ParameterDirection.Output }.SqlValue);
-                commandParameters.Add(new SqlParameter("@SurveyId", surveyId).SqlValue);
-                commandParameters.Add(new SqlParameter("@CurrentPage", pageNumber).SqlValue);
-                commandParameters.Add(new SqlParameter("@PageSize", pageSize).SqlValue);
-            }
-
-            DbConnection.db.LoadDataSet("vts_spVoterInvitationQueueGetAll", dataSet, new string[] {"InvitationQueues"}, commandParameters.ToArray());
             
-            //totalRecords = Convert.ToInt32(commandParameters[0].ToString());
-            //note: output parameter redundant, no longer used; cannot be combined with dataSet output;
-
-            totalRecords = dataSet.InvitationQueues.Rows.Count;
-
+            DbCommand dbCommand = DbConnection.db.GetStoredProcCommand("vts_spVoterInvitationQueueGetAll");
+            DbConnection.db.AddOutParameter(dbCommand, "@TotalRecords", DbType.Int32, 0);
+            DbConnection.db.AddInParameter(dbCommand, "@SurveyId", DbType.Int32, surveyId);
+            DbConnection.db.AddInParameter(dbCommand, "@CurrentPage", DbType.Int32, pageNumber);
+            DbConnection.db.AddInParameter(dbCommand, "@PageSize", DbType.Int32, pageSize);
+            DbConnection.db.LoadDataSet(dbCommand, dataSet, "InvitationQueues");
+            totalRecords = (int)DbConnection.db.GetParameterValue(dbCommand, "@TotalRecords"); 
             return dataSet;
         }
 

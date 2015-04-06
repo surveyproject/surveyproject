@@ -22,6 +22,15 @@ namespace Votations.NSurvey.WebAdmin {
         protected global::System.Web.UI.WebControls.RadioButtonList rblReports;
         
         /// <summary>
+        /// ThreeDeeDropDownList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ThreeDeeDropDownList;
+        
+        /// <summary>
         /// pnlDropDownList control.
         /// </summary>
         /// <remarks>
