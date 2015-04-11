@@ -1,9 +1,12 @@
 # surveyproject_main_public
-Survey™ Project is a free. open source survey and (data entry) forms webapplication (WAP) for processing & gathering data online. 
 
-SP™ is written in C#, ASP.NET and runs on Windows OS, IIS and MsSqlserver databases.
+![Survey Project Logo](http://download-codeplex.sec.s-msft.com/Download?ProjectName=survey&DownloadId=838352&Build=20983)
 
-Survey™ Project is ideal to collect valuable information from customers, visitors or employees efficiently.
+- Survey™ Project is a free. open source survey and (data entry) forms webapplication (WAP) for processing & gathering data online. 
+
+- SP™ is written in C#, ASP.NET and runs on Windows OS, IIS and MsSqlserver databases.
+
+- Survey™ Project is ideal to collect valuable information from customers, visitors or employees efficiently.
 
 At Github you will find the most recent Survey™ Project source code and main branche for public development & access.
 
