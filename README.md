@@ -1,4 +1,4 @@
-# sp_main_public
+# surveyproject_main_public
 Survey™ Project is a free. open source survey and (data entry) forms webapplication (WAP) for processing & gathering data online. 
 
 SP™ is written in C#, ASP.NET and runs on Windows OS, IIS and MsSqlserver databases.
