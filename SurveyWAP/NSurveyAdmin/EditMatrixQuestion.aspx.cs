@@ -209,7 +209,8 @@ namespace Votations.NSurvey.WebAdmin
 
             if (_parentQuestionId == -1)
             {
-                throw new FormatException("Invalid matrix question id!");
+                //throw new FormatException("Invalid matrix question id!");
+                throw new FormatException(GetPageResource("InvalidMatrixQuestionID"));
             }
         }
 

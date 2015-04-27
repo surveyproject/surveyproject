@@ -620,7 +620,8 @@ namespace Votations.NSurvey.WebAdmin
                         header.QuestionText : header.QuestionIdText + " " +
                         (header.IsQuestionAliasNull() ? string.Empty : header.QuestionAlias));
 
-                default: return "Invalid DDl Value";
+                //default: return "Invalid DDl Value";
+                default: return (GetPageResource("DDlValue"));
             }
         }
 

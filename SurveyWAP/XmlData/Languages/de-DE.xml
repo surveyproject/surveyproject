@@ -3403,4 +3403,22 @@
   <data version="2.3" id="1134" name="SurveyListPageNrLiteral">
     <value>You are viewing page</value>
   </data>
+  <data version="2.4" id="1135" name="GeneralSettingsHyperlink">
+    <value>General Settings</value>
+  </data>
+  <data version="2.4" id="1136" name="InvalidMatrixQuestionID">
+    <value>Invalid matrix QuestionID!</value>
+  </data>
+  <data version="2.4" id="1137" name="InvalidVoterID">
+    <value>Invalid VoterID!</value>
+  </data>
+  <data version="2.4" id="1138" name="DDlValue">
+    <value>Invalid Dropdownlist Value</value>
+  </data>
+  <data version="2.4" id="1139" name="InvalidPageNumber">
+    <value>Invalid page number!</value>
+  </data>
+  <data version="2.4" id="1140" name="InvalidQuestionID">
+    <value>Invalid QuestionID!</value>
+  </data>
 </root>

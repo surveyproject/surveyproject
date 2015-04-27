@@ -75,7 +75,8 @@ namespace Votations.NSurvey.WebAdmin
                 Information.IsNumeric(Request["Page"]) ? int.Parse(Request["Page"]) : -1;
             if (_pageNumber == -1)
             {
-                throw new FormatException("Invalid page number!");
+                //throw new FormatException("Invalid page number!");
+                throw new FormatException(GetPageResource("InvalidPageNumber"));
             }
 
             PageBranchingRules.SurveyId = SurveyId;

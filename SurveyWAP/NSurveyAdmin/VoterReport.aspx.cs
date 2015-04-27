@@ -88,7 +88,8 @@ namespace Votations.NSurvey.WebAdmin
 			}
 			else
 			{
-				throw new FormatException("Invalid voter id!");
+				//throw new FormatException("Invalid voter id!");
+                throw new FormatException(GetPageResource("InvalidVoterID"));
 			}
 
 			if (!Page.IsPostBack)

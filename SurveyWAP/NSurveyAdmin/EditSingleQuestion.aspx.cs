@@ -229,7 +229,8 @@ namespace Votations.NSurvey.WebAdmin
 
             if (_questionId == -1)
             {
-                throw new FormatException("Invalid question id!");
+                //throw new FormatException("Invalid question id!");
+                throw new FormatException(GetPageResource("InvalidQuestion"));
             }
         }
 

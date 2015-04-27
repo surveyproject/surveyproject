@@ -74,7 +74,8 @@ namespace Votations.NSurvey.WebAdmin
 				Information.IsNumeric(Request["Page"]) ? int.Parse(Request["Page"]) : -1;
 			if (_pageNumber == -1)
 			{
-				throw new FormatException("Invalid page number!");
+				//throw new FormatException("Invalid page number!");
+                throw new FormatException(GetPageResource("InvalidPageNumber"));
 			}	
 			
 			ValidateRequestQuestionId();
@@ -130,7 +131,8 @@ namespace Votations.NSurvey.WebAdmin
 
 			if (_questionId == -1)
 			{
-				throw new FormatException("Invalid question id!");
+				//throw new FormatException("Invalid question id!");
+                throw new FormatException(GetPageResource("InvalidQuestionID"));
 			}		
 		}
 

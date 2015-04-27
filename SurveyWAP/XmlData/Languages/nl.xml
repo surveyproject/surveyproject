@@ -3441,4 +3441,22 @@ Vriendelijke groet
   <data version="2.3" id="1134" name="SurveyListPageNrLiteral">
     <value>Pagina</value>
   </data>
+  <data version="2.4" id="1135" name="GeneralSettingsHyperlink">
+    <value>Algemene Instellingen</value>
+  </data>
+  <data version="2.4" id="1136" name="InvalidMatrixQuestionID">
+    <value>Ongeldige matrix QuestionID!</value>
+  </data>
+  <data version="2.4" id="1137" name="InvalidVoterID">
+    <value>Ongeldige VoterID!</value>
+  </data>
+  <data version="2.4" id="1138" name="DDlValue">
+    <value>Ongeldige keuzelijst waarde</value>
+  </data>
+  <data version="2.4" id="1139" name="InvalidPageNumber">
+    <value>Ongeldig pagina nummer!</value>
+  </data>
+  <data version="2.4" id="1140" name="InvalidQuestionID">
+    <value>Ongeldige QuestionID!</value>
+  </data>
 </root>
