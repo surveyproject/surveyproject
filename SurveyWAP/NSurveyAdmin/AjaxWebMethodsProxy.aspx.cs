@@ -54,7 +54,7 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
         [System.Web.Services.WebMethod()]
         public static void TreeViewDelFolder(string SelectedFolderId)
         {
-            int id = int.Parse(SelectedFolderId.Substring(1));
+            int id = int.Parse(SelectedFolderId.Substring(1),System.Globalization.CultureInfo.InvariantCulture);
 
             if (SelectedFolderId.StartsWith("f"))
                 new Folders().DeleteFolderById(id);
@@ -91,8 +91,8 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
             try
             {
 
-                int id = int.Parse(ItemId.Substring(1));
-                int? pid = (string.IsNullOrEmpty(ParentFolderId)) ? (int?)null : int.Parse(ParentFolderId.Substring(1));
+                int id = int.Parse(ItemId.Substring(1), System.Globalization.CultureInfo.InvariantCulture);
+                int? pid = (string.IsNullOrEmpty(ParentFolderId)) ? (int?)null : int.Parse(ParentFolderId.Substring(1), System.Globalization.CultureInfo.InvariantCulture);
 
                 // skip move to a list
                 if (ParentFolderId.StartsWith("s"))

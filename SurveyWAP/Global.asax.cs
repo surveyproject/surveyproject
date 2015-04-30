@@ -53,10 +53,10 @@ namespace SurveyWAP
 
             Response.Write("<h2>Survey™ Project Global Page Error</h2>\n");
             Response.Write("An application error has been generated. More details on the error can be found in the logfiles directory of the Survey™ Project application. An automated warning message has been sent to the default SMTP server account.\n");
-            Response.Write( "<p>" + exc.Message + "\n" + exc.InnerException.Message +  "</p>\n");
-            Response.Write("Please return to the <a href='" + HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Authority + HttpContext.Current.Request.ApplicationPath + "/default.aspx'>Default Page</a>\n");
+            //Response.Write( "<p>" + exc.Message + "\n" + exc.InnerException.Message +  "</p>\n");
+            //Response.Write("Please return to the <a href='" + HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Authority + HttpContext.Current.Request.ApplicationPath + "/default.aspx'>Default Page</a>\n");
 
-            Response.Write("<br /><br /> <hr style='color:#e2e2e2;'/><br /><br />&copy; Fryslan Webservices&trade; 2012 </div> ");
+            //Response.Write("<br /><br /> <hr style='color:#e2e2e2;'/><br /><br />&copy; Fryslan Webservices&trade; 2012 </div> ");
 
             // Log the exception and notify system operators
             ExceptionUtility.LogException(exc, "DefaultPage");

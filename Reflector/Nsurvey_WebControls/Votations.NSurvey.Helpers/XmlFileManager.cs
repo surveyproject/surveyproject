@@ -5,6 +5,7 @@ namespace Votations.NSurvey.Helpers
     using System.IO;
     using System.Web;
     using System.Web.Caching;
+    using System.Xml;
     using Votations.NSurvey;
     using Votations.NSurvey.Data;
 
@@ -35,7 +36,7 @@ namespace Votations.NSurvey.Helpers
                     return null;
                 }
                 NSurveyDataSource source = new NSurveyDataSource();
-                source.ReadXml(filePath);
+                source.ReadXml(XmlTextReader.Create(filePath, new XmlReaderSettings() { DtdProcessing = DtdProcessing.Ignore, XmlResolver = null }));
                 CacheDependency dependencies = new CacheDependency(filePath);
                 this._context.Cache.Insert(this.FileName + CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, source, dependencies);
             }
@@ -55,7 +56,7 @@ namespace Votations.NSurvey.Helpers
                     return null;
                 }
                 NSurveyDataSource source = new NSurveyDataSource();
-                source.ReadXml(filePath);
+                source.ReadXml(XmlTextReader.Create(filePath, new XmlReaderSettings() { DtdProcessing = DtdProcessing.Ignore, XmlResolver = null }));
                 CacheDependency dependencies = new CacheDependency(filePath);
                 this._context.Cache.Insert(this.FileName, source, dependencies);
             }

@@ -14,7 +14,7 @@ namespace Votations.NSurvey.WebAdmin
     /// <summary>
     /// This was renamed from Survey to SurveyMain as it causes conflict
     /// </summary>
-    public partial class SurveyMobile : System.Web.UI.Page
+    public partial class SurveyMobile : PageViewState
     {
         private int GetIdFromUrl()
         {

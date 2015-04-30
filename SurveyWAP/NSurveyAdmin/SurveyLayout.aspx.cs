@@ -173,6 +173,7 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
         {
             if (ddlTemplate.SelectedIndex == 0) return;
             string cssToDelete = Constants.Constants.GetFilePathCSS(SurveyId) + ddlTemplate.SelectedItem.Text;
+            if (cssToDelete.LastIndexOfAny(Path.GetInvalidPathChars()) > -1) return;
             File.Delete(cssToDelete);
             BindFields();
 
@@ -207,7 +208,9 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
 
         protected void EditCssSaveButton_Click(object sender, EventArgs e)
         {
-            File.WriteAllText(Constants.Constants.GetFilePathCSS(SurveyId) + ddlTemplate.SelectedItem.Text, EditCssTextBox.Text);
+            string path = Constants.Constants.GetFilePathCSS(SurveyId) + ddlTemplate.SelectedItem.Text;
+            if (path.LastIndexOfAny(Path.GetInvalidPathChars()) > -1) return;
+            File.WriteAllText(path, EditCssTextBox.Text);
             EditCssTextBox.Text = string.Empty;
             EditCssPlaceHolder.Visible = false;
             pnlHdrFooter.Visible = true;
@@ -221,6 +224,8 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
             pnlHdrFooter.Visible = false;
             EditCssPlaceHolder.Visible = true;
             EditCssTextBox.Focus();
+            string path = Constants.Constants.GetFilePathCSS(SurveyId) + ddlTemplate.SelectedItem.Text;
+            if (path.LastIndexOfAny(Path.GetInvalidPathChars()) > -1) return;
             EditCssTextBox.Text = File.ReadAllText(Constants.Constants.GetFilePathCSS(SurveyId) + ddlTemplate.SelectedItem.Text);
         }
         

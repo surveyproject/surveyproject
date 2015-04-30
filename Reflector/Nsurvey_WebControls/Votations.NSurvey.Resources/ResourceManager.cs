@@ -96,8 +96,8 @@ namespace Votations.NSurvey.Resources
             }
             if (File.Exists(path))
             {
-                XmlDocument document = new XmlDocument();
-                document.Load(path);
+                XmlDocument document = new XmlDocument() { XmlResolver = null };
+                document.Load(XmlTextReader.Create(path, new XmlReaderSettings() { DtdProcessing = DtdProcessing.Ignore, XmlResolver = null }));
                 hashtable = new Hashtable();
                 foreach (XmlNode node in document["root"])
                 {

@@ -32,7 +32,8 @@ namespace Votations.NSurvey.Data
             if (s != null)
             {
                 DataSet dataSet = new DataSet();
-                dataSet.ReadXmlSchema(new XmlTextReader(new StringReader(s)));
+                dataSet.ReadXmlSchema(XmlTextReader.Create(new StringReader(s), new XmlReaderSettings() { DtdProcessing = DtdProcessing.Ignore,XmlResolver = null }));
+                //dataSet.ReadXmlSchema(XmlTextReader.Create(new StringReader(s), new XmlReaderSettings() { DtdProcessing = DtdProcessing.Ignore,XmlResolver = null }));
                 if (dataSet.Tables["AnswerTypes"] != null)
                 {
                     base.Tables.Add(new AnswerTypesDataTable(dataSet.Tables["AnswerTypes"]));
@@ -68,7 +69,7 @@ namespace Votations.NSurvey.Data
             MemoryStream w = new MemoryStream();
             base.WriteXmlSchema(new XmlTextWriter(w, null));
             w.Position = 0L;
-            return XmlSchema.Read(new XmlTextReader(w), null);
+            return XmlSchema.Read((XmlTextReader.Create(w, new XmlReaderSettings() { DtdProcessing = DtdProcessing.Ignore, XmlResolver = null })), null);
         }
 
         private void InitClass()

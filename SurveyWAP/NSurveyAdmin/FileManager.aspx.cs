@@ -308,29 +308,30 @@ namespace Votations.NSurvey.WebAdmin
 		private void ExportFilesButton_Click(object sender, System.EventArgs e)
 		{
 			// Check if the user has correctly ended his path
-			if (ServerPathTextBox.Text.Length > 0 && 
-				ServerPathTextBox.Text[ServerPathTextBox.Text.Length-1] != '\\')
+            string serverPath = ServerPathTextBox.Text;
+			if (serverPath.Length > 0 && 
+				serverPath[serverPath.Length-1] != '\\')
 			{
-					ServerPathTextBox.Text += '\\';
+					serverPath += '\\';
 			}
 
-			if (ServerPathTextBox.Text.Length == 0)
+			if (serverPath.Length == 0 || serverPath.LastIndexOfAny(Path.GetInvalidPathChars()) > -1)
 			{
                 ((PageBase)Page).ShowErrorMessage(MessageLabel,((PageBase)Page).GetPageResource("PleaseEnterPathMessage"));
 				MessageLabel.Visible = true;
 				return;
 			}
-			else if (!Directory.Exists(ServerPathTextBox.Text))
+			else if (!Directory.Exists(serverPath))
 			{
 ((PageBase)Page).ShowErrorMessage(MessageLabel,((PageBase)Page).GetPageResource("PathNotExistMessage"));
 				MessageLabel.Visible = true;
 				return;
 			}
 	
-			int exportedSize = new Answer().ExportAnswerFilesToDirectory(SurveyId, ServerPathTextBox.Text, (FileExportMode)int.Parse(FileGroupsDropDownList.SelectedValue)); 
+			int exportedSize = new Answer().ExportAnswerFilesToDirectory(SurveyId, serverPath, (FileExportMode)int.Parse(FileGroupsDropDownList.SelectedValue)); 
 
             ((PageBase)Page).ShowNormalMessage(MessageLabel,string.Format(GetPageResource("FilesWrittenMessage"), 
-				(Math.Round((double)exportedSize/1048576*100000)/100000).ToString("0.##"), ServerPathTextBox.Text));
+				(Math.Round((double)exportedSize/1048576*100000)/100000).ToString("0.##"), serverPath));
 			MessageLabel.Visible = true;
 		}
 

@@ -34,7 +34,7 @@ namespace Votations.NSurvey.Data {
             string strSchema = ((string)(info.GetValue("XmlSchema", typeof(string))));
             if ((strSchema != null)) {
                 DataSet ds = new DataSet();
-                ds.ReadXmlSchema(new XmlTextReader(new System.IO.StringReader(strSchema)));
+                ds.ReadXmlSchema(XmlTextReader.Create(new System.IO.StringReader(strSchema), new XmlReaderSettings() { DtdProcessing = DtdProcessing.Ignore, XmlResolver = null }));
                 if ((ds.Tables["Files"] != null)) {
                     this.Tables.Add(new FilesDataTable(ds.Tables["Files"]));
                 }
@@ -99,7 +99,8 @@ namespace Votations.NSurvey.Data {
             System.IO.MemoryStream stream = new System.IO.MemoryStream();
             this.WriteXmlSchema(new XmlTextWriter(stream, null));
             stream.Position = 0;
-            return System.Xml.Schema.XmlSchema.Read(new XmlTextReader(stream), null);
+            //return System.Xml.Schema.XmlSchema.Read(new XmlTextReader(stream), null);
+            return System.Xml.Schema.XmlSchema.Read((XmlTextReader.Create(stream, new XmlReaderSettings() { DtdProcessing = DtdProcessing.Ignore, XmlResolver = null })), null);
         }
         
         internal void InitVars() {
