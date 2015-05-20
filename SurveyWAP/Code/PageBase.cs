@@ -46,7 +46,7 @@ namespace Votations.NSurvey.WebAdmin
     /// <summary>
     /// PageBase class description
     /// </summary>
-    public class PageBase : Page
+    public class PageBase : PageViewState
     {
         /// <summary>
         /// Creates new nsurvey context from the current user name
@@ -372,7 +372,8 @@ namespace Votations.NSurvey.WebAdmin
             l.Visible = true;
             //l.ForeColor = System.Drawing.Color.Red;
             l.CssClass = "ErrorMessage icon-warning-sign";
-            l.Text = s;
+            //l.Text = s;
+            l.Text = "An error has occurred";
 
         }
     }

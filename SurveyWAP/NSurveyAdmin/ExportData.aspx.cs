@@ -302,8 +302,8 @@ namespace Votations.NSurvey.WebAdmin
                 }
             }
 
-
-            XmlReader reader = new XmlTextReader(voterAnswers.GetXml(), XmlNodeType.Document, null); ;
+            XmlReader reader = XmlReader.Create(new StringReader(voterAnswers.GetXml()), new XmlReaderSettings() { XmlResolver = null});
+            //XmlReader reader = new XmlTextReader(voterAnswers.GetXml(), XmlNodeType.Document, null) ;
             XmlTextWriter writer = new XmlTextWriter(Response.OutputStream, System.Text.Encoding.UTF8); ;
 
             writer.WriteStartDocument(true);

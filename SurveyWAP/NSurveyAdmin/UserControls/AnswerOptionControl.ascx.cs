@@ -100,7 +100,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 		/// </summary>
 		public int AnswerId
 		{
-			get { return (ViewState["AnswerID"]==null) ? -1 : int.Parse(ViewState["AnswerID"].ToString()); }
+            get { return (ViewState["AnswerID"] == null) ? -1 : int.Parse(ViewState["AnswerID"].ToString(), System.Globalization.CultureInfo.InvariantCulture); }
 			set { ViewState["AnswerID"] = value; }
 		}
 
@@ -109,7 +109,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 		/// </summary>
 		public int QuestionId
 		{
-			get { return (ViewState["QuestionId"]==null) ? -1 : int.Parse(ViewState["QuestionId"].ToString()); }
+            get { return (ViewState["QuestionId"] == null) ? -1 : int.Parse(ViewState["QuestionId"].ToString(), System.Globalization.CultureInfo.InvariantCulture); }
 			set { ViewState["QuestionId"] = value; }
 		}
 
@@ -127,7 +127,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 
 		public int SurveyId
 		{
-			get { return (ViewState["SurveyId"]==null) ? -1 : int.Parse(ViewState["SurveyId"].ToString()); }
+            get { return (ViewState["SurveyId"] == null) ? -1 : int.Parse(ViewState["SurveyId"].ToString(), System.Globalization.CultureInfo.InvariantCulture); }
 			set { ViewState["SurveyId"] = value; }
 		}
 
@@ -139,7 +139,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 
         public int AnsuwerIDText
         {
-            get { return (ViewState["AnsuwerIDText"] == null) ? -1 : int.Parse(ViewState["AnsuwerIDText"].ToString()); }
+            get { return (ViewState["AnsuwerIDText"] == null) ? -1 : int.Parse(ViewState["AnsuwerIDText"].ToString(), System.Globalization.CultureInfo.InvariantCulture); }
             set { ViewState["AnsuwerIDText"] = value; }
         }
 
@@ -160,17 +160,17 @@ namespace Votations.NSurvey.WebAdmin.UserControls
         }
         public int SliderValue
         {
-            get { return (ViewState["SliderValue"] == null) ? 0 : int.Parse(ViewState["SliderValue"].ToString()); }
+            get { return (ViewState["SliderValue"] == null) ? 0 : int.Parse(ViewState["SliderValue"].ToString(), System.Globalization.CultureInfo.InvariantCulture); }
             set { ViewState["SliderValue"] = value; }
         }
         public int SliderMin
         {
-            get { return (ViewState["SliderMin"] == null) ? 0 : int.Parse(ViewState["SliderMin"].ToString()); }
+            get { return (ViewState["SliderMin"] == null) ? 0 : int.Parse(ViewState["SliderMin"].ToString(), System.Globalization.CultureInfo.InvariantCulture); }
             set { ViewState["SliderMin"] = value; }
         }
         public int SliderMax
         {
-            get { return (ViewState["SliderMax"] == null) ? 0 : int.Parse(ViewState["SliderMax"].ToString()); }
+            get { return (ViewState["SliderMax"] == null) ? 0 : int.Parse(ViewState["SliderMax"].ToString(), System.Globalization.CultureInfo.InvariantCulture); }
             set { ViewState["SliderMax"] = value; }
         }
         public bool SliderAnimate
@@ -180,7 +180,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
         }
         public int SliderStep
         {
-            get { return (ViewState["SliderStep"] == null) ? 0 : int.Parse(ViewState["SliderStep"].ToString()); }
+            get { return (ViewState["SliderStep"] == null) ? 0 : int.Parse(ViewState["SliderStep"].ToString(), System.Globalization.CultureInfo.InvariantCulture); }
             set { ViewState["SliderStep"] = value; }
         }
 
@@ -199,7 +199,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 				BindData();
 			}
 
-			AnswerTypeData typeData = new AnswerTypes().GetAnswerTypeById(int.Parse(AnswerTypeDropDownList.SelectedValue));
+            AnswerTypeData typeData = new AnswerTypes().GetAnswerTypeById(int.Parse(AnswerTypeDropDownList.SelectedValue, System.Globalization.CultureInfo.InvariantCulture));
 			SetUIState(typeData.AnswerTypes[0].TypeMode, false);
 		}
 
@@ -394,31 +394,31 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 			DefaultTextTextBox.Text = answer.Answers[0].DefaultText;
 			AnswerPipeAliasTextBox.Text = answer.Answers[0].AnswerPipeAlias;
 			SelectionCheckBox.Checked = answer.Answers[0].Selected;
-			if (AnswerTypeDropDownList.Items.FindByValue(answer.Answers[0].AnswerTypeId.ToString()) != null)
+			if (AnswerTypeDropDownList.Items.FindByValue(answer.Answers[0].AnswerTypeId.ToString(System.Globalization.CultureInfo.InvariantCulture)) != null)
 			{
-				AnswerTypeDropDownList.SelectedValue = answer.Answers[0].AnswerTypeId.ToString();
+                AnswerTypeDropDownList.SelectedValue = answer.Answers[0].AnswerTypeId.ToString(System.Globalization.CultureInfo.InvariantCulture);
 			}
 			RatingPartCheckbox.Checked = answer.Answers[0].RatePart;
 			RatingPartCheckbox.Visible = RatingEnabled;
 			AnswerRatingLabel.Visible = RatingEnabled;
-			ScoreTextBox.Text = answer.Answers[0].ScorePoint.ToString();
+            ScoreTextBox.Text = answer.Answers[0].ScorePoint.ToString(System.Globalization.CultureInfo.InvariantCulture);
 			ScoreTextBox.Visible = ScoreEnabled;
 			ScoreLabel.Visible = ScoreEnabled;
 			MandatoryCheckBox.Checked = answer.Answers[0].Mandatory;
 			if (!answer.Answers[0].IsRegularExpressionIdNull())
 			{
-				RegExDropDownList.SelectedValue = answer.Answers[0].RegularExpressionId.ToString();
+                RegExDropDownList.SelectedValue = answer.Answers[0].RegularExpressionId.ToString(System.Globalization.CultureInfo.InvariantCulture);
 			}
             txtAnswerAlias.Text = answer.Answers[0].AnswerAlias;
             txtAnswerID.Text = answer.Answers[0].AnswerIDText;
 
             SliderRangeDDL.SelectedValue = answer.Answers[0].SliderRange;
 
-            SliderValueTextBox.Text = Convert.ToString(answer.Answers[0].SliderValue);
-            SliderMinTextBox.Text = Convert.ToString(answer.Answers[0].SliderMin);
-            SliderMaxTextBox.Text = Convert.ToString(answer.Answers[0].SliderMax);
+            SliderValueTextBox.Text = Convert.ToString(answer.Answers[0].SliderValue, System.Globalization.CultureInfo.InvariantCulture);
+            SliderMinTextBox.Text = Convert.ToString(answer.Answers[0].SliderMin, System.Globalization.CultureInfo.InvariantCulture);
+            SliderMaxTextBox.Text = Convert.ToString(answer.Answers[0].SliderMax, System.Globalization.CultureInfo.InvariantCulture);
             SliderAnimateCheckbox.Checked = answer.Answers[0].SliderAnimate;
-            SliderStepTextBox.Text = Convert.ToString(answer.Answers[0].SliderStep);
+            SliderStepTextBox.Text = Convert.ToString(answer.Answers[0].SliderStep, System.Globalization.CultureInfo.InvariantCulture);
             
 			SetUIState(answer.Answers[0].TypeMode, false);
 		}
@@ -590,23 +590,23 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 			newAnswer.QuestionId = QuestionId;
 			newAnswer.AnswerText = AnswerTextTextBox.Text;
 			newAnswer.ImageURL = AnswerImageURLTextBox.Text;
-			newAnswer.AnswerTypeId = 
-				int.Parse(AnswerTypeDropDownList.SelectedValue);
+			newAnswer.AnswerTypeId =
+                int.Parse(AnswerTypeDropDownList.SelectedValue, System.Globalization.CultureInfo.InvariantCulture);
 			newAnswer.RatePart = RatingPartCheckbox.Checked;
 			newAnswer.DefaultText = DefaultTextTextBox.Text;
 			newAnswer.Selected = SelectionCheckBox.Checked;
 			newAnswer.AnswerPipeAlias = AnswerPipeAliasTextBox.Text;
-			newAnswer.ScorePoint = Information.IsNumeric(ScoreTextBox.Text) ? int.Parse(ScoreTextBox.Text) : 0;
+            newAnswer.ScorePoint = Information.IsNumeric(ScoreTextBox.Text) ? int.Parse(ScoreTextBox.Text, System.Globalization.CultureInfo.InvariantCulture) : 0;
 			newAnswer.Mandatory = MandatoryCheckBox.Checked;
             newAnswer.AnswerAlias = txtAnswerAlias.Text;
             newAnswer.AnswerIDText = txtAnswerID.Text;
 
             newAnswer.SliderRange = SliderRangeDDL.SelectedValue.ToString();
-            newAnswer.SliderValue = Information.IsNumeric(SliderValueTextBox) ? int.Parse(SliderValueTextBox.Text) : 0;
-            newAnswer.SliderMin = Information.IsNumeric(SliderMinTextBox.Text) ? int.Parse(SliderMinTextBox.Text) : 0;
-            newAnswer.SliderMax = Information.IsNumeric(SliderMaxTextBox.Text) ? int.Parse(SliderMaxTextBox.Text) : 0;
+            newAnswer.SliderValue = Information.IsNumeric(SliderValueTextBox) ? int.Parse(SliderValueTextBox.Text, System.Globalization.CultureInfo.InvariantCulture) : 0;
+            newAnswer.SliderMin = Information.IsNumeric(SliderMinTextBox.Text) ? int.Parse(SliderMinTextBox.Text, System.Globalization.CultureInfo.InvariantCulture) : 0;
+            newAnswer.SliderMax = Information.IsNumeric(SliderMaxTextBox.Text) ? int.Parse(SliderMaxTextBox.Text, System.Globalization.CultureInfo.InvariantCulture) : 0;
             newAnswer.SliderAnimate = SliderAnimateCheckbox.Checked;
-            newAnswer.SliderStep = Information.IsNumeric(SliderStepTextBox.Text) ? int.Parse(SliderStepTextBox.Text) : 0;
+            newAnswer.SliderStep = Information.IsNumeric(SliderStepTextBox.Text) ? int.Parse(SliderStepTextBox.Text, System.Globalization.CultureInfo.InvariantCulture) : 0;
 
 			if (RegExDropDownList.SelectedIndex > 0)
 			{
@@ -698,7 +698,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 
 		private void AnswerTypeDropDownList_SelectedIndexChanged(object sender, System.EventArgs e)
 		{
-			AnswerTypeData typeData = new AnswerTypes().GetAnswerTypeById(int.Parse(AnswerTypeDropDownList.SelectedValue));
+            AnswerTypeData typeData = new AnswerTypes().GetAnswerTypeById(int.Parse(AnswerTypeDropDownList.SelectedValue, System.Globalization.CultureInfo.InvariantCulture));
 			SetUIState(typeData.AnswerTypes[0].TypeMode, true);
 		}
 
@@ -710,7 +710,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 
 		private void AvailablePublishersListBox_SelectedIndexChanged(object sender, System.EventArgs e)
 		{
-			new Answer().SubscribeToPublisher(int.Parse(AvailablePublishersListBox.SelectedValue), AnswerId);
+            new Answer().SubscribeToPublisher(int.Parse(AvailablePublishersListBox.SelectedValue, System.Globalization.CultureInfo.InvariantCulture), AnswerId);
 			BindData();
 			MessageLabel.Visible = true;
             ((PageBase)Page).ShowNormalMessage(MessageLabel,((PageBase)Page).GetPageResource("SelectionUpdatedMessage"));
@@ -718,7 +718,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 
 		private void SubscribedListbox_SelectedIndexChanged(object sender, System.EventArgs e)
 		{
-			new Answer().UnSubscribeFromPublisher(int.Parse(SubscribedListbox.SelectedValue), AnswerId);
+            new Answer().UnSubscribeFromPublisher(int.Parse(SubscribedListbox.SelectedValue, System.Globalization.CultureInfo.InvariantCulture), AnswerId);
 			BindData();
 			MessageLabel.Visible = true;
             ((PageBase)Page).ShowNormalMessage(MessageLabel,((PageBase)Page).GetPageResource("SelectionUpdatedMessage"));

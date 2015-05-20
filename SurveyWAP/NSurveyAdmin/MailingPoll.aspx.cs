@@ -98,14 +98,15 @@ namespace Votations.NSurvey.WebAdmin
             }
             catch (Exception ex)
             {
-                if (ex.InnerException != null && ex.InnerException.InnerException != null)
-                {
-                    Response.Write(@"<script type='text/javascript' language='javascript'>alert('" + ex.InnerException.InnerException.Message.Replace("'", "\\'").Replace(Environment.NewLine, "\\n") + "')</script>");
-                }
-                else
-                {
-                    Response.Write(@"<script type='text/javascript' language='javascript'>alert('" + ex.Message.Replace("'", "\\'").Replace(Environment.NewLine, "\\n") + "')</script>");
-                }
+                //if (ex.InnerException != null && ex.InnerException.InnerException != null)
+                //{
+                //    Response.Write(@"<script type='text/javascript' language='javascript'>alert('" + ex.InnerException.InnerException.Message.Replace("'", "\\'").Replace(Environment.NewLine, "\\n") + "')</script>");
+                //}
+                //else
+                //{
+                //    Response.Write(@"<script type='text/javascript' language='javascript'>alert('" + ex.Message.Replace("'", "\\'").Replace(Environment.NewLine, "\\n") + "')</script>");
+                //}
+                Response.Write(@"<script type='text/javascript' language='javascript'>alert('An error has occurred')</script>");
             }
 
 		}

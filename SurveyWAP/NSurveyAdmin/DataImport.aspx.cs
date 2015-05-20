@@ -57,8 +57,7 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
 
                 try
                 {
-
-                    voterData.ReadXml(fupDataFile.PostedFile.InputStream);
+                    voterData.ReadXml(System.Xml.XmlReader.Create(fupDataFile.PostedFile.InputStream, (new System.Xml.XmlReaderSettings() { XmlResolver = null })));
                     if (rbSelRange.Checked)
                     {
                         DateTime start = DateTime.Parse(txtFrom.Text);

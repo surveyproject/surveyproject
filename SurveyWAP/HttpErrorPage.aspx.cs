@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace Votations.NSurvey.WebAdmin
 {
-    public partial class HttpErrorPage : System.Web.UI.Page
+    public partial class HttpErrorPage : PageViewState
     {
 
       //  protected HttpException ex = null;

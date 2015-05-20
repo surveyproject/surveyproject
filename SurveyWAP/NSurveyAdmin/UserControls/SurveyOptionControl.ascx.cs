@@ -565,7 +565,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
                 try
                 {
 
-                    importedSurveys.ReadXml(ImportFile.PostedFile.InputStream);
+                    importedSurveys.ReadXml(System.Xml.XmlReader.Create(ImportFile.PostedFile.InputStream, (new System.Xml.XmlReaderSettings() { XmlResolver = null })));
                     if (importedSurveys.Survey.Rows.Count > 0)
                     {
                         // Prevents SQL injection from custom hand written datasources Sql answer types in the import Xml 

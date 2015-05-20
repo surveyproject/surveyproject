@@ -361,7 +361,7 @@ namespace Votations.NSurvey.WebAdmin
                 NSurveyQuestion importedQuestions = new NSurveyQuestion();
                 try
                 {
-                    importedQuestions.ReadXml(ImportFile.PostedFile.InputStream);
+                    importedQuestions.ReadXml(System.Xml.XmlReader.Create(ImportFile.PostedFile.InputStream, (new System.Xml.XmlReaderSettings() { XmlResolver = null })));
 
 
                     SetImportedQuestionsDefaults(importedQuestions);
