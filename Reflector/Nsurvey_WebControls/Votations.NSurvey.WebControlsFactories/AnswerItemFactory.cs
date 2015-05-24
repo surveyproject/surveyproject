@@ -171,11 +171,14 @@ namespace Votations.NSurvey.WebControlsFactories
                 }
                 item4.ImageUrl = answer.IsImageURLNull() ? null : answer.ImageURL;
             }
-            string str = (section == null) ? GetUserText(answer.AnswerId, 0, voterAnswersState) : GetUserText(answer.AnswerId, section.SectionNumber, voterAnswersState);
-            if (str != null)
+            //string str = (section == null) ? GetUserText(answer.AnswerId, 0, voterAnswersState) : GetUserText(answer.AnswerId, section.SectionNumber, voterAnswersState);
+            string str = string.Empty;
+            if ((!answer.IsDefaultTextNull()) && (answer.DefaultText.Length > 0)) str = new PipeManager().PipeValuesInText(answer.QuestionId, answer.DefaultText, voterAnswersState, languageCode);
+            if (!string.IsNullOrEmpty(str))
             {
                 item.DefaultText = str;
             }
+            
             else if ((enableDefaults && !answer.IsDefaultTextNull()) && (answer.DefaultText.Length > 0))
             {
                 item.DefaultText = ParseDefaultAnswerText(answer.QuestionId, answer.DefaultText, voterAnswersState, languageCode);
