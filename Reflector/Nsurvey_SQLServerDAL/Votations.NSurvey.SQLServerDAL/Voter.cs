@@ -565,6 +565,18 @@ namespace Votations.NSurvey.SQLServerDAL
             return dataSet;
         }
 
+        public VoterData GetVoterByUserName(int surveyId, string userName) {
+            ArrayList commandParameters = new ArrayList();
+            {
+                commandParameters.Add(new SqlParameter("@SurveyId", surveyId).SqlValue);
+                commandParameters.Add(new SqlParameter("@UserName", userName).SqlValue);
+            }
+
+            VoterData dataSet = new VoterData();
+            DbConnection.db.LoadDataSet("vts_spVoterGetByUserName", dataSet, new string[] { "Voters", "Voter" }, commandParameters.ToArray());
+            return dataSet;
+        }
+        
         /// <summary>
         /// Returns all the entries text / selections of the voters
         /// </summary>
