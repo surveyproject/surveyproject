@@ -32,7 +32,6 @@ namespace Votations.NSurvey.IDAL
         VoterStatisticsData GetMonthlyStats(int surveyId, int month, int year);
         int GetUnvalidatedVotersCount(int surveyId);
         VoterAnswersData GetVoterAnswers(int voterId);
-        VoterData GetVoterByUserName(int surveyId, string userName);
         DataSet GetVotersCompleteEntries(int surveyId, int pageNumber, int pageSize, DateTime startDate, DateTime endDate);
         VoterData GetVotersInvitationAnswered(int surveyId, int pageNumber, int pageSize, out int totalRecords);
         InvitationQueueData GetVotersInvitationQueue(int surveyId, int pageNumber, int pageSize, out int totalRecords);

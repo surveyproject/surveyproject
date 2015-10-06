@@ -111,10 +111,6 @@ namespace Votations.NSurvey.DataAccess
             return voterAnswers;
         }
 
-        public VoterData GetVoterByUserName(int surveyId, string userName) {
-            return VoterFactory.Create().GetVoterByUserName(surveyId, userName);
-        }
-        
         /// <summary>
         /// Returns all the entries (text / selections) of the voters
         /// </summary>
