@@ -1,6 +1,4 @@
-﻿USE [sp23test]
-GO
-/****** Object:  UserDefinedTableType [dbo].[IntTableType]    Script Date: 19-8-2014 22:01:40 ******/
+﻿/****** Object:  UserDefinedTableType [dbo].[IntTableType]    Script Date: 19-8-2014 22:01:40 ******/
 CREATE TYPE [dbo].[IntTableType] AS TABLE(
 	[value] [int] NULL
 )
@@ -2926,9 +2924,9 @@ deallocate c1;
 	SELECT f.folderId, f.parentfolderId FROM vts_tbfolders f 
 	INNER JOIN fCTE fc ON f.ParentFolderId = fc.fid
 )--- delete passed folder
-Delete fd from [vts_tbFolders] AS fd
-INNER JOIN fCTE AS fc ON fc.fid = fd.FolderId
-where fd.ParentFolderId IS NOT NULL
+Delete [vts_tbFolders] from [vts_tbFolders]
+INNER JOIN fCTE AS fc ON fc.fid = FolderId
+where ParentFolderId IS NOT NULL
 
 END
 
