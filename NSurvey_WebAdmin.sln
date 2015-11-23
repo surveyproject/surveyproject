@@ -17,6 +17,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Votations.NSurvey.DAL", "Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Votations.NSurvey.EMailing", "Reflector\Nsurvey_Emailing\Votations.NSurvey.EMailing.csproj", "{7D02ED0F-6C2F-4550-B203-CA03D190A5E3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database Scripts", "Database Scripts", "{A9EE1D62-1366-433A-AFD5-50CC52D2B114}"
+	ProjectSection(SolutionItems) = preProject
+		Database Scripts\ApplicationProvisioning_Script.sql = Database Scripts\ApplicationProvisioning_Script.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
