@@ -102,6 +102,10 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="default.aspx" />
+    <Content Include="DeploymentManifest.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="Filemanager\.gitignore" />
     <Content Include="Filemanager\connectors\ashx\filemanager.ashx" />

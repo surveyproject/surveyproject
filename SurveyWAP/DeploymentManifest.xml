@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appManifest xmlns="http://schemas.apprenda.com/DeploymentManifest"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://schemas.apprenda.com/DeploymentManifest http://apprenda.com/schemas/platform/6.0/DeploymentManifest.xsd" >
+
+  <!--Valid values for applicationServices level: "None", "Authentication", "Authorization", "Multitenancy", "Billing"-->
+  <applicationServices level="Multitenancy" />
+
+  <!--Valid values for presentation strategy: "CommingledAppRoot", "CommingledRootApp", "IsolatedAppTenantRoot", "IsolatedRootAppTenant"-->
+  <!--Valid values for presentation pipelineMode: "Classic", "Integrated"-->
+  <!--  <presentation strategy="IsolatedAppTenantRoot" pipelineMode="Integrated" /> -->
+
+  <!--Valid values for presentation strategy: "IsolatedDB", "Commingled"-->
+  <persistence strategy="IsolatedDB" defaultSchema="dbo">
+    <!-- <tableOptions>
+      <tableOption name="ExampleTableName" schema="dbo" option="AllTenants" />
+    </tableOptions>
+    -->
+  </persistence>
+  <executionSecurables>
+    <securable name="SurveyAdmin" />
+  </executionSecurables>
+
+  <entitlementDefinitions>
+    <entitlementDefinition isPublished="true" name="Default" description="A basic Customer Portal subscription.">
+      <userBasedEntitlements>
+        <plans>
+          <plan name="Basic" description="Basic" planType="Perpetual">
+            <planModels>
+              <planModel type="Perpetual" />
+            </planModels>
+          </plan>
+        </plans>
+      </userBasedEntitlements>
+    </entitlementDefinition>
+  </entitlementDefinitions>
+  
+</appManifest>
