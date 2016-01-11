@@ -62,6 +62,7 @@
       <HintPath>mscorlib.dll</HintPath>
       <Private />
     </Reference>
+    <Reference Include="SaaSGrid.API, Version=6.0.3.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>

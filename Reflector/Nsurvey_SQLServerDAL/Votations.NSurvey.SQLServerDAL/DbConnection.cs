@@ -4,6 +4,7 @@ using Microsoft.Practices.EnterpriseLibrary.Data.Configuration;
 using System.Web;
 using System.Web.Caching;
 using System.Configuration;
+using Apprenda.SaaSGrid;
 
 namespace Votations.NSurvey.SQLServerDAL
 {
@@ -25,30 +26,35 @@ namespace Votations.NSurvey.SQLServerDAL
 
             get
             {
-
-                if (HttpContext.Current == null)
+                try
                 {
-
-                   // return System.Configuration.ConfigurationManager.ConnectionStrings[""].ConnectionString;     
-            
-                    DatabaseSettings dbSettings = (DatabaseSettings)ConfigurationManager.GetSection("dataConfiguration");
-                    return ConfigurationManager.ConnectionStrings[dbSettings.DefaultDatabase].ConnectionString;
-
+                    return TenantContext.Current.ConnectionString;
                 }
-
-                Cache cache = HttpContext.Current.Cache;
-
-                if (cache["NSurvey.NewDbConnectionString"] == null)
+                catch 
                 {
+                    if (HttpContext.Current == null)
+                    {
 
-                    DatabaseSettings dbSettings = (DatabaseSettings)ConfigurationManager.GetSection("dataConfiguration");
-                    String values2 = System.Configuration.ConfigurationManager.ConnectionStrings[dbSettings.DefaultDatabase].ConnectionString;
+                        // return System.Configuration.ConfigurationManager.ConnectionStrings[""].ConnectionString;     
 
-                    cache.Insert("NSurvey.NewDbConnectionString", values2);
+                        DatabaseSettings dbSettings = (DatabaseSettings)ConfigurationManager.GetSection("dataConfiguration");
+                        return ConfigurationManager.ConnectionStrings[dbSettings.DefaultDatabase].ConnectionString;
+
+                    }
+
+                    Cache cache = HttpContext.Current.Cache;
+
+                    if (cache["NSurvey.NewDbConnectionString"] == null)
+                    {
+
+                        DatabaseSettings dbSettings = (DatabaseSettings)ConfigurationManager.GetSection("dataConfiguration");
+                        String values2 = System.Configuration.ConfigurationManager.ConnectionStrings[dbSettings.DefaultDatabase].ConnectionString;
+
+                        cache.Insert("NSurvey.NewDbConnectionString", values2);
+                    }
+
+                    return cache["NSurvey.NewDbConnectionString"].ToString();
                 }
-
-                return cache["NSurvey.NewDbConnectionString"].ToString();
-
             }
 
         }
