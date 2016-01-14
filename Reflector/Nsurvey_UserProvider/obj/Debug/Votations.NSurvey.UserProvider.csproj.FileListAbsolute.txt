@@ -32,3 +32,14 @@ D:\02_Programming\SurveyTest\Source_Survey_21Beta_TS\Reflector\Nsurvey_UserProvi
 D:\02_Programming\SurveyTest\Source_Survey_21Beta_TS\Reflector\Nsurvey_UserProvider\obj\Debug\Votations.NSurvey.UserProvider.dll
 D:\02_Programming\SurveyTest\Source_Survey_21Beta_TS\Reflector\Nsurvey_UserProvider\obj\Debug\Votations.NSurvey.UserProvider.pdb
 D:\02_Programming\SurveyTest\Source_Survey_21Beta_TS\Reflector\Nsurvey_UserProvider\obj\Debug\Votations.NSurvey.UserProvider.csprojResolveAssemblyReference.cache
+C:\Users\chrism\Documents\Source\git\surveyproject_main_public\Reflector\Nsurvey_UserProvider\bin\Debug\Votations.NSurvey.UserProvider.dll
+C:\Users\chrism\Documents\Source\git\surveyproject_main_public\Reflector\Nsurvey_UserProvider\bin\Debug\Votations.NSurvey.UserProvider.pdb
+C:\Users\chrism\Documents\Source\git\surveyproject_main_public\Reflector\Nsurvey_UserProvider\bin\Debug\Votations.NSurvey.BE.dll
+C:\Users\chrism\Documents\Source\git\surveyproject_main_public\Reflector\Nsurvey_UserProvider\bin\Debug\Votations.NSurvey.BLL.dll
+C:\Users\chrism\Documents\Source\git\surveyproject_main_public\Reflector\Nsurvey_UserProvider\bin\Debug\Votations.NSurvey.DAL.dll
+C:\Users\chrism\Documents\Source\git\surveyproject_main_public\Reflector\Nsurvey_UserProvider\bin\Debug\Votations.NSurvey.BE.pdb
+C:\Users\chrism\Documents\Source\git\surveyproject_main_public\Reflector\Nsurvey_UserProvider\bin\Debug\Votations.NSurvey.BLL.pdb
+C:\Users\chrism\Documents\Source\git\surveyproject_main_public\Reflector\Nsurvey_UserProvider\bin\Debug\Votations.NSurvey.DAL.pdb
+C:\Users\chrism\Documents\Source\git\surveyproject_main_public\Reflector\Nsurvey_UserProvider\obj\Debug\Votations.NSurvey.UserProvider.csprojResolveAssemblyReference.cache
+C:\Users\chrism\Documents\Source\git\surveyproject_main_public\Reflector\Nsurvey_UserProvider\obj\Debug\Votations.NSurvey.UserProvider.dll
+C:\Users\chrism\Documents\Source\git\surveyproject_main_public\Reflector\Nsurvey_UserProvider\obj\Debug\Votations.NSurvey.UserProvider.pdb
