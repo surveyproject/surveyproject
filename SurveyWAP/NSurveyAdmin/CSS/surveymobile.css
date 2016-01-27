@@ -5,10 +5,10 @@
 .surveybox
 {
 	width: 100%;
-	background-color: #fff;
-    color: #000;
+	background-color: white;
+    color: black;
 	line-height: 23px;
-	font-family: "Helvetica Neue", Helvetica,Arial,sans-serif;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	vertical-align: top;
 
 }
@@ -21,9 +21,9 @@
 
 .questionStyle
 {
-	font-family: "Helvetica Neue", Helvetica,Arial,sans-serif;
-	color: #000;
-	background-color: #fff;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	color: black;
+	background-color: white;
     font-size: 1.2em;
 }
 
@@ -75,7 +75,7 @@ tr.questionStyle td > span > div.question-number-div
 {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 0.9em;
-	color: #fff;
+	color: white;
 	background-color: #6699CC;  /* #b1efb1; */
     padding: 2px 3px 2px 10px;
     margin-bottom: 7px;
@@ -159,8 +159,8 @@ tr.questionStyle td > span > div.question-number-div
 {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 1.1em;
-	background-color: #fff;
-    color: #000;
+	background-color: white;
+    color: black;
 }
 
 .answerStyle > td 
@@ -395,7 +395,7 @@ tr.footStyle > td
 .ThanksboxCss
 {
     width: 100%;
-    /*color: #000;
+    /*color: black;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 0.9em;*/
     margin:10px;
@@ -412,7 +412,7 @@ tr.footStyle > td
 .calendarStyle tr:nth-of-type(1) > td
 {
     background-color: #6699CC;
-    color: #fff;
+    color: white;
 }
 
 

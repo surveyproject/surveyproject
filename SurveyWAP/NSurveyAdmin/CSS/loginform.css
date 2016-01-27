@@ -10,7 +10,7 @@
             font-family: FontAwesome; 
             font-size: 1.4em;
             font-style: normal;
-            color: #fff;
+            color: white;
             content: "\f090"; 
             margin-left: 5%;
             vertical-align:middle;
@@ -163,7 +163,7 @@
 
     /* Font styles */
     font-family: 'Raleway', 'Lato', Arial, sans-serif;
-    color: #fff;
+    color: white;
     font-size: 14px;
     font-weight: bold;
 }
