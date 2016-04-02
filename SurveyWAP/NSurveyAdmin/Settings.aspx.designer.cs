@@ -22,6 +22,15 @@ namespace Votations.NSurvey.WebAdmin {
         protected global::System.Web.UI.WebControls.Label MessageLabel;
         
         /// <summary>
+        /// lblMainTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMainTitle;
+        
+        /// <summary>
         /// btnCreateSqlDb control.
         /// </summary>
         /// <remarks>

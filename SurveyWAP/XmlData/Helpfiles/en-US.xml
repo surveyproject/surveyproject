@@ -255,7 +255,7 @@
   <data version="2.3" id="22" name="RequiredMarkerSettings">
     <value>
       &lt;b&gt;Required Markers&lt;/b&gt;
-      Please check the helpfiles section "Survey Designer and Form Builder" for a complete explanation of how to use and set "Required Markers" by making use of the Minimum Selection Required setting (Question level) or the Mandatory checkbox (Answer level).
+      Check the helpfiles section "Survey Designer and Form Builder" for a complete explanation of how to use and set "Required Markers" by making use of the Minimum Selection Required setting (Question level) or the Mandatory checkbox (Answer level).
     </value>
   </data>
   <data version="2.4" id="23" name="ResultsReportRedirectHelp">
@@ -269,5 +269,36 @@
       &lt;br /&gt;Example:
       &lt;br /&gt;resultsreport.aspx?surveyid=bb058c...&lt;br /&gt;
     </value>
-  </data>  
+  </data>
+  <data version="2.4" id="23" name="AnswerCssClass">
+    <value>
+      Enter a Cssclass or selector as defined in the CSS files to change look and feel of Radiobutton DIV.
+    </value>
+  </data>
+  <data version="2.4" id="24" name="AnswerAlias">
+    <value>Alternative or abbreviated name to recognise answer. Not used on screens, saved to database for reporting options. &lt;br /&gt;&lt;br /&gt;
+      If the Alias matches a Cssclass or selector as defined in the CSS files the class/ selector will become active and
+      change look and feel of Radiobutton DIV.
+    </value>
+  </data>
+  <data version="2.4" id="25" name="AnswerID">
+    <value>
+      Custom ID to indicate answer not used in screens but saved to database for reporting options.
+    </value>
+  </data>
+  <data version="2.4" id="26" name="AnswerText">
+    <value>
+      Text of the answeroption as presented on the surveyform/ webpage.
+    </value>
+  </data>
+  <data version="2.4" id="27" name="DefaultAnswerText">
+    <value>
+      Default answer shown in the survey textbox. If no other answer is filled out the default answer will be submitted.
+    </value>
+  </data>
+  <data version="2.4" id="27" name="AnswerPipeAliasTextBox">
+    <value>
+      Alias name of the answer that can be used to pipe the answer to a question or answer on one of the other pages of the survey. Check the helpfiles for instructions on Piping options.
+    </value>
+  </data>
 </root>

@@ -33,9 +33,9 @@
             </td>
         </tr>
     </table>
-   <table width="700px" class="innerText">
+<!--   <table width="700px" class="innerText">
         <tr>
-            <td>
+            <td> -->
                 <vts:SurveyBox ID="SurveyControl" CssClass="surveybox" EnableValidation="false" runat="server">
                     <QuestionStyle CssClass="questionStyle"></QuestionStyle>
                     <QuestionValidationMessageStyle CssClass="qvmStyle"></QuestionValidationMessageStyle>
@@ -54,9 +54,9 @@
                     <SectionGridAnswersHeaderStyle CssClass="sgahStyle"></SectionGridAnswersHeaderStyle>
                     <FootStyle CssClass="footStyle"></FootStyle>
                 </vts:SurveyBox>
-            </td>
+<!--            </td>
         </tr>
-    </table>
+    </table> -->
     <table width="100%">
         <tr>
             <td>

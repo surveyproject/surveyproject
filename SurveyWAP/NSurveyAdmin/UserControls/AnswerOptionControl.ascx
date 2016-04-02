@@ -21,15 +21,16 @@
                     <li>
 
                     <asp:Label ID="lblAnswerID" AssociatedControlID="txtAnswerID" runat="server" Text="ID : ">ID : </asp:Label>
-                        <asp:TextBox runat="server" ID="txtAnswerID"></asp:TextBox>
+                       <div id="tooltip"> <asp:TextBox runat="server" ID="txtAnswerID"></asp:TextBox></div>
                                             </li>                    
                     <li>
-                   <asp:Label runat="server" ID="lblAnswerAlias" AssociatedControlID="txtAnswerAlias" Text="Alias : "></asp:Label> <asp:TextBox runat="server" ID="txtAnswerAlias"></asp:TextBox>
+                   <asp:Label runat="server" ID="lblAnswerAlias" AssociatedControlID="txtAnswerAlias" Text="Alias : "></asp:Label> 
+                        <div id="tooltip"><asp:TextBox runat="server" ID="txtAnswerAlias"></asp:TextBox></div>
                                             </li>
                     <li>
                             <asp:Label ID="AnswerTextLabel" AssociatedControlID="AnswerTextTextBox" runat="server" EnableViewState="False" Text="Answer text :"></asp:Label>
-
-                        <asp:TextBox ID="AnswerTextTextBox" runat="server"></asp:TextBox>
+                        <div id="tooltip">
+                        <asp:TextBox ID="AnswerTextTextBox" runat="server"></asp:TextBox></div>
                                             </li>
 
                     <li>
@@ -38,11 +39,15 @@
                         <asp:TextBox ID="AnswerImageURLTextBox" runat="server"></asp:TextBox>
 
                                                                     </li>   
+                                        <li>
+                        <asp:Label ID="AnswerCssClassLabel" AssociatedControlID="AnswerCssClassTextBox" runat="server" EnableViewState="False" Text="Radiobutton Css:"></asp:Label>
+                        <div id="tooltip"><asp:TextBox ID="AnswerCssClassTextBox" runat="server"></asp:TextBox></div>
+                    </li>
                                     <li>
                             <asp:Label ID="DefaultTextLabel" AssociatedControlID="DefaultTextTextBox" Visible="False" runat="server" EnableViewState="False"
                                 Text="Default text value* :"></asp:Label>
-
-                        <asp:TextBox ID="DefaultTextTextBox" Visible="False" runat="server"></asp:TextBox>
+                                        <div id="tooltip">
+                        <asp:TextBox ID="DefaultTextTextBox" Visible="False" runat="server"></asp:TextBox></div>
 
                                             </li>                 
                      <li>
@@ -117,9 +122,9 @@
 
                     <li>
                             <asp:Label ID="AnswerPipeAliasLabel" AssociatedControlID="AnswerPipeAliasTextBox" runat="server" EnableViewState="False" Text="Pipe alias :"></asp:Label>
-
+                        <div id="tooltip">
                         <asp:TextBox ID="AnswerPipeAliasTextBox" runat="server"></asp:TextBox>
-
+                            </div>
                                             </li>
 
                     <li>

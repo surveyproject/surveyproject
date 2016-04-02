@@ -14,7 +14,7 @@ namespace Votations.NSurvey.BE.Votations.NSurvey.Constants
        {
            Table t = new Table();
            t.Width = new Unit(100.00, UnitType.Percentage);
-           t.Attributes.Add("style","table-layout:fixed;");
+           //t.Attributes.Add("style","table-layout:fixed;");
            return t;
        }
     }

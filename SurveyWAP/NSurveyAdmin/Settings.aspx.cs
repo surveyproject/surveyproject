@@ -15,6 +15,8 @@ using System.Data.SqlClient;
 
 using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
 using Microsoft.Practices.EnterpriseLibrary.Data.Configuration;
+using Votations.NSurvey.WebAdmin.NSurveyAdmin;
+using Votations.NSurvey.Data;
 
 namespace Votations.NSurvey.WebAdmin
 {
@@ -30,6 +32,8 @@ namespace Votations.NSurvey.WebAdmin
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            UITabList.SetSurveyInfoTabs((MsterPageTabs)Page.Master, UITabList.SurveyInfoTabs.SurveySettings);
+            SetupSecurity();
 
             LocalizePage();
           
@@ -57,8 +61,17 @@ namespace Votations.NSurvey.WebAdmin
 
         }
 
+        private void SetupSecurity()
+        {
+            if (NSurveyUser.Identity.IsAdmin == false)
+            {
+                UINavigator.NavigateToAccessDenied(getSurveyId(), MenuIndex);
+            }
+        }
+
         private void LocalizePage()
         {
+            lblMainTitle.Text = Resources.ResourceManager.GetString("GeneralSettingsTitle");
             lblCulture.Text = Culture;
 
             lblConnectionStringDev.Text = connDev;

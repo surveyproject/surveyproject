@@ -83,8 +83,9 @@ namespace Votations.NSurvey.WebControlsFactories
                     item.ShowAnswerText = showAnswerText;
                     item.SectionContainer = section;
                     item.LanguageCode = languageCode;
-                    
-                   
+                    item.Css = String.IsNullOrEmpty(answer.CssClass) ? answer.AnswerAlias : answer.CssClass;
+
+
                 }
             }
             catch (FileNotFoundException)

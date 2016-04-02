@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="yes"?>
+<NSurveyDataSource xmlns="http://www.nsurvey.org/NSurveyDataSource.xsd">
+	<XmlDataSource>
+		<XmlAnswers>
+		  <XmlAnswer><AnswerValue></AnswerValue><AnswerDescription>[Selecteer Functie]</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>LOG</AnswerValue><AnswerDescription>Logeren</AnswerDescription></XmlAnswer>
+		  <XmlAnswer><AnswerValue>BHI</AnswerValue><AnswerDescription>Behandeling Individueel</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>BHG</AnswerValue><AnswerDescription>Behandeling Groep</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>BGG</AnswerValue><AnswerDescription>Begeleiding Groep</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>BGI</AnswerValue><AnswerDescription>Begeleiding Individueel</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>PVO</AnswerValue><AnswerDescription>Persoonlijke Verzorging</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>VPO</AnswerValue><AnswerDescription>Verpleging</AnswerDescription></XmlAnswer> 
+		</XmlAnswers>	
+	</XmlDataSource>
+</NSurveyDataSource>

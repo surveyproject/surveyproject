@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="yes"?>
+<NSurveyDataSource xmlns="http://www.nsurvey.org/NSurveyDataSource.xsd">
+	<XmlDataSource>
+		<XmlAnswers>
+		  <XmlAnswer><AnswerValue></AnswerValue><AnswerDescription>[Selecteer Sector]</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>SO</AnswerValue><AnswerDescription>Somatisch</AnswerDescription></XmlAnswer>
+		  <XmlAnswer><AnswerValue>PG</AnswerValue><AnswerDescription>Psychiatrisch Geriatrisch</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>VG</AnswerValue><AnswerDescription>Verstandelijk Gehandicapt</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>LG</AnswerValue><AnswerDescription>Lichamelijk Gehandicapt</AnswerDescription></XmlAnswer> 
+		  <XmlAnswer><AnswerValue>ZG</AnswerValue><AnswerDescription>Zintuigelijk Gehandicapt</AnswerDescription></XmlAnswer> 
+		</XmlAnswers>	
+	</XmlDataSource>
+</NSurveyDataSource>

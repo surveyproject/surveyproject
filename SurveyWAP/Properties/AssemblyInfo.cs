@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Fryslan Webservices™")]
 [assembly: AssemblyProduct("Survey™ Project Webapplication")]
-[assembly: AssemblyCopyright("(c) 2004 Thomas Zumbrunn - (c) 2009/2014 Fryslan Webservices™")]
+[assembly: AssemblyCopyright("(c) 2004 Thomas Zumbrunn - (c) 2009/2016 Fryslan Webservices™")]
 [assembly: AssemblyTrademark("Survey™ Project")]
 [assembly: AssemblyCulture("")]
 

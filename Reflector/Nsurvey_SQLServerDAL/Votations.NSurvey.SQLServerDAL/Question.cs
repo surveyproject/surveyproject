@@ -416,6 +416,8 @@ namespace Votations.NSurvey.SQLServerDAL
             command.Parameters.Add(new SqlParameter("@HelpText", SqlDbType.NVarChar, 255, "HelpText"));
             command.Parameters.Add(new SqlParameter("@ShowHelpText", SqlDbType.Bit, 1, "ShowHelpText"));
             command.Parameters.Add(new SqlParameter("@QuestionGroupId", SqlDbType.Int, 4, "QuestionGroupId"));
+
+            //command.Parameters["@SurveyID"].IsNullable = true;
             command.Parameters["@QuestionID"].Direction = ParameterDirection.Output;
             return command;
         }
@@ -919,8 +921,10 @@ namespace Votations.NSurvey.SQLServerDAL
             SqlCommand insertQuestionSectionGridAnswersCommand = this.GetInsertQuestionSectionGridAnswersCommand(sqlConnection, sqlTransaction);
             try
             {
-                // Add Question groups so we can attach them to questions
-                int surveyId = importQuestions.Question.First().SurveyId;
+
+              // FWS 2016/03/14: next line never used, but causes exception error on import xml question to library;
+              //  int surveyId = importQuestions.Question.First().SurveyId;
+
                 // Add Question groups so we can attach them to questions
 
                 string defaultLang = null;

@@ -10,8 +10,8 @@
                         <!--      <asp:Label ID="HelpMessageLabel" runat="server" CssClass=""></asp:Label> -->
 
                  <fieldset style="width:700px; margin-top:15px; margin-left:37px; text-align: left;">
-        <legend class="titleFont" style="margin: 0px 15px 0 15px;">
-                             <span >Helpfiles</span>                     </legend><br />
+        <legend class="titleFont" id="hftitle" style="margin: 0px 15px 0 15px;" runat="server">
+        </legend><br />
         <ol>
             <li><div class="rounded_corners" style="background:#FFF9AC; padding:7px;">
    
@@ -23,8 +23,7 @@
     </fieldset>
 
                               <fieldset style="width:700px; margin-top:15px; margin-left:37px; text-align: left;">
-        <legend class="titleFont" style="margin: 0px 15px 0 15px;">
-                             <span>Startup & Settings</span> 
+        <legend class="titleFont" id="sstitle" style="margin: 0px 15px 0 15px;" runat="server">                        
              </legend><br />
         <ol>
             <li><div class="rounded_corners" style="background:#FFF9AC; padding:7px;">

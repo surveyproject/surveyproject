@@ -59,6 +59,7 @@
         {
             ArrayList commandParameters = new ArrayList();
             {
+                commandParameters.Add(new SqlParameter("@surveyId", surveyID).SqlValue);
                 commandParameters.Add(new SqlParameter("@token", token).SqlValue);
                 commandParameters.Add(new SqlParameter("@voterId", voterId).SqlValue);
             }

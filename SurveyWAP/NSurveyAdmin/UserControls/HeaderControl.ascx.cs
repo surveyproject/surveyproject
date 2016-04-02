@@ -216,9 +216,15 @@ namespace Votations.NSurvey.WebAdmin.UserControls
                     mnuMain.Items[menuIndex].ChildItems.Add(new MenuItem(((PageBase)Page).GetPageResource("RegExLibHyperLink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.RegExEditorHyperLink, SurveyId)));
 
                 if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.SurveyLayoutRight))
-                    mnuMain.Items[menuIndex].ChildItems.
-                        Add(new MenuItem(((PageBase)Page).GetPageResource("SurveyLayoutHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.SurveyLayoutLink, SurveyId)));
-               
+                {
+
+                    mnuMain.Items[menuIndex].ChildItems.Add(new MenuItem(((PageBase)Page).GetPageResource("SurveyLayoutHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.SurveyLayoutLink, SurveyId)));
+
+                    if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.SurveyLayoutRight))
+                        mnuMain.Items[menuIndex].ChildItems[mnuMain.Items[menuIndex].ChildItems.Count - 1].ChildItems.
+                            Add(new MenuItem(((PageBase)Page).GetPageResource("CssXmlHyperLink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.CssXmlHyperLink, SurveyId)));
+                }
+
                 menuIndex++;
             }
 

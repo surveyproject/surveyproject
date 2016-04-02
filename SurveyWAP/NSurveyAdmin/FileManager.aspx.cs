@@ -98,16 +98,18 @@ namespace Votations.NSurvey.WebAdmin
 		private void LocalizePage()
 		{
 			UploadedFilesTitle.Text = GetPageResource("UploadedFilesTitle");
-			((ButtonColumn)ValidatedFilesDataGrid.Columns[1]).HeaderText = "Download";
-			((ButtonColumn)ValidatedFilesDataGrid.Columns[1]).Text = GetPageResource("FileDownloadButton");
+			((ButtonColumn)ValidatedFilesDataGrid.Columns[1]).HeaderText = GetPageResource("FileDownloadButton");
+            ((ButtonColumn)ValidatedFilesDataGrid.Columns[1]).Text = GetPageResource("FileDownloadButton");
 			((ButtonColumn)ValidatedFilesDataGrid.Columns[2]).HeaderText = GetPageResource("BoundColumnPostedBy");
 			((ButtonColumn)ValidatedFilesDataGrid.Columns[2]).Text = GetPageResource("FileVoterDetailsButton");
 			((BoundColumn)ValidatedFilesDataGrid.Columns[3]).HeaderText = GetPageResource("BoundColumnFileName");
 			((BoundColumn)ValidatedFilesDataGrid.Columns[4]).HeaderText = GetPageResource("BoundColumnFileType");
 			((TemplateColumn)ValidatedFilesDataGrid.Columns[5]).HeaderText = GetPageResource("BoundColumnFileSize");
-			((BoundColumn)ValidatedFilesDataGrid.Columns[6]).HeaderText = GetPageResource("BoundColumnUploadDate");
+            ((BoundColumn)ValidatedFilesDataGrid.Columns[6]).HeaderText = GetPageResource("BoundColumnUploadDate");
+            ((BoundColumn)ValidatedFilesDataGrid.Columns[7]).HeaderText = GetPageResource("GroupGuid");
+            ((BoundColumn)ValidatedFilesDataGrid.Columns[8]).HeaderText = GetPageResource("VoterID");
 
-			CreateGroupsLabel.Text = GetPageResource("CreateGroupsLabel");
+            CreateGroupsLabel.Text = GetPageResource("CreateGroupsLabel");
 			ExportFilesTitle.Text = GetPageResource("ExportFilesTitle");
 			ServerPathLabel.Text = GetPageResource("ServerPathLabel");
 			ExportFilesButton.Text = GetPageResource("ExportFilesButton");

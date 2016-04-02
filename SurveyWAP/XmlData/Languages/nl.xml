@@ -1309,7 +1309,7 @@ Met vriendelijke groet,&lt;br /&gt;
 		<value>Nieuwe voorwaarde toevoegen</value>
 	</data>
 	<data version="1.4" id="432" name="VoterUserNameLabel">
-		<value>.NET gebruikersnaam:</value>
+		<value>SP gebruikersnaam:</value>
 	</data>
 	<data version="1.4" id="433" name="ContextUserNameDisabled">
 		<value>Uitgezet</value>
@@ -3458,5 +3458,32 @@ Vriendelijke groet
   </data>
   <data version="2.4" id="1140" name="InvalidQuestionID">
     <value>Ongeldige QuestionID!</value>
+  </data>
+  <data version="2.4" id="1141" name="VoterID">
+    <value>VoterID</value>
+  </data>
+  <data version="2.4" id="1142" name="GroupGuid">
+    <value>GroepsGuid</value>
+  </data>
+  <data version="2.4" id="1143" name="TokenSecurity">
+    <value>Token Beveiliging</value>
+  </data>
+  <data version="2.4" id="1144" name="SurveyLayout">
+    <value>Enquete Layout</value>
+  </data>
+  <data version="2.4" id="1145" name="AccessSurveyList">
+    <value>Toegang Enquetelijst</value>
+  </data>
+  <data version="2.4" id="1146" name="HelpLabelHelpfiles">
+    <value>Beschikbare Helpbestanden</value>
+  </data>
+  <data version="2.4" id="1147" name="HelpLabelStartupSettings">
+    <value>Opstarten en Instellingen</value>
+  </data>
+  <data version="2.4" id="1148" name="CancelButtonText">
+    <value> Cancel </value>
+  </data>
+  <data version="2.4" id="1149" name="RadioButtonAnswerCssLabel">
+    <value>Radiobutton CSS :</value>
   </data>
 </root>

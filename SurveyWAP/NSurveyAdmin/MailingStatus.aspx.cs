@@ -171,9 +171,9 @@ namespace Votations.NSurvey.WebAdmin
 				totalPages = 0;
 			AnsweredEmailsDatagrid.DataMember = "Voters";
 			AnsweredEmailsDatagrid.DataKeyField = "VoterID";
-            AnsweredEmailsDatagrid.DataSource = new Voters().GetVotersInvitationAnswered(SurveyId, CurrentPageIndex, AnsweredEmailsDatagrid.PageSize, out totalRecords);
+            AnsweredEmailsDatagrid.DataSource = new Voters().GetVotersInvitationAnswered(SurveyId, CurrentPageIndex1, AnsweredEmailsDatagrid.PageSize, out totalRecords);
 			AnsweredEmailsDatagrid.DataBind();
-			CurrentAnsweredPageLabel.Text = (CurrentPageIndex+1).ToString();
+			CurrentAnsweredPageLabel.Text = (CurrentPageIndex1+1).ToString();
 
 			if (totalRecords > 0)
 			{
@@ -278,6 +278,18 @@ namespace Votations.NSurvey.WebAdmin
                 ViewState["CurrentPageIndex"] = value;
             }
         }
+        private int CurrentPageIndex1
+        {
+            get
+            {
+                if (ViewState["CurrentPageIndex1"] == null) return 0;
+                else return int.Parse(ViewState["CurrentPageIndex1"].ToString());
+            }
+            set
+            {
+                ViewState["CurrentPageIndex1"] = value;
+            }
+        }
 		private void PreviousPendingPageLinkButton_Click(object sender, System.EventArgs e)
 		{
 			// Declare local data members.
@@ -336,17 +348,17 @@ namespace Votations.NSurvey.WebAdmin
 			int totalPages = int.Parse(TotalAnsweredPagesLabel.Text);
 
 			// Decrement the current page index.
-			if (currentPage >= 1)
+			if (currentPage > 1)
 			{
 
 				//AnsweredEmailsDatagrid.CurrentPageIndex--;
-                CurrentPageIndex--;
+                CurrentPageIndex1--;
 
 				// Get the data for the DataGrid.
 				BindAnsweredData();
 
 				// Should we disable the previous link?
-				if (CurrentPageIndex+1 == 1)
+				if (CurrentPageIndex1+1 == 1)
 				{
 
 					PreviousAnsweredPageLinkButton.Enabled = false;
@@ -372,20 +384,20 @@ namespace Votations.NSurvey.WebAdmin
 			{
 
 				//AnsweredEmailsDatagrid.CurrentPageIndex++;
-                CurrentPageIndex++;
+                CurrentPageIndex1++;
 
 				// Get the data for the DataGrid.
 				BindAnsweredData();
 
 				// Should we disable the previous link?
-				if (CurrentPageIndex+1 <= totalPages)
+				if (CurrentPageIndex1+1 <= totalPages)
 				{
 
 					PreviousAnsweredPageLinkButton.Enabled = true;
 				}
 
 				// Should we enable the next link?
-				if (CurrentPageIndex+1 == totalPages || totalPages == 1)
+				if (CurrentPageIndex1+1 == totalPages || totalPages == 1)
 				{
 
 					NextAnsweredPageLinkButton.Enabled = false;

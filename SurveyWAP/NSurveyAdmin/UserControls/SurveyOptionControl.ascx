@@ -41,7 +41,7 @@
                             <asp:TextBox
                                 ID="TitleTextBox"
                                 runat="server"
-                                Columns="60" MaxLength="90">
+                                Columns="40" MaxLength="90">
                             </asp:TextBox>
 
                             <asp:Button ID="CreateSurveyButton" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Create survey!"></asp:Button>

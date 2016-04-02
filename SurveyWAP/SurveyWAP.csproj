@@ -25,6 +25,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -100,7 +101,6 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="default.aspx" />
-    <Content Include="DwsReport.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -133,6 +133,7 @@
     <Content Include="Images\Bar\NegativeRatingBar.gif" />
     <Content Include="Images\Bar\PositiveRatingBar.gif" />
     <Content Include="Images\CalendarIcon.gif" />
+    <Content Include="Images\cancel2.gif" />
     <Content Include="Images\close-icn.png" />
     <Content Include="Images\csharp.png" />
     <Content Include="Images\delete.gif" />
@@ -141,7 +142,6 @@
     <Content Include="Images\email.png" />
     <Content Include="Images\help.gif" />
     <Content Include="Images\help.png" />
-    <Content Include="Images\ImpulseScores1.jpg" />
     <Content Include="Images\index-icon.png" />
     <Content Include="Images\inet.png" />
     <Content Include="Images\layout.png" />
@@ -153,6 +153,7 @@
     <Content Include="Images\PositiveRatingBar.gif" />
     <Content Include="Images\Print_32X32_Standard.png" />
     <Content Include="Images\reports.png" />
+    <Content Include="Images\save.gif" />
     <Content Include="Images\small_help.gif" />
     <Content Include="Images\SocialMedia.png" />
     <Content Include="Images\Spacer.gif" />
@@ -164,6 +165,9 @@
     <Content Include="Images\tools.png" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Images\view.png" />
+    <Content Include="Images\warning-icn.png" />
+    <Content Include="Images\yellowwarning_16px.gif" />
     <Content Include="NSurveyAdmin\AccessDenied.aspx" />
     <Content Include="NSurveyAdmin\AjaxWebMethodsProxy.aspx" />
     <Content Include="NSurveyAdmin\CampaignStart.aspx" />
@@ -177,10 +181,12 @@
     <Content Include="NSurveyAdmin\CSS\surveymobile.css" />
     <Content Include="NSurveyAdmin\CSS\surveypreview.css" />
     <Content Include="NSurveyAdmin\CSS\voterreport.css" />
+    <Content Include="NSurveyAdmin\EditCssXml.aspx" />
     <Content Include="NSurveyAdmin\FilterCreator.aspx" />
     <Content Include="NSurveyAdmin\FilterEditor.aspx" />
     <Content Include="NSurveyAdmin\Help\About.aspx" />
     <Content Include="NSurveyAdmin\Help\Completion Actions.aspx" />
+    <Content Include="NSurveyAdmin\Help\CssXml.aspx" />
     <Content Include="NSurveyAdmin\Help\Field - Slider.aspx" />
     <Content Include="NSurveyAdmin\Help\default.aspx" />
     <Content Include="NSurveyAdmin\Help\Email Notification.aspx" />
@@ -188,6 +194,7 @@
     <Content Include="NSurveyAdmin\Help\FieldT_Introduction.aspx" />
     <Content Include="NSurveyAdmin\Help\Help on Help.aspx" />
     <Content Include="NSurveyAdmin\Help\Insert Security AddIn.aspx" />
+    <Content Include="NSurveyAdmin\Help\InstallationSettings.aspx" />
     <Content Include="NSurveyAdmin\Help\Licence.aspx" />
     <Content Include="NSurveyAdmin\Help\Multi-Languages Settings.aspx" />
     <Content Include="NSurveyAdmin\Help\New\Advanced Completion.aspx" />
@@ -1147,6 +1154,7 @@
     <Content Include="Scripts\Javascript\slider\slider.js" />
     <Content Include="Scripts\Javascript\tooltip\javascripts\jquery.tipsy.js" />
     <Content Include="Scripts\Javascript\tooltip\stylesheets\tipsy.css" />
+    <Content Include="Scripts\Javascript\ui\jquery-ui-1.10.4.js" />
     <Content Include="Scripts\Javascript\ui\jquery-ui-1.8.12.custom.min.js" />
     <Content Include="Scripts\Javascript\ui\jquery.ui.core.js" />
     <Content Include="Scripts\Javascript\ui\jquery.ui.mouse.js" />
@@ -1178,6 +1186,7 @@
     <Content Include="XmlData\countries.fr.xml" />
     <Content Include="XmlData\countries.nl.xml" />
     <Content Include="XmlData\countries.xml" />
+    <Content Include="XmlData\Css\SurveyBox.xml" />
     <Content Include="XmlData\de.fr.xml" />
     <Content Include="XmlData\de.xml" />
     <Content Include="XmlData\es.fr.xml" />
@@ -1213,6 +1222,7 @@
     <Content Include="XmlData\Languages\fr-FR.xml" />
     <Content Include="XmlData\Languages\fr.xml" />
     <Content Include="XmlData\Languages\he-IL.xml" />
+    <Content Include="XmlData\Languages\he.xml" />
     <Content Include="XmlData\Languages\it-IT.xml" />
     <Content Include="XmlData\Languages\lt-LT.xml" />
     <Content Include="XmlData\Languages\nl-NL.xml" />
@@ -1298,13 +1308,6 @@
     <Compile Include="Code\SyncDataStore.cs" />
     <Compile Include="Code\UINavigator.cs" />
     <Compile Include="Code\UITabList.cs" />
-    <Compile Include="DwsReport.aspx.cs">
-      <DependentUpon>DwsReport.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DwsReport.aspx.designer.cs">
-      <DependentUpon>DwsReport.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1363,6 +1366,13 @@
     </Compile>
     <Compile Include="NSurveyAdmin\ControlCode.aspx.designer.cs">
       <DependentUpon>ControlCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\EditCssXml.aspx.cs">
+      <DependentUpon>EditCssXml.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\EditCssXml.aspx.designer.cs">
+      <DependentUpon>EditCssXml.aspx</DependentUpon>
     </Compile>
     <Compile Include="NSurveyAdmin\FilterCreator.aspx.cs">
       <DependentUpon>FilterCreator.aspx</DependentUpon>

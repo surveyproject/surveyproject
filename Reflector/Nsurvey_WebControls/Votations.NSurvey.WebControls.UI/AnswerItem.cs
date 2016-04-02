@@ -26,6 +26,7 @@ namespace Votations.NSurvey.WebControls.UI
         private Votations.NSurvey.WebControls.UI.Section _sectionContainer;
         private bool _showAnswerText = true;
         private string _text = null;
+        private string _css = null;
 
         public event AnswerPublisherEventHandler AnswerPublished;
 
@@ -288,6 +289,17 @@ namespace Votations.NSurvey.WebControls.UI
             set
             {
                 this._text = value;
+            }
+        }
+        public virtual string Css
+        {
+            get
+            {
+                return this._css;
+            }
+            set
+            {
+                this._css = value;
             }
         }
     }

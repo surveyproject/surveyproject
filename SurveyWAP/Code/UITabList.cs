@@ -29,7 +29,7 @@ namespace Votations.NSurvey.WebAdmin
 {
     public static class UITabList
     {
-        public enum DesignerTabs { FormBuilder = 0, QuestionGroups = 1, AnswerTypeEdit = 2, RegexLib = 3, SurveyInfoLayout = 4}
+        public enum DesignerTabs { FormBuilder = 0, QuestionGroups = 1, AnswerTypeEdit = 2, RegexLib = 3, SurveyInfoLayout = 4, CssXml = 5 }
         public static void SetDesignerTabs(MsterPageTabs masterPage, DesignerTabs selectedTab)
         {
             masterPage.DisplayTabs.Clear();
@@ -38,6 +38,7 @@ namespace Votations.NSurvey.WebAdmin
             masterPage.DisplayTabs.Add(ResourceManager.GetString("DesignerformAnswerTypeEdit"), UINavigator.TypeEditor);
             masterPage.DisplayTabs.Add(ResourceManager.GetString("DesignerformRegexLib"), UINavigator.RegExEditorHyperLink);
             masterPage.DisplayTabs.Add(ResourceManager.GetString("SurveyInfoLayout"), UINavigator.SurveyLayoutLink);
+            masterPage.DisplayTabs.Add(ResourceManager.GetString("CssXmlHyperLink"), UINavigator.CssXmlHyperLink);
             masterPage.selectedTabIndex = (int)selectedTab;
         }
 
@@ -114,13 +115,14 @@ namespace Votations.NSurvey.WebAdmin
             masterPage.selectedTabIndex = (int)selectedTab;
         }
         
-        public enum SurveyInfoTabs { SurveyInfo = 0, SurveyInfoMultiLanguage = 1, SurveyInfoCompletion = 2 }
+        public enum SurveyInfoTabs { SurveyInfo = 0, SurveyInfoMultiLanguage = 1, SurveyInfoCompletion = 2, SurveySettings = 3 }
         public static void SetSurveyInfoTabs(MsterPageTabs masterPage, SurveyInfoTabs selectedTab)
         {
             masterPage.DisplayTabs.Clear();
             masterPage.DisplayTabs.Add(ResourceManager.GetString("SurveyInfo"), UINavigator.SurveyOptionsLink);
             masterPage.DisplayTabs.Add(ResourceManager.GetString("SurveyInfoMultiLanguage"), UINavigator.MultiLanguagesHyperLink);
             masterPage.DisplayTabs.Add(ResourceManager.GetString("SurveyInfoCompletion"), UINavigator.SurveyPrivacyLink);
+            masterPage.DisplayTabs.Add(ResourceManager.GetString("GeneralSettingsHyperlink"), UINavigator.GeneralSettingsLink);
 
             masterPage.selectedTabIndex = (int)selectedTab;
         }
@@ -129,11 +131,11 @@ namespace Votations.NSurvey.WebAdmin
         public static void SetResultsTabs(MsterPageTabs masterPage, ResultTabs selectedTab)
         {
             masterPage.DisplayTabs.Clear();
-            masterPage.DisplayTabs.Add("Reports", UINavigator.ResultsReportHyperlink);
-            masterPage.DisplayTabs.Add("Filters", UINavigator.FilterEditor);
-            masterPage.DisplayTabs.Add("File Manager", UINavigator.FileManagerHyperLink);
-            masterPage.DisplayTabs.Add("Data Export", UINavigator.ExportData);
-            masterPage.DisplayTabs.Add("Data Import", UINavigator.DataImportHyperLink);
+            masterPage.DisplayTabs.Add(ResourceManager.GetString("ResultsSMHyperlink"), UINavigator.ResultsReportHyperlink);
+            masterPage.DisplayTabs.Add(ResourceManager.GetString("FiltersHyperlink"), UINavigator.FilterEditor);
+            masterPage.DisplayTabs.Add(ResourceManager.GetString("FileManagerHyperlink"), UINavigator.FileManagerHyperLink);
+            masterPage.DisplayTabs.Add(ResourceManager.GetString("DataExportHyperlink"), UINavigator.ExportData);
+            masterPage.DisplayTabs.Add(ResourceManager.GetString("DataImportHyperlink"), UINavigator.DataImportHyperLink);
             masterPage.selectedTabIndex = (int)selectedTab;
         }
 
@@ -142,8 +144,8 @@ namespace Votations.NSurvey.WebAdmin
         public static void SetSecurityTabs(MsterPageTabs masterPage, SecurityTabs selectedTab)
         {
             masterPage.DisplayTabs.Clear();
-            masterPage.DisplayTabs.Add("Form Security", UINavigator.SurveySecurityLink);
-            masterPage.DisplayTabs.Add("Token Security", UINavigator.SurveyTokenSecurityLink);
+            masterPage.DisplayTabs.Add(ResourceManager.GetString("SurveySecurityTitle"), UINavigator.SurveySecurityLink);
+            masterPage.DisplayTabs.Add(ResourceManager.GetString("TokenSecurityFormTitle"), UINavigator.SurveyTokenSecurityLink);
             masterPage.DisplayTabs.Add(ResourceManager.GetString("IPRangeFormTitle"), UINavigator.SurveyIPSecurityLink);
             masterPage.selectedTabIndex = (int)selectedTab;
         }

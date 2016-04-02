@@ -82,7 +82,9 @@ namespace Votations.NSurvey.WebAdmin
 			HelpMessageLabel.Text = GetPageResource("HelpMessageLabel");
             HelpFilesText.Text = ((PageBase)Page).GetPageHelpfiles("HelpFilesText");
             StartupSettings.Text = ((PageBase)Page).GetPageHelpfiles("StartupSettings");
-		}
+            hftitle.InnerText = GetPageResource("HelpLabelHelpfiles");
+            sstitle.InnerText = GetPageResource("HelpLabelStartupSettings");
+        }
 	}
 
 }

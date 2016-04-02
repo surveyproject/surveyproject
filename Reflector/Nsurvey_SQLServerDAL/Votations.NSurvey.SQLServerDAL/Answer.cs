@@ -316,6 +316,7 @@ namespace Votations.NSurvey.SQLServerDAL
             command.Parameters.Add(new SqlParameter("@SliderMax", SqlDbType.Int, 6, "SliderMax"));
             command.Parameters.Add(new SqlParameter("@SliderAnimate", SqlDbType.Bit, 1, "SliderAnimate"));
             command.Parameters.Add(new SqlParameter("@SliderStep", SqlDbType.Int, 6, "SliderStep"));
+            command.Parameters.Add(new SqlParameter("@CssClass", SqlDbType.NVarChar, 50, "CssClass"));
             command.Parameters["@AnswerID"].Direction = ParameterDirection.Output;
             return command;
         }
@@ -627,6 +628,7 @@ namespace Votations.NSurvey.SQLServerDAL
             insertCommand.Parameters.Add(new SqlParameter("@SliderMax", SqlDbType.Int, 6, "SliderMax"));
             insertCommand.Parameters.Add(new SqlParameter("@SliderAnimate", SqlDbType.Bit, 1, "SliderAnimate"));
             insertCommand.Parameters.Add(new SqlParameter("@SliderStep", SqlDbType.Int, 6, "SliderStep"));
+            insertCommand.Parameters.Add(new SqlParameter("@CssClass", SqlDbType.NVarChar, 50, "CssClass"));
             DbConnection.db.UpdateDataSet(updatedAnswer, "Answers", insertCommand, new SqlCommand(), insertCommand, UpdateBehavior.Transactional);
         }
 

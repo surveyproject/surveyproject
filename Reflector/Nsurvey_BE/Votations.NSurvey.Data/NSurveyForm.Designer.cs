@@ -57,19 +57,19 @@ namespace Votations.NSurvey.Data
         
         private global::System.Data.DataRelation relationQuestionSectionOptionvts_tbQuestionSectionGridAnswer;
         
-        private global::System.Data.DataRelation relationQuestionAnswerConnection;
+        private global::System.Data.DataRelation relationPublisherAnswerConnection;
         
         private global::System.Data.DataRelation relationSubscriberAnswerConnection;
         
-        private global::System.Data.DataRelation relationPublisherAnswerConnection;
+        private global::System.Data.DataRelation relationQuestionAnswerConnection;
         
         private global::System.Data.DataRelation relationQuestionChildQuestion;
         
-        private global::System.Data.DataRelation relationQuestionAnswer;
+        private global::System.Data.DataRelation relationAnswerTypeAnswer;
         
         private global::System.Data.DataRelation relationRegularExpressionAnswer;
         
-        private global::System.Data.DataRelation relationAnswerTypeAnswer;
+        private global::System.Data.DataRelation relationQuestionAnswer;
         
         private global::System.Data.DataRelation relationAnswerAnswerProperty;
         
@@ -508,13 +508,13 @@ namespace Votations.NSurvey.Data
             this.relationSurveyQuestion = this.Relations["SurveyQuestion"];
             this.relationQuestionQuestionSectionOption = this.Relations["QuestionQuestionSectionOption"];
             this.relationQuestionSectionOptionvts_tbQuestionSectionGridAnswer = this.Relations["QuestionSectionOptionvts_tbQuestionSectionGridAnswer"];
-            this.relationQuestionAnswerConnection = this.Relations["QuestionAnswerConnection"];
-            this.relationSubscriberAnswerConnection = this.Relations["SubscriberAnswerConnection"];
             this.relationPublisherAnswerConnection = this.Relations["PublisherAnswerConnection"];
+            this.relationSubscriberAnswerConnection = this.Relations["SubscriberAnswerConnection"];
+            this.relationQuestionAnswerConnection = this.Relations["QuestionAnswerConnection"];
             this.relationQuestionChildQuestion = this.Relations["QuestionChildQuestion"];
-            this.relationQuestionAnswer = this.Relations["QuestionAnswer"];
-            this.relationRegularExpressionAnswer = this.Relations["RegularExpressionAnswer"];
             this.relationAnswerTypeAnswer = this.Relations["AnswerTypeAnswer"];
+            this.relationRegularExpressionAnswer = this.Relations["RegularExpressionAnswer"];
+            this.relationQuestionAnswer = this.Relations["QuestionAnswer"];
             this.relationAnswerAnswerProperty = this.Relations["AnswerAnswerProperty"];
         }
         
@@ -574,9 +574,9 @@ namespace Votations.NSurvey.Data
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("QuestionAnswerConnection", new global::System.Data.DataColumn[] {
-                        this.tableQuestion.QuestionIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAnswerConnection.QuestionIdColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("PublisherAnswerConnection", new global::System.Data.DataColumn[] {
+                        this.tableAnswer.AnswerIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAnswerConnection.PublisherAnswerIdColumn});
             this.tableAnswerConnection.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
@@ -588,9 +588,9 @@ namespace Votations.NSurvey.Data
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("PublisherAnswerConnection", new global::System.Data.DataColumn[] {
-                        this.tableAnswer.AnswerIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAnswerConnection.PublisherAnswerIdColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("QuestionAnswerConnection", new global::System.Data.DataColumn[] {
+                        this.tableQuestion.QuestionIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAnswerConnection.QuestionIdColumn});
             this.tableAnswerConnection.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
@@ -602,9 +602,9 @@ namespace Votations.NSurvey.Data
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("QuestionAnswer", new global::System.Data.DataColumn[] {
-                        this.tableQuestion.QuestionIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAnswer.QuestionIdColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("AnswerTypeAnswer", new global::System.Data.DataColumn[] {
+                        this.tableAnswerType.AnswerTypeIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAnswer.AnswerTypeIdColumn});
             this.tableAnswer.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
@@ -616,9 +616,9 @@ namespace Votations.NSurvey.Data
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("AnswerTypeAnswer", new global::System.Data.DataColumn[] {
-                        this.tableAnswerType.AnswerTypeIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAnswer.AnswerTypeIdColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("QuestionAnswer", new global::System.Data.DataColumn[] {
+                        this.tableQuestion.QuestionIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAnswer.QuestionIdColumn});
             this.tableAnswer.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
@@ -642,34 +642,34 @@ namespace Votations.NSurvey.Data
                         this.tableQuestionSectionOption.QuestionIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableQuestionSectionGridAnswer.QuestionIdColumn}, false);
             this.Relations.Add(this.relationQuestionSectionOptionvts_tbQuestionSectionGridAnswer);
-            this.relationQuestionAnswerConnection = new global::System.Data.DataRelation("QuestionAnswerConnection", new global::System.Data.DataColumn[] {
-                        this.tableQuestion.QuestionIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAnswerConnection.QuestionIdColumn}, false);
-            this.Relations.Add(this.relationQuestionAnswerConnection);
-            this.relationSubscriberAnswerConnection = new global::System.Data.DataRelation("SubscriberAnswerConnection", new global::System.Data.DataColumn[] {
-                        this.tableAnswer.AnswerIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAnswerConnection.SubscriberAnswerIdColumn}, false);
-            this.Relations.Add(this.relationSubscriberAnswerConnection);
             this.relationPublisherAnswerConnection = new global::System.Data.DataRelation("PublisherAnswerConnection", new global::System.Data.DataColumn[] {
                         this.tableAnswer.AnswerIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableAnswerConnection.PublisherAnswerIdColumn}, false);
             this.Relations.Add(this.relationPublisherAnswerConnection);
+            this.relationSubscriberAnswerConnection = new global::System.Data.DataRelation("SubscriberAnswerConnection", new global::System.Data.DataColumn[] {
+                        this.tableAnswer.AnswerIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAnswerConnection.SubscriberAnswerIdColumn}, false);
+            this.Relations.Add(this.relationSubscriberAnswerConnection);
+            this.relationQuestionAnswerConnection = new global::System.Data.DataRelation("QuestionAnswerConnection", new global::System.Data.DataColumn[] {
+                        this.tableQuestion.QuestionIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAnswerConnection.QuestionIdColumn}, false);
+            this.Relations.Add(this.relationQuestionAnswerConnection);
             this.relationQuestionChildQuestion = new global::System.Data.DataRelation("QuestionChildQuestion", new global::System.Data.DataColumn[] {
                         this.tableQuestion.QuestionIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableChildQuestion.ParentQuestionIdColumn}, false);
             this.Relations.Add(this.relationQuestionChildQuestion);
-            this.relationQuestionAnswer = new global::System.Data.DataRelation("QuestionAnswer", new global::System.Data.DataColumn[] {
-                        this.tableQuestion.QuestionIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAnswer.QuestionIdColumn}, false);
-            this.Relations.Add(this.relationQuestionAnswer);
-            this.relationRegularExpressionAnswer = new global::System.Data.DataRelation("RegularExpressionAnswer", new global::System.Data.DataColumn[] {
-                        this.tableRegularExpression.RegularExpressionIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAnswer.RegularExpressionIdColumn}, false);
-            this.Relations.Add(this.relationRegularExpressionAnswer);
             this.relationAnswerTypeAnswer = new global::System.Data.DataRelation("AnswerTypeAnswer", new global::System.Data.DataColumn[] {
                         this.tableAnswerType.AnswerTypeIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableAnswer.AnswerTypeIdColumn}, false);
             this.Relations.Add(this.relationAnswerTypeAnswer);
+            this.relationRegularExpressionAnswer = new global::System.Data.DataRelation("RegularExpressionAnswer", new global::System.Data.DataColumn[] {
+                        this.tableRegularExpression.RegularExpressionIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAnswer.RegularExpressionIdColumn}, false);
+            this.Relations.Add(this.relationRegularExpressionAnswer);
+            this.relationQuestionAnswer = new global::System.Data.DataRelation("QuestionAnswer", new global::System.Data.DataColumn[] {
+                        this.tableQuestion.QuestionIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAnswer.QuestionIdColumn}, false);
+            this.Relations.Add(this.relationQuestionAnswer);
             this.relationAnswerAnswerProperty = new global::System.Data.DataRelation("AnswerAnswerProperty", new global::System.Data.DataColumn[] {
                         this.tableAnswer.AnswerIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableAnswerProperty.AnswerIdColumn}, false);
@@ -3549,6 +3549,8 @@ namespace Votations.NSurvey.Data
             
             private global::System.Data.DataColumn columnOldAnswerId;
             
+            private global::System.Data.DataColumn columnCssClass;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public AnswerDataTable() {
@@ -3760,6 +3762,14 @@ namespace Votations.NSurvey.Data
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CssClassColumn {
+                get {
+                    return this.columnCssClass;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3817,7 +3827,8 @@ namespace Votations.NSurvey.Data
                         int SliderMax, 
                         bool SliderAnimate, 
                         int SliderStep, 
-                        int OldAnswerId) {
+                        int OldAnswerId, 
+                        string CssClass) {
                 AnswerRow rowAnswerRow = ((AnswerRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3841,7 +3852,8 @@ namespace Votations.NSurvey.Data
                         SliderMax,
                         SliderAnimate,
                         SliderStep,
-                        OldAnswerId};
+                        OldAnswerId,
+                        CssClass};
                 if ((parentQuestionRowByQuestionAnswer != null)) {
                     columnValuesArray[0] = parentQuestionRowByQuestionAnswer[0];
                 }
@@ -3902,6 +3914,7 @@ namespace Votations.NSurvey.Data
                 this.columnSliderAnimate = base.Columns["SliderAnimate"];
                 this.columnSliderStep = base.Columns["SliderStep"];
                 this.columnOldAnswerId = base.Columns["OldAnswerId"];
+                this.columnCssClass = base.Columns["CssClass"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3951,6 +3964,8 @@ namespace Votations.NSurvey.Data
                 base.Columns.Add(this.columnSliderStep);
                 this.columnOldAnswerId = new global::System.Data.DataColumn("OldAnswerId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOldAnswerId);
+                this.columnCssClass = new global::System.Data.DataColumn("CssClass", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCssClass);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("NSurveyFormKey3", new global::System.Data.DataColumn[] {
                                 this.columnAnswerId}, true));
                 this.columnQuestionId.Namespace = "";
@@ -7315,12 +7330,12 @@ namespace Votations.NSurvey.Data
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public QuestionRow QuestionRow {
+            public AnswerRow AnswerRowByPublisherAnswerConnection {
                 get {
-                    return ((QuestionRow)(this.GetParentRow(this.Table.ParentRelations["QuestionAnswerConnection"])));
+                    return ((AnswerRow)(this.GetParentRow(this.Table.ParentRelations["PublisherAnswerConnection"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["QuestionAnswerConnection"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["PublisherAnswerConnection"]);
                 }
             }
             
@@ -7337,12 +7352,12 @@ namespace Votations.NSurvey.Data
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AnswerRow AnswerRowByPublisherAnswerConnection {
+            public QuestionRow QuestionRow {
                 get {
-                    return ((AnswerRow)(this.GetParentRow(this.Table.ParentRelations["PublisherAnswerConnection"])));
+                    return ((QuestionRow)(this.GetParentRow(this.Table.ParentRelations["QuestionAnswerConnection"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["PublisherAnswerConnection"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["QuestionAnswerConnection"]);
                 }
             }
             
@@ -7804,12 +7819,28 @@ namespace Votations.NSurvey.Data
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public QuestionRow QuestionRow {
+            public string CssClass {
                 get {
-                    return ((QuestionRow)(this.GetParentRow(this.Table.ParentRelations["QuestionAnswer"])));
+                    try {
+                        return ((string)(this[this.tableAnswer.CssClassColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CssClass\' in table \'Answer\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["QuestionAnswer"]);
+                    this[this.tableAnswer.CssClassColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AnswerTypeRow AnswerTypeRow {
+                get {
+                    return ((AnswerTypeRow)(this.GetParentRow(this.Table.ParentRelations["AnswerTypeAnswer"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["AnswerTypeAnswer"]);
                 }
             }
             
@@ -7826,12 +7857,12 @@ namespace Votations.NSurvey.Data
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AnswerTypeRow AnswerTypeRow {
+            public QuestionRow QuestionRow {
                 get {
-                    return ((AnswerTypeRow)(this.GetParentRow(this.Table.ParentRelations["AnswerTypeAnswer"])));
+                    return ((QuestionRow)(this.GetParentRow(this.Table.ParentRelations["QuestionAnswer"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["AnswerTypeAnswer"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["QuestionAnswer"]);
                 }
             }
             
@@ -8089,6 +8120,18 @@ namespace Votations.NSurvey.Data
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCssClassNull() {
+                return this.IsNull(this.tableAnswer.CssClassColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCssClassNull() {
+                this[this.tableAnswer.CssClassColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public AnswerPropertyRow[] GetAnswerPropertyRows() {
                 if ((this.Table.ChildRelations["AnswerAnswerProperty"] == null)) {
                     return new AnswerPropertyRow[0];
@@ -8100,23 +8143,23 @@ namespace Votations.NSurvey.Data
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AnswerConnectionRow[] GetAnswerConnectionRowsBySubscriberAnswerConnection() {
-                if ((this.Table.ChildRelations["SubscriberAnswerConnection"] == null)) {
-                    return new AnswerConnectionRow[0];
-                }
-                else {
-                    return ((AnswerConnectionRow[])(base.GetChildRows(this.Table.ChildRelations["SubscriberAnswerConnection"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public AnswerConnectionRow[] GetAnswerConnectionRowsByPublisherAnswerConnection() {
                 if ((this.Table.ChildRelations["PublisherAnswerConnection"] == null)) {
                     return new AnswerConnectionRow[0];
                 }
                 else {
                     return ((AnswerConnectionRow[])(base.GetChildRows(this.Table.ChildRelations["PublisherAnswerConnection"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AnswerConnectionRow[] GetAnswerConnectionRowsBySubscriberAnswerConnection() {
+                if ((this.Table.ChildRelations["SubscriberAnswerConnection"] == null)) {
+                    return new AnswerConnectionRow[0];
+                }
+                else {
+                    return ((AnswerConnectionRow[])(base.GetChildRows(this.Table.ChildRelations["SubscriberAnswerConnection"])));
                 }
             }
         }

@@ -365,7 +365,9 @@ namespace Votations.NSurvey.WebAdmin
 
 
                     SetImportedQuestionsDefaults(importedQuestions);
+
                     new Question().ImportQuestions(importedQuestions, NSurveyUser.Identity.UserId);
+
                     if (_libraryId == -1)
                     {
                         UINavigator.NavigateToSurveyBuilder(SurveyId, MenuIndex);
@@ -376,8 +378,8 @@ namespace Votations.NSurvey.WebAdmin
                     }
                 }
                 catch (Exception ex)
-                {
-                    ((PageBase)Page).ShowErrorMessage(MessageLabel, ex.Message);
+                {   
+                    ((PageBase)Page).ShowErrorMessage(MessageLabel, ex.Message + ":" + ex.InnerException);
                     MessageLabel.Visible = true;
                 }
             }
@@ -400,7 +402,7 @@ namespace Votations.NSurvey.WebAdmin
                 }
                 else
                 {
-                    question.SetSurveyIdNull();
+                    question.SetSurveyIdNull();                                 
                     question.PageNumber = 1;
                     question.DisplayOrder = 1;
                     question.LibraryId = _libraryId;

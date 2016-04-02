@@ -1,7 +1,7 @@
 ________________________________________________________________________________________________
 
 
-Survey™ Project v. 2.4 - The open source webapplication for online surveys and webforms
+Survey™ Project v. 2.4 Alpha - The open source webapplication for online surveys and webforms
 
 ________________________________________________________________________________________________
 
@@ -10,9 +10,7 @@ Available release packages for the Survey™ Project v. 2.4 solution:
 
 - Install		: http://survey.codeplex.com/Release/ProjectReleases.aspx
 - Upgrade		: see advise below
-- Source		: v. 2.3 available at http://survey.codeplex.com
-
-- MS WebApp gallery	: Survey™ Project 2.3 available soon
+- Source		: v. 2.3 at http://survey.codeplex.com; v. 2.4 at https://www.github.com/surveyproject
 
 ________________________________________________________________________________________________
 
@@ -56,7 +54,7 @@ Serverside:
 - .NET Framework 4.5 or higher must be installed
 - IIS webserver (7.5 or higer)
 - SMTP mailserver account
-- MsSqlserver 2012 database
+- MsSqlserver 2012 database or higher
 - supported Operating Systems are Windows7 or >, Windows Server 2008/2012
 - you must have administrator privileges on your computer 
 

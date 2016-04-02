@@ -354,6 +354,8 @@ namespace Votations.NSurvey.Data {
             
             private global::System.Data.DataColumn columnDisplayOrder;
             
+            private global::System.Data.DataColumn columnCssClass;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public AnswersDataTable() {
@@ -685,6 +687,14 @@ namespace Votations.NSurvey.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CssClassColumn {
+                get {
+                    return this.columnCssClass;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -755,7 +765,8 @@ namespace Votations.NSurvey.Data {
                         int SliderMax, 
                         bool SliderAnimate, 
                         int SliderStep, 
-                        int DisplayOrder) {
+                        int DisplayOrder, 
+                        string CssClass) {
                 AnswersRow rowAnswersRow = ((AnswersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -794,7 +805,8 @@ namespace Votations.NSurvey.Data {
                         SliderMax,
                         SliderAnimate,
                         SliderStep,
-                        DisplayOrder};
+                        DisplayOrder,
+                        CssClass};
                 rowAnswersRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAnswersRow);
                 return rowAnswersRow;
@@ -861,6 +873,7 @@ namespace Votations.NSurvey.Data {
                 this.columnSliderAnimate = base.Columns["SliderAnimate"];
                 this.columnSliderStep = base.Columns["SliderStep"];
                 this.columnDisplayOrder = base.Columns["DisplayOrder"];
+                this.columnCssClass = base.Columns["CssClass"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -940,6 +953,8 @@ namespace Votations.NSurvey.Data {
                 base.Columns.Add(this.columnSliderStep);
                 this.columnDisplayOrder = new global::System.Data.DataColumn("DisplayOrder", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDisplayOrder);
+                this.columnCssClass = new global::System.Data.DataColumn("CssClass", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCssClass);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("AnswerDataKey1", new global::System.Data.DataColumn[] {
                                 this.columnAnswerId}, true));
                 this.columnAnswerId.AutoIncrement = true;
@@ -952,6 +967,7 @@ namespace Votations.NSurvey.Data {
                 this.columnQuestionId.AllowDBNull = false;
                 this.columnQuestionId.ReadOnly = true;
                 this.columnAnswerText.AllowDBNull = false;
+                this.columnCssClass.DefaultValue = ((string)(""));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1671,6 +1687,22 @@ namespace Votations.NSurvey.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CssClass {
+                get {
+                    if (this.IsCssClassNull()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableAnswers.CssClassColumn]));
+                    }
+                }
+                set {
+                    this[this.tableAnswers.CssClassColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsAnswerTypeIdNull() {
                 return this.IsNull(this.tableAnswers.AnswerTypeIdColumn);
             }
@@ -2075,6 +2107,18 @@ namespace Votations.NSurvey.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDisplayOrderNull() {
                 this[this.tableAnswers.DisplayOrderColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCssClassNull() {
+                return this.IsNull(this.tableAnswers.CssClassColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCssClassNull() {
+                this[this.tableAnswers.CssClassColumn] = global::System.Convert.DBNull;
             }
         }
         

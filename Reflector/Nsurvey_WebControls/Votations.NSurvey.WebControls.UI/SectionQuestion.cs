@@ -171,6 +171,17 @@ namespace Votations.NSurvey.WebControls.UI
             set { _updateSectionLinkText = value; }
         }
 
+        /// <summary>
+        /// Cancel button caption
+        /// </summary>
+        public string CancelButtonText
+        {
+            get
+            {
+                return _cancelButtonText ?? ResourceManager.GetString("CancelButtonText", LanguageCode);
+            }
+            set { _cancelButtonText = value; }
+        }
 
         /// <summary>
         /// Enable server side validation of grid answer section items
@@ -830,7 +841,7 @@ namespace Votations.NSurvey.WebControls.UI
             if (_sectionGrid.GridVoterAnswers.Count > 0)
             {
                 cancelSectionButton.ID = "CancelSectionButton";
-                cancelSectionButton.Text = "Cancel";
+                cancelSectionButton.Text = CancelButtonText;
                 cancelSectionButton.CssClass = "btn btn-primary btn-xs bw fileuploadbuttonmargin";
                 cancelSectionButton.Click += new EventHandler(CancelSectionButton_Click);
                 _buttonsPlaceHolder.Controls.Add(cancelSectionButton);
@@ -1154,7 +1165,8 @@ namespace Votations.NSurvey.WebControls.UI
         private string _addSectionLinkText,
                 _deleteSectionLinkText,
                 _updateSectionLinkText,
-                _editSectionLinkText;
+                _editSectionLinkText,
+                _cancelButtonText;
 
         private Button _addSectionButton = new Button(),
                 _updateSectionButton = new Button();

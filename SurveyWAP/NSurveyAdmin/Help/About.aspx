@@ -11,16 +11,15 @@
       <tr>
         <td class="contentCell" valign="top">
             <br />
-            <h2 style="color:#5720C6;">About the Survey&trade; Project</h2><br />
+            <h2 style="color:#5720C6;">About Survey&trade; Project</h2><br />
             <br />
             <hr style="color:#E2E2E2;" />
             <br />
-            The Survey&trade; Project is a group of inspired volunteers willing to spend time and effort to create free open source survey software for the web and share knowledge and creative experiences along the way.
+            Survey&trade; Project is an initiative to create and maintain free open source survey software for the web and to share knowledge and creative experiences along the way.
             <br /><br />
             The Survey&trade; Project tool is a free, open source webapplication that is used to create webbased
-            surveys and (data entry) forms to gather information and feedback online from customers, employees,
-            friends or website visitors and export or analyze the results through
-            integrated reporting tools.<br />
+            surveys and (data entry) webforms to gather information and feedback online from customers, employees,
+            friends or website visitors and export or analyze the results through integrated reporting tools.<br />
             <br />
             Once installed Survey&trade; Project does not require any special technical knowledge to be used. The application is written in 
             C# and based on the Microsoft .NET framework. Survey&trade; Project makes use of the latest technologies available.
@@ -47,7 +46,7 @@
             with the Community and other SP&trade; users.<br />
             <br />
             We hope you will make good use of the application and appreciate its many features,<br /><br />
-            <b>The Survey&trade; Project Team</b><br />
+            <b>Survey&trade; Project</b><br />
                     </td>
         </tr>
                 

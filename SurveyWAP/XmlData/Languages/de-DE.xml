@@ -1294,7 +1294,7 @@
 		<value>Neue Bedingung hinzufügen</value>
 	</data>
 	<data version="1.4" id="432" name="VoterUserNameLabel">
-		<value>Benutzername von ASP.NET:</value>
+		<value>Benutzername von SP:</value>
 	</data>
 	<data version="1.4" id="433" name="ContextUserNameDisabled">
 		<value>Deaktiviert</value>
@@ -3420,5 +3420,32 @@
   </data>
   <data version="2.4" id="1140" name="InvalidQuestionID">
     <value>Invalid QuestionID!</value>
+  </data>
+  <data version="2.4" id="1141" name="VoterID">
+    <value>VoterID</value>
+  </data>
+  <data version="2.4" id="1142" name="GroupGuid">
+    <value>GroupGuid</value>
+  </data>
+  <data version="2.4" id="1143" name="TokenSecurity">
+    <value>Token Security</value>
+  </data>
+  <data version="2.4" id="1144" name="SurveyLayout">
+    <value>Survey Layout</value>
+  </data>
+  <data version="2.4" id="1145" name="AccessSurveyList">
+    <value>Access SurveyList</value>
+  </data>
+  <data version="2.4" id="1146" name="HelpLabelHelpfiles">
+    <value>Available Helpfiles</value>
+  </data>
+  <data version="2.4" id="1147" name="HelpLabelStartupSettings">
+    <value>Startup and Settings</value>
+  </data>
+  <data version="2.4" id="1148" name="CancelButtonText">
+    <value> Cancel </value>
+  </data>
+  <data version="2.4" id="1149" name="RadioButtonAnswerCssLabel">
+    <value>Radiobutton CSS :</value>
   </data>
 </root>

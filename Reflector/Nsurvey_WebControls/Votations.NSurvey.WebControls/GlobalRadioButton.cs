@@ -7,6 +7,7 @@ namespace Votations.NSurvey.WebControls.UI
     using System.Reflection;
     using System.Web.UI;
     using System.Web.UI.WebControls;
+    using Votations.NSurvey.Resources;
 
     /// <summary>
     /// This radio button is much like the built in <see cref="T:System.Web.UI.WebControls.RadioButton" /> control, but unlike it, has a <see cref="P:Votations.NSurvey.WebControls.UI.GlobalRadioButton.GroupName" /> that can be global, ignoring naming containers.
@@ -159,26 +160,63 @@ namespace Votations.NSurvey.WebControls.UI
             }
             if (this.Text.Length != 0)
             {
-                if (this.TextAlign == System.Web.UI.WebControls.TextAlign.Left)
+                //if (this.TextAlign == System.Web.UI.WebControls.TextAlign.Left)
+                if(this.AlignLabel == "Left")
                 {
-                    //TODO JJ Multiline answers separated by <br/>
-                    writer.Write("<div style='float:left;margin-left:1px;margin-top:0px;'> ");
-                    this.RenderLabel(writer, this.Text, this.ClientID);
-                    writer.Write("</div>");
-                    writer.Write("<div style='width:86%;float:left;margin-left:1px;margin-top:0px;'> ");
+                    ////TODO JJ Multiline answers separated by <br/>
+                    //writer.Write("<div style='float:left;margin-left:1px;margin-top:0px;'> ");
+                    //this.RenderLabel(writer, this.Text, this.ClientID);
+                    //writer.Write("</div>");
+                    //writer.Write("<div style='width:86%;float:left;margin-left:1px;margin-top:0px;'> ");
+                    //this.RenderInputTag(writer, this.ClientID);
+                    //writer.Write("</div>");
+
+
+                    if (String.IsNullOrEmpty(Css))
+                    {
+                        writer.Write("<div class=\"{0}\">", CssXmlManager.GetString("GlobalRadioButtonDiv"));
+                    }
+                    else
+                        writer.Write("<div class=\"{0}\">", Css);
+
+
+                    writer.Write(" <label AssociatedControlID=\"{0}\" Class=\"{1}\" runat=\"server\">{2}</label> ", this.ClientID, CssXmlManager.GetString("GlobalRadioButtonLabel"), this.Text);
+
+                    //writer.Write("<div class=\"{0}\">", Css);
+                    //writer.Write("<div>");
+                    //writer.Write(this.Text);
+                    //writer.Write("</div>");
+                    //writer.Write("<label for=\"{0}\"></label>", this.ClientID);
                     this.RenderInputTag(writer, this.ClientID);
                     writer.Write("</div>");
                 }
                 else
                 {
-                    //TODO JJ Multiline answers separated by <br/>
-                    writer.Write("<div style='float:left;margin-left:1px;margin-top:0px;'> ");
+                    // //TODO JJ Multiline answers separated by <br/>
+                    // writer.Write("<div style='float:left;margin-left:1px;margin-top:0px;'> ");
+                    // this.RenderInputTag(writer, this.ClientID);
+                    // writer.Write("</div>");
+                    // writer.Write(
+                    //     string.Format("<div   style='width:86%;float:left;margin-left:0px;margin-top:-5px;'> {0}",this.Text));
+                    //// this.RenderLabel(writer, this.Text, this.ClientID);
+                    // writer.Write("</div>");
+
+                    if( String.IsNullOrEmpty(Css) )
+                    {
+                     writer.Write("<div class=\"{0}\">", CssXmlManager.GetString("GlobalRadioButtonDiv"));
+                    }
+                    else
+                    writer.Write("<div class=\"{0}\">", Css);
+                    
+
                     this.RenderInputTag(writer, this.ClientID);
+                    writer.Write(" <label AssociatedControlID=\"{0}\" Class=\"{1}\" runat=\"server\">{2}</label> ", this.ClientID, CssXmlManager.GetString("GlobalRadioButtonLabel"), this.Text);
+                    //writer.Write("<label for=\"{0}\"></label>", this.ClientID);
+                    //writer.Write("<div>");
+                    //writer.Write(this.Text);
+                    //writer.Write("</div>");
                     writer.Write("</div>");
-                    writer.Write(
-                        string.Format("<div   style='width:86%;float:left;margin-left:0px;margin-top:-5px;'> {0}",this.Text));
-                   // this.RenderLabel(writer, this.Text, this.ClientID);
-                    writer.Write("</div>");
+
                 }
             }
             else
@@ -198,6 +236,7 @@ namespace Votations.NSurvey.WebControls.UI
         {
             writer.AddAttribute(HtmlTextWriterAttribute.Id, clientID);
             writer.AddAttribute(HtmlTextWriterAttribute.Type, "radio");
+            writer.AddAttribute(HtmlTextWriterAttribute.Class, CssXmlManager.GetString("GlobalRadioButton"));
             writer.AddAttribute(HtmlTextWriterAttribute.Name, this.UniqueGroupName);
             writer.AddAttribute(HtmlTextWriterAttribute.Value, this.ValueAttribute);
             if (this.Checked)
@@ -223,6 +262,7 @@ namespace Votations.NSurvey.WebControls.UI
 
         /// <summary>
         /// Renders the label portion of the control.
+        /// Note 03/'16: method not used in Render code
         /// </summary>
         protected virtual void RenderLabel(HtmlTextWriter writer, string text, string clientID)
         {
@@ -345,6 +385,8 @@ namespace Votations.NSurvey.WebControls.UI
 
         /// <summary>
         /// Gets or sets the alignment of the text label associated with the control.
+        /// Note 20/03/'16: will not work with the htmltextwriter to create the input control; will only work if TextAlign is set as an 
+        /// attribute on an ASP control; instead of TextAlign the AlignLabel method is created below. 
         /// </summary>
         [DefaultValue(2), Description("Gets or sets the alignment of the text label associated with the control."), Category("Appearance")]
         public virtual System.Web.UI.WebControls.TextAlign TextAlign
@@ -352,6 +394,7 @@ namespace Votations.NSurvey.WebControls.UI
             get
             {
                 object obj2 = this.ViewState["TextAlign"];
+
                 if (obj2 != null)
                 {
                     return (System.Web.UI.WebControls.TextAlign)obj2;
@@ -365,6 +408,50 @@ namespace Votations.NSurvey.WebControls.UI
                     throw new ArgumentOutOfRangeException("value");
                 }
                 this.ViewState["TextAlign"] = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the cssclass of the control.
+        /// The CssXmlManager searches the Xmldata/Css/Surveybox.xml file for the entry holding the left/ right value.
+        /// </summary>
+        [Category("Appearance"), Description("Gets or sets the label Alignment Lef/Right associated with the control."), DefaultValue("Left")]
+        public virtual string AlignLabel
+        {
+            get
+            {
+                object obj2 = CssXmlManager.GetString("GlobalRadioButtonTextAlign");
+                if (obj2 != null)
+                {
+                    return (string)obj2;
+                }
+                return string.Empty;
+            }
+            set
+            {
+                this.ViewState["AlignLabel"] = value;
+            }
+        }
+
+
+        /// <summary>
+        /// Gets or sets the cssclass of the control.
+        /// </summary>
+        [Category("Appearance"), Description("Gets or sets the text label associated with the control."), DefaultValue("")]
+        public virtual string Css
+        {
+            get
+            {
+                object obj2 = this.ViewState["Css"];
+                if (obj2 != null)
+                {
+                    return ((string)obj2).Replace(" ","-");
+                }
+                return string.Empty;
+            }
+            set
+            {
+                this.ViewState["Css"] = value;
             }
         }
 

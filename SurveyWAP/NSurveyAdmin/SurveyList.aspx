@@ -51,7 +51,7 @@
                 <br />
                 <ol>
                     <li>
-                        <asp:TextBox runat="server" ID="txtSearchField"></asp:TextBox>
+                        <asp:TextBox runat="server" Columns="50" ID="txtSearchField"></asp:TextBox>
                         <asp:Button CssClass="btn btn-primary btn-xs bw" runat="server" ID="btnSearch" Text="" OnClick="OnSurveyFilter" />
                     </li>
                 </ol><br />

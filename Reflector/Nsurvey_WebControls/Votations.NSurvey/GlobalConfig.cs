@@ -15,8 +15,8 @@ namespace Votations.NSurvey
         public static readonly string AnswerSectionsName = "_ass";
         public static readonly string DeleteFileButtonName = "_dlfb";
         public static readonly string GroupName = "_grp";
-        private static int majorVersion = 1;
-        private static int minorVersion = 2;
+        private static int majorVersion = 2;
+        private static int minorVersion = 4;
         public static readonly string QuestionValidationFunction = "__ValidateQuestion";
         public static readonly string SurveyValidationFunction = "__ValidateSurvey";
         private static string version = "rtm";
@@ -140,7 +140,7 @@ namespace Votations.NSurvey
         {
             get
             {
-                return ("Survey v." + majorVersion.ToString() + "." + minorVersion.ToString() + " " + version);
+                return ("Survey Project v." + majorVersion.ToString() + "." + minorVersion.ToString() + " " + version);
             }
         }
 
@@ -183,6 +183,28 @@ namespace Votations.NSurvey
                 if (str == null)
                 {
                     return "/XmlData/Helpfiles/";
+                }
+                return str;
+            }
+        }
+
+        /// <summary>
+        /// Path of the CSS Xml files
+        /// </summary>
+        public static string CssXmlFilePath
+        {
+            get
+            {
+                string str = null;
+                NameValueCollection config = (NameValueCollection)ConfigurationManager.GetSection("nSurveySettings");
+                if (config == null)
+                {
+                    config = ConfigurationManager.AppSettings;
+                }
+                str = config["NSurveyCssXmlPath"];
+                if (str == null)
+                {
+                    return "/XmlData/Css/";
                 }
                 return str;
             }

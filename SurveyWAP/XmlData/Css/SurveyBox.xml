@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- Parameters (43 entries/ nodes):
+  value= css clases and selectors applied to the object; css classes can be defined in the surveybox.css file; multiple classes per object possible
+  id = the id of the different objects as set in the .cs codebehind files
+  name = the name used by the CssXmlManager in the .cs codebehind files to fetch the css values for the object
+  -->
+  <!-- Message Box panels -->
+  <data version="2.4" id="mbCW" name="MessageBoxContainerWrapper">
+    <value>questionContainerWrapper</value>
+  </data>
+  <data version="2.4" id="mbC" name="MessageBoxContainer">
+    <value>questionContainer</value>
+  </data>  
+  <!-- Message Box messages -->
+  <data version="2.4" id="mbMP" name="NotYetOpenedSurveyMessage">
+    <value>notYetOpenedSurveyMessage</value>
+  </data>
+  <data version="2.4" id="mbMP" name="InactiveSurveyMessage">
+    <value>inactiveSurveyMessage</value>
+  </data>
+  <data version="2.4" id="mbMP" name="ClosedSurveyMessage">
+    <value>closedSurveyMessage</value>
+  </data>
+  <data version="2.4" id="mbMP" name="ClosedDateSurveyMessage">
+    <value>closedSurveyMessage</value>
+  </data>
+  <!--Multi Language Request Entries -->
+  <data version="2.4" id="lrqCW" name="MultiLanguageContainerWrapper">
+    <value>questionContainerWrapper</value>
+  </data>
+  <data version="2.4" id="lrqC" name="MultiLanguageContainer">
+    <value>questionContainer</value>
+  </data>
+  <data version="2.4" id="lrB" name="LanguageRequestButton">
+    <value>btn btn-primary btn-xs bw</value>
+  </data>
+  <data version="2.4" id="lrDDL" name="LanguageRequestDDL">
+    <value>lddl</value>
+  </data>
+  <data version="2.4" id="lrT" name="LanguageRequestTable">
+    <value>tablelddl</value>
+  </data>
+  <data version="2.4" id="lrlM" name="LanguageRequestMessage">
+    <value>languageMessage</value>
+  </data>
+  <data version="2.4" id="lrlDDLP" name="LanguageDropDownListPanel">
+    <value>languageDropDownList</value>
+  </data>
+  <data version="2.4" id="lrlBP" name="LanguageButtonPanel">
+    <value>languageButtonPanel</value>
+  </data>
+  <!-- Pagenumber & percentage footer -->
+  <data version="2.4" id="pNP" name="PageNumberPanel">
+    <value>pageNumberPanel</value>
+  </data>
+  <data version="2.4" id="pN" name="PageNumberLabel">
+    <value>pageNumberLabel</value>
+  </data>
+  <data version="2.4" id="cP" name="PageNumberCurrent">
+    <value>currentPage</value>
+  </data>
+  <data version="2.4" id="vP" name="PageNumberVisited">
+    <value>visitedPage</value>
+  </data>
+  <data version="2.4" id="naP" name="PageNumberNonactive">
+    <value>nonactivePage</value>
+  </data>
+  <!-- Nextpage buttons incl. resume -->
+  <data version="2.4" id="npBRP" name="NextPageButtonRowPanel">
+    <value>nextPageButtonRowPanel</value>
+  </data>
+  <data version="2.4" id="npNP" name="NextPageNavigationPanel">
+    <value>navigationPanel</value>
+  </data>
+  <data version="2.4" id="ppbB" name="PreviousPageButton">
+    <value>previousPageButton btn btn-primary btn-xs bw</value>
+  </data>
+    <data version="2.4" id="ppBP" name="PreviousPageButtonPanel">
+    <value>previousPageButtonPanel</value>
+  </data>
+  <data version="2.4" id="npSB" name="NextPageSubmitButton">
+    <value>nextPageButton btn btn-primary btn-xs bw</value>
+  </data>
+  <data version="2.4" id="npSBP" name="NextPageSubmitButtonPanel">
+    <value>nextPageSubmitButtonPanel</value>
+  </data>
+  <data version="2.4" id="RPB" name="ResumeProgressButton">
+    <value>resumeProgressButton btn btn-primary btn-xs bw</value>
+  </data>
+    <data version="2.4" id="npRPBP" name="NextPageResumeProgressButtonPanel">
+    <value>resumeProgressButtonPanel</value>
+  </data>
+  <data version="2.4" id="npSPBP" name="NextPageSaveProgressButtonPanel">
+    <value>saveProgressButtonPanel</value>
+  </data>
+  <data version="2.4" id="spB" name="SaveProgressButton">
+    <value>saveProgressButton btn btn-primary btn-xs bw</value>
+  </data>
+  <data version="2.4" id="rrUB" name="ResumeRequestUidButton">
+    <value>btn btn-primary btn-xs bw</value>
+  </data>
+  <data version="2.4" id="rrCB" name="ResumeRequestCancelButton">
+    <value>btn btn-primary btn-xs bw</value>
+  </data>
+  <data version="2.4" id="rct" name="ResumeRequestTable">
+    <value>rct</value> 
+  </data>
+  <!-- submit button row -->
+  <data version="2.4" id="bsbP" name="BuildSubmitButtonPanel">
+    <value>pageButtonRow</value>
+  </data>
+  <data version="2.4" id="bsbSP" name="BuildSubmitButtonSubPanel">
+    <value>navigationPanel</value>
+  </data>
+  <data version="2.4" id="bsbPPBP" name="BuildSubmitPPBSubPanel">
+    <value>previousPageButtonPanel</value>
+  </data>
+  <data version="2.4" id="ssB" name="SurveySubmitButton">
+    <value>surveySubmitButton btn btn-primary btn-xs bw</value>
+  </data>
+  <data version="2.4" id="ssbP" name="SurveySubmitButtonPanel">
+    <value>surveySubmitButtonPanel</value>
+  </data>
+<!-- build surveybox -->
+  <data version="2.4" id="bsbQCP" name="BuildSurveyBoxQCPanel">
+    <value>questionContainerWrapper</value>
+  </data>
+  <data version="2.4" id="bsbQCSP" name="BuildSurveyBoxQCSubPanel">
+    <value>questionContainer</value>
+  </data>
+  <!-- Build Thanksbox -->
+  <data version="2.4" id="bsbcT" name="BuildThankBoxCssTable">
+    <value>ThanksboxCss</value>
+  </data>
+  <data version="2.4" id="bsbcP" name="BuildThankBoxCssPanel">
+    <value>questionContainerWrapper</value>
+  </data>
+  <data version="2.4" id="bsbcSP" name="BuildThankBoxCssSubPanel">
+    <value>questionContainer</value>
+  </data>
+<!-- onresume UID submit errormesage -->
+  <data version="2.4" id="oruse" name="OnResumeUidSubmitError">
+    <value>ErrorMessage</value>
+  </data>
+  <!-- AnswerSelectionItem Radiobutton-->
+  <data version="2.4" id="oruse" name="AnswerSelectionRadioButton">
+    <value>AnswerTextRender</value>
+  </data>
+  <data version="2.4" id="oruse" name="GlobalRadioButtonLabel">
+    <value></value>
+  </data>
+  <data version="2.4" id="oruse" name="GlobalRadioButtonDiv">
+    <value></value>
+  </data>
+  <data version="2.4" id="oruse" name="GlobalRadioButton">
+    <value>globalRadioButton</value>
+  </data>
+  <!-- Option to determine labeltext left or right alignment of radiobutton: no css -->
+  <data version="2.4" id="oruse" name="GlobalRadioButtonTextAlign">
+    <value>Right</value>
+  </data>
+</root>

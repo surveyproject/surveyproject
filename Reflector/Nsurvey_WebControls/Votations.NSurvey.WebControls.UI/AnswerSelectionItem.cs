@@ -5,6 +5,7 @@ namespace Votations.NSurvey.WebControls.UI
     using System.Web.UI.WebControls;
     using Votations.NSurvey;
     using Votations.NSurvey.Data;
+    using Votations.NSurvey.Resources;
 
     public class AnswerSelectionItem : AnswerItem
     {
@@ -45,8 +46,11 @@ namespace Votations.NSurvey.WebControls.UI
                     }
                     else
                     {
-                        child.Text = this.Text;//JJ
-                    child.CssClass = "AnswerTextRender";
+                        child.Text = this.Text;
+                        //child.ID = "rbID";
+                        // next will get CSS from database; CSS entered on AnswerSettingsform - Radiobutton CSS 
+                        child.Css = this.Css;
+                        //child.CssClass = CssXmlManager.GetString("AnswerSelectionRadioButton");
                     }
                 }
                 this.SelectionControl = child;

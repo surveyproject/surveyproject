@@ -103,8 +103,9 @@ namespace Votations.NSurvey.WebAdmin
         public static readonly string LibraryTemplateHyperlink = AdminRoot + "/LibraryTemplates.aspx";
         public static readonly string WarningScreenHyperlink = AdminRoot + "/WarningScreen.aspx";
         
-        // Survey 2.3 Release Additions
+        // Survey 2.4 Release Additions
         public static readonly string GeneralSettingsLink = AdminRoot + "/Settings.aspx";
+        public static readonly string CssXmlHyperLink = AdminRoot + "/EditCssXml.aspx";
 
 
         public static void NavigateToSurveyOptions(int surveyId, int menuIndex)

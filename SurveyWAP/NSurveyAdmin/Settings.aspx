@@ -1,25 +1,22 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Wap.Master" AutoEventWireup="true" CodeBehind="Settings.aspx.cs" Inherits="Votations.NSurvey.WebAdmin.Settings" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/NSurveyAdmin/MsterPageTabs.master" AutoEventWireup="true" CodeBehind="Settings.aspx.cs" Inherits="Votations.NSurvey.WebAdmin.Settings" %>
 
 <asp:content id="Content1" contentplaceholderid="ContentPlaceHolder1" runat="Server">
-        <div id="mainBody" class="contentHolder ps-container" style="width: 775px; top: 0px;
-                background-color: #ffffff; 
-                height:750px; 
-                vertical-align:top;
-                text-align:left;
-                border: 1px #aaaaaa solid ;              
-               -webkit-border-radius: 7px;
-               -moz-border-radius: 7px;
-                border-radius: 7px;
-                
-                ">
+        <div id="mainBody" class="contentHolder ps-container" >
         <div id="Panel" class="Panel content" style="margin: 25px 0px 25px 10px; width: 725px;">
 
                         <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="ErrorMessage" Visible="False"></asp:Label>
                 </div>
 
+            <div style="position: relative; left: 720px; width: 10px; top: 13px; clear: none;">
+                <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/InstallationSettings.aspx"
+                    title="Click for more Information">
+                    <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                </a>
+            </div>
 
-            <h2 style="margin-left:25px;">General Settings</h2><br />
+
+ <!--            <asp:label ID="lblMainTitle" CssClass="titleFont" style="margin-left:25px;" runat="server"></asp:label><br /> -->
 <!--
             <fieldset style="width: 720px; margin-top: 15px; margin-left: 15px; text-align: left;">
                 <legend class="titleFont" style="margin: 0px 15px 0 15px;">CREATE SP DATABASE
@@ -38,7 +35,7 @@
             -->
 
                             <fieldset style="width:720px; margin-top:15px; margin-left:15px; text-align: left;">
-        <legend class="titleFont" style="margin: 0px 15px 0 15px;">DATABASE SETTINGS
+        <legend class="titleFont" style="margin: 0px 15px 0 15px;">Database Connections
                                 </legend><br />
         <ol>
             <li>
@@ -85,7 +82,7 @@
     </fieldset>
 
                 <fieldset style="width:720px; margin-top:15px; margin-left:15px; text-align: left;">
-        <legend class="titleFont" style="margin: 0px 15px 0 15px;">NSURVEYSETTINGS
+        <legend class="titleFont" style="margin: 0px 15px 0 15px;">Web.config NSURVEYSETTINGS
                                 </legend><br />
         <ol>
             <li>

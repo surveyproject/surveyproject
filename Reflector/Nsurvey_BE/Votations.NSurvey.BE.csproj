@@ -24,7 +24,7 @@
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>bin\</OutputPath>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <DebugType>Full</DebugType>
     <DocumentationFile />
@@ -41,7 +41,8 @@
     <DefineConstants>TRACE</DefineConstants>
     <OutputPath>bin\</OutputPath>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <DocumentationFile>bin\Votations.NSurvey.BE.xml</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
@@ -87,9 +88,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
-    <Compile Include="Votations.NSurvey.Data\AnswerConnectionData.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Votations.NSurvey.Data\AnswerConnectionData.cs" />
     <Compile Include="Votations.NSurvey.Data\AnswerData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -103,7 +102,6 @@
     </Compile>
     <Compile Include="Votations.NSurvey.Data\NSurveyForm.cs">
       <DependentUpon>NSurveyForm.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Votations.NSurvey.Data\NSurveyForm.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -146,12 +144,8 @@
     <Compile Include="Votations.NSurvey.Data\Votations.NSurvey.Constants\Commons.cs" />
     <Compile Include="Votations.NSurvey.Data\Votations.NSurvey.Constants\Constants.cs" />
     <Compile Include="Votations.NSurvey.Data\Votations.NSurvey.Constants\UserSettings.cs" />
-    <Compile Include="Votations.NSurvey.Data\AnswerTypeData.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Votations.NSurvey.Data\BranchingRuleData.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Votations.NSurvey.Data\AnswerTypeData.cs" />
+    <Compile Include="Votations.NSurvey.Data\BranchingRuleData.cs" />
     <Compile Include="Votations.NSurvey.Data\CSVExportData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -159,105 +153,53 @@
     </Compile>
     <Compile Include="Votations.NSurvey.Data\FolderData.cs">
       <DependentUpon>FolderData.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Votations.NSurvey.Data\FileData.cs" />
-    <Compile Include="Votations.NSurvey.Data\FilterData.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Votations.NSurvey.Data\FilterRuleData.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Votations.NSurvey.Data\InvitationLogData.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Votations.NSurvey.Data\InvitationQueueData.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Votations.NSurvey.Data\LayoutModeData.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Votations.NSurvey.Data\FilterData.cs" />
+    <Compile Include="Votations.NSurvey.Data\FilterRuleData.cs" />
+    <Compile Include="Votations.NSurvey.Data\InvitationLogData.cs" />
+    <Compile Include="Votations.NSurvey.Data\InvitationQueueData.cs" />
+    <Compile Include="Votations.NSurvey.Data\LayoutModeData.cs" />
     <Compile Include="Votations.NSurvey.Data\LibraryData.cs">
       <DependentUpon>LibraryData.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Votations.NSurvey.Data\MatrixChildQuestionData.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Votations.NSurvey.Data\MessageConditionData.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Votations.NSurvey.Data\MultiLanguageData.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Votations.NSurvey.Data\NotificationModeData.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Votations.NSurvey.Data\NSurveyDataSource.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Votations.NSurvey.Data\MatrixChildQuestionData.cs" />
+    <Compile Include="Votations.NSurvey.Data\MessageConditionData.cs" />
+    <Compile Include="Votations.NSurvey.Data\MultiLanguageData.cs" />
+    <Compile Include="Votations.NSurvey.Data\NotificationModeData.cs" />
+    <Compile Include="Votations.NSurvey.Data\NSurveyDataSource.cs" />
     <Compile Include="Votations.NSurvey.Data\NSurveyQuestion.cs">
       <DependentUpon>NSurveyQuestion.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Votations.NSurvey.Data\NSurveyVoter.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NSurveyVoter.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Votations.NSurvey.Data\PageOptionData.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Votations.NSurvey.Data\PipeData.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Votations.NSurvey.Data\ProgressDisplayModeData.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Votations.NSurvey.Data\QuestionResultsData.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Votations.NSurvey.Data\QuestionsAnswersData.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Votations.NSurvey.Data\QuestionSectionOptionData.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Votations.NSurvey.Data\QuestionSelectionModeData.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Votations.NSurvey.Data\RegularExpressionData.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Votations.NSurvey.Data\ResumeModeData.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Votations.NSurvey.Data\RoleData.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Votations.NSurvey.Data\SecurityRightData.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Votations.NSurvey.Data\SkipLogicRuleData.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Votations.NSurvey.Data\PageOptionData.cs" />
+    <Compile Include="Votations.NSurvey.Data\PipeData.cs" />
+    <Compile Include="Votations.NSurvey.Data\ProgressDisplayModeData.cs" />
+    <Compile Include="Votations.NSurvey.Data\QuestionResultsData.cs" />
+    <Compile Include="Votations.NSurvey.Data\QuestionsAnswersData.cs" />
+    <Compile Include="Votations.NSurvey.Data\QuestionSectionOptionData.cs" />
+    <Compile Include="Votations.NSurvey.Data\QuestionSelectionModeData.cs" />
+    <Compile Include="Votations.NSurvey.Data\RegularExpressionData.cs" />
+    <Compile Include="Votations.NSurvey.Data\ResumeModeData.cs" />
+    <Compile Include="Votations.NSurvey.Data\RoleData.cs" />
+    <Compile Include="Votations.NSurvey.Data\SecurityRightData.cs" />
+    <Compile Include="Votations.NSurvey.Data\SkipLogicRuleData.cs" />
     <Compile Include="Votations.NSurvey.Data\SurveyData.cs">
       <DependentUpon>SurveyData.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Votations.NSurvey.Data\SurveyEntryQuotaData.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Votations.NSurvey.Data\SurveyEntryQuotaData.cs" />
     <Compile Include="Votations.NSurvey.Data\SurveyLayoutData.cs">
       <DependentUpon>SurveyLayoutData.xsd</DependentUpon>
     </Compile>
     <Compile Include="Votations.NSurvey.Data\Test.cs">
       <DependentUpon>Test.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Votations.NSurvey.Data\UnAuthentifiedUserActionData.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Votations.NSurvey.Data\UserData.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Votations.NSurvey.Data\UnAuthentifiedUserActionData.cs" />
+    <Compile Include="Votations.NSurvey.Data\UserData.cs" />
     <Compile Include="Votations.NSurvey.Data\UserSettingData.cs">
       <DependentUpon>UserSettingData.xsd</DependentUpon>
     </Compile>
@@ -266,18 +208,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UserSettingData.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Votations.NSurvey.Data\VoterAnswersData.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Votations.NSurvey.Data\VoterData.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Votations.NSurvey.Data\VoterStatisticsData.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Votations.NSurvey.Data\WebSecurityAddInData.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Votations.NSurvey.Data\VoterAnswersData.cs" />
+    <Compile Include="Votations.NSurvey.Data\VoterData.cs" />
+    <Compile Include="Votations.NSurvey.Data\VoterStatisticsData.cs" />
+    <Compile Include="Votations.NSurvey.Data\WebSecurityAddInData.cs" />
     <Compile Include="Votations.NSurvey.Enums\AnswerMessageType.cs" />
     <Compile Include="Votations.NSurvey.Enums\AnswerSelectionMode.cs" />
     <Compile Include="Votations.NSurvey.Enums\AnswerTypeEnum.cs" />

@@ -9,6 +9,6 @@
 [assembly: System.Reflection.AssemblyConfiguration("")]
 [assembly: System.Reflection.AssemblyCompany("Fryslan Webservices™")]
 [assembly: System.Reflection.AssemblyProduct("Survey™ Project Webapplication")]
-[assembly: System.Reflection.AssemblyCopyright("(c) 2004 Thomas Zumbrunn - (c) 2009/2014 Fryslan Webservices™")]
+[assembly: System.Reflection.AssemblyCopyright("(c) 2004 Thomas Zumbrunn - (c) 2009/2016 Fryslan Webservices™")]
 [assembly: System.Reflection.AssemblyTrademark("Survey™ Project")]
 [assembly: System.Reflection.AssemblyCulture("")]	

@@ -1,6 +1,6 @@
 <%@ Control Language="c#" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.UserControls.HeaderControl"
     TargetSchema="http://schemas.microsoft.com/intellisense/ie5" CodeBehind="HeaderControl.ascx.cs" %>
-<table title="Survey&#8482; Project Header" style="padding:0px; border:0px;">
+<table style="padding:0px; border:0px;">
     <tr>
         <td class="headerCell" style="text-align:right;">
             

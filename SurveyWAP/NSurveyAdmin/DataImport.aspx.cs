@@ -39,6 +39,7 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
             dataSelectionLabel.Text=GetPageResource("DataSelection");
             rbAll.Text = GetPageResource("CSVEXPGetAllDates");
             rbSelRange.Text = GetPageResource("CSVExpGetSelectedDates");
+            btnImport.Text = GetPageResource("ImportFile");
         }
 
         public void btnImport_Click(Object sender, EventArgs e)

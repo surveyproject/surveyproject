@@ -23,7 +23,7 @@
            
           <asp:placeholder id="pendinglist" runat="server">
        <li>    <div class="rounded_corners">
-          <asp:datagrid id="PendingEmailsDataGrid" runat="server" PageSize="3" AllowPaging="False" AutoGenerateColumns="False" Width="100%" EnableViewState="False" >
+          <asp:datagrid id="PendingEmailsDataGrid" runat="server" PageSize="2" AllowPaging="True" AutoGenerateColumns="False" Width="100%"  >
           <AlternatingItemStyle BackColor="#FFF6BB">
           </AlternatingItemStyle>
           

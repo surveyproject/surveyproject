@@ -25,7 +25,10 @@ namespace Votations.NSurvey.WebControls.UI
                     this._answerItemDropDownList.Items.Add(item);
                 }
             }
-            this._answerItemDropDownList.Items.Insert(0, new ListItem(ResourceManager.GetString("ListSelection", base.LanguageCode), "-1"));
+            ListItem listItem = new ListItem(ResourceManager.GetString("ListSelection", base.LanguageCode), "-1");
+            listItem.Attributes.Add("Style", "display: none;");
+            //this._answerItemDropDownList.Items.Insert(0, new ListItem(ResourceManager.GetString("ListSelection", base.LanguageCode), "-1"));
+            this._answerItemDropDownList.Items.Insert(0, listItem);
             this.Controls.Add(this._answerItemDropDownList);
         }
 

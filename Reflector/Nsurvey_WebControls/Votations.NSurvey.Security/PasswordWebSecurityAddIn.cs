@@ -120,27 +120,41 @@ namespace Votations.NSurvey.Security
         {
             TableCell cell = new TableCell();
             TableRow row = new TableRow();
-            Button child = new Button();
+            Button child = new Button { CssClass = "btn btn-primary btn-xs bw" };
+            Panel panel = new Panel { CssClass = "passwordMessage" };
             //TODO JJ 
-            child.CssClass = "btn btn-primary btn-xs bw";
             this._passwordTextBox = new TextBox();
-            //this._passwordTable.ControlStyle.Font.CopyFrom(controlStyle.Font);
             this._passwordTable.ControlStyle.CssClass = "tablelddl ";
-            this._passwordTable.Width = Unit.Percentage(100.0);
+            //this._passwordTable.Width = Unit.Percentage(100.0);
             child.Text = ResourceManager.GetString("SubmitPassword", this.LanguageCode);
             child.Click += new EventHandler(this.OnValidatePassword);
             this._passwordTextBox.TextMode = TextBoxMode.Password;
             this._passwordTextBox.CssClass = "lddl";
-            cell.Controls.Add(new LiteralControl(ResourceManager.GetString("EnterPasswordMessage", this.LanguageCode)));
+
+            panel.Controls.Add(new LiteralControl(ResourceManager.GetString("EnterPasswordMessage", this.LanguageCode)));
+            //cell.Controls.Add(new LiteralControl(ResourceManager.GetString("EnterPasswordMessage", this.LanguageCode)));
+            cell.Controls.Add(panel);
+            row.Cells.Add(cell);
+            //this._passwordTable.Rows.Add(row);
+            //cell = new TableCell();
+            //row = new TableRow();
+            panel = new Panel { CssClass = "passwordTextBox" };
+            panel.Controls.Add(this._passwordTextBox);
+            cell.Controls.Add(panel);
+
+            panel = new Panel { CssClass = "passwordSubmitButton" };
+            panel.Controls.Add(child);
+
+            cell.Controls.Add(panel);
             row.Cells.Add(cell);
             this._passwordTable.Rows.Add(row);
-            cell = new TableCell();
-            row = new TableRow();
-            cell.Controls.Add(this._passwordTextBox);
-            cell.Controls.Add(child);
-            row.Cells.Add(cell);
-            this._passwordTable.Rows.Add(row);
-            return this._passwordTable;
+
+            Panel wrapper = new Panel { CssClass = "questionContainerWrapper" };
+            Panel subpanel = new Panel { CssClass = "questionContainer" };
+            wrapper.Controls.Add(subpanel);
+            subpanel.Controls.Add(this._passwordTable);
+
+            return wrapper;
         }
 
         /// <summary>

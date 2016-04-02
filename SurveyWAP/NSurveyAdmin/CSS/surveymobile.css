@@ -2,15 +2,192 @@
 
 @import url('loginform.css');
 
+
+.fwsanswertestRed{
+    color:red;
+    font-size: 1.0em;
+    font-weight: normal;
+}
+
+
+.EmptyLabel{
+    color:green;
+    font-size: 1.0em;
+    font-weight: normal;
+}
+
+.fwsanswertest{
+    color:blue;
+    font-size: 1.0em;
+    font-weight: normal;
+}
+
+.globalRadioButton{
+ height:20px;
+}
+
+
+/*SP 2.4 CSS*/
+
+.notYetOpenedSurveyMessage{
+        color: red;
+        font-size: 1.2em;
+}
+.inactiveSurveyMessage{
+    color: red;
+    font-size: 1.2em;
+}
+.closedSurveyMessage{
+        color: red;
+        font-size: 1.2em;
+}
+
+/* messageboxes*/
+.questionContainerWrapper{
+
+}
+
+.questionContainer{
+
+}
+
+/*footerrow: pagenumber/ percentage*/
+.pageNumberPanel{
+
+}
+.pageNumberLabel{
+
+}
+.currentPage{
+
+}
+.visitedPage{
+
+}
+.nonactivePage{
+
+}
+
+/*multilanguage choices*/
+
+/*button: btn btn-primary btn-xs bw*/
+.btn{border:1px solid transparent;border-radius:4px;cursor:pointer;display:inline-block;font-size:14px;font-weight:400;margin-bottom:0;padding:6px 12px;text-align:center;user-select:none;vertical-align:middle;white-space:nowrap;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;-webkit-user-select:none}
+.btn-primary{background:#428bca;border-color:#357ebd;color:#fff}
+.btn-primary.disabled,.btn-primary[disabled],fieldset[disabled] .btn-primary,.btn-primary.disabled:hover,.btn-primary[disabled]:hover,fieldset[disabled] .btn-primary:hover,.btn-primary.disabled:focus,.btn-primary[disabled]:focus,fieldset[disabled] .btn-primary:focus,.btn-primary.disabled:active,.btn-primary[disabled]:active,fieldset[disabled] .btn-primary:active,.btn-primary.disabled.active,.btn-primary[disabled].active,fieldset[disabled] .btn-primary.active{background:#428bca;border-color:#357ebd}
+.btn-primary:active,.btn-primary.active,.open .dropdown-toggle.btn-primary{}
+.btn-primary:hover,.btn-primary:focus,.btn-primary:active,.btn-primary.active,.open .dropdown-toggle.btn-primary{background:#3276b1;border-color:#285e8e;color:#fff}
+.btn-sm,.btn-xs{border-radius:3px;font-size:12px;padding:5px 10px}
+.btn-xs{padding:1px 5px}
+.btn.disabled,.btn[disabled],fieldset[disabled] .btn{box-shadow:none;cursor:not-allowed;filter:alpha(opacity=65);opacity:.65;pointer-events:none;-webkit-box-shadow:none}
+.btn:active,.btn.active{box-shadow:inset 0 3px 5px rgba(0,0,0,.125);outline:0;-webkit-box-shadow:inset 0 3px 5px rgba(0,0,0,.125)}
+.btn:focus{outline:thin dotted #333;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}
+.btn:hover,.btn:focus{color:#333;text-decoration:none}
+.bw{float:right;font-size-adjust:.5;margin-right:10px;width:auto}
+
+
+.languageMessage{
+
+}
+
+.languageDropDownList{
+
+}
+.languageButtonPanel{
+
+}
+
+
+/*nextpage buttons*/
+
+.nextPageButtonRowPanel{
+
+}
+
+.pageButtonRow{
+
+}
+.navigationPanel{
+
+}
+
+.previousPageButton{
+
+}
+
+.nextPageButton{
+
+}
+
+.nextPageSubmitButtonPanel{
+
+}
+
+.resumeProgressButton{
+
+}
+.saveProgressButton{
+
+}
+
+/*resumerequest
+button: btn btn-primary btn-xs bw 
+resumetable*/
+.rct{
+
+}
+
+.resumeRequestTable{
+
+}
+
+/*submitbuttonrow*/
+.pageButtonRow{
+
+}
+.navigationPanel{
+
+}
+.surveySubmitButton{
+
+}
+
+
+/* Build SurveyBox - Question*/
+.questionContainerWrapper{
+
+}
+.questionContainer{
+
+}
+
+.ThanksboxCss{
+
+}
+
+
+/* Passwordwebsecutiryaddin */
+
+.passwordMessage{
+    margin: 3px 0 3px 0;
+}
+.passwordTextBox{
+
+}
+.passwordSubmitButton{
+
+}
+
+
+/*SP 2.3 CSS*/
+
 .surveybox
 {
 	width: 100%;
 	background-color: #fff;
     color: #000;
 	line-height: 23px;
-	font-family: "Helvetica Neue", Helvetica,Arial,sans-serif;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	vertical-align: top;
-
 }
 
 .surveybox > table
@@ -21,7 +198,7 @@
 
 .questionStyle
 {
-	font-family: "Helvetica Neue", Helvetica,Arial,sans-serif;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	color: #000;
 	background-color: #fff;
     font-size: 1.2em;
@@ -125,7 +302,7 @@ tr.questionStyle td > span > div.question-number-div
 	background-color: #B8F2AB;
 	color: green;
 
-        padding: 5px 15px 5px 10px;
+    padding: 5px 15px 5px 10px;
 
     display: block;
     width: 100%;
@@ -187,7 +364,7 @@ tr.questionStyle td > span > div.question-number-div
 .AnswerTextRender
 {
 	width: auto;
-	display: flexbox;
+	//display: flexbox;
     overflow:auto;
 	white-space: normal;
 }
@@ -283,7 +460,7 @@ span.AnswerTextRender > div:nth-child(2)
 	font-size: 10pt;
 	background-color: #F4F9FA;
     margin: 0 3px 7px 5px;
-
+    
     border-radius: 7px;
 }
 .sgahStyle
@@ -404,7 +581,7 @@ tr.footStyle > td
 /*calender Answerfield*/
 .calendarStyle
 {
-    	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 1.0em;
 	width: 260px;
 }

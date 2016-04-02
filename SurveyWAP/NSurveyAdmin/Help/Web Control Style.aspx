@@ -22,7 +22,7 @@
                 When deploying the survey control by publishing a survey <!-- using the <a href="Web%20Control%20Deployment.aspx"
                     target="_self">Web Control Deployment</a>  options --> the style of the survey can
                 be customized by changing the CSS itemstyle attributes of the ASP.NET survey control
-                code (see the survey.aspx file for th survey control and the nsurveyform.css file for the css) .<br />
+                code (see the surveymobile.aspx file for the survey control and the surveymobiles.css file for the css) .<br />
                 <br />
                 Survey&trade; offers great flexibility and the option to change almost any part of the
                 control's design as shown throught this list of control attributes:<br />
@@ -64,8 +64,10 @@
                     FootStyle CssClass="footStyle"
                 
                 <br /><br />
-
-
+                 In addition to these default CSS tags used on the survey control, the look and feel of multiple other individual
+                 elements on the surveyform webpage can be determined through the Designer/ Layout/ CSSXML list. This is were CSS class names and selectors
+                can be linked to different elements of the surveyform webpage (besides the ones mentioned at the surveycontrol).
+                <br /><br />
                 <h3>
                     How To Apply CSS</h3><br />
                     In case of customised CSS it can be applied to the style items as follows. As

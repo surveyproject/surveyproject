@@ -23,7 +23,7 @@
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>bin\</OutputPath>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <DebugType>Full</DebugType>
     <DocumentationFile />
@@ -40,7 +40,8 @@
     <DefineConstants>TRACE</DefineConstants>
     <OutputPath>bin\</OutputPath>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <DocumentationFile>bin\Votations.NSurvey.WebControls.xml</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
@@ -111,6 +112,7 @@
     <Compile Include="Votations.NSurvey.Helpers\XmlFileManager.cs" />
     <Compile Include="Votations.NSurvey.Reporting\VoterReportGenerator.cs" />
     <Compile Include="Votations.NSurvey.Reporting\VoterTextReportGenerator.cs" />
+    <Compile Include="Votations.NSurvey.Resources\CssXmlManager.cs" />
     <Compile Include="Votations.NSurvey.Resources\HelpfilesManager.cs" />
     <Compile Include="Votations.NSurvey.Resources\ResourceManager.cs" />
     <Compile Include="Votations.NSurvey.Security\IPRangeSecurityAddIn.cs" />

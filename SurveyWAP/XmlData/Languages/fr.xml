@@ -1308,7 +1308,7 @@ Prenom Nom</value>
 		<value>Ajouter une nouvelle condition</value>
 	</data>
 	<data version="1.4" id="432" name="VoterUserNameLabel">
-		<value>Nom d'utilisateur ASP.net:</value>
+		<value>Nom d'utilisateur SP:</value>
 	</data>
 	<data version="1.4" id="433" name="ContextUserNameDisabled">
 		<value>Désactivé</value>

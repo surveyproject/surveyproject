@@ -12,7 +12,7 @@
   <xs:element name="AnswerData" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="AnswerData" msprop:Generator_UserDSName="AnswerData">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Answers" msprop:Generator_TableClassName="AnswersDataTable" msprop:Generator_TableVarName="tableAnswers" msprop:Generator_TablePropName="Answers" msprop:Generator_RowDeletingName="AnswersRowDeleting" msprop:Generator_UserTableName="Answers" msprop:Generator_RowChangingName="AnswersRowChanging" msprop:Generator_RowEvHandlerName="AnswersRowChangeEventHandler" msprop:Generator_RowDeletedName="AnswersRowDeleted" msprop:Generator_RowEvArgName="AnswersRowChangeEvent" msprop:Generator_RowChangedName="AnswersRowChanged" msprop:Generator_RowClassName="AnswersRow">
+        <xs:element name="Answers" msprop:Generator_TableClassName="AnswersDataTable" msprop:Generator_TableVarName="tableAnswers" msprop:Generator_RowChangedName="AnswersRowChanged" msprop:Generator_TablePropName="Answers" msprop:Generator_RowDeletingName="AnswersRowDeleting" msprop:Generator_RowChangingName="AnswersRowChanging" msprop:Generator_RowEvHandlerName="AnswersRowChangeEventHandler" msprop:Generator_RowDeletedName="AnswersRowDeleted" msprop:Generator_RowClassName="AnswersRow" msprop:Generator_UserTableName="Answers" msprop:Generator_RowEvArgName="AnswersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="AnswerId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnAnswerId" msprop:Generator_ColumnPropNameInRow="AnswerId" msprop:Generator_ColumnPropNameInTable="AnswerIdColumn" msprop:Generator_UserColumnName="AnswerId" type="xs:int" />
@@ -52,6 +52,7 @@
               <xs:element name="SliderAnimate" msprop:nullValue="false" msprop:Generator_ColumnPropNameInRow="SliderAnimate" msprop:Generator_ColumnVarNameInTable="columnSliderAnimate" msprop:Generator_ColumnPropNameInTable="SliderAnimateColumn" msprop:Generator_UserColumnName="SliderAnimate" type="xs:boolean" minOccurs="0" />
               <xs:element name="SliderStep" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="SliderStep" msprop:Generator_ColumnVarNameInTable="columnSliderStep" msprop:Generator_ColumnPropNameInTable="SliderStepColumn" msprop:Generator_UserColumnName="SliderStep" type="xs:int" minOccurs="0" />
               <xs:element name="DisplayOrder" msprop:Generator_ColumnVarNameInTable="columnDisplayOrder" msprop:Generator_ColumnPropNameInRow="DisplayOrder" msprop:Generator_ColumnPropNameInTable="DisplayOrderColumn" msprop:Generator_UserColumnName="DisplayOrder" type="xs:int" minOccurs="0" />
+              <xs:element name="CssClass" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="CssClass" msprop:Generator_ColumnVarNameInTable="columnCssClass" msprop:Generator_ColumnPropNameInTable="CssClassColumn" msprop:Generator_UserColumnName="CssClass" type="xs:string" default="" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

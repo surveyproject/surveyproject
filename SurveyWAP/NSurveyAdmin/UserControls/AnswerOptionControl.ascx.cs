@@ -223,7 +223,9 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 			AnswerSubscribedLabel.Text = ((PageBase)Page).GetPageResource("AnswerSubscribedLabel");
 			EditExtendedSettingsTitle.Text = ((PageBase)Page).GetPageResource("EditExtendedSettingsTitle");
 			DefaultTextLabel.Text = ((PageBase)Page).GetPageResource("DefaultTextLabel");
-        
+
+            AnswerCssClassLabel.Text = ((PageBase)Page).GetPageResource("RadioButtonAnswerCssLabel");
+
             SliderRangeLabel.Text = ((PageBase)Page).GetPageResource("SliderRangeTextLabel");
             SliderValueLabel.Text = ((PageBase)Page).GetPageResource("SliderValueTextLabel");
             SliderMinLabel.Text = ((PageBase)Page).GetPageResource("SliderMinTextLabel");
@@ -239,8 +241,14 @@ namespace Votations.NSurvey.WebAdmin.UserControls
             SliderStepTextBox.ToolTip = ((PageBase)Page).GetPageHelpfiles("SliderStepValue");
 
             MandatoryCheckBox.ToolTip = ((PageBase)Page).GetPageHelpfiles("RequiredMarkerSettings");
+            AnswerCssClassTextBox.ToolTip = ((PageBase)Page).GetPageHelpfiles("AnswerCssClass");
+            txtAnswerAlias.ToolTip = ((PageBase)Page).GetPageHelpfiles("AnswerAlias");
+            txtAnswerID.ToolTip = ((PageBase)Page).GetPageHelpfiles("AnswerID");
+            AnswerTextTextBox.ToolTip = ((PageBase)Page).GetPageHelpfiles("AnswerText");
+            DefaultTextTextBox.ToolTip = ((PageBase)Page).GetPageHelpfiles("DefaultAnswerText");
+            AnswerPipeAliasTextBox.ToolTip = ((PageBase)Page).GetPageHelpfiles("AnswerPipeAliasTextBox");
 
-		}
+        }
 
 		public void BindData()
 		{
@@ -394,7 +402,8 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 			DefaultTextTextBox.Text = answer.Answers[0].DefaultText;
 			AnswerPipeAliasTextBox.Text = answer.Answers[0].AnswerPipeAlias;
 			SelectionCheckBox.Checked = answer.Answers[0].Selected;
-			if (AnswerTypeDropDownList.Items.FindByValue(answer.Answers[0].AnswerTypeId.ToString()) != null)
+            AnswerCssClassTextBox.Text = answer.Answers[0].CssClass;
+            if (AnswerTypeDropDownList.Items.FindByValue(answer.Answers[0].AnswerTypeId.ToString()) != null)
 			{
 				AnswerTypeDropDownList.SelectedValue = answer.Answers[0].AnswerTypeId.ToString();
 			}
@@ -449,6 +458,9 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 			
 			SelectedAnswersLabel.Visible = isSelectionType;
 			SelectionCheckBox.Visible = isSelectionType;
+
+            AnswerCssClassLabel.Visible = isSelectionType;
+            AnswerCssClassTextBox.Visible = isSelectionType;
 
 			RatingPartCheckbox.Visible = isSelectionType && RatingEnabled;
 			AnswerRatingLabel.Visible = isSelectionType && RatingEnabled;
@@ -600,6 +612,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 			newAnswer.Mandatory = MandatoryCheckBox.Checked;
             newAnswer.AnswerAlias = txtAnswerAlias.Text;
             newAnswer.AnswerIDText = txtAnswerID.Text;
+            newAnswer.CssClass = AnswerCssClassTextBox.Text;
 
             newAnswer.SliderRange = SliderRangeDDL.SelectedValue.ToString();
             newAnswer.SliderValue = Information.IsNumeric(SliderValueTextBox) ? int.Parse(SliderValueTextBox.Text) : 0;
@@ -649,6 +662,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 			updatedAnswer.AnswerId = AnswerId;
             updatedAnswer.AnswerIDText = txtAnswerID.Text;
             updatedAnswer.AnswerAlias = txtAnswerAlias.Text;
+            updatedAnswer.CssClass = AnswerCssClassTextBox.Text;
 
             updatedAnswer.SliderRange = SliderRangeDDL.SelectedValue.ToString();
             updatedAnswer.SliderValue = int.Parse(SliderValueTextBox.Text);

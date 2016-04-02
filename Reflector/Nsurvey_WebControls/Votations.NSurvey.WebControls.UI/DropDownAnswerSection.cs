@@ -97,13 +97,13 @@ namespace Votations.NSurvey.WebControls.UI
             {
                 while (num3 <= base.ColumnsNumber)
                 {
-                    cell = new TableCell();
-                    cell.VerticalAlign = VerticalAlign.Top;
                     if (num < this._nonSelectableItems.Count)
                     {
+                        cell = new TableCell();
+                        cell.VerticalAlign = VerticalAlign.Top;
                         cell.Controls.Add(this._nonSelectableItems[num]);
+                        row.Cells.Add(cell);
                     }
-                    row.Cells.Add(cell);
                     num3++;
                     num += num4;
                 }
