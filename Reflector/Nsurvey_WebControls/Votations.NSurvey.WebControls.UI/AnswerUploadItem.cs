@@ -44,7 +44,8 @@ namespace Votations.NSurvey.WebControls.UI
                 Label child = new Label();
                 child.ControlStyle.Font.Bold = true;
                 child.Text = label;
-                child.CssClass = "AnswerTextRender";//JJ
+                //child.CssClass = "AnswerTextRender";//JJ
+                child.CssClass = CssXmlManager.GetString("AnswerTextRender");
                 cell.Controls.Add(child);
                 if (comment != null)
                 {
@@ -107,10 +108,14 @@ namespace Votations.NSurvey.WebControls.UI
 
                         if (this.Mandatory)
                         {
-                            Label label1 = new Label();
-                            label1.Text = "&nbsp; * &nbsp;";
-                            label1.ForeColor = System.Drawing.Color.Red;
-                            this.Controls.Add(label1);
+                            //Label label1 = new Label();
+                            //label1.Text = "&nbsp; * &nbsp;";
+                            //label1.ForeColor = System.Drawing.Color.Red;
+                            //this.Controls.Add(label1);
+
+                            Label mandatoryLabel = new Label();
+                            mandatoryLabel.CssClass = CssXmlManager.GetString("AnswerMandatorySign");
+                            this.Controls.Add(mandatoryLabel);
                         }
                     }
                     //this.Controls.Add(new LiteralControl("<br />"));
@@ -120,7 +125,8 @@ namespace Votations.NSurvey.WebControls.UI
 
                 this._uploadButton.Click += new EventHandler(this.uploadButton_Click);
                 this._uploadButton.Text = ResourceManager.GetString("UploadFileUploadButton", base.LanguageCode);
-                this._uploadButton.CssClass = "btn btn-primary btn-xs bw fileuploadbuttonmargin";
+                //this._uploadButton.CssClass = "btn btn-primary btn-xs bw fileuploadbuttonmargin";
+                this._uploadButton.CssClass = CssXmlManager.GetString("AnswerUploadButton");
                 this._uploadButton.Enabled = this.RenderMode != ControlRenderMode.ReadOnly;
                 this.Controls.Add(this._uploadButton);
 
@@ -205,7 +211,7 @@ namespace Votations.NSurvey.WebControls.UI
             Button optionControl = new Button();
             optionControl.ID = "ApplyChangeButton";
             optionControl.Text = ResourceManager.GetString("ApplyChangesButton", base.LanguageCode);
-            optionControl.CssClass = "btn btn-primary btn-xs bw fileuploadbuttonmargin";
+            optionControl.CssClass = CssXmlManager.GetString("AnswerUploadButton");
             optionControl.Click += new EventHandler(this.OnClick);
             this._adminTable.Rows.Add(this.BuildOptionRow(null, optionControl, null));
 

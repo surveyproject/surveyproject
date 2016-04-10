@@ -1,14 +1,13 @@
 ﻿/*Survey Form CSS for Mobile platforms 2014- Twitter BootStrap based*/
 
-@import url('loginform.css');
+@import url('../../content/font-awesome.min.css');
 
-
+/* Test classes - remove again*/
 .fwsanswertestRed{
     color:red;
     font-size: 1.0em;
     font-weight: normal;
 }
-
 
 .EmptyLabel{
     color:green;
@@ -22,180 +21,212 @@
     font-weight: normal;
 }
 
-.globalRadioButton{
- height:20px;
+/*SP 2.4 CSS XML selectors*/
+
+/* SURVEY BOX CSS HIERARCHY*/
+
+/*ID: Form1*/
+.form-inline{}
+
+/*ID: ErrorMessageDiv*/
+.errorMessageDiv{
+    position: relative; 
+    text-align: center; 
+    top: 15px;
 }
 
+/*ID: MessageLabel*/
+.ErrorMessage
+{
+    background: #e80808;
+    color: white;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 0.9em;
+    padding: 5px 15px 7px 15px;
+    
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
 
-/*SP 2.4 CSS*/
-
-.notYetOpenedSurveyMessage{
-        color: red;
-        font-size: 1.2em;
-}
-.inactiveSurveyMessage{
-    color: red;
-    font-size: 1.2em;
-}
-.closedSurveyMessage{
-        color: red;
-        font-size: 1.2em;
-}
-
-/* messageboxes*/
-.questionContainerWrapper{
-
-}
-
-.questionContainer{
-
-}
-
-/*footerrow: pagenumber/ percentage*/
-.pageNumberPanel{
-
-}
-.pageNumberLabel{
-
-}
-.currentPage{
-
-}
-.visitedPage{
-
-}
-.nonactivePage{
+    margin-bottom: 5px;
 
 }
 
-/*multilanguage choices*/
+/*ID: SurveyBoxDiv*/
 
-/*button: btn btn-primary btn-xs bw*/
-.btn{border:1px solid transparent;border-radius:4px;cursor:pointer;display:inline-block;font-size:14px;font-weight:400;margin-bottom:0;padding:6px 12px;text-align:center;user-select:none;vertical-align:middle;white-space:nowrap;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;-webkit-user-select:none}
-.btn-primary{background:#428bca;border-color:#357ebd;color:#fff}
-.btn-primary.disabled,.btn-primary[disabled],fieldset[disabled] .btn-primary,.btn-primary.disabled:hover,.btn-primary[disabled]:hover,fieldset[disabled] .btn-primary:hover,.btn-primary.disabled:focus,.btn-primary[disabled]:focus,fieldset[disabled] .btn-primary:focus,.btn-primary.disabled:active,.btn-primary[disabled]:active,fieldset[disabled] .btn-primary:active,.btn-primary.disabled.active,.btn-primary[disabled].active,fieldset[disabled] .btn-primary.active{background:#428bca;border-color:#357ebd}
-.btn-primary:active,.btn-primary.active,.open .dropdown-toggle.btn-primary{}
-.btn-primary:hover,.btn-primary:focus,.btn-primary:active,.btn-primary.active,.open .dropdown-toggle.btn-primary{background:#3276b1;border-color:#285e8e;color:#fff}
-.btn-sm,.btn-xs{border-radius:3px;font-size:12px;padding:5px 10px}
-.btn-xs{padding:1px 5px}
-.btn.disabled,.btn[disabled],fieldset[disabled] .btn{box-shadow:none;cursor:not-allowed;filter:alpha(opacity=65);opacity:.65;pointer-events:none;-webkit-box-shadow:none}
-.btn:active,.btn.active{box-shadow:inset 0 3px 5px rgba(0,0,0,.125);outline:0;-webkit-box-shadow:inset 0 3px 5px rgba(0,0,0,.125)}
-.btn:focus{outline:thin dotted #333;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}
-.btn:hover,.btn:focus{color:#333;text-decoration:none}
-.bw{float:right;font-size-adjust:.5;margin-right:10px;width:auto}
+/*ID:SurveyControl */
+.surveybox{}
+
+/*ID: SurveyControl_bsbQCP*/
+.questionContainerWrapper{}
+
+/*ID: SurveyControl_bsbQCSP*/
+.questionContainer{}
 
 
-.languageMessage{
+/*MULTILANGUAGE*/
 
+/*ID: SurveyControl_lrT*/
+.tablelddl 
+{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 1.2em;
+    margin: 10px;
 }
 
-.languageDropDownList{
+/*ID: SurveyControl_lrlM*/
+.languageMessage{}
 
+/*ID: SurveyControl_lrlDDLP*/
+.languageDropDownList{}
+
+/*ID: SurveyControl_lrDDL*/
+.lddl 
+{   
+    width:17vw;
+    margin: 15px 15px 15px 0;
 }
+
+/*ID: SurveyControl_lrlBP*/
 .languageButtonPanel{
-
+    float:right;
+    font-size-adjust:.5;
+    margin-right:10px;
+    width:auto;
 }
 
+/*ID: SurveyControl_lrB */
 
-/*nextpage buttons*/
-
-.nextPageButtonRowPanel{
-
-}
-
-.pageButtonRow{
-
-}
-.navigationPanel{
-
-}
-
-.previousPageButton{
-
-}
-
-.nextPageButton{
-
-}
-
-.nextPageSubmitButtonPanel{
-
-}
-
-.resumeProgressButton{
-
-}
-.saveProgressButton{
-
-}
-
-/*resumerequest
-button: btn btn-primary btn-xs bw 
-resumetable*/
-.rct{
-
-}
-
-.resumeRequestTable{
-
-}
-
-/*submitbuttonrow*/
-.pageButtonRow{
-
-}
-.navigationPanel{
-
-}
-.surveySubmitButton{
-
-}
+/*MULTILANGUAGE END*/
 
 
-/* Build SurveyBox - Question*/
-.questionContainerWrapper{
+/* PASSWORD CSS */
 
-}
-.questionContainer{
-
-}
-
-.ThanksboxCss{
-
-}
-
-
-/* Passwordwebsecutiryaddin */
-
+/*ID: no id */
 .passwordMessage{
     margin: 3px 0 3px 0;
 }
-.passwordTextBox{
 
-}
-.passwordSubmitButton{
+/*ID: no id*/
+.passwordTextBox{}
 
-}
+/* lddl */
+
+/*ID: no id*/
+.passwordSubmitButtonPanel{}
+
+/* input btn btn-primary btn-xs bw*/
+
+/*END PASSWORD CSS*/
 
 
-/*SP 2.3 CSS*/
+/*SURVEY STATUS MESSAGES CSS*/
 
-.surveybox
-{
-	width: 100%;
-	background-color: #fff;
-    color: #000;
-	line-height: 23px;
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-	vertical-align: top;
-}
-
-.surveybox > table
-{
-    margin-top: 12px;
+/*ID: SurveyControl_mbMP */
+.notYetOpenedSurveyMessage{
+        color: red;
+        font-size: 1.2em;
+        margin: 15px;
 }
 
+/*ID: SurveyControl_mbMP*/
+.inactiveSurveyMessage{
+    color: red;
+    font-size: 1.2em;
+    margin: 15px;
+}
 
+/*ID: SurveyControl_mbMP*/
+.closedSurveyMessage{
+        color: red;
+        font-size: 1.2em;
+        margin: 15px;
+}
+
+/*SURVEY STATUS MESSAGES CSS END*/
+
+
+/* SURVEY SECURITY MESSAGES CSS */
+
+/*ID: eicTble*/
+.emailInvCodeTable{
+    margin: 10px;
+}
+
+/*ID: eicBtn*/
+/* btn btn-primary btn-xs bw*/
+
+/*ID: eicTB*/
+/* lddl */
+.emailInvCodeTextBox{
+
+}
+
+/*ID: eicMsg*/
+.emailInvCodeMessage{
+            font-size: 1.2em;
+        padding: 15px 0;
+}
+
+/*ID: eicTBC*/
+.emailInvCodeTextboxCell{
+    padding: 5px;
+}
+
+/*ID: eicEMsg*/
+/*ErrorMessage*/
+
+
+/*ID: tsEM */
+/* ErrorMessage */
+.tokenSecurityErrorMessage{}
+
+
+/*ID: etMsg*/
+.enterTokenMessage{
+        font-size: 1.2em;
+        padding: 15px 0;
+}
+
+/*ID: etTbl*/
+.enterTokenTable{
+    margin: 10px;
+}
+
+/* etTB*/
+.enterTokenTextBox{
+    padding: 5px 10px 10px 0;
+}
+
+/*ID: etBtn*/
+/* btn btn-primary btn-xs bw*/
+
+
+/*ID: eqEM*/
+.entryquotaErrorMessage{
+        color: red;
+        font-size: 1.2em;
+        margin: 15px;
+}
+
+/* SURVEY SECURITY MESSAGES CSS END*/
+
+
+/*ID: SurveyControl_MainTbl*/
+.mainTbl{
+    margin: 10px 10px 15px 10px;
+}
+
+/*ID:  SurveyControl_Question[nr] */
+
+
+/*ID: no id */
+.questTbl{}
+
+
+/* QUESTION CSS */
+
+/*ID: no id */
 .questionStyle
 {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -213,7 +244,6 @@ tr.questionStyle
     border-radius: 7px;
 
     border: 1px solid #6699CC;
-
     display: block;
 
 }
@@ -223,15 +253,13 @@ tr.questionStyle
     width: 1200px;
 }
 
-
 /* Line Spacing for Question text */
 tr.questionStyle td > span > div.question-text-div
 {
 	line-height: 1.5;
 	width: 96% !important; 
     margin:3px;
-    float:left;
-    
+    float:left;    
 }
 
 /* Line Spacing for Question Number */
@@ -247,7 +275,14 @@ tr.questionStyle td > span > div.question-number-div
         margin-left:10px;
         color: #ff6a00;
     }
+    
+/*ID: no id */
+.question-number-div{}
 
+/*ID: no id */
+.question-text-div{}
+
+/*ID: no id*/
 .HelpTextSmallFont
 {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -258,79 +293,27 @@ tr.questionStyle td > span > div.question-number-div
     margin-bottom: 7px;
     margin-right: 5px;
 
-        -moz-border-radius: 7px;
+    -moz-border-radius: 7px;
     -webkit-border-radius: 7px;
     border-radius: 7px;
-
 }
 
-
-.qvmStyle > td
-{
-    background: #e80808;
-    color: white;
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 0.9em;
-    font-weight: bold;
-    padding: 5px 15px 5px 10px;
-
-    display: block;
-    width: 100%;
-    border-radius: 7px;
-    margin-bottom: 10px;
-
-   
-
+/*ID: no id */
+.icon-warning-sign:before {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-size:large;
+    color: orange;
+    margin: 0px 7px 0px 10px;
+    content: "\f071";
 }
 
+/* QUESTION CSS END */
 
 
-.qvmarkStyle
-{
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 25pt;
-    line-height: 10px;
-    vertical-align: bottom;
-    color: floralwhite;
-}
+/* ANSWER CSS */
 
-/*resumecode message*/
-.cmStyle
-{
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-size: 1.2em;
-	background-color: #B8F2AB;
-	color: green;
-
-    padding: 5px 15px 5px 10px;
-
-    display: block;
-    width: 100%;
-    border-radius: 7px;
-    margin-bottom: 10px;
-}
-
-
-.soStyle
-{
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-size: 8pt;
-	font-weight: bold;
-	background-color: #E6EDF1;
-	color: #082E44;
-    padding-left: 8px;
-    display: block;
-    border-radius: 7px;
-    margin-right: 15px;
-}
-
-
-.buttonStyle
-{
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-size: 10pt;
-	font-weight: bold;
-}
+/*ID: no id*/
 
 .answerStyle
 {
@@ -361,10 +344,20 @@ tr.questionStyle td > span > div.question-number-div
     display: inherit;
 }
 
+/*ID: SurveyControl_Question2_SectTbl */
+.sectTbl{}
+
+/*ID: SurveyControl_Question2__as57474_AnswerTbl */
+.answerTbl{}
+
+/*ID: no id*/
+answerStyle
+
+
+/*ID: no id*/
 .AnswerTextRender
 {
 	width: auto;
-	//display: flexbox;
     overflow:auto;
 	white-space: normal;
 }
@@ -385,17 +378,275 @@ span.AnswerTextRender > div:nth-child(2)
     padding-top: 7px;
 }
 
+/*ID: no id*/
+.answer-warning-sign:before {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-size:small;
+    color: red;
+    margin: 0px 7px 0px 10px;
+    content: "\f071";
+}
 
+/* ANSWER CSS END */
+
+
+/*ANSWER DETAILS CSS*/
+
+.globalRadioButton{
+ height:20px;
+}
+
+.globalRadioButtonLabel{
+ font-weight: normal;
+}
+
+/*ANSWER DETAILS CSS END*/
+
+
+/* FOOTER ROW CSS*/
+
+/*ID: SurveyControl_npBRP*/
+.nextPageButtonRowPanel{
+    padding-bottom: 40px;
+}
+
+/*ID: SurveyControl_npNP*/
+.navigationPanel{}
+
+/*ID: SurveyControl_ppBP*/
+.previousPageButtonPanel{
+    float:right;
+    font-size-adjust:.5;
+    margin-right:10px;
+    width:auto;
+}
+
+/*ID: SurveyControl_ppbB*/
+/* previousPageButton btn btn-primary btn-xs bw */
+.previousPageButton{}
+
+/*pagenumber/ percentage*/
+/*ID:  SurveyControl_pNP */
+.pageNumberPanel{
+    float:left;
+}
+
+/*ID: non id*/
+.currentPage{}
+
+/*ID: non id*/
+.visitedPage{}
+
+/*ID: non id*/
+.nonactivePage{}
+
+/*ID: SurveyControl_pN*/
+.pageNumberLabel{}
+/* END pagenumber/ percentage*/
+
+/*ID: SurveyControl_npSBP*/
+.nextPageSubmitButtonPanel{
+    float:right;
+    font-size-adjust:.5;
+    margin-right:10px;
+    width:auto;
+}
+
+/*ID: SurveyControl_npSB*/
+/* nextPageButton btn btn-primary btn-xs bw */
+.nextPageButton{
+
+}
+
+
+/* RESUME PROGRESS */
+
+/*ID: SurveyControl_npRPBP*/
+.resumeProgressButtonPanel{
+    float:right;
+    font-size-adjust:.5;
+    margin-right:10px;
+    width:auto;
+}
+
+/*ID: SurveyControl_RPB*/
+/*resumeProgressButton btn btn-primary btn-xs bw*/
+.resumeProgressButton{}
+
+/*resumecode table*/
+.resumeRequestTable{}
+
+.rct
+{
+    width:100%;
+    margin: 5px 15px 15px 0;
+
+   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 1.2em;
+}
+
+.rct > tbody > tr > td
+{
+    padding: 10px 0 5px 0;
+}
+
+.rct > tbody > tr > td > input
+{
+    margin-right:10px;
+}
+
+/*ID: SurveyControl_rrUB */
+/*btn btn-primary btn-xs bw*/
+
+/*ID: SurveyControl_rrCB*/
+/*btn btn-primary btn-xs bw*/
+
+/*ID: ruSE*/
+/*ErrorMessage*/
+
+/*ID: erUM*/
+
+/*ID: SurveyControl_rrRow */
+.cmStyle
+{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 1.2em;
+	background-color: #B8F2AB;
+	color: black;
+
+    padding: 5px 15px 5px 10px;
+
+    display: block;
+    width: 100%;
+    border-radius: 7px;
+    margin-bottom: 10px;
+}
+
+/* END RESUME PROGRESS */
+
+
+/*ID: SurveyControl_npSPBP*/
+.saveProgressButtonPanel{
+    float:right;
+    font-size-adjust:.5;
+    margin-right:10px;
+    width:auto;
+}
+
+/*ID: SurveyControl_spB*/
+/*saveProgressButton btn btn-primary btn-xs bw*/
+.saveProgressButton{}
+
+
+/*submitbuttonrow*/
+
+/*ID: SurveyControl_bsbP*/
+.pageButtonRow{
+        padding-bottom: 40px;
+}
+
+
+/*ID: SurveyControl_ssbP */
+.surveySubmitButtonPanel{
+    float:right;
+    font-size-adjust:.5;
+    margin-right:10px;
+    width:auto;
+}
+
+/*ID: SurveyControl_ssB*/
+/*btn btn-primary btn-xs bw */
+.surveySubmitButton{}
+
+
+/* SURVEY COMPLETION*/
+
+/*ID: bsbcT*/
+.ThanksboxCss
+{
+    width: 100%;
+    margin:10px;
+}
+
+/*ID: thMsg*/
+.thankYouMessage{
+        font-size: 1.2em;
+        padding: 15px 0;
+}
+
+
+
+/* ORIGINAL SURVEYBOX WEBCONTROL CSS */
+
+/* QuestionStyle */
+/* questionStyle */
+
+/* QuestionValidationMessageStyle */
+.qvmStyle > td
+{
+    background: #e80808;
+    color: white;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 0.9em;
+    font-weight: bold;
+    padding: 5px 15px 5px 10px;
+
+    display: block;
+    width: 100%;
+    border-radius: 7px;
+    margin-bottom: 10px;
+}
+
+/* QuestionValidationMarkStyle */
+/* icon-warning-sign */
+.qvmarkStyle
+{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 25pt;
+    line-height: 10px;
+    vertical-align: bottom;
+    color: floralwhite;
+}
+
+/* ConfirmationMessageStyle */
+/* cmStyle*/
+
+/* SectionOptionStyle */
+.soStyle
+{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+	background-color: #E6EDF1;
+	color: #082E44;
+    padding-left: 8px;
+    display: block;
+    border-radius: 7px;
+    margin-right: 15px;
+}
+
+/* ButtonStyle */
+.buttonStyle
+{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+/*AnswerStyle */
+/* answerStyle */
+
+
+/* MatrixStyle */
 .matrixStyle
 {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 10pt;
 	background-color: #F4F9FA;
-
 }
 
-
-/*Matrix header*/
+/* MatrixHeaderStyle */
 .mhStyle
 {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -405,17 +656,16 @@ span.AnswerTextRender > div:nth-child(2)
 
 .mhStyle > td
 {
-
     border-bottom: 1px solid #6699CC;
 }
 
+/* MatrixItemStyle */
 .miStyle
 {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 1.1em;
 	background-color: White;
 }
-
 
 .miStyle > td
 {
@@ -425,6 +675,7 @@ span.AnswerTextRender > div:nth-child(2)
         padding:5px 5px 0 10px;
 }
 
+/* MatrixAlternatingItemStyle */
 .maiStyle
 {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -440,7 +691,7 @@ span.AnswerTextRender > div:nth-child(2)
     padding:5px 5px 0 10px
 }
 
-/*section answer grid item css - e.g. upload files */
+/* SectionGridAnswersItemStyle */
 
 .sgiStyle
 {
@@ -448,12 +699,26 @@ span.AnswerTextRender > div:nth-child(2)
 	font-size: 10pt;
 	background-color: White;
 }
+
+tr.sgiStyle > td
+{
+    padding: 3px 3px 3px 7px;
+}
+
+/* SectionGridAnswersAlternatingItemStyle */
 .sgaaisStyle
 {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 10pt;
 	background-color: #F4F9FA;
 }
+
+tr.sgaaisStyle> td
+{
+    padding: 3px 3px 3px 7px;
+}
+
+/* SectionGridAnswersStyle */
 .sgaStyle
 {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -463,6 +728,8 @@ span.AnswerTextRender > div:nth-child(2)
     
     border-radius: 7px;
 }
+
+/* SectionGridAnswersHeaderStyle */
 .sgahStyle
 {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -475,19 +742,8 @@ tr.sgahStyle > td
     padding: 3px 3px 3px 7px;
 }
 
-tr.sgaaisStyle> td
-{
-    padding: 3px 3px 3px 7px;
-}
 
-tr.sgiStyle > td
-{
-    padding: 3px 3px 3px 7px;
-}
-
-
-
-
+/* FootStyle */
 .footStyle
 {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -508,7 +764,7 @@ tr.footStyle > td
     padding: 10px 0 10px 0;
 }
 
-    tr.footStyle > td > table > tbody > tr > td 
+tr.footStyle > td > table > tbody > tr > td 
     {
         padding: 10px 10px 0 0px;
     }
@@ -524,38 +780,10 @@ tr.footStyle > td
     }
 }
 
-/*surveybox language dropdown list*/
-.lddl 
-{
-    width:250px;
-    margin: 5px 15px 15px 0;
-}
-.tablelddl 
-{
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-size: 1.2em;
-}
 
-/*resumecode table*/
+/* ORIGINAL SURVEYBOX WEBCONTROL CSS - END */
 
-.rct
-{
-    width:250px;
-    margin: 5px 15px 15px 0;
-
-   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-size: 1.2em;
-}
-
-.rct > tbody > tr > td
-{
-    padding: 10px 0 5px 0;
-}
-
-.rct > tbody > tr > td > input
-{
-    margin-right:10px;
-}
+/* _____________________________________________________*/
 
 /*Matrix question*/
 
@@ -568,15 +796,6 @@ tr.footStyle > td
     border:1px solid #6699CC;
 }
 
-/*completion message*/
-.ThanksboxCss
-{
-    width: 100%;
-    /*color: #000;
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-size: 0.9em;*/
-    margin:10px;
-}
 
 /*calender Answerfield*/
 .calendarStyle
@@ -593,23 +812,3 @@ tr.footStyle > td
 }
 
 
-.ErrorMessage
-{
-    /*background: #e80808 url(../../images/warning-icn.png) no-repeat 10px 5px;*/
-    background: #e80808;
-    color: white;
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-size: 0.8em;
-    font-weight: bold;
-    padding: 0px 15px 2px 10px;
-    
-    border-radius: 7px;
-      -moz-border-radius: 7px;
-     -webkit-border-radius: 7px;
-     display: block;
-}
-
-.fileuploadbuttonmargin
-{
-    margin: 0 5px;
-}

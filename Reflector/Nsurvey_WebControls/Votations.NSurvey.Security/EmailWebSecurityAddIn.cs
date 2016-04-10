@@ -78,28 +78,42 @@ namespace Votations.NSurvey.Security
         public Control GetLoginInterface(Style controlStyle)
         {
             this._uIdTable = new Table();
+            _uIdTable.CssClass = CssXmlManager.GetString("EmailInvCodeTable");
+            _uIdTable.ID = "eicTbl";
+
             TableCell cell = new TableCell();
             TableRow row = new TableRow();
+
             Button child = new Button();
+            child.ID = "eicBtn";
+            child.Text = ResourceManager.GetString("SubmitUId");
+            child.CssClass = CssXmlManager.GetString("EmailInvCodeButton");
             child.Click += new EventHandler(this.OnUIdSubmit);
 
             this._uIdTextBox = new TextBox();
-            this._uIdTextBox.CssClass = "lddl";
+            this._uIdTextBox.ID = "eicTB";
+            this._uIdTextBox.CssClass = CssXmlManager.GetString("EmailInvCodeTextbox");
             //this._uIdTable.ControlStyle.Font.CopyFrom(controlStyle.Font);
-            this._uIdTable.ControlStyle.CssClass = "tablelddl ";
-            this._uIdTable.Width = Unit.Percentage(100.0);
-            child.Text = ResourceManager.GetString("SubmitUId");
-            child.CssClass = "btn btn-primary btn-xs bw";
+            //this._uIdTable.ControlStyle.CssClass = "tablelddl ";
+            //this._uIdTable.Width = Unit.Percentage(100.0);
+
+            cell.CssClass = CssXmlManager.GetString("EmailInvCodeMessage");
+            cell.ID = "eicMsg";
 
             cell.Controls.Add(new LiteralControl(ResourceManager.GetString("EnterUIdMessage", this.LanguageCode)));
             row.Cells.Add(cell);
             this._uIdTable.Rows.Add(row);
+
             cell = new TableCell();
+            cell.CssClass = CssXmlManager.GetString("EmailInvCodeTextboxCell");
+            cell.ID = "eicTBC";
+
             row = new TableRow();
             cell.Controls.Add(this._uIdTextBox);
             cell.Controls.Add(child);
             row.Cells.Add(cell);
             this._uIdTable.Rows.Add(row);
+
             return this._uIdTable;
         }
 
@@ -139,7 +153,8 @@ namespace Votations.NSurvey.Security
         }
         private string GetErrorMessage(string msgname)
         {
-            return "<div class='ErrorMessage icon-warning-sign' >" + msgname + @"</div>";
+            //return "<div class='ErrorMessage icon-warning-sign' >" + msgname + @"</div>";
+            return "<div id=\"eicEMsg\" class=\"" + CssXmlManager.GetString("EmailInvCodeErrorMessage") + "\">" + msgname + @"</div>";
         }
         protected virtual void OnUIdSubmit(object sender, EventArgs e)
         {

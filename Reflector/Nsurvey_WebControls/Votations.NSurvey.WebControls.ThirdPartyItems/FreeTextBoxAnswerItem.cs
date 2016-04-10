@@ -93,12 +93,16 @@ namespace Votations.NSurvey.WebControls.ThirdPartyItems
                      */
                     Label label = new Label();
                     label.Text = this.Text;
-                    label.CssClass = "AnswerTextRender";
+                    //label.CssClass = "AnswerTextRender";
+                    label.CssClass = CssXmlManager.GetString("AnswerTextRender");
                     this.Controls.Add(label);
 
                     if (this.Mandatory)
                     {
-                        this.Controls.Add(new LiteralControl("<div style='color:red; display:inline-flex;'>&nbsp; * &nbsp;</div>"));
+                        //this.Controls.Add(new LiteralControl("<div style='color:red; display:inline-flex;'>&nbsp; * &nbsp;</div>"));
+                        Label mandatoryLabel = new Label();
+                        mandatoryLabel.CssClass = CssXmlManager.GetString("AnswerMandatorySign");
+                        this.Controls.Add(mandatoryLabel);
                     }
 
                 }

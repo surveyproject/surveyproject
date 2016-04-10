@@ -29,6 +29,7 @@ namespace Votations.NSurvey.WebControls.UI
             TableRow row2 = new TableRow();
             bool flag = true;
             table.ControlStyle.CopyFrom(this.MatrixStyle);
+            table.ID = "MatrixTbl";
             TableCell cell2 = new TableCell();
             row2.Cells.Add(cell2);
             int num = 1;
@@ -72,8 +73,8 @@ namespace Votations.NSurvey.WebControls.UI
                 }
                 num++;
             }
-            table.CellSpacing = 2;
-            table.CellPadding = 2;
+            //table.CellSpacing = 2;
+            //table.CellPadding = 2;
             return table;
         }
 

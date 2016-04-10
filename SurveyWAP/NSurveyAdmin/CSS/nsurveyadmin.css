@@ -60,6 +60,7 @@
 .questionOptions td>a{color:#e2e2e2;margin-right:5px;text-decoration:none}
 .questionOptions td>a:link,a:active,a:visited{color:#000;margin-right:5px;text-decoration:none}
 .questionOptions td>a:not(:hover){color:#fff;text-decoration:none}
+.questTbl{width:100%}
 .questionValidationMessageStyleCSS{background:#fcaaaa;color:Red;font:x-small Arial,Verdana,sans-serif}
 .qvmarkStyle{color:red;font:11pt Arial}
 .qvmStyle{background:#fcaaaa;color:red;font:700 10pt Arial}

@@ -203,10 +203,10 @@ namespace Votations.NSurvey.WebControls.UI
 
                     if( String.IsNullOrEmpty(Css) )
                     {
-                     writer.Write("<div class=\"{0}\">", CssXmlManager.GetString("GlobalRadioButtonDiv"));
+                     writer.Write("<div id=\"grbD\" class=\"{0}\">", CssXmlManager.GetString("GlobalRadioButtonDiv"));
                     }
                     else
-                    writer.Write("<div class=\"{0}\">", Css);
+                    writer.Write("<div id=\"grbD\" class=\"{0}\">", Css);
                     
 
                     this.RenderInputTag(writer, this.ClientID);

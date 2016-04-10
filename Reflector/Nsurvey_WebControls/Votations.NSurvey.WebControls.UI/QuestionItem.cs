@@ -21,7 +21,7 @@ namespace Votations.NSurvey.WebControls.UI
         private Style _questionStyle;
         private Table _questionTable = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetCentPercentTable();//JJ;
         private ControlRenderMode _renderMode = ControlRenderMode.Standard;
-        private Table _selectionTable = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetCentPercentTable();//JJ;
+        private Table _selectionTable = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetSectPercentTable();//JJ;
         private string _text = null;
         public string QuestionId_Text { get; set; }
         public string HelpText { get; set; }

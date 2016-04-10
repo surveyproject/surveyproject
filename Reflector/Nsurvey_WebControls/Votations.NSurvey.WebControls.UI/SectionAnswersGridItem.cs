@@ -47,9 +47,9 @@ namespace Votations.NSurvey.WebControls.UI
             if (this.GridVoterAnswers.Count > 0)
             {
                 TableCell cell;
-                Table child = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetCentPercentTable();//JJ;
-                child.CellSpacing = 2;
-                child.CellPadding = 2;
+                Table child = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetAnswerPercentTable();//JJ;
+                //child.CellSpacing = 2;
+                //child.CellPadding = 2;
                 child.ControlStyle.CopyFrom(this.SectionGridAnswersStyle);
                 TableRow row = new TableRow();
                 foreach (AnswerData.AnswersRow row2 in this.Answers.Answers)
@@ -196,7 +196,7 @@ namespace Votations.NSurvey.WebControls.UI
 
         private Table GenerateFileList(string groupGuid, Style tableStyle)
         {
-            Table table = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetCentPercentTable();//JJ;
+            Table table = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetAnswerPercentTable();//JJ;
             table.ControlStyle.CopyFrom(tableStyle);
             table.Rows.Clear();
             FileData guidFiles = new Votations.NSurvey.DataAccess.Answers().GetGuidFiles(groupGuid);

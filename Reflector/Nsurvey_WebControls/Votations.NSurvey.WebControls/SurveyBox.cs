@@ -31,10 +31,24 @@ namespace Votations.NSurvey.WebControls
     {
         private Style _answerStyle;
         private Style _buttonStyle;
+        private Style _confirmationMessageStyle;
+        private Style _footStyle;
+        private Style _matrixAlternatingItemStyle;
+        private Style _matrixHeaderStyle;
+        private Style _matrixItemStyle;
+        private Style _matrixStyle;
+        private Style _questionStyle;
+        private Style _questionValidationMarkStyle;
+        private Style _questionValidationMessageStyle;
+        private Style _sectionGridAnswersAlternatingItemStyle;
+        private Style _sectionGridAnswersHeaderStyle;
+        private Style _sectionGridAnswersItemStyle;
+        private Style _sectionGridAnswersStyle;
+        private Style _sectionOptionStyle;
+
         private string _buttonText = null;
         private int _cellPadding;
         private int _cellSpacing;
-        private Style _confirmationMessageStyle;
         private HttpContext _context = HttpContext.Current;
         private bool _didPostBack = false;
         private string _emailFrom;
@@ -43,15 +57,10 @@ namespace Votations.NSurvey.WebControls
         private bool _enableNavigation = true;
         private bool _enableSubmitButton = false;
         private bool _enableValidation = false;
-        private Style _footStyle;
         private bool _isDesignTime = true;
         private bool _isScored = false;
         private DropDownList _languageDropDownList;
         private string _languageVariable;
-        private Style _matrixAlternatingItemStyle;
-        private Style _matrixHeaderStyle;
-        private Style _matrixItemStyle;
-        private Style _matrixStyle;
         private MultiLanguageMode _multiLanguageMode = MultiLanguageMode.None;
         private string _nextPageText = null;
         private NotificationMode _notificationMode = NotificationMode.None;
@@ -62,10 +71,7 @@ namespace Votations.NSurvey.WebControls
         private Table _questionContainer = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetCentPercentTable();//JJ;
         private int _questionNumbers = 1;
         private QuestionItemCollection _questions;
-        private Style _questionStyle;
         private string _questionValidationMark = "*";
-        private Style _questionValidationMarkStyle;
-        private Style _questionValidationMessageStyle;
         private bool _randomQuestions = false;
         private string _redirectionURL;
         private ArrayList _requiredQuestions = new ArrayList();
@@ -74,11 +80,6 @@ namespace Votations.NSurvey.WebControls
         private Table _resumeTable;
         private TextBox _resumeUIdTextBox;
         private string _saveProgressText = null;
-        private Style _sectionGridAnswersAlternatingItemStyle;
-        private Style _sectionGridAnswersHeaderStyle;
-        private Style _sectionGridAnswersItemStyle;
-        private Style _sectionGridAnswersStyle;
-        private Style _sectionOptionStyle;
         private WebSecurityAddInCollection _securityAddIns = new WebSecurityAddInCollection();
         private bool _selectionsAreRequired = false;
         private bool _showOnlyPercent = false;
@@ -461,7 +462,8 @@ namespace Votations.NSurvey.WebControls
             button.CssClass = CssXmlManager.GetString("PreviousPageButton");
             button.Text = (this.PreviousPageText == null) ? ResourceManager.GetString("PreviousPage", this.LanguageCode) : this.PreviousPageText;
             button.Click += new EventHandler(this.OnPreviousPageChangeClick);
-            button.Enabled = enabled;
+            //button.Enabled = enabled;
+            button.Visible = enabled;
             return button;
         }
 
@@ -487,10 +489,13 @@ namespace Votations.NSurvey.WebControls
             _resumeTable.ID = "rct";
             this._resumeUIdTextBox = new TextBox();
             //this._resumeTable.ControlStyle.Font.CopyFrom(base.ControlStyle.Font);
-            this._resumeTable.Width = Unit.Percentage(100.0);
+            //this._resumeTable.Width = Unit.Percentage(100.0);
+            cell.CssClass = CssXmlManager.GetString("EnterResumeUIdMessage");
+            cell.ID = "erUM";
             cell.Controls.Add(new LiteralControl(ResourceManager.GetString("EnterResumeUIdMessage", this.LanguageCode)));
             row.Cells.Add(cell);
             this._resumeTable.Rows.Add(row);
+
             cell = new TableCell();
             row = new TableRow();
             this._resumeUIdTextBox.Columns = 20;
@@ -503,6 +508,7 @@ namespace Votations.NSurvey.WebControls
             cell.Controls.Add(button2);
             row.Cells.Add(cell);
             this._resumeTable.Rows.Add(row);
+
             this.Controls.Clear();
             this.Controls.Add(this._resumeTable);
         }
@@ -652,7 +658,7 @@ namespace Votations.NSurvey.WebControls
         {
             QuestionData data;
             this._questions = new QuestionItemCollection();
-            this._questionContainer = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetCentPercentTable();//JJ;
+            this._questionContainer = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetMainPercentTable();//JJ;
             this._questionContainer.Rows.Add(this.BuildRow("", null));
             this._questionContainer.Rows[0].EnableViewState = false;
             this._questionContainer.Rows.Add(this.BuildRow("", null));
@@ -666,7 +672,7 @@ namespace Votations.NSurvey.WebControls
             {
                 this.Controls.Add(BuildCustomHeaderOrFooter(HttpUtility.HtmlDecode(_userSettings.SurveyLayout[0].SurveyHeaderText)));
             }
-            this._questionContainer.ControlStyle.Font.CopyFrom(base.ControlStyle.Font);
+            //this._questionContainer.ControlStyle.Font.CopyFrom(base.ControlStyle.Font);
             Panel panel = new Panel { CssClass = CssXmlManager.GetString("BuildSurveyBoxQCPanel"), ID="bsbQCP" };
             Panel subpanel = new Panel { CssClass = CssXmlManager.GetString("BuildSurveyBoxQCSubPanel"), ID="bsbQCSP" };
             panel.Controls.Add(subpanel);
@@ -747,7 +753,7 @@ namespace Votations.NSurvey.WebControls
             }
 
             child.Rows.Add(text == null
-                ? this.BuildRow(new LiteralControl(this._thankYouMessage), null)
+                ? this.BuildRow(new LiteralControl("<div id=\"tyMsg\" class=\"" + CssXmlManager.GetString("ThankYouMessage") + "\">" + this._thankYouMessage + "</div>"), null)
                 : this.BuildRow(new LiteralControl(text), null));
             
             this.Controls.Clear();
@@ -1262,6 +1268,12 @@ namespace Votations.NSurvey.WebControls
             this.BuildResumeRequest();
         }
 
+        //On resume submit error message
+        private string GetErrorMessage(string msgname)
+        {
+            return "<div id=\"ruSE\" class=\"" + CssXmlManager.GetString("OnResumeUidSubmitError") + "\">" + msgname + @"</div>";
+        }
+
         protected virtual void OnResumeUIdSubmit(object sender, EventArgs e)
         {
             if (this.ResumeSession(this._resumeUIdTextBox.Text))
@@ -1270,13 +1282,22 @@ namespace Votations.NSurvey.WebControls
                 this.Controls.Clear();
                 this.BuildSurveyBox(false);
                 this._questionContainer.Rows[1].ControlStyle.CopyFrom(this.ConfirmationMessageStyle);
+                this._questionContainer.Rows[1].ID = "rrRow";
                 this._questionContainer.Rows[1].Cells[0].Controls.Add(new LiteralControl(ResourceManager.GetString("SuccessResumeUId", this.LanguageCode)));
             }
             else
             {
-                Style styletest = new Style();
-                styletest.CssClass = CssXmlManager.GetString("OnResumeUidSubmitError");
-                this._resumeTable.Rows.AddAt(0, this.BuildRow(ResourceManager.GetString("InvalidResumeUId", this.LanguageCode), styletest ));
+                //Style styletest = new Style();
+                //styletest.CssClass = CssXmlManager.GetString("OnResumeUidSubmitError");
+
+                TableCell cell = new TableCell();
+                TableRow row = new TableRow();
+                cell.Text = GetErrorMessage(ResourceManager.GetString("InvalidResumeUId", this.LanguageCode));
+                cell.ColumnSpan = 2;
+                row.Cells.Add(cell);
+
+                //this._resumeTable.Rows.AddAt(0, this.BuildRow(ResourceManager.GetString("InvalidResumeUId", this.LanguageCode), styletest ));
+                this._resumeTable.Rows.AddAt(0, row);
             }
         }
 
@@ -1313,18 +1334,21 @@ namespace Votations.NSurvey.WebControls
                 {
                     new Voter().SaveVoterProgress(this.VoterAnswers);
                     this._questionContainer.Rows[1].ControlStyle.CopyFrom(this.ConfirmationMessageStyle);
+                    this._questionContainer.Rows[1].ID = "rcRow";
                     this._questionContainer.Rows[1].Cells[0].Controls.Add(new LiteralControl(ResourceManager.GetString("ProgressSaved", this.LanguageCode)));
                     this.OnSessionSaved(new FormSessionEventArgs(this.VoterAnswers, this.VoterAnswers.Voters[0].ResumeUID));
                 }
                 else
                 {
                     this._questionContainer.Rows[1].ControlStyle.CopyFrom(this.QuestionValidationMessageStyle);
+                    this._questionContainer.Rows[1].ID = "rcRow";
                     this._questionContainer.Rows[1].Cells[0].Controls.Add(new LiteralControl(text));
                 }
             }
             else
             {
                 this._questionContainer.Rows[1].ControlStyle.CopyFrom(this.ConfirmationMessageStyle);
+                this._questionContainer.Rows[1].ID = "rcRow";
                 this._questionContainer.Rows[1].Cells[0].Controls.Add(new LiteralControl(string.Format(ResourceManager.GetString("ManualProgressSaved", this.LanguageCode), this.VoterAnswers.Voters[0].ResumeUID)));
                 new Voter().SaveVoterProgress(this.VoterAnswers);
                 this.OnSessionSaved(new FormSessionEventArgs(this.VoterAnswers, this.VoterAnswers.Voters[0].ResumeUID));
@@ -1493,6 +1517,7 @@ namespace Votations.NSurvey.WebControls
                     table.Width = base.Width;
                     table.Height = base.Height;
                     table.BackColor = base.BackColor;
+                    table.ID = "DtTable" ;
                     this.Controls.Add(table);
                 }
             }

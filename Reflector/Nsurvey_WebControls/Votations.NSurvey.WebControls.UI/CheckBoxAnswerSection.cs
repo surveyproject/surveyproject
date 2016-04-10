@@ -18,7 +18,7 @@ namespace Votations.NSurvey.WebControls.UI
         /// <returns>An horizontal table with all the answer items</returns>
         private Table BuildHorizontalSelectionLayout()
         {
-            Table table = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetCentPercentTable();//JJ;
+            Table table = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetAnswerPercentTable();//JJ;
             TableRow row = new TableRow();
             int num = 1;
             foreach (AnswerItem item in base.Answers)
@@ -38,8 +38,8 @@ namespace Votations.NSurvey.WebControls.UI
             }
             row.ControlStyle.CopyFrom(base.AnswerStyle);
             table.Rows.Add(row);
-            table.CellPadding = 2;
-            table.CellSpacing = 0;
+            //table.CellPadding = 2;
+            //table.CellSpacing = 0;
             return table;
         }
 
@@ -50,7 +50,7 @@ namespace Votations.NSurvey.WebControls.UI
         /// <returns>An horizontal table with all the answer items</returns>
         private Table BuildVerticalSelectionLayout()
         {
-            Table table = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetCentPercentTable();//JJ;
+            Table table = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetAnswerPercentTable();//JJ;
             int num = (base.ColumnsNumber == 0) ? base.Answers.Count : Convert.ToInt32(Math.Ceiling(((double) base.Answers.Count) / ((double) base.ColumnsNumber)));
             int num2 = 0;
             int num3 = 0;
@@ -74,8 +74,8 @@ namespace Votations.NSurvey.WebControls.UI
                 num3++;
                 num2 = num3;
             }
-            table.CellPadding = 2;
-            table.CellSpacing = 0;
+            //table.CellPadding = 2;
+            //table.CellSpacing = 0;
             return table;
         }
 

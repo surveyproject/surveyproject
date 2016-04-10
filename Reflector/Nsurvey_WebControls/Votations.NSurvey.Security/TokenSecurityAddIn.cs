@@ -80,23 +80,39 @@ namespace Votations.NSurvey.Security
         public Control GetLoginInterface(Style controlStyle)
         {
             this._tokenTable = new Table();
+            _tokenTable.CssClass = CssXmlManager.GetString("EnterTokenTable");
+            _tokenTable.ID = "etTbl";
+
             TableCell cell = new TableCell();
             TableRow row = new TableRow();
+
             Button child = new Button();
+            child.CssClass = CssXmlManager.GetString("EnterTokenButton");
+            child.ID = "etBtn";
             child.Click += new EventHandler(this.OnTokenSubmit);
+
             this._tokenTextBox = new TextBox();
-            this._tokenTable.ControlStyle.Font.CopyFrom(controlStyle.Font);
-            this._tokenTable.Width = Unit.Percentage(100.0);
+
+            //this._tokenTable.ControlStyle.Font.CopyFrom(controlStyle.Font);
+            //this._tokenTable.Width = Unit.Percentage(100.0);
             child.Text = ResourceManager.GetString("SubmitToken");
-           cell.Controls.Add(new LiteralControl(ResourceManager.GetString("EnterTokenMessage", this.LanguageCode)));
+            cell.CssClass = CssXmlManager.GetString("EnterTokenMessage");
+            cell.ID = "etMsg";
+            cell.Controls.Add(new LiteralControl(ResourceManager.GetString("EnterTokenMessage", this.LanguageCode)));
+
             row.Cells.Add(cell);
             this._tokenTable.Rows.Add(row);
+
             cell = new TableCell();
+            cell.CssClass = CssXmlManager.GetString("EnterTokenTextBox");
+            cell.ID = "etTB";
+
             row = new TableRow();
             cell.Controls.Add(this._tokenTextBox);
             cell.Controls.Add(child);
             row.Cells.Add(cell);
             this._tokenTable.Rows.Add(row);
+
             return this._tokenTable;
         }
 
@@ -126,7 +142,8 @@ namespace Votations.NSurvey.Security
         }
         private string GetErrorMessage(string msgname)
         {
-            return "<span style=\"Color:Red;\" >"+msgname+@"</span>" ;
+            //return "<span style=\"Color:Red;\" >"+msgname+@"</span>" ;
+            return "<div id=\"tsEM\" class=\"" + CssXmlManager.GetString("TokensecurityErrorMessage") + "\">" + msgname + @"</div>";
         }
         protected virtual void OnTokenSubmit(object sender, EventArgs e)
         {

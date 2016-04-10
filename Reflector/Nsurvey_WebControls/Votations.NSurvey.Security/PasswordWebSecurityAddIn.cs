@@ -120,16 +120,18 @@ namespace Votations.NSurvey.Security
         {
             TableCell cell = new TableCell();
             TableRow row = new TableRow();
-            Button child = new Button { CssClass = "btn btn-primary btn-xs bw" };
-            Panel panel = new Panel { CssClass = "passwordMessage" };
+            Button child = new Button { CssClass = CssXmlManager.GetString("PasswordButton"), ID="pwB" };
+            Panel panel = new Panel { CssClass = CssXmlManager.GetString("PasswordMessagePanel"), ID="pwMP" };
             //TODO JJ 
             this._passwordTextBox = new TextBox();
-            this._passwordTable.ControlStyle.CssClass = "tablelddl ";
+            this._passwordTable.ControlStyle.CssClass = CssXmlManager.GetString("PassWordTable");
+            this._passwordTable.ID = "pwTbl";
             //this._passwordTable.Width = Unit.Percentage(100.0);
             child.Text = ResourceManager.GetString("SubmitPassword", this.LanguageCode);
             child.Click += new EventHandler(this.OnValidatePassword);
             this._passwordTextBox.TextMode = TextBoxMode.Password;
-            this._passwordTextBox.CssClass = "lddl";
+            this._passwordTextBox.CssClass = CssXmlManager.GetString("PasswordTextBox");
+            this._passwordTextBox.ID = "pwTB";
 
             panel.Controls.Add(new LiteralControl(ResourceManager.GetString("EnterPasswordMessage", this.LanguageCode)));
             //cell.Controls.Add(new LiteralControl(ResourceManager.GetString("EnterPasswordMessage", this.LanguageCode)));
@@ -138,19 +140,19 @@ namespace Votations.NSurvey.Security
             //this._passwordTable.Rows.Add(row);
             //cell = new TableCell();
             //row = new TableRow();
-            panel = new Panel { CssClass = "passwordTextBox" };
+            panel = new Panel { CssClass = CssXmlManager.GetString("PasswordTextBoxPanel"), ID="pwTBP" };
             panel.Controls.Add(this._passwordTextBox);
             cell.Controls.Add(panel);
 
-            panel = new Panel { CssClass = "passwordSubmitButton" };
+            panel = new Panel { CssClass = CssXmlManager.GetString("PasswordSubmitButtonPanel"), ID="pwSBP" };
             panel.Controls.Add(child);
 
             cell.Controls.Add(panel);
             row.Cells.Add(cell);
             this._passwordTable.Rows.Add(row);
 
-            Panel wrapper = new Panel { CssClass = "questionContainerWrapper" };
-            Panel subpanel = new Panel { CssClass = "questionContainer" };
+            Panel wrapper = new Panel { CssClass = CssXmlManager.GetString("PasswordWrapper") };
+            Panel subpanel = new Panel { CssClass = CssXmlManager.GetString("PasswordSubPanel") };
             wrapper.Controls.Add(subpanel);
             subpanel.Controls.Add(this._passwordTable);
 
@@ -233,7 +235,7 @@ namespace Votations.NSurvey.Security
 
         private string GetErrorMessage(string msgname)
         {
-            return "<span class='ErrorMessage' >" + msgname + @"</span>";
+            return "<div id=\"pwEM\" class=\"" + CssXmlManager.GetString("PasswordErrorMessage") + "\">" + msgname + @"</div>";
         }
 
         protected virtual void OnValidatePassword(object sender, EventArgs e)

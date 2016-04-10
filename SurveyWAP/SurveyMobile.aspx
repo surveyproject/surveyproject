@@ -35,13 +35,13 @@
 </head>
 <body>
 
-    <div class="container">
+    <div id="MainContainer" class="container">
     <form id="Form1" class="form-inline" runat="server">
 
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
+            <div id="ErrorMessageDiv" class="errorMessageDiv" >
  <asp:Label ID="MessageLabel" runat="server"  CssClass="ErrorMessage" Visible="False"></asp:Label>
                 </div>
-                    <div class="container panel panel-default" style="margin-top:15px;">
+                    <div id="SurveyBoxDiv" class="container panel panel-default">
 
                 <vts:SurveyBox ID="SurveyControl" CssClass="surveybox" EnableValidation="false" runat="server">
                     <QuestionStyle CssClass="questionStyle"></QuestionStyle>

@@ -148,7 +148,8 @@ namespace Votations.NSurvey.Security
         }
         private string GetErrorMessage(string msgname)
         {
-            return "<div style=\"Color:Red;\" >" + msgname + @"</div>";
+            //return "<div style=\"Color:Red;\" >" + msgname + @"</div>";
+            return "<div id=\"eqEM\" class=\"" + CssXmlManager.GetString("EntryquotaErrorMessage") + "\">" + msgname + @"</div>";
         }
         /// <summary>
         /// Must create and return the control 

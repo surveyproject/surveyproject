@@ -106,6 +106,9 @@
   <data version="2.4" id="rct" name="ResumeRequestTable">
     <value>rct</value> 
   </data>
+  <data version="2.4" id="erUM" name="EnterResumeUIdMessage">
+    <value></value>
+  </data>
   <!-- submit button row -->
   <data version="2.4" id="bsbP" name="BuildSubmitButtonPanel">
     <value>pageButtonRow</value>
@@ -140,15 +143,15 @@
     <value>questionContainer</value>
   </data>
 <!-- onresume UID submit errormesage -->
-  <data version="2.4" id="oruse" name="OnResumeUidSubmitError">
+  <data version="2.4" id="ruSE" name="OnResumeUidSubmitError">
     <value>ErrorMessage</value>
   </data>
   <!-- AnswerSelectionItem Radiobutton-->
   <data version="2.4" id="oruse" name="AnswerSelectionRadioButton">
-    <value>AnswerTextRender</value>
+    <value></value>
   </data>
   <data version="2.4" id="oruse" name="GlobalRadioButtonLabel">
-    <value></value>
+    <value>globalRadioButtonLabel</value>
   </data>
   <data version="2.4" id="oruse" name="GlobalRadioButtonDiv">
     <value></value>
@@ -159,5 +162,89 @@
   <!-- Option to determine labeltext left or right alignment of radiobutton: no css -->
   <data version="2.4" id="oruse" name="GlobalRadioButtonTextAlign">
     <value>Right</value>
+  </data>
+  <data version="2.4" id="atr" name="AnswerTextRender">
+    <value>AnswerTextRender</value>
+  </data>
+  <data version="2.4" id="ams" name="AnswerMandatorySign">
+    <value>answer-warning-sign</value>
+  </data>
+  <data version="2.4" id="sucmes" name="SuccessMessage">
+    <value>SuccessMessage icon-ok</value>
+  </data>
+  <data version="2.4" id="ermes" name="ErrorMessage">
+    <value>ErrorMessage icon-warning-sign</value>
+  </data>
+  <data version="2.4" id="qht" name="QuestionHelpText">
+    <value>HelpTextSmallFont</value>
+  </data>
+  <data version="2.4" id="aulb" name="AnswerUploadButton">
+    <value>btn btn-primary btn-xs bw</value>
+  </data>
+  <data version="2.4" id="pwB" name="PasswordButton">
+    <value>btn btn-primary btn-xs bw</value>
+  </data>
+  <data version="2.4" id="pwMP" name="PasswordMessagePanel">
+    <value>passwordMessage</value>
+  </data>
+  <data version="2.4" id="pwT" name="PassWordTable">
+    <value>tablelddl</value>
+  </data>
+  <data version="2.4" id="pwTB" name="PasswordTextBox">
+    <value>lddl</value>
+  </data>
+  <data version="2.4" id="pwTBP" name="PasswordTextBoxPanel">
+    <value>passwordTextBox</value>
+  </data>
+  <data version="2.4" id="pwSBP" name="PasswordSubmitButtonPanel">
+    <value></value>
+  </data>
+  <data version="2.4" id="pwWR" name="PasswordWrapper">
+    <value>questionContainerWrapper</value>
+  </data>
+  <data version="2.4" id="pwSP" name="PasswordSubPanel">
+    <value>questionContainer</value>
+  </data>
+  <data version="2.4" id="pwEM" name="PasswordErrorMessage">
+    <value>ErrorMessage</value>
+  </data>
+  <data version="2.4" id="tsEM" name="TokensecurityErrorMessage">
+    <value>ErrorMessage</value>
+  </data>
+  <data version="2.4" id="eqEM" name="EntryquotaErrorMessage">
+    <value>entryquotaErrorMessage</value>
+  </data>
+  <data version="2.4" id="etBtn" name="EnterTokenButton">
+    <value>btn btn-primary btn-xs bw</value>
+  </data>
+  <data version="2.4" id="etMsg" name="EnterTokenMessage">
+    <value>enterTokenMessage</value>
+  </data>
+  <data version="2.4" id="etTbl" name="EnterTokenTable">
+    <value>enterTokenTable</value>
+  </data>
+  <data version="2.4" id="etTB" name="EnterTokenTextBox">
+    <value>enterTokenTextBox</value>
+  </data>
+  <data version="2.4" id="eicTbl" name="EmailInvCodeTable">
+    <value>emailInvCodeTable</value>
+  </data>
+  <data version="2.4" id="eicBtn" name="EmailInvCodeButton">
+    <value>btn btn-primary btn-xs bw</value>
+  </data>
+  <data version="2.4" id="eicTB" name="EmailInvCodeTextbox">
+    <value>emailInvCodeTextBox</value>
+  </data>
+  <data version="2.4" id="eicMsg" name="EmailInvCodeMessage">
+    <value>emailInvCodeMessage</value>
+  </data>
+  <data version="2.4" id="eicTBC" name="EmailInvCodeTextboxCell">
+    <value>emailInvCodeTextboxCell</value>
+  </data>
+  <data version="2.4" id="eicEMsg" name="EmailInvCodeErrorMessage">
+    <value>ErrorMessage</value>
+  </data>
+  <data version="2.4" id="tyMsg" name="ThankYouMessage">
+    <value>thankYouMessage</value>
   </data>
 </root>

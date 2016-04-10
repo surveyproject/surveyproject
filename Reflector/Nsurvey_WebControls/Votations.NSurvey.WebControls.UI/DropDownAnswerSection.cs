@@ -23,7 +23,7 @@ namespace Votations.NSurvey.WebControls.UI
         {
             TableCell cell;
             int num;
-            Table table = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetCentPercentTable();//JJ;
+            Table table = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetAnswerPercentTable();//JJ;
             TableRow row = new TableRow();
             this.InitListItems();
             if (this._answerListItem.AnswerItems.Count > 0)
@@ -68,7 +68,7 @@ namespace Votations.NSurvey.WebControls.UI
         private Table BuildVerticalListLayout()
         {
             int num4;
-            Table table = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetCentPercentTable();//JJ;
+            Table table = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetAnswerPercentTable();//JJ;
             TableRow row = new TableRow();
             TableCell cell = new TableCell();
             this.InitListItems();

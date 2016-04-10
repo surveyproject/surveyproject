@@ -362,7 +362,8 @@ namespace Votations.NSurvey.WebAdmin
         {
             l.Visible = true;
             //l.ForeColor = System.Drawing.Color.Green;
-            l.CssClass = "SuccessMessage icon-ok";
+            //l.CssClass = "SuccessMessage icon-ok";
+            l.CssClass = CssXmlManager.GetString("SuccessMessage");
             l.Text = s;
 
         }
@@ -371,7 +372,8 @@ namespace Votations.NSurvey.WebAdmin
         {
             l.Visible = true;
             //l.ForeColor = System.Drawing.Color.Red;
-            l.CssClass = "ErrorMessage icon-warning-sign";
+            //l.CssClass = "ErrorMessage icon-warning-sign";
+            l.CssClass = CssXmlManager.GetString("ErrorMessage");
             l.Text = s;
 
         }

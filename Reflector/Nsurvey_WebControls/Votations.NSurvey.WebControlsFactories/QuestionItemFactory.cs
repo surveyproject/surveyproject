@@ -7,6 +7,7 @@ namespace Votations.NSurvey.WebControlsFactories
     using Votations.NSurvey.DataAccess;
     using Votations.NSurvey.Helpers;
     using Votations.NSurvey.WebControls.UI;
+    using Votations.NSurvey.Resources;
 
     /// <summary>
     /// Create a web control compatible instance 
@@ -20,8 +21,10 @@ namespace Votations.NSurvey.WebControlsFactories
 
         private static string HelpTextInSmallFont(string text)
         {
-            return string.Format("<div class=\"HelpTextSmallFont\">{0}</div>", text);
+            //return string.Format("<div class=\"HelpTextSmallFont\">{0}</div>", text);
+            return string.Format("<div id=\"qht\" class=" + CssXmlManager.GetString("QuestionHelpText") + ">{0}</div>", text);
         }
+
         public static QuestionItem Create(QuestionData.QuestionsRow question, string languageCode, string parentControlUniqueID, 
             int questionRandomSeed, VoterAnswersData.VotersAnswersDataTable voterAnswersState, 
             bool enableAnswerDefaults,bool isDesignMode=false)

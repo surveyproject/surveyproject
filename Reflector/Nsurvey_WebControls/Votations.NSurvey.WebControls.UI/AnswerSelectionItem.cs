@@ -48,9 +48,16 @@ namespace Votations.NSurvey.WebControls.UI
                     {
                         child.Text = this.Text;
                         //child.ID = "rbID";
-                        // next will get CSS from database; CSS entered on AnswerSettingsform - Radiobutton CSS 
-                        child.Css = this.Css;
-                        //child.CssClass = CssXmlManager.GetString("AnswerSelectionRadioButton");
+
+                        if (String.IsNullOrEmpty(Css))
+                        {
+                            child.CssClass = CssXmlManager.GetString("AnswerSelectionRadioButton");
+                        }
+                        else
+                        {
+                            // next will get CSS from database; CSS entered on AnswerSettingsform - Radiobutton CSS 
+                            child.Css = this.Css;
+                        }
                     }
                 }
                 this.SelectionControl = child;

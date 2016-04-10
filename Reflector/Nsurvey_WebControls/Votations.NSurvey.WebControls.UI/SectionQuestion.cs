@@ -372,9 +372,9 @@ namespace Votations.NSurvey.WebControls.UI
             QuestionTable.Rows.Add(questionTableRow);
 
             // Add the section table to the tree to get correct uid for children
-            _sectionTable.CellSpacing = 0;
-            _sectionTable.CellPadding = 2;
-            _sectionTable.Width = Unit.Percentage(100);
+            //_sectionTable.CellSpacing = 0;
+            //_sectionTable.CellPadding = 2;
+            //_sectionTable.Width = Unit.Percentage(100);
             QuestionTable.Rows.Add(BuildRow(_sectionTable, AnswerStyle));
 
             // Create grid with current answers and section only to add a new entry
@@ -389,9 +389,9 @@ namespace Votations.NSurvey.WebControls.UI
             }
 
 
-            QuestionTable.Width = Unit.Percentage(100);
-            QuestionTable.CellSpacing = 0;
-            QuestionTable.CellPadding = 2;
+            //QuestionTable.Width = Unit.Percentage(100);
+            //QuestionTable.CellSpacing = 0;
+            //QuestionTable.CellPadding = 2;
         }
 
         /// <summary>
@@ -451,8 +451,8 @@ namespace Votations.NSurvey.WebControls.UI
 
             sectionOptionTable.Rows.Add(sectionOptionRow);
             sectionOptionTable.ControlStyle.CopyFrom(SectionOptionStyle);
-            sectionOptionTable.CellSpacing = 0;
-            sectionOptionTable.CellPadding = 2;
+            //sectionOptionTable.CellSpacing = 0;
+            //sectionOptionTable.CellPadding = 2;
             return sectionOptionTable;
         }
 
@@ -816,14 +816,14 @@ namespace Votations.NSurvey.WebControls.UI
                 submitSectioButton = _updateSectionButton;
                 submitSectioButton.ID = "SubmitSectionButton";
                 submitSectioButton.Text = UpdateSectionLinkText;
-                submitSectioButton.CssClass = "btn btn-primary btn-xs bw fileuploadbuttonmargin";
+                submitSectioButton.CssClass = CssXmlManager.GetString("AnswerUploadButton");
                 submitSectioButton.Click += new EventHandler(UpdateSectionButton_Click);
             }
             else
             {
                 submitSectioButton = _addSectionButton;
                 submitSectioButton.Text = AddSectionLinkText;
-                submitSectioButton.CssClass = "btn btn-primary btn-xs bw fileuploadbuttonmargin";
+                submitSectioButton.CssClass = CssXmlManager.GetString("AnswerUploadButton");
                 submitSectioButton.Click += new EventHandler(SubmitSectionButton_Click);
             }
 
@@ -842,7 +842,7 @@ namespace Votations.NSurvey.WebControls.UI
             {
                 cancelSectionButton.ID = "CancelSectionButton";
                 cancelSectionButton.Text = CancelButtonText;
-                cancelSectionButton.CssClass = "btn btn-primary btn-xs bw fileuploadbuttonmargin";
+                cancelSectionButton.CssClass = CssXmlManager.GetString("AnswerUploadButton");
                 cancelSectionButton.Click += new EventHandler(CancelSectionButton_Click);
                 _buttonsPlaceHolder.Controls.Add(cancelSectionButton);
             }
@@ -1157,7 +1157,7 @@ namespace Votations.NSurvey.WebControls.UI
             OnClientScriptGeneration(e);
         }
 
-        private Table _sectionTable = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetCentPercentTable();//JJ;
+        private Table _sectionTable = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetSectPercentTable();//JJ;
         private SectionCollection _sections = new SectionCollection();
         private Style _sectionOptionStyle;
         private int _maxSections = 0;

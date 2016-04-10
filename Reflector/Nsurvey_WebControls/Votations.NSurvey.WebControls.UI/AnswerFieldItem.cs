@@ -50,13 +50,20 @@ namespace Votations.NSurvey.WebControls.UI
                     this.Controls.Add(literal);
                      */
                     Label label= new Label();
-                    label.CssClass = "AnswerTextRender";
+                    //label.CssClass = "AnswerTextRender";
+                    label.CssClass = CssXmlManager.GetString("AnswerTextRender");
                     label.Text = this.Text;
                     this.Controls.Add(label);
 
+                    //Label mandatoryLabel = new Label();
+                    //mandatoryLabel.CssClass = CssXmlManager.GetString("AnswerMandatorySign");
+                    //mandatoryLabel.Text = "&nbsp; * &nbsp;";
+                    
                     if (this.Mandatory)
-                        {
-                            this.Controls.Add(new LiteralControl("<div style='color:red; display:inline-flex;'>&nbsp; * &nbsp;</div>"));
+                    {
+                        Label mandatoryLabel = new Label();
+                        mandatoryLabel.CssClass = CssXmlManager.GetString("AnswerMandatorySign");
+                        this.Controls.Add(mandatoryLabel);
                         }
                 }
 
