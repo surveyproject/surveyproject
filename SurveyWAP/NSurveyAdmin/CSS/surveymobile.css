@@ -401,6 +401,18 @@ span.AnswerTextRender > div:nth-child(2)
  font-weight: normal;
 }
 
+/*Matrix question*/
+
+.ScrollableDiv
+{
+	overflow: auto;
+	width: auto;
+    margin:10px;
+    border-radius: 7px;
+    border:1px solid #6699CC;
+}
+
+
 /*ANSWER DETAILS CSS END*/
 
 
@@ -785,16 +797,6 @@ tr.footStyle > td > table > tbody > tr > td
 
 /* _____________________________________________________*/
 
-/*Matrix question*/
-
-.ScrollableDiv
-{
-	overflow: auto;
-	width: auto;
-    margin:10px;
-    border-radius: 7px;
-    border:1px solid #6699CC;
-}
 
 
 /*calender Answerfield*/

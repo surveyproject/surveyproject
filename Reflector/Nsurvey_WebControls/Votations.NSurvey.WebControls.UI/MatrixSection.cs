@@ -6,6 +6,7 @@ namespace Votations.NSurvey.WebControls.UI
     using System.Web.UI;
     using System.Web.UI.WebControls;
     using Votations.NSurvey;
+    using Votations.NSurvey.Resources;
 
     /// <summary>
     /// Generates a matrix style layout
@@ -82,7 +83,8 @@ namespace Votations.NSurvey.WebControls.UI
         {
           
             Panel p = new Panel();
-            p.CssClass = "ScrollableDiv";
+            p.CssClass = CssXmlManager.GetString("MatrixSectionScrollableDiv");
+            p.ID = "msSD";
             p.Controls.Add(ctl);
             return p;
 

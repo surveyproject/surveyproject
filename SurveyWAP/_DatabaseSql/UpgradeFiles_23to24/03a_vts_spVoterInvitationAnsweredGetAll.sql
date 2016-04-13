@@ -1,4 +1,4 @@
-USE [sp23test]
+USE [DBNAME]
 GO
 
 /****** Object:  StoredProcedure [dbo].[vts_spVoterInvitationAnsweredGetAll]    Script Date: 04/01/2015 20:59:48 ******/
@@ -6,7 +6,7 @@ IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[vts_s
 DROP PROCEDURE [dbo].[vts_spVoterInvitationAnsweredGetAll]
 GO
 
-USE [sp23test]
+USE [DBNAME]
 GO
 
 /****** Object:  StoredProcedure [dbo].[vts_spVoterInvitationAnsweredGetAll]    Script Date: 04/01/2015 20:59:48 ******/

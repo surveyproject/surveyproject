@@ -7,37 +7,40 @@ _______________________________________________________________________
 
 
 Notes: 
-
-- In case of upgrading an SP v. 2.2 database to v.2.3 the following changes have to be made:
-
-Detailed code can be copied from the main SP v. 2.3 Beta SQl files.
-
-- DB upgrades are not formally supported. Always make sure to backup your databases first before making any changes or running scripts.
-
+- DB upgrades are not formally supported.
+- Always make sure to backup your databases first before making any changes or running scripts.
+- In case of upgrading an SP v. 2.3 database to v.2.4 the following changes have to be made:
 
 ***********************************************************************************
 
 
-- added stored procedure: vts_spGetReportScoresDws
+1 01_vts_tbWebSecurityAddIn_IPFilterToken.sql
 
-- new answertype FieldAddressType
-
-SET IDENTITY_INSERT [dbo].[vts_tbAnswerType] ON 
-
-
-INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDataSource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) 
-VALUES (55, 1, N'FieldAddressType', 20, 0, 100, 1090, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerFieldAddressItem', N'Votations.NSurvey.WebControls', NULL)
-
-
-GO
-SET IDENTITY_INSERT [dbo].[vts_tbAnswerType] OFF
-
-
-- changes/edited stored procedures:
-* vts_spVoterInvitationAnsweredGetAll.sql
-* vts_spVoterInvitationQueueGetAll.sql
-Both to add paging on mailingstatus.aspx page.
-
-- issue Github 26: missing entries from vts_tbSecurityAddIn
+* issue Github 26: missing entries from vts_tbSecurityAddIn
 * add token and filter add in's to vts_tbsecurityaddin
+
+
+2 02_vts_tbanswertype_AddFieldAddressType.sql
+
+* new answertype (google) FieldAddressType
+
+
+3 vts_spVoterInvitationAnsweredGetAll.sql
+  vts_spVoterInvitationQueueGetAll.sql
+
+* changes/edited stored procedures:
+* Both to add paging on mailingstatus.aspx page.
+
+
+4 04a_vts_tbAnswer.sql
+  04b_vts_spAnswerAddNew.sql
+  04c_vts_spAnswersCloneByQuestionId.sql
+  04d_vts_spAnswerGetDetails.sql
+  04e_vts_spAnswerUpdate.sql
+  04f_vts_spQuestionGetAnswers.sql
+  04g_vts_spSurveyGetForExport.sql
+
+* add CSS field option on answer level (+ include in export)
+* change vts_answertable (1x)
+* change/ add stored procedures  (6x)
 
