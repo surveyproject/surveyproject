@@ -92,7 +92,7 @@ namespace Votations.NSurvey.WebControls.UI
         protected override void CreateChildControls()
         {
             Table t = this.BuildMatrixLayout();
-            t.Width = new Unit(100.0, UnitType.Percentage);
+            //t.Width = new Unit(100.0, UnitType.Percentage);
             this.Controls.Add(EncloseInScrollableDiv( t));
         }
 

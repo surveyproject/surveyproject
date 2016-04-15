@@ -409,15 +409,7 @@ namespace Votations.NSurvey.WebControls
 
             Panel subPanel = new Panel { CssClass = CssXmlManager.GetString("NextPageNavigationPanel"), ID = "npNP" };
 
-            if (this._enableNavigation)
-            {
-                panel = new Panel { CssClass = CssXmlManager.GetString("PreviousPageButtonPanel"), ID = "ppBP" };
-                panel.Controls.Add(this.BuildPreviousPageButton(CurrentPageIndex > 1 && enabled));
-                subPanel.Controls.Add(panel);
-            }
-
-            subPanel = this.BuildFooterRow(subPanel, enabled);
-
+            //submitbutton
             this._submitButton.ControlStyle.CopyFrom(this.ButtonStyle);
             this._submitButton.CssClass = CssXmlManager.GetString("NextPageSubmitButton");
             this._submitButton.ID = "npSB";
@@ -434,8 +426,18 @@ namespace Votations.NSurvey.WebControls
 
             submitControl.Controls.Add(subPanel);
 
+            //previous page button
+            if (this._enableNavigation)
+            {
+                panel = new Panel { CssClass = CssXmlManager.GetString("PreviousPageButtonPanel"), ID = "ppBP" };
+                panel.Controls.Add(this.BuildPreviousPageButton(CurrentPageIndex > 1 && enabled));
+                subPanel.Controls.Add(panel);
+            }
+
+            subPanel = this.BuildFooterRow(subPanel, enabled);
 
 
+            //resume button
             if (this._resumeMode != ResumeMode.NotAllowed && enabled)
             {
                 if ((this._resumeMode == ResumeMode.Manual) && (this.CurrentPageIndex == 1))
@@ -559,15 +561,9 @@ namespace Votations.NSurvey.WebControls
 
             Panel subPanel = new Panel { CssClass = CssXmlManager.GetString("BuildSubmitButtonSubPanel"), ID="bsbSP" };
 
-            if (this._enableNavigation)
-            {
-                panel = new Panel { CssClass = CssXmlManager.GetString("BuildSubmitPPBSubPanel"), ID="bsbPPBP" };
-                panel.Controls.Add(this.BuildPreviousPageButton(CurrentPageIndex > 1));
-                subPanel.Controls.Add(panel);
-            }
 
-            subPanel = this.BuildFooterRow(subPanel, true);
 
+            // submit button
             this._submitButton.ControlStyle.CopyFrom(this.ButtonStyle);
             this._submitButton.CssClass = CssXmlManager.GetString("SurveySubmitButton");
             this._submitButton.ID = "ssB";
@@ -583,7 +579,18 @@ namespace Votations.NSurvey.WebControls
 
             submitControl.Controls.Add(subPanel);
 
+            //previous page button
+            if (this._enableNavigation)
+            {
+                panel = new Panel { CssClass = CssXmlManager.GetString("BuildSubmitPPBSubPanel"), ID = "bsbPPBP" };
+                panel.Controls.Add(this.BuildPreviousPageButton(CurrentPageIndex > 1));
+                subPanel.Controls.Add(panel);
+            }
 
+            subPanel = this.BuildFooterRow(subPanel, true);
+
+
+            //resume button
             if ((this._resumeMode == ResumeMode.Manual) && (this.TotalPageNumber == 1))
             {
                 //panel = new Panel { CssClass = "resumeProgressButton" };

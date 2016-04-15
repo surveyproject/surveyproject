@@ -345,7 +345,9 @@ tr.questionStyle td > span > div.question-number-div
 }
 
 /*ID: SurveyControl_Question2_SectTbl */
-.sectTbl{}
+.sectTbl{
+    width:100%;
+}
 
 /*ID: SurveyControl_Question2__as57474_AnswerTbl */
 .answerTbl{}
@@ -402,6 +404,7 @@ span.AnswerTextRender > div:nth-child(2)
 }
 
 /*Matrix question*/
+/*ID: SurveyControl_Question36__as37801_msSD*/
 
 .ScrollableDiv
 {
@@ -650,12 +653,15 @@ span.AnswerTextRender > div:nth-child(2)
 /* answerStyle */
 
 
+/*ID: SurveyControl_Question36__as37801_MatrixTbl */
 /* MatrixStyle */
 .matrixStyle
 {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 10pt;
 	background-color: #F4F9FA;
+
+    width:100%;
 }
 
 /* MatrixHeaderStyle */
