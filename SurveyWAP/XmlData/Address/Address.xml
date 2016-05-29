@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- Explanation of the Google Address XML Parameters File:
+
+- to make use of the Google Address Answer Type a Google Subscribtion is needed to get the key that must be set through this xml file
+- the key will become part of the url as provided by Google and which is programmed into SP
+- complete googlel url: https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&sensor=false&key=AIzaSyDwh2agwB_vfybUaiuLrl4Hopr9EDX6rUI&language=en
+
+  -->
+  <!-- Google Address Parameters -->
+  <data version="2.4" id="key" name="GoogleAddressKey">
+    <value>AIzaSyDwh2agwB_vfybUaiuLrl4Hopr9EDX6rUI</value>
+  </data>
+</root>

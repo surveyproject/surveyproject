@@ -13,6 +13,24 @@ namespace Votations.NSurvey.WebAdmin.UserControls {
     public partial class AnswerOptionControl {
         
         /// <summary>
+        /// atddlLI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl atddlLI;
+        
+        /// <summary>
+        /// aidLI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl aidLI;
+        
+        /// <summary>
         /// lblAnswerID control.
         /// </summary>
         /// <remarks>
@@ -29,6 +47,15 @@ namespace Votations.NSurvey.WebAdmin.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtAnswerID;
+        
+        /// <summary>
+        /// aaLI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl aaLI;
         
         /// <summary>
         /// lblAnswerAlias control.
@@ -49,6 +76,33 @@ namespace Votations.NSurvey.WebAdmin.UserControls {
         protected global::System.Web.UI.WebControls.TextBox txtAnswerAlias;
         
         /// <summary>
+        /// atLI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl atLI;
+        
+        /// <summary>
+        /// aiuLI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl aiuLI;
+        
+        /// <summary>
+        /// accLI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl accLI;
+        
+        /// <summary>
         /// AnswerCssClassLabel control.
         /// </summary>
         /// <remarks>
@@ -65,6 +119,51 @@ namespace Votations.NSurvey.WebAdmin.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox AnswerCssClassTextBox;
+        
+        /// <summary>
+        /// dtLI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dtLI;
+        
+        /// <summary>
+        /// revLI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl revLI;
+        
+        /// <summary>
+        /// mLI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl mLI;
+        
+        /// <summary>
+        /// srLI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl srLI;
+        
+        /// <summary>
+        /// svLI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl svLI;
         
         /// <summary>
         /// SliderValueTextBox control.
@@ -85,6 +184,15 @@ namespace Votations.NSurvey.WebAdmin.UserControls {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
         
         /// <summary>
+        /// smiLI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl smiLI;
+        
+        /// <summary>
         /// SliderMinTextBox control.
         /// </summary>
         /// <remarks>
@@ -101,6 +209,15 @@ namespace Votations.NSurvey.WebAdmin.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
+        
+        /// <summary>
+        /// smaLI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl smaLI;
         
         /// <summary>
         /// SliderMaxTextBox control.
@@ -121,6 +238,15 @@ namespace Votations.NSurvey.WebAdmin.UserControls {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator3;
         
         /// <summary>
+        /// saLI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl saLI;
+        
+        /// <summary>
         /// SliderAnimateCheckbox control.
         /// </summary>
         /// <remarks>
@@ -128,6 +254,15 @@ namespace Votations.NSurvey.WebAdmin.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox SliderAnimateCheckbox;
+        
+        /// <summary>
+        /// ssLI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ssLI;
         
         /// <summary>
         /// SliderStepTextBox control.
@@ -146,5 +281,41 @@ namespace Votations.NSurvey.WebAdmin.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator4;
+        
+        /// <summary>
+        /// apaLI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl apaLI;
+        
+        /// <summary>
+        /// seaLI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl seaLI;
+        
+        /// <summary>
+        /// arLI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl arLI;
+        
+        /// <summary>
+        /// sLI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl sLI;
     }
 }

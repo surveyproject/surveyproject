@@ -172,10 +172,14 @@ namespace Votations.NSurvey.WebControlsFactories
                 }
                 item4.ImageUrl = answer.IsImageURLNull() ? null : answer.ImageURL;
             }
-            //string str = (section == null) ? GetUserText(answer.AnswerId, 0, voterAnswersState) : GetUserText(answer.AnswerId, section.SectionNumber, voterAnswersState);
-            string str = string.Empty;
-            if ((!answer.IsDefaultTextNull()) && (answer.DefaultText.Length > 0)) str = new PipeManager().PipeValuesInText(answer.QuestionId, answer.DefaultText, voterAnswersState, languageCode);
-            if (!string.IsNullOrEmpty(str))
+
+            //new code by Mona Sarma: creates issue: viewstate not saved when moving to previous page
+            //string str = string.Empty;
+            //if ((!answer.IsDefaultTextNull()) && (answer.DefaultText.Length > 0)) str = new PipeManager().PipeValuesInText(answer.QuestionId, answer.DefaultText, voterAnswersState, languageCode);
+            //if (!string.IsNullOrEmpty(str))
+
+            string str = (section == null) ? GetUserText(answer.AnswerId, 0, voterAnswersState) : GetUserText(answer.AnswerId, section.SectionNumber, voterAnswersState);
+            if ( str != null)
             {
                 item.DefaultText = str;
             }

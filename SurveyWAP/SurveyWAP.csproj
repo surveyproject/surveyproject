@@ -187,6 +187,7 @@
     <Content Include="NSurveyAdmin\Help\About.aspx" />
     <Content Include="NSurveyAdmin\Help\Completion Actions.aspx" />
     <Content Include="NSurveyAdmin\Help\CssXml.aspx" />
+    <Content Include="NSurveyAdmin\Help\Field_Address.aspx" />
     <Content Include="NSurveyAdmin\Help\Field - Slider.aspx" />
     <Content Include="NSurveyAdmin\Help\default.aspx" />
     <Content Include="NSurveyAdmin\Help\Email Notification.aspx" />
@@ -1177,6 +1178,7 @@
     <None Include="Scripts\_references.js" />
     <Content Include="Survey.aspx" />
     <Content Include="SurveyMobile.aspx" />
+    <Content Include="XmlData\Address\Address.xml" />
     <Content Include="XmlData\al.xml" />
     <Content Include="XmlData\be.xml" />
     <Content Include="XmlData\br.xml" />

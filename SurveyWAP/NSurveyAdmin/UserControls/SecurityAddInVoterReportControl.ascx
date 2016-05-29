@@ -3,8 +3,8 @@
 <table class="innerText" id="Table1">
     <tr>
         <td colspan="2">
-            <font class="titleFont">
-                <asp:Literal ID="AddInDescriptionTitle" runat="server" EnableViewState="False"></asp:Literal></font>
+            <div class="titleFont">
+                <asp:Literal ID="AddInDescriptionTitle" runat="server" EnableViewState="False"></asp:Literal></div>
             <br />
             <br />
             <br />

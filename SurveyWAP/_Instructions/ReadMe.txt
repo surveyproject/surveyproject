@@ -1,7 +1,7 @@
 ________________________________________________________________________________________________
 
 
-Survey™ Project v. 2.4 Alpha - The open source webapplication for online surveys and webforms
+Survey™ Project v. 2.4 (Alpha) - The open source webapplication for online surveys and webforms
 
 ________________________________________________________________________________________________
 
@@ -16,10 +16,11 @@ ________________________________________________________________________________
 
 New Features & Fixes:
 
-SP 2.4. - status: 2014/.....
+SP 2.4. - status: 2016/04/17
 
 
 I. New Features:
+
 
 
 
@@ -47,8 +48,8 @@ Instructions "Survey™ Project 2.4 Install package" - NEW INSTALLATION
 
 1. SYSTEM REQUIREMENTS
 
-Clientside:
-- Tested Browsertypes IE11 ; Firefox 33.* >; Chrome 38.* 
+Client side:
+- Tested Browsertypes: Internet Explorer 11 ; Firefox 45.* >; Chrome 50.* 
 
 Serverside:
 - .NET Framework 4.5 or higher must be installed
@@ -62,21 +63,21 @@ Free downloads available at http://www.asp.net/downloads/
 
 
 2. FILES
-- download zipped install package to your computer
+- download the zipped install package to your computer
 - right click file: check Properties --> Unblock
-- unzip files to (new) file directory (e.g. C:/Survey/..)
+- unzip the files to a (new) file directory (e.g. C:/SurveyProject/..)
 
 
 3. IIS
 
 Option 1.
-- create a new Virtual Directory in IIS [e.g. called 'SurveyProject'] which points to the fysical directory where the Survey files are unzipped
+- create a new Virtual Directory in IIS [e.g. called 'SurveyProject'] which points to the fysical directory where the SurveyProject files are unzipped
 - make sure you have default.aspx specified as a Default Document for your Virtual Directory
-- set Asp.NET to version 4.* (or higher) and "Pipeline mode: Integrated"
+- set Asp.NET to version 4.5 (or higher) and "Pipeline mode: Integrated"
 
 Option 2. 
 - Create a WebApplication in IIS and follow the steps of option 1.
-- Add the Webapplication to the proper Applicationpool using .NET 4.5 and Integrated Pipeline Mode
+- Add the Webapplication to the proper Applicationpool using .NET 4.5 and "Integrated Pipeline Mode"
 
 
 4. DATABASE

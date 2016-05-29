@@ -38,7 +38,6 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 	using Votations.NSurvey.WebControls.UI;
 	using Votations.NSurvey.WebControlsFactories;
 
-
 	/// <summary>
 	/// Answer data CU methods
 	/// </summary>
@@ -137,10 +136,11 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 			set { ViewState["LanguageCode"] = value; }
 		}
 
-        public int AnsuwerIDText
+        // no references... (9x)
+        public int AnswerIDText
         {
-            get { return (ViewState["AnsuwerIDText"] == null) ? -1 : int.Parse(ViewState["AnsuwerIDText"].ToString()); }
-            set { ViewState["AnsuwerIDText"] = value; }
+            get { return (ViewState["AnswerIDText"] == null) ? -1 : int.Parse(ViewState["AnswerIDText"].ToString()); }
+            set { ViewState["AnswerIDText"] = value; }
         }
 
         public string AnswerAlias
@@ -149,10 +149,6 @@ namespace Votations.NSurvey.WebAdmin.UserControls
             set { ViewState["AnswerAlias"] = value; }
         }
 
-
-        /// <summary>
-        /// AnswerType Slider values:
-        /// </summary>
         public string SliderRange
         {
             get { return (ViewState["SliderRange"] == null) ? null : ViewState["SliderRange"].ToString(); }
@@ -184,9 +180,15 @@ namespace Votations.NSurvey.WebAdmin.UserControls
             set { ViewState["SliderStep"] = value; }
         }
 
+        public string AnswerCssClass
+        {
+            get { return (ViewState["AnswerCssClass"] == null) ? null : ViewState["AnswerCssClass"].ToString(); }
+            set { ViewState[" AnswerCssClass"] = value; }
+        }
 
 
-		private void Page_Load(object sender, System.EventArgs e)
+
+        private void Page_Load(object sender, System.EventArgs e)
 		{
 			LocalizePage();
 
@@ -194,14 +196,15 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 			DeleteAnswerButton.Attributes.Add("onClick",
 							"javascript:if(confirm('" +((PageBase)Page).GetPageResource("DeleteAnswerConfirmationMessage")+ "')== false) return false;");
 		
+            //if its not postback ... which is on the initial loading of the page...
 			if (!Page.IsPostBack)
 			{
 				BindData();
 			}
 
-			AnswerTypeData typeData = new AnswerTypes().GetAnswerTypeById(int.Parse(AnswerTypeDropDownList.SelectedValue));
-			SetUIState(typeData.AnswerTypes[0].TypeMode, false);
-		}
+           // AnswerTypeData typeData = new AnswerTypes().GetAnswerTypeById(int.Parse(AnswerTypeDropDownList.SelectedValue));
+           // SetUIState(typeData.AnswerTypes[0].TypeMode, false);
+        }
 
 		private void LocalizePage()
 		{
@@ -267,9 +270,12 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 			AnswerTypeDropDownList.DataValueField = "AnswerTypeID";
 			AnswerTypeDropDownList.DataBind();
 			((PageBase)Page).TranslateListControl(AnswerTypeDropDownList);
-			AnswerTypeDropDownList.SelectedValue = "1";
+            //AnswerTypeDropDownList.SelectedValue = "1";
 
-			AvailablePublishersListBox.DataSource = new Answers().GetPublishersList(AnswerId);
+            AnswerTypeDropDownList.Items.Insert(0, new ListItem(((PageBase)Page).GetPageResource("SelectAnswerTypeDDL"), "-1"));
+
+
+            AvailablePublishersListBox.DataSource = new Answers().GetPublishersList(AnswerId);
 			AvailablePublishersListBox.DataTextField = "AnswerText";
 			AvailablePublishersListBox.DataValueField = "AnswerId";
 			AvailablePublishersListBox.DataBind();
@@ -298,7 +304,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 				new ListItem(((PageBase)Page).GetPageResource("NoRegExValidationOption"), "-1"));
 
 
-			// Check if any answer has been assigned
+			// Check if any answer has been assigned, if so: go to the edit mode
 			if (AnswerId == -1)
 			{
 				SwitchToCreationMode();
@@ -315,34 +321,41 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 		/// </summary>
 		private void SwitchToCreationMode()
 		{
-			// Creation mode
-			AddAnswerButton.Visible = true;
-			UpdateAnswerButton.Visible = false;
-			DeleteAnswerButton.Visible = false;
-			SelectedAnswersLabel.Visible = true;
-			SelectionCheckBox.Visible = true;
-			RatingPartCheckbox.Visible = RatingEnabled;
-			AnswerRatingLabel.Visible = RatingEnabled;
-			AnswerTextTextBox.Text = String.Empty;
-			AnswerPipeAliasTextBox.Text = String.Empty;
-			DefaultTextTextBox.Text = String.Empty;
-			ScoreTextBox.Text = String.Empty;
-			ScoreTextBox.Visible = ScoreEnabled;
-			ScoreLabel.Visible = ScoreEnabled;
+            // Creation mode
+            AddAnswerButton.Visible = true;
+            UpdateAnswerButton.Visible = false;
+            DeleteAnswerButton.Visible = false;
+
+            SelectedAnswersLabel.Visible = true;
+            SelectionCheckBox.Visible = true;
+
+            RatingPartCheckbox.Visible = RatingEnabled;
+            AnswerRatingLabel.Visible = RatingEnabled;
+
+            AnswerTextTextBox.Text = String.Empty;
+            AnswerPipeAliasTextBox.Text = String.Empty;
+            DefaultTextTextBox.Text = String.Empty;
+
+            ScoreTextBox.Text = String.Empty;
+            ScoreTextBox.Visible = ScoreEnabled;
+            ScoreLabel.Visible = ScoreEnabled;
+
             txtAnswerAlias.Text = string.Empty;
             txtAnswerID.Text = string.Empty;
-			EditAnswerTitle.Text = ((PageBase)Page).GetPageResource("AddNewAnswerTitle");
-			RegExDropDownList.ClearSelection();
-			MandatoryLabel.Visible = false;
-			MandatoryCheckBox.Checked = false;
-			RegExValidationLabel.Visible = false;
-			RegExDropDownList.Visible = false;
-			MandatoryCheckBox.Visible = false;
-			ConnectionsPlaceHolder.Visible = false;
+            EditAnswerTitle.Text = ((PageBase)Page).GetPageResource("AddNewAnswerTitle");
 
+            RegExDropDownList.ClearSelection();
+
+            MandatoryLabel.Visible = false;
+            MandatoryCheckBox.Checked = false;
+            MandatoryCheckBox.Visible = false;
+
+            RegExValidationLabel.Visible = false;
+            RegExDropDownList.Visible = false;
+
+            ConnectionsPlaceHolder.Visible = false;
 
             SliderRangeLabel.Visible = false;
-
             SliderRangeDDL.Visible = false;
             SliderRangeDDL.Text = SliderRangeDDL.SelectedValue.ToString();
 
@@ -366,22 +379,45 @@ namespace Votations.NSurvey.WebAdmin.UserControls
             SliderStepTextBox.Visible = false;
             SliderStepTextBox.Text = String.Empty;
 
-            
-			DefaultTextLabel.Visible = false;
-			DefaultTextTextBox.Visible = false;
-			AnswerPipeAliasLabel.Visible = false;
-			AnswerPipeAliasTextBox.Visible = false;
-			PipeHelpLabel.Visible = false;
+            DefaultTextLabel.Visible = false;
+            DefaultTextTextBox.Visible = false;
 
-			ExtendedPropertiesPlaceholder.Controls.Clear();
-			ExtendedPropertiesPlaceholder.Visible = false;
-			ExtendedPlaceholder.Visible = false;
-		}
+            AnswerPipeAliasLabel.Visible = false;
+            AnswerPipeAliasTextBox.Visible = false;
+            PipeHelpLabel.Visible = false;
 
-		/// <summary>
-		/// Setup the control in edition mode
-		/// </summary>
-		private void SwitchToEditionMode()
+            ExtendedPropertiesPlaceholder.Controls.Clear();
+            ExtendedPropertiesPlaceholder.Visible = false;
+            ExtendedPlaceholder.Visible = false;
+
+
+            aidLI.Visible = false;
+            aaLI.Visible = false;
+            atLI.Visible = false;
+            aiuLI.Visible = false;
+            accLI.Visible = false;
+            seaLI.Visible = false;
+
+            dtLI.Visible = false;
+            revLI.Visible = false;
+            mLI.Visible = false;
+            srLI.Visible = false;
+            svLI.Visible = false;
+            smiLI.Visible = false;
+            smaLI.Visible = false;
+            saLI.Visible = false;
+            ssLI.Visible = false;
+            apaLI.Visible = false;
+            arLI.Visible = false;
+            sLI.Visible = false;
+
+
+        }
+
+        /// <summary>
+        /// Setup the control in edition mode
+        /// </summary>
+        private void SwitchToEditionMode()
 		{
 			AddAnswerButton.Visible = false;
 			UpdateAnswerButton.Visible = true;
@@ -403,10 +439,12 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 			AnswerPipeAliasTextBox.Text = answer.Answers[0].AnswerPipeAlias;
 			SelectionCheckBox.Checked = answer.Answers[0].Selected;
             AnswerCssClassTextBox.Text = answer.Answers[0].CssClass;
+
             if (AnswerTypeDropDownList.Items.FindByValue(answer.Answers[0].AnswerTypeId.ToString()) != null)
 			{
 				AnswerTypeDropDownList.SelectedValue = answer.Answers[0].AnswerTypeId.ToString();
 			}
+
 			RatingPartCheckbox.Checked = answer.Answers[0].RatePart;
 			RatingPartCheckbox.Visible = RatingEnabled;
 			AnswerRatingLabel.Visible = RatingEnabled;
@@ -414,15 +452,16 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 			ScoreTextBox.Visible = ScoreEnabled;
 			ScoreLabel.Visible = ScoreEnabled;
 			MandatoryCheckBox.Checked = answer.Answers[0].Mandatory;
+
 			if (!answer.Answers[0].IsRegularExpressionIdNull())
 			{
 				RegExDropDownList.SelectedValue = answer.Answers[0].RegularExpressionId.ToString();
 			}
+
             txtAnswerAlias.Text = answer.Answers[0].AnswerAlias;
             txtAnswerID.Text = answer.Answers[0].AnswerIDText;
 
             SliderRangeDDL.SelectedValue = answer.Answers[0].SliderRange;
-
             SliderValueTextBox.Text = Convert.ToString(answer.Answers[0].SliderValue);
             SliderMinTextBox.Text = Convert.ToString(answer.Answers[0].SliderMin);
             SliderMaxTextBox.Text = Convert.ToString(answer.Answers[0].SliderMax);
@@ -458,25 +497,32 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 			
 			SelectedAnswersLabel.Visible = isSelectionType;
 			SelectionCheckBox.Visible = isSelectionType;
+            seaLI.Visible = isSelectionType;
 
             AnswerCssClassLabel.Visible = isSelectionType;
             AnswerCssClassTextBox.Visible = isSelectionType;
+            accLI.Visible = isSelectionType;
 
-			RatingPartCheckbox.Visible = isSelectionType && RatingEnabled;
+            RatingPartCheckbox.Visible = isSelectionType && RatingEnabled;
 			AnswerRatingLabel.Visible = isSelectionType && RatingEnabled;
+            arLI.Visible = isSelectionType && RatingEnabled;
 
-			ScoreTextBox.Visible = isSelectionType && ScoreEnabled;
+            ScoreTextBox.Visible = isSelectionType && ScoreEnabled;
 			ScoreLabel.Visible = isSelectionType && ScoreEnabled;	
-		
-			PipeHelpLabel.Visible = isFieldType;
-			
-			MandatoryLabel.Visible = isMandatoryType;
+            sLI.Visible = isSelectionType && ScoreEnabled;
+
+            PipeHelpLabel.Visible = isFieldType;
+            apaLI.Visible = isFieldType;
+
+            MandatoryLabel.Visible = isMandatoryType;
 			MandatoryCheckBox.Visible = isMandatoryType;
-			
-			RegExValidationLabel.Visible = isRegExType;
-			RegExDropDownList.Visible = isRegExType;			
-			
-			if (resetValues && isFieldType)
+            mLI.Visible = isMandatoryType;
+
+            RegExValidationLabel.Visible = isRegExType;
+			RegExDropDownList.Visible = isRegExType;	
+            revLI.Visible = isRegExType;
+
+            if (resetValues && isFieldType)
 			{
 				ScoreTextBox.Text = "0";
 				RatingPartCheckbox.Checked = false;
@@ -488,27 +534,34 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 				isSubscriber && AnswerId != -1;
 
 			DefaultTextLabel.Visible = isFieldType;
-			DefaultTextTextBox.Visible = isFieldType;
+            DefaultTextTextBox.Visible = isFieldType;
+            dtLI.Visible = isFieldType;
 
             SliderRangeLabel.Visible = isSlider && isFieldType;
             SliderRangeDDL.Visible = isSlider && isFieldType;
+            srLI.Visible = isSlider && isFieldType;
 
             SliderValueTextBox.Visible = isSlider && isFieldType;
             SliderValueLabel.Visible = isSlider && isFieldType;
+            svLI.Visible = isSlider && isFieldType;
 
             SliderMinLabel.Visible = isSlider && isFieldType;
             SliderMinTextBox.Visible = isSlider && isFieldType;
+            smiLI.Visible = isSlider && isFieldType;
 
             SliderMaxLabel.Visible = isSlider && isFieldType;
             SliderMaxTextBox.Visible = isSlider && isFieldType;
+            smaLI.Visible = isSlider && isFieldType;
 
             SliderAnimateLabel.Visible = isSlider && isFieldType;
             SliderAnimateCheckbox.Visible = isSlider && isFieldType;
+            saLI.Visible = isSlider && isFieldType;
 
             SliderStepLabel.Visible = isSlider && isFieldType;
             SliderStepTextBox.Visible = isSlider && isFieldType;
+            ssLI.Visible = isSlider && isFieldType;
 
-			AnswerPipeAliasLabel.Visible = isFieldType;
+            AnswerPipeAliasLabel.Visible = isFieldType;
 			AnswerPipeAliasTextBox.Visible = isFieldType;
 
 			if (AnswerId != -1 && isExtended)
@@ -712,8 +765,10 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 
 		private void AnswerTypeDropDownList_SelectedIndexChanged(object sender, System.EventArgs e)
 		{
-			AnswerTypeData typeData = new AnswerTypes().GetAnswerTypeById(int.Parse(AnswerTypeDropDownList.SelectedValue));
-			SetUIState(typeData.AnswerTypes[0].TypeMode, true);
+
+                AnswerTypeData typeData = new AnswerTypes().GetAnswerTypeById(int.Parse(AnswerTypeDropDownList.SelectedValue));
+                SetUIState(typeData.AnswerTypes[0].TypeMode, true);
+   
 		}
 
 		private void CancelAnswerButton_Click(object sender, System.EventArgs e)

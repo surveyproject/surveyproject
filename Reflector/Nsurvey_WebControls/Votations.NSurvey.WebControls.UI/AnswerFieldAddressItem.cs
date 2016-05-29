@@ -12,6 +12,7 @@ using System.IO;
 using System.Web;
 
 using Votations.NSurvey.Data;
+using Votations.NSurvey.Resources;
 
 
 namespace Votations.NSurvey.WebControls.UI
@@ -43,9 +44,10 @@ namespace Votations.NSurvey.WebControls.UI
            { 
             javascriptControl.Attributes.Add("type", "text/Javascript");
             javascriptControl.Attributes.Add("id", "GoogleMaps");
-            javascriptControl.Attributes.Add("src", "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&sensor=false&key=AIzaSyDwh2agwB_vfybUaiuLrl4Hopr9EDX6rUI&language=en");
+            //javascriptControl.Attributes.Add("src", "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&sensor=false&key=AIzaSyDwh2agwB_vfybUaiuLrl4Hopr9EDX6rUI&language=en");
+            javascriptControl.Attributes.Add("src", "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&sensor=false&key=" + Resources.AddressManager.GetString("GoogleAddressKey") + "&language=en");
 
-            Page.Header.Controls.Add(javascriptControl);
+                Page.Header.Controls.Add(javascriptControl);
            }
 
             // test script 1.: " double check" 

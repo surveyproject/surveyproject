@@ -112,6 +112,7 @@
     <Compile Include="Votations.NSurvey.Helpers\XmlFileManager.cs" />
     <Compile Include="Votations.NSurvey.Reporting\VoterReportGenerator.cs" />
     <Compile Include="Votations.NSurvey.Reporting\VoterTextReportGenerator.cs" />
+    <Compile Include="Votations.NSurvey.Resources\AddressManager.cs" />
     <Compile Include="Votations.NSurvey.Resources\CssXmlManager.cs" />
     <Compile Include="Votations.NSurvey.Resources\HelpfilesManager.cs" />
     <Compile Include="Votations.NSurvey.Resources\ResourceManager.cs" />

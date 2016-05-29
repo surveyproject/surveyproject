@@ -146,6 +146,7 @@ namespace Votations.NSurvey
 
         /// <summary>
         /// Path of the Xml datasources
+        /// options set in a. web.config file; b. xml webdirectory
         /// </summary>
         public static string XmlDataSourcePath
         {
@@ -167,7 +168,8 @@ namespace Votations.NSurvey
         }
 
         /// <summary>
-        /// Path of the Xml help files
+        /// Path of the Xml Help files
+        /// options set in a. web.config file; b. xml webdirectory
         /// </summary>
         public static string HelpfilesPath
         {
@@ -190,6 +192,7 @@ namespace Votations.NSurvey
 
         /// <summary>
         /// Path of the CSS Xml files
+        /// options set in a. web.config file; b. xml webdirectory
         /// </summary>
         public static string CssXmlFilePath
         {
@@ -205,6 +208,30 @@ namespace Votations.NSurvey
                 if (str == null)
                 {
                     return "/XmlData/Css/";
+                }
+                return str;
+            }
+        }
+
+
+        /// <summary>
+        /// Path of the Google Address Xml files
+        /// options set in a. web.config file; b. xml webdirectory
+        /// </summary>
+        public static string AddressFilePath
+        {
+            get
+            {
+                string str = null;
+                NameValueCollection config = (NameValueCollection)ConfigurationManager.GetSection("nSurveySettings");
+                if (config == null)
+                {
+                    config = ConfigurationManager.AppSettings;
+                }
+                str = config["NSurveyAddressPath"];
+                if (str == null)
+                {
+                    return "/XmlData/Address/";
                 }
                 return str;
             }

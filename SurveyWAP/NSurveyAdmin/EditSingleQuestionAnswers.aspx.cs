@@ -77,11 +77,13 @@ namespace Votations.NSurvey.WebAdmin
             get { return (bool)ViewState["MultipleSelection"]; }
             set { ViewState["MultipleSelection"] = value; }
         }
+
         int getLibraryId()
         {
             if (ViewState["LibraryId"] == null) return -1;
             return (int)ViewState["LibraryId"];
         }
+
         private void Page_Load(object sender, System.EventArgs e)
         {
             UITabList.SetDesignerTabs((MsterPageTabs)Page.Master, UITabList.DesignerTabs.FormBuilder);
@@ -116,6 +118,7 @@ namespace Votations.NSurvey.WebAdmin
 
             AnswerOption.OptionChanged += new EventHandler(SurveyOption_OptionChanged);
         }
+
         protected void OnBackButton(object sender, System.EventArgs e)
         {
             int _questionId = -1;
@@ -455,7 +458,7 @@ namespace Votations.NSurvey.WebAdmin
             AnswerOption.RatingEnabled = _ratingEnabled;
             AnswerOption.ScoreEnabled = _scoreEnabled;
             AnswerOption.BindData();
-            BindAnswerOptions();
+           // BindAnswerOptions();
         }
 
         private void AnswersDataGrid_EditCommand(object source, System.Web.UI.WebControls.DataGridCommandEventArgs e)

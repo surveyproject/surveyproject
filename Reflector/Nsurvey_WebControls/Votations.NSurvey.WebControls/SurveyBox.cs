@@ -464,7 +464,7 @@ namespace Votations.NSurvey.WebControls
             button.CssClass = CssXmlManager.GetString("PreviousPageButton");
             button.Text = (this.PreviousPageText == null) ? ResourceManager.GetString("PreviousPage", this.LanguageCode) : this.PreviousPageText;
             button.Click += new EventHandler(this.OnPreviousPageChangeClick);
-            //button.Enabled = enabled;
+            button.Enabled = enabled;
             button.Visible = enabled;
             return button;
         }

@@ -12,52 +12,52 @@
                 <asp:Literal ID="EditAnswerTitle" runat="server" Text="Edit answer settings"></asp:Literal>
                                     </legend>
                 <br />
-                <ol>                                    <li>
+                <ol>                                    <li id="atddlLI" runat="server">
                             <asp:Label ID="AnswerTypeLabel" AssociatedControlID="AnswerTypeDropDownList" runat="server" EnableViewState="False" Text="Type :"></asp:Label>
 
                         <asp:DropDownList ID="AnswerTypeDropDownList" runat="server" AutoPostBack="True">
                         </asp:DropDownList>
                                             </li>    
-                    <li>
+                    <li id="aidLI" runat="server">
 
                     <asp:Label ID="lblAnswerID" AssociatedControlID="txtAnswerID" runat="server" Text="ID : ">ID : </asp:Label>
                        <div id="tooltip"> <asp:TextBox runat="server" ID="txtAnswerID"></asp:TextBox></div>
                                             </li>                    
-                    <li>
+                    <li id="aaLI" runat="server">
                    <asp:Label runat="server" ID="lblAnswerAlias" AssociatedControlID="txtAnswerAlias" Text="Alias : "></asp:Label> 
                         <div id="tooltip"><asp:TextBox runat="server" ID="txtAnswerAlias"></asp:TextBox></div>
                                             </li>
-                    <li>
+                    <li id="atLI" runat="server">
                             <asp:Label ID="AnswerTextLabel" AssociatedControlID="AnswerTextTextBox" runat="server" EnableViewState="False" Text="Answer text :"></asp:Label>
                         <div id="tooltip">
                         <asp:TextBox ID="AnswerTextTextBox" runat="server"></asp:TextBox></div>
                                             </li>
 
-                    <li>
+                    <li id="aiuLI" runat="server">
                             <asp:Label ID="AnswerURLLabel" AssociatedControlID="AnswerImageURLTextBox" runat="server" EnableViewState="False" Text="Image URL :"></asp:Label>
 
                         <asp:TextBox ID="AnswerImageURLTextBox" runat="server"></asp:TextBox>
 
                                                                     </li>   
-                                        <li>
+                                        <li id="accLI" runat="server">
                         <asp:Label ID="AnswerCssClassLabel" AssociatedControlID="AnswerCssClassTextBox" runat="server" EnableViewState="False" Text="Radiobutton Css:"></asp:Label>
                         <div id="tooltip"><asp:TextBox ID="AnswerCssClassTextBox" runat="server"></asp:TextBox></div>
                     </li>
-                                    <li>
+                                    <li id="dtLI" runat="server">
                             <asp:Label ID="DefaultTextLabel" AssociatedControlID="DefaultTextTextBox" Visible="False" runat="server" EnableViewState="False"
                                 Text="Default text value* :"></asp:Label>
                                         <div id="tooltip">
                         <asp:TextBox ID="DefaultTextTextBox" Visible="False" runat="server"></asp:TextBox></div>
 
                                             </li>                 
-                     <li>
+                     <li id="revLI" runat="server">
                             <asp:Label ID="RegExValidationLabel" AssociatedControlID="RegExDropDownList" Visible="False" runat="server" EnableViewState="False"
                                 Text="RegEx validation :"></asp:Label>
 
                         <asp:DropDownList ID="RegExDropDownList" runat="server" Visible="False">
                         </asp:DropDownList>
                                             </li>
-                    <li>
+                    <li id="mLI" runat="server">
                             <asp:Label ID="MandatoryLabel" AssociatedControlID="MandatoryCheckBox" Visible="False" runat="server" EnableViewState="False"
                                 Text="Mandatory :"></asp:Label>
                         <div id="tooltip">
@@ -65,7 +65,7 @@
                         </div>
                                             </li>
 
-                    <li>
+                    <li id="srLI" runat="server">
                         <asp:Label ID="SliderRangeLabel" AssociatedControlID="SliderRangeDDL" runat="server" Visible="False" EnableViewState="False" Text="Min or Max"></asp:Label>
 
             <div id="tooltip">
@@ -77,7 +77,7 @@
                        
                                             </li>
 
-                    <li>
+                    <li id="svLI" runat="server">
                         <asp:Label ID="SliderValueLabel" AssociatedControlID="SliderValueTextBox" runat="server" Visible="False" EnableViewState="False" Text="Starting Value"></asp:Label>
 
 <div id="tooltip">
@@ -86,7 +86,7 @@
         ErrorMessage="No Valid Number" ValidationExpression="^-{0,1}\d+$"></asp:RegularExpressionValidator></div>
 
                                             </li>   
-                    <li>
+                    <li id="smiLI" runat="server">
                         <asp:Label ID="SliderMinLabel" AssociatedControlID="SliderMinTextBox" runat="server" Visible="False" EnableViewState="False" Text="Min Value"></asp:Label>
                 <div id="tooltip">
                         <asp:TextBox ID="SliderMinTextBox" Visible="False" runat="server" Columns="15"></asp:TextBox>
@@ -95,7 +95,7 @@
 
                                             </li>
 
-                    <li>
+                    <li id="smaLI" runat="server">
                         <asp:Label ID="SliderMaxLabel" AssociatedControlID="SliderMaxTextBox" runat="server" Visible="False" EnableViewState="False" Text="Max Value"></asp:Label>
                     <div id="tooltip">
                         <asp:TextBox ID="SliderMaxTextBox" Visible="False" runat="server" Columns="15"></asp:TextBox>
@@ -103,13 +103,13 @@
         ErrorMessage="No Valid Number" ValidationExpression="^-{0,1}\d+$"></asp:RegularExpressionValidator></div>
 
                                             </li>                    
-                    <li>
+                    <li id="saLI" runat="server">
                         <asp:Label ID="SliderAnimateLabel" AssociatedControlID="SliderAnimateCheckbox" runat="server" Visible="False" EnableViewState="False" Text="Animate Y/N"></asp:Label>
                 <div id="tooltip">
                         <asp:CheckBox ID="SliderAnimateCheckbox" Visible="False" runat="server"></asp:CheckBox></div>
 
                                             </li>                  
-                      <li>
+                      <li id="ssLI" runat="server">
                         <asp:Label ID="SliderStepLabel" AssociatedControlID="SliderStepTextBox" runat="server" Visible="False" EnableViewState="False" Text="Step value"></asp:Label>
                     
                     <div id="tooltip">
@@ -120,14 +120,14 @@
                                             </li>
 
 
-                    <li>
+                    <li id="apaLI" runat="server">
                             <asp:Label ID="AnswerPipeAliasLabel" AssociatedControlID="AnswerPipeAliasTextBox" runat="server" EnableViewState="False" Text="Pipe alias :"></asp:Label>
                         <div id="tooltip">
                         <asp:TextBox ID="AnswerPipeAliasTextBox" runat="server"></asp:TextBox>
                             </div>
                                             </li>
 
-                    <li>
+                    <li id="seaLI" runat="server">
                             <asp:Label ID="SelectedAnswersLabel" AssociatedControlID="SelectionCheckBox" Visible="False" runat="server" EnableViewState="False"
                                 Text="Selected by default :"></asp:Label>
 
@@ -135,14 +135,14 @@
 
                                             </li>
 
-                    <li>
+                    <li id="arLI" runat="server">
                             <asp:Label ID="AnswerRatingLabel" AssociatedControlID="RatingPartCheckbox" Visible="False" runat="server" EnableViewState="False"
                                 Text="Rating part :"></asp:Label>
 
                         <asp:CheckBox ID="RatingPartCheckbox" Visible="False" runat="server"></asp:CheckBox>
 
                                             </li>
-                    <li>
+                    <li id="sLI" runat="server">
                             <asp:Label ID="ScoreLabel" AssociatedControlID="ScoreTextBox" Visible="False" runat="server" EnableViewState="False"
                                 Text="Score :"></asp:Label>
 
