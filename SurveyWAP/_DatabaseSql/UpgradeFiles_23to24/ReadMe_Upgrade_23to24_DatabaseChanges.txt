@@ -1,4 +1,4 @@
-_______________________________________________________________________
+﻿_______________________________________________________________________
 
 
 Databasechanges based on file comparison SP v. 2.3 and SP v. 2.4
@@ -39,8 +39,10 @@ Notes:
   04e_vts_spAnswerUpdate.sql
   04f_vts_spQuestionGetAnswers.sql
   04g_vts_spSurveyGetForExport.sql
+  04h_vts_spQuestionGetForExport.sql
+
 
 * add CSS field option on answer level (+ include in export)
 * change vts_answertable (1x)
-* change/ add stored procedures  (6x)
+* change/ add stored procedures  (7x)
 

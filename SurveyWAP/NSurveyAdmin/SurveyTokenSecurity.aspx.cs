@@ -75,7 +75,10 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
             btnDeleteSelected.Text = GetPageResource("lblDeleteSelected");
             btnExport.Text = GetPageResource("lblExportTokens");
             btnGenerate.Text = GetPageResource("lblGenerate");
-           
+
+            tokenfilter.Text = GetPageResource("TokenFilter");
+            tokenlist.Text = GetPageResource("TokenList");
+
         }
         protected void btnGenerate_Click(object sender, EventArgs e)
         {

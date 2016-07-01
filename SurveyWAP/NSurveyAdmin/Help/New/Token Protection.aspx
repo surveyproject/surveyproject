@@ -7,7 +7,7 @@
         <tr>
             <td>
                 <asp:ImageButton ID="btnBack" ImageUrl="~/Images/index-icon.png" runat="server" CssClass="buttonIndex"
-                    PostBackUrl="~/NSurveyAdmin/Help/default.aspx" Visible="True" ToolTip="Back to Helpfiles Index" />
+                    PostBackUrl="~/NSurveyAdmin/Help/default.aspx#Token" Visible="True" ToolTip="Back to Helpfiles Index" />
             </td>
         </tr>
         <tr>
@@ -19,33 +19,36 @@
                 <br />
                 <hr style="color:#e2e2e2;"/>
                 <br />
-This security addin will protect our survey using unique token generated
-using the TGenerator.html.<br />
+This security addin will protect a survey using a unique token generated
+using the token generator - TGenerator.html. To enable the Token Security Addin go to Menu Security/ Form Security and select Insert Security Addin/ Token Protection<br />
 <br />
-* Available Tokens is the number of token available for use. <br />
+<u>Token Generator Settings</u>
+    <br /><br />
+* <i>Generate</i> - enter the number of tokens to be generated and click the generate button. Additional/ new tokens can be added any time.
+                <br />
+* <i>Created Tokens</i> - number of tokens that have been created by the generator
 <br />
-* Used Tokens is the number of token that have been already used. A
+* <i>Available Tokens</i> - is the number of token available for use. <br />
+
+* <i>Used Tokens</i> - is the number of token that have been already used. A
   token can only be used once. <br />
 <br />
-* Allow Access To Valid Tokens Only we can open the survey to
-  respondent who don't have any token. If this option is activated
-  respondent without token will be able to take the survey several times
-  while respondent with token will only be able to submit once their
-  answers.<br />
-<br />
-* Token Source Variable Name is the variable name from which Survey
-  will look after in the querystring and session to see if a token has
-  been set. If nothing is set or no value is found inside the variable an
-  interface will be shown to the user to enter his token.<br />
-<br />
-  This feature is generally used along with the Emailing Invitation
-  Features as you can include a link in your invitation that would have
-  following parameters  :<br />
-  <a href="http://www.mydomain.com/survey.aspx?surveyid=[--surveyid-" target="_blank">http://www.mydomain.com/survey.aspx?surveyid=[--surveyid-</a>]&amp;token=[--invit
-  ationtoken-]<br />
-<br />
-  In this case the source variable name is &quot;token&quot;.<br />
-<br />
+                <u>Tokenlist Filter Options</u>
+<br /><br />
+* <i>By Token</i> - option to filter the list of tokens based on an individual token<br />
+* <i>By TokenType</i> - option to filter the list tokens by Used Only, Only Not Used or All<br />
+* <i>By Issued Date</i> - option to filter the list of tokens based on issue date (enter dateformat: m/dd/yyyy)
+                <br /><br />
+Note: Filter by tokentype and issued date can be combined.<br /><br />
+
+<u>List of Generated Tokens</u>
+<br /><br />
+* <i>Used/ Not Used</i> - color marker indicating used (red) unused (green) status of token<br />
+* <i>Select Checkbox</i> -  option to select tokens from the tokenlist; selected tokens will be affected by the Delete Selected button<br />
+* <i>Export Tokens</i> -   will generate a .csv file containing all tokens (selection will have no effect)<br />
+* <i>Delete Selected</i> - will delete tokens marked for selection by selecting the checkbox<br />
+* <i>Delete All</i> -  will delete all tokens irrespective of the selected status        <br /> <br />                                 
+
 
                 <hr style="color:#e2e2e2;"/>
                 <br />

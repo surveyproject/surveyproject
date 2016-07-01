@@ -1,5 +1,5 @@
 /**************************************************************************************************
-	Survey changes: copyright (c) 2010, Fryslan Webservices TM (http://survey.codeplex.com)	
+	Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -363,7 +363,7 @@ namespace Votations.NSurvey.WebAdmin
 
 
         /// <summary>
-        /// Generates the templated column with the
+        /// Answers Overview Grid: Generates the templated column with the
         /// selection mode
         /// </summary>
         private void AnswersDataGrid_ItemDataBound(object sender, System.Web.UI.WebControls.DataGridItemEventArgs e)
@@ -458,6 +458,7 @@ namespace Votations.NSurvey.WebAdmin
             AnswerOption.RatingEnabled = _ratingEnabled;
             AnswerOption.ScoreEnabled = _scoreEnabled;
             AnswerOption.BindData();
+            //TODO GB '16 redundant?
            // BindAnswerOptions();
         }
 
@@ -469,7 +470,8 @@ namespace Votations.NSurvey.WebAdmin
             AnswerOption.RatingEnabled = _ratingEnabled;
             AnswerOption.ScoreEnabled = _scoreEnabled;
             AnswerOption.BindData();
-            BindAnswerOptions();
+            //TODO GB '16 - ESQA BAO redundant???
+            //BindAnswerOptions();
         }
 
         private void AnswersDataGrid_ItemCommand(object source, System.Web.UI.WebControls.DataGridCommandEventArgs e)

@@ -7,7 +7,7 @@
         <tr>
             <td>
                 <asp:ImageButton ID="btnBack" ImageUrl="~/Images/index-icon.png" runat="server" CssClass="buttonIndex"
-                    PostBackUrl="~/NSurveyAdmin/Help/default.aspx" Visible="True" ToolTip="Back to Helpfiles Index" />
+                    PostBackUrl="~/NSurveyAdmin/Help/default.aspx#Reporting" Visible="True" ToolTip="Back to Helpfiles Index" />
             </td>
         </tr>
         <tr>
@@ -25,22 +25,15 @@ respondents answers.<br />
 <br />
 Voter reports can be accessed from following locations :<br />
 <br />
-* Free%20Text%20Report.html<br />
+* Menu Results/Report/VoterReport/List of Entries  - Voter%20Entries%20List.html<br />
 <br />
-* Voter%20Entries%20List.html<br />
+* Menu Results/ Filemanager/ Posted by columnlink - File%20Manager.html<br />
 <br />
-* File%20Manager.html<br />
+* Menu Campaigns/Mailing Status - Mailing%20Status.html<br />
 <br />
-* Mailing%20Status.html<br />
-<br />
-* Tk%20Status.html<br />
-<br />
-
-                <hr style="color:#e2e2e2;"/>
-                <br />
-                <br />
-                <h3>
-                    More Information</h3>
+                Note: the resultsreport that can be shown to the respondent after submitting a survey is identical to the voterreport. See Completion settings - Redirection URL to make use of the resultsreport.
+<br /><br />
+<hr style="color:#e2e2e2;" /> <br /><h3>More Information</h3><br />
                 <br />
 Voter%20Report%20Edit.html<br />
                 <br />

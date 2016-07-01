@@ -7,7 +7,7 @@
         <tr>
             <td>
                 <asp:ImageButton ID="btnBack" ImageUrl="~/Images/index-icon.png" runat="server" CssClass="buttonIndex"
-                    PostBackUrl="~/NSurveyAdmin/Help/default.aspx" Visible="True" ToolTip="Back to Helpfiles Index" />
+                    PostBackUrl="~/NSurveyAdmin/Help/default.aspx#Reporting" Visible="True" ToolTip="Back to Helpfiles Index" />
             </td>
         </tr>
         <tr>
@@ -20,98 +20,67 @@
                 <hr style="color:#e2e2e2;"/>
                 <br />
 
-This report item will show us graphical charts and statistics for
-questions and free text answers.<br />
+This report item will show graphical charts and statistics for
+questions and answers.<br />
 <br />
-Edit Graphics Item<br />
+
+<u>Filters / Answers Filters</u><br /><br />
+
+* Filter Start Date - is the start date interval on which the results of
+  the chart report RI_Introduction.html will be calculated.<br />
 <br />
-* Report Item Title is an optional text we can specify that will show
-  up on top on the report item.<br />
+* Filter End Date - is the end date interval on which the results of the
+  chart report RI_Introduction.html will be calculated.<br />
 <br />
-* Use Aliases do we want to show question and answers reporting aliases
-  instead of showing the question / answer label text.<br />
-<br />
-* Multiple Items Layout  if our report item supports multiple items
-  selections like multiple answers or questions we can display the
-  results either vertically or horizontally.<br />
-<br />
-* Columns Number is the number of columns in which we want to display
-  the items inside our report item. <br />
-<br />
-Filters / Answers Filters<br />
-<br />
-* Override Report Filters allows us to override the filters that have
-  been set at the report level.<br />
-<br />
-* Filter Start Date is the start date interval on which the results of
-  the RI_Introduction.html will be calculated.<br />
-<br />
-* Filter End Date is the end date interval on which the results of the
-  RI_Introduction.html will be calculated.<br />
-<br />
-* Assign A Filter using the Report%20Filter%20Creation.html we can
-  create specific filters. For example if we only want to display the
+* Assign A Filter - using the Report%20Filter%20Creation.html its possible to
+  create specific filters. For example if one only wants to display the
   results of respondents who have chosen answer B to the question Z.<br />
 <br />
-* Language Filter we can fillter the results of the
+* Language Filter - option to filter the results of the chart report
   RI_Introduction.html by the language chosen by the respondent.<br />
 <br />
-  This feature is only available if we have turned on Survey's
+  This feature is only available if Multi language is turned on the survey's settings
   ML_Introduction.html features.<br />
 <br />
-Extended Filters<br />
-The extended filters allow us to filter based on respondents answers. To
+<u>Extended Filters</u><br /><br />
+The extended filters allows to filter reportresults based on respondents answers. To
 learn more about extended filters please read EF_Introduction.html .
 <br />
 <br />
-Report Question(s)<br />
-We can select for which questions we want to show the graphic charts.<br />
+<u>Report Question(s)</u><br /><br />
+Option to select for which questions to show the graphic charts.<br />
 <br />
-Report Questions Answer(s)<br />
-We can select from which answers we want to show the graphic charts. As
-these charts are based on text answers results will be grouped by the
-same text entry. <br />
+
+<u>Graphics Properties</u><br />
 <br />
-Graphics Properties<br />
+* Column Chart will render a group of column charts to display the results.<br />
 <br />
 * Bar Chart will render a group of bar charts to display the results.<br />
 <br />
 * Pie Chart will render a pie chart to display the results.<br />
 <br />
-* Line Chart will render lines to display the results.<br />
+* Bubble Chart will render bubble charts to display the results.<br />
 <br />
-Charts Properties<br />
-The charts provide us following information during runtime analysis of  :<br />
+* HTML Chart will render lines to display the results.<br />
 <br />
-* Answers Total is the total count of answers for the question, if we
-  have multiple choices answers the total is a sum of all answers.<br />
+<u>Charts Properties</u><br /><br />
+The charts provide the following information during runtime analysis of  :<br />
 <br />
-* Individualsis the number of individual respondents who did answer to
-  this question, if we have multiple choices answers and a respondent has
-  selected more than one answers he will be still counted as one
+* Voters - the number of individual respondents who did answer to
+  this question, if ther are multiple choices answers and a respondent has
+  selected more than one answers he/she will be still counted as one
   respondent .<br />
 <br />
-* Participants is the total number of respondents who participated in
-  the survey.<br />
-<br />
-* Reach is the percentage of respondents the question has reached. In
-  other words its the percentage of respondent who answered the question
-  out of the total of survey participants. <br />
-<br />
-* Rating  is the average rating value for the question based on the
+* Rating - is the average rating value for the question based on the
   answer selection types that are marked as rating part.<br />
 <br />
-  This feature is only available if we have turned on
+  This feature is only available if rating is turned on
   Rating_Introduction.html from the Question%20Editor.html  and if there
-  is a least one selection type answer that is marked as a rate part .<br />
+  is at least one selection type answer that is marked as a rate part .<br />
 <br />
 
 <br />
-                <hr style="color:#e2e2e2;"/>
-                <br />
-                <br />
-                <h3>
-                    More Information</h3>
+<hr style="color:#e2e2e2;" /> <br /><h3>More Information</h3><br />
                 <br />
 HowToReport_Introduction.html<br />
 RI_Introduction.html<br />

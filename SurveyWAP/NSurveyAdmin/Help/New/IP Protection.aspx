@@ -32,9 +32,10 @@ depending on the mode activated on the firewalls or proxies it is
 sometime not possible to get a unique IP per respondent.<br />
 <br />
 
-<br />
+                Note:<br /> besides IP Protection there is a second IP based security addin to choose from: IP Filter. This addin allows to create and set specific IP addresses (or IP ranges) that
+                are allowed to have access to the survey. To create IP ranges for filtering go to menu Security/ IP Filter.
 
-<br />
+<br /><br />
                 <hr style="color:#e2e2e2;"/>
                 <br />
                 <br />

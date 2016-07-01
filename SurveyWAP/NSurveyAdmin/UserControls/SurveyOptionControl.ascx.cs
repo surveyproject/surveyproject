@@ -1,5 +1,5 @@
 /**************************************************************************************************
-	Survey changes: copyright (c) 2010, Fryslan Webservices TM (http://survey.codeplex.com)	
+	Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -396,8 +396,8 @@ namespace Votations.NSurvey.WebAdmin.UserControls
                 surveyRow.ProgressDisplayModeID = int.Parse(ProgressDisplayDropDownList.SelectedValue);
                 surveyRow.NotificationModeID = int.Parse(EntryNotificationDropdownlist.SelectedValue);
                 surveyRow.DefaultSurvey = DefaultSurveyCheckBox.Checked;
-                surveyRow.ThankYouMessage = ViewState["ThanksMessage"] == null ?
-                    null : ViewState["ThanksMessage"].ToString();
+                surveyRow.ThankYouMessage = ViewState["ThanksMessage"] == null ? null : ViewState["ThanksMessage"].ToString();
+
                 if (((NotificationMode)surveyRow.NotificationModeID) !=
                     NotificationMode.None)
                 {
@@ -417,7 +417,8 @@ namespace Votations.NSurvey.WebAdmin.UserControls
                 surveyData.Surveys.AddSurveysRow(surveyRow);
 
                 // Update the DB
-                new Survey().UpdateSurvey(surveyData, "");
+                // GB 2016 fix: dna (does not apply) added + SP vts_spSurveyUpdate modified
+                new Survey().UpdateSurvey(surveyData, "dna");
 
                 ((PageBase)Page).ShowNormalMessage(MessageLabel, ((PageBase)Page).GetPageResource("SurveyUpdatedMessage"));
                 MessageLabel.Visible = true;

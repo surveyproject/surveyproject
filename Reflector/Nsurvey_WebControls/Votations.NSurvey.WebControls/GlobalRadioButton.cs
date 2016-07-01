@@ -156,12 +156,13 @@ namespace Votations.NSurvey.WebControls.UI
             }
             if (flag)
             {
-                writer.RenderBeginTag(HtmlTextWriterTag.Span);
+                writer.RenderBeginTag(HtmlTextWriterTag.Div);
             }
+
             if (this.Text.Length != 0)
             {
                 //if (this.TextAlign == System.Web.UI.WebControls.TextAlign.Left)
-                if(this.AlignLabel == "Left")
+                if (this.AlignLabel == "Left")
                 {
                     ////TODO JJ Multiline answers separated by <br/>
                     //writer.Write("<div style='float:left;margin-left:1px;margin-top:0px;'> ");

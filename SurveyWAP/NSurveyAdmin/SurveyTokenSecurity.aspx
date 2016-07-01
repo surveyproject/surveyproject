@@ -16,7 +16,7 @@
     </script>
 
             <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
- <asp:Label ID="MessageLabel" runat="server"  CssClass="ErrorMessage" Visible="False"></asp:Label>
+ <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
             <br />
                     <fieldset style="width: 750px; margin-left: 12px; margin-top: 15px;">
@@ -39,7 +39,7 @@
 </li><li>
                 <asp:Label ID="lblTokensUsedPrompt" AssociatedControlID="lblTokensUsed" runat="server" Text="Number of Tokens used:" />&nbsp;&nbsp;
                 <asp:Label ID="lblTokensUsed" runat="server" Text="" />
-</li><li>
+</li><li><span class="titleFont" style="margin-left:-530px;"><asp:Literal ID="tokenfilter" runat="server" Text="FILTER OPTIONS" EnableViewState="False"></asp:Literal></span>
     <br /><br />
                             <asp:Label ID="ltFilterToken" AssociatedControlID="txtToken" runat="server" Text="By Token"></asp:Label>
 
@@ -63,7 +63,8 @@
 
 
     </li><li>
-
+      <span class="titleFont" style="margin-left:-525px;"> <asp:Literal ID="tokenlist" runat="server" Text="LIST OF GENERATED TOKENS" EnableViewState="False"></asp:Literal></span>
+            </li><li>
                 <asp:ListView ID="lvTokens" runat="server" GroupItemCount="2" OnPagePropertiesChanged="lvTokens_PagePropertiesChanged">
                     <LayoutTemplate>
                         <table  class="BorderedTable" width="100%" cellspacing="0">

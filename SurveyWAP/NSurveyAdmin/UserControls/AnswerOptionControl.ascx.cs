@@ -1,5 +1,5 @@
 /**************************************************************************************************
-	Survey changes: copyright (c) 2010, Fryslan Webservices TM (http://survey.codeplex.com)	
+	Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -448,9 +448,11 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 			RatingPartCheckbox.Checked = answer.Answers[0].RatePart;
 			RatingPartCheckbox.Visible = RatingEnabled;
 			AnswerRatingLabel.Visible = RatingEnabled;
+
 			ScoreTextBox.Text = answer.Answers[0].ScorePoint.ToString();
 			ScoreTextBox.Visible = ScoreEnabled;
 			ScoreLabel.Visible = ScoreEnabled;
+
 			MandatoryCheckBox.Checked = answer.Answers[0].Mandatory;
 
 			if (!answer.Answers[0].IsRegularExpressionIdNull())
@@ -494,33 +496,38 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 				isExtended = ((AnswerTypeMode)typeMode & AnswerTypeMode.ExtendedType) > 0,
 
                 isSlider = ((AnswerTypeMode)typeMode & AnswerTypeMode.Slider) > 0;
-			
-			SelectedAnswersLabel.Visible = isSelectionType;
-			SelectionCheckBox.Visible = isSelectionType;
-            seaLI.Visible = isSelectionType;
+
+            lblAnswerID.Visible = true;
+            txtAnswerID.Visible = true;
+            aidLI.Visible = true;
+
+            lblAnswerAlias.Visible = true;
+            txtAnswerAlias.Visible = true;
+            aaLI.Visible = true;
+
+            AnswerTextTextBox.Visible = true;
+            AnswerTextLabel.Visible = true;
+            atLI.Visible = true;
+
+            AnswerURLLabel.Visible = true;
+            AnswerImageURLTextBox.Visible = true;
+            aiuLI.Visible = true;
 
             AnswerCssClassLabel.Visible = isSelectionType;
             AnswerCssClassTextBox.Visible = isSelectionType;
             accLI.Visible = isSelectionType;
 
-            RatingPartCheckbox.Visible = isSelectionType && RatingEnabled;
-			AnswerRatingLabel.Visible = isSelectionType && RatingEnabled;
-            arLI.Visible = isSelectionType && RatingEnabled;
+            DefaultTextLabel.Visible = isFieldType;
+            DefaultTextTextBox.Visible = isFieldType;
+            dtLI.Visible = isFieldType;
 
-            ScoreTextBox.Visible = isSelectionType && ScoreEnabled;
-			ScoreLabel.Visible = isSelectionType && ScoreEnabled;	
-            sLI.Visible = isSelectionType && ScoreEnabled;
-
-            PipeHelpLabel.Visible = isFieldType;
-            apaLI.Visible = isFieldType;
+            RegExValidationLabel.Visible = isRegExType;
+            RegExDropDownList.Visible = isRegExType;
+            revLI.Visible = isRegExType;
 
             MandatoryLabel.Visible = isMandatoryType;
 			MandatoryCheckBox.Visible = isMandatoryType;
             mLI.Visible = isMandatoryType;
-
-            RegExValidationLabel.Visible = isRegExType;
-			RegExDropDownList.Visible = isRegExType;	
-            revLI.Visible = isRegExType;
 
             if (resetValues && isFieldType)
 			{
@@ -528,14 +535,6 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 				RatingPartCheckbox.Checked = false;
 				SelectionCheckBox.Checked = false;
 			}
-
-		
-			ConnectionsPlaceHolder.Visible = 
-				isSubscriber && AnswerId != -1;
-
-			DefaultTextLabel.Visible = isFieldType;
-            DefaultTextTextBox.Visible = isFieldType;
-            dtLI.Visible = isFieldType;
 
             SliderRangeLabel.Visible = isSlider && isFieldType;
             SliderRangeDDL.Visible = isSlider && isFieldType;
@@ -563,8 +562,24 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 
             AnswerPipeAliasLabel.Visible = isFieldType;
 			AnswerPipeAliasTextBox.Visible = isFieldType;
+            apaLI.Visible = isFieldType;
 
-			if (AnswerId != -1 && isExtended)
+            SelectedAnswersLabel.Visible = isSelectionType;
+            SelectionCheckBox.Visible = isSelectionType;
+            seaLI.Visible = isSelectionType;
+
+            RatingPartCheckbox.Visible = isSelectionType && RatingEnabled;
+            AnswerRatingLabel.Visible = isSelectionType && RatingEnabled;
+            arLI.Visible = isSelectionType && RatingEnabled;
+
+            ScoreTextBox.Visible = isSelectionType && ScoreEnabled;
+            ScoreLabel.Visible = isSelectionType && ScoreEnabled;
+            sLI.Visible = isSelectionType && ScoreEnabled;
+
+
+            ConnectionsPlaceHolder.Visible = isSubscriber && AnswerId != -1;
+
+            if (AnswerId != -1 && (isExtended || isFileUpload))
 			{
 				SetExtendedProperties();
 			}
@@ -574,7 +589,9 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 				ExtendedPropertiesPlaceholder.Visible = false;
 				ExtendedPlaceholder.Visible = false;
 			}
-	}
+
+            PipeHelpLabel.Visible = isFieldType;
+        }
 
 
 		private void SetExtendedProperties()

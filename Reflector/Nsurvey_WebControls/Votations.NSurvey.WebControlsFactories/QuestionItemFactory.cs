@@ -21,7 +21,7 @@ namespace Votations.NSurvey.WebControlsFactories
 
         private static string HelpTextInSmallFont(string text)
         {
-            //return string.Format("<div class=\"HelpTextSmallFont\">{0}</div>", text);
+            //return string.Format("<div class=\"helpTextSmallFont\">{0}</div>", text);
             return string.Format("<div id=\"qht\" class=" + CssXmlManager.GetString("QuestionHelpText") + ">{0}</div>", text);
         }
 
@@ -30,6 +30,7 @@ namespace Votations.NSurvey.WebControlsFactories
             bool enableAnswerDefaults,bool isDesignMode=false)
         {
             QuestionItem item;
+
             if ((question.TypeAssembly.Length == 0) || (question.TypeAssembly == null))
             {
                 throw new ApplicationException("Could not create an instance because the question data has no assembly type specified");
@@ -48,13 +49,22 @@ namespace Votations.NSurvey.WebControlsFactories
             }
             item.ID = "Question" + question.QuestionId.ToString();
             item.QuestionId = question.QuestionId;
-            item.Text = new PipeManager().PipeValuesInText(question.QuestionId, question.QuestionText+
-               ( (question.ShowHelpText && !isDesignMode )?(
-                question.IsHelpTextNull()?string.Empty: HelpTextInSmallFont(question.HelpText)):string.Empty)//JJSurveyBoxChange
-                , voterAnswersState, languageCode) ;
+
+            //item.Text = new PipeManager().PipeValuesInText(question.QuestionId, question.QuestionText+
+            //   ( (question.ShowHelpText && !isDesignMode )?(
+            //    question.IsHelpTextNull()?string.Empty: HelpTextInSmallFont(question.HelpText)):string.Empty)//JJSurveyBoxChange
+            //    , voterAnswersState, languageCode) ;
+
+
+            item.Text = new PipeManager().PipeValuesInText(question.QuestionId, question.QuestionText, voterAnswersState, languageCode);
+            item.HelpText = ((question.ShowHelpText && !isDesignMode) ? (question.IsHelpTextNull() ? string.Empty : HelpTextInSmallFont(question.HelpText)) : string.Empty);
+
+            //item.HelpText = question.HelpText;
+
             item.LanguageCode = languageCode;
             item.QuestionId_Text = question.QuestionIdText;
-            item.HelpText = question.HelpText;
+
+
             SectionQuestion question2 = item as SectionQuestion;
             if ((question2 != null) && (question.RepeatableSectionModeId != 0))
             {
@@ -78,6 +88,7 @@ namespace Votations.NSurvey.WebControlsFactories
                     question2.UpdateSectionLinkText = question.UpdateSectionLinkText;
                 }
             }
+
             SingleQuestion question3 = item as SingleQuestion;
             if (question3 != null)
             {
@@ -96,6 +107,7 @@ namespace Votations.NSurvey.WebControlsFactories
                 question3.DataSource = new Answers().GetAnswers(question.QuestionId, languageCode);
                 return question3;
             }
+
             MatrixQuestion question4 = item as MatrixQuestion;
             if (question4 != null)
             {

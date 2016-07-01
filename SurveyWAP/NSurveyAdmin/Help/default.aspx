@@ -33,13 +33,15 @@ II.	&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Management </strong> 	<a name
 2	&nbsp;	5	&nbsp;		&nbsp;		&nbsp;	 <u>Completion </u>	<a name="Completion" ></a><br />
 2	&nbsp;	5	&nbsp;	1	&nbsp;		&nbsp;	<a href="Completion Actions.aspx" title=" Completion Actions " > Completion Actions </a>	<br />
 2	&nbsp;	5	&nbsp;	2	&nbsp;		&nbsp;	<a href="Thanks Message Conditions.aspx" title=" Thanks Message Conditions " > Thanks Message Conditions </a>	<br />
+2	&nbsp;	5	&nbsp;	3	&nbsp;		&nbsp;	<a href="new/Advanced Completion.aspx" title=" Advanced Completion " > Advanced Completion </a>	<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
 2	&nbsp;	6	&nbsp;		&nbsp;		&nbsp;	 <u>Score</u> 	<a name="Score" ></a><br />
 2	&nbsp;	6	&nbsp;	1	&nbsp;		&nbsp;	<a href="Score_Introduction.aspx" title=" Introduction " > Introduction </a>	<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
 2	&nbsp;	7	&nbsp;		&nbsp;		&nbsp;	 <u>Multi-language Surveys </u>	<a name="MLSurveys" ></a><br />
-2	&nbsp;	7	&nbsp;	1	&nbsp;		&nbsp;	<a href="Multi-Languages Settings.aspx" title=" Multi-Languages Settings " > Multi Language Settings </a>	<br />
-2	&nbsp;	7	&nbsp;	2	&nbsp;		&nbsp;	<a href="System Messages Manager.aspx" title=" System Messages & Multi language texts" > System Messages & Multi language texts</a>	<br />
+2	&nbsp;	7	&nbsp;	1	&nbsp;		&nbsp;	<a href="new/ML_Introduction.aspx" title=" Multi-Languages Introduction " > Multi Language Introduction </a>	<br />
+2	&nbsp;	7	&nbsp;	2	&nbsp;		&nbsp;	<a href="Multi-Languages Settings.aspx" title=" Multi-Languages Settings " > Multi Language Settings </a>	<br />
+2	&nbsp;	7	&nbsp;	3	&nbsp;		&nbsp;	<a href="System Messages Manager.aspx" title=" System Messages & Multi language texts" > System Messages & Multi language texts</a>	<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
 2	&nbsp;	8	&nbsp;		&nbsp;		&nbsp;	 <u>Survey Layout & Style</u> 	<a name="SurveyLayout" ></a><br />
 2	&nbsp;	8	&nbsp;	1	&nbsp;		&nbsp;	<a href="Style_Introduction.aspx" title=" Introduction " > Introduction </a>	<br />
@@ -51,9 +53,6 @@ II.	&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Management </strong> 	<a name
 2	&nbsp;	9	&nbsp;	2	&nbsp;		&nbsp;	<a href="Survey Security.aspx" title=" Survey Security " > Survey Security </a>	<br />
 2	&nbsp;	9	&nbsp;	3	&nbsp;		&nbsp;	<a href="Insert Security AddIn.aspx" title=" Insert Security AddIn " > Insert Security AddIn </a>	<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
-<br />
-
-<!-- new -->
 
 3	&nbsp;	9	&nbsp;	4	&nbsp;		&nbsp;	 <u>Security AddIns</u> 	<a name="SecurityAddins" ></a><br />
 3	&nbsp;	9	&nbsp;	4	&nbsp;	1	&nbsp;	<a href="new/IP Protection.aspx" title=" IP Protection " > IP Protection </a>	<br />
@@ -66,6 +65,10 @@ II.	&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Management </strong> 	<a name
 	&nbsp;		&nbsp;		&nbsp;		&nbsp; <br />
 3	&nbsp;	9	&nbsp;	5	&nbsp;		&nbsp;	 <u>Key Provider </u>	<a name="KeyProvider" ></a><br />
 3	&nbsp;	9	&nbsp;	5	&nbsp;	1	&nbsp;	<a href="new/KP_Introduction.aspx" title=" Introduction" >  Introduction</a>	<br />
+            	&nbsp;		&nbsp;		&nbsp;		&nbsp; <br />
+3	&nbsp;	9	&nbsp;	6	&nbsp;		&nbsp;	 <u>Token Security </u>	<a name="Token" ></a><br />
+3	&nbsp;	9	&nbsp;	6	&nbsp;	1	&nbsp;	<a href="new/Token_Introduction.aspx" title=" Token Introduction" > Token Introduction</a>	<br />
+3	&nbsp;	9	&nbsp;	6	&nbsp;	2	&nbsp;	<a href="new/Token Protection.aspx" title=" Token Protection" > Token Protection</a>	<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
 
@@ -122,47 +125,41 @@ III.&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Designer & Form Builder <a na
 4	&nbsp;	14	&nbsp;	3	&nbsp;	3	&nbsp;	<a href="Field - Slider.aspx" title=" Field - Slider " > Field - Slider </a>	<br />
 4	&nbsp;	14	&nbsp;	3	&nbsp;	4	&nbsp;	<a href="Field_Address.aspx" title=" Field - Address " > Field - Address </a>	<br />
 
-<br />
- <!--
-4	&nbsp;	14	&nbsp;	3	&nbsp;	4	&nbsp;	<a href="new/Field - Large.aspx" title=" Field - Large " > Field - Large </a>	<br />
-4	&nbsp;	14	&nbsp;	3	&nbsp;	5	&nbsp;	<a href="new/Field - Required.aspx" title=" Field - Required " > Field - Required </a>	<br />
-4	&nbsp;	14	&nbsp;	3	&nbsp;	6	&nbsp;	<a href="new/Field - Email.aspx" title=" Field - Email " > Field - Email </a>	<br />
-4	&nbsp;	14	&nbsp;	3	&nbsp;	7	&nbsp;	<a href="new/Field - Rich.aspx" title=" Field - Rich " > Field - Rich </a>	<br />
-4	&nbsp;	14	&nbsp;	3	&nbsp;	8	&nbsp;	<a href="new/Field - Calendar.aspx" title=" Field - Calendar " > Field - Calendar </a>	<br />
-4	&nbsp;	14	&nbsp;	3	&nbsp;	9	&nbsp;	<a href="new/Field - Ranking.aspx" title=" Field - Ranking " > Field - Ranking </a>	<br />
-     4	&nbsp;	14	&nbsp;	3	&nbsp;	9	&nbsp;	<a href="new/Field - Constant Sum.aspx" title=" Field - Constant Sum " > Field - Constant Sum </a>	<br />
+4	&nbsp;	14	&nbsp;	3	&nbsp;	5	&nbsp;	<a href="new/Field - Large.aspx" title=" Field - Large " > Field - Large </a>	<br />
+4	&nbsp;	14	&nbsp;	3	&nbsp;	6	&nbsp;	<a href="new/Field - Required.aspx" title=" Field - Required " > Field - Required </a>	<br />
+4	&nbsp;	14	&nbsp;	3	&nbsp;	7	&nbsp;	<a href="new/Field - Email.aspx" title=" Field - Email " > Field - Email </a>	<br />
+4	&nbsp;	14	&nbsp;	3	&nbsp;	8	&nbsp;	<a href="new/Field - Rich.aspx" title=" Field - Rich " > Field - Rich </a>	<br />
+4	&nbsp;	14	&nbsp;	3	&nbsp;	9	&nbsp;	<a href="new/Field - Calendar.aspx" title=" Field - Calendar " > Field - Calendar </a>	<br />
 4	&nbsp;	14	&nbsp;	3	&nbsp;	10	&nbsp;	<a href="new/Field - Hidden.aspx" title=" Field - Hidden " > Field - Hidden </a>	<br />
 4	&nbsp;	14	&nbsp;	3	&nbsp;	11	&nbsp;	<a href="new/Field - Password.aspx" title=" Field - Password " > Field - Password </a>	<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
-4	&nbsp;	14	&nbsp;	4	&nbsp;		&nbsp;	 Xml Bound Types 	<a name="XmlBoundTypes" ></a><br />
-	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
+4	&nbsp;	14	&nbsp;	4	&nbsp;		&nbsp;	 <u>Xml Bound Types</u> 	<a name="XmlBoundTypes" ></a><br />
+	
 4	&nbsp;	14	&nbsp;	4	&nbsp;	1	&nbsp;	<a href="new/XMLT_Introduction.aspx" title=" Introduction " > Introduction </a>	<br />
 4	&nbsp;	14	&nbsp;	4	&nbsp;	2	&nbsp;	<a href="new/Xml - Country.aspx" title=" Xml - Country " > Xml - Country </a>	<br />
 4	&nbsp;	14	&nbsp;	4	&nbsp;	3	&nbsp;	<a href="new/Xml - US States.aspx" title=" Xml - US States " > Xml - US States </a>	<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
-4	&nbsp;	14	&nbsp;	5	&nbsp;		&nbsp;	 Sql Bound Types 	<a name="SqlTypes" ></a><br />
-	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
+4	&nbsp;	14	&nbsp;	5	&nbsp;		&nbsp;	 <u>Sql Bound Types</u> 	<a name="SqlTypes" ></a><br />
+	
 4	&nbsp;	14	&nbsp;	5	&nbsp;	1	&nbsp;	<a href="new/SQLType_Introduction.aspx" title=" Introduction " > Introduction </a>	<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
-4	&nbsp;	14	&nbsp;	6	&nbsp;		&nbsp;	 Misc. 	<a name="Misc" ></a><br />
-	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
+4	&nbsp;	14	&nbsp;	6	&nbsp;		&nbsp;	 <u>Misc.</u> 	<a name="Misc" ></a><br />
+	
 4	&nbsp;	14	&nbsp;	6	&nbsp;	1	&nbsp;	<a href="new/Extended - File Upload.aspx" title=" Extended - File Upload " > Extended - File Upload </a>	<br />
 4	&nbsp;	14	&nbsp;	6	&nbsp;	2	&nbsp;	<a href="new/Subscriber - Xml List.aspx" title=" Subscriber - Xml List " > Subscriber - Xml List </a>	<br />
-4	&nbsp;	14	&nbsp;	6	&nbsp;	3	&nbsp;	<a href="new/Image - Password.aspx" title=" Image - Password " > Image - Password </a>	<br />
 4	&nbsp;	14	&nbsp;	6	&nbsp;	4	&nbsp;	<a href="new/Boolean.aspx" title=" Boolean " > Boolean </a>	<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
 
-     -->
 4	&nbsp;	15	&nbsp;		&nbsp;		&nbsp;	 <u>Survey Conditional Logic</u> 	<a name="ConditionalLogic" ></a><br />
 
 4	&nbsp;	15	&nbsp;	1	&nbsp;		&nbsp;	<a href="new/Condition_Introduction.aspx" title=" Introduction " > Introduction </a>	<br />
 4	&nbsp;	15	&nbsp;	2	&nbsp;		&nbsp;	<a href="new/Branching conditions.aspx" title=" Branching Conditions " > Branching Conditions </a>	<br />
 4	&nbsp;	15	&nbsp;	3	&nbsp;		&nbsp;	<a href="new/Skip Logic Conditions.aspx" title=" Skip Logic Conditions " > Skip Logic Conditions </a>	<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
-	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
-
-
-5	&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Campaigns <a name="Campaigns" ></a></strong>	<br />
+4	&nbsp;	16	&nbsp;		&nbsp;		&nbsp;	 <u>Survey Rating</u> 	<a name="#Rating" ></a><br />
+4	&nbsp;	16	&nbsp;	1	&nbsp;		&nbsp;	<a href="new/Rating_Introduction.aspx" title=" Rating Introduction " > Rating Introduction </a>	<br />
+            <br /><br />
+IV.	&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Campaigns <a name="Campaigns" ></a></strong>	<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
 5	&nbsp;	1	&nbsp;		&nbsp;		&nbsp;	<a href="new/SD_Introduction.aspx" title=" Introduction " > Introduction </a>	<br />
 5	&nbsp;	2	&nbsp;		&nbsp;		&nbsp;	<a href="new/Survey Deployement.aspx" title=" Survey Link Deployment " > Survey Link Deployment </a>	<br />
@@ -172,7 +169,7 @@ III.&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Designer & Form Builder <a na
     <br /><br />
 
 
-5	&nbsp;	5	&nbsp;		&nbsp;		&nbsp;	 <strong>Email Invitations Distribution </strong> <a name="Email" ></a>	<br />
+V.	&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Email Invitations Distribution </strong> <a name="Email" ></a>	<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
 5	&nbsp;	5	&nbsp;	1	&nbsp;		&nbsp;	<a href="new/ED_Introduction.aspx" title=" Introduction " > Introduction </a>	<br />
 5	&nbsp;	5	&nbsp;	2	&nbsp;		&nbsp;	<a href="new/Survey Mailing.aspx" title=" Invitation Mailing " > Invitation Mailing </a>	<br />
@@ -181,49 +178,19 @@ III.&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Designer & Form Builder <a na
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
 
-            <!--
-
-6	&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Results & Reporting </strong> 	<a name="Reporting" ></a><br />
+VI.	&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Results & Reporting </strong> 	<a name="Reporting" ></a><br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
-6	&nbsp;	1	&nbsp;		&nbsp;		&nbsp;	<a href="new/RPRT_Introduction.aspx" title=" Introduction " > Introduction </a>	<br />
-6	&nbsp;	2	&nbsp;		&nbsp;		&nbsp;	<a href="new/Report General Settings.aspx" title=" Report General Settings " > Report General Settings </a>	<br />
-6	&nbsp;	3	&nbsp;		&nbsp;		&nbsp;	<a href="new/Report Builder.aspx" title=" Report Builder " > Report Builder </a>	<br />
-6	&nbsp;	4	&nbsp;		&nbsp;		&nbsp;	<a href="new/Insert Report Item.aspx" title=" Insert Report Item " > Insert Report Item </a>	<br />
-6	&nbsp;	5	&nbsp;		&nbsp;		&nbsp;	<a href="new/Report Item Editor.aspx" title=" Report Item Editor " > Report Item Editor </a>	<br />
-6	&nbsp;	6	&nbsp;		&nbsp;		&nbsp;	<a href="new/Report Analysis.aspx" title=" Report Analysis " > Report Analysis </a>	<br />
-6	&nbsp;	7	&nbsp;		&nbsp;		&nbsp;	<a href="new/Report Filter Creation.aspx" title=" Report Filter Creation " > Report Filter Creation </a>	<br />
-6	&nbsp;	8	&nbsp;		&nbsp;		&nbsp;	<a href="new/Report Filter Editor.aspx" title=" Report Filter Editor " > Report Filter Editor </a>	<br />
-6	&nbsp;	9	&nbsp;		&nbsp;		&nbsp;	<a href="new/File Manager.aspx" title=" File Manager " > File Manager </a>	<br />
-6	&nbsp;	10	&nbsp;		&nbsp;		&nbsp;	<a href="new/Data Export.aspx" title=" Data Export " > Data Export </a>	<br />
-6	&nbsp;	11	&nbsp;		&nbsp;		&nbsp;	<a href="new/Voter report.aspx" title=" Respondent / Voter Report " > Respondent / Voter Report </a>	<br />
-6	&nbsp;	12	&nbsp;		&nbsp;		&nbsp;	<a href="new/Voter Report Edit.aspx" title=" Voter Report Edit " > Voter Report Edit </a>	
-    <br />
-    <br />
-6	&nbsp;	13	&nbsp;		&nbsp;		&nbsp;	 Report Items 	<a name="ReportItem" ></a><br />
-	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
-6	&nbsp;	13	&nbsp;	1	&nbsp;		&nbsp;	<a href="new/RI_Introduction.aspx" title=" Introduction " > Introduction </a>	<br />
-6	&nbsp;	13	&nbsp;	2	&nbsp;		&nbsp;	<a href="new/Free Text Report.aspx" title=" Free Text Report " > Free Text Report </a>	<br />
-6	&nbsp;	13	&nbsp;	3	&nbsp;		&nbsp;	<a href="new/Graphic Reports.aspx" title=" Graphic Reports " > Graphic Reports </a>	<br />
-6	&nbsp;	13	&nbsp;	4	&nbsp;		&nbsp;	<a href="new/Voter Entries List.aspx" title=" Voter Entries List " > Voter Entries List </a>	<br />
-6	&nbsp;	13	&nbsp;	5	&nbsp;		&nbsp;	<a href="new/Matrix Grid Report.aspx" title=" Matrix Grid Report " > Matrix Grid Report </a>	<br />
-6	&nbsp;	13	&nbsp;	6	&nbsp;		&nbsp;	<a href="new/Cross Tabulation.aspx" title=" Cross Tabulation " > Cross Tabulation </a>	<br />
-6	&nbsp;	13	&nbsp;	7	&nbsp;		&nbsp;	<a href="new/Individual Reach For Multiple Answers.aspx" title=" Individual Reach For Multiple Answers " > Individual Reach For Multiple Answers </a>	<br />
-	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
-6	&nbsp;	14	&nbsp;		&nbsp;		&nbsp;	 Report Deployment 	<a name="ReportDeployment" ></a><br />
-	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
-6	&nbsp;	14	&nbsp;	1	&nbsp;		&nbsp;	<a href="new/RD_Introduction.aspx" title=" Introduction " > Introduction </a>	<br />
-6	&nbsp;	14	&nbsp;	2	&nbsp;		&nbsp;	<a href="new/Report Link Deployment.aspx" title=" Report Link Deployment " > Report Link Deployment </a>	<br />
-6	&nbsp;	14	&nbsp;	3	&nbsp;		&nbsp;	<a href="new/Web Control Deployment.aspx" title=" Web Control Deployment " > Web Control Deployment </a>	<br />
-	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
-6	&nbsp;	15	&nbsp;		&nbsp;		&nbsp;	 Extended Filters 	<a name="Filters" ></a><br />
-	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
-6	&nbsp;	15	&nbsp;	1	&nbsp;		&nbsp;	<a href="new/EF_Introduction.aspx" title=" Introduction " > Introduction </a>	<br />
-	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
-	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
-
-    -->
-
-IV.&nbsp;		&nbsp;		&nbsp;		&nbsp;	<strong>Roles & User Management</strong>	<a name="RolesUsers" ></a><br /><br />
+6	&nbsp;	1	&nbsp;		&nbsp;		&nbsp;	<a href="new/Report Filter Creation.aspx" title=" Report Filter Creation " > Report Filter Creation </a>	<br />
+6	&nbsp;	2	&nbsp;		&nbsp;		&nbsp;	<a href="new/Report Filter Editor.aspx" title=" Report Filter Editor " > Report Filter Editor </a>	<br />
+6	&nbsp;	3	&nbsp;		&nbsp;		&nbsp;	<a href="new/File Manager.aspx" title=" File Manager " > File Manager </a>	<br />
+6	&nbsp;	4	&nbsp;		&nbsp;		&nbsp;	<a href="new/Data Export.aspx" title=" Data Export " > Data Export </a>	<br />
+6	&nbsp;	5	&nbsp;		&nbsp;		&nbsp;	<a href="new/Graphic Reports.aspx" title=" Graphic Reports " > Graphic Reports </a>	<br />
+6	&nbsp;	6	&nbsp;		&nbsp;		&nbsp;	<a href="new/Voter report.aspx" title=" Respondent / Voter Report " > Respondent / Voter Report </a>	<br />
+6	&nbsp;	7	&nbsp;		&nbsp;		&nbsp;	<a href="new/Voter Report Edit.aspx" title=" Voter Report Edit " > Voter Report Edit </a>	<br />
+6	&nbsp;	8	&nbsp;		&nbsp;		&nbsp;	<a href="new/Voter Entries List.aspx" title=" Voter Entries List " > Voter Entries List </a>	<br />
+6	&nbsp;	9	&nbsp;		&nbsp;		&nbsp;	<a href="new/Cross Tabulation.aspx" title=" Cross Tabulation " > Cross Tabulation </a>	<br />
+<br /><br />
+VII.&nbsp;		&nbsp;		&nbsp;		&nbsp;	<strong>Roles & User Management</strong>	<a name="RolesUsers" ></a><br /><br />
 	
 7	&nbsp;	1	&nbsp;		&nbsp;		&nbsp; <a name="introduction" /><a href="UM_Introduction.aspx" title=" Introduction " > Introduction </a>	<br />
 
@@ -235,7 +202,7 @@ IV.&nbsp;		&nbsp;		&nbsp;		&nbsp;	<strong>Roles & User Management</strong>	<a na
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
 
-8	&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Appendix</strong> 	<a name="Appendix" ></a><br />
+VIII.&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Appendix</strong> 	<a name="Appendix" ></a><br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
 	&nbsp;	1	&nbsp;		&nbsp;		&nbsp;	<a href="new/Form Architecture.aspx" title=" Form Architecture " > Form Architecture </a>	<br />
 							<br />

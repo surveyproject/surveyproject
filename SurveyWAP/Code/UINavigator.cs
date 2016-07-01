@@ -1,5 +1,5 @@
 /**************************************************************************************************
-	Survey changes: copyright (c) 2010, Fryslan Webservices TM (http://survey.codeplex.com)	
+	Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -252,6 +252,8 @@ namespace Votations.NSurvey.WebAdmin
                 destURL = string.Format("{0}?surveyid={1}&menuindex={2}", UsersManagerHyperLink, surveyId, (int)NavigationMenuItems.UsersManager);
             else if (user.Identity.IsAdmin || user.HasRight(NSurveyRights.AccessHelpFiles))
                 destURL = string.Format("{0}?surveyid={1}&menuindex={2}", HelpFilesHyperLink, surveyId, (int)NavigationMenuItems.HelpFiles);
+            else if (user.Identity.IsAdmin || user.HasRight(NSurveyRights.SurveyLayoutRight))
+                destURL = string.Format("{0}?surveyid={1}&menuindex={2}", SurveyLayoutLink, surveyId, (int)NavigationMenuItems.SurveyLayout);
             //else if (user.Identity.IsAdmin || user.HasRight(NSurveyRights.AccessSurveyList))
             //   destURL = string.Format("{0}?surveyid={1}&menuindex={2}", SurveyListHyperLink, surveyId, (int)NavigationMenuItems.SurveyList);
 

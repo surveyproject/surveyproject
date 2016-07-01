@@ -92,10 +92,13 @@ namespace Votations.NSurvey.Security
             child.Click += new EventHandler(this.OnTokenSubmit);
 
             this._tokenTextBox = new TextBox();
+            _tokenTextBox.ID = "etTBI";
+            _tokenTextBox.CssClass = CssXmlManager.GetString("EnterTokenTextBoxInsert");
 
             //this._tokenTable.ControlStyle.Font.CopyFrom(controlStyle.Font);
             //this._tokenTable.Width = Unit.Percentage(100.0);
             child.Text = ResourceManager.GetString("SubmitToken");
+
             cell.CssClass = CssXmlManager.GetString("EnterTokenMessage");
             cell.ID = "etMsg";
             cell.Controls.Add(new LiteralControl(ResourceManager.GetString("EnterTokenMessage", this.LanguageCode)));

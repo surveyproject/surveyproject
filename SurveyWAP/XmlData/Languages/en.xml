@@ -2774,7 +2774,7 @@
     <value>&lt;b&gt;Official SP™ Helpfiles are not yet available.&lt;/b&gt; &lt;br /&gt;&lt;br /&gt; More information on the use of the Survey tool can be found at &lt;a href="http://www.surveyproject.org" title="Surveyproject Community site" target="_blank"&gt; http://www.surveyproject.org &lt;/a&gt;. You can go there to ask your questions as well.&lt;br /&gt; &lt;br /&gt; For downloads, sourcecode and more backgroundinformation you can go to &lt;a href="http://survey.codeplex.com" title="Survey Project" target="_blank"&gt; http://survey.codeplex.com &lt;/a&gt;. &lt;br /&gt;</value>
   </data>
   <data version="1.2.2" id="915" name="Disclaimer">
-    <value>&lt;h4&gt;SURVEY™ PROJECT is a webapplication for online surveys and webforms based on the open source software NSurvey. NSurvey was written by &lt;a href="http://www.nsurvey.org" target="_blank"&gt;Thomas Zumbrunn&lt;/a&gt;, (c) 2004/2005. SURVEY™ PROJECT is an initiative of &lt;a href="http://www.fryslanwebservices.com" title="Fryslan Webservices Homepage" target="_blank"&gt;Fryslan Webservices™ &lt;/a&gt;, copyright (c) 2009/2014. Survey™ Project is published under the GNU GENERAL PUBLIC LICENSE v.3, 29 June 2007. The open source SURVEY™ PROJECT can be found at &lt;a href="http://www.surveyproject.org" title="Survey Project Community Site" target="_blank"&gt;http://www.surveyproject.org&lt;/a&gt;.&lt;/h4&gt; </value>
+    <value>&lt;h4&gt;SURVEY™ PROJECT is a webapplication for online surveys and webforms based on the open source software NSurvey. NSurvey was written by &lt;a href="http://www.nsurvey.org" target="_blank"&gt;Thomas Zumbrunn&lt;/a&gt;, (c) 2004/2005. SURVEY™ PROJECT is an initiative of &lt;a href="http://www.w3devpro.com" title="W3DevPro Homepage" target="_blank"&gt;W3DevPro™ &lt;/a&gt;, copyright (c) 2009/2014. Survey™ Project is published under the GNU GENERAL PUBLIC LICENSE v.3, 29 June 2007. The open source SURVEY™ PROJECT can be found at &lt;a href="http://www.surveyproject.org" title="Survey Project Community Site" target="_blank"&gt;http://www.surveyproject.org&lt;/a&gt;.&lt;/h4&gt; </value>
   </data>
   <data version="1.2.2" id="916" name="Introduction">
     <value>
@@ -3518,5 +3518,20 @@
   </data>
   <data version="2.4" id="1152" name="FieldAddressType">
     <value>Field - Address</value>
+  </data>
+  <data version="2.4" id="1153" name="SelectAnswerTypeDDL">
+    <value>[Select AnswerType]</value>
+  </data>
+  <data version="2.4" id="1154" name="TokenList">
+    <value>List of Generated Tokens</value>
+  </data>
+  <data version="2.4" id="1155" name="TokenFilter">
+    <value>Tokenlist Filter Options</value>
+  </data>
+  <data version="2.4" id="1156" name="MandatoryQuestionTitle">
+    <value>Mandatory Question</value>
+  </data>
+  <data version="2.4" id="1157" name="MandatoryAnswerTitle">
+    <value>Mandatory Answer</value>
   </data>
 </root>

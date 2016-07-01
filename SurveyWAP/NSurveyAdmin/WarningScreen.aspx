@@ -16,7 +16,7 @@
                 <br />
                 <br />
                 <br />
-                <asp:Label CssClass="ErrorMessage icon-warning-sign" runat="server" ID="lblWarning"></asp:Label>
+                <asp:Label CssClass="errorMessage icon-warning-sign" runat="server" ID="lblWarning"></asp:Label>
                 <br />
 </div>
 </asp:Content>

@@ -168,9 +168,6 @@
     <Compile Include="Votations.NSurvey.Data\MultiLanguageData.cs" />
     <Compile Include="Votations.NSurvey.Data\NotificationModeData.cs" />
     <Compile Include="Votations.NSurvey.Data\NSurveyDataSource.cs" />
-    <Compile Include="Votations.NSurvey.Data\NSurveyQuestion.cs">
-      <DependentUpon>NSurveyQuestion.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Votations.NSurvey.Data\NSurveyVoter.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -322,9 +319,6 @@
       <LastGenOutput>NSurveyQuestion.Designer.cs</LastGenOutput>
     </None>
     <None Include="Votations.NSurvey.Data\NSurveyQuestion.xss">
-      <DependentUpon>NSurveyQuestion.xsd</DependentUpon>
-    </None>
-    <None Include="Votations.NSurvey.Data\NSurveyQuestion.xsx">
       <DependentUpon>NSurveyQuestion.xsd</DependentUpon>
     </None>
     <None Include="Votations.NSurvey.Data\NSurveyUserData.xsc">

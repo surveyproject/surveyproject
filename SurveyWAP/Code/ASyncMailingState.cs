@@ -1,7 +1,7 @@
 //-----------------------------------------------------------------------
-// <copyright file="ASyncMailingState.cs" company="Fryslan Webservices">
+// <copyright file="ASyncMailingState.cs" company="W3DevPro">
 //
-// Survey changes: copyright (c) 2010, Fryslan Webservices TM (http://survey.codeplex.com) 
+// Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com) 
 //
 // NSurvey - The web survey and form engine
 // Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)

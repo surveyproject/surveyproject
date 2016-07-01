@@ -27,7 +27,7 @@ namespace Votations.NSurvey.WebControls.UI
         /// <param name="container"></param>
         /// <returns>true if a selection control was added</returns>
         protected bool GenerateSelectionControl(ControlCollection container)
-        {
+        {   
             if (this.SelectionMode == AnswerSelectionMode.Radio)
             {
                 SelectionRadioButton child = new SelectionRadioButton();
@@ -80,7 +80,7 @@ namespace Votations.NSurvey.WebControls.UI
                     else
                     {
                         box.Text = this.Text;//JJ
-                        box.CssClass = "AnswerTextRender";
+                        box.CssClass = "answerTextRender";
                     }
                 }
                 this.SelectionControl = box;
@@ -89,7 +89,7 @@ namespace Votations.NSurvey.WebControls.UI
             {
                 AnswerListItem item = new AnswerListItem();
                 item.Text = this.Text;//JJ
-                item.CssClass = "AnswerTextRender";
+                item.CssClass = "answerTextRender";
                 container.Add(item);
             }
             else if ((this.ImageUrl != null) && (this.ImageUrl.Length != 0))

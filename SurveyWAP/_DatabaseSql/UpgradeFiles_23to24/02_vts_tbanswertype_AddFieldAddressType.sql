@@ -1,4 +1,4 @@
-USE [DBNAME]
+﻿USE [DBNAME]
 
 SET IDENTITY_INSERT [dbo].[vts_tbAnswerType] ON 
 

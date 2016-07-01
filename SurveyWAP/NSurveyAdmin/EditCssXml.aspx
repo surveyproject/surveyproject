@@ -17,7 +17,8 @@
           <asp:Literal ID="CssXmlLegend" runat="server" EnableViewState="false">Surveylayout CSS XML</asp:Literal>  
         </legend><br />
 
-           <div style="margin:30px;">
+ <ol>
+     <li>
             <asp:GridView ID="CssXmlGridView" Width="100%" 
                 ShowFooter="true"
                 AutoGenerateColumns="false"  
@@ -108,7 +109,7 @@
 
                 <SortedDescendingHeaderStyle BackColor="#4870BE"></SortedDescendingHeaderStyle>
             </asp:GridView>
-               </div>
+</li></ol>
             <br /><br />
                                    </fieldset>
             </div></div>

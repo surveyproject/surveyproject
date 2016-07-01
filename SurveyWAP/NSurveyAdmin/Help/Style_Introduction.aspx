@@ -31,8 +31,8 @@
                 created and edited to determine the graphical design (look & feel and layout) of the different survey components and webpage. 
                 Once uploaded the customised CSS files are linked to the survey selected in the treelist.    
                 <br /><br />
-                The default CSS file linked to the survey component and the survey.aspx webpage can be found 
-                in the NsurveyAdmin/CSS directory: surveymobile.css (a legacy version is available called: nsurveyform.css). Click the next link for instructions
+                The default (minified) CSS file linked to the survey component and the surveymobile.aspx webpage can be found 
+                in the NsurveyAdmin/CSS directory: surveymobile.min.css (a legacy version is available called: nsurveyform.css). Click the next link for instructions
                 on using the <a class="help" href="Web%20Control%20Style.aspx" target="_self">Web Control
                     CSS Style</a> attributes.
                 <br />

@@ -7,7 +7,7 @@
         <tr>
             <td>
                 <asp:ImageButton ID="btnBack" ImageUrl="~/Images/index-icon.png" runat="server" CssClass="buttonIndex"
-                    PostBackUrl="~/NSurveyAdmin/Help/default.aspx" Visible="True" ToolTip="Back to Helpfiles Index" />
+                    PostBackUrl="~/NSurveyAdmin/Help/default.aspx#Reporting" Visible="True" ToolTip="Back to Helpfiles Index" />
             </td>
         </tr>
         <tr>
@@ -19,15 +19,12 @@
                 <br />
                 <hr style="color:#e2e2e2;"/>
                 <br />
-
-The voter report edit mode shows an individual respondent answers with the option to change / edit the answers that were posted.<br />
+                The voter report shows the individual and detailed report for each
+respondents answers.
+The voter report <u>edit mode</u> shows an individual respondent answers with the option to change / edit the answers that were posted.<br />
 <br />
 
-                <hr style="color:#e2e2e2;"/>
-                <br />
-                <br />
-                <h3>
-                    More Information</h3>
+<hr style="color:#e2e2e2;" /> <br /><h3>More Information</h3><br />
                 <br />
 Voter%20report.html<br />
                 <br />

@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Web Application Project")]
 [assembly: AssemblyDescription("Survey™ Project 2.4")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Fryslan Webservices™")]
+[assembly: AssemblyCompany("W3DevPro™")]
 [assembly: AssemblyProduct("Survey™ Project Webapplication")]
-[assembly: AssemblyCopyright("(c) 2004 Thomas Zumbrunn - (c) 2009/2016 Fryslan Webservices™")]
+[assembly: AssemblyCopyright("(c) 2004 Thomas Zumbrunn - (c) 2009/2016 W3DevPro™")]
 [assembly: AssemblyTrademark("Survey™ Project")]
 [assembly: AssemblyCulture("")]
 

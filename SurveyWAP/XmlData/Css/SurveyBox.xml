@@ -80,7 +80,7 @@
     <value>previousPageButtonPanel</value>
   </data>
   <data version="2.4" id="npSB" name="NextPageSubmitButton">
-    <value>nextPageButton btn btn-primary btn-xs bw</value>
+    <value>nextPageButtonSubmit btn btn-primary btn-xs bw</value>
   </data>
   <data version="2.4" id="npSBP" name="NextPageSubmitButtonPanel">
     <value>nextPageSubmitButtonPanel</value>
@@ -134,7 +134,7 @@
   </data>
   <!-- Build Thanksbox -->
   <data version="2.4" id="bsbcT" name="BuildThankBoxCssTable">
-    <value>ThanksboxCss</value>
+    <value>thanksboxCss</value>
   </data>
   <data version="2.4" id="bsbcP" name="BuildThankBoxCssPanel">
     <value>questionContainerWrapper</value>
@@ -144,7 +144,7 @@
   </data>
 <!-- onresume UID submit errormesage -->
   <data version="2.4" id="ruSE" name="OnResumeUidSubmitError">
-    <value>ErrorMessage</value>
+    <value>errorMessage</value>
   </data>
   <!-- AnswerSelectionItem Radiobutton-->
   <data version="2.4" id="oruse" name="AnswerSelectionRadioButton">
@@ -164,7 +164,7 @@
     <value>Right</value>
   </data>
   <data version="2.4" id="atr" name="AnswerTextRender">
-    <value>AnswerTextRender</value>
+    <value>answerTextRender</value>
   </data>
   <data version="2.4" id="ams" name="AnswerMandatorySign">
     <value>answer-warning-sign</value>
@@ -173,10 +173,10 @@
     <value>SuccessMessage icon-ok</value>
   </data>
   <data version="2.4" id="ermes" name="ErrorMessage">
-    <value>ErrorMessage icon-warning-sign</value>
+    <value>errorMessage icon-warning-sign</value>
   </data>
   <data version="2.4" id="qht" name="QuestionHelpText">
-    <value>HelpTextSmallFont</value>
+    <value>helpTextSmallFont</value>
   </data>
   <data version="2.4" id="aulb" name="AnswerUploadButton">
     <value>btn btn-primary btn-xs bw</value>
@@ -206,10 +206,10 @@
     <value>questionContainer</value>
   </data>
   <data version="2.4" id="pwEM" name="PasswordErrorMessage">
-    <value>ErrorMessage</value>
+    <value>errorMessage</value>
   </data>
   <data version="2.4" id="tsEM" name="TokensecurityErrorMessage">
-    <value>ErrorMessage</value>
+    <value>errorMessage</value>
   </data>
   <data version="2.4" id="eqEM" name="EntryquotaErrorMessage">
     <value>entryquotaErrorMessage</value>
@@ -225,6 +225,9 @@
   </data>
   <data version="2.4" id="etTB" name="EnterTokenTextBox">
     <value>enterTokenTextBox</value>
+  </data>
+  <data version="2.4" id="etTB" name="EnterTokenTextBoxInsert">
+    <value>enterTokenTextBoxInsert</value>
   </data>
   <data version="2.4" id="eicTbl" name="EmailInvCodeTable">
     <value>emailInvCodeTable</value>
@@ -242,12 +245,12 @@
     <value>emailInvCodeTextboxCell</value>
   </data>
   <data version="2.4" id="eicEMsg" name="EmailInvCodeErrorMessage">
-    <value>ErrorMessage</value>
+    <value>errorMessage</value>
   </data>
   <data version="2.4" id="tyMsg" name="ThankYouMessage">
     <value>thankYouMessage</value>
   </data>
   <data version="2.4" id="msSD" name="MatrixSectionScrollableDiv">
-    <value>ScrollableDiv</value>
+    <value>scrollableDiv</value>
   </data>
 </root>

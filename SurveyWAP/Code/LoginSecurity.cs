@@ -1,5 +1,5 @@
 ﻿/**************************************************************************************************
-	Survey TM Project changes: copyright (c) 2013, Fryslan Webservices TM (http://survey.codeplex.com)	
+	Survey TM Project changes: copyright (c) 2013, W3DevPro TM (http://survey.codeplex.com)	
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License

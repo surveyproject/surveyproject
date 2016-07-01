@@ -5,7 +5,7 @@
         <div id="Panel" class="Panel content" style="margin: 25px 0px 25px 10px; width: 725px;">
 
                         <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
- <asp:Label ID="MessageLabel" runat="server"  CssClass="ErrorMessage" Visible="False"></asp:Label>
+ <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
 
             <div style="position: relative; left: 720px; width: 10px; top: 13px; clear: none;">

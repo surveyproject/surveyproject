@@ -32,7 +32,6 @@ using Votations.NSurvey.DataAccess;
 using Votations.NSurvey.WebControlsFactories;
 using Votations.NSurvey.Resources;
 
-
 namespace Votations.NSurvey.WebControls.UI
 {
 
@@ -323,7 +322,7 @@ namespace Votations.NSurvey.WebControls.UI
         /// Build the question layout with its 
         /// child controls
         /// </summary>
-        virtual protected void BuildQuestion()
+        virtual protected void BuildQuestion() 
         {
 
             Controls.Add(QuestionTable);
@@ -333,26 +332,31 @@ namespace Votations.NSurvey.WebControls.UI
             TableRow questionTableRow = new TableRow();    // default layout table row
 
             string requiredMarkerHtml = string.Empty;
+            string titleString = ResourceManager.GetString("MandatoryQuestionTitle");
             if (ValidationMark.Length != 0 &&
            (MinSelectionRequired > 0 || MaxSelectionAllowed > 0))
             {
                 //requiredMarkerHtml = string.Format("<span class='{0}'>&nbsp;{1}</span>",ValidationMarkStyle.CssClass.ToString(),ValidationMark);
-                requiredMarkerHtml = string.Format("&nbsp;<span class='{0}'></span>", ValidationMarkStyle.CssClass.ToString());
+                requiredMarkerHtml = string.Format("&nbsp;<span class='{0}' title='{1}'></span>", ValidationMarkStyle.CssClass.ToString(), titleString);
             }
 
             // Set question's text
-            Label questionLabel = new Label();
+            //Label questionLabel = new Label();
+            Literal questionLabel = new Literal();
+            questionLabel.Mode = LiteralMode.Transform;
+
+
             if (QuestionNumber > 0)
             {
                 // JJ Div to enclose the number and another div for text. Inline style is used because that is always necessary.can be moved into style sheet
-                questionLabel.Text = string.Format(@"<div style='float:left;' class='question-number-div'>{0}.&nbsp;
-              </div><div class='question-text-div'>{1}{2}</div>", QuestionNumber, Text, requiredMarkerHtml);
+                questionLabel.Text = string.Format(@"<div class='question-number-div'>{0}.&nbsp;
+              </div><div class='question-text-div'>{1}{2}{3}</div>", QuestionNumber, Text, requiredMarkerHtml, HelpText);
                 //TODO (THis is not a real TODO- just a makrker)  Question Number align subsequent lines with Text and not number
             }
             else
             {
                 //questionLabel.Text = Text;
-                questionLabel.Text = string.Format(@"<div class='question-text-div'>{0}{1}</div>", Text, requiredMarkerHtml);
+                questionLabel.Text = string.Format(@"<div class='question-text-div'>{0}{1}{2}</div>", Text, requiredMarkerHtml, HelpText);
             }
             questionTableCell.Controls.Add(questionLabel);
             /*TODO JJ Commented out introducing span above after the question text

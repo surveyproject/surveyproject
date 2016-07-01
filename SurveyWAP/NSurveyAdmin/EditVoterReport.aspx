@@ -9,7 +9,7 @@
 
 
             <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
- <asp:Label ID="MessageLabel" runat="server"  CssClass="ErrorMessage" Visible="False"></asp:Label>
+ <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
 
              <fieldset style="width:730px; margin-left:12px; margin-top:15px;" title="">

@@ -30,7 +30,7 @@ namespace Votations.NSurvey.WebControls.UI
                 num++;
                 if ((base.ColumnsNumber != 0) && (num > base.ColumnsNumber))
                 {
-                    row.ControlStyle.CopyFrom(base.AnswerStyle);
+                    //row.ControlStyle.CopyFrom(base.AnswerStyle);
                     table.Rows.Add(row);
                     num = 1;
                     row = new TableRow();

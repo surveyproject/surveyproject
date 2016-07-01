@@ -114,6 +114,7 @@ namespace Votations.NSurvey.WebControls.UI
                             //this.Controls.Add(label1);
 
                             Label mandatoryLabel = new Label();
+                            mandatoryLabel.ToolTip = ResourceManager.GetString("MandatoryAnswerTitle");
                             mandatoryLabel.CssClass = CssXmlManager.GetString("AnswerMandatorySign");
                             this.Controls.Add(mandatoryLabel);
                         }

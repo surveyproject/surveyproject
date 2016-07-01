@@ -2766,7 +2766,7 @@ Vriendelijke groet
 		<value>&lt;b&gt;Survey&#8482; Project Helpbestanden zijn beperkt beschikbaar.&lt;/b&gt; &lt;br /&gt;&lt;br /&gt; Meer informatie over het gebruik van de Survey applicatie is te vinden via &lt;a href="http://www.surveyproject.org" title="Surveyproject Gemeenschapssite" target="_blank"&gt; http://www.surveyproject.org &lt;/a&gt;. Vragen kunnen daar worden gesteld.&lt;br /&gt; &lt;br /&gt; Voor downloads, broncode en technische achtergronden ga naar &lt;a href="http://survey.codeplex.com" title="Survey Project" target="_blank"&gt; http://survey.codeplex.com &lt;/a&gt;. &lt;br /&gt;</value>
 	</data>
 	<data version="1.2.2" id="915" name="Disclaimer">
-		<value>&lt;h4&gt;SURVEY&#8482; PROJECT is een webapplicatie voor online enqu&#234;tes en formulieren gebaseerd op de open source software NSurvey (&lt;a href="http://www.nsurvey.org" target="_blank"&gt;Thomas Zumbrunn&lt;/a&gt;, (c) 2004/2005). Survey&#8482; Project is gepubliceerd onder een GNU GENERAL PUBLIC LICENSE v.3, 29 June 2007. Het vernieuwde SURVEY&#8482; PROJECT is een initiatief van &lt;a href="http://www.fryslanwebservices.com" title="Fryslan Webservices Homepage" target="_blank"&gt;Fryslan Webservices&#8482; &lt;/a&gt;, copyright (c) 2009/2014. SURVEY&#8482; PROJECT is te vinden via &lt;a href="http://www.surveyproject.org" title="Survey Project Community Site" target="_blank"&gt;http://www.surveyproject.org&lt;/a&gt;.&lt;/h4&gt; </value>
+		<value>&lt;h4&gt;SURVEY&#8482; PROJECT is een webapplicatie voor online enqu&#234;tes en formulieren gebaseerd op de open source software NSurvey (&lt;a href="http://www.nsurvey.org" target="_blank"&gt;Thomas Zumbrunn&lt;/a&gt;, (c) 2004/2005). Survey&#8482; Project is gepubliceerd onder een GNU GENERAL PUBLIC LICENSE v.3, 29 June 2007. Het vernieuwde SURVEY&#8482; PROJECT is een initiatief van &lt;a href="http://www.w3devpro.com" title="W3DevPro Homepage" target="_blank"&gt;W3DevPro&#8482; &lt;/a&gt;, copyright (c) 2009/2014. SURVEY&#8482; PROJECT is te vinden via &lt;a href="http://www.surveyproject.org" title="Survey Project Community Site" target="_blank"&gt;http://www.surveyproject.org&lt;/a&gt;.&lt;/h4&gt; </value>
 	</data>
 	<data version="1.2.2" id="916" name="Introduction">
 		<value>
@@ -3487,12 +3487,27 @@ Vriendelijke groet
     <value>Radiobutton CSS :</value>
   </data>
   <data version="2.4" id="1150" name="GeneralSettingsTitle">
-    <value>INSTALLATION SETTINGS</value>
+    <value>INSTALLATIE SETTINGS</value>
   </data>
   <data version="2.4" id="1151" name="CssXmlHyperLink">
     <value>Css Xml</value>
   </data>
   <data version="2.4" id="1152" name="FieldAddressType">
-    <value>Field - Address</value>
+    <value>Field - Adres</value>
+  </data>
+  <data version="2.4" id="1153" name="SelectAnswerTypeDDL">
+    <value>[Kies AntwoordType]</value>
+  </data>
+  <data version="2.4" id="1154" name="TokenList">
+    <value>Lijst van Tokens</value>
+  </data>
+  <data version="2.4" id="1155" name="TokenFilter">
+    <value>Tokenlijst Filter Opties</value>
+  </data>
+  <data version="2.4" id="1156" name="MandatoryQuestionTitle">
+    <value>Verplichte Vraag</value>
+  </data>
+  <data version="2.4" id="1157" name="MandatoryAnswerTitle">
+    <value>Verplicht Antwoord</value>
   </data>
 </root>

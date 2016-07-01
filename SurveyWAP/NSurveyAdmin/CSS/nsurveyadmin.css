@@ -149,7 +149,7 @@ table.TlcFront{background:url(../../images/PenSurvey.JPG) repeat-x center #fff;b
 .chkPrivs td>label{width:85%}
 .cssXmlAlign{float:left;margin-left:10px}
 .DynamicMenu{display:none}
-.ErrorMessage{background:#e80808;border-radius:7px;color:#fff;font:700 .9em "Helvetica Neue",Helvetica,Arial,sans-serif;padding:3px 15px 3px 10px;-moz-border-radius:7px;-webkit-border-radius:7px}
+.errorMessage{background:#e80808;border-radius:7px;color:#fff;font:700 .9em "Helvetica Neue",Helvetica,Arial,sans-serif;padding:3px 15px 3px 10px;-moz-border-radius:7px;-webkit-border-radius:7px}
 .hint{background:url(~/images/pointer.gif) no-repeat -10px 5px #ffc;border:1px solid #c93;margin-top:-4px;padding:10px 12px;position:relative;right:10px;width:100px}
 .hint .hint-pointer{background:url(~/images/pointer.gif) no-repeat left top;height:19px;left:-10px;position:absolute;top:5px;width:10px}
 .hoverstyle td.rowwithseperator{padding-bottom:0}

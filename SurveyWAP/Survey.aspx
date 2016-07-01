@@ -6,10 +6,10 @@
 <head id="Head1" runat="server">
     <title>The Survey Project surveyform</title>
     <meta id="MetaDescription" name="DESCRIPTION" content="Survey Project is a free and open source web based survey and (data entry) forms toolkit for processing & gathering data online." />
-    <meta id="MetaKeywords" name="KEYWORDS" content="Survey, Project, Nsurvey, c#, open source, websurvey, surveyform, formbuilder, FWS, Fryslan Webservices, codeplex " />
-    <meta id="MetaCopyright" name="COPYRIGHT" content=" 2011 &lt;href='http://www.fryslanwebservices.com'>Fryslan Webservices&lt;/a>" />
+    <meta id="MetaKeywords" name="KEYWORDS" content="Survey, Project, Nsurvey, c#, open source, websurvey, surveyform, formbuilder, WDP, W3DevPro, codeplex " />
+    <meta id="MetaCopyright" name="COPYRIGHT" content=" 2011 &lt;href='http://www.w3devpro.com'>W3DevPro&lt;/a>" />
     <meta id="MetaGenerator" name="GENERATOR" content="Survey Project" />
-    <meta id="MetaAuthor" name="AUTHOR" content="Fryslan Webservices" />
+    <meta id="MetaAuthor" name="AUTHOR" content="W3DevPro" />
     <meta name="RESOURCE-TYPE" content="DOCUMENT" />
     <meta name="DISTRIBUTION" content="GLOBAL" />
     <meta name="ROBOTS" content="INDEX, FOLLOW" />
@@ -24,7 +24,7 @@
 <body>
     <form id="Form1" class="surveyform" runat="server">
             <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
- <asp:Label ID="MessageLabel" runat="server"  CssClass="ErrorMessage" Visible="False"></asp:Label>
+ <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
     <table width="100%">
         <tr>

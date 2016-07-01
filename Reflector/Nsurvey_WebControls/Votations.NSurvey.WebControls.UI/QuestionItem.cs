@@ -26,9 +26,11 @@ namespace Votations.NSurvey.WebControls.UI
         public string QuestionId_Text { get; set; }
         public string HelpText { get; set; }
         public bool ShowHelpText { get; set; }
-        protected QuestionItem()
+
+        protected QuestionItem() : base(HtmlTextWriterTag.Div)
         {
         }
+
 
         /// <summary>
         /// Build a row with the given control and style
@@ -52,6 +54,8 @@ namespace Votations.NSurvey.WebControls.UI
         protected override void OnInit(EventArgs e)
         {
             base.OnInit(e);
+
+            // rows to add warning messages on required Q/A's
             this.QuestionTable.Rows.Add(this.BuildRow(null, null));
             this.QuestionTable.Rows[0].EnableViewState = false;
             this.QuestionTable.Rows.Add(this.BuildRow(null, null));

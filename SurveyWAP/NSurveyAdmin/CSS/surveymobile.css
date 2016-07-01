@@ -1,15 +1,47 @@
-﻿/*Survey Form CSS for Mobile platforms 2014- Twitter BootStrap based*/
-
+﻿@charset "UTF-8";       
 @import url('../../content/font-awesome.min.css');
 
-/* Test classes - remove again*/
+/* Line 1: Sets the encoding of the style sheet to Unicode UTF-8 
+   Line 2: Importt the font-awsome css  */
+
+/* GENERAL REMARKS
+    
+    Surveyform CSS for SurveyMobile.aspx webpage - Twitter BootStrap based
+    
+    - this file is for development purposes
+    - a minified version is available for production purposes
+    - this file has been minified through: https://devilo.us
+
+        Settings:
+
+        Compress colours +
+        Compress font-weight +
+        Optimise shorthands -Yes, all
+        Regroup selectors - Merge
+        Sort selectors (use with caution) - no
+        Sort properties - yes
+        Preserve comments - no
+        Add timestamp - no
+        Remove unnecessary backslashes - yes
+        Remove last semi-colons - yes
+        Discard invalid properties - no
+        CSS 3 compatible +
+        Case for properties - Lowercase - yes
+        Lowercase selectors - no
+
+    - to switch from development to production file go to surveymobile.asxp file
+    - next comment/ uncomment the appropriate CSS file links in the pages header
+*/
+
+/* Test classes - remove again 
+
 .fwsanswertestRed{
     color:red;
     font-size: 1.0em;
     font-weight: normal;
 }
 
-.EmptyLabel{
+.emptyLabel{
     color:green;
     font-size: 1.0em;
     font-weight: normal;
@@ -21,7 +53,15 @@
     font-weight: normal;
 }
 
+*/
+
 /*SP 2.4 CSS XML selectors*/
+
+/* GENERIC TABLE/ ROW/ CELL CSS*/
+
+.cellValign{
+    vertical-align:top;
+}
 
 /* SURVEY BOX CSS HIERARCHY*/
 
@@ -36,7 +76,7 @@
 }
 
 /*ID: MessageLabel*/
-.ErrorMessage
+.errorMessage
 {
     background: #e80808;
     color: white;
@@ -102,17 +142,17 @@
 
 /* PASSWORD CSS */
 
-/*ID: no id */
+/*ID dna */
 .passwordMessage{
     margin: 3px 0 3px 0;
 }
 
-/*ID: no id*/
+/*ID dna*/
 .passwordTextBox{}
 
 /* lddl */
 
-/*ID: no id*/
+/*ID dna*/
 .passwordSubmitButtonPanel{}
 
 /* input btn btn-primary btn-xs bw*/
@@ -198,6 +238,12 @@
     padding: 5px 10px 10px 0;
 }
 
+.enterTokenTextBoxInsert
+{
+    margin: 10px;
+}
+
+
 /*ID: etBtn*/
 /* btn btn-primary btn-xs bw*/
 
@@ -220,13 +266,13 @@
 /*ID:  SurveyControl_Question[nr] */
 
 
-/*ID: no id */
+/*ID dna */
 .questTbl{}
 
 
 /* QUESTION CSS */
 
-/*ID: no id */
+/*ID dna */
 .questionStyle
 {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -237,7 +283,7 @@
 
 tr.questionStyle
 {
-	padding: 0px 10px 0px 10px;
+	padding: 10px;
 
     -moz-border-radius: 7px;
     -webkit-border-radius: 7px;
@@ -250,7 +296,7 @@ tr.questionStyle
 
 .questionStyle > td
 {
-    width: 1200px;
+    width: 100vw;
 }
 
 /* Line Spacing for Question text */
@@ -270,20 +316,22 @@ tr.questionStyle td > span > div.question-number-div
     margin:3px;
 }
 
-    tr.questionStyle td > span > div.question-text-div > span 
+tr.questionStyle td > span > div.question-text-div > span 
     {
         margin-left:10px;
         color: #ff6a00;
     }
     
-/*ID: no id */
-.question-number-div{}
+/*ID dna */
+.question-number-div{
+    float:left;
+}
 
-/*ID: no id */
+/*ID dna */
 .question-text-div{}
 
-/*ID: no id*/
-.HelpTextSmallFont
+/*ID dna*/
+.helpTextSmallFont
 {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 0.9em;
@@ -292,13 +340,14 @@ tr.questionStyle td > span > div.question-number-div
     padding: 2px 3px 2px 10px;
     margin-bottom: 7px;
     margin-right: 5px;
+    margin-top: 7px;
 
     -moz-border-radius: 7px;
     -webkit-border-radius: 7px;
     border-radius: 7px;
 }
 
-/*ID: no id */
+/*ID dna */
 .icon-warning-sign:before {
     font-family: FontAwesome;
     font-style: normal;
@@ -308,12 +357,11 @@ tr.questionStyle td > span > div.question-number-div
     content: "\f071";
 }
 
-/* QUESTION CSS END */
-
-
-/* ANSWER CSS */
-
-/*ID: no id*/
+/* 
+QUESTION CSS END 
+ANSWER CSS
+ID dna
+*/
 
 .answerStyle
 {
@@ -352,35 +400,32 @@ tr.questionStyle td > span > div.question-number-div
 /*ID: SurveyControl_Question2__as57474_AnswerTbl */
 .answerTbl{}
 
-/*ID: no id*/
-answerStyle
 
-
-/*ID: no id*/
-.AnswerTextRender
+/*ID dna*/
+.answerTextRender
 {
 	width: auto;
     overflow:auto;
 	white-space: normal;
 }
 
-.AnswerTextRender > input
+.answerTextRender > input
 {
     margin: 5px;
 }
 
-.AnswerTextRender > label
+.answerTextRender > label
 {
     font-weight:normal;
 }
 
-span.AnswerTextRender > div:nth-child(2)
+span.answerTextRender > div:nth-child(2)
 {
 	padding-left: 5px;
     padding-top: 7px;
 }
 
-/*ID: no id*/
+/*ID dna*/
 .answer-warning-sign:before {
     font-family: FontAwesome;
     font-style: normal;
@@ -391,7 +436,6 @@ span.AnswerTextRender > div:nth-child(2)
 }
 
 /* ANSWER CSS END */
-
 
 /*ANSWER DETAILS CSS*/
 
@@ -406,7 +450,7 @@ span.AnswerTextRender > div:nth-child(2)
 /*Matrix question*/
 /*ID: SurveyControl_Question36__as37801_msSD*/
 
-.ScrollableDiv
+.scrollableDiv
 {
 	overflow: auto;
 	width: auto;
@@ -417,7 +461,6 @@ span.AnswerTextRender > div:nth-child(2)
 
 
 /*ANSWER DETAILS CSS END*/
-
 
 /* FOOTER ROW CSS*/
 
@@ -447,13 +490,13 @@ span.AnswerTextRender > div:nth-child(2)
     float:left;
 }
 
-/*ID: non id*/
+/*ID dna*/
 .currentPage{}
 
-/*ID: non id*/
+/*ID dna*/
 .visitedPage{}
 
-/*ID: non id*/
+/*ID dna*/
 .nonactivePage{}
 
 /*ID: SurveyControl_pN*/
@@ -474,6 +517,15 @@ span.AnswerTextRender > div:nth-child(2)
 
 }
 
+.nextPageButtonSubmit{
+   
+}
+
+/*CSS selector generated by code - used on submit/nextpage button on goodbye page after submitting survey */
+.aspNetDisabled 
+{
+    visibility: hidden;
+}
 
 /* RESUME PROGRESS */
 
@@ -578,7 +630,7 @@ span.AnswerTextRender > div:nth-child(2)
 /* SURVEY COMPLETION*/
 
 /*ID: bsbcT*/
-.ThanksboxCss
+.thanksboxCss
 {
     width: 100%;
     margin:10px;
@@ -589,8 +641,6 @@ span.AnswerTextRender > div:nth-child(2)
         font-size: 1.2em;
         padding: 15px 0;
 }
-
-
 
 /* ORIGINAL SURVEYBOX WEBCONTROL CSS */
 
@@ -606,6 +656,7 @@ span.AnswerTextRender > div:nth-child(2)
     font-size: 0.9em;
     font-weight: bold;
     padding: 5px 15px 5px 10px;
+    line-height:1.7;
 
     display: block;
     width: 100%;
@@ -649,9 +700,8 @@ span.AnswerTextRender > div:nth-child(2)
 	font-weight: bold;
 }
 
-/*AnswerStyle */
+/* AnswerStyle */
 /* answerStyle */
-
 
 /*ID: SurveyControl_Question36__as37801_MatrixTbl */
 /* MatrixStyle */

@@ -15,7 +15,7 @@ namespace Votations.NSurvey.WebAdmin
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            UITabList.SetDesignerTabs((MsterPageTabs)Page.Master, UITabList.DesignerTabs.SurveyInfoLayout);
+            UITabList.SetDesignerTabs((MsterPageTabs)Page.Master, UITabList.DesignerTabs.CssXml);
             SetupSecurity();
 
             LocalizePage();

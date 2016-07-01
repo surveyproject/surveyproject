@@ -69,7 +69,7 @@ tr.questionStyle td > span > div.question-number-div
         color: #ff6a00;
     }
 
-.HelpTextSmallFont
+.helpTextSmallFont
 {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 0.9em;
@@ -183,7 +183,7 @@ tr.questionStyle td > span > div.question-number-div
 }
 
 
-.AnswerTextRender
+.answerTextRender
 {
 	width: auto;
 	display: flexbox;
@@ -191,12 +191,12 @@ tr.questionStyle td > span > div.question-number-div
 	white-space: normal;
 }
 
-.AnswerTextRender > input
+.answerTextRender > input
 {
     margin: 5px;
 }
 
-.AnswerTextRender > label
+.answerTextRender > label
 {
     font-weight:normal;
     background: white;
@@ -204,14 +204,14 @@ tr.questionStyle td > span > div.question-number-div
     
 }
 
-span.AnswerTextRender > div:nth-child(2)
+span.answerTextRender > div:nth-child(2)
 {
 	padding-left: 5px;
     padding-top: 7px;
 }
 
-span.AnswerTextRender > label{color: black;background: white;font-weight: normal; margin-left: 5px;}
-span.AnswerTextRender > div > input {margin: 2px 0 0 0}
+span.answerTextRender > label{color: black;background: white;font-weight: normal; margin-left: 5px;}
+span.answerTextRender > div > input {margin: 2px 0 0 0}
 
 
 .matrixStyle
@@ -388,7 +388,7 @@ tr.footStyle > td
 
 /*Matrix question*/
 
-.ScrollableDiv
+.scrollableDiv
 {
 	overflow: auto;
 	width: auto;
@@ -398,7 +398,7 @@ tr.footStyle > td
 }
 
 /*completion message*/
-.ThanksboxCss
+.thanksboxCss
 {
     width: 100%;
     /*color: #000;
@@ -422,7 +422,7 @@ tr.footStyle > td
 }
 
 
-.ErrorMessage
+.errorMessage
 {
     /*background: #e80808 url(../../images/warning-icn.png) no-repeat 10px 5px;*/
     background: #e80808;

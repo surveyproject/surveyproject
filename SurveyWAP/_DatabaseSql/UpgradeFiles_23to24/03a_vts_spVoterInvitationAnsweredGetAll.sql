@@ -1,4 +1,4 @@
-USE [DBNAME]
+﻿USE [DBNAME]
 GO
 
 /****** Object:  StoredProcedure [dbo].[vts_spVoterInvitationAnsweredGetAll]    Script Date: 04/01/2015 20:59:48 ******/

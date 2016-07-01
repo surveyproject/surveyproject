@@ -8,7 +8,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="mainBody" class="mainBody contentHolder ps-container"><div id="Panel" class="Panel content">
  
             <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
- <asp:Label ID="MessageLabel" runat="server"  CssClass="ErrorMessage" Visible="False"></asp:Label>
+ <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
 
                 <div style="position: absolute; width: 50px; text-align: center; margin-left: 700px; top: 15px;">

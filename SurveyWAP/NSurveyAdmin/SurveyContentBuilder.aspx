@@ -25,8 +25,8 @@
     </script>
 
     <style type="text/css" id="scb_answers">
-        span.AnswerTextRender > label{color: black;background: white;font-weight: normal; margin-left: 5px;}
-        span.AnswerTextRender > div > input {margin: -5px 5px 0 0}
+        span.answerTextRender > label{color: black;background: white;font-weight: normal; margin-left: 5px;}
+        span.answerTextRender > div > input {margin: -5px 5px 0 0}
     </style>
 
     <div id="mainBody" class="mainBody contentHolder ps-container">

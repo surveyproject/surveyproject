@@ -47,7 +47,7 @@
     For safety reasons the request has been redirected to this error page.<br /><br />
     To try again please return to the <a href='Default.aspx'>Default Page</a>
     <br /><br /><br /><br /><br />
-    <hr style="color:#e2e2e2;"/><br /><br />&copy; Fryslan Webservices&trade; 2014
+    <hr style="color:#e2e2e2;"/><br /><br />&copy; W3DevPro&trade; 2014
   </div>
   </form>
 </body>

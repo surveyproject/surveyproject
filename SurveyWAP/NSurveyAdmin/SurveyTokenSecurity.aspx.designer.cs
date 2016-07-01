@@ -112,6 +112,15 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin {
         protected global::System.Web.UI.WebControls.Label lblTokensUsed;
         
         /// <summary>
+        /// tokenfilter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal tokenfilter;
+        
+        /// <summary>
         /// ltFilterToken control.
         /// </summary>
         /// <remarks>
@@ -173,6 +182,15 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnApplyFilter;
+        
+        /// <summary>
+        /// tokenlist control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal tokenlist;
         
         /// <summary>
         /// lvTokens control.

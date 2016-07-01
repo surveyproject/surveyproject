@@ -203,7 +203,7 @@ a:hover
 	width: 160px;
 	height: 15px;
 }
-.HelpTextSmallFont
+.helpTextSmallFont
 {
 	font-size: xx-small;
 	font-weight: lighter;
@@ -218,14 +218,14 @@ a:hover
 	overflow: auto;
 }
 
-.AnswerTextRender
+.answerTextRender
 {
 	width: auto;
 	display: block; /* overflow:auto;*/
 	white-space: normal;
 }
 
-.ScrollableDiv
+.scrollableDiv
 {
 	overflow: auto;
 	width: auto;
@@ -246,12 +246,12 @@ a:hover
 	width: 715px;
 }
 
-span.AnswerTextRender > div
+span.answerTextRender > div
 {
 	line-height: 2.0;
 }
 
-span.AnswerTextRender > div:nth-child(2)
+span.answerTextRender > div:nth-child(2)
 {
 	padding-left: 2px;
 }

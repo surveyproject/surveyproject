@@ -42,7 +42,7 @@ namespace Votations.NSurvey.WebControls.UI
             {
                 bool flag = false;
                 StringBuilder builder = new StringBuilder();
-                builder.Append(string.Format("<script type=\"text/javascript\" language=\"javascript\"><!--{0}function {1}{2}(){{/*alert('start validation');*/", Environment.NewLine, GlobalConfig.QuestionValidationFunction, this.UniqueID.Replace(":", "_")));
+                builder.Append(string.Format("<script type=\"text/javascript\"><!--{0}function {1}{2}(){{/*alert('start validation');*/", Environment.NewLine, GlobalConfig.QuestionValidationFunction, this.UniqueID.Replace(":", "_")));
                 foreach (AnswerItem item in this.Answers)
                 {
                     if (item is IClientScriptValidator)

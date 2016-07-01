@@ -1,28 +1,37 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SurveyMobile.aspx.cs" Inherits="Votations.NSurvey.WebAdmin.SurveyMobile" %>
 <%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="Votations.NSurvey.WebControls" %>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head id="Head1" runat="server">
-    <title>The Survey Project Mobile Surveyform</title>
-    <meta id="MetaDescription" name="DESCRIPTION" content="Survey Project is a free and open source web based survey and (data entry) forms toolkit for processing & gathering data online." />
-    <meta id="MetaKeywords" name="KEYWORDS" content="Survey, Project, Nsurvey, c#, open source, websurvey, surveyform, formbuilder, FWS, Fryslan Webservices, codeplex " />
-    <meta id="MetaCopyright" name="COPYRIGHT" content=" 2011 &lt;href='http://www.fryslanwebservices.com'>Fryslan Webservices&lt;/a>" />
-    <meta id="MetaGenerator" name="GENERATOR" content="Survey Project" />
-    <meta id="MetaAuthor" name="AUTHOR" content="Fryslan Webservices" />
+    <title>The Survey Project Mobile Webform</title>
+    <meta charset="UTF-8" />
+    <meta name="application-name" content="Survey&trade; Project Webapplication" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="DESCRIPTION" content="Survey&trade Project is a free and open source survey and (data entry) forms webapplication for processing & gathering data online." />
+    <meta name="KEYWORDS" content="surveyproject, survey, webform, questionnaire, nsurvey, w3devpro" />
+    <meta name="COPYRIGHT" content=" 2016 &lt;href='http://www.w3devpro.com'>W3DevPro&lt;/a>" />
+    <meta name="GENERATOR" content="Survey&trade; Project" />
+    <meta name="AUTHOR" content="W3DevPro" />
+
     <meta name="RESOURCE-TYPE" content="DOCUMENT" />
     <meta name="DISTRIBUTION" content="GLOBAL" />
     <meta name="ROBOTS" content="INDEX, FOLLOW" />
     <meta name="REVISIT-AFTER" content="1 DAYS" />
     <meta name="RATING" content="GENERAL" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- IE only -->
     <meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <!-- Bootstrap -->
-    <link href="content/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="content/bootstrap-theme.min.css" />
-    <link href="nsurveyadmin/css/surveymobile.css" type="text/css" rel="stylesheet" />
+    <link href="content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="content/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <!-- Production -->
+    <link href="nsurveyadmin/css/surveymobile.min.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Development 
+    <link href="nsurveyadmin/css/surveymobile.css" rel="stylesheet" type="text/css" />
+    -->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,40 +44,40 @@
 </head>
 <body>
 
-    <div id="MainContainer" class="container">
-    <form id="Form1" class="form-inline" runat="server">
+        <section id="MainContainer" class="container"><h2 style="visibility:hidden; line-height:0.0em; margin-top:-5px">Survey Project Webform</h2>
+            <form id="Form1" class="form-inline" runat="server">
 
-            <div id="ErrorMessageDiv" class="errorMessageDiv" >
- <asp:Label ID="MessageLabel" runat="server"  CssClass="ErrorMessage" Visible="False"></asp:Label>
-                </div>
-                    <div id="SurveyBoxDiv" class="container panel panel-default">
+                    <header id="ErrorMessageDiv" class="errorMessageDiv">
+                        <asp:Label ID="MessageLabel" runat="server" CssClass="errorMessage" Visible="False"></asp:Label>
+                    </header>
 
-                <vts:SurveyBox ID="SurveyControl" CssClass="surveybox" EnableValidation="false" runat="server">
-                    <QuestionStyle CssClass="questionStyle"></QuestionStyle>
-                    <QuestionValidationMessageStyle CssClass="qvmStyle"></QuestionValidationMessageStyle>
-                    <QuestionValidationMarkStyle CssClass="icon-warning-sign"></QuestionValidationMarkStyle>
-                    <ConfirmationMessageStyle CssClass="cmStyle"></ConfirmationMessageStyle>
-                    <SectionOptionStyle CssClass="soStyle"></SectionOptionStyle>
-                    <ButtonStyle CssClass="btn btn-primary btn-xs bw"></ButtonStyle>
-                    <AnswerStyle CssClass="answerStyle"></AnswerStyle>
-                    <MatrixStyle CssClass="matrixStyle "></MatrixStyle>
-                    <MatrixHeaderStyle CssClass="mhStyle"></MatrixHeaderStyle>
-                    <MatrixItemStyle CssClass="miStyle"></MatrixItemStyle>
-                    <MatrixAlternatingItemStyle CssClass="maiStyle"></MatrixAlternatingItemStyle>
-                    <SectionGridAnswersItemStyle CssClass="sgiStyle"></SectionGridAnswersItemStyle>
-                    <SectionGridAnswersAlternatingItemStyle CssClass="sgaaisStyle"></SectionGridAnswersAlternatingItemStyle>
-                    <SectionGridAnswersStyle CssClass="sgaStyle"></SectionGridAnswersStyle>
-                    <SectionGridAnswersHeaderStyle CssClass="sgahStyle"></SectionGridAnswersHeaderStyle>
-                    <FootStyle CssClass="footStyle"></FootStyle>
-                </vts:SurveyBox>
+                <main id="SurveyBoxDiv" class="container panel panel-default">
 
-      </div>
-    </form>
-        </div>
+                        <vts:SurveyBox ID="SurveyControl" CssClass="surveybox" EnableValidation="false" runat="server">
+                            <QuestionStyle CssClass="questionStyle"></QuestionStyle>
+                            <QuestionValidationMessageStyle CssClass="qvmStyle"></QuestionValidationMessageStyle>
+                            <QuestionValidationMarkStyle CssClass="icon-warning-sign"></QuestionValidationMarkStyle>
+                            <ConfirmationMessageStyle CssClass="cmStyle"></ConfirmationMessageStyle>
+                            <SectionOptionStyle CssClass="soStyle"></SectionOptionStyle>
+                            <ButtonStyle CssClass="btn btn-primary btn-xs bw"></ButtonStyle>
+                            <AnswerStyle CssClass="answerStyle"></AnswerStyle>
+                            <MatrixStyle CssClass="matrixStyle "></MatrixStyle>
+                            <MatrixHeaderStyle CssClass="mhStyle"></MatrixHeaderStyle>
+                            <MatrixItemStyle CssClass="miStyle"></MatrixItemStyle>
+                            <MatrixAlternatingItemStyle CssClass="maiStyle"></MatrixAlternatingItemStyle>
+                            <SectionGridAnswersItemStyle CssClass="sgiStyle"></SectionGridAnswersItemStyle>
+                            <SectionGridAnswersAlternatingItemStyle CssClass="sgaaisStyle"></SectionGridAnswersAlternatingItemStyle>
+                            <SectionGridAnswersStyle CssClass="sgaStyle"></SectionGridAnswersStyle>
+                            <SectionGridAnswersHeaderStyle CssClass="sgahStyle"></SectionGridAnswersHeaderStyle>
+                            <FootStyle CssClass="footStyle"></FootStyle>
+                        </vts:SurveyBox>
 
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+                </main>
+            </form>
+        </section>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
 
 </body>
 </html>
-

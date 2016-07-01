@@ -164,7 +164,7 @@ namespace Votations.NSurvey.WebControls
         /// <summary>
         /// Web control constructor
         /// </summary>
-        public SurveyBox()
+        public SurveyBox(): base(HtmlTextWriterTag.Div)
         {
             if (this.Context != null)
             {
@@ -657,12 +657,11 @@ namespace Votations.NSurvey.WebControls
         }
 
 
-
         /// <summary>
         /// Builds the HTML to show the survey box
         /// </summary>
         protected virtual void BuildSurveyBox(bool enableQuestionDefaults)
-        {
+        {   
             QuestionData data;
             this._questions = new QuestionItemCollection();
             this._questionContainer = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetMainPercentTable();//JJ;
@@ -684,6 +683,8 @@ namespace Votations.NSurvey.WebControls
             Panel subpanel = new Panel { CssClass = CssXmlManager.GetString("BuildSurveyBoxQCSubPanel"), ID="bsbQCSP" };
             panel.Controls.Add(subpanel);
             subpanel.Controls.Add(this._questionContainer);
+
+
             this.Controls.Add(panel);
             //this.Controls.Add(_questionContainer);
             PageOptionData surveyPageOptions = new Surveys().GetSurveyPageOptions(this.SurveyId, this.CurrentPageIndex);
@@ -857,7 +858,7 @@ namespace Votations.NSurvey.WebControls
         protected virtual string GenerateClientSideValidationCode()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append(string.Format("<script type=\"text/javascript\" language=\"javascript\"><!--{0}function {1}{2}(){{/*alert('start survey validation');*/", Environment.NewLine, GlobalConfig.SurveyValidationFunction, this.ID));
+            builder.Append(string.Format("<script type=\"text/javascript\"><!--{0}function {1}{2}(){{/*alert('start survey validation');*/", Environment.NewLine, GlobalConfig.SurveyValidationFunction, this.ID));
             builder.Append(this._questionClientValidationCalls);
             builder.Append("return true;}//--></script>");
             return builder.ToString();

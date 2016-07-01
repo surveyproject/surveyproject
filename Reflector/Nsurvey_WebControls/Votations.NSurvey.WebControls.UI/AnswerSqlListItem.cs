@@ -41,7 +41,7 @@ namespace Votations.NSurvey.WebControls.UI
                    //JJ this.Controls.Add(new LiteralControl(string.Format("{0}<br />", this.Text)));
                     Label label = new Label();
                     label.Text = string.Format("{0}<br />", this.Text);
-                    label.CssClass = "AnswerTextRender";
+                    label.CssClass = "answerTextRender";
                     this.Controls.Add(label);
                 }
             }

@@ -25,10 +25,12 @@ namespace Votations.NSurvey.WebControls.UI
             foreach (AnswerItem item in base.Answers)
             {
                 TableCell cell = new TableCell();
-                cell.VerticalAlign = VerticalAlign.Top;
+                //cell.VerticalAlign = VerticalAlign.Top;
+                cell.CssClass = "cellValign";
                 cell.Controls.Add(item);
                 row.Cells.Add(cell);
                 cell.Width = GetCellWidth(this.ColumnsNumber);//JJ
+
                 num++;
                 if ((base.ColumnsNumber != 0) && (num > base.ColumnsNumber))
                 {
@@ -64,12 +66,11 @@ namespace Votations.NSurvey.WebControls.UI
                 {
                     TableCell cell = new TableCell();
                     cell.Width = GetCellWidth(this.ColumnsNumber);//JJ
-                    cell.VerticalAlign = VerticalAlign.Top;
+
+                    //cell.VerticalAlign = VerticalAlign.Top;
+                    cell.CssClass = "cellValign";
                     if (num2 < base.Answers.Count)
                     {
-                        
-                       
-
                         cell.Width = GetCellWidth(this.ColumnsNumber);
                         cell.Controls.Add(base.Answers[num2]);
                     }

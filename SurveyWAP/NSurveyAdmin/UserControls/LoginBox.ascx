@@ -1,7 +1,7 @@
 <%@ Control Language="C#" AutoEventWireup="true" ClassName="LoginBox" Inherits="Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls.LoginBox" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" Codebehind="LoginBox.ascx.cs" %>
 
                     <div style="position:absolute; padding-left: 3px; padding-top:5px; min-width:210px;">
-                    <asp:Label ID="MessageLabel" runat="server" CssClass="ErrorMessage"  Visible="False"></asp:Label>
+                    <asp:Label ID="MessageLabel" runat="server" CssClass="errorMessage"  Visible="False"></asp:Label>
                     </div>
 
                     <div style="margin-left:5px; margin-top:40px;

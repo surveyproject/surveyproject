@@ -7,7 +7,7 @@
         <tr>
             <td>
                 <asp:ImageButton ID="btnBack" ImageUrl="~/Images/index-icon.png" runat="server" CssClass="buttonIndex"
-                    PostBackUrl="~/NSurveyAdmin/Help/default.aspx" Visible="True" ToolTip="Back to Helpfiles Index" />
+                    PostBackUrl="~/NSurveyAdmin/Help/default.aspx#Completion" Visible="True" ToolTip="Back to Helpfiles Index" />
             </td>
         </tr>
         <tr>
@@ -19,18 +19,14 @@
                 <br />
                 <hr style="color:#e2e2e2;"/>
                 <br />
-
-<hr /><br />
 <br />
-Survey also provides several programmatic ways to hook your own .NET
-methods to integrate it further in your environment or with third party
+Survey Project also provides several programmatic ways to hook custom written .NET
+methods to integrate it further in other web environments or with third party
 tools.<br />
 <br />
-Here are a few code samples taken from the CSharp_Samples directory that
-is available in your Program files/Survey directory when we installed
-Survey using MSI installation.<br />
+Here are a few code samples.<br />
 <br />
-Form Submitting Event<br />
+<u>Form Submitting Event</u><br /><br />
 Using this event we can manage the data posted by the respondent before
 they got stored in the database at this point the voter id is still a
 temporary id and its the last time we can modify voter information or
@@ -72,7 +68,7 @@ Response.Write(String.Format(&quot;Validated = {0}&lt;br&gt;&quot;, voter.Valida
 <br />
 
 <br />
-Form Submitted Event<br />
+<u>Form Submitted Event</u><br /><br />
 Using this event we can manage the data posted by the respondent after
 they got stored in the database at this point the voter id is the one
 stored and returned by the database.<br />
@@ -111,11 +107,7 @@ Response.Write(String.Format(&quot;Validated = {0}&lt;br&gt;&quot;, voter.Valida
 }<br />
 <br />
 
-                <hr style="color:#e2e2e2;"/>
-                <br />
-                <br />
-                <h3>
-                    More Information</h3>
+<hr style="color:#e2e2e2;" /> <br /><h3>More Information</h3><br />
                 <br />
 Thanks%20Message%20Conditions.html<br />
 Survey%20Copyright%20and%20Disclaimer.html<br />

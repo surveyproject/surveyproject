@@ -19,7 +19,8 @@ namespace Votations.NSurvey.Data
         TakeSurvey,
         UsersManager,
         HelpFiles,
-        SurveyList
+        SurveyList,
+        SurveyLayout
     }
 }
 

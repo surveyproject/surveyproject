@@ -57,6 +57,10 @@ namespace Votations.NSurvey.WebAdmin
                 txtSessionFileDeleteTime.Text = SessionFileDeleteTime;
                 txtSingleMode.Text = SingleMode;
                 txtSqlAnswer.Text = SqlAnswer;
+
+                ShowHideDecryptConnectionButton();
+                ShowHideDecryptCultureButton();
+                ShowHideDecryptSmtpButton();
             }
 
         }
@@ -227,9 +231,26 @@ namespace Votations.NSurvey.WebAdmin
 
             config.Save();
 
+            //show decrypt button to unencrypt the connectionstrings in web.config
+            btnDecryptSmtp.Visible = true;
+
             // display a message informing the user that value has changed
             ((PageBase)Page).ShowNormalMessage(MessageLabel, "Updated SMTP");
             MessageLabel.Visible = true;
+        }
+
+
+        // show/ hide Decrypt Misc Settings button depending on state of encryption of web.config file
+
+        private void ShowHideDecryptSmtpButton()
+        {
+            var config = WebConfigurationManager.OpenWebConfiguration("~");
+            var nsurveySection = (AppSettingsSection)config.GetSection("nSurveySettings");
+
+            if (!nsurveySection.SectionInformation.IsProtected)
+                btnDecryptSmtp.Visible = false;
+            else
+                btnDecryptSmtp.Visible = true;
         }
 
 
@@ -249,6 +270,9 @@ namespace Votations.NSurvey.WebAdmin
             nsurveySection.SectionInformation.ForceSave = true;
 
             config.Save(ConfigurationSaveMode.Full);
+
+            //show decrypt button to unencrypt the connectionstrings in web.config
+            btnDecryptSmtp.Visible = false;
 
             // display a message informing the user that value has changed
             ((PageBase)Page).ShowNormalMessage(MessageLabel, "Decrypted SMTP");
@@ -271,9 +295,26 @@ namespace Votations.NSurvey.WebAdmin
 
             config.Save();
 
+            //show decrypt button to unencrypt the connectionstrings in web.config
+            btnDecriptConnections.Visible = true;
+
             // display a message informing the user that value has changed
             ((PageBase)Page).ShowNormalMessage(MessageLabel, "Updated Connection Test Strings");
             MessageLabel.Visible = true;
+        }
+
+
+        // show/ hide Decrypt Connection button depending on state of encryption of web.config file
+
+        private void ShowHideDecryptConnectionButton()
+        {
+            Configuration config = WebConfigurationManager.OpenWebConfiguration(Request.ApplicationPath);
+            ConfigurationSection connectionStringsSection = config.GetSection("connectionStrings");
+
+            if (!connectionStringsSection.SectionInformation.IsProtected)
+                btnDecriptConnections.Visible = false;
+            else
+                btnDecriptConnections.Visible = true;
         }
 
 
@@ -294,8 +335,11 @@ namespace Votations.NSurvey.WebAdmin
 
                 config.Save(ConfigurationSaveMode.Full);
 
-                // display a message informing the user that value has changed
-                ((PageBase)Page).ShowNormalMessage(MessageLabel, "Decripted ConnStrings");
+            //hide decrypt button after unencrypting the connections
+            btnDecriptConnections.Visible = false;
+
+            // display a message informing the user that value has changed
+            ((PageBase)Page).ShowNormalMessage(MessageLabel, "Decripted ConnStrings");
                 MessageLabel.Visible = true;
             
         }
@@ -318,11 +362,28 @@ namespace Votations.NSurvey.WebAdmin
 
                 configuration.Save();
 
+                //show decrypt button to unencrypt the Culture in web.config
+                btnCultureDecript.Visible = true;
+
                 // display a message informing the user that value has changed
                 ((PageBase)Page).ShowNormalMessage(MessageLabel, "Updated:" + section.UICulture.ToString());
                 MessageLabel.Visible = true;
             }
         }
+
+        // show/ hide Decrypt Culture button depending on state of encryption of web.config file
+
+        private void ShowHideDecryptCultureButton()
+        {
+            Configuration configuration = WebConfigurationManager.OpenWebConfiguration("~");
+            var section = (GlobalizationSection)configuration.GetSection("system.web/globalization");
+
+            if (!section.SectionInformation.IsProtected)
+                btnCultureDecript.Visible = false;
+            else
+                btnCultureDecript.Visible = true;
+        }
+
 
 
         protected void btnCultureDecript_Click(object sender, EventArgs e)
@@ -345,6 +406,9 @@ namespace Votations.NSurvey.WebAdmin
                 section.SectionInformation.ForceSave = true;
 
                 configuration.Save(ConfigurationSaveMode.Full);
+
+                //hide decrypt button to unencrypt the Culture in web.config
+                btnCultureDecript.Visible = false;
 
                 // display a message informing the user that value has changed
                 ((PageBase)Page).ShowNormalMessage(MessageLabel, "Updated:" + section.UICulture.ToString());

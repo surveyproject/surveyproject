@@ -50,7 +50,7 @@ namespace Votations.NSurvey.WebControls.ThirdPartyItems
                 Label child = new Label();
                 child.ControlStyle.Font.Bold = true;
                 child.Text = label;
-                child.CssClass = "AnswerTextRender";//JJ
+                child.CssClass = "answerTextRender";//JJ
                 cell.Controls.Add(child);
                 cell.VerticalAlign = VerticalAlign.Top;
                 if (comment != null)
@@ -101,6 +101,7 @@ namespace Votations.NSurvey.WebControls.ThirdPartyItems
                     {
                         //this.Controls.Add(new LiteralControl("<div style='color:red; display:inline-flex;'>&nbsp; * &nbsp;</div>"));
                         Label mandatoryLabel = new Label();
+                        mandatoryLabel.ToolTip = ResourceManager.GetString("MandatoryAnswerTitle");
                         mandatoryLabel.CssClass = CssXmlManager.GetString("AnswerMandatorySign");
                         this.Controls.Add(mandatoryLabel);
                     }
@@ -264,7 +265,7 @@ namespace Votations.NSurvey.WebControls.ThirdPartyItems
         {
             if (((this.EnableValidation && (this.JavascriptCode != null)) && ((this.JavascriptCode.Length != 0) && (this.JavascriptFunctionName != null))) && ((this.JavascriptFunctionName.Length != 0) && !this.Page.ClientScript.IsClientScriptBlockRegistered(this.JavascriptFunctionName)))
             {
-                this.Page.ClientScript.RegisterClientScriptBlock(this.GetType(), this.JavascriptFunctionName, string.Format("<script type=\"text/javascript\" language=\"javascript\"><!--{0}{1}//--></script>", Environment.NewLine, this.JavascriptCode));
+                this.Page.ClientScript.RegisterClientScriptBlock(this.GetType(), this.JavascriptFunctionName, string.Format("<script type=\"text/javascript\"><!--{0}{1}//--></script>", Environment.NewLine, this.JavascriptCode));
             }
             base.OnPreRender(e);
         }

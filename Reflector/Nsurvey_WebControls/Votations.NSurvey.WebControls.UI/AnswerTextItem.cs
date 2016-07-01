@@ -11,7 +11,7 @@ namespace Votations.NSurvey.WebControls.UI
            //JJ this.Controls.Add(new LiteralControl(this.Text));
             Label label = new Label();
             label.Text = this.Text;
-            label.CssClass = "AnswerTextRender";
+            label.CssClass = "answerTextRender";
             this.Controls.Add(label);
         }
 

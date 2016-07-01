@@ -56,7 +56,7 @@ namespace SurveyWAP
             Response.Write( "<p>" + exc.Message + "\n" + exc.InnerException.Message +  "</p>\n");
             Response.Write("Please return to the <a href='" + HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Authority + HttpContext.Current.Request.ApplicationPath + "/default.aspx'>Default Page</a>\n");
 
-            Response.Write("<br /><br /> <hr style='color:#e2e2e2;'/><br /><br />&copy; Fryslan Webservices&trade; 2014 </div> ");
+            Response.Write("<br /><br /> <hr style='color:#e2e2e2;'/><br /><br />&copy; W3DevPro&trade; 2014 </div> ");
 
             // Log the exception and notify system operators
             ExceptionUtility.LogException(exc, "DefaultPage");

@@ -48,6 +48,7 @@ namespace Votations.NSurvey.WebControls.UI
                     {
                         //this.Controls.Add(new LiteralControl("<div style='color:red; display:inline-flex;'>&nbsp; * &nbsp;</div>"));
                         Label mandatoryLabel = new Label();
+                        mandatoryLabel.ToolTip = ResourceManager.GetString("MandatoryAnswerTitle");
                         mandatoryLabel.CssClass = CssXmlManager.GetString("AnswerMandatorySign");
                         this.Controls.Add(mandatoryLabel);
                     }

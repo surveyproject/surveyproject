@@ -62,6 +62,7 @@ namespace Votations.NSurvey.WebControls.UI
                     if (this.Mandatory)
                     {
                         Label mandatoryLabel = new Label();
+                        mandatoryLabel.ToolTip = ResourceManager.GetString("MandatoryAnswerTitle");
                         mandatoryLabel.CssClass = CssXmlManager.GetString("AnswerMandatorySign");
                         this.Controls.Add(mandatoryLabel);
                         }
@@ -136,7 +137,7 @@ namespace Votations.NSurvey.WebControls.UI
         {
             if (((this.EnableValidation && (this.JavascriptCode != null)) && ((this.JavascriptCode.Length != 0) && (this.JavascriptFunctionName != null))) && ((this.JavascriptFunctionName.Length != 0) && !this.Page.ClientScript.IsClientScriptBlockRegistered(this.JavascriptFunctionName)))
             {
-                this.Page.ClientScript.RegisterClientScriptBlock(this.GetType(), this.JavascriptFunctionName, string.Format("<script type=\"text/javascript\" language=\"javascript\"><!--{0}{1}//--></script>", Environment.NewLine, this.JavascriptCode));
+                this.Page.ClientScript.RegisterClientScriptBlock(this.GetType(), this.JavascriptFunctionName, string.Format("<script type=\"text/javascript\" ><!--{0}{1}//--></script>", Environment.NewLine, this.JavascriptCode));
             }
             base.OnPreRender(e);
         }

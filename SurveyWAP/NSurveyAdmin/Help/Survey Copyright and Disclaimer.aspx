@@ -48,7 +48,7 @@ For questions concerning this license:
 <br /><br />
                 <hr style="color:#e2e2e2;" />
                 <br />
-&copy;2013 Fryslan Webservices&trade;. <br />All rights reserved.<br />
+&copy;2013 W3DevPro&trade;. <br />All rights reserved.<br />
 <br />
 <br />
             </td>

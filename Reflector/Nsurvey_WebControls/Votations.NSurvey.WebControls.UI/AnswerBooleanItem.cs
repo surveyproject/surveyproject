@@ -34,7 +34,7 @@ namespace Votations.NSurvey.WebControls.UI
 
                     Label label = new Label();
                     label.Text = this.Text;
-                    label.CssClass = "AnswerTextRender";
+                    label.CssClass = "answerTextRender";
                     this.Controls.Add(label);
                 }
             }

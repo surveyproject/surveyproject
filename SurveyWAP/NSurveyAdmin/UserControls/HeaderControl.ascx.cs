@@ -1,5 +1,5 @@
 /**************************************************************************************************
-	Survey changes: copyright (c) 2010, Fryslan Webservices TM (http://survey.codeplex.com)	
+	Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -184,7 +184,8 @@ namespace Votations.NSurvey.WebAdmin.UserControls
             if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessFormBuilder)
                 || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessLibrary) || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.ManageLibrary)
                 || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessQuestionGroupRight) || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessAnswerTypeEditor)
-                || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessRegExEditor))
+                || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessRegExEditor) || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.SurveyLayoutRight)
+                ) 
             {
                 mnuMain.Items.Add(new MenuItem(((PageBase)Page).GetPageResource("DesignerHyperlink"), null, null, String.Empty));
                 if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessFormBuilder))

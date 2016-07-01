@@ -7,7 +7,7 @@
   <tr>
     <td></td></tr>
   <tr>
-    <td class="contentCell" valign="top"> <asp:Label ID="MessageLabel" runat="server"  CssClass="ErrorMessage" Visible="False"></asp:Label>
+    <td class="contentCell" valign="top"> <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
     
       <table class="innerText">
         <tr>

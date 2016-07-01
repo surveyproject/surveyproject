@@ -93,7 +93,7 @@ namespace Votations.NSurvey.WebControls.UI
         {
             Table t = this.BuildMatrixLayout();
             //t.Width = new Unit(100.0, UnitType.Percentage);
-            this.Controls.Add(EncloseInScrollableDiv( t));
+            this.Controls.Add(EncloseInScrollableDiv(t));
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Votations.NSurvey.WebControls.UI
             {
                 bool flag = false;
                 StringBuilder builder = new StringBuilder();
-                builder.Append(string.Format("<script type=\"text/javascript\" language=\"javascript\"><!--{0}function {1}{2}(){{/*alert('start validation');*/", Environment.NewLine, GlobalConfig.QuestionValidationFunction, this.UniqueID.Replace(":", "_")));
+                builder.Append(string.Format("<script type=\"text/javascript\"><!--{0}function {1}{2}(){{/*alert('start validation');*/", Environment.NewLine, GlobalConfig.QuestionValidationFunction, this.UniqueID.Replace(":", "_")));
                 for (int i = 0; i < this.ChildQuestions.Count; i++)
                 {
                     foreach (AnswerItem item in this.ChildQuestions[i].Answers)
