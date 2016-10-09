@@ -110,7 +110,7 @@ using Votations.NSurvey.Emailing;
        ex.InnerException.InnerException.GetType().ToString() : ex.GetType().ToString();
       invitationLog.SurveyId = surveyId;
       invitationLog.Email = email;
-      invitationLog.ErrorDate = DateTime.Now;
+      invitationLog.ErrorDate = DateTime.UtcNow;
       invitationLogs.InvitationLogs.AddInvitationLogsRow(invitationLog);
      
       // Log error in the database

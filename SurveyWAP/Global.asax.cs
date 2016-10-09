@@ -26,6 +26,7 @@ namespace SurveyWAP
 
         void Application_Error(object sender, EventArgs e)
         {
+            // https://msdn.microsoft.com/en-us/library/24395wz3.aspx
             // Code that runs when an unhandled error occurs
 
             // Get the exception object.
@@ -38,10 +39,15 @@ namespace SurveyWAP
                 // some errors using URLs with "NoCatch" in them;
                 // ignore these here to simulate what would happen
                 // if a global.asax handler were not implemented.
-                if (exc.Message.Contains("NoCatch") || exc.Message.Contains("maxUrlLength"))
-                 return;                
 
-                Server.Transfer("HttpErrorPage.aspx");
+                //if (exc.Message.Contains("NoCatch") || exc.Message.Contains("maxUrlLength"))
+                // return;
+                HttpException ex = null;
+                ex = (HttpException)Server.GetLastError();
+                int httpCode = ex.GetHttpCode();
+
+                ExceptionUtility.LogException(ex, "HttpError 404: page does not exist");
+                //Server.Transfer("HttpErrorPage.aspx");
             }
 
             // For other kinds of errors give the user some information

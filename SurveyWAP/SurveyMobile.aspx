@@ -43,6 +43,8 @@
     <link rel="SHORTCUT ICON" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
+    
+<IFRAME ID="KeepAliveFrame" src="KeepSessionAlive.aspx" frameBorder="0" width="0" height="0" runat="server"></IFRAME>
 
         <section id="MainContainer" class="container"><h2 style="visibility:hidden; line-height:0.0em; margin-top:-5px">Survey Project Webform</h2>
             <form id="Form1" class="form-inline" runat="server">
@@ -77,7 +79,7 @@
         </section>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<%= Page.ResolveUrl("~")%>Scripts/bootstrap.min.js"></script>
 
 </body>
 </html>

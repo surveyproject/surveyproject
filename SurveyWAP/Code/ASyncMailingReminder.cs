@@ -45,7 +45,7 @@ namespace Votations.NSurvey.WebAdmin
 				IEmailing mailService = EmailingFactory.Create();
 				EmailingMessage message = new EmailingMessage();
 				message.FromEmail = "mail@surveyproject.org";
-				message.Subject = DateTime.Now.ToString();
+				message.Subject = DateTime.UtcNow.ToString();
 				message.Body = "ok";
 				message.ToEmail = "mail@surveyproject.org";
 				mailService.SendEmail(message);

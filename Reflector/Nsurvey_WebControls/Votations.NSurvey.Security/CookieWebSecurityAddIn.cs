@@ -146,7 +146,7 @@ namespace Votations.NSurvey.Security
         public void ProcessVoterData(VoterAnswersData voter)
         {
             HttpCookie cookie = new HttpCookie("VotationsSurvey" + this.SurveyId, "1");
-            cookie.Expires = DateTime.Now.AddMinutes((double) new Surveys().GetCookieExpiration(this.SurveyId));
+            cookie.Expires = DateTime.UtcNow.AddMinutes((double) new Surveys().GetCookieExpiration(this.SurveyId));
             HttpContext.Current.Response.Cookies.Add(cookie);
         }
 

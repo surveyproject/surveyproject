@@ -76,7 +76,7 @@ namespace Votations.NSurvey.Helpers
                     {
                         if (HttpContext.Current.Cache["NSurvey:PipeData"] == null)
                         {
-                            HttpContext.Current.Cache.Insert("NSurvey:PipeData", new Surveys().GetSurveyPipeDataFromQuestionId(questionId), null, DateTime.Now.AddMinutes(1.0), TimeSpan.Zero);
+                            HttpContext.Current.Cache.Insert("NSurvey:PipeData", new Surveys().GetSurveyPipeDataFromQuestionId(questionId), null, DateTime.UtcNow.AddMinutes(1.0), TimeSpan.Zero);
                         }
                         this._pipeData = (PipeData) HttpContext.Current.Cache["NSurvey:PipeData"];
                     }

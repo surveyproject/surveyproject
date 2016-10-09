@@ -156,7 +156,7 @@ III.&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Designer & Form Builder <a na
 4	&nbsp;	15	&nbsp;	2	&nbsp;		&nbsp;	<a href="new/Branching conditions.aspx" title=" Branching Conditions " > Branching Conditions </a>	<br />
 4	&nbsp;	15	&nbsp;	3	&nbsp;		&nbsp;	<a href="new/Skip Logic Conditions.aspx" title=" Skip Logic Conditions " > Skip Logic Conditions </a>	<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
-4	&nbsp;	16	&nbsp;		&nbsp;		&nbsp;	 <u>Survey Rating</u> 	<a name="#Rating" ></a><br />
+4	&nbsp;	16	&nbsp;		&nbsp;		&nbsp;	 <u>Survey Rating</u> 	<a name="Rating" ></a><br />
 4	&nbsp;	16	&nbsp;	1	&nbsp;		&nbsp;	<a href="new/Rating_Introduction.aspx" title=" Rating Introduction " > Rating Introduction </a>	<br />
             <br /><br />
 IV.	&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Campaigns <a name="Campaigns" ></a></strong>	<br />

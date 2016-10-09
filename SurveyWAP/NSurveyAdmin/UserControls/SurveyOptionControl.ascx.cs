@@ -233,7 +233,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
         {
 
 
-            DateFormatLabel.Text = (DateTime.Now).ToShortDateString();
+            DateFormatLabel.Text = (DateTime.UtcNow).ToShortDateString();
 
             // Retrieve the survey data
             SurveyData surveyData = new Surveys().GetSurveyById(SurveyId, "");
@@ -460,7 +460,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
             surveyRow.ResultsDisplayTimes = 0;
             surveyRow.SetOpenDateNull();
             surveyRow.SetCloseDateNull();
-            surveyRow.CreationDate = DateTime.Now;
+            surveyRow.CreationDate = DateTime.UtcNow;
             surveyRow.IPExpires = 1440;
             surveyRow.CookieExpires = 1440;
             surveyRow.OnlyInvited = false;

@@ -168,6 +168,7 @@
     <Content Include="Images\view.png" />
     <Content Include="Images\warning-icn.png" />
     <Content Include="Images\yellowwarning_16px.gif" />
+    <Content Include="KeepSessionAlive.aspx" />
     <Content Include="NSurveyAdmin\AccessDenied.aspx" />
     <Content Include="NSurveyAdmin\AjaxWebMethodsProxy.aspx" />
     <Content Include="NSurveyAdmin\CampaignStart.aspx" />
@@ -1284,6 +1285,13 @@
     </Compile>
     <Compile Include="HttpErrorPage.aspx.designer.cs">
       <DependentUpon>HttpErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KeepSessionAlive.aspx.cs">
+      <DependentUpon>KeepSessionAlive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KeepSessionAlive.aspx.designer.cs">
+      <DependentUpon>KeepSessionAlive.aspx</DependentUpon>
     </Compile>
     <Compile Include="NSurveyAdmin\AccessDenied.aspx.cs">
       <DependentUpon>AccessDenied.aspx</DependentUpon>

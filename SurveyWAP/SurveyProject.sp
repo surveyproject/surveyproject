@@ -7,10 +7,10 @@
       </description>
       <iconFile>favicon.ico</iconFile>
       <owner>
-        <name>Fryslan Webservices™</name>
-        <organization>FryslanWebservices.com</organization>
-        <url>http://www.fryslanwebservices.com</url>
-        <email><![CDATA[Contact FWS via the <a href="http://www.fryslanwebservices.com/Contact/tabid/205/language/en-US/Default.aspx" target="_new">Contact Page</a>]]></email>
+        <name>W3DevPro™</name>
+        <organization>w3devpro.com</organization>
+        <url>http://www.w3devpro.com</url>
+        <email><![CDATA[Contact WDP via the <a href="http://www.w3devpro.com/contact.cshtml" target="_new">Contact Page</a>]]></email>
       </owner>      
     </package>
   </packages>

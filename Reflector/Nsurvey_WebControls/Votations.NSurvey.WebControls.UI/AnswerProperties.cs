@@ -39,7 +39,7 @@ namespace Votations.NSurvey.WebControls.UI
                 obj2 = this.Deserialize(answerId);
                 if (obj2 != null)
                 {
-                    this._webCache.Insert("nsurvey:answ" + answerId + ":properties", obj2, null, DateTime.Now.AddHours(1.0), TimeSpan.Zero);
+                    this._webCache.Insert("nsurvey:answ" + answerId + ":properties", obj2, null, DateTime.UtcNow.AddHours(1.0), TimeSpan.Zero);
                 }
             }
             else if ((this._webCache != null) && (this._webCache["nsurvey:answ" + answerId + ":properties"] != null))
