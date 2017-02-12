@@ -83,6 +83,7 @@
 
                         </li><li> 
 <asp:Button ID="CreateTypeButton" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Create type"></asp:Button>
+<asp:Button ID="CancelButton" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Cancel"></asp:Button>
 <asp:Button ID="ApplyChangesButton" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Apply changes"></asp:Button>
 <asp:Button ID="DeleteTypeButton" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Delete type"></asp:Button>
 <asp:Button ID="MakeBuiltInButton" CssClass="btn btn-primary btn-xs bw" Visible="False" runat="server" Text="Make Built In"></asp:Button>

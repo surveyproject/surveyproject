@@ -3,15 +3,15 @@
 <!DOCTYPE html>
 <html>
 <head id="Head1" runat="server">
-    <title>The Survey Project Mobile Webform</title>
+    <title>SurveyProject&trade; Webform</title>
     <meta charset="UTF-8" />
     <meta name="application-name" content="Survey&trade; Project Webapplication" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="DESCRIPTION" content="Survey&trade Project is a free and open source survey and (data entry) forms webapplication for processing & gathering data online." />
+    <meta name="DESCRIPTION" content="SurveyProject&trade;  is a free and open source survey and (data entry) forms webapplication for processing & gathering data online." />
     <meta name="KEYWORDS" content="surveyproject, survey, webform, questionnaire, nsurvey, w3devpro" />
     <meta name="COPYRIGHT" content=" 2016 &lt;href='http://www.w3devpro.com'>W3DevPro&lt;/a>" />
-    <meta name="GENERATOR" content="Survey&trade; Project" />
+    <meta name="GENERATOR" content="SurveyProject&trade; " />
     <meta name="AUTHOR" content="W3DevPro" />
 
     <meta name="RESOURCE-TYPE" content="DOCUMENT" />

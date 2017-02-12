@@ -27,7 +27,8 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
                 LocalizePage();
                 BindFields();
                 BindLanguages();
-              
+                cssBtnID.Visible = false;
+
             }
 
             //CKEditor config:
@@ -38,7 +39,7 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
             txtPageHeader.config.skin = "moonocolor";
 
         }
-       
+
 
         private void SetupSecurity()
         {
@@ -66,14 +67,14 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
         private void BindLanguages()
         {
             MultiLanguageMode languageMode = MultiLanguageMode.UserSelection;
-            
-                languageMode = new MultiLanguages().GetMultiLanguageMode(SurveyId);
-            if ( languageMode != MultiLanguageMode.None)
+
+            languageMode = new MultiLanguages().GetMultiLanguageMode(SurveyId);
+            if (languageMode != MultiLanguageMode.None)
             {
                 MultiLanguageData surveyLanguages;
-               
-                    surveyLanguages = new MultiLanguages().GetSurveyLanguages(SurveyId);
-              ;
+
+                surveyLanguages = new MultiLanguages().GetSurveyLanguages(SurveyId);
+                ;
                 LanguagesDropdownlist.Items.Clear();
                 foreach (MultiLanguageData.MultiLanguagesRow language in surveyLanguages.MultiLanguages)
                 {
@@ -99,7 +100,7 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
         private void BindFields()
         {
             SQLServerDAL.SurveyLayout sl = new SQLServerDAL.SurveyLayout();
-            SurveyLayoutData ud = sl.SurveyLayoutGet(((PageBase)Page).SurveyId,LanguagesDropdownlist.SelectedValue);
+            SurveyLayoutData ud = sl.SurveyLayoutGet(((PageBase)Page).SurveyId, LanguagesDropdownlist.SelectedValue);
             string[] names = Directory.GetFiles(Constants.Constants.GetFilePathCSS(SurveyId));
             int i;
 
@@ -126,15 +127,19 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
                     }
                 }
 
-
                 if (!cssSelected) ddlTemplate.SelectedIndex = 0;
+
                 txtPageFooter.Text = ud.SurveyLayout[0].SurveyFooterText;
                 txtPageHeader.Text = ud.SurveyLayout[0].SurveyHeaderText;
             }
         }
 
-
-       protected void OnCssFileUpload(object sender, CommandEventArgs e)
+        /// <summary>
+        /// Command activated on clicking BtnCssUpload
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void OnCssFileUpload(object sender, CommandEventArgs e)
         {
             string filename = fuCss.FileName;
 
@@ -145,14 +150,24 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
                 if (Path.GetExtension(filename).ToLower() == ".css")
                 {
 
-                    fuCss.SaveAs(Constants.Constants.GetFilePathCSS(SurveyId)+ filename);
+                    fuCss.SaveAs(Constants.Constants.GetFilePathCSS(SurveyId) + filename);
+                    cssBtnID.Visible = true;
+                    ShowNormalMessage(MessageLabel, GetPageResource("FileUploadedMessage"));
 
                     BindFields();
+                }
+                else
+                {
+                    ShowErrorMessage(MessageLabel, GetPageResource("InvalidFileTypeLayoutMsg"));
                 }
             }
         }
 
-
+        /// <summary>
+        /// Command on LayoutSaveButton
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void OnSave(object sender, CommandEventArgs e)
         {
             SQLServerDAL.SurveyLayout sl = new SQLServerDAL.SurveyLayout();
@@ -165,7 +180,9 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
             slr.SurveyHeaderText = txtPageHeader.Text;
             slr.SurveyFooterText = txtPageFooter.Text;
             sld.SurveyLayout.AddSurveyLayoutRow(slr);
-            sl.SurveyLayoutUpdate(sld,LanguagesDropdownlist.SelectedValue);
+            sl.SurveyLayoutUpdate(sld, LanguagesDropdownlist.SelectedValue);
+
+            ShowNormalMessage(MessageLabel, GetPageResource("SurveyLayoutSavedMsg"));
 
         }
 
@@ -175,6 +192,9 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
             string cssToDelete = Constants.Constants.GetFilePathCSS(SurveyId) + ddlTemplate.SelectedItem.Text;
             File.Delete(cssToDelete);
             BindFields();
+
+            ddlTemplate.SelectedIndex = 0;
+            ShowNormalMessage(MessageLabel, GetPageResource("UploadFileDeletedMessage"));
 
         }
 
@@ -211,6 +231,9 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
             EditCssTextBox.Text = string.Empty;
             EditCssPlaceHolder.Visible = false;
             pnlHdrFooter.Visible = true;
+
+            ddlTemplate.SelectedIndex = 0;
+            ShowNormalMessage(MessageLabel, GetPageResource("CssFileUpdatedMsg"));
         }
 
         protected void btnCssEdit_Click(object sender, EventArgs e)
@@ -223,10 +246,23 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
             EditCssTextBox.Focus();
             EditCssTextBox.Text = File.ReadAllText(Constants.Constants.GetFilePathCSS(SurveyId) + ddlTemplate.SelectedItem.Text);
         }
-        
+
         protected void LanguagesDropdownlist_SelectedIndexChanged1(object sender, EventArgs e)
         {
             BindFields();
+        }
+
+        protected void TemplatesDropdownlist_SelectedIndexChanged(object sender, EventArgs e)
+        {   
+            if(ddlTemplate.SelectedIndex != 0)
+            {
+            cssBtnID.Visible = true;
+            }
+            else
+            {
+                cssBtnID.Visible = false;
+            }
+
         }
 
 

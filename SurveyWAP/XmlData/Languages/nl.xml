@@ -3225,7 +3225,7 @@ Vriendelijke groet
 		<value>Gebruiksvriendelijke URL:</value>
 	</data>
 	<data version="2.0" id="1063" name="FriendlyUrl">
-		<value>Opmerking: URL indeling = http:// [UwWebSiteUrl] / survey.aspx / [&lt;b&gt;UwUrlNaam&lt;/b&gt;] </value>
+		<value>Opmerking: URL indeling = http:// [UwWebSiteUrl] / surveymobile.aspx / [&lt;b&gt;UwUrlNaam&lt;/b&gt;] </value>
 	</data>
 	<data version="2.0" id="1064" name="BtnFriendly">
 		<value>Opslaan</value>
@@ -3509,5 +3509,17 @@ Vriendelijke groet
   </data>
   <data version="2.4" id="1157" name="MandatoryAnswerTitle">
     <value>Verplicht Antwoord</value>
+  </data>
+  <data version="2.4" id="1158" name="FriendlyNameDeletedMsg">
+    <value>Gebruiksvriendelijk URL verwijderd</value>
+  </data>
+  <data version="2.4" id="1160" name="SurveyLayoutSavedMsg">
+    <value>Layout correct opgeslagen</value>
+  </data>
+  <data version="2.4" id="1161" name="InvalidFileTypeLayoutMsg">
+    <value>Verkeerd bestandstype: alleen .CSS</value>
+  </data>
+  <data version="2.4" id="1162" name="CssFileUpdatedMsg">
+    <value>CSS bestand geupdate</value>
   </data>
 </root>

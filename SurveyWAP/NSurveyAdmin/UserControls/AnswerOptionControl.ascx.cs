@@ -195,15 +195,15 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 			MessageLabel.Visible = false;
 			DeleteAnswerButton.Attributes.Add("onClick",
 							"javascript:if(confirm('" +((PageBase)Page).GetPageResource("DeleteAnswerConfirmationMessage")+ "')== false) return false;");
-		
-            //if its not postback ... which is on the initial loading of the page...
-			if (!Page.IsPostBack)
-			{
-				BindData();
-			}
 
-           // AnswerTypeData typeData = new AnswerTypes().GetAnswerTypeById(int.Parse(AnswerTypeDropDownList.SelectedValue));
-           // SetUIState(typeData.AnswerTypes[0].TypeMode, false);
+            //if its not postback ... which is on the initial loading of the page...
+            if (!Page.IsPostBack)
+            {
+                BindData();
+            }
+
+                AnswerTypeData typeData = new AnswerTypes().GetAnswerTypeById(int.Parse(AnswerTypeDropDownList.SelectedValue));
+                SetUIState(typeData.AnswerTypes[0].TypeMode, false);
         }
 
 		private void LocalizePage()
@@ -253,6 +253,14 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 
         }
 
+        /// <summary>
+        /// Creates Answertypes Dropdownlist
+        /// Directs to Edit or Creation (new) mode -> always CreationMode which makes all invisible (untill DDL selected); except on Edit  Answer
+        /// Binddata() also called from EditSingelQuestion code:
+        /// * addnew (answer) button
+        /// * edit (answer) button
+        /// * language DDL
+        /// </summary>
 		public void BindData()
 		{
 			if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || 
@@ -270,9 +278,9 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 			AnswerTypeDropDownList.DataValueField = "AnswerTypeID";
 			AnswerTypeDropDownList.DataBind();
 			((PageBase)Page).TranslateListControl(AnswerTypeDropDownList);
-            //AnswerTypeDropDownList.SelectedValue = "1";
+            AnswerTypeDropDownList.SelectedValue = "1";
 
-            AnswerTypeDropDownList.Items.Insert(0, new ListItem(((PageBase)Page).GetPageResource("SelectAnswerTypeDDL"), "-1"));
+            //AnswerTypeDropDownList.Items.Insert(0, new ListItem(((PageBase)Page).GetPageResource("SelectAnswerTypeDDL"), "-1"));
 
 
             AvailablePublishersListBox.DataSource = new Answers().GetPublishersList(AnswerId);
@@ -305,6 +313,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 
 
 			// Check if any answer has been assigned, if so: go to the edit mode
+            // AnswerID only assigned on Edit from EditSingleQuestionAnswer code
 			if (AnswerId == -1)
 			{
 				SwitchToCreationMode();
@@ -317,7 +326,8 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 
 
 		/// <summary>
-		/// Setup the control in creation mode
+		/// Setup the controls in creation mode
+        /// including visibility of li (list) elements
 		/// </summary>
 		private void SwitchToCreationMode()
 		{
@@ -391,12 +401,12 @@ namespace Votations.NSurvey.WebAdmin.UserControls
             ExtendedPlaceholder.Visible = false;
 
 
-            aidLI.Visible = false;
-            aaLI.Visible = false;
-            atLI.Visible = false;
-            aiuLI.Visible = false;
-            accLI.Visible = false;
-            seaLI.Visible = false;
+            aidLI.Visible = true;
+            aaLI.Visible = true;
+            atLI.Visible = true;
+            aiuLI.Visible = true;
+            accLI.Visible = true;
+            seaLI.Visible = true;
 
             dtLI.Visible = false;
             revLI.Visible = false;
@@ -410,6 +420,8 @@ namespace Votations.NSurvey.WebAdmin.UserControls
             apaLI.Visible = false;
             arLI.Visible = false;
             sLI.Visible = false;
+
+            //exLI.Visible = false;
 
 
         }
@@ -474,7 +486,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 		}
 
 		/// <summary>
-		/// Enable / disable fields depending on the type mode choosen
+		/// Enable / disable fields depending on the type mode chosen
 		/// </summary>
 		/// <param name="typeMode"></param>
 		private void SetUIState(int typeMode, bool resetValues)
@@ -579,10 +591,11 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 
             ConnectionsPlaceHolder.Visible = isSubscriber && AnswerId != -1;
 
-            if (AnswerId != -1 && (isExtended || isFileUpload))
-			{
+            if (AnswerId != -1 && isExtended)
+                {
 				SetExtendedProperties();
-			}
+                //exLI.Visible = true;
+            }
 			else
 			{
 				ExtendedPropertiesPlaceholder.Controls.Clear();
@@ -601,8 +614,8 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 
 			if (((AnswerTypeMode)answers.Answers[0].TypeMode & AnswerTypeMode.ExtendedType) > 0)
 			{
-
-				ExtendedPlaceholder.Visible = true;
+                //exLI.Visible = true;
+                ExtendedPlaceholder.Visible = true;
 				ExtendedPropertiesPlaceholder.Visible = true;
 				AnswerItem answerItem = 
 					AnswerItemFactory.Create(answers.Answers[0], null, null, AnswerSelectionMode.None, null,
@@ -612,15 +625,17 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 
 				if (extendedItem != null)
 				{
-					extendedItem.RestoreProperties();
+                    extendedItem.RestoreProperties();
+                    // answeruploaditem.cs override control:
 					ExtendedPropertiesPlaceholder.Controls.Add(extendedItem.GeneratePropertiesUI());
-				}
+                }
 			}
 			else
 			{
 				ExtendedPropertiesPlaceholder.Controls.Clear();
 				ExtendedPropertiesPlaceholder.Visible = false;
-				ExtendedPlaceholder.Visible = false;
+                //exLI.Visible = false;
+                ExtendedPlaceholder.Visible = false;
 			}
 		}
 

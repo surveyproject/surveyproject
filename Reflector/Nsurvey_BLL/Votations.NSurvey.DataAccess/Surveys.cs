@@ -364,6 +364,11 @@ namespace Votations.NSurvey.DataAccess
         {
             SurveyFactory.Create().SetFriendlyName(surveyId, friendlyName);
         }
+
+        public void DeleteFriendlyName(int surveyId)
+        {
+            SurveyFactory.Create().DeleteFriendlyName(surveyId);
+        }
     }
 }
 

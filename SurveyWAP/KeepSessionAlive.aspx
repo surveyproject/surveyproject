@@ -6,7 +6,8 @@
 <head runat="server">
     <title>SP KeepSession Alive</title>
 
-<meta id="MetaRefresh" http-equiv="refresh" content="21600;url=KeepSessionAlive.aspx" runat="server" />
+<!-- refresh rate: content = seconds -->
+<meta id="MetaRefresh" http-equiv="refresh" content="600;url=KeepSessionAlive.aspx" runat="server" />
 
 <script>
    window.status = "<%=WindowStatusText%>";

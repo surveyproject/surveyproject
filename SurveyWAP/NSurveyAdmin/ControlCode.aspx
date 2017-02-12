@@ -24,10 +24,7 @@
                 Deployment URL:</asp:Literal>
                 </div>
                 <br />
-                Legacy:
-                <asp:HyperLink ID="CodeHyperLink" Target="_blank" runat="server">HyperLink</asp:HyperLink>
-                <br />
-                Default:
+                
                 <asp:HyperLink ID="CodeMobileHyperLink" Target="_blank" runat="server">MobileHyperLink</asp:HyperLink>
                 <br />
                 &nbsp;
@@ -41,14 +38,20 @@
                 <div style="float: right; position: relative; top: -37px; margin-right: 65px;">
                     <asp:Button ID="btnFriendly" CssClass="btn btn-primary btn-xs bw" runat="server" />
                 </div>
+                <asp:Literal ID="FriendlyUrl" runat="server" EnableViewState="False">Note: Friendly Url format = http:// [YourWebSiteUrl] / surveymobile.aspx / [<b>YourFriendlyName</b>]</asp:Literal>
             </li>
-            <li>Legacy:
-                <asp:HyperLink ID="friendlyUrlLink" Target="_blank" runat="server">HyperLink</asp:HyperLink><br />
-                Default:
+            <li id="fuID" runat="server">
+                            
+                <div class="scm">
+                    <asp:Literal ID="friendlyUrlLabel" runat="server" EnableViewState="False">
+                Friendly URL:</asp:Literal>
+                </div>
+                <br />
                 <asp:HyperLink ID="friendlyMobileUrlLink" Target="_blank" runat="server">MobileHyperLink</asp:HyperLink><br />
+                <asp:Button ID="btnDeleteFriendly" CssClass="btn btn-primary btn-xs bw" runat="server" />
 
                 <br />
-                <asp:Literal ID="FriendlyUrl" runat="server" EnableViewState="False">Note: Friendly Url format = http:// [YourWebSiteUrl] / surveymobile.aspx / [<b>YourFriendlyName</b>]</asp:Literal>
+
             </li>
         </ol>
         <br />

@@ -30,7 +30,7 @@ namespace Votations.NSurvey
         {
 
             Response.Buffer = true;
-            Response.ExpiresAbsolute = DateTime.UtcNow.AddDays(-1d);
+            Response.ExpiresAbsolute = DateTime.Now.AddDays(-1d);
             Response.Expires = -1500;
             Response.CacheControl = "no-cache";
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
@@ -47,7 +47,7 @@ namespace Votations.NSurvey
             {
                 Response.Cache.SetCacheability(HttpCacheability.NoCache);//IE set to not cache
                 Response.Cache.SetNoStore();//Firefox/Chrome not to cache
-                Response.Cache.SetExpires(DateTime.UtcNow); //for safe measure expire it immediately
+                Response.Cache.SetExpires(DateTime.Now); //for safe measure expire it immediately
             }
 
 

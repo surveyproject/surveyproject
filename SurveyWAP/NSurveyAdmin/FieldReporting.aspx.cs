@@ -104,7 +104,7 @@ namespace Votations.NSurvey.WebAdmin
 			int totalPages = 0,
 				totalRecords = 0;
 			
-			DataSet textEntries = new Voters().GetVotersTextEntries(SurveyId, FieldReportDataGrid.CurrentPageIndex, 25, new DateTime(2004,1,1), DateTime.UtcNow);
+			DataSet textEntries = new Voters().GetVotersTextEntries(SurveyId, FieldReportDataGrid.CurrentPageIndex, FieldReportDataGrid.PageSize , new DateTime(2004,1,1), DateTime.UtcNow);
 
 			FieldReportDataGrid.DataSource = textEntries ;
 			FieldReportDataGrid.DataKeyField = "VoterID";
@@ -115,14 +115,15 @@ namespace Votations.NSurvey.WebAdmin
 				totalRecords = int.Parse(textEntries.Tables[0].Rows[0]["TotalRecords"].ToString());
 				CurrentPageLabel.Text = FieldReportDataGrid.CurrentPageIndex.ToString();
 				if (textEntries.Tables[0].Rows.Count > 0)
-				{
-					if ((totalRecords%25) == 0)
+				{   
+                    // operator % - calculate remainder
+					if ((totalRecords%FieldReportDataGrid.PageSize) == 0)
 					{
-						totalPages = totalRecords/25;
+						totalPages = totalRecords/FieldReportDataGrid.PageSize;
 					}
 					else
 					{
-						totalPages = (totalRecords/25) + 1;
+						totalPages = (totalRecords/FieldReportDataGrid.PageSize) + 1;
 					}
 				
 				}

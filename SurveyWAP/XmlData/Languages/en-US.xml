@@ -3242,7 +3242,7 @@
   </data>
   <data version="2.0" id="1063" name="FriendlyUrl">
     <value>
-      Note: Friendly Url format = http:// [YourWebSiteUrl] / survey.aspx / [&lt;b&gt;YourFriendlyName&lt;/b&gt;]
+      Note: Friendly Url format = http:// [YourWebSiteUrl] / surveymobile.aspx / [&lt;b&gt;YourFriendlyName&lt;/b&gt;]
     </value>
   </data>
   <data version="2.0" id="1064" name="BtnFriendly">
@@ -3530,5 +3530,20 @@
   </data>
   <data version="2.4" id="1157" name="MandatoryAnswerTitle">
     <value>Mandatory Answer</value>
+  </data>
+  <data version="2.4" id="1158" name="FriendlyNameDeletedMsg">
+    <value>Friendly name Deleted</value>
+  </data>
+  <data version="2.4" id="1159" name="FriendlyUrlLabel">
+    <value>Friendly URL: </value>
+  </data>
+  <data version="2.4" id="1160" name="SurveyLayoutSavedMsg">
+    <value>Layout correctly Saved</value>
+  </data>
+  <data version="2.4" id="1161" name="InvalidFileTypeLayoutMsg">
+    <value>Invalid filetype: .CSS only</value>
+  </data>
+  <data version="2.4" id="1162" name="CssFileUpdatedMsg">
+    <value>CSS file updated</value>
   </data>
 </root>

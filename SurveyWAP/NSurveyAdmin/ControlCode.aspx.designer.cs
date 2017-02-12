@@ -58,13 +58,31 @@ namespace Votations.NSurvey.WebAdmin {
         protected global::System.Web.UI.WebControls.Button btnFriendly;
         
         /// <summary>
-        /// friendlyUrlLink control.
+        /// FriendlyUrl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink friendlyUrlLink;
+        protected global::System.Web.UI.WebControls.Literal FriendlyUrl;
+        
+        /// <summary>
+        /// fuID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl fuID;
+        
+        /// <summary>
+        /// friendlyUrlLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal friendlyUrlLabel;
         
         /// <summary>
         /// friendlyMobileUrlLink control.
@@ -76,13 +94,13 @@ namespace Votations.NSurvey.WebAdmin {
         protected global::System.Web.UI.WebControls.HyperLink friendlyMobileUrlLink;
         
         /// <summary>
-        /// FriendlyUrl control.
+        /// btnDeleteFriendly control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal FriendlyUrl;
+        protected global::System.Web.UI.WebControls.Button btnDeleteFriendly;
         
         /// <summary>
         /// taCode control.

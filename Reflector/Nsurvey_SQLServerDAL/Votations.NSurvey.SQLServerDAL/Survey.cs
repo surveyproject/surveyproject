@@ -1457,7 +1457,7 @@ namespace Votations.NSurvey.SQLServerDAL
         }
 
         /// <summary>
-        /// Disable survey's multi language features
+        /// Add Friendly Deployement URl to survey for Web Publication
         /// </summary>
         /// <param name="surveyId"></param>
         public void SetFriendlyName(int surveyId, string friendlyName)
@@ -1469,6 +1469,20 @@ namespace Votations.NSurvey.SQLServerDAL
             }
 
             DbConnection.db.ExecuteNonQuery("vts_spSurveyUpdateFriendlyName", sqlParams.ToArray());
+        }
+
+        /// <summary>
+        /// Delete Friendly Deployement URL ie set it to null
+        /// </summary>
+        /// <param name="surveyId"></param>
+        public void DeleteFriendlyName(int surveyId)
+        {
+            ArrayList sqlParams = new ArrayList();
+            {
+                sqlParams.Add(new SqlParameter("@SurveyId", surveyId).SqlValue);
+            }
+
+            DbConnection.db.ExecuteNonQuery("vts_spSurveyDeleteFriendlyName", sqlParams.ToArray());
         }
     }
 }

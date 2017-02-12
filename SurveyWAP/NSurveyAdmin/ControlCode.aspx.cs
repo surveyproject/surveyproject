@@ -46,7 +46,7 @@ namespace Votations.NSurvey.WebAdmin
         protected System.Web.UI.WebControls.Label MessageLabel;
         new protected HeaderControl Header;
         protected System.Web.UI.WebControls.TextBox tbNetSource;
-        protected System.Web.UI.WebControls.HyperLink CodeHyperLink;
+        //protected System.Web.UI.WebControls.HyperLink CodeHyperLink;
         protected System.Web.UI.WebControls.Literal ControlCodeTitle;
         //        protected System.Web.UI.WebControls.Literal FriendlyUrl;
         protected System.Web.UI.WebControls.Literal PageDirectiveInfo;
@@ -71,48 +71,48 @@ namespace Votations.NSurvey.WebAdmin
                 Guid guid = survey.SurveyGuid;
                 if (!survey.IsFriendlyNameNull())
                     txtFriendly.Text = survey.FriendlyName;
-                CodeHyperLink.NavigateUrl = GetUrl("?surveyid=" + guid.ToString());
+                //CodeHyperLink.NavigateUrl = GetUrl("?surveyid=" + guid.ToString());
                 CodeMobileHyperLink.NavigateUrl = GetMobileUrl("?surveyid=" + guid.ToString());
 
-                CodeHyperLink.Text = CodeHyperLink.NavigateUrl;
+                //CodeHyperLink.Text = CodeHyperLink.NavigateUrl;
                 CodeMobileHyperLink.Text = CodeMobileHyperLink.NavigateUrl;
             }
             SetupTextArea();
         }
 
-        private string GetUrl(string urlpart)
-        {
-            string[] standardPorts = { "80", "443"};
-            string conn = "http";
-            if (Request.IsSecureConnection) conn = "https";
-            if (Request.ServerVariables["SERVER_PORT"] != null && !standardPorts.Contains(Request.ServerVariables["SERVER_PORT"]))
-            {
-                if (HttpContext.Current.Request.ApplicationPath != "/")
-                {
-                    return string.Format(conn + "://{0}:{1}{2}/survey.aspx{3}",
-                        Request.ServerVariables["SERVER_NAME"], Request.ServerVariables["SERVER_PORT"], HttpContext.Current.Request.ApplicationPath, urlpart);
+        //private string GetUrl(string urlpart)
+        //{
+        //    string[] standardPorts = { "80", "443"};
+        //    string conn = "http";
+        //    if (Request.IsSecureConnection) conn = "https";
+        //    if (Request.ServerVariables["SERVER_PORT"] != null && !standardPorts.Contains(Request.ServerVariables["SERVER_PORT"]))
+        //    {
+        //        if (HttpContext.Current.Request.ApplicationPath != "/")
+        //        {
+        //            return string.Format(conn + "://{0}:{1}{2}/survey.aspx{3}",
+        //                Request.ServerVariables["SERVER_NAME"], Request.ServerVariables["SERVER_PORT"], HttpContext.Current.Request.ApplicationPath, urlpart);
 
-                }
-                else
-                {
-                    return string.Format(conn + "://{0}:{1}/survey.aspx{2}",
-                        Request.ServerVariables["SERVER_NAME"], Request.ServerVariables["SERVER_PORT"], urlpart);
-                }
-            }
-            else
-            {
-                if (HttpContext.Current.Request.ApplicationPath != "/")
-                {
-                    return string.Format(conn + "://{0}{1}/survey.aspx{2}",
-                        Request.ServerVariables["SERVER_NAME"], HttpContext.Current.Request.ApplicationPath, urlpart);
-                }
-                else
-                {
-                    return string.Format(conn + "://{0}/survey.aspx{1}",
-                        Request.ServerVariables["SERVER_NAME"], urlpart);
-                }
-            }
-        }
+        //        }
+        //        else
+        //        {
+        //            return string.Format(conn + "://{0}:{1}/survey.aspx{2}",
+        //                Request.ServerVariables["SERVER_NAME"], Request.ServerVariables["SERVER_PORT"], urlpart);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        if (HttpContext.Current.Request.ApplicationPath != "/")
+        //        {
+        //            return string.Format(conn + "://{0}{1}/survey.aspx{2}",
+        //                Request.ServerVariables["SERVER_NAME"], HttpContext.Current.Request.ApplicationPath, urlpart);
+        //        }
+        //        else
+        //        {
+        //            return string.Format(conn + "://{0}/survey.aspx{1}",
+        //                Request.ServerVariables["SERVER_NAME"], urlpart);
+        //        }
+        //    }
+        //}
 
         private string GetMobileUrl(string urlpart)
         {
@@ -154,10 +154,11 @@ namespace Votations.NSurvey.WebAdmin
 
             if (!survey.IsFriendlyNameNull())
             {
-                friendlyUrlLink.Visible = true;
-                friendlyUrlLink.Text = GetUrl("/" + survey.FriendlyName);
-                friendlyUrlLink.NavigateUrl = GetUrl("/" + survey.FriendlyName);
+                //friendlyUrlLink.Visible = true;
+                //friendlyUrlLink.Text = GetUrl("/" + survey.FriendlyName);
+                //friendlyUrlLink.NavigateUrl = GetUrl("/" + survey.FriendlyName);
 
+                fuID.Visible = true;
                 friendlyMobileUrlLink.Visible = true;
                 friendlyMobileUrlLink.Text = GetMobileUrl("/" + survey.FriendlyName);
                 friendlyMobileUrlLink.NavigateUrl = GetMobileUrl("/" + survey.FriendlyName);
@@ -166,7 +167,8 @@ namespace Votations.NSurvey.WebAdmin
             }
             else
             {
-                friendlyUrlLink.Visible = false;
+                fuID.Visible = false;
+                //friendlyUrlLink.Visible = false;
                 friendlyMobileUrlLink.Visible = false;
             }
         }
@@ -232,7 +234,9 @@ namespace Votations.NSurvey.WebAdmin
             QuickLinkInfo.Text = GetPageResource("QuickLinkInfo");
 
             friendlyLabel.Text = GetPageResource("FriendlyLabel");
+            friendlyUrlLabel.Text = GetPageResource("FriendlyUrlLabel");
             btnFriendly.Text = GetPageResource("BtnFriendly");
+            btnDeleteFriendly.Text = GetPageResource("ButtonDeleteColumn");
             FriendlyUrl.Text = GetPageResource("FriendlyUrl");
         }
 
@@ -254,7 +258,7 @@ namespace Votations.NSurvey.WebAdmin
         {
             this.Load += new System.EventHandler(this.Page_Load);
             btnFriendly.Click += new EventHandler(btnFriendly_Click);
-
+            btnDeleteFriendly.Click += new EventHandler(btnDeleteFriendly_Click);
         }
 
         void btnFriendly_Click(object sender, EventArgs e)
@@ -264,6 +268,23 @@ namespace Votations.NSurvey.WebAdmin
             ShowFriendlyUrl();
             ShowNormalMessage(MessageLabel, GetPageResource("FriendlyNameUpdatedMsg"));
         }
+
+        /// <summary>
+        /// Delete Friendly URL 
+        /// to be finished .....
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void btnDeleteFriendly_Click(object sender, EventArgs e)
+        {
+            if (txtFriendly.Text != null )
+            new Surveys().DeleteFriendlyName(SurveyId);
+            ShowFriendlyUrl();
+            txtFriendly.Text = string.Empty;
+            ShowNormalMessage(MessageLabel, GetPageResource("FriendlyNameDeletedMsg"));
+        }
+
+
         #endregion
 
     }

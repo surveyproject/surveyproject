@@ -318,6 +318,9 @@ namespace Votations.NSurvey.WebAdmin
             _answers = new Answers().GetAnswers(_questionId, LanguagesDropdownlist.SelectedValue);
             if (_answers.Answers.Rows.Count > 0)
             {
+                //testGB
+                adgID.Visible = true;
+
                 AnswersDataGrid.Visible = true;
                 AnswersDataGrid.DataSource = _answers;
                 AnswersDataGrid.DataMember = "Answers";
@@ -326,6 +329,9 @@ namespace Votations.NSurvey.WebAdmin
             }
             else
             {
+                //testGB
+                adgID.Visible = false;
+
                 AnswersDataGrid.Visible = false;
             }
 
@@ -501,6 +507,8 @@ namespace Votations.NSurvey.WebAdmin
             {
                 _questionId = int.Parse(QuestionsDropDownList.SelectedValue);
                 AnswerOverviewPlaceHolder.Visible = true;
+                //testGB
+                adgID.Visible = false;
                 AnswerOption.Visible = false;
                 SetQuestionOptions();
                 BindAnswerOptions();

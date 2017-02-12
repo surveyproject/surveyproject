@@ -126,6 +126,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
             JavascriptFunctionLabel.Text = ((PageBase)Page).GetPageResource("JavascriptFunctionLabel");
             JavascriptCodeLabel.Text = ((PageBase)Page).GetPageResource("JavascriptCodeLabel");
             CreateTypeButton.Text = ((PageBase)Page).GetPageResource("CreateTypeButton");
+            CancelButton.Text = ((PageBase)Page).GetPageResource("CancelText");
             ApplyChangesButton.Text = ((PageBase)Page).GetPageResource("ApplyChangesButton");
             DeleteTypeButton.Text = ((PageBase)Page).GetPageResource("DeleteTypeButton");
             MakeBuiltInButton.Text = ((PageBase)Page).GetPageResource("MakeBuiltInButton");
@@ -155,6 +156,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
             // Creation mode
             fieldTypeOptionTitleLabel.Text = ((PageBase)Page).GetPageResource("NewAnswerTypeTitle"); ;
             CreateTypeButton.Visible = true;
+            CancelButton.Visible = true;
             ApplyChangesButton.Visible = false;
             DeleteTypeButton.Visible = false;
         }
@@ -166,6 +168,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
         {
             fieldTypeOptionTitleLabel.Text = ((PageBase)Page).GetPageResource("EditAnswerTypeTitle");
             CreateTypeButton.Visible = false;
+            CancelButton.Visible = false;
             ApplyChangesButton.Visible = true;
             DeleteTypeButton.Visible = true;
             MakeBuiltInButton.Visible = false;
@@ -297,6 +300,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
             this.SelectionTypeCheckBox.CheckedChanged += new System.EventHandler(this.SelectionTypeCheckBox_CheckedChanged);
             this.FieldTypeCheckBox.CheckedChanged += new System.EventHandler(this.FieldEntryChecked);
             this.CreateTypeButton.Click += new System.EventHandler(this.CreateTypeButton_Click);
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             this.ApplyChangesButton.Click += new System.EventHandler(this.ApplyChangesButton_Click);
             this.DeleteTypeButton.Click += new System.EventHandler(this.DeleteTypeButton_Click);
             this.MakeBuiltInButton.Click += new System.EventHandler(this.MakeBuiltInButton_Click);
@@ -398,6 +402,11 @@ namespace Votations.NSurvey.WebAdmin.UserControls
                 new AnswerType().AddAnswerType(answerTypeData, ((PageBase)Page).NSurveyUser.Identity.UserId);
                 UINavigator.NavigateToTypeEditor(((PageBase)Page).MenuIndex);
             }
+        }
+
+        private void CancelButton_Click(object sender, System.EventArgs e)
+        {
+            UINavigator.NavigateToTypeEditor(((PageBase)Page).MenuIndex);
         }
 
 

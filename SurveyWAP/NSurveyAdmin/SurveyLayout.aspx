@@ -42,14 +42,14 @@
  <ol>
      <li>
                     <asp:Label ID="CssLabel" AssociatedControlID="ddlTemplate" runat="server"></asp:Label>
-                <asp:DropDownList runat="server" ID="ddlTemplate" Width="400px" AppendDataBoundItems="True">
+                <asp:DropDownList runat="server" ID="ddlTemplate" Width="400px" AppendDataBoundItems="True" AutoPostBack="True"  OnSelectedIndexChanged="TemplatesDropdownlist_SelectedIndexChanged">
                 </asp:DropDownList>
 
 </li><li>   
         
                             <asp:FileUpload Width="225"  runat="server" ID="fuCss"/>
                             <asp:Button Width="100" Height="23" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Upload" ID="btnCssUpload" OnCommand="OnCssFileUpload" />
-    </li><li> 
+    </li><li id="cssBtnID" runat="server"> 
                             <asp:Button CssClass="btn btn-primary btn-xs bw" runat="server" ID="btnCssDownload" Text="Download" OnClick="btnCssDownload_Click" />
 
                             <asp:Button CssClass="btn btn-primary btn-xs bw" runat="server" ID="btnCssDelete" Text="Delete" OnClick="btnCssDelete_Click" />
