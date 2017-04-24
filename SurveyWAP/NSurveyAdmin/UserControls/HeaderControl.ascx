@@ -1,12 +1,12 @@
 <%@ Control Language="c#" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.UserControls.HeaderControl"
     TargetSchema="http://schemas.microsoft.com/intellisense/ie5" CodeBehind="HeaderControl.ascx.cs" %>
-<table style="padding:0px; border:0px;">
+<table style="padding:0px; border:0px; width:770px;">
     <tr>
         <td class="headerCell" style="text-align:right;">
             
             <asp:Label Text="" CssClass="loginDiv icon-user" Visible="false" runat="server" ID="MenuUserName" />
             </td>
-            <td style="text-align:left; width:50px;">
+            <td style="text-align:left; width:7%;">
             <asp:LinkButton Text="" runat="server" ID="LogoutButton"  OnCommand="LogoutButton_Click"
                 Visible="false" CssClass="logouthyperlink icon-signout" 
                  ToolTip="" />

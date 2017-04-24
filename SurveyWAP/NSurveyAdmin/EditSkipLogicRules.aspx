@@ -20,7 +20,7 @@
             <br />
                 
                                  <fieldset style="width:750px; margin-left:12px; margin-top:15px;" title="Survey Title">
-        <legend class="titleFont" style="text-align:left; margin: 0px 15px 0 15px;">
+        <legend class="titleFont titleLegend">
             <asp:literal id="AddNewSkipLogicTitle" runat="server" EnableViewState="False" Text="Add new skip logic to this question"></asp:literal>
                                 </legend>
                          <br />
@@ -59,7 +59,7 @@
 
 
                                                        <fieldset style="width:750px; margin-left:12px; margin-top:15px;" title="Survey Title">
-        <legend class="titleFont" style="text-align:left; margin: 0px 15px 0 15px;">
+        <legend class="titleFont titleLegend">
 <asp:literal id="SkipLogicRulesTitle" runat="server" EnableViewState="False" Text="Skip logic rules"></asp:literal>
                                 </legend>
                          <br />

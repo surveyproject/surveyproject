@@ -13,7 +13,7 @@
                 </div>
 
          <br />
-                <fieldset style="width:750px; margin-top:15px; margin-left:12px;"><legend class="titleFont" style="margin: 0px 15px 0 15px; text-align:left;">
+                <fieldset style="width:750px; margin-top:15px; margin-left:12px;"><legend class="titleFont titleLegend">
                                             <asp:Literal ID="InvitationMailingTitle" runat="server" EnableViewState="False">Invitation mailing</asp:Literal>
                     </legend>
                     <br />

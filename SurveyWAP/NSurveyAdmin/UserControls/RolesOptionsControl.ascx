@@ -2,12 +2,12 @@
     TargetSchema="http://schemas.microsoft.com/intellisense/ie5" CodeBehind="RolesOptionsControl.ascx.cs" %>
 
 
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
+            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 2px;">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
 <br />
             <fieldset style="width:745px; margin-left:0px;">
-                <legend class="titleFont" style="margin: 0px 15px 0 15px; text-align:left;">
+                <legend class="titleFont titleLegend">
                 <asp:Label ID="RolesOptionTitleLabel" runat="server">Label</asp:Label>
                     </legend>
                 <br />

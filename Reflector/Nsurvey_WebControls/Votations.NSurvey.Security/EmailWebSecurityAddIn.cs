@@ -78,7 +78,7 @@ namespace Votations.NSurvey.Security
         public Control GetLoginInterface(Style controlStyle)
         {
             this._uIdTable = new Table();
-            _uIdTable.CssClass = CssXmlManager.GetString("EmailInvCodeTable");
+            _uIdTable.CssClass = CssXmlManager.GetString("PassWordTable");
             _uIdTable.ID = "eicTbl";
 
             TableCell cell = new TableCell();
@@ -90,9 +90,11 @@ namespace Votations.NSurvey.Security
             child.CssClass = CssXmlManager.GetString("EmailInvCodeButton");
             child.Click += new EventHandler(this.OnUIdSubmit);
 
+            Panel panel = new Panel { CssClass = CssXmlManager.GetString("PasswordMessagePanel"), ID = "eiMP" };
+
             this._uIdTextBox = new TextBox();
             this._uIdTextBox.ID = "eicTB";
-            this._uIdTextBox.CssClass = CssXmlManager.GetString("EmailInvCodeTextbox");
+            this._uIdTextBox.CssClass = CssXmlManager.GetString("PasswordTextBox");
             //this._uIdTable.ControlStyle.Font.CopyFrom(controlStyle.Font);
             //this._uIdTable.ControlStyle.CssClass = "tablelddl ";
             //this._uIdTable.Width = Unit.Percentage(100.0);
@@ -100,21 +102,40 @@ namespace Votations.NSurvey.Security
             cell.CssClass = CssXmlManager.GetString("EmailInvCodeMessage");
             cell.ID = "eicMsg";
 
-            cell.Controls.Add(new LiteralControl(ResourceManager.GetString("EnterUIdMessage", this.LanguageCode)));
+
+            panel.Controls.Add(new LiteralControl(ResourceManager.GetString("EnterUIdMessage", this.LanguageCode)));
+            //cell.Controls.Add(new LiteralControl(ResourceManager.GetString("EnterUIdMessage", this.LanguageCode)));
+            cell.Controls.Add(panel);
+            row.Cells.Add(cell);
+
+            //this._uIdTable.Rows.Add(row);
+            //cell = new TableCell();
+            //cell.CssClass = CssXmlManager.GetString("EmailInvCodeTextboxCell");
+            //cell.ID = "eicTBC";
+            //row = new TableRow();
+
+            panel = new Panel { CssClass = CssXmlManager.GetString("PasswordTextBoxPanel"), ID = "pwTBP" };
+            panel.Controls.Add(this._uIdTextBox);
+            cell.Controls.Add(panel);
+
+            panel = new Panel { CssClass = CssXmlManager.GetString("PasswordSubmitButtonPanel"), ID = "pwSBP" };
+            panel.Controls.Add(child);
+
+
+            //cell.Controls.Add(this._uIdTextBox);
+            cell.Controls.Add(panel);
             row.Cells.Add(cell);
             this._uIdTable.Rows.Add(row);
 
-            cell = new TableCell();
-            cell.CssClass = CssXmlManager.GetString("EmailInvCodeTextboxCell");
-            cell.ID = "eicTBC";
+            //return this._uIdTable;
 
-            row = new TableRow();
-            cell.Controls.Add(this._uIdTextBox);
-            cell.Controls.Add(child);
-            row.Cells.Add(cell);
-            this._uIdTable.Rows.Add(row);
 
-            return this._uIdTable;
+            Panel wrapper = new Panel { CssClass = CssXmlManager.GetString("PasswordWrapper") };
+            Panel subpanel = new Panel { CssClass = CssXmlManager.GetString("PasswordSubPanel") };
+            wrapper.Controls.Add(subpanel);
+            subpanel.Controls.Add(this._uIdTable);
+
+            return wrapper;
         }
 
         /// <summary>

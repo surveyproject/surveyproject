@@ -12,7 +12,7 @@
     - a minified version is available for production purposes
     - this file has been minified through: https://devilo.us
 
-        Settings:
+        Settings: Highest
 
         Compress colours +
         Compress font-weight +
@@ -32,6 +32,7 @@
     - to switch from development to production file go to surveymobile.asxp file
     - next comment/ uncomment the appropriate CSS file links in the pages header
 */
+
 
 /* Test classes - remove again 
 
@@ -80,7 +81,7 @@
 {
     background: #e80808;
     color: white;
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	
 	font-size: 0.9em;
     padding: 5px 15px 7px 15px;
     
@@ -109,7 +110,7 @@
 /*ID: SurveyControl_lrT*/
 .tablelddl 
 {
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	
 	font-size: 1.2em;
     margin: 10px;
 }
@@ -275,7 +276,7 @@
 /*ID dna */
 .questionStyle
 {
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	
 	color: #000;
 	background-color: #fff;
     font-size: 1.2em;
@@ -333,7 +334,7 @@ tr.questionStyle td > span > div.question-text-div > span
 /*ID dna*/
 .helpTextSmallFont
 {
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	
     font-size: 0.9em;
 	color: #fff;
 	background-color: #6699CC;  /* #b1efb1; */
@@ -365,7 +366,7 @@ ID dna
 
 .answerStyle
 {
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	
 	font-size: 1.1em;
 	background-color: #fff;
     color: #000;
@@ -549,7 +550,7 @@ span.answerTextRender > div:nth-child(2)
     width:100%;
     margin: 5px 15px 15px 0;
 
-   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	
 	font-size: 1.2em;
 }
 
@@ -577,7 +578,7 @@ span.answerTextRender > div:nth-child(2)
 /*ID: SurveyControl_rrRow */
 .cmStyle
 {
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	
 	font-size: 1.2em;
 	background-color: #B8F2AB;
 	color: black;
@@ -652,7 +653,7 @@ span.answerTextRender > div:nth-child(2)
 {
     background: #e80808;
     color: white;
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	
     font-size: 0.9em;
     font-weight: bold;
     padding: 5px 15px 5px 10px;
@@ -668,7 +669,7 @@ span.answerTextRender > div:nth-child(2)
 /* icon-warning-sign */
 .qvmarkStyle
 {
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	
     font-size: 25pt;
     line-height: 10px;
     vertical-align: bottom;
@@ -681,7 +682,7 @@ span.answerTextRender > div:nth-child(2)
 /* SectionOptionStyle */
 .soStyle
 {
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	
 	font-size: 8pt;
 	font-weight: bold;
 	background-color: #E6EDF1;
@@ -695,7 +696,7 @@ span.answerTextRender > div:nth-child(2)
 /* ButtonStyle */
 .buttonStyle
 {
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	
 	font-size: 10pt;
 	font-weight: bold;
 }
@@ -707,7 +708,7 @@ span.answerTextRender > div:nth-child(2)
 /* MatrixStyle */
 .matrixStyle
 {
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	
 	font-size: 10pt;
 	background-color: #F4F9FA;
 
@@ -717,7 +718,7 @@ span.answerTextRender > div:nth-child(2)
 /* MatrixHeaderStyle */
 .mhStyle
 {
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	
 	font-size: 1.1em;
 	background-color: #E3EEF6;
 }
@@ -730,7 +731,7 @@ span.answerTextRender > div:nth-child(2)
 /* MatrixItemStyle */
 .miStyle
 {
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	
 	font-size: 1.1em;
 	background-color: White;
 }
@@ -746,7 +747,7 @@ span.answerTextRender > div:nth-child(2)
 /* MatrixAlternatingItemStyle */
 .maiStyle
 {
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	
 	font-size: 1.1em;
 	background-color: #F4F9FA;
 }
@@ -763,7 +764,7 @@ span.answerTextRender > div:nth-child(2)
 
 .sgiStyle
 {
-	font-family: Arial;
+	
 	font-size: 10pt;
 	background-color: White;
 }
@@ -776,7 +777,7 @@ tr.sgiStyle > td
 /* SectionGridAnswersAlternatingItemStyle */
 .sgaaisStyle
 {
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	
 	font-size: 10pt;
 	background-color: #F4F9FA;
 }
@@ -789,7 +790,7 @@ tr.sgaaisStyle> td
 /* SectionGridAnswersStyle */
 .sgaStyle
 {
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	
 	font-size: 10pt;
 	background-color: #F4F9FA;
     margin: 0 3px 7px 5px;
@@ -800,7 +801,7 @@ tr.sgaaisStyle> td
 /* SectionGridAnswersHeaderStyle */
 .sgahStyle
 {
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	
 	font-size: 1.2em;
 	background-color: #E3EEF6;
 }
@@ -814,7 +815,7 @@ tr.sgahStyle > td
 /* FootStyle */
 .footStyle
 {
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	
 	font-size: 1.2em;
 	font-weight: bold;
 	background-color: White;
@@ -858,7 +859,7 @@ tr.footStyle > td > table > tbody > tr > td
 /*calender Answerfield*/
 .calendarStyle
 {
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	
 	font-size: 1.0em;
 	width: 260px;
 }

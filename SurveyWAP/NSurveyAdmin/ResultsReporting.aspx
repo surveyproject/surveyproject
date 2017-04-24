@@ -11,8 +11,12 @@
     <script type="text/javascript">
         $(function () {
 
-            $("#<%=StartDateTextBox.ClientID%>").datepicker();
-            $("#<%=EndDateTextBox.ClientID%>").datepicker();
+            var lang2 = '<%=Request.UserLanguages[0].ToString().ToLower()%>';
+            var lang = lang2.substring(0,2)
+
+            $("#<%=StartDateTextBox.ClientID%>").datepicker( $.datepicker.regional[lang] );
+            $("#<%=EndDateTextBox.ClientID%>").datepicker($.datepicker.regional[lang]);
+
         });
     </script>
 
@@ -48,12 +52,12 @@
     // -->
                 </script>
             <div style="position: relative; left: 700px; width: 10px;  top: 15px; clear:none;">
-                <input type="image" class="PrintImage" alt="print" src="../images/Print_32X32_Standard.png"
+                <input type="image" class="PrintImage" alt="print" src="images/Print_32X32_Standard.png"
                     title="Print" onclick="JavaScript: printPreviewDiv('DivPrint');" />
                 </div>
 
                <fieldset style="width:750px; margin-left:12px; margin-top:15px;" title="">
-        <legend class="titleFont" style="margin: 0px 15px 0 15px; text-align:left;"><asp:Literal ID="SurveyResultsTitle" runat="server" EnableViewState="False">Survey results</asp:Literal>
+        <legend class="titleFont titleLegend"><asp:Literal ID="SurveyResultsTitle" runat="server" EnableViewState="False">Survey results</asp:Literal>
         </legend><br />
    <ol>
      <li>

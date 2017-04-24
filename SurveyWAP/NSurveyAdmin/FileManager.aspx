@@ -12,7 +12,7 @@
                 </div>
             <br />
                         <fieldset style="width: 750px; margin-left: 12px; margin-right: 0px; margin-top: 15px;">
-                <legend class="titleFont" style="margin: 0px 15px 0 15px; text-align:left;">
+                <legend class="titleFont titleLegend">
 
                                             <asp:Literal ID="UploadedFilesTitle" runat="server" Text="Uploaded files - Page"
                                                 EnableViewState="False"></asp:Literal><asp:Label ID="CurrentPendingPageLabel" runat="server">1</asp:Label>&nbsp;/
@@ -59,7 +59,7 @@
                     
                 <asp:PlaceHolder ID="FileExportPlaceHolder" runat="server">
                                             <fieldset style="width: 750px; margin-left: 12px; margin-top: 15px;">
-                <legend class="titleFont" style="margin: 0px 15px 0 15px; text-align:left;">
+                <legend class="titleFont titleLegend">
                         <asp:Literal ID="ExportFilesTitle" runat="server" EnableViewState="False" Text="Export all files to server's directory"></asp:Literal>
                                     </legend>
                 <br />

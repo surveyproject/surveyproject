@@ -12,7 +12,7 @@
                 </div>
   <br />
                                  <fieldset style="width:750px; margin-left:12px; margin-top:19px;" title="">
-        <legend class="titleFont" style="text-align:left; margin: 0px 15px 0 15px;"><asp:Literal ID="RegExLibraryTitle" runat="server" Text="RegEx library" EnableViewState="False"></asp:Literal>
+        <legend class="titleFont titleLegend"><asp:Literal ID="RegExLibraryTitle" runat="server" Text="RegEx library" EnableViewState="False"></asp:Literal>
 
         </legend>
                          <br />

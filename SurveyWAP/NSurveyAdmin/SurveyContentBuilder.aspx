@@ -33,7 +33,7 @@
     <div id="Panel" class="Panel content">
                         <fieldset style="width:750px; margin-top:15px; margin-left:12px;" id="liML" runat="server">
                             
-                      <!--      <legend class="titleFont" style="margin: 0px 15px 0 15px;">
+                      <!--      <legend class="titleFont titleLegend">
                                             <asp:Literal ID="SurveyBuilderTitle" runat="server" EnableViewState="False">Survey builder</asp:Literal>
                                                 </legend> -->
                     

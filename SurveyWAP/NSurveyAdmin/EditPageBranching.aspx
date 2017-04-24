@@ -18,7 +18,7 @@
     <br />
     
                                  <fieldset style="width:750px; margin-left:12px; margin-top:15px;" title="Survey Title">
-        <legend class="titleFont" style="text-align:left; margin: 0px 15px 0 15px;">
+        <legend class="titleFont titleLegend">
     <asp:literal id="AddNewBranchingTitle" runat="server" EnableViewState="False">Add new branching rule to page</asp:literal>
                     </legend>
                          <br />
@@ -59,7 +59,7 @@
 
 
                                            <fieldset style="width:750px; margin-left:12px; margin-top:15px;" title="Survey Title">
-        <legend class="titleFont" style="text-align:left; margin: 0px 15px 0 15px;">
+        <legend class="titleFont titleLegend">
     <asp:literal id="BranchingRulesTitle" runat="server" EnableViewState="False">Branching rules</asp:literal>
                     </legend>
                          <br />

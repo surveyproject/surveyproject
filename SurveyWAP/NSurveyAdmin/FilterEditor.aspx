@@ -9,7 +9,7 @@
         <div id="Panel" class="Panel content">
             <br />
             <fieldset style="width: 730px; margin-left: 12px; margin-top: 15px;" title="Survey Title">
-                <legend class="titleFont" style="margin: 0px 15px 0 15px; text-align:left;">
+                <legend class="titleFont titleLegend" style="width:96%;">
                     <asp:Literal ID="FilterBuilderTitle" runat="server" EnableViewState="False">Results filter builder</asp:Literal>
                 </legend>
                 <br />

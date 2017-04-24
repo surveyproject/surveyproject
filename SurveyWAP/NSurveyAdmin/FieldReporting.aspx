@@ -9,7 +9,7 @@
 
 
             <fieldset style="width: 750px; margin-left: 12px; margin-top: 15px; overflow: hidden;" title="">
-                <legend class="titleFont" style="margin: 0px 15px 0 15px; text-align: left;">
+                 <legend class="titleFont titleLegend">
                     <asp:Literal ID="FieldReportTitle" runat="server" EnableViewState="False">Field entries report - Page</asp:Literal>
                     <asp:Label ID="CurrentPageLabel" runat="server">1</asp:Label>&nbsp;/
                                             <asp:Label ID="TotalPagesLabel" runat="server">1</asp:Label>

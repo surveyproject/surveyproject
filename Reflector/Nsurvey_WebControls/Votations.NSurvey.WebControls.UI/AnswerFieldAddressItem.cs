@@ -27,107 +27,79 @@ namespace Votations.NSurvey.WebControls.UI
 
         public HtmlInputText street_number = new HtmlInputText();
 
-        /// <summary>
-        /// Create the "layout" and adds the textbox control to the 
-        /// control tree
-        /// </summary>
-        protected override void CreateChildControls()
+        protected virtual void AddHeaderScripts()
         {
-              
             //script 1.
             Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-
 
             HtmlGenericControl javascriptControl = new HtmlGenericControl("script");
 
             if (Page.Header.FindControl("GoogleMaps") == null)
-           { 
-            javascriptControl.Attributes.Add("type", "text/Javascript");
-            javascriptControl.Attributes.Add("id", "GoogleMaps");
-            //javascriptControl.Attributes.Add("src", "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&sensor=false&key=AIzaSyDwh2agwB_vfybUaiuLrl4Hopr9EDX6rUI&language=en");
-            javascriptControl.Attributes.Add("src", "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&sensor=false&key=" + Resources.AddressManager.GetString("GoogleAddressKey") + "&language=en");
+            {
+                javascriptControl.Attributes.Add("type", "text/Javascript");
+                javascriptControl.Attributes.Add("id", "GoogleMaps");
+                //javascriptControl.Attributes.Add("src", "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDwh2agwB_vfybUaiuLrl4Hopr9EDX6rUI&language=en");
+                javascriptControl.Attributes.Add("src", "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=" + Resources.AddressManager.GetString("GoogleAddressKey") + "&language=en");
 
                 Page.Header.Controls.Add(javascriptControl);
-           }
 
-            // test script 1.: " double check" 
+                //script 2.
 
-           //String csname = "GoogleMapsScript";
-           ////String csurl = "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&sensor=false&key=AIzaSyDwh2agwB_vfybUaiuLrl4Hopr9EDX6rUI&language=en";
-           //String csurl = "~/Scripts/Javascript/google/Google.js?v=3.exp&libraries=places&sensor=false&key=AIzaSyDwh2agwB_vfybUaiuLrl4Hopr9EDX6rUI&language=en";
-           //Type cstype = this.GetType();
+                Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
 
-           //// Get a ClientScriptManager reference from the Page class.
-           //ClientScriptManager cs = Page.ClientScript;
+                //HtmlGenericControl javascriptControl = new HtmlGenericControl("script");
 
-           //// Check to see if the include script exists already.
-           //if (!cs.IsClientScriptIncludeRegistered(cstype, csname))
-           //{
-           //    cs.RegisterClientScriptInclude(cstype, csname, ResolveClientUrl(csurl));
-           //}
+                javascriptControl = new HtmlGenericControl("script");
+                javascriptControl.Attributes.Add("defer", "defer");
+                javascriptControl.Attributes.Add("name", "SearchAddress");
+                javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/Javascript/google/SearchAddress.js"));
+
+                Page.Header.Controls.Add(javascriptControl);
 
 
-            
-           //script 2.
-           
-           Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
+                // add .css files:
+                this.Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
 
-           //HtmlGenericControl javascriptControl = new HtmlGenericControl("script");
+                HtmlGenericControl css = new HtmlGenericControl("link");
+                css.Attributes.Add("rel", "stylesheet");
+                css.Attributes.Add("type", "text/css");
 
-           javascriptControl = new HtmlGenericControl("script");
+                css.Attributes.Add("href", ResolveUrl("~/Scripts/Javascript/google/SearchAddress.css"));
 
-           javascriptControl.Attributes.Add("type", "text/Javascript");
-           javascriptControl.Attributes.Add("name", "SearchAddress");
-           javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/Javascript/google/SearchAddress.js"));
+                Page.Header.Controls.Add(css);
 
-           Page.Header.Controls.Add(javascriptControl);
+            }
+        }
 
-           //script 4.: add onload to body tag of html page:
-           //HtmlGenericControl body = (HtmlGenericControl)
-           //Page.FindControl("TestBody");
-           //body.Attributes.Add("onload", "initialize()");
-
-
-           // add .css files:
-           this.Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-
-           HtmlGenericControl css = new HtmlGenericControl("link");
-           css.Attributes.Add("rel", "stylesheet");
-           css.Attributes.Add("type", "text/css");
-
-           css.Attributes.Add("href", ResolveUrl("~/Scripts/Javascript/google/SearchAddress.css"));
-
-           Page.Header.Controls.Add(css);
-
+        protected virtual void AddHtml()
+        {
             // add the html
 
-           base.CreateChildControls();
-           
-           this.Controls.Add(new LiteralControl(textHtmlOne));
+            this.Controls.Add(new LiteralControl(textHtmlOne));
 
-          //input field 'autocomplete' to enter address and select google result:
+            //input field 'autocomplete' to enter address and select google result:
 
-           HtmlInputText input = new HtmlInputText();
-           input.Attributes["id"] = "autocomplete";
-           input.Attributes["placeholder"] = "Please enter your address";
-           input.Attributes["runat"] = "server";
+            HtmlInputText input = new HtmlInputText();
+            input.Attributes["id"] = "autocomplete";
+            input.Attributes["placeholder"] = "Please enter your address";
+            input.Attributes["runat"] = "server";
 
-           if (base._fieldTextBox.Text.Length != 0)
-           {
-               input.Value = string.Empty;
-               input.Value = base._fieldTextBox.Text;
-           }
-           else
-           {
-               input.Value = this.DefaultText;
-           }
+            if (base._fieldTextBox.Text.Length != 0)
+            {
+                input.Value = string.Empty;
+                input.Value = base._fieldTextBox.Text;
+            }
+            else
+            {
+                input.Value = this.DefaultText;
+            }
 
-           input.Size =  100;
-           input.Attributes["type"] = "text";
-           this.Controls.Add(input);
+            input.Size = 100;
+            input.Attributes["type"] = "text";
+            this.Controls.Add(input);
 
 
-          //base._fieldTextBox set as hidden to save address answer results:
+            //base._fieldTextBox set as hidden to save address answer results:
 
             if (input.Value.Length != 0)
             {
@@ -142,41 +114,26 @@ namespace Votations.NSurvey.WebControls.UI
             base._fieldTextBox.Width = Unit.Percentage(100);
             base._fieldTextBox.Attributes["id"] = "hiddenFullAddress";
             base._fieldTextBox.Attributes["type"] = "hidden";
-            
-           this.Controls.Add(new LiteralControl(textHtmlThree));
-           this.Controls.Add(new LiteralControl(textHtmlTwo));
 
-           this.OnAnswerPublisherCreated(new AnswerItemEventArgs(this.GetUserAnswers()));
+            this.Controls.Add(new LiteralControl(textHtmlThree));
+            this.Controls.Add(new LiteralControl(textHtmlTwo));
 
         }
+
 
         /// <summary>
-        /// Returns	the default answer text that was 
-        /// filled with the correct template value specified
-        /// by the user
+        /// Create the "layout" and adds the textbox control to the 
+        /// control tree
         /// </summary>
-        protected override PostedAnswerDataCollection GetPostedAnswerData()
+        protected override void CreateChildControls()
         {
-            PostedAnswerDataCollection userAnswers = this.GetUserAnswers();
-            this.OnAnswerPublished(new AnswerItemEventArgs(userAnswers));
-            return userAnswers;
+
+            base.CreateChildControls();
+            this.AddHeaderScripts();
+            this.AddHtml();      
+
         }
 
-        /// <summary>
-        /// Returns the answeritem user's answers
-        /// </summary>
-        protected virtual PostedAnswerDataCollection GetUserAnswers()
-        {
-            PostedAnswerDataCollection datas = null;
-            if (this._fieldTextBox.Text.Length != 0 )
-            {
-                datas = new PostedAnswerDataCollection();
-                datas.Add(new PostedAnswerData(this, this.AnswerId, base.SectionContainer.SectionNumber, this._fieldTextBox.Text , AnswerTypeMode.RegExValidator | AnswerTypeMode.Mandatory | AnswerTypeMode.Publisher | AnswerTypeMode.Field));
-            }
-            return datas;
-        }
-        
-        //html including address input fields and javascript functions:
 
         private string textHtmlOne = "<div id='locationField'>";
 

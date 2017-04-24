@@ -45,7 +45,7 @@
         <div id="tabs-1" style="position: relative; left:-12px;">
            
             <fieldset style="width: 750px; margin-left: 7px; margin-top: 15px;">
-                <legend class="titleFont" style="margin: 0px 15px 0 15px; text-align: left;">
+                 <legend class="titleFont titleLegend">
                     <asp:Literal ID="SearchTitle" runat="server" EnableViewState="False">Search Surveylist</asp:Literal>
                     </legend>
                 <br />

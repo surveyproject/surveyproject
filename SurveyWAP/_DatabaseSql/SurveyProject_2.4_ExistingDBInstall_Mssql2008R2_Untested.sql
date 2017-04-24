@@ -5605,7 +5605,7 @@ SELECT
 	DefaultText = 
 		CASE @LanguageCode 
 		WHEN null THEN
-			AnswerText 
+			DefaultText 
 		WHEN '' THEN
 			DefaultText 
 		ELSE
@@ -5613,7 +5613,7 @@ SELECT
 			vts_tbMultiLanguageText WHERE
 			LanguageItemId = vts_tbAnswer.AnswerID AND
 			LanguageMessageTypeId = 2 AND
-			LanguageCode = @LanguageCode), null)		
+			LanguageCode = @LanguageCode), DefaultText)		
 		END,
 	ScorePoint,
 	FieldWidth,
@@ -14642,20 +14642,21 @@ AS
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[vts_spUserUpdate]    Script Date: 4-9-2014 10:25:13 ******/
+/****** Object:  StoredProcedure [dbo].[vts_spUserUpdate]    Script Date: 3/21/2017 08:36:36 ******/
 SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER OFF
 GO
 
-CREATE PROCEDURE [dbo].[vts_spUserUpdate]
+ALTER PROCEDURE [dbo].[vts_spUserUpdate]
 			@UserID int,
 			@UserName nvarchar(255),
 			@Password nvarchar(255),
 		    @PasswordSalt nvarchar(255),
 			@LastName nvarchar(255),
 			@FirstName nvarchar(255),  
-			@Email nvarchar(255)
+			@Email nvarchar(255),
+			@LastLogin datetime
 			
 AS
 
@@ -14674,7 +14675,12 @@ BEGIN
 	WHERE UserID = @UserID
 END
 
-
+if @LastLogin is not null
+BEGIN
+	UPDATE vts_tbUser SET
+		LastLogin = @LastLogin
+	WHERE UserID = @UserID
+END
 
 
 
@@ -15309,13 +15315,13 @@ DELETE FROM vts_tbVoter WHERE SurveyID = @SurveyID AND Validated = 0
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[vts_spVoterExportCSVData]    Script Date: 4-9-2014 10:25:13 ******/
+/****** Object:  StoredProcedure [dbo].[vts_spVoterExportCSVData]    Script Date: 3/21/2017 15:14:06 ******/
 SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey changes: copyright (c) 2010, Fryslan Webservices TM (http://survey.codeplex.com)	
+	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -15338,7 +15344,7 @@ GO
 /// Return the data needed to export a CSV  file
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spVoterExportCSVData]
+ALTER PROCEDURE [dbo].[vts_spVoterExportCSVData]
 				@SurveyID int,
 				@StartDate datetime ,
 				@EndDate datetime
@@ -15395,8 +15401,15 @@ SELECT
 			ON vts_tbVoterAnswers.VoterID = vts_tbVoter.VoterID
 		INNER JOIN vts_tbAnswer
 			ON vts_tbAnswer.AnswerID = vts_tbVoterAnswers.AnswerID
-		WHERE vts_tbVoter.VoterID = V.VoterID) AS Score
+		WHERE vts_tbVoter.VoterID = V.VoterID) AS Score,
+	E.Email as email
 	FROM vts_tbVoter V
+
+		LEFT JOIN vts_tbVoterEmail 
+		ON V.VoterID = vts_tbVoterEmail.VoterID
+	LEFT JOIN vts_tbEmail E
+		ON E.EmailID = vts_tbVoterEmail.EmailId
+
 	WHERE 
 		V.SurveyID = @SurveyID AND
 		V.Validated <> 0 AND
@@ -15427,6 +15440,7 @@ WHERE
 	V.Validated <> 0 AND
 	DATEDIFF (d,@startDate,V.VoteDate) >= 0 AND DATEDIFF (d,@endDate,V.VoteDate) <= 0
 ORDER BY V.VoterID DESC
+
 
 
 

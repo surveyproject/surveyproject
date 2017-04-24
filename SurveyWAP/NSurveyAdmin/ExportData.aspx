@@ -9,19 +9,22 @@
 <script type="text/javascript">
         $(function () {
 
-            $("#<%=StartDateTextBox.ClientID%>").datepicker();
-            $("#<%=EndDateTextBox.ClientID%>").datepicker();
+            var lang2 = '<%=Request.UserLanguages[0].ToString().ToLower()%>';
+            var lang = lang2.substring(0,2)
+
+            $("#<%=StartDateTextBox.ClientID%>").datepicker( $.datepicker.regional[lang] );
+            $("#<%=EndDateTextBox.ClientID%>").datepicker($.datepicker.regional[lang]);
         });
     </script>
 
 
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
+            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 6px;">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
-
+            <br />
             
     <fieldset style="width:750px; margin-top:15px; margin-left:12px; text-align: left;">
-        <legend class="titleFont" style="margin: 0px 15px 0 15px;">
+        <legend class="titleFont titleLegend">
 
                                             <asp:Literal ID="SurveyExportTitle" runat="server" EnableViewState="False">Survey CSV export</asp:Literal>
                                 </legend><br />
@@ -42,7 +45,7 @@
 
             <asp:PlaceHolder ID="plhCSVStyles" runat="server">
                 <fieldset style="width: 750px; margin-top: 15px; margin-left: 12px; text-align: left;">
-                    <legend class="titleFont" style="margin: 0px 15px 0 15px;">
+                    <legend class="titleFont titleLegend">
                         <asp:Label ID="layoutLabel" runat="server">Export Layout</asp:Label>
                     </legend>
                     <br />
@@ -89,7 +92,7 @@
 
             <asp:PlaceHolder ID="CSVOptionPlaceHolder" runat="server">
                 <fieldset style="width: 750px; margin-top: 15px; margin-left: 12px; text-align: left;">
-                    <legend class="titleFont" style="margin: 0px 15px 0 15px;">
+                    <legend class="titleFont titleLegend">
                         <asp:Literal ID="formatlabel" runat="server" EnableViewState="False" Text="Format"></asp:Literal>
                     </legend>
                     <br />
@@ -127,7 +130,7 @@
             </asp:PlaceHolder>
 
                   <fieldset style="width: 750px; margin-top: 15px; margin-left: 12px; text-align: left;">
-                    <legend class="titleFont" style="margin: 0px 15px 0 15px;">
+                    <legend class="titleFont titleLegend">
                      <asp:Label runat="server" ID="dataSelectionLabel" Text="Data Selection"></asp:Label>
                     </legend>
                     <br />

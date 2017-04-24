@@ -71,7 +71,7 @@
                 <h3>
                     How To Apply CSS</h3><br />
                     In case of customised CSS it can be applied to the style items as follows. As
-                    an example take this CSS style that must first be added to the nsurveyform.css file:
+                    an example take this CSS style that must first be added to the surveymobile.css file:
                     <br />
                     <br />
                     <code>.myQuestionCSS<br />

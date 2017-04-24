@@ -56,12 +56,11 @@ namespace Votations.NSurvey
 
             // Add CSS Files
 
-            //Jquery UI 1.8.12 css:
+            //Jquery UI 1.11.4 css:
             HtmlGenericControl css = new HtmlGenericControl("link");            
             css.Attributes.Add("rel", "stylesheet");
             css.Attributes.Add("type", "text/css");
-            //css.Attributes.Add("href", ResolveUrl("~/Scripts/css/custom-theme/jquery-ui-1.8.12.custom.css"));
-            css.Attributes.Add("href", ResolveUrl("~/Scripts/css/base/jquery.ui.all.css"));            
+            css.Attributes.Add("href", ResolveUrl("~/Content/themes/base/all.css"));            
             Page.Header.Controls.Add(css);
 
             //Tipsy help balloons css: 
@@ -74,72 +73,57 @@ namespace Votations.NSurvey
 
             //Add JQuery Scripts
 
-            //JQuery v. 1.11.1:
+            //JQuery v. 3.1.1. Min:
             Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
             HtmlGenericControl javascriptControl = new HtmlGenericControl("script");
             javascriptControl.Attributes.Add("type", "text/Javascript");
-            //javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/js/jquery-1.5.1.min.js"));
-            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/Javascript/01_jquery/jquery-1.11.1.js"));
+            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/jquery-3.1.1.min.js"));
             Page.Header.Controls.Add(javascriptControl);
 
-            //JQuery Migrate Plugin 1.2.1:
-            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-            javascriptControl = new HtmlGenericControl("script");
-            javascriptControl.Attributes.Add("type", "text/Javascript");
-            //javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/js/jquery-1.5.1.min.js"));
-            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/Javascript/01_jquery/jquery-migrate-1.2.1.min.js"));
-            Page.Header.Controls.Add(javascriptControl);
-
-
-            //JQuery UI v. 1.10.4 :
-            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-            javascriptControl = new HtmlGenericControl("script");
-            javascriptControl.Attributes.Add("type", "text/Javascript");
-            //javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/Javascript/ui/jquery-ui-1.8.12.custom.min.js"));
-            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/Javascript/ui/jquery-ui-1.10.4.js"));
-            Page.Header.Controls.Add(javascriptControl);
-
-            //JQuery UI datepicker:
-            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-
-            if (Request.UserLanguages != null && Request.UserLanguages.Length > 0)
-            {
-                string lang = Request.UserLanguages[0].ToString().ToLower();
-                javascriptControl = new HtmlGenericControl("script");
-                javascriptControl.Attributes.Add("type", "text/Javascript");
-                javascriptControl.Attributes.Add("src", ResolveUrl(string.Format("~/Scripts/js/jquery.ui.datepicker-{0}.js",lang)));
-                Page.Header.Controls.Add(javascriptControl);
-                Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-            }
-
-            //JQuery fileinput: NOT USED on surveylayout anymore:
-
+            //JQuery Migrate Plugin - to test upgrades
+            //Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
             //javascriptControl = new HtmlGenericControl("script");
             //javascriptControl.Attributes.Add("type", "text/Javascript");
-            //javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/Javascript/fileinput/jquery.fileinput.min.js"));
+            //javascriptControl.Attributes.Add("src", ResolveUrl("https://code.jquery.com/jquery-migrate-3.0.0.js"));
             //Page.Header.Controls.Add(javascriptControl);
-            //Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
 
-            //JQuery CSS Menu:
+
+            //JQuery UI v. 1.12.1 min :
+            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
             javascriptControl = new HtmlGenericControl("script");
             javascriptControl.Attributes.Add("type", "text/Javascript");
-            javascriptControl.InnerHtml = "$(document).ready(function() {" + Environment.NewLine + 
-                                            "jquerycssmenu.buildmenu('SurveyMenu', MenuArrowImages)" + Environment.NewLine +
-                                          "});";
+            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/jquery-ui-1.12.1.min.js"));
+            Page.Header.Controls.Add(javascriptControl);
+
+            //JQuery UI localized files - used on datepicker:
+            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
+
+            javascriptControl = new HtmlGenericControl("script");
+            javascriptControl.Attributes.Add("type", "text/Javascript");
+            //javascriptControl.Attributes.Add("src", ResolveUrl(string.Format("~/Scripts/js/jquery.ui.datepicker-{0}.js",lang)));
+            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/jquery-ui-i18n.min.js"));
             Page.Header.Controls.Add(javascriptControl);
             Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
 
-            //JQuery Tipse Help Balloons:
+            //JQuery Tips Help Balloons:
             javascriptControl = new HtmlGenericControl("script");
             javascriptControl.Attributes.Add("type", "text/Javascript");
             javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/Javascript/tooltip/javascripts/jquery.tipsy.js"));
             Page.Header.Controls.Add(javascriptControl);
             Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
 
+            //JQuery Bootstrap JS
+            javascriptControl = new HtmlGenericControl("script");
+            javascriptControl.Attributes.Add("type", "text/Javascript");
+            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/bootstrap.min.js"));
+            Page.Header.Controls.Add(javascriptControl);
+            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
+
+
             //JQuery Mobile devices Modernizr
             javascriptControl = new HtmlGenericControl("script");
             javascriptControl.Attributes.Add("type", "text/Javascript");
-            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/modernizr-2.7.2.js"));
+            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/modernizr-2.8.3.js"));
             Page.Header.Controls.Add(javascriptControl);
             Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
 
@@ -170,8 +154,16 @@ namespace Votations.NSurvey
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            LocalizePage();
             ViewBanners();
+        }
+
+        private void LocalizePage()
+        {
+
+            Disclaimer.Text = ((PageBase)Page).GetPageResource("Disclaimer");
+            Theme.InnerHtml = ((PageBase)Page).GetPageResource("SpFrontPageTheme");
+            LdTitle.InnerHtml = ((PageBase)Page).GetPageResource("DisclaimerTitle");
         }
 
         public void ViewBanners()
@@ -181,11 +173,12 @@ namespace Votations.NSurvey
             if (((PageBase)Page).NSurveyUser.Identity.UserId == -1 )
             //if(!Page.User.Identity.IsAuthenticated)
             { banners.Visible = true;
-            spLogo.Width = Unit.Percentage(25);
+            //spLogo.Width = Unit.Percentage(25);
                 return; }
 
             banners.Visible = false;
-            spLogo.Width = Unit.Percentage(20);
+            //spLogo.Width = Unit.Percentage(20);
+            logoText.Style.Value = "color: white;float:right;font-weight:800; margin-top:0px;margin-right:100px; font-size:x-large;";
             logoPanel.CssClass = "topCell logoLogedInPanel";
             
         }

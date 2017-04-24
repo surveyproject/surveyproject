@@ -11,19 +11,19 @@
 
     </script>
 
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
+            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 6px;">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
             <br />
                       
    <fieldset style="width:750px; margin-left:12px; margin-top:15px;" title="">
-        <legend class="titleFont" style="margin: 0px 15px 0 15px; text-align:left;">
+        <legend class="titleFont titleLegend">
            <asp:Literal ID="QuestionGroupLegend" runat="server" EnableViewState="false">Question Groups</asp:Literal> 
 
         </legend><br />
                                 <ol>
      <li>
-               <div > <asp:Literal ID="QGroupsExlpainLabel" runat="server" EnableViewState="False">Note: Question groups are used for rating questions.</asp:Literal></div>
+               <div > <asp:Literal ID="QGroupsExplainLabel" runat="server" EnableViewState="False">Note: Question groups are used for rating questions.</asp:Literal></div>
           </li><li>    
                  <asp:Label AssociatedControlID="ddlLanguage" ID="Labellanguage" runat="server">Language: </asp:Label>
 

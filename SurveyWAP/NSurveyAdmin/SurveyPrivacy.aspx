@@ -10,7 +10,7 @@
     <div id="mainBody" class="mainBody contentHolder ps-container">
         <div id="Panel" class="Panel content">
 
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
+            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 4px;">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
 
@@ -21,7 +21,7 @@
                                             </a>
                                         </div>
              
-                <fieldset style="width:750px; margin-top:15px; margin-left:12px;"><legend class="titleFont" style="margin: 0px 15px 0 15px; text-align:left;">
+                <fieldset style="width:750px; margin-top:15px; margin-left:12px;"><legend class="titleFont titleLegend">
                                             <asp:Literal ID="PrivacySettingsTitle" runat="server" Text="Privacy settings" EnableViewState="False"></asp:Literal>
                     </legend>
 
@@ -60,14 +60,14 @@
 
 
                     </fieldset>
-                  <br />      <div style="position: relative; left: 720px; width: 10px;  top: 3px; clear:none;">
+                       <div style="position: relative; left: 720px; width: 10px;  top: 3px; clear:none;">
                                 <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/Thanks Message Conditions.aspx"
                                     title="Click for more Information">
                                     <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
                                 </a>
                             </div>
 
-                <fieldset style="width: 750px; margin-top:15px; margin-left: 12px; margin-top: 10px;"><legend class="titleFont" style="margin: 0px 15px 0 15px; text-align:left;">
+                <fieldset style="width: 750px; margin-top:15px; margin-left: 12px; margin-top: 10px;"><legend class="titleFont titleLegend">
                                 <asp:Literal ID="ThanksMessageConditionTitle" runat="server" Text="Thanks messages display conditions*"
                                     EnableViewState="False"></asp:Literal> </legend>
                     <br />

@@ -10,7 +10,7 @@
 
     <meta name="DESCRIPTION" content="SurveyProject&trade;  is a free and open source survey and (data entry) forms webapplication for processing & gathering data online." />
     <meta name="KEYWORDS" content="surveyproject, survey, webform, questionnaire, nsurvey, w3devpro" />
-    <meta name="COPYRIGHT" content=" 2016 &lt;href='http://www.w3devpro.com'>W3DevPro&lt;/a>" />
+    <meta name="COPYRIGHT" content=" 2017 &lt;href='http://www.w3devpro.com'>W3DevPro&lt;/a>" />
     <meta name="GENERATOR" content="SurveyProject&trade; " />
     <meta name="AUTHOR" content="W3DevPro" />
 
@@ -23,22 +23,22 @@
     <!-- IE only -->
     <meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)" />
 
-    <!-- Bootstrap -->
-    <link href="content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="content/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
-    <!-- Production -->
-    <link href="nsurveyadmin/css/surveymobile.min.css" rel="stylesheet" type="text/css" />
-    
-    <!-- Development 
+        <!-- Bootstrap v. 3.3.7 - Package -->
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Minified Production CSS -->
+    <link id="defaultCSS" runat="server" href="nsurveyadmin/css/surveymobile.min.css" rel="stylesheet" type="text/css" />
+    <!-- Full Development CSS
     <link href="nsurveyadmin/css/surveymobile.css" rel="stylesheet" type="text/css" />
     -->
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- Part of Bootstrap Installation -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="Scripts/Javascript/HTML5shiv/html5shiv.js"></script>
-      <script src="Scripts/respond.min.js"></script>
-    <![endif]-->    
+        <script src="Scripts/html5shiv.min.js"></script>
+        <script src="Scripts/respond.min.js"></script>
+    <![endif]-->
 
     <link rel="SHORTCUT ICON" href="favicon.ico" type="image/x-icon" />
 </head>
@@ -46,7 +46,7 @@
     
 <IFRAME ID="KeepAliveFrame" src="KeepSessionAlive.aspx" frameBorder="0" width="0" height="0" runat="server"></IFRAME>
 
-        <section id="MainContainer" class="container"><h2 style="visibility:hidden; line-height:0.0em; margin-top:-5px">Survey Project Webform</h2>
+        <section id="MainContainer" class="container"><h2 style="visibility:hidden; line-height:0.0em; margin-top:-5px">Survey&trade; Project Webform</h2>
             <form id="Form1" class="form-inline" runat="server">
 
                     <header id="ErrorMessageDiv" class="errorMessageDiv">
@@ -78,8 +78,8 @@
             </form>
         </section>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script type="text/javascript" src="<%= Page.ResolveUrl("~")%>Scripts/bootstrap.min.js"></script>
+    <!-- Bootstrap JS 3.3.7 - package -->
+    <script src="Scripts/bootstrap.min.js"></script>
 
 </body>
 </html>

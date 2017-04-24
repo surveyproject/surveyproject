@@ -1,12 +1,12 @@
 <%@ Control Language="c#" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.UserControls.UsersOptionsControl"
     TargetSchema="http://schemas.microsoft.com/intellisense/ie5" CodeBehind="UsersOptionsControl.ascx.cs" %>
 
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
+            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 2px;">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
 <br />
             <fieldset style="width:750px; margin-left:-5px;">
-                <legend class="titleFont" style="margin: 0px 15px 0 15px; text-align:left;">
+                <legend class="titleFont titleLegend">
                 <asp:Label ID="UserOptionTitleLabel" runat="server"></asp:Label>
                     </legend>
                                 <br />
@@ -55,7 +55,7 @@
                 <asp:PlaceHolder ID="ExtendedSettingsPlaceHolder" runat="server">
 
  <fieldset style="width:750px; margin-left:-5px;">
-                <legend class="titleFont" style="margin: 0px 15px 0 15px; text-align:left;">
+                <legend class="titleFont titleLegend">
                                 <asp:Literal ID="UserSurveyAssignedLabel" runat="server" Text="Assigned surveys :" EnableViewState="False"></asp:Literal>
                     </legend>
      <br />

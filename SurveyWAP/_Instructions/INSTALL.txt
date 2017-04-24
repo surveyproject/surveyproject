@@ -1,0 +1,211 @@
+________________________________________________________________________________________________
+
+Instructions "Survey™ Project 2.4 Install package" - NEW INSTALLATION
+________________________________________________________________________________________________
+
+
+1. SYSTEM REQUIREMENTS
+
+Client side:
+- Webbrowsers: tested on MS Edge 38.14393.1066.0 ; Firefox 53.* (32 bit) >; Chrome 58.* 
+
+Serverside:
+- .NET Framework 4.5 or higher must be installed
+- IIS webserver (7.5 or higer)
+- SMTP mailserver account
+- MsSqlserver 2012 database or higher
+- supported Operating Systems are Windows7 or >, Windows Server 2008/2012 or >
+- you must have administrator privileges on your computer 
+
+Free software downloads available at http://www.asp.net/downloads/
+
+
+2. FILES
+- download the zipped Install package to your computer
+- right click file: check Properties --> 'Unblock'
+- unzip the files to a (new) file directory (e.g. C:/SurveyProject/..)
+
+
+3. IIS Webserver
+
+Option 1.
+- create a new Virtual Directory in IIS [e.g. 'SurveyProject'] which points to the fysical directory where the SurveyProject files are unzipped
+- make sure you have default.aspx specified as a Default Document for your Virtual Directory
+- set Asp.NET to version 4.5 (or higher) and "Pipeline mode: Integrated"
+
+Option 2. 
+- Create a WebApplication in IIS and follow the steps of option 1.
+- Add the Webapplication to the proper Applicationpool using .NET 4.5 and "Integrated Pipeline Mode"
+
+
+4. DATABASE
+
+"Existing DB installation"
+
+Version Options 2008, 2012/2014 or 2016
+- depending on the MSsqlserver version used select the appropriate Sql file
+- 2012 and 2014 files are fully tested and supported
+
+
+- start MS SQL Server (using MsSqlserver Management Studio or your tool of choice )**
+- create a new empty database
+- open the appropriate Sql file (see version options) from the '_DatabaseSql' SP website directory in a query window
+- change USE [yourdatabasename] command to the name of your database
+- run the SQL query
+- check to see if the database was created correctly (warning messages can be ignored)
+
+*Notes: 
+	o to upgrade an existing SP 2.3 database use the  with the 2.4 scripts in the directory _DatabaseSql\UpgradeFiles_23to24
+	o instructions on how to upgrade can be found in : ReadMe_Upgrade_23to24_DatabaseChanges.txt
+	o check the UPGRADE EXISTING INSTALLATION section in this file
+
+
+5. SECURITY
+
+If using Windows 2003 - IIS6 or higher
+- the {Server}/NetworkService user account must have Read, Write and Change Control 
+of the root application directory (this allows the application to create files/folders ) 
+
+
+6. DATABASE CONNECTION
+- go to the rootdirectory of the SP site
+- open the web.config file in notepad or any other texteditor
+- find the appropriate database connection string in the web.config file: there are connectionstrings for different databases (e.g. Development, Test, Production):
+
+  <!-- selection of database connection options & settings-->
+  <connectionStrings>
+    <add name="SurveyProjectDevConnectionString" connectionString="Data Source=.\yoursqlserver;Initial Catalog=YourSpDevDatabase;Persist Security Info=True;User ID=yourusername;Password=yourpassword" providerName="System.Data.SqlClient" />
+    <add name="SurveyProjectTestConnectionString" connectionString="Data Source=.\yoursqlserver;Initial Catalog=YourSpTestDatabase;Persist Security Info=True;User ID=yourusername;Password=yourpassword" providerName="System.Data.SqlClient" />
+    <add name="SurveyProjectProdConnectionString" connectionString="Data Source=.\yoursqlserver;Initial Catalog=YourSpProdDatabase;Persist Security Info=True;User ID=yourusername;Password=yourpassword" providerName="System.Data.SqlClient" />
+  </connectionStrings>
+
+- Next set the default dbconnection to use on the SP site:
+
+  <!-- Survey Project database connection: to select connectionsetting options see connectionStrings-->
+  <dataConfiguration defaultDatabase="SurveyProjectProdConnectionString" />
+
+
+7. SMTP MAILSETTINGS
+- open the web.config file in notepad or a texteditor
+- check smpt settings. Default is:
+		<add key="NSurveySMTPServer" value="127.0.0.1" />
+		<add key="NSurveySMTPServerPort" value="25" />
+		<add key="NSurveySMTPServerAuthUserName" value="" />
+		<add key="NSurveySMTPServerAuthPassword" value="" />
+
+       		<add key="NSurveySMTPServerEnableSsl" value="false"/>  
+
+
+8. CULTURE/UICULTURE
+- The language setting of your webbrowser will determine the XML languagefiles used to translate webpage texts. 
+- This effect is caused by one of the settings in the web.config file: culture/ uiculture. 
+- If set to "auto" (default) Survey™ Project will pick up culture/ language of preferred browser settings. 
+- To explicitely pick a culture/ language, replace auto with "en-US" or "nl-NL" for example. 
+
+
+9. START WEBAPPLICATION
+- open your webbrowser
+- browse to http://[nameofyourwebserver]/[NameOfSurveySite] or your hosting URL
+- the application will start running 
+
+
+10. DEFAULT ADMINISTRATOR LOGIN
+- on first login use:
+	Username: admin
+	Password: SP_admin01
+- next create a survey and do not forget to change the default admin password (menu Accounts/Userlist)
+
+
+
+________________________________________________________________________________________________
+
+Instructions on "Survey™ 2.4 Install package" - UPGRADE EXISTING INSTALLATION
+________________________________________________________________________________________________
+
+
+WARNING: SP 2.4 does not formally support upgrading from previous versions.If you decide to upgrade a previous version, make sure to create backups first.
+
+
+Webfiles:
+- because of several changes to the directorystructure it is advised to delete all previous files and copy the files and directories to the webserver
+- CSS and image user directories can be copied back from the backupfiles
+
+
+Database:
+- check the _DatabaseSql/UpgradeFiles23_24 directory for a description of changes and available upgrade files
+
+
+Surveys:
+- Surveys, questions and answers created in 2.* can be exported to XML and imported into the 2.4 version. 
+- Manual corrections to the XML files may be necessary;
+
+
+
+________________________________________________________________________________________________
+
+Additional Information
+________________________________________________________________________________________________
+
+
+I. ---------------------------- SYSTEM SETTINGS MENU OPTIONS -------------------------------------
+
+New to SP v. 2.4 is the option to manage web.config settings from inside the webapplication.
+Login as admin and go to menu Surveys/Settings/System Settings/ for the following options:
+
+
+a. DATABASE CONNECTION STRINGS
+	- edit the connectionstring(s) to match your SP database;
+	- on submit the connectionstring section of the web.config file will be encrypted
+	- to unencrypt the connection strings section of the web.config file click button Decrypt
+
+
+b. DEFAULT DB CONNECTION
+	- select / edit the default db connectionstring to use;
+	- click button submit to save the changes
+
+
+c. GLOBALISATION CULTURE
+	- edit the Language setting
+	- to explicitely pick a culture/ language, replace auto with "en-US" or "nl-NL" for example. 
+	- click rename button to save the changes
+
+
+d. SMTP MAILSETTINGS
+	- edit the SMTP Server settings
+	- on submit the NsurveySettings section (including Smtp) of the web.config file will be encrypted
+	- to unencrypt the NsurveySettings section of the web.config file click button Decrypt
+
+e. MISCELLANEOUS SETTINGS
+	- edit miscellaneous settings:
+		* Set SP installation to Single User mode
+		* Allow the use of Sqlbased Answertypes	
+		* Set timeout on Uploaded Files
+		* Set session timeout on uploaded Files
+ 
+	- on submit the NsurveySettings section (including Smtp) of the web.config file will be encrypted
+	- to unencrypt the NsurveySettings section of the web.config file click button Decrypt
+	
+
+II. ----------------------------------- CKEDITOR & FILEMANAGER ------------------------------------
+
+The CKEditor is used as a text/html editor through the SP tool and on the Field - Rich Answertype.
+
+Part of the CKEditor is a Filemanager from where (image) files can be uploaded/ downloaded to the text/html editor.
+
+The default path for uploading/ downloading files is set at:
+- Scripts/ckeditor/filemanager/userfiles/....
+
+To make changes to the CKEditor or Filemanager settings check the ReadMe.MD files for both components.
+
+
+________________________________________________________________________________________________
+
+Survey™ Form Samples
+________________________________________________________________________________________________
+
+
+- Sample Survey forms can be found in the _SurveySamples directory
+- Import the xml files through the Surveys/Survey New menu options
+
+________________________________________________________________________________________________
+

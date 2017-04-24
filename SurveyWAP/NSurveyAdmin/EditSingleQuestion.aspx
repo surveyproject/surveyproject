@@ -27,7 +27,7 @@
                 </div>
 
             <fieldset style="width: 750px; margin-left: 12px; margin-right: 0px; margin-top: 15px;">
-                <legend class="titleFont" style="margin: 0px 15px 0 15px;">
+                <legend class="titleFont titleLegend">
                     <asp:Literal ID="EditQuestionTitle" runat="server" EnableViewState="False">Edit question</asp:Literal>
                 </legend>
                 <br />
@@ -205,7 +205,7 @@
             <asp:PlaceHolder ID="RepeatSectionOptionPlaceHolder" runat="server">
 
                 <fieldset style="width: 750px; margin-left: 12px; margin-right: 0px; margin-top: 15px;">
-                    <legend class="titleFont" style="margin: 0px 15px 0 15px;">
+                    <legend class="titleFont titleLegend">
                         <asp:Literal ID="RepeatableSectionsLabel" runat="server" EnableViewState="False">Repeatable sections</asp:Literal>
                     </legend>
                     <br />

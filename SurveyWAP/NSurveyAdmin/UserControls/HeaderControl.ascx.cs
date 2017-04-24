@@ -57,20 +57,6 @@ namespace Votations.NSurvey.WebAdmin.UserControls
         {
             //this.MainMenuDataList.ItemDataBound += new System.Web.UI.WebControls.DataListItemEventHandler(this.MainMenuDataList_ItemDataBound);
             this.Load += new System.EventHandler(this.Page_Load);
-
-            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-            HtmlGenericControl css = new HtmlGenericControl("link");
-            css.Attributes.Add("rel", "stylesheet");
-            css.Attributes.Add("type", "text/css");
-            css.Attributes.Add("href", ResolveUrl("~/NSurveyAdmin/CSS/jquerycssmenu.css"));
-            Page.Header.Controls.Add(css);
-
-            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-            HtmlGenericControl javascriptControl = new HtmlGenericControl("script");
-            javascriptControl.Attributes.Add("type", "text/Javascript");
-            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/Javascript/cssmenu/jquerycssmenu.js"));
-            Page.Header.Controls.Add(javascriptControl);
-
         }
 
         private void Page_Load(object sender, System.EventArgs e)

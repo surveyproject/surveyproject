@@ -42,7 +42,9 @@ function initialize() {
         }
     }
 
-    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+        map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
 
     // Create the autocomplete object, restricting the search
     // to geographical location types.
@@ -257,8 +259,10 @@ function emptyFullAddress()
 
 function deleteFullAddress()
 {
+    //document.forms['Form1'].reset();
+
     //hiddenFullAddress.value = "";
-    document.getElementById('hiddenFullAddress').value = "";
+    document.getElementById('hiddenFullAddress').value = null;
     document.getElementById('autocomplete').value = "";
 
     document.getElementById('street_number').value = "";

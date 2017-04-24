@@ -884,7 +884,7 @@
     <value>Web</value>
   </data>
   <data version="1.0" id="291" name="NSurveyAuthenticationTitle">
-    <value>Sign In </value>
+    <value>Login </value>
   </data>
   <data version="1.0" id="292" name="LoginLabel">
     <value>Username</value>
@@ -893,7 +893,7 @@
     <value>Password</value>
   </data>
   <data version="1.0" id="294" name="ValidateCredentialsButton">
-    <value>Validate credentials</value>
+    <value> &#160;Submit &#160;</value>
   </data>
   <data version="1.0" id="295" name="InvalidLoginPasswordMessage">
     <value>Invalid Login. Please try again.</value>
@@ -2401,7 +2401,7 @@
     <value>Variable name :</value>
   </data>
   <data version="1.9" id="793" name="VariableNameInfoLabel">
-    <value>Must hold the language value to show. eg : en-US, fr-FR etc .. </value>
+    <value>Add to survey url to hold the language value to show. E.g. ..?lang=nl-NL </value>
   </data>
   <data version="1.9" id="794" name="VariableNameUpdateButton">
     <value>Update</value>
@@ -2774,15 +2774,27 @@
     <value>&lt;b&gt;Official SP™ Helpfiles are not yet available.&lt;/b&gt; &lt;br /&gt;&lt;br /&gt; More information on the use of the Survey tool can be found at &lt;a href="http://www.surveyproject.org" title="Surveyproject Community site" target="_blank"&gt; http://www.surveyproject.org &lt;/a&gt;. You can go there to ask your questions as well.&lt;br /&gt; &lt;br /&gt; For downloads, sourcecode and more backgroundinformation you can go to &lt;a href="http://survey.codeplex.com" title="Survey Project" target="_blank"&gt; http://survey.codeplex.com &lt;/a&gt;. &lt;br /&gt;</value>
   </data>
   <data version="1.2.2" id="915" name="Disclaimer">
-    <value>&lt;h4&gt;SURVEY™ PROJECT is a webapplication for online surveys and webforms based on the open source software NSurvey. NSurvey was written by &lt;a href="http://www.nsurvey.org" target="_blank"&gt;Thomas Zumbrunn&lt;/a&gt;, (c) 2004/2005. SURVEY™ PROJECT is an initiative of &lt;a href="http://www.w3devpro.com" title="W3DevPro Homepage" target="_blank"&gt;W3DevPro™ &lt;/a&gt;, copyright (c) 2009/2014. Survey™ Project is published under the GNU GENERAL PUBLIC LICENSE v.3, 29 June 2007. The open source SURVEY™ PROJECT can be found at &lt;a href="http://www.surveyproject.org" title="Survey Project Community Site" target="_blank"&gt;http://www.surveyproject.org&lt;/a&gt;.&lt;/h4&gt; </value>
+    <value>SURVEY™ PROJECT is a webapplication for creating and publishing online surveys and webforms. The application is based on the open source software NSurvey. 
+    NSurvey was written by &lt;a href="http://www.nsurvey.org" title="Nsurvey" target="_blank"&gt;Thomas Zumbrunn&lt;/a&gt;, (c) 2004/2005. 
+    &lt;br /&gt;&lt;br /&gt;SURVEY™ PROJECT is an initiative of &lt;a href="http://www.w3devpro.com" title="W3DevPro Homepage" target="_blank"&gt;W3DevPro™ &lt;/a&gt;, copyright (c) 2009/2017. 
+    Survey™ Project is published under the &lt;a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.en.html" title="GPL" target="_blank"&gt;GNU GENERAL PUBLIC LICENSE v.3, 29 June 2007&lt;/a&gt;.
+      A copy of all licenses that apply can be found in the directory: SurveyWAP\ _Instructions\ Licenses of this application.
+      &lt;br /&gt;&lt;br /&gt;
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      GNU General Public License for more details.
+      
+   &lt;br /&gt;&lt;br /&gt;All sources are published at &lt;a href="https://github.com/surveyproject" title="Survey Project Sources and Downloads" target="_blank"&gt; GitHub &lt;/a&gt;.
+
+      &lt;br /&gt;&lt;br /&gt;Visit the open source SURVEY™ PROJECT Community site at &lt;a href="http://www.surveyproject.org" title="Survey Project Community Site" target="_blank"&gt;http://www.surveyproject.org&lt;/a&gt;. 
+  </value>
   </data>
   <data version="1.2.2" id="916" name="Introduction">
     <value>&lt;br /&gt;
-
       Congratulations, &lt;br /&gt;&lt;br /&gt;
       You have started the Survey™ Project Webapplication.
       &lt;br /&gt;&lt;br /&gt;
-
       On first login:&lt;br /&gt;&lt;br /&gt;
       username = &lt;strong&gt;admin&lt;/strong&gt;&lt;br /&gt;
       password = &lt;strong&gt;SP_admin01&lt;/strong&gt;
@@ -2790,8 +2802,6 @@
       Next create a new Survey and &lt;br /&gt;
       follow the instructions at menu Help/ Helpoptions. &lt;br /&gt; &lt;br /&gt;Don't forget to change the default password.
      &lt;br /&gt;
-      
-
     </value>
   </data>
   <data version="1.2.2" id="917" name="SurveyInactive">
@@ -3094,7 +3104,7 @@
     <value>Apply Filter</value>
   </data>
   <data version="2.0" id="1016" name="lblGenerate">
-    <value>Generate</value>
+    <value>Required Number of Tokens</value>
   </data>
   <data version="2.0" id="1017" name="lblGenerateCount">
     <value>Number of Tokens :</value>
@@ -3463,7 +3473,7 @@
     <value>You are viewing page</value>
   </data>
   <data version="2.4" id="1135" name="GeneralSettingsHyperlink">
-    <value>Installation Settings</value>
+    <value>System Settings</value>
   </data>
   <data version="2.4" id="1136" name="InvalidMatrixQuestionID">
     <value>Invalid matrix QuestionID!</value>
@@ -3545,5 +3555,35 @@
   </data>
   <data version="2.4" id="1162" name="CssFileUpdatedMsg">
     <value>CSS file updated</value>
+  </data>
+  <data version="2.4" id="1163" name="SpFrontPageSlogan">
+    <value>
+      Platform for developing &amp; sharing free software &lt;br /&gt;to collect data online
+    </value>
+  </data>
+  <data version="2.4" id="1164" name="SpFrontPageTheme">
+    <value>
+      The open source webapplication to create and publish surveys and webforms online
+    </value>
+  </data>
+  <data version="2.4" id="1165" name="DisclaimerTitle">
+    <value>
+      Licensing &amp; Disclaimer
+    </value>
+  </data>
+  <data version="2.4" id="1166" name="IPRanges">
+    <value>IP Ranges</value>
+  </data>
+  <data version="2.4" id="1167" name="ValidateCredentialsButtonTooltip">
+    <value>Validate Credentials</value>
+  </data>
+  <data version="2.4" id="1168" name="Token Protection">
+    <value>Token Protection</value>
+  </data>
+  <data version="2.4" id="1169" name="IP Filter">
+    <value>IP Filter Protection</value>
+  </data>
+  <data version="2.4" id="1170" name="btnGenerate">
+    <value>Generate</value>
   </data>
 </root>

@@ -19,7 +19,7 @@
  <!--            <asp:label ID="lblMainTitle" CssClass="titleFont" style="margin-left:25px;" runat="server"></asp:label><br /> -->
 <!--
             <fieldset style="width: 720px; margin-top: 15px; margin-left: 15px; text-align: left;">
-                <legend class="titleFont" style="margin: 0px 15px 0 15px;">CREATE SP DATABASE
+                <legend class="titleFont titleLegend">CREATE SP DATABASE
                 </legend>
                 <br />
                 <ol>
@@ -35,7 +35,7 @@
             -->
 
                             <fieldset style="width:720px; margin-top:15px; margin-left:15px; text-align: left;">
-        <legend class="titleFont" style="margin: 0px 15px 0 15px;">Database Connections
+        <legend class="titleFont titleLegend">Database Connections
                                 </legend><br />
         <ol>
             <li>
@@ -65,7 +65,7 @@
         <br /><br />
 
                 <fieldset style="width:720px; margin-top:15px; margin-left:15px; text-align: left;">
-        <legend class="titleFont" style="margin: 0px 15px 0 15px;">Globalisation Culture
+        <legend class="titleFont titleLegend">Globalisation Culture
                                 </legend><br />
         <ol>
             <li>
@@ -82,7 +82,7 @@
     </fieldset>
 
                 <fieldset style="width:720px; margin-top:15px; margin-left:15px; text-align: left;">
-        <legend class="titleFont" style="margin: 0px 15px 0 15px;">Web.config NSURVEYSETTINGS
+        <legend class="titleFont titleLegend">Web.config NSURVEYSETTINGS
                                 </legend><br />
         <ol>
             <li>

@@ -15,7 +15,7 @@
 
             
  <fieldset style="width:730px; margin-left:12px; margin-top:15px;" title="">
-        <legend class="titleFont" style="margin: 0px 15px 0 15px; text-align:left;">
+        <legend class="titleFont titleLegend">
 
                             <asp:Literal ID="VoterInformationTitle" runat="server" EnableViewState="False">Voterinformation</asp:Literal>
 </legend><br />
@@ -53,7 +53,7 @@
  </script>
 
 
-                   <div style="position: absolute; text-align:right; right:85px; top: 40px;">
+                   <div style="position: absolute; text-align:right; right:45px; top: 70px;">
                    <input type="image" class="PrintImage" alt="print" src="../images/Print_32X32_Standard.png" title="Print" onclick="JavaScript: printPreviewDiv('DivPrint');" />
                         </div>
                         <!-- code to be added later:
@@ -64,7 +64,7 @@
 
                         <table class="TableLayoutContainer innerText">
                             <tr>
-                                <td width="160px">
+                                <td style="width:160px;">
                                     <strong>
                                         <asp:Literal ID="VoterDBIDLabel" runat="server" EnableViewState="False">Voter DB ID :</asp:Literal></strong>
                                 </td>
@@ -73,7 +73,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td width="160px">
+                                <td style="width:160px;">
                                     <strong>
                                         <asp:Literal ID="VoterUserNameLabel" runat="server" EnableViewState="False">Voter user name:</asp:Literal></strong>
                                 </td>
@@ -82,7 +82,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td width="160px">
+                                <td style="width:160px;">
                                     <strong>
                                         <asp:Literal ID="VoterEmailLabel" runat="server" EnableViewState="False">Voter Email :</asp:Literal></strong>
                                 </td>
@@ -91,7 +91,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td width="160px">
+                                <td style="width:160px;">
                                     <strong>
                                         <asp:Literal ID="VoterLanguageLabel" runat="server" EnableViewState="False">Voter language :</asp:Literal></strong>
                                 </td>
@@ -100,7 +100,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td width="160px">
+                                <td style="width:160px;">
                                     <strong>
                                         <asp:Literal ID="VoterIPAddressLabel" runat="server" EnableViewState="False">IP address :</asp:Literal></strong>
                                 </td>
@@ -109,7 +109,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td width="160px">
+                                <td style="width:160px;">
                                     <strong>
                                         <asp:Literal ID="VoteRecordedLabel" runat="server" EnableViewState="False">Vote recorded on:</asp:Literal></strong>
                                 </td>
@@ -118,7 +118,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td valign="top" width="160px">
+                                <td style="width:160px; vertical-align:top;">
                                     <strong>
                                         <asp:Literal ID="TimeToTakeLabel" runat="server" EnableViewState="False">Time to take the survey:</asp:Literal></strong>
                                 </td>
@@ -131,18 +131,17 @@
    </fieldset>
 
           
-
-            <br />
             <asp:PlaceHolder ID="AddInVoterDataPlaceHolder" runat="server"></asp:PlaceHolder>
 
+                        <div style="width:470px;">
+                        <asp:Button ID="EditAnswersLinkButton" CssClass="btn btn-primary btn-xs bw PrintImage" runat="server" OnClick="EditAnswersLinkButton_Click" />
+                        </div>
+    <br />
      <fieldset style="width:730px; margin-left:12px; margin-top:15px;" title="">
-        <legend class="titleFont" style="margin: 0px 15px 0 15px; text-align:left;">
+        <legend class="titleFont titleLegend">
                             <asp:Literal ID="SurveyAnswersTitle" runat="server" EnableViewState="False">Survey answers</asp:Literal>
             </legend>
-                        <div style="width:470px; margin-top:-42px;">
-                        <asp:Button ID="EditAnswersLinkButton" CssClass="invisible btn btn-primary btn-xs bw" runat="server" OnClick="EditAnswersLinkButton_Click" />
-                        </div>
-<br /><br /><br />
+
                         <table class="voterReport TableLayoutContainer">
                             <tr>
                                 <td>

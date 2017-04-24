@@ -7,27 +7,36 @@
 <%@ Register TagPrefix="uc1" TagName="LoginBox" Src="~/NSurveyAdmin/UserControls/LoginBox.ascx" %>
 
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head runat="server">
+
     <title>Survey&#8482; Project Webapplication</title>
-    <meta id="MetaDescription" name="DESCRIPTION" content="Survey Project is a free and open source webapplication to create surveys, questionnaires or (data entry) forms for gathering and processing data online." />
-    <meta id="MetaKeywords" name="KEYWORDS" content="survey project, survey, questionnaire, maker, tool, create, free, online, open source" />
-    <meta id="MetaCopyright" name="COPYRIGHT" content="(c) 2011-2014 &lt;href='http://www.w3devpro.com'>W3DevPro TM&lt;/a>" />
-    <meta id="MetaGenerator" name="GENERATOR" content="SurveyTM Project" />
-    <meta id="MetaAuthor" name="AUTHOR" content="W3DevPro TM" />
+    <meta charset="UTF-8" />
+
+    <meta name="application-name" content="Survey&trade; Project Webapplication" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="DESCRIPTION" content="SurveyProject&trade;  is a free and open source survey and (data entry) forms webapplication for processing & gathering data online." />
+    <meta name="KEYWORDS" content="surveyproject, survey, webform, questionnaire, nsurvey, w3devpro" />
+    <meta name="COPYRIGHT" content=" 2017 &lt;href='http://www.w3devpro.com'>W3DevPro&lt;/a>" />
+    <meta name="GENERATOR" content="SurveyProject&trade; " />
+    <meta name="AUTHOR" content="W3DevPro" />
+
     <meta name="RESOURCE-TYPE" content="DOCUMENT" />
     <meta name="DISTRIBUTION" content="GLOBAL" />
     <meta name="ROBOTS" content="INDEX, FOLLOW" />
     <meta name="REVISIT-AFTER" content="1 DAYS" />
     <meta name="RATING" content="GENERAL" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- IE only -->
     <meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)" />
 
-  
+  <!-- SP Admin tool main CSS file -->
     <link href="~/nsurveyadmin/css/nsurveyadmin.css" type="text/css" rel="stylesheet" />
-    <link href="~/nsurveyadmin/css/perfect-scrollbar.css" type="text/css" rel="stylesheet" />
-    <!-- All CSS for Survey 2.0 version is in survey20.css -->
 
+            <!-- Bootstrap v. 3.3.7 - Package -->
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <!-- <link href="Content/bootstrap-theme.min.css" rel="stylesheet" /> -->
 
     <!--[if lte IE 7]>
         <style type="text/css">
@@ -40,7 +49,7 @@
     <script type="text/javascript">
         var MenuArrowImages = { down: ['downarrowclass', '../Images/arrow-down.gif', 25], right: ['rightarrowclass', '../Images/arrow-right.gif'] };
     </script>
-
+    
     <script type="text/javascript">
 
         function noContextMenu() {
@@ -58,6 +67,14 @@
         
     </script>
 
+        <!-- Part of Bootstrap Installation -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="Scripts/html5shiv.min.js"></script>
+        <script src="Scripts/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 <body>
 
@@ -71,6 +88,7 @@
 
     <div id="container" style="position: relative; text-align: center; width: 1030px;
         margin-left: auto; margin-right: auto; ">
+
         <form id="MasterForm" runat="server">
 
         <div id="Top" style="position: absolute; 
@@ -88,26 +106,21 @@
             -moz-border-radius: 7px;
             border-radius: 7px;" >
 
- <!--        <div id="superTop" style="position: absolute; 
-           left: 0px; 
-           top: 0px;  
-           height: 25px; 
-           width:1021px;
-            background-color: #775CE2; 	
-            border: 1px; 
-            border-color: #9999FF;
-            border-style: solid;
-            -webkit-border-radius: 7px;
-            -moz-border-radius: 7px;
-            border-radius: 7px;" ><br /><br />&nbsp;</div>
-            -->
-
 
             <asp:Panel id="logoPanel" runat="server"  CssClass="topCell logoPanel"> 
-
+                <!--
                 <a href="<%= Page.ResolveUrl("~")%>default.aspx" title="Survey&#8482; Project Homepage" target="_self">
-                 <asp:Image ID="spLogo" runat="server" ImageUrl="~/Images/SpLogo.png" AlternateText="SP Logo" />
+                 <asp:Image ID="spLogo" runat="server" ImageUrl="~/Images/splogo.svg" AlternateText="SP Logo" />
                 </a>
+                -->
+                            
+<div style="font-size: 4vw;margin-top:-20px;width: 550px;">
+      <a href="<%= Page.ResolveUrl("~")%>default.aspx" title="Survey&#8482; Project Homepage" target="_self">
+        <span style="color: #5bc0de;float:left;margin-right: 10px;" class="fa fa-pencil-square-o"></span>
+        <span style="color: #5cb85c;margin-top: 10px;" class="fa fa-check-square-o"></span>
+                         <h1 id="logoText" runat="server" style="color: white;float:right;font-weight:800; margin-right:40px;">Survey™ Project  </h1>
+     </a>
+          </div>
 
 
             </asp:Panel>
@@ -142,52 +155,77 @@
 
             <uc1:SurveyTree ID="surveyTree1" runat="server"></uc1:SurveyTree>
 
-            <div id="banners" runat="server" visible="true" style="position:absolute; left: 15px; top: 10px; width: 235px;
-            text-align:center; height:auto; overflow:auto;">
-                <table title="Survey&#8482; Project Login">
-                    <tr>
-                        <td style="vertical-align:central;" colspan="2"><br /><img src="<%= Page.ResolveUrl("~")%>Images/surveys.png" title="Surveys & Webforms" width="85" height="85" alt="surveys" /></td>
-                        
-                    </tr>
-                    <tr>
-                        <td style="vertical-align:central;"><br /><img src="<%= Page.ResolveUrl("~")%>Images/layout.png" title="Layout & design" width="85" height="85"  alt="layout"/></td>
-                        <td style="vertical-align:central;"><br /><img src="<%= Page.ResolveUrl("~")%>Images/reports.png" title="Reports & Charts" width="85" height="85"  alt="reports" /></td>
-                    </tr>
-                                        <tr>
-                        <td style="vertical-align:central;"> <br /><img src="<%= Page.ResolveUrl("~")%>Images/help.png" title="Helpfiles" width="85" height="85" alt="helpfiles"/></td>
-                        <td style="vertical-align:central;"><br /><img src="<%= Page.ResolveUrl("~")%>Images/email.png" title="Campaigns & Mailings" width="85" height="85" alt="campaigns"/></td>
-                    </tr>
-                                        <tr>
-                        <td style="vertical-align:central;" colspan="2"><br /><img src="<%= Page.ResolveUrl("~")%>Images/inet.png" title="Online & Webbased" width="85" height="85" alt="Webbased"/></td>
-                        
-                    </tr>
+            <div id="banners" runat="server" visible="true" style="position:absolute; left: 15px; top: 10px; 
+            text-align:center; height:auto; overflow:hidden;">
+
+
+                                            <div class="Social-Links" style="height: auto; margin-top:0px; font-size:2.1vw;">
+                                <a href="http://www.facebook.com/surveyproject" target="_blank" title="SP Facebook">
+                                    <span class="fa fa-inverse fa-facebook-square"></span></a>
+                                <a href="http://t.co/ciC3YNV" target="_blank" title="SP LinkedIn">
+                                   <span class="fa fa-inverse fa-linkedin-square"></span></a>
+                                <a href="http://www.twitter.com/surveyprojects" target="_blank" title="SP Twitter">
+                                    <span class="fa fa-inverse fa-twitter"></span></a>
+                                <a href="http://www.youtube.com/TheSurveyProject" target="_blank" title="SP YouTube">
+                                    <span class="fa fa-inverse fa-youtube"></span></a>
+                            </div>
+
+
+                <h3 id="Theme" runat="server" style="color:#5bc0de;">The open source webapplication to create and publish surveys and webforms online.</h3>
+
+                <table title="Survey&#8482; Project Login Table" style="width:180px;">
 
                     <tr>
-                        <td colspan="2"><br />
-                            <uc1:LoginBox ID="LoginBox1" runat="server"></uc1:LoginBox>
+                        <td colspan="2">
+                           
+    <div style="font-size: 2.5vw; margin: 20px;">
+
+        <span class="fa fa-inverse  fa-tablet"></span>
+                <span style="color: #f0ad4e;" class="fa fa-inverse fa-laptop"></span>
+        <span class="fa fa-inverse fa-mobile"></span>
+
+    </div>
+
                         </td>
                     </tr>
 
                     <tr>
                         <td colspan="2">
-                            <div class="Social-Links" style="height: auto; margin-top:10px;">
-                                <a href="http://www.facebook.com/surveyproject" target="_blank" title="SP Facebook">
-                                    <img alt="facebook" src="<%= Page.ResolveUrl("~")%>Images/Spacer.gif" class="icoFacebook" /></a>
-                                <a href="http://t.co/ciC3YNV" target="_blank" title="SP LinkedIn">
-                                    <img alt="linkedIn" src="<%= Page.ResolveUrl("~")%>Images/Spacer.gif" class="icoIN" /></a>
-                                <a href="http://www.twitter.com/surveyprojects" target="_blank" title="SP Twitter">
-                                    <img alt="Twitter" src="<%= Page.ResolveUrl("~")%>Images/Spacer.gif" class="icoTwitter" /></a>
-                                <a href="http://www.youtube.com/TheSurveyProject" target="_blank" title="SP YouTube">
-                                    <img alt="YouTube" src="<%= Page.ResolveUrl("~")%>Images/Spacer.gif" class="icoYouTube" /></a>
+                            <uc1:LoginBox ID="LoginBox1" runat="server"></uc1:LoginBox>
+                        </td>
+                    </tr>
+                                        <tr>
+                        <td colspan="2">
+
+                            <!-- Disclaimer Panel -->
+
+                            <div class="disclaimer-panel-group panel-group">
+                                <div class="panel panel-default" style="border: none; overflow: hidden;">
+
+                                    <div class="panel-heading" style="background-color: transparent; background-image: linear-gradient(to bottom,rgba(183, 38, 38, 0) 0,rgba(232, 232, 232, 0) 100%); border: none; border-color: white;">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" id="LdTitle" runat="server" href="#collapse1"
+                                                style="font-size: small; font-weight: 600; color: lightgray;" title="Licensing & Disclaimer Information">Licensing & Disclaimer</a>
+                                        </h4>
+                                    </div>
+
+                                    <div id="collapse1" class="panel-collapse collapse disclaimer">
+                                        <div class="panel-footer" style="text-align:center"><h4>SP&trade; Licensing &amp; Disclaimer</h4></div>
+                                        <div class="panel-body">
+                                            <small>
+                                                <asp:Literal ID="Disclaimer" runat="server" EnableViewState="False">Disclaimer</asp:Literal></small>
+                                        </div>
+                                        <div class="panel-footer">&nbsp;</div>
+                                    </div>
+
+                                </div>
                             </div>
 
-
-
                         </td>
+
                     </tr>
 
                 </table>
-
 
             </div>
 
@@ -197,16 +235,18 @@
 
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="Server">
                 </asp:ContentPlaceHolder>
-      
 
         </div>
-            <div id="footerDiv" class="footerDiv">
-                <table title="Survey&#8482; Project Disclaimer" id="footerTable">
+
+
+            <footer id="footerDiv" class="footerDiv">
+
                     <uc1:FooterControl ID="Footercontrol1" runat="server"></uc1:FooterControl>
-                </table>
-            </div>
+
+            </footer>
 
         </form>
     </div>
+
 </body>
 </html>

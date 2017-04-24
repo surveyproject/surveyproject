@@ -1,18 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" standalone="yes"?>
 <root>
-  <!-- Parameters (43 entries/ nodes):
-  value= css clases and selectors applied to the object; css classes can be defined in the surveybox.css file; multiple classes per object possible
-  id = the id of the different objects as set in the .cs codebehind files
-  name = the name used by the CssXmlManager in the .cs codebehind files to fetch the css values for the object
-  -->
-  <!-- Message Box panels -->
   <data version="2.4" id="mbCW" name="MessageBoxContainerWrapper">
     <value>questionContainerWrapper</value>
   </data>
   <data version="2.4" id="mbC" name="MessageBoxContainer">
     <value>questionContainer</value>
-  </data>  
-  <!-- Message Box messages -->
+  </data>
   <data version="2.4" id="mbMP" name="NotYetOpenedSurveyMessage">
     <value>notYetOpenedSurveyMessage</value>
   </data>
@@ -25,7 +18,6 @@
   <data version="2.4" id="mbMP" name="ClosedDateSurveyMessage">
     <value>closedSurveyMessage</value>
   </data>
-  <!--Multi Language Request Entries -->
   <data version="2.4" id="lrqCW" name="MultiLanguageContainerWrapper">
     <value>questionContainerWrapper</value>
   </data>
@@ -50,7 +42,6 @@
   <data version="2.4" id="lrlBP" name="LanguageButtonPanel">
     <value>languageButtonPanel</value>
   </data>
-  <!-- Pagenumber & percentage footer -->
   <data version="2.4" id="pNP" name="PageNumberPanel">
     <value>pageNumberPanel</value>
   </data>
@@ -66,7 +57,6 @@
   <data version="2.4" id="naP" name="PageNumberNonactive">
     <value>nonactivePage</value>
   </data>
-  <!-- Nextpage buttons incl. resume -->
   <data version="2.4" id="npBRP" name="NextPageButtonRowPanel">
     <value>nextPageButtonRowPanel</value>
   </data>
@@ -76,7 +66,7 @@
   <data version="2.4" id="ppbB" name="PreviousPageButton">
     <value>previousPageButton btn btn-primary btn-xs bw</value>
   </data>
-    <data version="2.4" id="ppBP" name="PreviousPageButtonPanel">
+  <data version="2.4" id="ppBP" name="PreviousPageButtonPanel">
     <value>previousPageButtonPanel</value>
   </data>
   <data version="2.4" id="npSB" name="NextPageSubmitButton">
@@ -88,7 +78,7 @@
   <data version="2.4" id="RPB" name="ResumeProgressButton">
     <value>resumeProgressButton btn btn-primary btn-xs bw</value>
   </data>
-    <data version="2.4" id="npRPBP" name="NextPageResumeProgressButtonPanel">
+  <data version="2.4" id="npRPBP" name="NextPageResumeProgressButtonPanel">
     <value>resumeProgressButtonPanel</value>
   </data>
   <data version="2.4" id="npSPBP" name="NextPageSaveProgressButtonPanel">
@@ -104,12 +94,11 @@
     <value>btn btn-primary btn-xs bw</value>
   </data>
   <data version="2.4" id="rct" name="ResumeRequestTable">
-    <value>rct</value> 
+    <value>rct</value>
   </data>
   <data version="2.4" id="erUM" name="EnterResumeUIdMessage">
-    <value></value>
+    <value />
   </data>
-  <!-- submit button row -->
   <data version="2.4" id="bsbP" name="BuildSubmitButtonPanel">
     <value>pageButtonRow</value>
   </data>
@@ -125,14 +114,12 @@
   <data version="2.4" id="ssbP" name="SurveySubmitButtonPanel">
     <value>surveySubmitButtonPanel</value>
   </data>
-<!-- build surveybox -->
   <data version="2.4" id="bsbQCP" name="BuildSurveyBoxQCPanel">
     <value>questionContainerWrapper</value>
   </data>
   <data version="2.4" id="bsbQCSP" name="BuildSurveyBoxQCSubPanel">
     <value>questionContainer</value>
   </data>
-  <!-- Build Thanksbox -->
   <data version="2.4" id="bsbcT" name="BuildThankBoxCssTable">
     <value>thanksboxCss</value>
   </data>
@@ -142,24 +129,21 @@
   <data version="2.4" id="bsbcSP" name="BuildThankBoxCssSubPanel">
     <value>questionContainer</value>
   </data>
-<!-- onresume UID submit errormesage -->
   <data version="2.4" id="ruSE" name="OnResumeUidSubmitError">
     <value>errorMessage</value>
   </data>
-  <!-- AnswerSelectionItem Radiobutton-->
   <data version="2.4" id="oruse" name="AnswerSelectionRadioButton">
-    <value></value>
+    <value />
   </data>
   <data version="2.4" id="oruse" name="GlobalRadioButtonLabel">
     <value>globalRadioButtonLabel</value>
   </data>
   <data version="2.4" id="oruse" name="GlobalRadioButtonDiv">
-    <value></value>
+    <value />
   </data>
   <data version="2.4" id="oruse" name="GlobalRadioButton">
     <value>globalRadioButton</value>
   </data>
-  <!-- Option to determine labeltext left or right alignment of radiobutton: no css -->
   <data version="2.4" id="oruse" name="GlobalRadioButtonTextAlign">
     <value>Right</value>
   </data>
@@ -197,7 +181,7 @@
     <value>passwordTextBox</value>
   </data>
   <data version="2.4" id="pwSBP" name="PasswordSubmitButtonPanel">
-    <value></value>
+    <value />
   </data>
   <data version="2.4" id="pwWR" name="PasswordWrapper">
     <value>questionContainerWrapper</value>

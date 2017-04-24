@@ -67,7 +67,7 @@
             <asp:PlaceHolder runat="server" ID="phUsersList" Visible="true">
 
             <fieldset style="width:750px; margin-left:-5px;">
-                <legend class="titleFont" style="margin: 0px 15px 0 15px; text-align:left;">
+                <legend class="titleFont titleLegend">
                             <asp:Label ID="UserListTitleLabel" runat="server">UserListLabel</asp:Label>
                     </legend>
 

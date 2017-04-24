@@ -76,16 +76,17 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls
         private void LocalizePage()
         {
             NSurveyAuthenticationTitle.Text = ((PageBase)Page).GetPageResource("NSurveyAuthenticationTitle");
-            LoginLabel.Text = ((PageBase)Page).GetPageResource("LoginLabel");
-            PasswordLabel.Text = ((PageBase)Page).GetPageResource("PasswordLabel");
+            //LoginLabel.Text = ((PageBase)Page).GetPageResource("LoginLabel");
+            //PasswordLabel.Text = ((PageBase)Page).GetPageResource("PasswordLabel");
 
             LoginTextBox.ToolTip = ((PageBase)Page).GetPageResource("LoginLabel");
             PasswordTextBox.ToolTip = ((PageBase)Page).GetPageResource("PasswordLabel");
 
             ValidateCredentialsButton.Text = ((PageBase)Page).GetPageResource("ValidateCredentialsButton");
+            ValidateCredentialsButton.ToolTip = ((PageBase)Page).GetPageResource("ValidateCredentialsButtonTooltip");
             //Disclaimer.Text = ((PageBase)Page).GetPageResource("Disclaimer");
-            Introduction.Text = ((PageBase)Page).GetPageResource("Introduction");
-            HelpGifTitle.Text = ((PageBase)Page).GetPageResource("HelpGifTitle");
+            //Introduction.Text = ((PageBase)Page).GetPageResource("Introduction");
+            //HelpGifTitle.Text = ((PageBase)Page).GetPageResource("HelpGifTitle");
         }
 
 
@@ -106,6 +107,7 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls
                     var user = new Users().GetUserById(id ?? 0);
                     string pwd = user.Users[0].Password;
                     string salt = user.Users[0].IsPasswordSaltNull() ? null : user.Users[0].PasswordSalt;
+
                     if (string.IsNullOrEmpty(salt))// Unhashed old style .Create salted password and update
                     {
                         encryptedPwd = new User().EncryptUserPassword(enteredPwd);
@@ -151,8 +153,13 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls
                             {
                                 authUser.Users[0].PasswordSalt = salt;
                                 authUser.Users[0].Password = sec.CreatePasswordHash(enteredPwd, salt);
+
                                 ((INSurveyUserProvider)_userProvider).UpdateUser(authUser);
                             }
+
+                            // add logindate:
+                            authUser.Users[0].LastLogin = DateTime.UtcNow;
+                            ((INSurveyUserProvider)_userProvider).UpdateUser(authUser);
 
                             FormsAuthentication.SetAuthCookie(userInfos.ToString(), false);
 

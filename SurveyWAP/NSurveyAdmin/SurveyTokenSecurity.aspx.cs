@@ -74,7 +74,7 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
             btnDeleteAll.Text = GetPageResource("lblDeleteAll");
             btnDeleteSelected.Text = GetPageResource("lblDeleteSelected");
             btnExport.Text = GetPageResource("lblExportTokens");
-            btnGenerate.Text = GetPageResource("lblGenerate");
+            btnGenerate.Text = GetPageResource("btnGenerate");
 
             tokenfilter.Text = GetPageResource("TokenFilter");
             tokenlist.Text = GetPageResource("TokenList");

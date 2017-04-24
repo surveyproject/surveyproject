@@ -27,7 +27,7 @@
                 </div>
               
                             <fieldset style="width:750px; margin-top:15px; margin-left:12px;">
-                                <legend class="titleFont" style="margin: 0px 15px 0 15px;">
+                                <legend class="titleFont titleLegend">
                                 <asp:Literal ID="EditMatrixQuestionTitle" runat="server" EnableViewState="False">Edit matrix question</asp:Literal>
                                                     </legend>
                     <br />
@@ -148,7 +148,7 @@
                     </fieldset>
 
                                         <fieldset style="width:750px; margin-top:15px; margin-left:12px;">
-                                <legend class="titleFont" style="margin: 0px 15px 0 15px;">
+                                <legend class="titleFont titleLegend">
                     <asp:Literal ID="InsertNewTitle" runat="server" EnableViewState="False">Insert a new</asp:Literal>
                                 </legend>
                     <br />
@@ -174,7 +174,7 @@
                     </fieldset>
 
                                                     <fieldset style="width:750px; margin-top:15px; margin-left:12px;">
-                                <legend class="titleFont" style="margin: 0px 15px 0 15px;">
+                                <legend class="titleFont titleLegend">
                     <asp:Literal ID="CurrentRowsColumnsTitle" runat="server" EnableViewState="False">Current rows and columns</asp:Literal>
                                                                                                                             </legend>
                     <br />

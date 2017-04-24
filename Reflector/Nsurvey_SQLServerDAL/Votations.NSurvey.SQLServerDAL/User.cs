@@ -230,16 +230,17 @@ namespace Votations.NSurvey.SQLServerDAL
         public void UpdateUser(NSurveyUserData updatedUser)
         {
             SqlConnection connection = new SqlConnection(DbConnection.NewDbConnectionString);
-            SqlCommand insertCommand = new SqlCommand("vts_spUserUpdate", connection);
-            insertCommand.CommandType = CommandType.StoredProcedure;
-            insertCommand.Parameters.Add(new SqlParameter("@UserId", SqlDbType.Int, 4, "UserId"));
-            insertCommand.Parameters.Add(new SqlParameter("@UserName", SqlDbType.VarChar, 0xff, "UserName"));
-            insertCommand.Parameters.Add(new SqlParameter("@Password", SqlDbType.VarChar, 0xff, "Password"));
-            insertCommand.Parameters.Add(new SqlParameter("@PasswordSalt", SqlDbType.VarChar, 0xff, "PasswordSalt"));
-            insertCommand.Parameters.Add(new SqlParameter("@LastName", SqlDbType.VarChar, 0xff, "LastName"));
-            insertCommand.Parameters.Add(new SqlParameter("@FirstName", SqlDbType.VarChar, 0xff, "FirstName"));
-            insertCommand.Parameters.Add(new SqlParameter("@Email", SqlDbType.VarChar, 0xff, "Email"));
-            DbConnection.db.UpdateDataSet(updatedUser, "Users", insertCommand, new SqlCommand(), insertCommand, UpdateBehavior.Transactional);
+            SqlCommand updateCommand = new SqlCommand("vts_spUserUpdate", connection);
+            updateCommand.CommandType = CommandType.StoredProcedure;
+            updateCommand.Parameters.Add(new SqlParameter("@UserId", SqlDbType.Int, 4, "UserId"));
+            updateCommand.Parameters.Add(new SqlParameter("@UserName", SqlDbType.VarChar, 0xff, "UserName"));
+            updateCommand.Parameters.Add(new SqlParameter("@Password", SqlDbType.VarChar, 0xff, "Password"));
+            updateCommand.Parameters.Add(new SqlParameter("@PasswordSalt", SqlDbType.VarChar, 0xff, "PasswordSalt"));
+            updateCommand.Parameters.Add(new SqlParameter("@LastName", SqlDbType.VarChar, 0xff, "LastName"));
+            updateCommand.Parameters.Add(new SqlParameter("@FirstName", SqlDbType.VarChar, 0xff, "FirstName"));
+            updateCommand.Parameters.Add(new SqlParameter("@Email", SqlDbType.VarChar, 0xff, "Email"));
+            updateCommand.Parameters.Add(new SqlParameter("@LastLogin", SqlDbType.DateTime, 0xff, "LastLogin"));
+            DbConnection.db.UpdateDataSet(updatedUser, "Users", updateCommand, updateCommand, updateCommand, UpdateBehavior.Transactional);
         }
 
         /// <summary>

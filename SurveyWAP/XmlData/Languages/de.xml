@@ -484,7 +484,7 @@
     <value>Passwort zur Umfrage:</value>
   </data>
   <data version="1.0" id="162" name="CreateSurveyButton">
-    <value>Umfrage erstellen!</value>
+    <value>Umfrage erstellen</value>
   </data>
   <data version="1.0" id="163" name="ApplyChangesButton">
     <value>Änderungen übernehmen</value>
@@ -880,7 +880,7 @@
     <value>Passwort:</value>
   </data>
   <data version="1.0" id="294" name="ValidateCredentialsButton">
-    <value>Legitimation validieren</value>
+    <value>Senden</value>
   </data>
   <data version="1.0" id="295" name="InvalidLoginPasswordMessage">
     <value>Ungültige Anmeldung.</value>
@@ -955,7 +955,7 @@
     <value>Fortschrittsbalken anzeigen:</value>
   </data>
   <data version="1.2" id="319" name="EnableNavigationLabel">
-    <value>Navigation zur vorherigen/nächsten Seite:</value>
+    <value>Navigation vorherigen/nächsten Seite</value>
   </data>
   <data version="1.2" id="320" name="EnableResumeLabel">
     <value>Wiederaufnahme des Fortschritts:</value>
@@ -1018,7 +1018,7 @@
     <value>Unvollständige Einträge löschen</value>
   </data>
   <data version="1.2" id="340" name="PipeHelpLabel">
-    <value>&gt;*Sie können Werte festlegen, die während der Laufzeit im Textwert ersetzt werden:&lt;br /&gt; ##yourquerystringvariablename##&lt;/b&gt;&lt;br /&gt; @@yoursessionvariablename@@&lt;br /&gt; &amp;&amp;yourcookievariablename&amp;&amp;&lt;br /&gt; %%servervariablename%%</value>
+    <value>*Sie können Werte festlegen, die während der Laufzeit im Textwert ersetzt werden:&lt;br /&gt; ##yourquerystringvariablename##&lt;/b&gt;&lt;br /&gt; @@yoursessionvariablename@@&lt;br /&gt; &amp;&amp;yourcookievariablename&amp;&amp;&lt;br /&gt; %%servervariablename%%</value>
   </data>
   <data version="1.3" id="341" name="EnableRandomHyperlink">
     <value>Zufälligkeit aktivieren</value>
@@ -2743,7 +2743,7 @@
     <value>&gt;&lt;b&gt;Die offiziellen Umfrage-Hilfedateien sind noch nicht verfügbar.&lt;/b&gt; &lt;br /&gt;&lt;br /&gt; Weitere Informationen zur Benutzung der Umfrage-Tools finden Sie unter &lt;a href="http://www.surveyproject.info" title="Surveyproject Community site" target="_blank"&gt; http://www.surveyproject.com &lt;/a&gt;. Sie können auch dorthin gehen, um Ihre Fragen zu stellen.&lt;br /&gt; &lt;br /&gt; Für Downloads, den Quellcode und weitere Hintergrundinformationen gehen Sie bitte zu &lt;a href="http://survey.codeplex.com" title="Survey Project" target="_blank"&gt; http://survey.codeplex.com &lt;/a&gt;. &lt;br /&gt;</value>
   </data>
   <data version="1.2.2" id="915" name="Disclaimer">
-    <value>&lt;h4&gt;SURVEY™ PROJECT ist eine Web-Anwendung für online Umfragen- und Formulare, die auf der Open Source Web-Anwendung NSurvey basiert (&lt;a href="http://www.nsurvey.org" target="_blank"&gt;Thomas Zumbrunn&lt;/a&gt;, (c) 2004/2005). Das neue SURVEY™ PROJECT-Lösungskonzept wurde von &lt;a href="http://www.w3devpro.com" title="W3DevPro Homepage" target="_blank"&gt;W3DevPro™ &lt;/a&gt;- (c) 2009/2014 begonnen. Survey™ Project wird unter der GNU GENERAL PUBLIC LICENSE v.3, 29. Juni 2007, herausgegeben. Das SURVEY™ PROJECT finden Sie unter &lt;a href="http://www.surveyproject.org" title="Survey Project Community Site" target="_blank"&gt;http://www.surveyproject.org&lt;/a&gt;.&lt;/h4&gt; </value>
+    <value>SURVEY™ PROJECT ist eine Web-Anwendung für online Umfragen- und Formulare, die auf der Open Source Web-Anwendung NSurvey basiert (&lt;a href="http://www.nsurvey.org" target="_blank"&gt;Thomas Zumbrunn&lt;/a&gt;, (c) 2004/2005). Das neue SURVEY™ PROJECT-Lösungskonzept wurde von &lt;a href="http://www.w3devpro.com" title="W3DevPro Homepage" target="_blank"&gt;W3DevPro™ &lt;/a&gt;- (c) 2009/2014 begonnen. Survey™ Project wird unter der GNU GENERAL PUBLIC LICENSE v.3, 29. Juni 2007, herausgegeben. Das SURVEY™ PROJECT finden Sie unter &lt;a href="http://www.surveyproject.org" title="Survey Project Community Site" target="_blank"&gt;http://www.surveyproject.org&lt;/a&gt;.</value>
   </data>
   <data version="1.2.2" id="916" name="Introduction">
     <value>Herzlichen Glückwunsch, &lt;br /&gt; Sie haben die Survey™ Projekt Web-Anwendung gestartet. &lt;br /&gt;&lt;br /&gt; Zum erstmaligen Anmelden:&lt;br /&gt; Benutzername = &lt;strong&gt;admin&lt;/strong&gt;&lt;br /&gt; Passwort = &lt;strong&gt;Admin.&lt;/strong&gt; &lt;br /&gt;&lt;br /&gt; Erstellen Sie als Nächstes eine neue Umfrage und &lt;br /&gt; folgen Sie den Anweisungen im Hilfe-Menü/in den Hilfe-optionen. &lt;br /&gt;&lt;br /&gt; Sie können nun damit beginnen, das Online-Administration-Tool zu benutzen.</value>
@@ -2809,7 +2809,7 @@
     <value>übernehmen</value>
   </data>
   <data version="1.2.2" id="937" name="SurveyListTabList">
-    <value>Umfrageliste</value>
+    <value>Umfragenliste</value>
   </data>
   <data version="1.2.2" id="938" name="SurveyListTabNew">
     <value>Neue Umfrage</value>
@@ -3046,7 +3046,7 @@
     <value>Filter übernehmen</value>
   </data>
   <data version="2.0" id="1016" name="lblGenerate">
-    <value>Generieren</value>
+    <value>Benötigte Anzahl der Tokens</value>
   </data>
   <data version="2.0" id="1017" name="lblGenerateCount">
     <value>Anzahl der Tokens:</value>
@@ -3187,7 +3187,7 @@
     <value>URL mit freundlichem Namen erstellen:</value>
   </data>
   <data version="2.0" id="1063" name="FriendlyUrl">
-    <value>Hinweis: Freundliches URL-Format = http:// [URLIhrerWebsite] / survey.aspx / [&lt;b&gt;IhrFreundlicherName&lt;/b&gt;]    </value>
+    <value>Hinweis: Freundliches URL-Format = http:// [URLIhrerWebsite] / surveymobile.aspx / [&lt;b&gt;IhrFreundlicherName&lt;/b&gt;]    </value>
   </data>
   <data version="2.0" id="1064" name="BtnFriendly">
     <value>Speichern</value>
@@ -3319,10 +3319,10 @@
     <value>- Wählen Sie bitte einen Wert aus-</value>
   </data>
   <data version="2.0" id="1106" name="ChooseSurveyLabel">
-    <value>Please choose a survey from the list:</value>
+    <value>Wählen Sie bitte eine Umfrage:</value>
   </data>
   <data version="2.0" id="1107" name="HelpGifTitle">
-    <value>Click for more Information</value>
+    <value>Klick für weitere Information</value>
   </data>
   <data version="1.0" id="1108" name="FromLabelMail">
     <value>From Email :</value>
@@ -3334,52 +3334,52 @@
     <value>Slider Min/ Max Range :</value>
   </data>
   <data version="1.0" id="1111" name="SliderValueTextLabel">
-    <value>Default Value :</value>
+    <value>Standardwert :</value>
   </data>
   <data version="1.0" id="1112" name="SliderMinTextLabel">
-    <value>Min Value :</value>
+    <value>Min Wert :</value>
   </data>
   <data version="1.0" id="1113" name="SliderMaxTextLabel">
-    <value>Max Value :</value>
+    <value>Max Wert :</value>
   </data>
   <data version="1.0" id="1114" name="SliderAnimateTextLabel">
-    <value>Animate :</value>
+    <value>Animieren :</value>
   </data>
   <data version="1.0" id="1115" name="SliderStepTextLabel">
     <value>Step :</value>
   </data>
   <data version="1.0" id="1116" name="FieldSliderType">
-    <value>Field - Slider</value>
+    <value>Feld - Slider</value>
   </data>
   <data version="1.0" id="1117" name="MissingSurveyTitleMessage">
-    <value>Please enter a title for your Survey</value>
+    <value>Bitte geben Sie einen Titel für Ihre Umfrage ein</value>
   </data>
   <data version="1.0" id="1118" name="MissingGroupNameMessage">
-    <value>Please enter a name for the Group</value>
+    <value>Bitte geben Sie einen Namen für die Gruppe ein</value>
   </data>
   <data version="1.0" id="1119" name="MissingSubGroupNameMessage">
-    <value>Please enter a name for the SubGroup</value>
+    <value>Bitte geben Sie einen Namen für die Untergruppe ein</value>
   </data>
   <data version="1.0" id="1120" name="GraphicalReports">
-    <value> Graphical Reports</value>
+    <value> Graphische Rapporte</value>
   </data>
   <data version="1.0" id="1121" name="VoterReports">
-    <value> Voter Reports</value>
+    <value> Befragter Rapporte</value>
   </data>
   <data version="1.0" id="1122" name="CrossTabulationReports">
-    <value> Cross Tabulation Reports</value>
+    <value> Cross Tabulation Rapporte</value>
   </data>
   <data version="1.0" id="1123" name="Prev">
-    <value> Previous</value>
+    <value> Vorherige</value>
   </data>
   <data version="1.0" id="1124" name="Next">
-    <value> Next</value>
+    <value> Nächste</value>
   </data>
   <data version="2.3" id="1125" name="MailStatusDetails">
     <value>Details</value>
   </data>
   <data version="2.3" id="1126" name="SearchTitle">
-    <value>Search Surveylist</value>
+    <value>Liste der Umfragen durchsuchen</value>
   </data>
   <data version="2.3" id="1127" name="SurveyInformationTitle2">
     <value>Umfrage Titel</value>
@@ -3388,40 +3388,40 @@
     <value>Umfrage Importieren</value>
   </data>
   <data version="2.3" id="1129" name="LibraryDirectoryLegend">
-    <value>Libraries Directory</value>
+    <value>Bibliotheken Directory</value>
   </data>
   <data version="2.3" id="1130" name="QuestionGroupLegend">
-    <value>Question Groups</value>
+    <value>Frage Gruppen</value>
   </data>
   <data version="2.3" id="1131" name="UpdateVoterAnswersButton">
-    <value>Update Answers</value>
+    <value>Update Antworten</value>
   </data>
   <data version="2.3" id="1132" name="UserlistFilterOptionLiteral">
-    <value>Userlist Filter Options</value>
+    <value>Benuzterliste Filter Wahlen</value>
   </data>
   <data version="2.3" id="1133" name="SurveyLayoutLegend">
-    <value>Survey Layout</value>
+    <value>Umfrage Layout</value>
   </data>
   <data version="2.3" id="1134" name="SurveyListPageNrLiteral">
-    <value>You are viewing page</value>
+    <value>Sie Betrachten Seite</value>
   </data>
   <data version="2.4" id="1135" name="GeneralSettingsHyperlink">
-    <value>General Settings</value>
+    <value>System Einstellungen</value>
   </data>
   <data version="2.4" id="1136" name="InvalidMatrixQuestionID">
-    <value>Invalid matrix QuestionID!</value>
+    <value>Unzulässige Matrix QuestionID!</value>
   </data>
   <data version="2.4" id="1137" name="InvalidVoterID">
-    <value>Invalid VoterID!</value>
+    <value>Unzulässiges VoterID!</value>
   </data>
   <data version="2.4" id="1138" name="DDlValue">
-    <value>Invalid Dropdownlist Value</value>
+    <value>Unzulässiger Dropdownlist Wert</value>
   </data>
   <data version="2.4" id="1139" name="InvalidPageNumber">
-    <value>Invalid page number!</value>
+    <value>Unzulässige Seitenzahl!</value>
   </data>
   <data version="2.4" id="1140" name="InvalidQuestionID">
-    <value>Invalid QuestionID!</value>
+    <value>Unzulässiges QuestionID!</value>
   </data>
   <data version="2.4" id="1141" name="VoterID">
     <value>VoterID</value>
@@ -3430,33 +3430,93 @@
     <value>GroupGuid</value>
   </data>
   <data version="2.4" id="1143" name="TokenSecurity">
-    <value>Token Security</value>
+    <value>Token Sicherheit</value>
   </data>
   <data version="2.4" id="1144" name="SurveyLayout">
-    <value>Survey Layout</value>
+    <value>Umfrage Layout</value>
   </data>
   <data version="2.4" id="1145" name="AccessSurveyList">
-    <value>Access SurveyList</value>
+    <value>SurveyList zugänglich</value>
   </data>
   <data version="2.4" id="1146" name="HelpLabelHelpfiles">
-    <value>Available Helpfiles</value>
+    <value>Vorhandenes Helpfiles</value>
   </data>
   <data version="2.4" id="1147" name="HelpLabelStartupSettings">
-    <value>Startup and Settings</value>
+    <value>Start und Einstellungen</value>
   </data>
   <data version="2.4" id="1148" name="CancelButtonText">
-    <value> Cancel </value>
+    <value> Löschen </value>
   </data>
   <data version="2.4" id="1149" name="RadioButtonAnswerCssLabel">
-    <value>Radiobutton CSS :</value>
+    <value>Radiobutton CSS:</value>
   </data>
   <data version="2.4" id="1150" name="GeneralSettingsTitle">
-    <value>INSTALLATION SETTINGS</value>
+    <value>INSTALLATION EINSTELLUNGEN</value>
   </data>
   <data version="2.4" id="1151" name="CssXmlHyperLink">
     <value>Css Xml</value>
   </data>
   <data version="2.4" id="1152" name="FieldAddressType">
-    <value>Field - Address</value>
+    <value>Feld - Adresse</value>
+  </data>
+  <data version="2.4" id="1153" name="SelectAnswerTypeDDL">
+    <value>[Wählen Sie AnswerType]</value>
+  </data>
+  <data version="2.4" id="1154" name="TokenList">
+    <value>Liste des erzeugten Zeichens</value>
+  </data>
+  <data version="2.4" id="1155" name="TokenFilter">
+    <value>Tokenlist Filter-Wahlen</value>
+  </data>
+  <data version="2.4" id="1156" name="MandatoryQuestionTitle">
+    <value>Vorgeschriebene Frage</value>
+  </data>
+  <data version="2.4" id="1157" name="MandatoryAnswerTitle">
+    <value>Vorgeschriebene Antwort</value>
+  </data>
+  <data version="2.4" id="1158" name="FriendlyNameDeletedMsg">
+    <value>Freundlicher Name gelöscht</value>
+  </data>
+  <data version="2.4" id="1159" name="FriendlyUrlLabel">
+    <value>Freundliches URL: </value>
+  </data>
+  <data version="2.4" id="1160" name="SurveyLayoutSavedMsg">
+    <value>Plan richtig gespeichert worden</value>
+  </data>
+  <data version="2.4" id="1161" name="InvalidFileTypeLayoutMsg">
+    <value>Unzulässiges filetype: Nur .CSS</value>
+  </data>
+  <data version="2.4" id="1162" name="CssFileUpdatedMsg">
+    <value>CSS Akte aktualisiert</value>
+  </data>
+  <data version="2.4" id="1163" name="SpFrontPageSlogan">
+    <value>
+      Plattform für die Entwicklung und Freigabe freier&lt;br /&gt; Software um Daten online zu sammeln
+    </value>
+  </data>
+  <data version="2.4" id="1164" name="SpFrontPageTheme">
+    <value>
+      Die Open-Source Webapplikation zur Erstellung und Veröffentlichung von Umfragen und Webformaten online
+    </value>
+  </data>
+  <data version="2.4" id="1165" name="DisclaimerTitle">
+    <value>
+      Lizenzierung &amp; Haftungsausschluss
+    </value>
+  </data>
+  <data version="2.4" id="1166" name="IPRanges">
+    <value>IP Bereiche</value>
+  </data>
+  <data version="2.4" id="1167" name="ValidateCredentialsButtonTooltip">
+    <value>Validieren von Anmeldeinformationen</value>
+  </data>
+  <data version="2.4" id="1168" name="Token Protection">
+    <value>Token-Schutz</value>
+  </data>
+  <data version="2.4" id="1169" name="IP Filter">
+    <value>IP Filter-Schutz</value>
+  </data>
+  <data version="2.4" id="1170" name="btnGenerate">
+    <value>Generieren</value>
   </data>
 </root>

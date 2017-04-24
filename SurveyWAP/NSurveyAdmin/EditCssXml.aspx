@@ -13,19 +13,19 @@
             </div>
 
                    <fieldset style="width:750px; margin-left:12px; margin-top:15px;">
-        <legend class="titleFont" style="margin: 0px 15px 0 15px; text-align:left;">
+        <legend class="titleFont titleLegend">
           <asp:Literal ID="CssXmlLegend" runat="server" EnableViewState="false">Surveylayout CSS XML</asp:Literal>  
         </legend><br />
 
  <ol>
      <li>
-            <asp:GridView ID="CssXmlGridView" Width="100%" 
+            <asp:GridView ID="CssXmlGridView" Width="100%" PagerSettings-Mode="Numeric"
                 ShowFooter="true"
                 AutoGenerateColumns="false"  
                 runat="server" 
                 AllowPaging="true" 
                 PageSize="20"             
-                 CellSpacing="5"   
+                 CellSpacing="25"   
                 
                 OnRowCancelingEdit ="CssXmlGridView_RowCancelingEdit"
                 OnRowDeleting ="CssXmlGridView_RowDeleting"
@@ -95,7 +95,7 @@
 
                 <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White"></HeaderStyle>
 
-                <PagerStyle HorizontalAlign="Center" BackColor="#2461BF" Font-Size="1.3em" ForeColor="White"></PagerStyle>
+                <PagerStyle HorizontalAlign="Center" CssClass="cssxmlpaging" BackColor="#2461BF" Font-Size="1.3em" ForeColor="White"></PagerStyle>
 
                 <RowStyle BackColor="#EFF3FB"></RowStyle>
 

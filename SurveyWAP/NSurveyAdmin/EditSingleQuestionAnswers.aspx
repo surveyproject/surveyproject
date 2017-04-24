@@ -10,16 +10,15 @@
     <div id="mainBody" class="mainBody contentHolder ps-container">
         <div id="Panel" class="Panel content">
 
-                 <div style="position: absolute; width: 50px; text-align: center; margin-left: 700px; top: 15px;">
+              <fieldset style="width: 750px; margin-left: 12px; margin-right: 0px; margin-top: 15px;">
             <asp:ImageButton ID="ImageButton1" ImageUrl="~/Images/back_button.gif" runat="server" CssClass="buttonBack" OnCommand="OnBackButton" />
-                            </div>
+            </fieldset>
 
             <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
-            <br />
                         <fieldset style="width: 750px; margin-left: 12px; margin-right: 0px; margin-top: 15px;">
-                <legend class="titleFont" style="margin: 0px 15px 0 15px;">
+                <legend class="titleFont titleLegend">
                                             <asp:Literal ID="SingleQuestionAnswerEditorTitle" runat="server" EnableViewState="False"
                                                 Text="Question's answers editor"></asp:Literal>
                                     </legend>
@@ -48,7 +47,7 @@
                 <asp:PlaceHolder ID="AnswerOverviewPlaceHolder" runat="server">
 
                                             <fieldset style="width: 750px; margin-left: 12px; margin-right: 0px; margin-top: 15px;">
-                <legend class="titleFont" style="margin: 0px 15px 0 15px;">
+                <legend class="titleFont titleLegend">
                                     <asp:Literal ID="AnswersOverviewTitle" runat="server" Text="Answers overview" EnableViewState="False"></asp:Literal>
                                                         </legend>
                 <br />

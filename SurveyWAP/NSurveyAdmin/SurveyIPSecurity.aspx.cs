@@ -31,6 +31,7 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
             literalIPRangeEnd.Text = GetPageResource("IPRangeEndTitle");
             literalIPRangesTitle.Text = GetPageResource("IPRangeFormTitle");
             lbAddNew.Text = GetPageResource("AddNew");
+            Label2.Text = GetPageResource("IPRanges");
         }
         protected void BindFields()
         {

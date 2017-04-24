@@ -20,7 +20,7 @@
                                         </div>
              
                 <fieldset style="width: 750px; margin-left: 12px; margin-top: 15px;">
-                    <legend class="titleFont" style="margin: 0px 15px 0 15px; text-align:left;"><asp:Literal ID="MultiLanguagesTitle" runat="server" EnableViewState="False" Text="Multi-Languages settings"></asp:Literal></legend>
+                    <legend class="titleFont titleLegend"><asp:Literal ID="MultiLanguagesTitle" runat="server" EnableViewState="False" Text="Multi-Languages settings"></asp:Literal></legend>
                     <br />
 <ol>
      <li>

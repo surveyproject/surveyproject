@@ -111,14 +111,14 @@ namespace Votations.NSurvey.WebAdmin
 
             HtmlGenericControl javascriptControl = new HtmlGenericControl("script");
             javascriptControl.Attributes.Add("type", "text/Javascript");
-            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/JavaScript/01_jquery/jquery-1.11.1.js"));
+            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/jquery-3.1.1.min.js"));
             Page.Header.Controls.Add(javascriptControl);
 
             Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
 
             javascriptControl = new HtmlGenericControl("script");
             javascriptControl.Attributes.Add("type", "text/Javascript");
-            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/JavaScript/ui/jquery-ui-1.10.4.js"));
+            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/jquery-ui-1.12.1.min.js"));
             Page.Header.Controls.Add(javascriptControl);
 
             Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
@@ -148,7 +148,7 @@ namespace Votations.NSurvey.WebAdmin
 
             if (isScored)
             {
-                VoterScoreTotalLabel.Text = "<font color='#00008B'>Total Voter Score: " + _totalScore.ToString() + "</font>";
+                VoterScoreTotalLabel.Text = "<span class='totalscore'>Total Voter Score: " + _totalScore.ToString() + "</span>";
             }
         }
 
@@ -205,7 +205,7 @@ namespace Votations.NSurvey.WebAdmin
                         Label scoreTotalLabel = (Label)e.Item.Cells[0].FindControl("QuestionScoreLabel");
                         if (isScored)
                         {
-                            scoreTotalLabel.Text = string.Format("<br />" + "<font color='#59ACFF'>Question Score: " + _questionScore + "</font><br />");
+                            scoreTotalLabel.Text = string.Format("<br />" + "<span class='questionscore'>Question Score: " + _questionScore + "</span><br />");
                         }
                         _totalScore += _questionScore;
                         _questionScore = 0;
@@ -321,7 +321,7 @@ namespace Votations.NSurvey.WebAdmin
                     }
                     else
                     {
-                        answerTextCell.Text = string.Format("<font color='#006803'><b>{0}</b></font>", answerText);
+                        answerTextCell.Text = string.Format("<span class='answerscore'><b>{0}</b></span>", answerText);
                         _questionScore += answer.ScorePoint;
                     }
                 }
@@ -481,17 +481,17 @@ namespace Votations.NSurvey.WebAdmin
             {
                 if (answer == null || answer.Length == 0)
                 {
-                    return "<font color='#FF6A00'>Not Answered</font>";
+                    return "<span class='notanswered'>Not Answered</span>";
                 }
                 else
                 {
                     if (selected)
                     {
-                        return string.Format("<b>{0}</b> <br />{1}", answer, "<font color='#FF6A00'>Not Answered</font>");
+                        return string.Format("<b>{0}</b> <br />{1}", answer, "<span class='notanswered'>Not Answered</span>");
                     }
                     else
                     {
-                        return string.Format("{0} <br />{1}", answer, "<font color='#FF6A00'>Not Answered</font>");
+                        return string.Format("{0} <br />{1}", answer, "<span class='notanswered'>Not Answered</span>");
                     }
                 }
             }

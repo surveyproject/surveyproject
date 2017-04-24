@@ -31,14 +31,6 @@ namespace Votations.NSurvey.WebAdmin
 	/// </summary>
     public partial class LogOut : PageBase
 	{
-		protected System.Web.UI.WebControls.Label MessageLabel;
-		protected System.Web.UI.WebControls.Button ValidateCredentialsButton;
-		protected System.Web.UI.WebControls.TextBox LoginTextBox;
-		protected System.Web.UI.WebControls.Literal NSurveyAuthenticationTitle;
-		protected System.Web.UI.WebControls.Literal LoginLabel;
-		protected System.Web.UI.WebControls.Literal PasswordLabel;
-		protected System.Web.UI.WebControls.TextBox PasswordTextBox;
-
 
 		override protected void OnInit(EventArgs e)
 		{
@@ -57,10 +49,11 @@ namespace Votations.NSurvey.WebAdmin
 	
 		private void Page_Load(object sender, System.EventArgs e)
 		{
-
+            // clear all login/ authorisation data
             Session.Abandon();
             Response.Cookies.Clear();
 			FormsAuthentication.SignOut();
+            // go back to SP start page: default.aspx
 			UINavigator.NavigateToLogin();
 		}
 

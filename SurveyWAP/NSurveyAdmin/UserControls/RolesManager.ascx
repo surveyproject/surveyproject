@@ -2,14 +2,14 @@
 <%@ Register TagPrefix="uc1" TagName="RolesOptionsControl" Src="RolesOptionsControl.ascx" %>
 
 <br />
-                                        <div style="position: absolute; width:40px; right: 22px; top: 52px;">
+                                        <div style="position: absolute; width:40px; right: 22px; top: 0px;">
                                             <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/UM_Introduction.aspx"
                                                 title="Click for more Information">
                                                 <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
                                             </a>
                                         </div>
             <fieldset style="width:745px; margin-left:0px;">
-                <legend class="titleFont" style="margin: 0px 15px 0 15px; text-align:left;">
+                <legend class="titleFont titleLegend">
                             <asp:Literal ID="RolesManagerTitle" runat="server" EnableViewState="False" Text="Roles manager"></asp:Literal>
                     </legend>
 

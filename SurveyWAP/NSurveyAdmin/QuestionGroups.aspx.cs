@@ -28,20 +28,23 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
             if (!Page.IsPostBack)
             {
                 BindLanguages();
-                LocalizePage();
+
                 BindFields();
                 SetupSecurity();
             }
+
+                LocalizePage();
 
         }
 
 
         private void LocalizePage()
         {
-            QGroupsExlpainLabel.Text = GetPageResource("QGroupsExplain");
+            QGroupsExplainLabel.Text = GetPageResource("QGroupsExplain");
             lbAddNew.Text = GetPageResource("AddNewGroup");
             lbAddNewSubGroup.Text = GetPageResource("AddNewSubgroup");
             QuestionGroupLegend.Text = GetPageResource("QuestionGroupLegend");
+            Labellanguage.Text = GetPageResource("FreeTextBoxLanguageLabel");
             
         }
         private void SetupSecurity()

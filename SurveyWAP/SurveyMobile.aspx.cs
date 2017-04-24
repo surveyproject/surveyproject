@@ -62,9 +62,43 @@ namespace Votations.NSurvey.WebAdmin
         }
 
 
+        protected override void OnInit(EventArgs e)
+        {
+            //jQuery(necessary for Bootstrap's JavaScript plugins) + answerfieldslideritem.cs
+
+            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
+
+            HtmlGenericControl javascriptControl = new HtmlGenericControl("script");
+
+            javascriptControl.Attributes.Add("id", "jq311");
+            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/jquery-3.1.1.min.js"));
+            Page.Header.Controls.Add(javascriptControl);
+
+            //For development purposes only: upgrade jquery
+
+            //Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
+
+            //javascriptControl = new HtmlGenericControl("script");
+            //javascriptControl.Attributes.Add("id", "jqmigrate");
+            //javascriptControl.Attributes.Add("src", ResolveUrl("https://code.jquery.com/jquery-migrate-3.0.0.js"));
+            //Page.Header.Controls.Add(javascriptControl);
+
+            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
+
+            javascriptControl = new HtmlGenericControl("script");
+            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/jquery-ui-1.12.1.min.js"));
+            Page.Header.Controls.Add(javascriptControl);
+
+            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
+
+
+        }
+
+
         void Page_Load(Object sender, EventArgs e)
         {
-
+                
+            //in case of custom Layout add user CSS file:
             SurveyLayoutData _userSettings;
             //    Survey.SurveyId = int.Parse(Request["SurveyId"]);
             int id = GetSurveyId();
@@ -78,6 +112,8 @@ namespace Votations.NSurvey.WebAdmin
             {
                 if (!string.IsNullOrEmpty(_userSettings.SurveyLayout[0].SurveyCss))
                 {
+                    defaultCSS.Visible = false;
+
                     Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
                     HtmlGenericControl css = new HtmlGenericControl("link");
                     css.Attributes.Add("rel", "stylesheet");
@@ -89,23 +125,7 @@ namespace Votations.NSurvey.WebAdmin
                // this.SurveyHeaderCustom.Text = HttpUtility.HtmlDecode(_userSettings.SurveyLayout[0].SurveyHeaderText);
                // this.SurveyFooterCustom.Text = HttpUtility.HtmlDecode(_userSettings.SurveyLayout[0].SurveyFooterText);
             }
-
-           // jQuery (necessary for Bootstrap's JavaScript plugins) + answerfieldslideritem.cs
-            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-
-            HtmlGenericControl javascriptControl = new HtmlGenericControl("script");
-            javascriptControl.Attributes.Add("type", "text/Javascript");
-            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/JavaScript/01_jquery/jquery-1.11.1.js"));
-            Page.Header.Controls.Add(javascriptControl);
-
-            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-
-            javascriptControl = new HtmlGenericControl("script");
-            javascriptControl.Attributes.Add("type", "text/Javascript");
-            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/JavaScript/ui/jquery-ui-1.10.4.js"));
-            Page.Header.Controls.Add(javascriptControl);
-
-            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
+            
 
         }
     }

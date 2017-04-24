@@ -8,7 +8,7 @@
                 </div>
 <br />
             <fieldset style="width: 730px; margin-left: 12px; margin-top: 15px;">
-                <legend class="titleFont" style="margin: 0px 15px 0 15px; text-align:left;">
+                <legend class="titleFont titleLegend" style="width:96%;">
             <asp:Label ID="filtertitle" runat="server"></asp:Label>
                                     </legend>
                 <br />
@@ -43,7 +43,7 @@
 <asp:PlaceHolder ID="EditplaceHolder" runat="server">
 
             <fieldset style="width: 730px; margin-left: 12px; margin-top: 15px;">
-                <legend class="titleFont" style="margin: 0px 15px 0 15px; text-align:left;">
+                <legend class="titleFont titleLegend" style="width:96%;">
                     <asp:Literal ID="NewRuleTitle" runat="server" EnableViewState="False"> Add new rule to filter</asp:Literal>
                                                         </legend>
                 <br />
@@ -108,7 +108,7 @@
 <br />
 <asp:PlaceHolder ID="AutoPlaceHolder" runat="server">
                 <fieldset style="width: 730px; margin-left: 12px; margin-top: 15px;">
-                <legend class="titleFont" style="margin: 0px 15px 0 15px; text-align:left;">
+                <legend class="titleFont titleLegend" style="width:96%;">
                     <asp:Literal ID="autoFilterLabel" runat="server" EnableViewState="False"> Auto-Create Filter</asp:Literal>
                                                                             </legend>
                 <br />

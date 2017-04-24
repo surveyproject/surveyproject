@@ -31,33 +31,6 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls {
         protected global::System.Web.UI.WebControls.Literal NSurveyAuthenticationTitle;
         
         /// <summary>
-        /// Introduction control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Introduction;
-        
-        /// <summary>
-        /// LoginLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal LoginLabel;
-        
-        /// <summary>
-        /// PasswordLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal PasswordLabel;
-        
-        /// <summary>
         /// ValidateCredentialsButton control.
         /// </summary>
         /// <remarks>

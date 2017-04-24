@@ -8,13 +8,17 @@
     <script type="text/javascript">
         $(function () {
 
-            $("#<%=txtFrom.ClientID%>").datepicker();
-            $("#<%=txtTo.ClientID%>").datepicker();
+            var lang2 = '<%=Request.UserLanguages[0].ToString().ToLower()%>';
+            var lang = lang2.substring(0,2)
+
+            $("#<%=txtFrom.ClientID%>").datepicker( $.datepicker.regional[lang] );
+            $("#<%=txtTo.ClientID%>").datepicker($.datepicker.regional[lang]);
+
         });
     </script>
 
 
-                        <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
+                        <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 6px;">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
             <br />
@@ -22,7 +26,7 @@
 
 
     <fieldset style="width:750px; margin-top:15px; margin-left:12px; text-align: left;">
-        <legend class="titleFont" style="margin: 0px 15px 0 15px;">
+        <legend class="titleFont titleLegend">
 
                     <asp:Literal ID="DataImportTitle" runat="server" Text="Data Import" EnableViewState="False"></asp:Literal>
 

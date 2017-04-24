@@ -84,14 +84,6 @@ namespace Votations.NSurvey.WebAdmin
             _userSettings = u.SurveyLayoutGet(((PageBase)Page).getSurveyId());
 
             string href = ResolveUrl("~/NSurveyAdmin/CSS/surveypreview.css");
-            //string href= VirtualPathUtility.ToAbsolute("~/NSurveyAdmin/CSS/nsurveyform.css" );
-
-            //Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-            //HtmlGenericControl css = new HtmlGenericControl("link");
-            //css.Attributes.Add("rel", "stylesheet");
-            //css.Attributes.Add("type", "text/css");
-            //css.Attributes.Add("href", VirtualPathUtility.ToAbsolute("~/NSurveyAdmin/CSS/nsurveyform.css"));
-            //Page.Header.Controls.Add(css);
 
 
             if (!(_userSettings == null || _userSettings.SurveyLayout.Count == 0))
@@ -154,59 +146,6 @@ namespace Votations.NSurvey.WebAdmin
        
             SurveyPreview.Visible = true;
 
-            //Votations.NSurvey.SQLServerDAL.SurveyLayout u = new Votations.NSurvey.SQLServerDAL.SurveyLayout();
-            //_userSettings = u.SurveyLayoutGet(((PageBase)Page).getSurveyId());
-
-            //string href = ResolveUrl("~/NSurveyAdmin/CSS/nsurveyform.css");
-            ////string href= VirtualPathUtility.ToAbsolute("~/NSurveyAdmin/CSS/nsurveyform.css" );
-
-            ////Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-            ////HtmlGenericControl css = new HtmlGenericControl("link");
-            ////css.Attributes.Add("rel", "stylesheet");
-            ////css.Attributes.Add("type", "text/css");
-            ////css.Attributes.Add("href", VirtualPathUtility.ToAbsolute("~/NSurveyAdmin/CSS/nsurveyform.css"));
-            ////Page.Header.Controls.Add(css);
-            
-                
-            //if (!(_userSettings == null || _userSettings.SurveyLayout.Count == 0))
-            //{
-
-
-            //    if (!string.IsNullOrEmpty(_userSettings.SurveyLayout[0].SurveyCss))
-            //    {
-                  
-            //       // href=ResolveUrl(UserSettingsConstants.CssStoragePath + "/" + SurveyId.ToString() + "/" + _userSettings.SurveyLayout[0].SurveyCss);
-
-            //        Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-            //        HtmlGenericControl css2 = new HtmlGenericControl("link");
-            //        css2.Attributes.Add("rel", "stylesheet");
-            //        css2.Attributes.Add("type", "text/css");
-            //        css2.Attributes.Add("href", ResolveUrl(UserSettingsConstants.CssStoragePath + "/" + SurveyId.ToString() + "/" + _userSettings.SurveyLayout[0].SurveyCss));
-            //        Page.Header.Controls.Add(css2);
-
-            //    }
-            //    else
-            //    {
-            //        Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-            //        HtmlGenericControl css = new HtmlGenericControl("link");
-            //        css.Attributes.Add("rel", "stylesheet");
-            //        css.Attributes.Add("type", "text/css");
-            //        css.Attributes.Add("href", href);
-            //        Page.Header.Controls.Add(css);
-            //    }
-
-            ////    this.SurveyHeaderCustom.Text = HttpUtility.HtmlDecode(_userSettings.SurveyLayout[0].SurveyHeaderText);
-            // //   this.SurveyFooterCustom.Text = HttpUtility.HtmlDecode(_userSettings.SurveyLayout[0].SurveyFooterText);
-            //}
-            //else
-            //{
-            //Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-            //HtmlGenericControl css = new HtmlGenericControl("link");
-            //css.Attributes.Add("rel", "stylesheet");
-            //css.Attributes.Add("type", "text/css");
-            //css.Attributes.Add("href", href);
-            //Page.Header.Controls.Add(css);
-            //}
 
 
             

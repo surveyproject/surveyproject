@@ -8,13 +8,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div id="mainBody" class="mainBody contentHolder ps-container">
         <div id="Panel" class="Panel content">
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
+            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 2px;">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
 
      <br />
     <fieldset style="width:750px; margin-top:15px; margin-left:12px; text-align: left;">
-        <legend class="titleFont" style="margin: 0px 15px 0 15px;">
+        <legend class="titleFont titleLegend">
             <asp:Literal ID="SurveyUrl" runat="server" EnableViewState="False">Survey Hyperlinks</asp:Literal>
         </legend><br />
         <ol>
@@ -58,7 +58,7 @@
     </fieldset>
      <br /> <br />
     <fieldset style="width:750px; margin-left:12px; text-align: left;">
-        <legend class="titleFont" style="margin: 0px 15px 0 15px;">
+        <legend class="titleFont titleLegend">
             <asp:Literal ID="ControlCodeTitle" runat="server" EnableViewState="False">Webcontrol asp.net starting code</asp:Literal></legend>
         <br /><ol>
             <li>

@@ -3,16 +3,20 @@
 <%@ Control Language="c#" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.UserControls.SurveyOptionControl" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" Codebehind="SurveyOptionControl.ascx.cs" %>
 
 
+
     <script type="text/javascript">
         $(function () {
 
-            $("#<%=OpeningDateTextBox.ClientID%>").datepicker();
-            $("#<%=CloseDateTextbox.ClientID%>").datepicker();
+            var lang2 = '<%=Request.UserLanguages[0].ToString().ToLower()%>';
+            var lang = lang2.substring(0,2)
+
+            $("#<%=OpeningDateTextBox.ClientID%>").datepicker( $.datepicker.regional[lang] );
+            $("#<%=CloseDateTextbox.ClientID%>").datepicker($.datepicker.regional[lang]);
         });
     </script>
 
 
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
+            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 4px;">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
 
@@ -26,7 +30,7 @@
                                         </div>
 
             <fieldset style="width: 750px; margin-left: 12px; margin-top: 15px;" title="Survey Title">
-                <legend class="titleFont" style="text-align: left; margin: 0px 15px 0 15px;">
+                <legend class="titleFont titleLegend">
                     <asp:Literal ID="SurveyInformationTitle2" runat="server" Text=""
                         EnableViewState="False"></asp:Literal></legend>
 
@@ -57,7 +61,7 @@
      <asp:PlaceHolder ID="EditUi" runat="server">
          <br />
          <fieldset style="width: 750px; margin-left: 12px; margin-top: 15px;" title="Survey Settings">
-             <legend class="titleFont" style="text-align: left; margin: 0px 15px 0 15px;">
+             <legend class="titleFont titleLegend">
                  <asp:Literal ID="SurveyInformationTitle" runat="server" Text="Survey information"
                      EnableViewState="False"></asp:Literal></legend>
              <br />
@@ -172,7 +176,7 @@
             </div>
 
          <fieldset style="width: 750px; margin-top:15px; margin-left: 12px;" title="Notification Settings">
-             <legend class="titleFont" style="text-align: left; margin: 0px 15px 0 15px;">
+             <legend class="titleFont titleLegend">
                  <asp:Literal ID="NotificationSettingsTitle" runat="server" EnableViewState="False" Text="Notification settings"></asp:Literal>
              </legend>
              <br />
@@ -227,19 +231,19 @@
 <asp:PlaceHolder runat="server" ID="SurveyImportPlaceHolder">
 <div style=" display:inline-block; float:left; clear:both; width:750px; left:30px; position:absolute; top:195px;">     
     <fieldset title="Import Survey">
-        <legend class="titleFont" style="text-align: left; margin: 15px;">
+         <legend class="titleFont titleLegend">
            <asp:Literal ID="ImportSurveyLiteral" runat="server" EnableViewState="false">Import</asp:Literal>
         </legend>
 
-        <ol>
+        <ol style="margin:15px 0 0 0;">
             <li>
 
-                <asp:Label ID="ImportSurveyTitle" AssociatedControlID="ImportFile" runat="server" EnableViewState="False">Ïmport Survey from XML</asp:Label>
+                <asp:Label ID="ImportSurveyTitle" AssociatedControlID="ImportFile" runat="server" EnableViewState="False">Import Survey from XML</asp:Label>
 
-                <input id="ImportFile" type="file" size="40" style="margin-left: 15px;" name="ImportFile" runat="server" />
-
+                <input id="ImportFile" type="file" size="20" name="ImportFile" runat="server" />
+                <div style="margin:-21px 0 21px 0;">
                 <asp:Button ID="ImportXMLButton" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Import XML"></asp:Button>
-
+</div>
 
             </li>
         </ol>

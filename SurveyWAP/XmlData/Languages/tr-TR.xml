@@ -3358,4 +3358,205 @@ Thanks
   <data version="2.0" id="1105" name="DDLSelectValue">
    <value>--Please select a value--</value>
   </data>
+  <data version="2.0" id="1106" name="ChooseSurveyLabel">
+    <value>Please choose a survey from the list:</value>
+  </data>
+  <data version="2.0" id="1107" name="HelpGifTitle">
+    <value>Click for more Information</value>
+  </data>
+  <data version="1.0" id="1108" name="FromLabelMail">
+    <value>From Email :</value>
+  </data>
+  <data version="1.0" id="1109" name="ToLabelMail">
+    <value>To :</value>
+  </data>
+  <data version="1.0" id="1110" name="SliderRangeTextLabel">
+    <value>Slider Min/ Max Range :</value>
+  </data>
+  <data version="1.0" id="1111" name="SliderValueTextLabel">
+    <value>Default Value :</value>
+  </data>
+  <data version="1.0" id="1112" name="SliderMinTextLabel">
+    <value>Min Value :</value>
+  </data>
+  <data version="1.0" id="1113" name="SliderMaxTextLabel">
+    <value>Max Value :</value>
+  </data>
+  <data version="1.0" id="1114" name="SliderAnimateTextLabel">
+    <value>Animate :</value>
+  </data>
+  <data version="1.0" id="1115" name="SliderStepTextLabel">
+    <value>Step :</value>
+  </data>
+  <data version="1.0" id="1116" name="FieldSliderType">
+    <value>Field - Slider</value>
+  </data>
+  <data version="1.0" id="1117" name="MissingSurveyTitleMessage">
+    <value>Please enter a title for your Survey</value>
+  </data>
+  <data version="1.0" id="1118" name="MissingGroupNameMessage">
+    <value>Please enter a name for the Group</value>
+  </data>
+  <data version="1.0" id="1119" name="MissingSubGroupNameMessage">
+    <value>Please enter a name for the SubGroup</value>
+  </data>
+  <data version="1.0" id="1120" name="GraphicalReports">
+    <value> Graphical Reports</value>
+  </data>
+  <data version="1.0" id="1121" name="VoterReports">
+    <value> Voter Reports</value>
+  </data>
+  <data version="1.0" id="1122" name="CrossTabulationReports">
+    <value> Cross Tabulation Reports</value>
+  </data>
+  <data version="1.0" id="1123" name="Prev">
+    <value> Previous</value>
+  </data>
+  <data version="1.0" id="1124" name="Next">
+    <value> Next</value>
+  </data>
+  <data version="2.3" id="1125" name="MailStatusDetails">
+    <value>Details</value>
+  </data>
+  <data version="2.3" id="1126" name="SearchTitle">
+    <value>Search Surveylist</value>
+  </data>
+  <data version="2.3" id="1127" name="SurveyInformationTitle2">
+    <value>Survey Title</value>
+  </data>
+  <data version="2.3" id="1128" name="ImportSurveyLiteral">
+    <value>Import Survey</value>
+  </data>
+  <data version="2.3" id="1129" name="LibraryDirectoryLegend">
+    <value>Libraries Directory</value>
+  </data>
+  <data version="2.3" id="1130" name="QuestionGroupLegend">
+    <value>Question Groups</value>
+  </data>
+  <data version="2.3" id="1131" name="UpdateVoterAnswersButton">
+    <value>Update Answers</value>
+  </data>
+  <data version="2.3" id="1132" name="UserlistFilterOptionLiteral">
+    <value>Userlist Filter Options</value>
+  </data>
+  <data version="2.3" id="1133" name="SurveyLayoutLegend">
+    <value>Survey Layout</value>
+  </data>
+  <data version="2.3" id="1134" name="SurveyListPageNrLiteral">
+    <value>You are viewing page</value>
+  </data>
+  <data version="2.4" id="1135" name="GeneralSettingsHyperlink">
+    <value>Installation Settings</value>
+  </data>
+  <data version="2.4" id="1136" name="InvalidMatrixQuestionID">
+    <value>Invalid matrix QuestionID!</value>
+  </data>
+  <data version="2.4" id="1137" name="InvalidVoterID">
+    <value>Invalid VoterID!</value>
+  </data>
+  <data version="2.4" id="1138" name="DDlValue">
+    <value>Invalid Dropdownlist Value</value>
+  </data>
+  <data version="2.4" id="1139" name="InvalidPageNumber">
+    <value>Invalid page number!</value>
+  </data>
+  <data version="2.4" id="1140" name="InvalidQuestionID">
+    <value>Invalid QuestionID!</value>
+  </data>
+  <data version="2.4" id="1141" name="VoterID">
+    <value>VoterID</value>
+  </data>
+  <data version="2.4" id="1142" name="GroupGuid">
+    <value>GroupGuid</value>
+  </data>
+  <data version="2.4" id="1143" name="TokenSecurity">
+    <value>Token Security</value>
+  </data>
+  <data version="2.4" id="1144" name="SurveyLayout">
+    <value>Survey Layout</value>
+  </data>
+  <data version="2.4" id="1145" name="AccessSurveyList">
+    <value>Access SurveyList</value>
+  </data>
+  <data version="2.4" id="1146" name="HelpLabelHelpfiles">
+    <value>Available Helpfiles</value>
+  </data>
+  <data version="2.4" id="1147" name="HelpLabelStartupSettings">
+    <value>Startup and Settings</value>
+  </data>
+  <data version="2.4" id="1148" name="CancelButtonText">
+    <value> Cancel </value>
+  </data>
+  <data version="2.4" id="1149" name="RadioButtonAnswerCssLabel">
+    <value>Radiobutton CSS :</value>
+  </data>
+  <data version="2.4" id="1150" name="GeneralSettingsTitle">
+    <value>INSTALLATION SETTINGS</value>
+  </data>
+  <data version="2.4" id="1151" name="CssXmlHyperLink">
+    <value>Css Xml</value>
+  </data>
+  <data version="2.4" id="1152" name="FieldAddressType">
+    <value>Field - Address</value>
+  </data>
+  <data version="2.4" id="1153" name="SelectAnswerTypeDDL">
+    <value>[Select AnswerType]</value>
+  </data>
+  <data version="2.4" id="1154" name="TokenList">
+    <value>List of Generated Tokens</value>
+  </data>
+  <data version="2.4" id="1155" name="TokenFilter">
+    <value>Tokenlist Filter Options</value>
+  </data>
+  <data version="2.4" id="1156" name="MandatoryQuestionTitle">
+    <value>Mandatory Question</value>
+  </data>
+  <data version="2.4" id="1157" name="MandatoryAnswerTitle">
+    <value>Mandatory Answer</value>
+  </data>
+  <data version="2.4" id="1158" name="FriendlyNameDeletedMsg">
+    <value>Friendly name Deleted</value>
+  </data>
+  <data version="2.4" id="1159" name="FriendlyUrlLabel">
+    <value>Friendly URL: </value>
+  </data>
+  <data version="2.4" id="1160" name="SurveyLayoutSavedMsg">
+    <value>Layout correctly Saved</value>
+  </data>
+  <data version="2.4" id="1161" name="InvalidFileTypeLayoutMsg">
+    <value>Invalid filetype: .CSS only</value>
+  </data>
+  <data version="2.4" id="1162" name="CssFileUpdatedMsg">
+    <value>CSS file updated</value>
+  </data>
+  <data version="2.4" id="1163" name="SpFrontPageSlogan">
+    <value>
+      Platform for developing &amp; sharing free software &lt;br /&gt;to collect data online
+    </value>
+  </data>
+  <data version="2.4" id="1164" name="SpFrontPageTheme">
+    <value>
+      The open source webapplication to create and publish surveys and webforms online
+    </value>
+  </data>
+  <data version="2.4" id="1165" name="DisclaimerTitle">
+    <value>
+      Licensing &amp; Disclaimer
+    </value>
+  </data>
+  <data version="2.4" id="1166" name="IPRanges">
+    <value>IP Ranges</value>
+  </data>
+  <data version="2.4" id="1167" name="ValidateCredentialsButtonTooltip">
+    <value>Validate Credentials</value>
+  </data>
+  <data version="2.4" id="1168" name="Token Protection">
+    <value>Token Protection</value>
+  </data>
+  <data version="2.4" id="1169" name="IP Filter">
+    <value>IP Filter Protection</value>
+  </data>
+  <data version="2.4" id="1170" name="btnGenerate">
+    <value>Generate</value>
+  </data>
 </root>

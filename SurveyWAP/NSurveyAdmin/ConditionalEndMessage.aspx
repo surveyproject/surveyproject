@@ -13,11 +13,11 @@
     <div id="mainBody" class="mainBody contentHolder ps-container">
         <div id="Panel" class="Panel content">
 
-                                    <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 10px;">
+                                    <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 4px;">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
             <br />
-    <fieldset style="width:750px; margin-top:15px; margin-left:12px;"><legend class="titleFont" style="margin: 0px 15px 0 15px; text-align:left;">
+    <fieldset style="width:750px; margin-top:15px; margin-left:12px;"><legend class="titleFont titleLegend">
                     <asp:Literal ID="AddNewConditionTitle" runat="server" EnableViewState="False"></asp:Literal></legend>
         <br />
 <ol>

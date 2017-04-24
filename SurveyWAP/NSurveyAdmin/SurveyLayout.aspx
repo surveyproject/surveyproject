@@ -23,7 +23,7 @@
         <div id="mainBody" class="mainBody contentHolder ps-container">
         <div id="Panel" class="Panel content">
 
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
+            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 4px;">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
             
@@ -35,7 +35,7 @@
                 </div>
             
        <fieldset style="width:750px; margin-left:12px; margin-top:15px;">
-        <legend class="titleFont" style="margin: 0px 15px 0 15px; text-align:left;">
+        <legend class="titleFont titleLegend">
           <asp:Literal ID="SurveyLayoutLegend" runat="server" EnableViewState="false">Survey Layout</asp:Literal>  
         </legend><br />
 
@@ -47,8 +47,8 @@
 
 </li><li>   
         
-                            <asp:FileUpload Width="225"  runat="server" ID="fuCss"/>
-                            <asp:Button Width="100" Height="23" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Upload" ID="btnCssUpload" OnCommand="OnCssFileUpload" />
+                            <asp:FileUpload runat="server" ID="fuCss"/>
+                            <asp:Button CssClass="btnCssUpload btn btn-primary btn-xs bw" runat="server" Text="Upload" ID="btnCssUpload" OnCommand="OnCssFileUpload" />
     </li><li id="cssBtnID" runat="server"> 
                             <asp:Button CssClass="btn btn-primary btn-xs bw" runat="server" ID="btnCssDownload" Text="Download" OnClick="btnCssDownload_Click" />
 

@@ -13,7 +13,7 @@
                 </div>
     
          <br />
-                <fieldset style="width:750px; margin-top:15px; margin-left:12px;"><legend class="titleFont" style="margin: 0px 15px 0 15px; text-align:left;">
+                <fieldset style="width:750px; margin-top:15px; margin-left:12px;"><legend class="titleFont titleLegend">
 <asp:Literal id="PendingEmailsTitle" runat="server" EnableViewState="False">Pending emails - Page</asp:Literal>
 
           <asp:label id="CurrentPendingPageLabel" runat="server"></asp:label>&nbsp;/
@@ -66,7 +66,7 @@
                     <br />
                     </fieldset>
          <br />
-                <fieldset style="width:750px; margin-left:12px;"><legend class="titleFont" style="margin: 0px 15px 0 15px; text-align:left;">
+                <fieldset style="width:750px; margin-left:12px;"><legend class="titleFont titleLegend">
             
         <asp:Literal id="ValidatedEmailTitle" runat="server" EnableViewState="False">Validated emails answers - Page</asp:Literal>
                    

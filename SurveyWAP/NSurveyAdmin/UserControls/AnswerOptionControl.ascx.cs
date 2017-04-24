@@ -529,9 +529,9 @@ namespace Votations.NSurvey.WebAdmin.UserControls
             AnswerCssClassTextBox.Visible = isSelectionType;
             accLI.Visible = isSelectionType;
 
-            DefaultTextLabel.Visible = isFieldType;
-            DefaultTextTextBox.Visible = isFieldType;
-            dtLI.Visible = isFieldType;
+            DefaultTextLabel.Visible = isFieldType  && !isSlider;
+            DefaultTextTextBox.Visible = isFieldType && !isSlider;
+            dtLI.Visible = isFieldType && !isSlider;
 
             RegExValidationLabel.Visible = isRegExType;
             RegExDropDownList.Visible = isRegExType;

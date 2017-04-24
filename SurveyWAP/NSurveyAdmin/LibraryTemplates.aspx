@@ -15,7 +15,7 @@
                 </div>
             <br />
                   <fieldset style="width:730px; margin-left:12px; margin-top:15px;" title="">
-        <legend class="titleFont" style="margin: 0px 15px 0 15px; text-align:left;"><asp:Literal ID="LibraryQuestionsTemplatesTitle" runat="server" Text="Library templates"
+        <legend class="titleFont titleLegend"><asp:Literal ID="LibraryQuestionsTemplatesTitle" runat="server" Text="Library templates"
                                     EnableViewState="False"></asp:Literal></legend><br />
                 <ol>
                     <li>

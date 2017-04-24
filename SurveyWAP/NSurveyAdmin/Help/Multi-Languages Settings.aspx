@@ -45,8 +45,19 @@
                 <br />
                 <br />
                 o <i>Get From QueryString</i><br />
-                Survey will get the language of the query-string variable and will switch to it
-                if its language is available in the survey.<br />
+                Survey will get the language of the query-string variable from the survey URL and will switch to it
+                if its language is available in collection of survey xml language files.<br />
+                <br />
+                Steps:<br />
+- go to the multilanguage menu page<br />
+- select ML mode: " get from querystring"<br />
+- you can now enter a variable name (e.g. lang) that must be added to the survey url and which will hold the preferred language (eg. nl-NL)<br />
+- next save the changes<br /><br />
+
+To make use of the variable the survey url should look something like:<br />
+http://yourwebsite/surveymobile.aspx?surveyid=836aae1e-f2bb-451f-89d6-63b55e7f9318&lang=nl-NL
+
+
                 <br />
                 <br />
                 o <i>Get From Cookie</i><br />

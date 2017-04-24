@@ -102,24 +102,13 @@
 
       - Start u voor de eerste keer op dan kunt u inloggen als &lt;strong&gt;admin&lt;/strong&gt;, wachtwoord &lt;strong&gt;admin.&lt;/strong&gt;
       Wanneer u bent ingelogd en als u de eerste enquete hebt aangemaakt, kunt u gebruikersnaam en wachtwoord wijzigen via de menuoptie Gebruikers.&lt;br /&gt;&lt;br /&gt;
-      
-      - Enkele technische opties en aanwijzingen: Survey&#8482; kan in de zgn. single user mode (anoniem) worden opgestart: open het web.config bestand
-      en zoek het FormUserProviderSingleMode element voor meer informatie.&lt;br /&gt;&lt;br /&gt;
-      
-      - Wijzig de Mail server instellingen in het web.config bestand met behulp van een text editor - kladblok&lt;br /&gt;&lt;br /&gt;
-      Meer instructies en achtergrondinformatie is te vinden via de Survey Project website &lt;a href="http://www.surveyproject.info" target="_blank"&gt;http://www.surveyproject.info&lt;/a&gt;.
-      Voor vragen kunt u terecht bij de Forums van deze site.&lt;br /&gt;&lt;br /&gt;
-      
+
+      &lt;br /&gt;&lt;br /&gt;
+      - Several technical options and settings can be changed throught the System Settings Menu. Background information can be found in the
+      System Settings Helpfile.
 
       - &lt;b&gt;Enquete Voorbeelden:&lt;/b&gt; Twee voorbeeld Enquete xml-bestanden horen bij het Survey pakket [_FormSamples].
       Deze kunnen worden geimporteerd via de menuoptie [nieuw / importeer enquete via XML].&lt;br /&gt;&lt;br /&gt;
-
-      - Deze applicatie is zoveel mogelijk conform:&lt;br /&gt;&lt;br /&gt;&lt;a href="http://validator.w3.org/check?uri=referer"&gt;&lt;img src="http://www.w3.org/Icons/valid-xhtml10-blue" alt="Valid XHTML 1.0 Transitional" height="31" width="88" border="0" /&gt;&lt;/a&gt;
-
-      &lt;a href="http://jigsaw.w3.org/css-validator/check/referer"&gt;
-      &lt;img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" border="0" /&gt;&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;
-      - De Survey webapplicatie is herschreven om te voldoen aan de W3C XHTML 1.0 Transitional standaard met uitzondering van de pagina's die gebruik maken van componenten van derde partijen.
-      &lt;br /&gt;&lt;br /&gt;
 
       - De taalinstellingen van uw webbrowser bepalen welk xml taalbestand wordt gebruikt om de webpagina teksten te vertalen.
       &lt;br /&gt;&lt;br /&gt;

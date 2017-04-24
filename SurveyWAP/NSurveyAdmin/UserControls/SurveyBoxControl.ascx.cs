@@ -62,14 +62,14 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls
 
             HtmlGenericControl javascriptControl = new HtmlGenericControl("script");
             javascriptControl.Attributes.Add("type", "text/Javascript");
-            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/JavaScript/01_jquery/jquery-1.11.1.js"));
+            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/jquery-3.1.1.min.js"));
             Page.Header.Controls.Add(javascriptControl);
 
             Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
 
             javascriptControl = new HtmlGenericControl("script");
             javascriptControl.Attributes.Add("type", "text/Javascript");
-            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/JavaScript/ui/jquery-ui-1.10.4.js"));
+            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/jquery-ui-1.12.1.min.js"));
             Page.Header.Controls.Add(javascriptControl);
 
             Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
