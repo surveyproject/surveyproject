@@ -9,7 +9,7 @@
 - Survey™ Project is an easy-to-use webapp to collect data and information from customers, visitors or employees efficiently.
 
 At Github you will find the most recent Survey™ Project releases including source code and the main branche for (public) development.
-Former releases (up untill v 2.3) and sources can be found at htp://survey.codeplex.com
+Former releases (up untill v 2.3) and sources can be found at http://survey.codeplex.com
 
 
 The following sites are part of the current project and development platform:
