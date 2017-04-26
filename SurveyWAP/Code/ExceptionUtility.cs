@@ -24,7 +24,7 @@ namespace Votations.NSurvey.WebAdmin.Code
 
             // Open the log file for append and write the log
             StreamWriter sw = new StreamWriter(logFile, true);
-            sw.WriteLine("********** {0} **********", DateTime.UtcNow);
+            sw.WriteLine("********** {0} **********", DateTime.Now);
             if (exc.InnerException != null)
             {
                 sw.Write("Inner Exception Type: ");

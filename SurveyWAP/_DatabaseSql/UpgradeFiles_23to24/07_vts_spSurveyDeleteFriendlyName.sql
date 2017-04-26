@@ -1,4 +1,4 @@
-USE [YOURDBNAME]
+﻿USE [YOURDBNAME]
 GO
 /****** Object:  StoredProcedure [dbo].[vts_spSurveyDeleteFriendlyName]    Script Date: 7-2-2017 16:47:31 ******/
 SET ANSI_NULLS ON

@@ -158,7 +158,7 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls
                             }
 
                             // add logindate:
-                            authUser.Users[0].LastLogin = DateTime.UtcNow;
+                            authUser.Users[0].LastLogin = DateTime.Now;
                             ((INSurveyUserProvider)_userProvider).UpdateUser(authUser);
 
                             FormsAuthentication.SetAuthCookie(userInfos.ToString(), false);

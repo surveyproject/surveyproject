@@ -1,4 +1,4 @@
-USE [YOURDBNAME]
+﻿USE [YOURDBNAME]
 GO
 /****** Object:  StoredProcedure [dbo].[vts_spVoterExportCSVData]    Script Date: 3/21/2017 15:14:06 ******/
 SET ANSI_NULLS OFF

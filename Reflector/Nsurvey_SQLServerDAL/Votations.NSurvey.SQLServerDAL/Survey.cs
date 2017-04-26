@@ -537,7 +537,7 @@ namespace Votations.NSurvey.SQLServerDAL
             SqlCommand addNewSurvey = (sqlTransaction == null) ?
                 new SqlCommand("vts_spSurveyAddNew", sqlConnection) : new SqlCommand("vts_spSurveyAddNew", sqlConnection, sqlTransaction);
             addNewSurvey.CommandType = CommandType.StoredProcedure;
-            addNewSurvey.Parameters.Add(new SqlParameter("@CreationDate", DateTime.UtcNow));
+            addNewSurvey.Parameters.Add(new SqlParameter("@CreationDate", DateTime.Now));
             addNewSurvey.Parameters.Add(new SqlParameter("@OpenDate", SqlDbType.DateTime, 8, "OpenDate"));
             addNewSurvey.Parameters.Add(new SqlParameter("@CloseDate", SqlDbType.DateTime, 8, "CloseDate"));
             addNewSurvey.Parameters.Add(new SqlParameter("@Title", SqlDbType.NVarChar, 255, "Title"));

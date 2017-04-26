@@ -147,7 +147,6 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="GoogleMaps.aspx" />
     <Content Include="HttpErrorPage.aspx" />
     <Content Include="Images\arrow-down.gif" />
     <Content Include="Images\arrow-green-up.gif" />
@@ -171,34 +170,24 @@
     <Content Include="Images\CalendarIcon.gif" />
     <Content Include="Images\cancel2.gif" />
     <Content Include="Images\close-icn.png" />
-    <Content Include="Images\csharp.png" />
     <Content Include="Images\delete.gif" />
     <Content Include="Images\edit.gif" />
     <Content Include="Images\edit_pen.gif" />
-    <Content Include="Images\email.png" />
     <Content Include="Images\help.gif" />
-    <Content Include="Images\help.png" />
     <Content Include="Images\index-icon.png" />
-    <Content Include="Images\inet.png" />
-    <Content Include="Images\layout.png" />
     <Content Include="Images\lock.gif" />
     <Content Include="Images\menuseparator.gif" />
     <Content Include="Images\mscharts_temp\msc_cntr_0.txt" />
     <Content Include="Images\NegativeRatingBar.gif" />
-    <Content Include="Images\PenSurvey.JPG" />
     <Content Include="Images\PositiveRatingBar.gif" />
     <Content Include="Images\Print_32X32_Standard.png" />
-    <Content Include="Images\reports.png" />
     <Content Include="Images\save.gif" />
     <Content Include="Images\small_help.gif" />
-    <Content Include="Images\SocialMedia.png" />
     <Content Include="Images\Spacer.gif" />
     <Content Include="Images\splogo.svg" />
     <Content Include="Images\spot_off.gif" />
     <Content Include="Images\spot_on.gif" />
     <Content Include="Images\submenuseparator.gif" />
-    <Content Include="Images\surveys.png" />
-    <Content Include="Images\tools.png" />
     <Content Include="Images\view.png" />
     <Content Include="Images\warning-icn.png" />
     <Content Include="Images\yellowwarning_16px.gif" />
@@ -1234,13 +1223,6 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="GoogleMaps.aspx.cs">
-      <DependentUpon>GoogleMaps.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GoogleMaps.aspx.designer.cs">
-      <DependentUpon>GoogleMaps.aspx</DependentUpon>
     </Compile>
     <Compile Include="HttpErrorPage.aspx.cs">
       <DependentUpon>HttpErrorPage.aspx</DependentUpon>

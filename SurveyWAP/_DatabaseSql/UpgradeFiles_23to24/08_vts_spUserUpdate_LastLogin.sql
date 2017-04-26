@@ -1,4 +1,4 @@
-USE [YOURDBNAME]
+﻿USE [YOURDBNAME]
 GO
 /****** Object:  StoredProcedure [dbo].[vts_spUserUpdate]    Script Date: 3/21/2017 08:36:36 ******/
 SET ANSI_NULLS OFF

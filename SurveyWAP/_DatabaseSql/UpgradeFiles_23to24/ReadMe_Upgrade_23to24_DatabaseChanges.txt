@@ -1,7 +1,7 @@
 ﻿_______________________________________________________________________
 
 
-Databasechanges based on file comparison SP v. 2.3 and SP v. 2.4
+Databasechanges SP v. 2.3 to SP v. 2.4
 
 _______________________________________________________________________
 
@@ -9,7 +9,8 @@ _______________________________________________________________________
 Notes: 
 - DB upgrades are not formally supported.
 - Always make sure to backup your databases first before making any changes or running scripts.
-- In case of upgrading an SP v. 2.3 database to v.2.4 the following changes have to be made:
+- In case of upgrading an SP v. 2.3 database to v.2.4 execute all queries listed below in the order as described
+- The queryfiles can be found in the _DatabaseSql\UpgradeFiles_23to24 directory
 
 ***********************************************************************************
 
@@ -45,4 +46,36 @@ Notes:
 * add CSS field option on answer level (+ include in export)
 * change vts_answertable (1x)
 * change/ add stored procedures  (7x)
+
+5 05_vts_spFileGetListForGuid_AddFileType.sql
+
+* correction on Filetype
+
+
+6 06_vts_spSurveyUpdate_RedirectionurlFix.sql
+
+* correction of issue with redirectionurl on completion 
+
+
+7 07_vts_spSurveyDeleteFriendlyName.sql
+
+* survey friendlyname Url deleted
+
+
+8 08_vts_spUserUpdate_LastLogin.sql
+
+* last login date registered
+
+
+9 09_vts_spVoterExportCSVData_Email.sql
+
+* Email exported in case of CVS export
+
+
+10 10_vts_spQuestionGetAnswers_DefaultText.sql
+
+* correction on default text field
+
+
+
 

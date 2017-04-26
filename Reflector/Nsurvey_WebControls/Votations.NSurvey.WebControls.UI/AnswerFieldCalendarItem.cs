@@ -103,7 +103,7 @@ namespace Votations.NSurvey.WebControls.UI
             {
                 return flag;
             }
-            this.OnInvalidAnswer(new AnswerItemInvalidEventArgs(string.Format(ResourceManager.GetString("InvalidCalendarDateMessage", base.LanguageCode), this.Text, DateTime.UtcNow.ToShortDateString())));
+            this.OnInvalidAnswer(new AnswerItemInvalidEventArgs(string.Format(ResourceManager.GetString("InvalidCalendarDateMessage", base.LanguageCode), this.Text, DateTime.Now.ToShortDateString())));
             return false;
         }
     }

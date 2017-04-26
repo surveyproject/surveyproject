@@ -104,7 +104,7 @@ namespace Votations.NSurvey.WebAdmin
 			int totalPages = 0,
 				totalRecords = 0;
 			
-			DataSet textEntries = new Voters().GetVotersTextEntries(SurveyId, FieldReportDataGrid.CurrentPageIndex, FieldReportDataGrid.PageSize , new DateTime(2004,1,1), DateTime.UtcNow);
+			DataSet textEntries = new Voters().GetVotersTextEntries(SurveyId, FieldReportDataGrid.CurrentPageIndex, FieldReportDataGrid.PageSize , new DateTime(2004,1,1), DateTime.Now);
 
 			FieldReportDataGrid.DataSource = textEntries ;
 			FieldReportDataGrid.DataKeyField = "VoterID";

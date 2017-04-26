@@ -1,29 +1,37 @@
-# surveyproject_main_public
+ï»¿# surveyproject_main_public
 
 ![Survey Project Logo](http://download-codeplex.sec.s-msft.com/Download?ProjectName=survey&DownloadId=838352&Build=20983)
 
-- Survey™ Project is a free. open source survey and (data entry) forms webapplication (WAP) for processing & gathering data online. 
+- Surveyâ„¢ Project (SP) is a free. open source survey and (data entry) forms webapplication (WAP) for processing & gathering data online. 
 
-- SP™ is written in C#, ASP.NET and runs on Windows OS, IIS and MsSqlserver databases.
+- Surveyâ„¢ Project is written in C#, ASP.NET and runs on Windows OS, IIS and MsSqlserver databases.
 
-- Survey™ Project is ideal to collect valuable information from customers, visitors or employees efficiently.
+- Surveyâ„¢ Project is an easy-to-use webapp to collect data and information from customers, visitors or employees efficiently.
 
-At Github you will find the most recent Survey™ Project source code and main branche for public development & access.
+At Github you will find the most recent Surveyâ„¢ Project releases including source code and the main branche for (public) development.
+Former releases (up untill v 2.3) and sources can be found at htp://survey.codeplex.com
 
-The following sites are part of the current project:
 
-+Survey™ Project Codeplex at http://survey.codeplex.com
-* former versions of the source code
-* issue registration
-* new releases;
-* documentation
+The following sites are part of the current project and development platform:
 
-+Survey™ Project Community at http://www.surveyproject.org
-* project log and status updates
-* community forums on all Survey related subjects
-* Survey product backgrounds
++Surveyâ„¢ Project Community at http://www.surveyproject.org
+* main site of the project for regular status updates
+* forums on all SPâ„¢ related subjects
+* all product information and backgrounds
 * links and help files
 
-+Survey™ Project Demonstation at http://www.surveyproject.net
-* test and demo site of the online administration tool
-test and demo of online survey samples
++Surveyâ„¢ Project Demonstation at http://www.surveyproject.net
+* test and demo site of the latest SPâ„¢ webapplication
+* test and demo of online survey samples
+
++Surveyâ„¢ Project Business Services at http://www.surveyproject.biz
+* information on SPâ„¢ related services
+* business-to-business only
+
++Surveyâ„¢ Project Codeplex at http://survey.codeplex.com
+* former versions of the source code
+* former releases;
+* (legacy) documentation
+
+Note: as announced by Microsoft [2017/03/31] the Codeplex site will shutdown. Already this Github site has replaced all former Codeplex features for the SPâ„¢ project. 
+All information on Codeplex will be archived and remain available.

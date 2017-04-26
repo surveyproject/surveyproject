@@ -28,7 +28,7 @@
 <ol><li>
      <div class="rounded_corners">
     <asp:datagrid id="MailingLogDataGrid" runat="server" Width="100%" 
-                        AutoGenerateColumns="False" AllowCustomPaging="True" PageSize="1">
+                        AutoGenerateColumns="False" AllowCustomPaging="True" PageSize="10">
                 <AlternatingItemStyle BackColor="#FFF6BB">
                 </AlternatingItemStyle>
                 

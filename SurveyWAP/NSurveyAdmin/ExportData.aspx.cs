@@ -81,7 +81,7 @@ namespace Votations.NSurvey.WebAdmin
                 // Header.SurveyId = SurveyId;
                 ((Wap)Master.Master).HeaderControl.SurveyId = SurveyId;
                 StartDateTextBox.Text = new DateTime(2003, 12, 31).ToShortDateString();
-                EndDateTextBox.Text = DateTime.UtcNow.ToShortDateString();
+                EndDateTextBox.Text = DateTime.Now.ToShortDateString();
             }
         }
 

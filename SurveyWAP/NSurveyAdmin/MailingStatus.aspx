@@ -23,7 +23,7 @@
            
           <asp:placeholder id="pendinglist" runat="server">
        <li>    <div class="rounded_corners">
-          <asp:datagrid id="PendingEmailsDataGrid" runat="server" PageSize="2" AllowPaging="True" AutoGenerateColumns="False" Width="100%"  >
+          <asp:datagrid id="PendingEmailsDataGrid" runat="server" PageSize="10" AllowPaging="True" AutoGenerateColumns="False" Width="100%"  >
           <AlternatingItemStyle BackColor="#FFF6BB">
           </AlternatingItemStyle>
           
@@ -86,7 +86,7 @@
             <asp:placeholder id="AnswersPlaceHolder" runat="server">
 <li>
                 <div class="rounded_corners">
-            <asp:datagrid id="AnsweredEmailsDatagrid" runat="server" border="0" AllowPaging="False" Pagesize="3" AutoGenerateColumns="False" Width="100%">
+            <asp:datagrid id="AnsweredEmailsDatagrid" runat="server" border="0" AllowPaging="False" Pagesize="10" AutoGenerateColumns="False" Width="100%">
             <AlternatingItemStyle BackColor="#FFF6BB">
             </AlternatingItemStyle>
             

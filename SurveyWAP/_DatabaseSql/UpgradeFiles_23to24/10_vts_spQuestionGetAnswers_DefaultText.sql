@@ -1,4 +1,4 @@
-USE [YOURDBNAME]
+﻿USE [YOURDBNAME]
 GO
 /****** Object:  StoredProcedure [dbo].[vts_spQuestionGetAnswers]    Script Date: 3/22/2017 08:20:04 ******/
 SET ANSI_NULLS ON

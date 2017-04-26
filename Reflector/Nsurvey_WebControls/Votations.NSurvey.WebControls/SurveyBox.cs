@@ -84,7 +84,7 @@ namespace Votations.NSurvey.WebControls
         private bool _selectionsAreRequired = false;
         private bool _showOnlyPercent = false;
         private bool _showQuestionNumbers = true;
-        private long _startTime = DateTime.UtcNow.Ticks;
+        private long _startTime = DateTime.Now.Ticks;
         private Button _submitButton = new Button();
         private int _surveyId = -1;
         private SurveyData.SurveysRow _surveyRow;
@@ -636,11 +636,11 @@ namespace Votations.NSurvey.WebControls
                 {
                     this.BuildResumeRequest();
                 }
-                else if (!this._surveyRow.IsOpenDateNull() && (DateTime.UtcNow < this._surveyRow.OpenDate))
+                else if (!this._surveyRow.IsOpenDateNull() && (DateTime.Now < this._surveyRow.OpenDate))
                 {
                     this.BuildOpenDate();
                 }
-                else if (!this._surveyRow.IsCloseDateNull() && (DateTime.UtcNow > this._surveyRow.CloseDate))
+                else if (!this._surveyRow.IsCloseDateNull() && (DateTime.Now > this._surveyRow.CloseDate))
                 {
                     this.BuildCloseDate();
                 }
@@ -819,7 +819,7 @@ namespace Votations.NSurvey.WebControls
                 {
                     VoterAnswersData.VotersRow row = this.VoterAnswers.Voters.NewVotersRow();
                     row.SurveyId = this.SurveyId;
-                    row.StartDate = DateTime.UtcNow;
+                    row.StartDate = DateTime.Now;
                     row.LanguageCode = this.LanguageCode;
                     row.Validated = false;
                     row.IPSource = (this.Context.Request.ServerVariables["HTTP_X_FORWARDED_FOR"] != null) ? this.Context.Request.ServerVariables["HTTP_X_FORWARDED_FOR"] : this.Context.Request.ServerVariables["REMOTE_ADDR"];
@@ -872,7 +872,7 @@ namespace Votations.NSurvey.WebControls
         {
             if (this.ViewState["RandomSeed"] == null)
             {
-                this.ViewState["RandomSeed"] = DateTime.UtcNow.Millisecond;
+                this.ViewState["RandomSeed"] = DateTime.Now.Millisecond;
             }
             return int.Parse(this.ViewState["RandomSeed"].ToString());
         }
@@ -1330,7 +1330,7 @@ namespace Votations.NSurvey.WebControls
             {
                 this.VoterAnswers.Voters[0].ResumeUID = new Voter().GenerateResumeUId(8);
             }
-            this.VoterAnswers.Voters[0].ProgressSaveDate = DateTime.UtcNow;
+            this.VoterAnswers.Voters[0].ProgressSaveDate = DateTime.Now;
             this.VoterAnswers.Voters[0].ResumeAtPageNumber = this.CurrentPageIndex;
             this.VoterAnswers.Voters[0].ResumeQuestionNumber = this.QuestionNumber;
             this.VoterAnswers.Voters[0].ResumeHighestPageNumber = this.HighestPageNumber;
@@ -1459,7 +1459,7 @@ namespace Votations.NSurvey.WebControls
                 {
                     writer.Write(this.GenerateClientSideValidationCode());
                 }
-                TimeSpan span = new TimeSpan(DateTime.UtcNow.Ticks - this._startTime);
+                TimeSpan span = new TimeSpan(DateTime.Now.Ticks - this._startTime);
                 this.Context.Trace.Warn("survey execution time was : " + span);
             }
             base.Render(writer);
@@ -1588,7 +1588,7 @@ namespace Votations.NSurvey.WebControls
                 return ResourceManager.GetString("ProgressNotSaved", this.LanguageCode);
             }
             HttpCookie cookie = new HttpCookie("NSurveyResumeSurvey" + this.SurveyId, guid);
-            cookie.Expires = DateTime.UtcNow.AddDays(30.0);
+            cookie.Expires = DateTime.Now.AddDays(30.0);
             this._context.Response.Cookies.Add(cookie);
             return null;
         }
@@ -1717,7 +1717,7 @@ namespace Votations.NSurvey.WebControls
                     this.VoterAnswers.Merge(this.currentVisitorAnswerSet, false);
                 }
                 this.VoterAnswers.Voters[0].Validated = true;
-                this.VoterAnswers.Voters[0].VoteDate = DateTime.UtcNow;
+                this.VoterAnswers.Voters[0].VoteDate = DateTime.Now;
                 if (!this.VoterAnswers.Voters[0].IsResumeUIDNull())
                 {
                     new Voter().DeleteVoterResumeSession(this.SurveyId, this.VoterAnswers.Voters[0].ResumeUID);
