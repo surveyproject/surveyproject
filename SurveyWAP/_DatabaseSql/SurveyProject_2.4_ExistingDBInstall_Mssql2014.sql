@@ -10,13 +10,15 @@ CREATE TYPE [dbo].[VarcharTableType] AS TABLE(
 	[value] [varchar](40) NULL
 )
 GO
-/****** Object:  StoredProcedure [dbo].[vts_spAnswerAddNew]    Script Date: 19-8-2014 22:01:40 ******/
+/****** Object:  StoredProcedure [dbo].[vts_spAnswerAddNew]    Script Date: 26-4-2016 9:37:51 ******/
 SET ANSI_NULLS ON
 GO
+
 SET QUOTED_IDENTIFIER ON
 GO
+
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project changes: copyright (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -59,7 +61,8 @@ CREATE PROCEDURE [dbo].[vts_spAnswerAddNew]
 			@SliderMin int,
 			@SliderMax int,
 			@SliderAnimate bit,
-			@SliderStep int,			
+			@SliderStep int,
+			@CssClass nvarchar(50),
 			@AnswerID int OUTPUT
 AS
 
@@ -107,8 +110,8 @@ INSERT INTO vts_tbAnswer
 	SliderMin,
 	SliderMax,
 	SliderAnimate,
-	SliderStep
-	
+	SliderStep,
+	CssClass
 	)
 VALUES
 	 (@QuestionId, 
@@ -130,16 +133,14 @@ VALUES
 	@SliderMin,
 	@SliderMax,
 	@SliderAnimate,
-	@SliderStep
+	@SliderStep,
+	@CssClass
 	
 	)
 
 set @AnswerID = scope_identity()
 
 COMMIT TRANSACTION ADDNEWANSWER
-
-
-
 
 
 GO
@@ -390,13 +391,15 @@ WHERE
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[vts_spAnswerGetDetails]    Script Date: 19-8-2014 22:01:40 ******/
+/****** Object:  StoredProcedure [dbo].[vts_spAnswerGetDetails]    Script Date: 26-4-2016 9:46:57 ******/
 SET ANSI_NULLS OFF
 GO
+
 SET QUOTED_IDENTIFIER OFF
 GO
+
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project changes: copyright (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -493,7 +496,8 @@ SELECT
 	SliderMin,
 	SliderMax,
 	SliderAnimate,
-	SliderStep
+	SliderStep,
+	CssClass
 		
 FROM vts_tbAnswer
 INNER JOIN vts_tbAnswerType 
@@ -501,12 +505,6 @@ INNER JOIN vts_tbAnswerType
 LEFT JOIN vts_tbRegularExpression
 	ON vts_tbAnswer.RegularExpressionId = vts_tbRegularExpression.RegularExpressionId
 WHERE AnswerID=@AnswerID
-
-
-
-/* vts_spSurveyGetForExport  */
-
-
 
 
 GO
@@ -1236,13 +1234,15 @@ select scope_identity()
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[vts_spAnswersCloneByQuestionId]    Script Date: 19-8-2014 22:01:40 ******/
+/****** Object:  StoredProcedure [dbo].[vts_spAnswersCloneByQuestionId]    Script Date: 26-4-2016 9:44:50 ******/
 SET ANSI_NULLS OFF
 GO
+
 SET QUOTED_IDENTIFIER OFF
 GO
+
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project changes: copyright (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -1284,7 +1284,8 @@ INSERT INTO vts_tbAnswer
 	SliderMin,
 	SliderMax,
 	SliderAnimate,
-	SliderStep)
+	SliderStep,
+	CssClass)
 SELECT      
 	@ClonedQuestionID, 
 	AnswerTypeID, 
@@ -1305,7 +1306,8 @@ SELECT
 	SliderMin,
 	SliderMax,
 	SliderAnimate,
-	SliderStep
+	SliderStep,
+	CssClass
 FROM vts_tbAnswer WHERE QuestionID = @QuestionID
 
 --- Clone any available answer multi language text or answer default value in different languages
@@ -1338,9 +1340,6 @@ WHERE QuestionID = @QuestionID
 exec vts_spAnswerConnectionCloneByQuestionId @QuestionID, @ClonedQuestionId
 
 COMMIT TRAN CloneAnswers
-
-
-
 
 
 GO
@@ -1881,13 +1880,15 @@ WHERE AnswerTypeID = @AnswerTypeID
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[vts_spAnswerUpdate]    Script Date: 19-8-2014 22:01:40 ******/
+/****** Object:  StoredProcedure [dbo].[vts_spAnswerUpdate]    Script Date: 26-4-2016 9:49:54 ******/
 SET ANSI_NULLS ON
 GO
+
 SET QUOTED_IDENTIFIER ON
 GO
+
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project changes: copyright (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -1930,7 +1931,8 @@ CREATE PROCEDURE [dbo].[vts_spAnswerUpdate]
 			@SliderMin int,
 			@SliderMax int,
 			@SliderAnimate bit,
-			@SliderStep int					
+			@SliderStep int,
+			@CssClass nvarchar(50)
 AS
 BEGIN TRAN UpdateAnswer
 
@@ -1963,7 +1965,8 @@ SET	ImageURL = @ImageURL,
 	SliderMin = @SliderMin,
 	SliderMax = @SliderMax,
 	SliderAnimate = @SliderAnimate,
-	SliderStep = @SliderStep
+	SliderStep = @SliderStep,
+	CssClass = @CssClass
 	
 WHERE
 	AnswerID = @AnswerID
@@ -1986,10 +1989,6 @@ BEGIN
 END
 
 COMMIT TRAN UpdateAnswer
-
-
-
-
 
 GO
 /****** Object:  StoredProcedure [dbo].[vts_spEmailAddNew]    Script Date: 19-8-2014 22:01:40 ******/
@@ -2376,7 +2375,7 @@ WHERE GroupGuid = @GroupGuid
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[vts_spFileGetListForGuid]    Script Date: 19-8-2014 22:01:40 ******/
+/****** Object:  StoredProcedure [dbo].[vts_spFileGetListForGuid]    Script Date: 26-4-2016 22:01:40 ******/
 SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2409,7 +2408,7 @@ CREATE PROCEDURE [dbo].[vts_spFileGetListForGuid]
 		@GroupGuid varchar(40)
 AS
 
-SELECT FileId, GroupGuid, FileName, FileSize, SaveDate, -1 as VoterId FROM vts_tbFile WHERE GroupGuid = @GroupGuid
+SELECT FileId, GroupGuid, FileName, FileSize, FileType, SaveDate, -1 as VoterId FROM vts_tbFile WHERE GroupGuid = @GroupGuid
 
 
 
@@ -5447,13 +5446,15 @@ WHERE vts_tbAnswer.QuestionId = @QuestionId
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[vts_spQuestionGetAnswers]    Script Date: 19-8-2014 22:01:40 ******/
+/****** Object:  StoredProcedure [dbo].[vts_spQuestionGetAnswers]    Script Date: 26-4-2016 9:51:44 ******/
 SET ANSI_NULLS ON
 GO
+
 SET QUOTED_IDENTIFIER ON
 GO
+
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project changes: copyright (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -5532,15 +5533,15 @@ SELECT
 	Mandatory,
 	RegExpression,
 	RegExMessage,
-	vts_tbAnswer.RegularExpressionId
+	vts_tbAnswer.RegularExpressionId,
+	AnswerAlias,
+	CssClass
 FROM vts_tbAnswer
 INNER JOIN vts_tbAnswerType 
 	ON vts_tbAnswer.AnswerTypeID = vts_tbAnswerType.AnswerTypeID
 LEFT JOIN vts_tbRegularExpression
 	ON vts_tbAnswer.RegularExpressionId = vts_tbRegularExpression.RegularExpressionId
 WHERE QuestionID=@QuestionID ORDER BY vts_tbAnswer.DisplayOrder, AnswerID ASC
-
-
 
 GO
 /****** Object:  StoredProcedure [dbo].[vts_spQuestionGetAnswersList]    Script Date: 19-8-2014 22:01:40 ******/
@@ -10980,14 +10981,15 @@ ORDER BY vts_tbSurvey.SurveyID
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[vts_spSurveyGetForExport]    Script Date: 19-8-2014 22:01:40 ******/
-SET ANSI_NULLS OFF
+/****** Object:  StoredProcedure [dbo].[vts_spSurveyGetForExport]    Script Date: 26-4-2016 9:54:19 ******/
+SET ANSI_NULLS ON
 GO
+
 SET QUOTED_IDENTIFIER ON
 GO
 
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project changes: copyright (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -11096,7 +11098,8 @@ SELECT
 	SliderMax,
 	SliderAnimate,
 	SliderStep,
-    vts_tbAnswer.AnswerID as OldAnswerId
+    vts_tbAnswer.AnswerID as OldAnswerId,
+	CssClass
 FROM vts_tbAnswer
 INNER JOIN vts_tbQuestion 
 	ON vts_tbQuestion.QuestionID = vts_tbAnswer.QuestionID  
@@ -11198,8 +11201,6 @@ SELECT [LanguageItemId]
   SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE SurveyId=@SurveyID)
   )
   
-
-
 
 GO
 /****** Object:  StoredProcedure [dbo].[vts_spSurveyGetLibraryList]    Script Date: 19-8-2014 22:01:40 ******/
@@ -14385,7 +14386,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 
-ALTER PROCEDURE [dbo].[vts_spUserUpdate]
+CREATE PROCEDURE [dbo].[vts_spUserUpdate]
 			@UserID int,
 			@UserName nvarchar(255),
 			@Password nvarchar(255),
@@ -15069,7 +15070,7 @@ GO
 /// Return the data needed to export a CSV  file
 /// </summary>
 */
-ALTER PROCEDURE [dbo].[vts_spVoterExportCSVData]
+CREATE PROCEDURE [dbo].[vts_spVoterExportCSVData]
 				@SurveyID int,
 				@StartDate datetime ,
 				@EndDate datetime
@@ -17057,7 +17058,8 @@ CREATE TABLE [dbo].[vts_tbAnswer](
 	[SliderMin] [int] NULL,
 	[SliderMax] [int] NULL,
 	[SliderAnimate] [bit] NULL,
-	[SliderStep] [int] NULL
+	[SliderStep] [int] NULL,
+	[CssClass] [nvarchar](50) NULL
 ) ON [PRIMARY]
 
 GO
@@ -18169,6 +18171,8 @@ GO
 INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDataSource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (30, 1, N'ExtendedFileUploadType', 0, 0, 0, 832, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerUploadItem', N'Votations.NSurvey.WebControls', NULL)
 GO
 INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDataSource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (31, 1, N'ExtendedFreeTextBoxType', 500, 100, 255, 722, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.ThirdPartyItems.FreeTextBoxAnswerItem', N'Votations.NSurvey.WebControls', NULL)
+GO
+INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDataSource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (55, 1, N'FieldAddressType', 20, 0, 100, 210, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerFieldAddressItem', N'Votations.NSurvey.WebControls', NULL)
 GO
 INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDataSource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (56, 1, N'FieldSliderType', 20, 0, 100, 1090, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerFieldSliderItem', N'Votations.NSurvey.WebControls', NULL)
 GO

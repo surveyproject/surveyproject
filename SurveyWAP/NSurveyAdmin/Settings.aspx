@@ -4,7 +4,7 @@
         <div id="mainBody" class="contentHolder ps-container" >
         <div id="Panel" class="Panel content" style="margin: 25px 0px 25px 10px; width: 725px;">
 
-                        <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
+                        <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 6px;">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
 

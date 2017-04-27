@@ -65,7 +65,7 @@
 .questTbl{width:100%}
 .questionValidationMessageStyleCSS{background:#fcaaaa;color:Red;font-size:x-small }
 .qvmarkStyle{color:red;font-size:11pt }
-.qvmStyle{background:#fcaaaa;color:red;font-size:700 10pt }
+.qvmStyle{color:red;font-weight:700; font-size:10pt }
 .qvmStyle TD{padding:0 10px}
 .secAddIn{color:#000;font-size-adjust:.48;font-weight:700;line-height:10px}
 .security{table-layout:fixed;width:230px}

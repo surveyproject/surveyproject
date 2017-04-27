@@ -3,7 +3,7 @@
 <%@ Import Namespace="Votations.NSurvey.WebAdmin" %>
 
 <br />
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
+            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 6px;">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
 <br />

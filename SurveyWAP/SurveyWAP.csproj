@@ -177,7 +177,6 @@
     <Content Include="Images\index-icon.png" />
     <Content Include="Images\lock.gif" />
     <Content Include="Images\menuseparator.gif" />
-    <Content Include="Images\mscharts_temp\msc_cntr_0.txt" />
     <Content Include="Images\NegativeRatingBar.gif" />
     <Content Include="Images\PositiveRatingBar.gif" />
     <Content Include="Images\Print_32X32_Standard.png" />
@@ -1866,7 +1865,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Deployment\" />
-    <Folder Include="Images\mscharts_temp\charts_0\" />
+    <Folder Include="Images\mscharts_temp\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Reflector\Nsurvey_BE\Votations.NSurvey.BE.csproj">

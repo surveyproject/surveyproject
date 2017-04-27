@@ -22,7 +22,7 @@
             </fieldset>
 
 
-            <div style="position: relative; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
+            <div style="position: relative; width: 650px; text-align: center; margin-left: 57px; top: 6px;">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
 

@@ -40,7 +40,7 @@ else
     <TypeNameSpace>Votations.NSurvey.WebControls.UI.AnswerFieldItem</TypeNameSpace>
     <TypeAssembly>Votations.NSurvey.WebControls</TypeAssembly>
   </AnswerType>
-  <AnswerType AnswerTypeID="57" FieldWidth="20" FieldHeight="0" FieldLength="255" TypeMode="210" PublicFieldResults="false" BuiltIn="false">
+  <AnswerType AnswerTypeID="21" FieldWidth="20" FieldHeight="0" FieldLength="255" TypeMode="210" PublicFieldResults="false" BuiltIn="true">
     <Description>FieldRequiredType</Description>
     <JavascriptFunctionName>isFilled</JavascriptFunctionName>
     <JavascriptCode>function isFilled(sender)
@@ -55,7 +55,7 @@ else
    return true;
 }
 }</JavascriptCode>
-    <JavascriptErrorMessage>JSInvalidField</JavascriptErrorMessage>
+    <JavascriptErrorMessage>FieldRequiredType</JavascriptErrorMessage>
     <TypeNameSpace>Votations.NSurvey.WebControls.UI.AnswerFieldItem</TypeNameSpace>
     <TypeAssembly>Votations.NSurvey.WebControls</TypeAssembly>
   </AnswerType>
@@ -118,7 +118,7 @@ else
     <AnswerPipeAlias>email</AnswerPipeAlias>
     <OldAnswerId>263</OldAnswerId>
   </Answer>
-  <Answer QuestionId="1" AnswerTypeId="57" DisplayOrder="2" ScorePoint="0" RatePart="false" Selected="false" AnswerId="264" Mandatory="true">
+  <Answer QuestionId="1" AnswerTypeId="21" DisplayOrder="2" ScorePoint="0" RatePart="false" Selected="false" AnswerId="264" Mandatory="true">
     <AnswerText>Name :</AnswerText>
     <ImageURL />
     <AnswerPipeAlias>name</AnswerPipeAlias>

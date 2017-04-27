@@ -55,14 +55,14 @@ namespace SurveyWAP
 
             Response.Write("<div style='font-family:Tahoma; font-size:small; width:1020px; background-color: #e2e2e2; padding:35px; -webkit-border-radius: 7px; -moz-border-radius: 7px; border-radius: 7px;'> <div class='topCell' style='left:-4px;  top:-3px; position: relative; padding:0px 13px 2px 0px; border: 0px;  border-top-style: none; border-left-style: none; border-bottom-style: none; border-right-style: none; border-color: #ffffff;'> <a href='" + 
                 HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Authority + HttpContext.Current.Request.ApplicationPath + "/default.aspx' title='Survey&#8482; Project Homepage' target='_self'> <img src='" + 
-                HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Authority + HttpContext.Current.Request.ApplicationPath + "/Images/SpLogo.png' alt='logo' border='0' /> </a> </div>  <br /><br /> ");
+                HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Authority + HttpContext.Current.Request.ApplicationPath + "/Images/SpLogo.svg' alt='logo' border='0' /> </a> </div>  <br /><br /> ");
 
             Response.Write("<h2>Survey™ Project Global Page Error</h2>\n");
             Response.Write("An application error has been generated. More details on the error can be found in the logfiles directory of the Survey™ Project application. An automated warning message has been sent to the default SMTP server account.\n");
             Response.Write( "<p>" + exc.Message + "\n" + exc.InnerException.Message +  "</p>\n");
             Response.Write("Please return to the <a href='" + HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Authority + HttpContext.Current.Request.ApplicationPath + "/default.aspx'>Default Page</a>\n");
 
-            Response.Write("<br /><br /> <hr style='color:#e2e2e2;'/><br /><br />&copy; W3DevPro&trade; 2014 </div> ");
+            Response.Write("<br /><br /> <hr style='color:#e2e2e2;'/><br /><br />&copy; W3DevPro&trade; 2017 </div> ");
 
             // Log the exception and notify system operators
             ExceptionUtility.LogException(exc, "DefaultPage");

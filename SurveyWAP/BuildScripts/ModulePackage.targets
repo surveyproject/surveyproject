@@ -3,11 +3,11 @@
 <!-- WARNING, WARNING, WARNING -->
 <!-- REMEMBER THAT IF YOU MODIFY THE TARGETS FILE YOU NEED TO CLOSE/OPEN THE PROJECT FOR THE CHANGES TO TAKE EFFECT -->
 
-<Project ToolsVersion="4.0.30319" DefaultTargets="Release" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Release" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="MSBuild.Community.Tasks.Targets" />
 
   <UsingTask TaskName="TransformXml"
-             AssemblyFile="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\Web\Microsoft.Web.Publishing.Tasks.dll"/>
+             AssemblyFile="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v14.0\Web\Microsoft.Web.Publishing.Tasks.dll"/>
 
   <!-- create web.config for release-->
   <PropertyGroup>
@@ -80,6 +80,7 @@
     <Copy SourceFiles="$(MSBuildProjectDirectory)\$(PackageName)_$(Version)_Install.$(Extension)" DestinationFolder="install/" />
 
     <!-- Clean temp files and directories-->
+    <RemoveDir Directories ="$(MSBuildProjectDirectory)\Package\Scripts\ckeditor" />
     <RemoveDir Directories ="$(MSBuildProjectDirectory)\Package" />
     <Delete Files="$(MSBuildProjectDirectory)\$(PackageName)_$(Version)_Install.$(Extension)" />
     <Delete Files="$(MSBuildProjectDirectory)\Deployment\web.config" />

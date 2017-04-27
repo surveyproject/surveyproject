@@ -67,8 +67,8 @@
                 <br />
                 <b>Results Report Redirection URL</b><br />
                 <br />
-                This action will redirect the user to the Resultsreport page once the survey is completed. Through the resultsreport the respondent
-                will get an overview of all survey questions, the answers submitted by the respondent and scores. An option to print the report is shown on the page.
+                This action will redirect the user to the Resultsreport page once the survey is completed and submitted. Through the resultsreport the respondent
+                will get an overview of all survey questions, the answers submitted by the respondent and scores (if set). An option to print the report is shown on the page.
                                 <br />
                 <br />
                 * To set the correct Resultsreport redirection URL go to menuoption: Campaigns/ Web/ .. Deployment URL <br />
@@ -78,6 +78,7 @@
                 * paste the surveyid at the end of the typed part<br /><br />
                 URL Endresult: resultsreport.aspx?surveyid=bb058c21-861d-450e-a2a5-4601467a59ca 
                 <br />
+                <br />Note: the report option does not work with the Friendly URL
                 <br />
                 <hr style="color:#e2e2e2;" />
                 <br />

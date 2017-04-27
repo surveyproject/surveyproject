@@ -16,9 +16,19 @@ ________________________________________________________________________________
 
 New Features & Fixes:
 
-- See the PDF document SP24_Features&Fixes_v1_20170422.pdf for a complete and detailed overview of all changes and fixes.
+- Read the PDF document 'SP24_Features&Fixes_v1_20170427.pdf' for a complete and detailed overview of all changes and fixes.
 
 For information and questions visit the Survey™ Project community site at http://www.surveyproject.org.
+
+
+-----------------------------------------------------------------------------------------------
+
+Known Issues
+
+- The webapplication is permanently under development. 
+- Known and future issues are registered at https://github.com/surveyproject/surveyproject_main_public/issues
+- This is where you can report and register your own issues as well.
+
 
 ________________________________________________________________________________________________
 
