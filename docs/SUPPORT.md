@@ -3,6 +3,15 @@ Service and support options are all online and publicly available and accessible
 
 In general it is advised to make use of the Community Forums as much as possible.
 
+## Issues, Questions, Requests
+
+- Technical Issues (e.g. bugs, errors or feature requests) concerning the use and development of SP can be registered on the Github site.
+
+- Useability "Issues" i.e. questions on the use, installation or development of the SP webapplication or surveys can be posted to the Community site Forums.
+
+- On opening a new Issue on Github a template will show that can only be used for:  
+a. bugs/ errors  
+b. new features requests  
 
 ## Contact
 
