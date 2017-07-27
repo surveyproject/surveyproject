@@ -8,6 +8,8 @@ namespace Votations.NSurvey.UserProvider
     using Votations.NSurvey.DataAccess;
     using Votations.NSurvey.Web.Security;
 
+    using Apprenda.SaaSGrid;
+
     /// <summary>
     /// Implements the default provider to support 
     /// nsurvey's form authentication
@@ -24,26 +26,59 @@ namespace Votations.NSurvey.UserProvider
         /// </summary>
         public INSurveyPrincipal CreatePrincipal(string userName)
         {
-            if (this.SingleUserMode)
+            // Try to get the user information from the user context.
+            // If this fails (e.g., debugging locally), fall through and use
+            // built-in forms authentication.
+            try
             {
-                return new NSurveyFormPrincipal(new NSurveyFormIdentity("nsurvey_admin", 0, null, null, null, true, true, false), null);
+                using (var userContext = UserContext.Instance)
+                {
+                    // We have a fairly simple security model for Survey Project
+                    // on Apprenda: If you are an admin (are authorized to
+                    // "SurveyAdmin"), you can do everything. If you aren't, you
+                    // can take surveys.
+                    int userID = 1;
+                    bool accessAllSurveys = true;
+                    bool isAuthenticated = true;
+                    bool isAdmin = userContext.IsAuthorized("SurveyAdmin");
+
+                    var id = new NSurveyFormIdentity(
+                            userContext.CurrentUser.Email, // user name is e-mail
+                            userID,
+                            userContext.CurrentUser.FirstName,
+                            userContext.CurrentUser.LastName,
+                            userContext.CurrentUser.Email,
+                            isAdmin, accessAllSurveys, isAuthenticated);
+
+                    // Everyone can take a survey.
+                    string[] rights = { ((int)NSurveyRights.TakeSurvey).ToString() };
+
+                    return new NSurveyFormPrincipal(id, rights);
+                }
             }
-            if ((userName == null) || (userName.Length == 0))
+            catch
             {
-                return new NSurveyFormPrincipal(new NSurveyFormIdentity("anonymous", -1, null, null, null, false, false, false), null);
+                if (this.SingleUserMode)
+                {
+                    return new NSurveyFormPrincipal(new NSurveyFormIdentity("nsurvey_admin", 0, null, null, null, true, true, false), null);
+                }
+                if ((userName == null) || (userName.Length == 0))
+                {
+                    return new NSurveyFormPrincipal(new NSurveyFormIdentity("anonymous", -1, null, null, null, false, false, false), null);
+                }
+                int index = userName.IndexOf("|");
+                if (index < 0)
+                {
+                    return new NSurveyFormPrincipal(new NSurveyFormIdentity("anonymous", -1, null, null, null, false, false, false), null);
+                }
+                string[] strArray = userName.Substring(0, index).Split(new char[] { ',' });
+                if (strArray.Length < 6)
+                {
+                    return new NSurveyFormPrincipal(new NSurveyFormIdentity("anonymous", -1, null, null, null, false, false, false), null);
+                }
+                return new NSurveyFormPrincipal(new NSurveyFormIdentity(strArray[0], int.Parse(strArray[1]), strArray[2], strArray[3], strArray[4],
+                    bool.Parse(strArray[5]), bool.Parse(strArray[6]), true), userName.Substring(index + 1).Split(new char[] { ',' }));
             }
-            int index = userName.IndexOf("|");
-            if (index < 0)
-            {
-                return new NSurveyFormPrincipal(new NSurveyFormIdentity("anonymous", -1, null, null, null, false, false, false), null);
-            }
-            string[] strArray = userName.Substring(0, index).Split(new char[] { ',' });
-            if (strArray.Length < 6)
-            {
-                return new NSurveyFormPrincipal(new NSurveyFormIdentity("anonymous", -1, null, null, null, false, false, false), null);
-            }
-            return new NSurveyFormPrincipal(new NSurveyFormIdentity(strArray[0], int.Parse(strArray[1]), strArray[2], strArray[3], strArray[4],
-                bool.Parse(strArray[5]), bool.Parse(strArray[6]), true), userName.Substring(index + 1).Split(new char[] { ',' }));
         }
 
         public void DeleteUserById(int userId)

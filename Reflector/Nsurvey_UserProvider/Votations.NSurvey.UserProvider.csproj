@@ -52,10 +52,12 @@
     <FileAlignment>4096</FileAlignment>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Apprenda.Utils, Version=6.0.3.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="mscorlib">
       <HintPath>mscorlib.dll</HintPath>
       <Private />
     </Reference>
+    <Reference Include="SaaSGrid.API, Version=6.0.3.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System">
       <HintPath>System.dll</HintPath>
       <Private />

@@ -102,6 +102,10 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="default.aspx" />
+    <Content Include="DeploymentManifest.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="Filemanager\.gitignore" />
     <Content Include="Filemanager\connectors\ashx\filemanager.ashx" />
@@ -1144,6 +1148,7 @@
     <Content Include="Scripts\Javascript\slider\slider.js" />
     <Content Include="Scripts\Javascript\tooltip\javascripts\jquery.tipsy.js" />
     <Content Include="Scripts\Javascript\tooltip\stylesheets\tipsy.css" />
+    <Content Include="Scripts\Javascript\ui\jquery-ui-1.10.4.js" />
     <Content Include="Scripts\Javascript\ui\jquery-ui-1.8.12.custom.min.js" />
     <Content Include="Scripts\Javascript\ui\jquery.ui.core.js" />
     <Content Include="Scripts\Javascript\ui\jquery.ui.mouse.js" />
