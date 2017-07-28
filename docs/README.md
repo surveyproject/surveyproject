@@ -11,6 +11,22 @@
 At Github you will find the most recent Survey™ Project releases, source code and several branches for (public) development.
 Former releases (up untill v 2.3) and sources can be found at http://survey.codeplex.com
 
+## Documentation
+Available Guides for SP™ v2.4
+- Quickstart UserGuide  
+- Installation Guide  
+- Developers Guide  
+
+Download at: http://www.surveyproject.org/Support/Helpfiles/GuidesManuals/tabid/300/Default.aspx  
+  
+On Github check the *docs directory* of the repository for information on:
+- Support
+- Code of Conduct
+- Contributions
+- Issue Template
+- Pull Request Template
+
+## Platform & Websites
 
 The following sites are part of the current project and development platform:
 
