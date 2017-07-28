@@ -1,7 +1,7 @@
-# surveyproject Repository
-
-![Survey Project Logo](http://download-codeplex.sec.s-msft.com/Download?ProjectName=survey&DownloadId=838352&Build=20983)
-
+# surveyproject repository / [![DOI](https://zenodo.org/badge/33439897.svg)](https://zenodo.org/badge/latestdoi/33439897)
+  
+![Survey Project Logo](http://download-codeplex.sec.s-msft.com/Download?ProjectName=survey&DownloadId=838352&Build=20983)  
+  
 - Survey™ Project (SP) is a free. open source survey and (data entry) forms webapplication (WAP) for processing & gathering data online. 
 
 - Survey™ Project is written in C#, ASP.NET and runs on Windows OS, IIS and MsSqlserver databases.
@@ -10,7 +10,7 @@
 
 At Github you will find the most recent Survey™ Project releases, source code and several branches for (public) development.
 Former releases (up untill v 2.3) and sources can be found at http://survey.codeplex.com
-
+  
 ## Documentation
 Available Guides for SP™ v2.4
 - Quickstart UserGuide  
