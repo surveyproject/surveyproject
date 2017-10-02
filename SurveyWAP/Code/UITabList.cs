@@ -131,7 +131,7 @@ namespace Votations.NSurvey.WebAdmin
         public static void SetResultsTabs(MsterPageTabs masterPage, ResultTabs selectedTab)
         {
             masterPage.DisplayTabs.Clear();
-            masterPage.DisplayTabs.Add(ResourceManager.GetString("ResultsSMHyperlink"), UINavigator.ResultsReportHyperlink);
+            masterPage.DisplayTabs.Add(ResourceManager.GetString("ReportsSMHyperlink"), UINavigator.ResultsReportHyperlink);
             masterPage.DisplayTabs.Add(ResourceManager.GetString("FiltersHyperlink"), UINavigator.FilterEditor);
             masterPage.DisplayTabs.Add(ResourceManager.GetString("FileManagerHyperlink"), UINavigator.FileManagerHyperLink);
             masterPage.DisplayTabs.Add(ResourceManager.GetString("DataExportHyperlink"), UINavigator.ExportData);

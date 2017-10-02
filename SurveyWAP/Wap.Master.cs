@@ -168,18 +168,16 @@ namespace Votations.NSurvey
 
         public void ViewBanners()
         {
-
-            //if (((PageBase)Page).NSurveyUser.Identity.UserId == -1 || !(((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessSurveyList) || ((PageBase)Page).NSurveyUser.Identity.IsAdmin))
             if (((PageBase)Page).NSurveyUser.Identity.UserId == -1 )
-            //if(!Page.User.Identity.IsAuthenticated)
-            { banners.Visible = true;
-            //spLogo.Width = Unit.Percentage(25);
-                return; }
+            {
+                banners.Visible = true;
+                Footercontrol1.Visible = true;
+                return;
+            }
 
             banners.Visible = false;
-            //spLogo.Width = Unit.Percentage(20);
-            logoText.Style.Value = "color: white;float:right;font-weight:800; margin-top:0px;margin-right:100px; font-size:x-large;";
-            logoPanel.CssClass = "topCell logoLogedInPanel";
+            Footercontrol1.Visible = false;
+            logoText.Attributes.Add("class", "logoTextLogedin");
             
         }
 

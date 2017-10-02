@@ -102,6 +102,12 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
             return string.Format("{0}", title);
         }
 
+        public string GetSurveyFriendlyName(int id, string friendlyname)
+        {
+            //return string.Format("{0} {1}", GetPageResource("SurveyTitle"), id);
+            return string.Format("{0}", friendlyname);
+        }
+
         public string GetSurveyLink(int id)
         {
             return ResolveClientUrl("~/NSurveyAdmin/SurveyOptions.aspx");

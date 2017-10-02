@@ -75,7 +75,7 @@ namespace Votations.NSurvey.WebAdmin
 
         private void LocalizePage()
         {
-            lblMainTitle.Text = Resources.ResourceManager.GetString("GeneralSettingsTitle");
+            //lblMainTitle.Text = Resources.ResourceManager.GetString("GeneralSettingsTitle");
             lblCulture.Text = Culture;
 
             lblConnectionStringDev.Text = connDev;
@@ -112,7 +112,7 @@ namespace Votations.NSurvey.WebAdmin
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCreateSqlDb.Click += new System.EventHandler(this.btnCreateSqlDb_Click);
+            //this.btnCreateSqlDb.Click += new System.EventHandler(this.btnCreateSqlDb_Click);
 
             this.btnCulture.Click += new System.EventHandler(this.btnCulture_Click);
             this.btnCultureDecript.Click += new System.EventHandler(this.btnCultureDecript_Click);
@@ -617,7 +617,7 @@ namespace Votations.NSurvey.WebAdmin
                 }
             }
 
-            public static string Culture
+            public static new string Culture
             {
                 get
                 {

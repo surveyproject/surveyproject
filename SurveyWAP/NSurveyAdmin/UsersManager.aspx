@@ -1,8 +1,6 @@
 ﻿<%@ Page Language="c#" MasterPageFile="~/Wap.master" EnableEventValidation="false" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.UsersManager"
     CodeBehind="UsersManager.aspx.cs" %>
 
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="FooterControl" Src="UserControls/FooterControl.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="UsersOptionsControl" Src="UserControls/UsersOptionsControl.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="RolesManager" Src="UserControls/RolesManager.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="UserImport" Src="UserControls/UserImport.ascx" %>
@@ -36,12 +34,10 @@
     </script>
 
 
-
-
     <input type="hidden" id="tabindex" name="tabindex" value="<%= selectedTabIndex %>" />
     <div id="usersTabEvents" style="display: none" runat="server" onclick="foo" />
 
-    <div id="tabs" style="min-height:750px;">
+    <div id="tabs">
         <ul>
             <li><a href="#tabs-1">
                 <%=GetPageResource("UsersTab")%></a></li>
@@ -51,22 +47,18 @@
                 <%=GetPageResource("ImportUsersTab")%></a></li>
         </ul>
 
-<div style="position: absolute; width: 50px; text-align: center; margin-left: 700px; top: 55px; z-index: 1;">
 
-                    <asp:ImageButton ID="btnBack" ImageUrl="~/Images/back_button.gif" runat="server" CssClass="buttonBack" OnCommand="EditBackButton" Visible="false" ToolTip="Go back to previous" />
-</div>
-
-        <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
+        <div id="Panel" class="Panel">
+             <fieldset id="liML" runat="server">    
+                <asp:ImageButton ID="btnBack" Width="16px" ImageUrl="~/Images/back_button.gif" runat="server" CssClass="buttonBack" OnCommand="EditBackButton" Visible="false" ToolTip="Go back to previous" />
+            </fieldset>
 
         <div id="tabs-1">
-
             <uc1:UsersOptionsControl ID="UsersOptionsControl1" runat="server"></uc1:UsersOptionsControl>
-
 
             <asp:PlaceHolder runat="server" ID="phUsersList" Visible="true">
 
-            <fieldset style="width:750px; margin-left:-5px;">
+            <fieldset>
                 <legend class="titleFont titleLegend">
                             <asp:Label ID="UserListTitleLabel" runat="server">UserListLabel</asp:Label>
                     </legend>
@@ -173,6 +165,9 @@
         <div id="tabs-3">
             <uc1:UserImport ID="userImport" runat="server"></uc1:UserImport>
         </div>
-            </div></div>
+
+            <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
+            </div>
     </div>
+          
 </asp:Content>

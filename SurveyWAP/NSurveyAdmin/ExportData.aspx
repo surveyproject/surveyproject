@@ -1,11 +1,9 @@
 ﻿<%@ Page Language="c#" MasterPageFile="MsterPageTabs.master" AutoEventWireup="false"
     Inherits="Votations.NSurvey.WebAdmin.ExportData" CodeBehind="ExportData.aspx.cs" %>
 
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="FooterControl" Src="UserControls/FooterControl.ascx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
+
+        <div id="Panel" class="Panel">
 <script type="text/javascript">
         $(function () {
 
@@ -18,12 +16,17 @@
     </script>
 
 
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 6px;">
+            <div class="errorDiv">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
-            <br />
+                                                              <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/new/Data Export.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a>
+                                        </div>
             
-    <fieldset style="width:750px; margin-top:15px; margin-left:12px; text-align: left;">
+    <fieldset>
         <legend class="titleFont titleLegend">
 
                                             <asp:Literal ID="SurveyExportTitle" runat="server" EnableViewState="False">Survey CSV export</asp:Literal>
@@ -44,7 +47,7 @@
 
 
             <asp:PlaceHolder ID="plhCSVStyles" runat="server">
-                <fieldset style="width: 750px; margin-top: 15px; margin-left: 12px; text-align: left;">
+                <fieldset>
                     <legend class="titleFont titleLegend">
                         <asp:Label ID="layoutLabel" runat="server">Export Layout</asp:Label>
                     </legend>
@@ -91,7 +94,7 @@
             </asp:PlaceHolder>
 
             <asp:PlaceHolder ID="CSVOptionPlaceHolder" runat="server">
-                <fieldset style="width: 750px; margin-top: 15px; margin-left: 12px; text-align: left;">
+                <fieldset>
                     <legend class="titleFont titleLegend">
                         <asp:Literal ID="formatlabel" runat="server" EnableViewState="False" Text="Format"></asp:Literal>
                     </legend>
@@ -129,7 +132,7 @@
                 </fieldset>
             </asp:PlaceHolder>
 
-                  <fieldset style="width: 750px; margin-top: 15px; margin-left: 12px; text-align: left;">
+                  <fieldset>
                     <legend class="titleFont titleLegend">
                      <asp:Label runat="server" ID="dataSelectionLabel" Text="Data Selection"></asp:Label>
                     </legend>
@@ -162,5 +165,5 @@
                     </ol>
 
                 </fieldset>
-
-</div></div></asp:Content>
+                                                 <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
+</div></asp:Content>

@@ -1,9 +1,9 @@
-﻿<%@ Register TagPrefix="uc1" TagName="FooterControl" Src="UserControls/FooterControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="RolesOptionsControl" Src="UserControls/RolesOptionsControl.ascx" %>
+﻿<%@ Register TagPrefix="uc1" TagName="RolesOptionsControl" Src="UserControls/RolesOptionsControl.ascx" %>
 <%@ Page language="c#" MasterPageFile="~/Wap.master"   AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.RolesManager" Codebehind="RolesManager.aspx.cs" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="mainBody" class="mainBody contentHolder ps-container"><div id="Panel" class="Panel content">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+        <div id="Panel" class="Panel">
     <table class="TableLayoutContainer">
         <tr>
             <td>
@@ -62,4 +62,5 @@
             </td>
         </tr>
     </table>
-</div></div></asp:Content>
+            <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
+</div></asp:Content>

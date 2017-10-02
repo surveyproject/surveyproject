@@ -1,5 +1,5 @@
 /**************************************************************************************************
-	Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com)	
+	Survey™ Project changes: copyright (c) 2009-2017, W3DevPro™ (https://github.com/surveyproject)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -67,15 +67,16 @@ namespace Votations.NSurvey.WebAdmin
 
 		}
 
-        protected void rbListSelectedIndexChanged(object sender, EventArgs e)
-        {
-            switch (rblReports.SelectedValue)
-            {
-                case "GR": Response.Redirect(UINavigator.ResultsReportHyperlink); break;
-                case "TR": Response.Redirect(UINavigator.FieldsReportHyperlink); break;
-                case "CTR": Response.Redirect(UINavigator.CrossTabHyperLink); break;
-            }
-        }
+        //Sp 25: no longer used:
+        //protected void RbListSelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    switch (rblReports.SelectedValue)
+        //    {
+        //        case "GR": Response.Redirect(UINavigator.ResultsReportHyperlink); break;
+        //        case "TR": Response.Redirect(UINavigator.FieldsReportHyperlink); break;
+        //        case "CTR": Response.Redirect(UINavigator.CrossTabHyperLink); break;
+        //    }
+        //}
 
 		private void SetupSecurity()
 		{
@@ -92,7 +93,7 @@ namespace Votations.NSurvey.WebAdmin
 			//((ButtonColumn)FieldReportDataGrid.Columns[1]).Text = GetPageResource("DeleteColumn");
             ((ButtonColumn)FieldReportDataGrid.Columns[1]).HeaderText = GetPageResource("DeleteColumn");
 			((ButtonColumn)FieldReportDataGrid.Columns[1]).Visible = CheckRight(NSurveyRights.DeleteVoterEntries, false);
-            TranslateListControl(rblReports);
+           // TranslateListControl(rblReports);
 		}
 
 		/// <summary>
@@ -103,39 +104,82 @@ namespace Votations.NSurvey.WebAdmin
 		{
 			int totalPages = 0,
 				totalRecords = 0;
-			
-			DataSet textEntries = new Voters().GetVotersTextEntries(SurveyId, FieldReportDataGrid.CurrentPageIndex, FieldReportDataGrid.PageSize , new DateTime(2004,1,1), DateTime.Now);
 
-			FieldReportDataGrid.DataSource = textEntries ;
-			FieldReportDataGrid.DataKeyField = "VoterID";
-			FieldReportDataGrid.DataBind();
+            //TODO
+            if (CheckRight(NSurveyRights.AccessUserResponses, true) && (NSurveyUser.Identity.IsAdmin == false) == true)
+            {
+                int UserId = NSurveyUser.Identity.UserId;
 
-			if (textEntries.Tables[0].Rows.Count != 0)
-			{
-				totalRecords = int.Parse(textEntries.Tables[0].Rows[0]["TotalRecords"].ToString());
-				CurrentPageLabel.Text = FieldReportDataGrid.CurrentPageIndex.ToString();
-				if (textEntries.Tables[0].Rows.Count > 0)
-				{   
-                    // operator % - calculate remainder
-					if ((totalRecords%FieldReportDataGrid.PageSize) == 0)
-					{
-						totalPages = totalRecords/FieldReportDataGrid.PageSize;
-					}
-					else
-					{
-						totalPages = (totalRecords/FieldReportDataGrid.PageSize) + 1;
-					}
-				
-				}
-				TotalPagesLabel.Text = totalPages.ToString();
-			}
+                DataSet textIndivEntries = new Voters().GetVotersTextIndivEntries(SurveyId, UserId, FieldReportDataGrid.CurrentPageIndex, FieldReportDataGrid.PageSize, new DateTime(2004, 1, 1), DateTime.Now);
 
-			// Should we enable the next link?
-			if (totalPages == 1 || totalRecords == 0)
-			{
-				PreviousPageLinkButton.Enabled = false;
-				NextPageLinkButton.Enabled = false;
-			}
+                FieldReportDataGrid.DataSource = textIndivEntries;
+                FieldReportDataGrid.DataKeyField = "VoterID";
+                FieldReportDataGrid.DataBind();
+
+                if (textIndivEntries.Tables[0].Rows.Count != 0)
+                {
+                    totalRecords = int.Parse(textIndivEntries.Tables[0].Rows[0]["TotalRecords"].ToString());
+                    CurrentPageLabel.Text = FieldReportDataGrid.CurrentPageIndex.ToString();
+                    if (textIndivEntries.Tables[0].Rows.Count > 0)
+                    {
+                        // operator % - calculate remainder
+                        if ((totalRecords % FieldReportDataGrid.PageSize) == 0)
+                        {
+                            totalPages = totalRecords / FieldReportDataGrid.PageSize;
+                        }
+                        else
+                        {
+                            totalPages = (totalRecords / FieldReportDataGrid.PageSize) + 1;
+                        }
+
+                    }
+                    TotalPagesLabel.Text = totalPages.ToString();
+                }
+
+                // Should we enable the next link?
+                if (totalPages == 1 || totalRecords == 0)
+                {
+                    PreviousPageLinkButton.Enabled = false;
+                    NextPageLinkButton.Enabled = false;
+                }
+
+            }
+            else
+            {
+
+                DataSet textEntries = new Voters().GetVotersTextEntries(SurveyId, FieldReportDataGrid.CurrentPageIndex, FieldReportDataGrid.PageSize, new DateTime(2004, 1, 1), DateTime.Now);
+
+                FieldReportDataGrid.DataSource = textEntries;
+                FieldReportDataGrid.DataKeyField = "VoterID";
+                FieldReportDataGrid.DataBind();
+
+                if (textEntries.Tables[0].Rows.Count != 0)
+                {
+                    totalRecords = int.Parse(textEntries.Tables[0].Rows[0]["TotalRecords"].ToString());
+                    CurrentPageLabel.Text = FieldReportDataGrid.CurrentPageIndex.ToString();
+                    if (textEntries.Tables[0].Rows.Count > 0)
+                    {
+                        // operator % - calculate remainder
+                        if ((totalRecords % FieldReportDataGrid.PageSize) == 0)
+                        {
+                            totalPages = totalRecords / FieldReportDataGrid.PageSize;
+                        }
+                        else
+                        {
+                            totalPages = (totalRecords / FieldReportDataGrid.PageSize) + 1;
+                        }
+
+                    }
+                    TotalPagesLabel.Text = totalPages.ToString();
+                }
+
+                // Should we enable the next link?
+                if (totalPages == 1 || totalRecords == 0)
+                {
+                    PreviousPageLinkButton.Enabled = false;
+                    NextPageLinkButton.Enabled = false;
+                }
+            }
 		}
 
 

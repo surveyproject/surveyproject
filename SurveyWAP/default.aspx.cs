@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Votations.NSurvey.WebAdmin.Code;
 
 namespace Votations.NSurvey.WebAdmin
 {
@@ -36,6 +37,22 @@ namespace Votations.NSurvey.WebAdmin
             Slogan.InnerHtml = GetPageResource("SpFrontPageSlogan");
 
         }
+
+        //Note: Error handling in Global.config file:
+
+        //protected override void OnError(EventArgs e)
+        //{
+        //    Exception exc = Server.GetLastError().GetBaseException();
+
+        //    if (Server.GetLastError().GetBaseException() is System.Web.HttpRequestValidationException)
+        //    {
+        //        Response.Clear();
+        //        Response.Write("Invalid characters.");
+        //        Response.StatusCode = 200;
+        //        Response.End();
+
+        //    }
+        //}
 
     }
 }

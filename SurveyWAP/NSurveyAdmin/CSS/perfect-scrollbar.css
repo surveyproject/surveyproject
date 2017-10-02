@@ -2,8 +2,8 @@
 
 /*Wapmaster CSS*/
 
-        .contentHolder { position:relative; margin:0px auto; padding:0px; width: 600px; height: 750px; overflow: hidden; }
-        .contentHolder .content { width: 1280px; height: 750px; }
+        .contentHolder { position:relative; margin:0px auto; padding:0px; width: 600px; height: 100%; overflow: hidden; }
+        .contentHolder .content { width: 1280px; height: 100%; }
         .spacer { text-align:center }
 
 /*PS formal css*/

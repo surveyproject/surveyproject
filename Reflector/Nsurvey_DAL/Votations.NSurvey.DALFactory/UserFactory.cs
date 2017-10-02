@@ -19,7 +19,12 @@ namespace Votations.NSurvey.DALFactory
                 config = ConfigurationManager.AppSettings;
             }
             string assemblyString = config["WebDAL"];
-            string typeName = assemblyString + ".User";
+            //code before assembly namechange - also see web.config:
+            //string typeName = assemblyString + ".User";
+
+            // typename: must match namespace; after namechange of assembly, namespace no longer similar to 
+            string typeName = "Votations.NSurvey.SQLServerDAL.User";
+
             return (IUser) Assembly.Load(assemblyString).CreateInstance(typeName);
         }
     }

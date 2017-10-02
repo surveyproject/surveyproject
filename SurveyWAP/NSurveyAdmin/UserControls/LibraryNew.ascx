@@ -2,12 +2,14 @@
     Inherits="Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls.LibraryNew" %>
 <%@ Import Namespace="Votations.NSurvey.WebAdmin" %>
 
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 7px;">
+            <div class="errorDiv">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
 
-      <fieldset style="width:730px; margin-left:12px; margin-top:10px;" title="">
-        <legend class="titleFont titleLegend" style="width:96%;"><asp:Label runat="server" ID="lblLibraryTitle"></asp:Label></legend>
+            <fieldset>
+                 <legend class="titleFont titleLegend">
+            <asp:Label runat="server" ID="lblLibraryTitle"></asp:Label>
+        </legend>
           <br />
                 <ol>
                     <li>

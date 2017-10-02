@@ -2,76 +2,68 @@
     Inherits="Votations.NSurvey.WebAdmin.HelpFiles" CodeBehind="../default.aspx.cs" %>
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="mainBody" class="mainBody contentHolder ps-container"><div id="Panel" class="Panel content">
-    <table class="TableLayoutContainer">
-        <tr>
-            <td>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="helpPanel"><div>
                 <asp:ImageButton ID="btnBack" ImageUrl="~/Images/index-icon.png" runat="server" CssClass="buttonIndex"
                     PostBackUrl="~/NSurveyAdmin/Help/default.aspx#SurveyDesigner" Visible="True" ToolTip="Back to Helpfiles Index" />
-            </td>
-        </tr>
-        <tr>
-            <td class="contentCell" valign="top">
-                <br />
+            </div><div>
                 <h2 style="color:#5720C6;">
-                    Answer Type Editor</h2>
-                <br />
-                <br />
-                <hr style="color:#e2e2e2;"/>
+                    Answer Type Editor</h2><hr style="color:#e2e2e2;" />
 
-<br /><br />
-The answer type editor alows editing Answer Types - AT_Introduction.html. Note
-that one can only edit or use the answer type created by oneself. In a
-multi-user configuration we must make the answertype &quot;built-in&quot; by clicking
-on the &quot;Make built-in&quot; button if other users need to be able to see and use it.<br />
+The answer type editor enables editing Answer Types. 
+                <br /> <br />
+                
+                Note:
+an SP&trade; user can only edit or use the answertypes created by itself. In a
+multi-user configuration the answertype must be made &quot;built-in&quot; by clicking the &quot;Make built-in&quot; button
+                for other users to be able to see and use it.<br />
 <br />
-<u>Selection Types</u><br />
+<u>Edit Selection Answer Type</u><br />
 <br />
-* Field Name -  the name of the type that will be shown in the type
-  selection inside the Answer Editor.
-<br /><br />
-* Allow Selection - if we are creating a selection type we need to check
-  this option.
-<br /><br />
-* Field Entry - is our selection type offering an alternate entry like
-  the Selection%20-%20Other.html type.
-<br /><br />
-<u>Field Types</u><br />
+<i>* Field Name </i><br /> -  is the name of the new Answertype that will be shown drop down list of answer types to select in the Answer Editor.<br />
 <br />
-* Field Name - the name of the type that will be shown in the type
-  selection inside the Answer Editor.
+<i>* Use a Datasource</i><br /> - switch to XML or SQL to show relevant options on the form to create an XML or SQL answertype; not needed on Selection Type. 
+
+                <br /> <br />
+<i>* Allow Selection </i><br /> -  in case of creating a selection answertype this options needs to be checked.<br />
+<br />
+<i>* Field Entry </i><br /> -  check if the selection type offers an alternate entry option like the 'Selection - Other' answertype (or in case of creating a new Field Answer Type)<br />
+<br />
+<u>Edit Field Answer Types</u><br />
+<br />
+<i>* Field Name </i><br /> -   is the name of the new Answertype that will be shown drop down list of answer types to select in the Answer Editor.<br /><br />
+<i>* Allow Selection </i><br /> -  if creating a field type there is no need to
+  check this option.<br />
+<br />
+<i>* Field Entry </i><br /> -  check this option to display the extra
+  settings related to field types.<br />
+<br />
+<i>* Rich Field </i><br /> -  check if the new field allows extended HTML edition features (through the CK Editor).
 <br /><br />
-* Allow Selection - if we are creating a field type we don't need to
-  check this option.
+<i>* Field Width </i><br /> - Visible width of the field textbox
 <br /><br />
-* Field Entry - we need to check this option to display the extra
-  settings related to field types.
-<br /><br />
-* Rich Field - does the field allow extended HTML edition features.
-<br /><br />
-* Field Width of our field.
-<br /><br />
-* Field Height of our field. If the height is more than one our field
+<i>* Field Height </i><br /> - Visible height of the field textbox. If the height is more than [1] the field
   will be automatically rendered as a multi-line textbox.
 <br /><br />
-* Field Max.- Length the maximum text length a respondent can enter.
-  Note that fields with a height of more than one do not validate the
-  max. length.
-<br /><br />
-* Field Shown In Results ...............
-<br /><br />
-* Javascript Function Name - is the name of the javascript function that
+<i>* Field Max. Length </i><br /> - the maximum text length a respondent can enter.
+  Note that fields with a height of more than [1] do not validate the
+  max. length.<br />
+<br />
+<!--
+<i>* Field Shown In Results</i><br /> - [OBSOLETE]
+<br /><br /> -->
+<i>* Javascript Function Name </i><br /> -  the name of the javascript function that
   will be called to validate the field content. The javascript function
   should be defined inside the Javascript code option.
 <br /><br />
-* Error Message - is the error message that will show up if the
-  javascript function return false.
+<i>* Error Message </i><br /> -   the error message that will show up if the
+  javascript function returns false.
 <br /><br />
-* Javascript Code - is the javascript code that will validate the field
+<i>* Javascript Code </i><br /> -  the javascript code that will validate the field
   content. The function must return true if the condition is matched or
-  false if the method could not validate the content of the field.
-<br /><br />
-  Code Example to validate a mandatory field :<br /><br />
+  false if the method could not validate the content of the field.<br />
+<br />
+
+  Code Example to validate a mandatory field :<br /><br /><code>
   function isFilled(sender)<br />
   {<br />
   if (sender.value.length == 0)<br />
@@ -83,23 +75,22 @@ on the &quot;Make built-in&quot; button if other users need to be able to see an
   {<br />
   return true;<br />
   }<br />
-  }<br />
+  }<br /></code>
 <br />
-<u>Xml Bound Types</u><br />
+<u>Edit Xml Bound Answer Types</u><br />
 <br />
-* Field Name - the name of the type that will be shown in the type
+<i>* Field Name </i><br /> - the name of the type that will be shown in the type
   selection inside the Answer Editor.
 <br /><br />
-* Xml File Name - the file name of the Xml file that the type will be
-  bound to.<br />
-<br />
-  Note that the Xml file has to be in the directory specified by
-  SurveyXmlDataPath ellement of the web.config. At this time it is not
+<i>* Xml File Name</i><br /> - name of the Xml file that the type will be bound to.
+<br /><br />
+  Note that the Xml file has to be in the directory specified by the 
+  NsurveyXmlDataPath ellement of the web.config. It is not
   possible to edit or create Xml files through the administration
   interface.<br />
 <br />
   The format of the Xml file must be as following :<br />
-<br />
+<br /><code>
   &lt;?xml version=&quot;1.0&quot; standalone=&quot;yes&quot;?&gt;<br />
   &lt;SurveyDataSource xmlns=&quot;<a href="http://www.nsurvey.net/SurveyDataSource.xsd" target="_blank">http://www.nsurvey.net/SurveyDataSource.xsd</a>&quot;&gt;<br />
   &lt;XmlDataSource&gt;<br />
@@ -119,30 +110,25 @@ on the &quot;Make built-in&quot; button if other users need to be able to see an
   &lt;/XmlAnswers&gt;<br />
   &lt;/XmlDataSource&gt;<br />
   &lt;/SurveyDataSource&gt;<br />
+<br /></code>
+<u>Edit Sql Bound Answer Types</u><br />
 <br />
-<u>Sql Bound Types</u><br />
-<br />
-* Field Name - the name of the type that will be shown in the type
+<i>* Field Name </i><br /> - name of the type that will be shown in the type
   selection inside the Answer Editor.
 <br /><br />
-* Sql Query - the Sql query that will populate the dropdown list. You
+<i>* Sql Query</i><br /> - the Sql query that will populate the dropdown list. You
   can learn more about Sql bound types by reading the
-  SQLType_Introduction.html
+  <a href="SQLType_Introduction.aspx" title=" SQL Answer Type Introduction " > Sql Answer Type Introduction </a>
 <br /><br />
 
                 <hr style="color:#e2e2e2;"/>
-                <br />
-                <br />
+
                 <h3>
                     More Information</h3>
                 <br />
-FBT_Introduction.html<br />
-AT_Introduction.html<br />
-Score_Introduction.html<br />
-Answers%20Editor.html<br />
+<a href="AT_Introduction.aspx" title=" Answer Types Introduction " >Answer Types Introduction </a>	<br />
+<a href="Answer Type Creator.aspx" title=" Answer Type Editor " >Answer Type Creator</a>	<br />
                 <br />
-            </td>
-        </tr>
-    </table>
-</div></div></asp:Content>
+            </div>
+<div id="fillerDiv" class="fillerDiv">&nbsp;</div></div></asp:Content>
 

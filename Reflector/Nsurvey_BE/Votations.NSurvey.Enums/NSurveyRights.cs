@@ -47,7 +47,8 @@ namespace Votations.NSurvey.Data
         DataImportRight=37,
         TokenSecurityRight=38,
         SurveyLayoutRight=39,
-        AccessSurveyList=40
+        AccessSurveyList=40,
+        AccessUserResponses=41
     }
 }
 

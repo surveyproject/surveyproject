@@ -1,7 +1,7 @@
 //-----------------------------------------------------------------------
 // <copyright file="ASyncMailingState.cs" company="W3DevPro">
 //
-// Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com) 
+// Survey™ Project changes: copyright (c) 2009-2017, W3DevPro™ (https://github.com/surveyproject) 
 //
 // NSurvey - The web survey and form engine
 // Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)

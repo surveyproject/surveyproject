@@ -40,15 +40,6 @@ namespace Votations.NSurvey.WebAdmin.UserControls {
         protected global::System.Web.UI.WebControls.CheckBox DefaultSurveyCheckBox;
         
         /// <summary>
-        /// NotificationsSettingsHelp control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal NotificationsSettingsHelp;
-        
-        /// <summary>
         /// ImportSurveyLiteral control.
         /// </summary>
         /// <remarks>

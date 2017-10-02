@@ -1,9 +1,7 @@
 ﻿<%@ Page language="c#" MasterPageFile="~/Wap.master"   AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.MailingPoll" Codebehind="MailingPoll.aspx.cs" %>
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="FooterControl" Src="UserControls/FooterControl.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="SurveyListControl" Src="UserControls/SurveyListControl.ascx" %>
 
-<%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls.UI" Assembly="Votations.NSurvey.WebControls" %>
+<%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls.UI" Assembly="SurveyProject.WebControls" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div style="width: 775px; 
@@ -14,9 +12,10 @@
                -webkit-border-radius: 7px;
                -moz-border-radius: 7px;
                 border-radius: 7px;
+                padding:10px;
                 ">
         <br />
-                        <fieldset style="width:750px; margin-top:15px; margin-left:12px;">
+                        <fieldset>
                             <legend class="titleFont titleLegend">
                         <asp:Literal ID="PleaseWaitInfo" runat="server" EnableViewState="False">.... Please wait system is sending survey invitations ....</asp:Literal>
                     </legend>

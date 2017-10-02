@@ -126,7 +126,7 @@ namespace Votations.NSurvey.Security
             this._passwordTextBox = new TextBox();
             this._passwordTable.ControlStyle.CssClass = CssXmlManager.GetString("PassWordTable");
             this._passwordTable.ID = "pwTbl";
-            //this._passwordTable.Width = Unit.Percentage(100.0);
+
             child.Text = ResourceManager.GetString("SubmitPassword", this.LanguageCode);
             child.Click += new EventHandler(this.OnValidatePassword);
             this._passwordTextBox.TextMode = TextBoxMode.Password;

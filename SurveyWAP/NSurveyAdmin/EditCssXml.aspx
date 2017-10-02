@@ -2,17 +2,17 @@
 
 <asp:content id="Content1" contentplaceholderid="ContentPlaceHolder1" runat="Server">
 
-        <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
 
-                        <div style="position: relative; left: 720px; width: 10px; top: 13px; clear: none;">
+        <div id="Panel" class="Panel">
+
+                        <div class="helpDiv">
                 <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/CssXml.aspx"
                     title="Click for more Information">
                     <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
                 </a>
             </div>
 
-                   <fieldset style="width:750px; margin-left:12px; margin-top:15px;">
+                   <fieldset>
         <legend class="titleFont titleLegend">
           <asp:Literal ID="CssXmlLegend" runat="server" EnableViewState="false">Surveylayout CSS XML</asp:Literal>  
         </legend><br />
@@ -24,7 +24,7 @@
                 AutoGenerateColumns="false"  
                 runat="server" 
                 AllowPaging="true" 
-                PageSize="20"             
+                PageSize="15"             
                  CellSpacing="25"   
                 
                 OnRowCancelingEdit ="CssXmlGridView_RowCancelingEdit"
@@ -112,5 +112,5 @@
 </li></ol>
             <br /><br />
                                    </fieldset>
-            </div></div>
+            </div>
     </asp:content>

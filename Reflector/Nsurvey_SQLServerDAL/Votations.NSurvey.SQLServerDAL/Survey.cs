@@ -1460,7 +1460,7 @@ namespace Votations.NSurvey.SQLServerDAL
         /// Add Friendly Deployement URl to survey for Web Publication
         /// </summary>
         /// <param name="surveyId"></param>
-        public void SetFriendlyName(int surveyId, string friendlyName)
+        public bool SetFriendlyName(int surveyId, string friendlyName)
         {
             ArrayList sqlParams = new ArrayList();
             {
@@ -1468,7 +1468,15 @@ namespace Votations.NSurvey.SQLServerDAL
                 sqlParams.Add(new SqlParameter("@FriendlyName", friendlyName).SqlValue);
             }
 
-            DbConnection.db.ExecuteNonQuery("vts_spSurveyUpdateFriendlyName", sqlParams.ToArray());
+            object obj2 = DbConnection.db.ExecuteNonQuery("vts_spSurveyUpdateFriendlyName", sqlParams.ToArray());
+
+            //if name exists, no update and null rows affected: obj2 = -1
+            if (obj2 == null)
+            {
+                return false;
+            }
+            return int.Parse(obj2.ToString()) == -1 ? false : true;
+
         }
 
         /// <summary>

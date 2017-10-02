@@ -1,23 +1,21 @@
-﻿<%@ Register TagPrefix="uc1" TagName="FooterControl" Src="UserControls/FooterControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
+﻿
 <%@ Page language="c#" MasterPageFile="~/Wap.master"   AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.UserImport" Codebehind="UserImport.aspx.cs" %>
 <%@ Register TagPrefix="uc1" TagName="UsersOptionsControl" Src="UserControls/UsersOptionsControl.ascx" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="mainBody" class="mainBody contentHolder ps-container"><div id="Panel" class="Panel content">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    
+        <div id="Panel" class="Panel">
+
+            <div class="errorDiv">
+ <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
+                </div>
+
 <table class="TableLayoutContainer">
 <tr>
 	<td></td>
 </tr>
 <tr>
 <td class="contentCell"  valign="top">
-
-<table class="uiTable" width="600" border="0"><tr><td>
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
- <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
-                </div>
-</td>
-</tr>
-</table>
 
 <table class="smallText" width="600">
   <tr>
@@ -95,4 +93,5 @@
                       <asp:button id="ImportUsersButton" runat="server" Text="Import users"></asp:button>
                       </td></tr>
 </table>
-</div></div></asp:Content>
+                                                 <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
+</div></asp:Content>

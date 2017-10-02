@@ -2,7 +2,7 @@
 <NSurveyDataSource xmlns="http://www.nsurvey.org/NSurveyDataSource.xsd">
 	<XmlDataSource>
 		<RunTimeAnswerLabel>
-		State :
+		RTAL State :
 		</RunTimeAnswerLabel>
 		<XmlAnswers>
 		   <XmlAnswer><AnswerValue></AnswerValue><AnswerDescription>[Select State]</AnswerDescription></XmlAnswer> 

@@ -5,6 +5,7 @@ namespace Votations.NSurvey.WebControls.UI
     using System.Globalization;
     using System.Threading;
     using System.Web.UI;
+    using System.Web;
     using System.Web.UI.WebControls;
     using Votations.NSurvey;
     using Votations.NSurvey.Resources;
@@ -15,50 +16,70 @@ namespace Votations.NSurvey.WebControls.UI
     /// </summary>
     public class AnswerFieldCalendarItem : AnswerFieldItem
     {
-        private System.Web.UI.WebControls.Calendar _calendar = new System.Web.UI.WebControls.Calendar();
+        //private System.Web.UI.WebControls.Calendar _calendar = new System.Web.UI.WebControls.Calendar();
 
         /// <summary>
         /// Set the value of the textbox to the selected date
         /// </summary>
-        protected virtual void _calendar_SelectionChanged(object sender, EventArgs e)
+        //protected virtual void _calendar_SelectionChanged(object sender, EventArgs e)
+        //{
+        //    base._fieldTextBox.Text = this._calendar.SelectedDate.ToShortDateString();
+        //}
+
+        //protected virtual void AddCalendar()
+        //{
+        //    Style s = new Style();
+        //    s.CssClass = "calendarStyle";
+
+        //    this._calendar.CssClass = "calendarStyle";
+        //    this._calendar.DayHeaderStyle.CopyFrom(s);
+        //    this._calendar.DayStyle.CopyFrom(s);
+        //    this._calendar.NextPrevStyle.CopyFrom(s);
+        //    this._calendar.OtherMonthDayStyle.CopyFrom(s);
+        //    this._calendar.TitleStyle.CopyFrom(s);
+
+        //    this._calendar.Visible = false;
+        //    this._calendar.DayNameFormat = DayNameFormat.FirstLetter;
+        //    this._calendar.SelectionChanged += new EventHandler(this._calendar_SelectionChanged);
+        //    this.Controls.Add(this._calendar);
+        //}
+
+        //new Jquery calendar option
+        protected virtual void AddNewCalendar()
         {
-            base._fieldTextBox.Text = this._calendar.SelectedDate.ToShortDateString();
+
+            String[] userLang = HttpContext.Current.Request.UserLanguages;
+
+            string CalendarScript = 
+            "<script>"+
+            "$(function() {" +
+            "var lang2 = '"+ userLang[0].ToString().ToLower() +"';" +
+            "var lang = lang2.substring(0, 2);" +
+            "$(\"#" + base._fieldTextBox.ClientID  + "\").datepicker( $.datepicker.regional[lang]);" +
+
+            "});" +
+            "</script >";
+
+            this.Controls.Add(new LiteralControl(CalendarScript));
+
         }
 
-        protected virtual void AddCalendar()
-        {
-            Style s = new Style();
-            s.CssClass = "calendarStyle";
-//           s.Font.Size = FontUnit.XXSmall;
-            this._calendar.CssClass = "calendarStyle";
-            this._calendar.DayHeaderStyle.CopyFrom(s);
-            this._calendar.DayStyle.CopyFrom(s);
-            this._calendar.NextPrevStyle.CopyFrom(s);
-            this._calendar.OtherMonthDayStyle.CopyFrom(s);
-            this._calendar.TitleStyle.CopyFrom(s);
-//            this._calendar.Width = Unit.Pixel(80);
-//            this._calendar.Height = Unit.Pixel(0x56);
-            this._calendar.Visible = false;
-            this._calendar.DayNameFormat = DayNameFormat.FirstLetter;
-            this._calendar.SelectionChanged += new EventHandler(this._calendar_SelectionChanged);
-            this.Controls.Add(this._calendar);
-        }
+        //protected virtual void AddCalendarButton()
+        //{
+        //    ImageButton child = new ImageButton();
+        //    child.ImageUrl = GlobalConfig.ImagesPath + "calendaricon.gif";
+        //    child.ImageAlign = ImageAlign.Top;
+        //    child.Width = Unit.Pixel(18);
+        //    child.Height = Unit.Pixel(18);
+        //    child.Click += new ImageClickEventHandler(this.calendarButton_Click);
+        //    this.Controls.Add(child);
+        //}
 
-        protected virtual void AddCalendarButton()
-        {
-            ImageButton child = new ImageButton();
-            child.ImageUrl = GlobalConfig.ImagesPath + "calendaricon.gif";
-            child.ImageAlign = ImageAlign.Top;
-            child.Width = Unit.Pixel(18);
-            child.Height = Unit.Pixel(18);
-            child.Click += new ImageClickEventHandler(this.calendarButton_Click);
-            this.Controls.Add(child);
-        }
-
-        protected virtual void calendarButton_Click(object sender, ImageClickEventArgs e)
-        {
-            this._calendar.Visible = !this._calendar.Visible;
-        }
+        //protected virtual void calendarButton_Click(object sender, ImageClickEventArgs e)
+        //{
+        //    this._calendar.Visible = !this._calendar.Visible;
+        //}
+        
 
         /// <summary>
         /// Create the textbox field from the base 
@@ -67,8 +88,9 @@ namespace Votations.NSurvey.WebControls.UI
         protected override void CreateChildControls()
         {
             base.CreateChildControls();
-            this.AddCalendarButton();
-            this.AddCalendar();
+            //this.AddCalendarButton();
+            //this.AddCalendar();
+            this.AddNewCalendar();
         }
 
         protected override void Render(HtmlTextWriter writer)

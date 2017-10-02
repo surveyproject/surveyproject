@@ -1,6 +1,4 @@
 ﻿<%@ Import Namespace="Votations.NSurvey.WebAdmin" %>
-<%@ Register TagPrefix="uc1" TagName="FooterControl" Src="UserControls/FooterControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="LibraryNew" Src="UserControls/LibraryNew.ascx" %>
 
 <%@ Page Language="c#" MasterPageFile="~/Wap.master" AutoEventWireup="true" Inherits="Votations.NSurvey.WebAdmin.LibraryDirectory"
@@ -27,20 +25,27 @@
     <input type="hidden" id="tabindex" name="tabindex" value="<%= selectedTabIndex %>" />
     <input type="hidden" id="editmode" name="editmode" value="<%= editMode %>" />
 
-    <div id="tabs" style=" min-height:750px;">
+    <div id="tabs">
         <ul>
             <li><a runat="server" id="Tab1" href="#tab-1"><%# GetPageResource("LibraryList") %>  </a></li>
             <li><a runat="server" id="Tab2" href="#tab-2"><%# GetPageResource("NewTab") %></a></li>
         </ul>
        
-            <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
+
+        <div id="Panel" class="Panel">
 
         <div   id="tab-1"><br />
             <asp:Panel runat="server" ID="LibraryList">
 
-                     <fieldset style="width:730px; margin-left:12px; margin-top:10px;" title="">
-        <legend class="titleFont titleLegend" style="margin:0; width:100%;">
+                                                        <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/New/QL_Introduction.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a>
+                                        </div>
+
+            <fieldset>
+                 <legend class="titleFont titleLegend">
             <asp:Literal ID="LibraryDirectoryLegend" runat="server"  EnableViewState="false">Library Directory</asp:Literal>
 
         </legend>
@@ -79,10 +84,17 @@
 
         <div id="LibaryEditDiv">
             <asp:Panel runat="server" ID="LibraryEdit">
-                                            <div style="position: absolute; width: 50px; text-align: center; margin-left: 700px; top: 15px;">
+                       <fieldset id="liML" runat="server">                          
                 <asp:ImageButton ID="ImageButton1" ImageUrl="~/Images/back_button.gif" ToolTip="Click to go Back" runat="server"
                     CssClass="buttonBack" OnCommand="EditBackButton" />
-                </div>
+
+                                                                                   <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/New/Library Directory.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a>
+                                        </div>
+                </fieldset>
 
                 <uc1:LibraryNew runat="server" ID="lbnEdit" />
 
@@ -96,5 +108,5 @@
             <uc1:LibraryNew runat="server" ID="lbnNew" />
         </div>
             </div></div>
-    </div>
+    
 </asp:Content>

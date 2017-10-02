@@ -1,20 +1,17 @@
 <%@ Control Language="c#" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.UserControls.HeaderControl"
     TargetSchema="http://schemas.microsoft.com/intellisense/ie5" CodeBehind="HeaderControl.ascx.cs" %>
-<table style="padding:0px; border:0px; width:770px;">
-    <tr>
-        <td class="headerCell" style="text-align:right;">
-            
-            <asp:Label Text="" CssClass="loginDiv icon-user" Visible="false" runat="server" ID="MenuUserName" />
-            </td>
-            <td style="text-align:left; width:7%;">
-            <asp:LinkButton Text="" runat="server" ID="LogoutButton"  OnCommand="LogoutButton_Click"
-                Visible="false" CssClass="logouthyperlink icon-signout" 
-                 ToolTip="" />
-           
-        </td>
-    </tr>
-    <tr>
-        <td style="padding-top:23px; padding-left:5px; width:100%;" colspan="2">
+
+
+<div class="headerCell">
+    <asp:Label Text="" CssClass="loginDiv icon-user" Visible="false" runat="server" ID="MenuUserName" />
+
+
+<div class="logoutDiv">
+    <asp:LinkButton Text="" runat="server" ID="LogoutButton" OnCommand="LogoutButton_Click"
+        Visible="false" CssClass="logouthyperlink icon-signout" ToolTip="" />
+</div>
+</div>
+        <div class="mnuDiv">
 
             <asp:Menu ID="mnuMain"  RenderingMode="List" CssClass="mnuMain" StaticDisplayLevels="1"
                 Orientation="Horizontal" 
@@ -40,7 +37,5 @@
                 
             </asp:Menu>
 
-        </td>
+        </div>
        
-    </tr>
-</table>

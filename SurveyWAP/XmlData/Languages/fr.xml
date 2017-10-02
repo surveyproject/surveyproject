@@ -7,7 +7,7 @@
 		<value>Vous devez inclure la directive suivante dans les page aspx qui vont afficher le sondage :</value>
 	</data>
 	<data version="1.0" id="3" name="TagPrefixInfo">
-		<value>&lt;%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="Votations.NSurvey.WebControls" %&gt;</value>
+		<value>&lt;%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="SurveyProject.WebControls" %&gt;</value>
 	</data>
 	<data version="1.0" id="4" name="QuickLinkInfo">
 		<value>Vous pouvez également utiliser le lien suivant :</value>

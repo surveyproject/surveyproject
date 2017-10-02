@@ -1,20 +1,23 @@
 ﻿
-<%@ Register TagPrefix="uc1" TagName="FooterControl" Src="UserControls/FooterControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
-<%@ Register TagPrefix="mbrsc" Namespace="MetaBuilders.WebControls" Assembly="Votations.NSurvey.WebAdmin" %>
+<%@ Register TagPrefix="mbrsc" Namespace="MetaBuilders.WebControls" Assembly="SurveyProject.WebApplication" %>
 <%@ Page language="c#" MasterPageFile="~/NSurveyAdmin/MsterPageTabs.master"  AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.MailingLog" Codebehind="MailingLog.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
+
+        <div id="Panel" class="Panel">
 
 
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
+             <div class="errorDiv">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
 
-             <br />
-                <fieldset style="width:750px; margin-top:15px; margin-left:12px;">
+                                        <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/New/Mailing Log.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a>
+                                        </div>
+                <fieldset>
                     <legend class="titleFont titleLegend">
 
 <asp:literal id="MailingLogTitle"
@@ -59,4 +62,5 @@
 </ol>         
                     <br />
                     </fieldset>
-</div></div></asp:Content>
+            <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
+</div></asp:Content>

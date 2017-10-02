@@ -8,7 +8,7 @@ using System.Web;
 
 namespace Votations.NSurvey.WebAdmin.Code
 {
-    public class ExceptionUtility
+    public sealed class ExceptionUtility
     {
         // All methods are static, so this can be private
         private ExceptionUtility()
@@ -19,7 +19,7 @@ namespace Votations.NSurvey.WebAdmin.Code
         {
             // Include enterprise logic for logging exceptions
             // Get the absolute path to the log file
-            string logFile = "LogFiles/ErrorLog.txt";
+            string logFile = "~/App_Data/ErrorLog.txt";
             logFile = HttpContext.Current.Server.MapPath(logFile);
 
             // Open the log file for append and write the log
@@ -51,6 +51,31 @@ namespace Votations.NSurvey.WebAdmin.Code
             }
             sw.Close();
         }
+
+
+        // Log an Invalid Request on the Default.aspx Loginform
+        public static void LogInvalidRequest(string request, string source)
+        {
+            // Include enterprise logic for logging exceptions
+            // Get the absolute path to the log file
+            string logFile = "~/App_Data/ErrorLog.txt";
+            logFile = HttpContext.Current.Server.MapPath(logFile);
+
+            // Open the log file for append and write the log
+            StreamWriter sw = new StreamWriter(logFile, true);
+            sw.WriteLine("********** {0} **********", DateTime.Now);
+
+            sw.Write("Exception Type: ");
+            sw.WriteLine("System.Web.HttpRequestValidationException");
+            sw.WriteLine("Exception: A potentially dangerous Request.Form value was detected from the client");
+            sw.WriteLine("Source: " + source);
+            sw.WriteLine("Stack Trace: dna");
+            sw.WriteLine("No StackTrace");
+            sw.WriteLine();
+
+            sw.Close();
+        }
+
 
         // Notify System Operators about an exception
         public static void NotifySystemOps(Exception exc)

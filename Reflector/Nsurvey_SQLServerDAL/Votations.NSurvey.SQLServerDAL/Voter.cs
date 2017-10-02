@@ -662,6 +662,39 @@ namespace Votations.NSurvey.SQLServerDAL
             return DbConnection.db.ExecuteDataSet("vts_spVoterGetPivotTextEntries", commandParameters.ToArray());
         }
 
+
+        /// <summary>
+        /// Returns all the text entries of SP User as a voter
+        /// </summary>
+        /// <param name="surveyId"></param>
+        /// <param name="userId"></param>
+        /// <param name="pageNumber"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        /// <returns></returns>
+        public DataSet GetVotersTextIndivEntries(int surveyId, int userId, int pageNumber, int pageSize, DateTime startDate, DateTime endDate)
+        {
+            //SqlParameter[] commandParameters = new SqlParameter[] 
+            //{ new SqlParameter("@SurveyID", surveyId), 
+            //    new SqlParameter("@CurrentPage", pageNumber), 
+            //    new SqlParameter("@PageSize", pageSize), 
+            //    new SqlParameter("@StartDate", startDate), 
+            //    new SqlParameter("@EndDate", endDate) };
+
+            ArrayList commandParameters = new ArrayList();
+            {
+                commandParameters.Add(new SqlParameter("@SurveyId", surveyId).SqlValue);
+                commandParameters.Add(new SqlParameter("@UserId", userId).SqlValue);
+                commandParameters.Add(new SqlParameter("@CurrentPage", pageNumber).SqlValue);
+                commandParameters.Add(new SqlParameter("@PageSize", pageSize).SqlValue);
+                commandParameters.Add(new SqlParameter("@StartDate", startDate).SqlValue);
+                commandParameters.Add(new SqlParameter("@EndDate", endDate).SqlValue);
+            }
+
+            return DbConnection.db.ExecuteDataSet("vts_spVoterGetPivotTextIndivEntries", commandParameters.ToArray());
+        }
+
         /// <summary>
         /// Check if the username has already taken the survey
         /// </summary>

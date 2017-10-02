@@ -1,8 +1,11 @@
 namespace Votations.NSurvey
 {
     using System;
+    using System.Reflection;
     using System.Collections.Specialized;
     using System.Configuration;
+    using System.Diagnostics;
+    using System.Windows.Forms;
 
     /// <summary>
     /// Provides an abstraction layer for all your web.config or machine.config
@@ -16,10 +19,15 @@ namespace Votations.NSurvey
         public static readonly string DeleteFileButtonName = "_dlfb";
         public static readonly string GroupName = "_grp";
         private static int majorVersion = 2;
-        private static int minorVersion = 4;
+        private static int minorVersion = 5;
         public static readonly string QuestionValidationFunction = "__ValidateQuestion";
         public static readonly string SurveyValidationFunction = "__ValidateSurvey";
         private static string version = "rtm";
+
+        //TODO SP25
+        //private static string versionSP = Application.ProductVersion;
+        //private static string productVersion = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).ProductVersion;
+
 
         /// <summary>
         /// Path of where you have copied your images
@@ -38,7 +46,7 @@ namespace Votations.NSurvey
                 str = config["NSurveyImagesPath"];
                 if (str == null)
                 {
-                    return "~/images/";
+                    return "~/Images/";
                 }
                 return str;
             }
@@ -228,10 +236,76 @@ namespace Votations.NSurvey
                 {
                     config = ConfigurationManager.AppSettings;
                 }
-                str = config["NSurveyAddressPath"];
+                str = config["NSurveyFormAddressPath"];
                 if (str == null)
                 {
                     return "/XmlData/Address/";
+                }
+                return str;
+            }
+        }
+
+        /// <summary>
+        /// Path of the Survey Form CSS files
+        /// options set in a. web.config file
+        /// </summary>
+        public static string CSSFilesPath
+        {
+            get
+            {
+                string str = null;
+                NameValueCollection config = (NameValueCollection)ConfigurationManager.GetSection("nSurveySettings");
+                if (config == null)
+                {
+                    config = ConfigurationManager.AppSettings;
+                }
+                str = config["NSurveyFormCSSFilesPath"];
+                if (str == null)
+                {
+                    return "/Content/surveyform/";
+                }
+                return str;
+            }
+        }
+
+
+        /// <summary>
+        /// Path of the Survey Form CSS files
+        /// options set in a. web.config file
+        /// </summary>
+        public static string ScriptFilesPath
+        {
+            get
+            {
+                string str = null;
+                NameValueCollection config = (NameValueCollection)ConfigurationManager.GetSection("nSurveySettings");
+                if (config == null)
+                {
+                    config = ConfigurationManager.AppSettings;
+                }
+                str = config["NSurveyScriptFilesPath"];
+                if (str == null)
+                {
+                    return "/Scripts/";
+                }
+                return str;
+            }
+        }
+
+        public static string ContentFilesPath
+        {
+            get
+            {
+                string str = null;
+                NameValueCollection config = (NameValueCollection)ConfigurationManager.GetSection("nSurveySettings");
+                if (config == null)
+                {
+                    config = ConfigurationManager.AppSettings;
+                }
+                str = config["NSurveyContentFilesPath"];
+                if (str == null)
+                {
+                    return "/Content/";
                 }
                 return str;
             }

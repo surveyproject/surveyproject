@@ -3,8 +3,8 @@
 
 
  <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-     <div id="mainBody" class="mainBody contentHolder ps-container">
-         <div id="Panel" class="Panel content">
+     
+         <div id="helpPanel">
 
 
                         <!--      <asp:Label ID="HelpMessageLabel" runat="server" CssClass=""></asp:Label> -->
@@ -32,5 +32,5 @@
         </ol>
    
     </fieldset><br /><br />
- </div></div></asp:Content>
+ <div id="fillerDiv" class="fillerDiv">&nbsp;</div></div></asp:Content>
 

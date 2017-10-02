@@ -1,5 +1,5 @@
 /**************************************************************************************************
-	Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com)	
+	Survey™ Project changes: copyright (c) 2009-2017, W3DevPro™ (https://github.com/surveyproject)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -82,6 +82,7 @@ namespace Votations.NSurvey.WebAdmin
 
         public static readonly string HelpFilesHyperLink = AdminRoot + "/Help/default.aspx";
         public static readonly string HelpOptionsHyperLink = AdminRoot + "/Help/index.aspx";
+        public static readonly string HelpAboutHyperLink = AdminRoot + "/Help/About.aspx";
 
         public static readonly string LogOutHyperLink = AdminRoot + "/LogOut.aspx";
         //public static readonly string LoginHyperLink = AdminRoot + "/LogIn.aspx";
@@ -161,6 +162,12 @@ namespace Votations.NSurvey.WebAdmin
         public static void NavigateToTypeEditor(int menuIndex)
         {
             HttpContext.Current.Response.Redirect(TypeEditor + "?menuindex=" + menuIndex);
+        }
+
+        public static void NavigateToTypeCreator(int surveyId, int menuIndex)
+        {
+            HttpContext.Current.Response.Redirect(TypeCreator + "?surveyid" + surveyId + "?menuindex=" + menuIndex);
+            
         }
 
         public static void NavigateToFilterEditor(int surveyId, int menuIndex)

@@ -2,26 +2,15 @@
     Inherits="Votations.NSurvey.WebAdmin.HelpFiles" CodeBehind="../default.aspx.cs" %>
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="mainBody" class="mainBody contentHolder ps-container"><div id="Panel" class="Panel content">
-    <table class="TableLayoutContainer">
-        <tr>
-            <td>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="helpPanel"><div>
                 <asp:ImageButton ID="btnBack" ImageUrl="~/Images/index-icon.png" runat="server" CssClass="buttonIndex"
                     PostBackUrl="~/NSurveyAdmin/Help/default.aspx#Completion" Visible="True" ToolTip="Back to Helpfiles Index" />
-            </td>
-        </tr>
-        <tr>
-            <td class="contentCell" valign="top">
-                <br />
+            </div><div>
                 <h2 style="color:#5720C6;">
-                    Advanced Completion</h2>
-                <br />
-                <br />
-                <hr style="color:#e2e2e2;"/>
-                <br />
-<br />
-Survey Project also provides several programmatic ways to hook custom written .NET
-methods to integrate it further in other web environments or with third party
+                    Advanced Completion</h2><hr style="color:#e2e2e2;" />
+
+SP&trade; also provides several programmatic ways to use custom written .NET
+methods to integrate into other web environments or with third party
 tools.<br />
 <br />
 Here are a few code samples.<br />
@@ -30,9 +19,8 @@ Here are a few code samples.<br />
 Using this event we can manage the data posted by the respondent before
 they got stored in the database at this point the voter id is still a
 temporary id and its the last time we can modify voter information or
-answers before they get stored in the database.<br />
-
-<br />
+answers before they get stored in the database.<br /><br />
+<code>
 protected void Page_Load(Object sender, EventArgs e)<br />
 {<br />
 MySurvey.SurveyId = int.Parse(Request[&quot;SurveyId&quot;]);<br />
@@ -66,13 +54,14 @@ Response.Write(String.Format(&quot;Vote date = {0}&lt;br&gt;&quot;, voter.VoteDa
 Response.Write(String.Format(&quot;Validated = {0}&lt;br&gt;&quot;, voter.Validated));<br />
 }<br />
 <br />
-
+    </code>
 <br />
 <u>Form Submitted Event</u><br /><br />
 Using this event we can manage the data posted by the respondent after
 they got stored in the database at this point the voter id is the one
 stored and returned by the database.<br />
 <br />
+                <code>
 protected void Page_Load(Object sender, EventArgs e)<br />
 {<br />
 MySurvey.SurveyId = int.Parse(Request[&quot;SurveyId&quot;]);<br />
@@ -104,15 +93,16 @@ private void PrintVoterInfo(VoterAnswersData.VotersRow voter)<br />
 Response.Write(String.Format(&quot;Voter Id = {0}&lt;br&gt;&quot;, voter.VoterId));<br />
 Response.Write(String.Format(&quot;Vote date = {0}&lt;br&gt;&quot;, voter.VoteDate));<br />
 Response.Write(String.Format(&quot;Validated = {0}&lt;br&gt;&quot;, voter.Validated));<br />
-}<br />
-<br />
+}
 
-<hr style="color:#e2e2e2;" /> <br /><h3>More Information</h3><br />
+                </code>
+                    <br />
+                    <hr style="color:#e2e2e2;" />
+                <h3>More Information</h3>
                 <br />
-Thanks%20Message%20Conditions.html<br />
-Survey%20Copyright%20and%20Disclaimer.html<br />
-                <br />
-            </td>
-        </tr>
-    </table>
-</div></div></asp:Content>
+<a href="../Completion Actions.aspx" title="Completion Actions">Completion Actions</a><br />
+<a href="../Thanks Message Conditions.aspx" title="">Thanks Message Conditions</a><br />
+
+             
+            </div>
+<div id="fillerDiv" class="fillerDiv">&nbsp;</div></div></asp:Content>

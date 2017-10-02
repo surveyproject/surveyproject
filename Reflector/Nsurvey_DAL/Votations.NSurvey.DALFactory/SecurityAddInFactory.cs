@@ -19,7 +19,10 @@ namespace Votations.NSurvey.DALFactory
                 config = ConfigurationManager.AppSettings;
             }
             string assemblyString = config["WebDAL"];
-            string typeName = assemblyString + ".SecurityAddIn";
+            //string typeName = assemblyString + ".SecurityAddIn";
+            // typename: must match namespace; after namechange of assembly, namespace no longer similar to 
+            string typeName = "Votations.NSurvey.SQLServerDAL.SecurityAddIn";
+
             return (ISecurityAddIn) Assembly.Load(assemblyString).CreateInstance(typeName);
         }
     }

@@ -2,50 +2,34 @@
     Inherits="Votations.NSurvey.WebAdmin.HelpFiles" CodeBehind="../default.aspx.cs" %>
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="mainBody" class="mainBody contentHolder ps-container"><div id="Panel" class="Panel content">
-    <table class="TableLayoutContainer">
-        <tr>
-            <td>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="helpPanel"><div>
                 <asp:ImageButton ID="btnBack" ImageUrl="~/Images/index-icon.png" runat="server" CssClass="buttonIndex"
                     PostBackUrl="~/NSurveyAdmin/Help/default.aspx#QuestionLibrary" Visible="True" ToolTip="Back to Helpfiles Index" />
-            </td>
-        </tr>
-        <tr>
-            <td class="contentCell" valign="top">
-                <br />
+            </div><div>
                 <h2 style="color:#5720C6;">
-                    Library Templates</h2>
-                <br />
-                <br />
-                <hr style="color:#e2e2e2;"/>
-                <br />
+                    Library Templates</h2><hr style="color:#e2e2e2;" />
+         
 
-The library templates allows to add new questions to a library that
-will be available as templates to be re-used from the Question editor - 
-Question%20Editor.html.<br />
+The library templates enables the addition of new questions to a Question Library that
+will be available as 'question templates' to be re-used and added through the Question editor to the survey form.<br />
 <br />
 
-* Select Preview Language - set library language to add questions to
+<i>* Select Preview Language </i><br /> - set the library language to add questions to
 <br />
 <br />
-* Insert New / Existing Question - option to add a new question to the
-  library either by creating a new one or by copying an existing one
-  from a survey, form another library or import it from an XML file.<br />
+<i>* Insert New / Existing Question</i><br /> -  option to add a new question to the
+  library either by creating a new questino or by copying a question
+  from an existing survey, form another library or import it from an XML file.<br />
 <br />
 
                 <hr style="color:#e2e2e2;"/>
-                <br />
-                <br />
+    
                 <h3>
                     More Information</h3>
                 <br />
-FBT_Introduction.html<br />
-Question%20Editor.html <br />
-QL_Introduction.html<br />
-Library%20Templates.html<br />
+<a href="QL_Introduction.aspx" title=" Question Library Introduction " >Question Library Introduction </a>	<br />
+<a href="Library Directory.aspx" title=" Library Directory " > Library Directory </a>	<br />
                 <br />
-            </td>
-        </tr>
-    </table>
-</div></div></asp:Content>
+            </div>
+<div id="fillerDiv" class="fillerDiv">&nbsp;</div></div></asp:Content>
 

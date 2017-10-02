@@ -6,7 +6,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{17D2197C-324F-48A6-895D-075FAF4A942E}</ProjectGuid>
     <RootNamespace>Votations.NSurvey.DAL</RootNamespace>
-    <AssemblyName>Votations.NSurvey.DAL</AssemblyName>
+    <AssemblyName>SurveyProject.DataAccessLayer</AssemblyName>
     <OutputType>Library</OutputType>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <PreBuildEvent />

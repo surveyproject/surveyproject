@@ -1,32 +1,36 @@
-﻿<%@ Register TagPrefix="uc1" TagName="FooterControl" Src="UserControls/FooterControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
+﻿
 
 <%@ Page Language="c#" MasterPageFile="~/NSurveyAdmin/MsterPageTabs.master" AutoEventWireup="false"
     ValidateRequest="false" Inherits="Votations.NSurvey.WebAdmin.EditMatrixQuestion"
     CodeBehind="EditMatrixQuestion.aspx.cs" %>
 
-
-
 <%@ Register src="UserControls/QuestionExtraLinks.ascx" tagname="QuestionExtraLinks" tagprefix="uc2" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
+
+        <div id="Panel" class="Panel">
 
             
-            <fieldset style="width: 750px; margin-left: 12px; margin-right: 0px; margin-top: 15px;">
+            <fieldset>
 
                 <asp:ImageButton ID="ImageButton1" Width="16px" ImageUrl="~/Images/back_button.gif" runat="server"
                     CssClass="buttonBack" OnCommand="OnBackButton" />
                 <div style="left: 100px; text-align:center; width:450px; position: relative; top: 5px;">
                     <uc2:QuestionExtraLinks ID="QuestionExtraLinks1" runat="server" /></div>
+                                                           <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/new/Matrix Question Editor.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a>
+                                        </div>
                 
             </fieldset>
 
-            <div style="position: relative; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
+           <div class="errorDiv">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
               
-                            <fieldset style="width:750px; margin-top:15px; margin-left:12px;">
+                            <fieldset>
                                 <legend class="titleFont titleLegend">
                                 <asp:Literal ID="EditMatrixQuestionTitle" runat="server" EnableViewState="False">Edit matrix question</asp:Literal>
                                                     </legend>
@@ -147,7 +151,13 @@
                     <br />
                     </fieldset>
 
-                                        <fieldset style="width:750px; margin-top:15px; margin-left:12px;">
+                                                    <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/New/Matrix Rows _ Column Editor.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a>
+                                        </div>
+                                        <fieldset>
                                 <legend class="titleFont titleLegend">
                     <asp:Literal ID="InsertNewTitle" runat="server" EnableViewState="False">Insert a new</asp:Literal>
                                 </legend>
@@ -173,7 +183,7 @@
                     <br />
                     </fieldset>
 
-                                                    <fieldset style="width:750px; margin-top:15px; margin-left:12px;">
+                                                    <fieldset>
                                 <legend class="titleFont titleLegend">
                     <asp:Literal ID="CurrentRowsColumnsTitle" runat="server" EnableViewState="False">Current rows and columns</asp:Literal>
                                                                                                                             </legend>
@@ -238,4 +248,5 @@
   </ol>
                     <br />
                     </fieldset>
-</div></div></asp:Content>
+                                                 <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
+</div></asp:Content>

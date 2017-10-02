@@ -1,5 +1,5 @@
 /**************************************************************************************************
-	Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com)	
+	Survey™ Project changes: copyright (c) 2009-2017, W3DevPro™ (https://github.com/surveyproject)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -176,6 +176,7 @@ namespace Votations.NSurvey.WebAdmin
 
         void SetupTextArea()
         {
+            // @ means that you don't need to escape special characters in the string following to the symbol:
             string html = @"
 <head runat=""server"">
     <link href=""{0}"" type=""text/css"" rel=""stylesheet"" />
@@ -206,7 +207,9 @@ namespace Votations.NSurvey.WebAdmin
             SurveyLayoutData _userSettings;
 
             Votations.NSurvey.SQLServerDAL.SurveyLayout u = new Votations.NSurvey.SQLServerDAL.SurveyLayout();
+
             _userSettings = u.SurveyLayoutGet(SurveyId);
+
             if (!(_userSettings == null || _userSettings.SurveyLayout.Count == 0))
             {
                 string css = string.Empty;
@@ -219,7 +222,11 @@ namespace Votations.NSurvey.WebAdmin
                 taCode.InnerText = string.Format(html, css, header, str, footer);
             }
 
+            string str2 = string.Format(taCode.InnerText, SurveyId);
+            taCode.InnerText = str2;
+
         }
+
         private void SetupSecurity()
         {
             CheckRight(NSurveyRights.AccessASPNetCode, true);
@@ -264,10 +271,21 @@ namespace Votations.NSurvey.WebAdmin
         void btnFriendly_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtFriendly.Text)) return;
-            new Surveys().SetFriendlyName(SurveyId, txtFriendly.Text);
-            ShowFriendlyUrl();
-            ShowNormalMessage(MessageLabel, GetPageResource("FriendlyNameUpdatedMsg"));
+
+            //check if similar FN exists: in DB SP?
+
+            if (new Surveys().SetFriendlyName(SurveyId, txtFriendly.Text) == true)
+            {
+                ShowFriendlyUrl();
+                ShowNormalMessage(MessageLabel, GetPageResource("FriendlyNameUpdatedMsg"));
+            }
+            else 
+            {
+                ShowErrorMessage(MessageLabel, GetPageResource("FriendlyNameExistsMsg"));
+            }
+
         }
+                
 
         /// <summary>
         /// Delete Friendly URL 

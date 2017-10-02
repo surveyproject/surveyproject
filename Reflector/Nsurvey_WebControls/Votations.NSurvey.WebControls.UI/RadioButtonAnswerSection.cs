@@ -17,34 +17,41 @@ namespace Votations.NSurvey.WebControls.UI
         /// answer items
         /// </summary>
         /// <returns>An horizontal table with all the answer items</returns>
-        private Table BuildHorizontalSelectionLayout()
+        private Panel BuildHorizontalSelectionLayout()
         {
-            Table table = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetAnswerPercentTable();//JJ;
-            TableRow row = new TableRow();
+            //Table table = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetAnswerPercentTable();//JJ;
+            //TableRow row = new TableRow();
+            Panel panel = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetAnswerPercentPanel();//JJ; 
+            Control panelrow = new Panel();
+
             int num = 1;
             foreach (AnswerItem item in base.Answers)
             {
-                TableCell cell = new TableCell();
+                //TableCell cell = new TableCell();
+                Panel panelcell = new Panel();
                 //cell.VerticalAlign = VerticalAlign.Top;
-                cell.CssClass = "cellValign";
-                cell.Controls.Add(item);
-                row.Cells.Add(cell);
-                cell.Width = GetCellWidth(this.ColumnsNumber);//JJ
+                panelcell.CssClass = "cellValign";
+
+                panelcell.Controls.Add(item);
+                panelrow.Controls.Add(panelcell);
+                //cell.Width = GetCellWidth(this.ColumnsNumber);//JJ
+                panelcell.Width = GetCellWidth(this.ColumnsNumber);
+
 
                 num++;
                 if ((base.ColumnsNumber != 0) && (num > base.ColumnsNumber))
                 {
-                    row.ControlStyle.CopyFrom(base.AnswerStyle);
-                    table.Rows.Add(row);
+                    panel.ControlStyle.CopyFrom(base.AnswerStyle);
+                    panel.Controls.Add(panelrow);
                     num = 1;
-                    row = new TableRow();
+                    //row = new TableRow();
+                    panelrow = new Panel();
                 }
             }
-            row.ControlStyle.CopyFrom(base.AnswerStyle);
-            table.Rows.Add(row);
-            //table.CellPadding = 2;
-            //table.CellSpacing = 0;
-            return table;
+            panel.ControlStyle.CopyFrom(base.AnswerStyle);
+            panel.Controls.Add(panelrow);
+
+            return panel;
         }
 
         /// <summary>
@@ -52,40 +59,48 @@ namespace Votations.NSurvey.WebControls.UI
         /// answer items
         /// </summary>
         /// <returns>An horizontal table with all the answer items</returns>
-        private Table BuildVerticalSelectionLayout()
+        private Panel BuildVerticalSelectionLayout()
         {
-            Table table = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetAnswerPercentTable();//JJ;
+            //Table table = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetAnswerPercentTable();//JJ;
+            Panel panel = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetAnswerPercentPanel();
+
             int num = (base.ColumnsNumber == 0) ? base.Answers.Count : Convert.ToInt32(Math.Ceiling(((double) base.Answers.Count) / ((double) base.ColumnsNumber)));
             int num2 = 0;
             int num3 = 0;
             
             for (int i = 0; num3 < num; i = 0)
             {
-                TableRow row = new TableRow();
+                //TableRow row = new TableRow();
+                Control panelrow = new Panel();
+
+
                 while (i <= base.ColumnsNumber)
                 {
-                    TableCell cell = new TableCell();
-                    cell.Width = GetCellWidth(this.ColumnsNumber);//JJ
+                    //TableCell cell = new TableCell();
+                    //cell.Width = GetCellWidth(this.ColumnsNumber);//JJ
+
+                    Panel panelcell = new Panel();
+                    panelcell.Width = GetCellWidth(this.ColumnsNumber);
 
                     //cell.VerticalAlign = VerticalAlign.Top;
-                    cell.CssClass = "cellValign";
+                    panelcell.CssClass = "cellValign";
                     if (num2 < base.Answers.Count)
                     {
-                        cell.Width = GetCellWidth(this.ColumnsNumber);
-                        cell.Controls.Add(base.Answers[num2]);
+                        panelcell.Width = GetCellWidth(this.ColumnsNumber);
+                        panelcell.Controls.Add(base.Answers[num2]);
                     }
-                    row.Cells.Add(cell);
+                    panelrow.Controls.Add(panelcell);
                     i++;
                     num2 += num;
                 }
-                row.ControlStyle.CopyFrom(base.AnswerStyle);
-                table.Rows.Add(row);
+                panel.ControlStyle.CopyFrom(base.AnswerStyle);
+                panel.Controls.Add(panelrow);
+
                 num3++;
                 num2 = num3;
             }
-            //table.CellPadding = 2;
-            //table.CellSpacing = 0;
-            return table;
+
+            return panel;
         }
 
         /// <summary>

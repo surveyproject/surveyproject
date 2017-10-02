@@ -1,0 +1,11 @@
+<?xml version="1.0" standalone="yes"?>
+<NSurveyDataSource xmlns="http://www.nsurvey.org/NSurveyDataSource.xsd">
+	<XmlDataSource>
+		<XmlAnswers>
+			   <XmlAnswer><AnswerValue>0</AnswerValue><AnswerDescription>0</AnswerDescription></XmlAnswer> 
+			   <XmlAnswer><AnswerValue>1</AnswerValue><AnswerDescription>1</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>2</AnswerValue><AnswerDescription>2</AnswerDescription></XmlAnswer>
+			   <XmlAnswer><AnswerValue>3</AnswerValue><AnswerDescription>3</AnswerDescription></XmlAnswer>
+		</XmlAnswers>
+	</XmlDataSource>
+</NSurveyDataSource>

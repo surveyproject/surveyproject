@@ -19,7 +19,11 @@
                 config = ConfigurationManager.AppSettings;
             }
             string assemblyString = config["WebDAL"];
-            string typeName = assemblyString + ".Folder";
+
+            //string typeName = assemblyString + ".Folder";
+            // typename: must match namespace; after namechange of assembly, namespace no longer similar to 
+            string typeName = "Votations.NSurvey.SQLServerDAL.Folder";
+
             return (IFolder)Assembly.Load(assemblyString).CreateInstance(typeName);
         }
     }

@@ -1,4 +1,4 @@
-﻿namespace Votations.NSurvey.Data 
+﻿namespace Votations.NSurvey.Data
 {
 
 
@@ -7,7 +7,7 @@
         partial class TreeNodesDataTable
         {
         }
-    
+
         partial class FolderDataTable
         {
         }

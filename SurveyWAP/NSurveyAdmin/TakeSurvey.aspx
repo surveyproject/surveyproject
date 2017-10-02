@@ -1,20 +1,19 @@
-﻿<%@ Register TagPrefix="uc1" TagName="FooterControl" Src="UserControls/FooterControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
-<%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="Votations.NSurvey.WebControls" %>
+﻿
+<%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="SurveyProject.WebControls" %>
 
 <%@ Page Language="c#" MasterPageFile="MsterPageTabs.master" ValidateRequest="false"
     AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.TakeSurvey" CodeBehind="TakeSurvey.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
+
+        <div id="Panel" class="Panel">
 
     <!--
                                             <asp:Literal ID="TakeSurveyTitle" runat="server" EnableViewState="False" Text="Take survey"></asp:Literal></font>
        -->
 <asp:PlaceHolder ID="phSurveysDll"  runat="server" Visible="true">
      <br />
-                <fieldset style="width:750px; margin-left:12px;">
+                <fieldset>
                       <br />
                     <ol>
      <li>
@@ -52,5 +51,5 @@
                                     </td>
                                 </tr>
                             </table>
-
-</div></div></asp:Content>
+                                     <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
+</div></asp:Content>

@@ -3,11 +3,18 @@
 <%@ Control Language="c#" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.UserControls.AnswerOptionControl" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" Codebehind="AnswerOptionControl.ascx.cs" %>
 
 
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
+            <div class="errorDiv">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
 
-            <fieldset style="width: 750px; margin-left: 12px; margin-right: 0px; margin-top: 15px;">
+                                                                        <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/New/AT_Introduction.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a>
+                                        </div>
+
+            <fieldset>
                 <legend class="titleFont titleLegend">
                 <asp:Literal ID="EditAnswerTitle" runat="server" Text="Edit answer settings"></asp:Literal>
                                     </legend>

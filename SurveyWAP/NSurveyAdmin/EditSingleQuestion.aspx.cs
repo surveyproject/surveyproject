@@ -1,5 +1,5 @@
 /**************************************************************************************************
-	Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com)	
+	Survey™ Project changes: copyright (c) 2009-2017, W3DevPro™ (https://github.com/surveyproject)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -201,7 +201,7 @@ namespace Votations.NSurvey.WebAdmin
 
             if (!Page.IsPostBack)
             {
-                ColumnDropdownlist.Items.Insert(0, new ListItem(GetPageResource("NoSelectionRequiredOption"), "0"));
+                ColumnDropdownlist.Items.Insert(0, new ListItem(GetPageResource("NoSelectionRequiredOption"), "1"));
                 MinSelectionDropDownList.Items.Insert(0, new ListItem(GetPageResource("NoSelectionRequiredOption"), "0"));
                 MaxAllowedDropDownList.Items.Insert(0, new ListItem(GetPageResource("UnlimitedSelectionOption"), "0"));
 
@@ -518,8 +518,14 @@ namespace Votations.NSurvey.WebAdmin
                 // Set the updated fields
                 updatedQuestion.QuestionId = _questionId;
                 updatedQuestion.SurveyId = getSurveyId();
-                updatedQuestion.QuestionText = QuestionFreeTextBox.Text.Length > 3900 ?
-                   Server.HtmlDecode(QuestionFreeTextBox.Text.Substring(0, 3900)) : Server.HtmlDecode(QuestionFreeTextBox.Text);
+
+                // original code: limited questiontext - nvarchar(4000) dbtype
+                //                updatedQuestion.QuestionText = QuestionFreeTextBox.Text.Length > 3900 ?
+                //                Server.HtmlDecode(QuestionFreeTextBox.Text.Substring(0, 3900)) : Server.HtmlDecode(QuestionFreeTextBox.Text);
+
+                //sp25: unlimited questiontext - nvarchar(max) dbtype
+                updatedQuestion.QuestionText = Server.HtmlDecode(QuestionFreeTextBox.Text);
+
                 updatedQuestion.ColumnsNumber = int.Parse(ColumnDropdownlist.SelectedValue);
                 updatedQuestion.MinSelectionRequired = int.Parse(MinSelectionDropDownList.SelectedValue);
                 updatedQuestion.MaxSelectionAllowed = int.Parse(MaxAllowedDropDownList.SelectedValue);

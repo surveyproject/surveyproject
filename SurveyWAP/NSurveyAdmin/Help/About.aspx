@@ -1,23 +1,18 @@
 ﻿<%@ Page Language="c#" MasterPageFile="~/nsurveyadmin/MsterPageTabs.master" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.HelpFiles" Codebehind="default.aspx.cs" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="mainBody" class="mainBody contentHolder ps-container"><div id="Panel" class="Panel content">
-    <table class="TableLayoutContainer">
-        <tr>
-            <td>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <div id="helpPanel">
+
+            <div>
                 <asp:ImageButton ID="btnBack" ImageUrl="~/Images/index-icon.png" runat="server" CssClass="buttonIndex"
                     PostBackUrl="~/NSurveyAdmin/Help/default.aspx#Introduction" Visible="True" ToolTip="Back to Helpfiles Index" />
-            </td>
-        </tr>
-      <tr>
-        <td class="contentCell" valign="top">
+            </div>
+<div>
+            <h2 style="color:#5720C6;">About Survey&trade; Project</h2><hr style="color:#e2e2e2;" />
             <br />
-            <h2 style="color:#5720C6;">About Survey&trade; Project</h2><br />
-            <br />
-            <hr style="color:#E2E2E2;" />
-            <br />
-            Survey&trade; Project is an initiative to create and maintain free open source survey software for the web and to share knowledge and creative experiences along the way.
+            Survey&trade; Project is a Platform for Developing Free Software to Collect Data Online.
             <br /><br />
-            The Survey&trade; Project tool is a free, open source webapplication that is used to create webbased
+            The free, open source Survey&trade; Project webapplication is used to create webbased
             surveys and (data entry) webforms to gather information and feedback online from customers, employees,
             friends or website visitors and export or analyze the results through integrated reporting tools.<br />
             <br />
@@ -43,12 +38,12 @@
             <br />
             For a complete list of features go to the Survey&trade; Project Communitysite at
             <a href="http://www.surveyproject.org/" target="_blank">http://www.surveyproject.org/</a>. This is where experiences and questions are shared 
-            with the Community and other SP&trade; users.<br />
-            <br />
+            with the Community and other SP&trade; users.<br /><br />
+            You can also leave us your comments and feedback by sending an email to: <a href="mailto:mail@surveyproject.org" target="_top">mail@surveyproject.org</a>
+
+            <br /><br />
             We hope you will make good use of the application and appreciate its many features,<br /><br />
             <b>Survey&trade; Project</b><br />
-                    </td>
-        </tr>
-                
-    </table>
-</div></div></asp:Content>
+                    </div>
+
+<div id="fillerDiv" class="fillerDiv">&nbsp;</div></div></asp:Content>

@@ -10,14 +10,15 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
 
-                                    <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 4px;">
+        <div id="Panel" class="Panel">
+
+                                       <div class="errorDiv">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
             <br />
-    <fieldset style="width:750px; margin-top:15px; margin-left:12px;"><legend class="titleFont titleLegend">
+    <fieldset>
+        <legend class="titleFont titleLegend">
                     <asp:Literal ID="AddNewConditionTitle" runat="server" EnableViewState="False"></asp:Literal></legend>
         <br />
 <ol>
@@ -76,5 +77,5 @@
   </ol>
                     <br />
                     </fieldset>
-
- </div></div></asp:Content>
+                                                 <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
+ </div></asp:Content>

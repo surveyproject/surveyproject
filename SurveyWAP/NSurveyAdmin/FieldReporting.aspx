@@ -1,39 +1,30 @@
-﻿<%@ Register TagPrefix="uc1" TagName="FooterControl" Src="UserControls/FooterControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="SurveyListControl" Src="UserControls/SurveyListControl.ascx" %>
+﻿<%@ Register TagPrefix="uc1" TagName="SurveyListControl" Src="UserControls/SurveyListControl.ascx" %>
 <%@ Page language="c#" MasterPageFile="MsterPageTabs.master"   AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.FieldReporting" Codebehind="FieldReporting.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
 
-
-            <fieldset style="width: 750px; margin-left: 12px; margin-top: 15px; overflow: hidden;" title="">
+        <div id="Panel" class="Panel">
+        
+                                                        <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/New/Voter report.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a>
+                                        </div>
+            <fieldset>
                  <legend class="titleFont titleLegend">
                     <asp:Literal ID="FieldReportTitle" runat="server" EnableViewState="False">Field entries report - Page</asp:Literal>
                     <asp:Label ID="CurrentPageLabel" runat="server">1</asp:Label>&nbsp;/
                                             <asp:Label ID="TotalPagesLabel" runat="server">1</asp:Label>
                 </legend>
-                <br />
-                <ol>
-                    <li>
+            
 
-                        <asp:RadioButtonList runat="server" ID="rblReports" RepeatDirection="Vertical"
-                            CellPadding="10" OnSelectedIndexChanged="rbListSelectedIndexChanged" AutoPostBack="true"
-                            Width="700px">
-                            <asp:ListItem Text="GraphicalReports" Value="GR"></asp:ListItem>
-                            <asp:ListItem Text="VoterReports" Value="TR" Selected="True"></asp:ListItem>
-                            <asp:ListItem Text="CrossTabulationReports" Value="CTR"></asp:ListItem>
-                        </asp:RadioButtonList>
-
-
-                    </li>
-                </ol>
-                <br />
                 </fieldset>
 
-                     <fieldset style="width:750px; margin-left:12px; margin-top:15px;" title="">
-                           <br /> <ol>
+
+                     <fieldset>
+                         <br />
+                            <ol>
      <li>
                                    <div class="rounded_corners" style="width:680px; overflow:hidden;">
                                             <asp:DataGrid ID="FieldReportDataGrid" runat="server" AllowCustomPaging="True" GridLines="Vertical"
@@ -63,8 +54,8 @@
   </ol>
                     <br />
                     </fieldset>
+                                                 <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
 </div>
 
-    </div>
 
 </asp:Content>

@@ -6,7 +6,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{3050518F-8D14-4704-8092-1650B183E266}</ProjectGuid>
     <RootNamespace>Votations.NSurvey.SQLServerDAL</RootNamespace>
-    <AssemblyName>Votations.NSurvey.SQLServerDAL</AssemblyName>
+    <AssemblyName>SurveyProject.SQLServerDAL</AssemblyName>
     <OutputType>Library</OutputType>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <PreBuildEvent />

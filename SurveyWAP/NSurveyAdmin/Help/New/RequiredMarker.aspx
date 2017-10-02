@@ -2,27 +2,17 @@
     Inherits="Votations.NSurvey.WebAdmin.HelpFiles" CodeBehind="../default.aspx.cs" %>
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="mainBody" class="mainBody contentHolder ps-container"><div id="Panel" class="Panel content">
-    <table class="TableLayoutContainer">
-        <tr>
-            <td>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="helpPanel"><div>
                 <asp:ImageButton ID="btnBack" ImageUrl="~/Images/index-icon.png" runat="server" CssClass="buttonIndex"
                     PostBackUrl="~/NSurveyAdmin/Help/default.aspx#SurveyDesigner" Visible="True" ToolTip="Back to Helpfiles Index" />
-            </td>
-        </tr>
-        <tr>
-            <td class="contentCell" valign="top">
-                <br />
+            </div><div>
                 <h2 style="color:#5720C6;">
-                    Required Markers</h2>
-                <br />
-                <br />
-                <hr style="color:#e2e2e2;"/>
-                <br />
+                    Required Markers</h2><hr style="color:#e2e2e2;" />
+          
                 <b>General working</b><br /><br />
 
-"Required Markers" are set and shown on the surveyform to inform and "warn" the respondent that a particular question or answer has to be answered or selected
- before the survey can be submitted or before moving on to the next page.
+"Required Markers" are shown on the surveyform to inform and "warn" the respondent that a particular question or answer has to be answered or selected
+ before the survey can be submitted or before continuing to the next page.
                 <br /><br />
 
 <b>Detailed working & improvements</b>
@@ -33,8 +23,8 @@ a. Question level: by making use of the "Min. and Max. Selections Required/Allow
 b. Answer level: by making use of the "Mandatory" check box option;
 <br /><br />
 <u>A - Questionlevel:</u><br /><br />
-* by setting Min.selection required" to one (or higher) a [orange] required marker [triangle warning icon] will show on the survey form at the end of the question;<br />
-* in previous SP versions this marker would only show if on Survey Settings level Question Numbering was NOT disabled; it is now independent of the use of Question numbering;
+* by setting "Min.selection required" to one (or higher) a [orange] required marker [triangle warning icon] will show on the survey form at the end of the question;<br />
+* in previous SP&trade; versions this marker would only show if on Survey Settings level "Question Numbering" was NOT disabled; it is now independent of the use of Question numbering;
 <br /><br />
 The use of the "Min/ max. selection" options dropdownlist to set the required marker is confusing:
                 <br /><br />
@@ -69,21 +59,15 @@ if done otherwise even if one file is uploaded uploaded going to the next page i
 <br /><br />
 - On Multilanguage Questions: to show the required marker set the Min. Required select. on all language versions otherwise the marker will not show;
 <br /><br />
-- Required markers on both question and answer level are now also shown on the survey formbuiler once set.
-                
-<br />
-<br />
-
-                <hr style="color:#e2e2e2;"/>
-                <br />
-                <br />
+- Required markers on both question and answer level are now also shown on the survey formbuiler once set.<hr style="color:#e2e2e2;" />
+  
                 <h3>
                     More Information</h3>
                 <br />
+                <a href="Question Editor.aspx" title=" Question Editor " > Question Editor </a><br />
+                <a href="Answers Editor.aspx" title=" Answers Editor " >Answers Editor </a>	<br />
 
                 <br />
-            </td>
-        </tr>
-    </table>
-</div></div></asp:Content>
+            </div>
+<div id="fillerDiv" class="fillerDiv">&nbsp;</div></div></asp:Content>
 

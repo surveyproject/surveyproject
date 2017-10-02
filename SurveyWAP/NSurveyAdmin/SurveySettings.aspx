@@ -39,7 +39,7 @@
     <input type="hidden" id="tabindex" name="tabindex" value="<%= selectedTabIndex %>" />
     <div id="usersTabEvents" style="display: none" runat="server" onclick="foo" />
 
-    <div id="tabs" style=" min-height:750px;">
+    <div id="tabs">
         <ul>
             <li><a href="#tabs-1">
                 <%=GetPageResource("SurveyInfo")%></a></li>

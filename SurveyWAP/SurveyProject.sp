@@ -1,6 +1,6 @@
 <surveyproject type="Package" version="5.0">
   <packages>
-    <package name="SurveyProject" type="Application" version="02.04.00">
+    <package name="SurveyProject" type="Application" version="02.05.00">
       <friendlyName>SurveyProject</friendlyName>
       <description>
         The open source webapplication to create and publish surveys and webforms online.

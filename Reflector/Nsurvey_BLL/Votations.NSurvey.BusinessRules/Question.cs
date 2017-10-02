@@ -70,7 +70,13 @@ namespace Votations.NSurvey.BusinessRules
             QuestionData defaultQuestion = this.GetDefaultQuestion();
             QuestionData.QuestionsRow row = defaultQuestion.Questions[0];
             row.LibraryId = libraryId;
-            row.QuestionText = (questionText.Length > 0xf3c) ? questionText.Substring(0, 0xf3c) : questionText;
+
+            //orig code: limited textlength 3900 - nvarchar(4000)
+            //row.QuestionText = (questionText.Length > 0xf3c) ? questionText.Substring(0, 0xf3c) : questionText;
+
+            //SP25: unlimited text lenght nvarchar(max)
+            row.QuestionText = questionText;
+
             row.DisplayOrder = 1;
             row.PageNumber = 1;
             row.SelectionModeId = 1;
@@ -93,8 +99,13 @@ namespace Votations.NSurvey.BusinessRules
             QuestionData defaultQuestion = this.GetDefaultQuestion();
             QuestionData.QuestionsRow row = defaultQuestion.Questions[0];
             row.SurveyId = surveyId;
-            
-            row.QuestionText = (questionText.Length > 0xf3c) ? questionText.Substring(0, 0xf3c) : questionText;
+
+            //orig code: limited textlength 3900 - nvarchar(4000)
+            //row.QuestionText = (questionText.Length > 0xf3c) ? questionText.Substring(0, 0xf3c) : questionText;
+
+            //SP25: unlimited text lenght nvarchar(max)
+            row.QuestionText = questionText;
+
             row.DisplayOrder = displayOrder;
             row.PageNumber = pageNumber;
             row.SelectionModeId = 1;
@@ -137,7 +148,11 @@ namespace Votations.NSurvey.BusinessRules
             QuestionData defaultQuestion = this.GetDefaultQuestion();
             QuestionData.QuestionsRow row = defaultQuestion.Questions[0];
             row.LibraryId = libraryId;
-            row.QuestionText = (informationText.Length > 0xf3c) ? informationText.Substring(0, 0xf3c) : informationText;
+
+            //row.QuestionText = (informationText.Length > 0xf3c) ? informationText.Substring(0, 0xf3c) : informationText;
+
+            row.QuestionText = informationText;
+
             row.DisplayOrder = 1;
             row.PageNumber = 1;
             row.SelectionModeId = 5;
@@ -162,7 +177,9 @@ namespace Votations.NSurvey.BusinessRules
             QuestionData defaultQuestion = this.GetDefaultQuestion();
             QuestionData.QuestionsRow row = defaultQuestion.Questions[0];
             row.SurveyId = surveyId;
-            row.QuestionText = (informationText.Length > 0xf3c) ? informationText.Substring(0, 0xf3c) : informationText;
+
+            row.QuestionText = informationText;
+
             row.DisplayOrder = displayOrder;
             row.PageNumber = pageNumber;
             row.SelectionModeId = 5;

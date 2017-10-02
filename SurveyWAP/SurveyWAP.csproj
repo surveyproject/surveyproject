@@ -12,7 +12,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Votations.NSurvey.WebAdmin</RootNamespace>
-    <AssemblyName>Votations.NSurvey.WebAdmin</AssemblyName>
+    <AssemblyName>SurveyProject.WebApplication</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
     <FileUpgradeFlags>
@@ -46,10 +46,13 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Votations.NSurvey.WebAdmin.XML</DocumentationFile>
+    <DocumentationFile>bin\SurveyProject.WebApplication.xml</DocumentationFile>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
     <Prefer32Bit>false</Prefer32Bit>
     <PublishDatabases>false</PublishDatabases>
+    <DeployEncryptKey>Encryption password is used only if any deployment setting is marked as secure</DeployEncryptKey>
+    <IncludeIisSettings>false</IncludeIisSettings>
+    <IncludeAppPool>false</IncludeAppPool>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CKEditor.NET, Version=3.6.4.0, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL">
@@ -96,12 +99,17 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Code\RowSelectorColumnScript.js" />
+    <Content Include="App_Data\ErrorLog.txt" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\surveyform\resultsreport.css" />
+    <Content Include="Content\surveyform\surveymobile.css" />
+    <Content Include="Content\surveyform\surveymobile.min.css" />
+    <Content Include="Content\surveyform\UserCSS\Empty.txt" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -144,13 +152,17 @@
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="default.aspx" />
+    <Content Include="Errors\ErrorPage.aspx" />
+    <Content Include="Errors\ErrorTestPage.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="HttpErrorPage.aspx" />
+    <Content Include="Errors\HttpErrorPage.aspx" />
     <Content Include="Images\arrow-down.gif" />
     <Content Include="Images\arrow-green-up.gif" />
+    <Content Include="Images\arrow-green-up.png" />
     <Content Include="Images\arrow-red-down.gif" />
+    <Content Include="Images\arrow-red-down.png" />
     <Content Include="Images\arrow-right.gif" />
     <Content Include="Images\arrow_down.gif" />
     <Content Include="Images\arrow_up.gif" />
@@ -175,22 +187,33 @@
     <Content Include="Images\edit_pen.gif" />
     <Content Include="Images\help.gif" />
     <Content Include="Images\index-icon.png" />
+    <Content Include="Images\linebreak.gif" />
     <Content Include="Images\lock.gif" />
     <Content Include="Images\menuseparator.gif" />
     <Content Include="Images\NegativeRatingBar.gif" />
+    <Content Include="Images\PDF-Icon_32.png" />
     <Content Include="Images\PositiveRatingBar.gif" />
     <Content Include="Images\Print_32X32_Standard.png" />
+    <Content Include="Images\questiondownbutton.gif" />
+    <Content Include="Images\questionoptionsbackground.gif" />
+    <Content Include="Images\questionupbutton.gif" />
     <Content Include="Images\save.gif" />
+    <Content Include="Images\smalldot.gif" />
     <Content Include="Images\small_help.gif" />
     <Content Include="Images\Spacer.gif" />
     <Content Include="Images\splogo.svg" />
+    <Content Include="Images\spot_file.gif" />
     <Content Include="Images\spot_off.gif" />
     <Content Include="Images\spot_on.gif" />
+    <Content Include="Images\spot_text.gif" />
     <Content Include="Images\submenuseparator.gif" />
+    <Content Include="Images\tintblue.gif" />
+    <Content Include="Images\tintbluedark.gif" />
     <Content Include="Images\view.png" />
     <Content Include="Images\warning-icn.png" />
     <Content Include="Images\yellowwarning_16px.gif" />
-    <Content Include="KeepSessionAlive.aspx" />
+    <Content Include="Errors\DefaultRedirectErrorPage.aspx" />
+    <Content Include="NSurveyForm\KeepSessionAlive.aspx" />
     <Content Include="NSurveyAdmin\AccessDenied.aspx" />
     <Content Include="NSurveyAdmin\AjaxWebMethodsProxy.aspx" />
     <Content Include="NSurveyAdmin\CampaignStart.aspx" />
@@ -199,9 +222,6 @@
     <Content Include="NSurveyAdmin\ControlCode.aspx" />
     <Content Include="NSurveyAdmin\CSS\loginform.css" />
     <Content Include="NSurveyAdmin\CSS\perfect-scrollbar.css" />
-    <Content Include="NSurveyAdmin\CSS\resultsreport.css" />
-    <Content Include="NSurveyAdmin\CSS\surveymobile.css" />
-    <Content Include="NSurveyAdmin\CSS\surveymobile.min.css" />
     <Content Include="NSurveyAdmin\CSS\surveypreview.css" />
     <Content Include="NSurveyAdmin\CSS\voterreport.css" />
     <Content Include="NSurveyAdmin\EditCssXml.aspx" />
@@ -217,6 +237,9 @@
     <Content Include="NSurveyAdmin\Help\Field - Basic.aspx" />
     <Content Include="NSurveyAdmin\Help\FieldT_Introduction.aspx" />
     <Content Include="NSurveyAdmin\Help\Help on Help.aspx" />
+    <Content Include="NSurveyAdmin\Help\Images\AccesAuthorisation.gif" />
+    <Content Include="NSurveyAdmin\Help\Images\RepeatFull.JPG" />
+    <Content Include="NSurveyAdmin\Help\Images\RepeatGrid.JPG" />
     <Content Include="NSurveyAdmin\Help\Insert Security AddIn.aspx" />
     <Content Include="NSurveyAdmin\Help\InstallationSettings.aspx" />
     <Content Include="NSurveyAdmin\Help\Licence.aspx" />
@@ -228,10 +251,12 @@
     <Content Include="NSurveyAdmin\Help\New\ASP.NET Security Context.aspx" />
     <Content Include="NSurveyAdmin\Help\New\AP_Introduction.aspx" />
     <Content Include="NSurveyAdmin\Help\New\AT_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Condition_Introduction.aspx" />
     <Content Include="NSurveyAdmin\Help\New\Boolean.aspx" />
     <Content Include="NSurveyAdmin\Help\New\Branching conditions.aspx" />
     <Content Include="NSurveyAdmin\Help\New\Cookie Protection.aspx" />
     <Content Include="NSurveyAdmin\Help\New\Cross Tabulation.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Data Import.aspx" />
     <Content Include="NSurveyAdmin\Help\New\Data Export.aspx" />
     <Content Include="NSurveyAdmin\Help\New\ED_Introduction.aspx" />
     <Content Include="NSurveyAdmin\Help\New\EMail Code Protection.aspx" />
@@ -250,6 +275,7 @@
     <Content Include="NSurveyAdmin\Help\New\Form Architecture.aspx" />
     <Content Include="NSurveyAdmin\Help\New\Graphic Reports.aspx" />
     <Content Include="NSurveyAdmin\Help\New\Insert Question.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\IP Filter.aspx" />
     <Content Include="NSurveyAdmin\Help\New\IP Protection.aspx" />
     <Content Include="NSurveyAdmin\Help\New\KP_Introduction.aspx" />
     <Content Include="NSurveyAdmin\Help\New\Library Directory.aspx" />
@@ -273,6 +299,7 @@
     <Content Include="NSurveyAdmin\Help\New\Report Link Deployment.aspx" />
     <Content Include="NSurveyAdmin\Help\New\Roles Manager.aspx" />
     <Content Include="NSurveyAdmin\Help\New\RequiredMarker.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\QuestionGroups.aspx" />
     <Content Include="NSurveyAdmin\Help\New\SCE_Introduction.aspx" />
     <Content Include="NSurveyAdmin\Help\New\SD_Introduction.aspx" />
     <Content Include="NSurveyAdmin\Help\New\Sections Management.aspx" />
@@ -307,6 +334,7 @@
     <Content Include="NSurveyAdmin\Help\Statistics.aspx" />
     <Content Include="NSurveyAdmin\Help\Style_Introduction.aspx" />
     <Content Include="NSurveyAdmin\Help\Survey Copyright and Disclaimer.aspx" />
+    <Content Include="NSurveyAdmin\Help\SurveyListDirectory.aspx" />
     <Content Include="NSurveyAdmin\Help\Survey Creation.aspx" />
     <Content Include="NSurveyAdmin\Help\Survey General Settings.aspx" />
     <Content Include="NSurveyAdmin\Help\Survey Security.aspx" />
@@ -314,16 +342,6 @@
     <Content Include="NSurveyAdmin\Help\Thanks Message Conditions.aspx" />
     <Content Include="NSurveyAdmin\Help\UM_Introduction.aspx" />
     <Content Include="NSurveyAdmin\Help\Web Control Style.aspx" />
-    <Content Include="NSurveyAdmin\Images\AccesAuthorisation.gif" />
-    <Content Include="NSurveyAdmin\Images\arrow-green-up.gif" />
-    <Content Include="NSurveyAdmin\Images\arrow-green-up.png" />
-    <Content Include="NSurveyAdmin\Images\arrow-red-down.gif" />
-    <Content Include="NSurveyAdmin\Images\arrow-red-down.png" />
-    <Content Include="NSurveyAdmin\Images\arrow_down.gif" />
-    <Content Include="NSurveyAdmin\Images\arrow_up.gif" />
-    <Content Include="NSurveyAdmin\Images\PDF-Icon_32.png" />
-    <Content Include="NSurveyAdmin\Images\Print_32X32_Standard.png" />
-    <Content Include="NSurveyAdmin\Images\UserImg\Empty.txt" />
     <Content Include="NSurveyAdmin\Settings.aspx" />
     <Content Include="NSurveyAdmin\SurveyIPSecurity.aspx" />
     <Content Include="NSurveyAdmin\CreateSurvey.aspx" />
@@ -342,18 +360,6 @@
     <Content Include="NSurveyAdmin\FileManager.aspx" />
     <Content Include="NSurveyAdmin\GlobalStats.aspx" />
     <Content Include="NSurveyAdmin\Help\index.aspx" />
-    <Content Include="NSurveyAdmin\Images\linebreak.gif" />
-    <Content Include="NSurveyAdmin\Images\questiondownbutton.gif" />
-    <Content Include="NSurveyAdmin\Images\questionoptionsbackground.gif" />
-    <Content Include="NSurveyAdmin\Images\questionupbutton.gif" />
-    <Content Include="NSurveyAdmin\Images\smalldot.gif" />
-    <Content Include="NSurveyAdmin\Images\spacer.gif" />
-    <Content Include="NSurveyAdmin\Images\spot_file.gif" />
-    <Content Include="NSurveyAdmin\Images\spot_off.gif" />
-    <Content Include="NSurveyAdmin\Images\spot_on.gif" />
-    <Content Include="NSurveyAdmin\Images\spot_text.gif" />
-    <Content Include="NSurveyAdmin\Images\tintblue.gif" />
-    <Content Include="NSurveyAdmin\Images\tintbluedark.gif" />
     <Content Include="NSurveyAdmin\InsertQuestion.aspx" />
     <Content Include="NSurveyAdmin\InsertSecurityAddIn.aspx" />
     <Content Include="NSurveyAdmin\LibraryDirectory.aspx" />
@@ -413,7 +419,9 @@
     <Content Include="NSurveyAdmin\VoterReport.aspx" />
     <Content Include="Global.asax" />
     <Content Include="NSurveyAdmin\WarningScreen.aspx" />
-    <Content Include="ResultsReport.aspx" />
+    <Content Include="Images\images_list.json" />
+    <Content Include="NSurveyReports\CustomReport.aspx" />
+    <Content Include="NSurveyReports\ResultsReport.aspx" />
     <Content Include="Scripts\astreeview\astreeview.css" />
     <Content Include="Scripts\astreeview\astreeview.min.js" />
     <Content Include="Scripts\astreeview\contextmenu.css" />
@@ -1065,7 +1073,6 @@
     <Content Include="Scripts\ckeditor\package.json" />
     <Content Include="Scripts\ckeditor\LICENSE.md" />
     <Content Include="Scripts\ckeditor\CHANGES.md" />
-    <Content Include="NSurveyAdmin\Images\images_list.json" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -1220,21 +1227,42 @@
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Errors\ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errors\ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Errors\ErrorTestPage.aspx.cs">
+      <DependentUpon>ErrorTestPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errors\ErrorTestPage.aspx.designer.cs">
+      <DependentUpon>ErrorTestPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="HttpErrorPage.aspx.cs">
+    <Compile Include="Errors\HttpErrorPage.aspx.cs">
       <DependentUpon>HttpErrorPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="HttpErrorPage.aspx.designer.cs">
+    <Compile Include="Errors\HttpErrorPage.aspx.designer.cs">
       <DependentUpon>HttpErrorPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="KeepSessionAlive.aspx.cs">
+    <Compile Include="Errors\DefaultRedirectErrorPage.aspx.cs">
+      <DependentUpon>DefaultRedirectErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errors\DefaultRedirectErrorPage.aspx.designer.cs">
+      <DependentUpon>DefaultRedirectErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyForm\KeepSessionAlive.aspx.cs">
       <DependentUpon>KeepSessionAlive.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="KeepSessionAlive.aspx.designer.cs">
+    <Compile Include="NSurveyForm\KeepSessionAlive.aspx.designer.cs">
       <DependentUpon>KeepSessionAlive.aspx</DependentUpon>
     </Compile>
     <Compile Include="NSurveyAdmin\AccessDenied.aspx.cs">
@@ -1839,12 +1867,19 @@
     <Compile Include="NSurveyAdmin\WarningScreen.aspx.designer.cs">
       <DependentUpon>WarningScreen.aspx</DependentUpon>
     </Compile>
+    <Compile Include="NSurveyReports\CustomReport.aspx.cs">
+      <DependentUpon>CustomReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyReports\CustomReport.aspx.designer.cs">
+      <DependentUpon>CustomReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResultsReport.aspx.cs">
+    <Compile Include="NSurveyReports\ResultsReport.aspx.cs">
       <DependentUpon>ResultsReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ResultsReport.aspx.designer.cs">
+    <Compile Include="NSurveyReports\ResultsReport.aspx.designer.cs">
       <DependentUpon>ResultsReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="SurveyMobile.aspx.cs">
@@ -1863,7 +1898,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Deployment\" />
     <Folder Include="Images\mscharts_temp\" />
   </ItemGroup>
@@ -2097,7 +2131,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>4976</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/sp24dev</IISUrl>
+          <IISUrl>http://localhost/sp25dev</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

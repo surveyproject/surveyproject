@@ -1,20 +1,20 @@
-﻿<%@ Register TagPrefix="uc1" TagName="FooterControl" Src="UserControls/FooterControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
+﻿
 <%@ Page language="c#" MasterPageFile="MsterPageTabs.master"   AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.VoterReport" Codebehind="VoterReport.aspx.cs" %>
 <%@ Import Namespace = "Votations.NSurvey.Helpers" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
 
+        <div id="Panel" class="Panel">
+                 <fieldset id="liML" runat="server">    
+                <asp:ImageButton ID="btnBack" Width="16px" ImageUrl="~/Images/back_button.gif" runat="server" CssClass="buttonBack" OnCommand="OnBackButton" Visible="true" ToolTip="Go back to previous" />
+            </fieldset>
 <div id="DivPrint">
 
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
+             <div class="errorDiv">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
-
             
- <fieldset style="width:730px; margin-left:12px; margin-top:15px;" title="">
+ <fieldset>
         <legend class="titleFont titleLegend">
 
                             <asp:Literal ID="VoterInformationTitle" runat="server" EnableViewState="False">Voterinformation</asp:Literal>
@@ -58,7 +58,7 @@
                         </div>
                         <!-- code to be added later:
                     <div class="PrintImage" style="position: absolute; text-align:right; right: 34px; top: 40px;">
-                        <asp:ImageButton ID="CreatePdfButton" AlternateText="Create PDF" ToolTip="Create PDF" ImageUrl="~/NSurveyAdmin/Images/PDF-Icon_32.png"  runat="server"  />
+                        <asp:ImageButton ID="CreatePdfButton" AlternateText="Create PDF" ToolTip="Create PDF" ImageUrl="~/Images/PDF-Icon_32.png"  runat="server"  />
                     </div>
                             -->
 
@@ -136,15 +136,14 @@
                         <div style="width:470px;">
                         <asp:Button ID="EditAnswersLinkButton" CssClass="btn btn-primary btn-xs bw PrintImage" runat="server" OnClick="EditAnswersLinkButton_Click" />
                         </div>
-    <br />
-     <fieldset style="width:730px; margin-left:12px; margin-top:15px;" title="">
+    <br /><br />
+     <fieldset>
         <legend class="titleFont titleLegend">
                             <asp:Literal ID="SurveyAnswersTitle" runat="server" EnableViewState="False">Survey answers</asp:Literal>
             </legend>
 
-                        <table class="voterReport TableLayoutContainer">
-                            <tr>
-                                <td>
+                        <div class="TableLayoutContainer">
+
                                     <asp:DataGrid class="voterReport" ID="QuestionsDataGrid" runat="server" GridLines="Horizontal"
                                         ShowHeader="False" AutoGenerateColumns="False" Width="100%">
                                         <Columns>
@@ -164,12 +163,12 @@
                                             </asp:TemplateColumn>
                                         </Columns>
                                     </asp:DataGrid><b><asp:Label ID="VoterScoreTotalLabel" runat="server"></asp:Label></b>
-                                </td>
-                            </tr>
-                        </table>
+
+                        </div>
          <br />
             </fieldset>
     <br />
+               <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
 </div>
 
-</div></div></asp:Content>
+</div></asp:Content>

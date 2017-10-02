@@ -2,22 +2,12 @@
     Inherits="Votations.NSurvey.WebAdmin.HelpFiles" CodeBehind="../default.aspx.cs" %>
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="mainBody" class="mainBody contentHolder ps-container"><div id="Panel" class="Panel content">
-    <table class="TableLayoutContainer">
-        <tr>
-            <td>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="helpPanel"><div>
                 <asp:ImageButton ID="btnBack" ImageUrl="~/Images/index-icon.png" runat="server" CssClass="buttonIndex"
                     PostBackUrl="~/NSurveyAdmin/Help/default.aspx#RolesUsers" Visible="True" ToolTip="Back to Helpfiles Index" />
-            </td>
-        </tr>
-        <tr>
-            <td class="contentCell" valign="top">
-                <br />
+            </div><div>
                 <h2 style="color:#5720C6;">
-                    Accounts</h2>
-                <br />
-                <br />
-                <hr style="color:#e2e2e2;"/>
+                    Accounts</h2><hr style="color:#e2e2e2;" />
                 <br />
 Through the Accounts pages useraccounts that can access the SP tool are created and administered. Depending on the
 the type of user provider used on SP (i.e. AD integration of .NET users) it may not be possible edit the user but only assign roles and surveys.<br />
@@ -56,8 +46,6 @@ Group%20Manager.html<br />
 Roles%20Manager.html<br />
 User%20Import.html<br />
                 <br />
-            </td>
-        </tr>
-    </table>
-</div></div></asp:Content>
+            </div>
+<div id="fillerDiv" class="fillerDiv">&nbsp;</div></div></asp:Content>
 

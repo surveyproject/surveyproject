@@ -14,21 +14,35 @@ namespace Votations.NSurvey.BE.Votations.NSurvey.Constants
        public static Table GetCentPercentTable()
        {
            Table t = new Table();
-           //t.Width = new Unit(100.00, UnitType.Percentage);
-            //t.ID = "QuestTbl";
             t.CssClass = "questTbl";
-           //t.Attributes.Add("style","table-layout:fixed;");
            return t;
        }
+
+        //TODO SP25
+        //Central Question Panel
+        public static Panel GetCentPercentPanel()
+        {
+            Panel p = new Panel();
+            p.CssClass = "questTbl";
+            return p;
+        }
 
         //Central Question table
         public static Table GetSectPercentTable()
         {
             Table t = new Table();
-            //t.Width = new Unit(100.00, UnitType.Percentage);
             t.ID = "SectTbl";
             t.CssClass = "sectTbl";
-            //t.Attributes.Add("style","table-layout:fixed;");
+            return t;
+        }
+
+        //TODO SP25
+        //Central Question Panel
+        public static Panel GetSectPercentPanel()
+        {
+            Panel t = new Panel();
+            t.ID = "SectPnl";
+            t.CssClass = "sectTbl";
             return t;
         }
 
@@ -36,22 +50,41 @@ namespace Votations.NSurvey.BE.Votations.NSurvey.Constants
         public static Table GetAnswerPercentTable()
         {
             Table at = new Table();
-            //t.Width = new Unit(100.00, UnitType.Percentage);
             at.ID = "AnswerTbl";
             at.CssClass = "answerTbl";
-            //t.Attributes.Add("style","table-layout:fixed;");
             return at;
         }
+
+        //TODO SP25
+        //Central Answer table
+        public static Panel GetAnswerPercentPanel()
+        {
+            Panel at = new Panel();
+            at.ID = "AnswerPnl";
+            at.CssClass = "answerTbl";
+            return at;
+        }
+
+
 
         // Central Main table
         public static Table GetMainPercentTable()
         {
             Table mt = new Table();
-            //t.Width = new Unit(100.00, UnitType.Percentage);
             mt.ID = "MainTbl";
             mt.CssClass = "mainTbl";
-            //t.Attributes.Add("style","table-layout:fixed;");
             return mt;
         }
+
+        //TODO  SP25
+        //Central Main Panel
+        public static Panel GetMainPercentagePanel()
+        {
+            Panel mp = new Panel();
+            mp.ID = "MainPnl";
+            mp.CssClass = "mainTbl";
+            return mp;
+        }
+
     }
 }

@@ -52,11 +52,28 @@
 /* SP Login box customized */
 .FPtitleFont{background:#4169e1;border-radius:.35em;color:#fff; font-size:1.1vw;margin:0 auto 0 0;padding:3px 0 3px 10px;width:100%;-moz-border-radius:.35em;-webkit-border-radius:.35em}
 
+.loginBoxDiv
+{
+    margin-left: 10px;
+    margin-top: 40px;
+    background-color: rgba(221,221,221,0.3);
+    border: 1px solid white;
+    -moz-border-radius: 0.45em;
+    border-radius: 0.45em;
+    padding: 10px 10px 45px 10px;
+    text-align: left;
+}
 
-/*Login form CSS*/     
+.validateButton {
+    margin: 10px -10px 0 0
+}
 
+.loginErrorDiv {
+    position: absolute;
+    min-width: 210px;
+}
+/*Login form CSS*/
 /* GLOBALS */
-
 *,
 *:after,
 *:before {

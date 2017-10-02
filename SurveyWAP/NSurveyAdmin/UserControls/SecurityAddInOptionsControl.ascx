@@ -4,10 +4,10 @@
 
 
         <li style="text-align:justify;">
-            <asp:ImageButton ID="UpImageButton" runat="server" Height="12" Width="12" ImageUrl="~/NSurveyAdmin/images/questionupbutton.gif">
+            <asp:ImageButton ID="UpImageButton" runat="server" Height="12" Width="12" ImageUrl="~/Images/questionupbutton.gif">
             </asp:ImageButton>
 
-            <asp:ImageButton ID="DownImageButton" runat="server" Height="12" Width="12" ImageUrl="~/NSurveyAdmin/images/questiondownbutton.gif">
+            <asp:ImageButton ID="DownImageButton" runat="server" Height="12" Width="12" ImageUrl="~/Images/questiondownbutton.gif">
             </asp:ImageButton>
 
              <asp:Label ID="AddInDescriptionLabel" runat="server"></asp:Label>

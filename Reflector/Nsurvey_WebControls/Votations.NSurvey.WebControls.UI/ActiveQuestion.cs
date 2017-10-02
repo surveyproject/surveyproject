@@ -84,29 +84,58 @@ namespace Votations.NSurvey.WebControls.UI
                         }
                     }
                 }
+
                 if (builder.Length > 0)
                 {
-                    base.QuestionTable.Rows[0].ControlStyle.CopyFrom(this.ValidationMessageStyle);
-                    if (base.QuestionTable.Rows[0].Cells[0].Controls.Count > 0)
+                    //base.QuestionTable.Rows[0].ControlStyle.CopyFrom(this.ValidationMessageStyle);
+                    //if (base.QuestionTable.Rows[0].Cells[0].Controls.Count > 0)
+                    //{
+                    //    base.QuestionTable.Rows[0].Cells[0].Controls.Add(new LiteralControl("<br />" + builder.ToString()));
+                    //}
+                    //else
+                    //{
+                    //    base.QuestionTable.Rows[0].Cells[0].Controls.Add(new LiteralControl(builder.ToString()));
+                    //}
+
+                    //TODO SP25
+                    base.QuestionPanel.ControlStyle.CopyFrom(this.ValidationMessageStyle);
+                    if(base.QuestionPanel.Controls.Count > 0)
                     {
-                        base.QuestionTable.Rows[0].Cells[0].Controls.Add(new LiteralControl("<br />" + builder.ToString()));
+                        base.QuestionPanel.Controls[0].Controls.Add(new LiteralControl("<br />" + builder.ToString()));
                     }
                     else
                     {
-                        base.QuestionTable.Rows[0].Cells[0].Controls.Add(new LiteralControl(builder.ToString()));
+                        base.QuestionPanel.Controls[0].Controls.Add(new LiteralControl(builder.ToString()));
                     }
+
                 }
+
+
                 if (builder2.Length > 0)
                 {
-                    base.QuestionTable.Rows[1].ControlStyle.CopyFrom(this.ConfirmationMessageStyle);
-                    if (base.QuestionTable.Rows[1].Cells[0].Controls.Count > 0)
+                    //base.QuestionTable.Rows[1].ControlStyle.CopyFrom(this.ConfirmationMessageStyle);
+                    //if (base.QuestionTable.Rows[1].Cells[0].Controls.Count > 0)
+                    //{
+                    //    base.QuestionTable.Rows[1].Cells[0].Controls.Add(new LiteralControl("<br />" + builder2.ToString()));
+                    //}
+                    //else
+                    //{
+                    //    base.QuestionTable.Rows[1].Cells[0].Controls.Add(new LiteralControl(builder2.ToString()));
+                    //}
+
+                    //TODO SP25
+                    base.QuestionPanel.ControlStyle.CopyFrom(this.ValidationMessageStyle);
+                    if (base.QuestionPanel.Controls.Count > 0)
                     {
-                        base.QuestionTable.Rows[1].Cells[0].Controls.Add(new LiteralControl("<br />" + builder2.ToString()));
+                        base.QuestionPanel.Controls[1].Controls.Add(new LiteralControl("<br />" + builder2.ToString()));
                     }
                     else
                     {
-                        base.QuestionTable.Rows[1].Cells[0].Controls.Add(new LiteralControl(builder2.ToString()));
+                        base.QuestionPanel.Controls[1].Controls.Add(new LiteralControl(builder2.ToString()));
                     }
+
+
+
                 }
             }
         }
@@ -119,7 +148,10 @@ namespace Votations.NSurvey.WebControls.UI
         {
             if ((this.IsSelectionOverflow || this.IsSelectionRequired) || (this._invalidErrorMessages.Count > 0))
             {
-                base.QuestionTable.Rows[0].ControlStyle.CopyFrom(this.ValidationMessageStyle);
+                //base.QuestionTable.Rows[0].ControlStyle.CopyFrom(this.ValidationMessageStyle);
+                //TODO SP25
+                //base.QuestionPanel.ControlStyle.CopyFrom(this.ValidationMessageStyle);
+
                 StringBuilder builder = new StringBuilder();
                 if (this.IsSelectionOverflow)
                 {
@@ -148,7 +180,17 @@ namespace Votations.NSurvey.WebControls.UI
                         }
                     }
                 }
-                base.QuestionTable.Rows[0].Cells[0].Controls.Add(new LiteralControl(builder.ToString()));
+                //base.QuestionTable.Rows[0].Cells[0].Controls.Add(new LiteralControl(builder.ToString()));
+
+                //TODO SP25
+                
+                Label span = new Label();
+                span.Text = builder.ToString();
+                span.ControlStyle.CopyFrom(this.ValidationMessageStyle);
+
+                base.QuestionPanel.Controls[0].Controls.Add(span);
+                base.QuestionPanel.Controls[0].ID = "qvm";
+
             }
         }
 

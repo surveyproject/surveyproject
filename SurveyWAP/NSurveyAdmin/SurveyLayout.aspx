@@ -19,22 +19,20 @@
         
     </script>--%>
 
+        <div id="Panel" class="Panel">
 
-        <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
-
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 4px;">
+            <div class="errorDiv">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
             
-                <div style="position: relative; left: 720px; width:10px; top: 13px;">
+               <div class="helpDiv">
                     <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/Style_Introduction.aspx"
                         title="Click for more Information">
                         <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
                     </a>
                 </div>
             
-       <fieldset style="width:750px; margin-left:12px; margin-top:15px;">
+       <fieldset>
         <legend class="titleFont titleLegend">
           <asp:Literal ID="SurveyLayoutLegend" runat="server" EnableViewState="false">Survey Layout</asp:Literal>  
         </legend><br />
@@ -108,7 +106,7 @@
   </ol>
 
             </fieldset>
-
+                       <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
             </div>
-         </div>
+         
 </asp:Content>

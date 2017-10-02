@@ -1,5 +1,5 @@
 /**************************************************************************************************
-	Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com)	
+	Survey™ Project changes: copyright (c) 2009-2017, W3DevPro™ (https://github.com/surveyproject)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -26,6 +26,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Web.Security;
+using System.Text.RegularExpressions;
 using Votations.NSurvey.Data;
 using Votations.NSurvey.DataAccess;
 using Votations.NSurvey.BusinessRules;
@@ -94,6 +95,7 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls
         {
             string enteredPwd = PasswordTextBox.Text.Trim();
             string enteredUname = LoginTextBox.Text.Trim();
+
             if (enteredUname.Length > 0 && enteredPwd.Length > 0)
             {
                 string encryptedPwd;
@@ -112,6 +114,9 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls
                     {
                         encryptedPwd = new User().EncryptUserPassword(enteredPwd);
                         salt = sec.CreateSaltKey(5);
+                        // update of password and salt in DB does not happen!
+                        // next line 125 saved password compared to encryptedpwd = not true -> error!
+
                     }
                     else
                     {
@@ -173,7 +178,51 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls
                             UINavigator.NavigateToFirstAccess(x, -1);
                         }
                     }
+                } else if (id == -2)
+                    // if vts_tbuser is empty create an admin account:
+                {
+                    NSurveyUserData userData = new NSurveyUserData();
+                    NSurveyUserData.UsersRow newUser = userData.Users.NewUsersRow();
+
+                    if (_userProvider is INSurveyUserProvider)
+                    {
+                        //if (PasswordTextBox.Text.Length == 0)                    
+                        if (!Regex.IsMatch(PasswordTextBox.Text.Trim(), @"(?=^.{8,12}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$"))
+
+                        {
+                            MessageLabel.Visible = true;
+                            ((PageBase)Page).ShowErrorMessage(MessageLabel, ((PageBase)Page).GetPageResource("PasswordRequiredMessage"));
+                            return;
+                        }
+
+                        newUser.UserName = LoginTextBox.Text.Trim();
+                        var sec = new LoginSecurity();
+                        newUser.PasswordSalt = sec.CreateSaltKey(5);
+                        newUser.Password = sec.CreatePasswordHash(PasswordTextBox.Text.Trim(), newUser.PasswordSalt);
+                        //newUser.Email = EmailTextBox.Text;
+                        newUser.FirstName = "SurveyProject";
+                        newUser.LastName = "Administrator";
+
+                        userData.Users.Rows.Add(newUser);
+                        ((INSurveyUserProvider)_userProvider).AddUser(userData);
+                    }
+
+                    if (userData.Users.Rows.Count > 0)
+                    {
+                        UserSettingData userSettings = new UserSettingData();
+                        UserSettingData.UserSettingsRow newUserSettings = userSettings.UserSettings.NewUserSettingsRow();
+                        newUserSettings.UserId = userData.Users[0].UserId;
+                        newUserSettings.IsAdmin = true;
+                        newUserSettings.GlobalSurveyAccess = true;
+                        userSettings.UserSettings.Rows.Add(newUserSettings);
+                        new User().AddUserSettings(userSettings);
+                    }
+
+                    // after creating the new admin account login will automatically follow....
+
                 }
+
+
             }
 
             MessageLabel.Visible = true;

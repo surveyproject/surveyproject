@@ -1,13 +1,12 @@
 ﻿<%@ Register TagPrefix="uc1" TagName="SurveyListControl" Src="UserControls/SurveyListControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="FooterControl" Src="UserControls/FooterControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
+
 
 <%@ Page Language="c#" MasterPageFile="MsterPageTabs.master" AutoEventWireup="false"
     Inherits="Votations.NSurvey.WebAdmin.ResultsCrossTabulation" CodeBehind="ResultsCrossTabulation.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
+
+        <div id="Panel" class="Panel">
 
                 <script type="text/javascript">
                      <!--
@@ -39,17 +38,19 @@
                     }
                     // -->
                 </script>
-                        <div style="position: relative; left: 700px; width: 10px;  top: 15px; clear:none;">
-                <input type="image" class="PrintImage" alt="print" src="../images/Print_32X32_Standard.png"
-                    title="Print" onclick="JavaScript:printPreviewDiv('DivPrint');" />
-                            </div>
+
 
             <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
+                                                                <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/new/Cross%20Tabulation.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a>
+                                        </div>
 
-
-            <fieldset style="width: 750px; margin-left: 12px; margin-top: 15px;" title="">
+            <fieldset>
                  <legend class="titleFont titleLegend">
                     <asp:Literal ID="SurveyCrossTabTitle" runat="server" EnableViewState="False" Text="Survey cross tabulation results"></asp:Literal>
                 </legend>
@@ -61,7 +62,6 @@
                             CellPadding="10" OnSelectedIndexChanged="rbListSelectedIndexChanged" AutoPostBack="true"
                             Width="700px">
                             <asp:ListItem Text="GraphicalReports" Value="GR"></asp:ListItem>
-                            <asp:ListItem Text="VoterReports" Value="TR"></asp:ListItem>
                             <asp:ListItem Text="CrossTabulationReports" Value="CTR" Selected="True"></asp:ListItem>
                         </asp:RadioButtonList>
 
@@ -70,8 +70,11 @@
                 </ol>
                 <br />
                 </fieldset>
-
-                     <fieldset style="width:750px; margin-left:12px; margin-top:15px;" title="">
+                                     <div class="helpDiv">
+                <input type="image" class="PrintImage" alt="print" src="../images/Print_32X32_Standard.png"
+                    title="Print" onclick="JavaScript: printPreviewDiv('DivPrint');" />
+                            </div>
+                     <fieldset>
                            <br /> <ol>
      <li>
                                             <asp:Label ID="BaseQuestionLabel" runat="server" AssociatedControlID="BaseQuestionDropDownList" ></asp:Label>
@@ -100,6 +103,7 @@
   </ol>
                     <br />
                     </fieldset>
-</div></div>
+            <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
+</div>
 
 </asp:Content>

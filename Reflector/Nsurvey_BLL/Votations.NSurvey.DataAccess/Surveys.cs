@@ -360,9 +360,9 @@ namespace Votations.NSurvey.DataAccess
             SurveyFactory.Create().SetFolderId(folderId, surveyId);
         }
 
-        public void SetFriendlyName(int surveyId, string friendlyName)
+        public bool SetFriendlyName(int surveyId, string friendlyName)
         {
-            SurveyFactory.Create().SetFriendlyName(surveyId, friendlyName);
+            return SurveyFactory.Create().SetFriendlyName(surveyId, friendlyName);
         }
 
         public void DeleteFriendlyName(int surveyId)

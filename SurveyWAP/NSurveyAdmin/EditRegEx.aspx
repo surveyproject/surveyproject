@@ -1,17 +1,20 @@
 ﻿<%@ Page language="c#" MasterPageFile="MsterPageTabs.master"   AutoEventWireup="false" ValidateRequest="false" Inherits="Votations.NSurvey.WebAdmin.EditRegEx" Codebehind="EditRegEx.aspx.cs" %>
-<%@ Register TagPrefix="uc1" TagName="RolesOptionsControl" Src="UserControls/RolesOptionsControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="FooterControl" Src="UserControls/FooterControl.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
+
+        <div id="Panel" class="Panel">
           
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 11px;">
+             <div class="errorDiv">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
-  <br />
-                                 <fieldset style="width:750px; margin-left:12px; margin-top:19px;" title="">
+                                        <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/New/Regular Expression Editor.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a>
+                                        </div>
+
+                                    <fieldset>
         <legend class="titleFont titleLegend"><asp:Literal ID="RegExLibraryTitle" runat="server" Text="RegEx library" EnableViewState="False"></asp:Literal>
 
         </legend>
@@ -49,6 +52,7 @@
                     <asp:Button ID="MakeBuiltInRegExButton" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Make built in"></asp:Button>
                     <asp:Button ID="CancelRegExButton" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Cancel"></asp:Button>
         <br />
+                            
               </li> 
     </asp:PlaceHolder>
                 <li> 
@@ -68,4 +72,7 @@
                             </li>
   </ol>
    </fieldset>
-</div></div></asp:Content>
+            <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
+</div>
+
+</asp:Content>

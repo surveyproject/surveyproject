@@ -2,11 +2,11 @@
 
 <asp:content id="Content1" contentplaceholderid="ContentPlaceHolder1" runat="Server">
 
-    <div style="height:600px;">
-        <img style="margin-top:180px; width:30vw;" src="Images/splogo.svg" />
-    </div>
+    <div style="height:79vh;">
+        <img class="logoImg" alt="logoImage"  src="Images/splogo.svg" />    
 
-        <h2 id="Slogan" runat="server" style="color: white;">            
-            </h2>
+        <h2 id="Slogan" runat="server" style="color: #e2e2e2;"></h2>
+
+    </div>
 
 </asp:content>

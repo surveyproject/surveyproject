@@ -2,8 +2,8 @@
     AutoEventWireup="true" CodeBehind="DataImport.aspx.cs" Inherits="Votations.NSurvey.WebAdmin.NSurveyAdmin.DataImport" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
+
+        <div id="Panel" class="Panel">
 
     <script type="text/javascript">
         $(function () {
@@ -18,14 +18,19 @@
     </script>
 
 
-                        <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 6px;">
+                       
+            <div class="errorDiv">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
-            <br />
+                                                                <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/new/Data Import.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a>
+                                        </div>
 
 
-
-    <fieldset style="width:750px; margin-top:15px; margin-left:12px; text-align: left;">
+    <fieldset>
         <legend class="titleFont titleLegend">
 
                     <asp:Literal ID="DataImportTitle" runat="server" Text="Data Import" EnableViewState="False"></asp:Literal>
@@ -69,4 +74,5 @@
         </ol>
    
     </fieldset>
-</div></div></asp:Content>
+                                                 <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
+</div></asp:Content>

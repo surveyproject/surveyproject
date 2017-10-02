@@ -1,13 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/NSurveyAdmin/MsterPageTabs.master"
     AutoEventWireup="false" CodeBehind="CampaignStart.aspx.cs" Inherits="Votations.NSurvey.WebAdmin.NSurveyAdmin.CampaignStart" %>
 
-<%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="Votations.NSurvey.WebControls" %>
+<%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="SurveyProject.WebControls" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
 
-        <fieldset style="width:750px; margin-top:15px; margin-left:12px;"><legend class="titleFont titleLegend">
+        <div id="Panel" class="Panel">
+
+            <fieldset>
+                 <legend class="titleFont titleLegend">
                                             <asp:Literal ID="SurveyCodePreviewTitle" runat="server" EnableViewState="False" Text="Preview Survey"></asp:Literal>
              </legend> 
             <br />
@@ -48,4 +49,5 @@
                                 </tr>
                             </table>
             </fieldset>
-</div></div></asp:Content>
+                                                 <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
+</div></asp:Content>

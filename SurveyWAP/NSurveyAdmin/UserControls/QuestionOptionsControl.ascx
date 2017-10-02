@@ -3,9 +3,9 @@
 <table style="position: relative;" width="100%" class="questionOptions">
     <tr>
         <td>
-            <asp:ImageButton ID="UpImageButton" ImageUrl="~/NSurveyAdmin/images/questionupbutton.gif"
+            <asp:ImageButton ID="UpImageButton" ImageUrl="~/Images/questionupbutton.gif"
                 runat="server"></asp:ImageButton>
-            <asp:ImageButton ID="DownImageButton" ImageUrl="~/NSurveyAdmin/images/questiondownbutton.gif"
+            <asp:ImageButton ID="DownImageButton" ImageUrl="~/Images/questiondownbutton.gif"
                 runat="server"></asp:ImageButton>
             <asp:HyperLink ID="EditHyperLink" runat="server">Edit</asp:HyperLink>|&nbsp;
             <asp:HyperLink ID="EditAnswersHyperLink" runat="server">Edit answers</asp:HyperLink>|&nbsp;

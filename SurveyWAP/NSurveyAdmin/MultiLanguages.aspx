@@ -1,25 +1,23 @@
 ﻿<%@ Page language="c#" MasterPageFile="MsterPageTabs.master"   AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.MultiLanguagesPage" Codebehind="MultiLanguages.aspx.cs" %>
 <%@ Register TagPrefix="uc1" TagName="LanguageListControl" Src="UserControls/LanguageListControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="FooterControl" Src="UserControls/FooterControl.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="SurveyListControl" Src="UserControls/SurveyListControl.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
 
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 6px;">
+        <div id="Panel" class="Panel">
+
+            <div class="errorDiv">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
 
-                                        <div style="position: relative; left: 720px; width: 10px;  top: 13px; clear:none;">
+                                        <div class="helpDiv">
                                             <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/Multi-Languages Settings.aspx"
                                                 title="Click for more Information">
                                                 <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
                                             </a>
                                         </div>
              
-                <fieldset style="width: 750px; margin-left: 12px; margin-top: 15px;">
+                <fieldset>
                     <legend class="titleFont titleLegend"><asp:Literal ID="MultiLanguagesTitle" runat="server" EnableViewState="False" Text="Multi-Languages settings"></asp:Literal></legend>
                     <br />
 <ol>
@@ -86,4 +84,4 @@
                     <br />
                     </fieldset>
 
-</div></div></asp:Content>
+</div></asp:Content>

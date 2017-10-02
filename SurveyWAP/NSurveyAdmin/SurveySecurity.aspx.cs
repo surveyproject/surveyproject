@@ -1,5 +1,5 @@
 /**************************************************************************************************
-	Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com)	
+	Survey™ Project changes: copyright (c) 2009-2017, W3DevPro™ (https://github.com/surveyproject)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -81,9 +81,7 @@ namespace Votations.NSurvey.WebAdmin
 			Table addInContainer = new Table();
 			addInContainer.Width = Unit.Percentage(100);
 			Table addInTable = new Table();
-// moved to css files:
-//			addInTable.CellSpacing = 2;
-//			addInTable.CellPadding = 4;
+
 			addInTable.CssClass = "questionBuilder";
 			Style controlStyle = new Style();
 			controlStyle.CssClass = "addinsLayout";
@@ -118,9 +116,7 @@ namespace Votations.NSurvey.WebAdmin
 					addInContainer = new Table();
 					addInContainer.Width = Unit.Percentage(100);
 					addInTable = new Table();
-// moved to css file
-//					addInTable.CellSpacing = 2;
-//					addInTable.CellPadding = 4;
+
 					addInTable.CssClass = "questionBuilder";
 				}
 			}

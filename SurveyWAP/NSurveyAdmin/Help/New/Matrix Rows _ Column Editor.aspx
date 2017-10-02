@@ -2,73 +2,73 @@
     Inherits="Votations.NSurvey.WebAdmin.HelpFiles" CodeBehind="../default.aspx.cs" %>
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="mainBody" class="mainBody contentHolder ps-container"><div id="Panel" class="Panel content">
-    <table class="TableLayoutContainer">
-        <tr>
-            <td>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="helpPanel"><div>
                 <asp:ImageButton ID="btnBack" ImageUrl="~/Images/index-icon.png" runat="server" CssClass="buttonIndex"
                     PostBackUrl="~/NSurveyAdmin/Help/default.aspx#SurveyDesigner" Visible="True" ToolTip="Back to Helpfiles Index" />
-            </td>
-        </tr>
-        <tr>
-            <td class="contentCell" valign="top">
-                <br />
+            </div><div>
                 <h2 style="color:#5720C6;">
-                    Matrix Layout Editor</h2>
-                <br />
-                <br />
-                <hr style="color:#e2e2e2;"/>
-                <br />
+                    Matrix Rows & Columns Editor</h2><hr style="color:#e2e2e2;" />          
 
-The matrix layout editor alows to add, edit rows / columns to the matrix question- Matrix%20Question.html.<br />
+The matrix rows and columns editor is used for adding and editing rows and columns that are part of the the matrix question.<br />
 <br />
-<u>Matrix Layout Editor</u><br />
-<br />
-* add either a new column or a new row to the matrix.<br />
-<br />
+
+                * add either a new column or a new row to the matrix.<br />
 * edit either a column or a row inside the matrix.<br />
 <br />
-* deletes a column or a row. Respondent answers related to the row
-  columns will also be deleted and cannot be recovered afterward.<br />
-<br />
-<u>Row Editor</u><br />
-<br />
-* Row Question - is the text of the row.<br />
+
+                <u>Insert a Row or Column</u>
+ <br />
 <br />
 
-<u>Column Editor</u><br />
+
+
+<i>* Row (Question) </i><br />- is the 'question' text of the row.<br />
 <br />
-* Column Header Text -  the text that will appear in the matrix's column's
+
+<i>* Column (Header)  </i><br />-  the text that will appear in the matrix's column's
   header<br />
 <br />
-* Type - allows us to set the current answertype - AT_Introduction.html - we want in
-  our column. Respondent answers already collected will not be deleted if we change the type.<br />
+
+
+<u>Current Rows and Columns</u><br />
 <br />
 
-* Rating Part -option to choose if this selection is to be part of the
-  rating / scale calculation in the reports. To learn more about rating
-  read the Rating_Introduction.html.<br />
+<b>Rows</b><br /><br />
+
+              <i>  * Edit  </i><br />-  click to edit/ change the text of the row
+                <br /><br />
+<i>* Delete  </i><br />- deletes a row. Respondent answers related to the row
+  columns will also be deleted and cannot be recovered afterward.<br />
 <br />
-  This feature is only available if rating is turned on - 
-  Rating_Introduction.html - on the matrix question of the row / columns
-  set.<br />
+<b>Columns</b><br /><br />
+<i>* Type </i><br />- option to set the current answertype used for a column. Respondent answers already collected will not be deleted if the answertype is changed.<br />
 <br />
 
+<i>* Rating </i><br />- option to determine if this selection is to be part of the
+  rating calculation in the reports. To learn more about rating
+  read the <a href="Rating_Introduction.aspx" title=" Rating Introduction " > Rating Introduction </a>.<br />
 <br />
-                <hr style="color:#e2e2e2;"/>
-                <br />
-                <br />
+  This feature is only available if rating is activated on the matrix question of the row / columns set.<br /><br />
+                
+<i>* Mandatory</i><br />-  option to make answering mandatory or not               
+                
+            
+              <i>  * Edit  </i><br />-  click to edit/ change the text and settings of the column
+                <br /><br />
+<i>* Delete  </i><br />- deletes a column. Respondent answers related to the row
+  columns will also be deleted and cannot be recovered afterward.<br />
+<br />                
+                
+                <hr style="color:#e2e2e2;" />
+        
                 <h3>
                     More Information</h3>
                 <br />
-FBT_Introduction.html<br />
-Matrix%20Question.html<br />
-AT_Introduction.html<br />
-Matrix Question EditorMatrix%20Question%20Editor.html<br />
-Rating_Introduction.html<br />
+<a href="AT_Introduction.aspx" title=" Answer Types Introduction " > Answer Types Introduction </a>	<br />
+<a href="Matrix Question Editor.aspx" title=" Matrix Question Editor " > Matrix Question Editor </a><br />
+                <a href="Matrix Question.aspx" title=" Matrix Question " > Matrix Question </a>	<br />
+<a href="Rating_Introduction.aspx" title=" Rating Introduction " > Rating Introduction </a><br />
                 <br />
-            </td>
-        </tr>
-    </table>
-</div></div></asp:Content>
+            </div>
+<div id="fillerDiv" class="fillerDiv">&nbsp;</div></div></asp:Content>
 

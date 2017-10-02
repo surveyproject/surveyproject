@@ -1,0 +1,851 @@
+﻿@charset "UTF-8";       
+@import url('../font-awesome.min.css');
+
+/* Line 1: Sets the encoding of the style sheet to Unicode UTF-8 
+   Line 2: Importt the font-awsome css  */
+
+/* GENERAL REMARKS
+    
+    Surveyform CSS for SurveyMobile.aspx webpage - Twitter BootStrap based
+    
+    - this file is for development purposes
+    - a minified version is available for production purposes
+    - this file has been minified through: https://devilo.us
+
+        Settings: Highest
+
+        Compress colours +
+        Compress font-weight +
+        Optimise shorthands -Yes, all
+        Regroup selectors - Merge
+        Sort selectors (use with caution) - no
+        Sort properties - yes
+        Preserve comments - no
+        Add timestamp - no
+        Remove unnecessary backslashes - yes
+        Remove last semi-colons - yes
+        Discard invalid properties - no
+        CSS 3 compatible +
+        Case for properties - Lowercase - yes
+        Lowercase selectors - no
+
+    - to switch from development to production file go to surveymobile.asxp file
+    - next comment/ uncomment the appropriate CSS file links in the pages header
+*/
+
+
+/* Test classes - remove again 
+
+.fwsanswertestRed{
+    color:red;
+    font-size: 1.0em;
+    font-weight: normal;
+}
+
+.emptyLabel{
+    color:green;
+    font-size: 1.0em;
+    font-weight: normal;
+}
+
+.fwsanswertest{
+    color:blue;
+    font-size: 1.0em;
+    font-weight: normal;
+}
+
+*/
+
+/*SP 2.4 CSS XML selectors*/
+
+/* GENERIC TABLE/ ROW/ CELL CSS*/
+
+.cellValign{
+    vertical-align:top;
+}
+
+/* SURVEY BOX CSS HIERARCHY*/
+
+/*ID: Form1*/
+.form-inline{}
+
+/*ID: ErrorMessageDiv*/
+.errorMessageDiv{
+    position: relative; 
+    text-align: center; 
+    top: 15px;
+}
+
+/*ID: MessageLabel*/
+.errorMessage
+{
+    background: #e80808;
+    color: white;
+	
+	font-size: 0.9em;
+    padding: 5px 15px 7px 15px;
+    
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+
+    margin-bottom: 5px;
+
+}
+
+/*ID: SurveyBoxDiv*/
+
+/*ID:SurveyControl */
+.surveybox{}
+
+/*ID: SurveyControl_bsbQCP*/
+.questionContainerWrapper{}
+
+/*ID: SurveyControl_bsbQCSP*/
+.questionContainer {
+    /*float:left;*/
+}
+
+
+/*MULTILANGUAGE*/
+
+/*ID: SurveyControl_lrT*/
+.tablelddl 
+{
+	
+	font-size: 1.2em;
+    margin: 10px;
+}
+
+/*ID: SurveyControl_lrlM*/
+.languageMessage{}
+
+/*ID: SurveyControl_lrlDDLP*/
+.languageDropDownList{}
+
+/*ID: SurveyControl_lrDDL*/
+.lddl 
+{   
+    width:17vw;
+    margin: 15px 15px 15px 0;
+}
+
+/*ID: SurveyControl_lrlBP*/
+.languageButtonPanel{
+    float:right;
+    font-size-adjust:.5;
+    margin-right:10px;
+    width:auto;
+}
+
+/*ID: SurveyControl_lrB */
+
+/*MULTILANGUAGE END*/
+
+
+/* PASSWORD CSS */
+
+/*ID dna */
+.passwordMessage{
+    margin: 3px 0 3px 0;
+}
+
+/*ID dna*/
+.passwordTextBox{}
+
+/* lddl */
+
+/*ID dna*/
+.passwordSubmitButtonPanel{}
+
+/* input btn btn-primary btn-xs bw*/
+
+/*END PASSWORD CSS*/
+
+
+/*SURVEY STATUS MESSAGES CSS*/
+
+/*ID: SurveyControl_mbMP */
+.notYetOpenedSurveyMessage{
+        color: red;
+        font-size: 1.2em;
+        margin: 15px;
+}
+
+/*ID: SurveyControl_mbMP*/
+.inactiveSurveyMessage{
+    color: red;
+    font-size: 1.2em;
+    margin: 15px;
+}
+
+/*ID: SurveyControl_mbMP*/
+.closedSurveyMessage{
+        color: red;
+        font-size: 1.2em;
+        margin: 15px;
+}
+
+/*SURVEY STATUS MESSAGES CSS END*/
+
+
+/* SURVEY SECURITY MESSAGES CSS */
+
+/*ID: eicTble*/
+.emailInvCodeTable{
+    margin: 10px;
+}
+
+/*ID: eicBtn*/
+/* btn btn-primary btn-xs bw*/
+
+/*ID: eicTB*/
+/* lddl */
+.emailInvCodeTextBox{
+
+}
+
+/*ID: eicMsg*/
+.emailInvCodeMessage{
+            font-size: 1.2em;
+        padding: 15px 0;
+}
+
+/*ID: eicTBC*/
+.emailInvCodeTextboxCell{
+    padding: 5px;
+}
+
+/*ID: eicEMsg*/
+/*ErrorMessage*/
+
+
+/*ID: tsEM */
+/* ErrorMessage */
+.tokenSecurityErrorMessage{}
+
+
+/*ID: etMsg*/
+.enterTokenMessage{
+        font-size: 1.2em;
+        padding: 15px 0;
+}
+
+/*ID: etTbl*/
+.enterTokenTable{
+    margin: 10px;
+}
+
+/* etTB*/
+.enterTokenTextBox{
+    padding: 5px 10px 10px 0;
+}
+
+.enterTokenTextBoxInsert
+{
+    margin: 10px;
+}
+
+
+/*ID: etBtn*/
+/* btn btn-primary btn-xs bw*/
+
+
+/*ID: eqEM*/
+.entryquotaErrorMessage{
+        color: red;
+        font-size: 1.2em;
+        margin: 15px;
+}
+
+/* SURVEY SECURITY MESSAGES CSS END*/
+
+
+/*ID: SurveyControl_MainTbl*/
+.mainTbl{
+    margin: 10px 10px 15px 10px;
+}
+
+/*ID:  SurveyControl_Question[nr] */
+
+
+/*ID dna */
+.questTbl{}
+
+
+/* QUESTION CSS */
+
+/*ID dna */
+.questionStyle
+{
+	
+	color: #000;
+	background-color: #fff;
+
+	padding: 10px;
+
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+
+    border: 1px solid #6699CC;
+    display: block;
+
+    margin:0 0 5px 0;
+
+}
+
+    
+/*ID dna */
+.question-number-div {
+    float: left;
+
+    line-height: 1.5;
+    padding: 0 3px 0 5px;
+    margin: 3px;
+}
+
+/*ID dna */
+.question-text-div {
+    margin-left: 10px;
+
+    line-height: 1.5;
+    width: 96% !important;
+    margin: 3px;
+    float: left;
+}
+
+/*ID dna*/
+.helpTextSmallFont
+{
+	
+    font-size: 0.9em;
+	color: #fff;
+	background-color: #6699CC;  /* #b1efb1; */
+    padding: 2px 3px 2px 10px;
+    margin-bottom: 7px;
+    margin-right: 5px;
+    margin-top: 7px;
+
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+}
+
+/*ID dna */
+.icon-warning-sign:before {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-size:large;
+    color: orange;
+    margin: 0px 7px 0px 10px;
+    content: "\f071";
+}
+
+/* 
+QUESTION CSS END 
+ANSWER CSS
+ID dna
+*/
+
+.answerStyle
+{
+	
+	background-color: #fff;
+    color: #000;
+}
+
+.answerStyle > td 
+{
+    padding: 5px 5px 5px 21px;
+    margin-bottom: 10px;
+}
+
+.answerStyle > td > table
+{
+    margin-bottom: 10px;
+}
+
+.answerStyle > td > span > select
+{
+    margin: 5px 5px 5px 0;
+}
+
+.answerStyle > td > span > input
+{
+    display: inherit;
+}
+
+/*ID: SurveyControl_Question2_SectTbl */
+.sectTbl{
+    width:100%;
+}
+
+/*ID: SurveyControl_Question2__as57474_AnswerTbl */
+.answerTbl{}
+
+
+/*ID dna*/
+.answerTextRender
+{
+	width: auto;
+    overflow:auto;
+	white-space: normal;
+}
+
+.answerTextRender > input
+{
+    margin: 5px;
+}
+
+.answerTextRender > label
+{
+    font-weight:normal;
+}
+
+span.answerTextRender > div:nth-child(2)
+{
+	padding-left: 5px;
+    padding-top: 7px;
+}
+
+/*ID dna*/
+.answer-warning-sign:before {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-size:small;
+    color: red;
+    margin: 0px 7px 0px 10px;
+    content: "\f071";
+}
+
+/* ANSWER CSS END */
+
+/*ANSWER DETAILS CSS*/
+
+.globalRadioButton{
+ height:20px;
+}
+
+.globalRadioButtonLabel{
+ font-weight: normal;
+}
+
+/*Matrix question*/
+/*ID: SurveyControl_Question36__as37801_msSD*/
+
+.scrollableDiv
+{
+	/*overflow: auto;*/
+	width: auto;
+    margin:10px;
+    border-radius: 7px;
+    border:1px solid #6699CC;
+}
+
+
+/*ANSWER DETAILS CSS END*/
+
+/* FOOTER ROW CSS*/
+
+/*ID: SurveyControl_npBRP*/
+.nextPageButtonRowPanel{
+    padding-bottom: 40px;
+}
+
+/*ID: SurveyControl_npNP*/
+.navigationPanel{}
+
+/*ID: SurveyControl_ppBP*/
+.previousPageButtonPanel{
+    float:right;
+    font-size-adjust:.5;
+    margin-right:10px;
+    width:auto;
+}
+
+/*ID: SurveyControl_ppbB*/
+/* previousPageButton btn btn-primary btn-xs bw */
+.previousPageButton{}
+
+/*pagenumber/ percentage*/
+/*ID:  SurveyControl_pNP */
+.pageNumberPanel{
+    float:left;
+}
+
+/*ID dna*/
+.currentPage{}
+
+/*ID dna*/
+.visitedPage{}
+
+/*ID dna*/
+.nonactivePage{}
+
+/*ID: SurveyControl_pN*/
+.pageNumberLabel{}
+/* END pagenumber/ percentage*/
+
+/*ID: SurveyControl_npSBP*/
+.nextPageSubmitButtonPanel{
+    float:right;
+    font-size-adjust:.5;
+    margin-right:10px;
+    width:auto;
+}
+
+/*ID: SurveyControl_npSB*/
+/* nextPageButton btn btn-primary btn-xs bw */
+.nextPageButton{
+
+}
+
+.nextPageButtonSubmit{
+   
+}
+
+/*CSS selector generated by code - used on submit/nextpage button on goodbye page after submitting survey */
+.aspNetDisabled 
+{
+    visibility: hidden;
+}
+
+/* RESUME PROGRESS */
+
+/*ID: SurveyControl_npRPBP*/
+.resumeProgressButtonPanel{
+    float:right;
+    font-size-adjust:.5;
+    margin-right:10px;
+    width:auto;
+}
+
+/*ID: SurveyControl_RPB*/
+/*resumeProgressButton btn btn-primary btn-xs bw*/
+.resumeProgressButton{}
+
+/*resumecode table*/
+.resumeRequestTable{}
+
+.rct
+{
+    width:100%;
+    margin: 5px 15px 15px 0;
+
+	
+	font-size: 1.2em;
+}
+
+.rct > tbody > tr > td
+{
+    padding: 10px 0 5px 0;
+}
+
+.rct > tbody > tr > td > input
+{
+    margin-right:10px;
+}
+
+/*ID: SurveyControl_rrUB */
+/*btn btn-primary btn-xs bw*/
+
+/*ID: SurveyControl_rrCB*/
+/*btn btn-primary btn-xs bw*/
+
+/*ID: ruSE*/
+/*ErrorMessage*/
+
+/*ID: erUM*/
+
+/*ID: SurveyControl_rrRow */
+.cmStyle
+{
+	
+	font-size: 1.2em;
+	background-color: #B8F2AB;
+	color: black;
+
+    padding: 5px 15px 5px 10px;
+
+    display: block;
+    width: 100%;
+    border-radius: 7px;
+    margin-bottom: 10px;
+}
+
+/* END RESUME PROGRESS */
+
+
+/*ID: SurveyControl_npSPBP*/
+.saveProgressButtonPanel{
+    float:right;
+    font-size-adjust:.5;
+    margin-right:10px;
+    width:auto;
+}
+
+/*ID: SurveyControl_spB*/
+/*saveProgressButton btn btn-primary btn-xs bw*/
+.saveProgressButton{}
+
+
+/*submitbuttonrow*/
+
+/*ID: SurveyControl_bsbP*/
+.pageButtonRow{
+        padding-bottom: 40px;
+}
+
+
+/*ID: SurveyControl_ssbP */
+.surveySubmitButtonPanel{
+    float:right;
+    font-size-adjust:.5;
+    margin-right:10px;
+    width:auto;
+}
+
+/*ID: SurveyControl_ssB*/
+/*btn btn-primary btn-xs bw */
+.surveySubmitButton{}
+
+
+/* SURVEY COMPLETION*/
+
+/*ID: bsbcT*/
+.thanksboxCss
+{
+    width: 100%;
+    margin:10px;
+}
+
+/*ID: thMsg*/
+.thankYouMessage{
+        font-size: 1.2em;
+        padding: 15px 0;
+}
+
+/* ORIGINAL SURVEYBOX WEBCONTROL CSS */
+
+/* QuestionStyle */
+/* questionStyle */
+
+/* QuestionValidationMessageStyle */
+.qvmStyle {
+    background: #e80808;
+    color: white;
+    padding: 5px 15px 5px 10px;
+    line-height: 1.7;
+    display: block;
+    width: 100%;
+    border-radius: 7px;
+    margin-bottom: 10px;
+}
+
+/* QuestionValidationMarkStyle */
+/* icon-warning-sign */
+.qvmarkStyle
+{
+	
+    font-size: 25pt;
+    line-height: 10px;
+    vertical-align: bottom;
+    color: floralwhite;
+}
+
+/* ConfirmationMessageStyle */
+/* cmStyle*/
+
+/* SectionOptionStyle */
+.soStyle
+{
+	
+	font-size: 8pt;
+	font-weight: bold;
+	background-color: #E6EDF1;
+	color: #082E44;
+    padding-left: 8px;
+    display: block;
+    border-radius: 7px;
+    margin-right: 15px;
+}
+
+/* ButtonStyle */
+.buttonStyle
+{
+	
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+/* AnswerStyle */
+/* answerStyle */
+
+/*ID: SurveyControl_Question36__as37801_MatrixTbl */
+/* MatrixStyle */
+.matrixStyle
+{
+	
+	font-size: 10pt;
+	background-color: #F4F9FA;
+
+    width:100%;
+}
+
+/* MatrixHeaderStyle */
+.mhStyle
+{
+	
+	font-size: 1.1em;
+	background-color: #E3EEF6;
+}
+
+.mhStyle > td
+{
+    border-bottom: 1px solid #6699CC;
+}
+
+/* MatrixItemStyle */
+.miStyle
+{
+	
+	font-size: 1.1em;
+	background-color: White;
+}
+
+.miStyle > td
+{
+        border:1px solid #6699CC;
+        border-right: 0px;
+        border-bottom: 0px;
+        padding:5px 5px 0 10px;
+}
+
+/* MatrixAlternatingItemStyle */
+.maiStyle
+{
+	
+	font-size: 1.1em;
+	background-color: #F4F9FA;
+}
+
+.maiStyle > td
+{
+    border:1px solid #6699CC;
+    border-right: 0px;
+    border-bottom: 0px;
+    padding:5px 5px 0 10px
+}
+
+/* SectionGridAnswersItemStyle */
+
+.sgiStyle
+{
+	
+	font-size: 10pt;
+	background-color: White;
+}
+
+tr.sgiStyle > td
+{
+    padding: 3px 3px 3px 7px;
+}
+
+/* SectionGridAnswersAlternatingItemStyle */
+.sgaaisStyle
+{
+	
+	font-size: 10pt;
+	background-color: #F4F9FA;
+}
+
+tr.sgaaisStyle> td
+{
+    padding: 3px 3px 3px 7px;
+}
+
+/* SectionGridAnswersStyle */
+.sgaStyle
+{
+	
+	font-size: 10pt;
+	background-color: #F4F9FA;
+    margin: 0 3px 7px 5px;
+    
+    border-radius: 7px;
+}
+
+/* SectionGridAnswersHeaderStyle */
+.sgahStyle
+{
+	
+	font-size: 1.2em;
+	background-color: #E3EEF6;
+}
+
+tr.sgahStyle > td
+{
+    padding: 3px 3px 3px 7px;
+}
+
+
+/* FootStyle */
+.footStyle
+{
+	
+	font-size: 1.2em;
+	font-weight: bold;
+	background-color: White;
+	color: #6699CC;
+}
+
+
+tr.footStyle > td 
+{  
+	line-height: 2.5;
+    display: block; 
+    clear:both;
+    float: left;
+
+    padding: 10px 0 10px 0;
+}
+
+tr.footStyle > td > table > tbody > tr > td 
+    {
+        padding: 10px 10px 0 0px;
+    }
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px)
+{
+    tr.footStyle > td > table > tbody > tr > td 
+    {
+        line-height: 1.3;
+        display: block;
+        clear: both;
+        float: left;
+    }
+}
+
+
+/* ORIGINAL SURVEYBOX WEBCONTROL CSS - END */
+
+/* _____________________________________________________*/
+
+
+
+/*calender Answerfield*/
+.calendarStyle
+{
+	
+	font-size: 1.0em;
+	width: 260px;
+}
+
+.calendarStyle tr:nth-of-type(1) > td
+{
+    background-color: #6699CC;
+    color: #fff;
+}
+
+

@@ -7,7 +7,7 @@
     <value>You must also include the following directive in the aspx pages that will display the survey :</value>
   </data>
   <data version="1.0" id="3" name="TagPrefixInfo">
-    <value>&lt;%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="Votations.NSurvey.WebControls" %&gt;</value>
+    <value>&lt;%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="SurveyProject.WebControls" %&gt;</value>
   </data>
   <data version="1.0" id="4" name="QuickLinkInfo">
     <value>Deployment URL:</value>
@@ -115,7 +115,7 @@
     <value>Export CSV</value>
   </data>
   <data version="1.0" id="39" name="FieldReportTitle">
-    <value>Field entries report - Page</value>
+    <value>Individual Responses - Page</value>
   </data>
   <data version="1.0" id="40" name="NextPageLinkButton">
     <value>Next page &gt;&gt;</value>
@@ -533,7 +533,7 @@
     <value>(built in types cannot be edited)</value>
   </data>
   <data version="1.0" id="174" name="CreateTypeHyperLink">
-    <value>Click here to create a new type ...</value>
+    <value>Create a new type</value>
   </data>
   <data version="1.0" id="175" name="CreateATypeMessage">
     <value>Please create a type</value>
@@ -614,19 +614,19 @@
     <value>Type updated</value>
   </data>
   <data version="1.0" id="201" name="VoterInformationTitle">
-    <value>Voter information</value>
+    <value>Respondent Details</value>
   </data>
   <data version="1.0" id="202" name="VoterDBIDLabel">
-    <value>Voter DB ID :</value>
+    <value>Database VoterID :</value>
   </data>
   <data version="1.0" id="203" name="VoterEmailLabel">
-    <value>Voter's Email :</value>
+    <value>Email address :</value>
   </data>
   <data version="1.0" id="204" name="VoterIPAddressLabel">
     <value>IP address :</value>
   </data>
   <data version="1.0" id="205" name="VoteRecordedLabel">
-    <value>Vote recorded on :</value>
+    <value>Response recorded on :</value>
   </data>
   <data version="1.0" id="206" name="TimeToTakeLabel">
     <value>Time to take the survey :</value>
@@ -713,7 +713,7 @@
     <value>Edit matrix question</value>
   </data>
   <data version="1.0" id="234" name="InsertNewTitle">
-    <value>Insert a new</value>
+    <value>Insert a new Row or Column</value>
   </data>
   <data version="1.0" id="235" name="RowLabel">
     <value>Row</value>
@@ -1109,10 +1109,10 @@
     <value>Are you sure that you want to clear all answers for this page ?</value>
   </data>
   <data version="1.4" id="364" name="EditAnswersLinkButton">
-    <value>Switch to voter's answers edit mode</value>
+    <value>Switch to EDIT mode</value>
   </data>
   <data version="1.4" id="365" name="ReadOnlyAnswersLinkButton">
-    <value>Switch to voter's answers read only mode</value>
+    <value>Switch to READ ONLY mode</value>
   </data>
   <data version="1.4" id="366" name="EditVoterAnswersTitle">
     <value>Edit answers</value>
@@ -1313,7 +1313,7 @@
     <value>Add new condition</value>
   </data>
   <data version="1.4" id="432" name="VoterUserNameLabel">
-    <value>SP Username:</value>
+    <value>SP&amp;trade; Username:</value>
   </data>
   <data version="1.4" id="433" name="ContextUserNameDisabled">
     <value>Disabled</value>
@@ -2410,7 +2410,7 @@
     <value>Default language</value>
   </data>
   <data version="1.9" id="796" name="VoterLanguageLabel">
-    <value>Voter's language :</value>
+    <value>Response Language :</value>
   </data>
   <data version="1.9" id="797" name="LanguageFilterLabel">
     <value>Language filter :</value>
@@ -2428,7 +2428,7 @@
     <value>All languages</value>
   </data>
   <data version="1.9" id="802" name="PreviewSurveyLanguageLabel">
-    <value>Preview form in :</value>
+    <value>Select Language to edit :</value>
   </data>
   <data version="1.9" id="803" name="PreviewLibraryLanguageLabel">
     <value>Select Library Preview language:</value>
@@ -2642,7 +2642,7 @@
     <value>This addin will check if the user is logged in Survey and store his username on answers submission</value>
   </data>
   <data version="1.7" id="871" name="NSurveySecurityContextProtection">
-    <value>Survey security context</value>
+    <value>SP&#8482; security context</value>
   </data>
   <data version="1.7" id="872" name="RegExValidationFailedMessage">
     <value>Invalid answer given for {0}</value>
@@ -2811,19 +2811,19 @@
     <value>Active</value>
   </data>
   <data version="1.2.2" id="919" name="SurveyTitle">
-    <value>Survey</value>
+    <value>Survey Title &amp; ID</value>
   </data>
   <data version="1.2.2" id="920" name="SurveyStatus">
     <value>Status</value>
   </data>
   <data version="1.2.2" id="921" name="SurveyResponses">
-    <value>Responses</value>
+    <value>Votes</value>
   </data>
   <data version="1.2.2" id="922" name="SurveyCreated">
     <value>Created</value>
   </data>
   <data version="1.2.2" id="923" name="SurveyDesign">
-    <value>Design</value>
+    <value>Form</value>
   </data>
   <data version="1.2.2" id="924" name="SurveyDelete">
     <value>Delete</value>
@@ -2832,7 +2832,7 @@
     <value>Security</value>
   </data>
   <data version="1.2.2" id="926" name="SurveyEdit">
-    <value>Edit</value>
+    <value>Setting</value>
   </data>
   <data version="1.2.2" id="927" name="UsersTab">
     <value>Users</value>
@@ -3586,4 +3586,20 @@
   <data version="2.4" id="1170" name="btnGenerate">
     <value>Generate</value>
   </data>
+  <data version="2.5" id="1171" name="HelpAboutHyperlink">
+    <value>About SP&amp;trade;</value>
+  </data>
+  <data version="2.5" id="1172" name="ReportsSMHyperlink">
+    <value>Reports</value>
+  </data>
+  <data version="2.5" id="1173" name="ResponsesHyperlink">
+    <value>Individual Reponses</value>
+  </data>
+  <data version="2.5" id="1174" name="AccessUserResponses">
+    <value>Access User Reponses</value>
+  </data>
+  <data version="2.5" id="1175" name="FriendlyNameExistsMsg">
+    <value>Name already used, please retry.</value>
+  </data>
+
 </root>

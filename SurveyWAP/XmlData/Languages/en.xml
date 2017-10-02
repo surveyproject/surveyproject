@@ -7,7 +7,7 @@
     <value>You must also include the following directive in the aspx pages that will display the survey :</value>
   </data>
   <data version="1.0" id="3" name="TagPrefixInfo">
-    <value>&lt;%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="Votations.NSurvey.WebControls" %&gt;</value>
+    <value>&lt;%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="SurveyProject.WebControls" %&gt;</value>
   </data>
   <data version="1.0" id="4" name="QuickLinkInfo">
     <value>Deployment URL:</value>

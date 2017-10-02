@@ -7,7 +7,7 @@
     <value>Você também deve incluir a seguinte diretiva nas páginas aspx que vão mostrar a pesquisa :</value>
   </data>
   <data version="1.0" id="3" name="TagPrefixInfo">
-    <value>&lt;%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="Votations.NSurvey.WebControls" %&gt;</value>
+    <value>&lt;%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="SurveyProject.WebControls" %&gt;</value>
   </data>
   <data version="1.0" id="4" name="QuickLinkInfo">
     <value>URL de distribuição:</value>

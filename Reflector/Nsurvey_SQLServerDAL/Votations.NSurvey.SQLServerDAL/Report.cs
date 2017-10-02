@@ -17,7 +17,6 @@ using System.Data.SqlClient;
 using System.Runtime.InteropServices;
 using Votations.NSurvey.Data;
 using Votations.NSurvey.IDAL;
-using System.Linq;
 
 namespace Votations.NSurvey.SQLServerDAL
 {
@@ -39,7 +38,7 @@ namespace Votations.NSurvey.SQLServerDAL
                 commandParameters.Add(new SqlParameter("@VoterId", _voterId).SqlValue);
             }
 
-            return DbConnection.db.ExecuteDataSet("vts_spReportGetScoresDws", commandParameters.ToArray());
+            return DbConnection.db.ExecuteDataSet("vts_spReportGetScores", commandParameters.ToArray());
         }
     }
 }

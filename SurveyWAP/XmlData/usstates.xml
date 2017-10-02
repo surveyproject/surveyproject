@@ -2,7 +2,7 @@
 <NSurveyDataSource xmlns="http://www.nsurvey.org/NSurveyDataSource.xsd">
 	<XmlDataSource>
 		<XmlAnswers>
-			   <XmlAnswer><AnswerValue></AnswerValue><AnswerDescription>[Select State]</AnswerDescription></XmlAnswer> 
+			   <XmlAnswer><AnswerValue></AnswerValue><AnswerDescription>[Select US State]</AnswerDescription></XmlAnswer> 
 			   <XmlAnswer><AnswerValue>AL</AnswerValue><AnswerDescription>Alabama</AnswerDescription></XmlAnswer>
 			   <XmlAnswer><AnswerValue>AK</AnswerValue><AnswerDescription>Alaska</AnswerDescription></XmlAnswer>
 			   <XmlAnswer><AnswerValue>AS</AnswerValue><AnswerDescription>American Samoa</AnswerDescription></XmlAnswer>

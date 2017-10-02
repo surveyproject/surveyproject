@@ -57,14 +57,11 @@
         }
         //document.onMouseDown = customRightMenu(event);
 
-        // block the Right Menu mouse option: 
+        // block the Right Menu mouse option:    
         
-        document.oncontextmenu = function () {
-
-            return false;
-            
-        }        
-        
+        //document.oncontextmenu = function () {
+        //    return false;            
+        //}                
     </script>
 
         <!-- Part of Bootstrap Installation -->
@@ -86,116 +83,62 @@
   </script>
 
 
-    <div id="container" style="position: relative; text-align: center; width: 1030px;
-        margin-left: auto; margin-right: auto; ">
+    <div id="container">
 
         <form id="MasterForm" runat="server">
 
-        <div id="Top" style="position: absolute; 
-           left: 0px; 
-           top: 0px;  
-           height: 120px; 
-           width:1025px;
-            background-color: #4169E1; 	
-            border: 2px; 
-            border-color: #ffffff;
-            border-style: outset;
+            <div id="Top">
 
+                <asp:Panel ID="logoPanel" runat="server" CssClass="topCell logoPanel">
 
-            -webkit-border-radius: 7px;
-            -moz-border-radius: 7px;
-            border-radius: 7px;" >
+                    <div class="logoIcons" >
+                        <a href="<%= Page.ResolveUrl("~")%>default.aspx" title="Survey&#8482; Project Homepage" target="_self">
+                            <span style="color: #5bc0de; float: left; margin-right: 10px;" class="fa fa-pencil-square-o"></span>
+                            <span style="color: #5cb85c; margin-top: 10px;" class="fa fa-check-square-o"></span>
+                            <div ID="logoText" class="logoText" runat="server">Survey™ Project  </div>
+                        </a>
+                    </div>
 
+                </asp:Panel>
 
-            <asp:Panel id="logoPanel" runat="server"  CssClass="topCell logoPanel"> 
-                <!--
-                <a href="<%= Page.ResolveUrl("~")%>default.aspx" title="Survey&#8482; Project Homepage" target="_self">
-                 <asp:Image ID="spLogo" runat="server" ImageUrl="~/Images/splogo.svg" AlternateText="SP Logo" />
-                </a>
-                -->
-                            
-<div style="font-size: 4vw;margin-top:-20px;width: 550px;">
-      <a href="<%= Page.ResolveUrl("~")%>default.aspx" title="Survey&#8482; Project Homepage" target="_self">
-        <span style="color: #5bc0de;float:left;margin-right: 10px;" class="fa fa-pencil-square-o"></span>
-        <span style="color: #5cb85c;margin-top: 10px;" class="fa fa-check-square-o"></span>
-                         <h1 id="logoText" runat="server" style="color: white;float:right;font-weight:800; margin-right:40px;">Survey™ Project  </h1>
-     </a>
-          </div>
+                <div id="Header" class="header">
+                    <uc1:HeaderControl ID="Headercontrol1" runat="server"></uc1:HeaderControl>
+                </div>
 
+            </div>
 
-            </asp:Panel>
-
-
-        <div id="Header" class="gradient" style="position: absolute; left: 250px; top:-3px; height: 121px;
-            z-index:999;
-
-            padding: 0px -5px 2px 0px;
-
-            border-top: 2px white outset ; 
-            border-right: 0px white outset ; 
-            border-bottom: 2px white outset ; 
-
-            -webkit-border-top-right-radius: 7px;
-            -webkit-border-bottom-right-radius: 7px;
-            -moz-border-radius-topright: 7px;
-            -moz-border-radius-bottomright: 7px;
-            border-top-right-radius: 0px;
-            border-bottom-right-radius: 0px;  
-            
-            ">
-            <uc1:HeaderControl ID="Headercontrol1" runat="server"></uc1:HeaderControl>
-        </div>
-
-        </div>
-
-
-
-        <div id="leftNavDiv" style="position: absolute; left: 0px; top: 125px; width: 250px;
-            text-align: left; height:750px; overflow:auto; background: none repeat scroll 0 0 #EAEAEC;">
+        <div id="leftNavDiv">
 
             <uc1:SurveyTree ID="surveyTree1" runat="server"></uc1:SurveyTree>
 
-            <div id="banners" runat="server" visible="true" style="position:absolute; left: 15px; top: 10px; 
-            text-align:center; height:auto; overflow:hidden;">
+            <div id="banners" class="banners" runat="server" visible="true">
 
 
-                                            <div class="Social-Links" style="height: auto; margin-top:0px; font-size:2.1vw;">
-                                <a href="http://www.facebook.com/surveyproject" target="_blank" title="SP Facebook">
-                                    <span class="fa fa-inverse fa-facebook-square"></span></a>
-                                <a href="http://t.co/ciC3YNV" target="_blank" title="SP LinkedIn">
-                                   <span class="fa fa-inverse fa-linkedin-square"></span></a>
-                                <a href="http://www.twitter.com/surveyprojects" target="_blank" title="SP Twitter">
-                                    <span class="fa fa-inverse fa-twitter"></span></a>
-                                <a href="http://www.youtube.com/TheSurveyProject" target="_blank" title="SP YouTube">
-                                    <span class="fa fa-inverse fa-youtube"></span></a>
+                <div class="Social-Links">
+                    <a href="http://www.facebook.com/surveyproject" target="_blank" title="SP Facebook">
+                        <span class="fa fa-facebook-square"></span></a>
+                    <a href="http://t.co/ciC3YNV" target="_blank" title="SP LinkedIn">
+                        <span class="fa fa-linkedin-square"></span></a>
+                    <a href="http://www.twitter.com/surveyprojects" target="_blank" title="SP Twitter">
+                        <span class="fa fa-twitter"></span></a>
+                    <a href="http://www.youtube.com/TheSurveyProject" target="_blank" title="SP YouTube">
+                        <span class="fa fa-youtube"></span></a>
+                </div>
+
+
+                <h3 id="Theme" runat="server" style="color: #5bc0de;">The open source webapplication to create and publish surveys and webforms online.</h3>
+
+                <div title="Survey&#8482; Project Login">
+
+                            <!-- Fontawesome icons -->
+                            <div class="iconDiv">
+                                <span class="fa fa-tablet"></span>
+                                <span style="color: #f0ad4e;" class="fa fa-inverse fa-laptop"></span>
+                                <span class="fa fa-mobile"></span>
                             </div>
 
-
-                <h3 id="Theme" runat="server" style="color:#5bc0de;">The open source webapplication to create and publish surveys and webforms online.</h3>
-
-                <table title="Survey&#8482; Project Login Table" style="width:180px;">
-
-                    <tr>
-                        <td colspan="2">
-                           
-    <div style="font-size: 2.5vw; margin: 20px;">
-
-        <span class="fa fa-inverse  fa-tablet"></span>
-                <span style="color: #f0ad4e;" class="fa fa-inverse fa-laptop"></span>
-        <span class="fa fa-inverse fa-mobile"></span>
-
-    </div>
-
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
+                            <!-- Login Box -->
                             <uc1:LoginBox ID="LoginBox1" runat="server"></uc1:LoginBox>
-                        </td>
-                    </tr>
-                                        <tr>
-                        <td colspan="2">
 
                             <!-- Disclaimer Panel -->
 
@@ -210,7 +153,9 @@
                                     </div>
 
                                     <div id="collapse1" class="panel-collapse collapse disclaimer">
-                                        <div class="panel-footer" style="text-align:center"><h4>SP&trade; Licensing &amp; Disclaimer</h4></div>
+                                        <div class="panel-footer" style="text-align: center">
+                                            <h4>SP&trade; Licensing &amp; Disclaimer</h4>
+                                        </div>
                                         <div class="panel-body">
                                             <small>
                                                 <asp:Literal ID="Disclaimer" runat="server" EnableViewState="False">Disclaimer</asp:Literal></small>
@@ -221,29 +166,18 @@
                                 </div>
                             </div>
 
-                        </td>
-
-                    </tr>
-
-                </table>
+                </div>
 
             </div>
 
         </div>
 
-        <div id="Default" style="position: absolute; left: 250px; top: 125px; width: 778px;">
+        <div id="Default" class="defaultDiv">
 
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="Server">
-                </asp:ContentPlaceHolder>
+               <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="Server"></asp:ContentPlaceHolder>
+               <uc1:FooterControl ID="Footercontrol1" runat="server"></uc1:FooterControl>
 
         </div>
-
-
-            <footer id="footerDiv" class="footerDiv">
-
-                    <uc1:FooterControl ID="Footercontrol1" runat="server"></uc1:FooterControl>
-
-            </footer>
 
         </form>
     </div>

@@ -2,8 +2,8 @@
     AutoEventWireup="true" CodeBehind="SurveyTokenSecurity.aspx.cs" Inherits="Votations.NSurvey.WebAdmin.NSurveyAdmin.SurveyTokenSecurity" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
+
+        <div id="Panel" class="Panel">
 
     <script type="text/javascript">
         function ConfirmSelectedTokenDelete() {
@@ -15,11 +15,16 @@
         }
     </script>
 
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
+          <div class="errorDiv">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
-            <br />
-                    <fieldset style="width: 750px; margin-left: 12px; margin-top: 15px;">
+                                        <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/New/Token_Introduction.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a>
+                                        </div>
+                    <fieldset>
                          <legend class="titleFont titleLegend">
                     <asp:Literal ID="literalTokenSecurityTitle" runat="server" Text="Data Import" EnableViewState="False"></asp:Literal>
                         </legend> 
@@ -124,5 +129,5 @@
   </ol>
                     <br />
                     </fieldset>
-
-</div></div></asp:Content>
+                                                 <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
+</div></asp:Content>

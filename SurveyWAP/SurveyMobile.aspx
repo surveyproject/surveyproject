@@ -1,5 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SurveyMobile.aspx.cs" Inherits="Votations.NSurvey.WebAdmin.SurveyMobile" %>
-<%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="Votations.NSurvey.WebControls" %>
+﻿<%@ Page Language="C#" Trace="false" AutoEventWireup="true" CodeBehind="SurveyMobile.aspx.cs" Inherits="Votations.NSurvey.WebAdmin.SurveyMobile" %>
+<%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="SurveyProject.WebControls" %>
 <!DOCTYPE html>
 <html>
 <head id="Head1" runat="server">
@@ -10,7 +10,7 @@
 
     <meta name="DESCRIPTION" content="SurveyProject&trade;  is a free and open source survey and (data entry) forms webapplication for processing & gathering data online." />
     <meta name="KEYWORDS" content="surveyproject, survey, webform, questionnaire, nsurvey, w3devpro" />
-    <meta name="COPYRIGHT" content=" 2017 &lt;href='http://www.w3devpro.com'>W3DevPro&lt;/a>" />
+    <meta name="COPYRIGHT" content=" 2017 www.w3devpro.com - W3DevPro" />
     <meta name="GENERATOR" content="SurveyProject&trade; " />
     <meta name="AUTHOR" content="W3DevPro" />
 
@@ -23,28 +23,19 @@
     <!-- IE only -->
     <meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)" />
 
-        <!-- Bootstrap v. 3.3.7 - Package -->
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
-
-    <!-- Minified Production CSS -->
-    <link id="defaultCSS" runat="server" href="nsurveyadmin/css/surveymobile.min.css" rel="stylesheet" type="text/css" />
-    <!-- Full Development CSS
-    <link href="nsurveyadmin/css/surveymobile.css" rel="stylesheet" type="text/css" />
-    -->
+    <!-- Bootstrap v. 3.3.7 - Package -->
+    <!-- <link href="Content/bootstrap.min.css" rel="stylesheet" /> -->
 
     <!-- Part of Bootstrap Installation -->
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="Scripts/html5shiv.min.js"></script>
-        <script src="Scripts/respond.min.js"></script>
-    <![endif]-->
+    <!-- See codebehind -->
 
     <link rel="SHORTCUT ICON" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
-    
-<IFRAME ID="KeepAliveFrame" src="KeepSessionAlive.aspx" frameBorder="0" width="0" height="0" runat="server"></IFRAME>
+
+<iframe id="KeepAliveFrame" src="~/NSurveyForm/KeepSessionAlive.aspx" frameborder="0" width="0" height="0" runat="server"></iframe>
 
         <section id="MainContainer" class="container"><h2 style="visibility:hidden; line-height:0.0em; margin-top:-5px">Survey&trade; Project Webform</h2>
             <form id="Form1" class="form-inline" runat="server">
@@ -79,7 +70,7 @@
         </section>
 
     <!-- Bootstrap JS 3.3.7 - package -->
-    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="<%=Page.ResolveUrl("~/Scripts/bootstrap.min.js")%>"></script>
 
 </body>
 </html>

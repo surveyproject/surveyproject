@@ -263,10 +263,10 @@
       * To set the Results report URL go to: &lt;br /&gt;   Campaigns/ Web/ Deployment URL&lt;br /&gt;
       * copy the surveyid&lt;br /&gt;
       * go back to the Completion menu&lt;br /&gt;
-      * type the following: resultsreport.aspx?&lt;br /&gt;
+      * type the following: NsurveyReports\resultsreport.aspx?&lt;br /&gt;
       * add the surveyid &lt;br /&gt;
       &lt;br /&gt;Example:
-      &lt;br /&gt;resultsreport.aspx?surveyid=bb058c...&lt;br /&gt;
+      &lt;br /&gt;NSurveyReports\resultsreport.aspx?surveyid=bb058c...&lt;br /&gt;
     </value>
   </data>
   <data version="2.4" id="23" name="AnswerCssClass">

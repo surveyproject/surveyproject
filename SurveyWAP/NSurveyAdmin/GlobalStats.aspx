@@ -1,24 +1,22 @@
 ﻿<%@ Page Language="c#" MasterPageFile="MsterPageTabs.master" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.GlobalStats" Codebehind="GlobalStats.aspx.cs" %>
 
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
-
  <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-             <div id="mainBody" class="mainBody contentHolder ps-container">
-                 <div id="Panel" class="Panel content">
+
+                 <div id="Panel" class="Panel">
  
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
+            <div class="errorDiv">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
 
-                                        <div style="position: relative; left: 720px; width: 10px;  top: 13px; clear:none;">
+                                        <div class="helpDiv">
                                             <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/Statistics.aspx"
                                                 title="Click for more Information">
                                                 <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
                                             </a>
                                         </div>
         
-            <fieldset style="width: 750px; margin-left: 12px; margin-top: 15px;">
+            <fieldset>
                  <legend class="titleFont titleLegend">
                     <asp:Literal id="SurveyStatisticsTitle" runat="server" EnableViewState="False">Survey statistics</asp:Literal>
                 </legend> <br />
@@ -81,7 +79,7 @@
   </ol>
                     <br />
                     </fieldset>
-
+                                     <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
                 </div> 
-    </div>
+
 </asp:Content>

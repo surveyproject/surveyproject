@@ -284,10 +284,17 @@ namespace Votations.NSurvey.WebControls.UI
         /// <summary>
         /// Contains all sections and section options
         /// </summary>
-        protected Table SectionTable
+        //protected Table SectionTable
+        //{
+        //    get { return _sectionTable; }
+        //    set { _sectionTable = value; }
+        //}
+
+        //TODO SP25
+        protected Panel SectionPanel
         {
-            get { return _sectionTable; }
-            set { _sectionTable = value; }
+            get { return _sectionPanel; }
+            set { _sectionPanel = value; }
         }
 
         /// <summary>
@@ -325,23 +332,23 @@ namespace Votations.NSurvey.WebControls.UI
         virtual protected void BuildQuestion() 
         {
 
-            Controls.Add(QuestionTable);
+            //Controls.Add(QuestionTable);
+            //TODO SP25
+            Controls.Add(QuestionPanel);
 
             // Build default layout
-            TableCell questionTableCell = new TableCell();  // default layout table cell
-            TableRow questionTableRow = new TableRow();    // default layout table row
+            //TableCell questionTableCell = new TableCell();  // default layout table cell
+            //TableRow questionTableRow = new TableRow();    // default layout table row
 
             string requiredMarkerHtml = string.Empty;
             string titleString = ResourceManager.GetString("MandatoryQuestionTitle");
             if (ValidationMark.Length != 0 &&
            (MinSelectionRequired > 0 || MaxSelectionAllowed > 0))
             {
-                //requiredMarkerHtml = string.Format("<span class='{0}'>&nbsp;{1}</span>",ValidationMarkStyle.CssClass.ToString(),ValidationMark);
                 requiredMarkerHtml = string.Format("&nbsp;<span class='{0}' title='{1}'></span>", ValidationMarkStyle.CssClass.ToString(), titleString);
             }
 
             // Set question's text
-            //Label questionLabel = new Label();
             Literal questionLabel = new Literal();
             questionLabel.Mode = LiteralMode.Transform;
 
@@ -358,28 +365,23 @@ namespace Votations.NSurvey.WebControls.UI
                 //questionLabel.Text = Text;
                 questionLabel.Text = string.Format(@"<div class='question-text-div'>{0}{1}{2}</div>", Text, requiredMarkerHtml, HelpText);
             }
-            questionTableCell.Controls.Add(questionLabel);
-            /*TODO JJ Commented out introducing span above after the question text
-          if (ValidationMark.Length != 0 && 
-            (MinSelectionRequired > 0 || MaxSelectionAllowed > 0))
-          {
-            Label validationMark = new Label();
-            validationMark.Text = ValidationMark;
-            validationMark.ControlStyle.CopyFrom(ValidationMarkStyle);
-            questionTableCell.Controls.Add(validationMark);
-          }
-             * */
-            questionTableRow.ControlStyle.CopyFrom(QuestionStyle);
+
+            //questionTableCell.Controls.Add(questionLabel);
+            //questionTableRow.ControlStyle.CopyFrom(QuestionStyle);
+            //TODO SP25
+            QuestionPanel.Controls.Add(questionLabel);
+            QuestionPanel.ControlStyle.CopyFrom(QuestionStyle);
+
 
             // Creates the row
-            questionTableRow.Cells.Add(questionTableCell);
-            QuestionTable.Rows.Add(questionTableRow);
+            //questionTableRow.Cells.Add(questionTableCell);
+            //QuestionTable.Rows.Add(questionTableRow);
 
             // Add the section table to the tree to get correct uid for children
-            //_sectionTable.CellSpacing = 0;
-            //_sectionTable.CellPadding = 2;
-            //_sectionTable.Width = Unit.Percentage(100);
-            QuestionTable.Rows.Add(BuildRow(_sectionTable, AnswerStyle));
+
+            //QuestionTable.Rows.Add(BuildRow(_sectionTable, AnswerStyle));
+            //TODO SP25
+            QuestionPanel.Controls.Add(BuildPanelRow(_sectionPanel, AnswerStyle));
 
             // Create grid with current answers and section only to add a new entry
             if (RepeatMode == RepeatableSectionMode.GridAnswers)
@@ -392,10 +394,6 @@ namespace Votations.NSurvey.WebControls.UI
                 BuildMultipleSections();
             }
 
-
-            //QuestionTable.Width = Unit.Percentage(100);
-            //QuestionTable.CellSpacing = 0;
-            //QuestionTable.CellPadding = 2;
         }
 
         /// <summary>
@@ -455,8 +453,7 @@ namespace Votations.NSurvey.WebControls.UI
 
             sectionOptionTable.Rows.Add(sectionOptionRow);
             sectionOptionTable.ControlStyle.CopyFrom(SectionOptionStyle);
-            //sectionOptionTable.CellSpacing = 0;
-            //sectionOptionTable.CellPadding = 2;
+
             return sectionOptionTable;
         }
 
@@ -505,8 +502,15 @@ namespace Votations.NSurvey.WebControls.UI
             // Creates a new section
             Section section = CreateSection(sectionNumber, GetSectionUid(sectionNumber));
             _sections.Insert(sectionNumber, section);
-            _sectionTable.Rows.AddAt((sectionNumber) * 2, BuildRow(section, null));
-            _sectionTable.Rows.AddAt((sectionNumber) * 2, BuildRow(GetSectionOptions(sectionNumber, section.SectionUid), SectionOptionStyle));
+
+            //_sectionTable.Rows.AddAt((sectionNumber) * 2, BuildRow(section, null));
+            //_sectionTable.Rows.AddAt((sectionNumber) * 2, BuildRow(GetSectionOptions(sectionNumber, section.SectionUid), SectionOptionStyle));
+            //TODO SP25
+            _sectionPanel.Controls.AddAt((sectionNumber) * 2, BuildPanelRow(section, null));
+            _sectionPanel.Controls.AddAt((sectionNumber) * 2, BuildPanelRow(GetSectionOptions(sectionNumber, section.SectionUid), SectionOptionStyle));
+
+
+
         }
 
 
@@ -559,17 +563,23 @@ namespace Votations.NSurvey.WebControls.UI
 
             if (RepeatMode == RepeatableSectionMode.FullAnswers)
             {
-                _sectionTable.Rows.Add(BuildRow(GetSectionOptions(sectionNumber, section.SectionUid), SectionOptionStyle));
-                _sectionTable.Rows.Add(BuildRow(section, null));
-
+                //_sectionTable.Rows.Add(BuildRow(GetSectionOptions(sectionNumber, section.SectionUid), SectionOptionStyle));
+                //_sectionTable.Rows.Add(BuildRow(section, null));
+                //TODO SP25
+                _sectionPanel.Controls.Add(BuildPanelRow(GetSectionOptions(sectionNumber, section.SectionUid), SectionOptionStyle));
+                _sectionPanel.Controls.Add(BuildPanelRow(section, null));
             }
             else if (RepeatMode == RepeatableSectionMode.GridAnswers)
             {
-                _sectionTable.Rows.Add(BuildRow(section, null));
+                //_sectionTable.Rows.Add(BuildRow(section, null));
+                //TODO SP25
+                _sectionPanel.Controls.Add(BuildPanelRow(section, null));
             }
             else
             {
-                _sectionTable.Rows.Add(BuildRow(section, null));
+                //_sectionTable.Rows.Add(BuildRow(section, null));
+                //TODO SP25
+                _sectionPanel.Controls.Add(BuildPanelRow(section, null));
             }
 
         }
@@ -604,8 +614,11 @@ namespace Votations.NSurvey.WebControls.UI
             SectionUids.RemoveAt(sectionNumber);
 
             // Remove unwanted section
-            _sectionTable.Rows.RemoveAt((sectionNumber * 2));
-            _sectionTable.Rows.RemoveAt((sectionNumber * 2));
+            //_sectionTable.Rows.RemoveAt((sectionNumber * 2));
+            //_sectionTable.Rows.RemoveAt((sectionNumber * 2));
+            //TODO SP25
+            _sectionPanel.Controls.RemoveAt((sectionNumber * 2));
+            _sectionPanel.Controls.RemoveAt((sectionNumber * 2));
 
             // Update web control's sections number
             for (int i = sectionNumber; i < _sections.Count; i++)
@@ -639,7 +652,9 @@ namespace Votations.NSurvey.WebControls.UI
 
             if (_sectionGrid != null)
             {
-                QuestionTable.Rows.Add(BuildRow(_sectionGrid, null));
+                //QuestionTable.Rows.Add(BuildRow(_sectionGrid, null));
+                //TODO SP25
+                QuestionPanel.Controls.Add(BuildPanelRow(_sectionGrid, null));
             }
 
             // Assign any previous posted answers to the grid
@@ -701,7 +716,10 @@ namespace Votations.NSurvey.WebControls.UI
         /// </summary>
         protected virtual void AnswersGrid_AddSection(object sender, SectionAnswersItemEventArgs e)
         {
-            _sectionTable.Controls.Clear();
+            //_sectionTable.Controls.Clear();
+            //TODO SP25
+            _sectionPanel.Controls.Clear();
+
             AddSection(-1, 0);
             SectionCount = 0;
             TargetSection = int.Parse(e.SectionNumber.ToString());
@@ -715,7 +733,9 @@ namespace Votations.NSurvey.WebControls.UI
         /// </summary>
         protected virtual void AnswersGrid_EditSection(object sender, SectionAnswersItemEventArgs e)
         {
-            _sectionTable.Controls.Clear();
+            //_sectionTable.Controls.Clear();
+            //TODO SP25
+            _sectionPanel.Controls.Clear();
 
             if (e.SectionAnswers != null)
             {
@@ -769,7 +789,9 @@ namespace Votations.NSurvey.WebControls.UI
                 SectionCount = -1;
                 TargetSection = -1;
                 GridMode = SectionGridMode.None;
-                _sectionTable.Controls.Clear();
+                //_sectionTable.Controls.Clear();
+                //TODO SP25
+                _sectionPanel.Controls.Clear();
 
                 // Did the user delete the last section ?
                 if (GetSectionCountFromAnswers(_postedAnswers) < 1)
@@ -851,7 +873,9 @@ namespace Votations.NSurvey.WebControls.UI
                 _buttonsPlaceHolder.Controls.Add(cancelSectionButton);
             }
 
-            _sectionTable.Rows.Add(BuildRow(_buttonsPlaceHolder, null));
+            //_sectionTable.Rows.Add(BuildRow(_buttonsPlaceHolder, null));
+            //TODO SP25
+            _sectionPanel.Controls.Add(BuildPanelRow(_buttonsPlaceHolder, null));
         }
 
         /// <summary>
@@ -906,7 +930,9 @@ namespace Votations.NSurvey.WebControls.UI
             SectionCount = -1;
             TargetSection = -1;
             GridMode = SectionGridMode.None;
-            _sectionTable.Controls.Clear();
+            //_sectionTable.Controls.Clear();
+            //TODO SP25
+            _sectionPanel.Controls.Clear();
         }
 
         /// <summary>
@@ -930,7 +956,10 @@ namespace Votations.NSurvey.WebControls.UI
                 SectionCount = -1;
                 TargetSection = -1;
                 GridMode = SectionGridMode.None;
-                _sectionTable.Controls.Clear();
+                //_sectionTable.Controls.Clear();
+                //TODO SP25
+                _sectionPanel.Controls.Clear();
+
                 _sectionGrid.Controls.Clear();
                 _sectionGrid.BindSectionGrid();
             }
@@ -1161,7 +1190,11 @@ namespace Votations.NSurvey.WebControls.UI
             OnClientScriptGeneration(e);
         }
 
-        private Table _sectionTable = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetSectPercentTable();//JJ;
+        //private Table _sectionTable = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetSectPercentTable();//JJ;
+        //TODO SP25
+        private Panel _sectionPanel = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetSectPercentPanel();//GB;
+
+
         private SectionCollection _sections = new SectionCollection();
         private Style _sectionOptionStyle;
         private int _maxSections = 0;

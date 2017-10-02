@@ -1,40 +1,21 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/NSurveyAdmin/MsterPageTabs.master" AutoEventWireup="true" CodeBehind="Settings.aspx.cs" Inherits="Votations.NSurvey.WebAdmin.Settings" %>
+﻿<%@ Page Language="C#" MasterPageFile="MsterPageTabs.master" AutoEventWireup="true" CodeBehind="Settings.aspx.cs" Inherits="Votations.NSurvey.WebAdmin.Settings" %>
 
 <asp:content id="Content1" contentplaceholderid="ContentPlaceHolder1" runat="Server">
-        <div id="mainBody" class="contentHolder ps-container" >
-        <div id="Panel" class="Panel content" style="margin: 25px 0px 25px 10px; width: 725px;">
+        
+        <div id="Panel" class="Panel">
 
-                        <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 6px;">
+                        <div class="errorDiv">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
 
-            <div style="position: relative; left: 720px; width: 10px; top: 13px; clear: none;">
+            <div class="helpDiv">
                 <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/InstallationSettings.aspx"
                     title="Click for more Information">
                     <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
                 </a>
             </div>
 
-
- <!--            <asp:label ID="lblMainTitle" CssClass="titleFont" style="margin-left:25px;" runat="server"></asp:label><br /> -->
-<!--
-            <fieldset style="width: 720px; margin-top: 15px; margin-left: 15px; text-align: left;">
-                <legend class="titleFont titleLegend">CREATE SP DATABASE
-                </legend>
-                <br />
-                <ol>
-                    <li>Create the SP database:
-
-
-                <asp:Button ID="btnCreateSqlDb" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Create DB" />
-
-                    </li>
-                </ol>
-
-            </fieldset>
-            -->
-
-                            <fieldset style="width:720px; margin-top:15px; margin-left:15px; text-align: left;">
+                            <fieldset>
         <legend class="titleFont titleLegend">Database Connections
                                 </legend><br />
         <ol>
@@ -64,7 +45,7 @@
     </fieldset>
         <br /><br />
 
-                <fieldset style="width:720px; margin-top:15px; margin-left:15px; text-align: left;">
+                <fieldset>
         <legend class="titleFont titleLegend">Globalisation Culture
                                 </legend><br />
         <ol>
@@ -81,8 +62,8 @@
    
     </fieldset>
 
-                <fieldset style="width:720px; margin-top:15px; margin-left:15px; text-align: left;">
-        <legend class="titleFont titleLegend">Web.config NSURVEYSETTINGS
+                <fieldset>
+        <legend class="titleFont titleLegend">nSurveySettings
                                 </legend><br />
         <ol>
             <li>
@@ -121,6 +102,6 @@
         </ol>
    
     </fieldset>
-            <br /><br />
-            </div></div>
+            <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
+            </div>
 </asp:content>

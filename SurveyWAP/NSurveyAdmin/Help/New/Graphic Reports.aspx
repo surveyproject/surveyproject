@@ -2,22 +2,12 @@
     Inherits="Votations.NSurvey.WebAdmin.HelpFiles" CodeBehind="../default.aspx.cs" %>
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="mainBody" class="mainBody contentHolder ps-container"><div id="Panel" class="Panel content">
-    <table class="TableLayoutContainer">
-        <tr>
-            <td>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="helpPanel"><div>
                 <asp:ImageButton ID="btnBack" ImageUrl="~/Images/index-icon.png" runat="server" CssClass="buttonIndex"
                     PostBackUrl="~/NSurveyAdmin/Help/default.aspx#Reporting" Visible="True" ToolTip="Back to Helpfiles Index" />
-            </td>
-        </tr>
-        <tr>
-            <td class="contentCell" valign="top">
-                <br />
+            </div><div>
                 <h2 style="color:#5720C6;">
-                    Graphics Report</h2>
-                <br />
-                <br />
-                <hr style="color:#e2e2e2;"/>
+                    Graphics Report</h2><hr style="color:#e2e2e2;" />
                 <br />
 
 This report item will show graphical charts and statistics for
@@ -77,9 +67,6 @@ The charts provide the following information during runtime analysis of  :<br />
   This feature is only available if rating is turned on
   Rating_Introduction.html from the Question%20Editor.html  and if there
   is at least one selection type answer that is marked as a rate part .<br />
-<br />
-
-<br />
 <hr style="color:#e2e2e2;" /> <br /><h3>More Information</h3><br />
                 <br />
 HowToReport_Introduction.html<br />
@@ -87,8 +74,6 @@ RI_Introduction.html<br />
 Insert%20Report%20Item.html<br />
 Report%20Item%20Editor.html<br />
                 <br />
-            </td>
-        </tr>
-    </table>
-</div></div></asp:Content>
+            </div>
+<div id="fillerDiv" class="fillerDiv">&nbsp;</div></div></asp:Content>
 

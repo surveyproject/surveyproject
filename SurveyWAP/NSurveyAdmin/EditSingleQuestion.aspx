@@ -2,31 +2,31 @@
     AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.EditSingleQuestion"
     CodeBehind="EditSingleQuestion.aspx.cs" %>
 
-<%@ Register TagPrefix="mbrsc" Namespace="MetaBuilders.WebControls" Assembly="Votations.NSurvey.WebAdmin" %>
+<%@ Register TagPrefix="mbrsc" Namespace="MetaBuilders.WebControls" Assembly="SurveyProject.WebApplication" %>
+<%@ Register Src="UserControls/QuestionExtraLinks.ascx" TagName="QuestionExtraLinks" TagPrefix="uc2" %>
 
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="FooterControl" Src="UserControls/FooterControl.ascx" %>
-<%@ Register Src="UserControls/QuestionExtraLinks.ascx" TagName="QuestionExtraLinks"
-    TagPrefix="uc2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
 
-            <fieldset style="width: 750px; margin-left: 12px; margin-right: 0px; margin-top: 15px;">
+    <div id="Panel" class="Panel">
+                        <fieldset id="liML" runat="server">    
 
                 <asp:ImageButton ID="ImageButton1" Width="16px" ImageUrl="~/Images/back_button.gif" runat="server"
                     CssClass="buttonBack" OnCommand="OnBackButton" />
-                <div style="left: 100px; text-align:center; width:450px; position: relative; top: 5px;">
+                <div class="elDiv">
                     <uc2:QuestionExtraLinks ID="QuestionExtraLinks1" runat="server" /></div>
-                
+                                           <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/new/Question Editor.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a>
+                                        </div>
             </fieldset>
 
-
-            <div style="position: relative; width: 650px; text-align: center; margin-left: 57px; top: 6px;">
- <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
+            <div class="errorDiv">
+                    <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
 
-            <fieldset style="width: 750px; margin-left: 12px; margin-right: 0px; margin-top: 15px;">
+            <fieldset>
                 <legend class="titleFont titleLegend">
                     <asp:Literal ID="EditQuestionTitle" runat="server" EnableViewState="False">Edit question</asp:Literal>
                 </legend>
@@ -203,8 +203,13 @@
             </fieldset>
 
             <asp:PlaceHolder ID="RepeatSectionOptionPlaceHolder" runat="server">
-
-                <fieldset style="width: 750px; margin-left: 12px; margin-right: 0px; margin-top: 15px;">
+                                                                        <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/New/Repeatable_Introduction.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a>
+                                        </div>
+                <fieldset>
                     <legend class="titleFont titleLegend">
                         <asp:Literal ID="RepeatableSectionsLabel" runat="server" EnableViewState="False">Repeatable sections</asp:Literal>
                     </legend>
@@ -281,6 +286,7 @@
                     </ol>
                 </fieldset>
             </asp:PlaceHolder>
+                <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
         </div>
-    </div>
+
 </asp:Content>

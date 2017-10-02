@@ -1,7 +1,8 @@
-﻿namespace Votations.NSurvey.BE.Votations.NSurvey.Data
+﻿namespace Votations.NSurvey.Data
 {
-    
-    
-    public partial class SurveyData {
+
+
+    public partial class SurveyData
+    {
     }
 }

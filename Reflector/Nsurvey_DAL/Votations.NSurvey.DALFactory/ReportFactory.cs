@@ -21,7 +21,10 @@ namespace Votations.NSurvey.DALFactory
                 config = ConfigurationManager.AppSettings;
             }
             string assemblyString = config["WebDAL"];
-            string typeName = assemblyString + ".Report";
+            //string typeName = assemblyString + ".Report";
+            // typename: must match namespace; after namechange of assembly, namespace no longer similar to 
+            string typeName = "Votations.NSurvey.SQLServerDAL.Report";
+
             return (IReport)Assembly.Load(assemblyString).CreateInstance(typeName);
         }
     }

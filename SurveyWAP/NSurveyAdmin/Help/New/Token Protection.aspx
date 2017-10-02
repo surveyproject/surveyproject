@@ -2,25 +2,15 @@
     Inherits="Votations.NSurvey.WebAdmin.HelpFiles" CodeBehind="../default.aspx.cs" %>
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="mainBody" class="mainBody contentHolder ps-container"><div id="Panel" class="Panel content">
-    <table class="TableLayoutContainer">
-        <tr>
-            <td>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="helpPanel"><div>
                 <asp:ImageButton ID="btnBack" ImageUrl="~/Images/index-icon.png" runat="server" CssClass="buttonIndex"
                     PostBackUrl="~/NSurveyAdmin/Help/default.aspx#Token" Visible="True" ToolTip="Back to Helpfiles Index" />
-            </td>
-        </tr>
-        <tr>
-            <td class="contentCell" valign="top">
-                <br />
+            </div><div>
                 <h2 style="color:#5720C6;">
-                    Token Protection</h2>
-                <br />
-                <br />
-                <hr style="color:#e2e2e2;"/>
-                <br />
+                    Token Protection</h2><hr style="color:#e2e2e2;" />
+              
 This security addin will protect a survey using a unique token generated
-using the token generator - TGenerator.html. To enable the Token Security Addin go to Menu Security/ Form Security and select Insert Security Addin/ Token Protection<br />
+using the <a href="Token_Introduction.aspx"> token generator</a>. To enable the Token Security Addin go to Menu Security/ Form Security and select Insert Security Addin/ Token Protection<br />
 <br />
 <u>Token Generator Settings</u>
     <br /><br />
@@ -47,20 +37,15 @@ Note: Filter by tokentype and issued date can be combined.<br /><br />
 * <i>Select Checkbox</i> -  option to select tokens from the tokenlist; selected tokens will be affected by the Delete Selected button<br />
 * <i>Export Tokens</i> -   will generate a .csv file containing all tokens (selection will have no effect)<br />
 * <i>Delete Selected</i> - will delete tokens marked for selection by selecting the checkbox<br />
-* <i>Delete All</i> -  will delete all tokens irrespective of the selected status        <br /> <br />                                 
+* <i>Delete All</i> -  will delete all tokens irrespective of the selected status<hr style="color:#e2e2e2;" />
 
-
-                <hr style="color:#e2e2e2;"/>
-                <br />
-                <br />
                 <h3>
                     More Information</h3>
                 <br />
-Survey%20Security.html<br />
-Token_Introduction.html<br />
+                <a href="Token_Introduction.aspx">Token Introduction</a><br />
+<a href="../Survey%20Security.aspx" title="Survey Security">Security</a><br />
+<a href="../Sec_Introduction.aspx" title="Security Introduction">Security Introduction</a><br />
                 <br />
-            </td>
-        </tr>
-    </table>
-</div></div></asp:Content>
+            </div>
+<div id="fillerDiv" class="fillerDiv">&nbsp;</div></div></asp:Content>
 

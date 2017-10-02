@@ -2,12 +2,17 @@
 <%@ Register TagPrefix="uc1" TagName="UsersOptionsControl" Src="UsersOptionsControl.ascx" %>
 
 
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
+            <div class="errorDiv">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
 
- <br />
-            <fieldset style="width:750px; margin-left:-5px;">
+                                        <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/New/User Import.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a>
+                                        </div>
+            <fieldset>
                 <legend class="titleFont titleLegend">
                         <asp:Label ID="ImportUsersTitle" runat="server">Import users</asp:Label>
                     </legend>
@@ -56,7 +61,7 @@
                                                 &nbsp;<strong>&gt;&gt;<br />
                                                     &lt;&lt;</strong>&nbsp;
                                             </td>
-                                            <td style="width:45%;" valign="top">
+                                            <td style="width:45%;">
                                                 <asp:ListBox ID="UserSurveysListBox" runat="server" AutoPostBack="True" Width="100%" Rows="6">
                                                 </asp:ListBox>
                                             </td>

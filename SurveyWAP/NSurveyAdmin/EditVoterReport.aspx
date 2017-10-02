@@ -1,18 +1,16 @@
-﻿<%@ Register TagPrefix="uc1" TagName="FooterControl" Src="UserControls/FooterControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
-<%@ Page language="c#" MasterPageFile="MsterPageTabs.master"   validaterequest="false" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.EditVoterReport" Codebehind="EditVoterReport.aspx.cs" %>
+﻿<%@ Page language="c#" MasterPageFile="MsterPageTabs.master"   validaterequest="false" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.EditVoterReport" Codebehind="EditVoterReport.aspx.cs" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
+
+        <div id="Panel" class="Panel">
 
 
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
+              <div class="errorDiv">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
 
-             <fieldset style="width:730px; margin-left:12px; margin-top:15px;" title="">
+             <fieldset>
         <legend class="titleFont titleLegend">
                                 <asp:Literal ID="VoterInformationTitle" runat="server" EnableViewState="False">Voter information</asp:Literal></font>
                 </legend><br />
@@ -82,9 +80,9 @@
                             <asp:Button ID="ReadOnlyAnswersLinkButton" CssClass="btn btn-primary btn-xs bw" runat="server" OnClick="ReadOnlyAnswersLinkButton_Click" />
                                 </div>
 
-                <br />
+                <br /> <br />
 
-                 <fieldset style="width:730px; margin-left:12px; margin-top:15px;" title="">
+                 <fieldset>
         <legend class="titleFont titleLegend">
                                 <asp:Literal ID="EditSurveyAnswersTitle" runat="server" EnableViewState="False" Text="Edit survey answers"></asp:Literal>
                                          </legend>
@@ -100,4 +98,7 @@
                             </table>
                                  </fieldset>
              <br />
-</div></div></asp:Content>
+             <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
+</div>
+
+</asp:Content>

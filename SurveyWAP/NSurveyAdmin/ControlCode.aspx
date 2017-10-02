@@ -1,19 +1,24 @@
-﻿<%@ Register TagPrefix="uc1" TagName="FooterControl" Src="UserControls/FooterControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
-<%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="Votations.NSurvey.WebControls" %>
+﻿<%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="SurveyProject.WebControls" %>
 
 <%@ Page Language="c#" MasterPageFile="~/NSurveyAdmin/MsterPageTabs.master" ValidateRequest="false"
     AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.ControlCode" CodeBehind="ControlCode.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 2px;">
+
+        <div id="Panel" class="Panel">
+            <div class="errorDiv">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
 
-     <br />
-    <fieldset style="width:750px; margin-top:15px; margin-left:12px; text-align: left;">
+                                                <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/new/Survey%20Deployement.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a>
+                                        </div>
+
+  
+    <fieldset>
         <legend class="titleFont titleLegend">
             <asp:Literal ID="SurveyUrl" runat="server" EnableViewState="False">Survey Hyperlinks</asp:Literal>
         </legend><br />
@@ -56,8 +61,15 @@
         </ol>
         <br />
     </fieldset>
-     <br /> <br />
-    <fieldset style="width:750px; margin-left:12px; text-align: left;">
+
+                                                            <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/new/Web%20Control%20Deployment.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a>
+                                        </div>
+
+    <fieldset>
         <legend class="titleFont titleLegend">
             <asp:Literal ID="ControlCodeTitle" runat="server" EnableViewState="False">Webcontrol asp.net starting code</asp:Literal></legend>
         <br /><ol>
@@ -67,7 +79,7 @@
                 <br />
                 <span class="RegisterLiteral">
                     <asp:Literal ID="TagPrefixInfo" runat="server" EnableViewState="False">&lt;%@Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" 
-            Assembly="Votations.NSurvey.WebControls" %&gt;</asp:Literal></span>
+            Assembly="SurveyProject.WebControls" %&gt;</asp:Literal></span>
                 <br />
                 &nbsp;
             </li>
@@ -80,48 +92,41 @@
 &lt;QuestionStyle  CssClass="questionStyle"&gt;&lt;/QuestionStyle&gt;
 
 &lt;QuestionValidationMessageStyle CssClass="qvmStyle" &gt;&lt;/QuestionValidationMessageStyle&gt;
+&lt;QuestionValidationMarkStyle CssClass="icon-warning-sign" &gt;&lt;/QuestionValidationMarkStyle&gt;
 
-&lt;QuestionValidationMarkStyle CssClass="qvmarkStyle" &gt;
-&lt;/QuestionValidationMarkStyle&gt;
-
-&lt;ConfirmationMessageStyle CssClass="cmStyle" &gt;
-&lt;/ConfirmationMessageStyle&gt;
+&lt;ConfirmationMessageStyle CssClass="cmStyle" &gt;&lt;/ConfirmationMessageStyle&gt;
 
 &lt;SectionOptionStyle CssClass="soStyle"&gt;&lt;/SectionOptionStyle&gt;
 
-&lt;ButtonStyle CssClass="buttonStyle"&gt;&lt;/ButtonStyle&gt;
+&lt;ButtonStyle CssClass="btn btn-primary btn-xs bw"&gt;&lt;/ButtonStyle&gt;
 
 &lt;AnswerStyle CssClass="answerStyle"&gt;&lt;/AnswerStyle&gt;
 
 &lt;MatrixStyle CssClass="matrixStyle" &gt;&lt;/MatrixStyle&gt;
-
 &lt;MatrixHeaderStyle CssClass="mhStyle"&gt;&lt;/MatrixHeaderStyle&gt;
-
 &lt;MatrixItemStyle CssClass="miStyle" &gt;&lt;/MatrixItemStyle&gt;
+&lt;MatrixAlternatingItemStyle CssClass="maiStyle"&gt;&lt;/MatrixAlternatingItemStyle&gt;
 
-&lt;MatrixAlternatingItemStyle CssClass="maiStyle"&gt;
-&lt;/MatrixAlternatingItemStyle&gt;
-
-&lt;SectionGridAnswersItemStyle CssClass="sgiStyle" &gt;
-&lt;/SectionGridAnswersItemStyle&gt;
-
-&lt;SectionGridAnswersAlternatingItemStyle CssClass="sgaaisStyle" &gt;
-&lt;/SectionGridAnswersAlternatingItemStyle&gt;
-
-&lt;SectionGridAnswersStyle CssClass="sgaStyle" &gt;
-&lt;/SectionGridAnswersStyle&gt;
-
-&lt;SectionGridAnswersHeaderStyle CssClass="sgahStyle"&gt;
-&lt;/SectionGridAnswersHeaderStyle&gt;
+&lt;SectionGridAnswersItemStyle CssClass="sgiStyle" &gt;&lt;/SectionGridAnswersItemStyle&gt;
+&lt;SectionGridAnswersAlternatingItemStyle CssClass="sgaaisStyle" &gt;&lt;/SectionGridAnswersAlternatingItemStyle&gt;
+&lt;SectionGridAnswersStyle CssClass="sgaStyle" &gt;&lt;/SectionGridAnswersStyle&gt;
+&lt;SectionGridAnswersHeaderStyle CssClass="sgahStyle"&gt;&lt;/SectionGridAnswersHeaderStyle&gt;
 
 &lt;FootStyle CssClass="footStyle" &gt;&lt;/FootStyle&gt;
 
 &lt;/vts:SurveyBox&gt;
 
-</textarea>
+</textarea>            
+
+          <div>
+              </div>
+
 
             </li>
         </ol>
         <br />
     </fieldset>
-</div></div></asp:Content>
+                            <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
+</div>
+
+</asp:Content>

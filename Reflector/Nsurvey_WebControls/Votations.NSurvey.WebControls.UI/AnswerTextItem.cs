@@ -8,7 +8,6 @@ namespace Votations.NSurvey.WebControls.UI
     {
         protected override void CreateChildControls()
         {
-           //JJ this.Controls.Add(new LiteralControl(this.Text));
             Label label = new Label();
             label.Text = this.Text;
             label.CssClass = "answerTextRender";
