@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <data version="1.0" id="1" name="ControlCodeTitle">
-    <value>Survey Webcontrol: Asp.net Code</value>
+    <value>Surveyform Custom Webcontrol</value>
   </data>
   <data version="1.0" id="2" name="PageDirectiveInfo">
     <value>You must also include the following directive in the aspx pages that will display the survey :</value>
@@ -10,7 +10,7 @@
     <value>&lt;%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="SurveyProject.WebControls" %&gt;</value>
   </data>
   <data version="1.0" id="4" name="QuickLinkInfo">
-    <value>Deployment URL:</value>
+    <value>Survey Direct Link:</value>
   </data>
   <data version="1.0" id="5" name="SurveyCodePreviewTitle">
     <value>Survey Preview</value>
@@ -25,7 +25,7 @@
     <value>Display mode :</value>
   </data>
   <data version="1.0" id="9" name="ColumnNumberLabel">
-    <value>Number of columns :</value>
+    <value>Number of columns (V) or rows (H) :</value>
   </data>
   <data version="1.0" id="10" name="RandomizeAnswersLabel">
     <value>Randomize answers order :</value>
@@ -845,7 +845,7 @@
     <value>Survey List</value>
   </data>
   <data version="1.0" id="278" name="NewSurveyHyperLink">
-    <value>Survey New</value>
+    <value>New Survey</value>
   </data>
   <data version="1.0" id="279" name="SurveyOptionsHyperlink">
     <value>Settings</value>
@@ -881,7 +881,7 @@
     <value>Mailing Status</value>
   </data>
   <data version="1.0" id="290" name="ASPNETCodeHyperlink">
-    <value>Web</value>
+    <value>Web Links</value>
   </data>
   <data version="1.0" id="291" name="NSurveyAuthenticationTitle">
     <value>Login </value>
@@ -923,7 +923,7 @@
     <value>Security</value>
   </data>
   <data version="1.1" id="304" name="SurveySecurityTitle">
-    <value>Survey security</value>
+    <value>Form security</value>
   </data>
   <data version="1.1" id="305" name="SurveyAddAdinTitle">
     <value>Add security addin</value>
@@ -1780,7 +1780,7 @@
     <value>Xml import</value>
   </data>
   <data version="1.6" id="587" name="NoAnonymousRightsMessage">
-    <value>You must be authentified as a survey user to access these features.</value>
+    <value>You must be authorized as a survey user to access these features.</value>
   </data>
   <data version="1.7" id="588" name="SubscriberXMLList">
     <value>Subscriber - XML list</value>
@@ -3062,7 +3062,7 @@
     <value>IP Range - End</value>
   </data>
   <data version="2.0" id="1002" name="IPRangeFormTitle">
-    <value>IP Filter</value>
+    <value>IP Filter Security</value>
   </data>
   <data version="2.0" id="1003" name="TokenSecurityFormTitle">
     <value>Token Security</value>
@@ -3080,7 +3080,7 @@
     <value>Your IP address is not in acceptable range.</value>
   </data>
   <data version="2.0" id="1008" name="SurveyIPRangeSecurityHyperlink">
-    <value> IP Filter</value>
+    <value> IP Filter Security</value>
   </data>
   <data version="2.0" id="1009" name="Exception">
     <value> Exception Occurred</value>
@@ -3248,11 +3248,11 @@
     <value>Are you sure you want to delete this page ?</value>
   </data>
   <data version="2.0" id="1062" name="FriendlyLabel">
-    <value>Create Friendly Name Url :</value>
+    <value>Create Friendly Name :</value>
   </data>
   <data version="2.0" id="1063" name="FriendlyUrl">
     <value>
-      Note: Friendly Url format = http:// [YourWebSiteUrl] / surveymobile.aspx / [&lt;b&gt;YourFriendlyName&lt;/b&gt;]
+      Note: Friendly Link format = http:// [YourWebSiteUrl] / surveymobile.aspx / [&lt;b&gt;YourFriendlyName&lt;/b&gt;]
     </value>
   </data>
   <data version="2.0" id="1064" name="BtnFriendly">
@@ -3545,7 +3545,7 @@
     <value>Friendly name Deleted</value>
   </data>
   <data version="2.4" id="1159" name="FriendlyUrlLabel">
-    <value>Friendly URL: </value>
+    <value>Survey Friendly Link: </value>
   </data>
   <data version="2.4" id="1160" name="SurveyLayoutSavedMsg">
     <value>Layout correctly Saved</value>
@@ -3601,5 +3601,19 @@
   <data version="2.5" id="1175" name="FriendlyNameExistsMsg">
     <value>Name already used, please retry.</value>
   </data>
-
+  <data version="2.5" id="1176" name="WebControlIntro">
+    <value>More information on using the SurveyBox Custom Webcontrol at .....</value>
+  </data>
+  <data version="2.5" id="1177" name="AdminCreatedMessage">
+    <value>Account created. Please login.</value>
+  </data>
+  <data version="2.5" id="1178" name="MultilanguagesStatsLiteral">
+    <value>Active Languages:</value>
+  </data>
+  <data version="2.5" id="1179" name="OpeningCloseDateLiteral">
+    <value>Opening &amp; Closing dates</value>
+  </data>
+  <data version="2.5" id="1180" name="DateNotSet">
+    <value>Not set</value>
+  </data>
 </root>

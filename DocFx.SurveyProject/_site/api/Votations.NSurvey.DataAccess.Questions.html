@@ -1,0 +1,1805 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Questions
+   | SP Technical Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Questions
+   | SP Technical Documentation ">
+    <meta name="generator" content="docfx 2.26.3.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/splogo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Votations.NSurvey.DataAccess.Questions">
+  
+  
+  <h1 id="Votations_NSurvey_DataAccess_Questions" data-uid="Votations.NSurvey.DataAccess.Questions" class="text-break">Class Questions
+  </h1>
+  <div class="markdown level0 summary"><p>Contains the methods to access questions database data</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Questions</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Votations.NSurvey.DataAccess.html">Votations.NSurvey.DataAccess</a></h6>
+  <h6><strong>Assembly</strong>: SurveyProject.BusinessLogicLayer.dll</h6>
+  <h5 id="Votations_NSurvey_DataAccess_Questions_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Questions</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetAnswerableQuestionList_" data-uid="Votations.NSurvey.DataAccess.Questions.GetAnswerableQuestionList*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetAnswerableQuestionList_System_Int32_" data-uid="Votations.NSurvey.DataAccess.Questions.GetAnswerableQuestionList(System.Int32)">GetAnswerableQuestionList(Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns a question list that can be answered </p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionData GetAnswerableQuestionList(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td><p>Survey id from which you want to retrieve the questions</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td><p>A question object collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetAnswerableQuestionList_" data-uid="Votations.NSurvey.DataAccess.Questions.GetAnswerableQuestionList*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetAnswerableQuestionList_System_Int32_System_Int32_" data-uid="Votations.NSurvey.DataAccess.Questions.GetAnswerableQuestionList(System.Int32,System.Int32)">GetAnswerableQuestionList(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns a question list of the given page that can be answered </p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionData GetAnswerableQuestionList(int surveyId, int pageNumber)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td><p>Survey id from which you want to retrieve the questions</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pageNumber</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td><p>A question object collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetAnswerableQuestionListInPageRange_" data-uid="Votations.NSurvey.DataAccess.Questions.GetAnswerableQuestionListInPageRange*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetAnswerableQuestionListInPageRange_System_Int32_System_Int32_System_Int32_" data-uid="Votations.NSurvey.DataAccess.Questions.GetAnswerableQuestionListInPageRange(System.Int32,System.Int32,System.Int32)">GetAnswerableQuestionListInPageRange(Int32, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns a question list of the given page range that can be answered </p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionData GetAnswerableQuestionListInPageRange(int surveyId, int startPageNumber, int endPageNumber)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">startPageNumber</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">endPageNumber</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetAnswerableQuestionListWithoutChilds_" data-uid="Votations.NSurvey.DataAccess.Questions.GetAnswerableQuestionListWithoutChilds*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetAnswerableQuestionListWithoutChilds_System_Int32_" data-uid="Votations.NSurvey.DataAccess.Questions.GetAnswerableQuestionListWithoutChilds(System.Int32)">GetAnswerableQuestionListWithoutChilds(Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns a question list that can be answered without their child questions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionData GetAnswerableQuestionListWithoutChilds(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td><p>Survey id from which you want to retrieve the questions</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td><p>A question object collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetAnswerableQuestionWithoutChilds_" data-uid="Votations.NSurvey.DataAccess.Questions.GetAnswerableQuestionWithoutChilds*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetAnswerableQuestionWithoutChilds_System_Int32_" data-uid="Votations.NSurvey.DataAccess.Questions.GetAnswerableQuestionWithoutChilds(System.Int32)">GetAnswerableQuestionWithoutChilds(Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns the questions that can be answered without their childs</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionData GetAnswerableQuestionWithoutChilds(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td><p>Survey id from which you want to retrieve the questions</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td><p>A question object collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetAnswerableSingleQuestionListWithoutChilds_" data-uid="Votations.NSurvey.DataAccess.Questions.GetAnswerableSingleQuestionListWithoutChilds*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetAnswerableSingleQuestionListWithoutChilds_System_Int32_" data-uid="Votations.NSurvey.DataAccess.Questions.GetAnswerableSingleQuestionListWithoutChilds(System.Int32)">GetAnswerableSingleQuestionListWithoutChilds(Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns a question list that can be answered and that don&apos;t have any questions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionData GetAnswerableSingleQuestionListWithoutChilds(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td><p>Survey id from which you want to retrieve the questions</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td><p>A question object collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetCrossTabResults_" data-uid="Votations.NSurvey.DataAccess.Questions.GetCrossTabResults*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetCrossTabResults_System_Int32_System_Int32_" data-uid="Votations.NSurvey.DataAccess.Questions.GetCrossTabResults(System.Int32,System.Int32)">GetCrossTabResults(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>returns a results set with the compare question&apos;s answers number of voter 
+that have also answered the base question answer</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataSet GetCrossTabResults(int compareQuestionId, int baseAnswerId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">compareQuestionId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">baseAnswerId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.DataSet</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetLibraryAnswerableSingleQuestionListWithoutChilds_" data-uid="Votations.NSurvey.DataAccess.Questions.GetLibraryAnswerableSingleQuestionListWithoutChilds*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetLibraryAnswerableSingleQuestionListWithoutChilds_System_Int32_" data-uid="Votations.NSurvey.DataAccess.Questions.GetLibraryAnswerableSingleQuestionListWithoutChilds(System.Int32)">GetLibraryAnswerableSingleQuestionListWithoutChilds(Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns a question list for the given library 
+that can be answered and that don&apos;t have any child questions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionData GetLibraryAnswerableSingleQuestionListWithoutChilds(int libraryId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">libraryId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td><p>A question object collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetLibraryQuestionList_" data-uid="Votations.NSurvey.DataAccess.Questions.GetLibraryQuestionList*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetLibraryQuestionList_System_Int32_" data-uid="Votations.NSurvey.DataAccess.Questions.GetLibraryQuestionList(System.Int32)">GetLibraryQuestionList(Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns all question listed in the library</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionData GetLibraryQuestionList(int libraryId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">libraryId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetLibraryQuestionListWithoutChilds_" data-uid="Votations.NSurvey.DataAccess.Questions.GetLibraryQuestionListWithoutChilds*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetLibraryQuestionListWithoutChilds_System_Int32_" data-uid="Votations.NSurvey.DataAccess.Questions.GetLibraryQuestionListWithoutChilds(System.Int32)">GetLibraryQuestionListWithoutChilds(Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns all question listed in the library without their child questions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionData GetLibraryQuestionListWithoutChilds(int libraryId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">libraryId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetLibraryQuestions_" data-uid="Votations.NSurvey.DataAccess.Questions.GetLibraryQuestions*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetLibraryQuestions_System_Int32_System_String_" data-uid="Votations.NSurvey.DataAccess.Questions.GetLibraryQuestions(System.Int32,System.String)">GetLibraryQuestions(Int32, String)</h4>
+  <div class="markdown level1 summary"><p>Returns all question listed in the library</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionData GetLibraryQuestions(int libraryId, string languageCode)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">libraryId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">languageCode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetMatrixChildQuestions_" data-uid="Votations.NSurvey.DataAccess.Questions.GetMatrixChildQuestions*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetMatrixChildQuestions_System_Int32_System_String_" data-uid="Votations.NSurvey.DataAccess.Questions.GetMatrixChildQuestions(System.Int32,System.String)">GetMatrixChildQuestions(Int32, String)</h4>
+  <div class="markdown level1 summary"><p>Returns all child question from the given question</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MatrixChildQuestionData GetMatrixChildQuestions(int parentQuestionId, string languageCode)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">parentQuestionId</span></td>
+        <td><p>Parent question id from which you want to retrieve the questions</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">languageCode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.MatrixChildQuestionData.html">MatrixChildQuestionData</a></td>
+        <td><p>A question object collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetPagedQuestions_" data-uid="Votations.NSurvey.DataAccess.Questions.GetPagedQuestions*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetPagedQuestions_System_Int32_System_Int32_System_String_" data-uid="Votations.NSurvey.DataAccess.Questions.GetPagedQuestions(System.Int32,System.Int32,System.String)">GetPagedQuestions(Int32, Int32, String)</h4>
+  <div class="markdown level1 summary"><p>Returns the question until next page break is encountered</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionData GetPagedQuestions(int surveyId, int pageNumber, string languageCode)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td><p>Survey id from which you want to retrieve the paged questions</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pageNumber</span></td>
+        <td><p>Page to retrieve</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">languageCode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td><p>A question object collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetQuestionAnswerConnections_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestionAnswerConnections*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetQuestionAnswerConnections_System_Int32_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestionAnswerConnections(System.Int32)">GetQuestionAnswerConnections(Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns all question&apos;s answer subscribers</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AnswerConnectionData GetQuestionAnswerConnections(int questionId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">questionId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.AnswerConnectionData.html">AnswerConnectionData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetQuestionById_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestionById*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetQuestionById_System_Int32_System_String_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestionById(System.Int32,System.String)">GetQuestionById(Int32, String)</h4>
+  <div class="markdown level1 summary"><p>Return a question object that reflects the database question</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionData GetQuestionById(int questionId, string languageCode)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">questionId</span></td>
+        <td><p>Id of the question you need</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">languageCode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td><p>A questiondata object with the current database values</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetQuestionForExport_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestionForExport*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetQuestionForExport_System_Int32_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestionForExport(System.Int32)">GetQuestionForExport(Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns all question details, answers and answer types</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NSurveyQuestion GetQuestionForExport(int questionId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">questionId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.NSurveyQuestion.html">NSurveyQuestion</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetQuestionHierarchy_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestionHierarchy*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetQuestionHierarchy_System_Int32_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestionHierarchy(System.Int32)">GetQuestionHierarchy(Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns all question including their childs</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionData GetQuestionHierarchy(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td><p>Survey id from which you want to retrieve the questions and childs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td><p>A question object collection with all their childs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetQuestionLayoutModes_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestionLayoutModes*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetQuestionLayoutModes" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestionLayoutModes">GetQuestionLayoutModes()</h4>
+  <div class="markdown level1 summary"><p>Return the layout modes available</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LayoutModeData GetQuestionLayoutModes()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.LayoutModeData.html">LayoutModeData</a></td>
+        <td><p>A questionlayoutmodedata object with the current layout values</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetQuestionListForPageRange_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestionListForPageRange*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetQuestionListForPageRange_System_Int32_System_Int32_System_Int32_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestionListForPageRange(System.Int32,System.Int32,System.Int32)">GetQuestionListForPageRange(Int32, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns a question list of all available questions
+in the given page range</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionData GetQuestionListForPageRange(int surveyId, int startPageNumber, int endPageNumber)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">startPageNumber</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">endPageNumber</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetQuestionListWithSelectableAnswers_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestionListWithSelectableAnswers*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetQuestionListWithSelectableAnswers_System_Int32_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestionListWithSelectableAnswers(System.Int32)">GetQuestionListWithSelectableAnswers(Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns a question list with only text, questionid and display order field 
+from the given survey that have at leat one selectable answer type</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionData GetQuestionListWithSelectableAnswers(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td><p>Survey id from which you want to retrieve the questions</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td><p>A question object collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetQuestionListWithSelectableAnswers_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestionListWithSelectableAnswers*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetQuestionListWithSelectableAnswers_System_Int32_System_Int32_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestionListWithSelectableAnswers(System.Int32,System.Int32)">GetQuestionListWithSelectableAnswers(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns a question list of the given page with only text, questionid and display order field 
+from the given survey that have at leat one selectable answer type</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionData GetQuestionListWithSelectableAnswers(int surveyId, int pageNumber)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td><p>Survey id from which you want to retrieve the questions</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pageNumber</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td><p>A question object collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetQuestionResults_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestionResults*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetQuestionResults_System_Int32_System_Int32_System_String_System_String_System_DateTime_System_DateTime_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestionResults(System.Int32,System.Int32,System.String,System.String,System.DateTime,System.DateTime)">GetQuestionResults(Int32, Int32, String, String, DateTime, DateTime)</h4>
+  <div class="markdown level1 summary"><p>Returns the question and its answers results</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionResultsData GetQuestionResults(int questionId, int filterId, string sortOrder, string languageCode, DateTime startDate, DateTime endDate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">questionId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">filterId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sortOrder</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">languageCode</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">startDate</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">endDate</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionResultsData.html">QuestionResultsData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetQuestions_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestions*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetQuestions_System_Int32_System_Boolean_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestions(System.Int32,System.Boolean)">GetQuestions(Int32, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Returns all question from the given survey with title
+cleaned up from any html tag</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionData GetQuestions(int surveyId, bool removeHtmlFromTitle)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td><p>Survey id from which you want to retrieve the questions</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">removeHtmlFromTitle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td><p>A question object collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetQuestions_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestions*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetQuestions_System_Int32_System_String_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestions(System.Int32,System.String)">GetQuestions(Int32, String)</h4>
+  <div class="markdown level1 summary"><p>Returns all question from the given survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionData GetQuestions(int surveyId, string languageCode)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td><p>Survey id from which you want to retrieve the questions</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">languageCode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td><p>A question object collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetQuestionsAnswers_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestionsAnswers*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetQuestionsAnswers_System_Int32_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestionsAnswers(System.Int32)">GetQuestionsAnswers(Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns all question and all their answers from the given survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionsAnswersData GetQuestionsAnswers(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td><p>Survey id from which you want to retrieve the questions and answers</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionsAnswersData.html">QuestionsAnswersData</a></td>
+        <td><p>A question object collection with all answers</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetQuestionSectionGridAnswers_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestionSectionGridAnswers*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetQuestionSectionGridAnswers_System_Int32_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestionSectionGridAnswers(System.Int32)">GetQuestionSectionGridAnswers(Int32)</h4>
+  <div class="markdown level1 summary"><p>Get all answerids to show in the grid</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int[] GetQuestionSectionGridAnswers(int questionId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">questionId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetQuestionSectionOptions_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestionSectionOptions*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetQuestionSectionOptions_System_Int32_System_String_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestionSectionOptions(System.Int32,System.String)">GetQuestionSectionOptions(Int32, String)</h4>
+  <div class="markdown level1 summary"><p>Return the options available for the question&apos;s section</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionSectionOptionData GetQuestionSectionOptions(int questionId, string languageCode)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">questionId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">languageCode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionSectionOptionData.html">QuestionSectionOptionData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetQuestionSkipLogicRules_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestionSkipLogicRules*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetQuestionSkipLogicRules_System_Int32_" data-uid="Votations.NSurvey.DataAccess.Questions.GetQuestionSkipLogicRules(System.Int32)">GetQuestionSkipLogicRules(Int32)</h4>
+  <div class="markdown level1 summary"><p>Retrieves the skip logic rules for this question</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SkipLogicRuleData GetQuestionSkipLogicRules(int questionId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">questionId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.SkipLogicRuleData.html">SkipLogicRuleData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetRandomPagedQuestions_" data-uid="Votations.NSurvey.DataAccess.Questions.GetRandomPagedQuestions*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetRandomPagedQuestions_System_Int32_System_Int32_System_Int32_System_String_" data-uid="Votations.NSurvey.DataAccess.Questions.GetRandomPagedQuestions(System.Int32,System.Int32,System.Int32,System.String)">GetRandomPagedQuestions(Int32, Int32, Int32, String)</h4>
+  <div class="markdown level1 summary"><p>Get the questions until next page break is encountered and 
+return them in a random them</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionData GetRandomPagedQuestions(int surveyId, int pageNumber, int randomSeed, string languageCode)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td><p>Survey id from which you want to retrieve the paged questions</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pageNumber</span></td>
+        <td><p>Page to retrieve</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">randomSeed</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">languageCode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td><p>A question object collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetSelectableQuestionSelectionModes_" data-uid="Votations.NSurvey.DataAccess.Questions.GetSelectableQuestionSelectionModes*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetSelectableQuestionSelectionModes" data-uid="Votations.NSurvey.DataAccess.Questions.GetSelectableQuestionSelectionModes">GetSelectableQuestionSelectionModes()</h4>
+  <div class="markdown level1 summary"><p>Return the selection mode available for a singe question type</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionSelectionModeData GetSelectableQuestionSelectionModes()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionSelectionModeData.html">QuestionSelectionModeData</a></td>
+        <td><p>A questionselectionmode object with the current selections options</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetTotalCrossTabResults_" data-uid="Votations.NSurvey.DataAccess.Questions.GetTotalCrossTabResults*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetTotalCrossTabResults_System_Int32_System_Int32_" data-uid="Votations.NSurvey.DataAccess.Questions.GetTotalCrossTabResults(System.Int32,System.Int32)">GetTotalCrossTabResults(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>returns a results set with the total of compare question&apos;s answers number of voter 
+that have answered or not answered the base question answers</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataSet GetTotalCrossTabResults(int compareQuestionId, int baseQuestionId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">compareQuestionId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">baseQuestionId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.DataSet</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_GetUnansweredCrossTabResults_" data-uid="Votations.NSurvey.DataAccess.Questions.GetUnansweredCrossTabResults*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_GetUnansweredCrossTabResults_System_Int32_System_Int32_" data-uid="Votations.NSurvey.DataAccess.Questions.GetUnansweredCrossTabResults(System.Int32,System.Int32)">GetUnansweredCrossTabResults(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>returns a results set with the compare question&apos;s answers number of voter 
+that have not answered the base question answers</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataSet GetUnansweredCrossTabResults(int compareQuestionId, int baseQuestionId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">compareQuestionId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">baseQuestionId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.DataSet</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_MoveQuestionDown_" data-uid="Votations.NSurvey.DataAccess.Questions.MoveQuestionDown*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_MoveQuestionDown_System_Int32_" data-uid="Votations.NSurvey.DataAccess.Questions.MoveQuestionDown(System.Int32)">MoveQuestionDown(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void MoveQuestionDown(int questionId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">questionId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_MoveQuestionUp_" data-uid="Votations.NSurvey.DataAccess.Questions.MoveQuestionUp*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_MoveQuestionUp_System_Int32_" data-uid="Votations.NSurvey.DataAccess.Questions.MoveQuestionUp(System.Int32)">MoveQuestionUp(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void MoveQuestionUp(int questionId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">questionId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_ParseHTMLTagsFromQuestionText_" data-uid="Votations.NSurvey.DataAccess.Questions.ParseHTMLTagsFromQuestionText*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_ParseHTMLTagsFromQuestionText_System_String_System_Int32_" data-uid="Votations.NSurvey.DataAccess.Questions.ParseHTMLTagsFromQuestionText(System.String,System.Int32)">ParseHTMLTagsFromQuestionText(String, Int32)</h4>
+  <div class="markdown level1 summary"><p>Parse HTML tags from the question text</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ParseHTMLTagsFromQuestionText(string questionText, int maxTextLength)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">questionText</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">maxTextLength</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_DataAccess_Questions_ParseHTMLTagsFromQuestionText_" data-uid="Votations.NSurvey.DataAccess.Questions.ParseHTMLTagsFromQuestionText*"></a>
+  <h4 id="Votations_NSurvey_DataAccess_Questions_ParseHTMLTagsFromQuestionText_Votations_NSurvey_Data_QuestionData_System_Int32_" data-uid="Votations.NSurvey.DataAccess.Questions.ParseHTMLTagsFromQuestionText(Votations.NSurvey.Data.QuestionData,System.Int32)">ParseHTMLTagsFromQuestionText(QuestionData, Int32)</h4>
+  <div class="markdown level1 summary"><p>Parse HTML tags from the question collection</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ParseHTMLTagsFromQuestionText(QuestionData questions, int maxTextLength)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td><span class="parametername">questions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">maxTextLength</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy;2017 Survey&trade; Project
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

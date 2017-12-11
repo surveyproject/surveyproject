@@ -74,7 +74,7 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
                 MultiLanguageData surveyLanguages;
 
                 surveyLanguages = new MultiLanguages().GetSurveyLanguages(SurveyId);
-                ;
+
                 LanguagesDropdownlist.Items.Clear();
                 foreach (MultiLanguageData.MultiLanguagesRow language in surveyLanguages.MultiLanguages)
                 {

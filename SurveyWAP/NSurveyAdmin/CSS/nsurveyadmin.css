@@ -1,6 +1,5 @@
 @import"loginform.css";
 @import url('../../content/font-awesome.min.css');
-@import"perfect-scrollbar.css";
 #container {
     position: relative;
     text-align: center;
@@ -45,7 +44,7 @@
 .crossTabCompareCell{background:#f7dce0}
 .crossTabTable{background:#fcffff;border:1px #3f3d3d solid;color:#000;font-size:x-small ;width:100%}
 .DesignHelpText{color:#000;display:block;font-size:small;font-style:normal;font-weight:lighter;margin-left:15px;overflow:auto;width:639px}
-.defaultDiv{position: fixed;margin: 0 0 0 250px;top: 125px;width: 778px}
+.defaultDiv{position: fixed;margin: 0 0 0 250px;top: 125px;width: 778px; z-index:1}
 .elDiv{left: 100px; text-align:center; width:450px; position: relative; top: 5px;}
 .fillerDiv {height:30vh}
 
@@ -77,7 +76,7 @@
 .hmCell{border-bottom:1px #000 dotted;height:1px;margin:0;padding:0}
 .iconDiv {
     font-size: 2.5vw;
-    margin: 20px;
+    margin: 20px 20px 5px 20px;
 }
 .IdLabel td{background:#e2e2e2;}
 .innerText{font-size: 12px/23px }
@@ -89,9 +88,9 @@
 
 .logoPanel{border:0;border-color:#fff;border-style:none;position:relative;text-align:left;}
 
-.logoIcons {font-size: 4vw;float: left; margin:10px 0 0 35px}
+.logoIcons {font-size:6.6rem;float: left; margin:10px 0 0 35px}
 
-.logoText {color: white;float: right;font-size:0.6em;font-weight: 800;margin: 15px 0 0 25px}
+.logoText {color: white;float: right;font-size:3.6rem;font-weight: 800;margin: 15px 0 0 25px}
 .logoTextLogedin {color: white;float: right;font-weight: 800; margin:20px 0 0 30px; font-size: x-large;}
 
 .logouthyperlink{background:#99f;border-radius:0 0 15px;padding:11px 9px 4px;-moz-border-radius:0 0 15px 0;-webkit-border-radius:0 0 15px 0}
@@ -114,7 +113,7 @@
 .questionBreak a{color:#e2e2e2;margin-right:5px;text-decoration:none}
 .questionBreak a:link,a:active,a:visited{color:#a1a1a1;margin-right:5px;text-decoration:none}
 .questionBreak a:not(:hover){color:#000;text-decoration:none}
-.questionBreakOptions{background:url(../images/questionoptionsbackground.gif) repeat-x;height:25px;padding:3px 7px 0 7px;border:1px solid white;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px}
+.questionBreakOptions{background:url(../../images/questionoptionsbackground.gif) repeat-x;height:25px;padding:3px 7px 0 7px;border:1px solid white;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px}
 .questionBreakPageNr{font-size:smaller;font-weight:600}
 
 .questionsContainer{width:98%;}
@@ -181,7 +180,7 @@ fieldset label{background:#7c8fe3;border-radius:5px;color:#fff;float:left;font-w
 h1{font-size:1.4em;padding:10px 10px 0}
 html,body{height:100%}
 img{border:0 none}
-img.logo{background:url(images/headerlogo.jpg)}
+img.logo{background:url(../../images/headerlogo.jpg)}
 p{padding:0 10px 1em}
 .TableLayoutContainer{background:#fff;border:0 #082e44 solid;color:#000;font-size:12px ;margin:10px 0 0 15px;padding:0;text-align:left;width:95%}
 
@@ -228,16 +227,16 @@ table.TlcFront{background:url(../../images/PenSurvey.JPG) repeat-x center #fff;b
 .cssXmlAlign{float:left;margin-left:10px}
 .cssxmlpaging{letter-spacing:10px;}
 
-.disclaimer{position:fixed;top: 20px;left:15px;width: 220px;text-align:justify;text-justify:distribute;}
-.disclaimer-panel-group{margin: 30px 0 0 15px;border: none;overflow:hidden;width:190px;height:40px;}
+.disclaimer{position:fixed;top: 27%;left:36%;max-width:45%;min-width:20%; text-align:justify;text-justify:distribute; background-color:white;}
+.disclaimer-panel-group{margin: 30px 0 0 15px;border: none;overflow:hidden;width:190px;height:40px; z-index:200;}
 
-@media only screen and (max-width:768px) {.disclaimer{position:relative;text-align:justify;text-justify:distribute;width: 80%;height:100%;} .disclaimer-panel-group{margin: 85px 0 0 15px; border: none; overflow: hidden; width: 190px; height:100%;}}
+@media only screen and (max-width:768px) {.disclaimer{position:relative;text-align:justify;text-justify:distribute;width: 80%;height:100%;} .disclaimer-panel-group{margin: 85px 0 0 15px; border: none; overflow: hidden; width: 190px; height:100%; z-index:200;}}
 .DynamicMenu{display:none}
 .errorDiv{position: relative; min-width: 350px; text-align: center; margin:10px;}
 .errorMessage{background:#e80808;border-radius:7px;color:#fff;font-size:.9em;padding:3px 15px 3px 10px;-moz-border-radius:7px;-webkit-border-radius:7px}
 .globalRadioButtonLabel{font-weight:400;background-color:transparent;color:black;}
-.hint{background:url(~/images/pointer.gif) no-repeat -10px 5px #ffc;border:1px solid #c93;margin-top:-4px;padding:10px 12px;position:relative;right:10px;width:100px}
-.hint .hint-pointer{background:url(~/images/pointer.gif) no-repeat left top;height:19px;left:-10px;position:absolute;top:5px;width:10px}
+.hint{background:url(../../images/pointer.gif) no-repeat -10px 5px #ffc;border:1px solid #c93;margin-top:-4px;padding:10px 12px;position:relative;right:10px;width:100px}
+.hint .hint-pointer{background:url(../../images/pointer.gif) no-repeat left top;height:19px;left:-10px;position:absolute;top:5px;width:10px}
 .hoverstyle td.rowwithseperator{padding-bottom:0}
 .Instructions{background:#99f}
 .IPSection{min-width:3px;width:42px}
@@ -319,6 +318,7 @@ input[id*="lvTokens"]{border:none;margin-right:10px}
     overflow: auto;
     background: none repeat scroll 0 0 #fff;
     height:100%;
+    z-index: 100;
 }
 
 
@@ -349,3 +349,4 @@ input[id*="lvTokens"]{border:none;margin-right:10px}
 }
 
 .banners {position: absolute; left: 15px; top: 10px; text-align: center; height: auto; overflow: hidden}
+.SurveyStatusLabel{font-weight:bold; font-size:0.8em;}

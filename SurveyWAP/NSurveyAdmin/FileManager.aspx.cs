@@ -61,7 +61,7 @@ namespace Votations.NSurvey.WebAdmin
 		protected System.Web.UI.WebControls.Label CreateGroupsLabel;
 		protected System.Web.UI.WebControls.DropDownList FileGroupsDropDownList;
 		protected System.Web.UI.WebControls.PlaceHolder FileExportPlaceHolder;
-		protected SurveyListControl SurveyList;
+		//protected SurveyListControl SurveyList;
 		
 		private void Page_Load(object sender, System.EventArgs e)
 		{

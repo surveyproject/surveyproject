@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Wap.Master" AutoEventWireup="true"
     CodeBehind="SurveySettings.aspx.cs" Inherits="Votations.NSurvey.WebAdmin.NSurveyAdmin.SurveySettings" %>
 
-
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
 <%--    <script type="text/javascript">

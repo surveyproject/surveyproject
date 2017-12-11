@@ -44,7 +44,8 @@ namespace Votations.NSurvey.WebAdmin
     using System.Collections.Generic;
 
     /// <summary>
-    /// PageBase class description
+    /// This page contains logic common to all SP Web pages.
+    /// Info: http://www.4guysfromrolla.com/articles/041305-1.aspx 
     /// </summary>
     public class PageBase : Page
     {
@@ -71,7 +72,7 @@ namespace Votations.NSurvey.WebAdmin
         }
 
         /// <summary>
-        /// Selected FolderId
+        /// Selected FolderId from the SurveyTree treeview control
         /// </summary>
         public int? SelectedFolderId
         {
@@ -79,13 +80,20 @@ namespace Votations.NSurvey.WebAdmin
             set { Session["FolderID"] = value; }
         }
 
+        /// <summary>
+        ///  Sort order of the Surveylist Gridview 
+        /// </summary>
         public string SurveyListOrder
         {
             get { return (string)Session["SurveyOrder"]; }
             set { Session["SurveyOrder"] = value; }
         }
 
-        //Whenever a survey is deleted this should be called
+        /// <summary>
+        /// Action on deleting a survey. Used on the SurveyOptionControl webpage
+        /// Whenever a survey is deleted this should be called
+        /// </summary>
+        /// <param name="deletedSurveyId"></param>
         public void SurveyDeleteActions(int deletedSurveyId)
         {
             if (getSurveyId() == -1) return; // No action
@@ -141,6 +149,11 @@ namespace Votations.NSurvey.WebAdmin
                                 Response.Write(GetPageResource("NoAnonymousRightsMessage"));
 
                             }
+                            //else if(NSurveyUser.Identity.UserId == 0)
+                            //        {
+
+                            //    UINavigator.NavigateToWarningScreen();
+                            //        }
                             else
                             {
                                 UINavigator.NavigateToWarningScreen();
@@ -165,6 +178,9 @@ namespace Votations.NSurvey.WebAdmin
             }
         }
 
+        /// <summary>
+        /// Survey Title
+        /// </summary>
         public string SurveyTitle
         {
             get
@@ -178,6 +194,9 @@ namespace Votations.NSurvey.WebAdmin
             }
         }
 
+        /// <summary>
+        /// Question Library LibraryID
+        /// </summary>
         public int LibraryId
         {
             get
@@ -198,6 +217,7 @@ namespace Votations.NSurvey.WebAdmin
         {
             get { return NSurveyContext.Current.User; }
         }
+
         /// <summary>
         /// MenuIndex
         /// </summary>
@@ -210,7 +230,8 @@ namespace Votations.NSurvey.WebAdmin
             }
         }
         /// <summary>
-        /// GetPageResource: language files in XmlData/Languages directory
+        /// GetPageResource: refers to language files in XmlData/Languages directory
+        /// Directory path determined in web.config file Nsurvey Settings
         /// </summary>
         /// <param name="resourceName"></param>
         /// <returns></returns>
@@ -220,7 +241,8 @@ namespace Votations.NSurvey.WebAdmin
         }
 
         /// <summary>
-        /// GetPageHelpfiles: Helpfiles in XmlData/Helpfiles directory
+        /// GetPageHelpfiles: refers to Helpfiles in XmlData/Helpfiles directory
+        /// Directory path determined in web.config file Nsurvey Settings
         /// </summary>
         /// <param name="resourceName"></param>
         /// <returns></returns>
@@ -260,6 +282,7 @@ namespace Votations.NSurvey.WebAdmin
         /// to translate them
         /// </summary>
         /// <param name="unTranslatedListControl"></param>
+        /// <param name="reOrder"></param>
         public void TranslateListControl(ListControl unTranslatedListControl, bool reOrder = false)
         {
             List<ListItem> items = new List<ListItem>();
@@ -358,6 +381,11 @@ namespace Votations.NSurvey.WebAdmin
             else return (int)Session[SessionParameters.SurveyId.ToString()];
         }
 
+        /// <summary>
+        /// Message (information and confirmation) shown on succesfull operations
+        /// </summary>
+        /// <param name="l">Label</param>
+        /// <param name="s">Text String from XML language file</param>
         public void ShowNormalMessage(Label l, string s)
         {
             l.Visible = true;
@@ -368,6 +396,11 @@ namespace Votations.NSurvey.WebAdmin
 
         }
 
+        /// <summary>
+        /// Error Message shown on failed operations
+        /// </summary>
+        /// <param name="l">Label</param>
+        /// <param name="s">Text String from XML language file</param>
         public void ShowErrorMessage(Label l, string s)
         {
             l.Visible = true;

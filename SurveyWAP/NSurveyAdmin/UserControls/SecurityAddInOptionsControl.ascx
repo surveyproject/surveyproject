@@ -1,7 +1,4 @@
 <%@ Control Language="c#" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.UserControls.SecurityAddInOptionsControl" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" Codebehind="SecurityAddInOptionsControl.ascx.cs" %>
-<%@ Register TagPrefix="uc1" TagName="PageBranchingRulesControl" Src="PageBranchingRulesControl.ascx" %>
-
-
 
         <li style="text-align:justify;">
             <asp:ImageButton ID="UpImageButton" runat="server" Height="12" Width="12" ImageUrl="~/Images/questionupbutton.gif">

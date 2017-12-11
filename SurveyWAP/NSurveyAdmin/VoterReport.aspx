@@ -1,5 +1,4 @@
-﻿
-<%@ Page language="c#" MasterPageFile="MsterPageTabs.master"   AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.VoterReport" Codebehind="VoterReport.aspx.cs" %>
+﻿<%@ Page language="c#" MasterPageFile="MsterPageTabs.master"   AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.VoterReport" Codebehind="VoterReport.aspx.cs" %>
 <%@ Import Namespace = "Votations.NSurvey.Helpers" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">

@@ -1,0 +1,392 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class AnswerItemFactory
+   | SP Technical Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class AnswerItemFactory
+   | SP Technical Documentation ">
+    <meta name="generator" content="docfx 2.26.3.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/splogo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Votations.NSurvey.WebControlsFactories.AnswerItemFactory">
+  
+  
+  <h1 id="Votations_NSurvey_WebControlsFactories_AnswerItemFactory" data-uid="Votations.NSurvey.WebControlsFactories.AnswerItemFactory" class="text-break">Class AnswerItemFactory
+  </h1>
+  <div class="markdown level0 summary"><p>Creates a new answer item instance from the db answer data</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">AnswerItemFactory</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Votations.NSurvey.WebControlsFactories.html">Votations.NSurvey.WebControlsFactories</a></h6>
+  <h6><strong>Assembly</strong>: SurveyProject.WebControls.dll</h6>
+  <h5 id="Votations_NSurvey_WebControlsFactories_AnswerItemFactory_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class AnswerItemFactory</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Votations_NSurvey_WebControlsFactories_AnswerItemFactory_BindSubscribersToPublishers_" data-uid="Votations.NSurvey.WebControlsFactories.AnswerItemFactory.BindSubscribersToPublishers*"></a>
+  <h4 id="Votations_NSurvey_WebControlsFactories_AnswerItemFactory_BindSubscribersToPublishers_Votations_NSurvey_WebControls_UI_AnswerItemCollection_" data-uid="Votations.NSurvey.WebControlsFactories.AnswerItemFactory.BindSubscribersToPublishers(Votations.NSurvey.WebControls.UI.AnswerItemCollection)">BindSubscribersToPublishers(AnswerItemCollection)</h4>
+  <div class="markdown level1 summary"><p>Subsribe the answer items which require it to the correct
+answer publisher controls</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void BindSubscribersToPublishers(AnswerItemCollection answers)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.WebControls.UI.AnswerItemCollection.html">AnswerItemCollection</a></td>
+        <td><span class="parametername">answers</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebControlsFactories_AnswerItemFactory_Create_" data-uid="Votations.NSurvey.WebControlsFactories.AnswerItemFactory.Create*"></a>
+  <h4 id="Votations_NSurvey_WebControlsFactories_AnswerItemFactory_Create_Votations_NSurvey_Data_AnswerData_AnswersRow_Votations_NSurvey_WebControls_UI_QuestionItem_Votations_NSurvey_WebControls_UI_Section_Votations_NSurvey_Data_AnswerSelectionMode_System_Web_UI_WebControls_Style_Votations_NSurvey_Data_ControlRenderMode_System_String_System_String_System_Boolean_Votations_NSurvey_Data_VoterAnswersData_VotersAnswersDataTable_System_Boolean_" data-uid="Votations.NSurvey.WebControlsFactories.AnswerItemFactory.Create(Votations.NSurvey.Data.AnswerData.AnswersRow,Votations.NSurvey.WebControls.UI.QuestionItem,Votations.NSurvey.WebControls.UI.Section,Votations.NSurvey.Data.AnswerSelectionMode,System.Web.UI.WebControls.Style,Votations.NSurvey.Data.ControlRenderMode,System.String,System.String,System.Boolean,Votations.NSurvey.Data.VoterAnswersData.VotersAnswersDataTable,System.Boolean)">Create(AnswerData.AnswersRow, QuestionItem, Section, AnswerSelectionMode, Style, ControlRenderMode, String, String, Boolean, VoterAnswersData.VotersAnswersDataTable, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Creates a new answer item instance from the db answer data</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static AnswerItem Create(AnswerData.AnswersRow answer, QuestionItem question, Section section, AnswerSelectionMode defaultSelectionMode, Style answerStyle, ControlRenderMode renderMode, string languageCode, string parentControlUniqueID, bool showAnswerText, VoterAnswersData.VotersAnswersDataTable voterAnswersState, bool enableDefaults)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.AnswerData.AnswersRow.html">AnswerData.AnswersRow</a></td>
+        <td><span class="parametername">answer</span></td>
+        <td><p>The data source to create the instance from</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.WebControls.UI.QuestionItem.html">QuestionItem</a></td>
+        <td><span class="parametername">question</span></td>
+        <td><p>The question container</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.WebControls.UI.Section.html">Section</a></td>
+        <td><span class="parametername">section</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.AnswerSelectionMode.html">AnswerSelectionMode</a></td>
+        <td><span class="parametername">defaultSelectionMode</span></td>
+        <td><p>The default selection mode for the 
+item (Radio, checkbox etc...)</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Style</span></td>
+        <td><span class="parametername">answerStyle</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.ControlRenderMode.html">ControlRenderMode</a></td>
+        <td><span class="parametername">renderMode</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">languageCode</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">parentControlUniqueID</span></td>
+        <td><p>Unique ID required to identify global selection groups 
+like radiobutton groups</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">showAnswerText</span></td>
+        <td><p>Assigns the text to the answeritem control ?</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.VoterAnswersData.VotersAnswersDataTable.html">VoterAnswersData.VotersAnswersDataTable</a></td>
+        <td><span class="parametername">voterAnswersState</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">enableDefaults</span></td>
+        <td><p>Does the answer set the user default values of fields to the answer web controls</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.WebControls.UI.AnswerItem.html">AnswerItem</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebControlsFactories_AnswerItemFactory_CreateAnswerItemCollection_" data-uid="Votations.NSurvey.WebControlsFactories.AnswerItemFactory.CreateAnswerItemCollection*"></a>
+  <h4 id="Votations_NSurvey_WebControlsFactories_AnswerItemFactory_CreateAnswerItemCollection_Votations_NSurvey_Data_AnswerData_Votations_NSurvey_WebControls_UI_QuestionItem_Votations_NSurvey_WebControls_UI_Section_Votations_NSurvey_Data_AnswerSelectionMode_System_Web_UI_WebControls_Style_Votations_NSurvey_Data_ControlRenderMode_System_String_System_String_System_Boolean_Votations_NSurvey_Data_VoterAnswersData_VotersAnswersDataTable_System_Boolean_" data-uid="Votations.NSurvey.WebControlsFactories.AnswerItemFactory.CreateAnswerItemCollection(Votations.NSurvey.Data.AnswerData,Votations.NSurvey.WebControls.UI.QuestionItem,Votations.NSurvey.WebControls.UI.Section,Votations.NSurvey.Data.AnswerSelectionMode,System.Web.UI.WebControls.Style,Votations.NSurvey.Data.ControlRenderMode,System.String,System.String,System.Boolean,Votations.NSurvey.Data.VoterAnswersData.VotersAnswersDataTable,System.Boolean)">CreateAnswerItemCollection(AnswerData, QuestionItem, Section, AnswerSelectionMode, Style, ControlRenderMode, String, String, Boolean, VoterAnswersData.VotersAnswersDataTable, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Parse an AnswerDataCollection, converts the data and
+returns an AnswerItemCollection filled with the correct 
+child controls</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static AnswerItemCollection CreateAnswerItemCollection(AnswerData answers, QuestionItem question, Section section, AnswerSelectionMode defaultSelectionMode, Style answerStyle, ControlRenderMode renderMode, string languageCode, string parentControlUniqueID, bool showAnswerText, VoterAnswersData.VotersAnswersDataTable voterAnswersState, bool enableDefaults)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.AnswerData.html">AnswerData</a></td>
+        <td><span class="parametername">answers</span></td>
+        <td><p>A collection of answerdata entities</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.WebControls.UI.QuestionItem.html">QuestionItem</a></td>
+        <td><span class="parametername">question</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.WebControls.UI.Section.html">Section</a></td>
+        <td><span class="parametername">section</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.AnswerSelectionMode.html">AnswerSelectionMode</a></td>
+        <td><span class="parametername">defaultSelectionMode</span></td>
+        <td><p>The default selection mode for the 
+item (Radio, checkbox etc...)</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Style</span></td>
+        <td><span class="parametername">answerStyle</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.ControlRenderMode.html">ControlRenderMode</a></td>
+        <td><span class="parametername">renderMode</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">languageCode</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">parentControlUniqueID</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">showAnswerText</span></td>
+        <td><p>Assigns the text to the answeritem control ?</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.VoterAnswersData.VotersAnswersDataTable.html">VoterAnswersData.VotersAnswersDataTable</a></td>
+        <td><span class="parametername">voterAnswersState</span></td>
+        <td><p>Current state of answers, used for piping. If not available
+leave it to null </p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">enableDefaults</span></td>
+        <td><p>Does the answer set the user default values of fields to the answer web controls</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.WebControls.UI.AnswerItemCollection.html">AnswerItemCollection</a></td>
+        <td><p>A collection of answeritem web controls</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy;2017 Survey&trade; Project
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

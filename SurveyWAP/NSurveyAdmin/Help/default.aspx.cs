@@ -15,6 +15,7 @@ namespace Votations.NSurvey.WebAdmin
     /// <summary>
     /// Auth the login
     /// </summary>
+    /// <remarks>Check if the user is authenticated correctly based on role/ rolerrights to access the helpfiles pages</remarks>
     public partial class HelpFiles : PageBase
     {
 

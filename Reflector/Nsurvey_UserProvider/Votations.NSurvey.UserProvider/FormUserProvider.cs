@@ -26,7 +26,7 @@ namespace Votations.NSurvey.UserProvider
         {
             if (this.SingleUserMode)
             {
-                return new NSurveyFormPrincipal(new NSurveyFormIdentity("nsurvey_admin", 0, null, null, null, true, true, false), null);
+                return new NSurveyFormPrincipal(new NSurveyFormIdentity("single_admin", 0, "Single Mode", "Admin", "temp@fakemail.sp", true, true, true), null);
             }
             if ((userName == null) || (userName.Length == 0))
             {

@@ -41,7 +41,7 @@ namespace Votations.NSurvey.WebAdmin
 		new protected HeaderControl Header;
 		protected System.Web.UI.WebControls.DropDownList FilterDropDownList;
 		protected System.Web.UI.WebControls.HyperLink CreateFilterHyperLink;
-		protected SurveyListControl SurveyList;
+		//protected SurveyListControl SurveyList;
 		protected System.Web.UI.WebControls.Literal FilterBuilderTitle;
 		protected System.Web.UI.WebControls.Label SelectFilteraLabel;
 		protected FilterOptionControl FilterOption;

@@ -175,6 +175,7 @@
         <div id="Default" class="defaultDiv">
 
                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="Server"></asp:ContentPlaceHolder>
+
                <uc1:FooterControl ID="Footercontrol1" runat="server"></uc1:FooterControl>
 
         </div>

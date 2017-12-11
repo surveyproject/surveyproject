@@ -1,7 +1,5 @@
-﻿<%@ Register TagPrefix="uc1" TagName="SurveyListControl" Src="UserControls/SurveyListControl.ascx" %>
-<%@ Page language="c#" MasterPageFile="MsterPageTabs.master" ValidateRequest="false" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.EditSingleQuestionAnswers" Codebehind="EditSingleQuestionAnswers.aspx.cs" %>
+﻿<%@ Page language="c#" MasterPageFile="MsterPageTabs.master" ValidateRequest="false" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.EditSingleQuestionAnswers" Codebehind="EditSingleQuestionAnswers.aspx.cs" %>
 <%@ Register TagPrefix="uc1" TagName="AnswerOptionControl" Src="UserControls/AnswerOptionControl.ascx" %>
-
 <%@ Register TagPrefix="mbrsc" Namespace="MetaBuilders.WebControls" Assembly="SurveyProject.WebApplication" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">

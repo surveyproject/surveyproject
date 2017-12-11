@@ -178,15 +178,17 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls
                             UINavigator.NavigateToFirstAccess(x, -1);
                         }
                     }
-                } else if (id == -2)
-                    // if vts_tbuser is empty create an admin account:
+                }
+                else if (id == -2)
+                // if vts_tbuser is empty create an admin account:
                 {
                     NSurveyUserData userData = new NSurveyUserData();
                     NSurveyUserData.UsersRow newUser = userData.Users.NewUsersRow();
 
                     if (_userProvider is INSurveyUserProvider)
                     {
-                        //if (PasswordTextBox.Text.Length == 0)                    
+                        //if (PasswordTextBox.Text.Length == 0)  
+                        // Password: length min. 8 - max. 12; min. 1 small, 1 capital, 1 special, 1 number required
                         if (!Regex.IsMatch(PasswordTextBox.Text.Trim(), @"(?=^.{8,12}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$"))
 
                         {
@@ -218,7 +220,10 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls
                         new User().AddUserSettings(userSettings);
                     }
 
-                    // after creating the new admin account login will automatically follow....
+                    // after creating the new admin account show confirmation message:
+
+                    MessageLabel.Visible = true;
+                    ((PageBase)Page).ShowNormalMessage(MessageLabel, ((PageBase)Page).GetPageResource("AdminCreatedMessage"));
 
                 }
 

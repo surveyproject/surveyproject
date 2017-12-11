@@ -370,7 +370,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SurveyAssetData.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Votations.NSurvey.Data\SurveyData1.Designer.cs">
+    <Compile Include="Votations.NSurvey.Data\SurveyData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SurveyData.xsd</DependentUpon>
@@ -1052,7 +1052,7 @@
       <SubType>Designer</SubType>
       <CustomToolNamespace>Votations.NSurvey.Data</CustomToolNamespace>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SurveyData1.Designer.cs</LastGenOutput>
+      <LastGenOutput>SurveyData.Designer.cs</LastGenOutput>
     </None>
     <None Include="Votations.NSurvey.Data\SurveyData.xss">
       <DependentUpon>SurveyData.xsd</DependentUpon>

@@ -17,9 +17,12 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls
     public partial class SurveyTree : System.Web.UI.UserControl
     {
         public delegate void SurveyTreeSelectedNodeDelegate(string selectedNodeValue);
+
          //JJ after Creating/Deleting a Survey We need to fully refresh
         public bool isTreeStale { get; set; }
+
         public event SurveyTreeSelectedNodeDelegate OnSelectedNodeChangeHandler;
+
         public int SurveyId
         {
             get { return ((PageBase)Page).getSurveyId(); }
@@ -83,7 +86,9 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls
         {
 
             if (!IsPostBack || isTreeStale)
+            {
                 GenerateTree();
+            }
 
             if (((PageBase)Page).NSurveyUser.Identity.IsAdmin )
             {
@@ -93,14 +98,18 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls
         private void GenerateTree()
         {
 
-            if (((PageBase)Page).NSurveyUser.Identity.UserId == -1 ||
-            !(((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessSurveyList) ||((PageBase)Page).NSurveyUser.Identity.IsAdmin)  )
-            { astvMyTree.Visible = false; return; }
+            if ( ((PageBase)Page).NSurveyUser.Identity.UserId == -1 || !(((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessSurveyList) || ((PageBase)Page).NSurveyUser.Identity.IsAdmin )  )
+                {
+                astvMyTree.Visible = false;
+                return;
+            } 
 
             astvMyTree.Visible = true;
             FolderData folders;
             folders = new Folders().GetTreeNodes(((PageBase)Page).NSurveyUser.Identity.UserId);
+
             if (folders.TreeNodes.Count == 0) return;
+
             ASTreeViewDataTableColumnDescriptor descripter = new ASTreeViewDataTableColumnDescriptor("NodeName", "ItemId", "ParentFolderId");
             this.astvMyTree.DataTableRootNodeValue = null;
             this.astvMyTree.DataSourceDescriptor = descripter;
@@ -166,7 +175,7 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls
             ASTreeViewNode rootNode = this.astvMyTree.RootNode.ChildNodes[0];
             rootNode.EnableDragDrop = false;
 
-            /// if root node is empty we hide it
+            // if root node is empty we hide it
             if (rootNode.ChildNodes.Count == 1 && string.IsNullOrEmpty(rootNode.ChildNodes[0].NodeValue))
             {
                 // add empty node to show folder icon and set to closed state

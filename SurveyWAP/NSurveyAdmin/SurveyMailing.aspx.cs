@@ -64,7 +64,7 @@ namespace Votations.NSurvey.WebAdmin
         protected System.Web.UI.WebControls.Label InvitationMessageLabel;
         protected System.Web.UI.WebControls.Label EmailInvitationLabel;
         protected System.Web.UI.WebControls.Label AnonymousLabel;
-        protected SurveyListControl SurveyList;
+        //protected SurveyListControl SurveyList;
 
         private void Page_Load(object sender, System.EventArgs e)
         {

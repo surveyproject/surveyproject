@@ -1,0 +1,605 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SpSqlDatabase
+   | SP Technical Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SpSqlDatabase
+   | SP Technical Documentation ">
+    <meta name="generator" content="docfx 2.26.3.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/splogo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Votations.NSurvey.SQLServerDAL.SpSqlDatabase">
+  
+  
+  <h1 id="Votations_NSurvey_SQLServerDAL_SpSqlDatabase" data-uid="Votations.NSurvey.SQLServerDAL.SpSqlDatabase" class="text-break">Class SpSqlDatabase
+  </h1>
+  <div class="markdown level0 summary"><p>Extends Enterprise library SqlDatabase class</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database</span></div>
+    <div class="level2"><span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase</span></div>
+    <div class="level3"><span class="xref">SpSqlDatabase</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.ExecuteXmlReader(System.Data.Common.DbCommand)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.ExecuteXmlReader(System.Data.Common.DbCommand, System.Data.Common.DbTransaction)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.BeginExecuteXmlReader(System.Data.Common.DbCommand, System.AsyncCallback, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.BeginExecuteXmlReader(System.Data.Common.DbCommand, System.Data.Common.DbTransaction, System.AsyncCallback, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.EndExecuteXmlReader(System.IAsyncResult)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.DeriveParameters(System.Data.Common.DbCommand)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.UserParametersStartIndex()</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.BuildParameterName(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.SetUpRowUpdatedEvent(System.Data.Common.DbDataAdapter)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.SameNumberOfParametersAndValues(System.Data.Common.DbCommand, System.Object[])</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.AddParameter(System.Data.Common.DbCommand, System.String, System.Data.SqlDbType, System.Int32, System.Data.ParameterDirection, System.Boolean, System.Byte, System.Byte, System.String, System.Data.DataRowVersion, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.AddParameter(System.Data.Common.DbCommand, System.String, System.Data.SqlDbType, System.Data.ParameterDirection, System.String, System.Data.DataRowVersion, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.AddOutParameter(System.Data.Common.DbCommand, System.String, System.Data.SqlDbType, System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.AddInParameter(System.Data.Common.DbCommand, System.String, System.Data.SqlDbType)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.AddInParameter(System.Data.Common.DbCommand, System.String, System.Data.SqlDbType, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.AddInParameter(System.Data.Common.DbCommand, System.String, System.Data.SqlDbType, System.String, System.Data.DataRowVersion)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.CreateParameter(System.String, System.Data.SqlDbType, System.Int32, System.Data.ParameterDirection, System.Boolean, System.Byte, System.Byte, System.String, System.Data.DataRowVersion, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.ConfigureParameter(System.Data.SqlClient.SqlParameter, System.String, System.Data.SqlDbType, System.Int32, System.Data.ParameterDirection, System.Boolean, System.Byte, System.Byte, System.String, System.Data.DataRowVersion, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.BeginExecuteNonQuery(System.Data.Common.DbCommand, System.AsyncCallback, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.BeginExecuteNonQuery(System.Data.Common.DbCommand, System.Data.Common.DbTransaction, System.AsyncCallback, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.BeginExecuteNonQuery(System.String, System.AsyncCallback, System.Object, System.Object[])</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.BeginExecuteNonQuery(System.Data.Common.DbTransaction, System.String, System.AsyncCallback, System.Object, System.Object[])</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.BeginExecuteNonQuery(System.Data.CommandType, System.String, System.AsyncCallback, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.BeginExecuteNonQuery(System.Data.Common.DbTransaction, System.Data.CommandType, System.String, System.AsyncCallback, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.EndExecuteNonQuery(System.IAsyncResult)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.BeginExecuteReader(System.Data.Common.DbCommand, System.AsyncCallback, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.BeginExecuteReader(System.Data.Common.DbCommand, System.Data.Common.DbTransaction, System.AsyncCallback, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.BeginExecuteReader(System.String, System.AsyncCallback, System.Object, System.Object[])</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.BeginExecuteReader(System.Data.Common.DbTransaction, System.String, System.AsyncCallback, System.Object, System.Object[])</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.BeginExecuteReader(System.Data.CommandType, System.String, System.AsyncCallback, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.BeginExecuteReader(System.Data.Common.DbTransaction, System.Data.CommandType, System.String, System.AsyncCallback, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.EndExecuteReader(System.IAsyncResult)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.BeginExecuteScalar(System.Data.Common.DbCommand, System.AsyncCallback, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.BeginExecuteScalar(System.Data.Common.DbCommand, System.Data.Common.DbTransaction, System.AsyncCallback, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.BeginExecuteScalar(System.String, System.AsyncCallback, System.Object, System.Object[])</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.BeginExecuteScalar(System.Data.Common.DbTransaction, System.String, System.AsyncCallback, System.Object, System.Object[])</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.BeginExecuteScalar(System.Data.CommandType, System.String, System.AsyncCallback, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.BeginExecuteScalar(System.Data.Common.DbTransaction, System.Data.CommandType, System.String, System.AsyncCallback, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.EndExecuteScalar(System.IAsyncResult)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.ParameterToken</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.SupportsAsync</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.SupportsParemeterDiscovery</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.AddInParameter(System.Data.Common.DbCommand, System.String, System.Data.DbType)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.AddInParameter(System.Data.Common.DbCommand, System.String, System.Data.DbType, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.AddInParameter(System.Data.Common.DbCommand, System.String, System.Data.DbType, System.String, System.Data.DataRowVersion)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.AddOutParameter(System.Data.Common.DbCommand, System.String, System.Data.DbType, System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.AddParameter(System.Data.Common.DbCommand, System.String, System.Data.DbType, System.Int32, System.Data.ParameterDirection, System.Boolean, System.Byte, System.Byte, System.String, System.Data.DataRowVersion, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.AddParameter(System.Data.Common.DbCommand, System.String, System.Data.DbType, System.Data.ParameterDirection, System.String, System.Data.DataRowVersion, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ClearParameterCache()</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ConfigureParameter(System.Data.Common.DbParameter, System.String, System.Data.DbType, System.Int32, System.Data.ParameterDirection, System.Boolean, System.Byte, System.Byte, System.String, System.Data.DataRowVersion, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.CreateConnection()</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.CreateParameter(System.String, System.Data.DbType, System.Int32, System.Data.ParameterDirection, System.Boolean, System.Byte, System.Byte, System.String, System.Data.DataRowVersion, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.CreateParameter(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.DiscoverParameters(System.Data.Common.DbCommand)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteNonQuery(System.Data.Common.DbCommand)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(System.Data.Common.DbCommand)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(System.Data.Common.DbCommand, System.Data.Common.DbTransaction)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(System.String, System.Object[])</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(System.Data.Common.DbTransaction, System.String, System.Object[])</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(System.Data.CommandType, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(System.Data.Common.DbTransaction, System.Data.CommandType, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(System.Data.Common.DbCommand)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(System.Data.Common.DbCommand, System.Data.Common.DbTransaction)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(System.String, System.Object[])</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(System.Data.Common.DbTransaction, System.String, System.Object[])</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(System.Data.CommandType, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(System.Data.Common.DbTransaction, System.Data.CommandType, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(System.Data.Common.DbCommand)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.CreateWrappedReader(Microsoft.Practices.EnterpriseLibrary.Data.DatabaseConnectionWrapper, System.Data.IDataReader)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(System.Data.Common.DbCommand, System.Data.Common.DbTransaction)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(System.String, System.Object[])</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(System.Data.Common.DbTransaction, System.String, System.Object[])</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(System.Data.CommandType, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(System.Data.Common.DbTransaction, System.Data.CommandType, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteScalar(System.Data.Common.DbCommand)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteScalar(System.Data.Common.DbCommand, System.Data.Common.DbTransaction)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteScalar(System.String, System.Object[])</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteScalar(System.Data.Common.DbTransaction, System.String, System.Object[])</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteScalar(System.Data.CommandType, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteScalar(System.Data.Common.DbTransaction, System.Data.CommandType, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.GetDataAdapter()</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.GetDataAdapter(Microsoft.Practices.EnterpriseLibrary.Data.UpdateBehavior)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.GetOpenConnection()</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.GetWrappedConnection()</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.GetParameterValue(System.Data.Common.DbCommand, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.GetSqlStringCommand(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.GetStoredProcCommand(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.GetStoredProcCommand(System.String, System.Object[])</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.AssignParameters(System.Data.Common.DbCommand, System.Object[])</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.GetStoredProcCommandWithSourceColumns(System.String, System.String[])</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(System.Data.Common.DbCommand, System.Data.DataSet, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(System.Data.Common.DbCommand, System.Data.DataSet, System.String, System.Data.Common.DbTransaction)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(System.Data.Common.DbCommand, System.Data.DataSet, System.String[])</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(System.Data.Common.DbCommand, System.Data.DataSet, System.String[], System.Data.Common.DbTransaction)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(System.String, System.Data.DataSet, System.String[], System.Object[])</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(System.Data.Common.DbTransaction, System.String, System.Data.DataSet, System.String[], System.Object[])</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(System.Data.CommandType, System.String, System.Data.DataSet, System.String[])</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(System.Data.Common.DbTransaction, System.Data.CommandType, System.String, System.Data.DataSet, System.String[])</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.PrepareCommand(System.Data.Common.DbCommand, System.Data.Common.DbConnection)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.PrepareCommand(System.Data.Common.DbCommand, System.Data.Common.DbTransaction)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.SetParameterValue(System.Data.Common.DbCommand, System.String, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.UpdateDataSet(System.Data.DataSet, System.String, System.Data.Common.DbCommand, System.Data.Common.DbCommand, System.Data.Common.DbCommand, Microsoft.Practices.EnterpriseLibrary.Data.UpdateBehavior, System.Nullable&lt;System.Int32&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.UpdateDataSet(System.Data.DataSet, System.String, System.Data.Common.DbCommand, System.Data.Common.DbCommand, System.Data.Common.DbCommand, Microsoft.Practices.EnterpriseLibrary.Data.UpdateBehavior)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.UpdateDataSet(System.Data.DataSet, System.String, System.Data.Common.DbCommand, System.Data.Common.DbCommand, System.Data.Common.DbCommand, System.Data.Common.DbTransaction, System.Nullable&lt;System.Int32&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.UpdateDataSet(System.Data.DataSet, System.String, System.Data.Common.DbCommand, System.Data.Common.DbCommand, System.Data.Common.DbCommand, System.Data.Common.DbTransaction)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ConnectionString</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ConnectionStringNoCredentials</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.ConnectionStringWithoutCredentials</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Practices.EnterpriseLibrary.Data.Database.DbProviderFactory</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Votations.NSurvey.SQLServerDAL.html">Votations.NSurvey.SQLServerDAL</a></h6>
+  <h6><strong>Assembly</strong>: SurveyProject.SQLServerDAL.dll</h6>
+  <h5 id="Votations_NSurvey_SQLServerDAL_SpSqlDatabase_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class SpSqlDatabase : SqlDatabase</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_SpSqlDatabase__ctor_" data-uid="Votations.NSurvey.SQLServerDAL.SpSqlDatabase.#ctor*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_SpSqlDatabase__ctor_System_String_" data-uid="Votations.NSurvey.SQLServerDAL.SpSqlDatabase.#ctor(System.String)">SpSqlDatabase(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SpSqlDatabase(string connectionString)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">connectionString</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_SpSqlDatabase_LoadDataSetWithoutAcceptChanges_" data-uid="Votations.NSurvey.SQLServerDAL.SpSqlDatabase.LoadDataSetWithoutAcceptChanges*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_SpSqlDatabase_LoadDataSetWithoutAcceptChanges_System_Data_Common_DbCommand_System_Data_DataSet_System_String___" data-uid="Votations.NSurvey.SQLServerDAL.SpSqlDatabase.LoadDataSetWithoutAcceptChanges(System.Data.Common.DbCommand,System.Data.DataSet,System.String[])">LoadDataSetWithoutAcceptChanges(DbCommand, DataSet, String[])</h4>
+  <div class="markdown level1 summary"><p>Comment step 2</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void LoadDataSetWithoutAcceptChanges(DbCommand command, DataSet dataSet, string[] tableNames)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.Common.DbCommand</span></td>
+        <td><span class="parametername">command</span></td>
+        <td><p>1</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Data.DataSet</span></td>
+        <td><span class="parametername">dataSet</span></td>
+        <td><p>2</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">tableNames</span></td>
+        <td><p>3</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_SpSqlDatabase_LoadDataSetWithoutAcceptChanges_" data-uid="Votations.NSurvey.SQLServerDAL.SpSqlDatabase.LoadDataSetWithoutAcceptChanges*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_SpSqlDatabase_LoadDataSetWithoutAcceptChanges_System_String_System_Data_DataSet_System_String___System_Object___" data-uid="Votations.NSurvey.SQLServerDAL.SpSqlDatabase.LoadDataSetWithoutAcceptChanges(System.String,System.Data.DataSet,System.String[],System.Object[])">LoadDataSetWithoutAcceptChanges(String, DataSet, String[], Object[])</h4>
+  <div class="markdown level1 summary"><p>Comment Step one:</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void LoadDataSetWithoutAcceptChanges(string storedProcedureName, DataSet dataSet, string[] tableNames, params object[] parameterValues)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">storedProcedureName</span></td>
+        <td><p>1</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Data.DataSet</span></td>
+        <td><span class="parametername">dataSet</span></td>
+        <td><p>2</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">tableNames</span></td>
+        <td><p>3</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span>[]</td>
+        <td><span class="parametername">parameterValues</span></td>
+        <td><p>4</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy;2017 Survey&trade; Project
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

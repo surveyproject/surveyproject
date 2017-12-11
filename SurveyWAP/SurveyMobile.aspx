@@ -35,7 +35,7 @@
 </head>
 <body>
 
-<iframe id="KeepAliveFrame" src="~/NSurveyForm/KeepSessionAlive.aspx" frameborder="0" width="0" height="0" runat="server"></iframe>
+<iframe id="KeepAliveFrame" title="Keep Session Alive" src="~/NSurveyForm/KeepSessionAlive.aspx" frameborder="0" width="0" height="0" runat="server"></iframe>
 
         <section id="MainContainer" class="container"><h2 style="visibility:hidden; line-height:0.0em; margin-top:-5px">Survey&trade; Project Webform</h2>
             <form id="Form1" class="form-inline" runat="server">

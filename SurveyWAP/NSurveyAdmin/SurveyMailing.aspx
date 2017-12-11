@@ -1,6 +1,4 @@
-﻿<%@ Register TagPrefix="uc1" TagName="SurveyListControl" Src="UserControls/SurveyListControl.ascx" %>
-
-<%@ Page language="c#" MasterPageFile="~/NSurveyAdmin/MsterPageTabs.master"   ValidateRequest="false" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.SurveyMailing" Codebehind="SurveyMailing.aspx.cs" %>
+﻿<%@ Page language="c#" MasterPageFile="~/NSurveyAdmin/MsterPageTabs.master"   ValidateRequest="false" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.SurveyMailing" Codebehind="SurveyMailing.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 

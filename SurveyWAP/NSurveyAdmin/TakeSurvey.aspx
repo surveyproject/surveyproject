@@ -1,16 +1,13 @@
-﻿
-<%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="SurveyProject.WebControls" %>
-
-<%@ Page Language="c#" MasterPageFile="MsterPageTabs.master" ValidateRequest="false"
+﻿<%@ Page Language="c#" MasterPageFile="MsterPageTabs.master" ValidateRequest="false"
     AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.TakeSurvey" CodeBehind="TakeSurvey.aspx.cs" %>
+<%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="SurveyProject.WebControls" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
         <div id="Panel" class="Panel">
 
-    <!--
-                                            <asp:Literal ID="TakeSurveyTitle" runat="server" EnableViewState="False" Text="Take survey"></asp:Literal></font>
-       -->
+    <!-- <asp:Literal ID="TakeSurveyTitle" runat="server" EnableViewState="False" Text="Take survey"></asp:Literal></font> -->
+
 <asp:PlaceHolder ID="phSurveysDll"  runat="server" Visible="true">
      <br />
                 <fieldset>

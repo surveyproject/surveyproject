@@ -1,9 +1,5 @@
-﻿<%@ Register TagPrefix="uc1" TagName="SurveyListControl" Src="UserControls/SurveyListControl.ascx" %>
-
-<%@ Register TagPrefix="uc1" TagName="SurveyOptionControl" Src="UserControls/SurveyOptionControl.ascx" %>
+﻿<%@ Page language="c#" MasterPageFile="MsterPageTabs.master"   ValidateRequest="false" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.SurveyPrivacy" Codebehind="SurveyPrivacy.aspx.cs" %>
 <%@ Register TagPrefix="uc1" TagName="SurveyMessageConditonsControl" Src="UserControls/SurveyMessageConditonsControl.ascx" %>
-
-<%@ Page language="c#" MasterPageFile="MsterPageTabs.master"   ValidateRequest="false" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.SurveyPrivacy" Codebehind="SurveyPrivacy.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
         <div id="Panel" class="Panel">
@@ -76,7 +72,8 @@
                     <br /><br />
 
                                         <uc1:SurveyMessageConditonsControl ID="SurveyMessageConditons" runat="server"></uc1:SurveyMessageConditonsControl>
-                                        <asp:Label ID="EvaluationMessageConditionInfo" runat="server">Label</asp:Label>
+                   
+                                       <div style="clear:both"> <br /><asp:Label ID="EvaluationMessageConditionInfo" runat="server">Label</asp:Label></div>
                  </li>
   </ol>
                     <br />

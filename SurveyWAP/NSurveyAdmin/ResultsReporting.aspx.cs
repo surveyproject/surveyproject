@@ -45,7 +45,7 @@ namespace Votations.NSurvey.WebAdmin
 	/// </summary>
     public partial class ResultsReporting : PageBase
 	{
-		protected SurveyListControl SurveyList;
+		//protected SurveyListControl SurveyList;
 		protected System.Web.UI.WebControls.Label MessageLabel;
 		protected System.Web.UI.WebControls.PlaceHolder ResultsPlaceHolder;
 		protected System.Web.UI.WebControls.Repeater ChartRepeater;

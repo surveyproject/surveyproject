@@ -1,0 +1,2478 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class AnswerData.AnswersRow
+   | SP Technical Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class AnswerData.AnswersRow
+   | SP Technical Documentation ">
+    <meta name="generator" content="docfx 2.26.3.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/splogo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow">
+  
+  
+  <h1 id="Votations_NSurvey_Data_AnswerData_AnswersRow" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow" class="text-break">Class AnswerData.AnswersRow
+  </h1>
+  <div class="markdown level0 summary"><p>Represents strongly named DataRow class.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">System.Data.DataRow</span></div>
+    <div class="level2"><span class="xref">AnswerData.AnswersRow</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Data.DataRow.AcceptChanges()</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.BeginEdit()</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.CancelEdit()</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.Delete()</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.EndEdit()</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.SetColumnError(System.Int32, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.SetColumnError(System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.SetColumnError(System.Data.DataColumn, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.GetColumnError(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.GetColumnError(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.GetColumnError(System.Data.DataColumn)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.ClearErrors()</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.GetColumnsInError()</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.GetChildRows(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.GetChildRows(System.String, System.Data.DataRowVersion)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.GetChildRows(System.Data.DataRelation)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.GetChildRows(System.Data.DataRelation, System.Data.DataRowVersion)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.GetParentRow(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.GetParentRow(System.String, System.Data.DataRowVersion)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.GetParentRow(System.Data.DataRelation)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.GetParentRow(System.Data.DataRelation, System.Data.DataRowVersion)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.GetParentRows(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.GetParentRows(System.String, System.Data.DataRowVersion)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.GetParentRows(System.Data.DataRelation)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.GetParentRows(System.Data.DataRelation, System.Data.DataRowVersion)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.HasVersion(System.Data.DataRowVersion)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.IsNull(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.IsNull(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.IsNull(System.Data.DataColumn)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.IsNull(System.Data.DataColumn, System.Data.DataRowVersion)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.RejectChanges()</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.SetNull(System.Data.DataColumn)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.SetParentRow(System.Data.DataRow)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.SetParentRow(System.Data.DataRow, System.Data.DataRelation)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.SetAdded()</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.SetModified()</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.RowError</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.RowState</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.Table</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.Item[System.Int32]</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.Item[System.String]</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.Item[System.Data.DataColumn]</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.Item[System.Int32, System.Data.DataRowVersion]</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.Item[System.String, System.Data.DataRowVersion]</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.Item[System.Data.DataColumn, System.Data.DataRowVersion]</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.ItemArray</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.DataRow.HasErrors</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Votations.NSurvey.Data.html">Votations.NSurvey.Data</a></h6>
+  <h6><strong>Assembly</strong>: SurveyProject.BusinessEntities.dll</h6>
+  <h5 id="Votations_NSurvey_Data_AnswerData_AnswersRow_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class AnswersRow : DataRow</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_AnswerAlias_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.AnswerAlias*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_AnswerAlias" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.AnswerAlias">AnswerAlias</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AnswerAlias { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_AnswerId_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.AnswerId*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_AnswerId" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.AnswerId">AnswerId</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int AnswerId { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_AnswerIDText_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.AnswerIDText*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_AnswerIDText" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.AnswerIDText">AnswerIDText</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AnswerIDText { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_AnswerPipeAlias_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.AnswerPipeAlias*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_AnswerPipeAlias" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.AnswerPipeAlias">AnswerPipeAlias</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AnswerPipeAlias { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_AnswerText_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.AnswerText*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_AnswerText" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.AnswerText">AnswerText</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AnswerText { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_AnswerTypeId_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.AnswerTypeId*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_AnswerTypeId" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.AnswerTypeId">AnswerTypeId</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int AnswerTypeId { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_CssClass_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.CssClass*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_CssClass" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.CssClass">CssClass</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CssClass { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_DataSource_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.DataSource*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_DataSource" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.DataSource">DataSource</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DataSource { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_DefaultText_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.DefaultText*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_DefaultText" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.DefaultText">DefaultText</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DefaultText { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_DisplayOrder_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.DisplayOrder*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_DisplayOrder" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.DisplayOrder">DisplayOrder</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int DisplayOrder { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_FieldHeight_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.FieldHeight*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_FieldHeight" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.FieldHeight">FieldHeight</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int FieldHeight { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_FieldLength_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.FieldLength*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_FieldLength" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.FieldLength">FieldLength</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int FieldLength { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_FieldWidth_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.FieldWidth*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_FieldWidth" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.FieldWidth">FieldWidth</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int FieldWidth { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_ImageURL_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.ImageURL*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_ImageURL" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.ImageURL">ImageURL</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ImageURL { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_JavascriptCode_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.JavascriptCode*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_JavascriptCode" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.JavascriptCode">JavascriptCode</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string JavascriptCode { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_JavascriptErrorMessage_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.JavascriptErrorMessage*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_JavascriptErrorMessage" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.JavascriptErrorMessage">JavascriptErrorMessage</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string JavascriptErrorMessage { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_JavascriptFunctionName_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.JavascriptFunctionName*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_JavascriptFunctionName" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.JavascriptFunctionName">JavascriptFunctionName</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string JavascriptFunctionName { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_Mandatory_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.Mandatory*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_Mandatory" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.Mandatory">Mandatory</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Mandatory { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_QuestionId_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.QuestionId*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_QuestionId" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.QuestionId">QuestionId</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int QuestionId { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_RatePart_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.RatePart*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_RatePart" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.RatePart">RatePart</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RatePart { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_RegExMessage_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.RegExMessage*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_RegExMessage" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.RegExMessage">RegExMessage</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string RegExMessage { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_RegExpression_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.RegExpression*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_RegExpression" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.RegExpression">RegExpression</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string RegExpression { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_RegularExpressionId_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.RegularExpressionId*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_RegularExpressionId" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.RegularExpressionId">RegularExpressionId</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int RegularExpressionId { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_ScorePoint_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.ScorePoint*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_ScorePoint" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.ScorePoint">ScorePoint</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ScorePoint { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_Selected_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.Selected*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_Selected" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.Selected">Selected</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Selected { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SliderAnimate_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SliderAnimate*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SliderAnimate" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SliderAnimate">SliderAnimate</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SliderAnimate { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SliderMax_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SliderMax*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SliderMax" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SliderMax">SliderMax</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SliderMax { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SliderMin_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SliderMin*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SliderMin" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SliderMin">SliderMin</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SliderMin { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SliderRange_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SliderRange*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SliderRange" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SliderRange">SliderRange</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SliderRange { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SliderStep_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SliderStep*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SliderStep" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SliderStep">SliderStep</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SliderStep { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SliderValue_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SliderValue*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SliderValue" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SliderValue">SliderValue</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SliderValue { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_TypeAssembly_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.TypeAssembly*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_TypeAssembly" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.TypeAssembly">TypeAssembly</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TypeAssembly { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_TypeMode_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.TypeMode*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_TypeMode" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.TypeMode">TypeMode</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int TypeMode { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_TypeNameSpace_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.TypeNameSpace*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_TypeNameSpace" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.TypeNameSpace">TypeNameSpace</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TypeNameSpace { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_UserSelected_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.UserSelected*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_UserSelected" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.UserSelected">UserSelected</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UserSelected { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_UserText_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.UserText*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_UserText" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.UserText">UserText</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string UserText { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_VoteCount_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.VoteCount*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_VoteCount" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.VoteCount">VoteCount</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int VoteCount { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_XmlDatasource_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.XmlDatasource*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_XmlDatasource" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.XmlDatasource">XmlDatasource</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string XmlDatasource { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsAnswerAliasNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsAnswerAliasNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsAnswerAliasNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsAnswerAliasNull">IsAnswerAliasNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsAnswerAliasNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsAnswerIDTextNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsAnswerIDTextNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsAnswerIDTextNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsAnswerIDTextNull">IsAnswerIDTextNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsAnswerIDTextNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsAnswerPipeAliasNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsAnswerPipeAliasNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsAnswerPipeAliasNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsAnswerPipeAliasNull">IsAnswerPipeAliasNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsAnswerPipeAliasNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsAnswerTypeIdNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsAnswerTypeIdNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsAnswerTypeIdNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsAnswerTypeIdNull">IsAnswerTypeIdNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsAnswerTypeIdNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsCssClassNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsCssClassNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsCssClassNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsCssClassNull">IsCssClassNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCssClassNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsDataSourceNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsDataSourceNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsDataSourceNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsDataSourceNull">IsDataSourceNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsDataSourceNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsDefaultTextNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsDefaultTextNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsDefaultTextNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsDefaultTextNull">IsDefaultTextNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsDefaultTextNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsDisplayOrderNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsDisplayOrderNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsDisplayOrderNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsDisplayOrderNull">IsDisplayOrderNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsDisplayOrderNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsFieldHeightNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsFieldHeightNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsFieldHeightNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsFieldHeightNull">IsFieldHeightNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsFieldHeightNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsFieldLengthNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsFieldLengthNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsFieldLengthNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsFieldLengthNull">IsFieldLengthNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsFieldLengthNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsFieldWidthNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsFieldWidthNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsFieldWidthNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsFieldWidthNull">IsFieldWidthNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsFieldWidthNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsImageURLNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsImageURLNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsImageURLNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsImageURLNull">IsImageURLNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsImageURLNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsJavascriptCodeNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsJavascriptCodeNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsJavascriptCodeNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsJavascriptCodeNull">IsJavascriptCodeNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsJavascriptCodeNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsJavascriptErrorMessageNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsJavascriptErrorMessageNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsJavascriptErrorMessageNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsJavascriptErrorMessageNull">IsJavascriptErrorMessageNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsJavascriptErrorMessageNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsJavascriptFunctionNameNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsJavascriptFunctionNameNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsJavascriptFunctionNameNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsJavascriptFunctionNameNull">IsJavascriptFunctionNameNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsJavascriptFunctionNameNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsMandatoryNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsMandatoryNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsMandatoryNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsMandatoryNull">IsMandatoryNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsMandatoryNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsRatePartNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsRatePartNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsRatePartNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsRatePartNull">IsRatePartNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsRatePartNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsRegExMessageNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsRegExMessageNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsRegExMessageNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsRegExMessageNull">IsRegExMessageNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsRegExMessageNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsRegExpressionNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsRegExpressionNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsRegExpressionNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsRegExpressionNull">IsRegExpressionNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsRegExpressionNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsRegularExpressionIdNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsRegularExpressionIdNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsRegularExpressionIdNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsRegularExpressionIdNull">IsRegularExpressionIdNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsRegularExpressionIdNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsScorePointNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsScorePointNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsScorePointNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsScorePointNull">IsScorePointNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsScorePointNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsSelectedNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsSelectedNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsSelectedNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsSelectedNull">IsSelectedNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSelectedNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsSliderAnimateNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsSliderAnimateNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsSliderAnimateNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsSliderAnimateNull">IsSliderAnimateNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSliderAnimateNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsSliderMaxNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsSliderMaxNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsSliderMaxNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsSliderMaxNull">IsSliderMaxNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSliderMaxNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsSliderMinNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsSliderMinNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsSliderMinNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsSliderMinNull">IsSliderMinNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSliderMinNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsSliderRangeNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsSliderRangeNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsSliderRangeNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsSliderRangeNull">IsSliderRangeNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSliderRangeNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsSliderStepNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsSliderStepNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsSliderStepNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsSliderStepNull">IsSliderStepNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSliderStepNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsSliderValueNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsSliderValueNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsSliderValueNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsSliderValueNull">IsSliderValueNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSliderValueNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsTypeAssemblyNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsTypeAssemblyNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsTypeAssemblyNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsTypeAssemblyNull">IsTypeAssemblyNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsTypeAssemblyNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsTypeModeNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsTypeModeNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsTypeModeNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsTypeModeNull">IsTypeModeNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsTypeModeNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsTypeNameSpaceNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsTypeNameSpaceNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsTypeNameSpaceNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsTypeNameSpaceNull">IsTypeNameSpaceNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsTypeNameSpaceNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsUserSelectedNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsUserSelectedNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsUserSelectedNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsUserSelectedNull">IsUserSelectedNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsUserSelectedNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsUserTextNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsUserTextNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsUserTextNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsUserTextNull">IsUserTextNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsUserTextNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsVoteCountNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsVoteCountNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsVoteCountNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsVoteCountNull">IsVoteCountNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsVoteCountNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsXmlDatasourceNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsXmlDatasourceNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_IsXmlDatasourceNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.IsXmlDatasourceNull">IsXmlDatasourceNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsXmlDatasourceNull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetAnswerAliasNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetAnswerAliasNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetAnswerAliasNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetAnswerAliasNull">SetAnswerAliasNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetAnswerAliasNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetAnswerIDTextNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetAnswerIDTextNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetAnswerIDTextNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetAnswerIDTextNull">SetAnswerIDTextNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetAnswerIDTextNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetAnswerPipeAliasNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetAnswerPipeAliasNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetAnswerPipeAliasNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetAnswerPipeAliasNull">SetAnswerPipeAliasNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetAnswerPipeAliasNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetAnswerTypeIdNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetAnswerTypeIdNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetAnswerTypeIdNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetAnswerTypeIdNull">SetAnswerTypeIdNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetAnswerTypeIdNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetCssClassNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetCssClassNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetCssClassNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetCssClassNull">SetCssClassNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetCssClassNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetDataSourceNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetDataSourceNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetDataSourceNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetDataSourceNull">SetDataSourceNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetDataSourceNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetDefaultTextNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetDefaultTextNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetDefaultTextNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetDefaultTextNull">SetDefaultTextNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetDefaultTextNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetDisplayOrderNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetDisplayOrderNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetDisplayOrderNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetDisplayOrderNull">SetDisplayOrderNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetDisplayOrderNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetFieldHeightNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetFieldHeightNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetFieldHeightNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetFieldHeightNull">SetFieldHeightNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetFieldHeightNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetFieldLengthNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetFieldLengthNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetFieldLengthNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetFieldLengthNull">SetFieldLengthNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetFieldLengthNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetFieldWidthNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetFieldWidthNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetFieldWidthNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetFieldWidthNull">SetFieldWidthNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetFieldWidthNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetImageURLNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetImageURLNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetImageURLNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetImageURLNull">SetImageURLNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetImageURLNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetJavascriptCodeNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetJavascriptCodeNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetJavascriptCodeNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetJavascriptCodeNull">SetJavascriptCodeNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetJavascriptCodeNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetJavascriptErrorMessageNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetJavascriptErrorMessageNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetJavascriptErrorMessageNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetJavascriptErrorMessageNull">SetJavascriptErrorMessageNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetJavascriptErrorMessageNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetJavascriptFunctionNameNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetJavascriptFunctionNameNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetJavascriptFunctionNameNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetJavascriptFunctionNameNull">SetJavascriptFunctionNameNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetJavascriptFunctionNameNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetMandatoryNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetMandatoryNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetMandatoryNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetMandatoryNull">SetMandatoryNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetMandatoryNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetRatePartNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetRatePartNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetRatePartNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetRatePartNull">SetRatePartNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetRatePartNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetRegExMessageNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetRegExMessageNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetRegExMessageNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetRegExMessageNull">SetRegExMessageNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetRegExMessageNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetRegExpressionNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetRegExpressionNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetRegExpressionNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetRegExpressionNull">SetRegExpressionNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetRegExpressionNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetRegularExpressionIdNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetRegularExpressionIdNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetRegularExpressionIdNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetRegularExpressionIdNull">SetRegularExpressionIdNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetRegularExpressionIdNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetScorePointNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetScorePointNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetScorePointNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetScorePointNull">SetScorePointNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetScorePointNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetSelectedNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetSelectedNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetSelectedNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetSelectedNull">SetSelectedNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetSelectedNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetSliderAnimateNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetSliderAnimateNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetSliderAnimateNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetSliderAnimateNull">SetSliderAnimateNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetSliderAnimateNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetSliderMaxNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetSliderMaxNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetSliderMaxNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetSliderMaxNull">SetSliderMaxNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetSliderMaxNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetSliderMinNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetSliderMinNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetSliderMinNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetSliderMinNull">SetSliderMinNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetSliderMinNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetSliderRangeNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetSliderRangeNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetSliderRangeNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetSliderRangeNull">SetSliderRangeNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetSliderRangeNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetSliderStepNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetSliderStepNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetSliderStepNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetSliderStepNull">SetSliderStepNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetSliderStepNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetSliderValueNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetSliderValueNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetSliderValueNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetSliderValueNull">SetSliderValueNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetSliderValueNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetTypeAssemblyNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetTypeAssemblyNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetTypeAssemblyNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetTypeAssemblyNull">SetTypeAssemblyNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetTypeAssemblyNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetTypeModeNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetTypeModeNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetTypeModeNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetTypeModeNull">SetTypeModeNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetTypeModeNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetTypeNameSpaceNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetTypeNameSpaceNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetTypeNameSpaceNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetTypeNameSpaceNull">SetTypeNameSpaceNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetTypeNameSpaceNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetUserSelectedNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetUserSelectedNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetUserSelectedNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetUserSelectedNull">SetUserSelectedNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetUserSelectedNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetUserTextNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetUserTextNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetUserTextNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetUserTextNull">SetUserTextNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetUserTextNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetVoteCountNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetVoteCountNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetVoteCountNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetVoteCountNull">SetVoteCountNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetVoteCountNull()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetXmlDatasourceNull_" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetXmlDatasourceNull*"></a>
+  <h4 id="Votations_NSurvey_Data_AnswerData_AnswersRow_SetXmlDatasourceNull" data-uid="Votations.NSurvey.Data.AnswerData.AnswersRow.SetXmlDatasourceNull">SetXmlDatasourceNull()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetXmlDatasourceNull()</code></pre>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy;2017 Survey&trade; Project
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

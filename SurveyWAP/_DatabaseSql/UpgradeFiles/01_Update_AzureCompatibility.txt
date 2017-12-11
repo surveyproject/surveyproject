@@ -1,2 +1,2 @@
 
-remove Use [dbname]
+Remove from sql script: Use [dbname]

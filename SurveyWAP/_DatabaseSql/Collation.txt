@@ -1,0 +1,9 @@
+
+
+https://docs.microsoft.com/en-us/sql/relational-databases/collations/collation-and-unicode-support
+
+
+Default collation: Latin1_General_CI_AS
+
+Note: different collations may cause scripting errors (e.g. due to case sensitivity etc)
+

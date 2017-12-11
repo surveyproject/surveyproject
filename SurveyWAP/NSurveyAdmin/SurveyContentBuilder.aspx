@@ -1,6 +1,4 @@
-﻿
-
-<%@ Page Language="c#" MasterPageFile="MsterPageTabs.master" ValidateRequest="false"
+﻿<%@ Page Language="c#" MasterPageFile="MsterPageTabs.master" ValidateRequest="false"
     AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.SurveyContentBuilder"
     CodeBehind="SurveyContentBuilder.aspx.cs" %>
 

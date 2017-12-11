@@ -30,12 +30,10 @@ using Votations.NSurvey.Web.Security;
 namespace Votations.NSurvey.WebAdmin
 {
     /// <summary>
-    /// Manage the page navigation logic.
+    /// Classes to manage the page navigation logic: hyperlinks to all webpages of the webapplication
     /// </summary>
     public class UINavigator
     {
-
-
         public static readonly string AdminRoot = "~/NSurveyAdmin";
 
         public static readonly string CreateSurveyLink = AdminRoot + "/SurveyList.aspx?tabindex=1";
@@ -76,7 +74,7 @@ namespace Votations.NSurvey.WebAdmin
         public static readonly string LibraryDirectoryHyperLink = AdminRoot + "/LibraryDirectory.aspx";
         public static readonly string LibraryCreateHyperLink = AdminRoot + "/LibraryDirectory.aspx?tabindex=1";
         public static readonly string UsersManagerHyperLink = AdminRoot + "/UsersManager.aspx";
-        public static readonly string UserCreatorHyperLink = AdminRoot + "/UserCreator.aspx";
+        //public static readonly string UserCreatorHyperLink = AdminRoot + "/UserCreator.aspx";
         public static readonly string RolesManagerHyperLink = AdminRoot + "/UsersManager.aspx?tabindex=1";
         public static readonly string AccessDeniedHyperLink = AdminRoot + "/AccessDenied.aspx";
 
@@ -145,7 +143,8 @@ namespace Votations.NSurvey.WebAdmin
 
         public static void NavigateToVoterReport(int surveyId, int voterId, int menuIndex)
         {
-            HttpContext.Current.Response.Redirect(String.Format("{0}?surveyid={1}&voterid={2}&menuindex={3}", VoterReport, surveyId, voterId, menuIndex));
+            HttpContext.Current.Server.Transfer(String.Format("{0}?surveyid={1}&voterid={2}&menuindex={3}", VoterReport, surveyId, voterId, menuIndex));
+            // HttpContext.Current.Response.Redirect(String.Format("{0}?surveyid={1}&voterid={2}&menuindex={3}", VoterReport, surveyId, voterId, menuIndex));
         }
 
         public static void NavigateToEditVoterReport(int surveyId, int voterId, int menuIndex)
@@ -282,7 +281,7 @@ namespace Votations.NSurvey.WebAdmin
         /// For example for SuryeyId return SurveyId=22
         /// 
         /// </summary>
-        /// <param name="parameterName"></param>
+        /// <param name="parameterNames"></param>
         /// <returns></returns>
         public static string getRequestParameterExpression(FormParameters[] parameterNames)
         {

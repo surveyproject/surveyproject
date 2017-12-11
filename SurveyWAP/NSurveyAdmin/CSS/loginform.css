@@ -71,6 +71,7 @@
 .loginErrorDiv {
     position: absolute;
     min-width: 210px;
+    margin-left:15px;
 }
 /*Login form CSS*/
 /* GLOBALS */

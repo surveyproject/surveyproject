@@ -1,11 +1,4 @@
-﻿<%@ Register TagPrefix="uc1" TagName="SurveyListControl" Src="UserControls/SurveyListControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="FooterControl" Src="UserControls/FooterControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
-
-<%@ Register TagPrefix="uc1" TagName="PageBranchingRulesControl" Src="UserControls/PageBranchingRulesControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="SurveyMessageConditonsControl" Src="UserControls/SurveyMessageConditonsControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="FilterOptionControl" Src="UserControls/FilterOptionControl.ascx" %>
-
+﻿
 <%@ Page language="c#" MasterPageFile="MsterPageTabs.master"   ValidateRequest="false"	AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.ConditionalEndMessage" Codebehind="ConditionalEndMessage.aspx.cs" %>
 
 
@@ -13,9 +6,9 @@
 
         <div id="Panel" class="Panel">
 
-                                       <div class="errorDiv">
- <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
-                </div>
+            <div class="errorDiv">
+                <asp:Label ID="MessageLabel" runat="server" CssClass="errorMessage" Visible="False"></asp:Label>
+            </div>
             <br />
     <fieldset>
         <legend class="titleFont titleLegend">

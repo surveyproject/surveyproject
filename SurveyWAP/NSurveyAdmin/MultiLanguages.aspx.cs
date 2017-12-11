@@ -58,7 +58,7 @@ namespace Votations.NSurvey.WebAdmin
 		protected System.Web.UI.WebControls.Button VariableNameUpdateButton;
 		protected System.Web.UI.WebControls.Label Label1;
 		protected System.Web.UI.WebControls.Label VariableNameInfoLabel;
-		protected SurveyListControl SurveyList;
+		//protected SurveyListControl SurveyList;
 
 		private void Page_Load(object sender, System.EventArgs e)
 		{

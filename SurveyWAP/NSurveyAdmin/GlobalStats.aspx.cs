@@ -31,6 +31,8 @@ using Votations.NSurvey.BusinessRules;
 using Votations.NSurvey.WebAdmin.UserControls;
 
 using Votations.NSurvey.WebAdmin.NSurveyAdmin;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Votations.NSurvey.WebAdmin
 {
@@ -58,7 +60,7 @@ namespace Votations.NSurvey.WebAdmin
 		protected System.Web.UI.WebControls.Literal SaveProgressEntriesLabel;
 		protected System.Web.UI.WebControls.Label NumberSaveProgressEntriesLabel;
 		protected System.Web.UI.WebControls.Button DeleteSaveProgressLinkButton;
-		protected SurveyListControl SurveyList;
+		//protected SurveyListControl SurveyList;
 
 
 		private void Page_Load(object sender, System.EventArgs e)
@@ -74,7 +76,11 @@ namespace Votations.NSurvey.WebAdmin
                 // Header.SurveyId = SurveyId;
                 ((Wap)Master.Master).HeaderControl.SurveyId = SurveyId;
 				FillFields();
-			}
+
+                ShowMultiLanguages();
+                ShowOpenCloseDates();
+
+            }
 
 			ResetVotesButton.Attributes.Add("onClick",
 				"javascript:if(confirm('" +GetPageResource("ResetVotesConfirmationMessage")+ "')== false) return false;");
@@ -100,7 +106,65 @@ namespace Votations.NSurvey.WebAdmin
 			ResetVotesButton.Text = GetPageResource("ResetVotesButton");
 			SaveProgressEntriesLabel.Text = GetPageResource("SaveProgressEntriesLabel");
 			DeleteSaveProgressLinkButton.Text = GetPageResource("DeleteSaveProgressLinkButton");
+
+            MultilanguagesLiteral.Text = GetPageResource("MultilanguagesStatsLiteral");
+
 		}
+
+        private void ShowMultiLanguages()
+        {
+            SurveyData surveyData =
+            new Surveys().GetSurveyById(SurveyId, "");
+
+            if (surveyData.Surveys[0].MultiLanguageModeId > 0)
+            {
+                MultiLanguagePlaceholder.Visible = true;
+            }
+            else
+            {
+                MultiLanguagePlaceholder.Visible = false;
+            }
+
+        }
+
+
+        private void ShowOpenCloseDates()
+        {
+            SurveyData surveyData =
+            new Surveys().GetSurveyById(SurveyId, "");
+
+            if (!surveyData.Surveys[0].IsOpenDateNull() || !surveyData.Surveys[0].IsCloseDateNull())
+            {
+                OpenCloseDatePlaceHolder.Visible = true;
+            }
+            else
+            {
+                OpenCloseDatePlaceHolder.Visible = false;
+            }
+
+        }
+
+
+
+        private string ListMultiLanguages()
+        {
+            MultiLanguageData surveyLanguages;
+            surveyLanguages = new MultiLanguages().GetSurveyLanguages(SurveyId);
+
+            var index = 0;
+            StringBuilder builder = new StringBuilder();        
+
+            foreach (MultiLanguageData.MultiLanguagesRow language in surveyLanguages.MultiLanguages)
+            {
+                string defaultItem = " " + GetPageResource(language.LanguageDescription);
+
+                if (index >= 0)                    
+                    builder.Append(defaultItem).Append(",");
+                index++;
+            }
+
+            return builder.ToString().TrimEnd(',');
+        }
 
 
 		/// <summary>
@@ -112,9 +176,56 @@ namespace Votations.NSurvey.WebAdmin
 			// Retrieve the survey data
 			SurveyData surveyData = 
 				new Surveys().GetSurveyById(SurveyId, "");
-			
-			// Assigns the retrieved data to the correct labels
-			CreationDateLabel.Text = surveyData.Surveys[0].CreationDate.ToString();
+
+            // Assigns the retrieved data to the correct labels
+
+            SurveyTitleLabel.Text = surveyData.Surveys[0].Title;
+
+            //survey active status
+            if (surveyData.Surveys[0].Activated)
+            {
+                SurveyStatusLabel.Text = GetPageResource("SurveyActive");
+                SurveyStatusLabel.ForeColor = System.Drawing.ColorTranslator.FromHtml("green");
+            } else
+            {
+                SurveyStatusLabel.Text = GetPageResource("SurveyInactive");
+                SurveyStatusLabel.ForeColor = System.Drawing.ColorTranslator.FromHtml("red");
+            }
+
+            // ML active languages 
+            if (!String.IsNullOrEmpty(surveyData.Surveys[0].MultiLanguageModeId.ToString()) )
+            {
+                MultilanguagesLabel.Text = ListMultiLanguages();
+            }
+            else
+            {
+                MultilanguagesLabel.Text = "-";
+            }
+
+
+            // Open and Close Dates
+            OpenCloseDateLiteral.Text = GetPageResource("OpeningCloseDateLiteral");
+
+            if (!surveyData.Surveys[0].IsOpenDateNull())
+            {
+            OpenDateLabel.Text = String.IsNullOrEmpty(surveyData.Surveys[0].OpenDate.ToString()) ? "No Opendate" : "Open: " + surveyData.Surveys[0].OpenDate.ToShortDateString();
+            }
+            else
+            {
+                OpenDateLabel.Text = GetPageResource("DateNotSet");
+            }
+
+            //OpenDateLabel.Text = String.IsNullOrEmpty(oDate.ToString()) ? "No Opendate" : oDate.ToString();
+
+            if (!surveyData.Surveys[0].IsCloseDateNull())
+            {
+                CloseDateLabel.Text = String.IsNullOrEmpty(surveyData.Surveys[0].CloseDate.ToString()) ? "No Closedate" :"Close: " + surveyData.Surveys[0].CloseDate.ToShortDateString();
+            } else
+            {
+                CloseDateLabel.Text = GetPageResource("DateNotSet");
+            }
+
+            CreationDateLabel.Text = surveyData.Surveys[0].CreationDate.ToString();
 			LastEntryDateLabel.Text = 
 				surveyData.Surveys[0].IsLastEntryDateNull() ? GetPageResource("NoEntriesRecordedInfo") : surveyData.Surveys[0].LastEntryDate.ToString();
 

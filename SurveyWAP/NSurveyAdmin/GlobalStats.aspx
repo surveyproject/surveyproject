@@ -18,7 +18,9 @@
         
             <fieldset>
                  <legend class="titleFont titleLegend">
-                    <asp:Literal id="SurveyStatisticsTitle" runat="server" EnableViewState="False">Survey statistics</asp:Literal>
+                    <asp:Literal id="SurveyStatisticsTitle" runat="server" EnableViewState="False">Survey statistics</asp:Literal>&nbsp; - &nbsp;
+                     <b><asp:Label id="SurveyTitleLabel" runat="server"></asp:Label></b> &nbsp; - 
+                     &nbsp; <asp:Label id="SurveyStatusLabel" CssClass="SurveyStatusLabel" runat="server"></asp:Label> &nbsp;
                 </legend> <br />
              
    <ol>
@@ -26,7 +28,26 @@
 
                 <div class="scm"><asp:Literal id="SurveyCreationDateLabel" runat="server" EnableViewState="False">Creation date :</asp:Literal></div>
                         <asp:label id="CreationDateLabel" CssClass="statlabel" runat="server"></asp:label>
-  </li><li>
+  </li>
+
+      <asp:PlaceHolder id="OpenCloseDatePlaceHolder" runat="server" Visible="false">
+           <li>
+               <div class="scm">
+                   <asp:Literal ID="OpenCloseDateLiteral" runat="server" EnableViewState="False">Start and End Date</asp:Literal></div>
+               <div class="statlabel">
+               <asp:Label id="OpenDateLabel" runat="server"></asp:Label> - <asp:Label id="CloseDateLabel" runat="server"></asp:Label></div>
+           </li>
+       </asp:PlaceHolder>
+
+       <asp:PlaceHolder id="MultiLanguagePlaceholder" runat="server" Visible="false">
+           <li>
+               <div class="scm">
+                   <asp:Literal ID="MultilanguagesLiteral" runat="server" EnableViewState="False">Languages</asp:Literal></div>
+               <asp:Label id="MultilanguagesLabel" CssClass="statlabel" runat="server"></asp:Label>
+           </li>
+       </asp:PlaceHolder>
+       
+       <li>
                 <div class="scm"><asp:Literal id="LastSurveyEntryLabel" runat="server" EnableViewState="False">Last entry on :</asp:Literal></div>
                 <asp:label id="LastEntryDateLabel" CssClass="statlabel" runat="server"></asp:label>
       </li><li>     

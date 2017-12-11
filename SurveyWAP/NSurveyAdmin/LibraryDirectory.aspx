@@ -1,8 +1,9 @@
-﻿<%@ Import Namespace="Votations.NSurvey.WebAdmin" %>
+﻿<%@ Page Language="c#" MasterPageFile="~/Wap.master" AutoEventWireup="true" Inherits="Votations.NSurvey.WebAdmin.LibraryDirectory"
+    CodeBehind="LibraryDirectory.aspx.cs" %>
+<%@ Import Namespace="Votations.NSurvey.WebAdmin" %>
 <%@ Register TagPrefix="uc1" TagName="LibraryNew" Src="UserControls/LibraryNew.ascx" %>
 
-<%@ Page Language="c#" MasterPageFile="~/Wap.master" AutoEventWireup="true" Inherits="Votations.NSurvey.WebAdmin.LibraryDirectory"
-    CodeBehind="LibraryDirectory.aspx.cs" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Votations.NSurvey.SQLServerDAL", "Reflector\Nsurvey_SQLServerDAL\Votations.NSurvey.SQLServerDAL.csproj", "{3050518F-8D14-4704-8092-1650B183E266}"
 EndProject
@@ -25,6 +25,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{BBF489
 		.build\MSBuild.Community.Tasks.dll = .build\MSBuild.Community.Tasks.dll
 		.build\MSBuild.Community.Tasks.targets = .build\MSBuild.Community.Tasks.targets
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2D5DD98B-0000-4E06-80FC-77E513E268FD}"
+	ProjectSection(SolutionItems) = preProject
+		SP25SolutionGraph.dgml = SP25SolutionGraph.dgml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocFx.SurveyProject", "DocFx.SurveyProject\DocFx.SurveyProject.csproj", "{732A1F65-F34F-457F-BFDE-E94ABD814FC7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,11 +72,16 @@ Global
 		{7D02ED0F-6C2F-4550-B203-CA03D190A5E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D02ED0F-6C2F-4550-B203-CA03D190A5E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D02ED0F-6C2F-4550-B203-CA03D190A5E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{732A1F65-F34F-457F-BFDE-E94ABD814FC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{732A1F65-F34F-457F-BFDE-E94ABD814FC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{732A1F65-F34F-457F-BFDE-E94ABD814FC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{732A1F65-F34F-457F-BFDE-E94ABD814FC7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45
+		SolutionGuid = {6DB71F99-310C-4A1A-B5B7-8C0F0E1AC045}
 	EndGlobalSection
 EndGlobal

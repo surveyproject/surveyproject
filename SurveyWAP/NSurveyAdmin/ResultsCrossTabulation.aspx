@@ -1,7 +1,4 @@
-﻿<%@ Register TagPrefix="uc1" TagName="SurveyListControl" Src="UserControls/SurveyListControl.ascx" %>
-
-
-<%@ Page Language="c#" MasterPageFile="MsterPageTabs.master" AutoEventWireup="false"
+﻿<%@ Page Language="c#" MasterPageFile="MsterPageTabs.master" AutoEventWireup="false"
     Inherits="Votations.NSurvey.WebAdmin.ResultsCrossTabulation" CodeBehind="ResultsCrossTabulation.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">

@@ -1,8 +1,4 @@
-
-<%@ Register TagPrefix="uc1" TagName="SurveyListControl" Src="SurveyListControl.ascx" %>
 <%@ Control Language="c#" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.UserControls.SurveyOptionControl" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" Codebehind="SurveyOptionControl.ascx.cs" %>
-
-
 
     <script type="text/javascript">
         $(function () {
@@ -14,7 +10,6 @@
             $("#<%=CloseDateTextbox.ClientID%>").datepicker($.datepicker.regional[lang]);
         });
     </script>
-
 
             <div class="errorDiv">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>

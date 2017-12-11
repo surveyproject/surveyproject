@@ -8,6 +8,9 @@ using Votations.NSurvey.WebAdmin.Code;
 
 namespace Votations.NSurvey.WebAdmin
 {
+    /// <summary>
+    /// webapplication default webpage
+    /// </summary>
     public partial class _default :  PageBase
     {
 
@@ -29,6 +32,7 @@ namespace Votations.NSurvey.WebAdmin
         protected void Page_Load(object sender, EventArgs e)
         {
             LocalizePage();
+            ViewLogo();
         }
 
         private void LocalizePage()
@@ -37,6 +41,17 @@ namespace Votations.NSurvey.WebAdmin
             Slogan.InnerHtml = GetPageResource("SpFrontPageSlogan");
 
         }
+
+        public void ViewLogo()
+        {
+            if (((PageBase)Page).NSurveyUser.Identity.UserId == -1)
+            {
+                logoDiv.Visible = true;
+                return;
+            }
+            logoDiv.Visible = false;
+        }
+
 
         //Note: Error handling in Global.config file:
 

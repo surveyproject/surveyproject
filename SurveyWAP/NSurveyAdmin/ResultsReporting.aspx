@@ -73,7 +73,7 @@
                     <br />
                     </fieldset>
                         <div class="helpDiv">
-                <input type="image" class="PrintImage" alt="print" src="images/Print_32X32_Standard.png"
+                <input type="image" class="PrintImage" alt="print" src="<%=Page.ResolveUrl("~/images/Print_32X32_Standard.png")%>"
                     title="Print" onclick="JavaScript: printPreviewDiv('DivPrint');" />
                 </div>
                      <fieldset>

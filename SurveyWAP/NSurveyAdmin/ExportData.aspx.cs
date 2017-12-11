@@ -67,7 +67,7 @@ namespace Votations.NSurvey.WebAdmin
         protected System.Web.UI.WebControls.DropDownList CarriageReturnDropDownList;
         protected System.Web.UI.WebControls.PlaceHolder CSVOptionPlaceHolder;
         protected System.Web.UI.WebControls.TextBox CRCharTextbox;
-        protected SurveyListControl SurveyList;
+        //protected SurveyListControl SurveyList;
 
         private void Page_Load(object sender, System.EventArgs e)
         {

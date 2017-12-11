@@ -58,7 +58,7 @@ namespace Votations.NSurvey.WebAdmin
 		protected System.Web.UI.WebControls.LinkButton NextValidatedPageLinkButton;
 		protected System.Web.UI.WebControls.Literal MailingLogTitle;
 		protected System.Web.UI.WebControls.Button DeleteLogsButton;
-		protected SurveyListControl SurveyList;
+		//protected SurveyListControl SurveyList;
 		
 		private void Page_Load(object sender, System.EventArgs e)
 		{

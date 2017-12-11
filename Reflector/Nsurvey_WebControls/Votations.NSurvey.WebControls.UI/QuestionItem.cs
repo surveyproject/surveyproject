@@ -79,14 +79,19 @@ namespace Votations.NSurvey.WebControls.UI
             base.OnInit(e);
 
             // rows to add warning messages on required Q/A's
+            // used by section questions only
             //this.QuestionTable.Rows.Add(this.BuildRow(null, null));
             //this.QuestionTable.Rows[0].EnableViewState = false;
             //this.QuestionTable.Rows.Add(this.BuildRow(null, null));
             //this.QuestionTable.Rows[1].EnableViewState = false;
-            
+
+
             this._questionPanel.Controls.Add(this.BuildPanelRow(null, null));
+            this._questionPanel.Controls[0].Visible = false;
             this._questionPanel.Controls[0].EnableViewState = false;
+
             this._questionPanel.Controls.Add(this.BuildPanelRow(null, null));
+            this._questionPanel.Controls[1].Visible = false;
             this._questionPanel.Controls[1].EnableViewState = false;
 
 

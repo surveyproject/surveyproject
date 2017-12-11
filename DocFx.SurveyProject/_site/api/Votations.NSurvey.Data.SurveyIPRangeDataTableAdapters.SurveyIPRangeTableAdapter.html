@@ -1,0 +1,795 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SurveyIPRangeTableAdapter
+   | SP Technical Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SurveyIPRangeTableAdapter
+   | SP Technical Documentation ">
+    <meta name="generator" content="docfx 2.26.3.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/splogo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter">
+  
+  
+  <h1 id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter" class="text-break">Class SurveyIPRangeTableAdapter
+  </h1>
+  <div class="markdown level0 summary"><p>Represents the connection and commands used to retrieve and save data.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">System.MarshalByRefObject</span></div>
+    <div class="level2"><span class="xref">System.ComponentModel.Component</span></div>
+    <div class="level3"><span class="xref">SurveyIPRangeTableAdapter</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.ComponentModel.IComponent</span></div>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.ComponentModel.Component.Dispose()</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.Component.Dispose(System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.Component.GetService(System.Type)</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.Component.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.Component.CanRaiseEvents</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.Component.Events</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.Component.Site</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.Component.Container</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.Component.DesignMode</span>
+    </div>
+    <div>
+      <span class="xref">System.ComponentModel.Component.Disposed</span>
+    </div>
+    <div>
+      <span class="xref">System.MarshalByRefObject.MemberwiseClone(System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">System.MarshalByRefObject.GetLifetimeService()</span>
+    </div>
+    <div>
+      <span class="xref">System.MarshalByRefObject.InitializeLifetimeService()</span>
+    </div>
+    <div>
+      <span class="xref">System.MarshalByRefObject.CreateObjRef(System.Type)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.html">Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters</a></h6>
+  <h6><strong>Assembly</strong>: SurveyProject.BusinessEntities.dll</h6>
+  <h5 id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[DataObject(true)]
+public class SurveyIPRangeTableAdapter : Component, IComponent, IDisposable</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter__ctor_" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.#ctor*"></a>
+  <h4 id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter__ctor" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.#ctor">SurveyIPRangeTableAdapter()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SurveyIPRangeTableAdapter()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter_Adapter_" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.Adapter*"></a>
+  <h4 id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter_Adapter" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.Adapter">Adapter</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected SqlDataAdapter Adapter { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.SqlClient.SqlDataAdapter</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter_ClearBeforeFill_" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.ClearBeforeFill*"></a>
+  <h4 id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter_ClearBeforeFill" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.ClearBeforeFill">ClearBeforeFill</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ClearBeforeFill { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter_CommandCollection_" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.CommandCollection*"></a>
+  <h4 id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter_CommandCollection" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.CommandCollection">CommandCollection</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected SqlCommand[] CommandCollection { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.SqlClient.SqlCommand</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter_Delete_" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.Delete*"></a>
+  <h4 id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter_Delete_System_Int32_System_Int32_System_String_System_String_" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.Delete(System.Int32,System.Int32,System.String,System.String)">Delete(Int32, Int32, String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int Delete(int Original_SurveyIPRangeId, int Original_SurveyId, string Original_IPStart, string Original_IPEnd)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">Original_SurveyIPRangeId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">Original_SurveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">Original_IPStart</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">Original_IPEnd</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter_Fill_" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.Fill*"></a>
+  <h4 id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter_Fill_Votations_NSurvey_Data_SurveyIPRangeData_SurveyIPRangeDataTable_" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.Fill(Votations.NSurvey.Data.SurveyIPRangeData.SurveyIPRangeDataTable)">Fill(SurveyIPRangeData.SurveyIPRangeDataTable)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int Fill(SurveyIPRangeData.SurveyIPRangeDataTable dataTable)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.SurveyIPRangeData.SurveyIPRangeDataTable.html">SurveyIPRangeData.SurveyIPRangeDataTable</a></td>
+        <td><span class="parametername">dataTable</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter_GetData_" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.GetData*"></a>
+  <h4 id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter_GetData" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.GetData">GetData()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual SurveyIPRangeData.SurveyIPRangeDataTable GetData()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.SurveyIPRangeData.SurveyIPRangeDataTable.html">SurveyIPRangeData.SurveyIPRangeDataTable</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter_Insert_" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.Insert*"></a>
+  <h4 id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter_Insert_System_Int32_System_String_System_String_" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.Insert(System.Int32,System.String,System.String)">Insert(Int32, String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int Insert(int SurveyId, string IPStart, string IPEnd)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">SurveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">IPStart</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">IPEnd</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter_Update_" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.Update*"></a>
+  <h4 id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter_Update_System_Data_DataRow_" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.Update(System.Data.DataRow)">Update(DataRow)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int Update(DataRow dataRow)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.DataRow</span></td>
+        <td><span class="parametername">dataRow</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter_Update_" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.Update*"></a>
+  <h4 id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter_Update_System_Data_DataRow___" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.Update(System.Data.DataRow[])">Update(DataRow[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int Update(DataRow[] dataRows)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.DataRow</span>[]</td>
+        <td><span class="parametername">dataRows</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter_Update_" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.Update*"></a>
+  <h4 id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter_Update_System_Int32_System_String_System_String_System_Int32_System_Int32_System_String_System_String_" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.Update(System.Int32,System.String,System.String,System.Int32,System.Int32,System.String,System.String)">Update(Int32, String, String, Int32, Int32, String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int Update(int SurveyId, string IPStart, string IPEnd, int Original_SurveyIPRangeId, int Original_SurveyId, string Original_IPStart, string Original_IPEnd)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">SurveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">IPStart</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">IPEnd</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">Original_SurveyIPRangeId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">Original_SurveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">Original_IPStart</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">Original_IPEnd</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter_Update_" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.Update*"></a>
+  <h4 id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter_Update_System_Int32_System_String_System_String_System_Int32_System_Int32_System_String_System_String_System_Int32_" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.Update(System.Int32,System.String,System.String,System.Int32,System.Int32,System.String,System.String,System.Int32)">Update(Int32, String, String, Int32, Int32, String, String, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int Update(int SurveyId, string IPStart, string IPEnd, int Original_SurveyIPRangeId, int Original_SurveyId, string Original_IPStart, string Original_IPEnd, int SurveyIPRangeId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">SurveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">IPStart</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">IPEnd</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">Original_SurveyIPRangeId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">Original_SurveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">Original_IPStart</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">Original_IPEnd</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">SurveyIPRangeId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter_Update_" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.Update*"></a>
+  <h4 id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter_Update_Votations_NSurvey_Data_SurveyIPRangeData_" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.Update(Votations.NSurvey.Data.SurveyIPRangeData)">Update(SurveyIPRangeData)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int Update(SurveyIPRangeData dataSet)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.SurveyIPRangeData.html">SurveyIPRangeData</a></td>
+        <td><span class="parametername">dataSet</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter_Update_" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.Update*"></a>
+  <h4 id="Votations_NSurvey_Data_SurveyIPRangeDataTableAdapters_SurveyIPRangeTableAdapter_Update_Votations_NSurvey_Data_SurveyIPRangeData_SurveyIPRangeDataTable_" data-uid="Votations.NSurvey.Data.SurveyIPRangeDataTableAdapters.SurveyIPRangeTableAdapter.Update(Votations.NSurvey.Data.SurveyIPRangeData.SurveyIPRangeDataTable)">Update(SurveyIPRangeData.SurveyIPRangeDataTable)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int Update(SurveyIPRangeData.SurveyIPRangeDataTable dataTable)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.SurveyIPRangeData.SurveyIPRangeDataTable.html">SurveyIPRangeData.SurveyIPRangeDataTable</a></td>
+        <td><span class="parametername">dataTable</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.ComponentModel.IComponent</span>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy;2017 Survey&trade; Project
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

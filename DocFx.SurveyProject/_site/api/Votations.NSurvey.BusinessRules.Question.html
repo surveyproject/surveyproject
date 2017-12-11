@@ -1,0 +1,1249 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Question
+   | SP Technical Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Question
+   | SP Technical Documentation ">
+    <meta name="generator" content="docfx 2.26.3.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/splogo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Votations.NSurvey.BusinessRules.Question">
+  
+  
+  <h1 id="Votations_NSurvey_BusinessRules_Question" data-uid="Votations.NSurvey.BusinessRules.Question" class="text-break">Class Question
+  </h1>
+  <div class="markdown level0 summary"><p>Contains the business rules that are used for a question.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Question</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Votations.NSurvey.BusinessRules.html">Votations.NSurvey.BusinessRules</a></h6>
+  <h6><strong>Assembly</strong>: SurveyProject.BusinessLogicLayer.dll</h6>
+  <h5 id="Votations_NSurvey_BusinessRules_Question_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Question</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Votations_NSurvey_BusinessRules_Question_AddChildQuestion_" data-uid="Votations.NSurvey.BusinessRules.Question.AddChildQuestion*"></a>
+  <h4 id="Votations_NSurvey_BusinessRules_Question_AddChildQuestion_Votations_NSurvey_Data_MatrixChildQuestionData_" data-uid="Votations.NSurvey.BusinessRules.Question.AddChildQuestion(Votations.NSurvey.Data.MatrixChildQuestionData)">AddChildQuestion(MatrixChildQuestionData)</h4>
+  <div class="markdown level1 summary"><p>Adds a new child question to the parent question specified by the parent questio id in the database</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddChildQuestion(MatrixChildQuestionData newChildQuestion)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.MatrixChildQuestionData.html">MatrixChildQuestionData</a></td>
+        <td><span class="parametername">newChildQuestion</span></td>
+        <td><p>Question object with information about what to add. Only Id must be ommited</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_BusinessRules_Question_AddDefaultMatrixQuestion_" data-uid="Votations.NSurvey.BusinessRules.Question.AddDefaultMatrixQuestion*"></a>
+  <h4 id="Votations_NSurvey_BusinessRules_Question_AddDefaultMatrixQuestion_System_Int32_System_Int32_System_Int32_System_String_System_String_" data-uid="Votations.NSurvey.BusinessRules.Question.AddDefaultMatrixQuestion(System.Int32,System.Int32,System.Int32,System.String,System.String)">AddDefaultMatrixQuestion(Int32, Int32, Int32, String, String)</h4>
+  <div class="markdown level1 summary"><p>Insert a matrix parent question with hardcoded default values</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionData AddDefaultMatrixQuestion(int surveyId, int displayOrder, int pageNumber, string questionText, string questionIDText)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td><p>ID of the survey to which belongs the question</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">displayOrder</span></td>
+        <td><p>Order in which the question will be displayed</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pageNumber</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">questionText</span></td>
+        <td><p>The main question&apos;s text</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">questionIDText</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td><p>The full matrix parent question</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_BusinessRules_Question_AddDefaultMatrixQuestion_" data-uid="Votations.NSurvey.BusinessRules.Question.AddDefaultMatrixQuestion*"></a>
+  <h4 id="Votations_NSurvey_BusinessRules_Question_AddDefaultMatrixQuestion_System_Int32_System_String_System_String_" data-uid="Votations.NSurvey.BusinessRules.Question.AddDefaultMatrixQuestion(System.Int32,System.String,System.String)">AddDefaultMatrixQuestion(Int32, String, String)</h4>
+  <div class="markdown level1 summary"><p>Adds a matrix question to the library</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionData AddDefaultMatrixQuestion(int libraryId, string questionText, string questionIDText)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">libraryId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">questionText</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">questionIDText</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_BusinessRules_Question_AddDefaultSingleQuestion_" data-uid="Votations.NSurvey.BusinessRules.Question.AddDefaultSingleQuestion*"></a>
+  <h4 id="Votations_NSurvey_BusinessRules_Question_AddDefaultSingleQuestion_System_Int32_System_Int32_System_Int32_System_String_System_String_" data-uid="Votations.NSurvey.BusinessRules.Question.AddDefaultSingleQuestion(System.Int32,System.Int32,System.Int32,System.String,System.String)">AddDefaultSingleQuestion(Int32, Int32, Int32, String, String)</h4>
+  <div class="markdown level1 summary"><p>Insert a single question with hardcoded default values</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionData AddDefaultSingleQuestion(int surveyId, int displayOrder, int pageNumber, string questionText, string questionIdText)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td><p>ID of the survey to which belongs the question</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">displayOrder</span></td>
+        <td><p>Order in which the question will be displayed</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pageNumber</span></td>
+        <td><p>Page number to which the questions belongs</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">questionText</span></td>
+        <td><p>The question&apos;s text</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">questionIdText</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td><p>The full static question</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_BusinessRules_Question_AddDefaultSingleQuestion_" data-uid="Votations.NSurvey.BusinessRules.Question.AddDefaultSingleQuestion*"></a>
+  <h4 id="Votations_NSurvey_BusinessRules_Question_AddDefaultSingleQuestion_System_Int32_System_String_System_String_" data-uid="Votations.NSurvey.BusinessRules.Question.AddDefaultSingleQuestion(System.Int32,System.String,System.String)">AddDefaultSingleQuestion(Int32, String, String)</h4>
+  <div class="markdown level1 summary"><p>Insert a single question to the library</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionData AddDefaultSingleQuestion(int libraryId, string questionText, string questionIdText)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">libraryId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">questionText</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">questionIdText</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_BusinessRules_Question_AddQuestion_" data-uid="Votations.NSurvey.BusinessRules.Question.AddQuestion*"></a>
+  <h4 id="Votations_NSurvey_BusinessRules_Question_AddQuestion_Votations_NSurvey_Data_QuestionData_" data-uid="Votations.NSurvey.BusinessRules.Question.AddQuestion(Votations.NSurvey.Data.QuestionData)">AddQuestion(QuestionData)</h4>
+  <div class="markdown level1 summary"><p>Adds a new question to the poll specified by the poll id in the database</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddQuestion(QuestionData newQuestion)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td><span class="parametername">newQuestion</span></td>
+        <td><p>Question object with information about what to add. Only Id must be ommited</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_BusinessRules_Question_AddQuestionSectionGridAnswers_" data-uid="Votations.NSurvey.BusinessRules.Question.AddQuestionSectionGridAnswers*"></a>
+  <h4 id="Votations_NSurvey_BusinessRules_Question_AddQuestionSectionGridAnswers_System_Int32_System_Int32_" data-uid="Votations.NSurvey.BusinessRules.Question.AddQuestionSectionGridAnswers(System.Int32,System.Int32)">AddQuestionSectionGridAnswers(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Adds a new answer to be shown in the section grid</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddQuestionSectionGridAnswers(int questionId, int answerId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">questionId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">answerId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_BusinessRules_Question_AddSkipLogicRule_" data-uid="Votations.NSurvey.BusinessRules.Question.AddSkipLogicRule*"></a>
+  <h4 id="Votations_NSurvey_BusinessRules_Question_AddSkipLogicRule_Votations_NSurvey_Data_SkipLogicRuleData_" data-uid="Votations.NSurvey.BusinessRules.Question.AddSkipLogicRule(Votations.NSurvey.Data.SkipLogicRuleData)">AddSkipLogicRule(SkipLogicRuleData)</h4>
+  <div class="markdown level1 summary"><p>Add a new skip logic rule</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddSkipLogicRule(SkipLogicRuleData newSkipLogicRule)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.SkipLogicRuleData.html">SkipLogicRuleData</a></td>
+        <td><span class="parametername">newSkipLogicRule</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_BusinessRules_Question_AddStaticInformationText_" data-uid="Votations.NSurvey.BusinessRules.Question.AddStaticInformationText*"></a>
+  <h4 id="Votations_NSurvey_BusinessRules_Question_AddStaticInformationText_System_Int32_System_Int32_System_Int32_System_String_System_String_" data-uid="Votations.NSurvey.BusinessRules.Question.AddStaticInformationText(System.Int32,System.Int32,System.Int32,System.String,System.String)">AddStaticInformationText(Int32, Int32, Int32, String, String)</h4>
+  <div class="markdown level1 summary"><p>Insert a new static question </p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionData AddStaticInformationText(int surveyId, int displayOrder, int pageNumber, string informationText, string questionIdText)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td><p>ID of the survey to which belongs the question</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">displayOrder</span></td>
+        <td><p>Order in which the question will be displayed</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pageNumber</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">informationText</span></td>
+        <td><p>Static text</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">questionIdText</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td><p>The full static question</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_BusinessRules_Question_AddStaticInformationText_" data-uid="Votations.NSurvey.BusinessRules.Question.AddStaticInformationText*"></a>
+  <h4 id="Votations_NSurvey_BusinessRules_Question_AddStaticInformationText_System_Int32_System_String_System_String_" data-uid="Votations.NSurvey.BusinessRules.Question.AddStaticInformationText(System.Int32,System.String,System.String)">AddStaticInformationText(Int32, String, String)</h4>
+  <div class="markdown level1 summary"><p>Insert a new static question to the library</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionData AddStaticInformationText(int libraryId, string informationText, string questionIDText)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">libraryId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">informationText</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">questionIDText</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_BusinessRules_Question_CheckQuestionUser_" data-uid="Votations.NSurvey.BusinessRules.Question.CheckQuestionUser*"></a>
+  <h4 id="Votations_NSurvey_BusinessRules_Question_CheckQuestionUser_System_Int32_System_Int32_" data-uid="Votations.NSurvey.BusinessRules.Question.CheckQuestionUser(System.Int32,System.Int32)">CheckQuestionUser(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Check if the user has this question assigned</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CheckQuestionUser(int questionId, int userId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">questionId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">userId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_BusinessRules_Question_CloneQuestionById_" data-uid="Votations.NSurvey.BusinessRules.Question.CloneQuestionById*"></a>
+  <h4 id="Votations_NSurvey_BusinessRules_Question_CloneQuestionById_System_Int32_" data-uid="Votations.NSurvey.BusinessRules.Question.CloneQuestionById(System.Int32)">CloneQuestionById(Int32)</h4>
+  <div class="markdown level1 summary"><p>Clones a question and its answers 
+and returns the cloned question object </p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuestionData CloneQuestionById(int questionId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">questionId</span></td>
+        <td><p>Id of the question you want to clone</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td><p>A questiondata object with the cloned question</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_BusinessRules_Question_CopyQuestionById_" data-uid="Votations.NSurvey.BusinessRules.Question.CopyQuestionById*"></a>
+  <h4 id="Votations_NSurvey_BusinessRules_Question_CopyQuestionById_System_Int32_System_Int32_System_Int32_System_Int32_" data-uid="Votations.NSurvey.BusinessRules.Question.CopyQuestionById(System.Int32,System.Int32,System.Int32,System.Int32)">CopyQuestionById(Int32, Int32, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Copy a question to the given target survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CopyQuestionById(int questionId, int targetSurveyId, int targetDisplayOrder, int targetPageNumber)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">questionId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">targetSurveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">targetDisplayOrder</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">targetPageNumber</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_BusinessRules_Question_CopyQuestionToLibrary_" data-uid="Votations.NSurvey.BusinessRules.Question.CopyQuestionToLibrary*"></a>
+  <h4 id="Votations_NSurvey_BusinessRules_Question_CopyQuestionToLibrary_System_Int32_System_Int32_" data-uid="Votations.NSurvey.BusinessRules.Question.CopyQuestionToLibrary(System.Int32,System.Int32)">CopyQuestionToLibrary(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Copy a question to the library</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CopyQuestionToLibrary(int questionId, int libraryId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">questionId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">libraryId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_BusinessRules_Question_DeleteMatrixAnswers_" data-uid="Votations.NSurvey.BusinessRules.Question.DeleteMatrixAnswers*"></a>
+  <h4 id="Votations_NSurvey_BusinessRules_Question_DeleteMatrixAnswers_System_Int32_" data-uid="Votations.NSurvey.BusinessRules.Question.DeleteMatrixAnswers(System.Int32)">DeleteMatrixAnswers(Int32)</h4>
+  <div class="markdown level1 summary"><p>Remove all the matrix answers from the database</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteMatrixAnswers(int parentQuestionId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">parentQuestionId</span></td>
+        <td><p>Matrix question id</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_BusinessRules_Question_DeleteQuestionById_" data-uid="Votations.NSurvey.BusinessRules.Question.DeleteQuestionById*"></a>
+  <h4 id="Votations_NSurvey_BusinessRules_Question_DeleteQuestionById_System_Int32_" data-uid="Votations.NSurvey.BusinessRules.Question.DeleteQuestionById(System.Int32)">DeleteQuestionById(Int32)</h4>
+  <div class="markdown level1 summary"><p>Remove the question and all its answers from the database</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteQuestionById(int questionId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">questionId</span></td>
+        <td><p>Question to delete from the database</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_BusinessRules_Question_DeleteQuestionSectionGridAnswers_" data-uid="Votations.NSurvey.BusinessRules.Question.DeleteQuestionSectionGridAnswers*"></a>
+  <h4 id="Votations_NSurvey_BusinessRules_Question_DeleteQuestionSectionGridAnswers_System_Int32_System_Int32_" data-uid="Votations.NSurvey.BusinessRules.Question.DeleteQuestionSectionGridAnswers(System.Int32,System.Int32)">DeleteQuestionSectionGridAnswers(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Delete an answer to be shown in the section grid</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteQuestionSectionGridAnswers(int questionId, int answerId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">questionId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">answerId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_BusinessRules_Question_DeleteQuestionSectionOptions_" data-uid="Votations.NSurvey.BusinessRules.Question.DeleteQuestionSectionOptions*"></a>
+  <h4 id="Votations_NSurvey_BusinessRules_Question_DeleteQuestionSectionOptions_System_Int32_" data-uid="Votations.NSurvey.BusinessRules.Question.DeleteQuestionSectionOptions(System.Int32)">DeleteQuestionSectionOptions(Int32)</h4>
+  <div class="markdown level1 summary"><p>Deletes the question&apos;s sections option</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteQuestionSectionOptions(int questionId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">questionId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_BusinessRules_Question_DeleteSkipLogicRuleById_" data-uid="Votations.NSurvey.BusinessRules.Question.DeleteSkipLogicRuleById*"></a>
+  <h4 id="Votations_NSurvey_BusinessRules_Question_DeleteSkipLogicRuleById_System_Int32_" data-uid="Votations.NSurvey.BusinessRules.Question.DeleteSkipLogicRuleById(System.Int32)">DeleteSkipLogicRuleById(Int32)</h4>
+  <div class="markdown level1 summary"><p>Deletes the skip logic rule</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteSkipLogicRuleById(int skipLogicRuleId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">skipLogicRuleId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_BusinessRules_Question_GetQuestionAnswersScore_" data-uid="Votations.NSurvey.BusinessRules.Question.GetQuestionAnswersScore*"></a>
+  <h4 id="Votations_NSurvey_BusinessRules_Question_GetQuestionAnswersScore_System_Int32_Votations_NSurvey_Data_VoterAnswersData_" data-uid="Votations.NSurvey.BusinessRules.Question.GetQuestionAnswersScore(System.Int32,Votations.NSurvey.Data.VoterAnswersData)">GetQuestionAnswersScore(Int32, VoterAnswersData)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetQuestionAnswersScore(int questionId, VoterAnswersData votersAnswers)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">questionId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.VoterAnswersData.html">VoterAnswersData</a></td>
+        <td><span class="parametername">votersAnswers</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_BusinessRules_Question_ImportQuestions_" data-uid="Votations.NSurvey.BusinessRules.Question.ImportQuestions*"></a>
+  <h4 id="Votations_NSurvey_BusinessRules_Question_ImportQuestions_Votations_NSurvey_Data_NSurveyQuestion_System_Int32_" data-uid="Votations.NSurvey.BusinessRules.Question.ImportQuestions(Votations.NSurvey.Data.NSurveyQuestion,System.Int32)">ImportQuestions(NSurveyQuestion, Int32)</h4>
+  <div class="markdown level1 summary"><p>Import the given questions into the DB</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ImportQuestions(NSurveyQuestion importQuestions, int userId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.NSurveyQuestion.html">NSurveyQuestion</a></td>
+        <td><span class="parametername">importQuestions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">userId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_BusinessRules_Question_MoveQuestionPositionDown_" data-uid="Votations.NSurvey.BusinessRules.Question.MoveQuestionPositionDown*"></a>
+  <h4 id="Votations_NSurvey_BusinessRules_Question_MoveQuestionPositionDown_System_Int32_" data-uid="Votations.NSurvey.BusinessRules.Question.MoveQuestionPositionDown(System.Int32)">MoveQuestionPositionDown(Int32)</h4>
+  <div class="markdown level1 summary"><p>Move the give question&apos;s display position down</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void MoveQuestionPositionDown(int questionId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">questionId</span></td>
+        <td><p>ID of the question to change the position</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_BusinessRules_Question_MoveQuestionPositionUp_" data-uid="Votations.NSurvey.BusinessRules.Question.MoveQuestionPositionUp*"></a>
+  <h4 id="Votations_NSurvey_BusinessRules_Question_MoveQuestionPositionUp_System_Int32_" data-uid="Votations.NSurvey.BusinessRules.Question.MoveQuestionPositionUp(System.Int32)">MoveQuestionPositionUp(Int32)</h4>
+  <div class="markdown level1 summary"><p>Move the give question&apos;s display position up</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void MoveQuestionPositionUp(int questionId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">questionId</span></td>
+        <td><p>ID of the question to change the position</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_BusinessRules_Question_SkipQuestion_" data-uid="Votations.NSurvey.BusinessRules.Question.SkipQuestion*"></a>
+  <h4 id="Votations_NSurvey_BusinessRules_Question_SkipQuestion_System_Int32_Votations_NSurvey_Data_VoterAnswersData_System_Boolean_" data-uid="Votations.NSurvey.BusinessRules.Question.SkipQuestion(System.Int32,Votations.NSurvey.Data.VoterAnswersData,System.Boolean)">SkipQuestion(Int32, VoterAnswersData, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Check if we need to hide / skip the question depending on the
+skip logic rules rules</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SkipQuestion(int questionId, VoterAnswersData voterAnswers, bool evaluateScores)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">questionId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.VoterAnswersData.html">VoterAnswersData</a></td>
+        <td><span class="parametername">voterAnswers</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">evaluateScores</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_BusinessRules_Question_UpdateChildQuestion_" data-uid="Votations.NSurvey.BusinessRules.Question.UpdateChildQuestion*"></a>
+  <h4 id="Votations_NSurvey_BusinessRules_Question_UpdateChildQuestion_Votations_NSurvey_Data_MatrixChildQuestionData_System_String_" data-uid="Votations.NSurvey.BusinessRules.Question.UpdateChildQuestion(Votations.NSurvey.Data.MatrixChildQuestionData,System.String)">UpdateChildQuestion(MatrixChildQuestionData, String)</h4>
+  <div class="markdown level1 summary"><p>Update the child question in the database</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateChildQuestion(MatrixChildQuestionData updatedChildQuestion, string languageCode)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.MatrixChildQuestionData.html">MatrixChildQuestionData</a></td>
+        <td><span class="parametername">updatedChildQuestion</span></td>
+        <td><p>question to update, must contain the question id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">languageCode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_BusinessRules_Question_UpdateQuestion_" data-uid="Votations.NSurvey.BusinessRules.Question.UpdateQuestion*"></a>
+  <h4 id="Votations_NSurvey_BusinessRules_Question_UpdateQuestion_Votations_NSurvey_Data_QuestionData_System_String_" data-uid="Votations.NSurvey.BusinessRules.Question.UpdateQuestion(Votations.NSurvey.Data.QuestionData,System.String)">UpdateQuestion(QuestionData, String)</h4>
+  <div class="markdown level1 summary"><p>Update the question in the database</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateQuestion(QuestionData updatedQuestion, string languageCode)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.html">QuestionData</a></td>
+        <td><span class="parametername">updatedQuestion</span></td>
+        <td><p>question to update, must contain the question id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">languageCode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_BusinessRules_Question_UpdateQuestionSectionOptions_" data-uid="Votations.NSurvey.BusinessRules.Question.UpdateQuestionSectionOptions*"></a>
+  <h4 id="Votations_NSurvey_BusinessRules_Question_UpdateQuestionSectionOptions_Votations_NSurvey_Data_QuestionSectionOptionData_System_String_" data-uid="Votations.NSurvey.BusinessRules.Question.UpdateQuestionSectionOptions(Votations.NSurvey.Data.QuestionSectionOptionData,System.String)">UpdateQuestionSectionOptions(QuestionSectionOptionData, String)</h4>
+  <div class="markdown level1 summary"><p>updates a section options, creates it if it doesnt exists</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateQuestionSectionOptions(QuestionSectionOptionData sectionOptions, string languageCode)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionSectionOptionData.html">QuestionSectionOptionData</a></td>
+        <td><span class="parametername">sectionOptions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">languageCode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy;2017 Survey&trade; Project
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

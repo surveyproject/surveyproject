@@ -1,5 +1,6 @@
-<%@ Register TagPrefix="uc1" TagName="PageBranchingRulesControl" Src="PageBranchingRulesControl.ascx" %>
 <%@ Control Language="c#" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.UserControls.PageBreakOptionsControl" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" Codebehind="PageBreakOptionsControl.ascx.cs" %>
+<%@ Register TagPrefix="uc1" TagName="PageBranchingRulesControl" Src="PageBranchingRulesControl.ascx" %>
+
 <div class="questionBreakOptions">
     
         <span>

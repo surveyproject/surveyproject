@@ -3,7 +3,7 @@
     <package name="SurveyProject" type="Application" version="02.05.00">
       <friendlyName>SurveyProject</friendlyName>
       <description>
-        The open source webapplication to create and publish surveys and webforms online.
+        Free, open source webapplication to create and publish surveys and webforms online.
       </description>
       <iconFile>favicon.ico</iconFile>
       <owner>

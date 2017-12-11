@@ -44,7 +44,7 @@
                  <br /><br />
 
                                             <asp:DataGrid ID="CustomReportDataGrid" runat="server" class="voterReport" AllowCustomPaging="True" GridLines="Vertical"
-                                                ForeColor="Black" Width="100%"  AlternatingRowStyle-BackColor="#FFF6BB" ShowFooter="True" AllowPaging="False" PageSize="10" FooterStyle-BackColor="#FFDF12" FooterStyle-BorderStyle="None" FooterStyle-BorderColor="#E2E2E2">
+                                                ForeColor="Black" Width="100%"  AlternatingRowStyle-BackColor="#FFF6BB" ShowFooter="False" AllowPaging="False" PageSize="10" FooterStyle-BackColor="#FFDF12" FooterStyle-BorderStyle="None" FooterStyle-BorderColor="#E2E2E2">
                                                 <SelectedItemStyle Font-Bold="True" Wrap="True" ForeColor="White" BackColor="#000099">
                                                 </SelectedItemStyle>
                                                 <EditItemStyle Wrap="False"></EditItemStyle>

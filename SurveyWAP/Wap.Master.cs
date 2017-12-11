@@ -13,18 +13,26 @@ using Votations.NSurvey.Web.Security;
 
 namespace Votations.NSurvey
 {
+    /// <summary>
+    /// Webapplication MasterPage code
+    /// </summary>
     public partial class Wap : System.Web.UI.MasterPage
     {
         protected Image spLogo;
         //protected Panel logoPanel;
 
-        public bool isTreeStale {  set{this.surveyTree1.isTreeStale=true;} }
+        public bool isTreeStale
+        {
+            set
+            {
+                this.surveyTree1.isTreeStale = true;
+            }
+        }
 
         public void RebuildTree()
         {
             this.surveyTree1.RebuildTree();
         }
-
 
         protected void Page_Init(object sender, System.EventArgs e)
         {
@@ -127,27 +135,7 @@ namespace Votations.NSurvey
             Page.Header.Controls.Add(javascriptControl);
             Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
 
-            //Perfect Scrollbar scripts (3x):
-                        javascriptControl = new HtmlGenericControl("script");
-            javascriptControl.Attributes.Add("type", "text/Javascript");
-            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/Javascript/perfectscrollbar/jquery.mousewheel.js"));
-            Page.Header.Controls.Add(javascriptControl);
-            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
 
-            javascriptControl = new HtmlGenericControl("script");
-            javascriptControl.Attributes.Add("type", "text/Javascript");
-            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/Javascript/perfectscrollbar/perfect-scrollbar.js"));
-            Page.Header.Controls.Add(javascriptControl);
-            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-
-            javascriptControl = new HtmlGenericControl("script");
-            javascriptControl.Attributes.Add("type", "text/Javascript");
-            javascriptControl.InnerHtml = "jQuery(document).ready(function($) {" + Environment.NewLine +
-                                            "'use strict';" + Environment.NewLine +
-                                            "$('#mainBody').perfectScrollbar();" +Environment.NewLine +
-                                            "});";
-            Page.Header.Controls.Add(javascriptControl);
-            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
 
 
        }
@@ -166,22 +154,27 @@ namespace Votations.NSurvey
             LdTitle.InnerHtml = ((PageBase)Page).GetPageResource("DisclaimerTitle");
         }
 
+        /// <summary>
+        /// Hide or show banners, SP logo and footer on opening page depending on authorisation: logged in or not
+        /// </summary>
         public void ViewBanners()
         {
-            if (((PageBase)Page).NSurveyUser.Identity.UserId == -1 )
+            if (((PageBase)Page).NSurveyUser.Identity.UserId == -1)
             {
                 banners.Visible = true;
                 Footercontrol1.Visible = true;
+                surveyTree1.Visible = false;
                 return;
             }
 
-            banners.Visible = false;
-            Footercontrol1.Visible = false;
-            logoText.Attributes.Add("class", "logoTextLogedin");
-            
+                banners.Visible = false;
+                Footercontrol1.Visible = false;
+                logoText.Attributes.Add("class", "logoTextLogedin");
         }
 
-
+        /// <summary>
+        /// Headcontrol loads header.ascx webcontrol including menu, logout and logo
+        /// </summary>
         public Votations.NSurvey.WebAdmin.UserControls.HeaderControl HeaderControl
 
         {
@@ -192,6 +185,9 @@ namespace Votations.NSurvey
 
         }
 
+        /// <summary>
+        /// Loginbox control loads login.ascx webcontrol including login entry fields
+        /// </summary>
         public Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls.LoginBox LoginBox
         {
             get
@@ -200,6 +196,8 @@ namespace Votations.NSurvey
             }
 
         }
+
+
 
     }
 }

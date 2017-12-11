@@ -102,10 +102,12 @@ namespace Votations.NSurvey.WebControls.UI
                     if(base.QuestionPanel.Controls.Count > 0)
                     {
                         base.QuestionPanel.Controls[0].Controls.Add(new LiteralControl("<br />" + builder.ToString()));
+                        base.QuestionPanel.Controls[0].Visible = true;
                     }
                     else
                     {
                         base.QuestionPanel.Controls[0].Controls.Add(new LiteralControl(builder.ToString()));
+                        base.QuestionPanel.Controls[0].Visible = true;
                     }
 
                 }
@@ -128,10 +130,12 @@ namespace Votations.NSurvey.WebControls.UI
                     if (base.QuestionPanel.Controls.Count > 0)
                     {
                         base.QuestionPanel.Controls[1].Controls.Add(new LiteralControl("<br />" + builder2.ToString()));
+                        base.QuestionPanel.Controls[1].Visible = true;
                     }
                     else
                     {
                         base.QuestionPanel.Controls[1].Controls.Add(new LiteralControl(builder2.ToString()));
+                        base.QuestionPanel.Controls[1].Visible = true;
                     }
 
 
@@ -190,6 +194,7 @@ namespace Votations.NSurvey.WebControls.UI
 
                 base.QuestionPanel.Controls[0].Controls.Add(span);
                 base.QuestionPanel.Controls[0].ID = "qvm";
+                base.QuestionPanel.Controls[0].Visible = true;
 
             }
         }

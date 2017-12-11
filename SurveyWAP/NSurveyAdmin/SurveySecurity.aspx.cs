@@ -46,7 +46,7 @@ namespace Votations.NSurvey.WebAdmin
 		protected System.Web.UI.WebControls.Label UnAuthentifiedUserActionLabel;
 		protected System.Web.UI.WebControls.DropDownList ActionsDropDownList;
 		protected System.Web.UI.WebControls.PlaceHolder SecurityOptionsPlaceHolder;
-		protected SurveyListControl SurveyList;
+		//protected SurveyListControl SurveyList;
 
 		private void Page_Load(object sender, System.EventArgs e)
 		{

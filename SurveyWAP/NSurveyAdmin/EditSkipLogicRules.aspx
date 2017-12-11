@@ -1,8 +1,5 @@
-﻿<%@ Register TagPrefix="uc1" TagName="FilterOptionControl" Src="UserControls/FilterOptionControl.ascx" %>
+﻿<%@ Page language="c#" MasterPageFile="MsterPageTabs.master"   AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.EditSkipLogicRules" Codebehind="EditSkipLogicRules.aspx.cs" %>
 <%@ Register TagPrefix="uc1" TagName="SkipLogicRulesControl" Src="UserControls/SkipLogicRulesControl.ascx" %>
-<%@ Page language="c#" MasterPageFile="MsterPageTabs.master"   AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.EditSkipLogicRules" Codebehind="EditSkipLogicRules.aspx.cs" %>
-<%@ Register TagPrefix="uc1" TagName="PageBranchingRulesControl" Src="UserControls/PageBranchingRulesControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="SurveyListControl" Src="UserControls/SurveyListControl.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 

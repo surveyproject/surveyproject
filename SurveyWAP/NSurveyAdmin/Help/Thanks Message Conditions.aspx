@@ -38,7 +38,8 @@
                 <br /><br />
                * <strong>Message Shown on Submit</strong><br />
                 Text/Html editor to write and edit the message that will be shown on submitting the survey and based on the conditions.
-                <br /><br />
+                <br /><br />Note: if the Score feature is enabled (survey settings) and set on answer level the score results can be shown in the completion message by adding 
+                <code>::score::</code> to the text.
                 
                 <hr style="color:#e2e2e2;" />
                 <h3>

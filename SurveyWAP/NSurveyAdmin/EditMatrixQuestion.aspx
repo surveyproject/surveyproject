@@ -1,6 +1,4 @@
-﻿
-
-<%@ Page Language="c#" MasterPageFile="~/NSurveyAdmin/MsterPageTabs.master" AutoEventWireup="false"
+﻿<%@ Page Language="c#" MasterPageFile="~/NSurveyAdmin/MsterPageTabs.master" AutoEventWireup="false"
     ValidateRequest="false" Inherits="Votations.NSurvey.WebAdmin.EditMatrixQuestion"
     CodeBehind="EditMatrixQuestion.aspx.cs" %>
 

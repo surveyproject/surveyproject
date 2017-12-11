@@ -221,8 +221,8 @@ namespace Votations.NSurvey.WebControls
         /// <summary>
         /// Pagenumber & percentage progress shown on page footer of survey
         /// </summary>
-        /// <param name="submitControl"></param>
-        /// <param name="enabled"></param>
+        /// <param name="submitControl">SubmitControl</param>
+        /// <param name="enabled">enabled</param>
         /// <returns>submitControl</returns>
         protected virtual Panel BuildFooterRow(Panel submitControl, bool enabled)
         {
@@ -722,12 +722,14 @@ namespace Votations.NSurvey.WebControls
             //this._questionContainer.Rows.Add(this.BuildRow("", null));
             //this._questionContainer.Rows[1].EnableViewState = false;
 
-            //TODO SP25
+            //SP25
             this._questionPanel = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetMainPercentagePanel();
-            this._questionPanel.Controls.Add(this.BuildPanelRow("",null));
-            this._questionPanel.Controls[0].EnableViewState = false;
-            this._questionPanel.Controls.Add(this.BuildPanelRow("", null));
-            this._questionPanel.Controls[1].EnableViewState = false;
+
+            //TODO SP 25 never used??
+            //this._questionPanel.Controls.Add(this.BuildPanelRow("",null));
+            //this._questionPanel.Controls[0].EnableViewState = false;
+            //this._questionPanel.Controls.Add(this.BuildPanelRow("", null));
+            //this._questionPanel.Controls[1].EnableViewState = false;
 
 
             Votations.NSurvey.SQLServerDAL.SurveyLayout u = new Votations.NSurvey.SQLServerDAL.SurveyLayout();

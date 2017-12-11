@@ -65,7 +65,7 @@ namespace Votations.NSurvey.WebAdmin
 		protected System.Web.UI.WebControls.Literal NoEmailInvitationInfo;
 		protected System.Web.UI.WebControls.Literal ValidatedEmailTitle;
 		protected System.Web.UI.WebControls.Literal NoEmailAnswered;
-		protected SurveyListControl SurveyList;
+		//protected SurveyListControl SurveyList;
 		private void Page_Load(object sender, System.EventArgs e)
 		{
             UITabList.SetCampaignTabs((MsterPageTabs)Page.Master, UITabList.CampaignTabs.MailingStatus);

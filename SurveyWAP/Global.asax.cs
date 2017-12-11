@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
+using System.Security.Principal;
 using System.Web.SessionState;
 using Votations.NSurvey.WebAdmin.Code;
 
-
 namespace SurveyWAP
 {
+    /// <summary>
+    /// Namespace referrering to entire SurveyWAP webapplication project. Used only by the global.asax code to run application level events.
+    /// Global Class: code for responding to application-level events raised by ASP.NET or by HttpModules
+    /// More info: https://msdn.microsoft.com/en-us/library/1xaas8a2(v=vs.71).aspx
+    /// </summary>
+    /// <remarks>Includes Errorhandling references; demo servervariable; removing info from httpheader</remarks>
     public class Global : System.Web.HttpApplication
     {
 
@@ -24,6 +30,11 @@ namespace SurveyWAP
 
         }
 
+        /// <summary>
+        /// Errorhandling instructions
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void Application_Error(object sender, EventArgs e)
         {
             // https://msdn.microsoft.com/en-us/library/24395wz3.aspx
@@ -90,6 +101,67 @@ namespace SurveyWAP
             
 
         }
+
+        /// <summary>
+        /// Used to remove the (web) Server details from the Http header - for security reasons
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Application_BeginRequest(object sender, EventArgs e)
+        {
+            var app = sender as HttpApplication;
+            if (app != null && app.Context != null)
+            {
+                app.Context.Response.Headers.Remove("Server");
+            }
+        }
+
+        /// <summary>
+        /// Used for LDAP (AD) authentication
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        //void Application_AuthenticateRequest(Object sender, EventArgs e)
+        //{
+        //    String cookieName = FormsAuthentication.FormsCookieName;
+        //    HttpCookie authCookie = Context.Request.Cookies[cookieName];
+
+        //    if (null == authCookie)
+        //    {//There is no authentication cookie.
+        //        return;
+        //    }
+
+        //    FormsAuthenticationTicket authTicket = null;
+
+        //    try
+        //    {
+        //        authTicket = FormsAuthentication.Decrypt(authCookie.Value);
+        //    }
+        //    catch (Exception exc)
+        //    {
+        //        ExceptionUtility.LogException(exc, "Failed AD Authentication");
+        //        return;
+        //    }
+
+        //    if (null == authTicket)
+        //    {//Cookie failed to decrypt.
+        //        return;
+        //    }
+
+        //    //When the ticket was created, the UserData property was assigned a
+        //    //pipe-delimited string of group names.
+        //    String[] groups = authTicket.UserData.Split(new char[] { '|' });
+
+        //    //Create an Identity.
+        //    GenericIdentity id = new GenericIdentity(authTicket.Name, "LdapAuthentication");
+
+        //    //This principal flows throughout the request.
+        //    GenericPrincipal principal = new GenericPrincipal(id, groups);
+
+        //    Context.User = principal;
+
+        //}
+
 
         void Session_Start(object sender, EventArgs e)
         {

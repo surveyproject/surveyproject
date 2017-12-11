@@ -103,6 +103,15 @@ namespace Votations.NSurvey.WebAdmin {
         protected global::System.Web.UI.WebControls.Button btnDeleteFriendly;
         
         /// <summary>
+        /// WebControlIntro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal WebControlIntro;
+        
+        /// <summary>
         /// taCode control.
         /// </summary>
         /// <remarks>

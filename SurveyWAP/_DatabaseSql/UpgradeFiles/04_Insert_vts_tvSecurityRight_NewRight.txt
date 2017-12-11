@@ -1,5 +1,0 @@
-select * from vts_tbSecurityRight
-
-insert into vts_tbSecurityRight
-(securityrightid, description)
-values( 41, 'AccessUserResponses')

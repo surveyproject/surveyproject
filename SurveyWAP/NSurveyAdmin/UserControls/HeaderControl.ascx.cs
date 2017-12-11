@@ -72,9 +72,10 @@ namespace Votations.NSurvey.WebAdmin.UserControls
             PageBase page = (PageBase)Page;
             INSurveyPrincipal user = page.NSurveyUser;
 
-            if (!page.IsSingleUserMode(false) && user.Identity.IsAuthenticated)
-                MenuUserName.Visible = true;
-            MenuUserName.Text = page.GetPageResource("LoggedInAs") + " " +page.NSurveyUser.Identity.FirstName +" "+ page.NSurveyUser.Identity.LastName;
+            //if (page.IsSingleUserMode(false) && user.Identity.IsAuthenticated)
+            if (user.Identity.IsAuthenticated)
+                    MenuUserName.Visible = true;
+                    MenuUserName.Text = page.GetPageResource("LoggedInAs") + " " +page.NSurveyUser.Identity.FirstName +" "+ page.NSurveyUser.Identity.LastName;
 
             if (!page.IsSingleUserMode(false) && user.Identity.IsAuthenticated)
             {
@@ -85,11 +86,11 @@ namespace Votations.NSurvey.WebAdmin.UserControls
             }
 
 
- ///           if (user.Identity.IsAdmin || user.HasRight(NSurveyRights.AccessHelpFiles))
- ///           {
- ///                HelpButton.Visible = true;
- ///               HelpButton.Text = page.GetPageResource("HelpFilesHyperlink");
- ///           }
+ //           if (user.Identity.IsAdmin || user.HasRight(NSurveyRights.AccessHelpFiles))
+ //           {
+ //                HelpButton.Visible = true;
+ //               HelpButton.Text = page.GetPageResource("HelpFilesHyperlink");
+ //           }
 
             if (mnuMain.Items.Count > 0) return; // If menu is already populated return
 

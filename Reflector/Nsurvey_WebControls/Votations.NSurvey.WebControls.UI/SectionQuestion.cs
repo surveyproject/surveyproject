@@ -342,8 +342,7 @@ namespace Votations.NSurvey.WebControls.UI
 
             string requiredMarkerHtml = string.Empty;
             string titleString = ResourceManager.GetString("MandatoryQuestionTitle");
-            if (ValidationMark.Length != 0 &&
-           (MinSelectionRequired > 0 || MaxSelectionAllowed > 0))
+            if (ValidationMark.Length != 0 && (MinSelectionRequired > 0 || MaxSelectionAllowed > 0))
             {
                 requiredMarkerHtml = string.Format("&nbsp;<span class='{0}' title='{1}'></span>", ValidationMarkStyle.CssClass.ToString(), titleString);
             }
@@ -411,15 +410,15 @@ namespace Votations.NSurvey.WebControls.UI
         /// Builds a section option table for the 
         /// given section number
         /// </summary>
-        virtual protected Table GetSectionOptions(int sectionNumber, int sectionUid)
+        virtual protected Panel GetSectionOptions(int sectionNumber, int sectionUid)
         {
-            Table sectionOptionTable = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetCentPercentTable();//JJ;
-            TableRow sectionOptionRow = new TableRow();
-            TableCell sectionOptionCell = new TableCell();
+            Panel sectionOptionTable = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetCentPercentPanel();//JJ;
+            //Panel sectionOptionRow = new Panel();
+            Panel sectionOptionCell = new Panel();
 
             if (MaxSections == 0 || sectionNumber + 1 < MaxSections)
             {
-                sectionOptionCell = new TableCell();
+                sectionOptionCell = new Panel();
                 LinkButton addSectionAfterButton = new LinkButton();
                 addSectionAfterButton.ControlStyle.CopyFrom(SectionOptionStyle);
                 addSectionAfterButton.Text = AddSectionLinkText;
@@ -428,12 +427,12 @@ namespace Votations.NSurvey.WebControls.UI
                 addSectionAfterButton.CommandArgument = (sectionNumber + 1).ToString();
                 addSectionAfterButton.Enabled = RenderMode != ControlRenderMode.ReadOnly;
                 sectionOptionCell.Controls.Add(addSectionAfterButton);
-                sectionOptionRow.Cells.Add(sectionOptionCell);
+                //sectionOptionRow.Controls.Add(sectionOptionCell);
             }
 
             if (sectionNumber > 0)
             {
-                sectionOptionCell = new TableCell();
+                sectionOptionCell = new Panel();
 
                 if (MaxSections == 0 || sectionNumber + 1 < MaxSections)
                 {
@@ -448,10 +447,11 @@ namespace Votations.NSurvey.WebControls.UI
                 removeSectionButton.CommandArgument = sectionNumber.ToString();
                 removeSectionButton.Command += new CommandEventHandler(RemoveSectionButton_Command);
                 sectionOptionCell.Controls.Add(removeSectionButton);
-                sectionOptionRow.Cells.Add(sectionOptionCell);
+                //sectionOptionRow.Controls.Add(sectionOptionCell);
             }
 
-            sectionOptionTable.Rows.Add(sectionOptionRow);
+            //sectionOptionTable.Controls.Add(sectionOptionRow);
+            sectionOptionTable.Controls.Add(sectionOptionCell);
             sectionOptionTable.ControlStyle.CopyFrom(SectionOptionStyle);
 
             return sectionOptionTable;

@@ -1,6 +1,7 @@
-<%@ Register TagPrefix="uc1" TagName="SkipLogicRulesControl" Src="SkipLogicRulesControl.ascx" %>
 <%@ Control Language="c#" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.UserControls.QuestionOptionsControl" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" Codebehind="QuestionOptionsControl.ascx.cs" %>
-<table style="position: relative;" width="100%" class="questionOptions">
+<%@ Register TagPrefix="uc1" TagName="SkipLogicRulesControl" Src="SkipLogicRulesControl.ascx" %>
+
+<table style="position: relative; width:100%;" class="questionOptions">
     <tr>
         <td>
             <asp:ImageButton ID="UpImageButton" ImageUrl="~/Images/questionupbutton.gif"

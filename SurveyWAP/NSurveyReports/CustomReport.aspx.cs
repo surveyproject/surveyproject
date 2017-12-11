@@ -169,21 +169,60 @@ namespace Votations.NSurvey.WebAdmin
         }
         #endregion
 
+        /// <summary>
+        /// Hides or shows columns depending on number of values/ answers returned from Stored Procedure
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BindItemData(object sender, System.Web.UI.WebControls.DataGridItemEventArgs e)
         {
-            // Hides or shows columns depending on number of values/ answers returned from Stored Procedure
-
-            //0 = voterid
+            //0 = voterid - datagrid: datakeyfield / mandatory
             e.Item.Cells[0].Visible = false;
+
             //1 = first value
-            e.Item.Cells[1].Visible = true;
 
-            //e.Item.Cells[2].Visible = true;
+            if (e.Item.Cells[1].Text.Equals("blank1") || e.Item.Cells[1].Text.Equals("cell1"))
+            {
+                if (e.Item.ItemType == ListItemType.Header)
+                    e.Item.Cells[1].Visible = false;
+
+                if (e.Item.ItemType == ListItemType.Item)
+                    e.Item.Cells[1].Visible = false;
+            }
+
+            //2 = if blank value - not visible
+
+            if (e.Item.Cells[2].Text.Equals("blank2") || e.Item.Cells[2].Text.Equals("cell2"))
+                {
+                   if( e.Item.ItemType == ListItemType.Header )
+                    e.Item.Cells[2].Visible = false;
+
+                if (e.Item.ItemType == ListItemType.Item)
+                    e.Item.Cells[2].Visible = false;
+            }
+
             //e.Item.Cells[3].Visible = true;
+            if (e.Item.Cells[3].Text.Equals("blank3") || e.Item.Cells[3].Text.Equals("cell3"))
+            {
+                if (e.Item.ItemType == ListItemType.Header)
+                    e.Item.Cells[3].Visible = false;
+
+                if (e.Item.ItemType == ListItemType.Item)
+                    e.Item.Cells[3].Visible = false;
+            }
+
             //e.Item.Cells[4].Visible = true;
+            if (e.Item.Cells[4].Text.Equals("blank4") || e.Item.Cells[4].Text.Equals("cell4"))
+            {
+                if (e.Item.ItemType == ListItemType.Header)
+                    e.Item.Cells[4].Visible = false;
 
+                if (e.Item.ItemType == ListItemType.Item)
+                    e.Item.Cells[4].Visible = false;
+            }
 
-            e.Item.Cells[e.Item.Cells.Count - 1].Visible = true;
+            // all visible except voterid cell[0]
+            // e.Item.Cells[e.Item.Cells.Count - 1].Visible = true;
 
             if (e.Item.ItemType == ListItemType.Header)
             {
@@ -203,11 +242,7 @@ namespace Votations.NSurvey.WebAdmin
                     e.Item.Cells[i].Wrap = false;
                 }
             }
+
         }
-
-
-
-
-
     }
 }

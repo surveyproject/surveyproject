@@ -1,5 +1,4 @@
-﻿<%@ Register TagPrefix="uc1" TagName="SurveyListControl" Src="UserControls/SurveyListControl.ascx" %>
-<%@ Page language="c#" MasterPageFile="MsterPageTabs.master"   validaterequest="false" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.SurveySecurity" Codebehind="SurveySecurity.aspx.cs" %>
+﻿<%@ Page language="c#" MasterPageFile="MsterPageTabs.master"   validaterequest="false" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.SurveySecurity" Codebehind="SurveySecurity.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
@@ -26,7 +25,7 @@
              <asp:PlaceHolder ID="SecurityOptionsPlaceHolder" runat="server" Visible="False">
                 <ol>
                     <li>
-                     <asp:Label ID="UnAuthentifiedUserActionLabel" AssociatedControlID="ActionsDropDownList" runat="server">If user has not been automatically authentified by all security addins :</asp:Label>
+                     <asp:Label ID="UnAuthentifiedUserActionLabel" AssociatedControlID="ActionsDropDownList" runat="server">If user has not been automatically authenticated by all security addins :</asp:Label>
 
                      <asp:DropDownList ID="ActionsDropDownList" runat="server" AutoPostBack="True"></asp:DropDownList>
 

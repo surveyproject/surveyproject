@@ -46,7 +46,7 @@ namespace Votations.NSurvey.WebAdmin
 		protected System.Web.UI.WebControls.LinkButton NextPageLinkButton;
 		protected System.Web.UI.WebControls.Label TotalPagesLabel;
 		protected System.Web.UI.WebControls.Literal FieldReportTitle;
-		protected SurveyListControl SurveyList;
+		//protected SurveyListControl SurveyList;
 
 		private void Page_Load(object sender, System.EventArgs e)
 		{

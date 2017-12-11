@@ -1,0 +1,86 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            ""
+          ],
+          "cwd": ".",
+          "exclude": [
+            "**/obj/**",
+            "**/bin/**",
+            "_site/**"
+          ],
+          "src": ".."
+        }
+      ],
+      "dest": "obj/api"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "api/**.yml"
+        ],
+        "cwd": "obj"
+      },
+      {
+        "files": [
+          "api/*.md",
+          "articles/**.md",
+          "downloads/**.md",
+          "toc.yml",
+          "*.md"
+        ],
+        "exclude": [
+          "obj/**",
+          "_site/**"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**",
+          "downloads/files/**"
+        ],
+        "exclude": [
+          "obj/**",
+          "_site/**"
+        ]
+      }
+    ],
+    "overwrite": [
+      {
+        "files": [
+          "apidoc/**.md"
+        ],
+        "exclude": [
+          "obj/**",
+          "_site/**"
+        ]
+      }
+    ],
+    "dest": "_site",
+    "globalMetadata": {
+      "_enableSearch": true,
+      "_appTitle": "SP Technical Documentation",
+      "_gitContribute": {
+        "repo": "https://github.com/surveyproject/spdocs",
+        "branch": "master",
+        "path": ""
+      },
+      "_appFooter": "Copyright &copy;2017 Survey&trade; Project",
+      "_appLogoPath": "images/splogo.png",
+      "_appFaviconPath": "images/favicon.ico",
+      "_disableBreadcrumb": false,
+      "_disableAffix": false,
+      "_disableContribution": false
+    },
+    "template": [
+      "default"
+    ]
+  }
+}

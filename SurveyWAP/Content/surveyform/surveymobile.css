@@ -1,5 +1,6 @@
 ﻿@charset "UTF-8";       
 @import url('../font-awesome.min.css');
+@import url('../themes/base/theme.css');
 
 /* Line 1: Sets the encoding of the style sheet to Unicode UTF-8 
    Line 2: Importt the font-awsome css  */
@@ -62,6 +63,24 @@
 
 .cellValign{
     vertical-align:top;
+}
+
+
+input[type=text] {
+    box-sizing: border-box;
+    width: 50%;
+    outline: none;
+    margin: 5px;
+}
+
+input[type=text]:focus {
+    background-color: lightblue;
+}
+
+select {
+    width: 50%;
+    box-sizing: border-box;
+    margin: 5px;
 }
 
 /* SURVEY BOX CSS HIERARCHY*/
@@ -299,20 +318,21 @@
 /*ID dna */
 .question-number-div {
     float: left;
-
     line-height: 1.5;
     padding: 0 3px 0 5px;
-    margin: 3px;
+    margin: 5px 3px 0 3px;
 }
 
 /*ID dna */
 .question-text-div {
-    margin-left: 10px;
-
+    
     line-height: 1.5;
-    width: 96% !important;
-    margin: 3px;
-    float: left;
+    margin: 0 0 7px 0;
+    /*float: left;*/
+
+    background-color: whitesmoke;
+    border-radius: 7px;
+    padding: 5px;
 }
 
 /*ID dna*/
@@ -335,8 +355,6 @@
 /*ID dna */
 .icon-warning-sign:before {
     font-family: FontAwesome;
-    font-style: normal;
-    font-size:large;
     color: orange;
     margin: 0px 7px 0px 10px;
     content: "\f071";
@@ -371,14 +389,17 @@ ID dna
     margin: 5px 5px 5px 0;
 }
 
+/* redundant 2.5
 .answerStyle > td > span > input
 {
     display: inherit;
 }
+    */
 
 /*ID: SurveyControl_Question2_SectTbl */
 .sectTbl{
     width:100%;
+    display:inline-block;
 }
 
 /*ID: SurveyControl_Question2__as57474_AnswerTbl */
@@ -393,10 +414,12 @@ ID dna
 	white-space: normal;
 }
 
+/* redundant 2.5
 .answerTextRender > input
 {
     margin: 5px;
 }
+    */
 
 .answerTextRender > label
 {
@@ -424,7 +447,7 @@ span.answerTextRender > div:nth-child(2)
 /*ANSWER DETAILS CSS*/
 
 .globalRadioButton{
- height:20px;
+ /*height:20px;*/
 }
 
 .globalRadioButtonLabel{
