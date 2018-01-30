@@ -201,7 +201,7 @@ namespace Votations.NSurvey.WebAdmin
 
             if (!Page.IsPostBack)
             {
-                ColumnDropdownlist.Items.Insert(0, new ListItem(GetPageResource("NoSelectionRequiredOption"), "1"));
+                ColumnDropdownlist.Items.Insert(0, new ListItem(GetPageResource("NoSelectionRequiredOption"), "0"));
                 MinSelectionDropDownList.Items.Insert(0, new ListItem(GetPageResource("NoSelectionRequiredOption"), "0"));
                 MaxAllowedDropDownList.Items.Insert(0, new ListItem(GetPageResource("UnlimitedSelectionOption"), "0"));
 
@@ -304,6 +304,7 @@ namespace Votations.NSurvey.WebAdmin
                 AnswerOptionsPlaceholder.Visible = true;
                 RepeatSectionOptionPlaceHolder.Visible = true;
                 EditAnswersButton.Enabled = true;
+                HelpTextPlaceholder.Visible = true;
                 MultipleSelection = ((QuestionTypeMode)questionRow.TypeMode & QuestionTypeMode.MultipleAnswers) > 0;
             }
             else
@@ -311,6 +312,7 @@ namespace Votations.NSurvey.WebAdmin
                 RepeatSectionOptionPlaceHolder.Visible = false;
                 AnswerOptionsPlaceholder.Visible = false;
                 EditAnswersButton.Enabled = false;
+                HelpTextPlaceholder.Visible = false;
                 new Question().DeleteQuestionSectionOptions(_questionId);
             }
 
@@ -425,11 +427,11 @@ namespace Votations.NSurvey.WebAdmin
                 LanguagesDropdownlist.Items.Clear();
                 foreach (MultiLanguageData.MultiLanguagesRow language in surveyLanguages.MultiLanguages)
                 {
-                    ListItem defaultItem = new ListItem(GetPageResource(language.LanguageDescription), language.LanguageCode);
+                    ListItem defaultItem = new ListItem(GetPageLanguageCodes(language.LanguageDescription), language.LanguageCode);
                     if (language.DefaultLanguage)
                     {
                         defaultItem.Value = "";
-                        defaultItem.Text += " " + GetPageResource("LanguageDefaultText");
+                        defaultItem.Text += " " + GetPageLanguageCodes("LanguageDefaultText");
                     }
 
                     LanguagesDropdownlist.Items.Add(defaultItem);

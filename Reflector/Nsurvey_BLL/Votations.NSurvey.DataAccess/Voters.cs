@@ -190,6 +190,19 @@ namespace Votations.NSurvey.DataAccess
             }
             return data;
         }
+
+
+        /// <summary>
+        /// Get All Voter data for an SSrs Report Test
+        /// </summary>
+        /// <returns></returns>
+        public DataSet GetAllVotersSsrsTest()
+        {
+            return VoterFactory.Create().GetAllVotersSsrsTest();
+        }
+
+
+
     }
 }
 

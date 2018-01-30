@@ -151,6 +151,7 @@ namespace Votations.NSurvey.Security
             //return "<div style=\"Color:Red;\" >" + msgname + @"</div>";
             return "<div id=\"eqEM\" class=\"" + CssXmlManager.GetString("EntryquotaErrorMessage") + "\">" + msgname + @"</div>";
         }
+
         /// <summary>
         /// Must create and return the control 
         /// that will show the logon interface.

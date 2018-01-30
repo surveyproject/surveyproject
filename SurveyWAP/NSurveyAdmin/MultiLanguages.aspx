@@ -1,5 +1,4 @@
 ﻿<%@ Page language="c#" MasterPageFile="MsterPageTabs.master"   AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.MultiLanguagesPage" Codebehind="MultiLanguages.aspx.cs" %>
-<%@ Register TagPrefix="uc1" TagName="LanguageListControl" Src="UserControls/LanguageListControl.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
@@ -17,7 +16,9 @@
                                         </div>
              
                 <fieldset>
-                    <legend class="titleFont titleLegend"><asp:Literal ID="MultiLanguagesTitle" runat="server" EnableViewState="False" Text="Multi-Languages settings"></asp:Literal></legend>
+                    <legend class="titleFont titleLegend">
+                        <asp:Literal ID="MultiLanguagesTitle" runat="server" EnableViewState="False" Text="Multi-Languages settings"></asp:Literal>
+                    </legend>
                     <br />
 <ol>
      <li>
@@ -38,19 +39,22 @@
                                             <asp:DropDownList ID="MultiLanguagesModeDropDownList" runat="server" AutoPostBack="True">
                                             </asp:DropDownList>
 
-   </li><li>
+   </li>
+                                    <asp:PlaceHolder ID="VariablePlaceHolder" Visible="false" runat="server">
+                                    <li>
+                                        <strong>
+                                            <asp:Label ID="VariableNameLabel" AssociatedControlID="VariableNameTextBox" runat="server" Visible="False"></asp:Label>
+                                        </strong>
+                                            <asp:TextBox ID="VariableNameTextBox" runat="server" Visible="False"></asp:TextBox>&nbsp;&nbsp;&nbsp;
+                                            <asp:Button ID="VariableNameUpdateButton" CssClass="btn btn-primary btn-xs bw" runat="server" Visible="False" Text="Update"></asp:Button>
+                                        <br />
+                                    </li>
+                                    <li>
+                                        <asp:Label ID="VariableNameInfoLabel" runat="server"></asp:Label>
+                                    </li>
+                                    </asp:PlaceHolder>
 
-                                            <strong>
-                                                <asp:Label ID="VariableNameLabel" AssociatedControlID="VariableNameTextBox" runat="server" Visible="False" ></asp:Label></strong>
-
-                                            
-                                                <asp:TextBox ID="VariableNameTextBox" runat="server" Visible="False"></asp:TextBox>&nbsp;&nbsp;&nbsp;
-                                                <asp:Button ID="VariableNameUpdateButton" CssClass="btn btn-primary btn-xs bw" runat="server" Visible="False" Text="Update">
-                                                </asp:Button>
-                                                <br />
-                                                <asp:Label ID="VariableNameInfoLabel" runat="server"></asp:Label>
-       </li><li>
-
+                                    <li>
                                             <strong>
                                                 <asp:Label ID="EnabledLanguagesLabel" AssociatedControlID="DisabledLanguagesListBox" runat="server" EnableViewState="False" ></asp:Label></strong>
 
@@ -76,6 +80,13 @@
                                             <asp:DropDownList Width="200px" ID="DefaultLanguageDropdownlist" runat="server" AutoPostBack="True">
                                             </asp:DropDownList>
  </li>
+           <li><strong><asp:Label ID="MlCodesLabel" AssociatedControlID="MlCodesLiteral" runat="server">Language Codes</asp:Label></strong>
+                   <asp:Literal ID="MlCodesLiteral" runat="server" EnableViewState="False"></asp:Literal>
+               
+           </li>
+
+
+
                                 </asp:PlaceHolder>
 
             

@@ -107,11 +107,11 @@ namespace Votations.NSurvey.WebAdmin
                 LanguagesDropdownlist.Items.Clear();
                 foreach (MultiLanguageData.MultiLanguagesRow language in surveyLanguages.MultiLanguages)
                 {
-                    ListItem defaultItem = new ListItem(GetPageResource(language.LanguageDescription), language.LanguageCode);
+                    ListItem defaultItem = new ListItem(GetPageLanguageCodes(language.LanguageDescription), language.LanguageCode);
                     if (language.DefaultLanguage)
                     {
                         defaultItem.Value = "";
-                        defaultItem.Text += " " + GetPageResource("LanguageDefaultText");
+                        defaultItem.Text += " " + GetPageLanguageCodes("LanguageDefaultText");
                     }
 
                     LanguagesDropdownlist.Items.Add(defaultItem);

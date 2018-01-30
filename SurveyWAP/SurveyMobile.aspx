@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" Trace="false" AutoEventWireup="true" CodeBehind="SurveyMobile.aspx.cs" Inherits="Votations.NSurvey.WebAdmin.SurveyMobile" %>
+﻿<%@ Page Language="C#" Trace="false" maxPageStateFieldLength="-1"  EnableViewState="true" EnableViewStateMac="true" ViewStateEncryptionMode="Never" AutoEventWireup="true" CodeBehind="SurveyMobile.aspx.cs" Inherits="Votations.NSurvey.WebAdmin.SurveyMobile" %>
 <%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="SurveyProject.WebControls" %>
 <!DOCTYPE html>
 <html>
@@ -26,6 +26,9 @@
     <!-- Bootstrap v. 3.3.7 - Package -->
     <!-- <link href="Content/bootstrap.min.css" rel="stylesheet" /> -->
 
+     <!-- Production CSS - minified or full -->
+    <link id="defaultCSS" runat="server" href="Content/surveyform/surveymobile.css" rel="stylesheet" type="text/css" />
+
     <!-- Part of Bootstrap Installation -->
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,6 +45,7 @@
 
                     <header id="ErrorMessageDiv" class="errorMessageDiv">
                         <asp:Label ID="MessageLabel" runat="server" CssClass="errorMessage" Visible="False"></asp:Label>
+                        <span id="LoadMessage" style="display:none;">Load Message Text: multiple clicks not allowed......</span>
                     </header>
 
                 <main id="SurveyBoxDiv" class="container panel panel-default">

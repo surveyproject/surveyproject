@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
-
-using Votations.NSurvey.Data;
 using Votations.NSurvey.WebAdmin;
-using Votations.NSurvey.WebAdmin.UserControls;
-using Votations.NSurvey.Web.Security;
 
 namespace Votations.NSurvey
 {
@@ -81,11 +75,11 @@ namespace Votations.NSurvey
 
             //Add JQuery Scripts
 
-            //JQuery v. 3.1.1. Min:
+            //JQuery v. 3.3.1. Min:
             Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
             HtmlGenericControl javascriptControl = new HtmlGenericControl("script");
             javascriptControl.Attributes.Add("type", "text/Javascript");
-            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/jquery-3.1.1.min.js"));
+            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/jquery-3.3.1.min.js"));
             Page.Header.Controls.Add(javascriptControl);
 
             //JQuery Migrate Plugin - to test upgrades

@@ -9,6 +9,9 @@ namespace Votations.NSurvey.WebControls
     using System.Globalization;
     using System.Runtime.CompilerServices;
     using System.Text;
+    using System.Threading.Tasks;
+    // temp
+    using System.Timers;
     using System.Web;
     using System.Web.UI;
     using System.Web.UI.HtmlControls;
@@ -94,7 +97,7 @@ namespace Votations.NSurvey.WebControls
         private SurveyData.SurveysRow _surveyRow;
         private string _surveyTitle;
         private string _thankYouMessage;
-        private UnAuthentifiedUserAction _unAuthentifiedUserAction = UnAuthentifiedUserAction.ShowThankYouMessage;
+        private UnAuthentifiedUserAction _unAuthentifiedUserAction = UnAuthentifiedUserAction.GeneralWarning;
         private VoterAnswersData currentVisitorAnswerSet = new VoterAnswersData();
 
         /// <summary>
@@ -185,9 +188,15 @@ namespace Votations.NSurvey.WebControls
         {
             BuildMessageBox(ResourceManager.GetString("ClosedSurveyMessage", this.LanguageCode), CssXmlManager.GetString("ClosedSurveyMessage"));
         }
+
         protected virtual void BuildInactiveSurvey()
         {
             BuildMessageBox(ResourceManager.GetString("InactiveSurveyMessage", this.LanguageCode), CssXmlManager.GetString("InactiveSurveyMessage"));
+        }
+
+        protected virtual void BuildSecurityGeneralWarning()
+        {
+            BuildMessageBox(ResourceManager.GetString("SecurityGeneralWarning", this.LanguageCode), CssXmlManager.GetString("InactiveSurveyMessage"));
         }
 
         protected virtual void BuildOpenDate ()
@@ -294,7 +303,7 @@ namespace Votations.NSurvey.WebControls
             new MultiLanguages().GetSurveyLanguages(this.SurveyId);
             foreach (MultiLanguageData.MultiLanguagesRow row2 in new MultiLanguages().GetSurveyLanguages(this.SurveyId).MultiLanguages)
             {
-                ListItem item = new ListItem(ResourceManager.GetString(row2.LanguageDescription), row2.LanguageCode);
+                ListItem item = new ListItem(LanguageCodesManager.GetString(row2.LanguageDescription), row2.LanguageCode);
                 /* TODO JJ Remove setting to ""
                 if (row2.DefaultLanguage)
                 {
@@ -303,7 +312,7 @@ namespace Votations.NSurvey.WebControls
                  * */
                 this._languageDropDownList.Items.Add(item);
             }
-            ResourceManager.TranslateListControl(this._languageDropDownList);
+            LanguageCodesManager.TranslateListControl(this._languageDropDownList);
 
             panel = new Panel { CssClass = CssXmlManager.GetString("LanguageDropDownListPanel"), ID="lrlDDLP" };
             panel.Controls.Add(this._languageDropDownList);
@@ -470,22 +479,22 @@ namespace Votations.NSurvey.WebControls
             Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
 
             //SurveyForm css:
-            css = new HtmlGenericControl("link");
-            css.Attributes.Add("rel", "stylesheet");
-            css.Attributes.Add("type", "text/css");
-            css.Attributes.Add("ID", "defaultCSS");
-            css.Attributes.Add("runat", "server");
-            css.Attributes.Add("href", ResolveUrl(GlobalConfig.CSSFilesPath + "/surveymobile.css"));
-            Page.Header.Controls.Add(css);
+            //css = new HtmlGenericControl("link");
+            //css.Attributes.Add("rel", "stylesheet");
+            //css.Attributes.Add("type", "text/css");
+            //css.Attributes.Add("ID", "defaultCSS");
+            //css.Attributes.Add("runat", "server");
+            //css.Attributes.Add("href", ResolveUrl(GlobalConfig.CSSFilesPath + "/surveymobile.css"));
+            //Page.Header.Controls.Add(css);
+
+            //Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
 
             //jQuery(necessary for Bootstrap's JavaScript plugins) + answerfieldslideritem, answerfieldcalendar
-
-            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
 
             HtmlGenericControl javascriptControl = new HtmlGenericControl("script");
 
             javascriptControl.Attributes.Add("id", "jq311");
-            javascriptControl.Attributes.Add("src", ResolveUrl(GlobalConfig.ScriptFilesPath + "/jquery-3.1.1.min.js"));
+            javascriptControl.Attributes.Add("src", ResolveUrl(GlobalConfig.ScriptFilesPath + "/jquery-3.3.1.min.js"));
             Page.Header.Controls.Add(javascriptControl);
 
             //For development purposes only: upgrade jquery
@@ -624,18 +633,25 @@ namespace Votations.NSurvey.WebControls
             this._submitButton.CssClass = CssXmlManager.GetString("SurveySubmitButton");
             this._submitButton.ID = "ssB";
             this._submitButton.Text = (this.ButtonText == null) ? ResourceManager.GetString("SubmitSurvey", this.LanguageCode) : this.ButtonText;
+
+                // to prevent fast/ double clicking enter button:
+            this._submitButton.OnClientClick = "var e=this;setTimeout(function(){e.disabled=true;},0);return true;";
+
             this._submitButton.Click += new EventHandler(this.OnAnswersSubmit);
+
             if (this.EnableValidation)
             {
                 this._submitButton.Attributes.Add("OnClick", string.Format("return {0}{1}();", GlobalConfig.SurveyValidationFunction, this.ID));
             }
+            
+
             panel = new Panel { CssClass = CssXmlManager.GetString("SurveySubmitButtonPanel"), ID="ssbP" };
             panel.Controls.Add(this._submitButton);
             subPanel.Controls.Add(panel);
 
             submitControl.Controls.Add(subPanel);
 
-            //previous page button
+            //add previous page button in case Navigation is enabled
             if (this._enableNavigation)
             {
                 panel = new Panel { CssClass = CssXmlManager.GetString("BuildSubmitPPBSubPanel"), ID = "bsbPPBP" };
@@ -716,21 +732,8 @@ namespace Votations.NSurvey.WebControls
             QuestionData data;
             this._questions = new QuestionItemCollection();
 
-            //this._questionContainer = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetMainPercentTable();//JJ;
-            //this._questionContainer.Rows.Add(this.BuildRow("", null));
-            //this._questionContainer.Rows[0].EnableViewState = false;
-            //this._questionContainer.Rows.Add(this.BuildRow("", null));
-            //this._questionContainer.Rows[1].EnableViewState = false;
-
-            //SP25
+            //TODO SP25
             this._questionPanel = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetMainPercentagePanel();
-
-            //TODO SP 25 never used??
-            //this._questionPanel.Controls.Add(this.BuildPanelRow("",null));
-            //this._questionPanel.Controls[0].EnableViewState = false;
-            //this._questionPanel.Controls.Add(this.BuildPanelRow("", null));
-            //this._questionPanel.Controls[1].EnableViewState = false;
-
 
             Votations.NSurvey.SQLServerDAL.SurveyLayout u = new Votations.NSurvey.SQLServerDAL.SurveyLayout();
             var _userSettings = u.SurveyLayoutGet(this.SurveyId, this.LanguageCode);
@@ -741,7 +744,6 @@ namespace Votations.NSurvey.WebControls
             }
 
             Panel subpanel = new Panel { CssClass = CssXmlManager.GetString("BuildSurveyBoxQCSubPanel"), ID="bsbQCSP" };
-            //subpanel.Controls.Add(this._questionContainer);
 
             //TODO SP25
             subpanel.Controls.Add(this._questionPanel);
@@ -767,16 +769,11 @@ namespace Votations.NSurvey.WebControls
             {
                 if (!new Question().SkipQuestion(row2.QuestionId, this.VoterAnswers, this._isScored))
                 {
-                    //TableRow row = new TableRow();
-                    //TableCell cell = new TableCell();
-                    //row.Cells.Add(cell);
-                    //this._questionContainer.Rows.Add(row);
 
                     //TODO sp25
                     Panel panelrow = new Panel();
                     this._questionPanel.Controls.Add(panelrow);
 
-                    //this.InsertQuestion(row2, cell, enableQuestionDefaults);
                     this.InsertQuestion(row2, panelrow, enableQuestionDefaults);
                 }
                 else
@@ -1095,16 +1092,28 @@ namespace Votations.NSurvey.WebControls
             }
         }
 
+        /// <summary>
+        /// On click event of Submit button
+        /// </summary>
+        /// <param name="sender">sender: submitbutton</param>
+        /// <param name="e">raised event</param>
         protected virtual void OnAnswersSubmit(object sender, EventArgs e)
         {
-            if (!this._selectionsAreRequired)
-            {
-                this.SubmitAnswersToDb();
-                this.CurrentPageIndex = 1;
-                this.QuestionNumber = 0;
-                this.HighestPageNumber = 0;
-            }
+
+                if (!this._selectionsAreRequired)
+                {
+                        this.SubmitAnswersToDb();
+
+                        this.CurrentPageIndex = 1;
+                        this.QuestionNumber = 0;
+                        this.HighestPageNumber = 0;
+                }
+
+            //TODO SP2.5 remove test:
+            //Page.ClientScript.RegisterStartupScript(this.GetType(), "myalert", "document.getElementById('LoadMessage').style.display = 'block';", true);
+            
         }
+
 
         protected virtual void OnCancelResumeSubmit(object sender, EventArgs e)
         {
@@ -1683,10 +1692,19 @@ namespace Votations.NSurvey.WebControls
                     {
                         this.Visible = false;
                     }
-                    else
+                    else if (this._unAuthentifiedUserAction == UnAuthentifiedUserAction.GeneralWarning)
+                    {
+                        BuildSecurityGeneralWarning();
+
+                    } else if (this._unAuthentifiedUserAction == UnAuthentifiedUserAction.ShowThankYouMessage)
                     {
                         this.BuildThanksBox(false);
+
+                    }  else
+                    {
+                        BuildSecurityGeneralWarning();
                     }
+
                 }
                 return true;
             }
@@ -1763,15 +1781,17 @@ namespace Votations.NSurvey.WebControls
         }
 
         /// <summary>
+        /// On clicking the submitbutton and raising the click event:
         /// Submits the answers to the database and ends the survey
         /// Depending on notification mode sends email message (3 options) to administrator
         /// Optionally redirects to new url
-        /// Optionally shows thank you message to surveytaker
+        /// Optionally shows thank you message to surveytaker (buildthankbox)
         /// </summary>
         protected virtual void SubmitAnswersToDb()
         {
             this.CurrentSecurityAddIn = 0;
             this.ViewState["LastAuthenticatedAddIn"] = -1;
+
             if (!this.SecuritySetup(false))
             {
                 if (this.currentVisitorAnswerSet.VotersAnswers.Rows.Count > 0)
@@ -1784,15 +1804,19 @@ namespace Votations.NSurvey.WebControls
                 {
                     new Voter().DeleteVoterResumeSession(this.SurveyId, this.VoterAnswers.Voters[0].ResumeUID);
                 }
+
                 this.OnFormSubmitting(new FormItemEventArgs(this.VoterAnswers));
                 new Voter().AddVoter(this.VoterAnswers);
+
                 this.OnFormSubmitted(new FormItemEventArgs(this.VoterAnswers));
                 this.UnLoadSecurityAddIns(this.VoterAnswers);
+
                 if (this._notificationMode != NotificationMode.None)
                 {
                     new VoterTextReportGenerator(this.VoterAnswers, this.SurveyId).SendReport(this._notificationMode, this._surveyTitle, this._emailFrom, this._emailTo, this._emailSubject);
                 }
             }
+
             if ((this._redirectionURL != null) && (this._redirectionURL.Length != 0))
             {
                 HttpContext.Current.Session["voterid"] = this.VoterAnswers.Voters[0].VoterId;
@@ -1803,9 +1827,14 @@ namespace Votations.NSurvey.WebControls
             }
             else
             {
+                //TODO SP2.5 remove test:
+                //Page.ClientScript.RegisterStartupScript(this.GetType(), "myalert2", "document.getElementById('LoadMessage').style.display = 'none';", true);
                 this.BuildThanksBox(true);
             }
+
+            // clear all voteranswers from viewstate
             this.VoterAnswers.Clear();
+            ViewState.Clear();
         }
 
         /// <summary>
@@ -2431,6 +2460,7 @@ namespace Votations.NSurvey.WebControls
 
         /// <summary>
         /// Id of the survey you wish to render
+        /// and gets or sets it to the viewstate
         /// </summary>
         [Category("General"), DefaultValue("-1"), PersistenceMode(PersistenceMode.Attribute), Bindable(true), DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         public int SurveyId
@@ -2473,6 +2503,7 @@ namespace Votations.NSurvey.WebControls
 
         /// <summary>
         /// Total of questions pages in the survey
+        /// and adds it to the viewstate
         /// </summary>
         public int TotalPageNumber
         {
@@ -2493,6 +2524,7 @@ namespace Votations.NSurvey.WebControls
         /// <summary>
         /// Contains all the answers to all
         /// questions given by the current voter
+        /// and adds the VoterAnswersData Dataset to the viewstate
         /// </summary>
         public VoterAnswersData VoterAnswers
         {
@@ -2509,6 +2541,7 @@ namespace Votations.NSurvey.WebControls
                 this.ViewState["VoterAnswers"] = value;
             }
         }
+
     }
 }
 

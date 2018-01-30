@@ -20,7 +20,7 @@
                 Once uploaded the customised CSS files are linked to the survey selected in the treelist.    
                 <br /><br />
                 The default (minified) CSS file linked to the survey component and the surveymobile.aspx webpage can be found 
-                in the NsurveyAdmin/CSS directory: surveymobile.min.css. Click the next link for instructions
+                in the Content/surveyform directory: surveymobile.min.css. Click the next link for instructions
                 on using the <a class="help" href="Web%20Control%20Style.aspx" target="_self">Web Control CSS Style</a> attributes.
                 <br />
                 <br />

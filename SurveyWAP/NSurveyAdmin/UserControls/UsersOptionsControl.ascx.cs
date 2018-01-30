@@ -460,7 +460,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 			if (new Users().IsAdministrator(UserId) && new Users().GetAdminCount() == 1)
 			{
 				MessageLabel.Visible = true;
-((PageBase)Page).ShowErrorMessage(MessageLabel,((PageBase)Page).GetPageResource("CannotDeleteLastAdminMessage"));
+                ((PageBase)Page).ShowErrorMessage(MessageLabel,((PageBase)Page).GetPageResource("CannotDeleteLastAdminMessage"));
 				return;
 			}
 

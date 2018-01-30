@@ -1,6 +1,5 @@
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CustomReport.aspx.cs" Inherits="Votations.NSurvey.WebAdmin.CustomReport" %>
 
-<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 <%@ Import Namespace = "Votations.NSurvey.Helpers" %>
 <%@ Import Namespace = "Votations.NSurvey.WebControls" %>
 
@@ -43,8 +42,8 @@
             </legend>
                  <br /><br />
 
-                                            <asp:DataGrid ID="CustomReportDataGrid" runat="server" class="voterReport" AllowCustomPaging="True" GridLines="Vertical"
-                                                ForeColor="Black" Width="100%"  AlternatingRowStyle-BackColor="#FFF6BB" ShowFooter="False" AllowPaging="False" PageSize="10" FooterStyle-BackColor="#FFDF12" FooterStyle-BorderStyle="None" FooterStyle-BorderColor="#E2E2E2">
+                                            <asp:DataGrid ID="CustomReportDataGrid" runat="server" class="" AllowCustomPaging="True" GridLines="Vertical"
+                                                ForeColor="Black" Width="100%"  AlternatingRowStyle-BackColor="#FFF6BB" ShowHeader="true" ShowFooter="False" AllowPaging="False" PageSize="10" FooterStyle-BackColor="#FFDF12" FooterStyle-BorderStyle="None" FooterStyle-BorderColor="#E2E2E2">
                                                 <SelectedItemStyle Font-Bold="True" Wrap="True" ForeColor="White" BackColor="#000099">
                                                 </SelectedItemStyle>
                                                 <EditItemStyle Wrap="False"></EditItemStyle>
@@ -54,42 +53,6 @@
                                                 <HeaderStyle BackColor="#e2e2e2" ForeColor="#5720C6" Font-Size="1.4em" Font-Bold="true"  HorizontalAlign="Center" Wrap="true" Width="25%" BorderWidth="1px" BorderStyle="Solid" BorderColor="#E2E2E2"></HeaderStyle>
                                                 <FooterStyle Wrap="True" BackColor="#CCCCCC"></FooterStyle>
                                             </asp:DataGrid>
-                                    
-
-                             <div style="text-align:center;"><br /><br />
-                                 <!-- SP CHARTING EXAMPLE: uncomment to activate + adjust codebehind
-
-                                 <asp:Chart ID="Chart1" runat="server" ImageType="Png" ImageLocation="~/Images/mscharts_temp/ChartPic_#SEQ(300,3)"  BackColor="#D3DFF0" Width="512px" Height="396px" BorderColor="26, 59, 105" Palette="BrightPastel" BorderlineDashStyle="Solid" BackGradientStyle="TopBottom" BorderWidth="2">
-                                     <Titles>
-                                         <asp:Title ShadowColor="32, 0, 0, 0" Font="Trebuchet MS, 14.25pt, style=Bold" ShadowOffset="3" Text="Nonsense Title" Alignment="MiddleLeft" ForeColor="26, 59, 105"></asp:Title>
-                                     </Titles>
-                                     <Legends>
-                                         <asp:Legend Enabled="True" IsTextAutoFit="False" Name="Default" BackColor="Transparent" Font="Trebuchet MS, 8.25pt, style=Bold"></asp:Legend>
-                                     </Legends>
-                                     <BorderSkin SkinStyle="Emboss"></BorderSkin>
-
-                                     <Series>
-                                         <asp:Series Name="Series1" ChartType="Radar"  BorderColor="180, 26, 59, 105" Color="220, 65, 140, 240" XValueType="Double" YValueType="Double" font="Trebuchet MS, 8.25pt, style=Bold"></asp:Series>
-                                     </Series>
-
-							        <chartareas>
-								        <asp:chartarea Name="ChartArea1" BorderColor="64, 64, 64, 64" BackSecondaryColor="Transparent" BackColor="64, 165, 191, 228" ShadowColor="Transparent" BackGradientStyle="TopBottom">
-									        <area3dstyle Rotation="-21" perspective="10" enable3d="True" Inclination="48" IsRightAngleAxes="False" wallwidth="0" IsClustered="False"></area3dstyle>
-									        <axisy linecolor="64, 64, 64, 64">
-										        <labelstyle font="Trebuchet MS, 8.25pt, style=Bold" />
-										        <majorgrid linecolor="64, 64, 64, 64" />
-									        </axisy>
-									        <axisx linecolor="64, 64, 64, 64">
-										        <labelstyle font="Trebuchet MS, 8.25pt, style=Bold" />
-										        <majorgrid linecolor="64, 64, 64, 64" />
-									        </axisx>
-								        </asp:chartarea>
-							        </chartareas>
-                                 </asp:Chart>
-
-                                     -->
-
-                             </div>
 
          <br />  <br />
             </fieldset>

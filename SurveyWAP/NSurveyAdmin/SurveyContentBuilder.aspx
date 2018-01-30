@@ -22,11 +22,6 @@
         });
     </script>
 
-    <style type="text/css" id="scb_answers">
-        span.answerTextRender > label{color: black;background: white;font-weight: normal; margin-left: 5px;}
-        span.answerTextRender > div > input {margin: -5px 5px 0 0}
-    </style>
-
 
     <div id="Panel" class="Panel">
                         <fieldset id="liML" runat="server">                    

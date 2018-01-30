@@ -17,7 +17,6 @@
         <fieldset>
             <legend class="titleFont titleLegend">
                 <asp:Literal ID="RegExLibraryTitle" runat="server" Text="RegEx library" EnableViewState="False"></asp:Literal>
-
             </legend>
             <br />
 
@@ -28,7 +27,7 @@
                     </asp:DropDownList>
                 </li>
                 <li>
-                    <asp:LinkButton ID="CreateRegExHyperLink" runat="server">Click here to create a new regex</asp:LinkButton><br />
+                    <asp:Button ID="CreateRegExBtn" runat="server" CssClass="btn btn-primary btn-xs bw" Text="Create Regex" />
                     [
                     <asp:HyperLink ID="RegExLibComHyperLink" runat="server" Target="_blank" NavigateUrl="http://www.regexlib.com">Go to http://www.regexlib.com for more regular expressions</asp:HyperLink>
                     ]
@@ -60,13 +59,20 @@
                         <asp:Button ID="CancelRegExButton" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Cancel"></asp:Button>
                         <br />
 
-                    </li>
-                </asp:PlaceHolder>
-                <li>
-                    <b>
-                        <asp:Label ID="TestRegExTitle" runat="server">Test a regular expression</asp:Label></b>
-
                 </li>
+                </asp:PlaceHolder>
+                            </ol>
+                </fieldset>
+        <div class="errorDiv">
+            <asp:Label ID="TestMessageLabel" runat="server" CssClass="errorMessage" Visible="False"></asp:Label>
+        </div>
+
+                <fieldset>
+                     <legend class="titleFont titleLegend">
+                        <asp:Label ID="TestRegExTitle" runat="server">Test a regular expression</asp:Label>
+                         </legend>
+                    <br />
+            <ol>
                 <li>
                     <asp:Label ID="RegularExpressionTestLabel" AssociatedControlID="TestExpressionTextbox" runat="server"></asp:Label>
 

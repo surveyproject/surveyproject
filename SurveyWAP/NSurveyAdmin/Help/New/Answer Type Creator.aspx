@@ -85,7 +85,7 @@ SP&trade; provides a way to create custom Answer Types without the need to have 
 <i>* Xml File Name</i><br /> - name of the Xml file that the type will be bound to.
 <br /><br />
   Note that the Xml file has to be in the directory specified by the 
-  NsurveyXmlDataPath ellement of the web.config. It is not
+  NsurveyXmlDataPath element of the web.config. It is not
   possible to edit or create Xml files through the administration
   interface.<br />
 <br />

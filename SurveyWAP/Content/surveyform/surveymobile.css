@@ -74,13 +74,14 @@ input[type=text] {
 }
 
 input[type=text]:focus {
-    background-color: lightblue;
+    background-color:snow;
 }
 
 select {
     width: 50%;
     box-sizing: border-box;
-    margin: 5px;
+    margin: 5px 0 10px 5px;
+    height: 25px;
 }
 
 /* SURVEY BOX CSS HIERARCHY*/
@@ -424,6 +425,7 @@ ID dna
 .answerTextRender > label
 {
     font-weight:normal;
+    padding-left:5px;
 }
 
 span.answerTextRender > div:nth-child(2)
@@ -495,6 +497,7 @@ span.answerTextRender > div:nth-child(2)
 /*ID:  SurveyControl_pNP */
 .pageNumberPanel{
     float:left;
+    margin-left:20px;
 }
 
 /*ID dna*/
@@ -656,14 +659,16 @@ span.answerTextRender > div:nth-child(2)
 
 /* QuestionValidationMessageStyle */
 .qvmStyle {
-    background: #e80808;
-    color: white;
+    font-weight: bold;
+    font-style: oblique;
+    color: red;
     padding: 5px 15px 5px 10px;
     line-height: 1.7;
     display: block;
     width: 100%;
     border-radius: 7px;
     margin-bottom: 10px;
+    background-color: rgba(255, 127, 127, 0.07);
 }
 
 /* QuestionValidationMarkStyle */

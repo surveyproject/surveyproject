@@ -1,17 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Xml;
-//using Geekees.Common.Controls;
 using Goldtect;
 using System.Web.UI.HtmlControls;
-using System.Web.Security;
 using Votations.NSurvey.Data;
 using Votations.NSurvey.DataAccess;
-using  Votations.NSurvey.Resources;
+using Votations.NSurvey.Resources;
 namespace Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls
 {
     public partial class SurveyTree : System.Web.UI.UserControl

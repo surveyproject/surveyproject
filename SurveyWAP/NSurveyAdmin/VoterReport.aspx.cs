@@ -514,7 +514,7 @@ namespace Votations.NSurvey.WebAdmin
 			{
 				if (answer == null ||  answer.Length == 0)
 				{
-					return GetPageResource("AnswerNotAnsweredMessage");
+					return "<span class='notanswered'>" + GetPageResource("AnswerNotAnsweredMessage") + "</span>";
 				}
 				else
 				{

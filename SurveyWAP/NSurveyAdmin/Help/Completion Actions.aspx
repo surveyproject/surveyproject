@@ -53,20 +53,20 @@
                 <br />
                 * Redirection URL<br />
                 This is the URL to which the respondent will be redirected. It must be in following format: http://www.yourdomain.com or 
-                http://www.youdomain.com/yourpage.aspx<br />
+                http://www.youdomain.com/yourpage.aspx <br />
                                 <br />
                 <br />
                 <b>Results Report</b><br />
                 <br />
                 This action will redirect the user to the Resultsreport webpage once the survey is completed and submitted. 
-                Through the results report the respondent
-                will get an overview of all survey questions, the answers submitted and scores (if set). An option to print the report is shown on the page.
+                Through the results report the respondent will get an overview of all survey questions, the answers submitted and scores (if set). 
+                An option to print the report is shown on the page. The content and layout of the resultsreport 
+                is based on and similar to the <a href="New/Voter report.aspx" title="Voter Report">Individual Results Report</a>.
                                 <br />
            
                 <br />
                 * Redirection URL<br />
-                This is used to set the URL to the Resultsreport of the survey where the respondent will be redirected on completing the survey. 
-                The content and layout of the resultsreport is based on and similar to the <a href="New/Voter report.aspx" title="Voter Report">Voter Report</a>.
+                This is used to set the URL to the Individual Resultsreport of the survey where the respondent will be redirected on completing the survey. 
                                                 <br />
                 <br />
 
@@ -78,6 +78,24 @@
                 URL Endresult: NSurveyReports\resultsreport.aspx?surveyid=bb058c21-861d-450e-a2a5-4601467a59ca 
                 <br />
                 <br />Note: the report option does not work with the Friendly URL
+                <br /> <br /><br />
+                                <b>Custom Results Report</b><br />
+                <br />This action will redirect the user to a Custom Resultsreport webpage once the survey is completed and submitted. 
+                A custom report may contain any customized results or calculated values based on the individual or overall responses to a survey that
+                 are taken from the SP database through a special stored procedure. 
+                <br /><br />
+                See <a href="New\CreateCustomReport.aspx" title="Creating Custom Reports">Creating Custom Reports</a> on how to create/ edit the custom report.
+
+                                <br /><br />
+
+                * To set the correct Resultsreport 'redirection URL' go to menuoption 'Campaigns/ Web' go to the 'Deployment URL' <br />
+                * copy the surveyid part of the url (e.g. surveyid=bb058c21-861d-450e-a2a5-4601467a59ca )<br />
+                * go back to the Completion menu<br />
+                * type the following url including questionmark: NSurveyReports\customreport.aspx?<br />
+                * paste the surveyid at the end of the typed part<br /><br />
+                URL Endresult: NSurveyReports\customreport.aspx?surveyid=bb058c21-861d-450e-a2a5-4601467a59ca 
+                                <br />
+                <br />Note: the report option does not work with the Friendly URL
                 <br />
                 <hr style="color:#e2e2e2;" />
                 <h3>
@@ -85,9 +103,10 @@
                 <br />
                 <a href="Thanks Message Conditions.aspx" title="">Thanks Message Conditions</a><br />
                                 <a href="New\Advanced Completion.aspx" title="Advanced Completion">Advanced Completion</a><br />
+                <a href="New\CreateCustomReport.aspx" title="Creating Custom Reports">Creating Custom Reports</a><br />
                 <a href="Multi-Languages Settings.aspx" title="Multi Languages">Multi Languages Settings</a><br />
                 <a href="Score_Introduction.aspx" title="Score Introduction">Score Introduction</a><br />
-                <a href="New/Voter report.aspx" title="Voter Report">Voter Report</a><br />
+                <a href="New/Voter report.aspx" title="Voter Report">Individual Responses Reports</a><br />
                 <br />
             </div>
 <div id="fillerDiv" class="fillerDiv">&nbsp;</div></div></asp:Content>

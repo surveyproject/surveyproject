@@ -35,7 +35,7 @@
 
         <div id="Panel" class="Panel">
 
-        <div   id="tab-1"><br />
+        <div   id="tab-1">
             <asp:Panel runat="server" ID="LibraryList">
 
                                                         <div class="helpDiv">
@@ -81,7 +81,6 @@
          </fieldset>
 
             </asp:Panel>
-           
 
         <div id="LibaryEditDiv">
             <asp:Panel runat="server" ID="LibraryEdit">
@@ -96,9 +95,9 @@
                                             </a>
                                         </div>
                 </fieldset>
-
+                  
                 <uc1:LibraryNew runat="server" ID="lbnEdit" />
-
+                
             </asp:Panel>
         </div>
 

@@ -30,7 +30,7 @@ namespace Votations.NSurvey.SQLServerDAL
             insertCommand.CommandType = CommandType.StoredProcedure;
             insertCommand.Parameters.Add(new SqlParameter("@LibraryName", SqlDbType.VarChar, 0xff, "LibraryName"));
             insertCommand.Parameters.Add(new SqlParameter("@LibraryId", SqlDbType.Int, 4, "LibraryId"));
-            insertCommand.Parameters.Add(new SqlParameter("@Description", SqlDbType.NText, 10000, "Description"));
+            insertCommand.Parameters.Add(new SqlParameter("@Description", SqlDbType.NVarChar, -1, "Description"));
             insertCommand.Parameters.Add(new SqlParameter("@DefaultLanguageCode", SqlDbType.NVarChar, 50, "DefaultLanguageCode")); 
             insertCommand.Parameters["@LibraryId"].Direction = ParameterDirection.Output;
             DbConnection.db.UpdateDataSet(newLibrary, "Libraries", insertCommand, new SqlCommand(), new SqlCommand(), UpdateBehavior.Transactional);
@@ -90,7 +90,7 @@ namespace Votations.NSurvey.SQLServerDAL
             insertCommand.CommandType = CommandType.StoredProcedure;
             insertCommand.Parameters.Add(new SqlParameter("@LibraryID", SqlDbType.Int, 4, "LibraryID"));
             insertCommand.Parameters.Add(new SqlParameter("@LibraryName", SqlDbType.NVarChar, 255, "LibraryName"));
-            insertCommand.Parameters.Add(new SqlParameter("@Description", SqlDbType.NText, 10000, "Description"));
+            insertCommand.Parameters.Add(new SqlParameter("@Description", SqlDbType.NVarChar, -1, "Description"));
             insertCommand.Parameters.Add(new SqlParameter("@DefaultLanguageCode", SqlDbType.NVarChar, 50, "DefaultLanguageCode"));
             DbConnection.db.UpdateDataSet(updatedLibrary, "Libraries", insertCommand, new SqlCommand(), insertCommand, UpdateBehavior.Transactional);
         }

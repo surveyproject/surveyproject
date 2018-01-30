@@ -105,10 +105,6 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 					AddInDisabledLabel.Text = ((PageBase)Page).GetPageResource("AddInDisabledLabel");
 					DisableAddInLinkButton.Text = ((PageBase)Page).GetPageResource("EnableAddInLinkButton");
 				}
-//				else
-//				{
-//					DisableAddInLinkButton.Text = ((PageBase)Page).GetPageResource("DisableAddInLinkButton");
-//				}
 			}
 		}
 

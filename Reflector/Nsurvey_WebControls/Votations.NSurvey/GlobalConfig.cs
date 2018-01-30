@@ -311,6 +311,25 @@ namespace Votations.NSurvey
             }
         }
 
+        public static string LanguageCodesPath
+        {
+            get
+            {
+                string str = null;
+                NameValueCollection config = (NameValueCollection)ConfigurationManager.GetSection("nSurveySettings");
+                if (config == null)
+                {
+                    config = ConfigurationManager.AppSettings;
+                }
+                str = config["NSurveyLanguageCodesPath"];
+                if (str == null)
+                {
+                    return "/XmlData/LanguageCodes/";
+                }
+                return str;
+            }
+        }
+
     }
 }
 

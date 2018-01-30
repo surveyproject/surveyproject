@@ -32,16 +32,12 @@ namespace Votations.NSurvey.WebAdmin
         {
             if (Request.PathInfo.Length == 0)
             {
-                //MessageLabel.Text = ResourceManager.GetString("InvalidSurveyUrl");
-                //MessageLabel.Visible = true;
                 return -1;
             }
             string friendlyName = Request.PathInfo.Substring(1);
             int id = new Surveys().GetSurveyIdFromFriendlyName(friendlyName);
             if (id <= 0)
             {
-                //MessageLabel.Text = ResourceManager.GetString("InvalidSurveyUrl");
-                //MessageLabel.Visible = true;
                 return -1;
             }
             return id;
@@ -54,16 +50,12 @@ namespace Votations.NSurvey.WebAdmin
                 int id = new Surveys().GetSurveyIdFromGuid(guid);
                 if (id <= 0)
                 {
-                    //MessageLabel.Text = ResourceManager.GetString("InvalidSurveyGuid");
-                    //MessageLabel.Visible = true; 
                     return -1;
                 }
                 else return id;
             }
             else
             {
-                //MessageLabel.Text = ResourceManager.GetString("InvalidSurveyGuid");
-                //MessageLabel.Visible = true; 
                 return -1;
             }
         }
@@ -106,7 +98,7 @@ namespace Votations.NSurvey.WebAdmin
 
                 //SP Demo charting
                 // Bind the double array to the Y axis points of the Default data series
-                Chart1.Series["Series1"].Points.DataBindXY(xval, yval);
+                //Chart1.Series["Series1"].Points.DataBindXY(xval, yval);
 
             }
                 // jQuery (necessary for Bootstrap's JavaScript plugins) + answerfieldslideritem.cs
@@ -114,7 +106,7 @@ namespace Votations.NSurvey.WebAdmin
 
                 HtmlGenericControl javascriptControl = new HtmlGenericControl("script");
                 javascriptControl.Attributes.Add("type", "text/Javascript");
-                javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/jquery-3.1.1.min.js"));
+                javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/jquery-3.3.1.min.js"));
                 Page.Header.Controls.Add(javascriptControl);
 
                 Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
@@ -132,6 +124,16 @@ namespace Votations.NSurvey.WebAdmin
 
         private void LocalizePage()
         {
+            SurveyAnswersTitle.Text = GetSurveyTitle();
+        }
+
+        private string GetSurveyTitle()
+        {
+            int id = GetSurveyId();
+            SurveyData surveyData = new Surveys().GetSurveyById(id, "");
+            string _surveyTitle = surveyData.Surveys[0].Title;
+
+            return _surveyTitle;
         }
 
         private void BindData()
@@ -219,6 +221,16 @@ namespace Votations.NSurvey.WebAdmin
 
                 if (e.Item.ItemType == ListItemType.Item)
                     e.Item.Cells[4].Visible = false;
+            }
+
+            //e.Item.Cells[5].Visible = true;
+            if (e.Item.Cells[5].Text.Equals("blank5") || e.Item.Cells[5].Text.Equals("cell5"))
+            {
+                if (e.Item.ItemType == ListItemType.Header)
+                    e.Item.Cells[5].Visible = false;
+
+                if (e.Item.ItemType == ListItemType.Item)
+                    e.Item.Cells[5].Visible = false;
             }
 
             // all visible except voterid cell[0]

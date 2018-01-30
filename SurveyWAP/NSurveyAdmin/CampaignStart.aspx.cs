@@ -42,29 +42,29 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
                     Page.Header.Controls.Add(css2);
                 }
 
-                else
-                {
-                Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-                HtmlGenericControl css = new HtmlGenericControl("link");
-                css.Attributes.Add("rel", "stylesheet");
-                css.Attributes.Add("type", "text/css");
-                css.Attributes.Add("href", VirtualPathUtility.ToAbsolute("~/NSurveyAdmin/CSS/surveypreview.css"));
-                Page.Header.Controls.Add(css);
-                }
+                //else
+                //{
+                //Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
+                //HtmlGenericControl css = new HtmlGenericControl("link");
+                //css.Attributes.Add("rel", "stylesheet");
+                //css.Attributes.Add("type", "text/css");
+                //css.Attributes.Add("href", VirtualPathUtility.ToAbsolute("~/Content/surveyadmin/surveypreview.css"));
+                //Page.Header.Controls.Add(css);
+                //}
 
                     //this.SurveyHeaderCustom.Text = HttpUtility.HtmlDecode(_userSettings.SurveyLayout[0].SurveyHeaderText);
                     //this.SurveyFooterCustom.Text = HttpUtility.HtmlDecode(_userSettings.SurveyLayout[0].SurveyFooterText);
 
             }
-            else
-            {
-                Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-                HtmlGenericControl css = new HtmlGenericControl("link");
-                css.Attributes.Add("rel", "stylesheet");
-                css.Attributes.Add("type", "text/css");
-                css.Attributes.Add("href", VirtualPathUtility.ToAbsolute("~/NSurveyAdmin/CSS/surveypreview.css"));
-                Page.Header.Controls.Add(css);
-            }
+            //else
+            //{
+            //    Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
+            //    HtmlGenericControl css = new HtmlGenericControl("link");
+            //    css.Attributes.Add("rel", "stylesheet");
+            //    css.Attributes.Add("type", "text/css");
+            //    css.Attributes.Add("href", VirtualPathUtility.ToAbsolute("~/Content/surveyadmin/surveypreview.css"));
+            //    Page.Header.Controls.Add(css);
+            //}
 
 
         }

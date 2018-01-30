@@ -13,11 +13,19 @@
                 The statistics page provides basic metrics about a survey. It presents a general
                 overview of how the survey "performs" and how many people have participated.<br />
                 <br />
+
+                                <b>* Survey Title &amp; status</b><br />
+                Title of the survey and the current status (active/ inactive) as set in survey settings.<br />
+                <br />
             
                 <b>* Creation Date</b><br />
                 This is the date on which the survey was created.<br />
                 <br />
          
+                                <b>* Opening & Closing Date</b><br />
+                Opening date of the survey to respondents/ visitors. Closing date of the survey to repondents/ visitors. Both dates are shown only if set in Survey Settings.<br />
+                <br />
+
                 <b>* Last Entry On</b><br />
                 This is the date on which the last response to the survey was recorded.<br />
                 <br />

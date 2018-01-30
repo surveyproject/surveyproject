@@ -1,5 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="Votations.NSurvey.Wap"
-    CodeBehind="Wap.Master.cs" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="Votations.NSurvey.Wap" CodeBehind="Wap.Master.cs" %>
 
 <%@ Register TagPrefix="uc1" TagName="FooterControl" Src="~/NsurveyAdmin/UserControls/FooterControl.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="~/NsurveyAdmin/UserControls/HeaderControl.ascx" %>
@@ -32,7 +31,7 @@
     <meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)" />
 
   <!-- SP Admin tool main CSS file -->
-    <link href="~/nsurveyadmin/css/nsurveyadmin.css" type="text/css" rel="stylesheet" />
+    <link href="Content/surveyadmin/nsurveyadmin.css" rel="stylesheet" />
 
             <!-- Bootstrap v. 3.3.7 - Package -->
     <link href="Content/bootstrap.min.css" rel="stylesheet" />

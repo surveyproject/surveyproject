@@ -25,7 +25,6 @@
 
 namespace Votations.NSurvey.WebAdmin
 {
-
     using Microsoft.VisualBasic;
     using System;
     using System.Linq;
@@ -49,6 +48,7 @@ namespace Votations.NSurvey.WebAdmin
     /// </summary>
     public class PageBase : Page
     {
+       
         /// <summary>
         /// Creates new nsurvey context from the current user name
         /// </summary>
@@ -252,6 +252,18 @@ namespace Votations.NSurvey.WebAdmin
         }
 
         /// <summary>
+        /// GetPageHelpfiles: refers to Helpfiles in XmlData/Helpfiles directory
+        /// Directory path determined in web.config file Nsurvey Settings
+        /// </summary>
+        /// <param name="resourceName"></param>
+        /// <returns></returns>
+        public string GetPageLanguageCodes(string resourceName)
+        {
+            return LanguageCodesManager.GetString(resourceName);
+        }
+
+
+        /// <summary>
         /// ValidateSurveyId
         /// </summary>
         void ValidateSurveyId()
@@ -302,6 +314,34 @@ namespace Votations.NSurvey.WebAdmin
 
             }
         }
+
+        /// <summary>
+        /// Look up the give item texts in the resource file 
+        /// to translate them
+        /// </summary>
+        /// <param name="unTranslatedListControl"></param>
+        /// <param name="reOrder"></param>
+        public void LanguageTranslateListControl(ListControl unTranslatedListControl, bool reOrder = false)
+        {
+            List<ListItem> items = new List<ListItem>();
+            string translatedText;
+            foreach (ListItem item in unTranslatedListControl.Items)
+            {
+                translatedText = GetPageLanguageCodes(item.Text);
+                item.Text = translatedText == null ? item.Text : translatedText;
+                if (reOrder) items.Add(item);
+            }
+            if (reOrder)
+            {
+                StringComparer comp = StringComparer.Create(System.Threading.Thread.CurrentThread.CurrentUICulture, false);
+                unTranslatedListControl.Items.Clear();
+                items = items.OrderBy(x => x.Text, comp).ToList();
+                items.ForEach(x => unTranslatedListControl.Items.Add(x));
+
+            }
+        }
+
+
         /// <summary>
         /// isEmail check validity of email address format based on regular expression
         /// </summary>

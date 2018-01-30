@@ -2,11 +2,11 @@
 <NSurveyDataSource xmlns="http://www.nsurvey.org/NSurveyDataSource.xsd">
 	<XmlDataSource>
 		<RunTimeAnswerLabel>
-		Cities of Alabama :
+		Albania :
 		</RunTimeAnswerLabel>
 		<XmlAnswers>
-		   <XmlAnswer><AnswerValue></AnswerValue><AnswerDescription>[Select a city]</AnswerDescription></XmlAnswer> 
-		   <XmlAnswer><AnswerValue>AL</AnswerValue><AnswerDescription>Alabama city</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue></AnswerValue><AnswerDescription>[Select an Albanian city]</AnswerDescription></XmlAnswer> 
+		   <XmlAnswer><AnswerValue>AL</AnswerValue><AnswerDescription>Albania city</AnswerDescription></XmlAnswer>
 		</XmlAnswers>
 	</XmlDataSource>
 </NSurveyDataSource>	

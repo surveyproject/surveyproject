@@ -10,7 +10,7 @@
             a list of CSS/ XML entries has been created.
             <br /> <br />
             Through this list the "CSS Selectors" column can be edited. The CSS Selector or CSS Class names refer to the selectors and classes 
-            as defined in the CSS files used with a particular survey (default or custom). CSS files can be found in the NSurveyAdmin/CSS directories.
+            as defined in the CSS files used with a particular survey (default or custom). CSS files can be found in the Content directories.
             <br /><br />
             If a CSS Selectors is added (multiple selectors per item are possible) it's CSS rules will be applied to the part of the surveypage that can be recognised by the ID that is mentioned in the ObjectID column. 
              <br /><br />

@@ -4,6 +4,7 @@ namespace Votations.NSurvey.Enums
 
     public enum UnAuthentifiedUserAction
     {
+        GeneralWarning = 3,
         HideSurvey = 2,
         ShowThankYouMessage = 1
     }

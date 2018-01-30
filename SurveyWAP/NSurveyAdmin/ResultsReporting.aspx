@@ -30,7 +30,7 @@
 
         var printPreviewObject = '<object id="printPreviewElement" width="0" height="0" classid="CLSID:8856F961-340A-11D0-A96B-00C04FD705A2"></object>';
 
-        printWindow.document.write('<link rel="stylesheet" type="text/css" href="../nsurveyadmin/css/voterreport.css" />' + printContent.innerHTML);
+                    printWindow.document.write('<link rel="stylesheet" type="text/css" href="../Content/surveyadmin/voterreport.css" />' + printContent.innerHTML);
 
         printWindow.document.write(printPreviewObject);
 
@@ -67,6 +67,7 @@
                     OnSelectedIndexChanged="rbListSelectedIndexChanged" Width="700" AutoPostBack="true" CellPadding="10">
                     <asp:ListItem Text="GraphicalReports" Value="GR" Selected="True"></asp:ListItem>
                     <asp:ListItem Text="CrossTabulationReports" Value="CTR"></asp:ListItem>
+                    <asp:ListItem Text="SSRSReports" Value="SSRS"></asp:ListItem>
                 </asp:RadioButtonList>
        </li>
   </ol>

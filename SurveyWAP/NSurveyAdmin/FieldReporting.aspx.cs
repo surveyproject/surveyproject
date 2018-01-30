@@ -42,15 +42,15 @@ namespace Votations.NSurvey.WebAdmin
 		protected System.Web.UI.WebControls.DataGrid FieldReportDataGrid;
 		new protected HeaderControl Header;
 		protected System.Web.UI.WebControls.Label CurrentPageLabel;
-		protected System.Web.UI.WebControls.LinkButton PreviousPageLinkButton;
-		protected System.Web.UI.WebControls.LinkButton NextPageLinkButton;
+		//protected System.Web.UI.WebControls.LinkButton PreviousPageLinkButton;
+		//protected System.Web.UI.WebControls.LinkButton NextPageLinkButton;
 		protected System.Web.UI.WebControls.Label TotalPagesLabel;
 		protected System.Web.UI.WebControls.Literal FieldReportTitle;
 		//protected SurveyListControl SurveyList;
 
 		private void Page_Load(object sender, System.EventArgs e)
 		{
-            UITabList.SetResultsTabs((MsterPageTabs)Page.Master, UITabList.ResultTabs.Reports);
+            UITabList.SetResultsTabs((MsterPageTabs)Page.Master, UITabList.ResultTabs.Responses);
 
 			SetupSecurity();
 			LocalizePage();
@@ -60,8 +60,11 @@ namespace Votations.NSurvey.WebAdmin
 			
 				// Header.SurveyId = SurveyId;	
                 ((Wap)Master.Master).HeaderControl.SurveyId = SurveyId;
-				FieldReportDataGrid.CurrentPageIndex = 1;
-				PreviousPageLinkButton.Enabled = false;
+                FieldReportDataGrid.CurrentPageIndex = 1;
+
+                PreviousPageButton.Enabled = false;
+                PreviousPageButton.Visible = false;
+
 				BindData();
 			}
 
@@ -86,8 +89,8 @@ namespace Votations.NSurvey.WebAdmin
 		private void LocalizePage()
         {   
 			FieldReportTitle.Text = GetPageResource("FieldReportTitle");
-			PreviousPageLinkButton.Text = GetPageResource("PreviousPageLinkButton");
-			NextPageLinkButton.Text = GetPageResource("NextPageLinkButton");
+			PreviousPageButton.Text = GetPageResource("PreviousPageLinkButton");
+			NextPageButton.Text = GetPageResource("NextPageLinkButton");
 			//((ButtonColumn)FieldReportDataGrid.Columns[0]).Text = GetPageResource("DetailsColumn");
             ((ButtonColumn)FieldReportDataGrid.Columns[0]).HeaderText = GetPageResource("DetailsColumn");
 			//((ButtonColumn)FieldReportDataGrid.Columns[1]).Text = GetPageResource("DeleteColumn");
@@ -136,11 +139,13 @@ namespace Votations.NSurvey.WebAdmin
                     TotalPagesLabel.Text = totalPages.ToString();
                 }
 
-                // Should we enable the next link?
+                // Should we enable the next/previous links?
                 if (totalPages == 1 || totalRecords == 0)
                 {
-                    PreviousPageLinkButton.Enabled = false;
-                    NextPageLinkButton.Enabled = false;
+                    PreviousPageButton.Enabled = false;
+                    PreviousPageButton.Visible = false;
+                    NextPageButton.Enabled = false;
+                    NextPageButton.Visible = false;
                 }
 
             }
@@ -173,11 +178,13 @@ namespace Votations.NSurvey.WebAdmin
                     TotalPagesLabel.Text = totalPages.ToString();
                 }
 
-                // Should we enable the next link?
+                // Should we enable the next/previous links?
                 if (totalPages == 1 || totalRecords == 0)
                 {
-                    PreviousPageLinkButton.Enabled = false;
-                    NextPageLinkButton.Enabled = false;
+                    PreviousPageButton.Enabled = false;
+                    PreviousPageButton.Visible = false;
+                    NextPageButton.Enabled = false;
+                    NextPageButton.Visible = false;
                 }
             }
 		}
@@ -202,8 +209,8 @@ namespace Votations.NSurvey.WebAdmin
 			this.FieldReportDataGrid.DeleteCommand += new System.Web.UI.WebControls.DataGridCommandEventHandler(this.FieldReportDataGrid_DeleteCommand);
 			this.FieldReportDataGrid.ItemDataBound += new System.Web.UI.WebControls.DataGridItemEventHandler(this.BindItemData);
 			this.FieldReportDataGrid.SelectedIndexChanged += new System.EventHandler(this.ViewDetails);
-			this.PreviousPageLinkButton.Click += new System.EventHandler(this.LoadPreviousPage);
-			this.NextPageLinkButton.Click += new System.EventHandler(this.LoadNextPage);
+			this.PreviousPageButton.Click += new System.EventHandler(this.LoadPreviousPage);
+			this.NextPageButton.Click += new System.EventHandler(this.LoadNextPage);
 			this.Load += new System.EventHandler(this.Page_Load);
 
 		}
@@ -213,7 +220,10 @@ namespace Votations.NSurvey.WebAdmin
 		{
 			// Hides or shows voter id, ip and startdate
 			e.Item.Cells[2].Visible = true;
-			e.Item.Cells[4].Visible = false;
+            e.Item.Cells[2].Width = 55;
+            e.Item.Cells[2].HorizontalAlign = HorizontalAlign.Center;
+
+            e.Item.Cells[4].Visible = false;
 			e.Item.Cells[5].Visible = false;
 			if (!new Surveys().IsSurveyScored(SurveyId))
 			{
@@ -235,7 +245,10 @@ namespace Votations.NSurvey.WebAdmin
 			{
 				// Remove time from date
 				e.Item.Cells[3].Text = (e.Item.Cells[3].Text.Split(' '))[0];
-				for (int i=0; i<e.Item.Cells.Count;i++)
+                e.Item.Cells[3].Width = 55;
+
+
+                for (int i=0; i<e.Item.Cells.Count;i++)
 				{
 					e.Item.Cells[i].Wrap = false;
 				}
@@ -262,14 +275,16 @@ namespace Votations.NSurvey.WebAdmin
 				if (FieldReportDataGrid.CurrentPageIndex <= totalPages)
 				{
 
-					PreviousPageLinkButton.Enabled = true;
+					PreviousPageButton.Enabled = true;
+                    PreviousPageButton.Visible = true;
 				}
 
 				// Should we enable the next link?
 				if (FieldReportDataGrid.CurrentPageIndex == totalPages)
 				{
 
-					NextPageLinkButton.Enabled = false;
+					NextPageButton.Enabled = false;
+                    NextPageButton.Visible = false;
 				}
 			}
 
@@ -295,14 +310,16 @@ namespace Votations.NSurvey.WebAdmin
 				if (FieldReportDataGrid.CurrentPageIndex == 1)
 				{
 
-					PreviousPageLinkButton.Enabled = false;
+					PreviousPageButton.Enabled = false;
+                    PreviousPageButton.Visible = false;
 				}
 
 				// Should we enable the next link?
 				if (totalPages > 1)
 				{
-					NextPageLinkButton.Enabled = true;
-				}
+					NextPageButton.Enabled = true;
+                    NextPageButton.Visible = true;
+                }
 			}		
 		}
 

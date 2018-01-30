@@ -5,11 +5,11 @@
 		Region :
 		</RunTimeAnswerLabel>
 		<XmlAnswers>
-		   <XmlAnswer><AnswerValue></AnswerValue><AnswerDescription>[Choisissez une region]</AnswerDescription></XmlAnswer> 
-		   <XmlAnswer><AnswerValue>England</AnswerValue><AnswerDescription>England</AnswerDescription></XmlAnswer>
-		   <XmlAnswer><AnswerValue>Northern Ireland</AnswerValue><AnswerDescription>Northern Ireland</AnswerDescription></XmlAnswer>
-		   <XmlAnswer><AnswerValue>Scotland</AnswerValue><AnswerDescription>Scotland</AnswerDescription></XmlAnswer>
-		   <XmlAnswer><AnswerValue>Wales</AnswerValue><AnswerDescription>Wales</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue></AnswerValue><AnswerDescription>[Choisissez une région]</AnswerDescription></XmlAnswer> 
+		   <XmlAnswer><AnswerValue>England</AnswerValue><AnswerDescription>Angleterre</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Northern Ireland</AnswerValue><AnswerDescription>Irlande du Nord</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Scotland</AnswerValue><AnswerDescription>Écosse</AnswerDescription></XmlAnswer>
+		   <XmlAnswer><AnswerValue>Wales</AnswerValue><AnswerDescription>Pays de Galles</AnswerDescription></XmlAnswer>
 		</XmlAnswers>
 	</XmlDataSource>
 </NSurveyDataSource>		

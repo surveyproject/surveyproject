@@ -54,16 +54,20 @@
 
                         <asp:TextBox runat="server" ID="txtAlias"></asp:TextBox>
                     </li>
+
+                    <asp:PlaceHolder ID="HelpTextPlaceholder" runat="server">
                     <li>
                         <asp:Label ID="HelpTextLabel" AssociatedControlID="txtHelpText" runat="server" EnableViewState="False">Help Text:</asp:Label>
 
-                        <asp:TextBox runat="server" ID="txtHelpText" TextMode="MultiLine" Columns="43" Rows="2"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtHelpText" TextMode="MultiLine" Columns="65" Rows="3"></asp:TextBox>
                     </li>
                     <li>
                         <asp:Label ID="ShowHelpTextLabel" AssociatedControlID="chbShowHelpText" runat="server" EnableViewState="False">Show Help Text:</asp:Label>
 
                         <asp:CheckBox runat="server" ID="chbShowHelpText"></asp:CheckBox>
                     </li>
+                    </asp:PlaceHolder>
+
                     <li>
                         <asp:Label ID="SelectionModeLabel" AssociatedControlID="SelectionModeDropDownList" runat="server" EnableViewState="False">Selection mode:</asp:Label>
 
@@ -84,6 +88,7 @@
                             <asp:Label ID="ColumnNumberLabel" AssociatedControlID="ColumnDropdownlist" runat="server" EnableViewState="False">Number of columns:</asp:Label>
 
                             <asp:DropDownList ID="ColumnDropdownlist" runat="server">
+                                <asp:ListItem Value="1">1</asp:ListItem>
                                 <asp:ListItem Value="2">2</asp:ListItem>
                                 <asp:ListItem Value="3">3</asp:ListItem>
                                 <asp:ListItem Value="4">4</asp:ListItem>

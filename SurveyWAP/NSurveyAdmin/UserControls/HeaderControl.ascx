@@ -17,8 +17,10 @@
                 Orientation="Horizontal" 
                 runat="server"
 
-                 DynamicSelectedStyle-ForeColor ="YellowGreen"
-                 StaticSelectedStyle-ForeColor ="YellowGreen"
+                 DynamicSelectedStyle-ForeColor ="white"
+                 StaticSelectedStyle-ForeColor ="white"
+                DynamicSelectedStyle-BackColor="#9999ff"
+                StaticSelectedStyle-BackColor="#9999ff"
 
                 DynamicHorizontalOffset="2" 
                 DynamicVerticalOffset="1" 
@@ -27,12 +29,12 @@
 
                 <StaticMenuStyle CssClass="mnuMain" /> 
                 <StaticMenuItemStyle CssClass="mnuMain" />
-                <StaticSelectedStyle CssClass="selected" />
+
                 <StaticHoverStyle CssClass="mnuMain" />
 
 		<DynamicMenuStyle CssClass="mnuMain" /> 
 		<DynamicMenuItemStyle CssClass="mnuMain" /> 
-		<DynamicSelectedStyle CssClass="selected" /> 
+		<DynamicSelectedStyle CssClass="mnuMain" /> 
 		<DynamicHoverStyle CssClass="mnuMain" /> 
                 
             </asp:Menu>

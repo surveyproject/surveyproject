@@ -1,0 +1,56 @@
+<?xml version="1.0" standalone="yes"?>
+<NSurveyDataSource xmlns="http://www.nsurvey.org/NSurveyDataSource.xsd">
+  <XmlDataSource>
+    <RunTimeAnswerLabel>Friese 11 steden:</RunTimeAnswerLabel>
+    <XmlAnswers>
+      <XmlAnswer>
+        <AnswerValue></AnswerValue>
+        <AnswerDescription>[Kies een stad]</AnswerDescription>
+      </XmlAnswer>     
+      <XmlAnswer>
+        <AnswerValue>Dokkum</AnswerValue>
+        <AnswerDescription>Dokkum</AnswerDescription>
+      </XmlAnswer>
+      <XmlAnswer>
+        <AnswerValue>Leeuwarden</AnswerValue>
+        <AnswerDescription>Leeuwarden</AnswerDescription>
+      </XmlAnswer>
+      <XmlAnswer>
+        <AnswerValue>Bolsward</AnswerValue>
+        <AnswerDescription>Bolsward</AnswerDescription>
+      </XmlAnswer>
+      <XmlAnswer>
+        <AnswerValue>Ijlst</AnswerValue>
+        <AnswerDescription>Ijlst</AnswerDescription>
+      </XmlAnswer>
+      <XmlAnswer>
+        <AnswerValue>Stavoren</AnswerValue>
+        <AnswerDescription>Stavoren</AnswerDescription>
+      </XmlAnswer>
+      <XmlAnswer>
+        <AnswerValue>Workum</AnswerValue>
+        <AnswerDescription>Workum</AnswerDescription>
+      </XmlAnswer>
+      <XmlAnswer>
+        <AnswerValue>Sloten</AnswerValue>
+        <AnswerDescription>Sloten</AnswerDescription>
+      </XmlAnswer>
+      <XmlAnswer>
+        <AnswerValue>Franeker</AnswerValue>
+        <AnswerDescription>Franeker</AnswerDescription>
+      </XmlAnswer>
+      <XmlAnswer>
+        <AnswerValue>Harlingen</AnswerValue>
+        <AnswerDescription>Harlingen</AnswerDescription>
+      </XmlAnswer>
+      <XmlAnswer>
+        <AnswerValue>Sneek</AnswerValue>
+        <AnswerDescription>Sneek</AnswerDescription>
+      </XmlAnswer>
+      <XmlAnswer>
+        <AnswerValue>Hindelopen</AnswerValue>
+        <AnswerDescription>Hindelopen</AnswerDescription>
+      </XmlAnswer>
+    </XmlAnswers>
+  </XmlDataSource>
+</NSurveyDataSource>

@@ -41,7 +41,7 @@ namespace Votations.NSurvey.WebAdmin.Code
             }
             sw.Write("Exception Type: ");
             sw.WriteLine(exc.GetType().ToString());
-            sw.WriteLine("Exception: " + exc.Message);
+            sw.WriteLine("Exception Message: " + exc.Message);
             sw.WriteLine("Source: " + source);
             sw.WriteLine("Stack Trace: ");
             if (exc.StackTrace != null)

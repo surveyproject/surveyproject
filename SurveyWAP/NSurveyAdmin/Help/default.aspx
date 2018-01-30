@@ -31,7 +31,8 @@ II.	&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Management </strong> 	<a name
 2	&nbsp;	5	&nbsp;		&nbsp;		&nbsp;	 <u>Completion </u>	<a name="Completion" ></a><br />
 2	&nbsp;	5	&nbsp;	1	&nbsp;		&nbsp;	<a href="Completion Actions.aspx" title=" Completion Actions " > Completion Actions </a>	<br />
 2	&nbsp;	5	&nbsp;	2	&nbsp;		&nbsp;	<a href="Thanks Message Conditions.aspx" title=" Thanks Message Conditions " > Thanks Message Conditions </a>	<br />
-2	&nbsp;	5	&nbsp;	3	&nbsp;		&nbsp;	<a href="new/Advanced Completion.aspx" title=" Advanced Completion " > Advanced Completion </a>	<br />
+2	&nbsp;	5	&nbsp;	3	&nbsp;		&nbsp;	<a href="New\CreateCustomReport.aspx" title="Creating Custom Results Reports">Custom Results Reports</a>	<br />
+2	&nbsp;	5	&nbsp;	4	&nbsp;		&nbsp;	<a href="new/Advanced Completion.aspx" title=" Advanced Completion " > Advanced Completion </a>	<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
 2	&nbsp;	6	&nbsp;		&nbsp;		&nbsp;	 <u>Score</u> 	<a name="Score" ></a><br />
 2	&nbsp;	6	&nbsp;	1	&nbsp;		&nbsp;	<a href="Score_Introduction.aspx" title=" Score Introduction " > Introduction </a>	<br />
@@ -183,16 +184,27 @@ V.	&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Email Invitation Mailings </strong> <
 
 VI.	&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Results & Reporting </strong> 	<a name="Reporting" ></a><br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
-6	&nbsp;	1	&nbsp;		&nbsp;		&nbsp;	<a href="new/Report Filter Creation.aspx" title=" Report Filter Creation " > Report Filter Creation </a>	<br />
-6	&nbsp;	2	&nbsp;		&nbsp;		&nbsp;	<a href="new/Report Filter Editor.aspx" title=" Report Filter Editor " > Report Filter Editor </a>	<br />
-6	&nbsp;	3	&nbsp;		&nbsp;		&nbsp;	<a href="new/File Manager.aspx" title=" File Manager " > File Manager </a>	<br />
-6	&nbsp;	4a&nbsp;		&nbsp;		&nbsp;	<a href="new/Data Export.aspx" title=" Data Export " > Data Export </a>	<br />
-6	&nbsp;	4b&nbsp;		&nbsp;		&nbsp;	<a href="new/Data Import.aspx" title=" Data Import " > Data Import </a>	<br />
-6	&nbsp;	5	&nbsp;		&nbsp;		&nbsp;	<a href="new/Graphic Reports.aspx" title=" Graphic Reports " > Graphic Reports </a>	<br />
-6	&nbsp;	6	&nbsp;		&nbsp;		&nbsp;	<a href="new/Voter report.aspx" title=" Respondent / Voter Report " > Respondent / Voter Report </a>	<br />
-6	&nbsp;	7	&nbsp;		&nbsp;		&nbsp;	<a href="new/Voter Report Edit.aspx" title=" Voter Report Edit " > Voter Report Edit </a>	<br />
-6	&nbsp;	8	&nbsp;		&nbsp;		&nbsp;	<a href="new/Voter Entries List.aspx" title=" Voter Entries List " > Voter Entries List </a>	<br />
-6	&nbsp;	9	&nbsp;		&nbsp;		&nbsp;	<a href="new/Cross Tabulation.aspx" title=" Cross Tabulation " > Cross Tabulation </a>	<br />
+
+6	&nbsp;	0	&nbsp;		&nbsp;		&nbsp;	<a href="new/Reports_Introduction.aspx" title=" Reporting Introduction " > Reporting Introduction </a>	<br />
+
+6	&nbsp;	1	&nbsp;		&nbsp;		&nbsp;	<a href="new/Graphic Reports.aspx" title=" Graphic Reports " > Graphic Reports </a>	<br />
+6	&nbsp;	2	&nbsp;		&nbsp;		&nbsp;	<a href="new/Cross Tabulation.aspx" title=" Cross Tabulation " > Cross Tabulation </a>	<br />
+
+6	&nbsp;	3	&nbsp;		&nbsp;		&nbsp;	<a href="new/Report Filter Creation.aspx" title=" Report Filter Creation " > Report Filter Creation </a>	<br />
+6	&nbsp;	4	&nbsp;		&nbsp;		&nbsp;	<a href="new/Report Filter Editor.aspx" title=" Report Filter Editor " > Report Filter Editor </a>	<br />
+
+6	&nbsp;	5	&nbsp;		&nbsp;		&nbsp;	<a href="new/File Manager.aspx" title=" File Manager " > File Manager </a>	<br />
+
+6	&nbsp;	6	&nbsp;		&nbsp;		&nbsp;	<a href="new/Voter report.aspx" title=" Respondent / Voter Report " > Respondent Report </a>	<br />
+6	&nbsp;	7	&nbsp;		&nbsp;		&nbsp;	<a href="new/Voter Entries List.aspx" title=" Voter Entries List " > Respondents Entries List </a>	<br />
+6	&nbsp;	8	&nbsp;		&nbsp;		&nbsp;	<a href="new/Voter Report Edit.aspx" title=" Voter Report Edit " > Respondent Report Edit </a>	<br />
+
+6	&nbsp;	9 &nbsp;		&nbsp;		&nbsp;	<a href="new/Data Export.aspx" title=" Data Export " > Data Export </a>	<br />
+6	&nbsp;	10&nbsp;&nbsp;		&nbsp;	<a href="new/Data Import.aspx" title=" Data Import " > Data Import </a>	<br />
+
+6	&nbsp;	11&nbsp;&nbsp;		&nbsp;	<a href="new/SsrsReports.aspx" title=" Ssrs Reports " > SSRS Reports </a>	<br />
+
+
 <br /><br />
 VII.&nbsp;		&nbsp;		&nbsp;		&nbsp;	<strong>Roles & User Management</strong>	<a name="RolesUsers" ></a><br /><br />
 	

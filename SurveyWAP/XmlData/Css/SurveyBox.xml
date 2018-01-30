@@ -64,7 +64,7 @@
     <value>navigationPanel</value>
   </data>
   <data version="2.4" id="ppbB" name="PreviousPageButton">
-    <value>previousPageButton btn btn-primary btn-xs bw</value>
+    <value>btn btn-primary btn-xs bw</value>
   </data>
   <data version="2.4" id="ppBP" name="PreviousPageButtonPanel">
     <value>previousPageButtonPanel</value>

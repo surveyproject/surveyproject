@@ -22,7 +22,7 @@ After closing the survey the <a href="Graphic Reports.aspx">reporting options</a
 provide a way to either have a global look at the results or a more
 granular look per respondent's languages.<br />
 <br />
-Also check the <a href="Multi-Languages Settings.aspx">Mulit Language Settings</a> helppage in order to learn
+Also check the <a href="..\Multi-Languages Settings.aspx">Multi Language Settings</a> helppage in order to learn
 more about the multi-languages features of Survey.<br />
 <br />
 The survey web control also handles languages written from right to left, like

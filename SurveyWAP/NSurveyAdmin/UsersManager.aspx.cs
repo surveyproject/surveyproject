@@ -41,7 +41,7 @@ namespace Votations.NSurvey.WebAdmin
         Votations.NSurvey.SQLServerDAL.User UsersData;
         public int selectedTabIndex = 0;
 
-		private void Page_Load(object sender, System.EventArgs e)
+        private void Page_Load(object sender, System.EventArgs e)
 		{
 			SetupSecurity();
 			LocalizePage();
@@ -95,6 +95,25 @@ namespace Votations.NSurvey.WebAdmin
             phUsersList.Visible = false;
             btnBack.Visible = true;
         }
+
+        // delete user
+        public void OnUserDelete(Object sender, CommandEventArgs e)
+        {
+            int UserId = int.Parse(e.CommandArgument.ToString());
+            if (new Users().IsAdministrator(UserId) && new Users().GetAdminCount() == 1)
+            {
+                MessageLabel.Visible = true;
+                ((PageBase)Page).ShowErrorMessage(MessageLabel, ((PageBase)Page).GetPageResource("CannotDeleteLastAdminMessage"));
+                return;
+            }
+
+            ((INSurveyUserProvider)_userProvider).DeleteUserById(UserId);
+            UserId = -1;
+            Visible = false;
+            //OnOptionChanged();
+            UINavigator.NavigateToUserManager(((PageBase)Page).getSurveyId(), ((PageBase)Page).MenuIndex);
+        }
+
 
         public void EditBackButton(object sender, CommandEventArgs e)
         {

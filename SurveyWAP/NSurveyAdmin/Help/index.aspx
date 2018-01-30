@@ -9,24 +9,24 @@
 
                         <!--      <asp:Label ID="HelpMessageLabel" runat="server" CssClass=""></asp:Label> -->
 
-                 <fieldset style="width:700px; margin-top:15px; margin-left:37px; text-align: left;">
+                 <fieldset style="width:700px; margin-top:15px; margin-left:17px; text-align: left;">
         <legend class="titleFont" id="hftitle" runat="server">
-        </legend><br />
+        </legend>
         <ol>
-            <li style="background-color:white;"><div class="rounded_corners" style="padding:7px; border-color:transparent;">
+            <li style="background-color:white;"><div class="rounded_corners" style="border-color:transparent;">
    
                              <asp:Literal ID="HelpFilesText" runat="server" EnableViewState="False">Helpfiles Text</asp:Literal>
-                                           <br /> <br />
+                                           <br />
                </div></li>
         </ol>
    
     </fieldset>
 
-                              <fieldset style="width:700px; margin-top:15px; margin-left:37px; text-align: left;">
+                              <fieldset style="width:700px; margin-top:15px; margin-left:17px; text-align: left;">
         <legend class="titleFont" id="sstitle" runat="server">                        
-             </legend><br />
+             </legend>
         <ol>
-            <li style="background-color:white;"><div class="rounded_corners" style="padding:7px; border-color:transparent;">
+            <li style="background-color:white;"><div class="rounded_corners" style="border-color:transparent;">
                              <asp:Literal ID="StartupSettings" runat="server" EnableViewState="False">Startup & Settings</asp:Literal>
                                                        <br /><br /> </div></li>
         </ol>

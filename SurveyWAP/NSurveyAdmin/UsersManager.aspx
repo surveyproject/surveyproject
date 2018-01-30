@@ -94,7 +94,15 @@
                    <div class="rounded_corners">
                 <asp:GridView runat="server" Width="100%" ID="gvUsers" AutoGenerateColumns="False" AllowPaging="true"
                     OnPageIndexChanged="gvUsers_PageIndexChanged" OnPageIndexChanging="gvUsers_PageIndexChanging"
-                    PageSize="20" AlternatingRowStyle-BackColor="#FFF6BB" ShowFooter="True" FooterStyle-BackColor="#FFDF12" FooterStyle-BorderStyle="None" FooterStyle-BorderColor="#E2E2E2">
+                    PageSize="20" 
+                    AlternatingRowStyle-BackColor="#FFF6BB" 
+                    ShowFooter="True" 
+                    FooterStyle-BackColor="#FFDF12" 
+                    FooterStyle-BorderStyle="None" 
+                    FooterStyle-BorderColor="#E2E2E2"
+                     HeaderStyle-HorizontalAlign="Center"
+                     RowStyle-HorizontalAlign="Center"
+                     >
                     
                     <PagerSettings Visible="true" Mode="NumericFirstLast" Position="Bottom" PageButtonCount="10"
                         NextPageText=">" PreviousPageText="<" />
@@ -102,7 +110,7 @@
                         Width="200px" Height="5px"></PagerStyle>
 
                     <Columns>
-                        <asp:TemplateField ItemStyle-Width="17" ItemStyle-BorderWidth="1px" ItemStyle-BorderStyle="Solid" ItemStyle-BorderColor="#E2E2E2" HeaderStyle-Width="110px" HeaderStyle-BackColor="#e2e2e2" HeaderStyle-BorderColor="#e2e2e2" HeaderStyle-ForeColor="#5720C6" >
+                        <asp:TemplateField ItemStyle-Width="17%" ItemStyle-BorderWidth="1px" ItemStyle-BorderStyle="Solid" ItemStyle-BorderColor="#E2E2E2" HeaderStyle-Width="110px" HeaderStyle-BackColor="#e2e2e2" HeaderStyle-BorderColor="#e2e2e2" HeaderStyle-ForeColor="#5720C6" >
                             <HeaderTemplate>
                                 <asp:Label runat="server" ID="lbl1" Text='<%#GetPageResource("UsersTabUserName") %>' /></HeaderTemplate>
                             <ItemTemplate>
@@ -134,19 +142,28 @@
                                 <asp:Label runat="server" Text='<%#(Eval("Email")) %>' /></ItemTemplate>
                         </asp:TemplateField>
 
-                        <asp:TemplateField ItemStyle-Width="15%"  ItemStyle-BorderWidth="1px" ItemStyle-BorderStyle="Solid" ItemStyle-BorderColor="#E2E2E2" HeaderStyle-Width="110px" HeaderStyle-BackColor="#e2e2e2" HeaderStyle-BorderColor="#e2e2e2" HeaderStyle-ForeColor="#5720C6"  >
+                        <asp:TemplateField ItemStyle-Width="7%"  ItemStyle-BorderWidth="1px" ItemStyle-BorderStyle="Solid" ItemStyle-BorderColor="#E2E2E2" HeaderStyle-Width="110px" HeaderStyle-BackColor="#e2e2e2" HeaderStyle-BorderColor="#e2e2e2" HeaderStyle-ForeColor="#5720C6"  >
                             <HeaderTemplate>
                                 <asp:Label runat="server" Text='<%#GetPageResource("UsersTabAdministrator") %>' /></HeaderTemplate>
                             <ItemTemplate>
                                 <asp:CheckBox runat="server" Checked='<%#IsAdmin((int)Eval("UserId")) %>' Enabled="false" /></ItemTemplate>
                         </asp:TemplateField>
 
-                        <asp:TemplateField ItemStyle-Width="9%"  ItemStyle-BorderWidth="1px" ItemStyle-BorderStyle="Solid" ItemStyle-BorderColor="#E2E2E2" HeaderStyle-Width="110px" HeaderStyle-BackColor="#e2e2e2" HeaderStyle-BorderColor="#e2e2e2" HeaderStyle-ForeColor="#5720C6"  >
+                        <asp:TemplateField ItemStyle-Width="7%"  ItemStyle-BorderWidth="1px" ItemStyle-BorderStyle="Solid" ItemStyle-BorderColor="#E2E2E2" HeaderStyle-Width="110px" HeaderStyle-BackColor="#e2e2e2" HeaderStyle-BorderColor="#e2e2e2" HeaderStyle-ForeColor="#5720C6"  >
                             <HeaderTemplate>
                                 <asp:Label runat="server" Text='<%#GetPageResource("UsersTabEdit") %>' /></HeaderTemplate>
                             <ItemTemplate>
                             <asp:ImageButton runat="server" ToolTip="Click to Edit" ImageUrl="~/Images/edit_pen.gif" Width="16" Height="16" OnCommand="OnUserEdit"
                                     CommandName="UserEdit" CommandArgument='<%#(Eval("UserId")) %>' />
+                           </ItemTemplate>
+                        </asp:TemplateField>
+
+                         <asp:TemplateField ItemStyle-Width="7%" ItemStyle-BorderWidth="1px" ItemStyle-BorderStyle="Solid" ItemStyle-BorderColor="#E2E2E2" HeaderStyle-Width="110px" HeaderStyle-BackColor="#e2e2e2" HeaderStyle-BorderColor="#e2e2e2" HeaderStyle-ForeColor="#5720C6"  >
+                            <HeaderTemplate>
+                                <asp:Label runat="server" Text='<%#GetPageResource("UsersTabDelete") %>' /></HeaderTemplate>
+                            <ItemTemplate>
+                            <asp:ImageButton runat="server" ToolTip="Click to Delete" ImageUrl="~/Images/delete.gif" Width="16" Height="16" OnCommand="OnUserDelete"
+                                    CommandName="UserDelete" CommandArgument='<%#(Eval("UserId")) %>' />
                            </ItemTemplate>
                         </asp:TemplateField>
 

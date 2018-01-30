@@ -4,19 +4,17 @@
 
 
                  <div id="Panel" class="Panel">
- 
-            <div class="errorDiv">
- <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
-                </div>
 
-                                        <div class="helpDiv">
-                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/Statistics.aspx"
-                                                title="Click for more Information">
-                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
-                                            </a>
-                                        </div>
-        
-            <fieldset>
+                     <div class="errorDiv">
+                         <asp:Label ID="MessageLabel" runat="server" CssClass="errorMessage" Visible="False"></asp:Label>
+                     </div>
+                     <div class="helpDiv">
+                         <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/Statistics.aspx"
+                             title="Click for more Information">
+                             <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                         </a>
+                     </div>
+                     <fieldset>
                  <legend class="titleFont titleLegend">
                     <asp:Literal id="SurveyStatisticsTitle" runat="server" EnableViewState="False">Survey statistics</asp:Literal>&nbsp; - &nbsp;
                      <b><asp:Label id="SurveyTitleLabel" runat="server"></asp:Label></b> &nbsp; - 

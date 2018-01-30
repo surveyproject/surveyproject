@@ -35,38 +35,40 @@
       <Output TaskParameter="Value" PropertyName="Version" />
     </XmlRead>
 
-    <!--in VS 2012 we exclude folders -->
+    <!-- exclude folders -->
     <ItemGroup>
-      <InstallInclude Include="**\*.aspx" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
-      <InstallInclude Include="**\*.ascx" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
-      <InstallInclude Include="**\*.asax" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
-      <InstallInclude Include="**\*.css" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
-      <InstallInclude Include="**\*.ico" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
-      <InstallInclude Include="**\*.master" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
-      <InstallInclude Include="**\*.txt" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
+      <InstallInclude Include="**\*.aspx" Exclude="_NuGet\**;articles\**;BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
+      <InstallInclude Include="**\*.ascx" Exclude="_NuGet\**;articles\**;BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
+      <InstallInclude Include="**\*.asax" Exclude="_NuGet\**;articles\**;BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
+      <InstallInclude Include="**\*.css" Exclude="_NuGet\**;articles\**;BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
+      <InstallInclude Include="**\*.ico" Exclude="_NuGet\**;articles\**;BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
+      <InstallInclude Include="**\*.master" Exclude="_NuGet\**;articles\**;BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
+      <InstallInclude Include="**\*.txt" Exclude="_NuGet\**;articles\**;BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
+      <InstallInclude Include="**\*.rdlc" Exclude="_NuGet\**;articles\**;BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
 
-      <InstallInclude Include="**\_DatabaseSql\**" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
-      <InstallInclude Include="**\_Instructions\**" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
-      <InstallInclude Include="**\_SurveySamples\**" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
-      <InstallInclude Include="**\App_Browsers\**" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
-      <InstallInclude Include="**\App_Data\**" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
-      <InstallInclude Include="**\Content\**" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
-      <InstallInclude Include="**\fonts\**" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
-      <InstallInclude Include="**\Images\**" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
-      <InstallInclude Include="**\XmlData\**" Exclude="BuildScripts\**;Code\**;install\**;obj\**;Scripts\**;" />
-      <InstallInclude Include="**\Scripts\**" Exclude="BuildScripts\**;Code\**;install\**;obj\**;" />
+      <InstallInclude Include="**\_DatabaseSql\**" />
+      <InstallInclude Include="**\_Instructions\**" />
+      <InstallInclude Include="**\_SurveySamples\**" />
+      <InstallInclude Include="**\App_Browsers\**" />
+      <InstallInclude Include="**\App_Data\**" />
+      <InstallInclude Include="**\Content\**" />
+      <InstallInclude Include="**\fonts\**" />
+      <InstallInclude Include="**\Images\**" />
+      <InstallInclude Include="**\Scripts\**" />
+      <InstallInclude Include="**\SqlServerTypes\**" Exclude="**\SqlServerTypes\*.cs;**\SqlServerTypes\*.htm;" />
+      <InstallInclude Include="**\XmlData\**" />
+    </ItemGroup>    
+
+    <ItemGroup>
+      <BinItems Include="**\bin\**\*.dll" />
     </ItemGroup>
 
-
-    <CreateItem Include="**\bin\*.dll">
-      <Output TaskParameter="Include" ItemName="Assemblies" />
-    </CreateItem>
+    <Copy SourceFiles="@(BinItems)" DestinationFiles="@(BinItems->'$(MSBuildProjectDirectory)\Package\%(RecursiveDir)%(Filename)%(Extension)')" />
     
     <CreateItem Include="**\Deployment\web.config">
       <Output TaskParameter="Include" ItemName="WebConfig" />
     </CreateItem>    
 
-    <Copy SourceFiles="@(Assemblies)" DestinationFolder="$(MSBuildProjectDirectory)\Package\bin"/>
     <Copy SourceFiles="@(WebConfig)" DestinationFolder="$(MSBuildProjectDirectory)\Package"/>
     <Copy SourceFiles="@(InstallInclude)" DestinationFolder="$(MSBuildProjectDirectory)\Package\%(RecursiveDir)" />
 
@@ -81,6 +83,9 @@
 
     <!-- Clean temp files and directories-->
     <RemoveDir Directories ="$(MSBuildProjectDirectory)\Package\Scripts\ckeditor" />
+    <RemoveDir Directories ="$(MSBuildProjectDirectory)\Package\Scripts" />
+    <RemoveDir Directories ="$(MSBuildProjectDirectory)\Package\XmlData\Languages" />
+    <RemoveDir Directories ="$(MSBuildProjectDirectory)\Package\XmlData" />
     <RemoveDir Directories ="$(MSBuildProjectDirectory)\Package" />
     <Delete Files="$(MSBuildProjectDirectory)\$(PackageName)_$(Version)_Install.$(Extension)" />
     <Delete Files="$(MSBuildProjectDirectory)\Deployment\web.config" />

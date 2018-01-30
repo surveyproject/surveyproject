@@ -42,7 +42,6 @@ namespace Votations.NSurvey.WebAdmin
 		protected System.Web.UI.WebControls.Label MessageLabel;
 		new protected HeaderControl Header;
 		protected System.Web.UI.WebControls.Literal RegExLibraryTitle;
-		protected System.Web.UI.WebControls.LinkButton CreateRegExHyperLink;
 		protected System.Web.UI.WebControls.Button ApplyChangesButton;
 		protected System.Web.UI.WebControls.Label RegExOptionTitleLabel;
 		protected System.Web.UI.WebControls.Label TestRegExTitle;
@@ -88,8 +87,9 @@ namespace Votations.NSurvey.WebAdmin
 		private void LocalizePage()
 		{
 			RegExLibraryTitle.Text = GetPageResource("RegExLibraryTitle");
-			CreateRegExHyperLink.Text = GetPageResource("CreateRegExHyperLink");
-			RegExToEditLabel.Text = GetPageResource("RegExToEditLabel");
+            CreateRegExBtn.Text = GetPageResource("CreateRegExHyperLink");
+
+            RegExToEditLabel.Text = GetPageResource("RegExToEditLabel");
 			TestRegExTitle.Text = GetPageResource("TestRegExTitle");
 			RegularExpressionTestLabel.Text = GetPageResource("RegularExpressionLabel");
 			TestExpressionValueLabel.Text = GetPageResource("TestExpressionValueLabel");
@@ -164,8 +164,8 @@ namespace Votations.NSurvey.WebAdmin
 		private void InitializeComponent()
 		{    
 			this.RegExDropDownList.SelectedIndexChanged += new System.EventHandler(this.RegExDropDownList_SelectedIndexChanged);
-			this.CreateRegExHyperLink.Click += new System.EventHandler(this.CreateRegExHyperLink_Click);
-			this.CreateNewRegExButton.Click += new System.EventHandler(this.CreateNewRegExButton_Click);
+            this.CreateRegExBtn.Click += new System.EventHandler(this.CreateRegExBtn_Click);
+            this.CreateNewRegExButton.Click += new System.EventHandler(this.CreateNewRegExButton_Click);
 			this.ApplyChangesButton.Click += new System.EventHandler(this.ApplyChangesButton_Click);
 			this.DeleteRegExButton.Click += new System.EventHandler(this.DeleteRegExButton_Click);
 			this.MakeBuiltInRegExButton.Click += new System.EventHandler(this.MakeBuiltInRegExButton_Click);
@@ -193,8 +193,10 @@ namespace Votations.NSurvey.WebAdmin
 			regularExpressionData.RegularExpressions.AddRegularExpressionsRow(regularExpression);
 			new RegularExpression().AddRegularExpression(regularExpressionData, NSurveyUser.Identity.UserId);
 
-			MessageLabel.Visible = true;
-((PageBase)Page).ShowNormalMessage(MessageLabel,((PageBase)Page).GetPageResource("RegExAddedMessage"));
+            //CreateRegExBtn.Visible = true;
+
+            MessageLabel.Visible = true;
+            ((PageBase)Page).ShowNormalMessage(MessageLabel,((PageBase)Page).GetPageResource("RegExAddedMessage"));
 			ResetUIState();
 		}
 
@@ -203,14 +205,14 @@ namespace Votations.NSurvey.WebAdmin
 			if (RegularExpressionTextbox.Text.Length == 0)
 			{
 				MessageLabel.Visible = true;
-((PageBase)Page).ShowErrorMessage(MessageLabel,((PageBase)Page).GetPageResource("RegExRequiredMessage"));
+                ((PageBase)Page).ShowErrorMessage(MessageLabel,((PageBase)Page).GetPageResource("RegExRequiredMessage"));
 				return false;
 			}
 
 			if (RegExDescriptionTextbox.Text.Length == 0)
 			{
 				MessageLabel.Visible = true;
-((PageBase)Page).ShowErrorMessage(MessageLabel,((PageBase)Page).GetPageResource("RegExNameRequiredMessage"));
+                ((PageBase)Page).ShowErrorMessage(MessageLabel,((PageBase)Page).GetPageResource("RegExNameRequiredMessage"));
 				return false;
 			}
 
@@ -221,28 +223,28 @@ namespace Votations.NSurvey.WebAdmin
 		{
 			if (TestExpressionValueLabel.Text.Length == 0 || TestExpressionTextbox.Text.Length == 0 )
 			{
-				MessageLabel.Visible = true;
-((PageBase)Page).ShowErrorMessage(MessageLabel,((PageBase)Page).GetPageResource("RegExTestValueRequiredMessage"));
+				TestMessageLabel.Visible = true;
+                ((PageBase)Page).ShowErrorMessage(TestMessageLabel,((PageBase)Page).GetPageResource("RegExTestValueRequiredMessage"));
 				return;
 			}
 			else
 			{
 				if (Regex.IsMatch(TestValueTextBox.Text, TestExpressionTextbox.Text))
 				{
-					MessageLabel.Visible = true;
-((PageBase)Page).ShowNormalMessage(MessageLabel,((PageBase)Page).GetPageResource("RegExPassedMessage"));
+					TestMessageLabel.Visible = true;
+                    ((PageBase)Page).ShowNormalMessage(TestMessageLabel,((PageBase)Page).GetPageResource("RegExPassedMessage"));
 				}
 				else
 				{
 
-					MessageLabel.Visible = true;
-((PageBase)Page).ShowErrorMessage(MessageLabel,((PageBase)Page).GetPageResource("RegExFailedMessage"));
+					TestMessageLabel.Visible = true;
+                    ((PageBase)Page).ShowErrorMessage(TestMessageLabel,((PageBase)Page).GetPageResource("RegExFailedMessage"));
 				}
 			}
 
 		}
 
-		private void CreateRegExHyperLink_Click(object sender, System.EventArgs e)
+		private void CreateRegExBtn_Click(object sender, System.EventArgs e)
 		{
 			RegExOptionTitleLabel.Text = GetPageResource("CreateRegExOptionTitleLabel");
 			RegExDropDownList.ClearSelection();
@@ -255,8 +257,11 @@ namespace Votations.NSurvey.WebAdmin
 			MakeBuiltInRegExButton.Visible = false;
 			CreateNewRegExButton.Visible = true;
 			RegExOptionsPlaceHolder.Visible = true;
+            CreateRegExBtn.Visible = false;
+            TestMessageLabel.Visible = false;
 
-		}
+
+        }
 
 		private void RegExDropDownList_SelectedIndexChanged(object sender, System.EventArgs e)
 		{
@@ -284,9 +289,9 @@ namespace Votations.NSurvey.WebAdmin
 					NSurveyUser.Identity.IsAdmin && !regularExpressionData.RegularExpressions[0].BuiltIn;
 				CreateNewRegExButton.Visible = false;
 				RegExOptionsPlaceHolder.Visible = true;
+                TestMessageLabel.Visible = false;
 
-
-				if (regularExpressionData.RegularExpressions[0].BuiltIn)
+                if (regularExpressionData.RegularExpressions[0].BuiltIn)
 				{
 					DeleteRegExButton.Attributes.Add("onClick",
 						"javascript:if(confirm('" +((PageBase)Page).GetPageResource("DeleteBuiltInRegExConfirmationMessage")+ "')== false) return false;");
@@ -315,7 +320,9 @@ namespace Votations.NSurvey.WebAdmin
 			RegularExpressionTextbox.Text = string.Empty;
 			RegExDescriptionTextbox.Text = string.Empty;
 			RegExOptionsPlaceHolder.Visible = false;
-		}
+            CreateRegExBtn.Visible = true;
+            TestMessageLabel.Visible = false;
+        }
 
 		private void ApplyChangesButton_Click(object sender, System.EventArgs e)
 		{
@@ -331,7 +338,7 @@ namespace Votations.NSurvey.WebAdmin
 			new RegularExpression().UpdateRegularExpression(regularExpressionData);
 
 			MessageLabel.Visible = true;
-((PageBase)Page).ShowNormalMessage(MessageLabel,((PageBase)Page).GetPageResource("RegExUpdatedMessage"));
+            ((PageBase)Page).ShowNormalMessage(MessageLabel,((PageBase)Page).GetPageResource("RegExUpdatedMessage"));
 			ResetUIState();
 		}
 
@@ -342,7 +349,7 @@ namespace Votations.NSurvey.WebAdmin
 			ApplyChangesButton.Attributes.Remove("onClick");
 			MakeBuiltInRegExButton.Visible = false;
 			MessageLabel.Visible = true;
-((PageBase)Page).ShowNormalMessage(MessageLabel,((PageBase)Page).GetPageResource("RegExBuiltInConvertedMessage"));
+            ((PageBase)Page).ShowNormalMessage(MessageLabel,((PageBase)Page).GetPageResource("RegExBuiltInConvertedMessage"));
 		}
 
 		private void DeleteRegExButton_Click(object sender, System.EventArgs e)
@@ -350,7 +357,7 @@ namespace Votations.NSurvey.WebAdmin
 			new RegularExpression().DeleteRegularExpressionById(int.Parse(RegExDropDownList.SelectedValue));
 			ResetUIState();
 			MessageLabel.Visible = true;
-((PageBase)Page).ShowNormalMessage(MessageLabel,((PageBase)Page).GetPageResource("RegExDeleteedMessage"));
+            ((PageBase)Page).ShowNormalMessage(MessageLabel,((PageBase)Page).GetPageResource("RegExDeleteedMessage"));
 		}
 	}
 

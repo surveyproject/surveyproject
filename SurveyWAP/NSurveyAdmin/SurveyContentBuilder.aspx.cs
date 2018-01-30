@@ -58,6 +58,7 @@ namespace Votations.NSurvey.WebAdmin
         {
             return Request.QueryString[Constants.Constants.ScrollQuestionQstr];
         }
+
         private void Page_Load(object sender, System.EventArgs e)
         {
             UITabList.SetDesignerTabs((MsterPageTabs)Page.Master, UITabList.DesignerTabs.FormBuilder);
@@ -292,11 +293,11 @@ namespace Votations.NSurvey.WebAdmin
                 MultiLanguageData surveyLanguages = new MultiLanguages().GetSurveyLanguages(SurveyId);
                 foreach (MultiLanguageData.MultiLanguagesRow language in surveyLanguages.MultiLanguages)
                 {
-                    ListItem defaultItem = new ListItem(GetPageResource(language.LanguageDescription), language.LanguageCode);
+                    ListItem defaultItem = new ListItem(GetPageLanguageCodes(language.LanguageDescription), language.LanguageCode);
                     if (language.DefaultLanguage)
                     {
                         defaultItem.Value = "";
-                        defaultItem.Text += " " + GetPageResource("LanguageDefaultText");
+                        defaultItem.Text += " " + GetPageLanguageCodes("LanguageDefaultText");
                     }
 
                     LanguagesDropdownlist.Items.Add(defaultItem);

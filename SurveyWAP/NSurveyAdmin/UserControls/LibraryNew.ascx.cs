@@ -111,9 +111,9 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls
             }
 
 
-            ((PageBase)Page).TranslateListControl(ddlDefaultLang,true);
-            ((PageBase)Page).TranslateListControl(lbLangSrc,true);
-            ((PageBase)Page).TranslateListControl(lbLangEnabled,true);
+            ((PageBase)Page).LanguageTranslateListControl(ddlDefaultLang,true);
+            ((PageBase)Page).LanguageTranslateListControl(lbLangSrc,true);
+            ((PageBase)Page).LanguageTranslateListControl(lbLangEnabled,true);
         }
 
         protected void OnAddLibrary(Object sender, EventArgs e)

@@ -56,8 +56,17 @@ f* vts_tbMultilanguageText_Nvarcharmax
 * InsertAnserType_XmlUsStates
 
 9. Custom (results) Report Stored Procedure
-* vts_spReportGetscores_CustomReportData
+a* vts_spReportGetscores_CustomReportData NPS example
+b* default calculation format
 
 10. Set UserId (0) to 1 in SingleUserMode to show all Folders in treelist
 * vts_spTreeNodesGetAll_SingleUserMode.sql
+
+11. Update Multilanguages table: delete old/ insert new entries
+* Update_vts_tbMultilanguages_Edits.sql
+
+12. Add new security Roleright to Access SSRS report overview
+
+13. Add new stored procedure for SSRS Report test to get all Voter data
+
 

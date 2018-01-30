@@ -193,7 +193,7 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls
 
                         {
                             MessageLabel.Visible = true;
-                            ((PageBase)Page).ShowErrorMessage(MessageLabel, ((PageBase)Page).GetPageResource("PasswordRequiredMessage"));
+                            ((PageBase)Page).ShowErrorMessage(MessageLabel, ((PageBase)Page).GetPageResource("PasswordRulesMessage"));
                             return;
                         }
 
@@ -220,11 +220,10 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls
                         new User().AddUserSettings(userSettings);
                     }
 
-                    // after creating the new admin account show confirmation message:
-
+                   // after creating the new admin account show confirmation message:
                     MessageLabel.Visible = true;
                     ((PageBase)Page).ShowNormalMessage(MessageLabel, ((PageBase)Page).GetPageResource("AdminCreatedMessage"));
-
+                    return;
                 }
 
 

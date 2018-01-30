@@ -30,6 +30,9 @@
                      <asp:DropDownList ID="ActionsDropDownList" runat="server" AutoPostBack="True"></asp:DropDownList>
 
                  </li> 
+                    <li>
+                        <asp:Literal ID="SecurityActionInfoLiteral" runat="server"></asp:Literal>
+                    </li>
                 </ol>
              </asp:PlaceHolder> 
                   

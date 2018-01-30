@@ -30,6 +30,7 @@ using Votations.NSurvey.Data;
 using Votations.NSurvey.BusinessRules;
 using Votations.NSurvey.WebAdmin.UserControls;
 using Votations.NSurvey.WebAdmin.NSurveyAdmin;
+using System.Text;
 
 namespace Votations.NSurvey.WebAdmin
 {
@@ -85,7 +86,9 @@ namespace Votations.NSurvey.WebAdmin
 
 		private void LocalizePage()
 		{
-			MultiLanguagesTitle.Text = GetPageResource("MultiLanguagesTitle");
+            MlCodesLabel.Text = GetPageResource("MlCodesLiteral");
+
+            MultiLanguagesTitle.Text = GetPageResource("MultiLanguagesTitle");
 			EnableMultiLanguagesLabel.Text = GetPageResource("EnableMultiLanguagesLabel");
 			MultiLanguagesModeLabel.Text = GetPageResource("MultiLanguagesModeLabel");
 			EnabledLanguagesLabel.Text = GetPageResource("EnabledLanguagesLabel");
@@ -119,11 +122,13 @@ namespace Votations.NSurvey.WebAdmin
 				MultiLanguagesCheckBox.Checked = true;
 				MultiLanguagesModeDropDownList.SelectedValue = surveySettings.Surveys[0].MultiLanguageModeId.ToString();
 
-				if (int.Parse(MultiLanguagesModeDropDownList.SelectedValue) == (int)MultiLanguageMode.Cookie || 
+                if (int.Parse(MultiLanguagesModeDropDownList.SelectedValue) == (int)MultiLanguageMode.Cookie || 
 					int.Parse(MultiLanguagesModeDropDownList.SelectedValue) == (int)MultiLanguageMode.QueryString ||
 					int.Parse(MultiLanguagesModeDropDownList.SelectedValue) == (int)MultiLanguageMode.Session)
 				{
-					VariableNameLabel.Visible = true;
+                    VariablePlaceHolder.Visible = true;
+
+                    VariableNameLabel.Visible = true;
 					VariableNameTextBox.Visible = true;
 					VariableNameTextBox.Text = surveySettings.Surveys[0].MultiLanguageVariable;
 					VariableNameUpdateButton.Visible = true;
@@ -131,7 +136,9 @@ namespace Votations.NSurvey.WebAdmin
 				}
 				else
 				{
-					VariableNameLabel.Visible = false;
+                    VariablePlaceHolder.Visible = false;
+
+                    VariableNameLabel.Visible = false;
 					VariableNameTextBox.Text = string.Empty;
 					VariableNameTextBox.Visible = false;
 					VariableNameUpdateButton.Visible = false;
@@ -143,8 +150,11 @@ namespace Votations.NSurvey.WebAdmin
 				MultiLanguagesPlaceHolder.Visible = false;
 				MultiLanguagesCheckBox.Checked = false;
 			}
-			
-			DisabledLanguagesListBox.DataSource = new MultiLanguages().GetMultiLanguages();
+
+            // ML active languages 
+            MlCodesLiteral.Text = ListMultiLanguages();
+
+            DisabledLanguagesListBox.DataSource = new MultiLanguages().GetMultiLanguages();
 			DisabledLanguagesListBox.DataMember = "MultiLanguages";
 			DisabledLanguagesListBox.DataTextField = "LanguageDescription";
 			DisabledLanguagesListBox.DataValueField = "LanguageCode";
@@ -177,9 +187,9 @@ namespace Votations.NSurvey.WebAdmin
 				DefaultLanguageDropdownlist.Items.Add(defaultItem);
 			}
 
-			TranslateListControl(DefaultLanguageDropdownlist,true);
-			TranslateListControl(DisabledLanguagesListBox,true);
-			TranslateListControl(EnabledLanguagesListBox,true);
+			LanguageTranslateListControl(DefaultLanguageDropdownlist,true);
+            LanguageTranslateListControl(DisabledLanguagesListBox,true);
+            LanguageTranslateListControl(EnabledLanguagesListBox,true);
 
            
 		}
@@ -217,7 +227,7 @@ namespace Votations.NSurvey.WebAdmin
 			new MultiLanguage().UpdateSurveyLanguage(SurveyId, DisabledLanguagesListBox.SelectedValue, false);
 			FillFields();
 			MessageLabel.Visible = true;
-((PageBase)Page).ShowNormalMessage(MessageLabel,((PageBase)Page).GetPageResource("LanguageEnabledMessage"));
+            ((PageBase)Page).ShowNormalMessage(MessageLabel,((PageBase)Page).GetPageResource("LanguageEnabledMessage"));
 		}
 
 		private void EnabledLanguagesListBox_SelectedIndexChanged(object sender, System.EventArgs e)
@@ -227,12 +237,12 @@ namespace Votations.NSurvey.WebAdmin
 				new MultiLanguage().DeleteSurveyLanguage(SurveyId, EnabledLanguagesListBox.SelectedValue);
 				FillFields();
 				MessageLabel.Visible = true;
-((PageBase)Page).ShowNormalMessage(MessageLabel,((PageBase)Page).GetPageResource("LanguageDisabledMessage"));
+                ((PageBase)Page).ShowNormalMessage(MessageLabel,((PageBase)Page).GetPageResource("LanguageDisabledMessage"));
 			}
 			else
 			{
 				MessageLabel.Visible = true;
-((PageBase)Page).ShowErrorMessage(MessageLabel,((PageBase)Page).GetPageResource("OneDefaultLanguageRequiredMessage"));
+                ((PageBase)Page).ShowErrorMessage(MessageLabel,((PageBase)Page).GetPageResource("OneDefaultLanguageRequiredMessage"));
 			}
 		}
 
@@ -259,14 +269,18 @@ namespace Votations.NSurvey.WebAdmin
 				int.Parse(MultiLanguagesModeDropDownList.SelectedValue) == (int)MultiLanguageMode.QueryString ||
 				int.Parse(MultiLanguagesModeDropDownList.SelectedValue) == (int)MultiLanguageMode.Session)
 			{
-				VariableNameLabel.Visible = true;
+                VariablePlaceHolder.Visible = true;
+
+                VariableNameLabel.Visible = true;
 				VariableNameTextBox.Visible = true;
 				VariableNameUpdateButton.Visible = true;
 				VariableNameInfoLabel.Visible = true;
 			}
 			else
 			{
-				VariableNameLabel.Visible = false;
+                VariablePlaceHolder.Visible = false;
+
+                VariableNameLabel.Visible = false;
 				VariableNameTextBox.Visible = false;
 				VariableNameUpdateButton.Visible = false;
 				VariableNameInfoLabel.Visible = false;
@@ -294,5 +308,30 @@ namespace Votations.NSurvey.WebAdmin
 		{
 			new MultiLanguage().UpdateMultiLanguage(SurveyId, ((MultiLanguageMode)int.Parse(MultiLanguagesModeDropDownList.SelectedValue)), VariableNameTextBox.Text);	
 		}
-	}
+
+        /// <summary>
+        ///  Create string/ list of Activated Language Codes
+        /// </summary>       
+        private string ListMultiLanguages()
+        {
+            MultiLanguageData surveyLanguages;
+            surveyLanguages = new MultiLanguages().GetSurveyLanguages(SurveyId);
+
+            var index = 0;
+            StringBuilder builder = new StringBuilder();
+
+            foreach (MultiLanguageData.MultiLanguagesRow language in surveyLanguages.MultiLanguages)
+            {
+                string defaultItem = " " + language.LanguageCode;
+
+                if (index >= 0)
+                    builder.Append(defaultItem).Append(",");
+                index++;
+            }
+
+            return builder.ToString().TrimEnd(',');
+        }
+
+
+    }
 }

@@ -115,6 +115,7 @@
     <Compile Include="Votations.NSurvey.Resources\AddressManager.cs" />
     <Compile Include="Votations.NSurvey.Resources\CssXmlManager.cs" />
     <Compile Include="Votations.NSurvey.Resources\HelpfilesManager.cs" />
+    <Compile Include="Votations.NSurvey.Resources\LanguageCodesManager.cs" />
     <Compile Include="Votations.NSurvey.Resources\ResourceManager.cs" />
     <Compile Include="Votations.NSurvey.Security\IPRangeSecurityAddIn.cs" />
     <Compile Include="Votations.NSurvey.Security\TokenSecurityAddIn.cs" />

@@ -3552,5 +3552,56 @@ Merci
   </data>
   <data version="2.4" id="1170" name="btnGenerate">
     <value>Générer</value>
-  </data>  
+  </data>
+  <data version="2.5" id="1171" name="HelpAboutHyperlink">
+    <value>About SP&amp;trade;</value>
+  </data>
+  <data version="2.5" id="1172" name="ReportsSMHyperlink">
+    <value>Reports</value>
+  </data>
+  <data version="2.5" id="1173" name="ResponsesHyperlink">
+    <value>Individual Reponses</value>
+  </data>
+  <data version="2.5" id="1174" name="AccessUserResponses">
+    <value>Access User Reponses</value>
+  </data>
+  <data version="2.5" id="1175" name="FriendlyNameExistsMsg">
+    <value>Name already used, please retry.</value>
+  </data>
+  <data version="2.5" id="1176" name="WebControlIntro">
+    <value>More information on using the SurveyBox Custom Webcontrol at .....</value>
+  </data>
+  <data version="2.5" id="1177" name="AdminCreatedMessage">
+    <value>Account created. Please login.</value>
+  </data>
+  <data version="2.5" id="1178" name="MultilanguagesStatsLiteral">
+    <value>Active Languages:</value>
+  </data>
+  <data version="2.5" id="1179" name="OpeningCloseDateLiteral">
+    <value>Opening &amp; Closing dates</value>
+  </data>
+  <data version="2.5" id="1180" name="DateNotSet">
+    <value>Not set</value>
+  </data>
+  <data version="2.5" id="1181" name="PasswordRulesMessage">
+    <value>Password rules not met</value>
+  </data>
+  <data version="2.5" id="1182" name="SSRSReports">
+    <value>SSRS Reports</value>
+  </data>
+  <data version="2.5" id="1183" name="SsrsReportTitle">
+    <value>SQL Server Reporting Services - </value>
+  </data>
+  <data version="2.5" id="1184" name="SurveyTitleTooltip">
+    <value>Click a Title to go Statistics</value>
+  </data>
+  <data version="2.5" id="1185" name="SurveyStatusTooltip">
+    <value>Survey Activated or not</value>
+  </data>
+  <data version="2.5" id="1186" name="SurveyReponsesTooltip">
+    <value>Number of Reponses</value>
+  </data>
+  <data version="2.5" id="1187" name="SurveyCreatedTooltip">
+    <value>Survey Creation Date</value>
+  </data>
 </root>

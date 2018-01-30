@@ -27,27 +27,29 @@
      <li>
                                    <div class="rounded_corners" style="width:680px; overflow:hidden;">
                                             <asp:DataGrid ID="FieldReportDataGrid" runat="server" AllowCustomPaging="True" GridLines="Vertical"
-                                                ForeColor="Black" Width="100%"  AlternatingRowStyle-BackColor="#FFF6BB" ShowFooter="True" AllowPaging="False" PageSize="10" FooterStyle-BackColor="#FFDF12" FooterStyle-BorderStyle="None" FooterStyle-BorderColor="#E2E2E2">
+                                                ForeColor="Black" Width="100%"  AlternatingRowStyle-BackColor="#FFF6BB" ShowFooter="True" AllowPaging="False" PageSize="15" FooterStyle-BackColor="#FFDF12" FooterStyle-BorderStyle="None" FooterStyle-BorderColor="#E2E2E2">
                                                 <SelectedItemStyle Font-Bold="True" Wrap="True" ForeColor="White" BackColor="#000099">
                                                 </SelectedItemStyle>
                                                 <EditItemStyle Wrap="False"></EditItemStyle>
                                                 <AlternatingItemStyle Wrap="True" ForeColor="Black" BackColor="#F4F9FA"></AlternatingItemStyle>
                                                 <ItemStyle Wrap="True" BackColor="white" ForeColor="Black" Font-Size="xx-small">
                                                 </ItemStyle>
-                                                <HeaderStyle BackColor="#e2e2e2" ForeColor="#5720C6"  HorizontalAlign="Center" Wrap="true" Width="25%" BorderWidth="1px" BorderStyle="Solid" BorderColor="#E2E2E2"></HeaderStyle>
+                                                <HeaderStyle BackColor="#e2e2e2" ForeColor="#5720C6"  HorizontalAlign="Center" Wrap="true" BorderWidth="1px" BorderStyle="Solid" BorderColor="#E2E2E2"></HeaderStyle>
                                                 <FooterStyle Wrap="True" BackColor="#CCCCCC"></FooterStyle>
                                                 <Columns>                                                    
-                                                    <asp:ButtonColumn ItemStyle-Width="95" ButtonType="LinkButton" Text="<img src='../Images/view.png'>" CommandName="Select" />
-                                                    <asp:ButtonColumn ItemStyle-Width="95" ButtonType="LinkButton" Text="<img src='../Images/delete.gif'>" CommandName="Delete"></asp:ButtonColumn>
+                                                    <asp:ButtonColumn ItemStyle-Width="55" ItemStyle-HorizontalAlign="Center" ButtonType="LinkButton" Text="<img src='../Images/view.png'>" CommandName="Select" />
+                                                    <asp:ButtonColumn ItemStyle-Width="55" ItemStyle-HorizontalAlign="Center" ButtonType="LinkButton" Text="<img src='../Images/delete.gif'>" CommandName="Delete"></asp:ButtonColumn>
                                                 </Columns>
                                                 <PagerStyle HorizontalAlign="Center" ForeColor="Black" BackColor="#999999" Wrap="False">
                                                 </PagerStyle>
                                             </asp:DataGrid>
                                        </div>
                                          </li><li>
+                                           
+                                             <asp:Button CssClass="btn btn-primary btn-xs" ID="PreviousPageButton" runat="server" />&nbsp; &nbsp;
+                                             <asp:Button CssClass="btn btn-primary btn-xs" ID="NextPageButton" runat="server" />
 
-                                            <asp:LinkButton CssClass="btn btn-primary btn-xs bw" ID="NextPageLinkButton" runat="server">Next page >></asp:LinkButton>&nbsp;
-                                           <asp:LinkButton CssClass="btn btn-primary btn-xs bw" ID="PreviousPageLinkButton" runat="server"><< Previous page</asp:LinkButton>&nbsp;
+
                                              <br />
                                    </li>
   </ol>

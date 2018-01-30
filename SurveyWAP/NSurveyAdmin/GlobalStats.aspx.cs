@@ -156,7 +156,7 @@ namespace Votations.NSurvey.WebAdmin
 
             foreach (MultiLanguageData.MultiLanguagesRow language in surveyLanguages.MultiLanguages)
             {
-                string defaultItem = " " + GetPageResource(language.LanguageDescription);
+                string defaultItem = " " + language.LanguageCode;
 
                 if (index >= 0)                    
                     builder.Append(defaultItem).Append(",");

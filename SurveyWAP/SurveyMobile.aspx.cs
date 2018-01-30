@@ -1,20 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using Votations.NSurvey.DataAccess;
-using Votations.NSurvey.Data;
-using Votations.NSurvey.Resources;
 using System.Web.UI.HtmlControls;
+using Votations.NSurvey.Data;
+using Votations.NSurvey.DataAccess;
+using Votations.NSurvey.Resources;
 
 namespace Votations.NSurvey.WebAdmin
 {
     /// <summary>
     /// This was renamed from Survey to SurveyMain as it causes conflict
     /// </summary>
-    public partial class SurveyMobile : System.Web.UI.Page
+    public partial class SurveyMobile : Page
     {
 
         /// <summary>
@@ -73,24 +69,32 @@ namespace Votations.NSurvey.WebAdmin
             //SP 25: loading of css and script files in page header moved to surveybox.cs
         }
 
-
         void Page_Load(Object sender, EventArgs e)
         {
-                
             //in case of custom Layout add user CSS file:
             SurveyLayoutData _userSettings;
+
             //    Survey.SurveyId = int.Parse(Request["SurveyId"]);
             int id = GetSurveyId();
-            if (id == -1) { SurveyControl.SurveyId = 0; SurveyControl.Visible = false; return; }
+
+            if (id == -1)
+            {
+                SurveyControl.SurveyId = 0;
+                SurveyControl.Visible = false;
+                return;
+            }
+
             SurveyControl.SurveyId = id;
 
             Votations.NSurvey.SQLServerDAL.SurveyLayout u = new Votations.NSurvey.SQLServerDAL.SurveyLayout();
 
             _userSettings = u.SurveyLayoutGet(SurveyControl.SurveyId);
+
             if (!(_userSettings == null || _userSettings.SurveyLayout.Count == 0))
             {
                 if (!string.IsNullOrEmpty(_userSettings.SurveyLayout[0].SurveyCss))
                 {
+                    // not used?
                     defaultCSS.Visible = false;
 
                     Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
@@ -101,9 +105,9 @@ namespace Votations.NSurvey.WebAdmin
                     Page.Header.Controls.Add(css);
                 }
 
-            }
-            
+            }           
 
         }
+
     }
 }

@@ -115,7 +115,7 @@
 		<value>Exporteer CSV</value>
 	</data>
 	<data version="1.0" id="39" name="FieldReportTitle">
-		<value>Overzicht Tekstveldgegevens - Pagina</value>
+		<value>Individuele Reacties - Pagina</value>
 	</data>
 	<data version="1.0" id="40" name="NextPageLinkButton">
 		<value>Volgende pagina &gt;&gt;</value>
@@ -403,7 +403,7 @@
 		<value>Naar :</value>
 	</data>
 	<data version="1.0" id="135" name="FromNameLabel">
-		<value>Van naam:</value>
+		<value>Afzender Naam:</value>
 	</data>
 	<data version="1.0" id="136" name="SubjectLabel">
 		<value>Onderwerp:</value>
@@ -415,10 +415,10 @@
 		<value>Achternaam Voornaam</value>
 	</data>
 	<data version="1.0" id="139" name="EmailInvitationLabel">
-		<value>Email uitnodigingenlijst - komma gescheiden: email@dom.com, email2@dom.com, etc. :</value>
+		<value>Emailadressen verzendlijst - komma-gescheiden: email@dom.com, email2@dom.com, :</value>
 	</data>
 	<data version="1.0" id="140" name="InvitationMessageLabel">
-		<value>Uitnodiging:</value>
+		<value>Emailbericht en enqu&#234;te link met toegangscode:</value>
 	</data>
 	<data version="1.0" id="141" name="AnonymousLabel">
 		<value>Anoniem versturen:</value>
@@ -483,7 +483,7 @@ Met vriendelijke groet,&lt;br /&gt;
 		<value>(dit overruled alle beveiligingsinstellingen)</value>
 	</data>
 	<data version="1.0" id="158" name="PrivacySettingsTitle">
-		<value>Instellingen Voltoo&#239;ng Enqu&#234;te</value>
+		<value>Instellingen Afronding Enqu&#234;te</value>
 	</data>
 	<data version="1.0" id="159" name="RedirectionURLLabel">
 		<value>Doorverwijzing URL :</value>
@@ -615,7 +615,7 @@ Met vriendelijke groet,&lt;br /&gt;
 		<value>Gegevens Respondent</value>
 	</data>
 	<data version="1.0" id="202" name="VoterDBIDLabel">
-		<value>Respondent Database ID :</value>
+		<value>Respondent ID :</value>
 	</data>
 	<data version="1.0" id="203" name="VoterEmailLabel">
 		<value>E-mail respondent :</value>
@@ -627,7 +627,7 @@ Met vriendelijke groet,&lt;br /&gt;
 		<value>Ingezonden op:</value>
 	</data>
 	<data version="1.0" id="206" name="TimeToTakeLabel">
-		<value>Tijd voor invullen enqu&#234;te:</value>
+		<value>Tijdsduur beantwoorden:</value>
 	</data>
 	<data version="1.0" id="207" name="SurveyAnswersTitle">
 		<value>Enqu&#234;te antwoorden</value>
@@ -867,7 +867,7 @@ Met vriendelijke groet,&lt;br /&gt;
 		<value>Klik hier om ingevulde velden en individuele rapportages te bekijken</value>
 	</data>
 	<data version="1.0" id="286" name="ResultsReportHyperlink">
-		<value>Resultaten</value>
+		<value>Rapportages</value>
 	</data>
 	<data version="1.0" id="287" name="ExportDataHyperlink">
 		<value>data export</value>
@@ -1023,10 +1023,10 @@ Met vriendelijke groet,&lt;br /&gt;
 		<value>[Kies enqu&#234;te]</value>
 	</data>
 	<data version="1.2" id="338" name="SaveProgressEntriesLabel">
-		<value>Nog onvolledige enqu&#234;tes:</value>
+		<value>Aantal onafgeronde reacties:</value>
 	</data>
 	<data version="1.2" id="339" name="DeleteSaveProgressLinkButton">
-		<value>Verwijder alle onvolledige enqu&#234;tes</value>
+		<value>Verwijder onafgeronde reacties</value>
 	</data>
 	<data version="1.2" id="340" name="PipeHelpLabel">
 		<value>*bijzondere codes kunnen worden meegegeven die tijdens het invullen vervangen worden door de bijbehorende tekstwaarde:&lt;br /&gt;
@@ -1084,7 +1084,7 @@ Met vriendelijke groet,&lt;br /&gt;
 		<value>Handmatig (gebruiker moet code invullen bij voortzetting)</value>
 	</data>
 	<data version="1.4" id="357" name="GraphicResultsReportHyperlink">
-		<value>Grafisch rapport</value>
+		<value>Grafisch Rapport</value>
 	</data>
 	<data version="1.4" id="358" name="TextFieldsResultsReportHyperlink">
 		<value>Tekstveld data</value>
@@ -1312,7 +1312,7 @@ Met vriendelijke groet,&lt;br /&gt;
 		<value>SP gebruikersnaam:</value>
 	</data>
 	<data version="1.4" id="433" name="ContextUserNameDisabled">
-		<value>Uitgezet</value>
+		<value> - </value>
 	</data>
 	<data version="1.4" id="434" name="ScoreHeader">
 		<value>Score</value>
@@ -1818,7 +1818,7 @@ Met vriendelijke groet,&lt;br /&gt;
 		<value>Toegang RegEx</value>
 	</data>
 	<data version="1.7" id="601" name="RegExLibHyperLink">
-		<value>Regex bibliotheek</value>
+		<value>Regular Expressions</value>
 	</data>
 	<data version="1.7" id="602" name="RegExLibraryTitle">
 		<value>Regular expressions bibliotheek</value>
@@ -1956,7 +1956,7 @@ Met vriendelijke groet,&lt;br /&gt;
 		<value>Verplicht</value>
 	</data>
 	<data version="1.8" id="647" name="FileManagerHyperLink">
-		<value>Bestandsbeheer</value>
+		<value>Beheer Bestanden</value>
 	</data>
 	<data version="1.8" id="648" name="AccessFileManagerRight">
 		<value>Toegang bestandsbeheer</value>
@@ -2154,208 +2154,7 @@ Met vriendelijke groet,&lt;br /&gt;
 		<value>Help Bestanden</value>
 	</data>
 	<data version="1.9" id="713" name="MultiLanguagesHyperLink">
-		<value>Meertaligheid Enqu&#234;te</value>
-	</data>
-	<data version="1.9" id="714" name="AfrikaansLanguage">
-		<value>Afrikaans</value>
-	</data>
-	<data version="1.9" id="715" name="AlbanianLanguage">
-		<value>Albaans</value>
-	</data>
-	<data version="1.9" id="716" name="ArabicLanguage">
-		<value>Arabisch</value>
-	</data>
-	<data version="1.9" id="717" name="ArmenianLanguage">
-		<value>Armeneens</value>
-	</data>
-	<data version="1.9" id="718" name="AzeriLanguage">
-		<value>Azeri</value>
-	</data>
-	<data version="1.9" id="719" name="BasqueLanguage">
-		<value>Baskisch</value>
-	</data>
-	<data version="1.9" id="720" name="BelarusianLanguage">
-		<value>Witrussisch</value>
-	</data>
-	<data version="1.9" id="721" name="BulgarianLanguage">
-		<value>Bulgaars</value>
-	</data>
-	<data version="1.9" id="722" name="CatalanLanguage">
-		<value>Catalaans</value>
-	</data>
-	<data version="1.9" id="723" name="ChineseLanguage">
-		<value>Chinees / 中文（简体</value>
-	</data>
-	<data version="1.9" id="724" name="CroatianLanguage">
-		<value>Kroatisch</value>
-	</data>
-	<data version="1.9" id="725" name="CzechLanguage">
-		<value>Tsjechisch</value>
-	</data>
-	<data version="1.9" id="726" name="DanishLanguage">
-		<value>Deens</value>
-	</data>
-	<data version="1.9" id="727" name="DhivehiLanguage">
-		<value>Dhivehi</value>
-	</data>
-	<data version="1.9" id="728" name="DutchLanguage">
-		<value>Nederlands</value>
-	</data>
-	<data version="1.9" id="729" name="EnglishLanguage">
-		<value>Engels</value>
-	</data>
-	<data version="1.9" id="730" name="EstonianLanguage">
-		<value>Ests</value>
-	</data>
-	<data version="1.9" id="731" name="FaroeseLanguage">
-		<value>Faroes</value>
-	</data>
-	<data version="1.9" id="732" name="FarsiLanguage">
-		<value>Farsi</value>
-	</data>
-	<data version="1.9" id="733" name="FinishLanguage">
-		<value>Fins</value>
-	</data>
-	<data version="1.9" id="734" name="FrenchLanguage">
-		<value>Frans / Français</value>
-	</data>
-	<data version="1.9" id="735" name="GalicianLanguage">
-		<value>Galicisch</value>
-	</data>
-	<data version="1.9" id="736" name="GeorgianLanguage">
-		<value>Georgisch</value>
-	</data>
-	<data version="1.9" id="737" name="GermanLanguage">
-		<value>Duits / Deutsch</value>
-	</data>
-	<data version="1.9" id="738" name="GreekLanguage">
-		<value>Grieks</value>
-	</data>
-	<data version="1.9" id="739" name="GujaratiLanguage">
-		<value>Gujarati</value>
-	</data>
-	<data version="1.9" id="740" name="HebrewLanguage">
-		<value>Hebreews</value>
-	</data>
-	<data version="1.9" id="741" name="HindiLanguage">
-		<value>Hindi</value>
-	</data>
-	<data version="1.9" id="742" name="HungarianLanguage">
-		<value>Hongaars / Magyar</value>
-	</data>
-	<data version="1.9" id="743" name="IcelandicLanguage">
-		<value>Ijslands</value>
-	</data>
-	<data version="1.9" id="744" name="IndonesianLanguage">
-		<value>Indonesisch</value>
-	</data>
-	<data version="1.9" id="745" name="ItalianLanguage">
-		<value>Italiaans / Italiano</value>
-	</data>
-	<data version="1.9" id="746" name="JapaneseLanguage">
-		<value>Japans / 日本語</value>
-	</data>
-	<data version="1.9" id="747" name="KannadaLanguage">
-		<value>Cannadees</value>
-	</data>
-	<data version="1.9" id="748" name="KazakhLanguage">
-		<value>Kazachs</value>
-	</data>
-	<data version="1.9" id="749" name="KonkaniLanguage">
-		<value>Konkani</value>
-	</data>
-	<data version="1.9" id="750" name="KoreanLanguage">
-		<value>Koreaans / 한국어</value>
-	</data>
-	<data version="1.9" id="751" name="KyrgyzLanguage">
-		<value>Kyrgizisch</value>
-	</data>
-	<data version="1.9" id="752" name="LatvianLanguage">
-		<value>Lets</value>
-	</data>
-	<data version="1.9" id="753" name="MacedonianLanguage">
-		<value>Macedonisch</value>
-	</data>
-	<data version="1.9" id="754" name="MalayLanguage">
-		<value>Malay</value>
-	</data>
-	<data version="1.9" id="755" name="MarathiLanguage">
-		<value>Marathi</value>
-	</data>
-	<data version="1.9" id="756" name="MongolianLanguage">
-		<value>Mongools</value>
-	</data>
-	<data version="1.9" id="757" name="NorwegianLanguage">
-		<value>Noors</value>
-	</data>
-	<data version="1.9" id="758" name="PolishLanguage">
-		<value>Pools</value>
-	</data>
-	<data version="1.9" id="759" name="PortugueseLanguage">
-		<value>Portugees / Português</value>
-	</data>
-	<data version="1.9" id="760" name="PunjabiLanguage">
-		<value>Punjabi</value>
-	</data>
-	<data version="1.9" id="761" name="RomanianLanguage">
-		<value>Roemeens</value>
-	</data>
-	<data version="1.9" id="762" name="RussianLanguage">
-		<value>Russisch</value>
-	</data>
-	<data version="1.9" id="763" name="SanskritLanguage">
-		<value>Sanskriet</value>
-	</data>
-	<data version="1.9" id="764" name="SlovakLanguage">
-		<value>Slovaaks</value>
-	</data>
-	<data version="1.9" id="765" name="SlovenianLanguage">
-		<value>Sloveens</value>
-	</data>
-	<data version="1.9" id="766" name="SpanishLanguage">
-		<value>Spaans</value>
-	</data>
-	<data version="1.9" id="767" name="SwahiliLanguage">
-		<value>Swahili</value>
-	</data>
-	<data version="1.9" id="768" name="SwedishLanguage">
-		<value>Zweeds</value>
-	</data>
-	<data version="1.9" id="769" name="SyriacLanguage">
-		<value>Syrisch</value>
-	</data>
-	<data version="1.9" id="770" name="TamilLanguage">
-		<value>Tamil</value>
-	</data>
-	<data version="1.9" id="771" name="TatarLanguage">
-		<value>Tatar</value>
-	</data>
-	<data version="1.9" id="772" name="TeluguLanguage">
-		<value>Telugu</value>
-	</data>
-	<data version="1.9" id="773" name="ThaiLanguage">
-		<value>Thais</value>
-	</data>
-	<data version="1.9" id="774" name="TurkishLanguage">
-		<value>Turks</value>
-	</data>
-	<data version="1.9" id="775" name="UkrainianLanguage">
-		<value>Ukrainsch</value>
-	</data>
-	<data version="1.9" id="776" name="UrduLanguage">
-		<value>Urdu</value>
-	</data>
-	<data version="1.9" id="777" name="UzbekLanguage">
-		<value>Uzbeeks</value>
-	</data>
-	<data version="1.9" id="778" name="VietnameseLanguage">
-		<value>Vietnamees</value>
-	</data>
-	<data version="1.9" id="779" name="LithuanianLanguage">
-		<value>Litouws</value>
-	</data>
-	<data version="1.9" id="780" name="SerbianLanguage">
-		<value>Servisch</value>
+		<value>Meertalige Enqu&#234;te</value>
 	</data>
 	<data version="1.9" id="781" name="LanguageDisabledMessage">
 		<value>Taal is verwijderd</value>
@@ -2766,7 +2565,26 @@ Vriendelijke groet
 		<value>&lt;b&gt;Survey&#8482; Project Helpbestanden zijn beperkt beschikbaar.&lt;/b&gt; &lt;br /&gt;&lt;br /&gt; Meer informatie over het gebruik van de Survey applicatie is te vinden via &lt;a href="http://www.surveyproject.org" title="Surveyproject Gemeenschapssite" target="_blank"&gt; http://www.surveyproject.org &lt;/a&gt;. Vragen kunnen daar worden gesteld.&lt;br /&gt; &lt;br /&gt; Voor downloads, broncode en technische achtergronden ga naar &lt;a href="http://survey.codeplex.com" title="Survey Project" target="_blank"&gt; http://survey.codeplex.com &lt;/a&gt;. &lt;br /&gt;</value>
 	</data>
 	<data version="1.2.2" id="915" name="Disclaimer">
-		<value>SURVEY&#8482; PROJECT is een webapplicatie voor online enqu&#234;tes en formulieren gebaseerd op de open source software NSurvey (&lt;a href="http://www.nsurvey.org" target="_blank"&gt;Thomas Zumbrunn&lt;/a&gt;, (c) 2004/2005). Survey&#8482; Project is gepubliceerd onder een GNU GENERAL PUBLIC LICENSE v.3, 29 June 2007. Het vernieuwde SURVEY&#8482; PROJECT is een initiatief van &lt;a href="http://www.w3devpro.com" title="W3DevPro Homepage" target="_blank"&gt;W3DevPro&#8482; &lt;/a&gt;, copyright (c) 2009/2017. SURVEY&#8482; PROJECT is te vinden via &lt;a href="http://www.surveyproject.org" title="Survey Project Community Site" target="_blank"&gt;http://www.surveyproject.org&lt;/a&gt;.</value>
+		<value>SURVEY&#8482; PROJECT is een webapplicatie voor online enqu&#234;tes en 
+    formulieren gebaseerd op de open source software NSurvey (&lt;a href="http://www.nsurvey.org" target="_blank"&gt;Thomas Zumbrunn&lt;/a&gt;, (c) 2004/2005). 
+    &lt;br /&gt;&lt;br /&gt;
+    
+    SURVEY&#8482; PROJECT is een initiatief van &lt;a href="http://www.w3devpro.com" title="W3DevPro Homepage" target="_blank"&gt;W3DevPro&#8482; &lt;/a&gt;, copyright (c)
+      2009/2018.
+&lt;br /&gt;&lt;br /&gt;
+      Survey&#8482; Project is gepubliceerd onder de &lt;a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.en.html" title="GPL" target="_blank"&gt;GNU GENERAL PUBLIC LICENSE v.3, 29 juni 2007&lt;/a&gt;.
+      Een kopie van alle licenties die van toepassing zijn is te vinden in de map: SurveyWAP\ _Instructions\Licenses van deze applicatie.
+      &lt;br /&gt;&lt;br /&gt;
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      GNU General Public License for more details.
+
+      &lt;br /&gt;&lt;br /&gt;Alle source code wordt gepubliceerd via &lt;a href="https://github.com/surveyproject" title="Survey Project Sources and Downloads" target="_blank"&gt; GitHub.com/SurveyProject &lt;/a&gt;.
+
+      &lt;br /&gt;&lt;br /&gt;Bezoek de open source SURVEY™ PROJECT Community site via &lt;a href="http://www.surveyproject.org" title="Survey Project Community Site" target="_blank"&gt;http://www.surveyproject.org&lt;/a&gt;.
+
+    </value>
 	</data>
 	<data version="1.2.2" id="916" name="Introduction">
 		<value>
@@ -2789,7 +2607,7 @@ Vriendelijke groet
 		<value>Actief</value>
 	</data>
 	<data version="1.2.2" id="919" name="SurveyTitle">
-		<value>Enqu&#234;te</value>
+		<value>Enqu&#234;te titel &amp; ID</value>
 	</data>
 	<data version="1.2.2" id="920" name="SurveyStatus">
 		<value>Status</value>
@@ -2810,7 +2628,7 @@ Vriendelijke groet
 		<value>Beveiliging</value>
 	</data>
 	<data version="1.2.2" id="926" name="SurveyEdit">
-		<value>Bewerken</value>
+		<value>Instelling</value>
 	</data>
 	<data version="1.2.2" id="927" name="UsersTab">
 		<value>Gebruikers</value>
@@ -2894,7 +2712,7 @@ Vriendelijke groet
 		<value>Meertalige Enqu&#234;te</value>
 	</data>
 	<data version="2.0" id="954" name="SurveyInfoCompletion">
-		<value>Voltoo&#239;ng Enqu&#234;te</value>
+		<value>Afronding Enqu&#234;te</value>
 	</data>
 	<data version="2.0" id="955" name="SurveyInfoLayout">
 		<value>Layout</value>
@@ -2954,7 +2772,7 @@ Vriendelijke groet
 		<value>Filters</value>
 	</data>
 	<data version="2.0" id="974" name="FileManagerHyperlink">
-		<value>Bestandsbeheer</value>
+		<value>Beheer Bestanden</value>
 	</data>
 	<data version="2.0" id="975" name="DataExportHyperlink">
 		<value>Data Export</value>
@@ -3219,7 +3037,7 @@ Vriendelijke groet
 		<value>Weet u zeker dat u deze pagina wilt verwijderen?</value>
 	</data>
 	<data version="2.0" id="1062" name="FriendlyLabel">
-		<value>Gebruiksvriendelijke URL:</value>
+		<value>Type Gebruiksvriendelijke URL:</value>
 	</data>
 	<data version="2.0" id="1063" name="FriendlyUrl">
 		<value>Opmerking: URL indeling = http:// [UwWebSiteUrl] / surveymobile.aspx / [&lt;b&gt;UwUrlNaam&lt;/b&gt;] </value>
@@ -3358,7 +3176,7 @@ Vriendelijke groet
     <value>Klik voor meer Informatie</value>
   </data>
   <data version="1.0" id="1108" name="FromLabelMail">
-    <value>Email van :</value>
+    <value>Afzender Emailadres :</value>
   </data>
   <data version="1.0" id="1109" name="ToLabelMail">
     <value>Email aan :</value>
@@ -3394,7 +3212,7 @@ Vriendelijke groet
     <value>A.u.b. Subgroepsnaam opgeven</value>
   </data>
   <data version="1.0" id="1120" name="GraphicalReports">
-    <value>Grafisch rapport</value>
+    <value>Grafisch Rapport</value>
   </data>
   <data version="1.0" id="1121" name="VoterReports">
     <value>Textueel Rapport</value>
@@ -3510,6 +3328,9 @@ Vriendelijke groet
   <data version="2.4" id="1158" name="FriendlyNameDeletedMsg">
     <value>Gebruiksvriendelijk URL verwijderd</value>
   </data>
+  <data version="2.4" id="1159" name="FriendlyUrlLabel">
+    <value>Gebruiksvriendelijk URL: </value>
+  </data>
   <data version="2.4" id="1160" name="SurveyLayoutSavedMsg">
     <value>Layout correct opgeslagen</value>
   </data>
@@ -3526,7 +3347,7 @@ Vriendelijke groet
   </data>
   <data version="2.4" id="1164" name="SpFrontPageTheme">
     <value>
-      De open source webapplicatie om online enqu&#234;tes en webformulieren te maken en te publiceren
+      De open source webapplicatie voor online enqu&#234;tes en webformulieren
     </value>
   </data>
   <data version="2.4" id="1165" name="DisclaimerTitle">
@@ -3548,5 +3369,98 @@ Vriendelijke groet
   </data>
   <data version="2.4" id="1170" name="btnGenerate">
     <value>Aanmaken</value>
+  </data>
+  <data version="2.5" id="1171" name="HelpAboutHyperlink">
+    <value>Over SP&amp;trade;</value>
+  </data>
+  <data version="2.5" id="1172" name="ReportsSMHyperlink">
+    <value>Rapportages</value>
+  </data>
+  <data version="2.5" id="1173" name="ResponsesHyperlink">
+    <value>Individuele Reacties</value>
+  </data>
+  <data version="2.5" id="1174" name="AccessUserResponses">
+    <value>Toegang Gebruiker Reacties</value>
+  </data>
+  <data version="2.5" id="1175" name="FriendlyNameExistsMsg">
+    <value>Naam in gebruik. Kies nogmaals.</value>
+  </data>
+  <data version="2.5" id="1176" name="WebControlIntro">
+    <value>Meer informatie over het gebruik van de SurveyBox Custom Webcontrol .....</value>
+  </data>
+  <data version="2.5" id="1177" name="AdminCreatedMessage">
+    <value>Account aangemaakt. Inloggen aub.</value>
+  </data>
+  <data version="2.5" id="1178" name="MultilanguagesStatsLiteral">
+    <value>Actieve talen:</value>
+  </data>
+  <data version="2.5" id="1179" name="OpeningCloseDateLiteral">
+    <value>Opening &amp; Sluiting Data</value>
+  </data>
+  <data version="2.5" id="1180" name="DateNotSet">
+    <value>Geen datum</value>
+  </data>
+  <data version="2.5" id="1181" name="PasswordRulesMessage">
+    <value>Niet volgens wachtwoord regels</value>
+  </data>
+  <data version="2.5" id="1182" name="SSRSReports">
+    <value>SSRS Rapporten</value>
+  </data>
+  <data version="2.5" id="1183" name="SsrsReportTitle">
+    <value>SQL Server Reporting Services - </value>
+  </data>
+  <data version="2.5" id="1184" name="SurveyTitleTooltip">
+    <value>Klik Title en ga naar Statistieken</value>
+  </data>
+  <data version="2.5" id="1185" name="SurveyStatusTooltip">
+    <value>Enqu&#234;te actief of niet</value>
+  </data>
+  <data version="2.5" id="1186" name="SurveyReponsesTooltip">
+    <value>Aantal Reacties</value>
+  </data>
+  <data version="2.5" id="1187" name="SurveyCreatedTooltip">
+    <value>Aanmaakdatum Enqu&#234;te</value>
+  </data>
+  <data version="2.5" id="1188" name="AccessSsrsReports">
+    <value>Toegang SSRS Reports</value>
+  </data>
+  <data version="2.5" id="1189" name="SsrsPrintSurvey">
+    <value>Rapport met optie om enquete te selecteren via DDL en alle Vragen/Antwoordopties te exporteren/ printen.</value>
+  </data>
+  <data version="2.5" id="1190" name="SsrsReport">
+    <value>Eenvoudig SSRS rapport voorbeeld zoals beschikbaar via SP.</value>
+  </data>
+  <data version="2.5" id="1191" name="SecurityGeneralWarningText">
+    <value>Algemene waarschuwing tonen</value>
+  </data>
+  <data version="2.5" id="1191" name="SecurityGeneralWarning">
+    <value>Toegang niet toegestaan.</value>
+  </data>
+  <data version="2.5" id="1192" name="UsersTabDelete">
+    <value>Verwijder</value>
+  </data>
+  <data version="2.5" id="1193" name="UserImportLinesSubmitted">
+    <value> regels aangeboden; </value>
+  </data>
+  <data version="2.5" id="1194" name="UserImportLinesImported">
+    <value> gebuikers geimporteerd. Niet compleet: </value>
+  </data>
+  <data version="2.5" id="1195" name="UserImportUserExists">
+    <value> gebruiker bestaat al </value>
+  </data>
+  <data version="2.5" id="1196" name="UserImportIncorrectFormat">
+    <value> onjuist formaat regelindeling </value>
+  </data>
+  <data version="2.5" id="1197" name="SelectSecurityAction">
+    <value>Select an Action</value>
+  </data>
+  <data version="2.5" id="1198" name="SecurityActionInfo">
+    <value>
+      - If an option is selected from the dropdownlist the change is saved instantly and automatically.&lt;br /&gt;
+      - The default 'Action on Invalid Authorisation' if no selection is made is set to "Show the General Warning".
+    </value>
+  </data>
+  <data version="2.5" id="1199" name="MlCodesLiteral">
+    <value>Geactiveerde Taal Codes</value>
   </data>
 </root>

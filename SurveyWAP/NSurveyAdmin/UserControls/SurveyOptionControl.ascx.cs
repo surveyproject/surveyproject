@@ -596,9 +596,15 @@ namespace Votations.NSurvey.WebAdmin.UserControls
                 catch (Exception ex)
                 {
                     if (ex.Message == "DUPLICATEFOLDER")
-                        ((PageBase)Page).ShowErrorMessage(MessageLabel, ((PageBase)Page).GetPageResource("SurveyImportDuplicate") );
+                    {
+                        ((PageBase)Page).ShowErrorMessage(MessageLabel, ((PageBase)Page).GetPageResource("SurveyImportDuplicate"));
+                    }
                     else
+                    {
                         ((PageBase)Page).ShowErrorMessage(MessageLabel, ((PageBase)Page).GetPageResource("Exception") + "  " + ex.Message);
+                        Code.ExceptionUtility.LogException(ex, "Survey XML Import Error");
+                    }
+
                     MessageLabel.Visible = true;
                 }
             }

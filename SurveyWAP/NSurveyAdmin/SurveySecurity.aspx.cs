@@ -154,7 +154,8 @@ namespace Votations.NSurvey.WebAdmin
 		{
 			SurveySecurityTitle.Text = GetPageResource("SurveySecurityTitle");
 			UnAuthentifiedUserActionLabel.Text = GetPageResource("UnAuthentifiedUserActionLabel");
-		}
+            SecurityActionInfoLiteral.Text = GetPageResource("SecurityActionInfo");
+        }
 
 
 		/// <summary>
@@ -168,7 +169,8 @@ namespace Votations.NSurvey.WebAdmin
 			ActionsDropDownList.DataValueField = "UnAuthentifiedUserActionId";
 			ActionsDropDownList.DataBind();
 			TranslateListControl(ActionsDropDownList);
-			ActionsDropDownList.SelectedValue = new Surveys().GetSurveyUnAuthentifiedUserAction(SurveyId).ToString();
+
+            ActionsDropDownList.SelectedValue = new Surveys().GetSurveyUnAuthentifiedUserAction(SurveyId).ToString();
 		}
 
 

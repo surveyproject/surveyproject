@@ -119,19 +119,29 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls
 
         private void ImportUsersButton_Click(object sender, System.EventArgs e)
         {
+            //Regular Expression to check email format:
             Regex re = new Regex(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
                 @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
                 @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
 
             string[] users = ImportUsersTextBox.Text.Split('\n');
             int importCount = 0;
+            //nr of textbox lines:
+            int linesSubmitted = users.Length;
+            // nr of 
+            int linesCount = 0;
             var sec = new LoginSecurity();
            
             for (int i = 0; i < users.Length; i++)
             {
+                
                 string[] user = users[i].Split(',');
+
                 if (user.Length > 4 && user[0].Trim().Length > 0 && user[1].Trim().Length > 0)
                 {
+                    // nr of correct delimited lines
+                    linesCount++;
+
                     // Check if user already exists in the db
                     if (new Users().GetUserByIdFromUserName(user[0]) == -1)
                     {
@@ -140,6 +150,15 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls
                         newUser.UserName = user[0].Trim();
                      
                         string password = user[1].Trim();
+
+                        // Password: length min. 8 - max. 12; min. 1 small, 1 capital, 1 special, 1 number required
+                        if (!Regex.IsMatch(password, @"(?=^.{8,12}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$"))
+
+                        {
+                            MessageLabel.Visible = true;
+                            ((PageBase)Page).ShowErrorMessage(MessageLabel, linesSubmitted.ToString() + ((PageBase)Page).GetPageResource("UserImportLinesSubmitted") +  importCount.ToString() + ((PageBase)Page).GetPageResource("UserImportLinesImported") + ((PageBase)Page).GetPageResource("PasswordRulesMessage") );
+                            return;
+                        }
 
                         newUser.PasswordSalt =sec.CreateSaltKey(5);
                         newUser.Password = sec.CreatePasswordHash(password, newUser.PasswordSalt);
@@ -158,14 +177,30 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls
                             AddUserSurveys(userData.Users[0].UserId);
                         }
                     }
+                    else
+                    {
+                    MessageLabel.Visible = true;
+                    ((PageBase)Page).ShowErrorMessage(MessageLabel, linesSubmitted.ToString() + ((PageBase)Page).GetPageResource("UserImportLinesSubmitted") + importCount.ToString() + ((PageBase)Page).GetPageResource("UserImportLinesImported") + ((PageBase)Page).GetPageResource("UserImportUserExists"));
+                    return;
+                    }
+
+                } else
+                { 
+                MessageLabel.Visible = true;
+                ((PageBase)Page).ShowErrorMessage(MessageLabel, linesSubmitted.ToString() + ((PageBase)Page).GetPageResource("UserImportLinesSubmitted") + importCount.ToString() + ((PageBase)Page).GetPageResource("UserImportLinesImported") + ((PageBase)Page).GetPageResource("UserImportIncorrectFormat"));
+                return;
                 }
             }
 
             MessageLabel.Visible = true;
-            if(importCount>0)
-((PageBase)Page).ShowNormalMessage(MessageLabel,((PageBase)Page).GetPageResource("UserImportedMessage"));
+            if (importCount > 0)
+            {
+                ((PageBase)Page).ShowNormalMessage(MessageLabel, linesSubmitted.ToString() + ((PageBase)Page).GetPageResource("UserImportLinesSubmitted") + importCount.ToString() + ((PageBase)Page).GetPageResource("UserImportedMessage"));
+            }
             else
-            ((PageBase)Page).ShowErrorMessage(MessageLabel, ((PageBase)Page).GetPageResource("NoUserImportedMessage"));
+            {
+                ((PageBase)Page).ShowErrorMessage(MessageLabel, ((PageBase)Page).GetPageResource("NoUserImportedMessage"));
+            }
             ImportUsersTextBox.Text = string.Empty;
             UserRolesListBox.Items.Clear();
             UserSurveysListBox.Items.Clear();

@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using System.Web.Security;
-using System.Security.Principal;
-using System.Web.SessionState;
 using Votations.NSurvey.WebAdmin.Code;
 
 namespace SurveyWAP
@@ -21,6 +16,9 @@ namespace SurveyWAP
         void Application_Start(object sender, EventArgs e)
         {
             // Code that runs on application startup
+
+            //Load Sqlserver Spacial Data Types DLL's - see the ssrs reports codebehind
+            //SqlServerTypes.Utilities.LoadNativeAssemblies(Server.MapPath("~/bin"));
 
         }
 

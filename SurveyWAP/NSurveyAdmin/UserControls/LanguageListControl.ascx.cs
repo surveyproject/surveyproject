@@ -89,7 +89,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 				LanguageDropDownList.DataTextField = "LanguageDescription";
 				LanguageDropDownList.DataValueField = "LanguageCode";
 				LanguageDropDownList.DataBind();
-				((PageBase)Page).TranslateListControl(LanguageDropDownList);
+				((PageBase)Page).LanguageTranslateListControl(LanguageDropDownList);
 				if (LanguageDropDownList.Items.FindByValue(LanguageId.ToString()) != null)
 				{
 					LanguageDropDownList.SelectedValue = LanguageId.ToString();

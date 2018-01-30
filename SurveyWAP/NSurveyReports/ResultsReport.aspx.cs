@@ -9,13 +9,12 @@ using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
 
 using System.Drawing.Printing;
-
 using Microsoft.VisualBasic;
 
 using Votations.NSurvey.BusinessRules;
 using Votations.NSurvey.DataAccess;
 using Votations.NSurvey.Data;
-using Votations.NSurvey.WebAdmin.UserControls;
+using Votations.NSurvey.WebAdmin;
 using Votations.NSurvey.Enums;
 using Votations.NSurvey.Security;
 using Votations.NSurvey.Helpers;
@@ -72,6 +71,8 @@ namespace Votations.NSurvey.WebAdmin
             return GetIdFromUrl();
         }
 
+
+
         public int SurveyId;
 
         //private VoterAnswersData currentVisitorAnswerSet = new VoterAnswersData();
@@ -110,7 +111,7 @@ namespace Votations.NSurvey.WebAdmin
 
             HtmlGenericControl javascriptControl = new HtmlGenericControl("script");
             javascriptControl.Attributes.Add("type", "text/Javascript");
-            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/jquery-3.1.1.min.js"));
+            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/jquery-3.3.1.min.js"));
             Page.Header.Controls.Add(javascriptControl);
 
             Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
@@ -126,7 +127,16 @@ namespace Votations.NSurvey.WebAdmin
 
         private void LocalizePage()
         {
+            SurveyAnswersTitle.Text = GetSurveyTitle();
+        }
 
+        private string GetSurveyTitle()
+        {
+            int id = GetSurveyId();
+            SurveyData surveyData = new Surveys().GetSurveyById(id, "");
+            string _surveyTitle = surveyData.Surveys[0].Title;
+
+            return _surveyTitle;
         }
 
 
@@ -476,21 +486,26 @@ namespace Votations.NSurvey.WebAdmin
         string FormatVoterAnswer(string answer, string voterAnswer, bool selected)
         {
 
+            PageBase naText = new PageBase();
+
             if (voterAnswer == null)
             {
                 if (answer == null || answer.Length == 0)
                 {
-                    return "<span class='notanswered'>Not Answered</span>";
+                    //return "<span class='notanswered'>Not Answered</span>";
+                    //TODO SP25
+                    
+                    return "<span class='notanswered'>" + naText.GetPageResource("AnswerNotAnsweredMessage") + "</span>";
                 }
                 else
                 {
                     if (selected)
                     {
-                        return string.Format("<b>{0}</b> <br />{1}", answer, "<span class='notanswered'>Not Answered</span>");
+                        return string.Format("<b>{0}</b> <br />{1}", answer, "<span class='notanswered'>" + naText.GetPageResource("AnswerNotAnsweredMessage") + "</span>");
                     }
                     else
                     {
-                        return string.Format("{0} <br />{1}", answer, "<span class='notanswered'>Not Answered</span>");
+                        return string.Format("{0} <br />{1}", answer, "<span class='notanswered'>" + naText.GetPageResource("AnswerNotAnsweredMessage") + "</span>");
                     }
                 }
             }
@@ -640,8 +655,5 @@ namespace Votations.NSurvey.WebAdmin
                 DeleteFile(int.Parse(fileInfo[0]), fileInfo[1]);
             }
         }
-
-
-
     }
 }

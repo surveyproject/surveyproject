@@ -66,6 +66,7 @@ namespace Votations.NSurvey.WebAdmin
         public static readonly string MailingStatus = AdminRoot + "/MailingStatus.aspx";
         public static readonly string ResultsReportHyperlink = AdminRoot + "/ResultsReporting.aspx";
         public static readonly string FieldsReportHyperlink = AdminRoot + "/FieldReporting.aspx";
+        public static readonly string SSRSReportHyperlink = AdminRoot + "/ResultsSsrs.aspx";
         public static readonly string ASPNETCode = AdminRoot + "/Controlcode.aspx";
         public static readonly string InsertSecurityAddInLink = AdminRoot + "/InsertSecurityAddIn.aspx";
         public static readonly string CrossTabHyperLink = AdminRoot + "/ResultsCrossTabulation.aspx";
@@ -145,6 +146,12 @@ namespace Votations.NSurvey.WebAdmin
         {
             HttpContext.Current.Server.Transfer(String.Format("{0}?surveyid={1}&voterid={2}&menuindex={3}", VoterReport, surveyId, voterId, menuIndex));
             // HttpContext.Current.Response.Redirect(String.Format("{0}?surveyid={1}&voterid={2}&menuindex={3}", VoterReport, surveyId, voterId, menuIndex));
+        }
+
+        public static void NavigateToSsrsReport(string fileName, int menuIndex)
+        {
+           //HttpContext.Current.Server.Transfer(String.Format("~/NSurveyReports/{0}?&menuindex={1}", fileName, menuIndex));
+            HttpContext.Current.Response.Redirect(String.Format("~/NSurveyReports/{0}?&menuindex={1}", fileName, menuIndex));
         }
 
         public static void NavigateToEditVoterReport(int surveyId, int voterId, int menuIndex)

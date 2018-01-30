@@ -33,15 +33,23 @@
 
 </head>
 <body>
-Test = <%=WindowStatusText%> <br /><br />
-    List of Variables = 
+Test = <%=WindowStatusText%> 
+    <br />
+
+        List of Variables = 
     <br />
     <% 
-            foreach (var crntsession in Session)
-            {
-                Response.Write(string.Concat(crntsession, "=", Session[crntsession.ToString()]) + "<br />");
-            }                    
+        foreach (var crntsession in Session)
+        {
+            Response.Write(string.Concat(crntsession, "=", Session[crntsession.ToString()]) + "<br />");
+        }
      %>
+    <br /><br />
+    <% foreach (var x in Request.ServerVariables)
+        {
+            Response.Write(string.Concat(x, " = ") + Request.ServerVariables[string.Concat(x)] + "<br />");
+        }
+%>
 
 </body>
 </html>

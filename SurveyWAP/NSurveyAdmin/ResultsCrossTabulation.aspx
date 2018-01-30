@@ -17,7 +17,7 @@
 
                         var printPreviewObject = '<object id="printPreviewElement" width="0" height="0" classid="CLSID:8856F961-340A-11D0-A96B-00C04FD705A2"></object>';
 
-                        printWindow.document.write('<link rel="stylesheet" type="text/css" href="../nsurveyadmin/css/voterreport.css" /> <link href="../Content/bootstrap.min.css" rel="stylesheet" />' + printContent.innerHTML);
+                        printWindow.document.write('<link rel="stylesheet" type="text/css" href="../Content/surveyadmin/voterreport.css" /> <link href="../Content/bootstrap.min.css" rel="stylesheet" />' + printContent.innerHTML);
 
                         printWindow.document.write(printPreviewObject);
 

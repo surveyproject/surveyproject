@@ -24,9 +24,7 @@
                     </fieldset>
     </asp:PlaceHolder>
      <br />
-                            <table style="width:95%; margin-left:15px; text-align:left;" class="innerText">
-                                <tr>
-                                    <td>
+
                                         <vts:SurveyBox ID="SurveyPreview" CssClass="surveybox" Visible="false" EnableValidation="true" runat="server">
                                             <QuestionStyle CssClass="questionStyle"></QuestionStyle>
                                             <QuestionValidationMessageStyle CssClass="qvmStyle"></QuestionValidationMessageStyle>
@@ -45,8 +43,6 @@
                                             <SectionGridAnswersHeaderStyle CssClass="sgahStyle"></SectionGridAnswersHeaderStyle>
                                             <FootStyle CssClass="footStyle"></FootStyle>
                                         </vts:SurveyBox>
-                                    </td>
-                                </tr>
-                            </table>
+
                                      <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
 </div></asp:Content>

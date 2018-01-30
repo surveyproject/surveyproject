@@ -76,6 +76,7 @@ namespace Votations.NSurvey.WebAdmin
 		private void Page_Load(object sender, System.EventArgs e)
 		{
             RecreateControls(DdlDynamicName);
+
             UITabList.SetResultsTabs((MsterPageTabs)Page.Master, UITabList.ResultTabs.Reports);
 
             if (LayoutDropDownList.SelectedValue != "2")
@@ -133,8 +134,8 @@ namespace Votations.NSurvey.WebAdmin
             switch (rblReports.SelectedValue)
             {
                 case "GR": Response.Redirect(UINavigator.ResultsReportHyperlink); break;
-                //case "TR": Response.Redirect(UINavigator.FieldsReportHyperlink); break;
                 case "CTR": Response.Redirect(UINavigator.CrossTabHyperLink); break;
+                case "SSRS": Response.Redirect(UINavigator.SSRSReportHyperlink); break;
             }
         }
 
@@ -142,6 +143,8 @@ namespace Votations.NSurvey.WebAdmin
 		{
 			CheckRight(NSurveyRights.AccessReports, true);
 			FilterEditorHyperLink.Visible = CheckRight(NSurveyRights.CreateResultsFilter, false);
+            rblReports.Items[2].Enabled = CheckRight(NSurveyRights.AccessSsrsReports, false);
+
 		}
 
 		private void LocalizePage()
@@ -283,41 +286,7 @@ namespace Votations.NSurvey.WebAdmin
                 SingleChartImage.ImageUrl = Server.HtmlDecode("ColumnChartReport.aspx?questionid=" + questionId + "&filterid=" + GetFilterId().ToString() + "&SortOrder=" + ResultsOrderDropDownList.SelectedValue + "&LanguageCode=" + LanguagesDropdownlist.SelectedValue + "&ChartType=" + LayoutDropDownList.SelectedValue + "&Enable3D=" + ThreeDeeDropDownList.SelectedValue);
 			}
 		}
-
-        //void BuildBarChartResults(int questionId)
-        //{
-        //    if (questionId == 0)
-        //    {
-        //        ChartRepeater.Visible = true;
-        //        SingleChartImage.Visible = false;
-        //        ChartRepeater.DataSource = new Questions().GetQuestionListWithSelectableAnswers(SurveyId);
-        //        ChartRepeater.DataBind();
-        //    }
-        //    else
-        //    {
-        //        ChartRepeater.Visible = false;
-        //        SingleChartImage.Visible = true;
-        //        //SingleChartImage.ImageUrl = Server.HtmlDecode("BarChartReport.aspx?questionid="+questionId+"&filterid="+GetFilterId().ToString()+"&SortOrder="+ResultsOrderDropDownList.SelectedValue+"&LanguageCode="+LanguagesDropdownlist.SelectedValue);
-        //        SingleChartImage.ImageUrl = Server.HtmlDecode("ColumnChartReport.aspx?questionid=" + questionId + "&filterid=" + GetFilterId().ToString() + "&SortOrder=" + ResultsOrderDropDownList.SelectedValue + "&LanguageCode=" + LanguagesDropdownlist.SelectedValue + "&ChartType=" + LayoutDropDownList.SelectedValue +"&Enable3D=" + ThreeDeeDropDownList.SelectedValue);
-        //    }
-        //}
-
-        //void BuildPieChartResults(int questionId)
-        //{
-        //    if (questionId == 0)
-        //    {
-        //        ChartRepeater.Visible = true;
-        //        SingleChartImage.Visible = false;
-        //        ChartRepeater.DataSource = new Questions().GetQuestionListWithSelectableAnswers(SurveyId);
-        //        ChartRepeater.DataBind();
-        //    }
-        //    else
-        //    {
-        //        ChartRepeater.Visible = false;
-        //        SingleChartImage.Visible = true;
-        //        SingleChartImage.ImageUrl = Server.HtmlDecode("PieChartReport.aspx?questionid="+questionId+"&filterid="+GetFilterId().ToString()+"&SortOrder="+ResultsOrderDropDownList.SelectedValue+"&LanguageCode="+LanguagesDropdownlist.SelectedValue);
-        //    }
-        //}
+        
 
 		#region Web Form Designer generated code
 		override protected void OnInit(EventArgs e)
@@ -376,11 +345,11 @@ namespace Votations.NSurvey.WebAdmin
 				LanguagesDropdownlist.Items.Clear();
 				foreach (MultiLanguageData.MultiLanguagesRow language in surveyLanguages.MultiLanguages)
 				{
-					ListItem defaultItem = new ListItem(GetPageResource(language.LanguageDescription), language.LanguageCode);
+					ListItem defaultItem = new ListItem(GetPageLanguageCodes(language.LanguageDescription), language.LanguageCode);
 					if (language.DefaultLanguage)
 					{
 						defaultItem.Value = "";
-						defaultItem.Text += " " + GetPageResource("LanguageDefaultText");
+						defaultItem.Text += " " + GetPageLanguageCodes("LanguageDefaultText");
 					}
 
 					LanguagesDropdownlist.Items.Add(defaultItem);

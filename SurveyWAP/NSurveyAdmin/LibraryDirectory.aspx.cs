@@ -163,13 +163,6 @@ namespace Votations.NSurvey.WebAdmin
             //
             InitializeComponent();
             base.OnInit(e);
-
-            //Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-            //HtmlGenericControl css = new HtmlGenericControl("link");
-            //css.Attributes.Add("rel", "stylesheet");
-            //css.Attributes.Add("type", "text/css");
-            //css.Attributes.Add("href", ResolveUrl("~/NSurveyAdmin/CSS/survey20.css"));
-            //Page.Header.Controls.Add(css);
         }
 
         /// <summary>
