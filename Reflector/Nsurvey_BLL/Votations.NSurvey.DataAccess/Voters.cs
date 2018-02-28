@@ -156,6 +156,21 @@ namespace Votations.NSurvey.DataAccess
         }
 
         /// <summary>
+        /// Returns all the text entries of the logged in SP user as a voter
+        /// </summary>
+        /// <param name="surveyId"></param>
+        /// <param name="userId"></param>
+        /// <param name="pageNumber"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        /// <returns></returns>
+        public DataSet GetVotersTextIndivEntries(int surveyId, int userId, int pageNumber, int pageSize, DateTime startDate, DateTime endDate)
+        {
+            return VoterFactory.Create().GetVotersTextIndivEntries(surveyId, userId, pageNumber, pageSize, startDate, endDate);
+        }
+
+        /// <summary>
         /// Check if the username has already taken the survey
         /// </summary>
         public bool HasUserNameVoted(int surveyId, string userName)
@@ -175,6 +190,19 @@ namespace Votations.NSurvey.DataAccess
             }
             return data;
         }
+
+
+        /// <summary>
+        /// Get All Voter data for an SSrs Report Test
+        /// </summary>
+        /// <returns></returns>
+        public DataSet GetAllVotersSsrsTest()
+        {
+            return VoterFactory.Create().GetAllVotersSsrsTest();
+        }
+
+
+
     }
 }
 

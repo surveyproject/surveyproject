@@ -19,7 +19,10 @@
                 config = ConfigurationManager.AppSettings;
             }
             string assemblyString = config["WebDAL"];
-            string typeName = assemblyString + ".SurveyToken";
+            //string typeName = assemblyString + ".SurveyToken";
+            // typename: must match namespace; after namechange of assembly, namespace no longer similar to 
+            string typeName = "Votations.NSurvey.SQLServerDAL.SurveyToken";
+
             return (ISurveyToken)Assembly.Load(assemblyString).CreateInstance(typeName);
         }
     }

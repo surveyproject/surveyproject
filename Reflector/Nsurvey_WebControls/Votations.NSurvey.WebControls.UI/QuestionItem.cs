@@ -19,9 +19,15 @@ namespace Votations.NSurvey.WebControls.UI
         private int _questionId = -1;
         private int _questionNumber = -1;
         private Style _questionStyle;
-        private Table _questionTable = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetCentPercentTable();//JJ;
+
+        //private Table _questionTable = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetCentPercentTable();//JJ;
+        private Panel _questionPanel = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetCentPercentPanel();//GB
+
         private ControlRenderMode _renderMode = ControlRenderMode.Standard;
-        private Table _selectionTable = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetSectPercentTable();//JJ;
+        //private Table _selectionTable = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetSectPercentTable();//JJ;
+        //TODO SP25
+        private Panel _selectionPanel = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetSectPercentPanel();//GB;
+
         private string _text = null;
         public string QuestionId_Text { get; set; }
         public string HelpText { get; set; }
@@ -38,28 +44,57 @@ namespace Votations.NSurvey.WebControls.UI
         /// <param name="child"></param>
         /// <param name="rowStyle"></param>
         /// <returns></returns>
-        protected TableRow BuildRow(Control child, Style rowStyle)
+        //protected TableRow BuildRow(Control child, Style rowStyle)
+        //{
+        //    TableRow row = new TableRow();
+        //    TableCell cell = new TableCell();
+        //    if (child != null)
+        //    {
+        //        cell.Controls.Add(child);
+        //    }
+        //    row.Cells.Add(cell);
+        //    row.ControlStyle.CopyFrom(rowStyle);
+        //    return row;
+        //}
+
+        //TODO SP25
+        protected Panel BuildPanelRow(Control child, Style rowStyle)
         {
-            TableRow row = new TableRow();
-            TableCell cell = new TableCell();
+            Panel PanelRow = new Panel();
+            Label cell = new Label();
+
             if (child != null)
             {
                 cell.Controls.Add(child);
             }
-            row.Cells.Add(cell);
-            row.ControlStyle.CopyFrom(rowStyle);
-            return row;
+
+            PanelRow.Controls.Add(cell);
+            cell.ControlStyle.CopyFrom(rowStyle);
+            return PanelRow;
         }
+
 
         protected override void OnInit(EventArgs e)
         {
             base.OnInit(e);
 
             // rows to add warning messages on required Q/A's
-            this.QuestionTable.Rows.Add(this.BuildRow(null, null));
-            this.QuestionTable.Rows[0].EnableViewState = false;
-            this.QuestionTable.Rows.Add(this.BuildRow(null, null));
-            this.QuestionTable.Rows[1].EnableViewState = false;
+            // used by section questions only
+            //this.QuestionTable.Rows.Add(this.BuildRow(null, null));
+            //this.QuestionTable.Rows[0].EnableViewState = false;
+            //this.QuestionTable.Rows.Add(this.BuildRow(null, null));
+            //this.QuestionTable.Rows[1].EnableViewState = false;
+
+
+            this._questionPanel.Controls.Add(this.BuildPanelRow(null, null));
+            this._questionPanel.Controls[0].Visible = false;
+            this._questionPanel.Controls[0].EnableViewState = false;
+
+            this._questionPanel.Controls.Add(this.BuildPanelRow(null, null));
+            this._questionPanel.Controls[1].Visible = false;
+            this._questionPanel.Controls[1].EnableViewState = false;
+
+
         }
 
         /// <summary>
@@ -157,17 +192,35 @@ namespace Votations.NSurvey.WebControls.UI
         /// <summary>
         /// Table that holds the question's layout
         /// </summary>
-        public Table QuestionTable
+        //public Table QuestionTable
+        //{
+        //    get
+        //    {
+        //        return this._questionTable;
+        //    }
+        //    set
+        //    {
+        //        this._questionTable = value;
+        //    }
+        //}
+
+        //TODO SP25
+        /// <summary>
+        /// Panel that holds the question's layout
+        /// </summary>
+        public Panel QuestionPanel
         {
             get
             {
-                return this._questionTable;
+                return this._questionPanel;
             }
             set
             {
-                this._questionTable = value;
+                this._questionPanel = value;
             }
         }
+
+
 
         /// <summary>
         /// Defines in which mode the control is going 
@@ -189,15 +242,28 @@ namespace Votations.NSurvey.WebControls.UI
         /// <summary>
         /// Table that holds the question's selections layout
         /// </summary>
-        public Table SelectionTable
+        //public Table SelectionTable
+        //{
+        //    get
+        //    {
+        //        return this._selectionTable;
+        //    }
+        //    set
+        //    {
+        //        this._selectionTable = value;
+        //    }
+        //}
+
+        //TODO SP25
+        public Panel SelectionPanel
         {
             get
             {
-                return this._selectionTable;
+                return this._selectionPanel;
             }
             set
             {
-                this._selectionTable = value;
+                this._selectionPanel = value;
             }
         }
 

@@ -2,30 +2,23 @@
     Inherits="Votations.NSurvey.WebAdmin.HelpFiles" CodeBehind="default.aspx.cs" %>
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="mainBody" class="mainBody contentHolder ps-container"><div id="Panel" class="Panel content">
-    <table class="TableLayoutContainer">
-        <tr>
-            <td>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="helpPanel"><div>
                 <asp:ImageButton ID="btnBack" ImageUrl="~/Images/index-icon.png" runat="server" CssClass="buttonIndex"
                     PostBackUrl="~/NSurveyAdmin/Help/default.aspx#SurveyManagement" Visible="True" ToolTip="Back to Helpfiles Index" />
-            </td>
-        </tr>
-        <tr>
-            <td class="contentCell" valign="top">
-                <br />
+            </div><div>
                 <h2 style="color:#5720C6;">
                     Email Notification Settings</h2>
-                <br /><br />
                 <hr style="color:#e2e2e2;" />
-                <br />
-                The email notification feature is part of the Settings screen. It's purpose is to send an email message each
-                time a survey has been answered.  <br /> <br />There are three types of notifications:<br />
+             
+                The email notification feature is part of the <a href="Survey General Settings.aspx">Survey Settings</a> screen. 
+                It's purpose is to send an email message each
+                time a survey has been answered and submitted.  <br /> <br />There are three different types of notification:<br />
                 <br />
                 * <span style="text-decoration: underline">Short Message</span> This will send an email
                 with a brief text stating that someone has answered the survey .<br />
                 <br />
                 * <span style="text-decoration: underline">Full Entry</span> This will send a complete
-                report where all the questions are shown including those that were not
+                report where all questions and answers are shown including those that were not
                 answered.<br />
                 <br />
                 * <span style="text-decoration: underline">Answers Only</span>This will send a partial
@@ -46,10 +39,11 @@
                 <br />
                 <br />
                 Before using the email Notification options make sure that the (SMTP) mail server
-                is setup correctly either during the installation or afterwards: check the web.config
-                file's "mail server settings" in the SurveySetting section.
+                is setup correctly either during the installation (web.config - nSurveySettings section) or afterwards through the System Settings menu.
                 <br />
-            </td>
-        </tr>
-    </table>
-</div></div></asp:Content>
+                        <hr style="color:#e2e2e2;" />
+        <h3>More Information</h3><br />
+                <a href="InstallationSettings.aspx">System Settings</a><br />
+                <a href="Survey General Settings.aspx">Survey Settings</a>
+            </div>
+<div id="fillerDiv" class="fillerDiv">&nbsp;</div></div></asp:Content>

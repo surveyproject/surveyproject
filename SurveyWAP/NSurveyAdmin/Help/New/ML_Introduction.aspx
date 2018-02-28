@@ -2,55 +2,41 @@
     Inherits="Votations.NSurvey.WebAdmin.HelpFiles" CodeBehind="../default.aspx.cs" %>
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="mainBody" class="mainBody contentHolder ps-container"><div id="Panel" class="Panel content">
-    <table class="TableLayoutContainer">
-        <tr>
-            <td>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="helpPanel"><div>
                 <asp:ImageButton ID="btnBack" ImageUrl="~/Images/index-icon.png" runat="server" CssClass="buttonIndex"
                     PostBackUrl="~/NSurveyAdmin/Help/default.aspx#MLSurveys" Visible="True" ToolTip="Back to Helpfiles Index" />
-            </td>
-        </tr>
-        <tr>
-            <td class="contentCell" valign="top">
-                <br />
+            </div><div>
                 <h2 style="color:#5720C6;">
-                    Multi-Language Surveys</h2>
-                <br />
-                <br />
-                <hr style="color:#e2e2e2;"/>
-                <br />
+                    Multi-Language Surveys</h2><hr style="color:#e2e2e2;" />
 
-There are often times when there may be a worldwide audience of respondent who
-dont speak the same language and are not always speaking English. It would be possible to 
-create for each language a separate survey but this would results in big
-complications while compiling and aggregating the final results.<br />
+There are often times when there may be a international audience of respondent who speak 
+different languages and are not all fluent in English. It would be possible to 
+create a separate survey for each language but this would results in a lot of work and great 
+                difficulty in compiling and aggregating the final results.<br />
 <br />
-Survey Project has the flexibility to translate a single survey into multiple
-languages and let the respondent choose in which language he wants to
+SP&trade; has the flexibility to translate a single survey into multiple
+languages and let the respondent choose in which language he or she wants to
 take the survey.<br />
 <br />
-At the end of the survey Survey's  reporting options Report%20General%20Settings.html will
+After closing the survey the <a href="Graphic Reports.aspx">reporting options</a> will
 provide a way to either have a global look at the results or a more
 granular look per respondent's languages.<br />
 <br />
-Also check the MultiLanguage_Introduction.html in order to learn
+Also check the <a href="..\Multi-Languages Settings.aspx">Multi Language Settings</a> helppage in order to learn
 more about the multi-languages features of Survey.<br />
 <br />
-Survey engine handles also languages written from right to left, like
-Arabic.<br />
+The survey web control also handles languages written from right to left, like
+Arabic or Hebrew.<br />
  <br />
                 <hr style="color:#e2e2e2;"/>
-                <br />
-                <br />
                 <h3>
                     More Information</h3>
                 <br />
-MultiLanguage_Introduction.html<br />
-Multil-Languages%20Settings.html<br />
-System%20Messages%20Manager.html<br />
+<a href="..\Multi-Languages Settings.aspx">Multi Language Settings</a><br />
+                                <a href="..\System%20Messages%20Manager.aspx" target="_self">System Messages & Multiple Languages</a><br />
+                <a href="Graphic Reports.aspx">Reporting options</a>
+
                 <br />
-            </td>
-        </tr>
-    </table>
-</div></div></asp:Content>
+            </div>
+<div id="fillerDiv" class="fillerDiv">&nbsp;</div></div></asp:Content>
 

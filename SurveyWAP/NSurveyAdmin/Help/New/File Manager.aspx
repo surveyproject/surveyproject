@@ -2,22 +2,12 @@
     Inherits="Votations.NSurvey.WebAdmin.HelpFiles" CodeBehind="../default.aspx.cs" %>
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="mainBody" class="mainBody contentHolder ps-container"><div id="Panel" class="Panel content">
-    <table class="TableLayoutContainer">
-        <tr>
-            <td>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="helpPanel"><div>
                 <asp:ImageButton ID="btnBack" ImageUrl="~/Images/index-icon.png" runat="server" CssClass="buttonIndex"
                     PostBackUrl="~/NSurveyAdmin/Help/default.aspx#Reporting" Visible="True" ToolTip="Back to Helpfiles Index" />
-            </td>
-        </tr>
-        <tr>
-            <td class="contentCell" valign="top">
-                <br />
+            </div><div>
                 <h2 style="color:#5720C6;">
-                    File Manager</h2>
-                <br />
-                <br />
-                <hr style="color:#e2e2e2;"/>
+                    File Manager</h2><hr style="color:#e2e2e2;" />
                 <br />
 
 The file manager is created to manage all the files that have been uploaded by
@@ -47,15 +37,10 @@ directory to which we will export the files.<br />
     answer item inside the same directory.<br />
 <br />
 * Full Path On Server is the complete path  of the directory on the
-  server to which the files are going to be exported.<br />
-<br />
-
-<hr style="color:#e2e2e2;" /> <br /><h3>More Information</h3><br />
+  server to which the files are going to be exported.<hr style="color:#e2e2e2;" /> <br /><h3>More Information</h3><br />
                 <br />
 Extended%20-%20File%20Upload.html<br />
                 <br />
-            </td>
-        </tr>
-    </table>
-</div></div></asp:Content>
+            </div>
+<div id="fillerDiv" class="fillerDiv">&nbsp;</div></div></asp:Content>
 

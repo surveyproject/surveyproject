@@ -22,24 +22,6 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin {
         protected global::System.Web.UI.WebControls.Literal SurveyCodePreviewTitle;
         
         /// <summary>
-        /// SurveyHeaderCustom control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal SurveyHeaderCustom;
-        
-        /// <summary>
-        /// ltImg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltImg;
-        
-        /// <summary>
         /// SurveyPreview control.
         /// </summary>
         /// <remarks>
@@ -47,14 +29,5 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Votations.NSurvey.WebControls.SurveyBox SurveyPreview;
-        
-        /// <summary>
-        /// SurveyFooterCustom control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal SurveyFooterCustom;
     }
 }

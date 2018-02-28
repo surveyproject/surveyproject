@@ -8,7 +8,7 @@
 		<value>Dovete includere la direttiva seguente nella pagina aspx che pubblicheranno il sondaggio</value>
 	</data>
 	<data name="TagPrefixInfo">
-		<value>&lt;%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="Votations.NSurvey.WebControls" %&gt;</value>
+		<value>&lt;%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="SurveyProject.WebControls" %&gt;</value>
 	</data>
 	<data name="QuickLinkInfo">
 		<value>Potete anche utilizzare il seguente collegamento: </value>

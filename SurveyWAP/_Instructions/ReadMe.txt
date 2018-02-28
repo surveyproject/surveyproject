@@ -1,12 +1,12 @@
 ________________________________________________________________________________________________
 
 
-Survey™ Project v. 2.4 - The open source webapplication for online surveys and webforms
+Survey™ Project v. 2.5 - The open source webapplication for online surveys and webforms
 
 ________________________________________________________________________________________________
 
 
-Available release packages for the Survey™ Project v. 2.4 solution:
+Available release packages for the Survey™ Project v. 2.5 solution:
 
 - Install		: https://www.github.com/surveyproject
 - Upgrade		: see INSTALL.txt file
@@ -16,7 +16,7 @@ ________________________________________________________________________________
 
 New Features & Fixes:
 
-- Read the PDF document 'SP24_Features&Fixes_v1_20170427.pdf' for a complete and detailed overview of all changes and fixes.
+- Read the PDF document 'SP25_Features&Fixes_v1_20170518.pdf' for a complete and detailed overview of all changes and fixes.
 
 For information and questions visit the Survey™ Project community site at http://www.surveyproject.org.
 
@@ -32,7 +32,7 @@ Known Issues
 
 ________________________________________________________________________________________________
 
-Instructions "Survey™ Project 2.4 Install package" - NEW INSTALLATION/ UPGRADE EXISTING INSTALLATION
+Instructions "Survey™ Project 2.5 Install package" - NEW INSTALLATION/ UPGRADE EXISTING INSTALLATION
 
 - Check the INSTALL.txt file for complete instructions.
 

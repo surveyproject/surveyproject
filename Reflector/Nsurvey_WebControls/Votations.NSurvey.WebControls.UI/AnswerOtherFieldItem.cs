@@ -8,7 +8,7 @@ namespace Votations.NSurvey.WebControls.UI
     using Votations.NSurvey.Resources;
 
     /// <summary>
-    /// Other answer type field
+    /// Selection - Other answertype textbox
     /// </summary>
     public class AnswerOtherFieldItem : AnswerSelectionItem, IFieldItem, IClientScriptValidator, IMandatoryAnswer, IRegExValidator
     {
@@ -28,7 +28,9 @@ namespace Votations.NSurvey.WebControls.UI
         protected override void CreateChildControls()
         {
             this._generatedSelection = base.GenerateSelectionControl(this.Controls);
-            this.Controls.Add(new LiteralControl("<br />&nbsp;"));
+
+           // this.Controls.Add(new LiteralControl("<br />&nbsp;"));
+
             if (this.FieldHeight > 1)
             {
                 this._fieldTextBox.TextMode = TextBoxMode.MultiLine;
@@ -121,7 +123,7 @@ namespace Votations.NSurvey.WebControls.UI
             {
                 str = string.Format(ResourceManager.GetString("RegExValidationFailedMessage", base.LanguageCode), this.Text);
             }
-            this.OnInvalidAnswer(new AnswerItemInvalidEventArgs(string.Format(str, this.Text)));
+            this.OnInvalidAnswer(new AnswerItemInvalidEventArgs(string.Format(str, Text)));
             return false;
         }
 

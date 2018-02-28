@@ -29,9 +29,10 @@
 
 
    <input type="hidden" id="tabindex" name="tabindex" value="<%= selectedTabIndex %>" />
+
    <div id="surveysTabEvents" style="display: none" runat="server" onclick="foo" />
 
-    <div id="tabs" style="min-height:750px;">
+    <div id="tabs">
         <ul>
             <li><a runat="server" id="Tab1" href="#tabs-1">
                 <%=GetPageResource("SurveyListTabList")%></a></li>
@@ -39,12 +40,17 @@
                 <%=GetPageResource("SurveyListTabNew")%></a></li>
         </ul>
 
-        <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
 
-        <div id="tabs-1" style="position: relative; left:-12px;">
-           
-            <fieldset style="width: 750px; margin-left: 7px; margin-top: 15px;">
+        <div id="Panel" class="Panel">
+
+        <div id="tabs-1">
+                                                   <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/surveylistdirectory.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a>
+                                        </div>
+            <fieldset >
                  <legend class="titleFont titleLegend">
                     <asp:Literal ID="SearchTitle" runat="server" EnableViewState="False">Search Surveylist</asp:Literal>
                     </legend>
@@ -58,67 +64,60 @@
             </fieldset>
             <br />
 
-            <div class="rounded_corners" style="width: 750px; margin-left: 7px; margin-top: 10px;">
+            <div class="rounded_corners">
                         <asp:GridView ID="gridSurveys" Width="100%" runat="server" AutoGenerateColumns="False" AllowSorting="True"
-                            ShowHeaderWhenEmpty="true" OnSorting="gvSurveys_Sorting" AlternatingRowStyle-BackColor="#FFF6BB" ShowFooter="True" AllowPaging="True"  OnPageIndexChanging="gridSurveys_PageIndexChanging" PageSize="10" FooterStyle-BackColor="#FFDF12" FooterStyle-BorderStyle="None" FooterStyle-BorderColor="#E2E2E2">
-                            
+                            ShowHeaderWhenEmpty="true" OnSorting="gvSurveys_Sorting" AlternatingRowStyle-BackColor="#FFF6BB" ShowFooter="True" AllowPaging="True" PagerSettings-Mode="NumericFirstLast"  OnPageIndexChanging="gridSurveys_PageIndexChanging" PageSize="10" FooterStyle-BackColor="#FFDF12" FooterStyle-BorderStyle="None" FooterStyle-BorderColor="#E2E2E2">
+                            <PagerStyle HorizontalAlign="Center" CssClass="GridPager" />
                             <Columns>
-                                <asp:TemplateField HeaderText="Survey" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#e2e2e2" HeaderStyle-BorderColor="#e2e2e2" HeaderStyle-ForeColor="#5720C6"  HeaderStyle-HorizontalAlign="Center" ItemStyle-Wrap="true" ItemStyle-Width="25%" ItemStyle-BorderWidth="1px" ItemStyle-BorderStyle="Solid" ItemStyle-BorderColor="#E2E2E2">
+                                <asp:TemplateField HeaderText="Survey" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#e2e2e2" HeaderStyle-BorderColor="#e2e2e2" HeaderStyle-ForeColor="#5720C6"  HeaderStyle-HorizontalAlign="Center" ItemStyle-Wrap="true" ItemStyle-Width="30%" ItemStyle-BorderWidth="1px" ItemStyle-BorderStyle="Solid" ItemStyle-BorderColor="#E2E2E2">
                                     <HeaderTemplate>
-                                        <table align="center">
-                                            <tr>
-                                                <td style="width:90%; text-align:center;">
-                                                    <asp:Label runat="server" Text='<%#GetPageResource("SurveyTitle") %>' /> &nbsp;
-                                                </td>
-                                                <td style="width:15%;">
+                                                <div style="width:80%; float:left; margin:10px 0 0 0;text-align:center;">
+                                                    <asp:Label runat="server" Text='<%#GetPageResource("SurveyTitle") %>' ToolTip='<%#GetPageResource("SurveyTitleTooltip") %>' />
+                                                </div>
+                                                <div style="width:10%; float:right; margin:2px 0px 0 0;">
                                                     <asp:ImageButton runat="server" ImageUrl="~/Images/arrow_up.gif" CommandName="sort"
                                                         CommandArgument="Title ASC" /><br />
                                                     <asp:ImageButton runat="server" ImageUrl="~/Images/arrow_down.gif" CommandName="sort"
                                                         CommandArgument="Title DESC" />
-                                                </td>
-                                            </tr>
-                                        </table>                                        
+                                                </div>                                        
                                     </HeaderTemplate>
                                     <ItemTemplate>
-                                        <asp:LinkButton runat="server" ToolTip="Survey Statistics" Text='<%#GetSurveyName(Container.DataItemIndex + 1, (string)Eval("Title")) %>'
+                                        <div style="float:left; margin:0px 0 0 5px; text-align:left;">
+                                        <asp:LinkButton runat="server"  ToolTip='<%# GetSurveyFriendlyName(Container.DataItemIndex + 1, (string)Eval("FriendlyName")) %>' Text='<%#GetSurveyName(Container.DataItemIndex + 1, (string)Eval("Title")) %>'
                                             OnCommand="OnSurveyStats" CommandName="SurveyStats" CommandArgument='<%#Eval("SurveyID")%>' CssClass="hyperlink" />
+                                        [<asp:Label runat="server" Text='<%#Eval("SurveyID")%>' />]
+                                            </div>
                                     </ItemTemplate>
                                 </asp:TemplateField >
+
+
                                 <asp:TemplateField  ItemStyle-Wrap="true" ItemStyle-Width="15%" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#e2e2e2" HeaderStyle-BorderColor="#e2e2e2" HeaderStyle-ForeColor="#5720C6" HeaderStyle-HorizontalAlign="Center" ItemStyle-BorderColor="#E2E2E2" ItemStyle-BorderStyle="Solid" ItemStyle-BorderWidth="1px">
                                     <HeaderTemplate>
-                                        <table align="center">
-                                            <tr>
-                                                <td style="width:90%; text-align:center;">
-                                                    <asp:Label runat="server" Text='<%#GetPageResource("SurveyStatus") %>' />  &nbsp;
-                                                </td>
-                                                <td>
+                                            <div style="width:80%; float:left; margin:10px 0 0 0;text-align:center;">
+                                                    <asp:Label runat="server" Text='<%#GetPageResource("SurveyStatus") %>' ToolTip='<%#GetPageResource("SurveyStatusTooltip") %>' />  &nbsp;
+                                                </div>
+                                                <div style="width:15%; float:right; margin:2px 5px 0 0">
                                                     <asp:ImageButton runat="server" ImageUrl="~/Images/arrow_up.gif" CommandName="sort"
                                                         CommandArgument="Activated ASC" /><br />
                                                     <asp:ImageButton runat="server" ImageUrl="~/Images/arrow_down.gif" CommandName="sort"
                                                         CommandArgument="Activated DESC" />
-                                                </td>
-                                            </tr>
-                                        </table>
+                                                </div>
                                     </HeaderTemplate>
                                     <ItemTemplate>
                                         <asp:Label runat="server" Text='<%#GetStatus((bool)Eval("Activated")) %>' />
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:TemplateField  ItemStyle-Wrap="true" ItemStyle-Width="15%" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#e2e2e2" HeaderStyle-BorderColor="#e2e2e2" HeaderStyle-ForeColor="#5720C6" HeaderStyle-HorizontalAlign="Center" ItemStyle-BorderColor="#E2E2E2" ItemStyle-BorderStyle="Solid" ItemStyle-BorderWidth="1px">
+                                <asp:TemplateField  ItemStyle-Wrap="true" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#e2e2e2" HeaderStyle-BorderColor="#e2e2e2" HeaderStyle-ForeColor="#5720C6" HeaderStyle-HorizontalAlign="Center" ItemStyle-BorderColor="#E2E2E2" ItemStyle-BorderStyle="Solid" ItemStyle-BorderWidth="1px">
                                     <HeaderTemplate>
-                                        <table align="center">
-                                            <tr>
-                                                <td style="width:90%; text-align:center;">
-                                                    <asp:Label runat="server" Text='<%#GetPageResource("SurveyResponses") %>' /> &nbsp;
-                                                </td>
-                                                <td>
+                                            <div style="width:75%; float:left; margin:10px 0 0 0;text-align:center;">
+                                                    <asp:Label runat="server" Text='<%#GetPageResource("SurveyResponses") %>' ToolTip='<%#GetPageResource("SurveyReponsesTooltip") %>' /> &nbsp;
+                                                </div>
+                                                <div style="width:15%; float:right; margin:2px 5px 0 0">
                                                     <asp:ImageButton runat="server" ImageUrl="~/Images/arrow_up.gif" CommandName="sort"
                                                         CommandArgument="VoterNumber ASC" /><br />
                                                     <asp:ImageButton runat="server" ImageUrl="~/Images/arrow_down.gif" CommandName="sort"
                                                         CommandArgument="VoterNumber DESC" />
-                                                </td>
-                                            </tr>
-                                        </table>
+                                                </div>
                                     </HeaderTemplate>
                                     <ItemTemplate>
                                         <asp:Label runat="server" Text='<%#Eval("VoterNumber")%>' />
@@ -126,45 +125,39 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField  ItemStyle-Wrap="true" ItemStyle-Width="20%" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#e2e2e2" HeaderStyle-BorderColor="#e2e2e2" HeaderStyle-ForeColor="#5720C6" HeaderStyle-HorizontalAlign="Center" ItemStyle-BorderStyle="Solid" ItemStyle-BorderWidth="1px" ItemStyle-BorderColor="#E2E2E2">
                                     <HeaderTemplate>
-                                        <table align="center">
-                                            <tr>
-                                                <td style="width:90%; text-align:center;">
-                                                    <asp:Label runat="server" Text='<%#GetPageResource("SurveyCreated") %>' /> &nbsp;
-                                                </td>
-                                                <td>
+                                            <div style="width:80%; float:left; margin:10px 0 0 0;text-align:center;">
+                                                    <asp:Label runat="server" Text='<%#GetPageResource("SurveyCreated") %>' ToolTip='<%#GetPageResource("SurveyCreatedTooltip") %>' /> &nbsp;
+                                                </div>
+                                            <div style="width:15%; float:right; margin:2px 5px 0 0">
                                                     <asp:ImageButton runat="server" ImageUrl="~/Images/arrow_up.gif" CommandName="sort"
                                                         CommandArgument="CreationDate ASC" /><br />
                                                     <asp:ImageButton runat="server" ImageUrl="~/Images/arrow_down.gif" CommandName="sort"
                                                         CommandArgument="CreationDate DESC" />
-                                                </td>
-                                            </tr>
-                                        </table>
+                                                </div>
                                     </HeaderTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="Label2" runat="server" Text='<%#Eval("CreationDate")%>' />
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 
-                                <asp:TemplateField  ItemStyle-Wrap="true" ItemStyle-Width="7%" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#e2e2e2" HeaderStyle-BorderColor="#e2e2e2" HeaderStyle-ForeColor="#5720C6" HeaderStyle-HorizontalAlign="Center" ItemStyle-BorderStyle="Solid" ItemStyle-BorderWidth="1px" ItemStyle-BorderColor="#E2E2E2">
+                                <asp:TemplateField  ItemStyle-Wrap="true" ItemStyle-Width="8%" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#e2e2e2" HeaderStyle-BorderColor="#e2e2e2" HeaderStyle-ForeColor="#5720C6" HeaderStyle-HorizontalAlign="Center" ItemStyle-BorderStyle="Solid" ItemStyle-BorderWidth="1px" ItemStyle-BorderColor="#E2E2E2">
                                     <HeaderTemplate>
                                     <asp:Label runat="server" Text='<%#GetPageResource("SurveyEdit") %>' />
                                     </HeaderTemplate>
                                     <ItemTemplate>
-                                    <!--     <asp:LinkButton runat="server" Text='<%#GetPageResource("SurveyEdit")%>' OnCommand="OnSurveyEdit"
-                                            CommandName="SurveyEdit" CommandArgument='<%#Eval("SurveyID")%>' CssClass="hyperlink" /> -->
-                                                    <asp:ImageButton runat="server" ToolTip="Edit Survey Information" ImageUrl="~/Images/edit.gif" OnCommand="OnSurveyEdit"
+
+                                                    <asp:ImageButton runat="server" ToolTip="Edit Survey Settings" ImageUrl="~/Images/edit.gif" OnCommand="OnSurveyEdit"
                                             CommandName="SurveyEdit" CommandArgument='<%#Eval("SurveyID")%>' />                                               
                                             
                                             </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:TemplateField ItemStyle-Wrap="true" ItemStyle-Width="6%" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#e2e2e2" HeaderStyle-BorderColor="#e2e2e2" HeaderStyle-ForeColor="#5720C6" HeaderStyle-HorizontalAlign="Center" ItemStyle-BorderColor="#E2E2E2" ItemStyle-BorderStyle="Solid" ItemStyle-BorderWidth="1px">
+                                <asp:TemplateField ItemStyle-Wrap="true" ItemStyle-Width="8%" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#e2e2e2" HeaderStyle-BorderColor="#e2e2e2" HeaderStyle-ForeColor="#5720C6" HeaderStyle-HorizontalAlign="Center" ItemStyle-BorderColor="#E2E2E2" ItemStyle-BorderStyle="Solid" ItemStyle-BorderWidth="1px">
                                     <HeaderTemplate>
                                     <asp:Label runat="server" Text='<%#GetPageResource("SurveySecurity") %>' />
                                     </HeaderTemplate>
                                     <ItemTemplate>
-                               <!--         <asp:LinkButton runat="server" Text='<%#GetPageResource("SurveySecurity")%>' OnCommand="OnSurveySecurity"
-                                            CommandName="SurveySecurity" CommandArgument='<%#Eval("SurveyID")%>' CssClass="hyperlink" /> -->
-                                                    <asp:ImageButton runat="server" ToolTip="Survey Security Settings" ImageUrl="~/Images/lock.gif" OnCommand="OnSurveySecurity"
+
+                                                    <asp:ImageButton runat="server" ToolTip="Edit Security Settings" ImageUrl="~/Images/lock.gif" OnCommand="OnSurveySecurity"
                                             CommandName="SurveySecurity" CommandArgument='<%#Eval("SurveyID")%>'  />                                            
                                             
                                      </ItemTemplate>
@@ -175,9 +168,8 @@
                                     <asp:Label runat="server" Text='<%#GetPageResource("SurveyDesign") %>' />
                                     </HeaderTemplate>
                                     <ItemTemplate>
-                                       <!-- <asp:LinkButton runat="server" Text='<%#GetPageResource("SurveyDesign")%>' OnCommand="OnSurveyDesign"
-                                            CommandName="SurveyDesign" CommandArgument='<%#Eval("SurveyID")%>' CssClass="hyperlink" /> -->
-                                                    <asp:ImageButton runat="server" ToolTip="Survey Form Builder" ImageUrl="~/Images/edit_pen.gif" OnCommand="OnSurveyDesign"
+
+                                                    <asp:ImageButton runat="server" ToolTip="Edit Survey Form" ImageUrl="~/Images/edit_pen.gif" OnCommand="OnSurveyDesign"
                                             CommandName="SurveyDesign" CommandArgument='<%#Eval("SurveyID")%>' />
 
 
@@ -187,8 +179,8 @@
                         </asp:GridView>
 
                 </div>
-
-            <div class="rounded_corners" style="width: 750px; text-align: center; margin-left: 7px; margin-top: 10px;">
+            <br />
+            <div class="rounded_corners">
                 <i><asp:Literal ID="SurveyListPageNrLiteral" runat="server"  EnableViewState="false">You are viewing page</asp:Literal> <%=gridSurveys.PageIndex + 1%> / <%=gridSurveys.PageCount%> </i>
             </div>
             <!-- code to be added later: 
@@ -202,14 +194,14 @@
             </div>
 
 
-        <div id="tabs-2" style="position: relative; left:-17px;">
+        <div id="tabs-2">
 
             <uc1:SurveyOptionControl ID="SurveyOption" runat="server" Visible="false"></uc1:SurveyOptionControl>
 
         </div>
-        </div>
-        </div>
-      </div>
 
+                                                 <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
+        </div>
+        </div>
   
 </asp:Content>

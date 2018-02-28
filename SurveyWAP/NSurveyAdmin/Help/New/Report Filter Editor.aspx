@@ -2,22 +2,12 @@
     Inherits="Votations.NSurvey.WebAdmin.HelpFiles" CodeBehind="../default.aspx.cs" %>
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="mainBody" class="mainBody contentHolder ps-container"><div id="Panel" class="Panel content">
-    <table class="TableLayoutContainer">
-        <tr>
-            <td>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="helpPanel"><div>
                 <asp:ImageButton ID="btnBack" ImageUrl="~/Images/index-icon.png" runat="server" CssClass="buttonIndex"
                     PostBackUrl="~/NSurveyAdmin/Help/default.aspx#Reporting" Visible="True" ToolTip="Back to Helpfiles Index" />
-            </td>
-        </tr>
-        <tr>
-            <td class="contentCell" valign="top">
-                <br />
+            </div><div>
                 <h2 style="color:#5720C6;">
-                    Report Filter Editor</h2>
-                <br />
-                <br />
-                <hr style="color:#e2e2e2;"/>
+                    Report Filter Editor</h2><hr style="color:#e2e2e2;" />
                 <br />
 
 Report filters are used to setup a set of rules based on the
@@ -45,15 +35,11 @@ rule. Based on the answer type there areseveral more options :<br />
 Once a new rule is created for the condition any number
 of new rules can be added to the filter as needed. If there is more than one rule the
 logical operator (AND, OR) of the filter will be used to evaluate the
-rules together in the filter.<br />
-<br />
-<hr style="color:#e2e2e2;" /> <br /><h3>More Information</h3>
+rules together in the filter.<hr style="color:#e2e2e2;" /> <br /><h3>More Information</h3>
                 <br />
 ED_Introduction.html<br />
 Survey%20Mailing.html<br />
                 <br />
-            </td>
-        </tr>
-    </table>
-</div></div></asp:Content>
+            </div>
+<div id="fillerDiv" class="fillerDiv">&nbsp;</div></div></asp:Content>
 

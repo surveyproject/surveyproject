@@ -19,7 +19,11 @@ namespace Votations.NSurvey.DALFactory
                 config = ConfigurationManager.AppSettings;
             }
             string assemblyString = config["WebDAL"];
-            string typeName = assemblyString + ".MultiLanguage";
+            //string typeName = assemblyString + ".MultiLanguage";
+            // typename: must match namespace; after namechange of assembly, namespace no longer similar to 
+            string typeName = "Votations.NSurvey.SQLServerDAL.MultiLanguage";
+
+
             return (IMultiLanguage) Assembly.Load(assemblyString).CreateInstance(typeName);
         }
     }

@@ -124,7 +124,7 @@ namespace Votations.NSurvey.WebControls.UI
 
         public  Unit GetCellWidth(int columnsNumber)
         {
-            return new Unit( Math.Round(columnsNumber==0?0.0: 98.00/ columnsNumber,2), UnitType.Percentage);
+            return new Unit( Math.Round(columnsNumber==0?100.0: 98.00/ columnsNumber,2), UnitType.Percentage);
         }
     }
 }

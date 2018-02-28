@@ -16,67 +16,77 @@ namespace Votations.NSurvey.WebControls.UI
         /// answer items
         /// </summary>
         /// <returns>An horizontal table with all the answer items</returns>
-        private Table BuildHorizontalSelectionLayout()
+        private Panel BuildHorizontalSelectionLayout()
         {
-            Table table = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetAnswerPercentTable();//JJ;
-            TableRow row = new TableRow();
+            Panel panelrow = new Panel();
+
             int num = 1;
             foreach (AnswerItem item in base.Answers)
             {
-                TableCell cell = new TableCell();
-                cell.VerticalAlign = VerticalAlign.Top;
-                cell.Controls.Add(item);
-                row.Cells.Add(cell);
+                Panel panelcell = new Panel();
+                panelcell.CssClass = "cellValign";
+                panelcell.Width = GetCellWidth(this.ColumnsNumber); //SP25
+                panelcell.Style.Value = "float:left;";
+                panelcell.Controls.Add(item);
+
+                panelrow.Controls.Add(panelcell);
+
                 num++;
-                if ((base.ColumnsNumber != 0) && (num > base.ColumnsNumber))
+
+                if (base.ColumnsNumber == 0)
                 {
-                    //row.ControlStyle.CopyFrom(base.AnswerStyle);
-                    table.Rows.Add(row);
-                    num = 1;
-                    row = new TableRow();
+                    panelrow.Style.Value = "display:flex;";
+                }
+                else if ((base.ColumnsNumber != 0) && (num > base.ColumnsNumber))
+                {
+                    Panel panelrowadd = new Panel();
+                    panelrow.Controls.Add(panelrowadd);
+                    num = 1;   
                 }
             }
-            row.ControlStyle.CopyFrom(base.AnswerStyle);
-            table.Rows.Add(row);
-            //table.CellPadding = 2;
-            //table.CellSpacing = 0;
-            return table;
+            panelrow.ControlStyle.CopyFrom(base.AnswerStyle);
+            return panelrow;
         }
 
         /// <summary>
-        /// Builds a vertical table containing all the 
+        /// Builds a vertical Panel containing all the 
         /// answer items
         /// </summary>
-        /// <returns>An horizontal table with all the answer items</returns>
-        private Table BuildVerticalSelectionLayout()
+        /// <returns>An vertical panel with all the answer items</returns>
+        private Panel BuildVerticalSelectionLayout()
         {
-            Table table = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetAnswerPercentTable();//JJ;
+            Panel panelrow = new Panel();
+
             int num = (base.ColumnsNumber == 0) ? base.Answers.Count : Convert.ToInt32(Math.Ceiling(((double) base.Answers.Count) / ((double) base.ColumnsNumber)));
             int num2 = 0;
             int num3 = 0;
+
             for (int i = 0; num3 < num; i = 0)
             {
-                TableRow row = new TableRow();
                 while (i <= base.ColumnsNumber)
                 {
-                    TableCell cell = new TableCell();
-                    cell.VerticalAlign = VerticalAlign.Top;
+
+                    Panel panelcell = new Panel();
+                    panelcell.CssClass = "cellValign";
+
                     if (num2 < base.Answers.Count)
                     {
-                        cell.Controls.Add(base.Answers[num2]);
+                        panelcell.Width = GetCellWidth(this.ColumnsNumber);
+                        panelcell.Controls.Add(base.Answers[num2]);
                     }
-                    row.Cells.Add(cell);
+
+                    panelrow.Controls.Add(panelcell);
+
                     i++;
                     num2 += num;
                 }
-                row.ControlStyle.CopyFrom(base.AnswerStyle);
-                table.Rows.Add(row);
+
+                panelrow.ControlStyle.CopyFrom(base.AnswerStyle);
+
                 num3++;
                 num2 = num3;
             }
-            //table.CellPadding = 2;
-            //table.CellSpacing = 0;
-            return table;
+            return panelrow;
         }
 
         /// <summary>

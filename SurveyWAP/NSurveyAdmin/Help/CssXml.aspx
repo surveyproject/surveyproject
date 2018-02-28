@@ -1,25 +1,16 @@
 ﻿<%@ Page Language="c#" MasterPageFile="~/nsurveyadmin/MsterPageTabs.master" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.HelpFiles" Codebehind="default.aspx.cs" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="mainBody" class="mainBody contentHolder ps-container"><div id="Panel" class="Panel content">
-    <table class="TableLayoutContainer">
-        <tr>
-            <td>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="helpPanel"><div>
                 <asp:ImageButton ID="btnBack" ImageUrl="~/Images/index-icon.png" runat="server" CssClass="buttonIndex"
                     PostBackUrl="~/NSurveyAdmin/Help/default.aspx#SurveyLayout" Visible="True" ToolTip="Back to Helpfiles Index" />
-            </td>
-        </tr>
-      <tr>
-        <td class="contentCell" valign="top">
-            <br />
-            <h2 style="color:#5720C6;">Css Xml Layout Options</h2><br />
-            <br />
-            <hr style="color:#E2E2E2;" />
-            <br /> <br />
+            </div><div>
+            <h2 style="color:#5720C6;">Css Xml Layout Options</h2><hr style="color:#e2e2e2;" />
+          
             As part of the different features to determine the look and feel of the surveyform as it is presented to respondents 
             a list of CSS/ XML entries has been created.
             <br /> <br />
             Through this list the "CSS Selectors" column can be edited. The CSS Selector or CSS Class names refer to the selectors and classes 
-            as defined in the CSS files used with a particular survey (default or custom). CSS files can be found in the NSurveyAdmin/CSS directories.
+            as defined in the CSS files used with a particular survey (default or custom). CSS files can be found in the Content directories.
             <br /><br />
             If a CSS Selectors is added (multiple selectors per item are possible) it's CSS rules will be applied to the part of the surveypage that can be recognised by the ID that is mentioned in the ObjectID column. 
              <br /><br />
@@ -34,12 +25,14 @@
             the entry is picked at runtime to present the label left or right of the radiobutton. 
             <br /><br />
             Options to set the alignment are: 'Left' or 'Right' (case sensitive). 
-            
 
-
-            <br /><br />
-                    </td>
-        </tr>
-                
-    </table>
-</div></div></asp:Content>
+ <br />
+                <br /><hr style="color:#e2e2e2;" />
+                <h3>
+                    More Information</h3>
+                <br />
+                <a href="Web%20Control%20Style.aspx" target="_self">Web Control CSS Style</a><br />
+                <a href="Style_Introduction.aspx" target="_self">Layout & Style Introduction</a><br />
+                <br />
+                    </div>
+<div id="fillerDiv" class="fillerDiv">&nbsp;</div></div></asp:Content>

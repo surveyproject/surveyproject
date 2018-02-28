@@ -2,20 +2,18 @@
     Inherits="Votations.NSurvey.WebAdmin.HelpFiles" CodeBehind="default.aspx.cs" %>
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="mainBody" class="mainBody contentHolder ps-container"><div id="Panel" class="Panel content">
-    <table class="TableLayoutContainer">
-        <tr>
-            <td>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <div id="helpPanel">
+
+            <div>
                 <asp:ImageButton ID="btnBack" ImageUrl="~/Images/index-icon.png" runat="server" CssClass="buttonIndex"
                     PostBackUrl="~/NSurveyAdmin/Help/default.aspx#Introduction" Visible="True" ToolTip="Back to Helpfiles Index" />
-            </td>
-        </tr>
-        <tr>
-            <td class="contentCell" valign="top">
-<br />
-<h2 style="color:#5720C6;">Survey&trade; Project Helpfiles Copyright and Disclaimer</h2><br /><br />
-<hr style="color:#e2e2e2;"/><br />
-<b>Versions: 2.*</b><br /><br />
+            </div>
+
+            <div>
+<h2 style="color:#5720C6;">Copyright and Disclaimer</h2>
+<hr style="color:#e2e2e2;"/>
+
 These helpfiles are provided for
 informational purposes only and no warranties are made, either express or
 implied, in this document. Information in this document, including
@@ -45,14 +43,12 @@ licensed under a Creative Commons license:<br />
 For questions concerning this license:  
 <a href="http://www.surveyproject.org" target="_blank">http://www.surveyproject.org</a>.<br />
 
-<br /><br />
+<br />
                 <hr style="color:#e2e2e2;" />
-                <br />
-&copy;2013 W3DevPro&trade;. <br />All rights reserved.<br />
+            
+<b>&copy;2017 W3DevPro&trade;</b> <br />All rights reserved.<br />
 <br />
-<br />
-            </td>
-        </tr>
-    </table>
-</div></div></asp:Content>
+            </div>
+
+<div id="fillerDiv" class="fillerDiv">&nbsp;</div></div></asp:Content>
 

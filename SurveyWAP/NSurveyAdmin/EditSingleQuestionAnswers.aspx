@@ -1,23 +1,27 @@
-﻿<%@ Register TagPrefix="uc1" TagName="SurveyListControl" Src="UserControls/SurveyListControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="FooterControl" Src="UserControls/FooterControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
-<%@ Page language="c#" MasterPageFile="MsterPageTabs.master" ValidateRequest="false" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.EditSingleQuestionAnswers" Codebehind="EditSingleQuestionAnswers.aspx.cs" %>
+﻿<%@ Page language="c#" MasterPageFile="MsterPageTabs.master" ValidateRequest="false" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.EditSingleQuestionAnswers" Codebehind="EditSingleQuestionAnswers.aspx.cs" %>
 <%@ Register TagPrefix="uc1" TagName="AnswerOptionControl" Src="UserControls/AnswerOptionControl.ascx" %>
-
-<%@ Register TagPrefix="mbrsc" Namespace="MetaBuilders.WebControls" Assembly="Votations.NSurvey.WebAdmin" %>
+<%@ Register TagPrefix="mbrsc" Namespace="MetaBuilders.WebControls" Assembly="SurveyProject.WebApplication" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
+    <div id="Panel" class="Panel">
 
-              <fieldset style="width: 750px; margin-left: 12px; margin-right: 0px; margin-top: 15px;">
+              <fieldset>
             <asp:ImageButton ID="ImageButton1" ImageUrl="~/Images/back_button.gif" runat="server" CssClass="buttonBack" OnCommand="OnBackButton" />
+
+                                                                                          <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/New/Answers%20Editor.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a>
+                                        </div>
+
+
             </fieldset>
 
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
+            <div class="errorDiv">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
-                        <fieldset style="width: 750px; margin-left: 12px; margin-right: 0px; margin-top: 15px;">
+                        <fieldset>
                 <legend class="titleFont titleLegend">
                                             <asp:Literal ID="SingleQuestionAnswerEditorTitle" runat="server" EnableViewState="False"
                                                 Text="Question's answers editor"></asp:Literal>
@@ -46,7 +50,7 @@
 
                 <asp:PlaceHolder ID="AnswerOverviewPlaceHolder" runat="server">
 
-                                            <fieldset style="width: 750px; margin-left: 12px; margin-right: 0px; margin-top: 15px;">
+                                            <fieldset>
                 <legend class="titleFont titleLegend">
                                     <asp:Literal ID="AnswersOverviewTitle" runat="server" Text="Answers overview" EnableViewState="False"></asp:Literal>
                                                         </legend>
@@ -62,9 +66,9 @@
                                     <Columns>
                                         <asp:TemplateColumn HeaderText="Order">
                                             <ItemTemplate>
-                                                <asp:ImageButton ID="UpImageButton" Width="12" ImageUrl="~/NSurveyAdmin/images/questionupbutton.gif"
+                                                <asp:ImageButton ID="UpImageButton" Width="12" ImageUrl="~/Images/questionupbutton.gif"
                                                     CommandName="up" runat="server"></asp:ImageButton>
-                                                <asp:ImageButton ID="DownImageButton" Width="12" ImageUrl="~/NSurveyAdmin/images/questiondownbutton.gif"
+                                                <asp:ImageButton ID="DownImageButton" Width="12" ImageUrl="~/Images/questiondownbutton.gif"
                                                     CommandName="down" runat="server"></asp:ImageButton>
                                             </ItemTemplate>
                                         </asp:TemplateColumn>
@@ -115,5 +119,7 @@
                 </asp:PlaceHolder>
 
                 <uc1:AnswerOptionControl ID="AnswerOption" runat="server" Visible="False"></uc1:AnswerOptionControl>
+                <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
+</div>
 
-</div></div></asp:Content>
+</asp:Content>

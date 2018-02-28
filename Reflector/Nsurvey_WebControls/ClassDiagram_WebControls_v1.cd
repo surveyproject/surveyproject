@@ -1,0 +1,861 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Votations.NSurvey.GlobalConfig" Collapsed="true">
+    <Position X="78" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAACAgAAYAoSAUkAABQAAAEAAAQCIAIoAAAAAAAAE=</HashCode>
+      <FileName>Votations.NSurvey\GlobalConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.Data.GridAnswerData" Collapsed="true">
+    <Position X="79.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IJAAIAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAACQIAAQ=</HashCode>
+      <FileName>Votations.NSurvey.Data\GridAnswerData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.Data.GridAnswerDataCollection" Collapsed="true">
+    <Position X="81.5" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAACAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.Data\GridAnswerDataCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.Data.GridAnswerDataConverter" Collapsed="true">
+    <Position X="83.25" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAIAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.Data\GridAnswerDataConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.Data.PostedAnswerData" Collapsed="true">
+    <Position X="71" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>IJAAIAAAEAAAAAAAAAAAAAAEABAAABAAAAAAAAAIAAQ=</HashCode>
+      <FileName>Votations.NSurvey.Data\PostedAnswerData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.Data.PostedAnswerDataCollection" Collapsed="true">
+    <Position X="72.75" Y="4.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAIAAEAAAAAAAAAACAAABAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Votations.NSurvey.Data\PostedAnswerDataCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.Designer.AutoFormat" Collapsed="true">
+    <Position X="74.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABACABCAAAACAAA4AAAAAGQAACAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.Designer\AutoFormat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.Helpers.PipeManager" Collapsed="true">
+    <Position X="83.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAkAAAAAAAAAAAAAAAAAAAIAAACAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Votations.NSurvey.Helpers\PipeManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.Helpers.XmlFileManager" Collapsed="true">
+    <Position X="79.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIBAQACAAAABAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Votations.NSurvey.Helpers\XmlFileManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.Reporting.VoterReportGenerator">
+    <Position X="7.5" Y="27.75" Width="7.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAACAAAAACEAAAAAMAAAIAAAAIgAAAAAAAIAA=</HashCode>
+      <FileName>Votations.NSurvey.Reporting\VoterReportGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.Reporting.VoterTextReportGenerator">
+    <Position X="7.5" Y="32" Width="6.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAIABAAAAAIAACAABAUAIAAAAAAAAGgAAAIAAAIEA=</HashCode>
+      <FileName>Votations.NSurvey.Reporting\VoterTextReportGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.Resources.AddressManager" Collapsed="true">
+    <Position X="71" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAgAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.Resources\AddressManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.Resources.CssXmlManager" Collapsed="true">
+    <Position X="79.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAgAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.Resources\CssXmlManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.Resources.HelpfilesManager" Collapsed="true">
+    <Position X="71" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAgAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.Resources\HelpfilesManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.Resources.ResourceManager" Collapsed="true">
+    <Position X="71" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAgAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.Resources\ResourceManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.Security.ASPNetContextSecurityAddIn" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="72.75" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>QAGAAAQSAAAgAABEEACAABAgEAAQIkIAAAAAQMAEAAA=</HashCode>
+      <FileName>Votations.NSurvey.Security\ASPNetContextSecurityAddIn.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Votations.NSurvey.Security.CookieWebSecurityAddIn" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="78" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAGAAAQSAAAgAABEEACAABAiEAAQIkIAAAAAQMAEAAA=</HashCode>
+      <FileName>Votations.NSurvey.Security\CookieWebSecurityAddIn.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Votations.NSurvey.Security.EmailWebSecurityAddIn" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="81.5" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>QAGAAAQSAAAgAABEEACAEBCgGAAQIkIAAAgAQMAEAQA=</HashCode>
+      <FileName>Votations.NSurvey.Security\EmailWebSecurityAddIn.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Votations.NSurvey.Security.EntryQuotaSecurityAddIn" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="83.25" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAGAAAQyAAAgAABEEACEAACgEAAQIkMAAAAAQMAEAQA=</HashCode>
+      <FileName>Votations.NSurvey.Security\EntryQuotaSecurityAddIn.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Votations.NSurvey.Security.IPRangeSecurityAddIn" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="72.75" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAGAAAQSAAAgAABEEACAEBCgEAAQIkIAAAAAQcAEAQA=</HashCode>
+      <FileName>Votations.NSurvey.Security\IPRangeSecurityAddIn.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Votations.NSurvey.Security.IPWebSecurityAddIn" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="74.5" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAGAAAQSCAAgAABEEACAABAiEAAQIkIAAAAAQMAEAAA=</HashCode>
+      <FileName>Votations.NSurvey.Security\IPWebSecurityAddIn.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Votations.NSurvey.Security.NSurveyContextSecurityAddIn" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="79.75" Y="3.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>QAGAAAQSAAAgAABEEACAABAgEAAQIkIAAAAAQMAEAAA=</HashCode>
+      <FileName>Votations.NSurvey.Security\NSurveyContextSecurityAddIn.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Votations.NSurvey.Security.PasswordWebSecurityAddIn" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="81.5" Y="3.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAGACAQSAAAgAgJEEACEAAAgEAAQIkIACAAAQMAEAQA=</HashCode>
+      <FileName>Votations.NSurvey.Security\PasswordWebSecurityAddIn.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Votations.NSurvey.Security.TokenSecurityAddIn" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="72.75" Y="6.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>QAGAAAQSAAAgIABEEACAABAgEQAQIkIAAAAAQsAFAQA=</HashCode>
+      <FileName>Votations.NSurvey.Security\TokenSecurityAddIn.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Votations.NSurvey.Security.UserAuthenticatedEventArgs" Collapsed="true">
+    <Position X="74.5" Y="6.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.Security\UserAuthenticatedEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.Security.WebSecurityAddInCollection" Collapsed="true">
+    <Position X="76.25" Y="6.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAIAAEAAAAAAAAAACAAABAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Votations.NSurvey.Security\WebSecurityAddInCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.Security.WebSecurityAddInFactory" Collapsed="true">
+    <Position X="78" Y="6.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAACAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.Security\WebSecurityAddInFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.Web.NSurveyContext" Collapsed="true">
+    <Position X="78" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.Web\NSurveyContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.FormItemEventArgs" Collapsed="true">
+    <Position X="71" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls\FormItemEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.FormNavigationEventArgs" Collapsed="true">
+    <Position X="72.75" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAQAIAAAgAEAAAAAAAAAAAAAAGAACBAAkAABA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls\FormNavigationEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.FormQuestionEventArgs" Collapsed="true">
+    <Position X="74.5" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls\FormQuestionEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.FormSessionEventArgs" Collapsed="true">
+    <Position X="76.25" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAgACAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls\FormSessionEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.SurveyBox" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="83.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>B4njZtQorfxOpl8eDzdgs5AvbvBzU6TTLpp5ckI/owU=</HashCode>
+      <FileName>Votations.NSurvey.WebControls\SurveyBox.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.SurveyBoxDesigner" Collapsed="true">
+    <Position X="71" Y="6.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls\SurveyBoxDesigner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.GlobalRadioButton">
+    <Position X="0.5" Y="18.25" Width="6.25" />
+    <TypeIdentifier>
+      <HashCode>AACQAgAAIDAAAACAAAAQAAEUAAAAEABEABAFCgAAAAE=</HashCode>
+      <FileName>Votations.NSurvey.WebControls\GlobalRadioButton.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.ActiveQuestion" Collapsed="true">
+    <Position X="6.5" Y="41.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAygACIBAAEkEFMEAFAoAnASAAABiRhEIkEcQA0gRI=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\ActiveQuestion.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerBooleanItem">
+    <Position X="43" Y="11" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAwAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerBooleanItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerConnection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="72.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAYAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerConnection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerConnectionsCollection" Collapsed="true">
+    <Position X="74.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAIAAEAAAAAAAAAACAAABAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerConnectionsCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerDataSourceItem">
+    <Position X="9.25" Y="11" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerDataSourceItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerFieldAddressItem">
+    <Position X="27.75" Y="18.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAADAAAASAAAAIAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerFieldAddressItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerFieldCalendarItem">
+    <Position X="30.25" Y="18.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABQAAAAAAAAAAAAAAAAAABQAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerFieldCalendarItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerFieldHiddenItem">
+    <Position X="27" Y="11" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAgAAAAAAAAAAAAAAIAAAABAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerFieldHiddenItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerFieldItem">
+    <Position X="31.25" Y="11" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>BAQAACAAAQAUBRYEAAwAQAAAAAACIBCAAIAEABBEoAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerFieldItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerFieldPasswordItem">
+    <Position X="33.25" Y="18.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerFieldPasswordItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerFieldSliderItem">
+    <Position X="35.75" Y="18.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAgEEBAAACAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerFieldSliderItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerItem">
+    <Position X="17.75" Y="0.5" Width="5" />
+    <TypeIdentifier>
+      <HashCode>ADCAYAAogAAIAABIAIggAgAAAIIAEAIOQAAkSCYEAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerItemCollection" Collapsed="true">
+    <Position X="76.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAIAAEAAAAAAAAAACAAABAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerItemCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerItemEventArgs" Collapsed="true">
+    <Position X="78" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerItemEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerItemInvalidEventArgs" Collapsed="true">
+    <Position X="81.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerItemInvalidEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerItemMessageEventArgs" Collapsed="true">
+    <Position X="83.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAIAAAAAAAAAAAEAAAIAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerItemMessageEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerListItem">
+    <Position X="16.25" Y="11" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAABABAAAAgAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerListItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerOtherFieldItem">
+    <Position X="39" Y="18.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>DAQAACAAAQAUBRYEAAwAQAAAAAACIBCAAIAEABAEoAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerOtherFieldItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerProperties" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="71" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAQAAAAAAEBAACAAABAAAACBACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerProperties.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerSection" Collapsed="true">
+    <Position X="17.25" Y="44.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAABAUCAAAICAAAAAABAICQAAIUAAEAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerSection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerSelectionItem">
+    <Position X="38.5" Y="11" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACCAABAAAAhAAAIAAAAAABEAAAAAQAgIAAI=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerSelectionItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerSqlItem">
+    <Position X="17" Y="18.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAgAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerSqlItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerSqlListItem">
+    <Position X="17" Y="21.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAQAAAAwAgAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerSqlListItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerSubscriberXmlListItem">
+    <Position X="0.5" Y="11" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AAAQIAAAAAAAARAABAwAAAAAAAgBAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerSubscriberXmlListItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerTextItem">
+    <Position X="12" Y="11" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerTextItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerUploadItem">
+    <Position X="7.25" Y="18.25" Width="1.75" />
+    <NestedTypes>
+      <Class Name="Votations.NSurvey.WebControls.UI.AnswerUploadItem.FileInfo" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Votations.NSurvey.WebControls.UI\AnswerUploadItem.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>CQBAAAAAAEAAQRAFgAyMEBALkAAABAABICAEAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerUploadItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerXmlItem">
+    <Position X="12.75" Y="18.25" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAgAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerXmlItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.AnswerXmlListItem">
+    <Position X="12.75" Y="21.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAQAAAAwAAAAAAAgAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerXmlListItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.CheckBoxAnswerSection" Collapsed="true">
+    <Position X="15" Y="46" Width="2" />
+    <TypeIdentifier>
+      <HashCode>QgAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\CheckBoxAnswerSection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.CheckBoxMatrixQuestion" Collapsed="true">
+    <Position X="3.25" Y="45.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\CheckBoxMatrixQuestion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.CheckBoxQuestion" Collapsed="true">
+    <Position X="5.5" Y="45.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\CheckBoxQuestion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.DropDownAnswerSection" Collapsed="true">
+    <Position X="19.5" Y="46" Width="2" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAiAEAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\DropDownAnswerSection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.DropDownQuestion" Collapsed="true">
+    <Position X="10" Y="45.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\DropDownQuestion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.ExtendedAnswerItem">
+    <Position X="5.75" Y="11" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AABAAgAAAAAAEAAAAAAAAEAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\ExtendedAnswerItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.MatrixChildCollection" Collapsed="true">
+    <Position X="76.25" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAIAAEAAAAAAAAAACAAABAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\MatrixChildCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.MatrixChildQuestion" Collapsed="true">
+    <Position X="12.25" Y="41.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\MatrixChildQuestion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.MatrixQuestion" Collapsed="true">
+    <Position X="3.25" Y="44.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAkAAAAAAAoAAgAJBEEAAAEAQAFAAAAAACCAAQACAgA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\MatrixQuestion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.MatrixSection" Collapsed="true">
+    <Position X="12.75" Y="44.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAACAAAAgAABAIDAEAAAAAAABAAAAAASCIAAACAgA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\MatrixSection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.QuestionItem" Collapsed="true">
+    <Position X="6.5" Y="40" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACKQAAAEAAwAAAAAAgAAAABAABCAAAYKAAAASiQECAE=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\QuestionItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.QuestionItemAnswersEventArgs" Collapsed="true">
+    <Position X="74.5" Y="4.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\QuestionItemAnswersEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.QuestionItemClientScriptEventArgs" Collapsed="true">
+    <Position X="76.25" Y="4.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\QuestionItemClientScriptEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.QuestionItemCollection" Collapsed="true">
+    <Position X="78" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAIAAEAAAAAAAAAACAAABAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\QuestionItemCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.QuestionItemInvalidAnswersEventArgs" Collapsed="true">
+    <Position X="81.5" Y="4.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\QuestionItemInvalidAnswersEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.RadioButtonAnswerSection" Collapsed="true">
+    <Position X="17.25" Y="46" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>QgAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\RadioButtonAnswerSection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.RadioButtonQuestion" Collapsed="true">
+    <Position X="7.75" Y="45.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\RadioButtonQuestion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.RatingBar" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="83.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAABAAAAAAAEAAEAgBAAAEAAQIA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\RatingBar.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.ResultItem" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="72.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QgGAQAAgACQCAhQEAEAACCAEAEAAAQAGAAAhQAABAAE=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\ResultItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.ResultsBar" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="74.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAACAAIAAEAQAAgBAAAECAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\ResultsBar.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.Section" Collapsed="true">
+    <Position X="16" Y="43" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oAAAAAAAEAAAAAAICAAAIAAAAAAAAAAAAAgMAKQwAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\Section.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.SectionAnswersGridItem">
+    <Position X="20.5" Y="11" Width="6" />
+    <TypeIdentifier>
+      <HashCode>GwEAQAAgAiAZEDgCAAiAECAoAAIhTQAQUAAQAEIyAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\SectionAnswersGridItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.SectionAnswersItemEventArgs" Collapsed="true">
+    <Position X="76.25" Y="5.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>IACAAAAAEAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\SectionAnswersItemEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.SectionCollection" Collapsed="true">
+    <Position X="78" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAEAAAAAAAAAACAAABAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\SectionCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.SectionQuestion" Collapsed="true">
+    <Position X="6.5" Y="43" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IwVGKCGiAGIBYDgSDICQAAAoEQExbYwxUgAaLUIwAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\SectionQuestion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.SelectionCheckBox" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="79.75" Y="5.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\SelectionCheckBox.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.SelectionRadioButton">
+    <Position X="0.5" Y="25.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\SelectionRadioButton.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.SingleQuestion" Collapsed="true">
+    <Position X="7.75" Y="44.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEEAAEAAAIAAgAUAEEAICAAQAEABAAAQAAKEQAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\SingleQuestion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.UI.StaticQuestion" Collapsed="true">
+    <Position X="1" Y="41.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\StaticQuestion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.ThirdPartyItems.CkEditorControls" Collapsed="true">
+    <Position X="76.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.ThirdPartyItems\CkEditorControls.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControls.ThirdPartyItems.FreeTextBoxAnswerItem">
+    <Position X="9.5" Y="18.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>BARABCQACQIWBxYEAAwAQBAiAAACIBCBAKAMABBEoAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.ThirdPartyItems\FreeTextBoxAnswerItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Votations.NSurvey.WebControlsFactories.AnswerItemFactory" Collapsed="true">
+    <Position X="79.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAABAAAAAACEBAAAAAAIQAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControlsFactories\AnswerItemFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControlsFactories.QuestionItemFactory" Collapsed="true">
+    <Position X="79.75" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAEAAAAQAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControlsFactories\QuestionItemFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebControlsFactories.SubscriberItemFactory" Collapsed="true">
+    <Position X="81.5" Y="5.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAACEAAgAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControlsFactories\SubscriberItemFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Votations.NSurvey.Security.IWebSecurityAddIn" Collapsed="true">
+    <Position X="83.25" Y="7.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAGAAAAQAAAgAAAAEACAAAAgEAAQIEAAAAAAQMAEAAA=</HashCode>
+      <FileName>Votations.NSurvey.Security\IWebSecurityAddIn.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Votations.NSurvey.WebControls.UI.IAnswerPublisher" Collapsed="true">
+    <Position X="71" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\IAnswerPublisher.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Votations.NSurvey.WebControls.UI.IAnswerSubscriber" Collapsed="true">
+    <Position X="72.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\IAnswerSubscriber.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Votations.NSurvey.WebControls.UI.IClientScriptValidator" Collapsed="true">
+    <Position X="74.5" Y="7.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>BAAAACAAAAAAAAAAAAAAAAAAAAAAIAAAAIAAABAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\IClientScriptValidator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Votations.NSurvey.WebControls.UI.IFieldItem" Collapsed="true">
+    <Position X="76.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQBAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\IFieldItem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Votations.NSurvey.WebControls.UI.IMandatoryAnswer" Collapsed="true">
+    <Position X="78" Y="7.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\IMandatoryAnswer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Votations.NSurvey.WebControls.UI.IRegExValidator" Collapsed="true">
+    <Position X="79.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\IRegExValidator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Votations.NSurvey.WebControls.UI.ISelectionControl" Collapsed="true">
+    <Position X="81.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\ISelectionControl.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Delegate Name="Votations.NSurvey.Security.UserAuthenticatedEventHandler" Collapsed="true">
+    <Position X="76.25" Y="9.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.Security\UserAuthenticatedEventHandler.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Votations.NSurvey.WebControls.FormEventHandler" Collapsed="true">
+    <Position X="76.25" Y="8.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls\FormEventHandler.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Votations.NSurvey.WebControls.FormNavigationEventHandler" Collapsed="true">
+    <Position X="78" Y="8.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls\FormNavigationEventHandler.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Votations.NSurvey.WebControls.FormQuestionEventHandler" Collapsed="true">
+    <Position X="79.75" Y="8.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls\FormQuestionEventHandler.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Votations.NSurvey.WebControls.FormSessionEventHandler" Collapsed="true">
+    <Position X="81.5" Y="8.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls\FormSessionEventHandler.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Votations.NSurvey.WebControls.UI.AnswerPostedEventHandler" Collapsed="true">
+    <Position X="71" Y="8.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerPostedEventHandler.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Votations.NSurvey.WebControls.UI.AnswerPublisherEventHandler" Collapsed="true">
+    <Position X="72.75" Y="8.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\AnswerPublisherEventHandler.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Votations.NSurvey.WebControls.UI.ClientScriptGeneratedEventHandler" Collapsed="true">
+    <Position X="74.5" Y="8.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\ClientScriptGeneratedEventHandler.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Votations.NSurvey.WebControls.UI.InvalidAnswersEventHandler" Collapsed="true">
+    <Position X="83.25" Y="8.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\InvalidAnswersEventHandler.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Votations.NSurvey.WebControls.UI.SectionAnswersEventHandler" Collapsed="true">
+    <Position X="71" Y="9.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\SectionAnswersEventHandler.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Votations.NSurvey.WebControls.UI.SelectionOverflowEventHandler" Collapsed="true">
+    <Position X="72.75" Y="9.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\SelectionOverflowEventHandler.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Votations.NSurvey.WebControls.UI.SelectionRequiredEventHandler" Collapsed="true">
+    <Position X="74.5" Y="9.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Votations.NSurvey.WebControls.UI\SelectionRequiredEventHandler.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

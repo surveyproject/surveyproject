@@ -1,20 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using System.Web.Security;
-using System.Web.SessionState;
 using Votations.NSurvey.WebAdmin.Code;
-
 
 namespace SurveyWAP
 {
+    /// <summary>
+    /// Namespace referrering to entire SurveyWAP webapplication project. Used only by the global.asax code to run application level events.
+    /// Global Class: code for responding to application-level events raised by ASP.NET or by HttpModules
+    /// More info: https://msdn.microsoft.com/en-us/library/1xaas8a2(v=vs.71).aspx
+    /// </summary>
+    /// <remarks>Includes Errorhandling references; demo servervariable; removing info from httpheader</remarks>
     public class Global : System.Web.HttpApplication
     {
 
         void Application_Start(object sender, EventArgs e)
         {
             // Code that runs on application startup
+
+            //Load Sqlserver Spacial Data Types DLL's - see the ssrs reports codebehind
+            //SqlServerTypes.Utilities.LoadNativeAssemblies(Server.MapPath("~/bin"));
 
         }
 
@@ -24,6 +28,11 @@ namespace SurveyWAP
 
         }
 
+        /// <summary>
+        /// Errorhandling instructions
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void Application_Error(object sender, EventArgs e)
         {
             // https://msdn.microsoft.com/en-us/library/24395wz3.aspx
@@ -35,51 +44,129 @@ namespace SurveyWAP
             // Handle HTTP errors
             if (exc.GetType() == typeof(HttpException))
             {
-                // The Complete Error Handling Example generates
-                // some errors using URLs with "NoCatch" in them;
-                // ignore these here to simulate what would happen
-                // if a global.asax handler were not implemented.
+                //NOTE: code redirect per httpcode
+                //HttpException ex = (HttpException)Server.GetLastError();
+                //if(ex.GetHttpCode() == 404)
+                //{
+                //    Server.Transfer("~/Errors/ErrorPage.aspx?msg=404&amp;handler=Application_Error%20-HttpError-%20Global.asax", true);
+                //}
 
-                //if (exc.Message.Contains("NoCatch") || exc.Message.Contains("maxUrlLength"))
-                // return;
-                HttpException ex = null;
-                ex = (HttpException)Server.GetLastError();
-                int httpCode = ex.GetHttpCode();
+                Server.Transfer("~/Errors/HttpErrorPage.aspx?handler=Application_Error%20-HttpError-%20Global.asax", true);
+            }
+            
+            //Invalid or illegal Login attempt:
+            if (exc is HttpRequestValidationException)
+            {
+                Server.Transfer("~/Errors/ErrorPage.aspx?handler=Application_Error%20HttpRequestValidationException%20-%20Global.asax", true);
 
-                ExceptionUtility.LogException(ex, "HttpError 404: page does not exist");
-                //Server.Transfer("HttpErrorPage.aspx");
+                Response.Clear();
+                Response.StatusCode = 200;
+                Response.End();
+            }
+            
+
+            // Handle Invalid Operation exceptions
+            if (exc.GetBaseException() is InvalidOperationException)
+            {
+
+                Server.Transfer("~/Errors/ErrorPage.aspx?handler=Application_Error%20InvalidOperationException%20-%20Global.asax", true);
+
             }
 
-            // For other kinds of errors give the user some information
-            // but stay on the default page
+            // Handle AoR exceptions
+            if (exc.GetBaseException() is ArgumentOutOfRangeException)
+            {
+                Server.Transfer("~/Errors/ErrorPage.aspx?handler=Application_Error%20AoRException%20-%20Global.asax", true);
+            }
 
-            Response.Write("<div style='font-family:Tahoma; font-size:small; width:1020px; background-color: #e2e2e2; padding:35px; -webkit-border-radius: 7px; -moz-border-radius: 7px; border-radius: 7px;'> <div class='topCell' style='left:-4px;  top:-3px; position: relative; padding:0px 13px 2px 0px; border: 0px;  border-top-style: none; border-left-style: none; border-bottom-style: none; border-right-style: none; border-color: #ffffff;'> <a href='" + 
-                HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Authority + HttpContext.Current.Request.ApplicationPath + "/default.aspx' title='Survey&#8482; Project Homepage' target='_self'> <img src='" + 
-                HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Authority + HttpContext.Current.Request.ApplicationPath + "/Images/SpLogo.svg' alt='logo' border='0' /> </a> </div>  <br /><br /> ");
+            // For all other kinds of errors
+            Server.Transfer("~/Errors/ErrorPage.aspx?handler=Application_Error%20Generic%20-%20Global.asax", true);
 
-            Response.Write("<h2>Survey™ Project Global Page Error</h2>\n");
-            Response.Write("An application error has been generated. More details on the error can be found in the logfiles directory of the Survey™ Project application. An automated warning message has been sent to the default SMTP server account.\n");
-            Response.Write( "<p>" + exc.Message + "\n" + exc.InnerException.Message +  "</p>\n");
-            Response.Write("Please return to the <a href='" + HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Authority + HttpContext.Current.Request.ApplicationPath + "/default.aspx'>Default Page</a>\n");
+            // Determine where error was handled.
+            string errorHandler = Request.QueryString["handler"];
 
-            Response.Write("<br /><br /> <hr style='color:#e2e2e2;'/><br /><br />&copy; W3DevPro&trade; 2017 </div> ");
+            if (errorHandler == null)
+            {
+                errorHandler = "Application_Error UNKNOWN Global.asax";
+            }
 
             // Log the exception and notify system operators
-            ExceptionUtility.LogException(exc, "DefaultPage");
+            ExceptionUtility.LogException(exc, errorHandler);
             ExceptionUtility.NotifySystemOps(exc);
 
-            // Clear the error from the server
+           // Clear the error from the server
             Server.ClearError();
-
+            
 
         }
+
+        /// <summary>
+        /// Used to remove the (web) Server details from the Http header - for security reasons
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Application_BeginRequest(object sender, EventArgs e)
+        {
+            var app = sender as HttpApplication;
+            if (app != null && app.Context != null)
+            {
+                app.Context.Response.Headers.Remove("Server");
+            }
+        }
+
+        /// <summary>
+        /// Used for LDAP (AD) authentication
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        //void Application_AuthenticateRequest(Object sender, EventArgs e)
+        //{
+        //    String cookieName = FormsAuthentication.FormsCookieName;
+        //    HttpCookie authCookie = Context.Request.Cookies[cookieName];
+
+        //    if (null == authCookie)
+        //    {//There is no authentication cookie.
+        //        return;
+        //    }
+
+        //    FormsAuthenticationTicket authTicket = null;
+
+        //    try
+        //    {
+        //        authTicket = FormsAuthentication.Decrypt(authCookie.Value);
+        //    }
+        //    catch (Exception exc)
+        //    {
+        //        ExceptionUtility.LogException(exc, "Failed AD Authentication");
+        //        return;
+        //    }
+
+        //    if (null == authTicket)
+        //    {//Cookie failed to decrypt.
+        //        return;
+        //    }
+
+        //    //When the ticket was created, the UserData property was assigned a
+        //    //pipe-delimited string of group names.
+        //    String[] groups = authTicket.UserData.Split(new char[] { '|' });
+
+        //    //Create an Identity.
+        //    GenericIdentity id = new GenericIdentity(authTicket.Name, "LdapAuthentication");
+
+        //    //This principal flows throughout the request.
+        //    GenericPrincipal principal = new GenericPrincipal(id, groups);
+
+        //    Context.User = principal;
+
+        //}
+
 
         void Session_Start(object sender, EventArgs e)
         {
             // Code that runs when a new session is started
 
             // Session Variable to demo the working of the default answer option @@sessionvariablename@@
-            HttpContext.Current.Session["SpDemoSessionVariable"] = "This Session Variable was set in Global.asax.cs";
+            HttpContext.Current.Session["SpDemoSessionVariable"] = "This Session Variable was set in Global.asax.cs for demonstration purposes only.";
 
         }
 

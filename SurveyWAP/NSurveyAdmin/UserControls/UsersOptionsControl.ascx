@@ -1,11 +1,18 @@
 <%@ Control Language="c#" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.UserControls.UsersOptionsControl"
     TargetSchema="http://schemas.microsoft.com/intellisense/ie5" CodeBehind="UsersOptionsControl.ascx.cs" %>
 
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 2px;">
- <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
-                </div>
-<br />
-            <fieldset style="width:750px; margin-left:-5px;">
+<div class="errorDiv">
+    <asp:Label ID="MessageLabel" runat="server" CssClass="errorMessage" Visible="False"></asp:Label>
+</div>
+
+                                        <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/New/User Manager.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a>
+                                        </div>
+
+            <fieldset>
                 <legend class="titleFont titleLegend">
                 <asp:Label ID="UserOptionTitleLabel" runat="server"></asp:Label>
                     </legend>
@@ -13,48 +20,53 @@
                 <ol>
      
                 <asp:PlaceHolder ID="NSurveyUserPlaceHolder" runat="server">
-<li>
-                     <asp:Label ID="UserNameLabel" AssociatedControlID="UserNameTextBox" runat="server" EnableViewState="False" Text="User name:"></asp:Label>
-                            <asp:TextBox ID="UserNameTextBox" runat="server"></asp:TextBox>
+                    <li>
+                        <asp:Label ID="UserNameLabel" AssociatedControlID="UserNameTextBox" runat="server" EnableViewState="False" Text="User name:"></asp:Label>
+                        <asp:TextBox ID="UserNameTextBox" runat="server"></asp:TextBox>
 
-                      </li><li>
-                                <asp:Label ID="UserPasswordLabel" AssociatedControlID="PasswordTextBox" runat="server" EnableViewState="False" Text="Password :"></asp:Label>
-                            <asp:TextBox ID="PasswordTextBox" runat="server" MaxLength="12" TextMode="Password"></asp:TextBox>
-</li><li>
-                                <asp:Label ID="UserFirstNameLabel" AssociatedControlID="FirstNameTextBox" runat="server" EnableViewState="False" Text="First name :"></asp:Label>
-                            <asp:TextBox ID="FirstNameTextBox" runat="server"></asp:TextBox>
-  </li><li>
-                                <asp:Label ID="UserLastNameLabel" AssociatedControlID="LastNameTextBox" runat="server" EnableViewState="False" Text="Last name :"></asp:Label>
-                            <asp:TextBox ID="LastNameTextBox" runat="server"></asp:TextBox>
-  </li><li>
-                                <asp:Label ID="UserEmailLabel" AssociatedControlID="EmailTextBox" runat="server" EnableViewState="False" Text="Email :"></asp:Label>
-                            <asp:TextBox ID="EmailTextBox" runat="server"></asp:TextBox>
- </li>
+                    </li>
+                    <li>
+                        <asp:Label ID="UserPasswordLabel" AssociatedControlID="PasswordTextBox" runat="server" EnableViewState="False" Text="Password :"></asp:Label>
+                        <asp:TextBox ID="PasswordTextBox" runat="server" MaxLength="12" TextMode="Password"></asp:TextBox>
+                    </li>
+                    <li>
+                        <asp:Label ID="UserFirstNameLabel" AssociatedControlID="FirstNameTextBox" runat="server" EnableViewState="False" Text="First name :"></asp:Label>
+                        <asp:TextBox ID="FirstNameTextBox" runat="server"></asp:TextBox>
+                    </li>
+                    <li>
+                        <asp:Label ID="UserLastNameLabel" AssociatedControlID="LastNameTextBox" runat="server" EnableViewState="False" Text="Last name :"></asp:Label>
+                        <asp:TextBox ID="LastNameTextBox" runat="server"></asp:TextBox>
+                    </li>
+                    <li>
+                        <asp:Label ID="UserEmailLabel" AssociatedControlID="EmailTextBox" runat="server" EnableViewState="False" Text="Email :"></asp:Label>
+                        <asp:TextBox ID="EmailTextBox" runat="server"></asp:TextBox>
+                    </li>
                 </asp:PlaceHolder>
 
-  <li>
-                             <asp:Label ID="UserIsAdministratorLabel" AssociatedControlID="IsAdminCheckBox" runat="server" EnableViewState="False" Text="Administrator :"></asp:Label>
+                    <li>
+                        <asp:Label ID="UserIsAdministratorLabel" AssociatedControlID="IsAdminCheckBox" runat="server" EnableViewState="False" Text="Administrator :"></asp:Label>
                         <asp:CheckBox ID="IsAdminCheckBox" runat="server"></asp:CheckBox>
 
-     </li><li>                         <asp:Label ID="AssignAllSurveysLabel" AssociatedControlID="HasSurveyAccessCheckBox" runat="server" EnableViewState="False" Text="Assign all survey :"></asp:Label>
-
+                    </li>
+                    <li>
+                        <asp:Label ID="AssignAllSurveysLabel" AssociatedControlID="HasSurveyAccessCheckBox" runat="server" EnableViewState="False" Text="Assign all survey :"></asp:Label>
                         <asp:CheckBox ID="HasSurveyAccessCheckBox" runat="server" AutoPostBack="True"></asp:CheckBox>
-                
-     </li>
-  </ol>          <asp:Button ID="CreateNewUserButton" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Create user"></asp:Button>
 
-                        <asp:Button ID="ApplyChangesButton" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Apply changes"></asp:Button>
-                        <asp:Button ID="DeleteUserButton" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Delete user" Visible="False" OnClick="DeleteUserButton_Click1"></asp:Button>
+                    </li>
+  </ol>
+                <asp:Button ID="CreateNewUserButton" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Create user"></asp:Button>
+                <asp:Button ID="ApplyChangesButton" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Apply changes"></asp:Button>
+                <asp:Button ID="DeleteUserButton" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Delete user" Visible="False" OnClick="DeleteUserButton_Click1"></asp:Button>
 
-          
-                    <br /><br /> 
+
+<br /><br /> 
                     </fieldset>
 
 <br /><br />
 
                 <asp:PlaceHolder ID="ExtendedSettingsPlaceHolder" runat="server">
 
- <fieldset style="width:750px; margin-left:-5px;">
+ <fieldset>
                 <legend class="titleFont titleLegend">
                                 <asp:Literal ID="UserSurveyAssignedLabel" runat="server" Text="Assigned surveys :" EnableViewState="False"></asp:Literal>
                     </legend>

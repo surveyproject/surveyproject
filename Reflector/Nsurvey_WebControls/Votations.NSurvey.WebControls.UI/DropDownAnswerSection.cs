@@ -19,19 +19,29 @@ namespace Votations.NSurvey.WebControls.UI
         /// Build an horizontal list layout with
         /// the question's answeritem child controls
         /// </summary>
-        private Table BuildHorizonalListLayout()
+        private Panel BuildHorizonalListLayout()
         {
-            TableCell cell;
+            //TableCell cell;
+            Control panelcell;
             int num;
-            Table table = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetAnswerPercentTable();//JJ;
-            TableRow row = new TableRow();
+
+            //Table table = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetAnswerPercentTable();//JJ;
+            Panel panel = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetAnswerPercentPanel();
+
+            //TableRow row = new TableRow();
+            Control row = new Panel();
+
             this.InitListItems();
             if (this._answerListItem.AnswerItems.Count > 0)
             {
-                cell = new TableCell();
-                cell.VerticalAlign = VerticalAlign.Top;
-                cell.Controls.Add(this._answerListItem);
-                row.Cells.Add(cell);
+                //cell = new TableCell();
+                panelcell = new Control();
+                //cell.VerticalAlign = VerticalAlign.Top;
+                //cell.Controls.Add(this._answerListItem);
+                panelcell.Controls.Add(this._answerListItem);
+                //row.Cells.Add(cell);
+                row.Controls.Add(panelcell);
+
                 num = 2;
             }
             else
@@ -40,37 +50,49 @@ namespace Votations.NSurvey.WebControls.UI
             }
             foreach (AnswerItem item in this._nonSelectableItems)
             {
-                cell = new TableCell();
-                cell.VerticalAlign = VerticalAlign.Top;
-                cell.Controls.Add(item);
-                row.Cells.Add(cell);
+                //cell = new TableCell();
+                panelcell = new Control();
+                //cell.VerticalAlign = VerticalAlign.Top;
+                //cell.Controls.Add(item);
+                panelcell.Controls.Add(item);
+                //row.Cells.Add(cell);
+                row.Controls.Add(panelcell);
+
                 num++;
                 if ((base.ColumnsNumber != 0) && (num > base.ColumnsNumber))
                 {
-                    row.ControlStyle.CopyFrom(base.AnswerStyle);
-                    table.Rows.Add(row);
+                    panel.ControlStyle.CopyFrom(base.AnswerStyle);
+                    //table.Rows.Add(row);
+                    panel.Controls.Add(row);
+
                     num = 1;
-                    row = new TableRow();
+                    //row = new TableRow();
+                    row = new Panel();
                 }
             }
-            if (row.Cells.Count > 0)
+            if (row.Controls.Count > 0)
             {
-                row.ControlStyle.CopyFrom(base.AnswerStyle);
-                table.Rows.Add(row);
+                panel.ControlStyle.CopyFrom(base.AnswerStyle);
+                panel.Controls.Add(row);
             }
-            return table;
+            return panel;
         }
 
         /// <summary>
         /// Build an vertical list layout with
         /// the question's answeritem child controls
         /// </summary>
-        private Table BuildVerticalListLayout()
+        private Panel BuildVerticalListLayout()
         {
             int num4;
-            Table table = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetAnswerPercentTable();//JJ;
-            TableRow row = new TableRow();
-            TableCell cell = new TableCell();
+
+            //Table table = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetAnswerPercentTable();//JJ;
+            //TableRow row = new TableRow();
+            //TableCell cell = new TableCell();
+            Panel panel = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetAnswerPercentPanel();//JJ;
+            Control panelrow = new Panel();
+            Control panelcell = new Control();
+
             this.InitListItems();
             int num = 0;
             int num2 = 0;
@@ -78,15 +100,17 @@ namespace Votations.NSurvey.WebControls.UI
             if (this._answerListItem.AnswerItems.Count > 0)
             {
                 num4 = (base.ColumnsNumber == 0) ? (this._nonSelectableItems.Count + 1) : Convert.ToInt32(Math.Ceiling(((double) (this._nonSelectableItems.Count + 1)) / ((double) base.ColumnsNumber)));
-                cell = new TableCell();
-                cell.VerticalAlign = VerticalAlign.Top;
-                cell.Controls.Add(this._answerListItem);
-                row.Cells.Add(cell);
+                //cell = new TableCell();
+                panelcell = new Control();
+                //cell.VerticalAlign = VerticalAlign.Top;
+                panelcell.Controls.Add(this._answerListItem);
+                panelrow.Controls.Add(panelcell);
+
                 num += num4 - 1;
                 if (this._nonSelectableItems.Count == 0)
                 {
-                    row.ControlStyle.CopyFrom(base.AnswerStyle);
-                    table.Rows.Add(row);
+                    panel.ControlStyle.CopyFrom(base.AnswerStyle);
+                    panel.Controls.Add(panelrow);
                 }
             }
             else
@@ -99,17 +123,19 @@ namespace Votations.NSurvey.WebControls.UI
                 {
                     if (num < this._nonSelectableItems.Count)
                     {
-                        cell = new TableCell();
-                        cell.VerticalAlign = VerticalAlign.Top;
-                        cell.Controls.Add(this._nonSelectableItems[num]);
-                        row.Cells.Add(cell);
+                        //cell = new TableCell();
+                        panelcell = new Control();
+                        //cell.VerticalAlign = VerticalAlign.Top;
+                        panelcell.Controls.Add(this._nonSelectableItems[num]);
+                        panelrow.Controls.Add(panelcell);
                     }
                     num3++;
                     num += num4;
                 }
-                row.ControlStyle.CopyFrom(base.AnswerStyle);
-                table.Rows.Add(row);
-                row = new TableRow();
+                panel.ControlStyle.CopyFrom(base.AnswerStyle);
+                panel.Controls.Add(panelrow);
+                panelrow = new Panel();
+
                 num2++;
                 num = num2;
                 if (this._answerListItem.AnswerItems.Count > 0)
@@ -118,7 +144,7 @@ namespace Votations.NSurvey.WebControls.UI
                 }
                 num3 = 0;
             }
-            return table;
+            return panel;
         }
 
         /// <summary>

@@ -1,30 +1,31 @@
-﻿<%@ Register TagPrefix="uc1" TagName="FilterOptionControl" Src="UserControls/FilterOptionControl.ascx" %>
+﻿<%@ Page language="c#" MasterPageFile="MsterPageTabs.master"   AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.EditSkipLogicRules" Codebehind="EditSkipLogicRules.aspx.cs" %>
 <%@ Register TagPrefix="uc1" TagName="SkipLogicRulesControl" Src="UserControls/SkipLogicRulesControl.ascx" %>
-<%@ Page language="c#" MasterPageFile="MsterPageTabs.master"   AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.EditSkipLogicRules" Codebehind="EditSkipLogicRules.aspx.cs" %>
-<%@ Register TagPrefix="uc1" TagName="PageBranchingRulesControl" Src="UserControls/PageBranchingRulesControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="FooterControl" Src="UserControls/FooterControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="SurveyListControl" Src="UserControls/SurveyListControl.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
 
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
- <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
-                </div>
-                            <div style="position: absolute; width: 50px; text-align: center; margin-left: 700px; top: 15px;">
+        <div id="Panel" class="Panel">
+            
+ <fieldset id="liML" runat="server">    
 <asp:ImageButton ID="ImageButton1" ImageUrl="~/Images/back_button.gif" runat="server"
                     CssClass="buttonBack" ToolTip="Click to go Back" OnCommand="OnBackButton" />
-                                </div>
-            <br />
+
+                                                                             <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/New/Skip%20Logic%20Conditions.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a>
+                                        </div>
+     </fieldset>
+                                
+<div class="errorDiv">
+ <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
+                </div>
                 
-                                 <fieldset style="width:750px; margin-left:12px; margin-top:15px;" title="Survey Title">
+                                 <fieldset>
         <legend class="titleFont titleLegend">
             <asp:literal id="AddNewSkipLogicTitle" runat="server" EnableViewState="False" Text="Add new skip logic to this question"></asp:literal>
                                 </legend>
                          <br />
-
   <ol>
      <li>    
           
@@ -58,7 +59,7 @@
    </fieldset>
 
 
-                                                       <fieldset style="width:750px; margin-left:12px; margin-top:15px;" title="Survey Title">
+   <fieldset>
         <legend class="titleFont titleLegend">
 <asp:literal id="SkipLogicRulesTitle" runat="server" EnableViewState="False" Text="Skip logic rules"></asp:literal>
                                 </legend>
@@ -74,4 +75,5 @@
 				                                           </li>
   </ol>
    </fieldset>
-</div></div></asp:Content>
+                                                 <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
+</div></asp:Content>

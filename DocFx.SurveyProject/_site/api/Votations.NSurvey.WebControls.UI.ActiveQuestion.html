@@ -1,0 +1,1619 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ActiveQuestion
+   | SP Technical Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ActiveQuestion
+   | SP Technical Documentation ">
+    <meta name="generator" content="docfx 2.26.3.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/splogo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion">
+  
+  
+  <h1 id="Votations_NSurvey_WebControls_UI_ActiveQuestion" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion" class="text-break">Class ActiveQuestion
+  </h1>
+  <div class="markdown level0 summary"><p>Base active question class for all question controls that needs handling 
+of the posted child answeritems field values </p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">System.Web.UI.Control</span></div>
+    <div class="level2"><span class="xref">System.Web.UI.WebControls.WebControl</span></div>
+    <div class="level3"><a class="xref" href="Votations.NSurvey.WebControls.UI.QuestionItem.html">QuestionItem</a></div>
+    <div class="level4"><span class="xref">ActiveQuestion</span></div>
+      <div class="level5"><a class="xref" href="Votations.NSurvey.WebControls.UI.SectionQuestion.html">SectionQuestion</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.ComponentModel.IComponent</span></div>
+    <div><span class="xref">System.IDisposable</span></div>
+    <div><span class="xref">System.Web.UI.IParserAccessor</span></div>
+    <div><span class="xref">System.Web.UI.IUrlResolutionService</span></div>
+    <div><span class="xref">System.Web.UI.IDataBindingsAccessor</span></div>
+    <div><span class="xref">System.Web.UI.IControlBuilderAccessor</span></div>
+    <div><span class="xref">System.Web.UI.IControlDesignerAccessor</span></div>
+    <div><span class="xref">System.Web.UI.IExpressionsAccessor</span></div>
+    <div><span class="xref">System.Web.UI.IAttributeAccessor</span></div>
+    <div><span class="xref">System.Web.UI.INamingContainer</span></div>
+    <div><span class="xref">System.Web.UI.IPostBackDataHandler</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebControls.UI.QuestionItem.html#Votations_NSurvey_WebControls_UI_QuestionItem_QuestionId_Text">QuestionItem.QuestionId_Text</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebControls.UI.QuestionItem.html#Votations_NSurvey_WebControls_UI_QuestionItem_HelpText">QuestionItem.HelpText</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebControls.UI.QuestionItem.html#Votations_NSurvey_WebControls_UI_QuestionItem_ShowHelpText">QuestionItem.ShowHelpText</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebControls.UI.QuestionItem.html#Votations_NSurvey_WebControls_UI_QuestionItem_BuildPanelRow_System_Web_UI_Control_System_Web_UI_WebControls_Style_">QuestionItem.BuildPanelRow(Control, Style)</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebControls.UI.QuestionItem.html#Votations_NSurvey_WebControls_UI_QuestionItem_OnInit_System_EventArgs_">QuestionItem.OnInit(EventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebControls.UI.QuestionItem.html#Votations_NSurvey_WebControls_UI_QuestionItem_AnswerStyle">QuestionItem.AnswerStyle</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebControls.UI.QuestionItem.html#Votations_NSurvey_WebControls_UI_QuestionItem_LanguageCode">QuestionItem.LanguageCode</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebControls.UI.QuestionItem.html#Votations_NSurvey_WebControls_UI_QuestionItem_QuestionId">QuestionItem.QuestionId</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebControls.UI.QuestionItem.html#Votations_NSurvey_WebControls_UI_QuestionItem_QuestionNumber">QuestionItem.QuestionNumber</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebControls.UI.QuestionItem.html#Votations_NSurvey_WebControls_UI_QuestionItem_QuestionStyle">QuestionItem.QuestionStyle</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebControls.UI.QuestionItem.html#Votations_NSurvey_WebControls_UI_QuestionItem_QuestionPanel">QuestionItem.QuestionPanel</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebControls.UI.QuestionItem.html#Votations_NSurvey_WebControls_UI_QuestionItem_RenderMode">QuestionItem.RenderMode</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebControls.UI.QuestionItem.html#Votations_NSurvey_WebControls_UI_QuestionItem_SelectionPanel">QuestionItem.SelectionPanel</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebControls.UI.QuestionItem.html#Votations_NSurvey_WebControls_UI_QuestionItem_Text">QuestionItem.Text</a>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.AddAttributesToRender(System.Web.UI.HtmlTextWriter)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.ApplyStyle(System.Web.UI.WebControls.Style)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.CopyBaseAttributes(System.Web.UI.WebControls.WebControl)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.CreateControlStyle()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.LoadViewState(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.TrackViewState()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.MergeStyle(System.Web.UI.WebControls.Style)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.Render(System.Web.UI.HtmlTextWriter)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.RenderBeginTag(System.Web.UI.HtmlTextWriter)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.RenderEndTag(System.Web.UI.HtmlTextWriter)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.RenderContents(System.Web.UI.HtmlTextWriter)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.SaveViewState()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.System.Web.UI.IAttributeAccessor.GetAttribute(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.System.Web.UI.IAttributeAccessor.SetAttribute(System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.AccessKey</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.Attributes</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.BackColor</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.BorderColor</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.BorderWidth</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.BorderStyle</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.ControlStyle</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.ControlStyleCreated</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.CssClass</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.DisabledCssClass</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.Style</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.Enabled</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.EnableTheming</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.Font</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.ForeColor</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.HasAttributes</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.Height</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.IsEnabled</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.SupportsDisabledAttribute</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.SkinID</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.TabIndex</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.TagKey</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.TagName</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.ToolTip</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.WebControls.WebControl.Width</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ResolveAdapter()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.HasEvents()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.GetRouteUrl(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.GetRouteUrl(System.String, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.GetRouteUrl(System.Web.Routing.RouteValueDictionary)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.GetRouteUrl(System.String, System.Web.Routing.RouteValueDictionary)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.GetUniqueIDRelativeTo(System.Web.UI.Control)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ApplyStyleSheetSkin(System.Web.UI.Page)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.OnDataBinding(System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.DataBind()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.DataBind(System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.DataBindChildren()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.AddParsedSubObject(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.EnsureID()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ClearChildState()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ClearChildControlState()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ClearChildViewState()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ClearEffectiveClientIDMode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ClearCachedClientID()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Focus()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.LoadControlState(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.MapPathSecure(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.OpenFile(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.OnLoad(System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.BuildProfileTree(System.String, System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.SaveControlState()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.RenderChildren(System.Web.UI.HtmlTextWriter)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.RenderControl(System.Web.UI.HtmlTextWriter)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.RenderControl(System.Web.UI.HtmlTextWriter, System.Web.UI.Adapters.ControlAdapter)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.OnUnload(System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Dispose()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.RaiseBubbleEvent(System.Object, System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.AddedControl(System.Web.UI.Control, System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.CreateControlCollection()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.CreateChildControls()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ResolveUrl(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ResolveClientUrl(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.FindControl(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.FindControl(System.String, System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.GetDesignModeState()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.HasControls()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.IsLiteralContent()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.EnsureChildControls()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.RemovedControl(System.Web.UI.Control)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.SetDesignModeState(System.Collections.IDictionary)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.SetRenderMethodDelegate(System.Web.UI.RenderMethod)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IParserAccessor.AddParsedSubObject(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IControlDesignerAccessor.GetDesignModeState()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IControlDesignerAccessor.SetDesignModeState(System.Collections.IDictionary)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IControlDesignerAccessor.SetOwnerControl(System.Web.UI.Control)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ClientIDMode</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ClientID</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ClientIDSeparator</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Context</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Adapter</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.DesignMode</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Events</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ID</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.IsChildControlStateCleared</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.EnableViewState</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ViewStateMode</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.IsViewStateEnabled</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.NamingContainer</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.IdSeparator</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.LoadViewStateByID</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Page</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.RenderingCompatibility</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.TemplateControl</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Parent</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.TemplateSourceDirectory</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.AppRelativeTemplateSourceDirectory</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Site</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Visible</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.UniqueID</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.HasChildViewState</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Controls</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ValidateRequestMode</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ViewState</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ViewStateIgnoresCase</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ChildControlsCreated</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.IsTrackingViewState</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IDataBindingsAccessor.HasDataBindings</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IDataBindingsAccessor.DataBindings</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IControlDesignerAccessor.UserData</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IControlBuilderAccessor.ControlBuilder</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IExpressionsAccessor.HasExpressions</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IExpressionsAccessor.Expressions</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Disposed</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.DataBinding</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Init</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Load</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.PreRender</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Unload</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Votations.NSurvey.WebControls.UI.html">Votations.NSurvey.WebControls.UI</a></h6>
+  <h6><strong>Assembly</strong>: SurveyProject.WebControls.dll</h6>
+  <h5 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class ActiveQuestion : QuestionItem, IComponent, IDisposable, IParserAccessor, IUrlResolutionService, IDataBindingsAccessor, IControlBuilderAccessor, IControlDesignerAccessor, IExpressionsAccessor, IAttributeAccessor, INamingContainer, IPostBackDataHandler</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion__ctor_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.#ctor*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion__ctor" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.#ctor">ActiveQuestion()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected ActiveQuestion()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_ConfirmationMessageStyle_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.ConfirmationMessageStyle*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_ConfirmationMessageStyle" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.ConfirmationMessageStyle">ConfirmationMessageStyle</h4>
+  <div class="markdown level1 summary"><p>Style of the confirmation messages of the survey and questions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PersistenceMode(PersistenceMode.InnerProperty)]
+public Style ConfirmationMessageStyle { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Style</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_DisplayValidationErrorMessages_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.DisplayValidationErrorMessages*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_DisplayValidationErrorMessages" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.DisplayValidationErrorMessages">DisplayValidationErrorMessages</h4>
+  <div class="markdown level1 summary"><p>Do we add the validation error messages
+to the question layout</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool DisplayValidationErrorMessages { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_EnableAnswersDefault_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.EnableAnswersDefault*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_EnableAnswersDefault" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.EnableAnswersDefault">EnableAnswersDefault</h4>
+  <div class="markdown level1 summary"><p>Enable question&apos;s answers default values</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EnableAnswersDefault { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_EnableClientSideValidation_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.EnableClientSideValidation*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_EnableClientSideValidation" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.EnableClientSideValidation">EnableClientSideValidation</h4>
+  <div class="markdown level1 summary"><p>Enable client side validation of answers which needs it</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EnableClientSideValidation { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_EnableServerSideValidation_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.EnableServerSideValidation*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_EnableServerSideValidation" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.EnableServerSideValidation">EnableServerSideValidation</h4>
+  <div class="markdown level1 summary"><p>Enable server side validation of answers which needs it</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EnableServerSideValidation { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_HasInvalidAnswers_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.HasInvalidAnswers*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_HasInvalidAnswers" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.HasInvalidAnswers">HasInvalidAnswers</h4>
+  <div class="markdown level1 summary"><p>Has the question any invalid answer</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasInvalidAnswers { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_IsSelectionOverflow_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.IsSelectionOverflow*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_IsSelectionOverflow" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.IsSelectionOverflow">IsSelectionOverflow</h4>
+  <div class="markdown level1 summary"><p>Has the question too much answers ?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSelectionOverflow { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_IsSelectionRequired_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.IsSelectionRequired*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_IsSelectionRequired" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.IsSelectionRequired">IsSelectionRequired</h4>
+  <div class="markdown level1 summary"><p>Has the question been answered ?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSelectionRequired { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_MaxAnswerSelectionMessage_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.MaxAnswerSelectionMessage*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_MaxAnswerSelectionMessage" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.MaxAnswerSelectionMessage">MaxAnswerSelectionMessage</h4>
+  <div class="markdown level1 summary"><p>Message show when too much selections were
+selected in the question</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string MaxAnswerSelectionMessage { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_MaxSelectionAllowed_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.MaxSelectionAllowed*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_MaxSelectionAllowed" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.MaxSelectionAllowed">MaxSelectionAllowed</h4>
+  <div class="markdown level1 summary"><p>Max. of selection required in the question
+(Fields are not checked)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxSelectionAllowed { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_MinAnswerSelectionMessage_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.MinAnswerSelectionMessage*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_MinAnswerSelectionMessage" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.MinAnswerSelectionMessage">MinAnswerSelectionMessage</h4>
+  <div class="markdown level1 summary"><p>Message show when not enough selections were
+selected in the question</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string MinAnswerSelectionMessage { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_MinSelectionRequired_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.MinSelectionRequired*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_MinSelectionRequired" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.MinSelectionRequired">MinSelectionRequired</h4>
+  <div class="markdown level1 summary"><p>Min. of selection required in the question
+(Fields are not checked)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MinSelectionRequired { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_ValidationMark_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.ValidationMark*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_ValidationMark" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.ValidationMark">ValidationMark</h4>
+  <div class="markdown level1 summary"><p>Validation mark shown near the question
+that requires answers</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ValidationMark { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_ValidationMarkStyle_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.ValidationMarkStyle*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_ValidationMarkStyle" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.ValidationMarkStyle">ValidationMarkStyle</h4>
+  <div class="markdown level1 summary"><p>Style used for the question&apos;s mark</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PersistenceMode(PersistenceMode.InnerProperty)]
+public Style ValidationMarkStyle { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Style</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_ValidationMessageStyle_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.ValidationMessageStyle*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_ValidationMessageStyle" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.ValidationMessageStyle">ValidationMessageStyle</h4>
+  <div class="markdown level1 summary"><p>Style used for the question&apos;s error messages</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PersistenceMode(PersistenceMode.InnerProperty)]
+public Style ValidationMessageStyle { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Style</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_VoterAnswersState_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.VoterAnswersState*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_VoterAnswersState" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.VoterAnswersState">VoterAnswersState</h4>
+  <div class="markdown level1 summary"><p>Global answers that a voter has answered 
+to the survey, used for piping in the answers 
+purposes, its optional and can be null</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public VoterAnswersData.VotersAnswersDataTable VoterAnswersState { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.VoterAnswersData.VotersAnswersDataTable.html">VoterAnswersData.VotersAnswersDataTable</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_MaxSelectionsReached_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.MaxSelectionsReached*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_MaxSelectionsReached_Votations_NSurvey_Data_PostedAnswerDataCollection_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.MaxSelectionsReached(Votations.NSurvey.Data.PostedAnswerDataCollection)">MaxSelectionsReached(PostedAnswerDataCollection)</h4>
+  <div class="markdown level1 summary"><p>Check if selections has reached the max quota</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract bool MaxSelectionsReached(PostedAnswerDataCollection answers)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.PostedAnswerDataCollection.html">PostedAnswerDataCollection</a></td>
+        <td><span class="parametername">answers</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_MinSelectionsRequired_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.MinSelectionsRequired*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_MinSelectionsRequired_Votations_NSurvey_Data_PostedAnswerDataCollection_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.MinSelectionsRequired(Votations.NSurvey.Data.PostedAnswerDataCollection)">MinSelectionsRequired(PostedAnswerDataCollection)</h4>
+  <div class="markdown level1 summary"><p>Check if enough selections have been made</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract bool MinSelectionsRequired(PostedAnswerDataCollection answers)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.PostedAnswerDataCollection.html">PostedAnswerDataCollection</a></td>
+        <td><span class="parametername">answers</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_OnAnswersPost_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.OnAnswersPost*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_OnAnswersPost_Votations_NSurvey_WebControls_UI_QuestionItemAnswersEventArgs_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.OnAnswersPost(Votations.NSurvey.WebControls.UI.QuestionItemAnswersEventArgs)">OnAnswersPost(QuestionItemAnswersEventArgs)</h4>
+  <div class="markdown level1 summary"><p>Post an event when all answers have been
+collected and grouped.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnAnswersPost(QuestionItemAnswersEventArgs e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.WebControls.UI.QuestionItemAnswersEventArgs.html">QuestionItemAnswersEventArgs</a></td>
+        <td><span class="parametername">e</span></td>
+        <td><p>The question&apos;s answers</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_OnBubbleEvent_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.OnBubbleEvent*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_OnBubbleEvent_System_Object_System_EventArgs_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.OnBubbleEvent(System.Object,System.EventArgs)">OnBubbleEvent(Object, EventArgs)</h4>
+  <div class="markdown level1 summary"><p>Takes care of the children controls (answer items) events</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool OnBubbleEvent(object source, EventArgs e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">source</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.EventArgs</span></td>
+        <td><span class="parametername">e</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Web.UI.Control.OnBubbleEvent(System.Object, System.EventArgs)</span></div>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_OnClientScriptGeneration_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.OnClientScriptGeneration*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_OnClientScriptGeneration_Votations_NSurvey_WebControls_UI_QuestionItemClientScriptEventArgs_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.OnClientScriptGeneration(Votations.NSurvey.WebControls.UI.QuestionItemClientScriptEventArgs)">OnClientScriptGeneration(QuestionItemClientScriptEventArgs)</h4>
+  <div class="markdown level1 summary"><p>Post an event when a client script has been generated</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnClientScriptGeneration(QuestionItemClientScriptEventArgs e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.WebControls.UI.QuestionItemClientScriptEventArgs.html">QuestionItemClientScriptEventArgs</a></td>
+        <td><span class="parametername">e</span></td>
+        <td><p>Question&apos;s invalid answers args</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_OnInvalidAnswers_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.OnInvalidAnswers*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_OnInvalidAnswers_Votations_NSurvey_WebControls_UI_QuestionItemInvalidAnswersEventArgs_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.OnInvalidAnswers(Votations.NSurvey.WebControls.UI.QuestionItemInvalidAnswersEventArgs)">OnInvalidAnswers(QuestionItemInvalidAnswersEventArgs)</h4>
+  <div class="markdown level1 summary"><p>Post an event when there are invalid server side checked answers</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnInvalidAnswers(QuestionItemInvalidAnswersEventArgs e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.WebControls.UI.QuestionItemInvalidAnswersEventArgs.html">QuestionItemInvalidAnswersEventArgs</a></td>
+        <td><span class="parametername">e</span></td>
+        <td><p>Question&apos;s invalid answers args</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_OnPreRender_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.OnPreRender*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_OnPreRender_System_EventArgs_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.OnPreRender(System.EventArgs)">OnPreRender(EventArgs)</h4>
+  <div class="markdown level1 summary"><p>Register the control for postback</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnPreRender(EventArgs e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventArgs</span></td>
+        <td><span class="parametername">e</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Web.UI.Control.OnPreRender(System.EventArgs)</span></div>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_OnSelectionOverflow_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.OnSelectionOverflow*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_OnSelectionOverflow_Votations_NSurvey_WebControls_UI_QuestionItemAnswersEventArgs_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.OnSelectionOverflow(Votations.NSurvey.WebControls.UI.QuestionItemAnswersEventArgs)">OnSelectionOverflow(QuestionItemAnswersEventArgs)</h4>
+  <div class="markdown level1 summary"><p>Post an event when there are too many selections</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnSelectionOverflow(QuestionItemAnswersEventArgs e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.WebControls.UI.QuestionItemAnswersEventArgs.html">QuestionItemAnswersEventArgs</a></td>
+        <td><span class="parametername">e</span></td>
+        <td><p>Question&apos;s answers</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_OnSelectionRequired_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.OnSelectionRequired*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_OnSelectionRequired_Votations_NSurvey_WebControls_UI_QuestionItemAnswersEventArgs_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.OnSelectionRequired(Votations.NSurvey.WebControls.UI.QuestionItemAnswersEventArgs)">OnSelectionRequired(QuestionItemAnswersEventArgs)</h4>
+  <div class="markdown level1 summary"><p>Post an event when there is a missing
+answer</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnSelectionRequired(QuestionItemAnswersEventArgs e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.WebControls.UI.QuestionItemAnswersEventArgs.html">QuestionItemAnswersEventArgs</a></td>
+        <td><span class="parametername">e</span></td>
+        <td><p>Question&apos;s answer if any was answered</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_PostedAnswersHandler_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.PostedAnswersHandler*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_PostedAnswersHandler_Votations_NSurvey_Data_PostedAnswerDataCollection_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.PostedAnswersHandler(Votations.NSurvey.Data.PostedAnswerDataCollection)">PostedAnswersHandler(PostedAnswerDataCollection)</h4>
+  <div class="markdown level1 summary"><p>Last chance to change any answer that was posted
+by child answeritems before they get posted to 
+subscribers</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void PostedAnswersHandler(PostedAnswerDataCollection answers)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.PostedAnswerDataCollection.html">PostedAnswerDataCollection</a></td>
+        <td><span class="parametername">answers</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+  </h3>
+  
+  
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_AnswerPosted" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.AnswerPosted">AnswerPosted</h4>
+  <div class="markdown level1 summary"><p>Events posted by the question</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event AnswerPostedEventHandler AnswerPosted</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.WebControls.UI.AnswerPostedEventHandler.html">AnswerPostedEventHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_ClientScriptGenerated" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.ClientScriptGenerated">ClientScriptGenerated</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event ClientScriptGeneratedEventHandler ClientScriptGenerated</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.WebControls.UI.ClientScriptGeneratedEventHandler.html">ClientScriptGeneratedEventHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_InvalidAnswers" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.InvalidAnswers">InvalidAnswers</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event InvalidAnswersEventHandler InvalidAnswers</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.WebControls.UI.InvalidAnswersEventHandler.html">InvalidAnswersEventHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_SelectionOverflow" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.SelectionOverflow">SelectionOverflow</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event SelectionOverflowEventHandler SelectionOverflow</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.WebControls.UI.SelectionOverflowEventHandler.html">SelectionOverflowEventHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_SelectionRequired" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.SelectionRequired">SelectionRequired</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event SelectionRequiredEventHandler SelectionRequired</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.WebControls.UI.SelectionRequiredEventHandler.html">SelectionRequiredEventHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_System_Web_UI_IPostBackDataHandler_LoadPostData_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.System#Web#UI#IPostBackDataHandler#LoadPostData*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_System_Web_UI_IPostBackDataHandler_LoadPostData_System_String_System_Collections_Specialized_NameValueCollection_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.System#Web#UI#IPostBackDataHandler#LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">IPostBackDataHandler.LoadPostData(String, NameValueCollection)</h4>
+  <div class="markdown level1 summary"><p>Handle all the postback data and store the select answers and field 
+of the question</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IPostBackDataHandler.LoadPostData(string postDataKey, NameValueCollection postCollection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">postDataKey</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Specialized.NameValueCollection</span></td>
+        <td><span class="parametername">postCollection</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebControls_UI_ActiveQuestion_System_Web_UI_IPostBackDataHandler_RaisePostDataChangedEvent_" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.System#Web#UI#IPostBackDataHandler#RaisePostDataChangedEvent*"></a>
+  <h4 id="Votations_NSurvey_WebControls_UI_ActiveQuestion_System_Web_UI_IPostBackDataHandler_RaisePostDataChangedEvent" data-uid="Votations.NSurvey.WebControls.UI.ActiveQuestion.System#Web#UI#IPostBackDataHandler#RaisePostDataChangedEvent">IPostBackDataHandler.RaisePostDataChangedEvent()</h4>
+  <div class="markdown level1 summary"><p>Raise the AnswerPosted event</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IPostBackDataHandler.RaisePostDataChangedEvent()</code></pre>
+  </div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.ComponentModel.IComponent</span>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.UI.IParserAccessor</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.UI.IUrlResolutionService</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.UI.IDataBindingsAccessor</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.UI.IControlBuilderAccessor</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.UI.IControlDesignerAccessor</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.UI.IExpressionsAccessor</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.UI.IAttributeAccessor</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.UI.INamingContainer</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.UI.IPostBackDataHandler</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy;2017 Survey&trade; Project
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

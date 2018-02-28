@@ -2,54 +2,39 @@
     Inherits="Votations.NSurvey.WebAdmin.HelpFiles" CodeBehind="../default.aspx.cs" %>
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="mainBody" class="mainBody contentHolder ps-container"><div id="Panel" class="Panel content">
-    <table class="TableLayoutContainer">
-        <tr>
-            <td>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="helpPanel"><div>
                 <asp:ImageButton ID="btnBack" ImageUrl="~/Images/index-icon.png" runat="server" CssClass="buttonIndex"
                     PostBackUrl="~/NSurveyAdmin/Help/default.aspx#Campaigns" Visible="True" ToolTip="Back to Helpfiles Index" />
-            </td>
-        </tr>
-        <tr>
-            <td class="contentCell" valign="top">
-                <br />
+            </div><div>
                 <h2 style="color:#5720C6;">
-                    Survey Campaigns</h2>
-                <br />
-                <br />
-                <hr style="color:#e2e2e2;"/>
-                <br />
-Survey Project provides several ways to publish a survey to respondents.<br />
+                    Survey Publishing & Campaigns</h2><hr style="color:#e2e2e2;" />
+             
+SP&trade; provides several ways to start a campaign and publish a survey to respondents.<br />
 <br />
-* The Campaigns/Web menu - Survey%20Deployement.html -  provides a HTML link (URL) to the
-  survey. This link can be distibuted through all sort of media from emails, messenger or on website pages.<br />
+<i>* The Campaigns/Web menu - Deployment URL </i><br /> -   provides a HTML weblink (URL) to open and access the
+  survey in a webbrowser. This link can be distibuted (copy/ paste) through all sort of media from emails, messengers or on website pages.<br />
 <br />
 
-* The Campaigns/ Take Survey menuoption - Take%20Survey.html - presents a special page inside Survey Project's administration
-  that is meant to allow a registered user -  User%20Manager.html - to take a
-  survey once logged in to the SP tool. This page requires the user to
-  have the &quot;take survey&quot; right set for a given Role -  Roles%20Manager.html .<br />
+<i>* The Campaigns/ Take Survey menuoption</i><br /> -  presents a special page after loging in to the SP&trade; webapplication 
+  that is meant to allow a registered user to take a
+  survey. This page requires the user to
+  have the &quot;take survey&quot; right set for a given Role .<br />
 <br />
-* The Survey Webcontrol - Web%20Control%20Deployment.html - is for more experienced users who
+<i>* The Survey Webcontrol</i><br /> -  meant for more experienced users who
   want to customize the survey ASP.net control and integrate it into ASP.net pages of a separate website.<br />
 <br />
-* ED_Introduction.html - Survey Project provides a complete mailing tool to email invitations including survey links to respondents.<br />
+<i>* Mailings </i><br /> - a complete set of mailing features are part of SP&trade; to email invitations including survey links and invitation codes to respondents.<br />
 <br />
 
                 <hr style="color:#e2e2e2;"/>
-                <br />
-                <br />
                 <h3>
                     More Information</h3>
                 <br />
-Survey%20Popup%20Window.html<br />
-Survey%20Deployement.html<br />
-Take%20Survey.html<br />
-Web%20Control%20Deployment.html<br />
-ED_Introduction.html<br />
+                <a href="Survey Deployement.aspx" title=" Survey Link Deployment " > Survey Link Deployment </a>	<br />
+                <a href="Take Survey.aspx" title=" Take Survey " > Take Survey </a>	<br />
+                <a href="Web Control Deployment.aspx" title=" Web Control Deployment " > Web Control Deployment </a>	<br />
+                <a href="ED_Introduction.aspx" title=" Emailing Introduction " > Emailing Introduction </a>	<br />
                 <br />
-            </td>
-        </tr>
-    </table>
-</div></div></asp:Content>
+            </div>
+<div id="fillerDiv" class="fillerDiv">&nbsp;</div></div></asp:Content>
 

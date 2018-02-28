@@ -1,0 +1,6 @@
+
+
+Replace NText by NVARCHAR(max)
+
+* library
+* voteranswers

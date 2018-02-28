@@ -1,5 +1,5 @@
 /**************************************************************************************************
-	Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com)	
+	Survey™ Project changes: copyright (c) 2009-2017, W3DevPro™ (https://github.com/surveyproject)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -61,7 +61,7 @@ namespace Votations.NSurvey.WebAdmin
 		protected System.Web.UI.WebControls.Label CreateGroupsLabel;
 		protected System.Web.UI.WebControls.DropDownList FileGroupsDropDownList;
 		protected System.Web.UI.WebControls.PlaceHolder FileExportPlaceHolder;
-		protected SurveyListControl SurveyList;
+		//protected SurveyListControl SurveyList;
 		
 		private void Page_Load(object sender, System.EventArgs e)
 		{

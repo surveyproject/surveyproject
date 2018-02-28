@@ -166,10 +166,14 @@ namespace Votations.NSurvey.SQLServerDAL
             }
 
             object obj2 = DbConnection.db.ExecuteScalar("vts_spUserGetUserIdFromUserName", commandParameters.ToArray());
+
+            //null = no records; dbnull.value = non existant value
             if ((obj2 != null) && (obj2 != DBNull.Value))
             {
+                //id of user or -2 if no rows
                 return int.Parse(obj2.ToString());
-            }
+            } 
+            //name does not exist:
             return -1;
         }
 

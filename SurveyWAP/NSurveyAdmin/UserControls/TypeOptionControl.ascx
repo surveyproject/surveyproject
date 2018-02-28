@@ -2,11 +2,16 @@
     TargetSchema="http://schemas.microsoft.com/intellisense/ie5" CodeBehind="TypeOptionControl.ascx.cs" %>
 
 
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 6px;">
+            <div class="errorDiv">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
-<br />
-                        <fieldset style="width:750px; margin-left:12px; margin-top:15px;">
+                         <div class="helpDiv">
+                                <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/New/Answer%20Type%20Creator.aspx"
+                                    title="Click for more Information">
+                                    <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                </a>
+                            </div>
+                         <fieldset>
                                             <legend class="titleFont titleLegend">
                 <asp:Label ID="fieldTypeOptionTitleLabel" runat="server">Label</asp:Label>
                 </legend><br />
@@ -58,11 +63,16 @@
                                     <asp:Label ID="FieldLengthLabel" AssociatedControlID="FieldMaxLengthTextBox" runat="server">Field max. length:</asp:Label>
 
                                 <asp:TextBox ID="FieldMaxLengthTextBox" runat="server" size="3" MaxLength="3">255</asp:TextBox>
-        </li><li> 
-                                    <asp:Label ID="ShownInResultsLabel" AssociatedControlID="FieldShownInResultsCheckBox" runat="server" >Field shown in results :</asp:Label>
+        </li>
 
-                                <asp:CheckBox ID="FieldShownInResultsCheckBox" runat="server"></asp:CheckBox>
-            </li><li> 
+    <!-- OBSOLETE:
+    <li> 
+                                    <asp:Label ID="ShownInResultsLabel" AssociatedControlID="FieldShownInResultsCheckBox" runat="server" >Field shown in results :</asp:Label>
+                                        <asp:CheckBox ID="FieldShownInResultsCheckBox" runat="server"></asp:CheckBox>
+            </li>
+    -->
+    
+    <li> 
                                     <asp:Label ID="JavascriptFunctionLabel" AssociatedControlID="JavascriptFunctionNameTextBox" runat="server">Javascript function name :</asp:Label>
 
                                 <asp:TextBox ID="JavascriptFunctionNameTextBox" Columns="50" MaxLength="45" runat="server"></asp:TextBox>
@@ -93,3 +103,4 @@
   </ol>
                     <br />
                     </fieldset>
+ <div id="fillerDiv" class="fillerDiv">&nbsp;</div>

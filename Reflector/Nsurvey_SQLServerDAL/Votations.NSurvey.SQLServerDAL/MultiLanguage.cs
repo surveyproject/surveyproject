@@ -183,22 +183,13 @@ namespace Votations.NSurvey.SQLServerDAL
         /// </summary>
         public void AddMultiLanguageText(int languageItemId, string languageCode, int LanguageMessageTypeId ,string ItemText)
         {
-            //SqlParameter[] commandParameters = new SqlParameter[4];
-            //commandParameters[0] = new SqlParameter("@LanguageItemId", SqlDbType.Int, 4);
-            //commandParameters[0].Value = languageItemId;
-            //commandParameters[1] = new SqlParameter("@LanguageCode", SqlDbType.NVarChar, 50);
-            //commandParameters[1].Value = languageCode;
-            //commandParameters[2] = new SqlParameter("@LanguageMessageTypeId", SqlDbType.Int,4);
-            //commandParameters[2].Value = LanguageMessageTypeId;
-            //commandParameters[3] = new SqlParameter("@ItemText", SqlDbType.VarChar, 4000);
-            //commandParameters[3].Value = ItemText;
 
             ArrayList commandParameters = new ArrayList();
             {
                 commandParameters.Add(new SqlParameter("@LanguageItemId", SqlDbType.Int, 4) { Value = languageItemId }.SqlValue);
                 commandParameters.Add(new SqlParameter("@LanguageCode", SqlDbType.NVarChar, 50) { Value = languageCode }.SqlValue);
                 commandParameters.Add(new SqlParameter("@LanguageMessageTypeId", SqlDbType.Int, 4) { Value = LanguageMessageTypeId }.SqlValue);
-                commandParameters.Add(new SqlParameter("@ItemText", SqlDbType.VarChar, 4000) { Value = ItemText }.SqlValue);
+                commandParameters.Add(new SqlParameter("@ItemText", SqlDbType.NVarChar, -1) { Value = ItemText }.SqlValue);
             }
 
             DbConnection.db.ExecuteNonQuery("vts_spMultiLanguageTextAdd", commandParameters.ToArray());

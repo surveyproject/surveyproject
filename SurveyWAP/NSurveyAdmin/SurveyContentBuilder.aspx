@@ -1,6 +1,4 @@
-﻿
-
-<%@ Page Language="c#" MasterPageFile="MsterPageTabs.master" ValidateRequest="false"
+﻿<%@ Page Language="c#" MasterPageFile="MsterPageTabs.master" ValidateRequest="false"
     AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.SurveyContentBuilder"
     CodeBehind="SurveyContentBuilder.aspx.cs" %>
 
@@ -24,32 +22,28 @@
         });
     </script>
 
-    <style type="text/css" id="scb_answers">
-        span.answerTextRender > label{color: black;background: white;font-weight: normal; margin-left: 5px;}
-        span.answerTextRender > div > input {margin: -5px 5px 0 0}
-    </style>
 
-    <div id="mainBody" class="mainBody contentHolder ps-container">
-    <div id="Panel" class="Panel content">
-                        <fieldset style="width:750px; margin-top:15px; margin-left:12px;" id="liML" runat="server">
-                            
-                      <!--      <legend class="titleFont titleLegend">
-                                            <asp:Literal ID="SurveyBuilderTitle" runat="server" EnableViewState="False">Survey builder</asp:Literal>
-                                                </legend> -->
-                    
-<ol>
-     <li>
-                                            <asp:label ID="PreviewSurveyLanguageLabel" AssociatedControlID="LanguagesDropdownlist" runat="server" Text="Language preview :"></asp:label>
-                                        <asp:DropDownList ID="LanguagesDropdownlist" runat="server" AutoPostBack="True">
-                                        </asp:DropDownList>
+    <div id="Panel" class="Panel">
+                        <fieldset id="liML" runat="server">                    
+                            <ol>
+                                <li>
+                                    <asp:Label ID="PreviewSurveyLanguageLabel" AssociatedControlID="LanguagesDropdownlist" runat="server" Text="Language preview :"></asp:Label>
+                                    <asp:DropDownList ID="LanguagesDropdownlist" runat="server" AutoPostBack="True">
+                                    </asp:DropDownList>
 
-                          </li>
-  </ol>
-                   
-                    </fieldset><br />
+                                </li>
+                            </ol>
+
+                        </fieldset>
+
+                                                <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/new/Survey%20Form%20Builder.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a></div>
 
                                         <asp:PlaceHolder ID="QuestionListPlaceHolder" runat="server"></asp:PlaceHolder>
-
+                <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
         </div> 
-    </div>
+
 </asp:Content>

@@ -124,7 +124,7 @@ namespace Votations.NSurvey.WebControls.ThirdPartyItems
             }
             else
             {
-                this._freeTextBox.BasePath = "~/Desktopmodules/SurveyBox/Scripts/ckeditor";
+                this._freeTextBox.BasePath = GlobalConfig.ScriptFilesPath + "/ckeditor";
             }
 
             //this._freeTextBox.BasePath = "~/Scripts/ckeditor";
@@ -213,9 +213,11 @@ namespace Votations.NSurvey.WebControls.ThirdPartyItems
             //this._adminTable.Rows.Add(this.BuildOptionRow(ResourceManager.GetString("ToolBarLayoutLabel"), this._toolBarLayoutTextBox, null, ResourceManager.GetString("ToolBarLayoutExampleLabel")));
 
 
+            //Extended settings button:
             Button optionControl = new Button();
             optionControl.ID = "ApplyChangeButton";
             optionControl.Text = ResourceManager.GetString("ApplyChangesButton");
+            optionControl.CssClass = "btn btn-primary btn-xs bw";
             optionControl.Click += new EventHandler(this.OnClick);
             this._adminTable.Rows.Add(this.BuildOptionRow(null, optionControl, null, null));
 

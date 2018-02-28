@@ -1,9 +1,9 @@
 <?xml version="1.0" standalone="yes"?>
 <NSurveyDataSource xmlns="http://www.nsurvey.org/NSurveyDataSource.xsd">
-	<XmlDataSource>
-		<XmlAnswers>
-		  <XmlAnswer><AnswerValue></AnswerValue><AnswerDescription>[Select Country]</AnswerDescription></XmlAnswer> 
-		  <XmlAnswer><AnswerValue>AF</AnswerValue><AnswerDescription>Afghanistan</AnswerDescription></XmlAnswer> 
+  <XmlDataSource>
+    <XmlAnswers>
+      <XmlAnswer><AnswerValue></AnswerValue><AnswerDescription>[Land Kiezen]</AnswerDescription></XmlAnswer>
+      <XmlAnswer><AnswerValue>AF</AnswerValue><AnswerDescription>Afghanistan</AnswerDescription></XmlAnswer> 
 		  <XmlAnswer><AnswerValue>AL</AnswerValue><AnswerDescription>Albanie</AnswerDescription></XmlAnswer> 
 		  <XmlAnswer><AnswerValue>DZ</AnswerValue><AnswerDescription>Algerije</AnswerDescription></XmlAnswer> 
 		  <XmlAnswer><AnswerValue>AS</AnswerValue><AnswerDescription>Americaans Samoa</AnswerDescription></XmlAnswer> 

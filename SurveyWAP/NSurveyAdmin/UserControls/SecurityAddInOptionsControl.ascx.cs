@@ -1,5 +1,5 @@
 /**************************************************************************************************
-	Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com)	
+	Survey™ Project changes: copyright (c) 2009-2017, W3DevPro™ (https://github.com/surveyproject)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -105,10 +105,6 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 					AddInDisabledLabel.Text = ((PageBase)Page).GetPageResource("AddInDisabledLabel");
 					DisableAddInLinkButton.Text = ((PageBase)Page).GetPageResource("EnableAddInLinkButton");
 				}
-//				else
-//				{
-//					DisableAddInLinkButton.Text = ((PageBase)Page).GetPageResource("DisableAddInLinkButton");
-//				}
 			}
 		}
 

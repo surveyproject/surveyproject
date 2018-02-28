@@ -1,0 +1,44 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>W3DevPro.SurveyProject.Webapplication</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/surveyproject/surveyproject_main_public/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/surveyproject</projectUrl>
+    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Open source webapplication to create and publish surveys and webforms online.</description>
+    <summary></summary>
+    <releaseNotes>Contains new features (15), bug fixes (9) and technical changes and upgrades (15).
+
+      For a complete overview read the PDF document in the '_Instructions' directory.
+
+      Some highlights
+
+      New menu options:
+
+      * System Settings: administer web.config settings from inside the webapplication
+      * CSS XML: new options to administer survey layout
+      * New Graphical Reporting Charts (2D/3D)
+
+      Resultsreport option to show respondent after submitting survey
+
+      New Field Address answertype based on Google Maps
+
+      Complete upgrade and clean-out of all script and CSS files.
+
+      New frontend design of the web application
+
+      Many more changes are part of this release that may benefit end-users, administrators and developers.
+
+      For instructions on using and installing SP™ see the README.txt and INSTALL.txt files.
+
+      Questions, comments, remarks or suggestions can be posted at the Forums of the Community site at http://www.surveyproject.org
+    </releaseNotes>
+    <copyright>Copyright 2017: W3DevPro</copyright>
+    <tags>Survey Questionnaire Webform</tags>
+  </metadata>
+</package>

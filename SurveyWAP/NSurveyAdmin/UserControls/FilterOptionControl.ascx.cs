@@ -1,5 +1,5 @@
 /**************************************************************************************************
-	Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com)	
+	Survey™ Project changes: copyright (c) 2009-2017, W3DevPro™ (https://github.com/surveyproject)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -330,7 +330,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
             this.AddRuleButton.Click += new System.EventHandler(this.AddRuleButton_Click);
             this.RulesRepeater.ItemCommand += new System.Web.UI.WebControls.RepeaterCommandEventHandler(this.RulesRepeater_ItemCommand);
             this.Load += new System.EventHandler(this.Page_Load);
-            btnAutoFilter.Click += new EventHandler(btnAutoFilter_Click);
+            btnAutoFilter.Click += new EventHandler(BtnAutoFilter_Click);
 
         }
 
@@ -497,7 +497,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
             return filterCount;
         }
 
-        void btnAutoFilter_Click(object sender, EventArgs e)
+        void BtnAutoFilter_Click(object sender, EventArgs e)
         {
             if (GenerateFilter() > 0)
                 ((PageBase)Page).ShowNormalMessage(MessageLabel, ((PageBase)Page).GetPageResource("FilterGeneratedMsg"));

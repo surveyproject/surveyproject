@@ -1,0 +1,2090 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class FilterOptionControl
+   | SP Technical Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class FilterOptionControl
+   | SP Technical Documentation ">
+    <meta name="generator" content="docfx 2.26.3.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/splogo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl">
+  
+  
+  <h1 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl" class="text-break">Class FilterOptionControl
+  </h1>
+  <div class="markdown level0 summary"><p>Survey data CU methods</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">System.Web.UI.Control</span></div>
+    <div class="level2"><span class="xref">System.Web.UI.TemplateControl</span></div>
+    <div class="level3"><span class="xref">System.Web.UI.UserControl</span></div>
+    <div class="level4"><span class="xref">FilterOptionControl</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.ComponentModel.IComponent</span></div>
+    <div><span class="xref">System.IDisposable</span></div>
+    <div><span class="xref">System.Web.UI.IParserAccessor</span></div>
+    <div><span class="xref">System.Web.UI.IUrlResolutionService</span></div>
+    <div><span class="xref">System.Web.UI.IDataBindingsAccessor</span></div>
+    <div><span class="xref">System.Web.UI.IControlBuilderAccessor</span></div>
+    <div><span class="xref">System.Web.UI.IControlDesignerAccessor</span></div>
+    <div><span class="xref">System.Web.UI.IExpressionsAccessor</span></div>
+    <div><span class="xref">System.Web.UI.IFilterResolutionService</span></div>
+    <div><span class="xref">System.Web.UI.IAttributeAccessor</span></div>
+    <div><span class="xref">System.Web.UI.INamingContainer</span></div>
+    <div><span class="xref">System.Web.UI.IUserControlDesignerAccessor</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Web.UI.UserControl.LoadViewState(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.UserControl.SaveViewState()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.UserControl.System.Web.UI.IAttributeAccessor.GetAttribute(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.UserControl.System.Web.UI.IAttributeAccessor.SetAttribute(System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.UserControl.MapPath(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.UserControl.UpdateModel&lt;TModel&gt;(TModel)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.UserControl.UpdateModel&lt;TModel&gt;(TModel, System.Web.ModelBinding.IValueProvider)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.UserControl.TryUpdateModel&lt;TModel&gt;(TModel)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.UserControl.TryUpdateModel&lt;TModel&gt;(TModel, System.Web.ModelBinding.IValueProvider)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.UserControl.Attributes</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.UserControl.Application</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.UserControl.Trace</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.UserControl.Request</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.UserControl.Response</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.UserControl.Server</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.UserControl.Cache</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.UserControl.CachePolicy</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.UserControl.IsPostBack</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.UserControl.Session</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.UserControl.System.Web.UI.IUserControlDesignerAccessor.TagName</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.UserControl.System.Web.UI.IUserControlDesignerAccessor.InnerText</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.Construct()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.OnCommitTransaction(System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.OnAbortTransaction(System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.OnError(System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.CreateResourceBasedLiteralControl(System.Int32, System.Int32, System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.TestDeviceFilter(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.LoadControl(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.LoadControl(System.Type, System.Object[])</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.LoadTemplate(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.ParseControl(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.ParseControl(System.String, System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.Eval(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.Eval(System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.XPath(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.XPath(System.String, System.Xml.IXmlNamespaceResolver)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.XPath(System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.XPath(System.String, System.String, System.Xml.IXmlNamespaceResolver)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.XPathSelect(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.XPathSelect(System.String, System.Xml.IXmlNamespaceResolver)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.GetLocalResourceObject(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.GetLocalResourceObject(System.String, System.Type, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.GetGlobalResourceObject(System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.GetGlobalResourceObject(System.String, System.String, System.Type, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.System.Web.UI.IFilterResolutionService.EvaluateFilter(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.System.Web.UI.IFilterResolutionService.CompareFilters(System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.EnableTheming</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.AppRelativeVirtualPath</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.CommitTransaction</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.AbortTransaction</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.Error</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ResolveAdapter()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.HasEvents()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.GetRouteUrl(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.GetRouteUrl(System.String, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.GetRouteUrl(System.Web.Routing.RouteValueDictionary)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.GetRouteUrl(System.String, System.Web.Routing.RouteValueDictionary)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.GetUniqueIDRelativeTo(System.Web.UI.Control)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ApplyStyleSheetSkin(System.Web.UI.Page)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.OnDataBinding(System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.DataBind()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.DataBind(System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.DataBindChildren()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.AddParsedSubObject(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.EnsureID()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ClearChildState()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ClearChildControlState()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ClearChildViewState()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ClearEffectiveClientIDMode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ClearCachedClientID()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Focus()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.LoadControlState(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.MapPathSecure(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.OpenFile(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.OnLoad(System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.OnPreRender(System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.BuildProfileTree(System.String, System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.SaveControlState()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Render(System.Web.UI.HtmlTextWriter)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.RenderChildren(System.Web.UI.HtmlTextWriter)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.RenderControl(System.Web.UI.HtmlTextWriter)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.RenderControl(System.Web.UI.HtmlTextWriter, System.Web.UI.Adapters.ControlAdapter)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.OnUnload(System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Dispose()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.RaiseBubbleEvent(System.Object, System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.OnBubbleEvent(System.Object, System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.AddedControl(System.Web.UI.Control, System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.CreateControlCollection()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.CreateChildControls()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ResolveUrl(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ResolveClientUrl(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.FindControl(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.FindControl(System.String, System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.GetDesignModeState()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.HasControls()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.IsLiteralContent()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.TrackViewState()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.EnsureChildControls()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.RemovedControl(System.Web.UI.Control)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.SetDesignModeState(System.Collections.IDictionary)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.SetRenderMethodDelegate(System.Web.UI.RenderMethod)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IParserAccessor.AddParsedSubObject(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IControlDesignerAccessor.GetDesignModeState()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IControlDesignerAccessor.SetDesignModeState(System.Collections.IDictionary)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IControlDesignerAccessor.SetOwnerControl(System.Web.UI.Control)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ClientIDMode</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ClientID</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ClientIDSeparator</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Context</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Adapter</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.DesignMode</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Events</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ID</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.IsChildControlStateCleared</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.SkinID</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.EnableViewState</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ViewStateMode</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.IsViewStateEnabled</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.NamingContainer</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.IdSeparator</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.LoadViewStateByID</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Page</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.RenderingCompatibility</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.TemplateControl</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Parent</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.TemplateSourceDirectory</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.AppRelativeTemplateSourceDirectory</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Site</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Visible</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.UniqueID</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.HasChildViewState</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Controls</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ValidateRequestMode</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ViewState</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ViewStateIgnoresCase</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ChildControlsCreated</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.IsTrackingViewState</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IDataBindingsAccessor.HasDataBindings</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IDataBindingsAccessor.DataBindings</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IControlDesignerAccessor.UserData</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IControlBuilderAccessor.ControlBuilder</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IExpressionsAccessor.HasExpressions</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IExpressionsAccessor.Expressions</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Disposed</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.DataBinding</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Init</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Load</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.PreRender</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Unload</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Votations.NSurvey.WebAdmin.UserControls.html">Votations.NSurvey.WebAdmin.UserControls</a></h6>
+  <h6><strong>Assembly</strong>: SurveyProject.WebApplication.dll</h6>
+  <h5 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class FilterOptionControl : UserControl, IComponent, IDisposable, IParserAccessor, IUrlResolutionService, IDataBindingsAccessor, IControlBuilderAccessor, IControlDesignerAccessor, IExpressionsAccessor, IFilterResolutionService, IAttributeAccessor, INonBindingContainer, INamingContainer, IUserControlDesignerAccessor</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_AddRuleButton" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.AddRuleButton">AddRuleButton</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Button AddRuleButton</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Button</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_AnswerFilterDropdownlist" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.AnswerFilterDropdownlist">AnswerFilterDropdownlist</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected DropDownList AnswerFilterDropdownlist</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.DropDownList</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_AnswerLabel" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.AnswerLabel">AnswerLabel</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Label AnswerLabel</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Label</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_autoanswerNaminglabel" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.autoanswerNaminglabel">autoanswerNaminglabel</h4>
+  <div class="markdown level1 summary"><p>autoanswerNaminglabel control.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Label autoanswerNaminglabel</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Label</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_autoanswerNaminglabel_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Auto-generated field.
+To modify move field declaration from designer file to code-behind file.</p>
+</div>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_autofilterInfo2Label" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.autofilterInfo2Label">autofilterInfo2Label</h4>
+  <div class="markdown level1 summary"><p>autofilterInfo2Label control.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Literal autofilterInfo2Label</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Literal</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_autofilterInfo2Label_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Auto-generated field.
+To modify move field declaration from designer file to code-behind file.</p>
+</div>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_autoFilterLabel" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.autoFilterLabel">autoFilterLabel</h4>
+  <div class="markdown level1 summary"><p>autoFilterLabel control.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Literal autoFilterLabel</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Literal</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_autoFilterLabel_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Auto-generated field.
+To modify move field declaration from designer file to code-behind file.</p>
+</div>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_autoFilterMessageLabel" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.autoFilterMessageLabel">autoFilterMessageLabel</h4>
+  <div class="markdown level1 summary"><p>autoFilterMessageLabel control.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Literal autoFilterMessageLabel</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Literal</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_autoFilterMessageLabel_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Auto-generated field.
+To modify move field declaration from designer file to code-behind file.</p>
+</div>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_autoFilterMsg2title" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.autoFilterMsg2title">autoFilterMsg2title</h4>
+  <div class="markdown level1 summary"><p>autoFilterMsg2title control.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Label autoFilterMsg2title</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Label</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_autoFilterMsg2title_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Auto-generated field.
+To modify move field declaration from designer file to code-behind file.</p>
+</div>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_autoFilterParentLabel" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.autoFilterParentLabel">autoFilterParentLabel</h4>
+  <div class="markdown level1 summary"><p>autoFilterParentLabel control.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Label autoFilterParentLabel</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Label</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_autoFilterParentLabel_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Auto-generated field.
+To modify move field declaration from designer file to code-behind file.</p>
+</div>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_autoFilterQuestionLabel" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.autoFilterQuestionLabel">autoFilterQuestionLabel</h4>
+  <div class="markdown level1 summary"><p>autoFilterQuestionLabel control.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Label autoFilterQuestionLabel</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Label</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_autoFilterQuestionLabel_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Auto-generated field.
+To modify move field declaration from designer file to code-behind file.</p>
+</div>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_AutoPlaceHolder" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.AutoPlaceHolder">AutoPlaceHolder</h4>
+  <div class="markdown level1 summary"><p>AutoPlaceHolder control.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected PlaceHolder AutoPlaceHolder</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.PlaceHolder</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_AutoPlaceHolder_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Auto-generated field.
+To modify move field declaration from designer file to code-behind file.</p>
+</div>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_autoQuestionNamingLabel" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.autoQuestionNamingLabel">autoQuestionNamingLabel</h4>
+  <div class="markdown level1 summary"><p>autoQuestionNamingLabel control.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Label autoQuestionNamingLabel</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Label</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_autoQuestionNamingLabel_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Auto-generated field.
+To modify move field declaration from designer file to code-behind file.</p>
+</div>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_btnAutoFilter" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.btnAutoFilter">btnAutoFilter</h4>
+  <div class="markdown level1 summary"><p>btnAutoFilter control.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Button btnAutoFilter</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Button</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_btnAutoFilter_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Auto-generated field.
+To modify move field declaration from designer file to code-behind file.</p>
+</div>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_CreatefilterButton" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.CreatefilterButton">CreatefilterButton</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Button CreatefilterButton</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Button</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_ddlAutoAnswerNaming" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.ddlAutoAnswerNaming">ddlAutoAnswerNaming</h4>
+  <div class="markdown level1 summary"><p>ddlAutoAnswerNaming control.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected DropDownList ddlAutoAnswerNaming</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.DropDownList</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_ddlAutoAnswerNaming_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Auto-generated field.
+To modify move field declaration from designer file to code-behind file.</p>
+</div>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_ddlAutoFilterParent" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.ddlAutoFilterParent">ddlAutoFilterParent</h4>
+  <div class="markdown level1 summary"><p>ddlAutoFilterParent control.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected DropDownList ddlAutoFilterParent</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.DropDownList</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_ddlAutoFilterParent_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Auto-generated field.
+To modify move field declaration from designer file to code-behind file.</p>
+</div>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_ddlAutoQuestionNaming" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.ddlAutoQuestionNaming">ddlAutoQuestionNaming</h4>
+  <div class="markdown level1 summary"><p>ddlAutoQuestionNaming control.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected DropDownList ddlAutoQuestionNaming</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.DropDownList</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_ddlAutoQuestionNaming_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Auto-generated field.
+To modify move field declaration from designer file to code-behind file.</p>
+</div>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_ddlAutoQuestions" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.ddlAutoQuestions">ddlAutoQuestions</h4>
+  <div class="markdown level1 summary"><p>ddlAutoQuestions control.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected DropDownList ddlAutoQuestions</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.DropDownList</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_ddlAutoQuestions_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Auto-generated field.
+To modify move field declaration from designer file to code-behind file.</p>
+</div>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_DeleteFilterButton" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.DeleteFilterButton">DeleteFilterButton</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Button DeleteFilterButton</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Button</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_DropDownList1" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.DropDownList1">DropDownList1</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected DropDownList DropDownList1</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.DropDownList</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_EditplaceHolder" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.EditplaceHolder">EditplaceHolder</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected PlaceHolder EditplaceHolder</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.PlaceHolder</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_FilterNameLabel" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.FilterNameLabel">FilterNameLabel</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Label FilterNameLabel</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Label</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_FilterNameTextBox" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.FilterNameTextBox">FilterNameTextBox</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TextBox FilterNameTextBox</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.TextBox</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_FilterRulesTitle" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.FilterRulesTitle">FilterRulesTitle</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Label FilterRulesTitle</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Label</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_FilterText" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.FilterText">FilterText</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Label FilterText</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Label</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_filtertitle" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.filtertitle">filtertitle</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Label filtertitle</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Label</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_LogicalOperatorDropDownList" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.LogicalOperatorDropDownList">LogicalOperatorDropDownList</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected DropDownList LogicalOperatorDropDownList</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.DropDownList</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_MessageLabel" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.MessageLabel">MessageLabel</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Label MessageLabel</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Label</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_NewRuleTitle" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.NewRuleTitle">NewRuleTitle</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Literal NewRuleTitle</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Literal</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_ParentFilterNameDropDownList" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.ParentFilterNameDropDownList">ParentFilterNameDropDownList</h4>
+  <div class="markdown level1 summary"><p>ParentFilterNameDropDownList control.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected DropDownList ParentFilterNameDropDownList</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.DropDownList</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_ParentFilterNameDropDownList_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Auto-generated field.
+To modify move field declaration from designer file to code-behind file.</p>
+</div>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_ParentFilterNameLabel" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.ParentFilterNameLabel">ParentFilterNameLabel</h4>
+  <div class="markdown level1 summary"><p>ParentFilterNameLabel control.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Label ParentFilterNameLabel</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Label</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_ParentFilterNameLabel_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Auto-generated field.
+To modify move field declaration from designer file to code-behind file.</p>
+</div>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_QuestionFilterDropdownlist" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.QuestionFilterDropdownlist">QuestionFilterDropdownlist</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected DropDownList QuestionFilterDropdownlist</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.DropDownList</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_QuestionLabel" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.QuestionLabel">QuestionLabel</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Label QuestionLabel</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Label</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_RuleOperatorLabel" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.RuleOperatorLabel">RuleOperatorLabel</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Label RuleOperatorLabel</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Label</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_RulesRepeater" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.RulesRepeater">RulesRepeater</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Repeater RulesRepeater</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Repeater</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_TextBox1" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.TextBox1">TextBox1</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TextBox TextBox1</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.TextBox</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_TextFilterTextbox" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.TextFilterTextbox">TextFilterTextbox</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TextBox TextFilterTextbox</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.TextBox</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_UpdateFilterButton" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.UpdateFilterButton">UpdateFilterButton</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Button UpdateFilterButton</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Button</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_FilterId_" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.FilterId*"></a>
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_FilterId" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.FilterId">FilterId</h4>
+  <div class="markdown level1 summary"><p>Id of the answer type to edit
+if no id is given put the 
+usercontrol in creation mode</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int FilterId { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_SurveyId_" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.SurveyId*"></a>
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_SurveyId" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.SurveyId">SurveyId</h4>
+  <div class="markdown level1 summary"><p>Id of the survey to which the type belongs</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SurveyId { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_BindFields_" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.BindFields*"></a>
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_BindFields" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.BindFields">BindFields()</h4>
+  <div class="markdown level1 summary"><p>Get the current DB data and fill 
+the fields with them</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void BindFields()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_FilterName_" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.FilterName*"></a>
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_FilterName_Votations_NSurvey_Data_QuestionData_QuestionsRow_Votations_NSurvey_Data_AnswerData_AnswersRow_System_String_" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.FilterName(Votations.NSurvey.Data.QuestionData.QuestionsRow,Votations.NSurvey.Data.AnswerData.AnswersRow,System.String)">FilterName(QuestionData.QuestionsRow, AnswerData.AnswersRow, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string FilterName(QuestionData.QuestionsRow q, AnswerData.AnswersRow a, string splitChar)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.QuestionsRow.html">QuestionData.QuestionsRow</a></td>
+        <td><span class="parametername">q</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.AnswerData.AnswersRow.html">AnswerData.AnswersRow</a></td>
+        <td><span class="parametername">a</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">splitChar</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_FilterName_" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.FilterName*"></a>
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_FilterName_Votations_NSurvey_Data_QuestionData_QuestionsRow_Votations_NSurvey_Data_AnswerData_AnswersRow_Votations_NSurvey_Data_FilterData_FiltersRow_" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.FilterName(Votations.NSurvey.Data.QuestionData.QuestionsRow,Votations.NSurvey.Data.AnswerData.AnswersRow,Votations.NSurvey.Data.FilterData.FiltersRow)">FilterName(QuestionData.QuestionsRow, AnswerData.AnswersRow, FilterData.FiltersRow)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string FilterName(QuestionData.QuestionsRow q, AnswerData.AnswersRow a, FilterData.FiltersRow f)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.QuestionsRow.html">QuestionData.QuestionsRow</a></td>
+        <td><span class="parametername">q</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.AnswerData.AnswersRow.html">AnswerData.AnswersRow</a></td>
+        <td><span class="parametername">a</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.FilterData.FiltersRow.html">FilterData.FiltersRow</a></td>
+        <td><span class="parametername">f</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_FilterName_" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.FilterName*"></a>
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_FilterName_Votations_NSurvey_Data_QuestionData_QuestionsRow_Votations_NSurvey_Data_AnswerData_AnswersRow_Votations_NSurvey_Data_FilterData_FiltersRow_System_String_" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.FilterName(Votations.NSurvey.Data.QuestionData.QuestionsRow,Votations.NSurvey.Data.AnswerData.AnswersRow,Votations.NSurvey.Data.FilterData.FiltersRow,System.String)">FilterName(QuestionData.QuestionsRow, AnswerData.AnswersRow, FilterData.FiltersRow, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string FilterName(QuestionData.QuestionsRow q, AnswerData.AnswersRow a, FilterData.FiltersRow f, string splitChar)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.QuestionsRow.html">QuestionData.QuestionsRow</a></td>
+        <td><span class="parametername">q</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.AnswerData.AnswersRow.html">AnswerData.AnswersRow</a></td>
+        <td><span class="parametername">a</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.FilterData.FiltersRow.html">FilterData.FiltersRow</a></td>
+        <td><span class="parametername">f</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">splitChar</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_FormatRule_" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.FormatRule*"></a>
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_FormatRule_System_String_System_String_System_String_" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.FormatRule(System.String,System.String,System.String)">FormatRule(String, String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string FormatRule(string questionText, string answerText, string textFilter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">questionText</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">answerText</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">textFilter</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_GetAnswerPart_" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.GetAnswerPart*"></a>
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_GetAnswerPart_Votations_NSurvey_Data_AnswerData_AnswersRow_" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.GetAnswerPart(Votations.NSurvey.Data.AnswerData.AnswersRow)">GetAnswerPart(AnswerData.AnswersRow)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetAnswerPart(AnswerData.AnswersRow a)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.AnswerData.AnswersRow.html">AnswerData.AnswersRow</a></td>
+        <td><span class="parametername">a</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_GetQuestionPart_" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.GetQuestionPart*"></a>
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_GetQuestionPart_Votations_NSurvey_Data_QuestionData_QuestionsRow_Votations_NSurvey_Data_AnswerData_AnswersRow_" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.GetQuestionPart(Votations.NSurvey.Data.QuestionData.QuestionsRow,Votations.NSurvey.Data.AnswerData.AnswersRow)">GetQuestionPart(QuestionData.QuestionsRow, AnswerData.AnswersRow)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetQuestionPart(QuestionData.QuestionsRow q, AnswerData.AnswersRow a)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.QuestionData.QuestionsRow.html">QuestionData.QuestionsRow</a></td>
+        <td><span class="parametername">q</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.AnswerData.AnswersRow.html">AnswerData.AnswersRow</a></td>
+        <td><span class="parametername">a</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_OnInit_" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.OnInit*"></a>
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_OnInit_System_EventArgs_" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.OnInit(System.EventArgs)">OnInit(EventArgs)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnInit(EventArgs e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventArgs</span></td>
+        <td><span class="parametername">e</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Web.UI.UserControl.OnInit(System.EventArgs)</span></div>
+  
+  
+  <a id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_OnOptionChanged_" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.OnOptionChanged*"></a>
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_OnOptionChanged" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.OnOptionChanged">OnOptionChanged()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void OnOptionChanged()</code></pre>
+  </div>
+  <h3 id="events">Events
+  </h3>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_UserControls_FilterOptionControl_OptionChanged" data-uid="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl.OptionChanged">OptionChanged</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler OptionChanged</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.ComponentModel.IComponent</span>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.UI.IParserAccessor</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.UI.IUrlResolutionService</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.UI.IDataBindingsAccessor</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.UI.IControlBuilderAccessor</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.UI.IControlDesignerAccessor</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.UI.IExpressionsAccessor</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.UI.IFilterResolutionService</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.UI.IAttributeAccessor</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.UI.INamingContainer</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.UI.IUserControlDesignerAccessor</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy;2017 Survey&trade; Project
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

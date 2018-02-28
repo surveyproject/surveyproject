@@ -1,21 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using Votations.NSurvey.DataAccess;
-using Votations.NSurvey.Data;
-using Votations.NSurvey.Resources;
 using System.Web.UI.HtmlControls;
+using Votations.NSurvey.Data;
+using Votations.NSurvey.DataAccess;
+using Votations.NSurvey.Resources;
 
 namespace Votations.NSurvey.WebAdmin
 {
     /// <summary>
     /// This was renamed from Survey to SurveyMain as it causes conflict
     /// </summary>
-    public partial class SurveyMobile : System.Web.UI.Page
+    public partial class SurveyMobile : Page
     {
+
+        /// <summary>
+        /// defaultCSS control.
+        /// </summary>
+        protected global::System.Web.UI.HtmlControls.HtmlLink defaultCSS;
+
         private int GetIdFromUrl()
         {
             if (Request.PathInfo.Length == 0)
@@ -64,54 +66,35 @@ namespace Votations.NSurvey.WebAdmin
 
         protected override void OnInit(EventArgs e)
         {
-            //jQuery(necessary for Bootstrap's JavaScript plugins) + answerfieldslideritem.cs
-
-            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-
-            HtmlGenericControl javascriptControl = new HtmlGenericControl("script");
-
-            javascriptControl.Attributes.Add("id", "jq311");
-            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/jquery-3.1.1.min.js"));
-            Page.Header.Controls.Add(javascriptControl);
-
-            //For development purposes only: upgrade jquery
-
-            //Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-
-            //javascriptControl = new HtmlGenericControl("script");
-            //javascriptControl.Attributes.Add("id", "jqmigrate");
-            //javascriptControl.Attributes.Add("src", ResolveUrl("https://code.jquery.com/jquery-migrate-3.0.0.js"));
-            //Page.Header.Controls.Add(javascriptControl);
-
-            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-
-            javascriptControl = new HtmlGenericControl("script");
-            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/jquery-ui-1.12.1.min.js"));
-            Page.Header.Controls.Add(javascriptControl);
-
-            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-
-
+            //SP 25: loading of css and script files in page header moved to surveybox.cs
         }
-
 
         void Page_Load(Object sender, EventArgs e)
         {
-                
             //in case of custom Layout add user CSS file:
             SurveyLayoutData _userSettings;
+
             //    Survey.SurveyId = int.Parse(Request["SurveyId"]);
             int id = GetSurveyId();
-            if (id == -1) { SurveyControl.SurveyId = 0; SurveyControl.Visible = false; return; }
+
+            if (id == -1)
+            {
+                SurveyControl.SurveyId = 0;
+                SurveyControl.Visible = false;
+                return;
+            }
+
             SurveyControl.SurveyId = id;
 
             Votations.NSurvey.SQLServerDAL.SurveyLayout u = new Votations.NSurvey.SQLServerDAL.SurveyLayout();
 
             _userSettings = u.SurveyLayoutGet(SurveyControl.SurveyId);
+
             if (!(_userSettings == null || _userSettings.SurveyLayout.Count == 0))
             {
                 if (!string.IsNullOrEmpty(_userSettings.SurveyLayout[0].SurveyCss))
                 {
+                    // not used?
                     defaultCSS.Visible = false;
 
                     Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
@@ -122,11 +105,9 @@ namespace Votations.NSurvey.WebAdmin
                     Page.Header.Controls.Add(css);
                 }
 
-               // this.SurveyHeaderCustom.Text = HttpUtility.HtmlDecode(_userSettings.SurveyLayout[0].SurveyHeaderText);
-               // this.SurveyFooterCustom.Text = HttpUtility.HtmlDecode(_userSettings.SurveyLayout[0].SurveyFooterText);
-            }
-            
+            }           
 
         }
+
     }
 }

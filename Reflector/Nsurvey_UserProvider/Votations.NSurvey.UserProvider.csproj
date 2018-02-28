@@ -6,7 +6,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{94EB9C0F-FB57-41A8-8175-F1E255912374}</ProjectGuid>
     <RootNamespace>Votations.NSurvey.UserProvider</RootNamespace>
-    <AssemblyName>Votations.NSurvey.UserProvider</AssemblyName>
+    <AssemblyName>SurveyProject.UserProvider</AssemblyName>
     <OutputType>Library</OutputType>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <PreBuildEvent />
@@ -69,6 +69,7 @@
     <Reference Include="System.Data.DataSetExtensions">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -76,6 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Votations.NSurvey.UserProvider\ADUserProvider.cs" />
     <Compile Include="Votations.NSurvey.UserProvider\IUserProvider.cs" />
     <Compile Include="Votations.NSurvey.UserProvider\INSurveyUserProvider.cs" />
     <Compile Include="Votations.NSurvey.UserProvider\FormUserProvider.cs" />

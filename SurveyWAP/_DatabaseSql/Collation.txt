@@ -1,0 +1,49 @@
+Testing
+Sqlserver 2014 - default collation - run script/sp25dev db
+* no errors on running script
+
+
+
+-----
+COMPARE
+http://www.tareeinternet.com/scripts/comparison-tool/#diff
+https://www.diffchecker.com/diff
+
+--------------
+
+https://docs.microsoft.com/en-us/sql/relational-databases/collations/collation-and-unicode-support
+
+
+Default collation: Latin1_General_CI_AS
+
+Note: different collations may cause scripting errors (e.g. due to case sensitivity etc)
+
+
+https://docs.microsoft.com/en-us/sql/relational-databases/collations/collation-and-unicode-support
+
+Latin1_General_CI_AS
+
+CI specifies case-insensitive
+CS specifies case-sensitive
+
+AI specifies accent-insensitive
+AS specifies accent-sensitive
+
+
+Turkish 100 KS WS SC --> TURKISH_CI_AS 
+i and I are not equal.
+
+KS specifies kanatype-sensitive.
+Distinguishes between the two types of Japanese kana characters: Hiragana and Katakana. If this option is not selected, SQL Server considers Hiragana and Katakana characters to be equal for sorting purposes
+
+
+WS specifies width-sensitive
+Distinguishes between a single-byte character and the same character when represented as a double-byte character. If this option is not selected, SQL Server considers the single-byte and double-byte representation of the same character to be identical for sorting purposes.
+
+SC supplementary characters
+
+
+
+
+BIN
+Specifies the binary sort order to be used.

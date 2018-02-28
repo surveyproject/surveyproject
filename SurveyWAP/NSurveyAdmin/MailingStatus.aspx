@@ -1,19 +1,21 @@
 ﻿<%@ Page language="c#" MasterPageFile="~/NSurveyAdmin/MsterPageTabs.master"  AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.MailingStatus" Codebehind="MailingStatus.aspx.cs" %>
-<%@ Register TagPrefix="mbrsc" Namespace="MetaBuilders.WebControls" Assembly="Votations.NSurvey.WebAdmin" %>
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="FooterControl" Src="UserControls/FooterControl.ascx" %>
-
+<%@ Register TagPrefix="mbrsc" Namespace="MetaBuilders.WebControls" Assembly="SurveyProject.WebApplication" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
 
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
+        <div id="Panel" class="Panel">
+
+          <div class="errorDiv">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
-    
-         <br />
-                <fieldset style="width:750px; margin-top:15px; margin-left:12px;"><legend class="titleFont titleLegend">
+                                        <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/New/Mailing Status.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a>
+                                        </div>
+                <fieldset>
+                    <legend class="titleFont titleLegend">
 <asp:Literal id="PendingEmailsTitle" runat="server" EnableViewState="False">Pending emails - Page</asp:Literal>
 
           <asp:label id="CurrentPendingPageLabel" runat="server"></asp:label>&nbsp;/
@@ -66,7 +68,8 @@
                     <br />
                     </fieldset>
          <br />
-                <fieldset style="width:750px; margin-left:12px;"><legend class="titleFont titleLegend">
+                <fieldset>
+                    <legend class="titleFont titleLegend">
             
         <asp:Literal id="ValidatedEmailTitle" runat="server" EnableViewState="False">Validated emails answers - Page</asp:Literal>
                    
@@ -122,5 +125,5 @@
   </ol>
                     <br />
                     </fieldset>
-           
-</div></div></asp:Content>
+           <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
+</div></asp:Content>

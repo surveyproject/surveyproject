@@ -127,15 +127,17 @@ namespace Votations.NSurvey.WebAdmin
             masterPage.selectedTabIndex = (int)selectedTab;
         }
 
-        public enum ResultTabs { Reports = 0, Filters = 1, FileManager = 2, DataExport = 3, DataImport = 4 }
+        public enum ResultTabs { Reports = 0, Filters = 1, FileManager = 2, DataExport = 3, DataImport = 4, Responses = 5 }
         public static void SetResultsTabs(MsterPageTabs masterPage, ResultTabs selectedTab)
         {
             masterPage.DisplayTabs.Clear();
-            masterPage.DisplayTabs.Add(ResourceManager.GetString("ResultsSMHyperlink"), UINavigator.ResultsReportHyperlink);
+            masterPage.DisplayTabs.Add(ResourceManager.GetString("ReportsSMHyperlink"), UINavigator.ResultsReportHyperlink);
             masterPage.DisplayTabs.Add(ResourceManager.GetString("FiltersHyperlink"), UINavigator.FilterEditor);
             masterPage.DisplayTabs.Add(ResourceManager.GetString("FileManagerHyperlink"), UINavigator.FileManagerHyperLink);
             masterPage.DisplayTabs.Add(ResourceManager.GetString("DataExportHyperlink"), UINavigator.ExportData);
             masterPage.DisplayTabs.Add(ResourceManager.GetString("DataImportHyperlink"), UINavigator.DataImportHyperLink);
+            masterPage.DisplayTabs.Add(ResourceManager.GetString("ResponsesHyperlink"), UINavigator.FieldsReportHyperlink);
+
             masterPage.selectedTabIndex = (int)selectedTab;
         }
 

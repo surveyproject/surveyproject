@@ -12,7 +12,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Votations.NSurvey.WebAdmin</RootNamespace>
-    <AssemblyName>Votations.NSurvey.WebAdmin</AssemblyName>
+    <AssemblyName>SurveyProject.WebApplication</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
     <FileUpgradeFlags>
@@ -28,6 +28,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,6 +39,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\SurveyProject.WebApplication.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -46,10 +48,13 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Votations.NSurvey.WebAdmin.XML</DocumentationFile>
+    <DocumentationFile>bin\SurveyProject.WebApplication.xml</DocumentationFile>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
     <Prefer32Bit>false</Prefer32Bit>
     <PublishDatabases>false</PublishDatabases>
+    <DeployEncryptKey>Encryption password is used only if any deployment setting is marked as secure</DeployEncryptKey>
+    <IncludeIisSettings>false</IncludeIisSettings>
+    <IncludeAppPool>false</IncludeAppPool>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CKEditor.NET, Version=3.6.4.0, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL">
@@ -76,6 +81,38 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -96,12 +133,21 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Code\RowSelectorColumnScript.js" />
+    <Content Include="ADLogon.aspx" />
+    <Content Include="ADStart.aspx" />
+    <Content Include="App_Data\ErrorLog.txt" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\surveyadmin\loginform.css" />
+    <Content Include="Content\surveyadmin\nsurveyadmin.css" />
+    <Content Include="Content\surveyform\resultsreport.css" />
+    <Content Include="Content\surveyform\surveymobile.css" />
+    <Content Include="Content\surveyform\surveymobile.min.css" />
+    <Content Include="Content\surveyform\UserCSS\Empty.txt" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -144,13 +190,17 @@
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="default.aspx" />
+    <Content Include="Errors\ErrorPage.aspx" />
+    <Content Include="Errors\ErrorTestPage.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="HttpErrorPage.aspx" />
+    <Content Include="Errors\HttpErrorPage.aspx" />
     <Content Include="Images\arrow-down.gif" />
     <Content Include="Images\arrow-green-up.gif" />
+    <Content Include="Images\arrow-green-up.png" />
     <Content Include="Images\arrow-red-down.gif" />
+    <Content Include="Images\arrow-red-down.png" />
     <Content Include="Images\arrow-right.gif" />
     <Content Include="Images\arrow_down.gif" />
     <Content Include="Images\arrow_up.gif" />
@@ -175,35 +225,43 @@
     <Content Include="Images\edit_pen.gif" />
     <Content Include="Images\help.gif" />
     <Content Include="Images\index-icon.png" />
+    <Content Include="Images\linebreak.gif" />
     <Content Include="Images\lock.gif" />
     <Content Include="Images\menuseparator.gif" />
     <Content Include="Images\NegativeRatingBar.gif" />
+    <Content Include="Images\PDF-Icon_32.png" />
     <Content Include="Images\PositiveRatingBar.gif" />
     <Content Include="Images\Print_32X32_Standard.png" />
+    <Content Include="Images\questiondownbutton.gif" />
+    <Content Include="Images\questionoptionsbackground.gif" />
+    <Content Include="Images\questionupbutton.gif" />
     <Content Include="Images\save.gif" />
+    <Content Include="Images\smalldot.gif" />
     <Content Include="Images\small_help.gif" />
     <Content Include="Images\Spacer.gif" />
     <Content Include="Images\splogo.svg" />
+    <Content Include="Images\spot_file.gif" />
     <Content Include="Images\spot_off.gif" />
     <Content Include="Images\spot_on.gif" />
+    <Content Include="Images\spot_text.gif" />
     <Content Include="Images\submenuseparator.gif" />
+    <Content Include="Images\tintblue.gif" />
+    <Content Include="Images\tintbluedark.gif" />
     <Content Include="Images\view.png" />
     <Content Include="Images\warning-icn.png" />
     <Content Include="Images\yellowwarning_16px.gif" />
-    <Content Include="KeepSessionAlive.aspx" />
+    <Content Include="Errors\DefaultRedirectErrorPage.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\CreateCustomReport.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\SsrsReports.aspx" />
+    <Content Include="NSurveyAdmin\ResultsSsrs.aspx" />
+    <Content Include="NSurveyForm\KeepSessionAlive.aspx" />
     <Content Include="NSurveyAdmin\AccessDenied.aspx" />
     <Content Include="NSurveyAdmin\AjaxWebMethodsProxy.aspx" />
     <Content Include="NSurveyAdmin\CampaignStart.aspx" />
     <Content Include="NSurveyAdmin\ColumnChartReport.aspx" />
     <Content Include="NSurveyAdmin\ConditionalEndMessage.aspx" />
     <Content Include="NSurveyAdmin\ControlCode.aspx" />
-    <Content Include="NSurveyAdmin\CSS\loginform.css" />
-    <Content Include="NSurveyAdmin\CSS\perfect-scrollbar.css" />
-    <Content Include="NSurveyAdmin\CSS\resultsreport.css" />
-    <Content Include="NSurveyAdmin\CSS\surveymobile.css" />
-    <Content Include="NSurveyAdmin\CSS\surveymobile.min.css" />
-    <Content Include="NSurveyAdmin\CSS\surveypreview.css" />
-    <Content Include="NSurveyAdmin\CSS\voterreport.css" />
+    <Content Include="Content\surveyadmin\voterreport.css" />
     <Content Include="NSurveyAdmin\EditCssXml.aspx" />
     <Content Include="NSurveyAdmin\FilterCreator.aspx" />
     <Content Include="NSurveyAdmin\FilterEditor.aspx" />
@@ -217,6 +275,9 @@
     <Content Include="NSurveyAdmin\Help\Field - Basic.aspx" />
     <Content Include="NSurveyAdmin\Help\FieldT_Introduction.aspx" />
     <Content Include="NSurveyAdmin\Help\Help on Help.aspx" />
+    <Content Include="NSurveyAdmin\Help\Images\AccesAuthorisation.gif" />
+    <Content Include="NSurveyAdmin\Help\Images\RepeatFull.JPG" />
+    <Content Include="NSurveyAdmin\Help\Images\RepeatGrid.JPG" />
     <Content Include="NSurveyAdmin\Help\Insert Security AddIn.aspx" />
     <Content Include="NSurveyAdmin\Help\InstallationSettings.aspx" />
     <Content Include="NSurveyAdmin\Help\Licence.aspx" />
@@ -228,10 +289,12 @@
     <Content Include="NSurveyAdmin\Help\New\ASP.NET Security Context.aspx" />
     <Content Include="NSurveyAdmin\Help\New\AP_Introduction.aspx" />
     <Content Include="NSurveyAdmin\Help\New\AT_Introduction.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Condition_Introduction.aspx" />
     <Content Include="NSurveyAdmin\Help\New\Boolean.aspx" />
     <Content Include="NSurveyAdmin\Help\New\Branching conditions.aspx" />
     <Content Include="NSurveyAdmin\Help\New\Cookie Protection.aspx" />
     <Content Include="NSurveyAdmin\Help\New\Cross Tabulation.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Data Import.aspx" />
     <Content Include="NSurveyAdmin\Help\New\Data Export.aspx" />
     <Content Include="NSurveyAdmin\Help\New\ED_Introduction.aspx" />
     <Content Include="NSurveyAdmin\Help\New\EMail Code Protection.aspx" />
@@ -250,6 +313,7 @@
     <Content Include="NSurveyAdmin\Help\New\Form Architecture.aspx" />
     <Content Include="NSurveyAdmin\Help\New\Graphic Reports.aspx" />
     <Content Include="NSurveyAdmin\Help\New\Insert Question.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\IP Filter.aspx" />
     <Content Include="NSurveyAdmin\Help\New\IP Protection.aspx" />
     <Content Include="NSurveyAdmin\Help\New\KP_Introduction.aspx" />
     <Content Include="NSurveyAdmin\Help\New\Library Directory.aspx" />
@@ -270,9 +334,10 @@
     <Content Include="NSurveyAdmin\Help\New\Repeatable_Introduction.aspx" />
     <Content Include="NSurveyAdmin\Help\New\Report Filter Creation.aspx" />
     <Content Include="NSurveyAdmin\Help\New\Report Filter Editor.aspx" />
-    <Content Include="NSurveyAdmin\Help\New\Report Link Deployment.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\Reports_Introduction.aspx" />
     <Content Include="NSurveyAdmin\Help\New\Roles Manager.aspx" />
     <Content Include="NSurveyAdmin\Help\New\RequiredMarker.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\QuestionGroups.aspx" />
     <Content Include="NSurveyAdmin\Help\New\SCE_Introduction.aspx" />
     <Content Include="NSurveyAdmin\Help\New\SD_Introduction.aspx" />
     <Content Include="NSurveyAdmin\Help\New\Sections Management.aspx" />
@@ -307,6 +372,7 @@
     <Content Include="NSurveyAdmin\Help\Statistics.aspx" />
     <Content Include="NSurveyAdmin\Help\Style_Introduction.aspx" />
     <Content Include="NSurveyAdmin\Help\Survey Copyright and Disclaimer.aspx" />
+    <Content Include="NSurveyAdmin\Help\SurveyListDirectory.aspx" />
     <Content Include="NSurveyAdmin\Help\Survey Creation.aspx" />
     <Content Include="NSurveyAdmin\Help\Survey General Settings.aspx" />
     <Content Include="NSurveyAdmin\Help\Survey Security.aspx" />
@@ -314,23 +380,10 @@
     <Content Include="NSurveyAdmin\Help\Thanks Message Conditions.aspx" />
     <Content Include="NSurveyAdmin\Help\UM_Introduction.aspx" />
     <Content Include="NSurveyAdmin\Help\Web Control Style.aspx" />
-    <Content Include="NSurveyAdmin\Images\AccesAuthorisation.gif" />
-    <Content Include="NSurveyAdmin\Images\arrow-green-up.gif" />
-    <Content Include="NSurveyAdmin\Images\arrow-green-up.png" />
-    <Content Include="NSurveyAdmin\Images\arrow-red-down.gif" />
-    <Content Include="NSurveyAdmin\Images\arrow-red-down.png" />
-    <Content Include="NSurveyAdmin\Images\arrow_down.gif" />
-    <Content Include="NSurveyAdmin\Images\arrow_up.gif" />
-    <Content Include="NSurveyAdmin\Images\PDF-Icon_32.png" />
-    <Content Include="NSurveyAdmin\Images\Print_32X32_Standard.png" />
-    <Content Include="NSurveyAdmin\Images\UserImg\Empty.txt" />
     <Content Include="NSurveyAdmin\Settings.aspx" />
     <Content Include="NSurveyAdmin\SurveyIPSecurity.aspx" />
-    <Content Include="NSurveyAdmin\CreateSurvey.aspx" />
-    <Content Include="NSurveyAdmin\CSS\nsurveyadmin.css" />
     <Content Include="NSurveyAdmin\DataImport.aspx" />
     <Content Include="NSurveyAdmin\EditMatrixQuestion.aspx" />
-    <Content Include="NSurveyAdmin\EditMultiLanguages.aspx" />
     <Content Include="NSurveyAdmin\EditPageBranching.aspx" />
     <Content Include="NSurveyAdmin\EditRegEx.aspx" />
     <Content Include="NSurveyAdmin\EditSingleQuestion.aspx" />
@@ -342,18 +395,6 @@
     <Content Include="NSurveyAdmin\FileManager.aspx" />
     <Content Include="NSurveyAdmin\GlobalStats.aspx" />
     <Content Include="NSurveyAdmin\Help\index.aspx" />
-    <Content Include="NSurveyAdmin\Images\linebreak.gif" />
-    <Content Include="NSurveyAdmin\Images\questiondownbutton.gif" />
-    <Content Include="NSurveyAdmin\Images\questionoptionsbackground.gif" />
-    <Content Include="NSurveyAdmin\Images\questionupbutton.gif" />
-    <Content Include="NSurveyAdmin\Images\smalldot.gif" />
-    <Content Include="NSurveyAdmin\Images\spacer.gif" />
-    <Content Include="NSurveyAdmin\Images\spot_file.gif" />
-    <Content Include="NSurveyAdmin\Images\spot_off.gif" />
-    <Content Include="NSurveyAdmin\Images\spot_on.gif" />
-    <Content Include="NSurveyAdmin\Images\spot_text.gif" />
-    <Content Include="NSurveyAdmin\Images\tintblue.gif" />
-    <Content Include="NSurveyAdmin\Images\tintbluedark.gif" />
     <Content Include="NSurveyAdmin\InsertQuestion.aspx" />
     <Content Include="NSurveyAdmin\InsertSecurityAddIn.aspx" />
     <Content Include="NSurveyAdmin\LibraryDirectory.aspx" />
@@ -366,7 +407,6 @@
     <Content Include="NSurveyAdmin\QuestionGroups.aspx" />
     <Content Include="NSurveyAdmin\ResultsCrossTabulation.aspx" />
     <Content Include="NSurveyAdmin\ResultsReporting.aspx" />
-    <Content Include="NSurveyAdmin\RolesManager.aspx" />
     <Content Include="NSurveyAdmin\SurveyContentBuilder.aspx" />
     <Content Include="NSurveyAdmin\SurveyLayout.aspx" />
     <Content Include="NSurveyAdmin\SurveyList.aspx" />
@@ -397,9 +437,7 @@
     <Content Include="NSurveyAdmin\UserControls\SecurityAddInVoterReportControl.ascx" />
     <Content Include="NSurveyAdmin\UserControls\SkipLogicRulesControl.ascx" />
     <Content Include="NSurveyAdmin\UserControls\SurveyBoxControl.ascx" />
-    <Content Include="NSurveyAdmin\UserControls\SurveyListControl.ascx" />
     <Content Include="NSurveyAdmin\UserControls\SurveyMessageConditonsControl.ascx" />
-    <Content Include="NSurveyAdmin\UserControls\SurveyFormSecurity.ascx" />
     <Content Include="NSurveyAdmin\UserControls\SurveyOptionControl.ascx" />
     <Content Include="NSurveyAdmin\UserControls\SurveyTreeControl.ascx" />
     <Content Include="NSurveyAdmin\UserControls\TypeOptionControl.ascx" />
@@ -407,13 +445,15 @@
     <Content Include="NSurveyAdmin\UserControls\UpdateVoterQuestionOptionsControl.ascx" />
     <Content Include="NSurveyAdmin\UserControls\UserImport.ascx" />
     <Content Include="NSurveyAdmin\UserControls\UsersOptionsControl.ascx" />
-    <Content Include="NSurveyAdmin\UserCreator.aspx" />
-    <Content Include="NSurveyAdmin\UserImport.aspx" />
     <Content Include="NSurveyAdmin\UsersManager.aspx" />
     <Content Include="NSurveyAdmin\VoterReport.aspx" />
     <Content Include="Global.asax" />
     <Content Include="NSurveyAdmin\WarningScreen.aspx" />
-    <Content Include="ResultsReport.aspx" />
+    <Content Include="Images\images_list.json" />
+    <Content Include="NSurveyReports\CustomReport.aspx" />
+    <Content Include="NSurveyReports\ResultsReport.aspx" />
+    <Content Include="NSurveyReports\SsrsPrintSurvey.aspx" />
+    <Content Include="NSurveyReports\SsrsReport.aspx" />
     <Content Include="Scripts\astreeview\astreeview.css" />
     <Content Include="Scripts\astreeview\astreeview.min.js" />
     <Content Include="Scripts\astreeview\contextmenu.css" />
@@ -1038,8 +1078,6 @@
     <Content Include="Scripts\html5shiv.min.js" />
     <Content Include="Scripts\Javascript\google\SearchAddress.css" />
     <Content Include="Scripts\Javascript\google\SearchAddress.js" />
-    <Content Include="Scripts\Javascript\perfectscrollbar\jquery.mousewheel.js" />
-    <Content Include="Scripts\Javascript\perfectscrollbar\perfect-scrollbar.js" />
     <Content Include="Scripts\Javascript\tooltip\javascripts\jquery.tipsy.js" />
     <Content Include="Scripts\Javascript\tooltip\stylesheets\tipsy.css" />
     <Content Include="fonts\FontAwesome.otf" />
@@ -1065,12 +1103,17 @@
     <Content Include="Scripts\ckeditor\package.json" />
     <Content Include="Scripts\ckeditor\LICENSE.md" />
     <Content Include="Scripts\ckeditor\CHANGES.md" />
-    <Content Include="NSurveyAdmin\Images\images_list.json" />
-    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.1.1.js" />
-    <Content Include="Scripts\jquery-3.1.1.min.js" />
-    <Content Include="Scripts\jquery-3.1.1.slim.js" />
-    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="ClassDiagram_SurveyWAP_v1.cd" />
+    <Content Include="articles\toc.md" />
+    <Content Include="articles\intro.md" />
+    <Content Include="articles\diagrams.md" />
+    <None Include="NSurveyReports\SsrsReport.rdlc" />
+    <Content Include="NSurveyReports\SsrsSurveyQAPrint.rdlc" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
     <Content Include="Scripts\jquery-ui-i18n.js" />
@@ -1080,9 +1123,22 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
     <None Include="Scripts\_references.js" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="SurveyMobile.aspx" />
     <Content Include="XmlData\Address\Address.xml" />
     <Content Include="XmlData\al.xml" />
@@ -1090,6 +1146,7 @@
     <Content Include="XmlData\br.xml" />
     <Content Include="XmlData\ch.fr.xml" />
     <Content Include="XmlData\ch.xml" />
+    <Content Include="XmlData\countries.de.xml" />
     <Content Include="XmlData\countries.br.xml" />
     <Content Include="XmlData\countries.fr.xml" />
     <Content Include="XmlData\countries.nl.xml" />
@@ -1101,6 +1158,7 @@
     <Content Include="XmlData\es.xml" />
     <Content Include="XmlData\fr.fr.xml" />
     <Content Include="XmlData\fr.xml" />
+    <Content Include="XmlData\gb.nl.xml" />
     <Content Include="XmlData\gb.fr.xml" />
     <Content Include="XmlData\gb.xml" />
     <Content Include="XmlData\Helpfiles\de-DE.xml" />
@@ -1117,6 +1175,10 @@
     <Content Include="XmlData\Helpfiles\tr.xml" />
     <Content Include="XmlData\it.fr.xml" />
     <Content Include="XmlData\it.xml" />
+    <Content Include="XmlData\LanguageCodes\de.xml" />
+    <Content Include="XmlData\LanguageCodes\en-US.xml" />
+    <Content Include="XmlData\LanguageCodes\en.xml" />
+    <Content Include="XmlData\LanguageCodes\nl.xml" />
     <Content Include="XmlData\Languages\ar.xml" />
     <Content Include="XmlData\Languages\base.xml" />
     <Content Include="XmlData\Languages\de-DE.xml" />
@@ -1140,11 +1202,14 @@
     <Content Include="XmlData\Languages\pt.xml" />
     <Content Include="XmlData\Languages\tr-TR.xml" />
     <Content Include="XmlData\Languages\tr.xml" />
+    <Content Include="XmlData\fryslan.xml" />
     <Content Include="XmlData\nl.xml" />
     <Content Include="XmlData\pt.fr.xml" />
     <Content Include="XmlData\pt.xml" />
+    <Content Include="XmlData\scores.xml" />
     <Content Include="XmlData\us.fr.xml" />
     <Content Include="XmlData\us.xml" />
+    <Content Include="XmlData\usstates.nl.xml" />
     <Content Include="XmlData\usstates.xml" />
     <EmbeddedResource Include="NSurveyAdmin\EditMatrixQuestion.aspx.resx">
       <DependentUpon>EditMatrixQuestion.aspx.cs</DependentUpon>
@@ -1182,9 +1247,6 @@
     <EmbeddedResource Include="NSurveyAdmin\UserControls\RolesOptionsControl.ascx.resx">
       <DependentUpon>RolesOptionsControl.ascx.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NSurveyAdmin\UserControls\SurveyListControl.ascx.resx">
-      <DependentUpon>SurveyListControl.ascx.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="NSurveyAdmin\UserControls\SurveyOptionControl.ascx.resx">
       <DependentUpon>SurveyOptionControl.ascx.cs</DependentUpon>
     </EmbeddedResource>
@@ -1198,6 +1260,13 @@
     <Content Include="Wap.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADLogon.aspx.cs">
+      <DependentUpon>ADLogon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADLogon.aspx.designer.cs">
+      <DependentUpon>ADLogon.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Code\ASyncMailing.cs" />
     <Compile Include="Code\ASyncMailingReminder.cs" />
     <Compile Include="Code\ASyncMailingState.cs" />
@@ -1220,21 +1289,49 @@
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Errors\ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errors\ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Errors\ErrorTestPage.aspx.cs">
+      <DependentUpon>ErrorTestPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errors\ErrorTestPage.aspx.designer.cs">
+      <DependentUpon>ErrorTestPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="HttpErrorPage.aspx.cs">
+    <Compile Include="Errors\HttpErrorPage.aspx.cs">
       <DependentUpon>HttpErrorPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="HttpErrorPage.aspx.designer.cs">
+    <Compile Include="Errors\HttpErrorPage.aspx.designer.cs">
       <DependentUpon>HttpErrorPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="KeepSessionAlive.aspx.cs">
+    <Compile Include="Errors\DefaultRedirectErrorPage.aspx.cs">
+      <DependentUpon>DefaultRedirectErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errors\DefaultRedirectErrorPage.aspx.designer.cs">
+      <DependentUpon>DefaultRedirectErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\ResultsSsrs.aspx.cs">
+      <DependentUpon>ResultsSsrs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\ResultsSsrs.aspx.designer.cs">
+      <DependentUpon>ResultsSsrs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyForm\KeepSessionAlive.aspx.cs">
       <DependentUpon>KeepSessionAlive.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="KeepSessionAlive.aspx.designer.cs">
+    <Compile Include="NSurveyForm\KeepSessionAlive.aspx.designer.cs">
       <DependentUpon>KeepSessionAlive.aspx</DependentUpon>
     </Compile>
     <Compile Include="NSurveyAdmin\AccessDenied.aspx.cs">
@@ -1321,13 +1418,6 @@
     <Compile Include="NSurveyAdmin\SurveyIPSecurity.aspx.designer.cs">
       <DependentUpon>SurveyIPSecurity.aspx</DependentUpon>
     </Compile>
-    <Compile Include="NSurveyAdmin\CreateSurvey.aspx.cs">
-      <DependentUpon>CreateSurvey.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="NSurveyAdmin\CreateSurvey.aspx.designer.cs">
-      <DependentUpon>CreateSurvey.aspx</DependentUpon>
-    </Compile>
     <Compile Include="NSurveyAdmin\DataImport.aspx.cs">
       <DependentUpon>DataImport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1341,13 +1431,6 @@
     </Compile>
     <Compile Include="NSurveyAdmin\EditMatrixQuestion.aspx.designer.cs">
       <DependentUpon>EditMatrixQuestion.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="NSurveyAdmin\EditMultiLanguages.aspx.cs">
-      <DependentUpon>EditMultiLanguages.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="NSurveyAdmin\EditMultiLanguages.aspx.designer.cs">
-      <DependentUpon>EditMultiLanguages.aspx</DependentUpon>
     </Compile>
     <Compile Include="NSurveyAdmin\EditPageBranching.aspx.cs">
       <DependentUpon>EditPageBranching.aspx</DependentUpon>
@@ -1516,13 +1599,6 @@
     </Compile>
     <Compile Include="NSurveyAdmin\ResultsReporting.aspx.designer.cs">
       <DependentUpon>ResultsReporting.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="NSurveyAdmin\RolesManager.aspx.cs">
-      <DependentUpon>RolesManager.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="NSurveyAdmin\RolesManager.aspx.designer.cs">
-      <DependentUpon>RolesManager.aspx</DependentUpon>
     </Compile>
     <Compile Include="NSurveyAdmin\SurveyContentBuilder.aspx.cs">
       <DependentUpon>SurveyContentBuilder.aspx</DependentUpon>
@@ -1734,26 +1810,12 @@
     <Compile Include="NSurveyAdmin\UserControls\SurveyBoxControl.ascx.designer.cs">
       <DependentUpon>SurveyBoxControl.ascx</DependentUpon>
     </Compile>
-    <Compile Include="NSurveyAdmin\UserControls\SurveyListControl.ascx.cs">
-      <DependentUpon>SurveyListControl.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="NSurveyAdmin\UserControls\SurveyListControl.ascx.designer.cs">
-      <DependentUpon>SurveyListControl.ascx</DependentUpon>
-    </Compile>
     <Compile Include="NSurveyAdmin\UserControls\SurveyMessageConditonsControl.ascx.cs">
       <DependentUpon>SurveyMessageConditonsControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NSurveyAdmin\UserControls\SurveyMessageConditonsControl.ascx.designer.cs">
       <DependentUpon>SurveyMessageConditonsControl.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="NSurveyAdmin\UserControls\SurveyFormSecurity.ascx.cs">
-      <DependentUpon>SurveyFormSecurity.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="NSurveyAdmin\UserControls\SurveyFormSecurity.ascx.designer.cs">
-      <DependentUpon>SurveyFormSecurity.ascx</DependentUpon>
     </Compile>
     <Compile Include="NSurveyAdmin\UserControls\SurveyOptionControl.ascx.cs">
       <DependentUpon>SurveyOptionControl.ascx</DependentUpon>
@@ -1804,20 +1866,6 @@
     <Compile Include="NSurveyAdmin\UserControls\UsersOptionsControl.ascx.designer.cs">
       <DependentUpon>UsersOptionsControl.ascx</DependentUpon>
     </Compile>
-    <Compile Include="NSurveyAdmin\UserCreator.aspx.cs">
-      <DependentUpon>UserCreator.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="NSurveyAdmin\UserCreator.aspx.designer.cs">
-      <DependentUpon>UserCreator.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="NSurveyAdmin\UserImport.aspx.cs">
-      <DependentUpon>UserImport.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="NSurveyAdmin\UserImport.aspx.designer.cs">
-      <DependentUpon>UserImport.aspx</DependentUpon>
-    </Compile>
     <Compile Include="NSurveyAdmin\UsersManager.aspx.cs">
       <DependentUpon>UsersManager.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1839,14 +1887,36 @@
     <Compile Include="NSurveyAdmin\WarningScreen.aspx.designer.cs">
       <DependentUpon>WarningScreen.aspx</DependentUpon>
     </Compile>
+    <Compile Include="NSurveyReports\CustomReport.aspx.cs">
+      <DependentUpon>CustomReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyReports\CustomReport.aspx.designer.cs">
+      <DependentUpon>CustomReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyReports\SsrsPrintSurvey.aspx.cs">
+      <DependentUpon>SsrsPrintSurvey.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyReports\SsrsPrintSurvey.aspx.designer.cs">
+      <DependentUpon>SsrsPrintSurvey.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyReports\SsrsReport.aspx.cs">
+      <DependentUpon>SsrsReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyReports\SsrsReport.aspx.designer.cs">
+      <DependentUpon>SsrsReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResultsReport.aspx.cs">
+    <Compile Include="NSurveyReports\ResultsReport.aspx.cs">
       <DependentUpon>ResultsReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ResultsReport.aspx.designer.cs">
+    <Compile Include="NSurveyReports\ResultsReport.aspx.designer.cs">
       <DependentUpon>ResultsReport.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="SurveyMobile.aspx.cs">
       <DependentUpon>SurveyMobile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1863,7 +1933,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="articles\images\" />
     <Folder Include="Deployment\" />
     <Folder Include="Images\mscharts_temp\" />
   </ItemGroup>
@@ -1906,12 +1976,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NSurveyAdmin\ControlCode.aspx.resx">
       <DependentUpon>ControlCode.aspx.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NSurveyAdmin\CreateSurvey.aspx.resx">
-      <DependentUpon>CreateSurvey.aspx.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NSurveyAdmin\EditMultiLanguages.aspx.resx">
-      <DependentUpon>EditMultiLanguages.aspx.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NSurveyAdmin\EditPageBranching.aspx.resx">
       <DependentUpon>EditPageBranching.aspx.cs</DependentUpon>
@@ -1976,9 +2040,6 @@
     <EmbeddedResource Include="NSurveyAdmin\ResultsReporting.aspx.resx">
       <DependentUpon>ResultsReporting.aspx.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NSurveyAdmin\RolesManager.aspx.resx">
-      <DependentUpon>RolesManager.aspx.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="NSurveyAdmin\SurveyOptions.aspx.resx">
       <DependentUpon>SurveyOptions.aspx.cs</DependentUpon>
     </EmbeddedResource>
@@ -2029,12 +2090,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NSurveyAdmin\UserControls\UpdateVoterQuestionOptionsControl.ascx.resx">
       <DependentUpon>UpdateVoterQuestionOptionsControl.ascx.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NSurveyAdmin\UserCreator.aspx.resx">
-      <DependentUpon>UserCreator.aspx.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NSurveyAdmin\UserImport.aspx.resx">
-      <DependentUpon>UserImport.aspx.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NSurveyAdmin\VoterReport.aspx.resx">
       <DependentUpon>VoterReport.aspx.cs</DependentUpon>
@@ -2097,7 +2152,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>4976</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/sp24dev</IISUrl>
+          <IISUrl>http://localhost/sp25dev</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

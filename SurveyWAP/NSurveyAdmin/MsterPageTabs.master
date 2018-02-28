@@ -29,7 +29,7 @@
             <li><a href='#mptabs-1'><%=DisplayTabs.Keys[i]%></a></li>
             <% } %>
         </ul>
-        <div id="mptabs-1" style="overflow:auto; min-height:703px;">
+        <div id="mptabs-1" class="mnuTabsOne">
          <asp:ContentPlaceHolder runat="server" ID="ContentPlaceHolder1"></asp:ContentPlaceHolder>
        </div>
     </div>

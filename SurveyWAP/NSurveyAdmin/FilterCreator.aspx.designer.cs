@@ -13,13 +13,13 @@ namespace Votations.NSurvey.WebAdmin {
     public partial class FilterCreator {
         
         /// <summary>
-        /// MessageLabel control.
+        /// liML control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MessageLabel;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liML;
         
         /// <summary>
         /// ImageButton1 control.
@@ -29,5 +29,14 @@ namespace Votations.NSurvey.WebAdmin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
+        
+        /// <summary>
+        /// MessageLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MessageLabel;
     }
 }

@@ -1,5 +1,5 @@
 /**************************************************************************************************
-	Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com)	
+	Survey™ Project changes: copyright (c) 2009-2017, W3DevPro™ (https://github.com/surveyproject)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -41,7 +41,7 @@ namespace Votations.NSurvey.WebAdmin
         Votations.NSurvey.SQLServerDAL.User UsersData;
         public int selectedTabIndex = 0;
 
-		private void Page_Load(object sender, System.EventArgs e)
+        private void Page_Load(object sender, System.EventArgs e)
 		{
 			SetupSecurity();
 			LocalizePage();
@@ -95,6 +95,25 @@ namespace Votations.NSurvey.WebAdmin
             phUsersList.Visible = false;
             btnBack.Visible = true;
         }
+
+        // delete user
+        public void OnUserDelete(Object sender, CommandEventArgs e)
+        {
+            int UserId = int.Parse(e.CommandArgument.ToString());
+            if (new Users().IsAdministrator(UserId) && new Users().GetAdminCount() == 1)
+            {
+                MessageLabel.Visible = true;
+                ((PageBase)Page).ShowErrorMessage(MessageLabel, ((PageBase)Page).GetPageResource("CannotDeleteLastAdminMessage"));
+                return;
+            }
+
+            ((INSurveyUserProvider)_userProvider).DeleteUserById(UserId);
+            UserId = -1;
+            Visible = false;
+            //OnOptionChanged();
+            UINavigator.NavigateToUserManager(((PageBase)Page).getSurveyId(), ((PageBase)Page).MenuIndex);
+        }
+
 
         public void EditBackButton(object sender, CommandEventArgs e)
         {

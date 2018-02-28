@@ -1,5 +1,5 @@
 /**************************************************************************************************
-	Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com)	
+	Survey™ Project changes: copyright (c) 2009-2017, W3DevPro™ (https://github.com/surveyproject)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -72,9 +72,10 @@ namespace Votations.NSurvey.WebAdmin.UserControls
             PageBase page = (PageBase)Page;
             INSurveyPrincipal user = page.NSurveyUser;
 
-            if (!page.IsSingleUserMode(false) && user.Identity.IsAuthenticated)
-                MenuUserName.Visible = true;
-            MenuUserName.Text = page.GetPageResource("LoggedInAs") + " " +page.NSurveyUser.Identity.FirstName +" "+ page.NSurveyUser.Identity.LastName;
+            //if (page.IsSingleUserMode(false) && user.Identity.IsAuthenticated)
+            if (user.Identity.IsAuthenticated)
+                    MenuUserName.Visible = true;
+                    MenuUserName.Text = page.GetPageResource("LoggedInAs") + " " +page.NSurveyUser.Identity.FirstName +" "+ page.NSurveyUser.Identity.LastName;
 
             if (!page.IsSingleUserMode(false) && user.Identity.IsAuthenticated)
             {
@@ -85,11 +86,11 @@ namespace Votations.NSurvey.WebAdmin.UserControls
             }
 
 
- ///           if (user.Identity.IsAdmin || user.HasRight(NSurveyRights.AccessHelpFiles))
- ///           {
- ///                HelpButton.Visible = true;
- ///               HelpButton.Text = page.GetPageResource("HelpFilesHyperlink");
- ///           }
+ //           if (user.Identity.IsAdmin || user.HasRight(NSurveyRights.AccessHelpFiles))
+ //           {
+ //                HelpButton.Visible = true;
+ //               HelpButton.Text = page.GetPageResource("HelpFilesHyperlink");
+ //           }
 
             if (mnuMain.Items.Count > 0) return; // If menu is already populated return
 
@@ -152,6 +153,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
                     if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessSecuritySettings))
                         mnuMain.Items[menuIndex].ChildItems[mnuMain.Items[menuIndex].ChildItems.Count - 1].ChildItems.
                             Add(new MenuItem(((PageBase)Page).GetPageResource("SurveyFormSecurityHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.SurveySecurityLink, SurveyId)));
+
                     if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.TokenSecurityRight))
                         mnuMain.Items[menuIndex].ChildItems[mnuMain.Items[menuIndex].ChildItems.Count - 1].ChildItems.
                             Add(new MenuItem(((PageBase)Page).GetPageResource("SurveyTokenSecurityHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.SurveyTokenSecurityLink, SurveyId)));
@@ -221,15 +223,24 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 
             if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessReports)
                 || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.CreateResultsFilter) || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessFileManager)
-                || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.DataImportRight) || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessExport))
+                || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.DataImportRight) || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessExport) ||
+                ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessFieldEntries) )
             {
                 mnuMain.Items.Add(new MenuItem(((PageBase)Page).GetPageResource("ResultsSMHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.ResultsReportHyperlink, SurveyId)));
+
 
                 if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessReports))
                     mnuMain.Items[menuIndex].ChildItems.Add(new MenuItem(((PageBase)Page).GetPageResource("ResultsReportHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.ResultsReportHyperlink, SurveyId)));
 
+
                 if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.CreateResultsFilter))
-                    mnuMain.Items[menuIndex].ChildItems.Add(new MenuItem(((PageBase)Page).GetPageResource("FiltersHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.FilterEditor, SurveyId)));
+                    mnuMain.Items[menuIndex].ChildItems[mnuMain.Items[menuIndex].ChildItems.Count - 1].ChildItems.
+                        Add(new MenuItem(((PageBase)Page).GetPageResource("FiltersHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.FilterEditor, SurveyId)));
+
+
+                if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessFieldEntries))
+                    mnuMain.Items[menuIndex].ChildItems.Add(new MenuItem(((PageBase)Page).GetPageResource("ResponsesHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.FieldsReportHyperlink, SurveyId)));
+
 
                 if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessFileManager))
                     mnuMain.Items[menuIndex].ChildItems.Add(new MenuItem(((PageBase)Page).GetPageResource("FileManagerHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.FileManagerHyperLink, SurveyId)));
@@ -298,6 +309,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 
                 mnuMain.Items[menuIndex].ChildItems.Add(new MenuItem(((PageBase)Page).GetPageResource("HelpFilesHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.HelpFilesHyperLink, SurveyId)));
 
+                mnuMain.Items[menuIndex].ChildItems.Add(new MenuItem(((PageBase)Page).GetPageResource("HelpAboutHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.HelpAboutHyperLink, SurveyId)));
 
                 menuIndex++;
             }

@@ -48,8 +48,7 @@ namespace Votations.NSurvey.WebControls.UI
             {
                 TableCell cell;
                 Table child = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetAnswerPercentTable();//JJ;
-                //child.CellSpacing = 2;
-                //child.CellPadding = 2;
+
                 child.ControlStyle.CopyFrom(this.SectionGridAnswersStyle);
                 TableRow row = new TableRow();
                 foreach (AnswerData.AnswersRow row2 in this.Answers.Answers)

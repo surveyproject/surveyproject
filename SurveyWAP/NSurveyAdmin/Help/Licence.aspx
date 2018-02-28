@@ -1,20 +1,16 @@
 ﻿<%@ Page Language="c#" MasterPageFile="~/nsurveyadmin/MsterPageTabs.master" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.HelpFiles" Codebehind="default.aspx.cs" %>
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="mainBody" class="mainBody contentHolder ps-container"><div id="Panel" class="Panel content">
-    <table class="TableLayoutContainer">
-        <tr>
-            <td>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <div id="helpPanel">
+
+            <div>
                     <asp:ImageButton ID="btnBack"  ImageUrl="~/Images/index-icon.png" runat="server"
                         CssClass="buttonIndex" PostBackUrl="~/NSurveyAdmin/Help/default.aspx#Introduction" Visible="True" ToolTip="Back to Helpfiles Index" />
-            </td>
-        </tr>
-        <tr>
-            <td class="contentCell" valign="top">
-<br />
-<h2 style="color:#5720C6;">License Agreement</h2><br />
-<br />
-<hr style="color:#e2e2e2;" /><br />
+            </div>
+
+            <div>
+<h2 style="color:#5720C6;">License Agreement</h2><hr style="color:#e2e2e2;" /><br />
 <br />
 GNU General Public License version 3 (GPLv3)
  <br /><br />
@@ -245,8 +241,7 @@ The GNU General Public License does not permit incorporating your program into p
 
 <br />
 <br />
-        </td>
-        </tr>
-    </table>
-</div></div></asp:Content>
+        </div>
+
+<div id="fillerDiv" class="fillerDiv">&nbsp;</div></div></asp:Content>
 

@@ -19,7 +19,10 @@
                 config = ConfigurationManager.AppSettings;
             }
             string assemblyString = config["WebDAL"];
-            string typeName = assemblyString + ".SurveyIPRange";
+            //string typeName = assemblyString + ".SurveyIPRange";
+            // typename: must match namespace; after namechange of assembly, namespace no longer similar to 
+            string typeName = "Votations.NSurvey.SQLServerDAL.SurveyIPRange";
+
             return (ISurveyIPRange)Assembly.Load(assemblyString).CreateInstance(typeName);
         }
     }

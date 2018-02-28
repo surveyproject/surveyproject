@@ -2,21 +2,25 @@
     AutoEventWireup="true" CodeBehind="QuestionGroups.aspx.cs" Inherits="Votations.NSurvey.WebAdmin.NSurveyAdmin.QuestionGroups" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
+        <div id="Panel" class="Panel">
+
     <script type="text/javascript">
         function ConfirmGroupDelete() {
             return confirm('<%= GetPageResource("GroupListDeleteConfirm") %>');
         }
-
     </script>
 
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 6px;">
+            <div class="errorDiv">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
-            <br />
-                      
-   <fieldset style="width:750px; margin-left:12px; margin-top:15px;" title="">
+                                            <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/New/QuestionGroups.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a>
+                                        </div>
+
+                <fieldset>
         <legend class="titleFont titleLegend">
            <asp:Literal ID="QuestionGroupLegend" runat="server" EnableViewState="false">Question Groups</asp:Literal> 
 
@@ -152,5 +156,7 @@
   </ol>
                     <br />
                     </fieldset>
+            <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
+</div>
 
-</div></div></asp:Content>
+</asp:Content>

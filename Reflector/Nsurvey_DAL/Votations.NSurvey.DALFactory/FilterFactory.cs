@@ -19,7 +19,10 @@ namespace Votations.NSurvey.DALFactory
                 config = ConfigurationManager.AppSettings;
             }
             string assemblyString = config["WebDAL"];
-            string typeName = assemblyString + ".Filter";
+            //string typeName = assemblyString + ".Filter";
+            // typename: must match namespace; after namechange of assembly, namespace no longer similar to 
+            string typeName = "Votations.NSurvey.SQLServerDAL.Filter";
+
             return (IFilter) Assembly.Load(assemblyString).CreateInstance(typeName);
         }
     }

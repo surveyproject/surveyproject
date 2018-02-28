@@ -36,7 +36,7 @@ namespace Votations.NSurvey.WebControlsFactories
                 throw new ApplicationException("Could not create an instance because the question data has no assembly type specified");
             }
             try
-            {
+            {   
                 item = (QuestionItem) Assembly.Load(question.TypeAssembly).CreateInstance(question.TypeNameSpace);
             }
             catch (InvalidCastException)

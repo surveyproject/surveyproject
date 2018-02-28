@@ -1,5 +1,5 @@
 /**************************************************************************************************
-	Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com)	
+	Survey™ Project changes: copyright (c) 2009-2017, W3DevPro™ (https://github.com/surveyproject)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -169,7 +169,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
             DisableQuestionNumbering.Text = ((PageBase)Page).GetPageResource("DisableQuestionNumbering");
             DefaultSurveyLabel.Text = ((PageBase)Page).GetPageResource("DefaultSurvey");
             //New Helpfiles xml texts:
-            NotificationsSettingsHelp.Text = ((PageBase)Page).GetPageHelpfiles("NotificationsSettingsHelp");
+            //NotificationsSettingsHelp.Text = ((PageBase)Page).GetPageHelpfiles("NotificationsSettingsHelp");
             //HelpGifTitle.Text = ((PageBase)Page).GetPageResource("HelpGifTitle");
 
             TitleTextBox.ToolTip = ((PageBase)Page).GetPageHelpfiles("SettingsTitleHelp");
@@ -596,9 +596,15 @@ namespace Votations.NSurvey.WebAdmin.UserControls
                 catch (Exception ex)
                 {
                     if (ex.Message == "DUPLICATEFOLDER")
-                        ((PageBase)Page).ShowErrorMessage(MessageLabel, ((PageBase)Page).GetPageResource("SurveyImportDuplicate") );
+                    {
+                        ((PageBase)Page).ShowErrorMessage(MessageLabel, ((PageBase)Page).GetPageResource("SurveyImportDuplicate"));
+                    }
                     else
+                    {
                         ((PageBase)Page).ShowErrorMessage(MessageLabel, ((PageBase)Page).GetPageResource("Exception") + "  " + ex.Message);
+                        Code.ExceptionUtility.LogException(ex, "Survey XML Import Error");
+                    }
+
                     MessageLabel.Visible = true;
                 }
             }

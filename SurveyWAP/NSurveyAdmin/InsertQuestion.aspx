@@ -2,23 +2,26 @@
     AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.InsertQuestion"
     CodeBehind="InsertQuestion.aspx.cs" %>
 
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="FooterControl" Src="UserControls/FooterControl.ascx" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="mainBody" class="mainBody contentHolder ps-container">
+
         <div id="Panel" class="Panel content">
 
-            <div style="position: absolute; width: 50px; text-align: center; margin-left: 700px; top: 15px;">
+             <fieldset id="liML" runat="server">    
                 <asp:ImageButton ID="ImageButton1" ImageUrl="~/Images/back_button.gif" ToolTip="Click to go Back" runat="server" CssClass="buttonBack" OnCommand="OnBackButton" />
-         </div>
 
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
+                                              <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/new/Insert Question.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a>
+                                        </div>
+         </fieldset>
+
+            <div class="errorDiv">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
-            <br />
-
-          <fieldset style="width: 750px; margin-left: 12px; margin-right: 0px; margin-top: 15px;">
+                                 
+          <fieldset>
                 <legend class="titleFont titleLegend">
                                 <asp:Literal ID="NewQuestionTitle" runat="server" EnableViewState="False">New question</asp:Literal>
                                                         </legend>
@@ -88,6 +91,6 @@
                                                              
                                                         </ol>
             </fieldset>
-</div></div>
 
+                    <div id="fillerDiv" class="fillerDiv">&nbsp;</div></div>
 </asp:Content>

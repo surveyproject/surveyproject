@@ -1,0 +1,2978 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Survey
+   | SP Technical Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Survey
+   | SP Technical Documentation ">
+    <meta name="generator" content="docfx 2.26.3.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/splogo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Votations.NSurvey.SQLServerDAL.Survey">
+  
+  
+  <h1 id="Votations_NSurvey_SQLServerDAL_Survey" data-uid="Votations.NSurvey.SQLServerDAL.Survey" class="text-break">Class Survey
+  </h1>
+  <div class="markdown level0 summary"><p>SQL Server DAL implementation.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Survey</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Votations.NSurvey.IDAL.ISurvey.html">ISurvey</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Votations.NSurvey.SQLServerDAL.html">Votations.NSurvey.SQLServerDAL</a></h6>
+  <h6><strong>Assembly</strong>: SurveyProject.SQLServerDAL.dll</h6>
+  <h5 id="Votations_NSurvey_SQLServerDAL_Survey_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Survey : ISurvey</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_AddBranchingRule_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.AddBranchingRule*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_AddBranchingRule_Votations_NSurvey_Data_BranchingRuleData_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.AddBranchingRule(Votations.NSurvey.Data.BranchingRuleData)">AddBranchingRule(BranchingRuleData)</h4>
+  <div class="markdown level1 summary"><p>Add a new branching rule to the survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddBranchingRule(BranchingRuleData newBranchingRule)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.BranchingRuleData.html">BranchingRuleData</a></td>
+        <td><span class="parametername">newBranchingRule</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_AddMessageCondition_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.AddMessageCondition*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_AddMessageCondition_Votations_NSurvey_Data_MessageConditionData_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.AddMessageCondition(Votations.NSurvey.Data.MessageConditionData)">AddMessageCondition(MessageConditionData)</h4>
+  <div class="markdown level1 summary"><p>Add a new condition to show a given thank you message</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddMessageCondition(MessageConditionData newMessageCondition)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.MessageConditionData.html">MessageConditionData</a></td>
+        <td><span class="parametername">newMessageCondition</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_AddSurvey_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.AddSurvey*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_AddSurvey_Votations_NSurvey_Data_SurveyData_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.AddSurvey(Votations.NSurvey.Data.SurveyData)">AddSurvey(SurveyData)</h4>
+  <div class="markdown level1 summary"><p>Adds a new survey to the database</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddSurvey(SurveyData newSurvey)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.SurveyData.html">SurveyData</a></td>
+        <td><span class="parametername">newSurvey</span></td>
+        <td><p>Survey object with information about what to add. Only Id must be ommited</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_AspSecurityAllowsMultipleSubmissions_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.AspSecurityAllowsMultipleSubmissions*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_AspSecurityAllowsMultipleSubmissions_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.AspSecurityAllowsMultipleSubmissions(System.Int32)">AspSecurityAllowsMultipleSubmissions(Int32)</h4>
+  <div class="markdown level1 summary"><p>Check if the survey allows multiple submission
+for the same username </p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AspSecurityAllowsMultipleSubmissions(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_AssignUserToSurvey_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.AssignUserToSurvey*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_AssignUserToSurvey_System_Int32_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.AssignUserToSurvey(System.Int32,System.Int32)">AssignUserToSurvey(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Assigns a new user to a survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AssignUserToSurvey(int surveyId, int userId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">userId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_CheckSurveyUser_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.CheckSurveyUser*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_CheckSurveyUser_System_Int32_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.CheckSurveyUser(System.Int32,System.Int32)">CheckSurveyUser(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Check if the user has this survey assigned</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CheckSurveyUser(int surveyId, int userId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">userId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_CloneSurvey_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.CloneSurvey*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_CloneSurvey_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.CloneSurvey(System.Int32)">CloneSurvey(Int32)</h4>
+  <div class="markdown level1 summary"><p>Clone the given survey and returns its clone</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SurveyData CloneSurvey(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td><p>Id of the survey you want to clone</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.SurveyData.html">SurveyData</a></td>
+        <td><p>A SurveyData dataset object with the current database values of the clone</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_DeleteBranchingRuleById_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.DeleteBranchingRuleById*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_DeleteBranchingRuleById_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.DeleteBranchingRuleById(System.Int32)">DeleteBranchingRuleById(Int32)</h4>
+  <div class="markdown level1 summary"><p>Deletes the branching rules </p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteBranchingRuleById(int branchingRuleId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">branchingRuleId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_DeleteFriendlyName_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.DeleteFriendlyName*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_DeleteFriendlyName_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.DeleteFriendlyName(System.Int32)">DeleteFriendlyName(Int32)</h4>
+  <div class="markdown level1 summary"><p>Delete Friendly Deployement URL ie set it to null</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteFriendlyName(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_DeleteMessageConditionById_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.DeleteMessageConditionById*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_DeleteMessageConditionById_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.DeleteMessageConditionById(System.Int32)">DeleteMessageConditionById(Int32)</h4>
+  <div class="markdown level1 summary"><p>Deletes the message condition</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteMessageConditionById(int messageConditionId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">messageConditionId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_DeletePageBreak_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.DeletePageBreak*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_DeletePageBreak_System_Int32_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.DeletePageBreak(System.Int32,System.Int32)">DeletePageBreak(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Deletes a page break</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeletePageBreak(int surveyId, int pageNumber)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td><p>Survey ID</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pageNumber</span></td>
+        <td><p>Page numbe to delete</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_DeleteQuotaSettings_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.DeleteQuotaSettings*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_DeleteQuotaSettings_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.DeleteQuotaSettings(System.Int32)">DeleteQuotaSettings(Int32)</h4>
+  <div class="markdown level1 summary"><p>Deletes survey&apos;s quotas</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteQuotaSettings(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_DeleteSurveyById_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.DeleteSurveyById*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_DeleteSurveyById_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.DeleteSurveyById(System.Int32)">DeleteSurveyById(Int32)</h4>
+  <div class="markdown level1 summary"><p>Remove the survey and all its question / answers from the database</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteSurveyById(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td><p>Survey to delete from the database</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetActivatedSurvey_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetActivatedSurvey*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetActivatedSurvey" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetActivatedSurvey">GetActivatedSurvey()</h4>
+  <div class="markdown level1 summary"><p>Return a survey object that reflects the current activated survey. 
+IE: The survey that shows up when the surveybox has a surveyid value of 
+0</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SurveyData GetActivatedSurvey()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.SurveyData.html">SurveyData</a></td>
+        <td><p>A survey object with the current database values</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetAllSurveys_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetAllSurveys*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetAllSurveys" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetAllSurveys">GetAllSurveys()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SurveyData GetAllSurveys()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.SurveyData.html">SurveyData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetAllSurveysByFolderId_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetAllSurveysByFolderId*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetAllSurveysByFolderId_System_Nullable_System_Int32__" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetAllSurveysByFolderId(System.Nullable{System.Int32})">GetAllSurveysByFolderId(Nullable&lt;Int32&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SurveyData GetAllSurveysByFolderId(int ? folderId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><span class="parametername">folderId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.SurveyData.html">SurveyData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetAllSurveysByTitle_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetAllSurveysByTitle*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetAllSurveysByTitle_System_String_System_Nullable_System_Int32__System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetAllSurveysByTitle(System.String,System.Nullable{System.Int32},System.Int32)">GetAllSurveysByTitle(String, Nullable&lt;Int32&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Get a survey list with only the survey id and title with matching title</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SurveyData GetAllSurveysByTitle(string title, int ? folderID, int userID)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">title</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><span class="parametername">folderID</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">userID</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.SurveyData.html">SurveyData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetAllSurveysList_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetAllSurveysList*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetAllSurveysList" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetAllSurveysList">GetAllSurveysList()</h4>
+  <div class="markdown level1 summary"><p>Get a survey list with only the survey id and title</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SurveyData GetAllSurveysList()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.SurveyData.html">SurveyData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetArchivedSurveys_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetArchivedSurveys*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetArchivedSurveys" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetArchivedSurveys">GetArchivedSurveys()</h4>
+  <div class="markdown level1 summary"><p>Get all surveys that have been flaged as archived</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SurveyData GetArchivedSurveys()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.SurveyData.html">SurveyData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetAssignedSurveysList_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetAssignedSurveysList*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetAssignedSurveysList_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetAssignedSurveysList(System.Int32)">GetAssignedSurveysList(Int32)</h4>
+  <div class="markdown level1 summary"><p>Get a survey list assigned to the user</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SurveyData GetAssignedSurveysList(int userId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">userId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.SurveyData.html">SurveyData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetCookieExpiration_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetCookieExpiration*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetCookieExpiration_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetCookieExpiration(System.Int32)">GetCookieExpiration(Int32)</h4>
+  <div class="markdown level1 summary"><p>Get the number of minutes after which the security cookie 
+expires</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetCookieExpiration(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetFirstSurveyId_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetFirstSurveyId*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetFirstSurveyId" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetFirstSurveyId">GetFirstSurveyId()</h4>
+  <div class="markdown level1 summary"><p>Retrieves the first survey ID available in the DB</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetFirstSurveyId()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>If found the survey ID else -1</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetFirstSurveyId_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetFirstSurveyId*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetFirstSurveyId_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetFirstSurveyId(System.Int32)">GetFirstSurveyId(Int32)</h4>
+  <div class="markdown level1 summary"><p>Retrieves the first survey ID for user available in the DB</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetFirstSurveyId(int userId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">userId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>If found the survey ID else -1</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetFormForExport_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetFormForExport*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetFormForExport_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetFormForExport(System.Int32)">GetFormForExport(Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns all the survey, questions, answers
+for a survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NSurveyForm GetFormForExport(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.NSurveyForm.html">NSurveyForm</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetInsertSurveyCommand_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetInsertSurveyCommand*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetInsertSurveyCommand_System_Data_SqlClient_SqlConnection_System_Data_SqlClient_SqlTransaction_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetInsertSurveyCommand(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction)">GetInsertSurveyCommand(SqlConnection, SqlTransaction)</h4>
+  <div class="markdown level1 summary"><p>Creates and return an insert command for a survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SqlCommand GetInsertSurveyCommand(SqlConnection sqlConnection, SqlTransaction sqlTransaction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.SqlClient.SqlConnection</span></td>
+        <td><span class="parametername">sqlConnection</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Data.SqlClient.SqlTransaction</span></td>
+        <td><span class="parametername">sqlTransaction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.SqlClient.SqlCommand</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetIPExpiration_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetIPExpiration*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetIPExpiration_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetIPExpiration(System.Int32)">GetIPExpiration(Int32)</h4>
+  <div class="markdown level1 summary"><p>Get the number of minutes after which the security IP 
+expires</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetIPExpiration(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetPagesNumber_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetPagesNumber*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetPagesNumber_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetPagesNumber(System.Int32)">GetPagesNumber(Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns the total of pages in the survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetPagesNumber(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetQuotaSettings_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetQuotaSettings*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetQuotaSettings_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetQuotaSettings(System.Int32)">GetQuotaSettings(Int32)</h4>
+  <div class="markdown level1 summary"><p>Retrieves the quota of the survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SurveyEntryQuotaData GetQuotaSettings(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.SurveyEntryQuotaData.html">SurveyEntryQuotaData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyBranchingRules_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyBranchingRules*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyBranchingRules_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyBranchingRules(System.Int32)">GetSurveyBranchingRules(Int32)</h4>
+  <div class="markdown level1 summary"><p>returns the branching rules for the given survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BranchingRuleData GetSurveyBranchingRules(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.BranchingRuleData.html">BranchingRuleData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyById_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyById*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyById_System_Int32_System_String_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyById(System.Int32,System.String)">GetSurveyById(Int32, String)</h4>
+  <div class="markdown level1 summary"><p>Return a survey object that reflects the database survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SurveyData GetSurveyById(int surveyId, string languageCode)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td><p>Id of the survey you need</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">languageCode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.SurveyData.html">SurveyData</a></td>
+        <td><p>A survey object with the current database values</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyIdFromFriendlyName_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyIdFromFriendlyName*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyIdFromFriendlyName_System_String_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyIdFromFriendlyName(System.String)">GetSurveyIdFromFriendlyName(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetSurveyIdFromFriendlyName(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyIdFromGuid_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyIdFromGuid*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyIdFromGuid_System_Guid_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyIdFromGuid(System.Guid)">GetSurveyIdFromGuid(Guid)</h4>
+  <div class="markdown level1 summary"><p>Returns the total of pages in the survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetSurveyIdFromGuid(Guid id)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Guid</span></td>
+        <td><span class="parametername">id</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyMessageCondition_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyMessageCondition*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyMessageCondition_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyMessageCondition(System.Int32)">GetSurveyMessageCondition(Int32)</h4>
+  <div class="markdown level1 summary"><p>returns the thank you message conditions for the given survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MessageConditionData GetSurveyMessageCondition(int messageConditionId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">messageConditionId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.MessageConditionData.html">MessageConditionData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyMessageConditions_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyMessageConditions*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyMessageConditions_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyMessageConditions(System.Int32)">GetSurveyMessageConditions(Int32)</h4>
+  <div class="markdown level1 summary"><p>returns the thank you message contions for the given survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MessageConditionData GetSurveyMessageConditions(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.MessageConditionData.html">MessageConditionData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyNotificationModes_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyNotificationModes*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyNotificationModes" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyNotificationModes">GetSurveyNotificationModes()</h4>
+  <div class="markdown level1 summary"><p>Returns a list of available email notification mode</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NotificationModeData GetSurveyNotificationModes()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.NotificationModeData.html">NotificationModeData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyPageBranchingRules_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyPageBranchingRules*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyPageBranchingRules_System_Int32_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyPageBranchingRules(System.Int32,System.Int32)">GetSurveyPageBranchingRules(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>returns the branching rules for the given page of the survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BranchingRuleData GetSurveyPageBranchingRules(int surveyId, int pageNumber)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pageNumber</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.BranchingRuleData.html">BranchingRuleData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyPageBranchingRulesDetails_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyPageBranchingRulesDetails*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyPageBranchingRulesDetails_System_Int32_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyPageBranchingRulesDetails(System.Int32,System.Int32)">GetSurveyPageBranchingRulesDetails(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>returns the branching rules for the given page with all
+their details</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BranchingRuleData GetSurveyPageBranchingRulesDetails(int surveyId, int pageNumber)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pageNumber</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.BranchingRuleData.html">BranchingRuleData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyPageOptions_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyPageOptions*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyPageOptions_System_Int32_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyPageOptions(System.Int32,System.Int32)">GetSurveyPageOptions(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Retrieves the options that were setup for the page</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PageOptionData GetSurveyPageOptions(int surveyId, int pageNumber)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pageNumber</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.PageOptionData.html">PageOptionData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyPassword_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyPassword*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyPassword_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyPassword(System.Int32)">GetSurveyPassword(Int32)</h4>
+  <div class="markdown level1 summary"><p>Get the access password of the survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetSurveyPassword(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyPipeDataFromQuestionId_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyPipeDataFromQuestionId*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyPipeDataFromQuestionId_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyPipeDataFromQuestionId(System.Int32)">GetSurveyPipeDataFromQuestionId(Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns all the data need to handle 
+and process question / answer piping</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PipeData GetSurveyPipeDataFromQuestionId(int questionId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">questionId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.PipeData.html">PipeData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyProgressModes_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyProgressModes*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyProgressModes" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyProgressModes">GetSurveyProgressModes()</h4>
+  <div class="markdown level1 summary"><p>Returns a list of available progress modes</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ProgressModeData GetSurveyProgressModes()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.ProgressModeData.html">ProgressModeData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyResumeModes_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyResumeModes*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyResumeModes" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyResumeModes">GetSurveyResumeModes()</h4>
+  <div class="markdown level1 summary"><p>Returns a list of available resume modes</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ResumeModeData GetSurveyResumeModes()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.ResumeModeData.html">ResumeModeData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyUnAuthentifiedUserAction_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyUnAuthentifiedUserAction*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetSurveyUnAuthentifiedUserAction_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetSurveyUnAuthentifiedUserAction(System.Int32)">GetSurveyUnAuthentifiedUserAction(Int32)</h4>
+  <div class="markdown level1 summary"><p>Get the actions that is set for the given survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetSurveyUnAuthentifiedUserAction(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_GetUnAssignedSurveysList_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetUnAssignedSurveysList*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_GetUnAssignedSurveysList_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.GetUnAssignedSurveysList(System.Int32)">GetUnAssignedSurveysList(Int32)</h4>
+  <div class="markdown level1 summary"><p>Get a survey list not assigned to the user</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SurveyData GetUnAssignedSurveysList(int userId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">userId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.SurveyData.html">SurveyData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_HasPageBranching_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.HasPageBranching*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_HasPageBranching_System_Int32_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.HasPageBranching(System.Int32,System.Int32)">HasPageBranching(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns true if the page has any branching rule
+associated with it</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasPageBranching(int surveyId, int pageNumber)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pageNumber</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_ImportSurveys_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.ImportSurveys*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_ImportSurveys_Votations_NSurvey_Data_NSurveyForm_System_Int32_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.ImportSurveys(Votations.NSurvey.Data.NSurveyForm,System.Int32,System.Int32)">ImportSurveys(NSurveyForm, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Import the given surveys into the DB</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ImportSurveys(NSurveyForm importSurveys, int userId, int folderId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.NSurveyForm.html">NSurveyForm</a></td>
+        <td><span class="parametername">importSurveys</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">userId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">folderId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_IncreaseQuotaEntries_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.IncreaseQuotaEntries*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_IncreaseQuotaEntries_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.IncreaseQuotaEntries(System.Int32)">IncreaseQuotaEntries(Int32)</h4>
+  <div class="markdown level1 summary"><p>Increase the current entries number calculated
+against the max. quota</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void IncreaseQuotaEntries(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_IncrementResultsViews_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.IncrementResultsViews*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_IncrementResultsViews_System_Int32_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.IncrementResultsViews(System.Int32,System.Int32)">IncrementResultsViews(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Increment the number of time the survey&apos;s result has been viewed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void IncrementResultsViews(int surveyId, int incrementNumber)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td><p>Id of the survey to increment result view</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">incrementNumber</span></td>
+        <td><p>number of views to add</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_IncrementSurveyViews_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.IncrementSurveyViews*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_IncrementSurveyViews_System_Int32_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.IncrementSurveyViews(System.Int32,System.Int32)">IncrementSurveyViews(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Increment the number of time a survey has been viewed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void IncrementSurveyViews(int surveyId, int incrementNumber)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td><p>Id of the survey to increment views</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">incrementNumber</span></td>
+        <td><p>number of views to add</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_InsertPageBreak_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.InsertPageBreak*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_InsertPageBreak_System_Int32_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.InsertPageBreak(System.Int32,System.Int32)">InsertPageBreak(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Insert a new page break</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InsertPageBreak(int surveyId, int displayOrder)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td><p>Survey ID</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">displayOrder</span></td>
+        <td><p>Where we will insert the page break</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_IsSurveyEmailInviteOnly_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.IsSurveyEmailInviteOnly*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_IsSurveyEmailInviteOnly_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.IsSurveyEmailInviteOnly(System.Int32)">IsSurveyEmailInviteOnly(Int32)</h4>
+  <div class="markdown level1 summary"><p>Get the invited status of the survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSurveyEmailInviteOnly(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_IsSurveyPasswordValid_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.IsSurveyPasswordValid*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_IsSurveyPasswordValid_System_Int32_System_String_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.IsSurveyPasswordValid(System.Int32,System.String)">IsSurveyPasswordValid(Int32, String)</h4>
+  <div class="markdown level1 summary"><p>Check if the given password is valid for the survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSurveyPasswordValid(int surveyId, string password)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td><p>Id of the protected survey</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">password</span></td>
+        <td><p>the password to check for</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_IsSurveySaveTokenUserData_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.IsSurveySaveTokenUserData*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_IsSurveySaveTokenUserData_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.IsSurveySaveTokenUserData(System.Int32)">IsSurveySaveTokenUserData(Int32)</h4>
+  <div class="markdown level1 summary"><p>Get Save Token User status of the survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSurveySaveTokenUserData(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_IsSurveyScored_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.IsSurveyScored*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_IsSurveyScored_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.IsSurveyScored(System.Int32)">IsSurveyScored(Int32)</h4>
+  <div class="markdown level1 summary"><p>Check if survey has been set to be scored</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSurveyScored(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_MovePageBreakDown_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.MovePageBreakDown*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_MovePageBreakDown_System_Int32_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.MovePageBreakDown(System.Int32,System.Int32)">MovePageBreakDown(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Move a page break Down</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void MovePageBreakDown(int surveyId, int pageNumber)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td><p>ID of the survey to which we add the page break</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pageNumber</span></td>
+        <td><p>Page break to move down</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_MovePageBreakUp_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.MovePageBreakUp*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_MovePageBreakUp_System_Int32_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.MovePageBreakUp(System.Int32,System.Int32)">MovePageBreakUp(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Move a page break up</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void MovePageBreakUp(int surveyId, int pageNumber)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td><p>ID of the survey to which we add the page break</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pageNumber</span></td>
+        <td><p>Page break to move up</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_NSurveyAllowsMultipleSubmissions_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.NSurveyAllowsMultipleSubmissions*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_NSurveyAllowsMultipleSubmissions_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.NSurveyAllowsMultipleSubmissions(System.Int32)">NSurveyAllowsMultipleSubmissions(Int32)</h4>
+  <div class="markdown level1 summary"><p>Check if the survey allows multiple submission
+for the same nsurvey username </p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool NSurveyAllowsMultipleSubmissions(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_ResetQuotaEntries_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.ResetQuotaEntries*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_ResetQuotaEntries_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.ResetQuotaEntries(System.Int32)">ResetQuotaEntries(Int32)</h4>
+  <div class="markdown level1 summary"><p>Resets the current entries number calculated
+against the max. quota</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ResetQuotaEntries(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_ResetVotes_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.ResetVotes*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_ResetVotes_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.ResetVotes(System.Int32)">ResetVotes(Int32)</h4>
+  <div class="markdown level1 summary"><p>Sets all answers and vote count to 0</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ResetVotes(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td><p>Survey ID</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_SetFolderId_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.SetFolderId*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_SetFolderId_System_Nullable_System_Int32__System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.SetFolderId(System.Nullable{System.Int32},System.Int32)">SetFolderId(Nullable&lt;Int32&gt;, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetFolderId(int ? folderId, int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><span class="parametername">folderId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_SetFriendlyName_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.SetFriendlyName*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_SetFriendlyName_System_Int32_System_String_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.SetFriendlyName(System.Int32,System.String)">SetFriendlyName(Int32, String)</h4>
+  <div class="markdown level1 summary"><p>Add Friendly Deployement URl to survey for Web Publication</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SetFriendlyName(int surveyId, string friendlyName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">friendlyName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_SurveyExists_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.SurveyExists*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_SurveyExists_System_String_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.SurveyExists(System.String)">SurveyExists(String)</h4>
+  <div class="markdown level1 summary"><p>Check if a survey exists in the database</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SurveyExists(string title)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">title</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if the survey exists</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_TotalOfSurveys_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.TotalOfSurveys*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_TotalOfSurveys" data-uid="Votations.NSurvey.SQLServerDAL.Survey.TotalOfSurveys">TotalOfSurveys()</h4>
+  <div class="markdown level1 summary"><p>Returns the total of surveys stored in the database</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int TotalOfSurveys()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>Total of surveys</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_UnAssignUserFromSurvey_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.UnAssignUserFromSurvey*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_UnAssignUserFromSurvey_System_Int32_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.UnAssignUserFromSurvey(System.Int32,System.Int32)">UnAssignUserFromSurvey(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>UnAssigns a user from a survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UnAssignUserFromSurvey(int surveyId, int userId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">userId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_UpdateAccessPassword_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.UpdateAccessPassword*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_UpdateAccessPassword_System_Int32_System_String_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.UpdateAccessPassword(System.Int32,System.String)">UpdateAccessPassword(Int32, String)</h4>
+  <div class="markdown level1 summary"><p>Update the survey access password</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateAccessPassword(int surveyId, string accessPassword)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">accessPassword</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_UpdateAspSecuritySettings_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.UpdateAspSecuritySettings*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_UpdateAspSecuritySettings_System_Int32_System_Boolean_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.UpdateAspSecuritySettings(System.Int32,System.Boolean)">UpdateAspSecuritySettings(Int32, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Update the security settings</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateAspSecuritySettings(int surveyId, bool allowMultipleSubmissions)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">allowMultipleSubmissions</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_UpdateCookieExpiration_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.UpdateCookieExpiration*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_UpdateCookieExpiration_System_Int32_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.UpdateCookieExpiration(System.Int32,System.Int32)">UpdateCookieExpiration(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Update the cookie expiration time</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateCookieExpiration(int surveyId, int cookieExpires)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">cookieExpires</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_UpdateIPExpiration_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.UpdateIPExpiration*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_UpdateIPExpiration_System_Int32_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.UpdateIPExpiration(System.Int32,System.Int32)">UpdateIPExpiration(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Update the ip expiration time</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateIPExpiration(int surveyId, int ipExpires)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">ipExpires</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_UpdateMessageCondition_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.UpdateMessageCondition*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_UpdateMessageCondition_Votations_NSurvey_Data_MessageConditionData_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.UpdateMessageCondition(Votations.NSurvey.Data.MessageConditionData)">UpdateMessageCondition(MessageConditionData)</h4>
+  <div class="markdown level1 summary"><p>Updates a message condition</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateMessageCondition(MessageConditionData updatedMessageCondition)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.MessageConditionData.html">MessageConditionData</a></td>
+        <td><span class="parametername">updatedMessageCondition</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_UpdateNSurveySecuritySettings_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.UpdateNSurveySecuritySettings*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_UpdateNSurveySecuritySettings_System_Int32_System_Boolean_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.UpdateNSurveySecuritySettings(System.Int32,System.Boolean)">UpdateNSurveySecuritySettings(Int32, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Update the nsurvey security settings</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateNSurveySecuritySettings(int surveyId, bool allowMultipleNSurveySubmissions)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">allowMultipleNSurveySubmissions</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_UpdateOnlyInvited_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.UpdateOnlyInvited*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_UpdateOnlyInvited_System_Int32_System_Boolean_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.UpdateOnlyInvited(System.Int32,System.Boolean)">UpdateOnlyInvited(Int32, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Update the survey only invited status</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateOnlyInvited(int surveyId, bool onlyInvited)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">onlyInvited</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_UpdateQuotaSettings_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.UpdateQuotaSettings*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_UpdateQuotaSettings_Votations_NSurvey_Data_SurveyEntryQuotaData_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.UpdateQuotaSettings(Votations.NSurvey.Data.SurveyEntryQuotaData)">UpdateQuotaSettings(SurveyEntryQuotaData)</h4>
+  <div class="markdown level1 summary"><p>Updates or creates if it doesnt exists 
+quota settings for the survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateQuotaSettings(SurveyEntryQuotaData surveyQuota)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.SurveyEntryQuotaData.html">SurveyEntryQuotaData</a></td>
+        <td><span class="parametername">surveyQuota</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_UpdateSaveTokenUserData_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.UpdateSaveTokenUserData*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_UpdateSaveTokenUserData_System_Int32_System_Boolean_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.UpdateSaveTokenUserData(System.Int32,System.Boolean)">UpdateSaveTokenUserData(Int32, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Update the survey only invited status</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateSaveTokenUserData(int surveyId, bool saveData)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">saveData</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_UpdateSurvey_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.UpdateSurvey*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_UpdateSurvey_Votations_NSurvey_Data_SurveyData_System_String_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.UpdateSurvey(Votations.NSurvey.Data.SurveyData,System.String)">UpdateSurvey(SurveyData, String)</h4>
+  <div class="markdown level1 summary"><p>Update the database with the given survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateSurvey(SurveyData updatedSurvey, string languageCode)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.SurveyData.html">SurveyData</a></td>
+        <td><span class="parametername">updatedSurvey</span></td>
+        <td><p>survey to update, must contain the surveyid</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">languageCode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_UpdateSurveyPageOptions_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.UpdateSurveyPageOptions*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_UpdateSurveyPageOptions_Votations_NSurvey_Data_PageOptionData_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.UpdateSurveyPageOptions(Votations.NSurvey.Data.PageOptionData)">UpdateSurveyPageOptions(PageOptionData)</h4>
+  <div class="markdown level1 summary"><p>Update the options that were setup for the page</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateSurveyPageOptions(PageOptionData updatedPageOptions)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.PageOptionData.html">PageOptionData</a></td>
+        <td><span class="parametername">updatedPageOptions</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Survey_UpdateUnAuthentifiedUserActions_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.UpdateUnAuthentifiedUserActions*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Survey_UpdateUnAuthentifiedUserActions_System_Int32_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Survey.UpdateUnAuthentifiedUserActions(System.Int32,System.Int32)">UpdateUnAuthentifiedUserActions(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Updates the survey to a new unAuthentified user action</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateUnAuthentifiedUserActions(int surveyId, int unAuthentifiedUserActionId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">unAuthentifiedUserActionId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Votations.NSurvey.IDAL.ISurvey.html">ISurvey</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy;2017 Survey&trade; Project
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

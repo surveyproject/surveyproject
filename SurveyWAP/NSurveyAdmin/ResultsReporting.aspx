@@ -1,12 +1,9 @@
 ﻿<%@ Page Language="c#" MasterPageFile="MsterPageTabs.master" AutoEventWireup="false"
     Inherits="Votations.NSurvey.WebAdmin.ResultsReporting" CodeBehind="ResultsReporting.aspx.cs" %>
 
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="FooterControl" Src="UserControls/FooterControl.ascx" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
+    
+        <div id="Panel" class="Panel">
 
     <script type="text/javascript">
         $(function () {
@@ -33,7 +30,7 @@
 
         var printPreviewObject = '<object id="printPreviewElement" width="0" height="0" classid="CLSID:8856F961-340A-11D0-A96B-00C04FD705A2"></object>';
 
-        printWindow.document.write('<link rel="stylesheet" type="text/css" href="../nsurveyadmin/css/voterreport.css" />' + printContent.innerHTML);
+                    printWindow.document.write('<link rel="stylesheet" type="text/css" href="../Content/surveyadmin/voterreport.css" />' + printContent.innerHTML);
 
         printWindow.document.write(printPreviewObject);
 
@@ -51,12 +48,16 @@
     }
     // -->
                 </script>
-            <div style="position: relative; left: 700px; width: 10px;  top: 15px; clear:none;">
-                <input type="image" class="PrintImage" alt="print" src="images/Print_32X32_Standard.png"
-                    title="Print" onclick="JavaScript: printPreviewDiv('DivPrint');" />
-                </div>
 
-               <fieldset style="width:750px; margin-left:12px; margin-top:15px;" title="">
+
+                                                    <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/new/Graphic%20Reports.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a>
+                                        </div>
+
+               <fieldset>
         <legend class="titleFont titleLegend"><asp:Literal ID="SurveyResultsTitle" runat="server" EnableViewState="False">Survey results</asp:Literal>
         </legend><br />
    <ol>
@@ -65,17 +66,18 @@
                 <asp:RadioButtonList runat="server" ID="rblReports" RepeatDirection="Vertical"
                     OnSelectedIndexChanged="rbListSelectedIndexChanged" Width="700" AutoPostBack="true" CellPadding="10">
                     <asp:ListItem Text="GraphicalReports" Value="GR" Selected="True"></asp:ListItem>
-                    <asp:ListItem Text="VoterReports" Value="TR"></asp:ListItem>
                     <asp:ListItem Text="CrossTabulationReports" Value="CTR"></asp:ListItem>
+                    <asp:ListItem Text="SSRSReports" Value="SSRS"></asp:ListItem>
                 </asp:RadioButtonList>
-
-
-                          </li>
+       </li>
   </ol>
                     <br />
                     </fieldset>
-
-                     <fieldset style="width:750px; margin-left:12px; margin-top:15px;" title="">
+                        <div class="helpDiv">
+                <input type="image" class="PrintImage" alt="print" src="<%=Page.ResolveUrl("~/images/Print_32X32_Standard.png")%>"
+                    title="Print" onclick="JavaScript: printPreviewDiv('DivPrint');" />
+                </div>
+                     <fieldset>
                            <br /> <ol>
      <li>
                                             <asp:Label ID="QuestionsResultsDisplaylabel" runat="server" AssociatedControlID="QuestionsDropDownList">Question's results to display</asp:Label>
@@ -139,4 +141,5 @@
   </ol>
                     <br />
                     </fieldset>
-</div></div></asp:Content>
+                            <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
+</div></asp:Content>

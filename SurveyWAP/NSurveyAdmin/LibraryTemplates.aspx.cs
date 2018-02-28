@@ -1,5 +1,5 @@
 /**************************************************************************************************
-	Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com)	
+	Survey™ Project changes: copyright (c) 2009-2017, W3DevPro™ (https://github.com/surveyproject)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -107,11 +107,11 @@ namespace Votations.NSurvey.WebAdmin
                 LanguagesDropdownlist.Items.Clear();
                 foreach (MultiLanguageData.MultiLanguagesRow language in surveyLanguages.MultiLanguages)
                 {
-                    ListItem defaultItem = new ListItem(GetPageResource(language.LanguageDescription), language.LanguageCode);
+                    ListItem defaultItem = new ListItem(GetPageLanguageCodes(language.LanguageDescription), language.LanguageCode);
                     if (language.DefaultLanguage)
                     {
                         defaultItem.Value = "";
-                        defaultItem.Text += " " + GetPageResource("LanguageDefaultText");
+                        defaultItem.Text += " " + GetPageLanguageCodes("LanguageDefaultText");
                     }
 
                     LanguagesDropdownlist.Items.Add(defaultItem);

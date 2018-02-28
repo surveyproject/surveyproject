@@ -1,5 +1,5 @@
 /**************************************************************************************************
-	Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com)	
+	Survey™ Project changes: copyright (c) 2009-2017, W3DevPro™ (https://github.com/surveyproject)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -38,7 +38,7 @@ namespace Votations.NSurvey.WebAdmin
     /// </summary>
     public partial class TakeSurvey : PageBase
     {
-        protected SurveyListControl SurveyList;
+        //protected SurveyListControl SurveyList;
         protected System.Web.UI.WebControls.Label MessageLabel;
         new protected HeaderControl Header;
         protected System.Web.UI.WebControls.TextBox tbNetSource;
@@ -46,19 +46,6 @@ namespace Votations.NSurvey.WebAdmin
         protected SurveyBox SurveyPreview;
         protected SurveyLayoutData _userSettings;
 
-
-        //public bool SurveyStarted
-        //{
-        //    get
-        //    {
-        //        return ViewState["SurveyStarted"] == null ? false : (bool)ViewState["SurveyStarted"];
-        //    }
-
-        //    set
-        //    {
-        //        ViewState["SurveyStarted"] = value;
-        //    }
-        //}
 
         public bool SurveyStarted;
 
@@ -78,23 +65,13 @@ namespace Votations.NSurvey.WebAdmin
 
             UITabList.SetTakeSurveyTabs((MsterPageTabs)Page.Master, UITabList.TakeSurveyTabs.TakeSurvey);
 
-            //if(!SurveyStarted) InitiateSurvey();
-
             Votations.NSurvey.SQLServerDAL.SurveyLayout u = new Votations.NSurvey.SQLServerDAL.SurveyLayout();
             _userSettings = u.SurveyLayoutGet(((PageBase)Page).getSurveyId());
 
-            string href = ResolveUrl("~/NSurveyAdmin/CSS/surveypreview.css");
-
-
             if (!(_userSettings == null || _userSettings.SurveyLayout.Count == 0))
             {
-
-
                 if (!string.IsNullOrEmpty(_userSettings.SurveyLayout[0].SurveyCss))
                 {
-
-                    // href=ResolveUrl(UserSettingsConstants.CssStoragePath + "/" + SurveyId.ToString() + "/" + _userSettings.SurveyLayout[0].SurveyCss);
-
                     Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
                     HtmlGenericControl css2 = new HtmlGenericControl("link");
                     css2.Attributes.Add("rel", "stylesheet");
@@ -103,31 +80,8 @@ namespace Votations.NSurvey.WebAdmin
                     Page.Header.Controls.Add(css2);
 
                 }
-                else
-                {
-                    Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-                    HtmlGenericControl css = new HtmlGenericControl("link");
-                    css.Attributes.Add("rel", "stylesheet");
-                    css.Attributes.Add("type", "text/css");
-                    css.Attributes.Add("href", href);
-                    Page.Header.Controls.Add(css);
-                }
 
-                //    this.SurveyHeaderCustom.Text = HttpUtility.HtmlDecode(_userSettings.SurveyLayout[0].SurveyHeaderText);
-                //   this.SurveyFooterCustom.Text = HttpUtility.HtmlDecode(_userSettings.SurveyLayout[0].SurveyFooterText);
             }
-            else
-            {
-                Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-                HtmlGenericControl css = new HtmlGenericControl("link");
-                css.Attributes.Add("rel", "stylesheet");
-                css.Attributes.Add("type", "text/css");
-                css.Attributes.Add("href", href);
-                Page.Header.Controls.Add(css);
-            }
-
-
-
         }
 
         private void InitiateSurvey(int surveyId=-1)
@@ -145,15 +99,10 @@ namespace Votations.NSurvey.WebAdmin
             ChooseSurveyLabel.Visible = false;
        
             SurveyPreview.Visible = true;
-
-
-
             
             // Header.SurveyId = SurveyId;
                 ((Wap)Master.Master).HeaderControl.SurveyId = ((PageBase)Page).getSurveyId();
                 SurveyPreview.SurveyId = ((PageBase)Page).getSurveyId();
-
-
 
             if (!Page.IsPostBack)
             {

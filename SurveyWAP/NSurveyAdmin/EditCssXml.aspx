@@ -2,30 +2,30 @@
 
 <asp:content id="Content1" contentplaceholderid="ContentPlaceHolder1" runat="Server">
 
-        <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
 
-                        <div style="position: relative; left: 720px; width: 10px; top: 13px; clear: none;">
+        <div id="Panel" class="Panel">
+
+                        <div class="helpDiv">
                 <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/CssXml.aspx"
                     title="Click for more Information">
                     <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
                 </a>
             </div>
 
-                   <fieldset style="width:750px; margin-left:12px; margin-top:15px;">
+                   <fieldset>
         <legend class="titleFont titleLegend">
           <asp:Literal ID="CssXmlLegend" runat="server" EnableViewState="false">Surveylayout CSS XML</asp:Literal>  
         </legend><br />
 
  <ol>
-     <li>
+     <li> <div class="rounded_corners" style="background-color:#507CD1;">
             <asp:GridView ID="CssXmlGridView" Width="100%" PagerSettings-Mode="Numeric"
                 ShowFooter="true"
                 AutoGenerateColumns="false"  
                 runat="server" 
                 AllowPaging="true" 
-                PageSize="20"             
-                 CellSpacing="25"   
+                PageSize="12"             
+                CellSpacing="25"   
                 
                 OnRowCancelingEdit ="CssXmlGridView_RowCancelingEdit"
                 OnRowDeleting ="CssXmlGridView_RowDeleting"
@@ -35,7 +35,9 @@
                 OnPageIndexChanging="OnPageIndexChanging"  
                 CellPadding="4" 
                 ForeColor="#333333" 
+                BackColor="#507CD1"
                 GridLines="None">
+                                            <PagerStyle HorizontalAlign="Center" Height="35" BackColor="#2461BF" CssClass="GridPager" />
 
                                 <AlternatingRowStyle BackColor="White"></AlternatingRowStyle>
                 <Columns>
@@ -93,9 +95,7 @@
 
                 <FooterStyle BackColor="#EFF3FB" Font-Bold="True" ForeColor="White"></FooterStyle>
 
-                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White"></HeaderStyle>
-
-                <PagerStyle HorizontalAlign="Center" CssClass="cssxmlpaging" BackColor="#2461BF" Font-Size="1.3em" ForeColor="White"></PagerStyle>
+                <HeaderStyle BackColor="#507CD1" Height="25" BorderWidth="4" BorderStyle="Solid" BorderColor="#507CD1" Font-Bold="True" ForeColor="White"></HeaderStyle>
 
                 <RowStyle BackColor="#EFF3FB"></RowStyle>
 
@@ -109,8 +109,10 @@
 
                 <SortedDescendingHeaderStyle BackColor="#4870BE"></SortedDescendingHeaderStyle>
             </asp:GridView>
+         </div>
 </li></ol>
             <br /><br />
                                    </fieldset>
-            </div></div>
+             <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
+            </div>
     </asp:content>

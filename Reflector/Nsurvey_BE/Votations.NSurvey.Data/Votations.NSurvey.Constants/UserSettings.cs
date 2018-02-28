@@ -7,8 +7,9 @@ namespace Votations.NSurvey.Constants
 {
     public class UserSettingsConstants
     {
-        public const string CssStoragePath = "~/NSurveyAdmin/CSS/UserCSS";
-        public const string ImgStoragePath = "~/NSurveyAdmin/Images/UserImg";
+        public const string CssStoragePath = "~/Content/surveyform/UserCSS";
+        //never used - see CKeditor/ Filemanager instead:
+        //public const string ImgStoragePath = "~/NSurveyAdmin/Images/UserImg";
 
     }
 }

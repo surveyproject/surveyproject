@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Web Application Project")]
-[assembly: AssemblyDescription("Survey™ Project 2.4")]
+[assembly: AssemblyTitle("SurveyProject Webapplication")]
+[assembly: AssemblyDescription("Survey™ Project 2.5")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("W3DevPro™")]
 [assembly: AssemblyProduct("Survey™ Project Webapplication")]
-[assembly: AssemblyCopyright("(c) 2004 Thomas Zumbrunn - (c) 2009/2017 W3DevPro™")]
+[assembly: AssemblyCopyright("(c) W3DevPro™ 2009/2018 - (c) Thomas Zumbrunn 2004")]
 [assembly: AssemblyTrademark("Survey™ Project")]
 [assembly: AssemblyCulture("")]
 
@@ -31,5 +31,5 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("2.4.0.0")]
-[assembly: AssemblyFileVersion("2.4.0.0")]
+[assembly: AssemblyVersion("2.5.0.0")]
+[assembly: AssemblyFileVersion("2.5.0.0")]

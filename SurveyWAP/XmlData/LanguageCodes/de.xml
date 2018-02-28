@@ -1,0 +1,2415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data version="2.5" id="1" name="Afar_aa">
+    <value>Afar</value>
+  </data>
+  <data version="2.5" id="2" name="Afar_Djibouti_aa-DJ">
+    <value>Afar / Djibouti</value>
+  </data>
+  <data version="2.5" id="3" name="Afar_Eritrea_aa-ER">
+    <value>Afar / Eritrea</value>
+  </data>
+  <data version="2.5" id="4" name="Afar_Ethiopia_aa-ET">
+    <value>Afar / Ethiopia</value>
+  </data>
+  <data version="2.5" id="5" name="Afrikaans_af">
+    <value>Afrikaans</value>
+  </data>
+  <data version="2.5" id="6" name="Afrikaans_Namibia_af-NA">
+    <value>Afrikaans / Namibia</value>
+  </data>
+  <data version="2.5" id="7" name="Afrikaans_South Africa_af-ZA">
+    <value>Afrikaans / South Africa</value>
+  </data>
+  <data version="2.5" id="8" name="Aghem_agq">
+    <value>Aghem</value>
+  </data>
+  <data version="2.5" id="9" name="Aghem_Cameroon_agq-CM">
+    <value>Aghem / Cameroon</value>
+  </data>
+  <data version="2.5" id="10" name="Akan_ak">
+    <value>Akan</value>
+  </data>
+  <data version="2.5" id="11" name="Akan_Ghana_ak-GH">
+    <value>Akan / Ghana</value>
+  </data>
+  <data version="2.5" id="12" name="Albanian_sq">
+    <value>Albanian</value>
+  </data>
+  <data version="2.5" id="13" name="Albanian_Albania_sq-AL">
+    <value>Albanian / Albania</value>
+  </data>
+  <data version="2.5" id="14" name="Albanian_Macedonia, FYRO_sq-MK">
+    <value>Albanian / Macedonia, FYRO</value>
+  </data>
+  <data version="2.5" id="15" name="Alsatian_gsw">
+    <value>Alsatian</value>
+  </data>
+  <data version="2.5" id="16" name="Alsatian_France_gsw-FR">
+    <value>Alsatian / France</value>
+  </data>
+  <data version="2.5" id="17" name="Alsatian_Liechtenstein_gsw-LI">
+    <value>Alsatian / Liechtenstein</value>
+  </data>
+  <data version="2.5" id="18" name="Alsatian_Switzerland_gsw-CH">
+    <value>Alsatian / Switzerland</value>
+  </data>
+  <data version="2.5" id="19" name="Amharic_am">
+    <value>Amharic</value>
+  </data>
+  <data version="2.5" id="20" name="Amharic_Ethiopia_am-ET">
+    <value>Amharic / Ethiopia</value>
+  </data>
+  <data version="2.5" id="21" name="Arabic_ar">
+    <value>Arabic</value>
+  </data>
+  <data version="2.5" id="22" name="Arabic_Algeria_ar-DZ">
+    <value>Arabic / Algeria</value>
+  </data>
+  <data version="2.5" id="23" name="Arabic_Bahrain_ar-BH">
+    <value>Arabic / Bahrain</value>
+  </data>
+  <data version="2.5" id="24" name="Arabic_Chad_ar-TD">
+    <value>Arabic / Chad</value>
+  </data>
+  <data version="2.5" id="25" name="Arabic_Comoros_ar-KM">
+    <value>Arabic / Comoros</value>
+  </data>
+  <data version="2.5" id="26" name="Arabic_Djibouti_ar-DJ">
+    <value>Arabic / Djibouti</value>
+  </data>
+  <data version="2.5" id="27" name="Arabic_Egypt_ar-EG">
+    <value>Arabic / Egypt</value>
+  </data>
+  <data version="2.5" id="28" name="Arabic_Eritrea_ar-ER">
+    <value>Arabic / Eritrea</value>
+  </data>
+  <data version="2.5" id="29" name="Arabic_Iraq_ar-IQ">
+    <value>Arabic / Iraq</value>
+  </data>
+  <data version="2.5" id="30" name="Arabic_Israel_ar-IL">
+    <value>Arabic / Israel</value>
+  </data>
+  <data version="2.5" id="31" name="Arabic_Jordan_ar-JO">
+    <value>Arabic / Jordan</value>
+  </data>
+  <data version="2.5" id="32" name="Arabic_Kuwait_ar-KW">
+    <value>Arabic / Kuwait</value>
+  </data>
+  <data version="2.5" id="33" name="Arabic_Lebanon_ar-LB">
+    <value>Arabic / Lebanon</value>
+  </data>
+  <data version="2.5" id="34" name="Arabic_Libya_ar-LY">
+    <value>Arabic / Libya</value>
+  </data>
+  <data version="2.5" id="35" name="Arabic_Mauritania_ar-MR">
+    <value>Arabic / Mauritania</value>
+  </data>
+  <data version="2.5" id="36" name="Arabic_Morocco_ar-MA">
+    <value>Arabic / Morocco</value>
+  </data>
+  <data version="2.5" id="37" name="Arabic_Oman_ar-OM">
+    <value>Arabic / Oman</value>
+  </data>
+  <data version="2.5" id="38" name="Arabic_Palestinian Authority_ar-PS">
+    <value>Arabic / Palestinian Authority</value>
+  </data>
+  <data version="2.5" id="39" name="Arabic_Qatar_ar-QA">
+    <value>Arabic / Qatar</value>
+  </data>
+  <data version="2.5" id="40" name="Arabic_Saudi Arabia_ar-SA">
+    <value>Arabic / Saudi Arabia</value>
+  </data>
+  <data version="2.5" id="41" name="Arabic_Somalia_ar-SO">
+    <value>Arabic / Somalia</value>
+  </data>
+  <data version="2.5" id="42" name="Arabic_South Sudan_ar-SS">
+    <value>Arabic / South Sudan</value>
+  </data>
+  <data version="2.5" id="43" name="Arabic_Sudan_ar-SD">
+    <value>Arabic / Sudan</value>
+  </data>
+  <data version="2.5" id="44" name="Arabic_Syria_ar-SY">
+    <value>Arabic / Syria</value>
+  </data>
+  <data version="2.5" id="45" name="Arabic_Tunisia_ar-TN">
+    <value>Arabic / Tunisia</value>
+  </data>
+  <data version="2.5" id="46" name="Arabic_U.A.E._ar-AE">
+    <value>Arabic / U.A.E.</value>
+  </data>
+  <data version="2.5" id="47" name="Arabic_World_ar-001">
+    <value>Arabic / World</value>
+  </data>
+  <data version="2.5" id="48" name="Arabic_Yemen_ar-YE">
+    <value>Arabic / Yemen</value>
+  </data>
+  <data version="2.5" id="49" name="Armenian_hy">
+    <value>Armenian</value>
+  </data>
+  <data version="2.5" id="50" name="Armenian_Armenia_hy-AM">
+    <value>Armenian / Armenia</value>
+  </data>
+  <data version="2.5" id="51" name="Assamese_as">
+    <value>Assamese</value>
+  </data>
+  <data version="2.5" id="52" name="Assamese_India_as-IN">
+    <value>Assamese / India</value>
+  </data>
+  <data version="2.5" id="53" name="Asturian_ast">
+    <value>Asturian</value>
+  </data>
+  <data version="2.5" id="54" name="Asturian_Spain_ast-ES">
+    <value>Asturian / Spain</value>
+  </data>
+  <data version="2.5" id="55" name="Asu_asa">
+    <value>Asu</value>
+  </data>
+  <data version="2.5" id="56" name="Asu_Tanzania_asa-TZ">
+    <value>Asu / Tanzania</value>
+  </data>
+  <data version="2.5" id="57" name="Azerbaijani (Cyrillic)_az-Cyrl">
+    <value>Azerbaijani (Cyrillic)</value>
+  </data>
+  <data version="2.5" id="58" name="Azerbaijani (Cyrillic)_Azerbaijan_az-Cyrl-AZ">
+    <value>Azerbaijani (Cyrillic) / Azerbaijan</value>
+  </data>
+  <data version="2.5" id="59" name="Azerbaijani (Latin)_az">
+    <value>Azerbaijani (Latin)</value>
+  </data>
+  <data version="2.5" id="60" name="Azerbaijani (Latin)_az-Latn">
+    <value>Azerbaijani (Latin)</value>
+  </data>
+  <data version="2.5" id="61" name="Azerbaijani (Latin)_Azerbaijan_az-Latn-AZ">
+    <value>Azerbaijani (Latin) / Azerbaijan</value>
+  </data>
+  <data version="2.5" id="62" name="Bafia_ksf">
+    <value>Bafia</value>
+  </data>
+  <data version="2.5" id="63" name="Bafia_Cameroon_ksf-CM">
+    <value>Bafia / Cameroon</value>
+  </data>
+  <data version="2.5" id="64" name="Bamanankan_bm">
+    <value>Bamanankan</value>
+  </data>
+  <data version="2.5" id="65" name="Bamanankan (Latin)_Mali_bm-Latn-ML">
+    <value>Bamanankan (Latin) / Mali</value>
+  </data>
+  <data version="2.5" id="66" name="Bangla_bn">
+    <value>Bangla</value>
+  </data>
+  <data version="2.5" id="67" name="Bangla_Bangladesh_bn-BD">
+    <value>Bangla / Bangladesh</value>
+  </data>
+  <data version="2.5" id="68" name="Bangla_India_bn-IN">
+    <value>Bangla / India</value>
+  </data>
+  <data version="2.5" id="69" name="Basaa_bas">
+    <value>Basaa</value>
+  </data>
+  <data version="2.5" id="70" name="Basaa_Cameroon_bas-CM">
+    <value>Basaa / Cameroon</value>
+  </data>
+  <data version="2.5" id="71" name="Bashkir_ba">
+    <value>Bashkir</value>
+  </data>
+  <data version="2.5" id="72" name="Bashkir_Russia_ba-RU">
+    <value>Bashkir / Russia</value>
+  </data>
+  <data version="2.5" id="73" name="Basque_eu">
+    <value>Basque</value>
+  </data>
+  <data version="2.5" id="74" name="Basque_Spain_eu-ES">
+    <value>Basque / Spain</value>
+  </data>
+  <data version="2.5" id="75" name="Belarusian_be">
+    <value>Belarusian</value>
+  </data>
+  <data version="2.5" id="76" name="Belarusian_Belarus_be-BY">
+    <value>Belarusian / Belarus</value>
+  </data>
+  <data version="2.5" id="77" name="Bemba_bem">
+    <value>Bemba</value>
+  </data>
+  <data version="2.5" id="78" name="Bemba_Zambia_bem-ZM">
+    <value>Bemba / Zambia</value>
+  </data>
+  <data version="2.5" id="79" name="Bena_bez">
+    <value>Bena</value>
+  </data>
+  <data version="2.5" id="80" name="Bena_Tanzania_bez-TZ">
+    <value>Bena / Tanzania</value>
+  </data>
+  <data version="2.5" id="81" name="Blin_byn">
+    <value>Blin</value>
+  </data>
+  <data version="2.5" id="82" name="Blin_Eritrea_byn-ER">
+    <value>Blin / Eritrea</value>
+  </data>
+  <data version="2.5" id="83" name="Bodo_brx">
+    <value>Bodo</value>
+  </data>
+  <data version="2.5" id="84" name="Bodo_India_brx-IN">
+    <value>Bodo / India</value>
+  </data>
+  <data version="2.5" id="85" name="Bosnian (Cyrillic)_bs-Cyrl">
+    <value>Bosnian (Cyrillic)</value>
+  </data>
+  <data version="2.5" id="86" name="Bosnian (Cyrillic)_Bosnia and Herzegovina_bs-Cyrl-BA">
+    <value>Bosnian (Cyrillic) / Bosnia and Herzegovina</value>
+  </data>
+  <data version="2.5" id="87" name="Bosnian (Latin)_bs-Latn">
+    <value>Bosnian (Latin)</value>
+  </data>
+  <data version="2.5" id="88" name="Bosnian (Latin)_bs">
+    <value>Bosnian (Latin)</value>
+  </data>
+  <data version="2.5" id="89" name="Bosnian (Latin)_Bosnia and Herzegovina_bs-Latn-BA">
+    <value>Bosnian (Latin) / Bosnia and Herzegovina</value>
+  </data>
+  <data version="2.5" id="90" name="Breton_br">
+    <value>Breton</value>
+  </data>
+  <data version="2.5" id="91" name="Breton_France_br-FR">
+    <value>Breton / France</value>
+  </data>
+  <data version="2.5" id="92" name="Bulgarian_bg">
+    <value>Bulgarian</value>
+  </data>
+  <data version="2.5" id="93" name="Bulgarian_Bulgaria_bg-BG">
+    <value>Bulgarian / Bulgaria</value>
+  </data>
+  <data version="2.5" id="94" name="Burmese_my">
+    <value>Burmese</value>
+  </data>
+  <data version="2.5" id="95" name="Burmese_Myanmar_my-MM">
+    <value>Burmese / Myanmar</value>
+  </data>
+  <data version="2.5" id="96" name="Catalan_ca">
+    <value>Catalan</value>
+  </data>
+  <data version="2.5" id="97" name="Catalan_Andorra_ca-AD">
+    <value>Catalan / Andorra</value>
+  </data>
+  <data version="2.5" id="98" name="Catalan_France_ca-FR">
+    <value>Catalan / France</value>
+  </data>
+  <data version="2.5" id="99" name="Catalan_Italy_ca-IT">
+    <value>Catalan / Italy</value>
+  </data>
+  <data version="2.5" id="100" name="Catalan_Spain_ca-ES">
+    <value>Catalan / Spain</value>
+  </data>
+  <data version="2.5" id="101" name="Central Atlas Tamazight (Latin)_Morocco_tzm-Latn-MA">
+    <value>Central Atlas Tamazight (Latin) / Morocco</value>
+  </data>
+  <data version="2.5" id="102" name="Central Kurdish_ku">
+    <value>Central Kurdish</value>
+  </data>
+  <data version="2.5" id="103" name="Central Kurdish_ku-Arab">
+    <value>Central Kurdish</value>
+  </data>
+  <data version="2.5" id="104" name="Central Kurdish_Iraq_ku-Arab-IQ">
+    <value>Central Kurdish / Iraq</value>
+  </data>
+  <data version="2.5" id="105" name="Chechen_Russia_cd-RU">
+    <value>Chechen / Russia</value>
+  </data>
+  <data version="2.5" id="106" name="Cherokee_chr">
+    <value>Cherokee</value>
+  </data>
+  <data version="2.5" id="107" name="Cherokee_chr-Cher">
+    <value>Cherokee</value>
+  </data>
+  <data version="2.5" id="108" name="Cherokee_United States_chr-Cher-US">
+    <value>Cherokee / United States</value>
+  </data>
+  <data version="2.5" id="109" name="Chiga_cgg">
+    <value>Chiga</value>
+  </data>
+  <data version="2.5" id="110" name="Chiga_Uganda_cgg-UG">
+    <value>Chiga / Uganda</value>
+  </data>
+  <data version="2.5" id="111" name="Chinese (Simplified)_zh-Hans">
+    <value>Chinese (Simplified)</value>
+  </data>
+  <data version="2.5" id="112" name="Chinese (Simplified)_zh">
+    <value>Chinese (Simplified)</value>
+  </data>
+  <data version="2.5" id="113" name="Chinese (Simplified)_People's Republic of China_zh-CN">
+    <value>Chinese (Simplified) / People's Republic of China</value>
+  </data>
+  <data version="2.5" id="114" name="Chinese (Simplified)_Singapore_zh-SG">
+    <value>Chinese (Simplified) / Singapore</value>
+  </data>
+  <data version="2.5" id="115" name="Chinese (Traditional)_zh-Hant">
+    <value>Chinese (Traditional)</value>
+  </data>
+  <data version="2.5" id="116" name="Chinese (Traditional)_Hong Kong S.A.R._zh-HK">
+    <value>Chinese (Traditional) / Hong Kong S.A.R.</value>
+  </data>
+  <data version="2.5" id="117" name="Chinese (Traditional)_Macao S.A.R._zh-MO">
+    <value>Chinese (Traditional) / Macao S.A.R.</value>
+  </data>
+  <data version="2.5" id="118" name="Chinese (Traditional)_Taiwan_zh-TW">
+    <value>Chinese (Traditional) / Taiwan</value>
+  </data>
+  <data version="2.5" id="119" name="Church Slavic_Russia_cu-RU">
+    <value>Church Slavic / Russia</value>
+  </data>
+  <data version="2.5" id="120" name="Congo Swahili_swc">
+    <value>Congo Swahili</value>
+  </data>
+  <data version="2.5" id="121" name="Congo Swahili_Congo DRC_swc-CD">
+    <value>Congo Swahili / Congo DRC</value>
+  </data>
+  <data version="2.5" id="122" name="Cornish_kw">
+    <value>Cornish</value>
+  </data>
+  <data version="2.5" id="123" name="Cornish_United Kingdom_kw-GB">
+    <value>Cornish / United Kingdom</value>
+  </data>
+  <data version="2.5" id="124" name="Corsican_co">
+    <value>Corsican</value>
+  </data>
+  <data version="2.5" id="125" name="Corsican_France_co-FR">
+    <value>Corsican / France</value>
+  </data>
+  <data version="2.5" id="126" name="Croatian_bs, hr, or sr">
+    <value>Croatian</value>
+  </data>
+  <data version="2.5" id="127" name="Croatian_Croatia_hr-HR">
+    <value>Croatian / Croatia</value>
+  </data>
+  <data version="2.5" id="128" name="Croatian (Latin)_Bosnia and Herzegovina_hr-BA">
+    <value>Croatian (Latin) / Bosnia and Herzegovina</value>
+  </data>
+  <data version="2.5" id="129" name="Czech_cs">
+    <value>Czech</value>
+  </data>
+  <data version="2.5" id="130" name="Czech_Czech Republic_cs-CZ">
+    <value>Czech / Czech Republic</value>
+  </data>
+  <data version="2.5" id="131" name="Danish_da">
+    <value>Danish</value>
+  </data>
+  <data version="2.5" id="132" name="Danish_Denmark_da-DK">
+    <value>Danish / Denmark</value>
+  </data>
+  <data version="2.5" id="133" name="Danish_Greenland_da-GL">
+    <value>Danish / Greenland</value>
+  </data>
+  <data version="2.5" id="134" name="Dari_prs">
+    <value>Dari</value>
+  </data>
+  <data version="2.5" id="135" name="Dari_Afghanistan_prs-AF">
+    <value>Dari / Afghanistan</value>
+  </data>
+  <data version="2.5" id="136" name="Divehi_dv">
+    <value>Divehi</value>
+  </data>
+  <data version="2.5" id="137" name="Divehi_Maldives_dv-MV">
+    <value>Divehi / Maldives</value>
+  </data>
+  <data version="2.5" id="138" name="Duala_dua">
+    <value>Duala</value>
+  </data>
+  <data version="2.5" id="139" name="Duala_Cameroon_dua-CM">
+    <value>Duala / Cameroon</value>
+  </data>
+  <data version="2.5" id="140" name="Dutch_nl">
+    <value>Dutch</value>
+  </data>
+  <data version="2.5" id="141" name="Dutch_Aruba_nl-AW">
+    <value>Dutch / Aruba</value>
+  </data>
+  <data version="2.5" id="142" name="Dutch_Belgium_nl-BE">
+    <value>Dutch / Belgium</value>
+  </data>
+  <data version="2.5" id="143" name="Dutch_Bonaire, Sint Eustatius and Saba_nl-BQ">
+    <value>Dutch / Bonaire, Sint Eustatius and Saba</value>
+  </data>
+  <data version="2.5" id="144" name="Dutch_Curaçao_nl-CW">
+    <value>Dutch / Curaçao</value>
+  </data>
+  <data version="2.5" id="145" name="Dutch_Netherlands_nl-NL">
+    <value>Dutch / Netherlands</value>
+  </data>
+  <data version="2.5" id="146" name="Dutch_Sint Maarten_nl-SX">
+    <value>Dutch / Sint Maarten</value>
+  </data>
+  <data version="2.5" id="147" name="Dutch_Suriname_nl-SR">
+    <value>Dutch / Suriname</value>
+  </data>
+  <data version="2.5" id="148" name="Dzongkha_dz">
+    <value>Dzongkha</value>
+  </data>
+  <data version="2.5" id="149" name="Dzongkha_Bhutan_dz-BT">
+    <value>Dzongkha / Bhutan</value>
+  </data>
+  <data version="2.5" id="150" name="Embu_ebu">
+    <value>Embu</value>
+  </data>
+  <data version="2.5" id="151" name="Embu_Kenya_ebu-KE">
+    <value>Embu / Kenya</value>
+  </data>
+  <data version="2.5" id="152" name="English_en">
+    <value>English</value>
+  </data>
+  <data version="2.5" id="153" name="English_American Samoa_en-AS">
+    <value>English / American Samoa</value>
+  </data>
+  <data version="2.5" id="154" name="English_Anguilla_en-AI">
+    <value>English / Anguilla</value>
+  </data>
+  <data version="2.5" id="155" name="English_Antigua and Barbuda_en-AG">
+    <value>English / Antigua and Barbuda</value>
+  </data>
+  <data version="2.5" id="156" name="English_Australia_en-AU">
+    <value>English / Australia</value>
+  </data>
+  <data version="2.5" id="157" name="English_Austria_en-AT">
+    <value>English / Austria</value>
+  </data>
+  <data version="2.5" id="158" name="English_Bahamas_en-BS">
+    <value>English / Bahamas</value>
+  </data>
+  <data version="2.5" id="159" name="English_Barbados_en-BB">
+    <value>English / Barbados</value>
+  </data>
+  <data version="2.5" id="160" name="English_Belgium_en-BE">
+    <value>English / Belgium</value>
+  </data>
+  <data version="2.5" id="161" name="English_Belize_en-BZ">
+    <value>English / Belize</value>
+  </data>
+  <data version="2.5" id="162" name="English_Bermuda_en-BM">
+    <value>English / Bermuda</value>
+  </data>
+  <data version="2.5" id="163" name="English_Botswana_en-BW">
+    <value>English / Botswana</value>
+  </data>
+  <data version="2.5" id="164" name="English_British Indian Ocean Territory_en-IO">
+    <value>English / British Indian Ocean Territory</value>
+  </data>
+  <data version="2.5" id="165" name="English_British Virgin Islands_en-VG">
+    <value>English / British Virgin Islands</value>
+  </data>
+  <data version="2.5" id="166" name="English_Burundi_en-BI">
+    <value>English / Burundi</value>
+  </data>
+  <data version="2.5" id="167" name="English_Cameroon_en-CM">
+    <value>English / Cameroon</value>
+  </data>
+  <data version="2.5" id="168" name="English_Canada_en-CA">
+    <value>English / Canada</value>
+  </data>
+  <data version="2.5" id="169" name="English_Caribbean_en-029">
+    <value>English / Caribbean</value>
+  </data>
+  <data version="2.5" id="170" name="English_Cayman Islands_en-KY">
+    <value>English / Cayman Islands</value>
+  </data>
+  <data version="2.5" id="171" name="English_Christmas Island_en-CX">
+    <value>English / Christmas Island</value>
+  </data>
+  <data version="2.5" id="172" name="English_Cocos [Keeling] Islands_en-CC">
+    <value>English / Cocos [Keeling] Islands</value>
+  </data>
+  <data version="2.5" id="173" name="English_Cook Islands_en-CK">
+    <value>English / Cook Islands</value>
+  </data>
+  <data version="2.5" id="174" name="English_Cyprus_en-CY">
+    <value>English / Cyprus</value>
+  </data>
+  <data version="2.5" id="175" name="English_Denmark_en-DK">
+    <value>English / Denmark</value>
+  </data>
+  <data version="2.5" id="176" name="English_Dominica_en-DM">
+    <value>English / Dominica</value>
+  </data>
+  <data version="2.5" id="177" name="English_Eritrea_en-ER">
+    <value>English / Eritrea</value>
+  </data>
+  <data version="2.5" id="178" name="English_Europe_en-150">
+    <value>English / Europe</value>
+  </data>
+  <data version="2.5" id="179" name="English_Falkland Islands_en-FK">
+    <value>English / Falkland Islands</value>
+  </data>
+  <data version="2.5" id="180" name="English_Finland_en-FI">
+    <value>English / Finland</value>
+  </data>
+  <data version="2.5" id="181" name="English_Fiji_en-FJ">
+    <value>English / Fiji</value>
+  </data>
+  <data version="2.5" id="182" name="English_Gambia_en-GM">
+    <value>English / Gambia</value>
+  </data>
+  <data version="2.5" id="183" name="English_Germany_en-DE">
+    <value>English / Germany</value>
+  </data>
+  <data version="2.5" id="184" name="English_Ghana_en-GH">
+    <value>English / Ghana</value>
+  </data>
+  <data version="2.5" id="185" name="English_Gibraltar_en-GI">
+    <value>English / Gibraltar</value>
+  </data>
+  <data version="2.5" id="186" name="English_Grenada_en-GD">
+    <value>English / Grenada</value>
+  </data>
+  <data version="2.5" id="187" name="English_Guam_en-GU">
+    <value>English / Guam</value>
+  </data>
+  <data version="2.5" id="188" name="English_Guernsey_en-GG">
+    <value>English / Guernsey</value>
+  </data>
+  <data version="2.5" id="189" name="English_Guyana_en-GY">
+    <value>English / Guyana</value>
+  </data>
+  <data version="2.5" id="190" name="English_Hong Kong_en-HK">
+    <value>English / Hong Kong</value>
+  </data>
+  <data version="2.5" id="191" name="English_India_en-IN">
+    <value>English / India</value>
+  </data>
+  <data version="2.5" id="192" name="English_Ireland_en-IE">
+    <value>English / Ireland</value>
+  </data>
+  <data version="2.5" id="193" name="English_Isle of Man_en-IM">
+    <value>English / Isle of Man</value>
+  </data>
+  <data version="2.5" id="194" name="English_Israel_en-IL">
+    <value>English / Israel</value>
+  </data>
+  <data version="2.5" id="195" name="English_Jamaica_en-JM">
+    <value>English / Jamaica</value>
+  </data>
+  <data version="2.5" id="196" name="English_Jersey_en-JE">
+    <value>English / Jersey</value>
+  </data>
+  <data version="2.5" id="197" name="English_Kenya_en-KE">
+    <value>English / Kenya</value>
+  </data>
+  <data version="2.5" id="198" name="English_Kiribati_en-KI">
+    <value>English / Kiribati</value>
+  </data>
+  <data version="2.5" id="199" name="English_Lesotho_en-LS">
+    <value>English / Lesotho</value>
+  </data>
+  <data version="2.5" id="200" name="English_Liberia_en-LR">
+    <value>English / Liberia</value>
+  </data>
+  <data version="2.5" id="201" name="English_Macao SAR_en-MO">
+    <value>English / Macao SAR</value>
+  </data>
+  <data version="2.5" id="202" name="English_Madagascar_en-MG">
+    <value>English / Madagascar</value>
+  </data>
+  <data version="2.5" id="203" name="English_Malawi_en-MW">
+    <value>English / Malawi</value>
+  </data>
+  <data version="2.5" id="204" name="English_Malaysia_en-MY">
+    <value>English / Malaysia</value>
+  </data>
+  <data version="2.5" id="205" name="English_Malta_en-MT">
+    <value>English / Malta</value>
+  </data>
+  <data version="2.5" id="206" name="English_Marshall Islands_en-MH">
+    <value>English / Marshall Islands</value>
+  </data>
+  <data version="2.5" id="207" name="English_Mauritius_en-MU">
+    <value>English / Mauritius</value>
+  </data>
+  <data version="2.5" id="208" name="English_Micronesia_en-FM">
+    <value>English / Micronesia</value>
+  </data>
+  <data version="2.5" id="209" name="English_Montserrat_en-MS">
+    <value>English / Montserrat</value>
+  </data>
+  <data version="2.5" id="210" name="English_Namibia_en-NA">
+    <value>English / Namibia</value>
+  </data>
+  <data version="2.5" id="211" name="English_Nauru_en-NR">
+    <value>English / Nauru</value>
+  </data>
+  <data version="2.5" id="212" name="English_Netherlands_en-NL">
+    <value>English / Netherlands</value>
+  </data>
+  <data version="2.5" id="213" name="English_New Zealand_en-NZ">
+    <value>English / New Zealand</value>
+  </data>
+  <data version="2.5" id="214" name="English_Nigeria_en-NG">
+    <value>English / Nigeria</value>
+  </data>
+  <data version="2.5" id="215" name="English_Niue_en-NU">
+    <value>English / Niue</value>
+  </data>
+  <data version="2.5" id="216" name="English_Norfolk Island_en-NF">
+    <value>English / Norfolk Island</value>
+  </data>
+  <data version="2.5" id="217" name="English_Northern Mariana Islands_en-MP">
+    <value>English / Northern Mariana Islands</value>
+  </data>
+  <data version="2.5" id="218" name="English_Pakistan_en-PK">
+    <value>English / Pakistan</value>
+  </data>
+  <data version="2.5" id="219" name="English_Palau_en-PW">
+    <value>English / Palau</value>
+  </data>
+  <data version="2.5" id="220" name="English_Papua New Guinea_en-PG">
+    <value>English / Papua New Guinea</value>
+  </data>
+  <data version="2.5" id="221" name="English_Pitcairn Islands_en-PN">
+    <value>English / Pitcairn Islands</value>
+  </data>
+  <data version="2.5" id="222" name="English_Puerto Rico_en-PR">
+    <value>English / Puerto Rico</value>
+  </data>
+  <data version="2.5" id="223" name="English_Republic of the Philippines_en-PH">
+    <value>English / Republic of the Philippines</value>
+  </data>
+  <data version="2.5" id="224" name="English_Rwanda_en-RW">
+    <value>English / Rwanda</value>
+  </data>
+  <data version="2.5" id="225" name="English_Saint Kitts and Nevis_en-KN">
+    <value>English / Saint Kitts and Nevis</value>
+  </data>
+  <data version="2.5" id="226" name="English_Saint Lucia_en-LC">
+    <value>English / Saint Lucia</value>
+  </data>
+  <data version="2.5" id="227" name="English_Saint Vincent and the Grenadines_en-VC">
+    <value>English / Saint Vincent and the Grenadines</value>
+  </data>
+  <data version="2.5" id="228" name="English_Samoa_en-WS">
+    <value>English / Samoa</value>
+  </data>
+  <data version="2.5" id="229" name="English_Seychelles_en-SC">
+    <value>English / Seychelles</value>
+  </data>
+  <data version="2.5" id="230" name="English_Sierra Leone_en-SL">
+    <value>English / Sierra Leone</value>
+  </data>
+  <data version="2.5" id="231" name="English_Singapore_en-SG">
+    <value>English / Singapore</value>
+  </data>
+  <data version="2.5" id="232" name="English_Sint Maarten_en-SX">
+    <value>English / Sint Maarten</value>
+  </data>
+  <data version="2.5" id="233" name="English_Slovenia_en-SI">
+    <value>English / Slovenia</value>
+  </data>
+  <data version="2.5" id="234" name="English_Solomon Islands_en-SB">
+    <value>English / Solomon Islands</value>
+  </data>
+  <data version="2.5" id="235" name="English_South Africa_en-ZA">
+    <value>English / South Africa</value>
+  </data>
+  <data version="2.5" id="236" name="English_South Sudan_en-SS">
+    <value>English / South Sudan</value>
+  </data>
+  <data version="2.5" id="237" name="English_St Helena, Ascension, Tristan da Cunha_en-SH">
+    <value>English / St Helena, Ascension, Tristan da Cunha</value>
+  </data>
+  <data version="2.5" id="238" name="English_Sudan_en-SD">
+    <value>English / Sudan</value>
+  </data>
+  <data version="2.5" id="239" name="English_Swaziland_en-SZ">
+    <value>English / Swaziland</value>
+  </data>
+  <data version="2.5" id="240" name="English_Sweden_en-SE">
+    <value>English / Sweden</value>
+  </data>
+  <data version="2.5" id="241" name="English_Switzerland_en-CH">
+    <value>English / Switzerland</value>
+  </data>
+  <data version="2.5" id="242" name="English_Tanzania_en-TZ">
+    <value>English / Tanzania</value>
+  </data>
+  <data version="2.5" id="243" name="English_Tokelau_en-TK">
+    <value>English / Tokelau</value>
+  </data>
+  <data version="2.5" id="244" name="English_Tonga_en-TO">
+    <value>English / Tonga</value>
+  </data>
+  <data version="2.5" id="245" name="English_Trinidad and Tobago_en-TT">
+    <value>English / Trinidad and Tobago</value>
+  </data>
+  <data version="2.5" id="246" name="English_Turks and Caicos Islands_en-TC">
+    <value>English / Turks and Caicos Islands</value>
+  </data>
+  <data version="2.5" id="247" name="English_Tuvalu_en-TV">
+    <value>English / Tuvalu</value>
+  </data>
+  <data version="2.5" id="248" name="English_Uganda_en-UG">
+    <value>English / Uganda</value>
+  </data>
+  <data version="2.5" id="249" name="English_United Kingdom_en-GB">
+    <value>English / United Kingdom</value>
+  </data>
+  <data version="2.5" id="250" name="English_United States_en-US">
+    <value>English / United States</value>
+  </data>
+  <data version="2.5" id="251" name="English_US Minor Outlying Islands_en-UM">
+    <value>English / US Minor Outlying Islands</value>
+  </data>
+  <data version="2.5" id="252" name="English_US Virgin Islands_en-VI">
+    <value>English / US Virgin Islands</value>
+  </data>
+  <data version="2.5" id="253" name="English_Vanuatu_en-VU">
+    <value>English / Vanuatu</value>
+  </data>
+  <data version="2.5" id="254" name="English_World_en-001">
+    <value>English / World</value>
+  </data>
+  <data version="2.5" id="255" name="English_Zambia_en-ZM">
+    <value>English / Zambia</value>
+  </data>
+  <data version="2.5" id="256" name="English_Zimbabwe_en-ZW">
+    <value>English / Zimbabwe</value>
+  </data>
+  <data version="2.5" id="257" name="Esperanto_eo">
+    <value>Esperanto</value>
+  </data>
+  <data version="2.5" id="258" name="Esperanto_World_eo-001">
+    <value>Esperanto / World</value>
+  </data>
+  <data version="2.5" id="259" name="Estonian_et">
+    <value>Estonian</value>
+  </data>
+  <data version="2.5" id="260" name="Estonian_Estonia_et-EE">
+    <value>Estonian / Estonia</value>
+  </data>
+  <data version="2.5" id="261" name="Ewe_ee">
+    <value>Ewe</value>
+  </data>
+  <data version="2.5" id="262" name="Ewe_Ghana_ee-GH">
+    <value>Ewe / Ghana</value>
+  </data>
+  <data version="2.5" id="263" name="Ewe_Togo_ee-TG">
+    <value>Ewe / Togo</value>
+  </data>
+  <data version="2.5" id="264" name="Ewondo_ewo">
+    <value>Ewondo</value>
+  </data>
+  <data version="2.5" id="265" name="Ewondo_Cameroon_ewo-CM">
+    <value>Ewondo / Cameroon</value>
+  </data>
+  <data version="2.5" id="266" name="Faroese_fo">
+    <value>Faroese</value>
+  </data>
+  <data version="2.5" id="267" name="Faroese_Denmark_fo-DK">
+    <value>Faroese / Denmark</value>
+  </data>
+  <data version="2.5" id="268" name="Faroese_Faroe Islands_fo-FO">
+    <value>Faroese / Faroe Islands</value>
+  </data>
+  <data version="2.5" id="269" name="Filipino_fil">
+    <value>Filipino</value>
+  </data>
+  <data version="2.5" id="270" name="Filipino_Philippines_fil-PH">
+    <value>Filipino / Philippines</value>
+  </data>
+  <data version="2.5" id="271" name="Finnish_fi">
+    <value>Finnish</value>
+  </data>
+  <data version="2.5" id="272" name="Finnish_Finland_fi-FI">
+    <value>Finnish / Finland</value>
+  </data>
+  <data version="2.5" id="273" name="French_fr">
+    <value>French</value>
+  </data>
+  <data version="2.5" id="274" name="French_Algeria_fr-DZ">
+    <value>French / Algeria</value>
+  </data>
+  <data version="2.5" id="275" name="French_Belgium_fr-BE">
+    <value>French / Belgium</value>
+  </data>
+  <data version="2.5" id="276" name="French_Benin_fr-BJ">
+    <value>French / Benin</value>
+  </data>
+  <data version="2.5" id="277" name="French_Burkina Faso_fr-BF">
+    <value>French / Burkina Faso</value>
+  </data>
+  <data version="2.5" id="278" name="French_Burundi_fr-BI">
+    <value>French / Burundi</value>
+  </data>
+  <data version="2.5" id="279" name="French_Cameroon_fr-CM">
+    <value>French / Cameroon</value>
+  </data>
+  <data version="2.5" id="280" name="French_Canada_fr-CA">
+    <value>French / Canada</value>
+  </data>
+  <data version="2.5" id="281" name="French_Central African Republic_fr-CF">
+    <value>French / Central African Republic</value>
+  </data>
+  <data version="2.5" id="282" name="French_Chad_fr-TD">
+    <value>French / Chad</value>
+  </data>
+  <data version="2.5" id="283" name="French_Comoros_fr-KM">
+    <value>French / Comoros</value>
+  </data>
+  <data version="2.5" id="284" name="French_Congo_fr-CG">
+    <value>French / Congo</value>
+  </data>
+  <data version="2.5" id="285" name="French_Congo, DRC_fr-CD">
+    <value>French / Congo, DRC</value>
+  </data>
+  <data version="2.5" id="286" name="French_Côte d'Ivoire_fr-CI">
+    <value>French / Côte d'Ivoire</value>
+  </data>
+  <data version="2.5" id="287" name="French_Djibouti_fr-DJ">
+    <value>French / Djibouti</value>
+  </data>
+  <data version="2.5" id="288" name="French_Equatorial Guinea_fr-GQ">
+    <value>French / Equatorial Guinea</value>
+  </data>
+  <data version="2.5" id="289" name="French_France_fr-FR">
+    <value>French / France</value>
+  </data>
+  <data version="2.5" id="290" name="French_French Guiana_fr-GF">
+    <value>French / French Guiana</value>
+  </data>
+  <data version="2.5" id="291" name="French_French Polynesia_fr-PF">
+    <value>French / French Polynesia</value>
+  </data>
+  <data version="2.5" id="292" name="French_Gabon_fr-GA">
+    <value>French / Gabon</value>
+  </data>
+  <data version="2.5" id="293" name="French_Guadeloupe_fr-GP">
+    <value>French / Guadeloupe</value>
+  </data>
+  <data version="2.5" id="294" name="French_Guinea_fr-GN">
+    <value>French / Guinea</value>
+  </data>
+  <data version="2.5" id="295" name="French_Haiti_fr-HT">
+    <value>French / Haiti</value>
+  </data>
+  <data version="2.5" id="296" name="French_Luxembourg_fr-LU">
+    <value>French / Luxembourg</value>
+  </data>
+  <data version="2.5" id="297" name="French_Madagascar_fr-MG">
+    <value>French / Madagascar</value>
+  </data>
+  <data version="2.5" id="298" name="French_Mali_fr-ML">
+    <value>French / Mali</value>
+  </data>
+  <data version="2.5" id="299" name="French_Martinique_fr-MQ">
+    <value>French / Martinique</value>
+  </data>
+  <data version="2.5" id="300" name="French_Mauritania_fr-MR">
+    <value>French / Mauritania</value>
+  </data>
+  <data version="2.5" id="301" name="French_Mauritius_fr-MU">
+    <value>French / Mauritius</value>
+  </data>
+  <data version="2.5" id="302" name="French_Mayotte_fr-YT">
+    <value>French / Mayotte</value>
+  </data>
+  <data version="2.5" id="303" name="French_Morocco_fr-MA">
+    <value>French / Morocco</value>
+  </data>
+  <data version="2.5" id="304" name="French_New Caledonia_fr-NC">
+    <value>French / New Caledonia</value>
+  </data>
+  <data version="2.5" id="305" name="French_Niger_fr-NE">
+    <value>French / Niger</value>
+  </data>
+  <data version="2.5" id="306" name="French_Principality of Monaco_fr-MC">
+    <value>French / Principality of Monaco</value>
+  </data>
+  <data version="2.5" id="307" name="French_Reunion_fr-RE">
+    <value>French / Reunion</value>
+  </data>
+  <data version="2.5" id="308" name="French_Rwanda_fr-RW">
+    <value>French / Rwanda</value>
+  </data>
+  <data version="2.5" id="309" name="French_Saint Barthélemy_fr-BL">
+    <value>French / Saint Barthélemy</value>
+  </data>
+  <data version="2.5" id="310" name="French_Saint Martin_fr-MF">
+    <value>French / Saint Martin</value>
+  </data>
+  <data version="2.5" id="311" name="French_Saint Pierre and Miquelon_fr-PM">
+    <value>French / Saint Pierre and Miquelon</value>
+  </data>
+  <data version="2.5" id="312" name="French_Senegal_fr-SN">
+    <value>French / Senegal</value>
+  </data>
+  <data version="2.5" id="313" name="French_Seychelles_fr-SC">
+    <value>French / Seychelles</value>
+  </data>
+  <data version="2.5" id="314" name="French_Switzerland_fr-CH">
+    <value>French / Switzerland</value>
+  </data>
+  <data version="2.5" id="315" name="French_Syria_fr-SY">
+    <value>French / Syria</value>
+  </data>
+  <data version="2.5" id="316" name="French_Togo_fr-TG">
+    <value>French / Togo</value>
+  </data>
+  <data version="2.5" id="317" name="French_Tunisia_fr-TN">
+    <value>French / Tunisia</value>
+  </data>
+  <data version="2.5" id="318" name="French_Vanuatu_fr-VU">
+    <value>French / Vanuatu</value>
+  </data>
+  <data version="2.5" id="319" name="French_Wallis and Futuna_fr-WF">
+    <value>French / Wallis and Futuna</value>
+  </data>
+  <data version="2.5" id="320" name="Frisian_Frisland_fy">
+    <value>Frisian / Frisland</value>
+  </data>
+  <data version="2.5" id="321" name="Frisian_Netherlands_fy-NL">
+    <value>Frisian / Netherlands</value>
+  </data>
+  <data version="2.5" id="322" name="Friulian_fur">
+    <value>Friulian</value>
+  </data>
+  <data version="2.5" id="323" name="Friulian_Italy_fur-IT">
+    <value>Friulian / Italy</value>
+  </data>
+  <data version="2.5" id="324" name="Fulah_ff">
+    <value>Fulah</value>
+  </data>
+  <data version="2.5" id="325" name="Fulah_ff-Latn">
+    <value>Fulah</value>
+  </data>
+  <data version="2.5" id="326" name="Fulah_Cameroon_ff-CM">
+    <value>Fulah / Cameroon</value>
+  </data>
+  <data version="2.5" id="327" name="Fulah_Guinea_ff-GN">
+    <value>Fulah / Guinea</value>
+  </data>
+  <data version="2.5" id="328" name="Fulah_Mauritania_ff-MR">
+    <value>Fulah / Mauritania</value>
+  </data>
+  <data version="2.5" id="329" name="Fulah_Senegal_ff-Latn-SN">
+    <value>Fulah / Senegal</value>
+  </data>
+  <data version="2.5" id="330" name="Galician_gl">
+    <value>Galician</value>
+  </data>
+  <data version="2.5" id="331" name="Galician_Spain_gl-ES">
+    <value>Galician / Spain</value>
+  </data>
+  <data version="2.5" id="332" name="Ganda_lg">
+    <value>Ganda</value>
+  </data>
+  <data version="2.5" id="333" name="Ganda_Uganda_lg-UG">
+    <value>Ganda / Uganda</value>
+  </data>
+  <data version="2.5" id="334" name="Georgian_ka">
+    <value>Georgian</value>
+  </data>
+  <data version="2.5" id="335" name="Georgian_Georgia_ka-GE">
+    <value>Georgian / Georgia</value>
+  </data>
+  <data version="2.5" id="336" name="German_de">
+    <value>German</value>
+  </data>
+  <data version="2.5" id="337" name="German_Austria_de-AT">
+    <value>German / Austria</value>
+  </data>
+  <data version="2.5" id="338" name="German_Belgium_de-BE">
+    <value>German / Belgium</value>
+  </data>
+  <data version="2.5" id="339" name="German_Germany_de-DE">
+    <value>German / Germany</value>
+  </data>
+  <data version="2.5" id="340" name="German_Italy_de-IT">
+    <value>German / Italy</value>
+  </data>
+  <data version="2.5" id="341" name="German_Liechtenstein_de-LI">
+    <value>German / Liechtenstein</value>
+  </data>
+  <data version="2.5" id="342" name="German_Luxembourg_de-LU">
+    <value>German / Luxembourg</value>
+  </data>
+  <data version="2.5" id="343" name="German_Switzerland_de-CH">
+    <value>German / Switzerland</value>
+  </data>
+  <data version="2.5" id="344" name="Greek_el">
+    <value>Greek</value>
+  </data>
+  <data version="2.5" id="345" name="Greek_Cyprus_el-CY">
+    <value>Greek / Cyprus</value>
+  </data>
+  <data version="2.5" id="346" name="Greek_Greece_el-GR">
+    <value>Greek / Greece</value>
+  </data>
+  <data version="2.5" id="347" name="Greenlandic_kl">
+    <value>Greenlandic</value>
+  </data>
+  <data version="2.5" id="348" name="Greenlandic_Greenland_kl-GL">
+    <value>Greenlandic / Greenland</value>
+  </data>
+  <data version="2.5" id="349" name="Guarani_gn">
+    <value>Guarani</value>
+  </data>
+  <data version="2.5" id="350" name="Guarani_Paraguay_gn-PY">
+    <value>Guarani / Paraguay</value>
+  </data>
+  <data version="2.5" id="351" name="Gujarati_gu">
+    <value>Gujarati</value>
+  </data>
+  <data version="2.5" id="352" name="Gujarati_India_gu-IN">
+    <value>Gujarati / India</value>
+  </data>
+  <data version="2.5" id="353" name="Gusii_guz">
+    <value>Gusii</value>
+  </data>
+  <data version="2.5" id="354" name="Gusii_Kenya_guz-KE">
+    <value>Gusii / Kenya</value>
+  </data>
+  <data version="2.5" id="355" name="Hausa (Latin)_ha">
+    <value>Hausa (Latin)</value>
+  </data>
+  <data version="2.5" id="356" name="Hausa (Latin)_ha-Latn">
+    <value>Hausa (Latin)</value>
+  </data>
+  <data version="2.5" id="357" name="Hausa (Latin)_Ghana_ha-Latn-GH">
+    <value>Hausa (Latin) / Ghana</value>
+  </data>
+  <data version="2.5" id="358" name="Hausa (Latin)_Niger_ha-Latn-NE">
+    <value>Hausa (Latin) / Niger</value>
+  </data>
+  <data version="2.5" id="359" name="Hausa (Latin)_Nigeria_ha-Latn-NG">
+    <value>Hausa (Latin) / Nigeria</value>
+  </data>
+  <data version="2.5" id="360" name="Hawaiian_haw">
+    <value>Hawaiian</value>
+  </data>
+  <data version="2.5" id="361" name="Hawaiian_United States_haw-US">
+    <value>Hawaiian / United States</value>
+  </data>
+  <data version="2.5" id="362" name="Hebrew_he">
+    <value>Hebrew</value>
+  </data>
+  <data version="2.5" id="363" name="Hebrew_Israel_he-IL">
+    <value>Hebrew / Israel</value>
+  </data>
+  <data version="2.5" id="364" name="Hindi_hi">
+    <value>Hindi</value>
+  </data>
+  <data version="2.5" id="365" name="Hindi_India_hi-IN">
+    <value>Hindi / India</value>
+  </data>
+  <data version="2.5" id="366" name="Hungarian_hu">
+    <value>Hungarian</value>
+  </data>
+  <data version="2.5" id="367" name="Hungarian_Hungary_hu-HU">
+    <value>Hungarian / Hungary</value>
+  </data>
+  <data version="2.5" id="368" name="Icelandic_is">
+    <value>Icelandic</value>
+  </data>
+  <data version="2.5" id="369" name="Icelandic_Iceland_is-IS">
+    <value>Icelandic / Iceland</value>
+  </data>
+  <data version="2.5" id="370" name="Igbo_ig">
+    <value>Igbo</value>
+  </data>
+  <data version="2.5" id="371" name="Igbo_Nigeria_ig-NG">
+    <value>Igbo / Nigeria</value>
+  </data>
+  <data version="2.5" id="372" name="Indonesian_id">
+    <value>Indonesian</value>
+  </data>
+  <data version="2.5" id="373" name="Indonesian_Indonesia_id-ID">
+    <value>Indonesian / Indonesia</value>
+  </data>
+  <data version="2.5" id="374" name="Interlingua_ia">
+    <value>Interlingua</value>
+  </data>
+  <data version="2.5" id="375" name="Interlingua_France_ia-FR">
+    <value>Interlingua / France</value>
+  </data>
+  <data version="2.5" id="376" name="Interlingua_World_ia-001">
+    <value>Interlingua / World</value>
+  </data>
+  <data version="2.5" id="377" name="Inuktitut (Latin)_iu">
+    <value>Inuktitut (Latin)</value>
+  </data>
+  <data version="2.5" id="378" name="Inuktitut (Latin)_iu-Latn">
+    <value>Inuktitut (Latin)</value>
+  </data>
+  <data version="2.5" id="379" name="Inuktitut (Latin)_Canada_iu-Latn-CA">
+    <value>Inuktitut (Latin) / Canada</value>
+  </data>
+  <data version="2.5" id="380" name="Inuktitut (Syllabics)_iu-Cans">
+    <value>Inuktitut (Syllabics)</value>
+  </data>
+  <data version="2.5" id="381" name="Inuktitut (Syllabics)_Canada_iu-Cans-CA">
+    <value>Inuktitut (Syllabics) / Canada</value>
+  </data>
+  <data version="2.5" id="382" name="Irish_ga">
+    <value>Irish</value>
+  </data>
+  <data version="2.5" id="383" name="Irish_Ireland_ga-IE">
+    <value>Irish / Ireland</value>
+  </data>
+  <data version="2.5" id="384" name="Italian_it">
+    <value>Italian</value>
+  </data>
+  <data version="2.5" id="385" name="Italian_Italy_it-IT">
+    <value>Italian / Italy</value>
+  </data>
+  <data version="2.5" id="386" name="Italian_San Marino_it-SM">
+    <value>Italian / San Marino</value>
+  </data>
+  <data version="2.5" id="387" name="Italian_Switzerland_it-CH">
+    <value>Italian / Switzerland</value>
+  </data>
+  <data version="2.5" id="388" name="Italian_Vatican City_it-VA">
+    <value>Italian / Vatican City</value>
+  </data>
+  <data version="2.5" id="389" name="Japanese_ja">
+    <value>Japanese</value>
+  </data>
+  <data version="2.5" id="390" name="Japanese_Japan_ja-JP">
+    <value>Japanese / Japan</value>
+  </data>
+  <data version="2.5" id="391" name="Javanese_jv">
+    <value>Javanese</value>
+  </data>
+  <data version="2.5" id="392" name="Javanese_Latin_jv-Latn">
+    <value>Javanese / Latin</value>
+  </data>
+  <data version="2.5" id="393" name="Javanese_Latin, Indonesia_jv-Latn-ID">
+    <value>Javanese / Latin, Indonesia</value>
+  </data>
+  <data version="2.5" id="394" name="Jola-Fonyi_dyo">
+    <value>Jola-Fonyi</value>
+  </data>
+  <data version="2.5" id="395" name="Jola-Fonyi_Senegal_dyo-SN">
+    <value>Jola-Fonyi / Senegal</value>
+  </data>
+  <data version="2.5" id="396" name="Kabuverdianu_kea">
+    <value>Kabuverdianu</value>
+  </data>
+  <data version="2.5" id="397" name="Kabuverdianu_Cabo Verde_kea-CV">
+    <value>Kabuverdianu / Cabo Verde</value>
+  </data>
+  <data version="2.5" id="398" name="Kabyle_kab">
+    <value>Kabyle</value>
+  </data>
+  <data version="2.5" id="399" name="Kabyle_Algeria_kab-DZ">
+    <value>Kabyle / Algeria</value>
+  </data>
+  <data version="2.5" id="400" name="Kako_kkj">
+    <value>Kako</value>
+  </data>
+  <data version="2.5" id="401" name="Kako_Cameroon_kkj-CM">
+    <value>Kako / Cameroon</value>
+  </data>
+  <data version="2.5" id="402" name="Kalenjin_kln">
+    <value>Kalenjin</value>
+  </data>
+  <data version="2.5" id="403" name="Kalenjin_Kenya_kln-KE">
+    <value>Kalenjin / Kenya</value>
+  </data>
+  <data version="2.5" id="404" name="Kamba_kam">
+    <value>Kamba</value>
+  </data>
+  <data version="2.5" id="405" name="Kamba_Kenya_kam-KE">
+    <value>Kamba / Kenya</value>
+  </data>
+  <data version="2.5" id="406" name="Kannada_kn">
+    <value>Kannada</value>
+  </data>
+  <data version="2.5" id="407" name="Kannada_India_kn-IN">
+    <value>Kannada / India</value>
+  </data>
+  <data version="2.5" id="408" name="Kashmiri_ks">
+    <value>Kashmiri</value>
+  </data>
+  <data version="2.5" id="409" name="Kashmiri_Perso-Arabic_ks-Arab">
+    <value>Kashmiri / Perso-Arabic</value>
+  </data>
+  <data version="2.5" id="410" name="Kashmiri_Perso-Arabic_ks-Arab-IN">
+    <value>Kashmiri / Perso-Arabic</value>
+  </data>
+  <data version="2.5" id="411" name="Kazakh_kk">
+    <value>Kazakh</value>
+  </data>
+  <data version="2.5" id="412" name="Kazakh_Kazakhstan_kk-KZ">
+    <value>Kazakh / Kazakhstan</value>
+  </data>
+  <data version="2.5" id="413" name="Khmer_km">
+    <value>Khmer</value>
+  </data>
+  <data version="2.5" id="414" name="Khmer_Cambodia_km-KH">
+    <value>Khmer / Cambodia</value>
+  </data>
+  <data version="2.5" id="415" name="K'iche_quc">
+    <value>K'iche</value>
+  </data>
+  <data version="2.5" id="416" name="K'iche_Guatemala_quc-Latn-GT">
+    <value>K'iche / Guatemala</value>
+  </data>
+  <data version="2.5" id="417" name="Kikuyu_ki">
+    <value>Kikuyu</value>
+  </data>
+  <data version="2.5" id="418" name="Kikuyu_Kenya_ki-KE">
+    <value>Kikuyu / Kenya</value>
+  </data>
+  <data version="2.5" id="419" name="Kinyarwanda_rw">
+    <value>Kinyarwanda</value>
+  </data>
+  <data version="2.5" id="420" name="Kinyarwanda_Rwanda_rw-RW">
+    <value>Kinyarwanda / Rwanda</value>
+  </data>
+  <data version="2.5" id="421" name="Kiswahili_sw">
+    <value>Kiswahili</value>
+  </data>
+  <data version="2.5" id="422" name="Kiswahili_Kenya_sw-KE">
+    <value>Kiswahili / Kenya</value>
+  </data>
+  <data version="2.5" id="423" name="Kiswahili_Tanzania_sw-TZ">
+    <value>Kiswahili / Tanzania</value>
+  </data>
+  <data version="2.5" id="424" name="Kiswahili_Uganda_sw-UG">
+    <value>Kiswahili / Uganda</value>
+  </data>
+  <data version="2.5" id="425" name="Konkani_kok">
+    <value>Konkani</value>
+  </data>
+  <data version="2.5" id="426" name="Konkani_India_kok-IN">
+    <value>Konkani / India</value>
+  </data>
+  <data version="2.5" id="427" name="Korean_ko">
+    <value>Korean</value>
+  </data>
+  <data version="2.5" id="428" name="Korean_Korea_ko-KR">
+    <value>Korean / Korea</value>
+  </data>
+  <data version="2.5" id="429" name="Korean_North Korea_ko-KP">
+    <value>Korean / North Korea</value>
+  </data>
+  <data version="2.5" id="430" name="Koyra Chiini_khq">
+    <value>Koyra Chiini</value>
+  </data>
+  <data version="2.5" id="431" name="Koyra Chiini_Mali_khq-ML">
+    <value>Koyra Chiini / Mali</value>
+  </data>
+  <data version="2.5" id="432" name="Koyraboro Senni_ses">
+    <value>Koyraboro Senni</value>
+  </data>
+  <data version="2.5" id="433" name="Koyraboro Senni_Mali_ses-ML">
+    <value>Koyraboro Senni / Mali</value>
+  </data>
+  <data version="2.5" id="434" name="Kwasio_nmg">
+    <value>Kwasio</value>
+  </data>
+  <data version="2.5" id="435" name="Kwasio_Cameroon_nmg-CM">
+    <value>Kwasio / Cameroon</value>
+  </data>
+  <data version="2.5" id="436" name="Kyrgyz_ky">
+    <value>Kyrgyz</value>
+  </data>
+  <data version="2.5" id="437" name="Kyrgyz_Kyrgyzstan_ky-KG">
+    <value>Kyrgyz / Kyrgyzstan</value>
+  </data>
+  <data version="2.5" id="438" name="Kurdish_Perso-Arabic, Iran_ku-Arab-IR">
+    <value>Kurdish / Perso-Arabic, Iran</value>
+  </data>
+  <data version="2.5" id="439" name="Lakota_lkt">
+    <value>Lakota</value>
+  </data>
+  <data version="2.5" id="440" name="Lakota_United States_lkt-US">
+    <value>Lakota / United States</value>
+  </data>
+  <data version="2.5" id="441" name="Langi_lag">
+    <value>Langi</value>
+  </data>
+  <data version="2.5" id="442" name="Langi_Tanzania_lag-TZ">
+    <value>Langi / Tanzania</value>
+  </data>
+  <data version="2.5" id="443" name="Lao_lo">
+    <value>Lao</value>
+  </data>
+  <data version="2.5" id="444" name="Lao_Lao P.D.R._lo-LA">
+    <value>Lao / Lao P.D.R.</value>
+  </data>
+  <data version="2.5" id="445" name="Latvian_lv">
+    <value>Latvian</value>
+  </data>
+  <data version="2.5" id="446" name="Latvian_Latvia_lv-LV">
+    <value>Latvian / Latvia</value>
+  </data>
+  <data version="2.5" id="447" name="Lingala_ln">
+    <value>Lingala</value>
+  </data>
+  <data version="2.5" id="448" name="Lingala_Angola_ln-AO">
+    <value>Lingala / Angola</value>
+  </data>
+  <data version="2.5" id="449" name="Lingala_Central African Republic_ln-CF">
+    <value>Lingala / Central African Republic</value>
+  </data>
+  <data version="2.5" id="450" name="Lingala_Congo_ln-CG">
+    <value>Lingala / Congo</value>
+  </data>
+  <data version="2.5" id="451" name="Lingala_Congo DRC_ln-CD">
+    <value>Lingala / Congo DRC</value>
+  </data>
+  <data version="2.5" id="452" name="Lithuanian_lt">
+    <value>Lithuanian</value>
+  </data>
+  <data version="2.5" id="453" name="Lithuanian_Lithuania_lt-LT">
+    <value>Lithuanian / Lithuania</value>
+  </data>
+  <data version="2.5" id="454" name="Low German_nds">
+    <value>Low German</value>
+  </data>
+  <data version="2.5" id="455" name="Low German _Germany_nds-DE">
+    <value>Low German  / Germany</value>
+  </data>
+  <data version="2.5" id="456" name="Low German_Netherlands_nds-NL">
+    <value>Low German / Netherlands</value>
+  </data>
+  <data version="2.5" id="457" name="Lower Sorbian_dsb">
+    <value>Lower Sorbian</value>
+  </data>
+  <data version="2.5" id="458" name="Lower Sorbian_Germany_dsb-DE">
+    <value>Lower Sorbian / Germany</value>
+  </data>
+  <data version="2.5" id="459" name="Luba-Katanga_lu">
+    <value>Luba-Katanga</value>
+  </data>
+  <data version="2.5" id="460" name="Luba-Katanga_Congo DRC_lu-CD">
+    <value>Luba-Katanga / Congo DRC</value>
+  </data>
+  <data version="2.5" id="461" name="Luo_luo">
+    <value>Luo</value>
+  </data>
+  <data version="2.5" id="462" name="Luo_Kenya_luo-KE">
+    <value>Luo / Kenya</value>
+  </data>
+  <data version="2.5" id="463" name="Luxembourgish_lb">
+    <value>Luxembourgish</value>
+  </data>
+  <data version="2.5" id="464" name="Luxembourgish_Luxembourg_lb-LU">
+    <value>Luxembourgish / Luxembourg</value>
+  </data>
+  <data version="2.5" id="465" name="Luyia_luy">
+    <value>Luyia</value>
+  </data>
+  <data version="2.5" id="466" name="Luyia_Kenya_luy-KE">
+    <value>Luyia / Kenya</value>
+  </data>
+  <data version="2.5" id="467" name="Macedonian_mk">
+    <value>Macedonian</value>
+  </data>
+  <data version="2.5" id="468" name="Macedonian_Macedonia (Former Yugoslav Republic of Macedonia)_mk-MK">
+    <value>Macedonian / Macedonia (Former Yugoslav Republic of Macedonia)</value>
+  </data>
+  <data version="2.5" id="469" name="Machame_jmc">
+    <value>Machame</value>
+  </data>
+  <data version="2.5" id="470" name="Machame_Tanzania_jmc-TZ">
+    <value>Machame / Tanzania</value>
+  </data>
+  <data version="2.5" id="471" name="Makhuwa-Meetto_mgh">
+    <value>Makhuwa-Meetto</value>
+  </data>
+  <data version="2.5" id="472" name="Makhuwa-Meetto_Mozambique_mgh-MZ">
+    <value>Makhuwa-Meetto / Mozambique</value>
+  </data>
+  <data version="2.5" id="473" name="Makonde_kde">
+    <value>Makonde</value>
+  </data>
+  <data version="2.5" id="474" name="Makonde_Tanzania_kde-TZ">
+    <value>Makonde / Tanzania</value>
+  </data>
+  <data version="2.5" id="475" name="Malagasy_mg">
+    <value>Malagasy</value>
+  </data>
+  <data version="2.5" id="476" name="Malagasy_Madagascar_mg-MG">
+    <value>Malagasy / Madagascar</value>
+  </data>
+  <data version="2.5" id="477" name="Malay_ms">
+    <value>Malay</value>
+  </data>
+  <data version="2.5" id="478" name="Malay_Brunei Darussalam_ms-BN">
+    <value>Malay / Brunei Darussalam</value>
+  </data>
+  <data version="2.5" id="479" name="Malay_Malaysia_ms-MY">
+    <value>Malay / Malaysia</value>
+  </data>
+  <data version="2.5" id="480" name="Malayalam_ml">
+    <value>Malayalam</value>
+  </data>
+  <data version="2.5" id="481" name="Malayalam_India_ml-IN">
+    <value>Malayalam / India</value>
+  </data>
+  <data version="2.5" id="482" name="Maltese_mt">
+    <value>Maltese</value>
+  </data>
+  <data version="2.5" id="483" name="Maltese_Malta_mt-MT">
+    <value>Maltese / Malta</value>
+  </data>
+  <data version="2.5" id="484" name="Manx_gv">
+    <value>Manx</value>
+  </data>
+  <data version="2.5" id="485" name="Manx_Isle of Man_gv-IM">
+    <value>Manx / Isle of Man</value>
+  </data>
+  <data version="2.5" id="486" name="Maori_mi">
+    <value>Maori</value>
+  </data>
+  <data version="2.5" id="487" name="Maori_New Zealand_mi-NZ">
+    <value>Maori / New Zealand</value>
+  </data>
+  <data version="2.5" id="488" name="Mapudungun_arn">
+    <value>Mapudungun</value>
+  </data>
+  <data version="2.5" id="489" name="Mapudungun_Chile_arn-CL">
+    <value>Mapudungun / Chile</value>
+  </data>
+  <data version="2.5" id="490" name="Marathi_mr">
+    <value>Marathi</value>
+  </data>
+  <data version="2.5" id="491" name="Marathi_India_mr-IN">
+    <value>Marathi / India</value>
+  </data>
+  <data version="2.5" id="492" name="Masai_mas">
+    <value>Masai</value>
+  </data>
+  <data version="2.5" id="493" name="Masai_Kenya_mas-KE">
+    <value>Masai / Kenya</value>
+  </data>
+  <data version="2.5" id="494" name="Masai_Tanzania_mas-TZ">
+    <value>Masai / Tanzania</value>
+  </data>
+  <data version="2.5" id="495" name="Mazanderani_Iran_mzn-IR">
+    <value>Mazanderani / Iran</value>
+  </data>
+  <data version="2.5" id="496" name="Meru_mer">
+    <value>Meru</value>
+  </data>
+  <data version="2.5" id="497" name="Meru_Kenya_mer-KE">
+    <value>Meru / Kenya</value>
+  </data>
+  <data version="2.5" id="498" name="Meta'_mgo">
+    <value>Meta'</value>
+  </data>
+  <data version="2.5" id="499" name="Meta'_Cameroon_mgo-CM">
+    <value>Meta' / Cameroon</value>
+  </data>
+  <data version="2.5" id="500" name="Mohawk_moh">
+    <value>Mohawk</value>
+  </data>
+  <data version="2.5" id="501" name="Mohawk_Canada_moh-CA">
+    <value>Mohawk / Canada</value>
+  </data>
+  <data version="2.5" id="502" name="Mongolian (Cyrillic)_mn">
+    <value>Mongolian (Cyrillic)</value>
+  </data>
+  <data version="2.5" id="503" name="Mongolian (Cyrillic)_mn-Cyrl">
+    <value>Mongolian (Cyrillic)</value>
+  </data>
+  <data version="2.5" id="504" name="Mongolian (Cyrillic)_Mongolia_mn-MN">
+    <value>Mongolian (Cyrillic) / Mongolia</value>
+  </data>
+  <data version="2.5" id="505" name="Mongolian (Traditional Mongolian)_mn-Mong">
+    <value>Mongolian (Traditional Mongolian)</value>
+  </data>
+  <data version="2.5" id="506" name="Mongolian (Traditional Mongolian)_People's Republic of China_mn-Mong-CN">
+    <value>Mongolian (Traditional Mongolian) / People's Republic of China</value>
+  </data>
+  <data version="2.5" id="507" name="Mongolian (Traditional Mongolian)_Mongolia_mn-Mong-MN">
+    <value>Mongolian (Traditional Mongolian) / Mongolia</value>
+  </data>
+  <data version="2.5" id="508" name="Morisyen_mfe">
+    <value>Morisyen</value>
+  </data>
+  <data version="2.5" id="509" name="Morisyen_Mauritius_mfe-MU">
+    <value>Morisyen / Mauritius</value>
+  </data>
+  <data version="2.5" id="510" name="Mundang_mua">
+    <value>Mundang</value>
+  </data>
+  <data version="2.5" id="511" name="Mundang_Cameroon_mua-CM">
+    <value>Mundang / Cameroon</value>
+  </data>
+  <data version="2.5" id="512" name="N'ko_nqo">
+    <value>N'ko</value>
+  </data>
+  <data version="2.5" id="513" name="N'ko_Guinea_nqo-GN">
+    <value>N'ko / Guinea</value>
+  </data>
+  <data version="2.5" id="514" name="Nama_naq">
+    <value>Nama</value>
+  </data>
+  <data version="2.5" id="515" name="Nama_Namibia_naq-NA">
+    <value>Nama / Namibia</value>
+  </data>
+  <data version="2.5" id="516" name="Nepali_ne">
+    <value>Nepali</value>
+  </data>
+  <data version="2.5" id="517" name="Nepali_India_ne-IN">
+    <value>Nepali / India</value>
+  </data>
+  <data version="2.5" id="518" name="Nepali_Nepal_ne-NP">
+    <value>Nepali / Nepal</value>
+  </data>
+  <data version="2.5" id="519" name="Ngiemboon_nnh">
+    <value>Ngiemboon</value>
+  </data>
+  <data version="2.5" id="520" name="Ngiemboon_Cameroon_nnh-CM">
+    <value>Ngiemboon / Cameroon</value>
+  </data>
+  <data version="2.5" id="521" name="Ngomba_jgo">
+    <value>Ngomba</value>
+  </data>
+  <data version="2.5" id="522" name="Ngomba_Cameroon_jgo-CM">
+    <value>Ngomba / Cameroon</value>
+  </data>
+  <data version="2.5" id="523" name="Northern Luri_Iraq_lrc-IQ">
+    <value>Northern Luri / Iraq</value>
+  </data>
+  <data version="2.5" id="524" name="Northern Luri_Iran_lrc-IR">
+    <value>Northern Luri / Iran</value>
+  </data>
+  <data version="2.5" id="525" name="North Ndebele_nd">
+    <value>North Ndebele</value>
+  </data>
+  <data version="2.5" id="526" name="North Ndebele_Zimbabwe_nd-ZW">
+    <value>North Ndebele / Zimbabwe</value>
+  </data>
+  <data version="2.5" id="527" name="Norwegian (Bokmal)_no">
+    <value>Norwegian (Bokmal)</value>
+  </data>
+  <data version="2.5" id="528" name="Norwegian (Bokmal)_nb">
+    <value>Norwegian (Bokmal)</value>
+  </data>
+  <data version="2.5" id="529" name="Norwegian (Bokmal)_Norway_nb-NO">
+    <value>Norwegian (Bokmal) / Norway</value>
+  </data>
+  <data version="2.5" id="530" name="Norwegian (Nynorsk)_nn">
+    <value>Norwegian (Nynorsk)</value>
+  </data>
+  <data version="2.5" id="531" name="Norwegian (Nynorsk)_Norway_nn-NO">
+    <value>Norwegian (Nynorsk) / Norway</value>
+  </data>
+  <data version="2.5" id="532" name="Norwegian Bokmål_Svalbard and Jan Mayen_nb-SJ">
+    <value>Norwegian Bokmål / Svalbard and Jan Mayen</value>
+  </data>
+  <data version="2.5" id="533" name="Nuer_nus">
+    <value>Nuer</value>
+  </data>
+  <data version="2.5" id="534" name="Nuer_Sudan_nus-SD">
+    <value>Nuer / Sudan</value>
+  </data>
+  <data version="2.5" id="535" name="Nyankole_nyn">
+    <value>Nyankole</value>
+  </data>
+  <data version="2.5" id="536" name="Nyankole_Uganda_nyn-UG">
+    <value>Nyankole / Uganda</value>
+  </data>
+  <data version="2.5" id="537" name="Occitan_oc">
+    <value>Occitan</value>
+  </data>
+  <data version="2.5" id="538" name="Occitan_France_oc-FR">
+    <value>Occitan / France</value>
+  </data>
+  <data version="2.5" id="539" name="Odia_or">
+    <value>Odia</value>
+  </data>
+  <data version="2.5" id="540" name="Odia_India_or-IN">
+    <value>Odia / India</value>
+  </data>
+  <data version="2.5" id="541" name="Oromo_om">
+    <value>Oromo</value>
+  </data>
+  <data version="2.5" id="542" name="Oromo_Ethiopia_om-ET">
+    <value>Oromo / Ethiopia</value>
+  </data>
+  <data version="2.5" id="543" name="Oromo_Kenya_om-KE">
+    <value>Oromo / Kenya</value>
+  </data>
+  <data version="2.5" id="544" name="Ossetian_os">
+    <value>Ossetian</value>
+  </data>
+  <data version="2.5" id="545" name="Ossetian_Cyrillic, Georgia_os-GE">
+    <value>Ossetian / Cyrillic, Georgia</value>
+  </data>
+  <data version="2.5" id="546" name="Ossetian_Cyrillic, Russia_os-RU">
+    <value>Ossetian / Cyrillic, Russia</value>
+  </data>
+  <data version="2.5" id="547" name="Pashto_ps">
+    <value>Pashto</value>
+  </data>
+  <data version="2.5" id="548" name="Pashto_Afghanistan_ps-AF">
+    <value>Pashto / Afghanistan</value>
+  </data>
+  <data version="2.5" id="549" name="Persian_fa">
+    <value>Persian</value>
+  </data>
+  <data version="2.5" id="550" name="Persian_Afghanistan_fa-AF">
+    <value>Persian / Afghanistan</value>
+  </data>
+  <data version="2.5" id="551" name="Persian_Iran_fa-IR">
+    <value>Persian / Iran</value>
+  </data>
+  <data version="2.5" id="552" name="Polish_pl">
+    <value>Polish</value>
+  </data>
+  <data version="2.5" id="553" name="Polish_Poland_pl-PL">
+    <value>Polish / Poland</value>
+  </data>
+  <data version="2.5" id="554" name="Portuguese_pt">
+    <value>Portuguese</value>
+  </data>
+  <data version="2.5" id="555" name="Portuguese_Angola_pt-AO">
+    <value>Portuguese / Angola</value>
+  </data>
+  <data version="2.5" id="556" name="Portuguese_Brazil_pt-BR">
+    <value>Portuguese / Brazil</value>
+  </data>
+  <data version="2.5" id="557" name="Portuguese_Cabo Verde_pt-CV">
+    <value>Portuguese / Cabo Verde</value>
+  </data>
+  <data version="2.5" id="558" name="Portuguese_Equatorial Guinea_pt-GQ">
+    <value>Portuguese / Equatorial Guinea</value>
+  </data>
+  <data version="2.5" id="559" name="Portuguese_Guinea-Bissau_pt-GW">
+    <value>Portuguese / Guinea-Bissau</value>
+  </data>
+  <data version="2.5" id="560" name="Portuguese_Luxembourg_pt-LU">
+    <value>Portuguese / Luxembourg</value>
+  </data>
+  <data version="2.5" id="561" name="Portuguese_Macao SAR_pt-MO">
+    <value>Portuguese / Macao SAR</value>
+  </data>
+  <data version="2.5" id="562" name="Portuguese_Mozambique_pt-MZ">
+    <value>Portuguese / Mozambique</value>
+  </data>
+  <data version="2.5" id="563" name="Portuguese_Portugal_pt-PT">
+    <value>Portuguese / Portugal</value>
+  </data>
+  <data version="2.5" id="564" name="Portuguese_São Tomé and Príncipe_pt-ST">
+    <value>Portuguese / São Tomé and Príncipe</value>
+  </data>
+  <data version="2.5" id="565" name="Portuguese_Switzerland_pt-CH">
+    <value>Portuguese / Switzerland</value>
+  </data>
+  <data version="2.5" id="566" name="Portuguese_Timor-Leste_pt-TL">
+    <value>Portuguese / Timor-Leste</value>
+  </data>
+  <data version="2.5" id="567" name="Prussian_prg-001">
+    <value>Prussian</value>
+  </data>
+  <data version="2.5" id="568" name="Punjabi_pa">
+    <value>Punjabi</value>
+  </data>
+  <data version="2.5" id="569" name="Punjabi_pa-Arab">
+    <value>Punjabi</value>
+  </data>
+  <data version="2.5" id="570" name="Punjabi_India_pa-IN">
+    <value>Punjabi / India</value>
+  </data>
+  <data version="2.5" id="571" name="Punjabi_Islamic Republic of Pakistan_pa-Arab-PK">
+    <value>Punjabi / Islamic Republic of Pakistan</value>
+  </data>
+  <data version="2.5" id="572" name="Quechua_quz">
+    <value>Quechua</value>
+  </data>
+  <data version="2.5" id="573" name="Quechua_Bolivia_quz-BO">
+    <value>Quechua / Bolivia</value>
+  </data>
+  <data version="2.5" id="574" name="Quechua_Ecuador_quz-EC">
+    <value>Quechua / Ecuador</value>
+  </data>
+  <data version="2.5" id="575" name="Quechua_Peru_quz-PE">
+    <value>Quechua / Peru</value>
+  </data>
+  <data version="2.5" id="576" name="Ripuarian_ksh">
+    <value>Ripuarian</value>
+  </data>
+  <data version="2.5" id="577" name="Ripuarian_Germany_ksh-DE">
+    <value>Ripuarian / Germany</value>
+  </data>
+  <data version="2.5" id="578" name="Romanian_ro">
+    <value>Romanian</value>
+  </data>
+  <data version="2.5" id="579" name="Romanian_Moldova_ro-MD">
+    <value>Romanian / Moldova</value>
+  </data>
+  <data version="2.5" id="580" name="Romanian_Romania_ro-RO">
+    <value>Romanian / Romania</value>
+  </data>
+  <data version="2.5" id="581" name="Romansh_rm">
+    <value>Romansh</value>
+  </data>
+  <data version="2.5" id="582" name="Romansh_Switzerland_rm-CH">
+    <value>Romansh / Switzerland</value>
+  </data>
+  <data version="2.5" id="583" name="Rombo_rof">
+    <value>Rombo</value>
+  </data>
+  <data version="2.5" id="584" name="Rombo_Tanzania_rof-TZ">
+    <value>Rombo / Tanzania</value>
+  </data>
+  <data version="2.5" id="585" name="Rundi_rn">
+    <value>Rundi</value>
+  </data>
+  <data version="2.5" id="586" name="Rundi_Burundi_rn-BI">
+    <value>Rundi / Burundi</value>
+  </data>
+  <data version="2.5" id="587" name="Russian_ru">
+    <value>Russian</value>
+  </data>
+  <data version="2.5" id="588" name="Russian_Belarus_ru-BY">
+    <value>Russian / Belarus</value>
+  </data>
+  <data version="2.5" id="589" name="Russian_Kazakhstan_ru-KZ">
+    <value>Russian / Kazakhstan</value>
+  </data>
+  <data version="2.5" id="590" name="Russian_Kyrgyzstan_ru-KG">
+    <value>Russian / Kyrgyzstan</value>
+  </data>
+  <data version="2.5" id="591" name="Russian_Moldova_ru-MD">
+    <value>Russian / Moldova</value>
+  </data>
+  <data version="2.5" id="592" name="Russian_Russia_ru-RU">
+    <value>Russian / Russia</value>
+  </data>
+  <data version="2.5" id="593" name="Russian_Ukraine_ru-UA">
+    <value>Russian / Ukraine</value>
+  </data>
+  <data version="2.5" id="594" name="Rwa_rwk">
+    <value>Rwa</value>
+  </data>
+  <data version="2.5" id="595" name="Rwa_Tanzania_rwk-TZ">
+    <value>Rwa / Tanzania</value>
+  </data>
+  <data version="2.5" id="596" name="Saho_ssy">
+    <value>Saho</value>
+  </data>
+  <data version="2.5" id="597" name="Saho_Eritrea_ssy-ER">
+    <value>Saho / Eritrea</value>
+  </data>
+  <data version="2.5" id="598" name="Sakha_sah">
+    <value>Sakha</value>
+  </data>
+  <data version="2.5" id="599" name="Sakha_Russia_sah-RU">
+    <value>Sakha / Russia</value>
+  </data>
+  <data version="2.5" id="600" name="Samburu_saq">
+    <value>Samburu</value>
+  </data>
+  <data version="2.5" id="601" name="Samburu_Kenya_saq-KE">
+    <value>Samburu / Kenya</value>
+  </data>
+  <data version="2.5" id="602" name="Sami (Inari)_smn">
+    <value>Sami (Inari)</value>
+  </data>
+  <data version="2.5" id="603" name="Sami (Inari)_Finland_smn-FI">
+    <value>Sami (Inari) / Finland</value>
+  </data>
+  <data version="2.5" id="604" name="Sami (Lule)_smj">
+    <value>Sami (Lule)</value>
+  </data>
+  <data version="2.5" id="605" name="Sami (Lule)_Norway_smj-NO">
+    <value>Sami (Lule) / Norway</value>
+  </data>
+  <data version="2.5" id="606" name="Sami (Lule)_Sweden_smj-SE">
+    <value>Sami (Lule) / Sweden</value>
+  </data>
+  <data version="2.5" id="607" name="Sami (Northern)_se">
+    <value>Sami (Northern)</value>
+  </data>
+  <data version="2.5" id="608" name="Sami (Northern)_Finland_se-FI">
+    <value>Sami (Northern) / Finland</value>
+  </data>
+  <data version="2.5" id="609" name="Sami (Northern)_Norway_se-NO">
+    <value>Sami (Northern) / Norway</value>
+  </data>
+  <data version="2.5" id="610" name="Sami (Northern)_Sweden_se-SE">
+    <value>Sami (Northern) / Sweden</value>
+  </data>
+  <data version="2.5" id="611" name="Sami (Skolt)_sms">
+    <value>Sami (Skolt)</value>
+  </data>
+  <data version="2.5" id="612" name="Sami (Skolt)_Finland_sms-FI">
+    <value>Sami (Skolt) / Finland</value>
+  </data>
+  <data version="2.5" id="613" name="Sami (Southern)_sma">
+    <value>Sami (Southern)</value>
+  </data>
+  <data version="2.5" id="614" name="Sami (Southern)_Norway_sma-NO">
+    <value>Sami (Southern) / Norway</value>
+  </data>
+  <data version="2.5" id="615" name="Sami (Southern)_Sweden_sma-SE">
+    <value>Sami (Southern) / Sweden</value>
+  </data>
+  <data version="2.5" id="616" name="Sango_sg">
+    <value>Sango</value>
+  </data>
+  <data version="2.5" id="617" name="Sango_Central African Republic_sg-CF">
+    <value>Sango / Central African Republic</value>
+  </data>
+  <data version="2.5" id="618" name="Sangu_sbp">
+    <value>Sangu</value>
+  </data>
+  <data version="2.5" id="619" name="Sangu_Tanzania_sbp-TZ">
+    <value>Sangu / Tanzania</value>
+  </data>
+  <data version="2.5" id="620" name="Sanskrit_sa">
+    <value>Sanskrit</value>
+  </data>
+  <data version="2.5" id="621" name="Sanskrit_India_sa-IN">
+    <value>Sanskrit / India</value>
+  </data>
+  <data version="2.5" id="622" name="Scottish Gaelic_gd">
+    <value>Scottish Gaelic</value>
+  </data>
+  <data version="2.5" id="623" name="Scottish Gaelic_United Kingdom_gd-GB">
+    <value>Scottish Gaelic / United Kingdom</value>
+  </data>
+  <data version="2.5" id="624" name="Sena_seh">
+    <value>Sena</value>
+  </data>
+  <data version="2.5" id="625" name="Sena_Mozambique_seh-MZ">
+    <value>Sena / Mozambique</value>
+  </data>
+  <data version="2.5" id="626" name="Serbian (Cyrillic)_sr-Cyrl">
+    <value>Serbian (Cyrillic)</value>
+  </data>
+  <data version="2.5" id="627" name="Serbian (Cyrillic)_Bosnia and Herzegovina_sr-Cyrl-BA">
+    <value>Serbian (Cyrillic) / Bosnia and Herzegovina</value>
+  </data>
+  <data version="2.5" id="628" name="Serbian (Cyrillic)_Montenegro_sr-Cyrl-ME">
+    <value>Serbian (Cyrillic) / Montenegro</value>
+  </data>
+  <data version="2.5" id="629" name="Serbian (Cyrillic)_Serbia_sr-Cyrl-RS">
+    <value>Serbian (Cyrillic) / Serbia</value>
+  </data>
+  <data version="2.5" id="630" name="Serbian (Cyrillic)_Serbia and Montenegro (Former)_sr-Cyrl-CS">
+    <value>Serbian (Cyrillic) / Serbia and Montenegro (Former)</value>
+  </data>
+  <data version="2.5" id="631" name="Serbian (Latin)_sr-Latn">
+    <value>Serbian (Latin)</value>
+  </data>
+  <data version="2.5" id="632" name="Serbian (Latin)_sr">
+    <value>Serbian (Latin)</value>
+  </data>
+  <data version="2.5" id="633" name="Serbian (Latin)_Bosnia and Herzegovina_sr-Latn-BA">
+    <value>Serbian (Latin) / Bosnia and Herzegovina</value>
+  </data>
+  <data version="2.5" id="634" name="Serbian (Latin)_Montenegro_sr-Latn-ME">
+    <value>Serbian (Latin) / Montenegro</value>
+  </data>
+  <data version="2.5" id="635" name="Serbian (Latin)_Serbia_sr-Latn-RS">
+    <value>Serbian (Latin) / Serbia</value>
+  </data>
+  <data version="2.5" id="636" name="Serbian (Latin)_Serbia and Montenegro (Former)_sr-Latn-CS">
+    <value>Serbian (Latin) / Serbia and Montenegro (Former)</value>
+  </data>
+  <data version="2.5" id="637" name="Sesotho sa Leboa_nso">
+    <value>Sesotho sa Leboa</value>
+  </data>
+  <data version="2.5" id="638" name="Sesotho sa Leboa_South Africa_nso-ZA">
+    <value>Sesotho sa Leboa / South Africa</value>
+  </data>
+  <data version="2.5" id="639" name="Setswana_tn">
+    <value>Setswana</value>
+  </data>
+  <data version="2.5" id="640" name="Setswana_Botswana_tn-BW">
+    <value>Setswana / Botswana</value>
+  </data>
+  <data version="2.5" id="641" name="Setswana_South Africa_tn-ZA">
+    <value>Setswana / South Africa</value>
+  </data>
+  <data version="2.5" id="642" name="Shambala_ksb">
+    <value>Shambala</value>
+  </data>
+  <data version="2.5" id="643" name="Shambala_Tanzania_ksb-TZ">
+    <value>Shambala / Tanzania</value>
+  </data>
+  <data version="2.5" id="644" name="Shona_sn">
+    <value>Shona</value>
+  </data>
+  <data version="2.5" id="645" name="Shona_Latin_sn-Latn">
+    <value>Shona / Latin</value>
+  </data>
+  <data version="2.5" id="646" name="Shona_Zimbabwe_sn-Latn-ZW">
+    <value>Shona / Zimbabwe</value>
+  </data>
+  <data version="2.5" id="647" name="Sindhi_sd">
+    <value>Sindhi</value>
+  </data>
+  <data version="2.5" id="648" name="Sindhi_sd-Arab">
+    <value>Sindhi</value>
+  </data>
+  <data version="2.5" id="649" name="Sindhi_Islamic Republic of Pakistan_sd-Arab-PK">
+    <value>Sindhi / Islamic Republic of Pakistan</value>
+  </data>
+  <data version="2.5" id="650" name="Sinhala_si">
+    <value>Sinhala</value>
+  </data>
+  <data version="2.5" id="651" name="Sinhala_Sri Lanka_si-LK">
+    <value>Sinhala / Sri Lanka</value>
+  </data>
+  <data version="2.5" id="652" name="Slovak_sk">
+    <value>Slovak</value>
+  </data>
+  <data version="2.5" id="653" name="Slovak_Slovakia_sk-SK">
+    <value>Slovak / Slovakia</value>
+  </data>
+  <data version="2.5" id="654" name="Slovenian_sl">
+    <value>Slovenian</value>
+  </data>
+  <data version="2.5" id="655" name="Slovenian_Slovenia_sl-SI">
+    <value>Slovenian / Slovenia</value>
+  </data>
+  <data version="2.5" id="656" name="Soga_xog">
+    <value>Soga</value>
+  </data>
+  <data version="2.5" id="657" name="Soga_Uganda_xog-UG">
+    <value>Soga / Uganda</value>
+  </data>
+  <data version="2.5" id="658" name="Somali_so">
+    <value>Somali</value>
+  </data>
+  <data version="2.5" id="659" name="Somali_Djibouti_so-DJ">
+    <value>Somali / Djibouti</value>
+  </data>
+  <data version="2.5" id="660" name="Somali_Ethiopia_so-ET">
+    <value>Somali / Ethiopia</value>
+  </data>
+  <data version="2.5" id="661" name="Somali_Kenya_so-KE">
+    <value>Somali / Kenya</value>
+  </data>
+  <data version="2.5" id="662" name="Somali_Somalia_so-SO">
+    <value>Somali / Somalia</value>
+  </data>
+  <data version="2.5" id="663" name="Sotho_st">
+    <value>Sotho</value>
+  </data>
+  <data version="2.5" id="664" name="Sotho_South Africa_st-ZA">
+    <value>Sotho / South Africa</value>
+  </data>
+  <data version="2.5" id="665" name="South Ndebele_nr">
+    <value>South Ndebele</value>
+  </data>
+  <data version="2.5" id="666" name="South Ndebele_South Africa_nr-ZA">
+    <value>South Ndebele / South Africa</value>
+  </data>
+  <data version="2.5" id="667" name="Southern Sotho_Lesotho_st-LS">
+    <value>Southern Sotho / Lesotho</value>
+  </data>
+  <data version="2.5" id="668" name="Spanish_es">
+    <value>Spanish</value>
+  </data>
+  <data version="2.5" id="669" name="Spanish_Argentina_es-AR">
+    <value>Spanish / Argentina</value>
+  </data>
+  <data version="2.5" id="670" name="Spanish_Belize_es-BZ">
+    <value>Spanish / Belize</value>
+  </data>
+  <data version="2.5" id="671" name="Spanish_Bolivarian Republic of Venezuela_es-VE">
+    <value>Spanish / Bolivarian Republic of Venezuela</value>
+  </data>
+  <data version="2.5" id="672" name="Spanish_Bolivia_es-BO">
+    <value>Spanish / Bolivia</value>
+  </data>
+  <data version="2.5" id="673" name="Spanish_Brazil_es-BR">
+    <value>Spanish / Brazil</value>
+  </data>
+  <data version="2.5" id="674" name="Spanish_Chile_es-CL">
+    <value>Spanish / Chile</value>
+  </data>
+  <data version="2.5" id="675" name="Spanish_Colombia_es-CO">
+    <value>Spanish / Colombia</value>
+  </data>
+  <data version="2.5" id="676" name="Spanish_Costa Rica_es-CR">
+    <value>Spanish / Costa Rica</value>
+  </data>
+  <data version="2.5" id="677" name="Spanish_Cuba_es-CU">
+    <value>Spanish / Cuba</value>
+  </data>
+  <data version="2.5" id="678" name="Spanish_Dominican Republic_es-DO">
+    <value>Spanish / Dominican Republic</value>
+  </data>
+  <data version="2.5" id="679" name="Spanish_Ecuador_es-EC">
+    <value>Spanish / Ecuador</value>
+  </data>
+  <data version="2.5" id="680" name="Spanish_El Salvador_es-SV">
+    <value>Spanish / El Salvador</value>
+  </data>
+  <data version="2.5" id="681" name="Spanish_Equatorial Guinea_es-GQ">
+    <value>Spanish / Equatorial Guinea</value>
+  </data>
+  <data version="2.5" id="682" name="Spanish_Guatemala_es-GT">
+    <value>Spanish / Guatemala</value>
+  </data>
+  <data version="2.5" id="683" name="Spanish_Honduras_es-HN">
+    <value>Spanish / Honduras</value>
+  </data>
+  <data version="2.5" id="684" name="Spanish_Latin America_es-419">
+    <value>Spanish / Latin America</value>
+  </data>
+  <data version="2.5" id="685" name="Spanish_Mexico_es-MX">
+    <value>Spanish / Mexico</value>
+  </data>
+  <data version="2.5" id="686" name="Spanish_Nicaragua_es-NI">
+    <value>Spanish / Nicaragua</value>
+  </data>
+  <data version="2.5" id="687" name="Spanish_Panama_es-PA">
+    <value>Spanish / Panama</value>
+  </data>
+  <data version="2.5" id="688" name="Spanish_Paraguay_es-PY">
+    <value>Spanish / Paraguay</value>
+  </data>
+  <data version="2.5" id="689" name="Spanish_Peru_es-PE">
+    <value>Spanish / Peru</value>
+  </data>
+  <data version="2.5" id="690" name="Spanish_Philippines_es-PH">
+    <value>Spanish / Philippines</value>
+  </data>
+  <data version="2.5" id="691" name="Spanish_Puerto Rico_es-PR">
+    <value>Spanish / Puerto Rico</value>
+  </data>
+  <data version="2.5" id="692" name="Spanish_Spain_es-ES_tradnl">
+    <value>Spanish / Spain</value>
+  </data>
+  <data version="2.5" id="693" name="Spanish_Spain_es-ES">
+    <value>Spanish / Spain</value>
+  </data>
+  <data version="2.5" id="694" name="Spanish_United States_es-US">
+    <value>Spanish / United States</value>
+  </data>
+  <data version="2.5" id="695" name="Spanish_Uruguay_es-UY">
+    <value>Spanish / Uruguay</value>
+  </data>
+  <data version="2.5" id="696" name="Standard Moroccan Tamazight_zgh">
+    <value>Standard Moroccan Tamazight</value>
+  </data>
+  <data version="2.5" id="697" name="Standard Moroccan Tamazight_Morocco_zgh-Tfng-MA">
+    <value>Standard Moroccan Tamazight / Morocco</value>
+  </data>
+  <data version="2.5" id="698" name="Standard Moroccan Tamazight_Tifinagh_zgh-Tfng">
+    <value>Standard Moroccan Tamazight / Tifinagh</value>
+  </data>
+  <data version="2.5" id="699" name="Swati_ss">
+    <value>Swati</value>
+  </data>
+  <data version="2.5" id="700" name="Swati_South Africa_ss-ZA">
+    <value>Swati / South Africa</value>
+  </data>
+  <data version="2.5" id="701" name="Swati_Swaziland_ss-SZ">
+    <value>Swati / Swaziland</value>
+  </data>
+  <data version="2.5" id="702" name="Swedish_sv">
+    <value>Swedish</value>
+  </data>
+  <data version="2.5" id="703" name="Swedish_Åland Islands_sv-AX">
+    <value>Swedish / Åland Islands</value>
+  </data>
+  <data version="2.5" id="704" name="Swedish_Finland_sv-FI">
+    <value>Swedish / Finland</value>
+  </data>
+  <data version="2.5" id="705" name="Swedish_Sweden_sv-SE">
+    <value>Swedish / Sweden</value>
+  </data>
+  <data version="2.5" id="706" name="Syriac_syr">
+    <value>Syriac</value>
+  </data>
+  <data version="2.5" id="707" name="Syriac_Syria_syr-SY">
+    <value>Syriac / Syria</value>
+  </data>
+  <data version="2.5" id="708" name="Tachelhit_shi">
+    <value>Tachelhit</value>
+  </data>
+  <data version="2.5" id="709" name="Tachelhit_Tifinagh_shi-Tfng">
+    <value>Tachelhit / Tifinagh</value>
+  </data>
+  <data version="2.5" id="710" name="Tachelhit_Tifinagh, Morocco_shi-Tfng-MA">
+    <value>Tachelhit / Tifinagh, Morocco</value>
+  </data>
+  <data version="2.5" id="711" name="Tachelhit (Latin)_shi-Latn">
+    <value>Tachelhit (Latin)</value>
+  </data>
+  <data version="2.5" id="712" name="Tachelhit (Latin)_Morocco_shi-Latn-MA">
+    <value>Tachelhit (Latin) / Morocco</value>
+  </data>
+  <data version="2.5" id="713" name="Taita_dav">
+    <value>Taita</value>
+  </data>
+  <data version="2.5" id="714" name="Taita_Kenya_dav-KE">
+    <value>Taita / Kenya</value>
+  </data>
+  <data version="2.5" id="715" name="Tajik (Cyrillic)_tg">
+    <value>Tajik (Cyrillic)</value>
+  </data>
+  <data version="2.5" id="716" name="Tajik (Cyrillic)_tg-Cyrl">
+    <value>Tajik (Cyrillic)</value>
+  </data>
+  <data version="2.5" id="717" name="Tajik (Cyrillic)_Tajikistan_tg-Cyrl-TJ">
+    <value>Tajik (Cyrillic) / Tajikistan</value>
+  </data>
+  <data version="2.5" id="718" name="Tamazight (Latin)_tzm">
+    <value>Tamazight (Latin)</value>
+  </data>
+  <data version="2.5" id="719" name="Tamazight (Latin)_tzm-Latn">
+    <value>Tamazight (Latin)</value>
+  </data>
+  <data version="2.5" id="720" name="Tamazight (Latin)_Algeria_tzm-Latn-DZ">
+    <value>Tamazight (Latin) / Algeria</value>
+  </data>
+  <data version="2.5" id="721" name="Tamil_ta">
+    <value>Tamil</value>
+  </data>
+  <data version="2.5" id="722" name="Tamil_India_ta-IN">
+    <value>Tamil / India</value>
+  </data>
+  <data version="2.5" id="723" name="Tamil_Malaysia_ta-MY">
+    <value>Tamil / Malaysia</value>
+  </data>
+  <data version="2.5" id="724" name="Tamil_Singapore_ta-SG">
+    <value>Tamil / Singapore</value>
+  </data>
+  <data version="2.5" id="725" name="Tamil_Sri Lanka_ta-LK">
+    <value>Tamil / Sri Lanka</value>
+  </data>
+  <data version="2.5" id="726" name="Tasawaq_twq">
+    <value>Tasawaq</value>
+  </data>
+  <data version="2.5" id="727" name="Tasawaq_Niger_twq-NE">
+    <value>Tasawaq / Niger</value>
+  </data>
+  <data version="2.5" id="728" name="Tatar_tt">
+    <value>Tatar</value>
+  </data>
+  <data version="2.5" id="729" name="Tatar_Russia_tt-RU">
+    <value>Tatar / Russia</value>
+  </data>
+  <data version="2.5" id="730" name="Telugu_te">
+    <value>Telugu</value>
+  </data>
+  <data version="2.5" id="731" name="Telugu_India_te-IN">
+    <value>Telugu / India</value>
+  </data>
+  <data version="2.5" id="732" name="Teso_teo">
+    <value>Teso</value>
+  </data>
+  <data version="2.5" id="733" name="Teso_Kenya_teo-KE">
+    <value>Teso / Kenya</value>
+  </data>
+  <data version="2.5" id="734" name="Teso_Uganda_teo-UG">
+    <value>Teso / Uganda</value>
+  </data>
+  <data version="2.5" id="735" name="Thai_th">
+    <value>Thai</value>
+  </data>
+  <data version="2.5" id="736" name="Thai_Thailand_th-TH">
+    <value>Thai / Thailand</value>
+  </data>
+  <data version="2.5" id="737" name="Tibetan_bo">
+    <value>Tibetan</value>
+  </data>
+  <data version="2.5" id="738" name="Tibetan_India_bo-IN">
+    <value>Tibetan / India</value>
+  </data>
+  <data version="2.5" id="739" name="Tibetan_People's Republic of China_bo-CN">
+    <value>Tibetan / People's Republic of China</value>
+  </data>
+  <data version="2.5" id="740" name="Tigre_tig">
+    <value>Tigre</value>
+  </data>
+  <data version="2.5" id="741" name="Tigre_Eritrea_tig-ER">
+    <value>Tigre / Eritrea</value>
+  </data>
+  <data version="2.5" id="742" name="Tigrinya_ti">
+    <value>Tigrinya</value>
+  </data>
+  <data version="2.5" id="743" name="Tigrinya_Eritrea_ti-ER">
+    <value>Tigrinya / Eritrea</value>
+  </data>
+  <data version="2.5" id="744" name="Tigrinya_Ethiopia_ti-ET">
+    <value>Tigrinya / Ethiopia</value>
+  </data>
+  <data version="2.5" id="745" name="Tongan_to">
+    <value>Tongan</value>
+  </data>
+  <data version="2.5" id="746" name="Tongan_Tonga_to-TO">
+    <value>Tongan / Tonga</value>
+  </data>
+  <data version="2.5" id="747" name="Tsonga_ts">
+    <value>Tsonga</value>
+  </data>
+  <data version="2.5" id="748" name="Tsonga_South Africa_ts-ZA">
+    <value>Tsonga / South Africa</value>
+  </data>
+  <data version="2.5" id="749" name="Turkish_tr">
+    <value>Turkish</value>
+  </data>
+  <data version="2.5" id="750" name="Turkish_Cyprus_tr-CY">
+    <value>Turkish / Cyprus</value>
+  </data>
+  <data version="2.5" id="751" name="Turkish_Turkey_tr-TR">
+    <value>Turkish / Turkey</value>
+  </data>
+  <data version="2.5" id="752" name="Turkmen_tk">
+    <value>Turkmen</value>
+  </data>
+  <data version="2.5" id="753" name="Turkmen_Turkmenistan_tk-TM">
+    <value>Turkmen / Turkmenistan</value>
+  </data>
+  <data version="2.5" id="754" name="Ukrainian_uk">
+    <value>Ukrainian</value>
+  </data>
+  <data version="2.5" id="755" name="Ukrainian_Ukraine_uk-UA">
+    <value>Ukrainian / Ukraine</value>
+  </data>
+  <data version="2.5" id="756" name="Upper Sorbian_dsb or hsb">
+    <value>Upper Sorbian</value>
+  </data>
+  <data version="2.5" id="757" name="Upper Sorbian_Germany_hsb-DE">
+    <value>Upper Sorbian / Germany</value>
+  </data>
+  <data version="2.5" id="758" name="Urdu_ur">
+    <value>Urdu</value>
+  </data>
+  <data version="2.5" id="759" name="Urdu_India_ur-IN">
+    <value>Urdu / India</value>
+  </data>
+  <data version="2.5" id="760" name="Urdu_Islamic Republic of Pakistan_ur-PK">
+    <value>Urdu / Islamic Republic of Pakistan</value>
+  </data>
+  <data version="2.5" id="761" name="Uyghur_ug">
+    <value>Uyghur</value>
+  </data>
+  <data version="2.5" id="762" name="Uyghur_People's Republic of China_ug-CN">
+    <value>Uyghur / People's Republic of China</value>
+  </data>
+  <data version="2.5" id="763" name="Uzbek_Perso-Arabic_uz-Arab">
+    <value>Uzbek / Perso-Arabic</value>
+  </data>
+  <data version="2.5" id="764" name="Uzbek_Perso-Arabic, Afghanistan_uz-Arab-AF">
+    <value>Uzbek / Perso-Arabic, Afghanistan</value>
+  </data>
+  <data version="2.5" id="765" name="Uzbek (Cyrillic)_uz-Cyrl">
+    <value>Uzbek (Cyrillic)</value>
+  </data>
+  <data version="2.5" id="766" name="Uzbek (Cyrillic)_Uzbekistan_uz-Cyrl-UZ">
+    <value>Uzbek (Cyrillic) / Uzbekistan</value>
+  </data>
+  <data version="2.5" id="767" name="Uzbek (Latin)_uz">
+    <value>Uzbek (Latin)</value>
+  </data>
+  <data version="2.5" id="768" name="Uzbek (Latin)_uz-Latn">
+    <value>Uzbek (Latin)</value>
+  </data>
+  <data version="2.5" id="769" name="Uzbek (Latin)_Uzbekistan_uz-Latn-UZ">
+    <value>Uzbek (Latin) / Uzbekistan</value>
+  </data>
+  <data version="2.5" id="770" name="Vai_vai">
+    <value>Vai</value>
+  </data>
+  <data version="2.5" id="771" name="Vai_vai-Vaii">
+    <value>Vai</value>
+  </data>
+  <data version="2.5" id="772" name="Vai_Liberia_vai-Vaii-LR">
+    <value>Vai / Liberia</value>
+  </data>
+  <data version="2.5" id="773" name="Vai (Latin)_ Liberia_vai-Latn-LR">
+    <value>Vai (Latin) /  Liberia</value>
+  </data>
+  <data version="2.5" id="774" name="Vai (Latin)_vai-Latn">
+    <value>Vai (Latin)</value>
+  </data>
+  <data version="2.5" id="775" name="Valencian_Spain_ca-ES-valencia">
+    <value>Valencian / Spain</value>
+  </data>
+  <data version="2.5" id="776" name="Venda_ve">
+    <value>Venda</value>
+  </data>
+  <data version="2.5" id="777" name="Venda_South Africa_ve-ZA">
+    <value>Venda / South Africa</value>
+  </data>
+  <data version="2.5" id="778" name="Vietnamese_vi">
+    <value>Vietnamese</value>
+  </data>
+  <data version="2.5" id="779" name="Vietnamese_Vietnam_vi-VN">
+    <value>Vietnamese / Vietnam</value>
+  </data>
+  <data version="2.5" id="780" name="Volapük_vo">
+    <value>Volapük</value>
+  </data>
+  <data version="2.5" id="781" name="Volapük_World_vo-001">
+    <value>Volapük / World</value>
+  </data>
+  <data version="2.5" id="782" name="Vunjo_vun">
+    <value>Vunjo</value>
+  </data>
+  <data version="2.5" id="783" name="Vunjo_Tanzania_vun-TZ">
+    <value>Vunjo / Tanzania</value>
+  </data>
+  <data version="2.5" id="784" name="Walser_wae">
+    <value>Walser</value>
+  </data>
+  <data version="2.5" id="785" name="Walser_Switzerland_wae-CH">
+    <value>Walser / Switzerland</value>
+  </data>
+  <data version="2.5" id="786" name="Welsh_cy">
+    <value>Welsh</value>
+  </data>
+  <data version="2.5" id="787" name="Welsh_United Kingdom_cy-GB">
+    <value>Welsh / United Kingdom</value>
+  </data>
+  <data version="2.5" id="788" name="Wolaytta_wal">
+    <value>Wolaytta</value>
+  </data>
+  <data version="2.5" id="789" name="Wolaytta_Ethiopia_wal-ET">
+    <value>Wolaytta / Ethiopia</value>
+  </data>
+  <data version="2.5" id="790" name="Wolof_wo">
+    <value>Wolof</value>
+  </data>
+  <data version="2.5" id="791" name="Wolof_Senegal_wo-SN">
+    <value>Wolof / Senegal</value>
+  </data>
+  <data version="2.5" id="792" name="Xhosa_xh">
+    <value>Xhosa</value>
+  </data>
+  <data version="2.5" id="793" name="Xhosa_South Africa_xh-ZA">
+    <value>Xhosa / South Africa</value>
+  </data>
+  <data version="2.5" id="794" name="Yangben_yav">
+    <value>Yangben</value>
+  </data>
+  <data version="2.5" id="795" name="Yangben_Cameroon_yav-CM">
+    <value>Yangben / Cameroon</value>
+  </data>
+  <data version="2.5" id="796" name="Yi_ii">
+    <value>Yi</value>
+  </data>
+  <data version="2.5" id="797" name="Yi_People's Republic of China_ii-CN">
+    <value>Yi / People's Republic of China</value>
+  </data>
+  <data version="2.5" id="798" name="Yoruba_yo">
+    <value>Yoruba</value>
+  </data>
+  <data version="2.5" id="799" name="Yoruba_Benin_yo-BJ">
+    <value>Yoruba / Benin</value>
+  </data>
+  <data version="2.5" id="800" name="Yoruba_Nigeria_yo-NG">
+    <value>Yoruba / Nigeria</value>
+  </data>
+  <data version="2.5" id="801" name="Zarma_dje">
+    <value>Zarma</value>
+  </data>
+  <data version="2.5" id="802" name="Zarma_Niger_dje-NE">
+    <value>Zarma / Niger</value>
+  </data>
+  <data version="2.5" id="803" name="Zulu_zu">
+    <value>Zulu</value>
+  </data>
+  <data version="2.5" id="804" name="Zulu_South Africa_zu-ZA">
+    <value>Zulu / South Africa</value>
+  </data>
+</root>

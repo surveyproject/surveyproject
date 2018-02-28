@@ -1,5 +1,5 @@
 /**************************************************************************************************
-	Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com)	
+	Survey™ Project changes: copyright (c) 2009-2017, W3DevPro™ (https://github.com/surveyproject)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -42,13 +42,11 @@ namespace Votations.NSurvey.WebAdmin
     /// </summary>
     public partial class ControlCode : PageBase
     {
-        protected SurveyListControl SurveyList;
+        //protected SurveyListControl SurveyList;
         protected System.Web.UI.WebControls.Label MessageLabel;
         new protected HeaderControl Header;
         protected System.Web.UI.WebControls.TextBox tbNetSource;
-        //protected System.Web.UI.WebControls.HyperLink CodeHyperLink;
         protected System.Web.UI.WebControls.Literal ControlCodeTitle;
-        //        protected System.Web.UI.WebControls.Literal FriendlyUrl;
         protected System.Web.UI.WebControls.Literal PageDirectiveInfo;
         protected System.Web.UI.WebControls.Literal TagPrefixInfo;
         protected System.Web.UI.WebControls.Literal QuickLinkInfo;
@@ -71,48 +69,12 @@ namespace Votations.NSurvey.WebAdmin
                 Guid guid = survey.SurveyGuid;
                 if (!survey.IsFriendlyNameNull())
                     txtFriendly.Text = survey.FriendlyName;
-                //CodeHyperLink.NavigateUrl = GetUrl("?surveyid=" + guid.ToString());
                 CodeMobileHyperLink.NavigateUrl = GetMobileUrl("?surveyid=" + guid.ToString());
 
-                //CodeHyperLink.Text = CodeHyperLink.NavigateUrl;
                 CodeMobileHyperLink.Text = CodeMobileHyperLink.NavigateUrl;
             }
             SetupTextArea();
         }
-
-        //private string GetUrl(string urlpart)
-        //{
-        //    string[] standardPorts = { "80", "443"};
-        //    string conn = "http";
-        //    if (Request.IsSecureConnection) conn = "https";
-        //    if (Request.ServerVariables["SERVER_PORT"] != null && !standardPorts.Contains(Request.ServerVariables["SERVER_PORT"]))
-        //    {
-        //        if (HttpContext.Current.Request.ApplicationPath != "/")
-        //        {
-        //            return string.Format(conn + "://{0}:{1}{2}/survey.aspx{3}",
-        //                Request.ServerVariables["SERVER_NAME"], Request.ServerVariables["SERVER_PORT"], HttpContext.Current.Request.ApplicationPath, urlpart);
-
-        //        }
-        //        else
-        //        {
-        //            return string.Format(conn + "://{0}:{1}/survey.aspx{2}",
-        //                Request.ServerVariables["SERVER_NAME"], Request.ServerVariables["SERVER_PORT"], urlpart);
-        //        }
-        //    }
-        //    else
-        //    {
-        //        if (HttpContext.Current.Request.ApplicationPath != "/")
-        //        {
-        //            return string.Format(conn + "://{0}{1}/survey.aspx{2}",
-        //                Request.ServerVariables["SERVER_NAME"], HttpContext.Current.Request.ApplicationPath, urlpart);
-        //        }
-        //        else
-        //        {
-        //            return string.Format(conn + "://{0}/survey.aspx{1}",
-        //                Request.ServerVariables["SERVER_NAME"], urlpart);
-        //        }
-        //    }
-        //}
 
         private string GetMobileUrl(string urlpart)
         {
@@ -154,9 +116,6 @@ namespace Votations.NSurvey.WebAdmin
 
             if (!survey.IsFriendlyNameNull())
             {
-                //friendlyUrlLink.Visible = true;
-                //friendlyUrlLink.Text = GetUrl("/" + survey.FriendlyName);
-                //friendlyUrlLink.NavigateUrl = GetUrl("/" + survey.FriendlyName);
 
                 fuID.Visible = true;
                 friendlyMobileUrlLink.Visible = true;
@@ -168,7 +127,6 @@ namespace Votations.NSurvey.WebAdmin
             else
             {
                 fuID.Visible = false;
-                //friendlyUrlLink.Visible = false;
                 friendlyMobileUrlLink.Visible = false;
             }
         }
@@ -176,6 +134,7 @@ namespace Votations.NSurvey.WebAdmin
 
         void SetupTextArea()
         {
+            // @ means that you don't need to escape special characters in the string following to the symbol:
             string html = @"
 <head runat=""server"">
     <link href=""{0}"" type=""text/css"" rel=""stylesheet"" />
@@ -206,7 +165,9 @@ namespace Votations.NSurvey.WebAdmin
             SurveyLayoutData _userSettings;
 
             Votations.NSurvey.SQLServerDAL.SurveyLayout u = new Votations.NSurvey.SQLServerDAL.SurveyLayout();
+
             _userSettings = u.SurveyLayoutGet(SurveyId);
+
             if (!(_userSettings == null || _userSettings.SurveyLayout.Count == 0))
             {
                 string css = string.Empty;
@@ -219,7 +180,11 @@ namespace Votations.NSurvey.WebAdmin
                 taCode.InnerText = string.Format(html, css, header, str, footer);
             }
 
+            string str2 = string.Format(taCode.InnerText, SurveyId);
+            taCode.InnerText = str2;
+
         }
+
         private void SetupSecurity()
         {
             CheckRight(NSurveyRights.AccessASPNetCode, true);
@@ -238,6 +203,7 @@ namespace Votations.NSurvey.WebAdmin
             btnFriendly.Text = GetPageResource("BtnFriendly");
             btnDeleteFriendly.Text = GetPageResource("ButtonDeleteColumn");
             FriendlyUrl.Text = GetPageResource("FriendlyUrl");
+            WebControlIntro.Text = GetPageResource("WebControlIntro");
         }
 
         #region Web Form Designer generated code
@@ -264,10 +230,21 @@ namespace Votations.NSurvey.WebAdmin
         void btnFriendly_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtFriendly.Text)) return;
-            new Surveys().SetFriendlyName(SurveyId, txtFriendly.Text);
-            ShowFriendlyUrl();
-            ShowNormalMessage(MessageLabel, GetPageResource("FriendlyNameUpdatedMsg"));
+
+            //check if similar FN exists: in DB SP?
+
+            if (new Surveys().SetFriendlyName(SurveyId, txtFriendly.Text) == true)
+            {
+                ShowFriendlyUrl();
+                ShowNormalMessage(MessageLabel, GetPageResource("FriendlyNameUpdatedMsg"));
+            }
+            else 
+            {
+                ShowErrorMessage(MessageLabel, GetPageResource("FriendlyNameExistsMsg"));
+            }
+
         }
+                
 
         /// <summary>
         /// Delete Friendly URL 

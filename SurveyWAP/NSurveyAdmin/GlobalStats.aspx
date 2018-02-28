@@ -1,26 +1,24 @@
 ﻿<%@ Page Language="c#" MasterPageFile="MsterPageTabs.master" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.GlobalStats" Codebehind="GlobalStats.aspx.cs" %>
 
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
-
  <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-             <div id="mainBody" class="mainBody contentHolder ps-container">
-                 <div id="Panel" class="Panel content">
- 
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
- <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
-                </div>
 
-                                        <div style="position: relative; left: 720px; width: 10px;  top: 13px; clear:none;">
-                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/Statistics.aspx"
-                                                title="Click for more Information">
-                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
-                                            </a>
-                                        </div>
-        
-            <fieldset style="width: 750px; margin-left: 12px; margin-top: 15px;">
+                 <div id="Panel" class="Panel">
+
+                     <div class="errorDiv">
+                         <asp:Label ID="MessageLabel" runat="server" CssClass="errorMessage" Visible="False"></asp:Label>
+                     </div>
+                     <div class="helpDiv">
+                         <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/Statistics.aspx"
+                             title="Click for more Information">
+                             <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                         </a>
+                     </div>
+                     <fieldset>
                  <legend class="titleFont titleLegend">
-                    <asp:Literal id="SurveyStatisticsTitle" runat="server" EnableViewState="False">Survey statistics</asp:Literal>
+                    <asp:Literal id="SurveyStatisticsTitle" runat="server" EnableViewState="False">Survey statistics</asp:Literal>&nbsp; - &nbsp;
+                     <b><asp:Label id="SurveyTitleLabel" runat="server"></asp:Label></b> &nbsp; - 
+                     &nbsp; <asp:Label id="SurveyStatusLabel" CssClass="SurveyStatusLabel" runat="server"></asp:Label> &nbsp;
                 </legend> <br />
              
    <ol>
@@ -28,7 +26,26 @@
 
                 <div class="scm"><asp:Literal id="SurveyCreationDateLabel" runat="server" EnableViewState="False">Creation date :</asp:Literal></div>
                         <asp:label id="CreationDateLabel" CssClass="statlabel" runat="server"></asp:label>
-  </li><li>
+  </li>
+
+      <asp:PlaceHolder id="OpenCloseDatePlaceHolder" runat="server" Visible="false">
+           <li>
+               <div class="scm">
+                   <asp:Literal ID="OpenCloseDateLiteral" runat="server" EnableViewState="False">Start and End Date</asp:Literal></div>
+               <div class="statlabel">
+               <asp:Label id="OpenDateLabel" runat="server"></asp:Label> - <asp:Label id="CloseDateLabel" runat="server"></asp:Label></div>
+           </li>
+       </asp:PlaceHolder>
+
+       <asp:PlaceHolder id="MultiLanguagePlaceholder" runat="server" Visible="false">
+           <li>
+               <div class="scm">
+                   <asp:Literal ID="MultilanguagesLiteral" runat="server" EnableViewState="False">Languages</asp:Literal></div>
+               <asp:Label id="MultilanguagesLabel" CssClass="statlabel" runat="server"></asp:Label>
+           </li>
+       </asp:PlaceHolder>
+       
+       <li>
                 <div class="scm"><asp:Literal id="LastSurveyEntryLabel" runat="server" EnableViewState="False">Last entry on :</asp:Literal></div>
                 <asp:label id="LastEntryDateLabel" CssClass="statlabel" runat="server"></asp:label>
       </li><li>     
@@ -81,7 +98,7 @@
   </ol>
                     <br />
                     </fieldset>
-
+                                     <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
                 </div> 
-    </div>
+
 </asp:Content>

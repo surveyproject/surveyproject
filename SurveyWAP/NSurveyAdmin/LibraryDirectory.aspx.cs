@@ -1,5 +1,5 @@
 /**************************************************************************************************
-	Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com)	
+	Survey™ Project changes: copyright (c) 2009-2017, W3DevPro™ (https://github.com/surveyproject)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -163,13 +163,6 @@ namespace Votations.NSurvey.WebAdmin
             //
             InitializeComponent();
             base.OnInit(e);
-
-            //Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-            //HtmlGenericControl css = new HtmlGenericControl("link");
-            //css.Attributes.Add("rel", "stylesheet");
-            //css.Attributes.Add("type", "text/css");
-            //css.Attributes.Add("href", ResolveUrl("~/NSurveyAdmin/CSS/survey20.css"));
-            //Page.Header.Controls.Add(css);
         }
 
         /// <summary>

@@ -1,5 +1,5 @@
 /**************************************************************************************************
-	Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com)	
+	Survey™ Project changes: copyright (c) 2009-2017, W3DevPro™ (https://github.com/surveyproject)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -44,7 +44,7 @@ namespace Votations.NSurvey.WebAdmin
     /// </summary>
     public partial class SurveyContentBuilder : PageBase
     {
-        protected SurveyListControl SurveyList;
+        //protected SurveyListControl SurveyList;
         protected System.Web.UI.WebControls.Label MessageLabel;
         protected System.Web.UI.WebControls.PlaceHolder QuestionListPlaceHolder;
         protected System.Web.UI.WebControls.Label Label1;
@@ -58,19 +58,17 @@ namespace Votations.NSurvey.WebAdmin
         {
             return Request.QueryString[Constants.Constants.ScrollQuestionQstr];
         }
+
         private void Page_Load(object sender, System.EventArgs e)
         {
             UITabList.SetDesignerTabs((MsterPageTabs)Page.Master, UITabList.DesignerTabs.FormBuilder);
 
             SetupSecurity();
             LocalizePage();
-            //  ((Wap)Master.Master).SetContainerWidth(1050);
-            SurveyBuilderTitle.Text = GetPageResource("SurveyBuilderTitle");
+
             if (!Page.IsPostBack)
             {
                 BindLanguages();
-
-                // Header.SurveyId = SurveyId;
                 ((Wap)Master.Master).HeaderControl.SurveyId = SurveyId;
             }
 
@@ -87,6 +85,7 @@ namespace Votations.NSurvey.WebAdmin
         private void LocalizePage()
         {
             PreviewSurveyLanguageLabel.Text = GetPageResource("PreviewSurveyLanguageLabel");
+            // SurveyBuilderTitle.Text = GetPageResource("SurveyBuilderTitle");
         }
 
 
@@ -102,12 +101,12 @@ namespace Votations.NSurvey.WebAdmin
                 totalPages = new Surveys().GetPagesNumber(SurveyId);
 
             Table questionsContainer = new Table();
-            questionsContainer.Width = Unit.Percentage(100);
+            questionsContainer.CssClass = "questionsContainer";
+            questionsContainer.ID = "qcT";
+
             Table questionTable = new Table();
-            // moved to css file
-            // questionTable.CellSpacing = 2;
-            // questionTable.CellPadding = 4;
             questionTable.CssClass = "questionBuilder";
+            questionTable.ID = "qT";
 
             TableRow pageBreakRow = BuildRow(null);
 
@@ -130,12 +129,12 @@ namespace Votations.NSurvey.WebAdmin
 
                     // Creates a new page
                     questionsContainer = new Table();
-                    questionsContainer.Width = Unit.Percentage(100);
+                    questionsContainer.CssClass = "questionsContainer";
+                    questionsContainer.ID = "qcT"+question.QuestionId;
+
                     questionTable = new Table();
-                    // moved to css file:
-                    // questionTable.CellSpacing = 2;
-                    // questionTable.CellPadding = 4;
                     questionTable.CssClass = "questionBuilder";
+                    questionTable.ID = "qT"+question.QuestionId;
 
                     pageBreakRow = BuildRow(null);
                     questionTable.Rows.Add(pageBreakRow);
@@ -171,8 +170,6 @@ namespace Votations.NSurvey.WebAdmin
             Style answerStyle = new Style();
             answerStyle.CssClass = "surveyAnswer";
 
-            //Style markStyle = new Style();
-            //markStyle.CssClass = "icon-warning-sign";
 
             if (questionWebControl is ActiveQuestion)
             {
@@ -206,7 +203,6 @@ namespace Votations.NSurvey.WebAdmin
 
             if (questionWebControl is MatrixQuestion)
             {
-                // questionWebControl.Width = new Unit(400.0,UnitType.Pixel);
                 questionTable.Rows.Add(BuildRow(questionWebControl));
             }
             else
@@ -297,11 +293,11 @@ namespace Votations.NSurvey.WebAdmin
                 MultiLanguageData surveyLanguages = new MultiLanguages().GetSurveyLanguages(SurveyId);
                 foreach (MultiLanguageData.MultiLanguagesRow language in surveyLanguages.MultiLanguages)
                 {
-                    ListItem defaultItem = new ListItem(GetPageResource(language.LanguageDescription), language.LanguageCode);
+                    ListItem defaultItem = new ListItem(GetPageLanguageCodes(language.LanguageDescription), language.LanguageCode);
                     if (language.DefaultLanguage)
                     {
                         defaultItem.Value = "";
-                        defaultItem.Text += " " + GetPageResource("LanguageDefaultText");
+                        defaultItem.Text += " " + GetPageLanguageCodes("LanguageDefaultText");
                     }
 
                     LanguagesDropdownlist.Items.Add(defaultItem);

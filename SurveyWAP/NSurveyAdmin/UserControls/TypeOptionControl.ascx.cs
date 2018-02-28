@@ -1,5 +1,5 @@
 /**************************************************************************************************
-	Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com)	
+	Survey™ Project changes: copyright (c) 2009-2017, W3DevPro™ (https://github.com/surveyproject)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -420,7 +420,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
             if (SelectionTypeCheckBox.Checked)
             {
                 TypeMode += (int)AnswerTypeMode.Selection;
-                newAnswerType.TypeAssembly = "Votations.NSurvey.WebControls";
+                newAnswerType.TypeAssembly = "SurveyProject.WebControls";
                 newAnswerType.TypeNameSpace = "Votations.NSurvey.WebControls.UI.AnswerSelectionItem";
             }
 
@@ -437,18 +437,18 @@ namespace Votations.NSurvey.WebAdmin.UserControls
                 TypeMode += (int)AnswerTypeMode.Mandatory;
                 if (SelectionTypeCheckBox.Checked)
                 {
-                    newAnswerType.TypeAssembly = "Votations.NSurvey.WebControls";
+                    newAnswerType.TypeAssembly = "SurveyProject.WebControls";
                     newAnswerType.TypeNameSpace = "Votations.NSurvey.WebControls.UI.AnswerOtherFieldItem";
                 }
                 else if (RichFieldCheckBox.Checked)
                 {
                     TypeMode += (int)AnswerTypeMode.ExtendedType;
-                    newAnswerType.TypeAssembly = "Votations.NSurvey.WebControls";
+                    newAnswerType.TypeAssembly = "SurveyProject.WebControls";
                     newAnswerType.TypeNameSpace = "Votations.NSurvey.WebControls.ThirdPartyItems.FreeTextBoxAnswerItem";
                 }
                 else
                 {
-                    newAnswerType.TypeAssembly = "Votations.NSurvey.WebControls";
+                    newAnswerType.TypeAssembly = "SurveyProject.WebControls";
                     newAnswerType.TypeNameSpace = "Votations.NSurvey.WebControls.UI.AnswerFieldItem";
                 }
             }
@@ -511,7 +511,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
                 newAnswerType.TypeMode += (int)AnswerTypeMode.Mandatory;
 
                 newAnswerType.XmlDataSource = XmlFileNameTextbox.Text;
-                newAnswerType.TypeAssembly = "Votations.NSurvey.WebControls";
+                newAnswerType.TypeAssembly = "SurveyProject.WebControls";
                 newAnswerType.TypeNameSpace = "Votations.NSurvey.WebControls.UI.AnswerXmlListItem";
 
                 answerTypeData.AnswerTypes.AddAnswerTypesRow(newAnswerType);
@@ -551,7 +551,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
                 SqlQueryTextbox.Text.Replace("truncate ", "");
 
                 newAnswerType.DataSource = SqlQueryTextbox.Text;
-                newAnswerType.TypeAssembly = "Votations.NSurvey.WebControls";
+                newAnswerType.TypeAssembly = "SurveyProject.WebControls";
                 newAnswerType.TypeNameSpace = "Votations.NSurvey.WebControls.UI.AnswerSqlListItem";
 
                 answerTypeData.AnswerTypes.AddAnswerTypesRow(newAnswerType);

@@ -9,8 +9,12 @@ namespace Votations.NSurvey.WebControls
     using System.Globalization;
     using System.Runtime.CompilerServices;
     using System.Text;
+    using System.Threading.Tasks;
+    // temp
+    using System.Timers;
     using System.Web;
     using System.Web.UI;
+    using System.Web.UI.HtmlControls;
     using System.Web.UI.WebControls;
     using Votations.NSurvey;
     using Votations.NSurvey.BusinessRules;
@@ -68,7 +72,10 @@ namespace Votations.NSurvey.WebControls
         private bool _previousQuestionNumbering = false;
         private ProgressDisplayMode _progressMode = ProgressDisplayMode.PagerNumbers;
         private StringBuilder _questionClientValidationCalls = new StringBuilder();
-        private Table _questionContainer = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetCentPercentTable();//JJ;
+
+        private Table _questionContainer = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetCentPercentTable();//JJ
+        private Panel _questionPanel = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetMainPercentagePanel();//GB
+
         private int _questionNumbers = 1;
         private QuestionItemCollection _questions;
         private string _questionValidationMark = "*";
@@ -90,7 +97,7 @@ namespace Votations.NSurvey.WebControls
         private SurveyData.SurveysRow _surveyRow;
         private string _surveyTitle;
         private string _thankYouMessage;
-        private UnAuthentifiedUserAction _unAuthentifiedUserAction = UnAuthentifiedUserAction.ShowThankYouMessage;
+        private UnAuthentifiedUserAction _unAuthentifiedUserAction = UnAuthentifiedUserAction.GeneralWarning;
         private VoterAnswersData currentVisitorAnswerSet = new VoterAnswersData();
 
         /// <summary>
@@ -174,47 +181,26 @@ namespace Votations.NSurvey.WebControls
 
         protected virtual void BuildCloseDate()
         {
-            //this.EnableValidation = false;
-            //Table child = new Table();
-            //child.ControlStyle.Font.CopyFrom(base.ControlStyle.Font);
-            //child.Width = Unit.Percentage(100.0);
-            //child.Rows.Add(this.BuildRow(new LiteralControl(string.Format(ResourceManager.GetString("ClosedMessage", this.LanguageCode), this._surveyRow.CloseDate.ToShortDateString())), null));
-            //this.Controls.Clear();
-            //this.Controls.Add(child);
             BuildMessageBox(string.Format(ResourceManager.GetString("ClosedMessage", this.LanguageCode), this._surveyRow.CloseDate.ToShortDateString()), CssXmlManager.GetString("ClosedDateSurveyMessage"));
         }
 
         protected virtual void BuildClosedSurvey()
         {
-            //this.EnableValidation = false;
-            //Table child = new Table();
-            //child.ControlStyle.Font.CopyFrom(base.ControlStyle.Font);
-            //child.Width = Unit.Percentage(100.0);
-            //child.Rows.Add(this.BuildRow(new LiteralControl(ResourceManager.GetString("ClosedSurveyMessage", this.LanguageCode)), null));
-            //this.Controls.Clear();
-            //this.Controls.Add(child);
             BuildMessageBox(ResourceManager.GetString("ClosedSurveyMessage", this.LanguageCode), CssXmlManager.GetString("ClosedSurveyMessage"));
         }
+
         protected virtual void BuildInactiveSurvey()
         {
-            //this.EnableValidation = false;
-            //Table child = new Table();
-            //child.ControlStyle.Font.CopyFrom(base.ControlStyle.Font);
-            //child.Width = Unit.Percentage(100.0);
-            //child.Rows.Add(this.BuildRow(new LiteralControl(ResourceManager.GetString("InactiveSurveyMessage", this.LanguageCode)), null));
-            //this.Controls.Clear();
-            //this.Controls.Add(child);
             BuildMessageBox(ResourceManager.GetString("InactiveSurveyMessage", this.LanguageCode), CssXmlManager.GetString("InactiveSurveyMessage"));
         }
 
-        protected virtual void BuildOpenDate () {
-            //this.EnableValidation = false;
-            //Table child = new Table();
-            //child.ControlStyle.Font.CopyFrom(base.ControlStyle.Font);
-            //child.Width = Unit.Percentage(100.0);
-            //child.Rows.Add(this.BuildRow(new LiteralControl(string.Format(ResourceManager.GetString("OpenMessage", this.LanguageCode), this._surveyRow.OpenDate.ToShortDateString())), null));
-            //this.Controls.Clear();
-            //this.Controls.Add(child);
+        protected virtual void BuildSecurityGeneralWarning()
+        {
+            BuildMessageBox(ResourceManager.GetString("SecurityGeneralWarning", this.LanguageCode), CssXmlManager.GetString("InactiveSurveyMessage"));
+        }
+
+        protected virtual void BuildOpenDate ()
+        {
             BuildMessageBox(string.Format(ResourceManager.GetString("OpenMessage", this.LanguageCode), this._surveyRow.OpenDate.ToShortDateString()), CssXmlManager.GetString("NotYetOpenedSurveyMessage"));
         }
 
@@ -244,18 +230,12 @@ namespace Votations.NSurvey.WebControls
         /// <summary>
         /// Pagenumber & percentage progress shown on page footer of survey
         /// </summary>
-        /// <param name="submitControl"></param>
-        /// <param name="enabled"></param>
+        /// <param name="submitControl">SubmitControl</param>
+        /// <param name="enabled">enabled</param>
         /// <returns>submitControl</returns>
         protected virtual Panel BuildFooterRow(Panel submitControl, bool enabled)
         {
-            //Table child = new Table();
-            //TableRow row = new TableRow();
-            //TableCell cell = new TableCell();
-            //child.Width = Unit.Percentage(100.0);
-            //cell.Controls.Add(submitControl);
-            //row.Cells.Add(cell);
-            //cell = new TableCell();
+
             Panel panel = new Panel { CssClass = CssXmlManager.GetString("PageNumberPanel"), ID="pNP" };
             Label label = new Label { CssClass = CssXmlManager.GetString("PageNumberLabel"), ID="pN" };
 
@@ -291,11 +271,7 @@ namespace Votations.NSurvey.WebControls
                 double num = (((double)(this.CurrentPageIndex)) / ((double)this.TotalPageNumber)) * 100.0;
                 label.Text = (num == 0.0) ? (0 + "%") : (num.ToString("##.##") + "%");
             }
-            //cell.HorizontalAlign = HorizontalAlign.Right;
-            //row.Cells.Add(cell);
-            //row.ControlStyle.CopyFrom(this.FootStyle);
-            //child.Rows.Add(row);
-            //return this.BuildRow(child, null);
+
             panel.Controls.Add(label);
             submitControl.Controls.Add(panel);
             return submitControl;
@@ -313,7 +289,6 @@ namespace Votations.NSurvey.WebControls
             this._languageDropDownList = new DropDownList {CssClass = CssXmlManager.GetString("LanguageRequestDDL"), ID="lrDDL"};
             table.ControlStyle.CssClass = CssXmlManager.GetString("LanguageRequestTable");
             table.ID = "lrT";
-            //table.Width = Unit.Percentage(100.0);
             
             Panel wrapper = new Panel { CssClass = CssXmlManager.GetString("MultiLanguageContainerWrapper"), ID="lrqCW" };
             Panel subpanel = new Panel { CssClass = CssXmlManager.GetString("MultiLanguageContainer"), ID="lrqC" };
@@ -324,14 +299,11 @@ namespace Votations.NSurvey.WebControls
             //cell.Controls.Add(new LiteralControl(ResourceManager.GetString("SelectLanguageMessage")));
             panel.Controls.Add(new LiteralControl(ResourceManager.GetString("SelectLanguageMessage")));
             cell.Controls.Add(panel);
-            //row.Cells.Add(cell);
-            //table.Rows.Add(row);
-            //cell = new TableCell();
-            //row = new TableRow();
+
             new MultiLanguages().GetSurveyLanguages(this.SurveyId);
             foreach (MultiLanguageData.MultiLanguagesRow row2 in new MultiLanguages().GetSurveyLanguages(this.SurveyId).MultiLanguages)
             {
-                ListItem item = new ListItem(ResourceManager.GetString(row2.LanguageDescription), row2.LanguageCode);
+                ListItem item = new ListItem(LanguageCodesManager.GetString(row2.LanguageDescription), row2.LanguageCode);
                 /* TODO JJ Remove setting to ""
                 if (row2.DefaultLanguage)
                 {
@@ -340,7 +312,7 @@ namespace Votations.NSurvey.WebControls
                  * */
                 this._languageDropDownList.Items.Add(item);
             }
-            ResourceManager.TranslateListControl(this._languageDropDownList);
+            LanguageCodesManager.TranslateListControl(this._languageDropDownList);
 
             panel = new Panel { CssClass = CssXmlManager.GetString("LanguageDropDownListPanel"), ID="lrlDDLP" };
             panel.Controls.Add(this._languageDropDownList);
@@ -401,11 +373,9 @@ namespace Votations.NSurvey.WebControls
 
         protected virtual Panel BuildNextPageButtonRow(bool enabled)
         {
-            //TableCell cell;
-            //Table submitControl = new Table();
+
             Panel submitControl = new Panel { CssClass = CssXmlManager.GetString("NextPageButtonRowPanel"), ID="npBRP" };
             Panel panel;
-            //TableRow row = new TableRow();
 
             Panel subPanel = new Panel { CssClass = CssXmlManager.GetString("NextPageNavigationPanel"), ID = "npNP" };
 
@@ -450,8 +420,7 @@ namespace Votations.NSurvey.WebControls
                 panel.Controls.Add(this.BuildSaveProgressButton());
                 submitControl.Controls.Add(panel);
             }
-            //return this.BuildFooterRow(submitControl);
-            //wrapper.Controls.Add(submitControl);
+
             return submitControl;
         }
 
@@ -480,6 +449,88 @@ namespace Votations.NSurvey.WebControls
             return button;
         }
 
+        /// <summary>
+        /// method to add the jquery and css files to the head section of the webpage on page initialisation (oninit())
+        /// </summary>
+        protected virtual void AddHeaderScriptCss()
+        {
+            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
+            Page.Header.Controls.Add(new LiteralControl("<!--[if lt IE 9]><script src='Scripts/html5shiv.min.js'></script><script src='Scripts/respond.min.js'></script><![endif]-->"));
+
+            //Jquery CSS files
+            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
+
+            //Jquery UI 1.11.4 css:
+            HtmlGenericControl css = new HtmlGenericControl("link");
+            css.Attributes.Add("rel", "stylesheet");
+            css.Attributes.Add("type", "text/css");
+            css.Attributes.Add("href", ResolveUrl(GlobalConfig.ContentFilesPath + "themes/base/base.css"));
+            Page.Header.Controls.Add(css);
+
+            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
+
+            //Bootstrap css:
+            css = new HtmlGenericControl("link");
+            css.Attributes.Add("rel", "stylesheet");
+            css.Attributes.Add("type", "text/css");
+            css.Attributes.Add("href", ResolveUrl(GlobalConfig.ContentFilesPath + "bootstrap.min.css"));
+            Page.Header.Controls.Add(css);
+
+            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
+
+            //SurveyForm css:
+            //css = new HtmlGenericControl("link");
+            //css.Attributes.Add("rel", "stylesheet");
+            //css.Attributes.Add("type", "text/css");
+            //css.Attributes.Add("ID", "defaultCSS");
+            //css.Attributes.Add("runat", "server");
+            //css.Attributes.Add("href", ResolveUrl(GlobalConfig.CSSFilesPath + "/surveymobile.css"));
+            //Page.Header.Controls.Add(css);
+
+            //Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
+
+            //jQuery(necessary for Bootstrap's JavaScript plugins) + answerfieldslideritem, answerfieldcalendar
+
+            HtmlGenericControl javascriptControl = new HtmlGenericControl("script");
+
+            javascriptControl.Attributes.Add("id", "jq311");
+            javascriptControl.Attributes.Add("src", ResolveUrl(GlobalConfig.ScriptFilesPath + "/jquery-3.3.1.min.js"));
+            Page.Header.Controls.Add(javascriptControl);
+
+            //For development purposes only: upgrade jquery
+
+            //Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
+
+            //javascriptControl = new HtmlGenericControl("script");
+            //javascriptControl.Attributes.Add("id", "jqmigrate");
+            //javascriptControl.Attributes.Add("src", ResolveUrl("https://code.jquery.com/jquery-migrate-3.0.0.js"));
+            //Page.Header.Controls.Add(javascriptControl);
+
+            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
+
+            javascriptControl = new HtmlGenericControl("script");
+            javascriptControl.Attributes.Add("src", ResolveUrl(GlobalConfig.ScriptFilesPath + "/jquery-ui-1.12.1.min.js"));
+            Page.Header.Controls.Add(javascriptControl);
+
+            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
+
+            javascriptControl = new HtmlGenericControl("script");
+            javascriptControl.Attributes.Add("src", ResolveUrl(GlobalConfig.ScriptFilesPath + "/jquery-ui-i18n.min.js"));
+            Page.Header.Controls.Add(javascriptControl);
+
+            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
+
+            javascriptControl = new HtmlGenericControl("script");
+            javascriptControl.Attributes.Add("src", ResolveUrl(GlobalConfig.ScriptFilesPath + "/modernizr-2.8.3.js"));
+            Page.Header.Controls.Add(javascriptControl);
+
+            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
+
+
+        }
+
+
+
         protected virtual void BuildResumeRequest()
         {
             TableCell cell = new TableCell();
@@ -490,8 +541,7 @@ namespace Votations.NSurvey.WebControls
             _resumeTable.ControlStyle.CssClass = CssXmlManager.GetString("ResumeRequestTable");
             _resumeTable.ID = "rct";
             this._resumeUIdTextBox = new TextBox();
-            //this._resumeTable.ControlStyle.Font.CopyFrom(base.ControlStyle.Font);
-            //this._resumeTable.Width = Unit.Percentage(100.0);
+
             cell.CssClass = CssXmlManager.GetString("EnterResumeUIdMessage");
             cell.ID = "erUM";
             cell.Controls.Add(new LiteralControl(ResourceManager.GetString("EnterResumeUIdMessage", this.LanguageCode)));
@@ -529,6 +579,24 @@ namespace Votations.NSurvey.WebControls
             return row;
         }
 
+        //TODO SP25
+        protected virtual Panel BuildPanelRow(string cellText, Style rowStyle)
+        {
+            Panel PanelRow = new Panel();
+            Label cell = new Label();
+
+            if ((cellText != null) && (cellText.Length > 0))
+            {
+                cell.Text = cellText;
+                //cell.Wrap = true;
+            }
+
+            PanelRow.Controls.Add(cell);
+            cell.ControlStyle.CopyFrom(rowStyle);
+
+            return PanelRow;
+        }
+
         protected virtual TableRow BuildRow(Control child, Style rowStyle)
         {
             TableRow row = new TableRow();
@@ -557,29 +625,33 @@ namespace Votations.NSurvey.WebControls
         {
             Panel submitControl = new Panel { CssClass = CssXmlManager.GetString("BuildSubmitButtonPanel"), ID="bsbP" };
             Panel panel;
-            //TableRow row = new TableRow();
 
             Panel subPanel = new Panel { CssClass = CssXmlManager.GetString("BuildSubmitButtonSubPanel"), ID="bsbSP" };
-
-
 
             // submit button
             this._submitButton.ControlStyle.CopyFrom(this.ButtonStyle);
             this._submitButton.CssClass = CssXmlManager.GetString("SurveySubmitButton");
             this._submitButton.ID = "ssB";
             this._submitButton.Text = (this.ButtonText == null) ? ResourceManager.GetString("SubmitSurvey", this.LanguageCode) : this.ButtonText;
+
+                // to prevent fast/ double clicking enter button:
+            this._submitButton.OnClientClick = "var e=this;setTimeout(function(){e.disabled=true;},0);return true;";
+
             this._submitButton.Click += new EventHandler(this.OnAnswersSubmit);
+
             if (this.EnableValidation)
             {
                 this._submitButton.Attributes.Add("OnClick", string.Format("return {0}{1}();", GlobalConfig.SurveyValidationFunction, this.ID));
             }
+            
+
             panel = new Panel { CssClass = CssXmlManager.GetString("SurveySubmitButtonPanel"), ID="ssbP" };
             panel.Controls.Add(this._submitButton);
             subPanel.Controls.Add(panel);
 
             submitControl.Controls.Add(subPanel);
 
-            //previous page button
+            //add previous page button in case Navigation is enabled
             if (this._enableNavigation)
             {
                 panel = new Panel { CssClass = CssXmlManager.GetString("BuildSubmitPPBSubPanel"), ID = "bsbPPBP" };
@@ -593,7 +665,6 @@ namespace Votations.NSurvey.WebControls
             //resume button
             if ((this._resumeMode == ResumeMode.Manual) && (this.TotalPageNumber == 1))
             {
-                //panel = new Panel { CssClass = "resumeProgressButton" };
                 panel = new Panel { CssClass = CssXmlManager.GetString("NextPageResumeProgressButtonPanel"), ID = "npRPBP" };
                 panel.Controls.Add(this.BuildResumeProgressButton());
                 submitControl.Controls.Add(panel);
@@ -605,10 +676,6 @@ namespace Votations.NSurvey.WebControls
                 submitControl.Controls.Add(panel);
             }
 
-            //cell = new TableCell();
-            //cell.Controls.Add(this._submitButton);
-            //row.Cells.Add(cell);
-            //submitControl.Rows.Add(row);
             return submitControl;
         }
 
@@ -664,29 +731,26 @@ namespace Votations.NSurvey.WebControls
         {   
             QuestionData data;
             this._questions = new QuestionItemCollection();
-            this._questionContainer = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetMainPercentTable();//JJ;
-            this._questionContainer.Rows.Add(this.BuildRow("", null));
-            this._questionContainer.Rows[0].EnableViewState = false;
-            this._questionContainer.Rows.Add(this.BuildRow("", null));
-            this._questionContainer.Rows[1].EnableViewState = false;
+
+            //TODO SP25
+            this._questionPanel = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetMainPercentagePanel();
 
             Votations.NSurvey.SQLServerDAL.SurveyLayout u = new Votations.NSurvey.SQLServerDAL.SurveyLayout();
             var _userSettings = u.SurveyLayoutGet(this.SurveyId, this.LanguageCode);
-
 
             if (!(_userSettings == null || _userSettings.SurveyLayout.Count == 0))
             {
                 this.Controls.Add(BuildCustomHeaderOrFooter(HttpUtility.HtmlDecode(_userSettings.SurveyLayout[0].SurveyHeaderText)));
             }
-            //this._questionContainer.ControlStyle.Font.CopyFrom(base.ControlStyle.Font);
-            Panel panel = new Panel { CssClass = CssXmlManager.GetString("BuildSurveyBoxQCPanel"), ID="bsbQCP" };
+
             Panel subpanel = new Panel { CssClass = CssXmlManager.GetString("BuildSurveyBoxQCSubPanel"), ID="bsbQCSP" };
-            panel.Controls.Add(subpanel);
-            subpanel.Controls.Add(this._questionContainer);
+
+            //TODO SP25
+            subpanel.Controls.Add(this._questionPanel);
+
+            this.Controls.Add(subpanel);
 
 
-            this.Controls.Add(panel);
-            //this.Controls.Add(_questionContainer);
             PageOptionData surveyPageOptions = new Surveys().GetSurveyPageOptions(this.SurveyId, this.CurrentPageIndex);
             if (surveyPageOptions.PageOptions.Rows.Count > 0)
             {
@@ -705,12 +769,12 @@ namespace Votations.NSurvey.WebControls
             {
                 if (!new Question().SkipQuestion(row2.QuestionId, this.VoterAnswers, this._isScored))
                 {
-                    TableRow row = new TableRow();
-                    TableCell cell = new TableCell();
-                    row.Cells.Add(cell);
 
-                    this._questionContainer.Rows.Add(row);
-                    this.InsertQuestion(row2, cell, enableQuestionDefaults);
+                    //TODO sp25
+                    Panel panelrow = new Panel();
+                    this._questionPanel.Controls.Add(panelrow);
+
+                    this.InsertQuestion(row2, panelrow, enableQuestionDefaults);
                 }
                 else
                 {
@@ -723,14 +787,10 @@ namespace Votations.NSurvey.WebControls
             }
             if ((this.CurrentPageIndex < this.TotalPageNumber) && !this._enableSubmitButton)
             {
-                //this._questionContainer.Rows.Add(this.BuildNextPageButtonRow());
-                //this.Controls.Add(this.BuildNextPageButtonRow(true));
                 subpanel.Controls.Add(this.BuildNextPageButtonRow(true));
             }
             else
             {
-                //this._questionContainer.Rows.Add(this.BuildSubmitButtonRow());
-                //this.Controls.Add(this.BuildSubmitButtonRow());
                 subpanel.Controls.Add(this.BuildSubmitButtonRow());
             }
 
@@ -1032,16 +1092,28 @@ namespace Votations.NSurvey.WebControls
             }
         }
 
+        /// <summary>
+        /// On click event of Submit button
+        /// </summary>
+        /// <param name="sender">sender: submitbutton</param>
+        /// <param name="e">raised event</param>
         protected virtual void OnAnswersSubmit(object sender, EventArgs e)
         {
-            if (!this._selectionsAreRequired)
-            {
-                this.SubmitAnswersToDb();
-                this.CurrentPageIndex = 1;
-                this.QuestionNumber = 0;
-                this.HighestPageNumber = 0;
-            }
+
+                if (!this._selectionsAreRequired)
+                {
+                        this.SubmitAnswersToDb();
+
+                        this.CurrentPageIndex = 1;
+                        this.QuestionNumber = 0;
+                        this.HighestPageNumber = 0;
+                }
+
+            //TODO SP2.5 remove test:
+            //Page.ClientScript.RegisterStartupScript(this.GetType(), "myalert", "document.getElementById('LoadMessage').style.display = 'block';", true);
+            
         }
+
 
         protected virtual void OnCancelResumeSubmit(object sender, EventArgs e)
         {
@@ -1101,8 +1173,11 @@ namespace Votations.NSurvey.WebControls
             base.OnInit(e);
             if (!this._isDesignTime)
             {
+                AddHeaderScriptCss();
+
                 this._submitButton.ID = "SurveySubmit";
                 this.ViewState["LastAuthenticatedAddIn"] = -1;
+
                 this._questionContainer.Rows.Add(this.BuildRow("", null));
                 this._questionContainer.Rows[0].EnableViewState = false;
                 this._questionContainer.Rows.Add(this.BuildRow("", null));
@@ -1295,16 +1370,12 @@ namespace Votations.NSurvey.WebControls
             }
             else
             {
-                //Style styletest = new Style();
-                //styletest.CssClass = CssXmlManager.GetString("OnResumeUidSubmitError");
-
                 TableCell cell = new TableCell();
                 TableRow row = new TableRow();
                 cell.Text = GetErrorMessage(ResourceManager.GetString("InvalidResumeUId", this.LanguageCode));
                 cell.ColumnSpan = 2;
                 row.Cells.Add(cell);
 
-                //this._resumeTable.Rows.AddAt(0, this.BuildRow(ResourceManager.GetString("InvalidResumeUId", this.LanguageCode), styletest ));
                 this._resumeTable.Rows.AddAt(0, row);
             }
         }
@@ -1621,10 +1692,19 @@ namespace Votations.NSurvey.WebControls
                     {
                         this.Visible = false;
                     }
-                    else
+                    else if (this._unAuthentifiedUserAction == UnAuthentifiedUserAction.GeneralWarning)
+                    {
+                        BuildSecurityGeneralWarning();
+
+                    } else if (this._unAuthentifiedUserAction == UnAuthentifiedUserAction.ShowThankYouMessage)
                     {
                         this.BuildThanksBox(false);
+
+                    }  else
+                    {
+                        BuildSecurityGeneralWarning();
                     }
+
                 }
                 return true;
             }
@@ -1701,15 +1781,17 @@ namespace Votations.NSurvey.WebControls
         }
 
         /// <summary>
+        /// On clicking the submitbutton and raising the click event:
         /// Submits the answers to the database and ends the survey
         /// Depending on notification mode sends email message (3 options) to administrator
         /// Optionally redirects to new url
-        /// Optionally shows thank you message to surveytaker
+        /// Optionally shows thank you message to surveytaker (buildthankbox)
         /// </summary>
         protected virtual void SubmitAnswersToDb()
         {
             this.CurrentSecurityAddIn = 0;
             this.ViewState["LastAuthenticatedAddIn"] = -1;
+
             if (!this.SecuritySetup(false))
             {
                 if (this.currentVisitorAnswerSet.VotersAnswers.Rows.Count > 0)
@@ -1722,15 +1804,19 @@ namespace Votations.NSurvey.WebControls
                 {
                     new Voter().DeleteVoterResumeSession(this.SurveyId, this.VoterAnswers.Voters[0].ResumeUID);
                 }
+
                 this.OnFormSubmitting(new FormItemEventArgs(this.VoterAnswers));
                 new Voter().AddVoter(this.VoterAnswers);
+
                 this.OnFormSubmitted(new FormItemEventArgs(this.VoterAnswers));
                 this.UnLoadSecurityAddIns(this.VoterAnswers);
+
                 if (this._notificationMode != NotificationMode.None)
                 {
                     new VoterTextReportGenerator(this.VoterAnswers, this.SurveyId).SendReport(this._notificationMode, this._surveyTitle, this._emailFrom, this._emailTo, this._emailSubject);
                 }
             }
+
             if ((this._redirectionURL != null) && (this._redirectionURL.Length != 0))
             {
                 HttpContext.Current.Session["voterid"] = this.VoterAnswers.Voters[0].VoterId;
@@ -1741,9 +1827,14 @@ namespace Votations.NSurvey.WebControls
             }
             else
             {
+                //TODO SP2.5 remove test:
+                //Page.ClientScript.RegisterStartupScript(this.GetType(), "myalert2", "document.getElementById('LoadMessage').style.display = 'none';", true);
                 this.BuildThanksBox(true);
             }
+
+            // clear all voteranswers from viewstate
             this.VoterAnswers.Clear();
+            ViewState.Clear();
         }
 
         /// <summary>
@@ -2369,6 +2460,7 @@ namespace Votations.NSurvey.WebControls
 
         /// <summary>
         /// Id of the survey you wish to render
+        /// and gets or sets it to the viewstate
         /// </summary>
         [Category("General"), DefaultValue("-1"), PersistenceMode(PersistenceMode.Attribute), Bindable(true), DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         public int SurveyId
@@ -2411,6 +2503,7 @@ namespace Votations.NSurvey.WebControls
 
         /// <summary>
         /// Total of questions pages in the survey
+        /// and adds it to the viewstate
         /// </summary>
         public int TotalPageNumber
         {
@@ -2431,6 +2524,7 @@ namespace Votations.NSurvey.WebControls
         /// <summary>
         /// Contains all the answers to all
         /// questions given by the current voter
+        /// and adds the VoterAnswersData Dataset to the viewstate
         /// </summary>
         public VoterAnswersData VoterAnswers
         {
@@ -2447,6 +2541,7 @@ namespace Votations.NSurvey.WebControls
                 this.ViewState["VoterAnswers"] = value;
             }
         }
+
     }
 }
 

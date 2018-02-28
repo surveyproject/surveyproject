@@ -1,23 +1,15 @@
 <%@ Page Language="c#" MasterPageFile="~/nsurveyadmin/MsterPageTabs.master" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.HelpFiles" CodeBehind="default.aspx.cs" %>
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="mainBody" class="mainBody contentHolder ps-container"><div id="Panel" class="Panel content">
-    <table class="TableLayoutContainer">
-        <tr>
-            <td>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="helpPanel"><div>
                 <asp:ImageButton ID="btnBack" ImageUrl="~/Images/index-icon.png" runat="server" CssClass="buttonIndex"
                     PostBackUrl="~/NSurveyAdmin/Help/default.aspx#RolesUsers" Visible="True" ToolTip="Back to Helpfiles Index" />
-            </td>
-        </tr>
-        <tr>
-            <td class="contentCell" valign="top">
-                <br />
-<h2 style="color:#5720C6;">Roles & User Management</h2><br />
-<br />
-<hr /><br />
+            </div><div>
+                <h2 style="color:#5720C6;">Roles & User Management</h2>
+<hr />
 Access to the SP™ application features and surveys is determined by ROLES and SURVEYS that are assigned to a USER. A ROLE is a collection of one or more ROLERIGHTS. Every ROLERIGHT is linked to specific application features. A SP™ USER can have one or more ROLES and/ or SURVEYS assigned.
 <br /><br />
-There are 40 different rolerights to choose and create roles from in any combination. The minimum number of rolerights to select is one, the maximum 40. In certain cases there is a hierarchy of rolerights to take into account when creating roles. 
+There are 40+ different rolerights to choose from and create roles in any combination. The minimum number of rolerights to select is one, the maximum 42. In certain cases there is a hierarchy of rolerights to take into account when creating roles. 
 <br /><br />
 Once a ROLE is created and assigned to a SP™ user it will give access to the application features as set by the rolerights. Certain features a roleright gives access to will only become available if one or more surveys are assigned to the user as well. 
 <br /><br />
@@ -36,18 +28,18 @@ Once a survey is assigned to the user and selected(!) when clicking the Form Bui
 
 <b>Hierarchy of rolerighs</b>
 <br /><br />
-The main roleright that is needed to be able to select a survey and access features that will only work if a survey is selected is the AccessSurveyList roleright. This roleright will give access to the SurveyList menu option and webpage and open the Survey TreeView in the left panel of the application. Any surveys assigned to a user will be shown in the Treeview and the SurveyList to select. Only administrators will see all surveys created through the SP™ application.
+The main roleright that is needed to be able to select a survey and access features that will only work if a survey is selected is the <code>AccessSurveyList</code> roleright. This roleright will give access to the SurveyList menu option and webpage and open the Survey TreeView in the left panel of the application. Any surveys assigned to a user will be shown in the Treeview and the SurveyList to select. Only administrators will see all surveys created through the SP™ application.
 <br /><br />
 The logic of other combinations of rolerights partly depends on the usertype or usergroups and the intended use of the application by that group.  
 <br /><br />
-An overview of the different rolerights, related features and menuoptions can be downloaded at .....
+For an overview of the different rolerights see <a href="new/Roles Manager.aspx" title=" Roles Manager " > Roles Manager </a>	<br />
 <br /><br />
 
 <b>Survey Takers</b><br /><br />
 
 The only exception to the AccessSurveyList roleright hierarchy and the need to select a survey from the surveylist or treeview first before accessing features directly related to a survey is the Survey Taker roleright.
 <br /><br />
-Survey takers (or voters) are a special group of users that are not supposed to have access to any of the other features of the SP™ application except to take a specific survey (one or more) and vote. 
+Survey takers (or respondents) are a special group of users that are not supposed to have access to any of the other features of the SP™ application except to answer a specific survey (one or more) and vote. 
 <br /><br />
 After login Survey takers that have multiple surveys assigned will be shown a dropdownlist to select the survey(s) to take. If only one survey is assigned is will be presented by default.
 <br /><br />
@@ -81,21 +73,20 @@ Customised roles can be created to be assigned so a specific group of users or a
 <i>Report Viewers</i><br />
 - role with rolerights to view surveysresults, reports and import/ export data
 <br /><br />
-<img alt="roles and users" src="../Images/AccesAuthorisation.gif" title="Acces & Authorisation" />
+<img alt="roles and users" src="Images/AccesAuthorisation.gif" title="Acces & Authorisation" />
 <br /><br />
 
- <hr style="color:#e2e2e2;" /><br />
-<br />
+ <hr style="color:#e2e2e2;" />
+
 <h3>More Information</h3><br />
 
-User%20Manager.html<br />
-User%20Creation%20Tool.html<br />
-Group%20Manager.html<br />
-Roles%20Manager.html<br />
-User%20Import.html<br />
+<a href="new/User Manager.aspx" title=" User Manager " > User Manager </a>	<br />
+<a href="new/User Creation Tool.aspx" title=" User Creation Tool " > User Creation Tool </a>	<br />
+
+<a href="new/Roles Manager.aspx" title=" Roles Manager " > Roles Manager </a>	<br />
+<a href="new/User Import.aspx" title=" User Import " > User Import </a>	<br />
+
 
 <br />
-            </td>
-        </tr>
-    </table>
-</div></div></asp:Content>
+            </div>
+<div id="fillerDiv" class="fillerDiv">&nbsp;</div></div></asp:Content>

@@ -116,6 +116,7 @@ namespace Votations.NSurvey.Security
         /// <summary>
         /// Check if the current user has given
         /// the correct credentials
+        /// if cookie is null (no expiration date) = true: correct credentials
         /// </summary>
         public bool IsAuthenticated()
         {
@@ -132,7 +133,9 @@ namespace Votations.NSurvey.Security
             {
                 TableCell cell = new TableCell();
                 TableRow row = new TableRow();
+                row.CssClass = "securityAdminWarning";
                 cell.Text = ResourceManager.GetString("InvalidCookieExpireTime", this.LanguageCode);
+                //cell.CssClass = "securityAdminWarning";
                 cell.ColumnSpan = 2;
                 row.Cells.Add(cell);
                 this._adminTable.Rows.AddAt(0, row);
@@ -145,9 +148,9 @@ namespace Votations.NSurvey.Security
         /// <param name="voter">Voter information as saved in the database and its answers</param>
         public void ProcessVoterData(VoterAnswersData voter)
         {
-            HttpCookie cookie = new HttpCookie("VotationsSurvey" + this.SurveyId, "1");
-            cookie.Expires = DateTime.Now.AddMinutes((double) new Surveys().GetCookieExpiration(this.SurveyId));
-            HttpContext.Current.Response.Cookies.Add(cookie);
+                HttpCookie cookie = new HttpCookie("VotationsSurvey" + this.SurveyId, "1");
+                cookie.Expires = DateTime.Now.AddMinutes((double)new Surveys().GetCookieExpiration(this.SurveyId));
+                HttpContext.Current.Response.Cookies.Add(cookie);
         }
 
         /// <summary>

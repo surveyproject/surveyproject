@@ -1,0 +1,886 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Votations.NSurvey.WebAdmin.ASyncMailing">
+    <Position X="145.75" Y="15.5" Width="2.5" />
+    <NestedTypes>
+      <Delegate Name="Votations.NSurvey.WebAdmin.ASyncMailing.MailItDelegate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Code\ASyncMailing.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAIAAAAAAAAAAAgAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Code\ASyncMailing.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.ASyncMailingReminder">
+    <Position X="148.5" Y="15.5" Width="3.75" />
+    <NestedTypes>
+      <Delegate Name="Votations.NSurvey.WebAdmin.ASyncMailingReminder.RemindRecipientsDelegate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Code\ASyncMailingReminder.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAgAAAA=</HashCode>
+      <FileName>Code\ASyncMailingReminder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.ASyncMailingState">
+    <Position X="152.5" Y="15.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAIAACAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Code\ASyncMailingState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.CheckBoxCtrlAdapter">
+    <Position X="155" Y="15.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Code\CheckBoxCtrlAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.PageBase">
+    <Position X="160.75" Y="0.5" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAUIAAAEACAAAAAQIAAAQAABhkABIIAEQAAAABA=</HashCode>
+      <FileName>Code\PageBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.SyncDataStore">
+    <Position X="165.5" Y="51.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAghAAAAABAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Code\SyncDataStore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.UINavigator">
+    <Position X="171.75" Y="51.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>9CSBWggh7FgHmRmhkhAEYwIAKEBRXiBAWgYJAYgZJQQ=</HashCode>
+      <FileName>Code\UINavigator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.UITabList">
+    <Position X="175.25" Y="51.25" Width="2.75" />
+    <NestedTypes>
+      <Enum Name="Votations.NSurvey.WebAdmin.UITabList.InsertSecurityTabs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Code\UITabList.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Votations.NSurvey.WebAdmin.UITabList.CreateAnswerTypeTabs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Code\UITabList.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Votations.NSurvey.WebAdmin.UITabList.StatsTabs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Code\UITabList.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Votations.NSurvey.WebAdmin.UITabList.SurveyInfoTabs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Code\UITabList.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Votations.NSurvey.WebAdmin.UITabList.LibraryTemplatesTabs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Code\UITabList.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Votations.NSurvey.WebAdmin.UITabList.VoterReportTabs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Code\UITabList.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Votations.NSurvey.WebAdmin.UITabList.ConditionalEndMessageTabs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Code\UITabList.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Votations.NSurvey.WebAdmin.UITabList.DesignerTabs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Code\UITabList.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Votations.NSurvey.WebAdmin.UITabList.EditVoterReportTabs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Code\UITabList.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Votations.NSurvey.WebAdmin.UITabList.SecurityTabs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Code\UITabList.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Votations.NSurvey.WebAdmin.UITabList.HelpTabs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Code\UITabList.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Votations.NSurvey.WebAdmin.UITabList.CampaignTabs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Code\UITabList.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Votations.NSurvey.WebAdmin.UITabList.TakeSurveyTabs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Code\UITabList.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Votations.NSurvey.WebAdmin.UITabList.ResultTabs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Code\UITabList.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>gBAAAIAAAAAAAICAQgEAAAAAACAAAAAAAEABBAAAQAI=</HashCode>
+      <FileName>Code\UITabList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin._default">
+    <Position X="237.25" Y="6.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgACAAAAAAQAAAAAAAIAAAA=</HashCode>
+      <FileName>default.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.ErrorTestPage">
+    <Position X="146" Y="20.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>4BgAAAAAAAAAAAAAAABAAAgAIAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Errors\ErrorTestPage.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.HttpErrorPage">
+    <Position X="166.5" Y="20.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAABEAAAAIAAAAAAgAAACAQIAAgA=</HashCode>
+      <FileName>Errors\HttpErrorPage.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.AccessDenied">
+    <Position X="0.5" Y="6.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAQAAAAAgACAAAAAAQAAAAAAAIAAAA=</HashCode>
+      <FileName>NSurveyAdmin\AccessDenied.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.ColumnChartReport">
+    <Position X="34" Y="6.75" Width="5" />
+    <TypeIdentifier>
+      <HashCode>QAIAAAIAIAAAgAAEAEAAAAAAAIAAIAAAAAAAQGIAAAA=</HashCode>
+      <FileName>NSurveyAdmin\ColumnChartReport.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.ConditionalEndMessage">
+    <Position X="67.75" Y="6.75" Width="9.25" />
+    <TypeIdentifier>
+      <HashCode>BAgABkNCiCAQAAAQAABgAkCCQEYSYYQAQAgAEA4kAkg=</HashCode>
+      <FileName>NSurveyAdmin\ConditionalEndMessage.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.ControlCode">
+    <Position X="110.75" Y="6.75" Width="4" />
+    <TypeIdentifier>
+      <HashCode>BAAAARAQAEoABBAQIAAgAqCCwACAAQQAAAAIAAIAAgE=</HashCode>
+      <FileName>NSurveyAdmin\ControlCode.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.CreateSurvey">
+    <Position X="136.5" Y="6.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>BAAAAQAAAAAAAAAAAAAAAAACAAAAAAQAAAAAAAIAAgA=</HashCode>
+      <FileName>NSurveyAdmin\CreateSurvey.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.EditCssXml">
+    <Position X="162.25" Y="6.75" Width="5.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAMEAAAAAACAAAAAAEgBAAAAAAAAAAACAgAIAAgA=</HashCode>
+      <FileName>NSurveyAdmin\EditCssXml.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.EditMatrixQuestion">
+    <Position X="190.5" Y="6.75" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>DA2AICOFAAAJACpWHJAAsigeoQRCOMZHhuHFgBIRBgc=</HashCode>
+      <FileName>NSurveyAdmin\EditMatrixQuestion.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.EditMultiLanguages">
+    <Position X="215" Y="6.75" Width="4" />
+    <TypeIdentifier>
+      <HashCode>BCAQAAACAAIAAAASAAAAAhCiAAAAAAQAAAAAQAIAAgA=</HashCode>
+      <FileName>NSurveyAdmin\EditMultiLanguages.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.EditPageBranching">
+    <Position X="241.25" Y="6.75" Width="8" />
+    <TypeIdentifier>
+      <HashCode>JAAAAgNAACAAIQAQEAAgAggCQIIQYcQCAQAAAA4kAgA=</HashCode>
+      <FileName>NSurveyAdmin\EditPageBranching.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.EditRegEx">
+    <Position X="271.75" Y="6.75" Width="5" />
+    <TypeIdentifier>
+      <HashCode>BAECCgAABEBAIgGQBAQAAg4KCAIAKAyIAAEACAIAA2Q=</HashCode>
+      <FileName>NSurveyAdmin\EditRegEx.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.EditSingleQuestion">
+    <Position X="301.25" Y="6.75" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>RQUQKDIAEChJBDBUEBBMZkiGCQxCeOwDBmnHhDOCRkM=</HashCode>
+      <FileName>NSurveyAdmin\EditSingleQuestion.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.EditSingleQuestionAnswers">
+    <Position X="4.5" Y="6.75" Width="5.75" />
+    <TypeIdentifier>
+      <HashCode>hAAhEEAKBAABYBBQGwAgAmmeYAEAqMQCAwSQBCoIAgE=</HashCode>
+      <FileName>NSurveyAdmin\EditSingleQuestionAnswers.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.EditSkipLogicRules">
+    <Position X="39.75" Y="6.75" Width="8" />
+    <TypeIdentifier>
+      <HashCode>BCAAAgNAACAAIRAQEAAgAgCCQAIQY4QAAAAAAC4kggA=</HashCode>
+      <FileName>NSurveyAdmin\EditSkipLogicRules.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.EditVoterReport">
+    <Position X="77.75" Y="6.75" Width="6.25" />
+    <TypeIdentifier>
+      <HashCode>BEAWUBCgKAAGAAAQEAMsBgASEAQAAgYIAAIAAAIAAgg=</HashCode>
+      <FileName>NSurveyAdmin\EditVoterReport.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.ExportData">
+    <Position X="115.5" Y="6.75" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>BWwBBBAECiASAQA4QlFAQrEKKgABQZcEoAJAQBsAEgY=</HashCode>
+      <FileName>NSurveyAdmin\ExportData.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.FieldReporting">
+    <Position X="140.5" Y="6.75" Width="5.75" />
+    <TypeIdentifier>
+      <HashCode>BAAAEBABEAAAAEBAACAIAgASAAAAEBQCAAAAAAMQAgA=</HashCode>
+      <FileName>NSurveyAdmin\FieldReporting.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.FileManager">
+    <Position X="168.75" Y="6.75" Width="5.75" />
+    <TypeIdentifier>
+      <HashCode>BAAEEBIYAAACIAARAgAASgASAFACgIQAMQEACEJEBhA=</HashCode>
+      <FileName>NSurveyAdmin\FileManager.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.FilterCreator">
+    <Position X="196.75" Y="6.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAIAAAAAAAAQEAAAgAACAAAAAIQAAAAAAAIAAgA=</HashCode>
+      <FileName>NSurveyAdmin\FilterCreator.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.FilterEditor">
+    <Position X="219.75" Y="6.75" Width="5" />
+    <TypeIdentifier>
+      <HashCode>BAAAABAAAIAIAAAAAAAAggECCAAAIAQBAAAAAAIAAgI=</HashCode>
+      <FileName>NSurveyAdmin\FilterEditor.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.GlobalStats">
+    <Position X="250" Y="6.75" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>BAAAADBCBBAQAAASAAAAAgCiAAABAgQEAIgASAIhAgA=</HashCode>
+      <FileName>NSurveyAdmin\GlobalStats.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.HelpFiles">
+    <Position X="277.5" Y="6.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgACAAAAAARAAAAAAAIAAgA=</HashCode>
+      <FileName>NSurveyAdmin\Help\default.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.HelpOptions">
+    <Position X="307.5" Y="6.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>gAAAEAAAEAAAAAAAAAAAAgACAAAAAAYAAAAAAAIAAgA=</HashCode>
+      <FileName>NSurveyAdmin\Help\Index.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.InsertQuestion">
+    <Position X="11" Y="6.75" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>lAACAAIAABGAQYAREgACIgACAoAYAKSAAEBAAAprAgA=</HashCode>
+      <FileName>NSurveyAdmin\InsertQuestion.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.InsertSecurityAddIn">
+    <Position X="48.5" Y="6.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>BAAACABCAAAQAAAQAAAgQgACAAAAAAQAAAAAAAIAIAA=</HashCode>
+      <FileName>NSurveyAdmin\InsertSecurityAddIn.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.LibraryDirectory">
+    <Position X="84.75" Y="6.75" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>BAiBEAIEAmQAAAAQFhCQQoACAAYgAAYCgAgBAAoUggU=</HashCode>
+      <FileName>NSurveyAdmin\LibraryDirectory.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.LibraryTemplates">
+    <Position X="121.75" Y="6.75" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>BEAAQAAwAEQAECRRAAAIAggCAAQAAAQAAgQAAkIAAgg=</HashCode>
+      <FileName>NSurveyAdmin\LibraryTemplates.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.LogOut">
+    <Position X="147" Y="6.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAAQAAAAAAAIAAAA=</HashCode>
+      <FileName>NSurveyAdmin\LogOut.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.MailingLog">
+    <Position X="175.25" Y="6.75" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>BACAABIaCAAAAEAQAgAAQgAiABAAAATgAQEAAAJEAhA=</HashCode>
+      <FileName>NSurveyAdmin\MailingLog.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.MailingPoll">
+    <Position X="200.75" Y="6.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAEAIAAAAAUgACAAAAAAQAAAAAAAKAAAA=</HashCode>
+      <FileName>NSurveyAdmin\MailingPoll.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.MailingStatus">
+    <Position X="225.5" Y="6.75" Width="5.75" />
+    <TypeIdentifier>
+      <HashCode>hBwAIBCIBCBAAAAUQgAAQgACIhAFAIRAMAADgSJQAhI=</HashCode>
+      <FileName>NSurveyAdmin\MailingStatus.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.MultiLanguagesPage">
+    <Position X="255.5" Y="6.75" Width="6" />
+    <TypeIdentifier>
+      <HashCode>BAhQQBAGEAIMAAIQAAAAggECEAAAQAQIiQBAAEYAAgA=</HashCode>
+      <FileName>NSurveyAdmin\MultiLanguages.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.ResultsCrossTabulation">
+    <Position X="281.5" Y="6.75" Width="6.75" />
+    <TypeIdentifier>
+      <HashCode>FAICABACAAAAAAAQEAGAgoECAAAAAAQAIjAAAEJAQgA=</HashCode>
+      <FileName>NSurveyAdmin\ResultsCrossTabulation.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.ResultsReporting">
+    <Position X="311.5" Y="6.75" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>hBAKABBQAJoDIABYEACAQkoKQABAAAUBAgABKOIMAio=</HashCode>
+      <FileName>NSurveyAdmin\ResultsReporting.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.RolesManager">
+    <Position X="17" Y="6.75" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAIQEAgAQkACAAAAIAQAEgAAAAYAAgA=</HashCode>
+      <FileName>NSurveyAdmin\RolesManager.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.Settings">
+    <Position X="53" Y="6.75" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AISWBBKCIIIqBAUSETBxEsAmUUEIAEQAIBQAaCIKQqA=</HashCode>
+      <FileName>NSurveyAdmin\Settings.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.SurveyContentBuilder">
+    <Position X="90.75" Y="6.75" Width="7" />
+    <TypeIdentifier>
+      <HashCode>BEAAABIgEAAAAARQBAAIAggCAAQAEAQAAgIAAAIAggg=</HashCode>
+      <FileName>NSurveyAdmin\SurveyContentBuilder.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.SurveyMailing">
+    <Position X="127.75" Y="6.75" Width="4" />
+    <TypeIdentifier>
+      <HashCode>FAAAABACAAAUAAgZBIAAEgACQQAAAAQBAqAgQAMAAhA=</HashCode>
+      <FileName>NSurveyAdmin\SurveyMailing.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.SurveyOptions">
+    <Position X="151" Y="6.75" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>BAAAAQAAAAABAAAAAAAAAAACAAAAAAQAAAAAAAIAAgA=</HashCode>
+      <FileName>NSurveyAdmin\SurveyOptions.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.SurveyPrivacy">
+    <Position X="180.5" Y="6.75" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>BAgAAQgEAAEAAABQAAAAAogCAAAAIAQAggCCAEoAAgQ=</HashCode>
+      <FileName>NSurveyAdmin\SurveyPrivacy.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.SurveySecurity">
+    <Position X="204.75" Y="6.75" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>BAAAABCiAAAAAIQQAAAAAgACAAAAiAQEAAAQAAIQAgA=</HashCode>
+      <FileName>NSurveyAdmin\SurveySecurity.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.TakeSurvey">
+    <Position X="232" Y="6.75" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>BBAAABAggAMAAAQQABAAAgACAAAAAQQBAAEAAAIAEkA=</HashCode>
+      <FileName>NSurveyAdmin\TakeSurvey.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.TypeCreator">
+    <Position X="262.25" Y="6.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAACAAAAAAQAAAABAAIAAgA=</HashCode>
+      <FileName>NSurveyAdmin\TypeCreator.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.TypeEditor">
+    <Position X="289" Y="6.75" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>BAAEAAlAAAgAAAAQAAAIAgACkBAAIAQAAAABAAIAAgA=</HashCode>
+      <FileName>NSurveyAdmin\TypeEditor.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.UserCreator">
+    <Position X="317.5" Y="6.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAQAQAAAAAAACAAAAAAQAAAAAAAIAAgA=</HashCode>
+      <FileName>NSurveyAdmin\UserCreator.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.UserImport">
+    <Position X="22" Y="6.75" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>DEAQAAAQEAQBAQAQAAIBAgMCAABQAARwFEBKAyJAI5A=</HashCode>
+      <FileName>NSurveyAdmin\UserImport.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.UsersManager">
+    <Position X="58" Y="6.75" Width="5" />
+    <TypeIdentifier>
+      <HashCode>BgCAAAIQQQQAFSAQQBZACoACCABAIIRwAAAGAAJBAgA=</HashCode>
+      <FileName>NSurveyAdmin\UsersManager.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.VoterReport">
+    <Position X="98.5" Y="6.75" Width="6.25" />
+    <TypeIdentifier>
+      <HashCode>TAAEdALQaAACIQAQEAMEFiGSAAAAEoRMAAECIAIAggA=</HashCode>
+      <FileName>NSurveyAdmin\VoterReport.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.KeepSessionAlive">
+    <Position X="154.75" Y="27.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAAAAIAAAA=</HashCode>
+      <FileName>NSurveyForm\KeepSessionAlive.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.CustomReport">
+    <Position X="157.75" Y="15.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAACggAAAAAoAgCCIgAAAAUAAACAQAIAAAA=</HashCode>
+      <FileName>NSurveyReports\CustomReport.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.ResultsReport">
+    <Position X="168.25" Y="35.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>SAAEMAJQQAACIwAAEAAAEgGCIAAAAAQMAAGCYAIAgEA=</HashCode>
+      <FileName>NSurveyReports\ResultsReport.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.SurveyMobile">
+    <Position X="177.75" Y="45" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAgAQAAAgAAAAAAAAAAQgAACAEAIAAEA=</HashCode>
+      <FileName>SurveyMobile.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.Code.ExceptionUtility">
+    <Position X="148" Y="20.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAACAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Code\ExceptionUtility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.Code.LoginSecurity">
+    <Position X="170.75" Y="27.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Code\LoginSecurity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.Code.MenuSecurity">
+    <Position X="173.25" Y="27.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Code\MenuSecurity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MetaBuilders.WebControls.GlobalRadioButton" BaseTypeListCollapsed="true">
+    <Position X="159.75" Y="20.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AACQAgAAABAAAACAAAAQAAEUAAAAEABEABAFCAAAAAE=</HashCode>
+      <FileName>Code\GlobalRadioButton.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MetaBuilders.WebControls.RowSelectorColumn">
+    <Position X="177.75" Y="35.75" Width="3.5" />
+    <NestedTypes>
+      <Class Name="MetaBuilders.WebControls.RowSelectorColumn.SelectAllCheckBox" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Code\RowSelectorColumn.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="MetaBuilders.WebControls.RowSelectorColumn.ParticipantCheckBox" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Code\RowSelectorColumn.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="MetaBuilders.WebControls.RowSelectorColumn.ParticipantRadioButton" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Code\RowSelectorColumn.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AQAAAAIACCAACAAAgAAQAAIEAAAAgABAAgAAQAgCAAA=</HashCode>
+      <FileName>Code\RowSelectorColumn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.NSurveyAdmin.Errors.DefaultRedirectErrorPage">
+    <Position X="160.5" Y="15.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAIAAgA=</HashCode>
+      <FileName>Errors\DefaultRedirectErrorPage.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.Errors.ErrorPage">
+    <Position X="162.75" Y="15.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAEAAAAAAAAABJAAAAAAAAAAAAQIAAQA=</HashCode>
+      <FileName>Errors\ErrorPage.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SurveyWAP.Global">
+    <Position X="157" Y="20.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAEAAAAAAAAAAECIBAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.NSurveyAdmin.AjaxWebMethodsProxy">
+    <Position X="156" Y="6.75" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAKAAEQAAIAAAAAAIAAAA=</HashCode>
+      <FileName>NSurveyAdmin\AjaxWebMethodsProxy.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.NSurveyAdmin.CampaignStart">
+    <Position X="186.5" Y="6.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgEEAQAAAAAAAAgACAAAgAAQBQAAAAAIAAgA=</HashCode>
+      <FileName>NSurveyAdmin\CampaignStart.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.NSurveyAdmin.DataImport">
+    <Position X="210.75" Y="6.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAIAAAAAAQAAQAAAAIgAAAgAQQAiAAAAAACKAAgA=</HashCode>
+      <FileName>NSurveyAdmin\DataImport.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.NSurveyAdmin.MsterPageTabs">
+    <Position X="175.75" Y="27.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAQAAAAAAAAAAAABAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>NSurveyAdmin\MsterPageTabs.master.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.NSurveyAdmin.QuestionGroups">
+    <Position X="266.25" Y="6.75" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AAgAAjERGACoAAAQABAAAwAJAAAQIEAAAkBAAgIAgkQ=</HashCode>
+      <FileName>NSurveyAdmin\QuestionGroups.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.NSurveyAdmin.SurveyIPSecurity">
+    <Position X="294" Y="6.75" Width="6.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAEAiAIAAQABCAAgAQABCAIAAAACAEAAKAAgE=</HashCode>
+      <FileName>NSurveyAdmin\SurveyIPSecurity.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.NSurveyAdmin.SurveyLayout">
+    <Position X="321.5" Y="6.75" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>FMACABgBAKAAIQBQAABQAoAIAKEAYCAAAgCEEwIkAgE=</HashCode>
+      <FileName>NSurveyAdmin\SurveyLayout.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.NSurveyAdmin.SurveyList">
+    <Position X="28" Y="6.75" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQATAIRAQgIAgEiQAgIkACAAAgAAAAAAQgIAAhI=</HashCode>
+      <FileName>NSurveyAdmin\SurveyList.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.NSurveyAdmin.SurveySettings">
+    <Position X="63.75" Y="6.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAABAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>NSurveyAdmin\SurveySettings.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.NSurveyAdmin.SurveyTokenSecurity">
+    <Position X="105.5" Y="6.75" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>BAgBhQAAEAAFEEAUJMCACgICAiAAIQQQAAgIAAJAA0g=</HashCode>
+      <FileName>NSurveyAdmin\SurveyTokenSecurity.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.NSurveyAdmin.WarningScreen">
+    <Position X="132.5" Y="6.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAIAAAA=</HashCode>
+      <FileName>NSurveyAdmin\WarningScreen.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.UserControls.AnswerOptionControl">
+    <Position X="141.5" Y="15.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>ABnIlkAVSTCKOJJVggIsY+ALQiFl4ByKBGsS8Y8sEIg=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\AnswerOptionControl.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.UserControls.FilterOptionControl">
+    <Position X="150.25" Y="20.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>BEIMsQFgLCIUoEAw4AIsQsByQAAQJYcIAIAAcJI4UgE=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\FilterOptionControl.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.UserControls.FooterControl">
+    <Position X="154.5" Y="20.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAAQAAAIAAAIAAAA=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\FooterControl.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.UserControls.HeaderControl">
+    <Position X="164" Y="20.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgggCIAAAAAQAAAAAQAIAAIA=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\HeaderControl.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.UserControls.LanguageListControl">
+    <Position X="157.25" Y="27.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAgACAgAAAAQAAAAAAAIAAEA=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\LanguageListControl.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.UserControls.LibraryQuestionOptionsControl">
+    <Position X="164" Y="27.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>EAEBAAQAAAAAEABAQIAAAhAGAAFAAAQEAAQEEAYAAAA=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\LibraryQuestionOptionsControl.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.UserControls.PageBranchingRulesControl">
+    <Position X="156.25" Y="35.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AACAEAQAAAIAgQAAEAAAAIACAAAAAAQAAAACQAIAAAA=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\PageBranchingRulesControl.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.UserControls.PageBreakOptionsControl">
+    <Position X="159.25" Y="35.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AACQAJRABAAEQQAAADIAAgAGAQEAIASAERAAQAIAgBA=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\PageBreakOptionsControl.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.UserControls.QuestionOptionsControl">
+    <Position X="165.25" Y="35.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>EAAQAIAgBAAgQAhAgJACAgAHIAUEAAQEAQAAAAMEgBA=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\QuestionOptionsControl.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.UserControls.RolesOptionsControl">
+    <Position X="174.5" Y="35.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AgAAAgIAAAACAAAQIQBIAkAKAAAAIAWQIgAAcEIIgAA=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\RolesOptionsControl.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.UserControls.SecurityAddInOptionsControl">
+    <Position X="156.25" Y="45" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AIAQAAwAhAAAACAFAAEAAgAGAAEAAAQBAAAAQgIAgBA=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\SecurityAddInOptionsControl.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.UserControls.SecurityAddInVoterReportControl">
+    <Position X="159.25" Y="45" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAQABAAEACAAAAEAQAAQAAAAIAAAA=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\SecurityAddInVoterReportControl.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.UserControls.SkipLogigRulesControl">
+    <Position X="162.5" Y="45" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAIAgAAAAAAAAIACAAAAAAQAAAAAACYAAAA=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\SkipLogicRulesControl.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.UserControls.SurveyListControl">
+    <Position X="171.75" Y="45" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAEAAAAACAAABAAQAAAAAQAIAAAA=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\SurveyListControl.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.UserControls.SurveyMessageConditionsControl">
+    <Position X="174.75" Y="45" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAQAAAIAgAAAAAAAAIACAAAAAAQAAAAAQAIAAQA=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\SurveyMessageConditonsControl.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.UserControls.SurveyOptionControl">
+    <Position X="156.25" Y="51.25" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>kggJQExAQKBBCUEaggEoMkEOAONEoIfWQAAIdAtECgQ=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\SurveyOptionControl.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.UserControls.TypeOptionControl">
+    <Position X="167.75" Y="51.25" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>ADAQBA4AB4EIAMMURQAIQ2A6BAAsIIShKMAQdAYAAmA=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\TypeOptionControl.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.UserControls.UpdateVoterPageBreakOptionsControl">
+    <Position X="178.25" Y="51.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AADAAAQAAAAGAQAAACAAAgAGAQAAAAQAEAAAQAIAAEA=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\UpdateVoterPageBreakOptionsControl.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.UserControls.UpdateVoterQuestionOptionsControl">
+    <Position X="181.25" Y="51.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAACAABAIAAAAgAGAAAAAAQEAAAAAAIAAAA=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\UpdateVoterQuestionOptionsControl.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.UserControls.UsersOptionsControl">
+    <Position X="182.5" Y="58.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>CMIQgAAQGAQBAEAQCAIJpkkqAQBIIATgAFBCcyJAARA=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\UsersOptionsControl.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls.LibraryNew">
+    <Position X="160.75" Y="27.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>UQgYAQAAwAACAAATAAIAAAAAYAgBBFAAAAAAAAYACkA=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\LibraryNew.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls.LoginBox">
+    <Position X="167.5" Y="27.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQABAAAAQCAAAAgAiAAAAAIQgAAAAAAIAAAA=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\LoginBox.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls.QuestionExtraLinks">
+    <Position X="163" Y="35.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AgAAQAAAAAAAAQAAgAAAAAIAAAAAAAAAAAAhAAoAECA=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\QuestionExtraLinks.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls.RolesManager">
+    <Position X="171.5" Y="35.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAEAgAQkAAAAAAIAEAEAAAAAYAAgA=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\RolesManager.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls.SurveyBoxControl">
+    <Position X="165.5" Y="45" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAgAAAAAAIAAAA=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\SurveyBoxControl.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls.SurveyFormSecurity">
+    <Position X="167.75" Y="45" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAABCiAAAAAIQQAAAAAgACAAAAiAQEAAAQQAIQAAA=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\SurveyFormSecurity.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls.SurveyTree">
+    <Position X="160.75" Y="51.25" Width="4.5" />
+    <NestedTypes>
+      <Delegate Name="Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls.SurveyTree.SurveyTreeSelectedNodeDelegate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>NSurveyAdmin\UserControls\SurveyTreeControl.ascx.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AEAAACAAAAAAAAEAAAACAAAABAAAAAQAAAgESAICAIA=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\SurveyTreeControl.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls.UserImport">
+    <Position X="178.75" Y="58.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>CEAQAAgQEAQBAQAQAAIBAgMCAABQAARwFEBKAyJAI5A=</HashCode>
+      <FileName>NSurveyAdmin\UserControls\UserImport.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Votations.NSurvey.Wap">
+    <Position X="186.25" Y="58.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAABICAABAgAAAAQAgAAAgABAIgAAMAFCAgAAAIgAAA=</HashCode>
+      <FileName>Wap.Master.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,23 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="FilterData" targetNamespace="http://tempuri.org/FilterData.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/FilterData.xsd" xmlns:mstns="http://tempuri.org/FilterData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xs:element name="FilterData" msdata:IsDataSet="true">
-        <xs:complexType>
-            <xs:choice maxOccurs="unbounded">
-                <xs:element name="Filters">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="FilterId" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
-                            <xs:element name="SurveyId" type="xs:int" minOccurs="0" />
-                            <xs:element name="Description" type="xs:string" minOccurs="0" />
-                            <xs:element name="LogicalOperatorTypeID" type="xs:short" minOccurs="0" />
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-            </xs:choice>
-        </xs:complexType>
-        <xs:unique name="FilterDataKey1" msdata:PrimaryKey="true">
-            <xs:selector xpath=".//mstns:Filters" />
-            <xs:field xpath="mstns:FilterId" />
-        </xs:unique>
-    </xs:element>
+<xs:schema id="FilterData" targetNamespace="http://tempuri.org/FilterData.xsd" xmlns:mstns="http://tempuri.org/FilterData.xsd" xmlns="http://tempuri.org/FilterData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="FilterData" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="FilterData" msprop:Generator_UserDSName="FilterData">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Filters" msprop:Generator_TableClassName="FiltersDataTable" msprop:Generator_TableVarName="tableFilters" msprop:Generator_RowChangedName="FiltersRowChanged" msprop:Generator_TablePropName="Filters" msprop:Generator_RowDeletingName="FiltersRowDeleting" msprop:Generator_RowChangingName="FiltersRowChanging" msprop:Generator_RowEvHandlerName="FiltersRowChangeEventHandler" msprop:Generator_RowDeletedName="FiltersRowDeleted" msprop:Generator_RowClassName="FiltersRow" msprop:Generator_UserTableName="Filters" msprop:Generator_RowEvArgName="FiltersRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FilterId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnFilterId" msprop:Generator_ColumnPropNameInRow="FilterId" msprop:Generator_ColumnPropNameInTable="FilterIdColumn" msprop:Generator_UserColumnName="FilterId" type="xs:int" />
+              <xs:element name="SurveyId" msprop:Generator_ColumnVarNameInTable="columnSurveyId" msprop:Generator_ColumnPropNameInRow="SurveyId" msprop:Generator_ColumnPropNameInTable="SurveyIdColumn" msprop:Generator_UserColumnName="SurveyId" type="xs:int" minOccurs="0" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" type="xs:string" minOccurs="0" />
+              <xs:element name="LogicalOperatorTypeID" msprop:Generator_ColumnVarNameInTable="columnLogicalOperatorTypeID" msprop:Generator_ColumnPropNameInRow="LogicalOperatorTypeID" msprop:Generator_ColumnPropNameInTable="LogicalOperatorTypeIDColumn" msprop:Generator_UserColumnName="LogicalOperatorTypeID" type="xs:short" minOccurs="0" />
+              <xs:element name="ParentFilterId" msprop:Generator_ColumnVarNameInTable="columnParentFilterId" msprop:Generator_ColumnPropNameInRow="ParentFilterId" msprop:Generator_ColumnPropNameInTable="ParentFilterIdColumn" msprop:Generator_UserColumnName="ParentFilterId" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="FilterDataKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Filters" />
+      <xs:field xpath="mstns:FilterId" />
+    </xs:unique>
+  </xs:element>
 </xs:schema>

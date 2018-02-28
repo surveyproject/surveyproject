@@ -1,0 +1,215 @@
+﻿/*CSS used on SP administration tool Login Form & Font Awesome icons*/
+
+/* Font Awesome 4.1.0 Icons : SP Customised */
+
+          i.icon-user:before { 
+            font-family: FontAwesome; 
+            font-size: 1.6em;
+            font-style: normal;
+            margin: 0 0 0 2px;
+            content: "\f007"; 
+          }
+
+          .icon-user:before { 
+            font-family: FontAwesome; 
+            font-size: 1.2em;
+            font-style: normal;
+            margin:0px 7px 0px 0px;
+            content: "\f007"; 
+          }
+
+          i.icon-lock:before { 
+            font-family: FontAwesome; 
+            font-size: 2.0em;
+            font-style: normal;
+            content: "\f023"; 
+          }
+
+          .icon-signout:before { 
+            font-family: FontAwesome; 
+            font-size: 2.0em;
+            font-style: normal;
+            margin:0px;
+            content: "\f08b"; 
+          }
+
+           .icon-ok:before { 
+            font-family: FontAwesome; 
+            font-size: 1.2em;
+            font-style: normal;
+            margin:0px 7px 0px 0px;
+            content: "\f00c"; 
+          }
+
+           .icon-warning-sign:before { 
+            font-family: FontAwesome; 
+            
+            font-style: normal;
+            margin:0px 7px 0px 0px;
+            content: "\f071"; 
+          }
+
+/* SP Login box customized */
+.FPtitleFont{background:#4169e1;border-radius:.35em;color:#fff; font-size:1.1vw;margin:0 auto 0 0;padding:3px 0 3px 10px;width:100%;-moz-border-radius:.35em;-webkit-border-radius:.35em}
+
+.loginBoxDiv
+{
+    margin-left: 10px;
+    margin-top: 40px;
+    background-color: rgba(221,221,221,0.3);
+    border: 1px solid white;
+    -moz-border-radius: 0.45em;
+    border-radius: 0.45em;
+    padding: 10px 10px 45px 10px;
+    text-align: left;
+}
+
+.validateButton {
+    margin: 10px -10px 0 0
+}
+
+.loginErrorDiv {
+    position: absolute;
+    min-width: 210px;
+    margin-left:15px;
+}
+/*Login form CSS*/
+/* GLOBALS */
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+   /* USED Form-4 on loginbox */
+
+.form-4 {
+    /* Size and position */
+    width: 150px;
+    margin: 0px auto 0px 30px;
+    padding: 0px;
+    position: relative;
+
+    /* Font styles */
+    font-family: 'Raleway', 'Lato', Arial, sans-serif;
+    color: white;
+    text-shadow: 0 2px 1px rgba(0,0,0,0.3);
+}
+
+.form-4 h1 {
+    font-size: 22px;
+    padding-bottom: 20px;
+}
+
+.form-4 p {
+        padding: 0 15px 0 0;
+    }
+
+/*From Form-1 icon */
+.form-4 .field i {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 0 0 rgba(255, 255, 255, 0.7);
+    color: #777777;
+    height: 36px;
+    left: -35px;
+    line-height: 36px;
+    pointer-events: none;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    transition: all 0.3s ease-out 0s;
+    width: 26px;
+}
+
+
+.form-4 input[type=text]:hover ~ i,
+.form-4 input[type=password]:hover ~ i 
+{
+    color: #4169E1;
+}
+
+.form-4 input[type=text]:focus ~ i,
+.form-4 input[type=password]:focus ~ i 
+{
+    color: #4169E1;
+}
+
+.form-4 input[type=text]:focus,
+.form-4 input[type=password]:focus
+ {
+    outline: none;
+}
+
+.form-4 input[type=text],
+.form-4 input[type=password] {
+    /* Size and position */
+    width: 100%;
+    padding: 6px 0px 6px 4px;
+    margin-bottom: 5px;
+
+    /* Styles */
+    border: 1px solid #4e3043; /* Fallback */
+    border: 1px solid rgba(78,48,67, 0.8);
+    background: rgba(0,0,0,0.15);
+    border-radius: 2px;
+    box-shadow: 
+        0 1px 0 rgba(255,255,255,0.2), 
+        inset 0 1px 1px rgba(0,0,0,0.1);
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+
+    /* Font styles */
+    font-family: 'Raleway', 'Lato', Arial, sans-serif;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Placeholder style (from http://stackoverflow.com/questions/2610497/change-an-inputs-html5-placeholder-color-with-css) */
+
+.form-4 input::-webkit-input-placeholder {
+    color: rgba(37,21,26,0.5);
+    text-shadow: 0 1px 0 rgba(255,255,255,0.15);
+}
+
+.form-4 input:-moz-placeholder {
+    color: rgba(37,21,26,0.5);
+    text-shadow: 0 1px 0 rgba(255,255,255,0.15);
+}
+
+.form-4 input:-ms-input-placeholder {
+    color: rgba(37,21,26,0.5);
+    text-shadow: 0 1px 0 rgba(255,255,255,0.15);
+}
+
+.form-4 input[type=text]:hover,
+.form-4 input[type=password]:hover {
+    border-color: white;
+    border-width:1px;
+}
+
+.form-4 input[type=text]:focus,
+.form-4 input[type=password]:focus,
+.form-4 input[type=submit]:focus {
+    box-shadow: 
+        0 1px 0 rgba(255,255,255,0.2), 
+        inset 0 1px 1px rgba(0,0,0,0.1),
+        0 0 0 3px rgba(255,255,255,0.15);
+    outline: none;
+}
+
+/* Fallback */
+.no-boxshadow .form-4 input[type=text]:focus,
+.no-boxshadow .form-4 input[type=password]:focus {
+    outline: 1px solid white;
+}
+

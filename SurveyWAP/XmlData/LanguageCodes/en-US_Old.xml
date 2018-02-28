@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data version="1.9" id="714" name="Afrikaans_South Africa_af-ZA">
+    <value>Afrikaans / South-Africa</value>
+  </data>
+  <data version="1.9" id="715" name="AlbanianLanguage">
+    <value>Albanian</value>
+  </data>
+  <data version="1.9" id="716" name="ArabicLanguage">
+    <value>Arabic</value>
+  </data>
+  <data version="1.9" id="717" name="ArmenianLanguage">
+    <value>Armenian</value>
+  </data>
+  <data version="1.9" id="718" name="AzeriLanguage">
+    <value>Azeri</value>
+  </data>
+  <data version="1.9" id="719" name="BasqueLanguage">
+    <value>Basque</value>
+  </data>
+  <data version="1.9" id="720" name="BelarusianLanguage">
+    <value>Belarusian</value>
+  </data>
+  <data version="1.9" id="721" name="BulgarianLanguage">
+    <value>Bulgarian</value>
+  </data>
+  <data version="1.9" id="722" name="CatalanLanguage">
+    <value>Catalan</value>
+  </data>
+  <data version="1.9" id="723" name="Chinese (Traditional)_Hong Kong S.A.R._zh-HK">
+    <value>Chinese / 中文（简体</value>
+  </data>
+  <data version="1.9" id="724" name="CroatianLanguage">
+    <value>Croatian</value>
+  </data>
+  <data version="1.9" id="725" name="CzechLanguage">
+    <value>Czech</value>
+  </data>
+  <data version="1.9" id="726" name="DanishLanguage">
+    <value>Danish</value>
+  </data>
+  <data version="1.9" id="727" name="DhivehiLanguage">
+    <value>Dhivehi</value>
+  </data>
+  <data version="1.9" id="728" name="DutchLanguage">
+    <value>Dutch / Nederlands</value>
+  </data>
+  <data version="1.9" id="729" name="EnglishLanguage">
+    <value>English</value>
+  </data>
+  <data version="1.9" id="730" name="EstonianLanguage">
+    <value>Estonian</value>
+  </data>
+  <data version="1.9" id="731" name="FaroeseLanguage">
+    <value>Faroese</value>
+  </data>
+  <data version="1.9" id="732" name="FarsiLanguage">
+    <value>Farsi</value>
+  </data>
+  <data version="1.9" id="733" name="FinishLanguage">
+    <value>Finish</value>
+  </data>
+  <data version="1.9" id="734" name="FrenchLanguage">
+    <value>French / Français</value>
+  </data>
+  <data version="1.9" id="735" name="GalicianLanguage">
+    <value>Galician</value>
+  </data>
+  <data version="1.9" id="736" name="GeorgianLanguage">
+    <value>Georgian</value>
+  </data>
+  <data version="1.9" id="737" name="GermanLanguage">
+    <value>German / Deutsch</value>
+  </data>
+  <data version="1.9" id="738" name="GreekLanguage">
+    <value>Greek</value>
+  </data>
+  <data version="1.9" id="739" name="GujaratiLanguage">
+    <value>Gujarati</value>
+  </data>
+  <data version="1.9" id="740" name="HebrewLanguage">
+    <value>Hebrew</value>
+  </data>
+  <data version="1.9" id="741" name="HindiLanguage">
+    <value>Hindi</value>
+  </data>
+  <data version="1.9" id="742" name="HungarianLanguage">
+    <value>Hungarian / Magyar</value>
+  </data>
+  <data version="1.9" id="743" name="IcelandicLanguage">
+    <value>Icelandic</value>
+  </data>
+  <data version="1.9" id="744" name="IndonesianLanguage">
+    <value>Indonesian</value>
+  </data>
+  <data version="1.9" id="745" name="ItalianLanguage">
+    <value>Italian / Italiano</value>
+  </data>
+  <data version="1.9" id="746" name="JapaneseLanguage">
+    <value>Japanese / 日本語</value>
+  </data>
+  <data version="1.9" id="747" name="KannadaLanguage">
+    <value>Kannada</value>
+  </data>
+  <data version="1.9" id="748" name="KazakhLanguage">
+    <value>Kazakh</value>
+  </data>
+  <data version="1.9" id="749" name="KonkaniLanguage">
+    <value>Konkani</value>
+  </data>
+  <data version="1.9" id="750" name="KoreanLanguage">
+    <value>Korean / 한국어</value>
+  </data>
+  <data version="1.9" id="751" name="KyrgyzLanguage">
+    <value>Kyrgyz</value>
+  </data>
+  <data version="1.9" id="752" name="LatvianLanguage">
+    <value>Latvian</value>
+  </data>
+  <data version="1.9" id="753" name="MacedonianLanguage">
+    <value>Macedonian</value>
+  </data>
+  <data version="1.9" id="754" name="MalayLanguage">
+    <value>Malay</value>
+  </data>
+  <data version="1.9" id="755" name="MarathiLanguage">
+    <value>Marathi</value>
+  </data>
+  <data version="1.9" id="756" name="MongolianLanguage">
+    <value>Mongolian</value>
+  </data>
+  <data version="1.9" id="757" name="NorwegianLanguage">
+    <value>Norwegian</value>
+  </data>
+  <data version="1.9" id="758" name="PolishLanguage">
+    <value>Polish</value>
+  </data>
+  <data version="1.9" id="759" name="PortugueseLanguage">
+    <value>Portuguese / Português</value>
+  </data>
+  <data version="1.9" id="760" name="PunjabiLanguage">
+    <value>Punjabi</value>
+  </data>
+  <data version="1.9" id="761" name="RomanianLanguage">
+    <value>Romanian</value>
+  </data>
+  <data version="1.9" id="762" name="RussianLanguage">
+    <value>Russian</value>
+  </data>
+  <data version="1.9" id="763" name="SanskritLanguage">
+    <value>Sanskrit</value>
+  </data>
+  <data version="1.9" id="764" name="SlovakLanguage">
+    <value>Slovak</value>
+  </data>
+  <data version="1.9" id="765" name="SlovenianLanguage">
+    <value>Slovenian</value>
+  </data>
+  <data version="1.9" id="766" name="SpanishLanguage">
+    <value>Spanish</value>
+  </data>
+  <data version="1.9" id="767" name="SwahiliLanguage">
+    <value>Swahili</value>
+  </data>
+  <data version="1.9" id="768" name="SwedishLanguage">
+    <value>Swedish</value>
+  </data>
+  <data version="1.9" id="769" name="SyriacLanguage">
+    <value>Syriac</value>
+  </data>
+  <data version="1.9" id="770" name="TamilLanguage">
+    <value>Tamil</value>
+  </data>
+  <data version="1.9" id="771" name="TatarLanguage">
+    <value>Tatar</value>
+  </data>
+  <data version="1.9" id="772" name="TeluguLanguage">
+    <value>Telugu</value>
+  </data>
+  <data version="1.9" id="773" name="ThaiLanguage">
+    <value>Thai</value>
+  </data>
+  <data version="1.9" id="774" name="TurkishLanguage">
+    <value>Turkish</value>
+  </data>
+  <data version="1.9" id="775" name="UkrainianLanguage">
+    <value>Ukrainian</value>
+  </data>
+  <data version="1.9" id="776" name="UrduLanguage">
+    <value>Urdu</value>
+  </data>
+  <data version="1.9" id="777" name="UzbekLanguage">
+    <value>Uzbek</value>
+  </data>
+  <data version="1.9" id="778" name="VietnameseLanguage">
+    <value>Vietnamese</value>
+  </data>
+  <data version="1.9" id="779" name="LithuanianLanguage">
+    <value>Lithuanian</value>
+  </data>
+  <data version="1.9" id="780" name="Serbian Language">
+    <value>Serbian</value>
+  </data>
+</root>

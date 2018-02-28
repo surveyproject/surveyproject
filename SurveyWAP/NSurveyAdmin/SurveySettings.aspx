@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Wap.Master" AutoEventWireup="true"
     CodeBehind="SurveySettings.aspx.cs" Inherits="Votations.NSurvey.WebAdmin.NSurveyAdmin.SurveySettings" %>
 
-
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
 <%--    <script type="text/javascript">
@@ -39,7 +38,7 @@
     <input type="hidden" id="tabindex" name="tabindex" value="<%= selectedTabIndex %>" />
     <div id="usersTabEvents" style="display: none" runat="server" onclick="foo" />
 
-    <div id="tabs" style=" min-height:750px;">
+    <div id="tabs">
         <ul>
             <li><a href="#tabs-1">
                 <%=GetPageResource("SurveyInfo")%></a></li>

@@ -1,16 +1,13 @@
 ﻿<%@ Page Language="c#" MasterPageFile="~/nsurveyadmin/MsterPageTabs.master" MaintainScrollPositionOnPostback="true" AutoEventWireup="false"  Inherits="Votations.NSurvey.WebAdmin.HelpFiles" Codebehind="default.aspx.cs" %>
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="mainBody" class="mainBody contentHolder ps-container"><div id="Panel" class="Panel content">
-    <table class="TableLayoutContainer">
-    <tr>
-    <td class="contentCell"><h1 style="color:#5720C6;">Helpfiles Index</h1>    
-    </td>
-    <td align="right"> <img alt="index" title="Helpfiles Index" src="<%= Page.ResolveUrl("~")%>Images/index-icon.png" /></td>
-    </tr>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    
+        <div id="helpPanel">
 
-      <tr>
-        <td colspan="2" class="contentCell" valign="top">
+<h1 style="color:#5720C6;">Helpfiles Index</h1>    
+<div style="float:right; margin: -45px 30px 0 0;"><img alt="index" title="Helpfiles Index" src="<%= Page.ResolveUrl("~")%>Images/index-icon.png" /></div> 
+<br />
 
 I.	&nbsp;		&nbsp;		&nbsp;		&nbsp;<strong>	Introduction </strong>	<a name="Introduction" ></a><br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
@@ -24,8 +21,9 @@ I.	&nbsp;		&nbsp;		&nbsp;		&nbsp;<strong>	Introduction </strong>	<a name="Introd
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
 II.	&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Management </strong> 	<a name="SurveyManagement" ></a><br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
-2	&nbsp;	0	&nbsp;		&nbsp;		&nbsp;	<a href="InstallationSettings.aspx" title=" Installation Settings "> Installation Settings </a>	<br />
-2	&nbsp;	1	&nbsp;		&nbsp;		&nbsp;	<a href="Survey Creation.aspx" title=" Survey Creation "> Survey Creation </a>	<br />
+2	&nbsp;	0	&nbsp;		&nbsp;		&nbsp;	<a href="InstallationSettings.aspx" title=" System Settings "> System Settings </a>	<br />
+2	&nbsp;	1a&nbsp;		&nbsp;&nbsp;<a href="Survey Creation.aspx" title=" Survey Creation "> Survey Creation </a>	<br />
+2	&nbsp;	1b&nbsp;		&nbsp;&nbsp;<a href="SurveyListDirectory.aspx" title=" Survey List & Directory "> Survey List & Directory </a>	<br />
 2	&nbsp;	2	&nbsp;		&nbsp;		&nbsp;	<a href="Survey General Settings.aspx" title=" Survey Settings " > Survey Settings </a>	<br />
 2	&nbsp;	3	&nbsp;		&nbsp;		&nbsp;	<a href="Email Notification.aspx" title=" Email Notification " > Email Notification </a>	<br />
 2	&nbsp;	4	&nbsp;		&nbsp;		&nbsp;	<a href="Statistics.aspx" title=" Survey Statistics " > Survey Statistics </a>	<br />
@@ -33,10 +31,11 @@ II.	&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Management </strong> 	<a name
 2	&nbsp;	5	&nbsp;		&nbsp;		&nbsp;	 <u>Completion </u>	<a name="Completion" ></a><br />
 2	&nbsp;	5	&nbsp;	1	&nbsp;		&nbsp;	<a href="Completion Actions.aspx" title=" Completion Actions " > Completion Actions </a>	<br />
 2	&nbsp;	5	&nbsp;	2	&nbsp;		&nbsp;	<a href="Thanks Message Conditions.aspx" title=" Thanks Message Conditions " > Thanks Message Conditions </a>	<br />
-2	&nbsp;	5	&nbsp;	3	&nbsp;		&nbsp;	<a href="new/Advanced Completion.aspx" title=" Advanced Completion " > Advanced Completion </a>	<br />
+2	&nbsp;	5	&nbsp;	3	&nbsp;		&nbsp;	<a href="New\CreateCustomReport.aspx" title="Creating Custom Results Reports">Custom Results Reports</a>	<br />
+2	&nbsp;	5	&nbsp;	4	&nbsp;		&nbsp;	<a href="new/Advanced Completion.aspx" title=" Advanced Completion " > Advanced Completion </a>	<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
 2	&nbsp;	6	&nbsp;		&nbsp;		&nbsp;	 <u>Score</u> 	<a name="Score" ></a><br />
-2	&nbsp;	6	&nbsp;	1	&nbsp;		&nbsp;	<a href="Score_Introduction.aspx" title=" Introduction " > Introduction </a>	<br />
+2	&nbsp;	6	&nbsp;	1	&nbsp;		&nbsp;	<a href="Score_Introduction.aspx" title=" Score Introduction " > Introduction </a>	<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
 2	&nbsp;	7	&nbsp;		&nbsp;		&nbsp;	 <u>Multi-language Surveys </u>	<a name="MLSurveys" ></a><br />
 2	&nbsp;	7	&nbsp;	1	&nbsp;		&nbsp;	<a href="new/ML_Introduction.aspx" title=" Multi-Languages Introduction " > Multi Language Introduction </a>	<br />
@@ -58,9 +57,9 @@ II.	&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Management </strong> 	<a name
 3	&nbsp;	9	&nbsp;	4	&nbsp;	1	&nbsp;	<a href="new/IP Protection.aspx" title=" IP Protection " > IP Protection </a>	<br />
 3	&nbsp;	9	&nbsp;	4	&nbsp;	2	&nbsp;	<a href="new/Cookie Protection.aspx" title=" Cookie Protection " > Cookie Protection </a>	<br />
 3	&nbsp;	9	&nbsp;	4	&nbsp;	3	&nbsp;	<a href="new/Pass Protection.aspx" title=" Password Protection " > Password Protection </a>	<br />
-3	&nbsp;	9	&nbsp;	4	&nbsp;	4	&nbsp;	<a href="new/EMail Code Protection.aspx" title=" EMail Code Protection " > EMail Code Protection </a>	<br />
+3	&nbsp;	9	&nbsp;	4	&nbsp;	4	&nbsp;	<a href="new/EMail Code Protection.aspx" title=" EMail Code Protection " > Email Code Protection </a>	<br />
 3	&nbsp;	9	&nbsp;	4	&nbsp;	5	&nbsp;	<a href="new/ASP.NET Security Context.aspx" title=" ASP.NET Security Context " > ASP.NET Security Context </a>	<br />
-3	&nbsp;	9	&nbsp;	4	&nbsp;	6	&nbsp;	<a href="new/Survey Security Context.aspx" title=" Survey Security Context " > Survey Security Context </a>	<br />
+3	&nbsp;	9	&nbsp;	4	&nbsp;	6	&nbsp;	<a href="new/Survey Security Context.aspx" title=" SP&trade; Security Context " > SP&trade; Security Context </a>	<br />
 3	&nbsp;	9	&nbsp;	4	&nbsp;	7	&nbsp;	<a href="new/Entry Number Limitation.aspx" title=" Entry Number Limitation " > Entry Number Limitation </a>	<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp; <br />
 3	&nbsp;	9	&nbsp;	5	&nbsp;		&nbsp;	 <u>Key Provider </u>	<a name="KeyProvider" ></a><br />
@@ -73,7 +72,7 @@ II.	&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Management </strong> 	<a name
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
 
 
-III.&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Designer & Form Builder <a name="SurveyDesigner" ></a></strong>	<br />
+III.&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Form Builder <a name="SurveyDesigner" ></a></strong>	<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
 
  
@@ -84,16 +83,19 @@ III.&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Designer & Form Builder <a na
 4	&nbsp;5a&nbsp;		&nbsp;		&nbsp;	<a href="new/Answers Editor.aspx" title=" Answers Editor " >Answers Editor </a>	<br />
 4	&nbsp;5b&nbsp;		&nbsp;		&nbsp;	<a href="new/RequiredMarker.aspx" title=" Required Markers " >Required Markers </a>	<br />
  <!-- limited revision: -->
-4	&nbsp;	6	&nbsp;		&nbsp;		&nbsp;	<a href="new/Answer Type Creator.aspx" title=" Answer Type Creator " > Answer Type Creator </a>	<br />
-4	&nbsp;	7	&nbsp;		&nbsp;		&nbsp;	<a href="new/Answer Type Editor.aspx" title=" Answer Type Editor " > Answer Type Editor </a>	<br />
+4	&nbsp;	6a&nbsp;		&nbsp;		&nbsp;<a href="new/Answer Type Creator.aspx" title=" Answer Type Creator " >Answer Type Creator </a>	<br />
+4	&nbsp;	6b&nbsp;		&nbsp;		&nbsp;<a href="new/Answer Type Editor.aspx" title=" Answer Type Editor " >Answer Type Editor </a>	<br />
+4	&nbsp;	7	&nbsp;		&nbsp;		&nbsp;	<a href="new/QuestionGroups.aspx" title=" Question Groups " > Question Groups </a>	<br />
+
+
 4	&nbsp;	8	&nbsp;		&nbsp;		&nbsp;	<a href="new/Matrix Question Editor.aspx" title=" Matrix Question Editor " > Matrix Question Editor </a>	<br />
 4	&nbsp;	9	&nbsp;		&nbsp;		&nbsp;	<a href="new/Matrix Rows _ Column Editor.aspx" title=" Matrix Rows / Column Editor " > Matrix Rows / Column Editor </a>	<br />
-4	&nbsp;	10&nbsp;&nbsp;		&nbsp;	<a href="new/Regular Expression Editor.aspx" title=" Regular Expression Editor " > Regular Expression Editor </a>	<br />
+4	&nbsp;	10&nbsp;      &nbsp;		&nbsp;<a href="new/Regular Expression Editor.aspx" title=" Regular Expression Editor " >Regular Expression Editor </a>	<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
 
 4	&nbsp;	11	&nbsp;		&nbsp;		&nbsp;	<u>Question Library</u> <a name="QuestionLibrary"></a><br />
 4	&nbsp;	11	&nbsp;	1	&nbsp;		&nbsp;	<a href="new/QL_Introduction.aspx" title=" Introduction " > Introduction </a>	<br />
-4	&nbsp;	11	&nbsp;	2	&nbsp;		&nbsp;	<a href="new/Library Directory.aspx" title=" Library Directory " > Library Directory </a>	<br />
+4	&nbsp;	11	&nbsp;	2	&nbsp;		&nbsp;	<a href="new/Library Directory.aspx" title=" Library Directory and Edit " > Library Directory and Edit </a>	<br />
 4	&nbsp;	11	&nbsp;	3	&nbsp;		&nbsp;	<a href="new/Library Templates.aspx" title=" Library Templates " > Library Templates </a>	<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
 4	&nbsp;	12	&nbsp;		&nbsp;		&nbsp;	 <u>Repeatable Sections</u> <a name="RepeatableSections"></a> 	<br />
@@ -111,7 +113,7 @@ III.&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Designer & Form Builder <a na
     <br />
     <br />
            
-4	&nbsp;	14	&nbsp;	2	&nbsp;		&nbsp;	 <u>Selection Types</u>	<a name="SelectionTypes" ></a><br />
+4	&nbsp;	14	&nbsp;	2	&nbsp;		&nbsp;	 <u>Selection Answer Types</u>	<a name="SelectionTypes" ></a><br />
 	
 4	&nbsp;	14	&nbsp;	2	&nbsp;	1	&nbsp;	<a href="new/SelectionT_Introduction.aspx" title=" Introduction " > Introduction </a>	<br />
 4	&nbsp;	14	&nbsp;	2	&nbsp;	2	&nbsp;	<a href="new/Selection - Text.aspx" title=" Selection - Text " > Selection - Text </a>	<br />
@@ -119,12 +121,11 @@ III.&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Designer & Form Builder <a na
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
 
 
-4	&nbsp;	14	&nbsp;	3	&nbsp;		&nbsp;	 <u>Field Types </u>	<a name="FieldTypes" ></a><br />
+4	&nbsp;	14	&nbsp;	3	&nbsp;		&nbsp;	 <u>Field Answer Types </u>	<a name="FieldTypes" ></a><br />
 4	&nbsp;	14	&nbsp;	3	&nbsp;	1	&nbsp;	<a href="FieldT_Introduction.aspx" title=" Introduction " > Introduction </a>	<br />
 4	&nbsp;	14	&nbsp;	3	&nbsp;	2	&nbsp;	<a href="Field - Basic.aspx" title=" Field - Basic " > Field - Basic </a>	<br />
 4	&nbsp;	14	&nbsp;	3	&nbsp;	3	&nbsp;	<a href="Field - Slider.aspx" title=" Field - Slider " > Field - Slider </a>	<br />
 4	&nbsp;	14	&nbsp;	3	&nbsp;	4	&nbsp;	<a href="Field_Address.aspx" title=" Field - Address " > Field - Address </a>	<br />
-
 4	&nbsp;	14	&nbsp;	3	&nbsp;	5	&nbsp;	<a href="new/Field - Large.aspx" title=" Field - Large " > Field - Large </a>	<br />
 4	&nbsp;	14	&nbsp;	3	&nbsp;	6	&nbsp;	<a href="new/Field - Required.aspx" title=" Field - Required " > Field - Required </a>	<br />
 4	&nbsp;	14	&nbsp;	3	&nbsp;	7	&nbsp;	<a href="new/Field - Email.aspx" title=" Field - Email " > Field - Email </a>	<br />
@@ -133,17 +134,17 @@ III.&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Designer & Form Builder <a na
 4	&nbsp;	14	&nbsp;	3	&nbsp;	10	&nbsp;	<a href="new/Field - Hidden.aspx" title=" Field - Hidden " > Field - Hidden </a>	<br />
 4	&nbsp;	14	&nbsp;	3	&nbsp;	11	&nbsp;	<a href="new/Field - Password.aspx" title=" Field - Password " > Field - Password </a>	<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
-4	&nbsp;	14	&nbsp;	4	&nbsp;		&nbsp;	 <u>Xml Bound Types</u> 	<a name="XmlBoundTypes" ></a><br />
+4	&nbsp;	14	&nbsp;	4	&nbsp;		&nbsp;	 <u>Xml Bound Answer Types</u> 	<a name="XmlBoundTypes" ></a><br />
 	
 4	&nbsp;	14	&nbsp;	4	&nbsp;	1	&nbsp;	<a href="new/XMLT_Introduction.aspx" title=" Introduction " > Introduction </a>	<br />
 4	&nbsp;	14	&nbsp;	4	&nbsp;	2	&nbsp;	<a href="new/Xml - Country.aspx" title=" Xml - Country " > Xml - Country </a>	<br />
 4	&nbsp;	14	&nbsp;	4	&nbsp;	3	&nbsp;	<a href="new/Xml - US States.aspx" title=" Xml - US States " > Xml - US States </a>	<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
-4	&nbsp;	14	&nbsp;	5	&nbsp;		&nbsp;	 <u>Sql Bound Types</u> 	<a name="SqlTypes" ></a><br />
+4	&nbsp;	14	&nbsp;	5	&nbsp;		&nbsp;	 <u>Sql Bound Answer Types</u> 	<a name="SqlTypes" ></a><br />
 	
 4	&nbsp;	14	&nbsp;	5	&nbsp;	1	&nbsp;	<a href="new/SQLType_Introduction.aspx" title=" Introduction " > Introduction </a>	<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
-4	&nbsp;	14	&nbsp;	6	&nbsp;		&nbsp;	 <u>Misc.</u> 	<a name="Misc" ></a><br />
+4	&nbsp;	14	&nbsp;	6	&nbsp;		&nbsp;	 <u>Misc. Answer Types</u> 	<a name="Misc" ></a><br />
 	
 4	&nbsp;	14	&nbsp;	6	&nbsp;	1	&nbsp;	<a href="new/Extended - File Upload.aspx" title=" Extended - File Upload " > Extended - File Upload </a>	<br />
 4	&nbsp;	14	&nbsp;	6	&nbsp;	2	&nbsp;	<a href="new/Subscriber - Xml List.aspx" title=" Subscriber - Xml List " > Subscriber - Xml List </a>	<br />
@@ -152,7 +153,7 @@ III.&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Designer & Form Builder <a na
 
 4	&nbsp;	15	&nbsp;		&nbsp;		&nbsp;	 <u>Survey Conditional Logic</u> 	<a name="ConditionalLogic" ></a><br />
 
-4	&nbsp;	15	&nbsp;	1	&nbsp;		&nbsp;	<a href="new/Condition_Introduction.aspx" title=" Introduction " > Introduction </a>	<br />
+4	&nbsp;	15	&nbsp;	1	&nbsp;		&nbsp;	<a href="new/Condition_Introduction.aspx" title=" Conditional Logic Introduction " > Introduction </a>	<br />
 4	&nbsp;	15	&nbsp;	2	&nbsp;		&nbsp;	<a href="new/Branching conditions.aspx" title=" Branching Conditions " > Branching Conditions </a>	<br />
 4	&nbsp;	15	&nbsp;	3	&nbsp;		&nbsp;	<a href="new/Skip Logic Conditions.aspx" title=" Skip Logic Conditions " > Skip Logic Conditions </a>	<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
@@ -162,9 +163,9 @@ III.&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Designer & Form Builder <a na
 4	&nbsp;	17	&nbsp;		&nbsp;		&nbsp;	 <u>Answer Piping</u> 	<a name="Piping" ></a><br />
 4	&nbsp;	17	&nbsp;	1	&nbsp;		&nbsp;	<a href="new/AP_Introduction.aspx" title=" Piping Introduction " > Answer Piping Introduction </a>	<br />
             <br /><br />
-IV.	&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Campaigns <a name="Campaigns" ></a></strong>	<br />
+IV.	&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Publishing & Campaigns <a name="Campaigns" ></a></strong>	<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
-5	&nbsp;	1	&nbsp;		&nbsp;		&nbsp;	<a href="new/SD_Introduction.aspx" title=" Introduction " > Introduction </a>	<br />
+5	&nbsp;	1	&nbsp;		&nbsp;		&nbsp;	<a href="new/SD_Introduction.aspx" title=" Survey Campaigns & Publishing Introduction " > Introduction </a>	<br />
 5	&nbsp;	2	&nbsp;		&nbsp;		&nbsp;	<a href="new/Survey Deployement.aspx" title=" Survey Link Deployment " > Survey Link Deployment </a>	<br />
 5	&nbsp;	3	&nbsp;		&nbsp;		&nbsp;	<a href="new/Take Survey.aspx" title=" Take Survey " > Take Survey </a>	<br />
 5	&nbsp;	4	&nbsp;		&nbsp;		&nbsp;	<a href="new/Web Control Deployment.aspx" title=" Web Control Deployment " > Web Control Deployment </a>	
@@ -172,9 +173,9 @@ IV.	&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Campaigns <a name="Campaigns"
     <br /><br />
 
 
-V.	&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Email Invitations Distribution </strong> <a name="Email" ></a>	<br />
+V.	&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Email Invitation Mailings </strong> <a name="Email" ></a>	<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
-5	&nbsp;	5	&nbsp;	1	&nbsp;		&nbsp;	<a href="new/ED_Introduction.aspx" title=" Introduction " > Introduction </a>	<br />
+5	&nbsp;	5	&nbsp;	1	&nbsp;		&nbsp;	<a href="new/ED_Introduction.aspx" title=" Emailing Introduction " > Introduction </a>	<br />
 5	&nbsp;	5	&nbsp;	2	&nbsp;		&nbsp;	<a href="new/Survey Mailing.aspx" title=" Invitation Mailing " > Invitation Mailing </a>	<br />
 5	&nbsp;	5	&nbsp;	3	&nbsp;		&nbsp;	<a href="new/Mailing Status.aspx" title=" Mailing Status " > Mailing Status </a>	<br />
 5	&nbsp;	5	&nbsp;	4	&nbsp;		&nbsp;	<a href="new/Mailing Log.aspx" title=" Mailing ErrorLog " > Mailing ErrorLog </a>	<br />
@@ -183,15 +184,27 @@ V.	&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Email Invitations Distribution </stro
 
 VI.	&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Results & Reporting </strong> 	<a name="Reporting" ></a><br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
-6	&nbsp;	1	&nbsp;		&nbsp;		&nbsp;	<a href="new/Report Filter Creation.aspx" title=" Report Filter Creation " > Report Filter Creation </a>	<br />
-6	&nbsp;	2	&nbsp;		&nbsp;		&nbsp;	<a href="new/Report Filter Editor.aspx" title=" Report Filter Editor " > Report Filter Editor </a>	<br />
-6	&nbsp;	3	&nbsp;		&nbsp;		&nbsp;	<a href="new/File Manager.aspx" title=" File Manager " > File Manager </a>	<br />
-6	&nbsp;	4	&nbsp;		&nbsp;		&nbsp;	<a href="new/Data Export.aspx" title=" Data Export " > Data Export </a>	<br />
-6	&nbsp;	5	&nbsp;		&nbsp;		&nbsp;	<a href="new/Graphic Reports.aspx" title=" Graphic Reports " > Graphic Reports </a>	<br />
-6	&nbsp;	6	&nbsp;		&nbsp;		&nbsp;	<a href="new/Voter report.aspx" title=" Respondent / Voter Report " > Respondent / Voter Report </a>	<br />
-6	&nbsp;	7	&nbsp;		&nbsp;		&nbsp;	<a href="new/Voter Report Edit.aspx" title=" Voter Report Edit " > Voter Report Edit </a>	<br />
-6	&nbsp;	8	&nbsp;		&nbsp;		&nbsp;	<a href="new/Voter Entries List.aspx" title=" Voter Entries List " > Voter Entries List </a>	<br />
-6	&nbsp;	9	&nbsp;		&nbsp;		&nbsp;	<a href="new/Cross Tabulation.aspx" title=" Cross Tabulation " > Cross Tabulation </a>	<br />
+
+6	&nbsp;	0	&nbsp;		&nbsp;		&nbsp;	<a href="new/Reports_Introduction.aspx" title=" Reporting Introduction " > Reporting Introduction </a>	<br />
+
+6	&nbsp;	1	&nbsp;		&nbsp;		&nbsp;	<a href="new/Graphic Reports.aspx" title=" Graphic Reports " > Graphic Reports </a>	<br />
+6	&nbsp;	2	&nbsp;		&nbsp;		&nbsp;	<a href="new/Cross Tabulation.aspx" title=" Cross Tabulation " > Cross Tabulation </a>	<br />
+
+6	&nbsp;	3	&nbsp;		&nbsp;		&nbsp;	<a href="new/Report Filter Creation.aspx" title=" Report Filter Creation " > Report Filter Creation </a>	<br />
+6	&nbsp;	4	&nbsp;		&nbsp;		&nbsp;	<a href="new/Report Filter Editor.aspx" title=" Report Filter Editor " > Report Filter Editor </a>	<br />
+
+6	&nbsp;	5	&nbsp;		&nbsp;		&nbsp;	<a href="new/File Manager.aspx" title=" File Manager " > File Manager </a>	<br />
+
+6	&nbsp;	6	&nbsp;		&nbsp;		&nbsp;	<a href="new/Voter report.aspx" title=" Respondent / Voter Report " > Respondent Report </a>	<br />
+6	&nbsp;	7	&nbsp;		&nbsp;		&nbsp;	<a href="new/Voter Entries List.aspx" title=" Voter Entries List " > Respondents Entries List </a>	<br />
+6	&nbsp;	8	&nbsp;		&nbsp;		&nbsp;	<a href="new/Voter Report Edit.aspx" title=" Voter Report Edit " > Respondent Report Edit </a>	<br />
+
+6	&nbsp;	9 &nbsp;		&nbsp;		&nbsp;	<a href="new/Data Export.aspx" title=" Data Export " > Data Export </a>	<br />
+6	&nbsp;	10&nbsp;&nbsp;		&nbsp;	<a href="new/Data Import.aspx" title=" Data Import " > Data Import </a>	<br />
+
+6	&nbsp;	11&nbsp;&nbsp;		&nbsp;	<a href="new/SsrsReports.aspx" title=" Ssrs Reports " > SSRS Reports </a>	<br />
+
+
 <br /><br />
 VII.&nbsp;		&nbsp;		&nbsp;		&nbsp;	<strong>Roles & User Management</strong>	<a name="RolesUsers" ></a><br /><br />
 	
@@ -207,15 +220,11 @@ VII.&nbsp;		&nbsp;		&nbsp;		&nbsp;	<strong>Roles & User Management</strong>	<a n
 
 VIII.&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Appendix</strong> 	<a name="Appendix" ></a><br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
-	&nbsp;	1	&nbsp;		&nbsp;		&nbsp;	<a href="new/Form Architecture.aspx" title=" Form Architecture " > Form Architecture </a>	<br />
+	&nbsp;	1	&nbsp;		&nbsp;		&nbsp;	<a href="new/Form Architecture.aspx" title=" Survey Form Architecture " > Survey Form Architecture </a>	<br />
 							<br />
 									<br />
-<b>Note </b> <br /><br />
-These helpfiles are a work in progress. Additional pages will be added gradually.
-<br />
+<b>Note </b> - these helpfiles are a work in progress. Updates and additions will follow gradually.
+<br /><div id="fillerDiv" class="fillerDiv">&nbsp;</div>
+        </div>
 
-
-        </td>
-        </tr>
-    </table>
-</div></div></asp:Content>
+    </asp:Content>

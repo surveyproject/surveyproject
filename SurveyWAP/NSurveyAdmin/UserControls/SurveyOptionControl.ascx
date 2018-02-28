@@ -1,35 +1,30 @@
-
-<%@ Register TagPrefix="uc1" TagName="SurveyListControl" Src="SurveyListControl.ascx" %>
 <%@ Control Language="c#" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.UserControls.SurveyOptionControl" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" Codebehind="SurveyOptionControl.ascx.cs" %>
-
-
 
     <script type="text/javascript">
         $(function () {
 
             var lang2 = '<%=Request.UserLanguages[0].ToString().ToLower()%>';
-            var lang = lang2.substring(0,2)
+            var lang = lang2.substring(0, 2);
 
             $("#<%=OpeningDateTextBox.ClientID%>").datepicker( $.datepicker.regional[lang] );
             $("#<%=CloseDateTextbox.ClientID%>").datepicker($.datepicker.regional[lang]);
         });
     </script>
 
-
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 4px;">
+            <div class="errorDiv">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
 
 
 <!-- New Survey -->
-                                        <div style="position: relative; left: 720px; width: 10px;  top: 10px; clear:none;">
+                                        <div class="helpDiv">
                                             <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/Survey General Settings.aspx"
                                                 title="Click for more Information">
                                                 <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
                                             </a>
                                         </div>
 
-            <fieldset style="width: 750px; margin-left: 12px; margin-top: 15px;" title="Survey Title">
+            <fieldset>
                 <legend class="titleFont titleLegend">
                     <asp:Literal ID="SurveyInformationTitle2" runat="server" Text=""
                         EnableViewState="False"></asp:Literal></legend>
@@ -60,7 +55,7 @@
 
      <asp:PlaceHolder ID="EditUi" runat="server">
          <br />
-         <fieldset style="width: 750px; margin-left: 12px; margin-top: 15px;" title="Survey Settings">
+         <fieldset>
              <legend class="titleFont titleLegend">
                  <asp:Literal ID="SurveyInformationTitle" runat="server" Text="Survey information"
                      EnableViewState="False"></asp:Literal></legend>
@@ -159,23 +154,15 @@
          </fieldset>
 <!-- Notification Settings -->
 
-
-            <div style="position: relative; left: 720px; width: 10px;  top: 15px; clear:none;">
-                <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' onclick="document.getElementById('PopUp2').style.display = 'block' ">
+         
+            <div class="helpDiv">
+                <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/Email%20Notification.aspx"
+                                                title="Click for more Information">
                     <img title="Click for more Information" alt="help" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
                 </a>
-                <div id='PopUp2' style='display: none; position: absolute; left: -420px; top: -315px;
-                    border: solid #CCCCCC 1px; padding: 10px; background-color: rgb(255,255,225); line-height:15px; text-align: justify;
-                    font-size: 11px; width: 425px; -webkit-border-radius: 5px;  -moz-border-radius: 5px; border-radius: 5px;'>
-                    <asp:Literal ID="NotificationsSettingsHelp" runat="server" EnableViewState="False">Notification Settings Help</asp:Literal>
-                    <br />
-                    <div style='text-align: right;'>
-                        <a onmouseover='this.style.cursor="pointer" ' style='font-size: 12px;' onfocus='this.blur();'
-                            onclick="document.getElementById('PopUp2').style.display = 'none' "><img alt="Close" title="Close" src="<%= Page.ResolveUrl("~")%>Images/close-icn.png" /></a></div>
-                </div>
-            </div>
+            </div>       
 
-         <fieldset style="width: 750px; margin-top:15px; margin-left: 12px;" title="Notification Settings">
+         <fieldset>
              <legend class="titleFont titleLegend">
                  <asp:Literal ID="NotificationSettingsTitle" runat="server" EnableViewState="False" Text="Notification settings"></asp:Literal>
              </legend>
@@ -229,13 +216,13 @@
 <!--Menu New Survey -  Import Survey -->
 
 <asp:PlaceHolder runat="server" ID="SurveyImportPlaceHolder">
-<div style=" display:inline-block; float:left; clear:both; width:750px; left:30px; position:absolute; top:195px;">     
-    <fieldset title="Import Survey">
+ 
+    <fieldset>
          <legend class="titleFont titleLegend">
            <asp:Literal ID="ImportSurveyLiteral" runat="server" EnableViewState="false">Import</asp:Literal>
         </legend>
-
-        <ol style="margin:15px 0 0 0;">
+        <br />
+        <ol>
             <li>
 
                 <asp:Label ID="ImportSurveyTitle" AssociatedControlID="ImportFile" runat="server" EnableViewState="False">Import Survey from XML</asp:Label>
@@ -250,6 +237,6 @@
         <br />
 
     </fieldset>
-       </div>
+
 </asp:PlaceHolder>
 

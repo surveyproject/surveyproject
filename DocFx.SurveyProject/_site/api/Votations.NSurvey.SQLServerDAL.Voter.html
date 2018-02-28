@@ -1,0 +1,1649 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Voter
+   | SP Technical Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Voter
+   | SP Technical Documentation ">
+    <meta name="generator" content="docfx 2.26.3.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/splogo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Votations.NSurvey.SQLServerDAL.Voter">
+  
+  
+  <h1 id="Votations_NSurvey_SQLServerDAL_Voter" data-uid="Votations.NSurvey.SQLServerDAL.Voter" class="text-break">Class Voter
+  </h1>
+  <div class="markdown level0 summary"><p>SQL Server DAL implementation.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Voter</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Votations.NSurvey.IDAL.IVoter.html">IVoter</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Votations.NSurvey.SQLServerDAL.html">Votations.NSurvey.SQLServerDAL</a></h6>
+  <h6><strong>Assembly</strong>: SurveyProject.SQLServerDAL.dll</h6>
+  <h5 id="Votations_NSurvey_SQLServerDAL_Voter_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Voter : IVoter</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_AddVoter_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.AddVoter*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_AddVoter_Votations_NSurvey_Data_VoterAnswersData_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.AddVoter(Votations.NSurvey.Data.VoterAnswersData)">AddVoter(VoterAnswersData)</h4>
+  <div class="markdown level1 summary"><p>Add a new voter and his answers to the database </p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddVoter(VoterAnswersData voterAnswers)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.VoterAnswersData.html">VoterAnswersData</a></td>
+        <td><span class="parametername">voterAnswers</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_AddVoterInvitation_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.AddVoterInvitation*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_AddVoterInvitation_System_Int32_System_String_System_Boolean_System_String_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.AddVoterInvitation(System.Int32,System.String,System.Boolean,System.String)">AddVoterInvitation(Int32, String, Boolean, String)</h4>
+  <div class="markdown level1 summary"><p>Queue an invitation request for a future voter</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddVoterInvitation(int surveyId, string email, bool anonymousEntry, string UId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">email</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">anonymousEntry</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">UId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_CheckIfVoterIPExists_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.CheckIfVoterIPExists*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_CheckIfVoterIPExists_System_Int32_System_String_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.CheckIfVoterIPExists(System.Int32,System.String)">CheckIfVoterIPExists(Int32, String)</h4>
+  <div class="markdown level1 summary"><p>Checks if the given IP has already been registered
+in the expiration time lapse</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CheckIfVoterIPExists(int surveyId, string voterIP)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">voterIP</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_CheckIfVoterUIdExists_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.CheckIfVoterUIdExists*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_CheckIfVoterUIdExists_System_Int32_System_String_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.CheckIfVoterUIdExists(System.Int32,System.String)">CheckIfVoterUIdExists(Int32, String)</h4>
+  <div class="markdown level1 summary"><p>Checks if the given UID has already been registered</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CheckIfVoterUIdExists(int surveyId, string uId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">uId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_DeleteInvitationLog_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.DeleteInvitationLog*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_DeleteInvitationLog_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.DeleteInvitationLog(System.Int32)">DeleteInvitationLog(Int32)</h4>
+  <div class="markdown level1 summary"><p>Deletes the log of the invitation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteInvitationLog(int invitationLogId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">invitationLogId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_DeleteUnvalidatedVoters_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.DeleteUnvalidatedVoters*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_DeleteUnvalidatedVoters_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.DeleteUnvalidatedVoters(System.Int32)">DeleteUnvalidatedVoters(Int32)</h4>
+  <div class="markdown level1 summary"><p>Deletes all unvalidated entries</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteUnvalidatedVoters(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_DeleteVoterAnswers_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.DeleteVoterAnswers*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_DeleteVoterAnswers_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.DeleteVoterAnswers(System.Int32)">DeleteVoterAnswers(Int32)</h4>
+  <div class="markdown level1 summary"><p>Delete all answer a voter gave for the survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteVoterAnswers(int voterId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">voterId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_DeleteVoterById_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.DeleteVoterById*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_DeleteVoterById_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.DeleteVoterById(System.Int32)">DeleteVoterById(Int32)</h4>
+  <div class="markdown level1 summary"><p>Delete a voter and all its answers</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteVoterById(int voterId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">voterId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_DeleteVoterInvitation_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.DeleteVoterInvitation*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_DeleteVoterInvitation_System_Int32_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.DeleteVoterInvitation(System.Int32,System.Int32)">DeleteVoterInvitation(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Deletes the email from the survey invitation queue</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteVoterInvitation(int surveyId, int emailId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">emailId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_DeleteVoterInvitation_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.DeleteVoterInvitation*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_DeleteVoterInvitation_System_Int32_System_String_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.DeleteVoterInvitation(System.Int32,System.String)">DeleteVoterInvitation(Int32, String)</h4>
+  <div class="markdown level1 summary"><p>Deletes the email from the survey invitation queue</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteVoterInvitation(int surveyId, string email)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">email</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_DeleteVoterPageAnswers_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.DeleteVoterPageAnswers*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_DeleteVoterPageAnswers_System_Int32_System_Int32_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.DeleteVoterPageAnswers(System.Int32,System.Int32,System.Int32)">DeleteVoterPageAnswers(Int32, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Delete all answer a voter gave for the page</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteVoterPageAnswers(int surveyId, int voterId, int pageNumber)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">voterId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pageNumber</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_DeleteVoterQuestionAnswers_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.DeleteVoterQuestionAnswers*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_DeleteVoterQuestionAnswers_System_Int32_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.DeleteVoterQuestionAnswers(System.Int32,System.Int32)">DeleteVoterQuestionAnswers(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Delete all answer a voter gave for the question</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteVoterQuestionAnswers(int voterId, int questionId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">voterId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">questionId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_DeleteVoterResumeSession_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.DeleteVoterResumeSession*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_DeleteVoterResumeSession_System_Int32_System_String_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.DeleteVoterResumeSession(System.Int32,System.String)">DeleteVoterResumeSession(Int32, String)</h4>
+  <div class="markdown level1 summary"><p>Deletes a voter resume session
+from the database</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteVoterResumeSession(int surveyId, string resumeUId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">resumeUId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_DeleteVoters_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.DeleteVoters*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_DeleteVoters_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.DeleteVoters(System.Int32)">DeleteVoters(Int32)</h4>
+  <div class="markdown level1 summary"><p>Delete all voter and all its answers for the survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteVoters(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_GetDayStats_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.GetDayStats*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_GetDayStats_System_Int32_System_DateTime_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.GetDayStats(System.Int32,System.DateTime)">GetDayStats(Int32, DateTime)</h4>
+  <div class="markdown level1 summary"><p>Get number of voters for the given date</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetDayStats(int surveyId, DateTime statDay)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">statDay</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_GetEmailUId_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.GetEmailUId*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_GetEmailUId_System_Int32_System_String_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.GetEmailUId(System.Int32,System.String)">GetEmailUId(Int32, String)</h4>
+  <div class="markdown level1 summary"><p>returns the guid from the queue for the given email and survey id</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetEmailUId(int surveyId, string email)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">email</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_GetForCSVExport_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.GetForCSVExport*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_GetForCSVExport_System_Int32_System_DateTime_System_DateTime_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.GetForCSVExport(System.Int32,System.DateTime,System.DateTime)">GetForCSVExport(Int32, DateTime, DateTime)</h4>
+  <div class="markdown level1 summary"><p>Returns all data needed to create a CSV</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CSVExportData GetForCSVExport(int surveyId, DateTime startDate, DateTime endDate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">startDate</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">endDate</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.CSVExportData.html">CSVExportData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_GetForExport_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.GetForExport*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_GetForExport_System_Int32_System_DateTime_System_DateTime_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.GetForExport(System.Int32,System.DateTime,System.DateTime)">GetForExport(Int32, DateTime, DateTime)</h4>
+  <div class="markdown level1 summary"><p>Returns all the answers of the voters</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NSurveyVoter GetForExport(int surveyId, DateTime startDate, DateTime endDate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">startDate</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">endDate</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.NSurveyVoter.html">NSurveyVoter</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_GetInvitationLogs_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.GetInvitationLogs*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_GetInvitationLogs_System_Int32_System_Int32_System_Int32_System_Int32__" data-uid="Votations.NSurvey.SQLServerDAL.Voter.GetInvitationLogs(System.Int32,System.Int32,System.Int32,System.Int32@)">GetInvitationLogs(Int32, Int32, Int32, out Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns all the invitation logs</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public InvitationLogData GetInvitationLogs(int surveyId, int pageNumber, int pageSize, out int totalRecords)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pageNumber</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pageSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">totalRecords</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.InvitationLogData.html">InvitationLogData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_GetMonthlyStats_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.GetMonthlyStats*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_GetMonthlyStats_System_Int32_System_Int32_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.GetMonthlyStats(System.Int32,System.Int32,System.Int32)">GetMonthlyStats(Int32, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Get voter&apos;s statistics for the given month and year</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public VoterStatisticsData GetMonthlyStats(int surveyId, int month, int year)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">month</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">year</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.VoterStatisticsData.html">VoterStatisticsData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_GetUnvalidatedVotersCount_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.GetUnvalidatedVotersCount*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_GetUnvalidatedVotersCount_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.GetUnvalidatedVotersCount(System.Int32)">GetUnvalidatedVotersCount(Int32)</h4>
+  <div class="markdown level1 summary"><p>returns the number of unvalidated entries (saved progress)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetUnvalidatedVotersCount(int surveyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_GetVoterAnswers_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.GetVoterAnswers*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_GetVoterAnswers_System_Int32_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.GetVoterAnswers(System.Int32)">GetVoterAnswers(Int32)</h4>
+  <div class="markdown level1 summary"><p>Get voter&apos;s answers and voter details</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public VoterAnswersData GetVoterAnswers(int voterId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">voterId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.VoterAnswersData.html">VoterAnswersData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_GetVotersCompleteEntries_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.GetVotersCompleteEntries*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_GetVotersCompleteEntries_System_Int32_System_Int32_System_Int32_System_DateTime_System_DateTime_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.GetVotersCompleteEntries(System.Int32,System.Int32,System.Int32,System.DateTime,System.DateTime)">GetVotersCompleteEntries(Int32, Int32, Int32, DateTime, DateTime)</h4>
+  <div class="markdown level1 summary"><p>Returns all the entries text / selections of the voters</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataSet GetVotersCompleteEntries(int surveyId, int pageNumber, int pageSize, DateTime startDate, DateTime endDate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pageNumber</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pageSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">startDate</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">endDate</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.DataSet</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_GetVotersInvitationAnswered_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.GetVotersInvitationAnswered*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_GetVotersInvitationAnswered_System_Int32_System_Int32_System_Int32_System_Int32__" data-uid="Votations.NSurvey.SQLServerDAL.Voter.GetVotersInvitationAnswered(System.Int32,System.Int32,System.Int32,System.Int32@)">GetVotersInvitationAnswered(Int32, Int32, Int32, out Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns all voters who have answered an invitation </p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public VoterData GetVotersInvitationAnswered(int surveyId, int pageNumber, int pageSize, out int totalRecords)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pageNumber</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pageSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">totalRecords</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.VoterData.html">VoterData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_GetVotersInvitationQueue_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.GetVotersInvitationQueue*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_GetVotersInvitationQueue_System_Int32_System_Int32_System_Int32_System_Int32__" data-uid="Votations.NSurvey.SQLServerDAL.Voter.GetVotersInvitationQueue(System.Int32,System.Int32,System.Int32,System.Int32@)">GetVotersInvitationQueue(Int32, Int32, Int32, out Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns the invitation queue of the survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public InvitationQueueData GetVotersInvitationQueue(int surveyId, int pageNumber, int pageSize, out int totalRecords)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pageNumber</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pageSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">totalRecords</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.InvitationQueueData.html">InvitationQueueData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_GetVotersTextEntries_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.GetVotersTextEntries*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_GetVotersTextEntries_System_Int32_System_Int32_System_Int32_System_DateTime_System_DateTime_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.GetVotersTextEntries(System.Int32,System.Int32,System.Int32,System.DateTime,System.DateTime)">GetVotersTextEntries(Int32, Int32, Int32, DateTime, DateTime)</h4>
+  <div class="markdown level1 summary"><p>Returns all the text entries of the voters</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataSet GetVotersTextEntries(int surveyId, int pageNumber, int pageSize, DateTime startDate, DateTime endDate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pageNumber</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pageSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">startDate</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">endDate</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.DataSet</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_GetVotersTextIndivEntries_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.GetVotersTextIndivEntries*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_GetVotersTextIndivEntries_System_Int32_System_Int32_System_Int32_System_Int32_System_DateTime_System_DateTime_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.GetVotersTextIndivEntries(System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.DateTime)">GetVotersTextIndivEntries(Int32, Int32, Int32, Int32, DateTime, DateTime)</h4>
+  <div class="markdown level1 summary"><p>Returns all the text entries of SP User as a voter</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataSet GetVotersTextIndivEntries(int surveyId, int userId, int pageNumber, int pageSize, DateTime startDate, DateTime endDate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">userId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pageNumber</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pageSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">startDate</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">endDate</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.DataSet</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_HasUserNameVoted_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.HasUserNameVoted*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_HasUserNameVoted_System_Int32_System_String_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.HasUserNameVoted(System.Int32,System.String)">HasUserNameVoted(Int32, String)</h4>
+  <div class="markdown level1 summary"><p>Check if the username has already taken the survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasUserNameVoted(int surveyId, string userName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">userName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_ImportVoter_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.ImportVoter*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_ImportVoter_System_Int32_Votations_NSurvey_Data_NSurveyVoter_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.ImportVoter(System.Int32,Votations.NSurvey.Data.NSurveyVoter)">ImportVoter(Int32, NSurveyVoter)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ImportVoter(int SurveyId, NSurveyVoter voterImport)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">SurveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.NSurveyVoter.html">NSurveyVoter</a></td>
+        <td><span class="parametername">voterImport</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_IsUIdValid_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.IsUIdValid*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_IsUIdValid_System_String_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.IsUIdValid(System.String)">IsUIdValid(String)</h4>
+  <div class="markdown level1 summary"><p>Check if the given Uid is valid</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int IsUIdValid(string UId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">UId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>returns the Survey id of the Uid if its valid else returns -1</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_LogInvitationError_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.LogInvitationError*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_LogInvitationError_Votations_NSurvey_Data_InvitationLogData_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.LogInvitationError(Votations.NSurvey.Data.InvitationLogData)">LogInvitationError(InvitationLogData)</h4>
+  <div class="markdown level1 summary"><p>logs the exception that occured for the invitation in the db</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void LogInvitationError(InvitationLogData invitationLog)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.InvitationLogData.html">InvitationLogData</a></td>
+        <td><span class="parametername">invitationLog</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_ResumeVoterAnswers_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.ResumeVoterAnswers*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_ResumeVoterAnswers_System_Int32_System_String_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.ResumeVoterAnswers(System.Int32,System.String)">ResumeVoterAnswers(Int32, String)</h4>
+  <div class="markdown level1 summary"><p>Get the voter&apos;s data and answers to resume a session</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public VoterAnswersData ResumeVoterAnswers(int surveyId, string resumeUid)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">surveyId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">resumeUid</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.VoterAnswersData.html">VoterAnswersData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_SetVoterUId_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.SetVoterUId*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_SetVoterUId_System_Int32_System_String_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.SetVoterUId(System.Int32,System.String)">SetVoterUId(Int32, String)</h4>
+  <div class="markdown level1 summary"><p>Set the give uid to the voter</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetVoterUId(int voterId, string uId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">voterId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">uId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_UpdateVoter_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.UpdateVoter*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_UpdateVoter_Votations_NSurvey_Data_VoterAnswersData_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.UpdateVoter(Votations.NSurvey.Data.VoterAnswersData)">UpdateVoter(VoterAnswersData)</h4>
+  <div class="markdown level1 summary"><p>Updates voter&apos;s answer</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateVoter(VoterAnswersData updatedVoterAnswers)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.VoterAnswersData.html">VoterAnswersData</a></td>
+        <td><span class="parametername">updatedVoterAnswers</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_SQLServerDAL_Voter_UpdateVoterUserName_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.UpdateVoterUserName*"></a>
+  <h4 id="Votations_NSurvey_SQLServerDAL_Voter_UpdateVoterUserName_System_Int32_System_String_" data-uid="Votations.NSurvey.SQLServerDAL.Voter.UpdateVoterUserName(System.Int32,System.String)">UpdateVoterUserName(Int32, String)</h4>
+  <div class="markdown level1 summary"><p>Update the asp.net username of the voter</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateVoterUserName(int voterId, string userName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">voterId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">userName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Votations.NSurvey.IDAL.IVoter.html">IVoter</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy;2017 Survey&trade; Project
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

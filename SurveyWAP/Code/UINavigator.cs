@@ -1,5 +1,5 @@
 /**************************************************************************************************
-	Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com)	
+	Survey™ Project changes: copyright (c) 2009-2017, W3DevPro™ (https://github.com/surveyproject)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -30,12 +30,10 @@ using Votations.NSurvey.Web.Security;
 namespace Votations.NSurvey.WebAdmin
 {
     /// <summary>
-    /// Manage the page navigation logic.
+    /// Classes to manage the page navigation logic: hyperlinks to all webpages of the webapplication
     /// </summary>
     public class UINavigator
     {
-
-
         public static readonly string AdminRoot = "~/NSurveyAdmin";
 
         public static readonly string CreateSurveyLink = AdminRoot + "/SurveyList.aspx?tabindex=1";
@@ -68,6 +66,7 @@ namespace Votations.NSurvey.WebAdmin
         public static readonly string MailingStatus = AdminRoot + "/MailingStatus.aspx";
         public static readonly string ResultsReportHyperlink = AdminRoot + "/ResultsReporting.aspx";
         public static readonly string FieldsReportHyperlink = AdminRoot + "/FieldReporting.aspx";
+        public static readonly string SSRSReportHyperlink = AdminRoot + "/ResultsSsrs.aspx";
         public static readonly string ASPNETCode = AdminRoot + "/Controlcode.aspx";
         public static readonly string InsertSecurityAddInLink = AdminRoot + "/InsertSecurityAddIn.aspx";
         public static readonly string CrossTabHyperLink = AdminRoot + "/ResultsCrossTabulation.aspx";
@@ -76,12 +75,13 @@ namespace Votations.NSurvey.WebAdmin
         public static readonly string LibraryDirectoryHyperLink = AdminRoot + "/LibraryDirectory.aspx";
         public static readonly string LibraryCreateHyperLink = AdminRoot + "/LibraryDirectory.aspx?tabindex=1";
         public static readonly string UsersManagerHyperLink = AdminRoot + "/UsersManager.aspx";
-        public static readonly string UserCreatorHyperLink = AdminRoot + "/UserCreator.aspx";
+        //public static readonly string UserCreatorHyperLink = AdminRoot + "/UserCreator.aspx";
         public static readonly string RolesManagerHyperLink = AdminRoot + "/UsersManager.aspx?tabindex=1";
         public static readonly string AccessDeniedHyperLink = AdminRoot + "/AccessDenied.aspx";
 
         public static readonly string HelpFilesHyperLink = AdminRoot + "/Help/default.aspx";
         public static readonly string HelpOptionsHyperLink = AdminRoot + "/Help/index.aspx";
+        public static readonly string HelpAboutHyperLink = AdminRoot + "/Help/About.aspx";
 
         public static readonly string LogOutHyperLink = AdminRoot + "/LogOut.aspx";
         //public static readonly string LoginHyperLink = AdminRoot + "/LogIn.aspx";
@@ -144,7 +144,14 @@ namespace Votations.NSurvey.WebAdmin
 
         public static void NavigateToVoterReport(int surveyId, int voterId, int menuIndex)
         {
-            HttpContext.Current.Response.Redirect(String.Format("{0}?surveyid={1}&voterid={2}&menuindex={3}", VoterReport, surveyId, voterId, menuIndex));
+            HttpContext.Current.Server.Transfer(String.Format("{0}?surveyid={1}&voterid={2}&menuindex={3}", VoterReport, surveyId, voterId, menuIndex));
+            // HttpContext.Current.Response.Redirect(String.Format("{0}?surveyid={1}&voterid={2}&menuindex={3}", VoterReport, surveyId, voterId, menuIndex));
+        }
+
+        public static void NavigateToSsrsReport(string fileName, int menuIndex)
+        {
+           //HttpContext.Current.Server.Transfer(String.Format("~/NSurveyReports/{0}?&menuindex={1}", fileName, menuIndex));
+            HttpContext.Current.Response.Redirect(String.Format("~/NSurveyReports/{0}?&menuindex={1}", fileName, menuIndex));
         }
 
         public static void NavigateToEditVoterReport(int surveyId, int voterId, int menuIndex)
@@ -161,6 +168,12 @@ namespace Votations.NSurvey.WebAdmin
         public static void NavigateToTypeEditor(int menuIndex)
         {
             HttpContext.Current.Response.Redirect(TypeEditor + "?menuindex=" + menuIndex);
+        }
+
+        public static void NavigateToTypeCreator(int surveyId, int menuIndex)
+        {
+            HttpContext.Current.Response.Redirect(TypeCreator + "?surveyid" + surveyId + "?menuindex=" + menuIndex);
+            
         }
 
         public static void NavigateToFilterEditor(int surveyId, int menuIndex)
@@ -275,7 +288,7 @@ namespace Votations.NSurvey.WebAdmin
         /// For example for SuryeyId return SurveyId=22
         /// 
         /// </summary>
-        /// <param name="parameterName"></param>
+        /// <param name="parameterNames"></param>
         /// <returns></returns>
         public static string getRequestParameterExpression(FormParameters[] parameterNames)
         {

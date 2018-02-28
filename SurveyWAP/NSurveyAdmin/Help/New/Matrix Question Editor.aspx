@@ -2,74 +2,60 @@
     Inherits="Votations.NSurvey.WebAdmin.HelpFiles" CodeBehind="../default.aspx.cs" %>
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="mainBody" class="mainBody contentHolder ps-container"><div id="Panel" class="Panel content">
-    <table class="TableLayoutContainer">
-        <tr>
-            <td>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="helpPanel"><div>
                 <asp:ImageButton ID="btnBack" ImageUrl="~/Images/index-icon.png" runat="server" CssClass="buttonIndex"
                     PostBackUrl="~/NSurveyAdmin/Help/default.aspx#SurveyDesigner" Visible="True" ToolTip="Back to Helpfiles Index" />
-            </td>
-        </tr>
-        <tr>
-            <td class="contentCell" valign="top">
-                <br />
+            </div><div>
                 <h2 style="color:#5720C6;">
-                    Matrix Question Editor</h2>
-                <br />
-                <br />
-                <hr style="color:#e2e2e2;"/>
-                <br />
-                The matrix question editor allows to setup the configuration and constraints
-of the "parent" (main) question of our Matrix question - Matrix%20Question.html.<br />
+                    Matrix Question Editor</h2><hr style="color:#e2e2e2;" />
+           
+                The 'matrix question editor' is used to determine the configuration and constraints
+of the "parent" (main) question of a Matrix of questions.<br />
 <br />
-If we want to add rows and columns to the matrix we will need to use the rows and Columns editor at the bottom of the matrix editor page - 
-Matrix%20Rows%20_%20Column%20Editor.html - after having created our parent
-matrix question.<br />
+                To start the Matrix Question Editor first insert a new question into the survey form. Next select the Type - Matrix Question from the dropdown list. Click the Add new Question button to open the Matrix Question Editor.
+                <br /><br />
+To add rows and columns to the matrix the  <a href="Matrix Rows _ Column Editor.aspx" title=" Matrix Rows / Column Editor " > Matrix Rows & Column Editor </a> at the bottom of the matrix editor page will be needed 
+                after having created a parent matrix question.<br />
 <br />
 <u>Matrix Question Options</u><br />
 <br />
-* Multiple Choices Matrix - is the mode in which the matrix 
-  SelectionT_Introduction.html columns will be rendered by the Survey
-  engine. By default these types are rendered as radio buttons but we can
+<i>* Multiple Choices Matrix </i><br /> - the multiple choice mode in which the matrix 
+  selection columns will be rendered by the survey. By default these types are rendered as radio buttons but it can
   also render checkboxes to allow multiple choices.<br />
+<i><br />
+* Rating </i><br /> -  activates the answers  rating  options in
+ the Matrix Rows & Columns editor. To know more about rating and
+  scaling read the <a href="Rating_Introduction.aspx" title=" Rating Introduction " > Rating Introduction </a>. Also the <a href="QuestionGroups.aspx" title=" Question Groups " > Question Groups </a> options become available
+                when the Rating is activated.<br />
 <br />
-* Rating Part - activates the answers  rating / scaling options in
-  our question's Selection Answer Types. To know more about rating and
-  scaling read the Rating_Introduction.html.<br />
+<i>* Repeatable Matrix Section </i><br /> - determines if the respondent will
+  be able to duplicate (repeat) the matrix in order to provide more answers or submit it multiple times. To
+  learn more about repeatable sections read the <a href="Repeatable_Introduction.aspx" title=" Repeatable Section Introduction " > Introduction </a><br />
 <br />
-* Repeatable Matrix Section - allows to specify if the respondent will
-  be able to duplicate the matrix in order to provide more answers. To
-  learn more about repeatable sections read the
-  Repeatable_Introduction.html<br />
-<br />
-* Min. Selection Required per row - is the minimum answers that are
+<i>* Min. Selection Required per row </i><br /> -  the minimum number of answers that is
   mandatory to select in each row. Only Selection Answer Types are
-  calculated in the selection number count, if we want to make Field
-  Answer Types mandatory we can do it by checking the Mandatory checkbox
-  in the Field%20-%20Basic.html answers options.<br />
+  calculated in the selection number count. If Field
+  Answer Types have to be mandatory it can be set by checking the Mandatory checkbox
+  in the Matrix Rows & Columns editor's answers options.<br />
 <br />
-* Max. Selection Allowed per row - is the maximum of answers that can be
+<i>* Max. Selection Allowed per row </i><br /> -  the maximum number of answers that can be
   selected in each row. Only Selection Answer Types are calculated in the
-  selection number count, if we want to make Field Answer Types mandatory
-  we can do it by checking the Required field in the
-  Field%20-%20Basic.html answers options.<br />
+  selection number count. If Field Answer Types have to be mandatory
+  it can be set by checking the Mandatory checkbox
+  in the Matrix Rows & Columns editor's answers options.<br />
 <br />
 
                 <hr style="color:#e2e2e2;"/>
-                <br />
-                <br />
                 <h3>
                     More Information</h3>
                 <br />
-FBT_Introduction.html<br />
-Matrix%20Question.html<br />
-AT_Introduction.html<br />
-Matrix Rows / Columns EditorPiping_Introduction.html<br />
-Rating_Introduction.html<br />
-Repeatable_Introduction.html<br />
+                <a href="AT_Introduction.aspx" title=" Answer Types Introduction " >Answer Types Introduction </a>	<br />
+<a href="Matrix Question.aspx" title=" Matrix Question " > Matrix Question </a><br />
+<a href="Matrix Rows _ Column Editor.aspx" title=" Matrix Rows / Column Editor " > Matrix Rows / Column Editor </a>	<br />
+<a href="Rating_Introduction.aspx" title=" Rating Introduction " >Rating Introduction</a><br />
+<a href="Repeatable_Introduction.aspx" title=" Introduction " >Repeatable Sections Introduction</a><br />
+    <a href="QuestionGroups.aspx" title=" Question Groups " > Question Groups </a>       <br />
                 <br />
-            </td>
-        </tr>
-    </table>
-</div></div></asp:Content>
+            </div>
+<div id="fillerDiv" class="fillerDiv">&nbsp;</div></div></asp:Content>
 

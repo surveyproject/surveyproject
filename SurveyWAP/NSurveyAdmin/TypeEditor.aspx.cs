@@ -1,5 +1,5 @@
 /**************************************************************************************************
-	Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com)	
+	Survey™ Project changes: copyright (c) 2009-2017, W3DevPro™ (https://github.com/surveyproject)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -40,7 +40,8 @@ namespace Votations.NSurvey.WebAdmin
 		protected System.Web.UI.WebControls.Label MessageLabel;
 		new protected HeaderControl Header;
 		protected System.Web.UI.WebControls.DropDownList TypesDropDownList;
-		protected System.Web.UI.WebControls.HyperLink CreateTypeHyperLink;
+		//protected System.Web.UI.WebControls.HyperLink CreateTypeHyperLink;
+
 		protected System.Web.UI.WebControls.Literal AnswerTypeBuilderTitle;
 		protected System.Web.UI.WebControls.Label TypeToEditLabel;
 		protected System.Web.UI.WebControls.Literal BuiltInTypeNotEditedLabel;
@@ -91,8 +92,9 @@ namespace Votations.NSurvey.WebAdmin
 		{
 			// Header.SurveyId = SurveyId;
             ((Wap)Master.Master).HeaderControl.SurveyId = SurveyId;
-			CreateTypeHyperLink.NavigateUrl = UINavigator.TypeCreator + "?surveyid="+SurveyId+"&menuindex=" + MenuIndex;
-			if (NSurveyUser.Identity.IsAdmin)
+           
+            //CreateTypeHyperLink.NavigateUrl = UINavigator.TypeCreator + "?surveyid="+SurveyId+"&menuindex=" + MenuIndex;
+            if (NSurveyUser.Identity.IsAdmin)
 			{
 				TypesDropDownList.DataSource = new AnswerTypes().GetEditableAnswerTypesList();
 			}
@@ -146,14 +148,22 @@ namespace Votations.NSurvey.WebAdmin
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent()
-		{    
-			this.TypesDropDownList.SelectedIndexChanged += new System.EventHandler(this.Type_IndexChanged);
+        {
+            this.CreateTypeHyperLink.Click += new System.EventHandler(this.CreateTypeHyperLink_Click);
+            this.TypesDropDownList.SelectedIndexChanged += new System.EventHandler(this.Type_IndexChanged);
 			this.Load += new System.EventHandler(this.Page_Load);
 
 		}
-		#endregion
+        #endregion
 
-		private void CreateTypeButton_Click(object sender, System.EventArgs e)
+        private void CreateTypeHyperLink_Click(object sender, System.EventArgs e)
+        {
+            //CreateTypeHyperLink.PostBackUrl = UINavigator.TypeCreator + "?surveyid=" + SurveyId + "&menuindex=" + MenuIndex;
+            
+            UINavigator.NavigateToTypeCreator(((PageBase)Page).getSurveyId(), ((PageBase)Page).MenuIndex);
+        }
+
+        private void CreateTypeButton_Click(object sender, System.EventArgs e)
 		{
 			TypeOption.Visible = true;
 		}

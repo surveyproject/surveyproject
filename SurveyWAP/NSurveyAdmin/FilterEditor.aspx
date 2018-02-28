@@ -1,15 +1,18 @@
 ﻿
-<%@ Register TagPrefix="uc1" TagName="FooterControl" Src="UserControls/FooterControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
 <%@ Page language="c#" MasterPageFile="MsterPageTabs.master"   AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.FilterEditor" Codebehind="FilterEditor.aspx.cs" %>
 <%@ Register TagPrefix="uc1" TagName="FilterOptionControl" Src="UserControls/FilterOptionControl.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="mainBody" class="mainBody contentHolder ps-container">
+
         <div id="Panel" class="Panel content">
-            <br />
-            <fieldset style="width: 730px; margin-left: 12px; margin-top: 15px;" title="Survey Title">
-                <legend class="titleFont titleLegend" style="width:96%;">
+                                                                <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/new/Report%20Filter%20Editor.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a>
+                                        </div>
+            <fieldset>
+                <legend class="titleFont titleLegend">
                     <asp:Literal ID="FilterBuilderTitle" runat="server" EnableViewState="False">Results filter builder</asp:Literal>
                 </legend>
                 <br />
@@ -26,8 +29,8 @@
                 </ol>
             </fieldset>
                         <uc1:FilterOptionControl ID="FilterOption" Visible="false" runat="server"></uc1:FilterOptionControl>
-
+                                                 <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
         </div>
-    </div>
+
 
 </asp:Content>

@@ -1,0 +1,680 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class TokenSecurityAddIn
+   | SP Technical Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class TokenSecurityAddIn
+   | SP Technical Documentation ">
+    <meta name="generator" content="docfx 2.26.3.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/splogo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn">
+  
+  
+  <h1 id="Votations_NSurvey_Security_TokenSecurityAddIn" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn" class="text-break">Class TokenSecurityAddIn
+  </h1>
+  <div class="markdown level0 summary"><p>Add in that handles the email security 
+A user will need to have a valid authentication
+code in order to access the survey</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">TokenSecurityAddIn</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Votations.NSurvey.Security.IWebSecurityAddIn.html">IWebSecurityAddIn</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Votations.NSurvey.Security.html">Votations.NSurvey.Security</a></h6>
+  <h6><strong>Assembly</strong>: SurveyProject.WebControls.dll</h6>
+  <h5 id="Votations_NSurvey_Security_TokenSecurityAddIn_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class TokenSecurityAddIn : IWebSecurityAddIn</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="Votations_NSurvey_Security_TokenSecurityAddIn_AddInDbId_" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.AddInDbId*"></a>
+  <h4 id="Votations_NSurvey_Security_TokenSecurityAddIn_AddInDbId" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.AddInDbId">AddInDbId</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int AddInDbId { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Security_TokenSecurityAddIn_Description_" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.Description*"></a>
+  <h4 id="Votations_NSurvey_Security_TokenSecurityAddIn_Description" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.Description">Description</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Description { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Security_TokenSecurityAddIn_Disabled_" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.Disabled*"></a>
+  <h4 id="Votations_NSurvey_Security_TokenSecurityAddIn_Disabled" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.Disabled">Disabled</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Disabled { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Security_TokenSecurityAddIn_LanguageCode_" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.LanguageCode*"></a>
+  <h4 id="Votations_NSurvey_Security_TokenSecurityAddIn_LanguageCode" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.LanguageCode">LanguageCode</h4>
+  <div class="markdown level1 summary"><p>Contains the current user language
+choice in a multi-language survey</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string LanguageCode { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Security_TokenSecurityAddIn_Order_" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.Order*"></a>
+  <h4 id="Votations_NSurvey_Security_TokenSecurityAddIn_Order" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.Order">Order</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Order { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Security_TokenSecurityAddIn_SurveyId_" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.SurveyId*"></a>
+  <h4 id="Votations_NSurvey_Security_TokenSecurityAddIn_SurveyId" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.SurveyId">SurveyId</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SurveyId { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Security_TokenSecurityAddIn_ViewState_" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.ViewState*"></a>
+  <h4 id="Votations_NSurvey_Security_TokenSecurityAddIn_ViewState" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.ViewState">ViewState</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public StateBag ViewState { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.StateBag</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Security_TokenSecurityAddIn_VisitorToken_" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.VisitorToken*"></a>
+  <h4 id="Votations_NSurvey_Security_TokenSecurityAddIn_VisitorToken" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.VisitorToken">VisitorToken</h4>
+  <div class="markdown level1 summary"><p>Return the current UId of the visitor</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string VisitorToken { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Votations_NSurvey_Security_TokenSecurityAddIn_GetAddInVoterData_" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.GetAddInVoterData*"></a>
+  <h4 id="Votations_NSurvey_Security_TokenSecurityAddIn_GetAddInVoterData_System_Int32_" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.GetAddInVoterData(System.Int32)">GetAddInVoterData(Int32)</h4>
+  <div class="markdown level1 summary"><p>Can return keys/values of the custom 
+stored data during the ProcessVoterData. 
+At this time these data are retrieved to
+be shown in individual reports and for results export</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NameValueCollection GetAddInVoterData(int voterId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">voterId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Specialized.NameValueCollection</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Security_TokenSecurityAddIn_GetAdministrationInterface_" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.GetAdministrationInterface*"></a>
+  <h4 id="Votations_NSurvey_Security_TokenSecurityAddIn_GetAdministrationInterface_System_Web_UI_WebControls_Style_" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.GetAdministrationInterface(System.Web.UI.WebControls.Style)">GetAdministrationInterface(Style)</h4>
+  <div class="markdown level1 summary"><p>Must create and return the control 
+that will show the administration interface
+If none is available returns null</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Control GetAdministrationInterface(Style controlStyle)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Style</span></td>
+        <td><span class="parametername">controlStyle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.Control</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Security_TokenSecurityAddIn_GetLoginInterface_" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.GetLoginInterface*"></a>
+  <h4 id="Votations_NSurvey_Security_TokenSecurityAddIn_GetLoginInterface_System_Web_UI_WebControls_Style_" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.GetLoginInterface(System.Web.UI.WebControls.Style)">GetLoginInterface(Style)</h4>
+  <div class="markdown level1 summary"><p>Must create and return the control 
+that will show the logon interface.
+If none is available returns null</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Control GetLoginInterface(Style controlStyle)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Style</span></td>
+        <td><span class="parametername">controlStyle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.Control</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Security_TokenSecurityAddIn_InitOnSurveyAddition_" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.InitOnSurveyAddition*"></a>
+  <h4 id="Votations_NSurvey_Security_TokenSecurityAddIn_InitOnSurveyAddition" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.InitOnSurveyAddition">InitOnSurveyAddition()</h4>
+  <div class="markdown level1 summary"><p>Method called once an addin has been added to a survey
+Can be used to set default values, settings for the addin</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InitOnSurveyAddition()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_Security_TokenSecurityAddIn_IsAuthenticated_" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.IsAuthenticated*"></a>
+  <h4 id="Votations_NSurvey_Security_TokenSecurityAddIn_IsAuthenticated" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.IsAuthenticated">IsAuthenticated()</h4>
+  <div class="markdown level1 summary"><p>Check if the current user has given
+the correct credentials</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsAuthenticated()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Security_TokenSecurityAddIn_OnCheckBoxChange_" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.OnCheckBoxChange*"></a>
+  <h4 id="Votations_NSurvey_Security_TokenSecurityAddIn_OnCheckBoxChange_System_Object_System_EventArgs_" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.OnCheckBoxChange(System.Object,System.EventArgs)">OnCheckBoxChange(Object, EventArgs)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnCheckBoxChange(object sender, EventArgs e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">sender</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.EventArgs</span></td>
+        <td><span class="parametername">e</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Security_TokenSecurityAddIn_OnTokenSubmit_" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.OnTokenSubmit*"></a>
+  <h4 id="Votations_NSurvey_Security_TokenSecurityAddIn_OnTokenSubmit_System_Object_System_EventArgs_" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.OnTokenSubmit(System.Object,System.EventArgs)">OnTokenSubmit(Object, EventArgs)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnTokenSubmit(object sender, EventArgs e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">sender</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.EventArgs</span></td>
+        <td><span class="parametername">e</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Security_TokenSecurityAddIn_ProcessVoterData_" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.ProcessVoterData*"></a>
+  <h4 id="Votations_NSurvey_Security_TokenSecurityAddIn_ProcessVoterData_Votations_NSurvey_Data_VoterAnswersData_" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.ProcessVoterData(Votations.NSurvey.Data.VoterAnswersData)">ProcessVoterData(VoterAnswersData)</h4>
+  <div class="markdown level1 summary"><p>Method to handle voter data once it has been stored in the database</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ProcessVoterData(VoterAnswersData voter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Data.VoterAnswersData.html">VoterAnswersData</a></td>
+        <td><span class="parametername">voter</span></td>
+        <td><p>Voter information as saved in the database and its answers</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_Security_TokenSecurityAddIn_UnInitOnSurveyRemoval_" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.UnInitOnSurveyRemoval*"></a>
+  <h4 id="Votations_NSurvey_Security_TokenSecurityAddIn_UnInitOnSurveyRemoval" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.UnInitOnSurveyRemoval">UnInitOnSurveyRemoval()</h4>
+  <div class="markdown level1 summary"><p>Method called once an addin has been remove from a survey
+Can be used to remove useless settings for the addin</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UnInitOnSurveyRemoval()</code></pre>
+  </div>
+  <h3 id="events">Events
+  </h3>
+  
+  
+  <h4 id="Votations_NSurvey_Security_TokenSecurityAddIn_UserAuthenticated" data-uid="Votations.NSurvey.Security.TokenSecurityAddIn.UserAuthenticated">UserAuthenticated</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event UserAuthenticatedEventHandler UserAuthenticated</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.Security.UserAuthenticatedEventHandler.html">UserAuthenticatedEventHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Votations.NSurvey.Security.IWebSecurityAddIn.html">IWebSecurityAddIn</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy;2017 Survey&trade; Project
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

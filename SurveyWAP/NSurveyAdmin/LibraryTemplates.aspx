@@ -1,21 +1,27 @@
 ﻿<%@ Import Namespace="Votations.NSurvey.Data" %>
 
 <%@ Page Language="c#" MasterPageFile="MsterPageTabs.master" AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.LibraryTemplates" Codebehind="LibraryTemplates.aspx.cs" %>
-
 <%@ Register TagPrefix="uc1" TagName="LibraryQuestionOptionsControl" Src="UserControls/LibraryQuestionOptionsControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="HeaderControl" Src="UserControls/HeaderControl.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="FooterControl" Src="UserControls/FooterControl.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="mainBody" class="mainBody contentHolder ps-container">
-        <div id="Panel" class="Panel content">
 
-            <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
+        <div id="Panel" class="Panel">
+
+            <div class="errorDiv">
  <asp:Label ID="MessageLabel" runat="server"  CssClass="errorMessage" Visible="False"></asp:Label>
                 </div>
-            <br />
-                  <fieldset style="width:730px; margin-left:12px; margin-top:15px;" title="">
-        <legend class="titleFont titleLegend"><asp:Literal ID="LibraryQuestionsTemplatesTitle" runat="server" Text="Library templates"
+
+            
+                                        <div class="helpDiv">
+                                            <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/new/Library%20Templates.aspx"
+                                                title="Click for more Information">
+                                                <img alt="help" border="0" src="<%= Page.ResolveUrl("~")%>Images/small_help.gif" />
+                                            </a>
+                                        </div>
+         
+                  <fieldset>
+        <legend class="titleFont titleLegend">
+            <asp:Literal ID="LibraryQuestionsTemplatesTitle" runat="server" Text="Library templates"
                                     EnableViewState="False"></asp:Literal></legend><br />
                 <ol>
                     <li>
@@ -35,7 +41,7 @@
    </fieldset>
 
 
-</div></div>
+</div>
 
 
 </asp:Content>

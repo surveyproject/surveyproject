@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <data version="1.0" id="1" name="ControlCodeTitle">
-    <value>Survey Webcontrol: Asp.net Code</value>
+    <value>Surveyform Custom Webcontrol</value>
   </data>
   <data version="1.0" id="2" name="PageDirectiveInfo">
     <value>You must also include the following directive in the aspx pages that will display the survey :</value>
   </data>
   <data version="1.0" id="3" name="TagPrefixInfo">
-    <value>&lt;%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="Votations.NSurvey.WebControls" %&gt;</value>
+    <value>&lt;%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="SurveyProject.WebControls" %&gt;</value>
   </data>
   <data version="1.0" id="4" name="QuickLinkInfo">
-    <value>Deployment URL:</value>
+    <value>Survey Direct Link:</value>
   </data>
   <data version="1.0" id="5" name="SurveyCodePreviewTitle">
     <value>Survey Preview</value>
@@ -25,7 +25,7 @@
     <value>Display mode :</value>
   </data>
   <data version="1.0" id="9" name="ColumnNumberLabel">
-    <value>Number of columns :</value>
+    <value>Number of columns (V) or rows (H) :</value>
   </data>
   <data version="1.0" id="10" name="RandomizeAnswersLabel">
     <value>Randomize answers order :</value>
@@ -115,7 +115,7 @@
     <value>Export CSV</value>
   </data>
   <data version="1.0" id="39" name="FieldReportTitle">
-    <value>Field entries report - Page</value>
+    <value>Individual Responses - Page</value>
   </data>
   <data version="1.0" id="40" name="NextPageLinkButton">
     <value>Next page &gt;&gt;</value>
@@ -124,7 +124,7 @@
     <value>&lt;&lt; Previous page</value>
   </data>
   <data version="1.0" id="42" name="DetailsColumn">
-    <value>Details</value>
+    <value>View</value>
   </data>
   <data version="1.0" id="43" name="DeleteColumn">
     <value>Delete</value>
@@ -533,7 +533,7 @@
     <value>(built in types cannot be edited)</value>
   </data>
   <data version="1.0" id="174" name="CreateTypeHyperLink">
-    <value>Click here to create a new type ...</value>
+    <value>Create a new type</value>
   </data>
   <data version="1.0" id="175" name="CreateATypeMessage">
     <value>Please create a type</value>
@@ -614,19 +614,19 @@
     <value>Type updated</value>
   </data>
   <data version="1.0" id="201" name="VoterInformationTitle">
-    <value>Voter information</value>
+    <value>Respondent Details</value>
   </data>
   <data version="1.0" id="202" name="VoterDBIDLabel">
-    <value>Voter DB ID :</value>
+    <value>Database VoterID :</value>
   </data>
   <data version="1.0" id="203" name="VoterEmailLabel">
-    <value>Voter's Email :</value>
+    <value>Email address :</value>
   </data>
   <data version="1.0" id="204" name="VoterIPAddressLabel">
     <value>IP address :</value>
   </data>
   <data version="1.0" id="205" name="VoteRecordedLabel">
-    <value>Vote recorded on :</value>
+    <value>Response recorded on :</value>
   </data>
   <data version="1.0" id="206" name="TimeToTakeLabel">
     <value>Time to take the survey :</value>
@@ -713,7 +713,7 @@
     <value>Edit matrix question</value>
   </data>
   <data version="1.0" id="234" name="InsertNewTitle">
-    <value>Insert a new</value>
+    <value>Insert a new Row or Column</value>
   </data>
   <data version="1.0" id="235" name="RowLabel">
     <value>Row</value>
@@ -845,7 +845,7 @@
     <value>Survey List</value>
   </data>
   <data version="1.0" id="278" name="NewSurveyHyperLink">
-    <value>Survey New</value>
+    <value>New Survey</value>
   </data>
   <data version="1.0" id="279" name="SurveyOptionsHyperlink">
     <value>Settings</value>
@@ -881,7 +881,7 @@
     <value>Mailing Status</value>
   </data>
   <data version="1.0" id="290" name="ASPNETCodeHyperlink">
-    <value>Web</value>
+    <value>Web Links</value>
   </data>
   <data version="1.0" id="291" name="NSurveyAuthenticationTitle">
     <value>Login </value>
@@ -923,7 +923,7 @@
     <value>Security</value>
   </data>
   <data version="1.1" id="304" name="SurveySecurityTitle">
-    <value>Survey security</value>
+    <value>Form security</value>
   </data>
   <data version="1.1" id="305" name="SurveyAddAdinTitle">
     <value>Add security addin</value>
@@ -956,7 +956,7 @@
     <value>Action on invalid authorisation</value>
   </data>
   <data version="1.1" id="315" name="ShowThankYouText">
-    <value>Display thank you message</value>
+    <value>Show Thank You message</value>
   </data>
   <data version="1.1" id="316" name="HideSurveyText">
     <value>Hide survey</value>
@@ -1109,10 +1109,10 @@
     <value>Are you sure that you want to clear all answers for this page ?</value>
   </data>
   <data version="1.4" id="364" name="EditAnswersLinkButton">
-    <value>Switch to voter's answers edit mode</value>
+    <value>Switch to EDIT mode</value>
   </data>
   <data version="1.4" id="365" name="ReadOnlyAnswersLinkButton">
-    <value>Switch to voter's answers read only mode</value>
+    <value>Switch to READ ONLY mode</value>
   </data>
   <data version="1.4" id="366" name="EditVoterAnswersTitle">
     <value>Edit answers</value>
@@ -1313,7 +1313,7 @@
     <value>Add new condition</value>
   </data>
   <data version="1.4" id="432" name="VoterUserNameLabel">
-    <value>SP Username:</value>
+    <value>SP&amp;trade; Username:</value>
   </data>
   <data version="1.4" id="433" name="ContextUserNameDisabled">
     <value>Disabled</value>
@@ -1583,16 +1583,16 @@
     <value>Change survey settings</value>
   </data>
   <data version="1.6" id="522" name="ApplySurveySettingsRight">
-    <value>Apply settings</value>
+    <value>Change Survey settings</value>
   </data>
   <data version="1.6" id="523" name="ExportSurveyXmlRight">
     <value>XML survey export</value>
   </data>
   <data version="1.6" id="524" name="AccessSurveySettingsRight">
-    <value>Settings access</value>
+    <value>View Survey settings</value>
   </data>
   <data version="1.6" id="525" name="CloneSurveyRight">
-    <value>Clone survey</value>
+    <value>Clone (copy) survey</value>
   </data>
   <data version="1.6" id="526" name="AccessPrivacySettingsRight" mimetype="">
     <value>Completion Access</value>
@@ -1601,10 +1601,10 @@
     <value>Security access</value>
   </data>
   <data version="1.6" id="528" name="AccessStatsRight">
-    <value>Stats access</value>
+    <value>Survey Statistics access</value>
   </data>
   <data version="1.6" id="529" name="ResetVotesRight">
-    <value>Reset votes</value>
+    <value>Reset all survey votes</value>
   </data>
   <data version="1.6" id="530" name="DeleteUnvalidateEntriesRight">
     <value>Delete unvalidated entries</value>
@@ -1616,25 +1616,25 @@
     <value>Answer type editor access</value>
   </data>
   <data version="1.6" id="533" name="AccessReportsRight">
-    <value>Report access</value>
+    <value>Reports access</value>
   </data>
   <data version="1.6" id="534" name="CreateResultsFilterRight">
-    <value>Create results filter</value>
+    <value>Create report results filter</value>
   </data>
   <data version="1.6" id="535" name="AccessFieldEntriesRight">
-    <value>Field entries access</value>
+    <value>Individual Responses access</value>
   </data>
   <data version="1.6" id="536" name="EditVoterEntriesRight">
-    <value>Edit voter entries</value>
+    <value>Edit respondent entries</value>
   </data>
   <data version="1.6" id="537" name="DeleteVoterEntriesRight">
-    <value>Delete voter entries</value>
+    <value>Delete respondent entries</value>
   </data>
   <data version="1.6" id="538" name="AccessCrossTabRight">
-    <value>Cross tabulation access</value>
+    <value>Cross tabulation report access</value>
   </data>
   <data version="1.6" id="539" name="AccessExportRight">
-    <value>Export data access</value>
+    <value>Export response data access</value>
   </data>
   <data version="1.6" id="540" name="AccessMailingRight">
     <value>Mailing access</value>
@@ -1645,13 +1645,13 @@
     </value>
   </data>
   <data version="1.6" id="542" name="AccessASPNetCodeRight">
-    <value>Preview and Web access</value>
+    <value>Preview and Weblink access</value>
   </data>
   <data version="1.6" id="543" name="AccessUserManagerRight">
     <value>User manager access</value>
   </data>
   <data version="1.6" id="544" name="AccessLibraryRight">
-    <value>Library access</value>
+    <value>Question Library access</value>
   </data>
   <data version="1.6" id="545" name="NoSurveysAndNoRightMessage">
     <value>You have no surveys and no rights to create new ones. Please contact your survey administrator.</value>
@@ -1723,7 +1723,7 @@
     <value>Hide to voters who scored &lt;b&gt;between {0} and {1}&lt;/b&gt; on &lt;b&gt;{2}&lt;/b&gt;</value>
   </data>
   <data version="1.6" id="568" name="ManageLibraryRight">
-    <value>Manage library</value>
+    <value>Manage Question library</value>
   </data>
   <data version="1.6" id="569" name="EqualsOperator">
     <value>Equals</value>
@@ -1771,16 +1771,16 @@
     <value>Only select queries are allowed, delete update and truncate keywords are forbidden</value>
   </data>
   <data version="1.6" id="584" name="SqlAnswerTypesEditionRight">
-    <value>Sql answer types edition</value>
+    <value>Create SQL answer types</value>
   </data>
   <data version="1.6" id="585" name="SqlAnswerTypeAccessDeniedMessage">
     <value>You don't have the credentials to create / edit a sql based answer type</value>
   </data>
   <data version="1.6" id="586" name="AllowXmlImportRight">
-    <value>Xml import</value>
+    <value>Xml Reponses import</value>
   </data>
   <data version="1.6" id="587" name="NoAnonymousRightsMessage">
-    <value>You must be authentified as a survey user to access these features.</value>
+    <value>You must be authorized as a survey user to access these features.</value>
   </data>
   <data version="1.7" id="588" name="SubscriberXMLList">
     <value>Subscriber - XML list</value>
@@ -1795,7 +1795,7 @@
     <value>end of survey</value>
   </data>
   <data version="1.7" id="592" name="TakeSurveyRight">
-    <value>Survey taker</value>
+    <value>Take Survey access</value>
   </data>
   <data version="1.7" id="593" name="TakeSurveyTitle">
     <value>Take survey</value>
@@ -1822,13 +1822,13 @@
     <value>RegEx editor access</value>
   </data>
   <data version="1.7" id="601" name="RegExLibHyperLink">
-    <value>Regex Library</value>
+    <value>Regular Expressions</value>
   </data>
   <data version="1.7" id="602" name="RegExLibraryTitle">
     <value>Regular expressions library</value>
   </data>
   <data version="1.7" id="603" name="CreateRegExHyperLink">
-    <value>Click here to create a new regex</value>
+    <value>Create New RegEx</value>
   </data>
   <data version="1.7" id="604" name="RegExToEditLabel">
     <value>Select a regex to edit / view :</value>
@@ -1939,10 +1939,10 @@
     <value>Import users</value>
   </data>
   <data version="1.7" id="640" name="UserImportedMessage">
-    <value>Users were imported into database</value>
+    <value> users were imported.</value>
   </data>
   <data version="1.7" id="640" name="NoUserImportedMessage">
-    <value>No Users were imported into database</value>
+    <value>No Users were imported.</value>
   </data>
   <data version="1.7" id="641" name="ImportUserLabel">
     <value>Import CSV data :</value>
@@ -1951,13 +1951,13 @@
     <value>Delete</value>
   </data>
   <data version="1.7" id="643" name="ImportInfo1Label">
-    <value>Import format are comma separated values. Each new line must contain a user to import.</value>
+    <value>&lt;b&gt;Import format:&lt;/b&gt; comma separated values. Each new line must contain a user to import.</value>
   </data>
   <data version="1.7" id="644" name="ImportInfo2Label">
-    <value>&lt;br /&gt;Example 1: UserName,Password,First name,Last name,Email &lt;br /&gt;</value>
+    <value>&lt;br /&gt;&lt;i&gt; Example 1:&lt;/i&gt;  UserName,Password,First name,Last name,Email &lt;br /&gt;</value>
   </data>
   <data version="1.7" id="645" name="ImportInfo3Label">
-    <value>Example 2: UserName,Password,,, (4 comma's in total)</value>
+    <value>&lt;i&gt;Example 2:&lt;/i&gt; UserName,Password,,, (4 comma's in total)</value>
   </data>
   <data version="1.7" id="646" name="ColMandatoryHeader">
     <value>Mandatory</value>
@@ -2163,207 +2163,6 @@
   <data version="1.9" id="713" name="MultiLanguagesHyperLink">
     <value>Multi Languages</value>
   </data>
-  <data version="1.9" id="714" name="AfrikaansLanguage">
-    <value>Afrikaans</value>
-  </data>
-  <data version="1.9" id="715" name="AlbanianLanguage">
-    <value>Albanian</value>
-  </data>
-  <data version="1.9" id="716" name="ArabicLanguage">
-    <value>Arabic</value>
-  </data>
-  <data version="1.9" id="717" name="ArmenianLanguage">
-    <value>Armenian</value>
-  </data>
-  <data version="1.9" id="718" name="AzeriLanguage">
-    <value>Azeri</value>
-  </data>
-  <data version="1.9" id="719" name="BasqueLanguage">
-    <value>Basque</value>
-  </data>
-  <data version="1.9" id="720" name="BelarusianLanguage">
-    <value>Belarusian</value>
-  </data>
-  <data version="1.9" id="721" name="BulgarianLanguage">
-    <value>Bulgarian</value>
-  </data>
-  <data version="1.9" id="722" name="CatalanLanguage">
-    <value>Catalan</value>
-  </data>
-  <data version="1.9" id="723" name="ChineseLanguage">
-    <value>Chinese / 中文（简体</value>
-  </data>
-  <data version="1.9" id="724" name="CroatianLanguage">
-    <value>Croatian</value>
-  </data>
-  <data version="1.9" id="725" name="CzechLanguage">
-    <value>Czech</value>
-  </data>
-  <data version="1.9" id="726" name="DanishLanguage">
-    <value>Danish</value>
-  </data>
-  <data version="1.9" id="727" name="DhivehiLanguage">
-    <value>Dhivehi</value>
-  </data>
-  <data version="1.9" id="728" name="DutchLanguage">
-    <value>Dutch / Nederlands</value>
-  </data>
-  <data version="1.9" id="729" name="EnglishLanguage">
-    <value>English</value>
-  </data>
-  <data version="1.9" id="730" name="EstonianLanguage">
-    <value>Estonian</value>
-  </data>
-  <data version="1.9" id="731" name="FaroeseLanguage">
-    <value>Faroese</value>
-  </data>
-  <data version="1.9" id="732" name="FarsiLanguage">
-    <value>Farsi</value>
-  </data>
-  <data version="1.9" id="733" name="FinishLanguage">
-    <value>Finish</value>
-  </data>
-  <data version="1.9" id="734" name="FrenchLanguage">
-    <value>French / Français</value>
-  </data>
-  <data version="1.9" id="735" name="GalicianLanguage">
-    <value>Galician</value>
-  </data>
-  <data version="1.9" id="736" name="GeorgianLanguage">
-    <value>Georgian</value>
-  </data>
-  <data version="1.9" id="737" name="GermanLanguage">
-    <value>German / Deutsch</value>
-  </data>
-  <data version="1.9" id="738" name="GreekLanguage">
-    <value>Greek</value>
-  </data>
-  <data version="1.9" id="739" name="GujaratiLanguage">
-    <value>Gujarati</value>
-  </data>
-  <data version="1.9" id="740" name="HebrewLanguage">
-    <value>Hebrew</value>
-  </data>
-  <data version="1.9" id="741" name="HindiLanguage">
-    <value>Hindi</value>
-  </data>
-  <data version="1.9" id="742" name="HungarianLanguage">
-    <value>Hungarian / Magyar</value>
-  </data>
-  <data version="1.9" id="743" name="IcelandicLanguage">
-    <value>Icelandic</value>
-  </data>
-  <data version="1.9" id="744" name="IndonesianLanguage">
-    <value>Indonesian</value>
-  </data>
-  <data version="1.9" id="745" name="ItalianLanguage">
-    <value>Italian / Italiano</value>
-  </data>
-  <data version="1.9" id="746" name="JapaneseLanguage">
-    <value>Japanese / 日本語</value>
-  </data>
-  <data version="1.9" id="747" name="KannadaLanguage">
-    <value>Kannada</value>
-  </data>
-  <data version="1.9" id="748" name="KazakhLanguage">
-    <value>Kazakh</value>
-  </data>
-  <data version="1.9" id="749" name="KonkaniLanguage">
-    <value>Konkani</value>
-  </data>
-  <data version="1.9" id="750" name="KoreanLanguage">
-    <value>Korean / 한국어</value>
-  </data>
-  <data version="1.9" id="751" name="KyrgyzLanguage">
-    <value>Kyrgyz</value>
-  </data>
-  <data version="1.9" id="752" name="LatvianLanguage">
-    <value>Latvian</value>
-  </data>
-  <data version="1.9" id="753" name="MacedonianLanguage">
-    <value>Macedonian</value>
-  </data>
-  <data version="1.9" id="754" name="MalayLanguage">
-    <value>Malay</value>
-  </data>
-  <data version="1.9" id="755" name="MarathiLanguage">
-    <value>Marathi</value>
-  </data>
-  <data version="1.9" id="756" name="MongolianLanguage">
-    <value>Mongolian</value>
-  </data>
-  <data version="1.9" id="757" name="NorwegianLanguage">
-    <value>Norwegian</value>
-  </data>
-  <data version="1.9" id="758" name="PolishLanguage">
-    <value>Polish</value>
-  </data>
-  <data version="1.9" id="759" name="PortugueseLanguage">
-    <value>Portuguese / Português</value>
-  </data>
-  <data version="1.9" id="760" name="PunjabiLanguage">
-    <value>Punjabi</value>
-  </data>
-  <data version="1.9" id="761" name="RomanianLanguage">
-    <value>Romanian</value>
-  </data>
-  <data version="1.9" id="762" name="RussianLanguage">
-    <value>Russian</value>
-  </data>
-  <data version="1.9" id="763" name="SanskritLanguage">
-    <value>Sanskrit</value>
-  </data>
-  <data version="1.9" id="764" name="SlovakLanguage">
-    <value>Slovak</value>
-  </data>
-  <data version="1.9" id="765" name="SlovenianLanguage">
-    <value>Slovenian</value>
-  </data>
-  <data version="1.9" id="766" name="SpanishLanguage">
-    <value>Spanish</value>
-  </data>
-  <data version="1.9" id="767" name="SwahiliLanguage">
-    <value>Swahili</value>
-  </data>
-  <data version="1.9" id="768" name="SwedishLanguage">
-    <value>Swedish</value>
-  </data>
-  <data version="1.9" id="769" name="SyriacLanguage">
-    <value>Syriac</value>
-  </data>
-  <data version="1.9" id="770" name="TamilLanguage">
-    <value>Tamil</value>
-  </data>
-  <data version="1.9" id="771" name="TatarLanguage">
-    <value>Tatar</value>
-  </data>
-  <data version="1.9" id="772" name="TeluguLanguage">
-    <value>Telugu</value>
-  </data>
-  <data version="1.9" id="773" name="ThaiLanguage">
-    <value>Thai</value>
-  </data>
-  <data version="1.9" id="774" name="TurkishLanguage">
-    <value>Turkish</value>
-  </data>
-  <data version="1.9" id="775" name="UkrainianLanguage">
-    <value>Ukrainian</value>
-  </data>
-  <data version="1.9" id="776" name="UrduLanguage">
-    <value>Urdu</value>
-  </data>
-  <data version="1.9" id="777" name="UzbekLanguage">
-    <value>Uzbek</value>
-  </data>
-  <data version="1.9" id="778" name="VietnameseLanguage">
-    <value>Vietnamese</value>
-  </data>
-  <data version="1.9" id="779" name="LithuanianLanguage">
-    <value>Lithuanian</value>
-  </data>
-  <data version="1.9" id="780" name="Serbian Language">
-    <value>Serbian</value>
-  </data>
   <data version="1.9" id="781" name="LanguageDisabledMessage">
     <value>Language has been disabled</value>
   </data>
@@ -2401,7 +2200,11 @@
     <value>Variable name :</value>
   </data>
   <data version="1.9" id="793" name="VariableNameInfoLabel">
-    <value>Add to survey url to hold the language value to show. E.g. ..?lang=nl-NL </value>
+    <value>
+      &lt;b&gt;Query String&lt;/b&gt; - add to the survey url including a language value  to determine what [enabled!] language is used. &lt;br /&gt;
+    E.g. VariableName: &lt;b&gt;lang&lt;/b&gt; | Language: &lt;i&gt;nl-NL&lt;/i&gt; | URL: [your survey URL&amp;GUID]&amp;lang=nl &lt;br /&gt;
+    &lt;b&gt;Cookie&lt;/b&gt; - see Help Files.
+    </value>   
   </data>
   <data version="1.9" id="794" name="VariableNameUpdateButton">
     <value>Update</value>
@@ -2410,7 +2213,7 @@
     <value>Default language</value>
   </data>
   <data version="1.9" id="796" name="VoterLanguageLabel">
-    <value>Voter's language :</value>
+    <value>Response Language :</value>
   </data>
   <data version="1.9" id="797" name="LanguageFilterLabel">
     <value>Language filter :</value>
@@ -2428,7 +2231,7 @@
     <value>All languages</value>
   </data>
   <data version="1.9" id="802" name="PreviewSurveyLanguageLabel">
-    <value>Preview form in :</value>
+    <value>Select Language to edit :</value>
   </data>
   <data version="1.9" id="803" name="PreviewLibraryLanguageLabel">
     <value>Select Library Preview language:</value>
@@ -2642,7 +2445,7 @@
     <value>This addin will check if the user is logged in Survey and store his username on answers submission</value>
   </data>
   <data version="1.7" id="871" name="NSurveySecurityContextProtection">
-    <value>Survey security context</value>
+    <value>SP&#8482; security context</value>
   </data>
   <data version="1.7" id="872" name="RegExValidationFailedMessage">
     <value>Invalid answer given for {0}</value>
@@ -2776,7 +2579,7 @@
   <data version="1.2.2" id="915" name="Disclaimer">
     <value>SURVEY™ PROJECT is a webapplication for creating and publishing online surveys and webforms. The application is based on the open source software NSurvey. 
     NSurvey was written by &lt;a href="http://www.nsurvey.org" title="Nsurvey" target="_blank"&gt;Thomas Zumbrunn&lt;/a&gt;, (c) 2004/2005. 
-    &lt;br /&gt;&lt;br /&gt;SURVEY™ PROJECT is an initiative of &lt;a href="http://www.w3devpro.com" title="W3DevPro Homepage" target="_blank"&gt;W3DevPro™ &lt;/a&gt;, copyright (c) 2009/2017. 
+    &lt;br /&gt;&lt;br /&gt;SURVEY™ PROJECT is an initiative of &lt;a href="http://www.w3devpro.com" title="W3DevPro Homepage" target="_blank"&gt;W3DevPro™ &lt;/a&gt;, copyright (c) 2009/2018. 
     Survey™ Project is published under the &lt;a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.en.html" title="GPL" target="_blank"&gt;GNU GENERAL PUBLIC LICENSE v.3, 29 June 2007&lt;/a&gt;.
       A copy of all licenses that apply can be found in the directory: SurveyWAP\ _Instructions\ Licenses of this application.
       &lt;br /&gt;&lt;br /&gt;
@@ -2811,19 +2614,19 @@
     <value>Active</value>
   </data>
   <data version="1.2.2" id="919" name="SurveyTitle">
-    <value>Survey</value>
+    <value>Survey Title &amp; ID</value>
   </data>
   <data version="1.2.2" id="920" name="SurveyStatus">
     <value>Status</value>
   </data>
   <data version="1.2.2" id="921" name="SurveyResponses">
-    <value>Responses</value>
+    <value>Votes</value>
   </data>
   <data version="1.2.2" id="922" name="SurveyCreated">
     <value>Created</value>
   </data>
   <data version="1.2.2" id="923" name="SurveyDesign">
-    <value>Design</value>
+    <value>Form</value>
   </data>
   <data version="1.2.2" id="924" name="SurveyDelete">
     <value>Delete</value>
@@ -2832,7 +2635,7 @@
     <value>Security</value>
   </data>
   <data version="1.2.2" id="926" name="SurveyEdit">
-    <value>Edit</value>
+    <value>Settings</value>
   </data>
   <data version="1.2.2" id="927" name="UsersTab">
     <value>Users</value>
@@ -2856,7 +2659,7 @@
     <value>Email</value>
   </data>
   <data version="1.2.2" id="934" name="UsersTabAdministrator">
-    <value>Administrator</value>
+    <value>Admin</value>
   </data>
   <data version="1.2.2" id="935" name="UsersTabEdit">
     <value>Edit</value>
@@ -3008,7 +2811,7 @@
     <value>Mailing</value>
   </data>
   <data version="2.0" id="984" name="AccessQuestionGroupRight">
-    <value>Access Question Groups</value>
+    <value>Question Groups access</value>
   </data>
   <data version="2.0" id="985" name="MissingVariableMessage">
     <value>Please set {0} before navigating to Library Maintenance Screen</value>
@@ -3062,7 +2865,7 @@
     <value>IP Range - End</value>
   </data>
   <data version="2.0" id="1002" name="IPRangeFormTitle">
-    <value>IP Filter</value>
+    <value>IP Filter Security</value>
   </data>
   <data version="2.0" id="1003" name="TokenSecurityFormTitle">
     <value>Token Security</value>
@@ -3080,7 +2883,7 @@
     <value>Your IP address is not in acceptable range.</value>
   </data>
   <data version="2.0" id="1008" name="SurveyIPRangeSecurityHyperlink">
-    <value> IP Filter</value>
+    <value> IP Filter Security</value>
   </data>
   <data version="2.0" id="1009" name="Exception">
     <value> Exception Occurred</value>
@@ -3248,11 +3051,11 @@
     <value>Are you sure you want to delete this page ?</value>
   </data>
   <data version="2.0" id="1062" name="FriendlyLabel">
-    <value>Create Friendly Name Url :</value>
+    <value>Create Friendly Name :</value>
   </data>
   <data version="2.0" id="1063" name="FriendlyUrl">
     <value>
-      Note: Friendly Url format = http:// [YourWebSiteUrl] / surveymobile.aspx / [&lt;b&gt;YourFriendlyName&lt;/b&gt;]
+      Note: Friendly Link format = http:// [YourWebSiteUrl] / surveymobile.aspx / [&lt;b&gt;YourFriendlyName&lt;/b&gt;]
     </value>
   </data>
   <data version="2.0" id="1064" name="BtnFriendly">
@@ -3503,10 +3306,10 @@
     <value>Survey Layout</value>
   </data>
   <data version="2.4" id="1145" name="AccessSurveyList">
-    <value>Access SurveyList</value>
+    <value>Survey List access</value>
   </data>
   <data version="2.4" id="1146" name="HelpLabelHelpfiles">
-    <value>Available Helpfiles</value>
+    <value>Available Help Options</value>
   </data>
   <data version="2.4" id="1147" name="HelpLabelStartupSettings">
     <value>Startup and Settings</value>
@@ -3545,7 +3348,7 @@
     <value>Friendly name Deleted</value>
   </data>
   <data version="2.4" id="1159" name="FriendlyUrlLabel">
-    <value>Friendly URL: </value>
+    <value>Survey Friendly Link: </value>
   </data>
   <data version="2.4" id="1160" name="SurveyLayoutSavedMsg">
     <value>Layout correctly Saved</value>
@@ -3563,7 +3366,7 @@
   </data>
   <data version="2.4" id="1164" name="SpFrontPageTheme">
     <value>
-      The open source webapplication to create and publish surveys and webforms online
+      The open source web&#160;application for online surveys and webforms
     </value>
   </data>
   <data version="2.4" id="1165" name="DisclaimerTitle">
@@ -3585,5 +3388,97 @@
   </data>
   <data version="2.4" id="1170" name="btnGenerate">
     <value>Generate</value>
+  </data>
+  <data version="2.5" id="1171" name="HelpAboutHyperlink">
+    <value>About SP&amp;trade;</value>
+  </data>
+  <data version="2.5" id="1172" name="ReportsSMHyperlink">
+    <value>Reports</value>
+  </data>
+  <data version="2.5" id="1173" name="ResponsesHyperlink">
+    <value>Individual Reponses</value>
+  </data>
+  <data version="2.5" id="1174" name="AccessUserResponses">
+    <value>User Reponses access</value>
+  </data>
+  <data version="2.5" id="1175" name="FriendlyNameExistsMsg">
+    <value>Name already used, please retry.</value>
+  </data>
+  <data version="2.5" id="1176" name="WebControlIntro">
+    <value>More information on using the SurveyBox Custom Webcontrol at .....</value>
+  </data>
+  <data version="2.5" id="1177" name="AdminCreatedMessage">
+    <value>Account created. Please login.</value>
+  </data>
+  <data version="2.5" id="1178" name="MultilanguagesStatsLiteral">
+    <value>Active Languages:</value>
+  </data>
+  <data version="2.5" id="1179" name="OpeningCloseDateLiteral">
+    <value>Opening &amp; Closing dates</value>
+  </data>
+  <data version="2.5" id="1180" name="DateNotSet">
+    <value>Not set</value>
+  </data>
+  <data version="2.5" id="1181" name="PasswordRulesMessage">
+    <value>Password rules not met</value>
+  </data>
+  <data version="2.5" id="1182" name="SSRSReports">
+    <value>SSRS Reports</value>
+  </data>
+  <data version="2.5" id="1183" name="SsrsReportTitle">
+    <value>SQL Server Reporting Services - </value>
+  </data>
+  <data version="2.5" id="1184" name="SurveyTitleTooltip">
+    <value>Click a Title to go Statistics</value>
+  </data>
+  <data version="2.5" id="1185" name="SurveyStatusTooltip">
+    <value>Survey Activated or not</value>
+  </data>
+  <data version="2.5" id="1186" name="SurveyReponsesTooltip">
+    <value>Number of Reponses</value>
+  </data>
+  <data version="2.5" id="1187" name="SurveyCreatedTooltip">
+    <value>Survey Creation Date</value>
+  </data>
+  <data version="2.5" id="1188" name="AccessSsrsReports">
+    <value>SSRS Reports access</value>
+  </data>
+  <data version="2.5" id="1189" name="SsrsPrintSurvey">
+    <value>Report to select any of the surveys through a DDL and print/ export all Q/A.</value>
+  </data>
+  <data version="2.5" id="1190" name="SsrsReport">
+    <value>Basic SSRS report example as added to SP.</value>
+  </data>
+  <data version="2.5" id="1191" name="SecurityGeneralWarningText">
+    <value>Show General Warning</value>
+  </data>
+  <data version="2.5" id="1191" name="SecurityGeneralWarning">
+    <value>Access not allowed.</value>
+  </data>
+  <data version="2.5" id="1192" name="UsersTabDelete">
+    <value>Delete</value>
+  </data>
+  <data version="2.5" id="1193" name="UserImportLinesSubmitted">
+    <value> lines submitted; </value>
+  </data>
+  <data version="2.5" id="1194" name="UserImportLinesImported">
+    <value> users imported. Not completed: </value>
+  </data>
+  <data version="2.5" id="1195" name="UserImportUserExists">
+    <value> user already exists </value>
+  </data>
+  <data version="2.5" id="1196" name="UserImportIncorrectFormat">
+    <value> incorrect delimiting format </value>
+  </data>
+  <data version="2.5" id="1197" name="SelectSecurityAction">
+    <value>Select an Action</value>
+  </data>
+  <data version="2.5" id="1198" name="SecurityActionInfo">
+    <value>- If an option is selected from the dropdownlist the change is saved instantly and automatically.&lt;br /&gt;
+      - The default 'Action on Invalid Authorisation' if no selection is made is set to "Show the General Warning".
+    </value>
+  </data>
+  <data version="2.5" id="1199" name="MlCodesLiteral">
+    <value>Active Language Codes</value>
   </data>
 </root>

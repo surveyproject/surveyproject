@@ -1,30 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
-
-using Votations.NSurvey.Data;
 using Votations.NSurvey.WebAdmin;
-using Votations.NSurvey.WebAdmin.UserControls;
-using Votations.NSurvey.Web.Security;
 
 namespace Votations.NSurvey
 {
+    /// <summary>
+    /// Webapplication MasterPage code
+    /// </summary>
     public partial class Wap : System.Web.UI.MasterPage
     {
         protected Image spLogo;
         //protected Panel logoPanel;
 
-        public bool isTreeStale {  set{this.surveyTree1.isTreeStale=true;} }
+        public bool isTreeStale
+        {
+            set
+            {
+                this.surveyTree1.isTreeStale = true;
+            }
+        }
 
         public void RebuildTree()
         {
             this.surveyTree1.RebuildTree();
         }
-
 
         protected void Page_Init(object sender, System.EventArgs e)
         {
@@ -73,11 +75,11 @@ namespace Votations.NSurvey
 
             //Add JQuery Scripts
 
-            //JQuery v. 3.1.1. Min:
+            //JQuery v. 3.3.1. Min:
             Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
             HtmlGenericControl javascriptControl = new HtmlGenericControl("script");
             javascriptControl.Attributes.Add("type", "text/Javascript");
-            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/jquery-3.1.1.min.js"));
+            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/jquery-3.3.1.min.js"));
             Page.Header.Controls.Add(javascriptControl);
 
             //JQuery Migrate Plugin - to test upgrades
@@ -127,27 +129,7 @@ namespace Votations.NSurvey
             Page.Header.Controls.Add(javascriptControl);
             Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
 
-            //Perfect Scrollbar scripts (3x):
-                        javascriptControl = new HtmlGenericControl("script");
-            javascriptControl.Attributes.Add("type", "text/Javascript");
-            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/Javascript/perfectscrollbar/jquery.mousewheel.js"));
-            Page.Header.Controls.Add(javascriptControl);
-            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
 
-            javascriptControl = new HtmlGenericControl("script");
-            javascriptControl.Attributes.Add("type", "text/Javascript");
-            javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/Javascript/perfectscrollbar/perfect-scrollbar.js"));
-            Page.Header.Controls.Add(javascriptControl);
-            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-
-            javascriptControl = new HtmlGenericControl("script");
-            javascriptControl.Attributes.Add("type", "text/Javascript");
-            javascriptControl.InnerHtml = "jQuery(document).ready(function($) {" + Environment.NewLine +
-                                            "'use strict';" + Environment.NewLine +
-                                            "$('#mainBody').perfectScrollbar();" +Environment.NewLine +
-                                            "});";
-            Page.Header.Controls.Add(javascriptControl);
-            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
 
 
        }
@@ -166,24 +148,27 @@ namespace Votations.NSurvey
             LdTitle.InnerHtml = ((PageBase)Page).GetPageResource("DisclaimerTitle");
         }
 
+        /// <summary>
+        /// Hide or show banners, SP logo and footer on opening page depending on authorisation: logged in or not
+        /// </summary>
         public void ViewBanners()
         {
+            if (((PageBase)Page).NSurveyUser.Identity.UserId == -1)
+            {
+                banners.Visible = true;
+                Footercontrol1.Visible = true;
+                surveyTree1.Visible = false;
+                return;
+            }
 
-            //if (((PageBase)Page).NSurveyUser.Identity.UserId == -1 || !(((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessSurveyList) || ((PageBase)Page).NSurveyUser.Identity.IsAdmin))
-            if (((PageBase)Page).NSurveyUser.Identity.UserId == -1 )
-            //if(!Page.User.Identity.IsAuthenticated)
-            { banners.Visible = true;
-            //spLogo.Width = Unit.Percentage(25);
-                return; }
-
-            banners.Visible = false;
-            //spLogo.Width = Unit.Percentage(20);
-            logoText.Style.Value = "color: white;float:right;font-weight:800; margin-top:0px;margin-right:100px; font-size:x-large;";
-            logoPanel.CssClass = "topCell logoLogedInPanel";
-            
+                banners.Visible = false;
+                Footercontrol1.Visible = false;
+                logoText.Attributes.Add("class", "logoTextLogedin");
         }
 
-
+        /// <summary>
+        /// Headcontrol loads header.ascx webcontrol including menu, logout and logo
+        /// </summary>
         public Votations.NSurvey.WebAdmin.UserControls.HeaderControl HeaderControl
 
         {
@@ -194,6 +179,9 @@ namespace Votations.NSurvey
 
         }
 
+        /// <summary>
+        /// Loginbox control loads login.ascx webcontrol including login entry fields
+        /// </summary>
         public Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls.LoginBox LoginBox
         {
             get
@@ -202,6 +190,8 @@ namespace Votations.NSurvey
             }
 
         }
+
+
 
     }
 }

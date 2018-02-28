@@ -2,62 +2,49 @@
     Inherits="Votations.NSurvey.WebAdmin.HelpFiles" CodeBehind="../default.aspx.cs" %>
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="mainBody" class="mainBody contentHolder ps-container"><div id="Panel" class="Panel content">
-    <table class="TableLayoutContainer">
-        <tr>
-            <td>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"><div id="helpPanel"><div>
                 <asp:ImageButton ID="btnBack" ImageUrl="~/Images/index-icon.png" runat="server" CssClass="buttonIndex"
                     PostBackUrl="~/NSurveyAdmin/Help/default.aspx#Email" Visible="True" ToolTip="Back to Helpfiles Index" />
-            </td>
-        </tr>
-        <tr>
-            <td class="contentCell" valign="top">
-                <br />
+            </div><div>
                 <h2 style="color:#5720C6;">
-                    Invitation Mailing</h2>
-                <br />
-                <br />
-                <hr style="color:#e2e2e2;"/>
-                <br />
+                    Invitation Mailing</h2><hr style="color:#e2e2e2;" />
 
-Usethe invitation mailing to send invitations to the respondents
-to take a survey.<br />
+
+Use the invitation mailing feature to send invitations to respondents
+to participate in answering a survey.<br />
 <br />
-* Email Invitation List - is a comma separated list of emails to which
-  you want to send the invitation.<br />
+<i>* Email Invitation List</i> <br /> a comma separated list of emails to which
+  the invitations are sent.<br />
 <br />
-* From Email - is the email from which the invitation will originate.<br />
+<i>* From Email </i><br /> the email from which the invitation will originate.<br />
 <br />
-* From Name - is the name of the person sending the invitation.<br />
+<i>* From Name</i> <br /> the name of the person/ organisation sending the invitation.<br />
 <br />
-* Invitation Message - this is the invitation message, a special optional
-  tag that will be replaced while sending the invitation can be included
+<i>* Invitation Message </i><br /> a [default] invitation message that can be edited/ customized with the Html/text (WYSYWIG) editor. Note:
+                the default text of the message can be found in the XmlData/Languages/[language].xml files.                
+                <br /><br />A special (optional)
+  tag that will be replaced on sending the invitation can be included
   in the invitation:<br />
 <br />
-  [--invitationid-] this tag will be replaced by a unique identifier that
-  will be used by - EMail%20Code%20Protection.html- the email security addin to
+ <i>* [--invitationid-] </i><br /> this tag will be replaced by a unique identifier (access code) that
+  will be used by the <a href="Email Code Protection.aspx">Email Code Protection security addin</a>  to
   uniquely identify a user to avoid multiple submission. Note that the email code protection - 
-  EMail%20Code%20Protection.html - must be activated in order to avoid
-  multiple submissions.<br />
+   must be activated in order to avoid multiple submissions.<br />
 <br />
 
-Anonymous Entries Survey - if checked SP will not track a link between the email and the
+<i>* Anonymous Entries Survey</i> <br /> if checked SP&trade; will not register a link between the email and the
 respondent answers.<br />
 <br />
 
                 <hr style="color:#e2e2e2;"/>
-                <br />
-                <br />
                 <h3>
                     More Information</h3>
                 <br />
-ED_Introduction.html<br />
-Mailing%20Templates.html<br />
-Mailing%20Status.html<br />
-Mailing%20Log.html<br />
+                                <a href="ED_Introduction.aspx" title=" Survey Mailing " > Mailing Introduction </a><br />
+                <a href="Mailing Status.aspx" title=" Mailing Status " > Mailing Status </a><br />
+                <a href="Mailing Log.aspx" title=" Mailing Log " > Mailing Log </a><br />
                 <br />
-            </td>
-        </tr>
-    </table>
-</div></div></asp:Content>
+                <br />
+            </div>
+<div id="fillerDiv" class="fillerDiv">&nbsp;</div></div></asp:Content>
 

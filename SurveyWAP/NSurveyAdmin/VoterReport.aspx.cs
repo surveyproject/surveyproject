@@ -1,5 +1,5 @@
 /**************************************************************************************************
-	Survey changes: copyright (c) 2010, W3DevPro TM (http://survey.codeplex.com)	
+	Survey™ Project changes: copyright (c) 2009-2017, W3DevPro™ (https://github.com/surveyproject)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -123,11 +123,17 @@ namespace Votations.NSurvey.WebAdmin
 			VoterLanguageLabel.Text = GetPageResource("VoterLanguageLabel");
 		}
 
-		/// <summary>
-		/// Get the current DB stats and fill 
-		/// the label with them
-		/// </summary>
-		private void BindData()
+        public void OnBackButton(object sender, CommandEventArgs e)
+        {
+            //SwitchToListMode();
+            Response.Redirect(UINavigator.FieldsReportHyperlink);
+        }
+
+        /// <summary>
+        /// Get the current DB stats and fill 
+        /// the label with them
+        /// </summary>
+        private void BindData()
 		{
 			isScored = new Surveys().IsSurveyScored(SurveyId);
 
@@ -319,7 +325,7 @@ namespace Votations.NSurvey.WebAdmin
 					System.Text.RegularExpressions.Regex.Replace(new PipeManager().PipeValuesInText(
 					answer.QuestionId, answer.AnswerText, _voterAnswers.VotersAnswers, null), "<[^>]*>", " "));
 				System.Web.UI.WebControls.Image spotImage = new System.Web.UI.WebControls.Image();
-				spotImage.ImageUrl = "images/spot_on.gif";
+				spotImage.ImageUrl = GlobalConfig.ImagesPath + "spot_on.gif";
 				
 				// Check if the voter has answered this answer
 				VoterAnswersData.VotersAnswersRow voterAnswer = _voterAnswers.VotersAnswers.FindByVoterIdAnswerIdSectionNumber(_voterId, answer.AnswerId, sectionNumber);
@@ -331,7 +337,7 @@ namespace Votations.NSurvey.WebAdmin
 						(((AnswerTypeMode)answer.TypeMode & AnswerTypeMode.DataSource) > 0)) &&
 						(((AnswerTypeMode)answer.TypeMode & AnswerTypeMode.Selection) == 0))
 					{
-						spotImage.ImageUrl = "images/spot_text.gif";
+						spotImage.ImageUrl = GlobalConfig.ImagesPath + "spot_text.gif";
 						answerTextCell.Text = FormatVoterAnswer(answerText, voterAnswer.AnswerText, true);
 					}
 					else if ( ((AnswerTypeMode)answer.TypeMode & AnswerTypeMode.Field) > 0 &&
@@ -342,7 +348,7 @@ namespace Votations.NSurvey.WebAdmin
 					}
 					else if(((AnswerTypeMode)answer.TypeMode & AnswerTypeMode.Upload) > 0)
 					{
-						spotImage.ImageUrl = "images/spot_file.gif";
+						spotImage.ImageUrl = GlobalConfig.ImagesPath + "spot_file.gif";
 						answerTextCell.Controls.Add(new LiteralControl(answerText + "<br />"));
 						answerTextCell.Controls.Add(GenerateFileList(voterAnswer.AnswerText));
 					}
@@ -360,18 +366,18 @@ namespace Votations.NSurvey.WebAdmin
 						(((AnswerTypeMode)answer.TypeMode & AnswerTypeMode.DataSource) > 0)) &&
 						(((AnswerTypeMode)answer.TypeMode & AnswerTypeMode.Selection) == 0))
 					{
-						spotImage.ImageUrl = "images/spot_text.gif";
+						spotImage.ImageUrl = GlobalConfig.ImagesPath + "spot_text.gif";
 						answerTextCell.Text = FormatVoterAnswer(answerText, null, false);
 					}
 					else if(((AnswerTypeMode)answer.TypeMode & AnswerTypeMode.Upload) > 0)
 					{
-						spotImage.ImageUrl = "images/spot_file.gif";
+						spotImage.ImageUrl = GlobalConfig.ImagesPath + "spot_file.gif";
 						answerTextCell.Text = answerText + "<br />" + GetPageResource("NoFileUploadedMessage");
 					}
 					else
 					{
 						answerTextCell.Text = answerText;
-						spotImage.ImageUrl = "images/spot_off.gif";
+						spotImage.ImageUrl = GlobalConfig.ImagesPath + "spot_off.gif";
 					}
 				}
 
@@ -458,7 +464,7 @@ namespace Votations.NSurvey.WebAdmin
 						}
 						else
 						{
-							spotImage.ImageUrl = "images/spot_on.gif";
+							spotImage.ImageUrl = GlobalConfig.ImagesPath + "spot_on.gif";
 							selectionCell.Controls.Add(spotImage);
 						}
 					}
@@ -477,7 +483,7 @@ namespace Votations.NSurvey.WebAdmin
 						}
 						else
 						{
-							spotImage.ImageUrl = "images/spot_off.gif";
+							spotImage.ImageUrl = GlobalConfig.ImagesPath + "spot_off.gif";
 							selectionCell.Controls.Add(spotImage);
 						}
 					}
@@ -508,7 +514,7 @@ namespace Votations.NSurvey.WebAdmin
 			{
 				if (answer == null ||  answer.Length == 0)
 				{
-					return GetPageResource("AnswerNotAnsweredMessage");
+					return "<span class='notanswered'>" + GetPageResource("AnswerNotAnsweredMessage") + "</span>";
 				}
 				else
 				{

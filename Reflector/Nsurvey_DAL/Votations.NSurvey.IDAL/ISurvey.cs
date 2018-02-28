@@ -82,7 +82,7 @@ namespace Votations.NSurvey.IDAL
         void SetFolderId(int? folderId, int surveyId);
         SurveyData GetAllSurveysByTitle(string title, int? folderID,int userID);
 
-        void SetFriendlyName(int surveyId, string friendlyName);
+        bool SetFriendlyName(int surveyId, string friendlyName);
         void DeleteFriendlyName(int surveyId);
 
     }

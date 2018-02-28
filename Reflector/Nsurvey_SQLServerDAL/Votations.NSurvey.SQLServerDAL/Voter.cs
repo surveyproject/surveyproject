@@ -51,7 +51,7 @@ namespace Votations.NSurvey.SQLServerDAL
             SqlCommand command2 = new SqlCommand("vts_spVoterAnswersAddNew", connection, transaction);
             command2.CommandType = CommandType.StoredProcedure;
             command2.Parameters.Add(new SqlParameter("@AnswerID", SqlDbType.Int, 4, "AnswerID"));
-            command2.Parameters.Add(new SqlParameter("@AnswerText", SqlDbType.NText, 0x3fffffff, "AnswerText"));
+            command2.Parameters.Add(new SqlParameter("@AnswerText", SqlDbType.NVarChar, 4000, "AnswerText"));
             command2.Parameters.Add(new SqlParameter("@VoterID", SqlDbType.Int, 4, "VoterID"));
             command2.Parameters.Add(new SqlParameter("@SectionNumber", SqlDbType.Int, 4, "SectionNumber"));
             try
@@ -117,14 +117,14 @@ namespace Votations.NSurvey.SQLServerDAL
                 SqlCommand command2 = new SqlCommand("vts_spVoterAnswersImport", connection, transaction);
                
                 command2.CommandType = CommandType.StoredProcedure;
-                command2.Parameters.Add(new SqlParameter("@Answer", SqlDbType.NText, 0x3fffffff, "Answer"));
-                command2.Parameters.Add(new SqlParameter("@VoterAnswer", SqlDbType.NText, 0x3fffffff, "VoterAnswer"));
+                command2.Parameters.Add(new SqlParameter("@Answer", SqlDbType.NVarChar, -1, "Answer"));
+                command2.Parameters.Add(new SqlParameter("@VoterAnswer", SqlDbType.NVarChar, -1, "VoterAnswer"));
                 command2.Parameters.Add(new SqlParameter("@VoterID", SqlDbType.Int, 4, "VoterID"));
                 command2.Parameters.Add(new SqlParameter("@QuestionDisplayOrder", SqlDbType.Int, 4, "QuestionDisplayOrder"));
                 command2.Parameters.Add(new SqlParameter("@AnswerDisplayOrder", SqlDbType.Int, 4, "AnswerDisplayOrder"));
                 command2.Parameters.Add(new SqlParameter("@SectionNumber", SqlDbType.Int, 4, "SectionNumber"));
                 command2.Parameters.Add(new SqlParameter("@SurveyId", SqlDbType.Int, 4, "SurveyId"));
-                command2.Parameters.Add(new SqlParameter("@QuestionText", SqlDbType.NVarChar, 4000, "QuestionText"));
+                command2.Parameters.Add(new SqlParameter("@QuestionText", SqlDbType.NVarChar, -1, "QuestionText"));
                 try
                 {
                     DbConnection.db.UpdateDataSet(voterAnswers, "Voter", insertCommand, new SqlCommand(), insertCommand, UpdateBehavior.Transactional);
@@ -662,6 +662,49 @@ namespace Votations.NSurvey.SQLServerDAL
             return DbConnection.db.ExecuteDataSet("vts_spVoterGetPivotTextEntries", commandParameters.ToArray());
         }
 
+
+        /// <summary>
+        /// Returns all the text entries of SP User as a voter
+        /// </summary>
+        /// <param name="surveyId"></param>
+        /// <param name="userId"></param>
+        /// <param name="pageNumber"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        /// <returns></returns>
+        public DataSet GetVotersTextIndivEntries(int surveyId, int userId, int pageNumber, int pageSize, DateTime startDate, DateTime endDate)
+        {
+            //SqlParameter[] commandParameters = new SqlParameter[] 
+            //{ new SqlParameter("@SurveyID", surveyId), 
+            //    new SqlParameter("@CurrentPage", pageNumber), 
+            //    new SqlParameter("@PageSize", pageSize), 
+            //    new SqlParameter("@StartDate", startDate), 
+            //    new SqlParameter("@EndDate", endDate) };
+
+            ArrayList commandParameters = new ArrayList();
+            {
+                commandParameters.Add(new SqlParameter("@SurveyId", surveyId).SqlValue);
+                commandParameters.Add(new SqlParameter("@UserId", userId).SqlValue);
+                commandParameters.Add(new SqlParameter("@CurrentPage", pageNumber).SqlValue);
+                commandParameters.Add(new SqlParameter("@PageSize", pageSize).SqlValue);
+                commandParameters.Add(new SqlParameter("@StartDate", startDate).SqlValue);
+                commandParameters.Add(new SqlParameter("@EndDate", endDate).SqlValue);
+            }
+
+            return DbConnection.db.ExecuteDataSet("vts_spVoterGetPivotTextIndivEntries", commandParameters.ToArray());
+        }
+
+
+        /// <summary>
+        /// Return all Voter data to show on Ssrs Report Test
+        /// </summary>
+        /// <returns></returns>
+        public DataSet GetAllVotersSsrsTest()
+        {
+            return DbConnection.db.ExecuteDataSet("vts_spReportSsrsVoterGetAll");
+        }
+        
         /// <summary>
         /// Check if the username has already taken the survey
         /// </summary>
@@ -786,7 +829,7 @@ namespace Votations.NSurvey.SQLServerDAL
             SqlCommand insertCommand = new SqlCommand("vts_spVoterAnswersAddNew", connection, transaction);
             insertCommand.CommandType = CommandType.StoredProcedure;
             insertCommand.Parameters.Add(new SqlParameter("@AnswerID", SqlDbType.Int, 4, "AnswerID"));
-            insertCommand.Parameters.Add(new SqlParameter("@AnswerText", SqlDbType.NText, 0x3fffffff, "AnswerText"));
+            insertCommand.Parameters.Add(new SqlParameter("@AnswerText", SqlDbType.NVarChar, 4000, "AnswerText"));
             insertCommand.Parameters.Add(new SqlParameter("@VoterID", SqlDbType.Int, 4, "VoterID"));
             insertCommand.Parameters.Add(new SqlParameter("@SectionNumber", SqlDbType.Int, 4, "SectionNumber"));
             try
