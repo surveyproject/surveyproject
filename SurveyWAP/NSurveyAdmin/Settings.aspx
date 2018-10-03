@@ -46,14 +46,21 @@
         <br /><br />
 
                 <fieldset>
-        <legend class="titleFont titleLegend">Globalisation Culture
+        <legend class="titleFont titleLegend">Globalisation
                                 </legend><br />
         <ol>
             <li>
 
-                        <b>Globalisation Culture:</b><br />
+                        <b>UI Culture:</b><br />
+        <asp:Label ID="lblUICulture" CssClass="SettingsValueLabel" runat="server"></asp:Label><br />
+        <asp:TextBox ID="txtUICulture" runat="server"></asp:TextBox>
+                <br /><br />
+
+         <b>Culture:</b><br />
         <asp:Label ID="lblCulture" CssClass="SettingsValueLabel" runat="server"></asp:Label><br />
         <asp:TextBox ID="txtCulture" runat="server"></asp:TextBox>
+                <br />
+
         <asp:Button ID="btnCulture" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Rename" />
         <asp:Button ID="btnCultureDecript" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Decrypt" />
             <br /><br />

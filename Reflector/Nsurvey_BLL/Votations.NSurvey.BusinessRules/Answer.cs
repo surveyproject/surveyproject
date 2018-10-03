@@ -73,7 +73,8 @@ namespace Votations.NSurvey.BusinessRules
             int num;
             int num2 = 0;
             Hashtable savedFiles = new Hashtable();
-            foreach (FileData.FilesRow row in new Answers().GetValidatedFileAnswers(surveyId, 1, 10, out num).Files)
+
+            foreach (FileData.FilesRow row in new Answers().GetValidatedFileAnswers(surveyId, -1, -1, out num).Files)
             {
                 string str = path;
                 if (exportMode == FileExportMode.VoterFileGroup)

@@ -25,8 +25,8 @@
                         <table class="normal" style="width: 100%;">
                             <tr>
                                 <td>
-                                    <asp:CheckBoxList ID="RightsCheckBoxList" runat="server" RepeatColumns="3" CssClass="smallText chkPrivs"
-                                        Height="22px" Width="100%">
+                                    <asp:CheckBoxList ID="RightsCheckBoxList" runat="server" RepeatColumns="1" CssClass="smallText chkPrivs"
+                                        Height="25px" Width="100%">
                                     </asp:CheckBoxList>
                                 </td>
                             </tr>

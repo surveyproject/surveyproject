@@ -24,7 +24,7 @@ namespace Votations.NSurvey.Data
         AccessSecuritySettings = 8,
         AccessStats = 9,
         AccessSurveySettings = 3,
-        AccessUserManager = 0x17,
+        AccessUserManager = 0x17, //23
         AllowXmlImport = 0x1d,
         ApplySurveySettings = 5,
         CloneSurvey = 6,
@@ -39,9 +39,9 @@ namespace Votations.NSurvey.Data
         ExportFiles = 0x21,
         ExportSurveyXml = 4,
         AccessHelpFiles = 0x23,
-        ManageLibrary = 0x1b,
+        ManageLibrary = 0x1b, //27
         ResetVotes = 10,
-        SqlAnswerTypesEdition = 0x1c,
+        SqlAnswerTypesEdition = 0x1c, //28
         TakeSurvey = 30,
         AccessQuestionGroupRight=36,
         DataImportRight=37,
@@ -49,7 +49,13 @@ namespace Votations.NSurvey.Data
         SurveyLayoutRight=39,
         AccessSurveyList=40,
         AccessUserResponses=41,
-        AccessSsrsReports=42
+        AccessSsrsReports=42,
+        AccessUserAccount=43,
+        AccessRolesManager=0x2c, //44
+        AccessImportUsers=0x2d, //45
+        AllowQuestionXmlImport= 0x2e, //46
+        IpFilterSecurityRight = 0x2f, //47
+        AllowQuestionInsert = 0x30 //48
     }
 }
 

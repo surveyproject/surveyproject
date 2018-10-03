@@ -315,7 +315,38 @@ namespace Votations.NSurvey.WebAdmin
             }
         }
 
+
+
         /// <summary>
+        /// Translate the Roles/ RoleRights list:
+        /// Look up the give item texts in the resource file 
+        /// to translate them
+        /// </summary>
+        /// <param name="unTranslatedListControl"></param>
+        /// <param name="reOrder"></param>
+        public void TranslateRoleRightsListControl(ListControl unTranslatedListControl, bool reOrder = false)
+        {
+            List<ListItem> items = new List<ListItem>();
+            string translatedText;
+            foreach (ListItem item in unTranslatedListControl.Items)
+            {
+                translatedText = GetPageResource(item.Text.Substring(100).Trim());
+                item.Text = translatedText == null ? item.Text : item.Text.Remove(100,35) + "<span class='chckPrivsLabel'>" + translatedText + "</span>" ;
+                if (reOrder) items.Add(item);
+            }
+            if (reOrder)
+            {
+                StringComparer comp = StringComparer.Create(System.Threading.Thread.CurrentThread.CurrentUICulture, false);
+                unTranslatedListControl.Items.Clear();
+                items = items.OrderBy(x => x.Text, comp).ToList();
+                items.ForEach(x => unTranslatedListControl.Items.Add(x));
+
+            }
+        }
+
+
+        /// <summary>
+        /// Translate (multi) Languagages drop down lists:
         /// Look up the give item texts in the resource file 
         /// to translate them
         /// </summary>
@@ -429,8 +460,6 @@ namespace Votations.NSurvey.WebAdmin
         public void ShowNormalMessage(Label l, string s)
         {
             l.Visible = true;
-            //l.ForeColor = System.Drawing.Color.Green;
-            //l.CssClass = "SuccessMessage icon-ok";
             l.CssClass = CssXmlManager.GetString("SuccessMessage");
             l.Text = s;
 
@@ -444,8 +473,6 @@ namespace Votations.NSurvey.WebAdmin
         public void ShowErrorMessage(Label l, string s)
         {
             l.Visible = true;
-            //l.ForeColor = System.Drawing.Color.Red;
-            //l.CssClass = "ErrorMessage icon-warning-sign";
             l.CssClass = CssXmlManager.GetString("ErrorMessage");
             l.Text = s;
 

@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DocFx.SurveyProject")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("SurveyProject DocFx Technical Documentation")]
+[assembly: AssemblyDescription("Survey™ Project 2.5")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DocFx.SurveyProject")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCompany("W3DevPro™")]
+[assembly: AssemblyProduct("Survey™ Project Webapplication")]
+[assembly: AssemblyCopyright("(c) W3DevPro™ 2009/2018")]
+[assembly: AssemblyTrademark("Survey™ Project")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 

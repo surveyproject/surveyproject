@@ -89,41 +89,41 @@ namespace Votations.NSurvey.WebAdmin.NSurveyReports
         {
             //Query to get the data to fill the dataset - (also see .rdlc file query)
 
-            string query = "select S.surveyid as ID,  " +
+            string query = "select S.surveyID as ID,  " +
             "S.title as [Title],  " +
             "isnull(S.friendlyname, '-') as [Friendly_URL],  " +
             "isnull(CONVERT(VARCHAR(10), S.opendate, 120)  , '-') as [Date_Open], " +
             "isnull(CONVERT(VARCHAR(10), S.closedate, 120) , '-') as [Date_Closed],  " +
             "case when S.activated = 1 then 'Active' else 'Inactive' end as Status,  " +
             "S.surveydisplaytimes as [NrDisplayed],  " +
-            "q.surveyid as Qsid,  " +
-            "q.questionid as Qqid,  " +
+            "q.surveyID as QsID,  " +
+            "q.questionID as QqID,  " +
             "q.pagenumber as [Page],  " +
             "q.displayorder as [Order], " +
-            "Case when q.questionid in (select parentquestionid from vts_tbquestion) " +
+            "Case when q.questionID in (select parentquestionID from vts_tbquestion) " +
             "then 'Matrix : ' + q.questiontext " +
-            "when q.parentquestionid is not null " +
-            "then 'Sub(' + cast(q.parentquestionid as varchar(50)) + ') - ' + q.Questiontext " +
+            "when q.parentquestionID is not null " +
+            "then 'Sub(' + cast(q.parentquestionID as varchar(50)) + ') - ' + q.Questiontext " +
             "else q.questiontext " +
             "end as QuestionText, " +
-            "a.answerid Aaid,  " +
-            "a.questionid Aqid,  " +
+            "a.answerID AaID,  " +
+            "a.questionID AqID,  " +
             "a.displayorder as Aorder,  " +
-            "Case when q.questionid in (select parentquestionid from vts_tbquestion)  " +
+            "Case when q.questionID in (select parentquestionID from vts_tbquestion)  " +
             "then '-'  " +
             "else a.answertext  " +
             "end as AOption,  " +
-            "at.AnswerTypeID as ATatid,  " +
+            "at.AnswerTypeID as ATatID,  " +
             "at.Description " +
-            "from vts_tbsurvey S left join vts_tbquestion Q on S.surveyid = Q.SurveyId  " +
-            "left join vts_Tbanswer a on q.questionid = a.questionid  " +
-            "left join vts_tbAnswerType at on a.answertypeid = at.answertypeid " +
-            "where s.surveyid = " + SurveyId.ToString() +
-            "order by s.surveyid,  " +
+            "from vts_tbsurvey S left join vts_tbquestion Q on S.surveyID = Q.SurveyID  " +
+            "left join vts_Tbanswer a on q.questionID = a.questionID  " +
+            "left join vts_tbAnswerType at on a.answertypeID = at.answertypeID " +
+            "where s.surveyID = " + SurveyId.ToString() +
+            "order by s.surveyID,  " +
             "Q.pagenumber,  " +
             "Q.DisplayOrder,  " +
             "A.displayorder,  " +
-            "A.answerid";
+            "A.answerID";
 
             //SP DB connection
             SqlConnection connection = new SqlConnection
@@ -138,6 +138,26 @@ namespace Votations.NSurvey.WebAdmin.NSurveyReports
                 SqlDataAdapter(command);
 
             ssrsAdapter.Fill(dataset, "ReportData");
+        }
+
+
+        /// <summary>
+        /// deploy the native assembly SqlServerSpatial140.dll
+        /// under the SqlServerTypes\x86 and SqlServerTypes\x64 subdirectories
+        /// </summary>
+        static bool _isSqlTypesLoaded = false;
+
+        /// <summary>
+        /// deploy the native assembly SqlServerSpatial140.dll
+        /// </summary>
+        public SsrsPrintSurvey()
+        {
+            if (!_isSqlTypesLoaded)
+            {
+                SqlServerTypes.Utilities.LoadNativeAssemblies(Server.MapPath("~/bin"));
+                _isSqlTypesLoaded = true;
+            }
+
         }
 
 

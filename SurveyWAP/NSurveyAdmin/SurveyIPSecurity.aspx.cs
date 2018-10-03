@@ -69,7 +69,7 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
         }
         private void SetupSecurity()
         {
-            CheckRight(Data.NSurveyRights.TokenSecurityRight, true);
+            CheckRight(Data.NSurveyRights.IpFilterSecurityRight, true);
         }
 
 

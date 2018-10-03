@@ -53,8 +53,9 @@
     border: 1px solid #3AC0F2;
 }
 
-.cellValign{
+.cellValign {
     margin: 7px 0 0 0;
+    display: inline-block;
 }
 
 
@@ -123,7 +124,7 @@
 
 .loginDiv{background:rgba(87,32,198,.5);border-radius:0 0 0 15px;color:#fff;font-size:11px;min-width:250px;padding:7px 15px 8px;width:auto;z-index:1000}
 
-.logoImg {margin-top: 140px;width: 30vw;}
+.logoImg {margin-top: 140px; }
 
 .logoPanel{border:0;border-color:#fff;border-style:none;position:relative;text-align:left;}
 
@@ -275,11 +276,16 @@ table.TlcFront{background:url(../../images/PenSurvey.JPG) repeat-x center #fff;b
 .buttonIndex{float:right;margin-right:15px;padding:0}
 .bw{float:right;font-size-adjust:.5;margin-right:10px;width:auto}
 .chkPrivs input{margin-right:3px}
-.chkPrivs td>input{width:5%}
-.chkPrivs td>label{width:85%}
+.chkPrivs td>input{width:4%}
+.chkPrivs td > label {
+    width: 94%;
+    background: white;
+    color: mediumblue;
+}
+.chckPrivsLabel{float:right; width:165px; color:blue;}
 .cssXmlAlign{float:left;margin-left:10px}
 
-.disclaimer{position:fixed;top: 27%;left:36%;max-width:45%;min-width:20%; text-align:justify;text-justify:distribute; background-color:white;}
+.disclaimer{position:fixed;top: 27vh;left:36vw; height:auto; width:auto; max-width:45vw; text-align:justify;text-justify:distribute; background-color:white; font-size: 1.0vw;}
 .disclaimer-panel-group{margin: 30px 0 0 15px;border: none;overflow:hidden;width:190px;height:40px; z-index:200;}
 
 @media only screen and (max-width:768px) {.disclaimer{position:relative;text-align:justify;text-justify:distribute;width: 80%;height:100%;} .disclaimer-panel-group{margin: 85px 0 0 15px; border: none; overflow: hidden; width: 190px; height:100%; z-index:200;}}
@@ -292,16 +298,25 @@ table.TlcFront{background:url(../../images/PenSurvey.JPG) repeat-x center #fff;b
 .hoverstyle td.rowwithseperator{padding-bottom:0}
 .Instructions{background:#99f}
 .IPSection{min-width:3px;width:42px}
+
 .level1{border:0 solid #99f;border-radius:.35em;color:#fff;font-size:13px;font-weight:700;line-height:20px;margin:5px;vertical-align:middle;width:115px;-moz-border-radius:.35em;-webkit-border-radius:.35em}
 .level1 a:hover{color:#fff}
 .level1 li{background:#99f;border:0 solid #99f;border-radius:5px 5px 0 0;margin-right:1px;-moz-border-radius:5px 5px 0 0;-webkit-border-radius:5px 5px 0 0}
 .level1 li>ul{background:#eaeaec;border:1px solid #99f;border-radius:0 5px 5px}
+
 .level2{background:#99f;border:0 solid #99f;border-radius:.35em;color:#fff;font-size:12px;font-weight:700;max-width:300px;min-width:145px;text-align:left;-moz-border-radius:.35em;-webkit-border-radius:.35em}
 .level2 a:hover{color:#000}
 .level2 li{border:1px solid #4169e1;border-radius:5px;margin:7px 5px;padding:5px;-moz-border-radius:.35em;-webkit-border-radius:.35em}
+
 .level3{background:#99f;border-radius:.35em;color:#fff;font-size:12px;max-width:250px;min-width:115px;text-align:left;-moz-border-radius:.35em;-webkit-border-radius:.35em}
 .level3 a:hover{color:#000}
 .level3 li{border:#4169e1 1px solid;border-radius:.35em;padding:5px;-moz-border-radius:.35em;-webkit-border-radius:.35em}
+
+.level4{background:#99f;border-radius:.35em;color:#fff;font-size:12px; font-weight:700;max-width:250px;min-width:115px;text-align:left;-moz-border-radius:.35em;-webkit-border-radius:.35em}
+.level4 a:hover{color:#000}
+.level4 li{border:#4169e1 1px solid;border-radius:.35em;padding:5px;-moz-border-radius:.35em;-webkit-border-radius:.35em}
+
+
 .LongButton{width:105px}
 .logouthyperlink{font-size: 10px;color: #571FC8;font-weight:bold;}
 a.logouthyperlink, a.logouthyperlink:visited, a.logouthyperlink:active{font-size: 10px;color: #571FC8;font-weight:bold;}
@@ -325,7 +340,7 @@ a.logouthyperlink:hover{font-size: 10px;color: #e2e2e2;text-decoration: none;fon
 .mnuDiv {width: 100%;margin: 23px 12px 0 0}
 
 .QuestionsDropDownClass{width:300px}
-.RegisterLiteral{color:Red;font-size:xx-small}
+.RegisterLiteral{color:Red;font-size:0.9em;}
 .resultsTable{text-align:left}
 .rounded_corners{border:1px solid #b2b2b2;border-radius:5px;overflow:hidden;-moz-border-radius:5px;-webkit-border-radius:5px}
 .rounded_corners table table td{border-style:none}
@@ -358,6 +373,9 @@ a.level2,a.level2:link,a.level2:visited,a.level2:active{border:solid #000 1px;co
 a.level2:hover{border:solid #000 1px;color:#4B44D3;font-weight:700}
 a.level3,a.level3:link,a.level3:visited,a.level3:active{border:solid #000 1px;color:#fff;font-weight:700}
 a.level3:hover{border:solid #000 1px;color:#4B44D3;font-weight:700}
+a.level4,a.level4:link,a.level4:visited,a.level4:active{border:solid #000 1px;color:#fff;font-weight:700}
+a.level4:hover{border:solid #000 1px;color:#4B44D3;font-weight:700}
+
 a[id*="gvIPRanges"].IPLink{color:Blue;text-align:center}
 a[id*="lbAddNew"].IPLink{color:Blue}
 fieldset li{background:#ffdf0f;border-radius:5px;list-style:none;margin:2px 0 0 10px;padding:15px;-moz-border-radius:5px;-webkit-border-radius:5px}

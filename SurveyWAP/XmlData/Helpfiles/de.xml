@@ -8,62 +8,46 @@
 	</data>
 	<data version="2.0" id="3" name="HelpFilesText">
 		<value>
-      The first integrated helpfiles have been added to this version of the Survey
-      webapplication. More information on all other Survey related subjects will be added gradually.
-      &lt;br /&gt;&lt;br /&gt;
-      The in between results of these helpfiles
-      will be published to the Survey Wiki of the Community website as well.  Please
-      &lt;a href="http://www.surveyproject.info/en/Support/Helpfiles/Wiki/tabid/193/Default.aspx" target="_blank" title="Survey Project Wiki"&gt;
-                             check the Wiki&lt;/a&gt; menu.
-                             &lt;br /&gt;&lt;br /&gt;
-                             At the
-                             &lt;a href="http://www.surveyproject.info/en/Support/Helpfiles/Articles/tabid/194/Default.aspx" target="_blank" title="Survey Project Articles"&gt;
-                             Articles Menu option&lt;/a&gt; of the Survey Project Community site several articles can be found based on specific Survey 
-                             related issues and themes. 
-                             &lt;br /&gt;
+      - Integrated helpfiles in English are part of the Survey Project webapplication.  The completion and translation into other languages is a (continuous) 'work in progress'.
+      &lt;br /&gt;&lt;br /&gt;o An index of helpfiles is available at menu Help/ Helpfiles.
+      &lt;br /&gt;o Tooltip [blue questionmark] icons linked to particular helptexts and subjects can be found on different webpages of the webapplication
+      &lt;br /&gt;
+      &lt;br /&gt;
+      - Visit the &lt;a href="http://www.surveyproject.org/Forums/tabid/107/Default.aspx" target="_blank" title="Survey Project Forums"&gt;Forums section&lt;/a&gt;
+      of the Community website to ask any questions or share information and experiences on the use and development of SP.
+      &lt;br /&gt;
+      &lt;br /&gt;
 
-                             &lt;br /&gt;
-                             At the &lt;a href="http://www.youtube.com/user/TheSurveyProject" target="_blank" title="Survey Project Youtube Channel"&gt;
-                             Survey project YouTube Channel&lt;/a&gt; movies can be found with basic instructions on several subjects.&lt;br /&gt;
-                             &lt;br /&gt;
-                             Technical information can be found at the Survey Sourcecode website at
-                             &lt;a href="http://survey.codeplex.com" target="_blank" title="Survey Project Codeplex"&gt;
-                             http://survey.codeplex.com&lt;/a&gt;.
-                             &lt;br /&gt;
-                             &lt;br /&gt;
-                             Visit the &lt;a href="http://www.surveyproject.info/en/Forums/tabid/107/Default.aspx" target="_blank" title="Survey Project Forums"&gt;Forums section&lt;/a&gt; of the Community website to ask any questions.&lt;br /&gt;
-                             &lt;br /&gt;
-                             Contributions to the projects documentation and helpfiles are most welcome. If 
-                             you have any experience in this field or if you feel like joining the team
-                             &lt;a href="http://www.surveyproject.info/en/Project/Membership/tabid/118/Default.aspx" target="_blank" title="Survey Project Membership"&gt;
-                             please let us know&lt;/a&gt;.
-</value>
+      - A &lt;a href="http://www.surveyproject.org/Support/Contact/tabid/304/Default.aspx" target="_blank" title="SP Contact Form"&gt;contact form&lt;/a&gt; is availabe if more private contact is required. Emails can be send to: &lt;a href="mailto:mail@surveyproject.org?Subject=SPQuestion" target="_top"&gt;mail@surveyproject.org &lt;/a&gt;
+
+      &lt;br /&gt;
+      &lt;br /&gt;
+      - At the &lt;a href="http://www.youtube.com/user/TheSurveyProject" target="_blank" title="Survey Project Youtube Channel"&gt;
+      Survey project YouTube Channel&lt;/a&gt; instruction movies are published on the installation and use of SP.
+      &lt;br /&gt;
+      &lt;br /&gt;
+      - Technical information, downloads and sources can be found at &lt;a href="http://www.github.com/surveyproject" target="_blank" title="Survey Project Github"&gt;
+      https://www.github.com/surveyproject&lt;/a&gt;.
+
+    </value>
 	</data>
 	<data version="2.0" id="4" name="StartupSettings">
 		<value>
-                             - On first startup the login details are: username = admin; password = admin. Once logged in and once a survey is created,
-                             the password, username can be changed from the Accounts/ User List section. 
-                             
-                             &lt;br /&gt;&lt;br /&gt;
-                             - Some technical options and settings: Survey can run in "single user mode" (anonymous):
-                             open the web.config file and find the FormUserProviderSingleMode element for more
-                             information. 
-                             &lt;br /&gt;&lt;br /&gt;
-                             - Change the Mail server settings from the web.config file using a text editor.
-                             &lt;br /&gt;&lt;br /&gt;
-                             - Survey Samples: Two sample survey xml files are part of the Survey package [_FormSamples]. They can be imported after
-                             logging in [new survey / import survey from XML]. 
-                             &lt;br /&gt;&lt;br /&gt;
-                             - The Survey webapplication was
-                             rewritten to become W3C XHTML 1.0 Transitional compliant as much as possible with
-                             the exception of pages making use of third party components. 
-                             &lt;br /&gt;&lt;br /&gt;
-                             - The language setting
-                             of you webbrowser determine the xml languagefiles used to present webpage texts.
-                             This effect is caused by one of the settings in the web.config file: culture/ uiculture.
-                             If set to "auto" Survey will pick up the culture/ language of your browsersettings.
-                             To explicitely pick a specific culture/ language, replace "auto" with "en-US" or
-                             "nl-NL" for example.
-		</value>
+      - On first starting the webapplication an initial administrator account is created from the username / password
+      entered into the login textboxes. The password is saved to the database encrypted and cannot be recovered if lost or forgotten.
+
+      &lt;br /&gt;&lt;br /&gt;
+      - Several technical settings of the application can be changed by admins throught the System Settings Menu. Background information can be found in the
+      System Settings Helpfile.
+
+      &lt;br /&gt;&lt;br /&gt;
+      - Survey Samples: sample survey xml files are part of the Survey package [directory: _SurveySamples]. They can be imported after
+      logging in [new survey / import survey from XML] and will give a good first impression of the different features of SP.
+      &lt;br /&gt;&lt;br /&gt;
+      - The language settings of the webbrowser used to access SP determine which xml languagefiles are used to present webpage texts.
+      This is regulated by one of the settings in the web.config file: culture/ uiculture.
+      If set to "auto" (2x) SP will pick up the culture/ language of your browsersettings.
+      To explicitely pick a specific culture/ language, replace "auto" with "en-US" or "nl-NL" for example.
+    </value>
 	</data>
 </root>

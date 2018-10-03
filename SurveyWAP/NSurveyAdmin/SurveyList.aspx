@@ -1,10 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Wap.Master" AutoEventWireup="true"
-    CodeBehind="SurveyList.aspx.cs" Inherits="Votations.NSurvey.WebAdmin.NSurveyAdmin.SurveyList" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="MsterPageTabs.master" AutoEventWireup="true" ValidateRequest="false"
+    CodeBehind="SurveyList.aspx.cs" Inherits="Votations.NSurvey.WebAdmin.SurveyList" %>
 <%@ Register TagPrefix="uc1" TagName="SurveyOptionControl" Src="UserControls/SurveyOptionControl.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-
-
 
 <script type="text/javascript">
     function ConfirmSurveyDelete() {
@@ -12,37 +10,8 @@
     }
 </script>
 
-            <script type="text/javascript">
-                $(function () {
-                    var obj = {
-                        beforeActivate: function(event, ui) { 
-                            $("#tabindex").val(ui.newTab.index()); 
-                            __doPostBack();
-                        },
-
-                        active: <%= selectedTabIndex %>
-                    };
-
-                $("#tabs").tabs(obj);
-            });
-    </script>
-
-
-   <input type="hidden" id="tabindex" name="tabindex" value="<%= selectedTabIndex %>" />
-
-   <div id="surveysTabEvents" style="display: none" runat="server" onclick="foo" />
-
-    <div id="tabs">
-        <ul>
-            <li><a runat="server" id="Tab1" href="#tabs-1">
-                <%=GetPageResource("SurveyListTabList")%></a></li>
-            <li><a runat="server" id="Tab2" href="#tabs-2">
-                <%=GetPageResource("SurveyListTabNew")%></a></li>
-        </ul>
-
-
         <div id="Panel" class="Panel">
-
+            <asp:PlaceHolder ID="surveyList" runat="server">
         <div id="tabs-1">
                                                    <div class="helpDiv">
                                             <a onmouseover='this.style.cursor="help" ' onfocus='this.blur();' href="Help/surveylistdirectory.aspx"
@@ -180,28 +149,18 @@
 
                 </div>
             <br />
-            <div class="rounded_corners">
-                <i><asp:Literal ID="SurveyListPageNrLiteral" runat="server"  EnableViewState="false">You are viewing page</asp:Literal> <%=gridSurveys.PageIndex + 1%> / <%=gridSurveys.PageCount%> </i>
-            </div>
-            <!-- code to be added later: 
-            <div class="rounded_corners" style="width: 750px; text-align: center; margin-left: 7px; margin-top: 10px;">
-                <asp:LinkButton ID="PreviousSurveysPageLinkButton" runat="server">&lt;&lt; Previous page</asp:LinkButton>
-                &nbsp;|&nbsp; 
-             <asp:LinkButton ID="NextSurveysPageLinkButton" runat="server">Next page >></asp:LinkButton>
-            </div>
-            -->
 
+            
             </div>
-
+                </asp:PlaceHolder>
+          
 
         <div id="tabs-2">
 
             <uc1:SurveyOptionControl ID="SurveyOption" runat="server" Visible="false"></uc1:SurveyOptionControl>
-
-        </div>
-
-                                                 <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
-        </div>
-        </div>
-  
+            
+        </div>   
+            
+            <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
+    </div>
 </asp:Content>

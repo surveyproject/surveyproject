@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <data version="1.0" id="1" name="ControlCodeTitle">
-    <value>Surveyform Custom Webcontrol</value>
+    <value>SurveyBox Custom Webcontrol</value>
   </data>
   <data version="1.0" id="2" name="PageDirectiveInfo">
-    <value>You must also include the following directive in the aspx pages that will display the survey :</value>
+    <value>Include the following directive in the .aspx pages that will display the survey webcontrol:</value>
   </data>
   <data version="1.0" id="3" name="TagPrefixInfo">
     <value>&lt;%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="SurveyProject.WebControls" %&gt;</value>
@@ -488,7 +488,7 @@
     <value>Completion Settings</value>
   </data>
   <data version="1.0" id="159" name="RedirectionURLLabel">
-    <value>Redirection URL :</value>
+    <value>Redirection or Report URL :</value>
   </data>
   <data version="1.0" id="160" name="ThanksMessageLabel">
     <value>Survey Completion Message :</value>
@@ -1571,7 +1571,7 @@
     <value>Role has been updated</value>
   </data>
   <data version="1.6" id="518" name="RoleRightsLabel">
-    <value>Role's rights :</value>
+    <value>Menucode, Feature &amp; Role right :</value>
   </data>
   <data version="1.6" id="519" name="CreateSurveyRight">
     <value>Create survey</value>
@@ -1622,7 +1622,7 @@
     <value>Create report results filter</value>
   </data>
   <data version="1.6" id="535" name="AccessFieldEntriesRight">
-    <value>Individual Responses access</value>
+    <value>Individual Responses List</value>
   </data>
   <data version="1.6" id="536" name="EditVoterEntriesRight">
     <value>Edit respondent entries</value>
@@ -1631,10 +1631,10 @@
     <value>Delete respondent entries</value>
   </data>
   <data version="1.6" id="538" name="AccessCrossTabRight">
-    <value>Cross tabulation report access</value>
+    <value>Cross tabulation report</value>
   </data>
   <data version="1.6" id="539" name="AccessExportRight">
-    <value>Export response data access</value>
+    <value>Export response data</value>
   </data>
   <data version="1.6" id="540" name="AccessMailingRight">
     <value>Mailing access</value>
@@ -1777,7 +1777,7 @@
     <value>You don't have the credentials to create / edit a sql based answer type</value>
   </data>
   <data version="1.6" id="586" name="AllowXmlImportRight">
-    <value>Xml Reponses import</value>
+    <value>Xml Survey Import</value>
   </data>
   <data version="1.6" id="587" name="NoAnonymousRightsMessage">
     <value>You must be authorized as a survey user to access these features.</value>
@@ -2023,7 +2023,7 @@
     <value>Invalid path, could not find path. Make sure specified directory exists on the server</value>
   </data>
   <data version="1.8" id="667" name="FilesWrittenMessage">
-    <value>{0} mb of files have been exported to server's directory : {1}</value>
+    <value>Filesize: {0} MB exported to directory : {1}</value>
   </data>
   <data version="1.8" id="668" name="ExportFilesConfirmationMessage">
     <value>Make sure that the user running IIS has the right to write to directory you have specified and note that any existing file will be replaced by the new exported one</value>
@@ -2231,7 +2231,7 @@
     <value>All languages</value>
   </data>
   <data version="1.9" id="802" name="PreviewSurveyLanguageLabel">
-    <value>Select Language to edit :</value>
+    <value>Select Language to view :</value>
   </data>
   <data version="1.9" id="803" name="PreviewLibraryLanguageLabel">
     <value>Select Library Preview language:</value>
@@ -2448,22 +2448,22 @@
     <value>SP&#8482; security context</value>
   </data>
   <data version="1.7" id="872" name="RegExValidationFailedMessage">
-    <value>Invalid answer given for {0}</value>
+    <value>Invalid answer given: &quot;{0}&quot;</value>
   </data>
   <data version="1.7" id="873" name="InvalidEmailRegExMessage">
-    <value>{0} is not a valid email</value>
+    <value>&quot;{0}&quot; is not a valid email</value>
   </data>
   <data version="1.7" id="874" name="InvalidIntegerRegExMessage">
-    <value>{0} is not numeric</value>
+    <value>&quot;{0}&quot; is not numeric</value>
   </data>
   <data version="1.7" id="875" name="InvalidEuroDateRegExMessage">
-    <value>{0} is not a valid date. dd/mm/yyyy expected</value>
+    <value>&quot;{0}&quot; is not a valid date. dd/mm/yyyy expected</value>
   </data>
   <data version="1.7" id="876" name="InvalidUSDateRegExMessage">
-    <value>{0} is not a valid date. mm/dd/yyyy expected</value>
+    <value>&quot;{0}&quot; is not a valid date. mm/dd/yyyy expected</value>
   </data>
   <data version="1.7" id="877" name="InvalidInternetUrlRegExMessage">
-    <value>{0} is not a valid web URL</value>
+    <value>&quot;{0}&quot; is not a valid web URL</value>
   </data>
   <data version="1.8" id="878" name="UploadFileRequiredMessage">
     <value>{0} requires that you upload at least one file</value>
@@ -2886,7 +2886,7 @@
     <value> IP Filter Security</value>
   </data>
   <data version="2.0" id="1009" name="Exception">
-    <value> Exception Occurred</value>
+    <value> Exception Occurred. Details are logged.</value>
   </data>
   <data version="2.0" id="1010" name="msgDeleteSelectedTokens">
     <value>Are you sure you want to delete the selected tokens ?</value>
@@ -3351,7 +3351,7 @@
     <value>Survey Friendly Link: </value>
   </data>
   <data version="2.4" id="1160" name="SurveyLayoutSavedMsg">
-    <value>Layout correctly Saved</value>
+    <value>All Layout an CSS Changes Saved</value>
   </data>
   <data version="2.4" id="1161" name="InvalidFileTypeLayoutMsg">
     <value>Invalid filetype: .CSS only</value>
@@ -3405,7 +3405,7 @@
     <value>Name already used, please retry.</value>
   </data>
   <data version="2.5" id="1176" name="WebControlIntro">
-    <value>More information on using the SurveyBox Custom Webcontrol at .....</value>
+    <value>Check the Helpfiles on how to use the SurveyBox Custom Webcontrol</value>
   </data>
   <data version="2.5" id="1177" name="AdminCreatedMessage">
     <value>Account created. Please login.</value>
@@ -3444,7 +3444,7 @@
     <value>SSRS Reports access</value>
   </data>
   <data version="2.5" id="1189" name="SsrsPrintSurvey">
-    <value>Report to select any of the surveys through a DDL and print/ export all Q/A.</value>
+    <value>Report to select any of the surveys through a DDL and print/ export all Q&amp;As - voteranswers NOT included</value>
   </data>
   <data version="2.5" id="1190" name="SsrsReport">
     <value>Basic SSRS report example as added to SP.</value>
@@ -3480,5 +3480,56 @@
   </data>
   <data version="2.5" id="1199" name="MlCodesLiteral">
     <value>Active Language Codes</value>
+  </data>
+  <data version="2.5" id="2000" name="UserDeletedConfirmation">
+    <value>User Deleted</value>
+  </data>
+  <data version="2.5" id="2001" name="UserCreatedConfirmation">
+    <value>User Created</value>
+  </data>
+  <data version="2.5" id="2002" name="SurveyClonedMessage">
+    <value>Survey Cloned</value>
+  </data>
+  <data version="2.5" id="2003" name="SurveyCreatedMessage">
+    <value>New Survey Created</value>
+  </data>
+  <data version="2.5" id="2004" name="ErrorLogHyperlink">
+    <value>Error Log</value>
+  </data>
+  <data version="2.5" id="2005" name="EditLogTitle">
+    <value>System Errors Logfile</value>
+  </data>
+  <data version="2.5" id="2006" name="EditLogCancel">
+    <value>Cancel</value>
+  </data>
+  <data version="2.5" id="2007" name="EditLogSave">
+    <value>Save Changes</value>
+  </data>
+  <data version="2.5" id="2008" name="LogfileUpdatedMsg">
+    <value>Error Logfile Updated</value>
+  </data>
+  <data version="2.5" id="2009" name="AccessUserAccount">
+    <value>User Account access</value>
+  </data>
+  <data version="2.5" id="2010" name="AccessRolesManager">
+    <value>Rolesmanager access</value>
+  </data>
+  <data version="2.5" id="2011" name="AccessImportUsers">
+    <value>Import Users access</value>
+  </data>
+  <data version="2.5" id="2012" name="AllowQuestionXmlImport">
+    <value>Allow Xml Question import</value>
+  </data>
+  <data version="2.5" id="2012" name="IpFilterSecurityRight">
+    <value>IP Filter Security</value>
+  </data>
+  <data version="2.5" id="2013" name="DataImport">
+    <value>Survey Data Import</value>
+  </data>
+  <data version="2.5" id="2014" name="AllowQuestionInsert">
+    <value>Allow Question Insert</value>
+  </data>
+  <data version="2.5" id="2015" name="FilesDeletedMessage">
+    <value>Files Deleted</value>
   </data>
 </root>

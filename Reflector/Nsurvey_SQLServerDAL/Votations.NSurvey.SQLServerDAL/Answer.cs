@@ -10,6 +10,7 @@ namespace Votations.NSurvey.SQLServerDAL
     using System.Collections;
     using System.Collections.Generic;
     using System.Data;
+    using System.Data.Common;
     using System.Data.SqlClient;
     using System.Runtime.InteropServices;
     using Votations.NSurvey.Data;
@@ -394,7 +395,7 @@ namespace Votations.NSurvey.SQLServerDAL
         }
 
         /// <summary>
-        /// Returns all the files that have not yet been validated
+        /// Returns all the files that have not yet been validated - NEVER USED
         /// </summary>
         public FileData GetUnValidatedFileAnswers(int surveyId, int pageNumber, int pageSize, out int totalRecords)
         {
@@ -431,25 +432,16 @@ namespace Votations.NSurvey.SQLServerDAL
         {
             FileData dataSet = new FileData();
 
-            //SqlParameter[] commandParameters = new SqlParameter[] 
-            //{ new SqlParameter("@SurveyID", surveyId), 
-            //    new SqlParameter("@CurrentPage", pageNumber), 
-            //    new SqlParameter("@PageSize", pageSize), 
-            //    new SqlParameter("@TotalRecords", SqlDbType.Int) };
-            //commandParameters[3].Direction = ParameterDirection.Output;
+            DbCommand dbCommand = DbConnection.db.GetStoredProcCommand("vts_spFileValidatedGetAll");
+            DbConnection.db.AddOutParameter(dbCommand, "@TotalRecords", DbType.Int32, 0);
 
-            ArrayList sqlParams = new ArrayList();
-            {
-                sqlParams.Add(new SqlParameter("@SurveyID", surveyId).SqlValue);
-                sqlParams.Add(new SqlParameter("@CurrentPage", pageNumber).SqlValue);
-                sqlParams.Add(new SqlParameter("@PageSize", pageSize).SqlValue);
-                sqlParams.Add(new SqlParameter("@TotalRecords", SqlDbType.Int) { Direction = ParameterDirection.Output }.SqlValue);
-            }
+            DbConnection.db.AddInParameter(dbCommand, "@SurveyID", DbType.Int32, surveyId);
+            DbConnection.db.AddInParameter(dbCommand, "@CurrentPage", DbType.Int32, pageNumber);
+            DbConnection.db.AddInParameter(dbCommand, "@PageSize", DbType.Int32, pageSize);
+            DbConnection.db.LoadDataSet(dbCommand, dataSet, "Files");
 
-            DbConnection.db.LoadDataSet("vts_spFileValidatedGetAll", dataSet, new string[] { "Files" }, sqlParams.ToArray());
+            totalRecords = (int)DbConnection.db.GetParameterValue(dbCommand, "@TotalRecords");
 
-            totalRecords = dataSet.Files.Rows.Count;
-            //totalRecords = int.Parse(sqlParams[3].ToString());
             return dataSet;
         }
 

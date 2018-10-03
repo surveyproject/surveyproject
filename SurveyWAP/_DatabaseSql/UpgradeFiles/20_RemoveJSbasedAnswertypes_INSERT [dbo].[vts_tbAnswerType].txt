@@ -1,0 +1,5 @@
+[dbo].[vts_tbAnswerType] 
+
+remove redundant answertypes (based on javascript - not working correct):
+EMAIl
+REQUIRED

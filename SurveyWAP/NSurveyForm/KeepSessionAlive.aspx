@@ -33,23 +33,16 @@
 
 </head>
 <body>
-Test = <%=WindowStatusText%> 
+    <br />
+    <div style="width: 50vw; text-align:center">
+<b>KeepAlive Status</b> 
+          <br />  <br />
+        <%=WindowStatusText%> 
+        <br />  <br />
+        [Refresh rate set to 60 seconds]
+    </div>
     <br />
 
-        List of Variables = 
-    <br />
-    <% 
-        foreach (var crntsession in Session)
-        {
-            Response.Write(string.Concat(crntsession, "=", Session[crntsession.ToString()]) + "<br />");
-        }
-     %>
-    <br /><br />
-    <% foreach (var x in Request.ServerVariables)
-        {
-            Response.Write(string.Concat(x, " = ") + Request.ServerVariables[string.Concat(x)] + "<br />");
-        }
-%>
 
 </body>
 </html>

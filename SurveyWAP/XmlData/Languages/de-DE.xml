@@ -4,16 +4,16 @@
     <value>Web-Steuerung ASP.NET Startcode</value>
   </data>
   <data version="1.0" id="2" name="PageDirectiveInfo">
-    <value>Sie müssen auch die folgende Direktive in die ASPX-Seiten aufnehmen, welche die Umfrage anzeigen sollen:</value>
+    <value>Die folgende Direktive in die ASPX-Seiten aufnehmen, welche die Umfrage anzeigen sollen:</value>
   </data>
   <data version="1.0" id="3" name="TagPrefixInfo">
-    <value>&lt;%@ Register TagPrefix="vts" Namespace="Stimmen.NSurvey.Web-Steuerungen" Assembly="Stimmen.NSurvey.Web-Steuerungen" %&gt;</value>
+    <value>&lt;%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="SurveyProject.WebControls" %&gt;</value>
   </data>
   <data version="1.0" id="4" name="QuickLinkInfo">
     <value>Bereitstellung der URL:</value>
   </data>
   <data version="1.0" id="5" name="SurveyCodePreviewTitle">
-    <value>Vorschau des Startcodes der Umfrage</value>
+    <value>Vorschau der Umfrage</value>
   </data>
   <data version="1.0" id="6" name="EditQuestionTitle">
     <value>Frage bearbeiten</value>
@@ -430,7 +430,7 @@
     <value>Hallo, &lt;br /&gt;&lt;br /&gt; Wir möchten Sie einladen, an der "{0}" Umfrage teilzunehmen. &lt;br /&gt;&lt;br /&gt; Bitte fügen Sie den folgenden Link in Ihren Web-Browser ein: &lt;br /&gt; &lt;a href="{1}"&gt;{1}&lt;/a&gt; &lt;br /&gt;&lt;br /&gt; Oder geben Sie den folgenden persönlichen Code ein, wenn Sie dazu aufgefordert werden: [--invitationid-] &lt;br /&gt;&lt;br /&gt; Vielen Dank,&lt;br /&gt; [Vorname Nachname]</value>
   </data>
   <data version="1.0" id="144" name="SurveyInformationTitle">
-    <value>Informationen zur Umfrage</value>
+    <value>Umfrage Einstellungen</value>
   </data>
   <data version="1.0" id="145" name="SurveyTitleLabel">
     <value>Titel:</value>
@@ -445,7 +445,7 @@
     <value>Enddatum:</value>
   </data>
   <data version="1.0" id="149" name="ActiveSurveyLabel">
-    <value>Aktiv:</value>
+    <value>Umfrage Aktivieren:</value>
   </data>
   <data version="1.0" id="150" name="ArchivedLabel">
     <value>Archiviert:</value>
@@ -463,7 +463,7 @@
     <value>läuft ab nach</value>
   </data>
   <data version="1.0" id="155" name="MinutesInfo">
-    <value>Minuten</value>
+    <value>&#160;&#160; Minuten</value>
   </data>
   <data version="1.0" id="156" name="OnlyInvitedEmailsLabel">
     <value>Nur eingeladene E-Mails können teilnehmen:</value>
@@ -475,7 +475,7 @@
     <value>Einstellungen zum Ausfüllen</value>
   </data>
   <data version="1.0" id="159" name="RedirectionURLLabel">
-    <value>URL-Umleitung:</value>
+    <value>Umleitung oder Rapport URL:</value>
   </data>
   <data version="1.0" id="160" name="ThanksMessageLabel">
     <value>Danke-Nachricht:</value>
@@ -559,7 +559,7 @@
     <value>Javascript-Funktionsname:</value>
   </data>
   <data version="1.0" id="187" name="JavascriptErrorMessageLabel">
-    <value>Fehlermeldung:</value>
+    <value>Javascript Fehlermeldung:</value>
   </data>
   <data version="1.0" id="188" name="JavascriptCodeLabel">
     <value>Javascript-Code:</value>
@@ -613,10 +613,10 @@
     <value>IP-Adresse:</value>
   </data>
   <data version="1.0" id="205" name="VoteRecordedLabel">
-    <value>Antwort aufgezeichnet am:</value>
+    <value>Aufgezeichnet am:</value>
   </data>
   <data version="1.0" id="206" name="TimeToTakeLabel">
-    <value>Zeitaufwand für die Umfrage:</value>
+    <value>Zeitaufwand:</value>
   </data>
   <data version="1.0" id="207" name="SurveyAnswersTitle">
     <value>Antworten auf die Umfrage</value>
@@ -838,7 +838,7 @@
     <value>Einstellungen</value>
   </data>
   <data version="1.0" id="280" name="SurveyInformationHyperlink">
-    <value>Informationen zur Umfrage</value>
+    <value>Umfrage Einstellungen</value>
   </data>
   <data version="1.0" id="281" name="SurveyStatsHyperlink">
     <value>Statistik</value>
@@ -847,7 +847,7 @@
     <value>Layout</value>
   </data>
   <data version="1.0" id="283" name="SurveyBuilderHyperlink">
-    <value>Form Builder</value>
+    <value>Umfrage Erstellen</value>
   </data>
   <data version="1.0" id="284" name="TypeBuilderHyperlink">
     <value>Antworttyp-Editor</value>
@@ -868,16 +868,16 @@
     <value>Versandstatus</value>
   </data>
   <data version="1.0" id="290" name="ASPNETCodeHyperlink">
-    <value>Web</value>
+    <value>Web Links</value>
   </data>
   <data version="1.0" id="291" name="NSurveyAuthenticationTitle">
     <value>Anmeldung</value>
   </data>
   <data version="1.0" id="292" name="LoginLabel">
-    <value>Benutzername:</value>
+    <value>Benutzername</value>
   </data>
   <data version="1.0" id="293" name="PasswordLabel">
-    <value>Passwort:</value>
+    <value>Passwort</value>
   </data>
   <data version="1.0" id="294" name="ValidateCredentialsButton">
     <value>Senden</value>
@@ -940,7 +940,7 @@
     <value>[Es sind keine weiteren Add-ins verfügbar]</value>
   </data>
   <data version="1.1" id="314" name="UnAuthentifiedUserActionLabel">
-    <value>Falls der Benutzer nicht automatisch durch alle Sicherheits-Add-ins authentisiert wurde:</value>
+    <value>Aktion bei ungültiger Autorisierung:</value>
   </data>
   <data version="1.1" id="315" name="ShowThankYouText">
     <value>Danke-Nachricht anzeigen</value>
@@ -1012,7 +1012,7 @@
     <value>[Umfrage auswählen]</value>
   </data>
   <data version="1.2" id="338" name="SaveProgressEntriesLabel">
-    <value>Unvollständige Verlaufseinträge:</value>
+    <value>Unvollständige Einträge:</value>
   </data>
   <data version="1.2" id="339" name="DeleteSaveProgressLinkButton">
     <value>Unvollständige Einträge löschen</value>
@@ -1801,13 +1801,13 @@
     <value>Zugang zum RegEx-Editor</value>
   </data>
   <data version="1.7" id="601" name="RegExLibHyperLink">
-    <value>RegEx-Bibliothek</value>
+    <value>Regular Expressions</value>
   </data>
   <data version="1.7" id="602" name="RegExLibraryTitle">
-    <value>Bibliothek - Reguläre Ausdrücke</value>
+    <value>Bibliothek - Reguläre Ausdrücke (RegEx)</value>
   </data>
   <data version="1.7" id="603" name="CreateRegExHyperLink">
-    <value>Klicken Sie hier, um einen neuen RegEx zu erstellen</value>
+    <value>Neuen RegEx erstellen</value>
   </data>
   <data version="1.7" id="604" name="RegExToEditLabel">
     <value>Einen RegEx auswählen:</value>
@@ -1858,7 +1858,7 @@
     <value>RegEx genehmigt. Im Formular wird keine Fehlermeldung erscheinen.</value>
   </data>
   <data version="1.7" id="620" name="RegExFailedMessage">
-    <value>RRegEx fehlgeschlagen. Im Formular wird eine Fehlermeldung erscheinen.</value>
+    <value>RegEx fehlgeschlagen. Im Formular wird eine Fehlermeldung erscheinen.</value>
   </data>
   <data version="1.7" id="621" name="RegExNameLabel">
     <value>Name:</value>
@@ -2263,7 +2263,7 @@
     <value>Durchschnittliche Bewertung: {0}/{1}</value>
   </data>
   <data version="1.0" id="822" name="TotalOfVotes">
-    <value>Gesamtanzahl der Stimmen: {0}</value>
+    <value>Stimmen Gesamtanzahl: {0}</value>
   </data>
   <data version="1.0" id="823" name="AlreadyVotedMessage">
     <value>Sie haben bereits abgestimmt!</value>
@@ -2542,7 +2542,25 @@
     <value>&gt;&lt;b&gt;Die offiziellen Umfrage-Hilfedateien sind noch nicht verfügbar.&lt;/b&gt; &lt;br /&gt;&lt;br /&gt; Weitere Informationen zur Benutzung der Umfrage-Tools finden Sie unter &lt;a href="http://www.surveyproject.info" title="Surveyproject Community site" target="_blank"&gt; http://www.surveyproject.com &lt;/a&gt;. Sie können auch dorthin gehen, um Ihre Fragen zu stellen.&lt;br /&gt; &lt;br /&gt; Für Downloads, den Quellcode und weitere Hintergrundinformationen gehen Sie bitte zu &lt;a href="http://survey.codeplex.com" title="Survey Project" target="_blank"&gt; http://survey.codeplex.com &lt;/a&gt;. &lt;br /&gt;</value>
   </data>
   <data version="1.2.2" id="915" name="Disclaimer">
-    <value>SURVEY™ PROJECT ist eine Web-Anwendung für online Umfragen- und Formulare, die auf der Open Source Web-Anwendung NSurvey basiert (&lt;a href="http://www.nsurvey.org" target="_blank"&gt;Thomas Zumbrunn&lt;/a&gt;, (c) 2004/2005). Das neue SURVEY™ PROJECT-Lösungskonzept wurde von &lt;a href="http://www.w3devpro.com" title="W3DevPro Homepage" target="_blank"&gt;W3DevPro™ &lt;/a&gt;- (c) 2009/2014 begonnen. Survey™ Project wird unter der GNU GENERAL PUBLIC LICENSE v.3, 29. Juni 2007, herausgegeben. Das SURVEY™ PROJECT finden Sie unter &lt;a href="http://www.surveyproject.org" title="Survey Project Community Site" target="_blank"&gt;http://www.surveyproject.org&lt;/a&gt;.</value>
+    <value>
+      SURVEY™ PROJECT ist eine Web-Anwendung für online Umfragen- und Formulare, die auf der Open Source Web-Anwendung NSurvey
+      basiert (&lt;a href="http://www.nsurvey.org" target="_blank"&gt;Thomas Zumbrunn&lt;/a&gt;, (c) 2004/2005).
+      &lt;br /&gt;&lt;br /&gt;
+
+      SURVEY™ PROJECT wurde von &lt;a href="http://www.w3devpro.com" title="W3DevPro Homepage" target="_blank"&gt;W3DevPro™ &lt;/a&gt;- (c) 2009/2018 begonnen.
+      Survey™ Project wird unter der &lt;a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.en.html" title="GPL" target="_blank"&gt;GNU GENERAL PUBLIC LICENSE v.3, 29. Juni 2007&lt;/a&gt;, herausgegeben.
+      Eine Kopie aller gültigen Lizenzen finden Sie im Verzeichnis: SurveyWAP \ _Instructions \ Licenses dieser Anwendung.
+      &lt;br /&gt;&lt;br /&gt;
+
+      Dieses Programm wird in der Hoffnung verteilt, dass es nützlich sein wird,
+      aber OHNE JEGLICHE GARANTIE; ohne sogar die implizierte Garantie von
+      Handelsüblichkeit oder Eignung für einen bestimmten Zweck. Siehe die
+      GNU General Public License für weitere Details.
+      &lt;br /&gt;&lt;br /&gt;
+      Alle Quellcode ist veröffentlicht bei &lt;a href="https://github.com/surveyproject" title="Survey Project Sources and Downloads" target="_blank"&gt; GitHub &lt;/a&gt;.
+      &lt;br /&gt;&lt;br /&gt;
+      Das SURVEY™ PROJECT finden Sie unter &lt;a href="http://www.surveyproject.org" title="Survey Project Community Site" target="_blank"&gt;http://www.surveyproject.org&lt;/a&gt;.
+    </value>
   </data>
   <data version="1.2.2" id="916" name="Introduction">
     <value>Herzlichen Glückwunsch, &lt;br /&gt; Sie haben die Survey™ Projekt Web-Anwendung gestartet. &lt;br /&gt;&lt;br /&gt; Zum erstmaligen Anmelden:&lt;br /&gt; Benutzername = &lt;strong&gt;admin&lt;/strong&gt;&lt;br /&gt; Passwort = &lt;strong&gt;Admin.&lt;/strong&gt; &lt;br /&gt;&lt;br /&gt; Erstellen Sie als Nächstes eine neue Umfrage und &lt;br /&gt; folgen Sie den Anweisungen im Hilfe-Menü/in den Hilfe-optionen. &lt;br /&gt;&lt;br /&gt; Sie können nun damit beginnen, das Online-Administration-Tool zu benutzen.</value>
@@ -2560,7 +2578,7 @@
     <value>Status</value>
   </data>
   <data version="1.2.2" id="921" name="SurveyResponses">
-    <value>Rückmeldungen</value>
+    <value>Einträge</value>
   </data>
   <data version="1.2.2" id="922" name="SurveyCreated">
     <value>Erstellt</value>
@@ -2653,7 +2671,7 @@
     <value>Sind Sie sicher, dass Sie diese Umfrage löschen möchten?</value>
   </data>
   <data version="2.0" id="952" name="SurveyInfo">
-    <value>Informationen zur Umfrage</value>
+    <value>Umfrage Einstellungen</value>
   </data>
   <data version="2.0" id="953" name="SurveyInfoMultiLanguage">
     <value>Multi-Sprachen</value>
@@ -2824,7 +2842,7 @@
     <value> IP-Filter</value>
   </data>
   <data version="2.0" id="1009" name="Exception">
-    <value>Ausnahme eingetreten</value>
+    <value>Ausnahme eingetreten. Details protokolliert</value>
   </data>
   <data version="2.0" id="1010" name="msgDeleteSelectedTokens">
     <value>Sind Sie sicher, dass Sie alle ausgewählten Tokens löschen möchten?</value>
@@ -2950,7 +2968,7 @@
     <value>Hinweis: Automatisches Erstellen erzeugt einen Filter für jede Antwort, die eine Frage haben kann.&lt;br/ &gt;  Dies ist nur für geschlossene Fragen (nicht für freie Textfelder) verfügbar.</value>
   </data>
   <data version="2.0" id="1051" name="AutoFilterQuestion">
-    <value>Automatisches Erstellen eines Filters, basierend auf Frage:</value>
+    <value>Automatisch Erstellen eines Filters:</value>
   </data>
   <data version="2.0" id="1052" name="AutoFilterQuestionNaming">
     <value>Benennung der Frage:</value>
@@ -2983,7 +3001,7 @@
     <value>Sind Sie sicher, dass Sie diese Seite löschen möchten?</value>
   </data>
   <data version="2.0" id="1062" name="FriendlyLabel">
-    <value>URL mit freundlichem Namen erstellen:</value>
+    <value>Freundlichem URL erstellen:</value>
   </data>
   <data version="2.0" id="1063" name="FriendlyUrl">
     <value>Hinweis: Freundliches URL-Format = http:// [URLIhrerWebsite] / surveymobile.aspx / [&lt;b&gt;IhrFreundlicherName&lt;/b&gt;]    </value>
@@ -3076,7 +3094,7 @@
     </value>
   </data>
   <data version="2.0" id="1092" name="DefaultSurvey">
-    <value>Standardumfrage</value>
+    <value>Standard Umfrage</value>
   </data>
   <data version="2.0" id="1093" name="SurveyImported">
     <value>Umfrage importiert</value>
@@ -3124,7 +3142,7 @@
     <value>Klick für weitere Information</value>
   </data>
   <data version="1.0" id="1108" name="FromLabelMail">
-    <value>From Email :</value>
+    <value>Von Email :</value>
   </data>
   <data version="1.0" id="1109" name="ToLabelMail">
     <value>To :</value>
@@ -3289,19 +3307,15 @@
     <value>CSS Akte aktualisiert</value>
   </data>
   <data version="2.4" id="1163" name="SpFrontPageSlogan">
-    <value>
-      Plattform für die Entwicklung und Freigabe freier&lt;br /&gt; Software um Daten online zu sammeln
-    </value>
+    <value>Plattform zum Entwickeln und Teilen von freier &lt;br /&gt; Software um Daten online zu sammeln</value>
   </data>
   <data version="2.4" id="1164" name="SpFrontPageTheme">
     <value>
-      Die Open-Source Webapplikation zur Erstellung und Veröffentlichung von Umfragen und Webformaten online
+      Die Open-Source Webapplikation für Umfragen und Webformaten online
     </value>
   </data>
   <data version="2.4" id="1165" name="DisclaimerTitle">
-    <value>
-      Lizenzierung &amp; Haftungsausschluss
-    </value>
+    <value>Lizenzierung</value>
   </data>
   <data version="2.4" id="1166" name="IPRanges">
     <value>IP Bereiche</value>
@@ -3319,54 +3333,149 @@
     <value>Generieren</value>
   </data>
   <data version="2.5" id="1171" name="HelpAboutHyperlink">
-    <value>About SP&amp;trade;</value>
+    <value>Über SP&amp;trade;</value>
   </data>
   <data version="2.5" id="1172" name="ReportsSMHyperlink">
-    <value>Reports</value>
+    <value>Berichte</value>
   </data>
   <data version="2.5" id="1173" name="ResponsesHyperlink">
-    <value>Individual Reponses</value>
+    <value>Individuelle Antworten</value>
   </data>
   <data version="2.5" id="1174" name="AccessUserResponses">
-    <value>Access User Reponses</value>
+    <value>Zugang Benutzer-Antworten</value>
   </data>
   <data version="2.5" id="1175" name="FriendlyNameExistsMsg">
-    <value>Name already used, please retry.</value>
+    <value>Name bereits vergeben, bitte erneut versuchen</value>
   </data>
   <data version="2.5" id="1176" name="WebControlIntro">
-    <value>More information on using the SurveyBox Custom Webcontrol at .....</value>
+    <value>Lesen Sie die Hilfedateien zur Verwendung von SurveyBox Custom Webcontrol</value>
   </data>
   <data version="2.5" id="1177" name="AdminCreatedMessage">
-    <value>Account created. Please login.</value>
+    <value>Account erstellt. Bitte einloggen.</value>
   </data>
   <data version="2.5" id="1178" name="MultilanguagesStatsLiteral">
-    <value>Active Languages:</value>
+    <value>Aktive Sprachen:</value>
   </data>
   <data version="2.5" id="1179" name="OpeningCloseDateLiteral">
-    <value>Opening &amp; Closing dates</value>
+    <value>Anfangs- und Schlussdaten</value>
   </data>
   <data version="2.5" id="1180" name="DateNotSet">
-    <value>Not set</value>
+    <value>nicht eingestellt</value>
   </data>
   <data version="2.5" id="1181" name="PasswordRulesMessage">
-    <value>Password rules not met</value>
+    <value>Passwortregeln nicht erfüllt</value>
   </data>
   <data version="2.5" id="1182" name="SSRSReports">
-    <value>SSRS Reports</value>
+    <value>SSRS Berichte</value>
   </data>
   <data version="2.5" id="1183" name="SsrsReportTitle">
     <value>SQL Server Reporting Services - </value>
   </data>
   <data version="2.5" id="1184" name="SurveyTitleTooltip">
-    <value>Click a Title to go Statistics</value>
+    <value>Klicken Sie auf einen Titel, um Statistiken aufzurufen</value>
   </data>
   <data version="2.5" id="1185" name="SurveyStatusTooltip">
-    <value>Survey Activated or not</value>
+    <value>Umfrage aktiviert oder nicht</value>
   </data>
   <data version="2.5" id="1186" name="SurveyReponsesTooltip">
-    <value>Number of Reponses</value>
+    <value>Anzahl der Antworten</value>
   </data>
   <data version="2.5" id="1187" name="SurveyCreatedTooltip">
-    <value>Survey Creation Date</value>
+    <value>Umfrage Erstellungsdatum</value>
+  </data>
+  <data version="2.5" id="1188" name="AccessSsrsReports">
+    <value>Zugang SSRS Berichte</value>
+  </data>
+  <data version="2.5" id="1189" name="SsrsPrintSurvey">
+    <value>
+      Der Bericht wird verwendet, um eine der Umfragen über eine DDL auszuwählen und alle Fragen und Antworten zu drucken / exportieren
+    </value>
+  </data>
+  <data version="2.5" id="1190" name="SsrsReport">
+    <value>Einfaches SSRS-Berichtsbeispiel wie zu SP hinzugefügt.</value>
+  </data>
+  <data version="2.5" id="1191" name="SecurityGeneralWarningText">
+    <value>Allgemeine Warnung anzeigen</value>
+  </data>
+  <data version="2.5" id="1191" name="SecurityGeneralWarning">
+    <value>Zugriff nicht erlaubt</value>
+  </data>
+  <data version="2.5" id="1192" name="UsersTabDelete">
+    <value>Löschen</value>
+  </data>
+  <data version="2.5" id="1193" name="UserImportLinesSubmitted">
+    <value> Zeilen eingereicht; </value>
+  </data>
+  <data version="2.5" id="1194" name="UserImportLinesImported">
+    <value> Benutzer importiert. Nicht vollständig: </value>
+  </data>
+  <data version="2.5" id="1195" name="UserImportUserExists">
+    <value> Benutzer existiert bereits </value>
+  </data>
+  <data version="2.5" id="1196" name="UserImportIncorrectFormat">
+    <value> Falsches Begrenzungsformat </value>
+  </data>
+  <data version="2.5" id="1197" name="SelectSecurityAction">
+    <value>Wählen Sie eine Aktion</value>
+  </data>
+  <data version="2.5" id="1198" name="SecurityActionInfo">
+    <value>
+      - Wenn eine Option aus der Dropdown-Liste ausgewählt wird, wird die Änderung sofort und automatisch gespeichert.&lt;br /&gt;
+      - Die Standardeinstellung "Aktion bei ungültiger Autorisierung", wenn keine Auswahl getroffen wurde, ist auf "Allgemeine Warnung anzeigen" eingestellt.
+    </value>
+  </data>
+  <data version="2.5" id="1199" name="MlCodesLiteral">
+    <value>Aktive Sprachcodes</value>
+  </data>
+  <data version="2.5" id="2000" name="UserDeletedConfirmation">
+    <value>Benutzer gelöscht</value>
+  </data>
+  <data version="2.5" id="2001" name="UserCreatedConfirmation">
+    <value>Benutzer erstellt</value>
+  </data>
+  <data version="2.5" id="2002" name="SurveyClonedMessage">
+    <value>Umfrage geklont</value>
+  </data>
+  <data version="2.5" id="2003" name="SurveyCreatedMessage">
+    <value>neue Umfrage erstellt</value>
+  </data>
+  <data version="2.5" id="2004" name="ErrorLogHyperlink">
+    <value>Fehlerprotokoll</value>
+  </data>
+  <data version="2.5" id="2005" name="EditLogTitle">
+    <value>Systemfehler Logfile</value>
+  </data>
+  <data version="2.5" id="2006" name="EditLogCancel">
+    <value>Abmelden</value>
+  </data>
+  <data version="2.5" id="2007" name="EditLogSave">
+    <value>Änderungen speichern</value>
+  </data>
+  <data version="2.5" id="2008" name="LogfileUpdatedMsg">
+    <value>Fehler Logfile aktualisiert</value>
+  </data>
+  <data version="2.5" id="2009" name="AccessUserAccount">
+    <value>Benutzerkonto Zugang</value>
+  </data>
+  <data version="2.5" id="2010" name="AccessRolesManager">
+    <value>Rolesmanager Zugang</value>
+  </data>
+  <data version="2.5" id="2011" name="AccessImportUsers">
+    <value>Benutzerzugriff Zugang</value>
+  </data>
+  <data version="2.5" id="2012" name="AllowQuestionXmlImport">
+    <value>Erlaube den Import von Xml-Fragen</value>
+  </data>
+  <data version="2.5" id="2012" name="IpFilterSecurityRight">
+    <value>P-Filter-Sicherheit</value>
+  </data>
+  <data version="2.5" id="2013" name="DataImport">
+    <value>Umfrage datenimport</value>
+  </data>
+  <data version="2.5" id="2014" name="AllowQuestionInsert">
+    <value>Frage zulassen einfügen</value>
+  </data>
+  <data version="2.5" id="2015" name="FilesDeletedMessage">
+    <value>Dateien gelöscht</value>
   </data>
 </root>

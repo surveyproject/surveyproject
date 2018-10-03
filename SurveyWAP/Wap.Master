@@ -152,14 +152,15 @@
                                     </div>
 
                                     <div id="collapse1" class="panel-collapse collapse disclaimer">
-                                        <div class="panel-footer" style="text-align: center">
-                                            <h4>SP&trade; Licensing &amp; Disclaimer</h4>
+                                        <div class="panel-footer" style="text-align: center; border:1px solid #dedbdb; border-radius:5px;">
+                                            <h4 id="ldPopupTitle" runat="server">SP&trade; Licensing &amp; Disclaimer</h4>
                                         </div>
                                         <div class="panel-body">
                                             <small>
                                                 <asp:Literal ID="Disclaimer" runat="server" EnableViewState="False">Disclaimer</asp:Literal></small>
                                         </div>
-                                        <div class="panel-footer">&nbsp;</div>
+                                        <div class="panel-footer" style="text-align: center; border:1px solid #dedbdb; border-radius:5px;">
+                                            <a data-toggle="collapse" id="LdClose" runat="server" href="#collapse1" title="Close Disclaimer">[close]</a></div>
                                     </div>
 
                                 </div>

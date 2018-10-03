@@ -37,7 +37,9 @@ The Survey&trade; Project Webapplication Helpfiles are
 licensed under a Creative Commons license:<br />
 <br />
 <div align="center">
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/nl/"><img alt="Creative Commons Licentie" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/nl/88x31.png" /></a><br />Dit werk is gelicenseerd onder een <br /><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/nl/">Creative Commons Naamsvermelding-GelijkDelen 3.0 Nederland licentie</a>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/nl/" target="_blank">
+    <img alt="Creative Commons Licentie" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/nl/88x31.png" /></a><br />
+    Dit werk is gelicenseerd onder een <br /><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/nl/" target="_blank">Creative Commons Naamsvermelding-GelijkDelen 3.0 Nederland licentie</a>
 </div>
 <br /><br />
 For questions concerning this license:  
@@ -46,7 +48,7 @@ For questions concerning this license:
 <br />
                 <hr style="color:#e2e2e2;" />
             
-<b>&copy;2017 W3DevPro&trade;</b> <br />All rights reserved.<br />
+<b>&copy;2018 W3DevPro&trade;</b> <br />All rights reserved.<br />
 <br />
             </div>
 

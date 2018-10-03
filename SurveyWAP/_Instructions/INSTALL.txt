@@ -13,8 +13,8 @@ Serverside:
 - .NET Framework 4.5 or higher must be installed
 - IIS webserver (7.5 or higer)
 - SMTP mailserver account
-- MsSqlserver 2012 database or higher
-- supported Operating Systems are Windows7 or >, Windows Server 2008/2012 or >
+- MsSqlserver 2014 database or higher
+- supported Operating Systems are Windows10 or >, Windows Server 2012 or >
 - you must have administrator privileges on your computer 
 
 Free software downloads available at http://www.asp.net/downloads/
@@ -42,9 +42,9 @@ Option 2.
 
 "Existing DB installation"
 
-Version Options 2008, 2012/2014 or 2016
+Version Options 2014 or 2016
 - depending on the MSsqlserver version used select the appropriate Sql file
-- 2012 and 2014 files are fully tested and supported
+- only the 2016 version is fully tested and supported
 
 
 - start MS SQL Server (using MsSqlserver Management Studio or your tool of choice )**
@@ -55,8 +55,8 @@ Version Options 2008, 2012/2014 or 2016
 - check to see if the database was created correctly (warning messages can be ignored)
 
 *Notes: 
-	o to upgrade an existing SP 2.3 database use the  with the 2.4 scripts in the directory _DatabaseSql\UpgradeFiles_23to24
-	o instructions on how to upgrade can be found in : ReadMe_Upgrade_23to24_DatabaseChanges.txt
+	o to upgrade an existing SP 2.4 database use the  with the 2.5 scripts in the directory _DatabaseSql\UpgradeFiles
+	o instructions on how to upgrade can be found in : ReadMe_Upgrade_24to25_DatabaseChanges.txt
 	o check the UPGRADE EXISTING INSTALLATION section in this file
 
 
@@ -74,15 +74,15 @@ of the root application directory (this allows the application to create files/f
 
   <!-- selection of database connection options & settings-->
   <connectionStrings>
-    <add name="SurveyProjectDevConnectionString" connectionString="Data Source=.\yoursqlserver;Initial Catalog=YourSpDevDatabase;Persist Security Info=True;User ID=yourusername;Password=yourpassword" providerName="System.Data.SqlClient" />
-    <add name="SurveyProjectTestConnectionString" connectionString="Data Source=.\yoursqlserver;Initial Catalog=YourSpTestDatabase;Persist Security Info=True;User ID=yourusername;Password=yourpassword" providerName="System.Data.SqlClient" />
-    <add name="SurveyProjectProdConnectionString" connectionString="Data Source=.\yoursqlserver;Initial Catalog=YourSpProdDatabase;Persist Security Info=True;User ID=yourusername;Password=yourpassword" providerName="System.Data.SqlClient" />
+    <add name="SurveyProjectDEVConnectionString" connectionString="Data Source=.\yoursqlserver;Initial Catalog=YourSpDevDatabase;Persist Security Info=True;User ID=yourusername;Password=yourpassword" providerName="System.Data.SqlClient" />
+    <add name="SurveyProjectTESTConnectionString" connectionString="Data Source=.\yoursqlserver;Initial Catalog=YourSpTestDatabase;Persist Security Info=True;User ID=yourusername;Password=yourpassword" providerName="System.Data.SqlClient" />
+    <add name="SurveyProjectPRODConnectionString" connectionString="Data Source=.\yoursqlserver;Initial Catalog=YourSpProdDatabase;Persist Security Info=True;User ID=yourusername;Password=yourpassword" providerName="System.Data.SqlClient" />
   </connectionStrings>
 
 - Next set the default dbconnection to use on the SP site:
 
   <!-- Survey Project database connection: to select connectionsetting options see connectionStrings-->
-  <dataConfiguration defaultDatabase="SurveyProjectProdConnectionString" />
+  <dataConfiguration defaultDatabase="SurveyProjectPRODConnectionString" />
 
 
 7. SMTP MAILSETTINGS
@@ -109,13 +109,9 @@ of the root application directory (this allows the application to create files/f
 - the application will start running 
 
 
-10. DEFAULT ADMINISTRATOR LOGIN
-- on first login use:
-	Username: admin
-	Password: SP_admin01
-- next create a survey and do not forget to change the default admin password (menu Accounts/Userlist)
-
-
+10. INITIAL LOGIN
+- On first starting the webapplication an initial administrator account is created from the username / password entered into the login textboxes. 
+The password is saved to the database encrypted and cannot be recovered if lost or forgotten. 
 
 ________________________________________________________________________________________________
 
@@ -123,7 +119,7 @@ Instructions on "Survey™ 2.4 Install package" - UPGRADE EXISTING INSTALLATION
 ________________________________________________________________________________________________
 
 
-WARNING: SP 2.4 does not formally support upgrading from previous versions.If you decide to upgrade a previous version, make sure to create backups first.
+WARNING: Upgrading from previous versions to SP 2.5 is not supported.If you decide to upgrade a previous version, make sure to create backups first.
 
 
 Webfiles:
@@ -132,11 +128,11 @@ Webfiles:
 
 
 Database:
-- check the _DatabaseSql/UpgradeFiles23_24 directory for a description of changes and available upgrade files
+- check the _DatabaseSql/UpgradeFiles24_25 directory for a description of changes and available upgrade files
 
 
 Surveys:
-- Surveys, questions and answers created in 2.* can be exported to XML and imported into the 2.4 version. 
+- Surveys, questions and answers created in 2.4 can be exported to XML and imported into the 2.5 version. 
 - Manual corrections to the XML files may be necessary;
 
 
@@ -149,7 +145,7 @@ ________________________________________________________________________________
 
 I. ---------------------------- SYSTEM SETTINGS MENU OPTIONS -------------------------------------
 
-New to SP v. 2.4 is the option to manage web.config settings from inside the webapplication.
+Since SP v. 2.4 there is the option to manage web.config settings from inside the webapplication.
 Login as admin and go to menu Surveys/Settings/System Settings/ for the following options:
 
 

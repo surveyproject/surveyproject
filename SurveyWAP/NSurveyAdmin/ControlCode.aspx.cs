@@ -131,56 +131,39 @@ namespace Votations.NSurvey.WebAdmin
             }
         }
 
+        /// <summary>
+        /// text (control code) added to the taCode textarea control on the webpage
+        /// </summary>
 
         void SetupTextArea()
         {
-            // @ means that you don't need to escape special characters in the string following to the symbol:
-            string html = @"
-<head runat=""server"">
-    <link href=""{0}"" type=""text/css"" rel=""stylesheet"" />
-</head>
-<body>
-    <form id=""form1"" runat=""server"">
-    <div>
-<table width=""100%"">
-        <tr>
-            <td>
-                {1}
-            </td>
-        </tr>
-    </table>
-{2}
- <table width=""100%"">
-        <tr>
-            <td>
-                {3}
-            </td>
-        </tr>
-    </table>
-</div>
-    </form>
-</body>
-   ";
 
+            // {0} - user layout CSS settings
             SurveyLayoutData _userSettings;
 
             Votations.NSurvey.SQLServerDAL.SurveyLayout u = new Votations.NSurvey.SQLServerDAL.SurveyLayout();
 
             _userSettings = u.SurveyLayoutGet(SurveyId);
 
+            string css = string.Empty;
+
             if (!(_userSettings == null || _userSettings.SurveyLayout.Count == 0))
             {
-                string css = string.Empty;
+               
                 if (!string.IsNullOrEmpty(_userSettings.SurveyLayout[0].SurveyCss))
+                { 
                     css = ResolveUrl(Votations.NSurvey.Constants.UserSettingsConstants.CssStoragePath + "/" + _userSettings.SurveyLayout[0].SurveyCss);
+                }
 
-                string header = HttpUtility.HtmlDecode(_userSettings.SurveyLayout[0].SurveyHeaderText);
-                string footer = HttpUtility.HtmlDecode(_userSettings.SurveyLayout[0].SurveyFooterText);
-                string str = string.Format(taCode.InnerText, SurveyId);
-                taCode.InnerText = string.Format(html, css, header, str, footer);
+                // .aspx webpage taCode textarea {1} - get/ set surveyid ; taCode = surveybox control code
+                string str = string.Format(taCode.InnerText, css, SurveyId);
+
+                // add all parameters {0 - 1} to html string and create taCode text
+                taCode.InnerText = str;
             }
 
-            string str2 = string.Format(taCode.InnerText, SurveyId);
+            //if no usersettings just add surveybox controlcode + surveyid
+            string str2 = string.Format(taCode.InnerText, css,  SurveyId);
             taCode.InnerText = str2;
 
         }

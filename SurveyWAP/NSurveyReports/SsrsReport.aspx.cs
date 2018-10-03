@@ -90,7 +90,7 @@ namespace Votations.NSurvey.WebAdmin.NSurveyReports
         {
             if (!_isSqlTypesLoaded)
             {
-                SqlServerTypes.Utilities.LoadNativeAssemblies(Server.MapPath("~"));
+                SqlServerTypes.Utilities.LoadNativeAssemblies(Server.MapPath("~/bin"));
                 _isSqlTypesLoaded = true;
             }
 

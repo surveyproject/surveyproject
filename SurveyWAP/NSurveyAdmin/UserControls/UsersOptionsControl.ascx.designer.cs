@@ -13,6 +13,15 @@ namespace Votations.NSurvey.WebAdmin.UserControls {
     public partial class UsersOptionsControl {
         
         /// <summary>
+        /// UsercheckBoxes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder UsercheckBoxes;
+        
+        /// <summary>
         /// phSurveySelect control.
         /// </summary>
         /// <remarks>

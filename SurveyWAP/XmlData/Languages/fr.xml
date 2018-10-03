@@ -3604,4 +3604,97 @@ Merci
   <data version="2.5" id="1187" name="SurveyCreatedTooltip">
     <value>Survey Creation Date</value>
   </data>
+  <data version="2.5" id="1188" name="AccessSsrsReports">
+    <value>SSRS Reports access</value>
+  </data>
+  <data version="2.5" id="1189" name="SsrsPrintSurvey">
+    <value>Report to select any of the surveys through a DDL and print/ export all Q/A.</value>
+  </data>
+  <data version="2.5" id="1190" name="SsrsReport">
+    <value>Basic SSRS report example as added to SP.</value>
+  </data>
+  <data version="2.5" id="1191" name="SecurityGeneralWarningText">
+    <value>Show General Warning</value>
+  </data>
+  <data version="2.5" id="1191" name="SecurityGeneralWarning">
+    <value>Access not allowed.</value>
+  </data>
+  <data version="2.5" id="1192" name="UsersTabDelete">
+    <value>Delete</value>
+  </data>
+  <data version="2.5" id="1193" name="UserImportLinesSubmitted">
+    <value> lines submitted; </value>
+  </data>
+  <data version="2.5" id="1194" name="UserImportLinesImported">
+    <value> users imported. Not completed: </value>
+  </data>
+  <data version="2.5" id="1195" name="UserImportUserExists">
+    <value> user already exists </value>
+  </data>
+  <data version="2.5" id="1196" name="UserImportIncorrectFormat">
+    <value> incorrect delimiting format </value>
+  </data>
+  <data version="2.5" id="1197" name="SelectSecurityAction">
+    <value>Select an Action</value>
+  </data>
+  <data version="2.5" id="1198" name="SecurityActionInfo">
+    <value>
+      - If an option is selected from the dropdownlist the change is saved instantly and automatically.&lt;br /&gt;
+      - The default 'Action on Invalid Authorisation' if no selection is made is set to "Show the General Warning".
+    </value>
+  </data>
+  <data version="2.5" id="1199" name="MlCodesLiteral">
+    <value>Active Language Codes</value>
+  </data>
+  <data version="2.5" id="2000" name="UserDeletedConfirmation">
+    <value>User Deleted</value>
+  </data>
+  <data version="2.5" id="2001" name="UserCreatedConfirmation">
+    <value>User Created</value>
+  </data>
+  <data version="2.5" id="2002" name="SurveyClonedMessage">
+    <value>Survey Cloned</value>
+  </data>
+  <data version="2.5" id="2003" name="SurveyCreatedMessage">
+    <value>New Survey Created</value>
+  </data>
+  <data version="2.5" id="2004" name="ErrorLogHyperlink">
+    <value>Error Log</value>
+  </data>
+  <data version="2.5" id="2005" name="EditLogTitle">
+    <value>System Errors Logfile</value>
+  </data>
+  <data version="2.5" id="2006" name="EditLogCancel">
+    <value>Cancel</value>
+  </data>
+  <data version="2.5" id="2007" name="EditLogSave">
+    <value>Save Changes</value>
+  </data>
+  <data version="2.5" id="2008" name="LogfileUpdatedMsg">
+    <value>Error Logfile Updated</value>
+  </data>
+  <data version="2.5" id="2009" name="AccessUserAccount">
+    <value>User Account access</value>
+  </data>
+  <data version="2.5" id="2010" name="AccessRolesManager">
+    <value>Rolesmanager access</value>
+  </data>
+  <data version="2.5" id="2011" name="AccessImportUsers">
+    <value>Import Users access</value>
+  </data>
+  <data version="2.5" id="2012" name="AllowQuestionXmlImport">
+    <value>Allow Xml Question import</value>
+  </data>
+  <data version="2.5" id="2012" name="IpFilterSecurityRight">
+    <value>IP Filter Security</value>
+  </data>
+  <data version="2.5" id="2013" name="DataImport">
+    <value>Survey Data Import</value>
+  </data>
+  <data version="2.5" id="2014" name="AllowQuestionInsert">
+    <value>Allow Question Insert</value>
+  </data>
+  <data version="2.5" id="2015" name="FilesDeletedMessage">
+    <value>Files Deleted</value>
+  </data>
 </root>

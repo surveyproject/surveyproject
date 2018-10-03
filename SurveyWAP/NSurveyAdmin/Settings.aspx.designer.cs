@@ -121,6 +121,24 @@ namespace Votations.NSurvey.WebAdmin {
         protected global::System.Web.UI.WebControls.Button btnDefaultDbConnection;
         
         /// <summary>
+        /// lblUICulture control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUICulture;
+        
+        /// <summary>
+        /// txtUICulture control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtUICulture;
+        
+        /// <summary>
         /// lblCulture control.
         /// </summary>
         /// <remarks>

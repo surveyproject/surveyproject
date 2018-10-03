@@ -33,7 +33,7 @@
                                         <strong>
                                             <asp:Label ID="RedirectionURLLabel" runat="server"  AssociatedControlID="RedirectionURLTextBox" EnableViewState="False"></asp:Label></strong>
                  <div id="tooltip">
-                                        <asp:TextBox ID="RedirectionURLTextBox" width="225px" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="RedirectionURLTextBox" width="325px" runat="server"></asp:TextBox>
                      </div>
   </li><li>
                                         

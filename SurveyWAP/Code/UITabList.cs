@@ -115,7 +115,7 @@ namespace Votations.NSurvey.WebAdmin
             masterPage.selectedTabIndex = (int)selectedTab;
         }
         
-        public enum SurveyInfoTabs { SurveyInfo = 0, SurveyInfoMultiLanguage = 1, SurveyInfoCompletion = 2, SurveySettings = 3 }
+        public enum SurveyInfoTabs { SurveyInfo = 0, SurveyInfoMultiLanguage = 1, SurveyInfoCompletion = 2, SurveySettings = 3, ErrorLog = 4 }
         public static void SetSurveyInfoTabs(MsterPageTabs masterPage, SurveyInfoTabs selectedTab)
         {
             masterPage.DisplayTabs.Clear();
@@ -123,6 +123,7 @@ namespace Votations.NSurvey.WebAdmin
             masterPage.DisplayTabs.Add(ResourceManager.GetString("SurveyInfoMultiLanguage"), UINavigator.MultiLanguagesHyperLink);
             masterPage.DisplayTabs.Add(ResourceManager.GetString("SurveyInfoCompletion"), UINavigator.SurveyPrivacyLink);
             masterPage.DisplayTabs.Add(ResourceManager.GetString("GeneralSettingsHyperlink"), UINavigator.GeneralSettingsLink);
+            masterPage.DisplayTabs.Add(ResourceManager.GetString("ErrorLogHyperlink"), UINavigator.ErrorLogLink);
 
             masterPage.selectedTabIndex = (int)selectedTab;
         }
@@ -140,7 +141,6 @@ namespace Votations.NSurvey.WebAdmin
 
             masterPage.selectedTabIndex = (int)selectedTab;
         }
-
 
         public enum SecurityTabs { Form = 0, Token = 1, IPRange=2}
         public static void SetSecurityTabs(MsterPageTabs masterPage, SecurityTabs selectedTab)
@@ -163,5 +163,27 @@ namespace Votations.NSurvey.WebAdmin
             masterPage.DisplayTabs.Add(ResourceManager.GetString("MailingLogHyperlink"), UINavigator.MailingLogHyperLink);
             masterPage.selectedTabIndex = (int)selectedTab;
         }
+        
+        public enum AccountsTabs { Users = 0, Roles = 1, ImportUsers = 2}
+        public static void SetAccountsTabs(MsterPageTabs masterPage, AccountsTabs selectedTab)
+        {
+            masterPage.DisplayTabs.Clear();
+            masterPage.DisplayTabs.Add(ResourceManager.GetString("UsersManagerHyperlink"), UINavigator.UsersManagerHyperLink);
+            masterPage.DisplayTabs.Add(ResourceManager.GetString("RolesManagerHyperlink"), UINavigator.RolesManagerHyperLink);
+            masterPage.DisplayTabs.Add(ResourceManager.GetString("ImportUsersHyperlink"), UINavigator.ImportUsersHyperLink);
+            masterPage.selectedTabIndex = (int)selectedTab;
+        }
+
+        public enum SurveyListTabs { List = 0, New = 1}
+        public static void SetSurveyListTabs(MsterPageTabs masterPage, SurveyListTabs selectedTab)
+        {
+            masterPage.DisplayTabs.Clear();
+            masterPage.DisplayTabs.Add(ResourceManager.GetString("ListSurveyHyperLink"), UINavigator.ListSurveyLink);
+            masterPage.DisplayTabs.Add(ResourceManager.GetString("NewSurveyHyperLink"), UINavigator.CreateSurveyLink);
+            masterPage.selectedTabIndex = (int)selectedTab;
+        }
+
+
+
     }
 }

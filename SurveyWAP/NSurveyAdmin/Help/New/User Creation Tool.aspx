@@ -33,19 +33,15 @@ the type of user provider used on SP (i.e. AD integration of .NET users) it may 
 <br />
 * Roles - what roles / rights has the user.<br />
 <br />
-
                 <hr style="color:#e2e2e2;"/>
-                <br />
-                <br />
                 <h3>
                     More Information</h3>
                 <br />
-UM_Introduction.html<br />
-User%20Manager.html<br />
-Group%20Manager.html<br />
-Roles%20Manager.html<br />
-User%20Import.html<br />
-                <br />
+<a href="../UM_Introduction.aspx" title="User Management Introduction " >User Management Introduction </a><br />
+<a href="User Manager.aspx" title=" User Manager " > User Manager </a><br />
+<a href="User_Account.aspx" title=" User Account Editing " > User Account Editing </a>	<br />
+<a href="Roles Manager.aspx" title=" Roles Manager " > Roles Manager </a><br />
+<a href="User Import.aspx" title=" User Import " > User Import </a>	<br />                <br />
             </div>
 <div id="fillerDiv" class="fillerDiv">&nbsp;</div></div></asp:Content>
 

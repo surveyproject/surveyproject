@@ -52,10 +52,10 @@
       <InstallInclude Include="**\App_Browsers\**" />
       <InstallInclude Include="**\App_Data\**" />
       <InstallInclude Include="**\Content\**" />
+      <InstallInclude Include="**\Errors\**" />
       <InstallInclude Include="**\fonts\**" />
       <InstallInclude Include="**\Images\**" />
       <InstallInclude Include="**\Scripts\**" />
-      <InstallInclude Include="**\SqlServerTypes\**" Exclude="**\SqlServerTypes\*.cs;**\SqlServerTypes\*.htm;" />
       <InstallInclude Include="**\XmlData\**" />
     </ItemGroup>    
 
@@ -75,6 +75,8 @@
     <CreateItem Include="$(MSBuildProjectDirectory)\Package\**\*.*">
       <Output TaskParameter="Include" ItemName="OutputContent" />
     </CreateItem>
+
+    <RemoveDir Directories ="$(MSBuildProjectDirectory)\Package\SqlServerTypes" />
 
     <!-- Create the Install zip package -->
     <Zip Files="@(OutputContent)" WorkingDirectory="$(MSBuildProjectDirectory)\Package" ZipFileName="$(PackageName)_$(Version)_Install.$(Extension)" />

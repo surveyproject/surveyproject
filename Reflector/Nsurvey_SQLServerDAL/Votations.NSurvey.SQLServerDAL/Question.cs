@@ -403,7 +403,7 @@ namespace Votations.NSurvey.SQLServerDAL
             command.Parameters.Add(new SqlParameter("@LayoutModeId", SqlDbType.Int, 4, "LayoutModeId"));
             command.Parameters.Add(new SqlParameter("@DisplayOrder", SqlDbType.Int, 4, "DisplayOrder"));
             command.Parameters.Add(new SqlParameter("@PageNumber", SqlDbType.Int, 4, "PageNumber"));
-            command.Parameters.Add(new SqlParameter("@QuestionText", SqlDbType.NVarChar, -1, "QuestionText"));
+            command.Parameters.Add(new SqlParameter("@QuestionText", SqlDbType.NVarChar, -1, "QuestionText")); // -1 = MAX
             command.Parameters.Add(new SqlParameter("@ColumnsNumber", SqlDbType.Int, 4, "ColumnsNumber"));
             command.Parameters.Add(new SqlParameter("@QuestionPipeAlias", SqlDbType.NVarChar, 0xff, "QuestionPipeAlias"));
             command.Parameters.Add(new SqlParameter("@MinSelectionRequired", SqlDbType.Int, 4, "MinSelectionRequired"));
@@ -413,7 +413,7 @@ namespace Votations.NSurvey.SQLServerDAL
             command.Parameters.Add(new SqlParameter("@QuestionID", SqlDbType.Int, 4, "QuestionId"));
             command.Parameters.Add(new SqlParameter("@QuestionIDText", SqlDbType.NVarChar, 255, "QuestionIDText"));
             command.Parameters.Add(new SqlParameter("@Alias", SqlDbType.NVarChar, 255, "Alias"));
-            command.Parameters.Add(new SqlParameter("@HelpText", SqlDbType.NVarChar, 255, "HelpText"));
+            command.Parameters.Add(new SqlParameter("@HelpText", SqlDbType.NVarChar, 4000, "HelpText"));
             command.Parameters.Add(new SqlParameter("@ShowHelpText", SqlDbType.Bit, 1, "ShowHelpText"));
             command.Parameters.Add(new SqlParameter("@QuestionGroupId", SqlDbType.Int, 4, "QuestionGroupId"));
 

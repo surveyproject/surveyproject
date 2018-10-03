@@ -48,12 +48,11 @@ type of user provider used (e.g. AD or Windows Account integration) it may be im
                 <h3>
                     More Information</h3>
                 <br />
-UM_Introduction.html<br />
-User%20Creation%20Tool.html<br />
-Group%20Manager.html<br />
-Roles%20Manager.html<br />
-User%20Import.html<br />
-                <br />
+<a href="../UM_Introduction.aspx" title="User Management Introduction " >User Management Introduction </a><br />
+<a href="User_Account.aspx" title=" User Account Editing " > User Account Editing </a>	<br />
+<a href="User Creation Tool.aspx" title=" User Creation Tool " > User Creation Tool </a>	<br />
+<a href="Roles Manager.aspx" title=" Roles Manager " > Roles Manager </a><br />
+<a href="User Import.aspx" title=" User Import " > User Import </a>	<br />                <br />
             </div>
 <div id="fillerDiv" class="fillerDiv">&nbsp;</div></div></asp:Content>
 

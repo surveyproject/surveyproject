@@ -85,6 +85,7 @@ Customised roles can be created to be assigned so a specific group of users or a
 
 <a href="new/Roles Manager.aspx" title=" Roles Manager " > Roles Manager </a>	<br />
 <a href="new/User Import.aspx" title=" User Import " > User Import </a>	<br />
+                <a href="new/User_Account.aspx" title=" User Account Editing " > User Account Editing </a>	<br />
 
 
 <br />

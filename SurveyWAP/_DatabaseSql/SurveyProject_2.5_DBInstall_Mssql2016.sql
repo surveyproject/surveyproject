@@ -1,4 +1,4 @@
-ï»¿USE [NameOfYourDatabase]
+--SURVEY PROJECT v2.5 - MsSql2016 / AZURE compatible DB script - Collation Turkish CI AS
 GO
 /****** Object:  UserDefinedTableType [dbo].[IntTableType]    Script Date: 19-8-2014 22:01:40 ******/
 CREATE TYPE [dbo].[IntTableType] AS TABLE(
@@ -18,7 +18,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 /*
-	Survey Project changes: copyright (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)	
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -43,26 +43,26 @@ GO
 */
 CREATE PROCEDURE [dbo].[vts_spAnswerAddNew]
 			@QuestionID int,
-			@AnswerText nvarchar(4000), 
-			@DefaultText nvarchar(4000), 
-			@AnswerPipeAlias nvarchar(255), 
-			@ImageURL nvarchar(1000), 
+			@AnswerText NVARCHAR(4000), 
+			@DefaultText NVARCHAR(4000), 
+			@AnswerPipeAlias NVARCHAR(255), 
+			@ImageURL NVARCHAR(1000), 
 			@AnswerTypeID int,
 			@Selected bit,
 			@RatePart bit,
 			@ScorePoint int,
 			@DisplayOrder int = null,
-			@RegularExpressionId int = null,
+			@RegularExpressionID int = null,
 			@Mandatory bit,
-			@AnswerIDText nvarchar(255),
-			@AnswerAlias nvarchar(255),			
-			@SliderRange nvarchar(3),
+			@AnswerIDText NVARCHAR(255),
+			@AnswerAlias NVARCHAR(255),			
+			@SliderRange NVARCHAR(3),
 			@SliderValue int,
 			@SliderMin int,
 			@SliderMax int,
 			@SliderAnimate bit,
 			@SliderStep int,
-			@CssClass nvarchar(50),
+			@CssClass NVARCHAR(50),
 			@AnswerID int OUTPUT
 AS
 
@@ -70,8 +70,8 @@ BEGIN TRANSACTION ADDNEWANSWER
 
 if @Selected <> 0
 BEGIN
--- Clear current selected status if we only one selection is possible for the question
-UPDATE vts_tbAnswer SET selected = 0 
+-- Clear current Selected status if we only one selection is possible for the question
+UPDATE vts_tbAnswer SET Selected = 0 
 WHERE AnswerID IN (
 	SELECT AnswerID FROM vts_tbAnswer 
 	INNER JOIN vts_tbQuestion
@@ -84,14 +84,14 @@ WHERE AnswerID IN (
 END 
 
 IF @DisplayOrder is null OR (@DisplayOrder is not null AND 
-	Exists(SELECT DisplayOrder FROM vts_tbAnswer WHERE DisplayOrder = @DisplayOrder AND questionID = @QuestionID))
+	Exists(SELECT DisplayOrder FROM vts_tbAnswer WHERE DisplayOrder = @DisplayOrder AND QuestionID = @QuestionID))
 BEGIN
-	select @DisplayOrder = ISNULL ( max(DisplayOrder) + 1 , 1)  FROM vts_tbAnswer WHERE questionID = @QuestionID
+	select @DisplayOrder = ISNULL ( max(DisplayOrder) + 1 , 1)  FROM vts_tbAnswer WHERE QuestionID = @QuestionID
 END
 
 
 INSERT INTO vts_tbAnswer 
-	( QuestionId, 
+	( QuestionID, 
 	AnswerText,
 	DefaultText, 
 	ImageURL, 
@@ -101,7 +101,7 @@ INSERT INTO vts_tbAnswer
 	ScorePoint,
 	DisplayOrder,
 	AnswerPipeAlias,
-	RegularExpressionId,
+	RegularExpressionID,
 	Mandatory,
 	AnswerIDText,
 	AnswerAlias,
@@ -114,7 +114,7 @@ INSERT INTO vts_tbAnswer
 	CssClass
 	)
 VALUES
-	 (@QuestionId, 
+	 (@QuestionID, 
 	@AnswerText, 
 	@DefaultText, 
 	@ImageURL, 
@@ -124,7 +124,7 @@ VALUES
 	@ScorePoint,
 	@DisplayOrder,
 	@AnswerPipeAlias,
-	@RegularExpressionId,
+	@RegularExpressionID,
 	@Mandatory,
 	@AnswerIDText,
 	@AnswerAlias,
@@ -138,19 +138,19 @@ VALUES
 	
 	)
 
-set @AnswerID = scope_identity()
+set @AnswerID = SCOPE_IDENTITY()
 
 COMMIT TRANSACTION ADDNEWANSWER
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[vts_spAnswerConnectionCloneByQuestionId]    Script Date: 19-8-2014 22:01:40 ******/
+/****** Object:  StoredProcedure [dbo].[vts_spAnswerConnectionCloneByQuestionID]    Script Date: 19-8-2014 22:01:40 ******/
 SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -170,25 +170,25 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 */
-CREATE PROCEDURE [dbo].[vts_spAnswerConnectionCloneByQuestionId] 
+CREATE PROCEDURE [dbo].[vts_spAnswerConnectionCloneByQuestionID] 
 	@QuestionID int,
-	@ClonedQuestionId int  
+	@ClonedQuestionID int  
 AS
 
 -- Clone the answer publishers / subscribers 
 INSERT INTO vts_tbAnswerConnection
-	(PublisherAnswerId,
+	(PublisherAnswerID,
 	SubscriberAnswerID)
 SELECT      
-	PublisherAnswerId = 
-	(select answerId from vts_tbAnswer WHERE QuestionId = @ClonedQuestionId AND 
-		DisplayOrder = (select DisplayOrder FROM vts_tbAnswer WHERE AnswerId = ASB.PublisherAnswerId)),
-	SubscriberAnswerId = 
-	(select answerId from vts_tbAnswer WHERE QuestionId = @ClonedQuestionId AND 
-		DisplayOrder = (select DisplayOrder FROM vts_tbAnswer WHERE AnswerId = ASB.SubscriberAnswerId))
+	PublisherAnswerID = 
+	(select AnswerID from vts_tbAnswer WHERE QuestionID = @ClonedQuestionID AND 
+		DisplayOrder = (select DisplayOrder FROM vts_tbAnswer WHERE AnswerID = ASB.PublisherAnswerID)),
+	SubscriberAnswerID = 
+	(select AnswerID from vts_tbAnswer WHERE QuestionID = @ClonedQuestionID AND 
+		DisplayOrder = (select DisplayOrder FROM vts_tbAnswer WHERE AnswerID = ASB.SubscriberAnswerID))
 FROM vts_tbAnswerConnection ASB
 INNER JOIN vts_tbAnswer A
-	ON ASB.PublisherAnswerId = A.AnswerId
+	ON ASB.PublisherAnswerID = A.AnswerID
 WHERE QuestionID = @QuestionID
 
 
@@ -200,7 +200,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -223,13 +223,13 @@ GO
 /// Adds a new subscriber to the publisher
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spAnswerConnectionSubscribeToPublisher] @PublisherAnswerId int, @SubscriberAnswerId int AS
+CREATE PROCEDURE [dbo].[vts_spAnswerConnectionSubscribeToPublisher] @PublisherAnswerID int, @SubscriberAnswerID int AS
 
-SELECT PublisherAnswerId FROM vts_tbAnswerConnection WHERE PublisherAnswerId = @PublisherAnswerId AND SubscriberAnswerID = @SubscriberAnswerID
+SELECT PublisherAnswerID FROM vts_tbAnswerConnection WHERE PublisherAnswerID = @PublisherAnswerID AND SubscriberAnswerID = @SubscriberAnswerID
 
-IF @@rowcount = 0
+IF @@RowCount = 0
 BEGIN
-	INSERT INTO vts_tbAnswerConnection (PublisherAnswerId, SubscriberAnswerID) VALUES (@PublisherAnswerID, @SubscriberAnswerId)
+	INSERT INTO vts_tbAnswerConnection (PublisherAnswerID, SubscriberAnswerID) VALUES (@PublisherAnswerID, @SubscriberAnswerID)
 END
 
 
@@ -241,7 +241,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -264,9 +264,9 @@ GO
 /// Unsubscribes from the publisher
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spAnswerConnectionUnSubscribeFromPublisher] @PublisherAnswerId int, @SubscriberAnswerId int AS
+CREATE PROCEDURE [dbo].[vts_spAnswerConnectionUnSubscribeFromPublisher] @PublisherAnswerID int, @SubscriberAnswerID int AS
 
-DELETE FROM vts_tbAnswerConnection WHERE PublisherAnswerId = @PublisherAnswerId AND SubscriberAnswerID = @SubscriberAnswerID
+DELETE FROM vts_tbAnswerConnection WHERE PublisherAnswerID = @PublisherAnswerID AND SubscriberAnswerID = @SubscriberAnswerID
 
 
 
@@ -277,7 +277,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -299,7 +299,7 @@ GO
 /// <summary>
 /// Delete an answer
 /// </summary>
-/// <param name="@AnswerID">
+/// <param Name="@AnswerID">
 /// Answer to delete
 /// </param>
 */
@@ -352,7 +352,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -376,7 +376,7 @@ GO
 /// </summary>
 */
 CREATE PROCEDURE [dbo].[vts_spAnswerGetAnswerTypeMode]
-		@AnswerId int
+		@AnswerID int
 AS
 
 SELECT 
@@ -384,7 +384,7 @@ SELECT
 FROM 
 	vts_tbAnswer
 INNER JOIN vts_tbAnswerType 
-	ON vts_tbAnswer.AnswerTypeId = vts_tbAnswerType.AnswerTypeID
+	ON vts_tbAnswer.AnswerTypeID = vts_tbAnswerType.AnswerTypeID
 WHERE 
 	AnswerID = @AnswerID
 
@@ -421,15 +421,15 @@ GO
 /// <summary>
 /// Get all question's answers
 /// </summary>
-/// <param name="@QuestionID">
+/// <param Name="@QuestionID">
 /// ID of the question from which we want the answers
 /// </param>
 */
-CREATE PROCEDURE [dbo].[vts_spAnswerGetDetails] @AnswerID int, @LanguageCode nvarchar(50) AS
+CREATE PROCEDURE [dbo].[vts_spAnswerGetDetails] @AnswerID int, @LanguageCode NVARCHAR(50) AS
 SELECT 
 	AnswerID,
 	vts_tbAnswer.AnswerTypeID,
-	QuestionId,
+	QuestionID,
 	AnswerText = 
 		CASE @LanguageCode
 		WHEN null THEN
@@ -437,10 +437,10 @@ SELECT
 		WHEN '' THEN
 			AnswerText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbAnswer.AnswerID AND
-			LanguageMessageTypeId = 1 AND
+			LanguageItemID = vts_tbAnswer.AnswerID AND
+			LanguageMessageTypeID = 1 AND
 			LanguageCode = @LanguageCode), AnswerText)		
 		END,
 		AnswerAlias = 
@@ -450,10 +450,10 @@ SELECT
 		WHEN '' THEN
 			AnswerAlias
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbAnswer.AnswerID AND
-			LanguageMessageTypeId = 13 AND
+			LanguageItemID = vts_tbAnswer.AnswerID AND
+			LanguageMessageTypeID = 13 AND
 			LanguageCode = @LanguageCode), AnswerAlias)		
 		END,
 	ImageURL, 
@@ -468,10 +468,10 @@ SELECT
 		WHEN '' THEN
 			DefaultText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbAnswer.AnswerID AND
-			LanguageMessageTypeId = 2 AND
+			LanguageItemID = vts_tbAnswer.AnswerID AND
+			LanguageMessageTypeID = 2 AND
 			LanguageCode = @LanguageCode), null)		
 		END,
 	FieldWidth,
@@ -489,7 +489,7 @@ SELECT
 	Mandatory,
 	RegExpression,
 	RegExMessage,
-	vts_tbAnswer.RegularExpressionId,
+	vts_tbAnswer.RegularExpressionID,
 	AnswerIDText,
 	SliderRange,
 	SliderValue,
@@ -503,7 +503,7 @@ FROM vts_tbAnswer
 INNER JOIN vts_tbAnswerType 
 	ON vts_tbAnswer.AnswerTypeID = vts_tbAnswerType.AnswerTypeID
 LEFT JOIN vts_tbRegularExpression
-	ON vts_tbAnswer.RegularExpressionId = vts_tbRegularExpression.RegularExpressionId
+	ON vts_tbAnswer.RegularExpressionID = vts_tbRegularExpression.RegularExpressionID
 WHERE AnswerID=@AnswerID
 
 
@@ -514,7 +514,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -537,13 +537,13 @@ GO
 /// Get a list of all answer that can be subscribed to
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spAnswerGetPublishersList] @AnswerId int AS
+CREATE PROCEDURE [dbo].[vts_spAnswerGetPublishersList] @AnswerID int AS
 
 DECLARE @PageNumber int,
-	@QuestionId int,
-	@SurveyId int
+	@QuestionID int,
+	@SurveyID int
 
-SELECT  @SurveyId = Q.SurveyId, @PageNumber = Q.PageNumber, @QuestionId = Q.QuestionId
+SELECT  @SurveyID = Q.SurveyID, @PageNumber = Q.PageNumber, @QuestionID = Q.QuestionID
 FROM vts_tbAnswer A
 INNER JOIN vts_tbQuestion Q
 	ON A.QuestionID = Q.QuestionID
@@ -559,10 +559,10 @@ INNER JOIN vts_tbQuestion Q
 INNER JOIN vts_tbAnswerType 
 	ON vts_tbAnswerType.AnswerTypeID = A.AnswerTypeID
 WHERE A.AnswerID<>@AnswerID AND 
-	A.AnswerID NOT IN ( Select PublisherAnswerId FROM vts_tbAnswerConnection WHERE SubscriberAnswerId = @AnswerId) AND
+	A.AnswerID NOT IN ( Select PublisherAnswerID FROM vts_tbAnswerConnection WHERE SubscriberAnswerID = @AnswerID) AND
 	Q.PageNumber = @PageNumber AND
-	@QuestionId = Q.QuestionId AND 
-	(Q.SurveyID = @SurveyId OR @SurveyID is null) AND
+	@QuestionID = Q.QuestionID AND 
+	(Q.SurveyID = @SurveyID OR @SurveyID is null) AND
 	vts_tbAnswerType.TypeMode & 16 > 1
 
 
@@ -574,7 +574,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -596,7 +596,7 @@ GO
 /// <summary>
 /// Get all question's answers
 /// </summary>
-/// <param name="@QuestionID">
+/// <param Name="@QuestionID">
 /// ID of the question from which we want the answers
 /// </param>
 */
@@ -617,7 +617,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -640,7 +640,7 @@ GO
 /// Get a list of all answers to which the answer has subscribed to receive answer events
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spAnswerGetSubscriptionList] @AnswerId int AS
+CREATE PROCEDURE [dbo].[vts_spAnswerGetSubscriptionList] @AnswerID int AS
 
 SELECT 
 	AnswerID,
@@ -648,7 +648,7 @@ SELECT
 FROM vts_tbAnswer 
 WHERE AnswerID in 
 (SELECT 
-	PublisherAnswerId as AnswerID
+	PublisherAnswerID as AnswerID
 FROM vts_tbAnswerConnection
 WHERE SubscriberAnswerID=@AnswerID)
 
@@ -661,7 +661,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -683,26 +683,26 @@ GO
 /// <summary>
 /// Adds a new column answer to a matrix
 /// </summary>
-/// <param name="@QuestionID">
-/// The id of the parent matrix question to which you will add the column
+/// <param Name="@QuestionID">
+/// The ID of the parent matrix question to which you will add the column
 /// </param>
-/// <param name="@AnswerText">
+/// <param Name="@AnswerText">
 /// The answer text
 /// </param>
-/// <param name="@ImageURL">
+/// <param Name="@ImageURL">
 /// Image that will be associated with the answer
 /// </param>
-/// <param name="@AnswerTypeID">
+/// <param Name="@AnswerTypeID">
 /// The type of answer we want to create
 /// </param>
-/// <param name="@AnswerID">
-/// The created answer's id
+/// <param Name="@AnswerID">
+/// The created answer's ID
 /// </param>
 */
 CREATE PROCEDURE [dbo].[vts_spAnswerMatrixAddNew] 
 			@ParentQuestionID int, 
-			@AnswerText nvarchar(4000), 
-			@ImageURL nvarchar(1000), 
+			@AnswerText NVARCHAR(4000), 
+			@ImageURL NVARCHAR(1000), 
 			@AnswerTypeID int,
 			@AnswerID int OUTPUT
 AS
@@ -710,21 +710,21 @@ BEGIN TRAN InsertMatrixColumn
 
 DECLARE @DisplayOrder int
 
-select @DisplayOrder = ISNULL ( max(DisplayOrder) + 1 , 1)  FROM vts_tbAnswer WHERE questionID = @ParentQuestionID
+select @DisplayOrder = ISNULL ( max(DisplayOrder) + 1 , 1)  FROM vts_tbAnswer WHERE QuestionID = @ParentQuestionID
 
 INSERT INTO vts_tbAnswer 
-	( QuestionId, 
+	( QuestionID, 
 	AnswerText,
 	ImageURL,
 	DisplayOrder,
 	AnswerTypeID)
 VALUES
-	 (@ParentQuestionId, 
+	 (@ParentQuestionID, 
 	@AnswerText, 
 	@ImageURL,
 	@DisplayOrder,
 	@AnswerTypeID)
-set @AnswerID = scope_identity()
+set @AnswerID = SCOPE_IDENTITY()
 exec vts_spAnswerMatrixChildAddNew 
 			@ParentQuestionID, 
 			@AnswerText, 
@@ -742,7 +742,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -762,30 +762,30 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 /// <summary>
-/// Insert  the answers for all the child questions of the parentQuestionID
+/// Insert  the answers for all the child questions of the ParentQuestionID
 /// </summary>
-/// <param name="@QuestionID">
-/// The id of the parent matrix question to get the child question ids
+/// <param Name="@QuestionID">
+/// The ID of the parent matrix question to get the child question IDs
 /// </param>
-/// <param name="@AnswerText">
+/// <param Name="@AnswerText">
 /// The answer text
 /// </param>
-/// <param name="@ImageURL">
+/// <param Name="@ImageURL">
 /// Image that will be associated with the answer
 /// </param>
-/// <param name="@AnswerTypeID">
+/// <param Name="@AnswerTypeID">
 /// The type of answer we want to create
 /// </param>
 */
 CREATE PROCEDURE [dbo].[vts_spAnswerMatrixChildAddNew] 
 			@ParentQuestionID int, 
-			@AnswerText nvarchar(4000), 
-			@ImageURL nvarchar(1000),
+			@AnswerText NVARCHAR(4000), 
+			@ImageURL NVARCHAR(1000),
 			@DisplayOrder int, 
 			@AnswerTypeID int 
 AS
 INSERT INTO vts_tbAnswer  
-	(QuestionId, 
+	(QuestionID, 
 	AnswerText,
 	ImageURL,
 	AnswerTypeID,
@@ -807,7 +807,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -825,7 +825,7 @@ GO
 /// <summary>
 /// Delete a columns of the given matrix
 /// </summary>
-/// <param name="@AnswerID">
+/// <param Name="@AnswerID">
 /// Answer to delete from the matrix
 /// </param>
 */
@@ -864,7 +864,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -886,29 +886,29 @@ GO
 /// <summary>
 /// Updates the settings of a matrix column
 /// </summary>
-/// <param name="@AnswerID">
+/// <param Name="@AnswerID">
 /// The answer to update
 /// </param>
-/// <param name="@AnswerText">
+/// <param Name="@AnswerText">
 /// The answer text
 /// </param>
-/// <param name="@ImageURL">
+/// <param Name="@ImageURL">
 /// Image that will be associated with the answer
 /// </param>
-/// <param name="@AnswerTypeID">
+/// <param Name="@AnswerTypeID">
 /// The type of answer we want to create
 /// </param>
-/// <param name="@RatePart">
+/// <param Name="@RatePart">
 /// Is this a rating parameter ?
 /// </param>*/
 CREATE PROCEDURE [dbo].[vts_spAnswerMatrixUpdate] 
 			@AnswerID int, 
-			@AnswerText nvarchar(4000), 
-			@ImageURL nvarchar(1000), 
+			@AnswerText NVARCHAR(4000), 
+			@ImageURL NVARCHAR(1000), 
 			@AnswerTypeID int,
 			@RatePart bit,
 			@Mandatory bit,
-			@LanguageCode nvarchar(50)
+			@LanguageCode NVARCHAR(50)
 AS
 BEGIN TRAN UpdateChildAnswers
 
@@ -956,12 +956,12 @@ BEGIN
 			OR vts_tbQuestion.QuestionID = tbParentAnswer.QuestionID)
 
 	OPEN GetChildAnswers
-	FETCH NEXT FROM GetChildAnswers INTO @ChildAnswerId
+	FETCH NEXT FROM GetChildAnswers INTO @ChildAnswerID
 	WHILE @@FETCH_STATUS = 0
 	BEGIN      
 		-- Updates localized text
-		exec vts_spMultiLanguageTextUpdate @ChildAnswerId, @LanguageCode, 1, @AnswerText
-		FETCH NEXT FROM GetChildAnswers INTO @ChildAnswerId
+		exec vts_spMultiLanguageTextUpdate @ChildAnswerID, @LanguageCode, 1, @AnswerText
+		FETCH NEXT FROM GetChildAnswers INTO @ChildAnswerID
 	END 
 	CLOSE GetChildAnswers
 	DEALLOCATE GetChildAnswers
@@ -979,7 +979,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -1001,7 +1001,7 @@ GO
 /// <summary>
 ///  Moves an answer's positions down 
 /// </summary>
-/// <param name="@AnswerID">
+/// <param Name="@AnswerID">
 /// ID of the answer to move one position down
 /// </param>
 */
@@ -1027,7 +1027,7 @@ WHERE
 	DisplayOrder > @OldDisplayOrder
 	ORDER BY DisplayOrder ASC
 -- Is this already the last answer
-IF @@ROWCOUNT <>0
+IF @@RowCount <>0
 BEGIN
 	-- Move up previous answer
 	UPDATE vts_tbAnswer
@@ -1048,7 +1048,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -1070,7 +1070,7 @@ GO
 /// <summary>
 ///  Moves an answer's positions up 
 /// </summary>
-/// <param name="@AnswerID">
+/// <param Name="@AnswerID">
 /// ID of the answer to move one position up
 /// </param>
 */
@@ -1096,7 +1096,7 @@ WHERE
 	DisplayOrder < @OldDisplayOrder
 	ORDER BY DisplayOrder DESC
 -- Is this the first answer
-IF @@ROWCOUNT <>0
+IF @@RowCount <>0
 BEGIN
 	-- Move down previous answer
 	UPDATE vts_tbAnswer
@@ -1117,7 +1117,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -1141,7 +1141,7 @@ GO
 /// </summary>
 */
 CREATE PROCEDURE [dbo].[vts_spAnswerPropertyDelete]
-		@AnswerId int
+		@AnswerID int
 AS
 
 DELETE FROM 	vts_tbAnswerProperty WHERE AnswerID = @AnswerID
@@ -1155,7 +1155,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -1179,7 +1179,7 @@ GO
 /// </summary>
 */
 CREATE PROCEDURE [dbo].[vts_spAnswerPropertyRestore]
-		@AnswerId int
+		@AnswerID int
 AS
 
 SELECT 
@@ -1198,7 +1198,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -1222,19 +1222,19 @@ GO
 /// </summary>
 */
 CREATE PROCEDURE [dbo].[vts_spAnswerPropertyStore]
-		@AnswerId int, 
+		@AnswerID int, 
 		@Properties image 
 AS
 
 DELETE FROM vts_tbAnswerProperty where AnswerID = @AnswerID
-INSERT INTO vts_tbAnswerProperty(AnswerId, Properties) VALUES (@AnswerID, @Properties)
+INSERT INTO vts_tbAnswerProperty(AnswerID, Properties) VALUES (@AnswerID, @Properties)
 
-select scope_identity()
+select SCOPE_IDENTITY()
 
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[vts_spAnswersCloneByQuestionId]    Script Date: 26-4-2016 9:44:50 ******/
+/****** Object:  StoredProcedure [dbo].[vts_spAnswersCloneByQuestionID]    Script Date: 26-4-2016 9:44:50 ******/
 SET ANSI_NULLS OFF
 GO
 
@@ -1258,9 +1258,9 @@ GO
 	along with this program; if not, write to the Free Software
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
-CREATE PROCEDURE [dbo].[vts_spAnswersCloneByQuestionId] 
+CREATE PROCEDURE [dbo].[vts_spAnswersCloneByQuestionID] 
 	@QuestionID int,
-	@ClonedQuestionId int  
+	@ClonedQuestionID int  
 AS
 BEGIN TRAN CloneAnswers
 -- Clone the answer
@@ -1275,7 +1275,7 @@ INSERT INTO vts_tbAnswer
 	DefaultText,
 	ScorePoint,
 	AnswerPipeAlias,
-	RegularExpressionId,
+	RegularExpressionID,
 	Mandatory,
 	AnswerIDText,
 	AnswerAlias,
@@ -1297,7 +1297,7 @@ SELECT
 	DefaultText,
 	ScorePoint,
 	AnswerPipeAlias,
-	RegularExpressionId,
+	RegularExpressionID,
 	Mandatory,
 	AnswerIDText,
 	AnswerAlias,
@@ -1315,29 +1315,29 @@ INSERT INTO vts_tbMultiLanguageText
 	(LanguageItemID, LanguageCode, LanguageMessageTypeID, ItemText)
 SELECT      
 	LanguageItemID = 
-	(select answerId from vts_tbAnswer WHERE QuestionId = @ClonedQuestionId AND 
-		DisplayOrder = (select DisplayOrder FROM vts_tbAnswer WHERE AnswerId = A.AnswerID)),
+	(select AnswerID from vts_tbAnswer WHERE QuestionID = @ClonedQuestionID AND 
+		DisplayOrder = (select DisplayOrder FROM vts_tbAnswer WHERE AnswerID = A.AnswerID)),
 	LanguageCode, LanguageMessageTypeID, ItemText 
 FROM vts_tbMultiLanguageText
 INNER JOIN vts_tbAnswer A
-	ON vts_tbMultiLanguageText.LanguageItemID = A.AnswerId
+	ON vts_tbMultiLanguageText.LanguageItemID = A.AnswerID
 WHERE QuestionID = @QuestionID AND (LanguageMessageTypeID = 1 OR LanguageMessageTypeID = 2 OR LanguageMessageTypeID = 13)
 
 
 INSERT INTO vts_tbAnswerProperty
-	(AnswerId,
+	(AnswerID,
 	Properties)
 SELECT      
-	AnswerId = 
-	(select answerId from vts_tbAnswer WHERE QuestionId = @ClonedQuestionId AND 
-		DisplayOrder = (select DisplayOrder FROM vts_tbAnswer WHERE AnswerId = A.AnswerID)),
+	AnswerID = 
+	(select AnswerID from vts_tbAnswer WHERE QuestionID = @ClonedQuestionID AND 
+		DisplayOrder = (select DisplayOrder FROM vts_tbAnswer WHERE AnswerID = A.AnswerID)),
 	Properties 
 FROM vts_tbAnswerProperty
 INNER JOIN vts_tbAnswer A
-	ON vts_tbAnswerProperty.AnswerID = A.AnswerId
+	ON vts_tbAnswerProperty.AnswerID = A.AnswerID
 WHERE QuestionID = @QuestionID
 
-exec vts_spAnswerConnectionCloneByQuestionId @QuestionID, @ClonedQuestionId
+exec vts_spAnswerConnectionCloneByQuestionID @QuestionID, @ClonedQuestionID
 
 COMMIT TRAN CloneAnswers
 
@@ -1349,7 +1349,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -1375,8 +1375,8 @@ GO
 CREATE PROCEDURE [dbo].[vts_spAnswerTypeAddNew]
 			@UserID int, 
 			@Description varchar(200), 
-			@XMLDataSource varchar(200) = null,
-			@DataSource nvarchar(4000) = null, 
+			@XMLDatasource varchar(200) = null,
+			@DataSource NVARCHAR(4000) = null, 
 			@TypeMode int = 0,
 			@FieldWidth int = 0,
 			@FieldHeight int = 0,
@@ -1395,7 +1395,7 @@ SELECT
 FROM vts_tbAnswerType
 WHERE
 	Description = @Description AND
-	(XMLDataSource = @XMLDataSource OR XMLDataSource is null) AND
+	(XMLDatasource = @XMLDatasource OR XMLDatasource is null) AND
 	(DataSource = @DataSource OR DataSource is null) AND
 	TypeMode = @TypeMode AND
 	(FieldWidth = @FieldWidth OR FieldWidth is null) AND
@@ -1408,11 +1408,11 @@ WHERE
 	TypeNameSpace = @TypeNameSpace
 
 
-if @@rowcount = 0
+if @@RowCount = 0
 BEGIN
 	INSERT INTO vts_tbAnswerType
 		(Description, 
-		XMLDataSource,
+		XMLDatasource,
 		DataSource,
 		TypeMode,
 		FieldWidth,
@@ -1426,7 +1426,7 @@ BEGIN
 		TypeNameSpace)
 	VALUES
 		 (@Description, 
-		@XMLDataSource,
+		@XMLDatasource,
 		@DataSource,
 		@TypeMode,
 		@FieldWidth,
@@ -1438,10 +1438,10 @@ BEGIN
 		@JavascriptCode,
 		@TypeAssembly,
 		@TypeNameSpace)
-	set @AnswerTypeID = scope_identity()
-	IF @UserId > 0
+	set @AnswerTypeID = SCOPE_IDENTITY()
+	IF @UserID > 0
 	BEGIN
-		exec vts_spUserAnswerTypeAssignUser @AnswerTypeID, @UserId
+		exec vts_spUserAnswerTypeAssignUser @AnswerTypeID, @UserID
 	END
 END
 
@@ -1454,7 +1454,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -1474,7 +1474,7 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 /// <summary>
-/// Deletes the given answer type id
+/// Deletes the given answer type ID
 /// </summary>
 */
 CREATE PROCEDURE [dbo].[vts_spAnswerTypeDelete] @AnswerTypeID int AS
@@ -1489,7 +1489,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -1513,7 +1513,7 @@ CREATE PROCEDURE [dbo].[vts_spAnswerTypeGetAll] AS
 SELECT 
 	AnswerTypeID,
 	Description,
-	XMLDataSource,
+	XMLDatasource,
 	DataSource,
 	TypeMode,
 	FieldWidth,
@@ -1535,7 +1535,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -1555,14 +1555,14 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 /// <summary>
-/// Retrieves all the infos of the given answer type id
+/// Retrieves all the infos of the given answer type ID
 /// </summary>
 */
 CREATE PROCEDURE [dbo].[vts_spAnswerTypeGetDetails] @AnswerTypeID int AS
 SELECT 
 	AnswerTypeID,
 	Description, 
-	XMLDataSource,
+	XMLDatasource,
 	DataSource,
 	TypeMode,
 	FieldWidth,
@@ -1587,7 +1587,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -1624,7 +1624,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -1644,7 +1644,7 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 */
-CREATE PROCEDURE [dbo].[vts_spAnswerTypeGetEditableListForUser] @UserId int AS
+CREATE PROCEDURE [dbo].[vts_spAnswerTypeGetEditableListForUser] @UserID int AS
 SELECT 
 	vts_tbAnswerType.AnswerTypeID,
 	vts_tbAnswerType.Description
@@ -1663,7 +1663,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -1698,7 +1698,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -1718,7 +1718,7 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 */
-CREATE PROCEDURE [dbo].[vts_spAnswerTypeGetListForUser] @UserId int, @SurveyId int AS
+CREATE PROCEDURE [dbo].[vts_spAnswerTypeGetListForUser] @UserID int, @SurveyID int AS
 SELECT 
 	distinct vts_tbAnswerType.AnswerTypeID,
 	vts_tbAnswerType.Description
@@ -1728,11 +1728,11 @@ LEFT JOIN vts_tbUserAnswerType
 WHERE vts_tbUserAnswerType.UserID = @UserID OR 
 	vts_tbAnswerType.BuiltIn<>0 OR 
 	vts_tbAnswerType.AnswerTypeID in 
-		(SELECT AnswerTypeId 
+		(SELECT AnswerTypeID 
 		FROM vts_tbAnswer 
 		INNER JOIN vts_tbQuestion 
-			ON vts_tbAnswer.QuestionId = vts_tbQuestion.QuestionId 
-		WHERE SurveyId = @SurveyId)
+			ON vts_tbAnswer.QuestionID = vts_tbQuestion.QuestionID 
+		WHERE SurveyID = @SurveyID)
 ORDER BY Description
 
 
@@ -1744,7 +1744,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -1780,7 +1780,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -1822,7 +1822,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -1848,8 +1848,8 @@ GO
 CREATE PROCEDURE [dbo].[vts_spAnswerTypeUpdate]
 			@AnswerTypeID int, 
 			@Description varchar(200), 
-			@XMLDataSource varchar(200),
-			@DataSource nvarchar(4000),
+			@XMLDatasource varchar(200),
+			@DataSource NVARCHAR(4000),
 			@TypeMode int = 0,
 			@FieldWidth int = 0,
 			@FieldHeight int = 0,
@@ -1863,7 +1863,7 @@ CREATE PROCEDURE [dbo].[vts_spAnswerTypeUpdate]
 AS
 UPDATE vts_tbAnswerType SET
 	Description = @Description, 
-	XMLDataSource = @XMLDataSource,
+	XMLDatasource = @XMLDatasource,
 	DataSource = @DataSource,
 	TypeMode = @TypeMode,
 	FieldWidth = @FieldWidth,
@@ -1913,33 +1913,33 @@ GO
 */
 CREATE PROCEDURE [dbo].[vts_spAnswerUpdate] 
 			@AnswerID int,
-			@AnswerText nvarchar(4000), 
-			@DefaultText nvarchar(4000), 
-			@ImageURL nvarchar(1000), 
-			@AnswerPipeAlias nvarchar(255),
+			@AnswerText NVARCHAR(4000), 
+			@DefaultText NVARCHAR(4000), 
+			@ImageURL NVARCHAR(1000), 
+			@AnswerPipeAlias NVARCHAR(255),
 			@AnswerTypeID int,
 			@Selected bit,
 			@RatePart bit,
 			@ScorePoint int,
-			@RegularExpressionId int = null,
+			@RegularExpressionID int = null,
 			@Mandatory bit,
-			@LanguageCode nvarchar(50) = null,
-			@AnswerIDText nvarchar(255),
-			@AnswerAlias nvarchar(255),		
-			@SliderRange nvarchar(3),
+			@LanguageCode NVARCHAR(50) = null,
+			@AnswerIDText NVARCHAR(255),
+			@AnswerAlias NVARCHAR(255),		
+			@SliderRange NVARCHAR(3),
 			@SliderValue int,
 			@SliderMin int,
 			@SliderMax int,
 			@SliderAnimate bit,
 			@SliderStep int,
-			@CssClass nvarchar(50)
+			@CssClass NVARCHAR(50)
 AS
 BEGIN TRAN UpdateAnswer
 
 if @Selected <> 0
 BEGIN
--- Clear current selected status if we only one selection is possible for the question
-UPDATE vts_tbAnswer SET selected = 0 
+-- Clear current Selected status if we only one selection is possible for the question
+UPDATE vts_tbAnswer SET Selected = 0 
 WHERE AnswerID IN (
 	SELECT AnswerID FROM vts_tbAnswer 
 	INNER JOIN vts_tbQuestion
@@ -1957,7 +1957,7 @@ SET	ImageURL = @ImageURL,
 	Selected = @Selected,
 	ScorePoint = @ScorePoint,
 	AnswerPipeAlias = @AnswerPipeAlias,
-	RegularExpressionId = @RegularExpressionId,
+	RegularExpressionID = @RegularExpressionID,
 	Mandatory = @Mandatory,
 	AnswerIDText = @AnswerIDText,
 	SliderRange = @SliderRange,
@@ -1997,7 +1997,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -2025,7 +2025,7 @@ SELECT @EmailID = EmailID FROM vts_tbEmail WHERE Email = @Email
 if @EmailID is null
 BEGIN
 	INSERT INTO vts_tbEmail (Email) VALUES (@Email)
-	set @EmailId = Scope_identity()
+	set @EmailID = SCOPE_IDENTITY()
 END
 
 
@@ -2037,7 +2037,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -2060,12 +2060,12 @@ CREATE PROCEDURE [dbo].[vts_spEmailNotificationSettingsAddNew]
 					@SurveyID int,
 					@EmailFrom varchar(255),
 					@EmailTo varchar(255),
-					@EmailSubject nvarchar(255)
+					@EmailSubject NVARCHAR(255)
  AS
 
 UPDATE vts_tbEmailNotificationSettings SET EmailFrom=@EmailFrom, EmailTo=@EmailTo, EmailSubject = @EmailSubject WHERE SurveyID = @SurveyID
 
-if @@rowcount = 0
+if @@RowCount = 0
 BEGIN
 	INSERT INTO vts_tbEmailNotificationSettings (SurveyID, EmailFrom, EmailTo, EmailSubject) 
 	VALUES (@SurveyID, @EmailFRom, @EmailTo, @EmailSubject)
@@ -2080,7 +2080,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -2115,7 +2115,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -2140,9 +2140,9 @@ GO
 */
 CREATE PROCEDURE [dbo].[vts_spFileAddNew] 
 		@GroupGuid varchar(40), 
-		@FileName nvarchar(1024), 
+		@FileName NVARCHAR(1024), 
 		@FileSize int, 
-		@FileType nvarchar(1024), 
+		@FileType NVARCHAR(1024), 
 		@FileData image,
 		@UploadedFileTimeOut int = 24,
 		@SessionUploadedFileTimeOut int = 336
@@ -2154,7 +2154,7 @@ exec vts_spFileDeleteExpired @UploadedFileTimeOut, @SessionUploadedFileTimeOut
 
 INSERT INTO vts_tbFile(GroupGuid, FileName, FileSize, FileType, FileData) VALUES (@GroupGuid, @FileName, @FileSize, @FileType, @FileData)
 
-select scope_identity()
+select SCOPE_IDENTITY()
 
 
 
@@ -2165,7 +2165,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -2189,14 +2189,14 @@ GO
 /// </summary>
 */
 CREATE PROCEDURE [dbo].[vts_spFileDelete]
-		@FileId int,
+		@FileID int,
 		@GroupGuid varchar(40)
 AS
 
 DELETE
 	vts_tbFile
 WHERE 
-	FileId=@FileId AND GroupGuid = @GroupGuid
+	FileID=@FileID AND GroupGuid = @GroupGuid
 
 
 
@@ -2207,7 +2207,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -2236,13 +2236,13 @@ CREATE PROCEDURE [dbo].[vts_spFileDeleteExpired]
 		@SessionUploadedFileTimeOut int
 AS
 
-DELETE  FROM vts_tbFile WHERE FileId IN (
-	SELECT f.FileId FROM vts_tbFile f WHERE 
+DELETE  FROM vts_tbFile WHERE FileID IN (
+	SELECT f.FileID FROM vts_tbFile f WHERE 
 	GetDate()>DateAdd(hh, @UploadedFileTimeOut,f.SaveDate) AND 
 	NOT EXISTS (SELECT VoterID FROM vts_tbVoterAnswers WHERE AnswerText like f.GroupGuid))
 
-DELETE  FROM vts_tbFile WHERE FileId IN (
-	SELECT f.FileId FROM vts_tbFile f WHERE 
+DELETE  FROM vts_tbFile WHERE FileID IN (
+	SELECT f.FileID FROM vts_tbFile f WHERE 
 	GetDate()>DateAdd(hh, @SessionUploadedFileTimeOut,f.SaveDate) AND 
 	EXISTS 
 	(SELECT vts_tbVoterAnswers.VoterID 
@@ -2258,7 +2258,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -2282,7 +2282,7 @@ GO
 /// </summary>
 */
 CREATE PROCEDURE [dbo].[vts_spFileGetData]
-		@FileId int,
+		@FileID int,
 		@GroupGuid varchar(40)
 AS
 
@@ -2291,7 +2291,7 @@ SELECT
 FROM 
 	vts_tbFile 
 WHERE 
-	FileId=@FileId AND GroupGuid = @GroupGuid
+	FileID=@FileID AND GroupGuid = @GroupGuid
 
 
 
@@ -2302,7 +2302,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -2326,11 +2326,11 @@ GO
 /// </summary>
 */
 CREATE PROCEDURE [dbo].[vts_spFileGetDetails]
-		@FileId int,
+		@FileID int,
 		@GroupGuid varchar(40)
 AS
 
-SELECT FileId, GroupGuid, FileName, FileSize, SaveDate, -1 as VoterID FROM vts_tbFile WHERE FileId=@FileId AND GroupGuid = @GroupGuid
+SELECT FileID, GroupGuid, FileName, FileSize, SaveDate, -1 as VoterID FROM vts_tbFile WHERE FileID=@FileID AND GroupGuid = @GroupGuid
 
 
 
@@ -2341,7 +2341,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -2381,7 +2381,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -2408,7 +2408,7 @@ CREATE PROCEDURE [dbo].[vts_spFileGetListForGuid]
 		@GroupGuid varchar(40)
 AS
 
-SELECT FileId, GroupGuid, FileName, FileSize, FileType, SaveDate, -1 as VoterId FROM vts_tbFile WHERE GroupGuid = @GroupGuid
+SELECT FileID, GroupGuid, FileName, FileSize, FileType, SaveDate, -1 as VoterID FROM vts_tbFile WHERE GroupGuid = @GroupGuid
 
 
 
@@ -2419,7 +2419,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -2439,7 +2439,7 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 /// <summary>
-///  Get validated files
+///  Get Validated files
 /// </summary>
 */
 CREATE PROCEDURE [dbo].[vts_spFileValidatedGetAll]
@@ -2449,7 +2449,7 @@ CREATE PROCEDURE [dbo].[vts_spFileValidatedGetAll]
 				@TotalRecords int OUTPUT
 AS
 -- Turn off count return.
-Set NoCount On
+Set NOCOUNT On
 -- Declare variables.
 DECLARE @FirstRec int
 DECLARE @LastRec int
@@ -2459,11 +2459,11 @@ SET @LastRec = (@CurrentPage * @PageSize + 1)
 
 -- Create a temp table to hold the current page of data
 -- Add an ID column to count the records
-CREATE TABLE #TempTable (RowId int IDENTITY PRIMARY KEY, FileId int NOT NULL, VoterId int, GroupGuid varchar(40), FileName nvarchar(1024), FileType varchar(1024), FileSize int, SaveDate DateTime)
+CREATE TABLE #TempTable (RowID int IDENTITY PRIMARY KEY, FileID int NOT NULL, VoterID int, GroupGuid varchar(40), FileName NVARCHAR(1024), FileType varchar(1024), FileSize int, SaveDate DateTime)
 
 --Fill the temp table with the reminders
-INSERT INTO #TempTable (FileId, VoterId, GroupGuid, FileName, FileType, FileSize, SaveDate)
-	SELECT FileId, vts_tbVoter.VoterId, GroupGuid, FileName, FileType, FileSize, SaveDate
+INSERT INTO #TempTable (FileID, VoterID, GroupGuid, FileName, FileType, FileSize, SaveDate)
+	SELECT FileID, vts_tbVoter.VoterID, GroupGuid, FileName, FileType, FileSize, SaveDate
 	FROM vts_tbFile
 	INNER JOIN vts_tbVoterAnswers ON 
 		AnswerText like GroupGuid
@@ -2479,14 +2479,18 @@ INNER JOIN vts_tbVoter ON
 	vts_tbVoter.VoterID = vts_tbVoterAnswers.VoterID
 WHERE vts_tbVoter.SurveyID = @SurveyID AND vts_tbVoter.Validated<>0
 
-SELECT FileId, VoterId, GroupGuid, FileName, FileType, FileSize, SaveDate
+If (@CurrentPage = -1 and @PageSize = -1)
+(SELECT FileId, VoterId, GroupGuid, FileName, FileType, FileSize, SaveDate
+FROM #TempTable)
+else 
+(SELECT FileId, VoterId, GroupGuid, FileName, FileType, FileSize, SaveDate
 FROM #TempTable
 WHERE 
 	RowId > @FirstRec AND
 	RowId < @LastRec
+	)
+
 DROP TABLE #TempTable
-
-
 
 GO
 /****** Object:  StoredProcedure [dbo].[vts_spFilterAddNew]    Script Date: 19-8-2014 22:01:40 ******/
@@ -2495,7 +2499,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -2522,11 +2526,11 @@ CREATE PROCEDURE [dbo].[vts_spFilterAddNew]
 			@SurveyID int,
 			@Description varchar(200), 
 			@LogicalOperatorTypeID smallint = 0,
-			@ParentFilterId int,
+			@ParentFilterID int,
 			@FilterID int output 
 AS
-INSERT INTO vts_tbFilter(SurveyID, Description, LogicalOperatorTypeID, ParentFilterId) VALUES (@SurveyID, @Description, @LogicalOperatorTypeID, @ParentFilterId)
-set  @FilterID = scope_identity()
+INSERT INTO vts_tbFilter(SurveyID, Description, LogicalOperatorTypeID, ParentFilterID) VALUES (@SurveyID, @Description, @LogicalOperatorTypeID, @ParentFilterID)
+set  @FilterID = SCOPE_IDENTITY()
 
 GO
 /****** Object:  StoredProcedure [dbo].[vts_spFilterDelete]    Script Date: 19-8-2014 22:01:40 ******/
@@ -2535,7 +2539,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -2572,7 +2576,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -2611,7 +2615,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -2630,14 +2634,14 @@ GO
 	along with this program; if not, write to the Free Software
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
-CREATE PROCEDURE [dbo].[vts_spFilterGetForSurvey] @SurveyId int AS
+CREATE PROCEDURE [dbo].[vts_spFilterGetForSurvey] @SurveyID int AS
 SELECT 
 	FilterID,
 	Description, 
 	LogicalOperatorTypeID,
 	ParentFilterID
 FROM vts_tbFilter 
-WHERE SurveyId = @SurveyId
+WHERE SurveyID = @SurveyID
 ORDER BY Description
 
 GO
@@ -2647,7 +2651,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -2666,14 +2670,14 @@ GO
 	along with this program; if not, write to the Free Software
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
-Create PROCEDURE [dbo].[vts_spFilterGetForSurveyByParent] @SurveyId int, @ParentId int AS
+Create PROCEDURE [dbo].[vts_spFilterGetForSurveyByParent] @SurveyID int, @ParentID int AS
 SELECT 
 	FilterID,
 	Description, 
 	LogicalOperatorTypeID,
 	ParentFilterID
 FROM vts_tbFilter 
-WHERE SurveyId = @SurveyId and isnull(ParentFilterID,0) = @ParentId
+WHERE SurveyID = @SurveyID and ISNULL(ParentFilterID,0) = @ParentID
 ORDER BY Description
 GO
 /****** Object:  StoredProcedure [dbo].[vts_spFilterRuleAddNew]    Script Date: 19-8-2014 22:01:40 ******/
@@ -2682,7 +2686,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -2709,7 +2713,7 @@ CREATE PROCEDURE [dbo].[vts_spFilterRuleAddNew]
 			@FilterID int,
 			@QuestionID int,
 			@AnswerID int,
-			@TextFilter nvarchar(4000), 
+			@TextFilter NVARCHAR(4000), 
 			@FilterRuleID int OUTPUT
 AS
 INSERT INTO vts_tbFilterRule
@@ -2722,7 +2726,7 @@ VALUES
 	@QuestionID,
 	@AnswerID,
 	@TextFilter)
-set @FilterRuleID = scope_identity()
+set @FilterRuleID = SCOPE_IDENTITY()
 
 
 
@@ -2733,7 +2737,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -2770,7 +2774,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -2814,7 +2818,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -2841,12 +2845,12 @@ CREATE PROCEDURE [dbo].[vts_spFilterUpdate]
 			@FilterID int, 
 			@Description varchar(200), 
 			@LogicalOperatorTypeID smallint = 0,
-			@ParentFilterId int
+			@ParentFilterID int
 AS
 UPDATE vts_tbFilter SET
 	Description = @Description, 
 	LogicalOperatorTypeID = @LogicalOperatorTypeID,
-	ParentFilterID = @ParentFilterId
+	ParentFilterID = @ParentFilterID
 WHERE FilterID = @FilterID
 
 GO
@@ -2861,17 +2865,17 @@ GO
 -- Description:	<Description,,>
 -- =============================================
 CREATE PROCEDURE [dbo].[vts_spFolderAddNew]	
-	@ParentFolderId int,
+	@ParentFolderID int,
 	@FolderName varchar(200)
 AS
 BEGIN
 if exists(
-select 1 from vts_tbFolders where ParentFolderId=@ParentFolderId and FolderName=@FolderName)
+select 1 from vts_tbFolders where ParentFolderID=@ParentFolderID and FolderName=@FolderName)
 begin
    raiserror('DUPLICATEFOLDER',16,4);
 return;
 end;
-INSERT INTO vts_tbFolders(FolderName, ParentFolderId) VALUES (@FolderName, @ParentFolderId)
+INSERT INTO vts_tbFolders(FolderName, ParentFolderID) VALUES (@FolderName, @ParentFolderID)
 END
 
 
@@ -2888,53 +2892,53 @@ GO
 -- Description:	<Description,,>
 -- =============================================
 CREATE PROCEDURE [dbo].[vts_spFolderDelete]	
-	@FolderId int
+	@FolderID int
 AS
 BEGIN
-declare @folders as table(fid int,pfid int);
-;with fCTE1 (fid, pfid) AS
+declare @Folders as table(FID int, PFID int);
+;with fcte1 (FID, PFID) AS
 (
-	SELECT folderId, parentfolderId FROM vts_tbfolders 
-		where @FolderId = FolderId AND ParentFolderId IS NOT NULL
+	SELECT FolderID, ParentFolderID FROM vts_tbFolders 
+		where @FolderID = FolderID AND ParentFolderID IS NOT NULL
 	UNION ALL
-	SELECT f.folderId, f.parentfolderId FROM vts_tbfolders f 
-	inner join fCTE1 fc ON f.ParentFolderId = fc.fid	
+	SELECT f.FolderID, f.ParentFolderID FROM vts_tbFolders f 
+	inner join fcte1 fc ON f.ParentFolderID = fc.FID	
 )
  
-insert into @folders select * from fCTE1;
+insert into @Folders select * from fcte1;
 
-declare c1 cursor for select sv.surveyId
+declare c1 cursor for select sv.SurveyID
 from [vts_tbSurvey] as sv
-INNER JOIN @folders AS fc ON fc.fid = sv.FolderId;
-declare @surveyId as int;
+INNER JOIN @Folders AS fc ON fc.FID = sv.FolderID;
+declare @SurveyID as int;
 open c1;
-fetch c1 into @surveyId;
+fetch c1 into @SurveyID;
 while @@FETCH_STATUS =0 
 begin 
- exec vts_spSurveyDeleteByID @surveyId
- fetch c1 into @surveyId;
+ exec vts_spSurveyDeleteByID @SurveyID
+ fetch c1 into @SurveyID;
 end;
 
 close c1;
 deallocate c1;
-;with fCTE (fid, pfid) AS
+;with fcte (FID, PFID) AS
 (
-	SELECT folderid, parentfolderid FROM vts_tbfolders 
-		where @FolderId = FolderId AND ParentFolderId IS NOT NULL
+	SELECT FolderID, ParentFolderID FROM vts_tbFolders 
+		where @FolderID = FolderID AND ParentFolderID IS NOT NULL
 	UNION ALL
-	SELECT f.folderId, f.parentfolderId FROM vts_tbfolders f 
-	INNER JOIN fCTE fc ON f.ParentFolderId = fc.fid
+	SELECT f.FolderID, f.ParentFolderID FROM vts_tbFolders f 
+	INNER JOIN fcte fc ON f.ParentFolderID = fc.FID
 )--- delete passed folder
 Delete fd from [vts_tbFolders] AS fd
-INNER JOIN fCTE AS fc ON fc.fid = fd.FolderId
-where fd.ParentFolderId IS NOT NULL
+INNER JOIN fcte AS fc ON fc.FID = fd.FolderID
+where fd.ParentFolderID IS NOT NULL
 
 END
 
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[vts_spFolderGetByFolderId]    Script Date: 19-8-2014 22:01:40 ******/
+/****** Object:  StoredProcedure [dbo].[vts_spFolderGetByFolderID]    Script Date: 19-8-2014 22:01:40 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2944,8 +2948,8 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE [dbo].[vts_spFolderGetByFolderId] 	
-	@FolderId int
+CREATE PROCEDURE [dbo].[vts_spFolderGetByFolderID] 	
+	@FolderID int
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -2953,9 +2957,9 @@ BEGIN
 	SET NOCOUNT ON;
 
     -- Insert statements for procedure here
-	SELECT CONVERT(varchar, fs.FolderId) as ItemId, fs.FolderName as NodeName, CONVERT(varchar, fs.ParentFolderId) as ParentFolderId
+	SELECT CONVERT(varchar, fs.FolderID) as ItemID, fs.FolderName as NodeName, CONVERT(varchar, fs.ParentFolderID) as ParentFolderID
 	FROM vts_tbFolders as fs
-	WHERE FolderId = @FolderId
+	WHERE FolderID = @FolderID
 END
 
 
@@ -2972,22 +2976,22 @@ GO
 -- Description:	<Description,,>
 -- =============================================
 CREATE PROCEDURE [dbo].[vts_spFolderMove]
-	@ParentFolderId int,
-	@FolderId int
+	@ParentFolderID int,
+	@FolderID int
 AS
 BEGIN
 	SET NOCOUNT ON;
-declare @foldername varchar(300);
-select @foldername =foldername from  vts_tbFolders where FolderId=@FolderId;
+declare @FolderName varchar(300);
+select @FolderName =FolderName from  vts_tbFolders where FolderID=@FolderID;
 if exists(
-select 1 from vts_tbFolders where ParentFolderId=@ParentFolderId and FolderName=@FolderName)
+select 1 from vts_tbFolders where ParentFolderID=@ParentFolderID and FolderName=@FolderName)
 begin
    raiserror('DUPLICATEFOLDER',16,4);
 return;
 end;
     Update vts_tbFolders
-	set ParentFolderId = @ParentFolderId	
-	where FolderId = @FolderId and ParentFolderId IS NOT NULL
+	set ParentFolderID = @ParentFolderID	
+	where FolderID = @FolderID and ParentFolderID IS NOT NULL
 END
 
 
@@ -3004,21 +3008,21 @@ GO
 -- Description:	<Description,,>
 -- =============================================
 CREATE PROCEDURE [dbo].[vts_spFolderUpdate]	
-	@FolderId int,
+	@FolderID int,
 	@FolderName varchar(200),
-	@ParentFolderId int
+	@ParentFolderID int
 AS
 BEGIN
 if exists(
-select 1 from vts_tbFolders where ParentFolderId=@ParentFolderId and FolderName=@FolderName and folderId!=@FolderId)
+select 1 from vts_tbFolders where ParentFolderID=@ParentFolderID and FolderName=@FolderName and FolderID!=@FolderID)
 begin
    raiserror('DUPLICATEFOLDER',16,4);
 return;
 end;
 Update vts_tbFolders
 set FolderName = @FolderName,
-ParentFolderId = @ParentFolderId
-where FolderId = @FolderId
+ParentFolderID = @ParentFolderID
+where FolderID = @FolderID
 
 END
 
@@ -3031,7 +3035,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -3061,7 +3065,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -3087,17 +3091,17 @@ GO
 
 CREATE PROCEDURE 	[dbo].[vts_spInvitationLogAddNew]
 			@SurveyID int,
-			@Email nvarchar(155),
-			@ExceptionMessage nvarchar(1024),
-			@ExceptionType nvarchar(255),
+			@Email NVARCHAR(155),
+			@ExceptionMessage NVARCHAR(1024),
+			@ExceptionType NVARCHAR(255),
 			@ErrorDate datetime,
 			@EmailID int OUTPUT,
 			@InvitationLogID int OUTPUT
 AS
 
-SELECT @EmailID = EmailId FROM vts_tbEmail WHERE Email = @Email
+SELECT @EmailID = EmailID FROM vts_tbEmail WHERE Email = @Email
 
-if @@rowcount>0 
+if @@RowCount>0 
 BEGIN
 INSERT INTO vts_tbInvitationLog
 	(SurveyID,
@@ -3112,7 +3116,7 @@ VALUES
 	@ExceptionType,
 	@ErrorDate)
 
-set @InvitationLogID = SCOPE_Identity()
+set @InvitationLogID = SCOPE_IDENTITY()
 END
 
 
@@ -3124,7 +3128,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -3162,7 +3166,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -3192,7 +3196,7 @@ CREATE PROCEDURE [dbo].[vts_spInvitationLogGetAll]
 				@TotalRecords int OUTPUT
 AS
 -- Turn off count return.
-Set NoCount On
+Set NOCOUNT On
 -- Declare variables.
 DECLARE @FirstRec int
 DECLARE @LastRec int
@@ -3202,37 +3206,37 @@ SET @LastRec = (@CurrentPage * @PageSize + 1)
 
 -- Create a temp table to hold the current page of data
 -- Add an ID column to count the records
-CREATE TABLE #TempTable (RowId int IDENTITY PRIMARY KEY, InvitationLogId int NOT NULL, SurveyId int, EmailId int, ExceptionMessage varchar(1024), ExceptionType nvarchar(255), Email varchar(155), ErrorDate DateTime)
+CREATE TABLE #TempTable (RowID int IDENTITY PRIMARY KEY, InvitationLogID int NOT NULL, SurveyID int, EmailID int, ExceptionMessage varchar(1024), ExceptionType NVARCHAR(255), Email varchar(155), ErrorDate DateTime)
 
 --Fill the temp table with the reminders
-INSERT INTO #TempTable (InvitationLogId, SurveyId, EmailId, ExceptionMessage, ExceptionType, Email, ErrorDate)
-	SELECT InvitationLogId, SurveyId, vts_tbInvitationLog.EmailId, ExceptionMessage, ExceptionType, Email, ErrorDate
+INSERT INTO #TempTable (InvitationLogID, SurveyID, EmailID, ExceptionMessage, ExceptionType, Email, ErrorDate)
+	SELECT InvitationLogID, SurveyID, vts_tbInvitationLog.EmailID, ExceptionMessage, ExceptionType, Email, ErrorDate
 	FROM vts_tbInvitationLog
 	INNER JOIN vts_tbEmail ON 
-		vts_tbInvitationLog.EmailId = vts_tbEmail.EmailID
+		vts_tbInvitationLog.EmailID = vts_tbEmail.EmailID
 	WHERE vts_tbInvitationLog.SurveyID = @SurveyID
 	ORDER BY ErrorDate DESC
 
 SELECT @TotalRecords = count(*) FROM vts_tbInvitationLog
 WHERE SurveyID = @SurveyID
 
-SELECT InvitationLogId, SurveyId, EmailId, ExceptionMessage, ExceptionType, Email, ErrorDate
+SELECT InvitationLogID, SurveyID, EmailID, ExceptionMessage, ExceptionType, Email, ErrorDate
 FROM #TempTable
 WHERE 
-	RowId > @FirstRec AND
-	RowId < @LastRec
+	RowID > @FirstRec AND
+	RowID < @LastRec
 DROP TABLE #TempTable
 
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[vts_spInvitationUIDIsValid]    Script Date: 19-8-2014 22:01:40 ******/
+/****** Object:  StoredProcedure [dbo].[vts_spInvitationUidIsValid]    Script Date: 19-8-2014 22:01:40 ******/
 SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -3252,13 +3256,13 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 /// <summary>
-/// Check if the given UId is valid and returns its survey id
+/// Check if the given UID is valID and returns its survey ID
 /// </summary>
-/// <param name="@UID">
-/// UId to check
+/// <param Name="@UID">
+/// UID to check
 /// </param>
 */
-CREATE PROCEDURE [dbo].[vts_spInvitationUIDIsValid] @UID varchar(40)
+CREATE PROCEDURE [dbo].[vts_spInvitationUidIsValid] @UID varchar(40)
 AS
 SELECT SurveyID
 FROM vts_tbInvitationQueue 
@@ -3273,7 +3277,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -3295,15 +3299,15 @@ GO
 /// <summary>
 /// Get the questions until next page break
 /// </summary>
-/// <param name="@LibraryID">
+/// <param Name="@LibraryID">
 /// ID of the library  to retrieve questions from
 /// </param>
 */
 CREATE PROCEDURE [dbo].[vts_spIPRangeGetForSurvey]
-			@SurveyId int
+			@SurveyID int
 AS
-	SELECT * from vts_tbSurveyIPrange
-	WHERE SurveyId=@SurveyId
+	SELECT * from vts_tbSurveyIPRange
+	WHERE SurveyID=@SurveyID
 
 
 
@@ -3314,7 +3318,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -3345,7 +3349,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -3366,17 +3370,17 @@ GO
 
 */
 CREATE PROCEDURE [dbo].[vts_spLibraryAddNew] 
-			@LibraryName nvarchar(255),
+			@LibraryName NVARCHAR(255),
 			@LibraryID int OUTPUT,
-			@Description ntext,
-			@DefaultlanguageCode nvarchar(50)
+			@Description NVARCHAR(max),
+			@DefaultLanguageCode NVARCHAR(50)
 
 AS
 
-INSERT INTO vts_tbLibrary (LibraryName, Description,DefaultlanguageCode)
+INSERT INTO vts_tbLibrary (LibraryName, Description,DefaultLanguageCode)
  VALUES (@LibraryName, @Description,@DefaultLanguageCode)
 
-set @LibraryID = scope_identity()
+set @LibraryID = SCOPE_IDENTITY()
 
 
 
@@ -3387,7 +3391,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -3423,7 +3427,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -3446,11 +3450,11 @@ GO
 CREATE PROCEDURE [dbo].[vts_spLibraryGetAll] AS
 
 SELECT
-	l.LibraryId,
+	l.LibraryID,
 	l.LibraryName,
 	l.Description,
 	l.DefaultLanguageCode,
-	(select count(q.QuestionId) from vts_tbQuestion q where q.LibraryID=l.LibraryId) as QuestionCnt
+	(select count(q.QuestionID) from vts_tbQuestion q where q.LibraryID=l.LibraryID) as QuestionCnt
  FROM vts_tbLibrary l ORDER BY LibraryName
 
 
@@ -3462,7 +3466,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -3482,14 +3486,14 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 */
-CREATE PROCEDURE [dbo].[vts_spLibraryGetDetails] @LibraryId int AS
+CREATE PROCEDURE [dbo].[vts_spLibraryGetDetails] @LibraryID int AS
 
 SELECT
-	lib.LibraryId,
+	lib.LibraryID,
 	lib.LibraryName,
 	lib.Description,
-	lib.defaultLanguageCode,
-	(select count(q.QuestionId) from vts_tbQuestion q where q.LibraryID=lib.LibraryId) as QuestionCnt
+	lib.DefaultLanguageCode,
+	(select count(q.QuestionID) from vts_tbQuestion q where q.LibraryID=lib.LibraryID) as QuestionCnt
  FROM vts_tbLibrary lib WHERE lib.LibraryID = @LibraryID
 
 
@@ -3501,7 +3505,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -3522,15 +3526,15 @@ GO
 
 */
 CREATE PROCEDURE [dbo].[vts_spLibraryUpdate]
-			@LibraryName nvarchar(255),
+			@LibraryName NVARCHAR(255),
 			@LibraryID int,
-			@Description ntext,
-		    @DefaultlanguageCode nvarchar(50)
+			@Description NVARCHAR(max),
+		    @DefaultLanguageCode NVARCHAR(50)
 
 AS
 
 UPDATE vts_tbLibrary SET LibraryName=@LibraryName, Description=@Description,
-DefaultLanguageCode=@DefaultlanguageCode WHERE LibraryID = @LibraryID
+DefaultLanguageCode=@DefaultLanguageCode WHERE LibraryID = @LibraryID
 
 
 
@@ -3541,7 +3545,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -3578,7 +3582,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -3600,18 +3604,18 @@ GO
 /// <summary>
 ///  Moves an answer's positions up 
 /// </summary>
-/// <param name="@AnswerID">
+/// <param Name="@AnswerID">
 /// ID of the answer to move one position up
 /// </param>
 */
 CREATE PROCEDURE [dbo].[vts_spMultiLanguageTextAdd] 
-@LanguageItemId int,
+@LanguageItemID int,
 @LanguageCode varchar(10),
-@LanguageMessageTypeId int,
-@ItemText varchar(max)
+@LanguageMessageTypeID int,
+@ItemText NVARCHAR(max)
 AS
-INSERT INTO [vts_tbMultiLanguageText](LanguageItemId ,LanguageCode,LanguageMessageTypeId,ItemText)
-VALUES (@LanguageItemId ,@LanguageCode,@LanguageMessageTypeId,@ItemText)
+INSERT INTO [vts_tbMultiLanguageText](LanguageItemID ,LanguageCode,LanguageMessageTypeID,ItemText)
+VALUES (@LanguageItemID ,@LanguageCode,@LanguageMessageTypeID,@ItemText)
 
 
 GO
@@ -3621,7 +3625,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -3648,7 +3652,7 @@ AS
 -- Delete multi language texts for answer items
 DELETE FROM vts_tbMultiLanguageText 
 WHERE LanguageItemID in 
-		(select answerID FROM vts_tbAnswer INNER JOIN vts_tbQuestion ON vts_tbAnswer.QuestionID = vts_tbQuestion.QuestionID WHERE vts_tbQuestion.SurveyID = @SurveyID)  AND 
+		(select AnswerID FROM vts_tbAnswer INNER JOIN vts_tbQuestion ON vts_tbAnswer.QuestionID = vts_tbQuestion.QuestionID WHERE vts_tbQuestion.SurveyID = @SurveyID)  AND 
 	(LanguageMessageTypeID = 1 OR LanguageMessageTypeID = 2)
 
 -- Delete multi languages texts for survey items
@@ -3669,7 +3673,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -3690,10 +3694,10 @@ GO
 
 */
 CREATE PROCEDURE [dbo].[vts_spMultiLanguageTextUpdate] 
-			@LanguageItemId int,
-			@LanguageCode nvarchar(50),
+			@LanguageItemID int,
+			@LanguageCode NVARCHAR(50),
 			@LanguageMessageTypeID int,
-			@ItemText nvarchar(4000)
+			@ItemText NVARCHAR(max)
 
 AS
 
@@ -3701,15 +3705,15 @@ AS
 UPDATE vts_tbMultiLanguageText
 SET 	ItemText = @ItemText
 WHERE 
-	LanguageItemID = @LanguageItemId AND
+	LanguageItemID = @LanguageItemID AND
 	LanguageCode = @LanguageCode AND
 	LanguageMessageTypeID = @LanguageMessageTypeID
 	
 -- If localized text doesnt exist, create it
-IF @@rowcount = 0 AND @ItemText is not null
+IF @@RowCount = 0 AND @ItemText is not null
 BEGIN
 	INSERT INTO vts_tbMultiLanguageText (LanguageItemID, LanguageCode, LanguageMessageTypeID, ItemText)
-	VALUES (@LanguageItemId, @LanguageCode, @LanguageMessageTypeID, @ItemText)
+	VALUES (@LanguageItemID, @LanguageCode, @LanguageMessageTypeID, @ItemText)
 END
 
 
@@ -3722,7 +3726,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -3742,22 +3746,22 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
 CREATE PROCEDURE [dbo].[vts_spMutliLanguageAddForSurvey] 
-		 @SurveyId int,
-         @LanguageCode nvarchar(50), 
+		 @SurveyID int,
+         @LanguageCode NVARCHAR(50), 
 		 @DefaultLanguage bit,
 		 @Entity VARCHAR(20)='Survey'		 
 AS
 IF (@Entity='Survey') 
 BEGIN
 UPDATE vts_tbSurveyLanguage SET
-	SurveyId = @SurveyID,
+	SurveyID = @SurveyID,
 	LanguageCode = @LanguageCode,
 	DefaultLanguage = @DefaultLanguage
 WHERE 
-	SurveyId = @SurveyId AND 
+	SurveyID = @SurveyID AND 
 	LanguageCode = @LanguageCode ;
-	IF @@rowcount = 0
-	INSERT INTO vts_tbSurveyLanguage(SurveyId, LanguageCode, DefaultLanguage)
+	IF @@RowCount = 0
+	INSERT INTO vts_tbSurveyLanguage(SurveyID, LanguageCode, DefaultLanguage)
 	VALUES (@SurveyID, @LanguageCode, @DefaultLanguage)
 END
 ELSE
@@ -3768,14 +3772,14 @@ BEGIN
    values (@LanguageCode,@LanguageCode);
 END;
 UPDATE vts_tbLibraryLanguage SET
-	LibraryId = @SurveyID,
+	LibraryID = @SurveyID,
 	LanguageCode = @LanguageCode,
 	DefaultLanguage = @DefaultLanguage
 WHERE 
-	LibraryId = @SurveyId AND 
+	LibraryID = @SurveyID AND 
 	LanguageCode = @LanguageCode ;
-	IF @@rowcount = 0
-	INSERT INTO vts_tbLibraryLanguage(LibraryId, LanguageCode, DefaultLanguage)
+	IF @@RowCount = 0
+	INSERT INTO vts_tbLibraryLanguage(LibraryID, LanguageCode, DefaultLanguage)
 	VALUES (@SurveyID, @LanguageCode, @DefaultLanguage)
 END
 
@@ -3789,7 +3793,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -3809,17 +3813,17 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
 CREATE PROCEDURE [dbo].[vts_spMutliLanguageCheckForSurvey] 
-@SurveyId int, @LanguageCode nvarchar(50) AS
+@SurveyID int, @LanguageCode NVARCHAR(50) AS
 
 SELECT LanguageCode FROM vts_tbSurveyLanguage WHERE LanguageCode = @LanguageCode AND SurveyID = @SurveyID
 
-IF @@rowcount = 0
+IF @@RowCount = 0
 	SELECT
 		vts_tbMultiLanguage.LanguageCode
 	FROM vts_tbMultiLanguage
 	INNER JOIN vts_tbSurveyLanguage
 		ON vts_tbMultiLanguage.LanguageCode = vts_tbSurveyLanguage.LanguageCode
-	WHERE SurveyId = @SurveyId AND DefaultLanguage<>0
+	WHERE SurveyID = @SurveyID AND DefaultLanguage<>0
 
 
 
@@ -3830,7 +3834,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -3850,7 +3854,7 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
 CREATE PROCEDURE [dbo].[vts_spMutliLanguageDeleteForSurvey] 
-@SurveyId int, @LanguageCode nvarchar(50),@Entity varchar(20)='Survey' AS
+@SurveyID int, @LanguageCode NVARCHAR(50),@Entity varchar(20)='Survey' AS
 
 IF @Entity = 'Survey'
 	DELETE FROM vts_tbSurveyLanguage 
@@ -3872,7 +3876,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -3892,7 +3896,7 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
 CREATE PROCEDURE [dbo].[vts_spMutliLanguageGetEnabledForSurvey]
-		 @SurveyId as int = -1,
+		 @SurveyID as int = -1,
 		 @Entity VARCHAR(20) = 'Survey'
 AS
 SELECT 
@@ -3902,7 +3906,7 @@ SELECT
 FROM vts_tbMultiLanguage
 INNER JOIN vts_tbSurveyLanguage
 	ON vts_tbMultiLanguage.LanguageCode = vts_tbSurveyLanguage.LanguageCode
-WHERE SurveyId = @SurveyId
+WHERE SurveyID = @SurveyID
 AND   @Entity='Survey'
 UNION ALL
 SELECT 
@@ -3912,7 +3916,7 @@ SELECT
 FROM vts_tbMultiLanguage
 INNER JOIN vts_tbLibraryLanguage
 	ON vts_tbMultiLanguage.LanguageCode = vts_tbLibraryLanguage.LanguageCode
-WHERE LibraryId = @SurveyId
+WHERE LibraryID = @SurveyID
 AND   @Entity='Library'
 ORDER BY DefaultLanguage DESC, LanguageDescription
 
@@ -3925,7 +3929,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -3960,7 +3964,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -3991,7 +3995,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -4013,7 +4017,7 @@ GO
 ///  retrieves the options that were setup for the page
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spPageOptionGetDetails] @SurveyId int, @PageNumber int AS
+CREATE PROCEDURE [dbo].[vts_spPageOptionGetDetails] @SurveyID int, @PageNumber int AS
 
 SELECT * FROM vts_tbPageOption WHERE SurveyID = @SurveyID AND PageNumber = @PageNumber
 
@@ -4026,7 +4030,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -4049,7 +4053,7 @@ GO
 /// </summary>
 */
 CREATE PROCEDURE [dbo].[vts_spPageOptionUpdate] 
-				@SurveyId int, 
+				@SurveyID int, 
 				@PageNumber int,
 				@RandomizeQuestions bit,
 				@EnableSubmitButton bit
@@ -4059,7 +4063,7 @@ UPDATE vts_tbPageOption
 SET RandomizeQuestions = @RandomizeQuestions, EnableSubmitButton = @EnableSubmitButton
 WHERE SurveyID = @SurveyID AND PageNumber = @PageNumber
 
-if (@@rowcount = 0)
+if (@@RowCount = 0)
 BEGIN
 	-- no options were set add the new one in the db
 	INSERT INTO vts_tbPageOption (SurveyID, PageNumber, RandomizeQuestions, EnableSubmitButton)
@@ -4075,7 +4079,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -4110,7 +4114,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -4136,9 +4140,9 @@ GO
 CREATE PROCEDURE [dbo].[vts_spQuestionAddNew]
 			@SurveyID int,
 			@LibraryID int, 
-			@QuestionText nvarchar(4000),
-			@SelectionModeId int,
-			@LayoutModeId int,
+			@QuestionText NVARCHAR(max),
+			@SelectionModeID int,
+			@LayoutModeID int,
 			@DisplayOrder int, 
 			@PageNumber int,
 			@ColumnsNumber int,
@@ -4146,12 +4150,12 @@ CREATE PROCEDURE [dbo].[vts_spQuestionAddNew]
 			@MaxSelectionAllowed int,
 			@RandomizeAnswers bit,
 			@RatingEnabled bit,
-			@QuestionPipeAlias nvarchar(255),
-			@QuestionIDText nvarchar(255),
-			@Alias nvarchar(255)='',
-			@HelpText nvarchar(4000)='',
+			@QuestionPipeAlias NVARCHAR(255),
+			@QuestionIDText NVARCHAR(255),
+			@Alias NVARCHAR(255)='',
+			@HelpText NVARCHAR(4000)='',
 			@ShowHelpText bit =0,
-			@QuestionGroupId int=null,
+			@QuestionGroupID int=null,
 			@QuestionID int OUTPUT
 AS
 
@@ -4172,8 +4176,8 @@ END
 INSERT INTO vts_tbQuestion
 	(SurveyID,
 	LibraryID,
-	SelectionModeId,
-	LayoutModeId,
+	SelectionModeID,
+	LayoutModeID,
 	DisplayOrder,
 	PageNumber,
 	QuestionText,
@@ -4183,7 +4187,7 @@ INSERT INTO vts_tbQuestion
 	RandomizeAnswers,
 	RatingEnabled,
 	QuestionPipeAlias,
-	QuestionIdText,
+	QuestionIDText,
 	Alias,
 	HelpText,
 	ShowHelpText,
@@ -4192,8 +4196,8 @@ INSERT INTO vts_tbQuestion
 VALUES
 	(@SurveyID,
 	@LibraryID, 
-	@SelectionModeId,
-	@LayoutModeId,
+	@SelectionModeID,
+	@LayoutModeID,
 	@DisplayOrder,
 	@PageNumber,
 	@QuestionText,
@@ -4209,9 +4213,9 @@ VALUES
 	@ShowHelpText,
 	@QuestionGroupID)
 
-set @QuestionID = Scope_Identity()
+set @QuestionID = SCOPE_IDENTITY()
 
-IF @@rowcount<>0 AND @SurveyID is not null AND @UpdateDisplayOrder = 1
+IF @@RowCount<>0 AND @SurveyID is not null AND @UpdateDisplayOrder = 1
 BEGIN
 	-- Update the display order
 	UPDATE vts_tbQuestion 
@@ -4234,7 +4238,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -4256,7 +4260,7 @@ GO
 /// <summary>
 /// Get a list of all question that can have any type of answers
 /// </summary>
-/// <param name="@SurveyID">
+/// <param Name="@SurveyID">
 /// ID of the survey  to retrieve questions
 /// </param>
 /// <returns>
@@ -4265,14 +4269,14 @@ GO
 ///	QuestionText, 
 /// </returns>
 */
-CREATE PROCEDURE [dbo].[vts_spQuestionAnswerableList] @SurveyId int  AS
+CREATE PROCEDURE [dbo].[vts_spQuestionAnswerableList] @SurveyID int  AS
 SELECT DISTINCT Q.QuestionID, Q.QuestionText, Q.DisplayOrder ,
-Q.QuestionIdText,Q.Alias
+Q.QuestionIDText,Q.Alias
 FROM vts_tbQuestion Q
 INNER JOIN vts_tbQuestionSelectionMode
 	ON  QuestionSelectionModeID= Q.SelectionModeID
 WHERE 
-	SurveyID = @SurveyId AND 
+	SurveyID = @SurveyID AND 
 	TypeMode & 4 > 1 AND 
 	NOT EXISTS(SELECT QuestionID FROM vts_tbQuestion WHERE ParentQuestionID = Q.QuestionID)
 ORDER BY Q.DisplayOrder, Q.QuestionID
@@ -4286,7 +4290,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -4308,10 +4312,10 @@ GO
 /// <summary>
 /// Get a list of all question that can have any type of answers
 /// </summary>
-/// <param name="@SurveyID">
+/// <param Name="@SurveyID">
 /// ID of the survey  to retrieve questions
 /// </param>
-/// <param name="@PageNumber">
+/// <param Name="@PageNumber">
 /// Page to rertieve question from
 /// </param>
 /// <returns>
@@ -4320,13 +4324,13 @@ GO
 ///	QuestionText, 
 /// </returns>
 */
-CREATE PROCEDURE [dbo].[vts_spQuestionAnswerableListForPage] @SurveyId int, @PageNumber int  AS
+CREATE PROCEDURE [dbo].[vts_spQuestionAnswerableListForPage] @SurveyID int, @PageNumber int  AS
 SELECT DISTINCT Q.QuestionID, Q.QuestionText, Q.DisplayOrder 
 FROM vts_tbQuestion Q
 INNER JOIN vts_tbQuestionSelectionMode
 	ON  QuestionSelectionModeID= Q.SelectionModeID
 WHERE 
-	SurveyID = @SurveyId AND 
+	SurveyID = @SurveyID AND 
 	Q.PageNumber = @PageNumber AND
 	TypeMode & 4 > 1 AND 
 	NOT EXISTS(SELECT QuestionID FROM vts_tbQuestion WHERE ParentQuestionID = Q.QuestionID)
@@ -4341,7 +4345,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -4363,10 +4367,10 @@ GO
 /// <summary>
 /// Get a list of all question that can have any type of answers
 /// </summary>
-/// <param name="@SurveyID">
+/// <param Name="@SurveyID">
 /// ID of the survey  to retrieve questions
 /// </param>
-/// <param name="@PageNumber">
+/// <param Name="@PageNumber">
 /// Page to rertieve question from
 /// </param>
 /// <returns>
@@ -4375,13 +4379,13 @@ GO
 ///	QuestionText, 
 /// </returns>
 */
-CREATE PROCEDURE [dbo].[vts_spQuestionAnswerableListForPageRange] @SurveyId int, @StartPageNumber int, @EndPageNumber int AS
+CREATE PROCEDURE [dbo].[vts_spQuestionAnswerableListForPageRange] @SurveyID int, @StartPageNumber int, @EndPageNumber int AS
 SELECT DISTINCT Q.QuestionID, Q.QuestionText, Q.DisplayOrder 
 FROM vts_tbQuestion Q
 INNER JOIN vts_tbQuestionSelectionMode
 	ON  QuestionSelectionModeID= Q.SelectionModeID
 WHERE 
-	SurveyID = @SurveyId AND 
+	SurveyID = @SurveyID AND 
 	(Q.PageNumber >= @StartPageNumber AND Q.PageNumber <= @EndPageNumber) AND
 	TypeMode & 4 > 1 AND 
 	NOT EXISTS(SELECT QuestionID FROM vts_tbQuestion WHERE ParentQuestionID = Q.QuestionID)
@@ -4396,7 +4400,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -4418,7 +4422,7 @@ GO
 /// <summary>
 /// Get a list of al parentl question that can have any type of answers
 /// </summary>
-/// <param name="@SurveyID">
+/// <param Name="@SurveyID">
 /// ID of the survey  to retrieve questions
 /// </param>
 /// <returns>
@@ -4427,13 +4431,13 @@ GO
 ///	QuestionText, 
 /// </returns>
 */
-CREATE PROCEDURE [dbo].[vts_spQuestionAnswerableListWithoutChilds] @SurveyId int  AS
+CREATE PROCEDURE [dbo].[vts_spQuestionAnswerableListWithoutChilds] @SurveyID int  AS
 SELECT DISTINCT Q.QuestionID, Q.QuestionText, Q.DisplayOrder 
 FROM vts_tbQuestion Q
 INNER JOIN vts_tbQuestionSelectionMode
 	ON  QuestionSelectionModeID= Q.SelectionModeID
 WHERE 
-	SurveyID = @SurveyId AND 
+	SurveyID = @SurveyID AND 
 	TypeMode & 4 > 1 AND 
 	ParentQuestionID is null
 ORDER BY Q.DisplayOrder, Q.QuestionID
@@ -4447,7 +4451,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -4469,7 +4473,7 @@ GO
 /// <summary>
 /// Get all parent questions that can have any type of answers
 /// </summary>
-/// <param name="@SurveyID">
+/// <param Name="@SurveyID">
 /// ID of the survey  to retrieve questions
 /// </param>
 /// <returns>
@@ -4478,14 +4482,14 @@ GO
 ///	QuestionText, 
 /// </returns>
 */
-CREATE PROCEDURE [dbo].[vts_spQuestionAnswerableWithoutChilds] @SurveyId int  AS
+CREATE PROCEDURE [dbo].[vts_spQuestionAnswerableWithoutChilds] @SurveyID int  AS
 
 SELECT DISTINCT 
 	vts_tbQuestion.QuestionID,
-	SurveyId,
+	SurveyID,
 	QuestionText, 
-	vts_tbQuestion.SelectionModeId,
-	LayoutModeId,
+	vts_tbQuestion.SelectionModeID,
+	LayoutModeID,
 	DisplayOrder,
 	MinSelectionRequired,
 	MaxSelectionAllowed,
@@ -4496,7 +4500,7 @@ SELECT DISTINCT
 	PageNumber,
 	ColumnsNumber,
 	QuestionPipeAlias,
-	(ISNULL(RepeatableSectionModeId, 0)) as RepeatableSectionModeId,
+	(ISNULL(RepeatableSectionModeID, 0)) as RepeatableSectionModeID,
 	AddSectionLinkText,
 	DeleteSectionLinkText,
 	(ISNULL(MaxSections, 0)) as MaxSections	
@@ -4506,7 +4510,7 @@ LEFT JOIN vts_tbQuestionSectionOption
 INNER JOIN vts_tbQuestionSelectionMode
 	ON  QuestionSelectionModeID= SelectionModeID
 WHERE 
-	SurveyID = @SurveyId AND 
+	SurveyID = @SurveyID AND 
 	TypeMode & 4 > 1 AND 
 	ParentQuestionID is null
 ORDER BY DisplayOrder, vts_tbQuestion.QuestionID
@@ -4520,7 +4524,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -4560,7 +4564,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -4582,19 +4586,19 @@ GO
 /// <summary>
 /// Adds a new question to a survey
 /// </summary>
-/// <param name="@ParentQuestionID">
+/// <param Name="@ParentQuestionID">
 /// Question  to which the child question will be added
 /// </param>
-/// <param name="@QuestionText">
+/// <param Name="@QuestionText">
 /// Question's text
 /// </param>
-/// <param name="@QuestionID">
+/// <param Name="@QuestionID">
 /// Created child question's ID
 /// </param>
 */
 CREATE PROCEDURE [dbo].[vts_spQuestionChildAddNew]
 			@ParentQuestionID int,
-			@QuestionText nvarchar(4000), 
+			@QuestionText NVARCHAR(max), 
 			@QuestionID int OUTPUT
 AS
 -- Get parent default values
@@ -4613,38 +4617,38 @@ INSERT INTO vts_tbQuestion
 	(ParentQuestionID,
 	SurveyID,
 	LibraryID,
-	SelectionModeId,
+	SelectionModeID,
 	DisplayOrder,
 	PageNumber,
 	RatingEnabled,
 	QuestionText)
 VALUES
 	( @ParentQuestionID,
-	@SurveyId,
-	@LibraryId,
+	@SurveyID,
+	@LibraryID,
 	@SelectionModeID,
 	@DisplayOrder,
 	@PageNumber,
 	@RatingEnabled,
 	@QuestionText)
-IF @@rowcount<>0
+IF @@RowCount<>0
 BEGIN
-	set @QuestionID = Scope_Identity()
+	set @QuestionID = SCOPE_IDENTITY()
 	-- Assign the same columns to the row
 	-- as the parent question
-	exec vts_spAnswersCloneByQuestionId @ParentQuestionID,@QuestionID
+	exec vts_spAnswersCloneByQuestionID @ParentQuestionID,@QuestionID
 END
 
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[vts_spQuestionChildCloneById]    Script Date: 19-8-2014 22:01:40 ******/
+/****** Object:  StoredProcedure [dbo].[vts_spQuestionChildCloneByID]    Script Date: 19-8-2014 22:01:40 ******/
 SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -4666,27 +4670,27 @@ GO
 /// <summary>
 /// Clones a child question and its answers
 /// </summary>
-/// <param name="@QuestionID">
+/// <param Name="@QuestionID">
 /// ID of the child question to clone
 /// </param>
-/// <param name="@ParentQuestionID">
+/// <param Name="@ParentQuestionID">
 /// Parent of the child question
 /// </param>
 /// <return>
 /// returns the cloned question
 /// </return>
 */
-CREATE PROCEDURE [dbo].[vts_spQuestionChildCloneById] 
+CREATE PROCEDURE [dbo].[vts_spQuestionChildCloneByID] 
 				@QuestionID int, 
 				@ParentQuestionID int,
 				@SurveyID int
 AS
 INSERT INTO vts_tbQuestion  
-	(ParentQuestionId, 
+	(ParentQuestionID, 
 	SurveyID,
 	LibraryID,
-	SelectionModeId, 
-	LayoutModeId, 
+	SelectionModeID, 
+	LayoutModeID, 
 	DisplayOrder,
 	PageNumber, 
 	MinSelectionRequired, 
@@ -4695,18 +4699,18 @@ INSERT INTO vts_tbQuestion
 	ColumnsNumber,
 	RandomizeAnswers,
 	QuestionText,
-	QuestionIdText,
+	QuestionIDText,
 	Alias,
 	HelpText,
 	ShowHelpText,
-	QuestionGroupId
+	QuestionGroupID
 	)
 SELECT      
 	@ParentQuestionID, 
 	@SurveyID,
 	LibraryID,
-	SelectionModeId, 
-	LayoutModeId, 
+	SelectionModeID, 
+	LayoutModeID, 
 	DisplayOrder,
 	PageNumber,
 	MinSelectionRequired, 
@@ -4715,23 +4719,23 @@ SELECT
 	ColumnsNumber,
 	RandomizeAnswers,
 	QuestionText ,
-	QuestionIdText,
+	QuestionIDText,
 	Alias,
 	HelpText,
 	ShowHelpText,
-	QuestionGroupId
+	QuestionGroupID
 FROM vts_tbQuestion WHERE QuestionID = @QuestionID
 -- Check if the cloned question was created
-IF @@rowCount <> 0
+IF @@RowCount <> 0
 BEGIN
 	DECLARE @ClonedQuestionID int
 	-- Clone the question's answers
-	set @ClonedQuestionID = Scope_Identity()
+	set @ClonedQuestionID = SCOPE_IDENTITY()
 	INSERT INTO vts_tbMultiLanguageText(LanguageItemID, LanguageCode, LanguageMessageTypeID, ItemText)
 		SELECT @ClonedQuestionID as LanguageItemID, LanguageCode, LanguageMessageTypeID, ItemText
 		FROM vts_tbMultiLanguageText
 		WHERE LanguageItemID = @QuestionID AND LanguageMessageTypeID = 3
-	exec vts_spAnswersCloneByQuestionId @QuestionID, @ClonedQuestionID
+	exec vts_spAnswersCloneByQuestionID @QuestionID, @ClonedQuestionID
 END
 
 
@@ -4743,7 +4747,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -4765,10 +4769,10 @@ GO
 /// <summary>
 /// Clones all childs of a question and its answers
 /// </summary>
-/// <param name="@QuestionID">
+/// <param Name="@QuestionID">
 /// ID of the parent question to clone the childs
 /// </param>
-/// <param name="@CloneQuestionID">
+/// <param Name="@CloneQuestionID">
 /// ID of the cloned child parent
 /// </param>
 */
@@ -4784,7 +4788,7 @@ AS
 	FETCH ChildQuestionsCursor INTO @ChildQuestionID
 	WHILE @@FETCH_STATUS = 0
 	BEGIN
-		EXEC vts_spQuestionChildCloneById 	@ChildQuestionID, @ClonedQuestionID, @ClonedSurveyID
+		EXEC vts_spQuestionChildCloneByID 	@ChildQuestionID, @ClonedQuestionID, @ClonedSurveyID
 		FETCH ChildQuestionsCursor INTO @ChildQuestionID
 	END
 	CLOSE ChildQuestionsCursor
@@ -4799,7 +4803,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -4821,17 +4825,17 @@ GO
 /// <summary>
 /// Updates a child question
 /// </summary>
-/// <param name="ChildQuestionID">
+/// <param Name="ChildQuestionID">
 /// ID of the child question to update
 /// </param>
-/// <param name="@QuestionText">
+/// <param Name="@QuestionText">
 /// Question's text
 /// </param>
 */
 CREATE PROCEDURE [dbo].[vts_spQuestionChildUpdate] 
 			@ChildQuestionID int, 
-			@QuestionText nvarchar(4000),
-			@LanguageCode nvarchar(50)
+			@QuestionText NVARCHAR(max),
+			@LanguageCode NVARCHAR(50)
 AS
 
 -- Updates text
@@ -4857,7 +4861,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -4879,7 +4883,7 @@ GO
 /// <summary>
 /// Clones a question and its answers
 /// </summary>
-/// <param name="@QuestionID">
+/// <param Name="@QuestionID">
 /// ID of the question to clone
 /// </param>
 /// <return>
@@ -4889,15 +4893,15 @@ GO
 CREATE PROCEDURE [dbo].[vts_spQuestionCloneByID] @QuestionID int AS
 BEGIN TRANSACTION CloneQuestion
 DECLARE 
-	@ClonedQuestionId int,
+	@ClonedQuestionID int,
 	@OldDisplayOrder int,
 	@SurveyID int
 -- Clone the question
 INSERT INTO vts_tbQuestion  
-	(ParentQuestionId, 
+	(ParentQuestionID, 
 	SurveyID, 
-	SelectionModeId, 
-	LayoutModeId, 
+	SelectionModeID, 
+	LayoutModeID, 
 	DisplayOrder,
 	PageNumber, 
 	MinSelectionRequired, 
@@ -4908,17 +4912,17 @@ INSERT INTO vts_tbQuestion
 	QuestionText,
 	QuestionPipeAlias,
 	LibraryID,
-	QuestionIdText,
+	QuestionIDText,
 	Alias,
 	HelpText,
 	ShowHelpText,
-	QuestionGroupId
+	QuestionGroupID
 	)
 SELECT      
-	ParentQuestionId, 
+	ParentQuestionID, 
 	SurveyID, 
-	SelectionModeId, 
-	LayoutModeId, 
+	SelectionModeID, 
+	LayoutModeID, 
 	DisplayOrder,
 	PageNumber, 
 	MinSelectionRequired, 
@@ -4929,17 +4933,17 @@ SELECT
 	QuestionText + ' - Cloned',
 	QuestionPipeAlias,
 	LibraryID,
-	QuestionIdText,
+	QuestionIDText,
 	Alias,
 	HelpText,
 	ShowHelpText,
-	QuestionGroupId
+	QuestionGroupID
 FROM vts_tbQuestion WHERE QuestionID = @QuestionID
 -- Check if the cloned question was created
-IF @@rowCount <> 0
+IF @@RowCount <> 0
 BEGIN
 	-- Clone the question's answers
-	set @ClonedQuestionID = Scope_Identity()
+	set @ClonedQuestionID = SCOPE_IDENTITY()
 	INSERT INTO vts_tbMultiLanguageText(LanguageItemID, LanguageCode, LanguageMessageTypeID, ItemText)
 		SELECT @ClonedQuestionID as LanguageItemID, LanguageCode, LanguageMessageTypeID, ItemText
 		FROM vts_tbMultiLanguageText
@@ -4947,13 +4951,13 @@ BEGIN
 
 	SELECT @OldDisplayOrder = DisplayOrder, @SurveyID = SurveyID 
 	FROM vts_tbQuestion WHERE QuestionID = @QuestionID
-	exec vts_spAnswersCloneByQuestionId @QuestionID, @ClonedQuestionID
+	exec vts_spAnswersCloneByQuestionID @QuestionID, @ClonedQuestionID
 
 	-- Clone question's child question, if any available
 	exec vts_spQuestionChildsClone @QuestionID, @ClonedQuestionID, @SurveyID
 
 	-- Clone question section options
-	exec vts_spQuestionSectionOptionClone @QuestionId, @ClonedQuestionId
+	exec vts_spQuestionSectionOptionClone @QuestionID, @ClonedQuestionID
 
 	-- Clone question skip rules
 	INSERT INTO vts_tbSkipLogicRule (
@@ -4997,7 +5001,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -5031,11 +5035,11 @@ AS
 BEGIN TRANSACTION CopyQuestion
 
 INSERT INTO vts_tbQuestion  
-	(ParentQuestionId, 
+	(ParentQuestionID, 
 	SurveyID,
 	LibraryID,
-	SelectionModeId, 
-	LayoutModeId, 
+	SelectionModeID, 
+	LayoutModeID, 
 	DisplayOrder,
 	PageNumber, 
 	MinSelectionRequired, 
@@ -5048,14 +5052,14 @@ INSERT INTO vts_tbQuestion
 	QuestionIDText,
 	HelpText,
 	Alias,
-	QuestiongroupID,
+	QuestionGroupID,
 	ShowHelpText)
 SELECT      
-	ParentQuestionId, 
+	ParentQuestionID, 
 	@NewSurveyID,
 	null, 
-	SelectionModeId, 
-	LayoutModeId, 
+	SelectionModeID, 
+	LayoutModeID, 
 	@DisplayOrder,
 	@PageNumber, 
 	MinSelectionRequired, 
@@ -5073,10 +5077,10 @@ SELECT
 FROM vts_tbQuestion WHERE QuestionID = @QuestionID
 
 -- Check if the cloned question was created
-IF @@rowCount <> 0
+IF @@RowCount <> 0
 BEGIN
 	-- Clone the question's answers
-	set @QuestionCopyID = Scope_Identity()
+	set @QuestionCopyID = SCOPE_IDENTITY()
 	INSERT INTO vts_tbMultiLanguageText(LanguageItemID, LanguageCode, LanguageMessageTypeID, ItemText)
 		SELECT @QuestionCopyID as LanguageItemID, LanguageCode, LanguageMessageTypeID, ItemText
 		FROM vts_tbMultiLanguageText
@@ -5084,11 +5088,11 @@ BEGIN
 
 	exec vts_spQuestionChildsClone @QuestionID, @QuestionCopyID, @NewSurveyID
 	UPDATE vts_tbQuestion SET DisplayOrder = @DisplayOrder, PageNumber = @PageNumber 
-	WHERE SurveyID = @NewSurveyID AND ParentQuestionid = @QuestionCopyID
+	WHERE SurveyID = @NewSurveyID AND ParentQuestionID = @QuestionCopyID
 
-	exec vts_spAnswersCloneByQuestionId @QuestionID, @QuestionCopyID
+	exec vts_spAnswersCloneByQuestionID @QuestionID, @QuestionCopyID
 
-	exec vts_spQuestionSectionOptionClone @QuestionId, @QuestionCopyId
+	exec vts_spQuestionSectionOptionClone @QuestionID, @QuestionCopyID
 
 	-- Update the display order
 	UPDATE vts_tbQuestion 
@@ -5111,7 +5115,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -5136,18 +5140,18 @@ GO
 */
 CREATE PROCEDURE [dbo].[vts_spQuestionCopyToLibrary]
 				@QuestionID int, 
-				@LibraryId int,
+				@LibraryID int,
 				@QuestionCopyID int output
 AS
 
 BEGIN TRANSACTION CopyQuestionToLibrary
 
 INSERT INTO vts_tbQuestion  
-	(ParentQuestionId, 
+	(ParentQuestionID, 
 	SurveyID,
 	LibraryID,
-	LayoutModeId, 
-	SelectionModeId, 
+	LayoutModeID, 
+	SelectionModeID, 
 	ColumnsNumber,
 	QuestionText,
 	DisplayOrder,
@@ -5160,14 +5164,14 @@ INSERT INTO vts_tbQuestion
 	QuestionIDText,
 	HelpText,
 	Alias,
-	QuestiongroupID,
-	showhelpText)
+	QuestionGroupID,
+	ShowHelpText)
 SELECT      
-	ParentQuestionId, 
+	ParentQuestionID, 
 	null,
 	@LibraryID, 
-	LayoutModeId, 
-	SelectionModeId, 
+	LayoutModeID, 
+	SelectionModeID, 
 	ColumnsNumber,
 	QuestionText,
 	1,
@@ -5185,10 +5189,10 @@ SELECT
 FROM vts_tbQuestion WHERE QuestionID = @QuestionID
 
 -- Check if the cloned question was created
-IF @@rowCount <> 0
+IF @@RowCount <> 0
 BEGIN
 	-- Clone the question's answers
-	set @QuestionCopyID = Scope_Identity()
+	set @QuestionCopyID = SCOPE_IDENTITY()
 	INSERT INTO vts_tbMultiLanguageText(LanguageItemID, LanguageCode, LanguageMessageTypeID, ItemText)
 		SELECT @QuestionCopyID as LanguageItemID, LanguageCode, LanguageMessageTypeID, ItemText
 		FROM vts_tbMultiLanguageText
@@ -5196,11 +5200,11 @@ BEGIN
 
 	exec vts_spQuestionChildsClone @QuestionID, @QuestionCopyID, null
 
-	UPDATE vts_tbQuestion SET LibraryID = @LibraryID WHERE ParentQuestionid = @QuestionCopyID
+	UPDATE vts_tbQuestion SET LibraryID = @LibraryID WHERE ParentQuestionID = @QuestionCopyID
 
-	exec vts_spAnswersCloneByQuestionId @QuestionID, @QuestionCopyID
+	exec vts_spAnswersCloneByQuestionID @QuestionID, @QuestionCopyID
 
-	exec vts_spQuestionSectionOptionClone @QuestionId, @QuestionCopyId
+	exec vts_spQuestionSectionOptionClone @QuestionID, @QuestionCopyID
 
 END
 
@@ -5215,7 +5219,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -5246,16 +5250,16 @@ DECLARE @QuestionID int
 DECLARE @QuestionCopyID int
 DECLARE QuestionListCursor  CURSOR FOR
 	SELECT QuestionID FROM vts_tbQuestion
-	WHERE SurveyID = @SurveyID AND ParentQuestionid is null
+	WHERE SurveyID = @SurveyID AND ParentQuestionID is null
 OPEN QuestionListCursor
 FETCH QuestionListCursor INTO @QuestionID
 WHILE @@FETCH_STATUS = 0
 BEGIN
 	INSERT INTO vts_tbQuestion  
-		(ParentQuestionId, 
+		(ParentQuestionID, 
 		SurveyID, 
-		SelectionModeId, 
-		LayoutModeId, 
+		SelectionModeID, 
+		LayoutModeID, 
 		DisplayOrder,
 		PageNumber, 
 		MinSelectionRequired, 
@@ -5270,10 +5274,10 @@ BEGIN
 	Alias,QuestionGroupID,
 	ShowHelpText)
 	SELECT      
-		ParentQuestionId, 
+		ParentQuestionID, 
 		@NewSurveyID, 
-		SelectionModeId, 
-		LayoutModeId, 
+		SelectionModeID, 
+		LayoutModeID, 
 		DisplayOrder,
 		PageNumber, 
 		MinSelectionRequired, 
@@ -5289,18 +5293,18 @@ BEGIN
 	ShowHelpText
 	FROM vts_tbQuestion WHERE QuestionID = @QuestionID
 -- Check if the cloned question was created
-IF @@rowCount <> 0
+IF @@RowCount <> 0
 BEGIN
 	-- Clone the question's answers
-	set @QuestionCopyID = Scope_Identity()
+	set @QuestionCopyID = SCOPE_IDENTITY()
 	INSERT INTO vts_tbMultiLanguageText(LanguageItemID, LanguageCode, LanguageMessageTypeID, ItemText)
 		SELECT @QuestionCopyID as LanguageItemID, LanguageCode, LanguageMessageTypeID, ItemText
 		FROM vts_tbMultiLanguageText
 		WHERE LanguageItemID = @QuestionID AND LanguageMessageTypeID = 3	
 
 	exec vts_spQuestionChildsClone @QuestionID, @QuestionCopyID, @NewSurveyID
-	exec vts_spAnswersCloneByQuestionId @QuestionID, @QuestionCopyID
-	exec vts_spQuestionSectionOptionClone @QuestionId, @QuestionCopyId
+	exec vts_spAnswersCloneByQuestionID @QuestionID, @QuestionCopyID
+	exec vts_spQuestionSectionOptionClone @QuestionID, @QuestionCopyID
 END
 FETCH QuestionListCursor INTO @QuestionID
 END
@@ -5316,7 +5320,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -5338,14 +5342,14 @@ GO
 /// <summary>
 /// Deletes a question and reorder the other questions
 /// </summary>
-/// <param name="@QuestionID">
+/// <param Name="@QuestionID">
 /// ID of the question to delete
 /// </param>
 */
 CREATE PROCEDURE [dbo].[vts_spQuestionDeleteByID]  @QuestionID int AS
 DECLARE
 		@DisplayOrder int,
-		@SurveyId int,
+		@SurveyID int,
 		@ParentQuestionID int
 
 BEGIN TRANSACTION DeleteQuestion
@@ -5362,12 +5366,12 @@ DELETE FROM vts_tbMultiLanguageText WHERE LanguageItemID = @QuestionID AND
 	(LanguageMessageTypeID = 3 OR LanguageMessageTypeID = 6 OR LanguageMessageTypeID = 7 OR LanguageMessageTypeID = 8 OR LanguageMessageTypeID = 9)
 
 -- Retrieve the current display order
-SELECT @SurveyID = surveyId, @DisplayOrder  = DisplayOrder, @ParentQuestionID = ParentQuestionId
+SELECT @SurveyID = SurveyID, @DisplayOrder  = DisplayOrder, @ParentQuestionID = ParentQuestionID
 FROM vts_tbQuestion 
 WHERE QuestionID = @QuestionID
 
 -- Deletes Filter rules associated with this question
-DELETE FROM vts_tbFilterRule WHERE questionID = @QuestionID
+DELETE FROM vts_tbFilterRule WHERE QuestionID = @QuestionID
 
 -- Deletes Branching rules associated with this question
 DELETE FROM vts_tbBranchingRule WHERE QuestionID = @QuestionID
@@ -5379,10 +5383,10 @@ DELETE FROM vts_tbSkipLogicRule WHERE QuestionID = @QuestionID
 DELETE FROM vts_tbMessageCondition WHERE QuestionID = @QuestionID
 
 -- Deletes the answer subscribers
-DELETE FROM vts_tbAnswerConnection WHERE PublisherAnswerId in (select AnswerID FROM vts_tbAnswer WHERE QuestionID = @QuestionID OR QuestionID in (select QuestionID FROM vts_tbQuestion WHERE ParentQuestionID = @QuestionID))
+DELETE FROM vts_tbAnswerConnection WHERE PublisherAnswerID in (select AnswerID FROM vts_tbAnswer WHERE QuestionID = @QuestionID OR QuestionID in (select QuestionID FROM vts_tbQuestion WHERE ParentQuestionID = @QuestionID))
 
 -- Deletes the questions answers
-DELETE FROM vts_tbAnswer WHERE AnswerId in (select AnswerID FROM vts_tbAnswer WHERE QuestionID = @QuestionID OR QuestionID in (select QuestionID FROM vts_tbQuestion WHERE ParentQuestionID = @QuestionID))
+DELETE FROM vts_tbAnswer WHERE AnswerID in (select AnswerID FROM vts_tbAnswer WHERE QuestionID = @QuestionID OR QuestionID in (select QuestionID FROM vts_tbQuestion WHERE ParentQuestionID = @QuestionID))
 
 -- Deletes the child questions
 DELETE FROM vts_tbQuestion WHERE ParentQuestionID = @QuestionID
@@ -5411,7 +5415,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -5434,14 +5438,14 @@ GO
 /// Get a list of all answers that have subscribe to other answers in the question
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spQuestionGetAnswerConnection] @QuestionId int AS
+CREATE PROCEDURE [dbo].[vts_spQuestionGetAnswerConnection] @QuestionID int AS
 
-SELECT PublisherAnswerId,
-	SubscriberAnswerId
+SELECT PublisherAnswerID,
+	SubscriberAnswerID
 FROM vts_tbAnswerConnection
 INNER JOIN vts_tbAnswer 
-	ON vts_tbAnswerConnection.SubscriberAnswerId = vts_tbAnswer.AnswerId
-WHERE vts_tbAnswer.QuestionId = @QuestionId
+	ON vts_tbAnswerConnection.SubscriberAnswerID = vts_tbAnswer.AnswerID
+WHERE vts_tbAnswer.QuestionID = @QuestionID
 
 
 
@@ -5476,17 +5480,17 @@ GO
 /// <summary>
 /// Get all question's answers
 /// </summary>
-/// <param name="@QuestionID">
+/// <param Name="@QuestionID">
 /// ID of the question from which we want the answers
 /// </param>
 */
-CREATE PROCEDURE [dbo].[vts_spQuestionGetAnswers] @QuestionID int, @LanguageCode nvarchar(50) AS
+CREATE PROCEDURE [dbo].[vts_spQuestionGetAnswers] @QuestionID int, @LanguageCode NVARCHAR(50) AS
 
 SELECT 
 	DisplayOrder,
 	AnswerID,
 	vts_tbAnswer.AnswerTypeID,
-	QuestionId,
+	QuestionID,
 	AnswerText = 
 		CASE @LanguageCode 
 		WHEN null THEN
@@ -5494,10 +5498,10 @@ SELECT
 		WHEN '' THEN
 			AnswerText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbAnswer.AnswerID AND
-			LanguageMessageTypeId = 1 AND
+			LanguageItemID = vts_tbAnswer.AnswerID AND
+			LanguageMessageTypeID = 1 AND
 			LanguageCode = @LanguageCode), AnswerText)		
 		END,
 	ImageURL, 
@@ -5511,10 +5515,10 @@ SELECT
 		WHEN '' THEN
 			DefaultText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbAnswer.AnswerID AND
-			LanguageMessageTypeId = 2 AND
+			LanguageItemID = vts_tbAnswer.AnswerID AND
+			LanguageMessageTypeID = 2 AND
 			LanguageCode = @LanguageCode), DefaultText)		
 		END,
 	ScorePoint,
@@ -5533,14 +5537,14 @@ SELECT
 	Mandatory,
 	RegExpression,
 	RegExMessage,
-	vts_tbAnswer.RegularExpressionId,
+	vts_tbAnswer.RegularExpressionID,
 	AnswerAlias,
 	CssClass
 FROM vts_tbAnswer
 INNER JOIN vts_tbAnswerType 
 	ON vts_tbAnswer.AnswerTypeID = vts_tbAnswerType.AnswerTypeID
 LEFT JOIN vts_tbRegularExpression
-	ON vts_tbAnswer.RegularExpressionId = vts_tbRegularExpression.RegularExpressionId
+	ON vts_tbAnswer.RegularExpressionID = vts_tbRegularExpression.RegularExpressionID
 WHERE QuestionID=@QuestionID ORDER BY vts_tbAnswer.DisplayOrder, AnswerID ASC
 
 GO
@@ -5550,7 +5554,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -5572,7 +5576,7 @@ GO
 /// <summary>
 /// Get a list of all question's answers
 /// </summary>
-/// <param name="@QuestionID">
+/// <param Name="@QuestionID">
 /// ID of the question from which we want the answers
 /// </param>
 /// <returns>
@@ -5582,12 +5586,12 @@ GO
 CREATE PROCEDURE [dbo].[vts_spQuestionGetAnswersList] @QuestionID int AS
 SELECT 
 	AnswerID,
-	vts_tbAnswer.AnswerTypeId,
+	vts_tbAnswer.AnswerTypeID,
 	AnswerText,
 	TypeMode,
-	displayOrder,
-	answerIdtext,
-	answeralias	
+	DisplayOrder,
+	AnswerIDText,
+	AnswerAlias	
 FROM vts_tbAnswer
 INNER JOIN vts_tbAnswerType 
 	ON vts_tbAnswer.AnswerTypeID = vts_tbAnswerType.AnswerTypeID
@@ -5602,7 +5606,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -5626,11 +5630,11 @@ GO
 /// that have also answered the base question answer
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spQuestionGetCrossTabResults] @CompareQuestionID int, @BaseQuestionAnswerId int AS
+CREATE PROCEDURE [dbo].[vts_spQuestionGetCrossTabResults] @CompareQuestionID int, @BaseQuestionAnswerID int AS
 
 SELECT 
-	(select count(voterId) FROM vts_tbVoterAnswers WHERE AnswerID = asw.AnswerID AND VoterID in 
-		(select voterId FROM vts_tbVoterAnswers WHERE AnswerID = @BaseQuestionAnswerId)) 
+	(select count(VoterID) FROM vts_tbVoterAnswers WHERE AnswerID = asw.AnswerID AND VoterID in 
+		(select VoterID FROM vts_tbVoterAnswers WHERE AnswerID = @BaseQuestionAnswerID)) 
 	AS Total
 FROM  vts_tbAnswer asw
 INNER JOIN vts_tbAnswerType 
@@ -5646,7 +5650,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -5670,24 +5674,24 @@ GO
 /// that have or have not answered the base question answers
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spQuestionGetCrossTabTotalResults] @CompareQuestionID int, @BaseQuestionId int AS
+CREATE PROCEDURE [dbo].[vts_spQuestionGetCrossTabTotalResults] @CompareQuestionID int, @BaseQuestionID int AS
 
 SELECT 
 	-- answered count
-	(select count(voterId) FROM vts_tbVoterAnswers WHERE AnswerID = asw.AnswerID AND 
+	(select count(VoterID) FROM vts_tbVoterAnswers WHERE AnswerID = asw.AnswerID AND 
 		VoterID IN 
-		(select voterId FROM vts_tbVoterAnswers
- 		WHERE answerId = asw.AnswerId and VoterID IN 
-		(select voterId FROM vts_tbVoterAnswers
+		(select VoterID FROM vts_tbVoterAnswers
+ 		WHERE AnswerID = asw.AnswerID and VoterID IN 
+		(select VoterID FROM vts_tbVoterAnswers
  		INNER JOIN vts_tbAnswer ON vts_tbAnswer.AnswerID = vts_tbVoterAnswers.AnswerID
- 		WHERE QuestionID = @BaseQuestionId)))
+ 		WHERE QuestionID = @BaseQuestionID)))
 
 	+ 	
 	-- unanswered count
-	(select count(voterId) FROM vts_tbVoterAnswers WHERE AnswerID = asw.AnswerID AND (VoterID NOT IN 
-		(select voterId FROM vts_tbVoterAnswers
+	(select count(VoterID) FROM vts_tbVoterAnswers WHERE AnswerID = asw.AnswerID AND (VoterID NOT IN 
+		(select VoterID FROM vts_tbVoterAnswers
  		INNER JOIN vts_tbAnswer ON vts_tbAnswer.AnswerID = vts_tbVoterAnswers.AnswerID
- 		WHERE QuestionID = @BaseQuestionId)))
+ 		WHERE QuestionID = @BaseQuestionID)))
 	AS Total
 FROM vts_tbAnswer asw
 INNER JOIN vts_tbAnswerType 
@@ -5703,7 +5707,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -5727,13 +5731,13 @@ GO
 /// that have not answered the base question answers
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spQuestionGetCrossTabUnansweredResults] @CompareQuestionID int, @BaseQuestionId int AS
+CREATE PROCEDURE [dbo].[vts_spQuestionGetCrossTabUnansweredResults] @CompareQuestionID int, @BaseQuestionID int AS
 
 SELECT 
-	(select count(voterId) FROM vts_tbVoterAnswers WHERE AnswerID = asw.AnswerID AND  VoterID NOT IN 
-		(select voterId FROM vts_tbVoterAnswers
+	(select count(VoterID) FROM vts_tbVoterAnswers WHERE AnswerID = asw.AnswerID AND  VoterID NOT IN 
+		(select VoterID FROM vts_tbVoterAnswers
  		INNER JOIN vts_tbAnswer ON vts_tbAnswer.AnswerID = vts_tbVoterAnswers.AnswerID
- 		WHERE QuestionID = @BaseQuestionId)) as Total
+ 		WHERE QuestionID = @BaseQuestionID)) as Total
 FROM vts_tbAnswer asw
 INNER JOIN vts_tbAnswerType 
 	ON asw.AnswerTypeID = vts_tbAnswerType.AnswerTypeID
@@ -5748,7 +5752,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -5770,15 +5774,15 @@ GO
 /// <summary>
 /// Get details of a question
 /// </summary>
-/// <param name="@QuestionID">
+/// <param Name="@QuestionID">
 /// ID of the questions from which we want the details
 /// </param>
 /// <returns>
 ///	QuestionID,
 ///	SurveyID, 
 ///	QuestionText, 
-///	SelectionModeId,
-///	LayoutModeId,
+///	SelectionModeID,
+///	LayoutModeID,
 ///	DisplayOrder
 ///	MinSelectionRequired,
 //	MaxSelectionAllowed
@@ -5787,7 +5791,7 @@ GO
 //	TypeMode
 /// </returns>
 */
-CREATE PROCEDURE [dbo].[vts_spQuestionGetDetails]  @QuestionID int, @LanguageCode nvarchar(50) AS
+CREATE PROCEDURE [dbo].[vts_spQuestionGetDetails]  @QuestionID int, @LanguageCode NVARCHAR(50) AS
 SELECT 
 	vts_tbQuestion.QuestionID,
 	SurveyID,
@@ -5799,14 +5803,14 @@ SELECT
 		WHEN '' THEN
 			QuestionText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestion.QuestionID AND
-			LanguageMessageTypeId = 3 AND
+			LanguageItemID = vts_tbQuestion.QuestionID AND
+			LanguageMessageTypeID = 3 AND
 			LanguageCode = @LanguageCode), QuestionText)		
 		END,
-	vts_tbQuestion.SelectionModeId,
-	LayoutModeId,
+	vts_tbQuestion.SelectionModeID,
+	LayoutModeID,
 	DisplayOrder,
 	MinSelectionRequired,
 	MaxSelectionAllowed,
@@ -5816,7 +5820,7 @@ SELECT
 	PageNumber,
 	ColumnsNumber,
 	QuestionPipeAlias,
-	(ISNULL(RepeatableSectionModeId, 0)) as RepeatableSectionModeId,
+	(ISNULL(RepeatableSectionModeID, 0)) as RepeatableSectionModeID,
 	AddSectionLinkText = 
 		CASE @LanguageCode 
 		WHEN null THEN
@@ -5824,10 +5828,10 @@ SELECT
 		WHEN '' THEN
 			AddSectionLinkText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestionSectionOption.QuestionID AND
-			LanguageMessageTypeId = 6 AND
+			LanguageItemID = vts_tbQuestionSectionOption.QuestionID AND
+			LanguageMessageTypeID = 6 AND
 			LanguageCode = @LanguageCode), AddSectionLinkText)	
 		END,
 	DeleteSectionLinkText = 
@@ -5837,10 +5841,10 @@ SELECT
 		WHEN '' THEN
 			DeleteSectionLinkText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestionSectionOption.QuestionID AND
-			LanguageMessageTypeId = 7 AND
+			LanguageItemID = vts_tbQuestionSectionOption.QuestionID AND
+			LanguageMessageTypeID = 7 AND
 			LanguageCode = @LanguageCode), DeleteSectionLinkText)	
 		END,
 
@@ -5851,10 +5855,10 @@ SELECT
 		WHEN '' THEN
 			EditSectionLinkText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestionSectionOption.QuestionID AND
-			LanguageMessageTypeId = 9 AND
+			LanguageItemID = vts_tbQuestionSectionOption.QuestionID AND
+			LanguageMessageTypeID = 9 AND
 			LanguageCode = @LanguageCode), EditSectionLinkText)	
 		END,
 	UpdateSectionLinkText = 
@@ -5864,15 +5868,15 @@ SELECT
 		WHEN '' THEN
 			UpdateSectionLinkText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestionSectionOption.QuestionID AND
-			LanguageMessageTypeId = 8 AND
+			LanguageItemID = vts_tbQuestionSectionOption.QuestionID AND
+			LanguageMessageTypeID = 8 AND
 			LanguageCode = @LanguageCode), UpdateSectionLinkText)
 		END,
 	(ISNULL(MaxSections, 0)) as MaxSections, 
-	QuestionIdText,
-	QuestionGroupId,
+	QuestionIDText,
+	QuestionGroupID,
 	HelpText = 
 		CASE @LanguageCode 
 		WHEN null THEN
@@ -5880,10 +5884,10 @@ SELECT
 		WHEN '' THEN
 			HelpText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestion.QuestionID AND
-			LanguageMessageTypeId = 11 AND
+			LanguageItemID = vts_tbQuestion.QuestionID AND
+			LanguageMessageTypeID = 11 AND
 			LanguageCode = @LanguageCode), HelpText)		
 		END,
 	ShowHelpText,
@@ -5894,10 +5898,10 @@ SELECT
 		WHEN '' THEN
 			Alias
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestion.QuestionID AND
-			LanguageMessageTypeId = 12 AND
+			LanguageItemID = vts_tbQuestion.QuestionID AND
+			LanguageMessageTypeID = 12 AND
 			LanguageCode = @LanguageCode), Alias)		
 		END
 FROM vts_tbQuestion 
@@ -5937,8 +5941,8 @@ SELECT
 	QuestionID,
 	ParentQuestionID,
 	QuestionText, 
-	vts_tbQuestion.SelectionModeId,
-	LayoutModeId,
+	vts_tbQuestion.SelectionModeID,
+	LayoutModeID,
 	MinSelectionRequired,
 	MaxSelectionAllowed,
 	RandomizeAnswers,
@@ -5947,8 +5951,8 @@ SELECT
 	QuestionPipeAlias,
 	Alias,
 	HelpText,
-	QuestionIdText,
-	QuestionGroupId,
+	QuestionIDText,
+	QuestionGroupID,
 	ShowHelpText
 FROM vts_tbQuestion 
 WHERE QuestionID = @QuestionID AND ParentQuestionID is null
@@ -5965,10 +5969,10 @@ SELECT
 	RatePart,
 	Selected,
 	AnswerTypeID,
-	RegularExpressionId,
+	RegularExpressionID,
 	Mandatory,
-	Answeralias,
-	answerIdText,
+	AnswerAlias,
+	AnswerIDText,
 	SliderRange,
 	SliderValue,
 	SliderMin,
@@ -5976,7 +5980,7 @@ SELECT
 	SliderAnimate,
 	SliderStep,
 	CssClass,
-	vts_tbAnswer.AnswerID OldId
+	vts_tbAnswer.AnswerID OldID
 	
 FROM vts_tbAnswer
 INNER JOIN vts_tbQuestion 
@@ -5986,10 +5990,10 @@ WHERE vts_tbQuestion.QuestionID = @QuestionID AND vts_tbQuestion.ParentQuestionI
 SELECT 
 	PublisherAnswerID,
 	SubscriberAnswerID,
-	vts_tbAnswer.QuestionId
+	vts_tbAnswer.QuestionID
 FROM vts_tbAnswerConnection
 INNER JOIN vts_tbAnswer
-	ON vts_tbAnswer.AnswerId = PublisherAnswerID
+	ON vts_tbAnswer.AnswerID = PublisherAnswerID
 INNER JOIN vts_tbQuestion 
 	ON vts_tbQuestion.QuestionID = vts_tbAnswer.QuestionID  
 WHERE vts_tbQuestion.QuestionID = @QuestionID AND vts_tbQuestion.ParentQuestionID is null
@@ -6017,52 +6021,52 @@ SELECT
 	EditSectionLinkText,
 	UpdateSectionLinkText,
 	AddSectionLinkText,
-	QuestionId,
+	QuestionID,
 	MaxSections,
-	RepeatableSectionModeId
+	RepeatableSectionModeID
 FROM vts_tbQuestionSectionOption
 WHERE QuestionID = @QuestionID
 
 SELECT QuestionID, AnswerID FROM vts_tbQuestionSectionGridAnswer WHERE QuestionID = @QuestionID
 
-SELECT [LanguageItemId]
+SELECT [LanguageItemID]
       ,[LanguageCode]
-      ,[LanguageMessageTypeId]
+      ,[LanguageMessageTypeID]
       ,[ItemText]
   FROM [dbo].[vts_tbMultiLanguageText]
   where
   (
-   languageMessageTypeId=10 OR
-  ( [LanguageItemId] =@QuestionID and
-  [LanguageMessageTypeId] in(3,11,12))
-  OR( [LanguageItemId] in (SELECT answerid from 
-  vts_tbAnswer as ans  where ans.QuestionId=@QuestionID ) and
-  [LanguageMessageTypeId] in(1,2,13))  )
+   LanguageMessageTypeID=10 OR
+  ( [LanguageItemID] =@QuestionID and
+  [LanguageMessageTypeID] in(3,11,12))
+  OR( [LanguageItemID] in (SELECT AnswerID from 
+  vts_tbAnswer as ans  where ans.QuestionID=@QuestionID ) and
+  [LanguageMessageTypeID] in(1,2,13))  )
   and len(ItemText) !=0
-  and LanguageItemId in(
+  and LanguageItemID in(
   SELECT g.ID
    FROM vts_tbQuestionGroups AS g
   WHERE g.ID  IN(
-  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE q.QuestionId=@QuestionId)
+  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE q.QuestionID=@QuestionID)
   UNION
   SELECT g.ID FROM vts_tbQuestionGroups AS g
   WHERE ID IN(
   SELECT g.ParentGroupID FROM vts_tbQuestionGroups AS g
   WHERE g.ID  IN(
-  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE q.QuestionId=@QuestionId)
+  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE q.QuestionID=@QuestionID)
   )
   )
   
-SELECT g.ID,g.ParentGroupID,g.GroupName,g.DisplayOrder,g.ID OldId
+SELECT g.ID,g.ParentGroupID,g.GroupName,g.DisplayOrder,g.ID OldID
    FROM vts_tbQuestionGroups AS g
   WHERE g.ID  IN(
-  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE q.QuestionId=@QuestionId)
+  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE q.QuestionID=@QuestionID)
   UNION
-  SELECT g.ID,g.ParentGroupID,g.GroupName,g.DisplayOrder ,g.ID OldId FROM vts_tbQuestionGroups AS g
+  SELECT g.ID,g.ParentGroupID,g.GroupName,g.DisplayOrder ,g.ID OldID FROM vts_tbQuestionGroups AS g
   WHERE ID IN(
   SELECT g.ParentGroupID FROM vts_tbQuestionGroups AS g
   WHERE g.ID  IN(
-  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE q.QuestionId=@QuestionId)
+  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE q.QuestionID=@QuestionID)
   )
   
 
@@ -6075,7 +6079,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -6097,7 +6101,7 @@ GO
 /// <summary>
 /// Get all questions and child questions
 /// </summary>
-/// <param name="@SurveyID">
+/// <param Name="@SurveyID">
 /// ID of the survey from
 /// </param>
 */
@@ -6106,10 +6110,10 @@ AS
 SELECT 
 	QuestionID,
 	ParentQuestionID,
-	SurveyId,
+	SurveyID,
 	QuestionText, 
-	vts_tbQuestion.SelectionModeId,
-	LayoutModeId,
+	vts_tbQuestion.SelectionModeID,
+	LayoutModeID,
 	DisplayOrder,
 	MinSelectionRequired,
 	MaxSelectionAllowed,
@@ -6125,7 +6129,7 @@ FROM vts_tbQuestion
 INNER JOIN vts_tbQuestionSelectionMode 
 	ON vts_tbQuestionSelectionMode.QuestionSelectionModeID = vts_tbQuestion.SelectionModeID
 WHERE 
-	SurveyID=@SurveyId AND
+	SurveyID=@SurveyID AND
 	TypeMode & 4 = 4 
 ORDER BY DisplayOrder ASC
 
@@ -6138,7 +6142,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -6161,15 +6165,15 @@ CREATE PROCEDURE [dbo].[vts_spQuestionGetResults]
 				@QuestionID int,
 				@FilterID int = -1,
 				@SortOrder varchar(4) = 'ANS',
-				@LanguageCode nvarchar(50),
+				@LanguageCode NVARCHAR(50),
 				@StartDate datetime,
 				@EndDate datetime
  AS
 SELECT 
 	Q.QuestionID,
 	Q.ParentQuestionID,
-	Q.SurveyId,
-	Q.SelectionModeId,
+	Q.SurveyID,
+	Q.SelectionModeID,
 	Q.QuestionText, 
 	 (select QuestionText FROM vts_tbQuestion WHERE QuestionID = Q.ParentQuestionID) as ParentQuestionText,
 	Q.DisplayOrder,
@@ -6190,7 +6194,7 @@ BEGIN
 			INNER JOIN vts_tbVoter ON 
 				vts_tbVoter.VoterID = vts_tbVoterAnswers.VoterID
 			WHERE Validated<>0 AND AnswerID = vts_tbAnswer.AnswerID AND
-			DATEDIFF (d,@startDate,vts_tbVoter.VoteDate) >= 0 AND DATEDIFF (d,@endDate,vts_tbVoter.VoteDate) <= 0
+			DATEDIFF (d,@StartDate,vts_tbVoter.VoteDate) >= 0 AND DATEDIFF (d,@EndDate,vts_tbVoter.VoteDate) <= 0
 			AND (vts_tbVoter.LanguageCode = @LanguageCode OR
 			 ((@LanguageCode is null OR @LanguageCode = '') AND (LanguageCode is null OR LanguageCode ='')) OR
 			(@LanguageCode = '-1' AND (LanguageCode is not null OR LanguageCode is null)))
@@ -6198,7 +6202,7 @@ BEGIN
 ) as VoterCount,
 		vts_tbAnswer.QuestionID,
 		vts_tbAnswer.AnswerTypeID,
-		SelectionModeId,
+		SelectionModeID,
 		TypeMode,
 		RatePart
 	FROM vts_tbAnswer
@@ -6207,7 +6211,7 @@ BEGIN
 	INNER JOIN vts_tbAnswerType
 		ON vts_tbAnswerType.AnswerTypeID = vts_tbAnswer.AnswerTypeID
 	WHERE 
-		vts_tbQuestion.QuestionID=@QuestionID OR vts_tbQuestion.parentQuestionID = @QuestionID
+		vts_tbQuestion.QuestionID=@QuestionID OR vts_tbQuestion.ParentQuestionID = @QuestionID
  	ORDER BY 
 		case when @SortOrder = 'ANS' then vts_tbAnswer.DisplayOrder end ,
 		case when @SortOrder = 'ASC' then 
@@ -6235,7 +6239,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -6255,9 +6259,9 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 /// <summary>
-/// Get all question's answers that can be selected
+/// Get all question's answers that can be Selected
 /// </summary>
-/// <param name="@QuestionID">
+/// <param Name="@QuestionID">
 /// ID of the question from which we want the selectable answers
 /// </param>
 */
@@ -6265,7 +6269,7 @@ CREATE PROCEDURE [dbo].[vts_spQuestionGetSelectableAnswers] @QuestionID int AS
 SELECT 
 	AnswerID,
 	vts_tbAnswer.AnswerTypeID,
-	QuestionId,
+	QuestionID,
 	AnswerText,
 	ImageURL, 
 	(SELECT count(*) FROM vts_tbVoterAnswers INNER JOIN vts_tbVoter ON vts_tbVoter.VoterID = vts_tbVoterAnswers.VoterID WHERE  vts_tbVoter.Validated<>0 AND AnswerID = vts_tbAnswer.AnswerID) as VoteCount,
@@ -6287,12 +6291,12 @@ SELECT
 	Mandatory,
 	RegExpression,
 	RegExMessage,
-	vts_tbAnswer.RegularExpressionId
+	vts_tbAnswer.RegularExpressionID
 FROM vts_tbAnswer
 INNER JOIN vts_tbAnswerType 
 	ON vts_tbAnswer.AnswerTypeID = vts_tbAnswerType.AnswerTypeID
 LEFT JOIN vts_tbRegularExpression
-	ON vts_tbAnswer.RegularExpressionId = vts_tbRegularExpression.RegularExpressionId
+	ON vts_tbAnswer.RegularExpressionID = vts_tbRegularExpression.RegularExpressionID
 WHERE QuestionID=@QuestionID
 AND vts_tbAnswerType.TypeMode & 1 > 0
 ORDER BY vts_tbAnswer.DisplayOrder
@@ -6306,7 +6310,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -6330,15 +6334,15 @@ GO
 /// </summary>
 */
 CREATE PROCEDURE [dbo].[vts_spQuestionGroupAddNew]
-			@GroupName nvarchar(255),
+			@GroupName NVARCHAR(255),
 			@ParentGroupID int, 
-			@LanguageCode nvarchar(50) = null,
+			@LanguageCode NVARCHAR(50) = null,
 			@QuestionGroupID int OUTPUT
 AS
 
 BEGIN TRAN InsertQuestionGroup
-declare @disp int
-select @disp = ISNULL(MAX(DisplayOrder), 0) from vts_tbQuestionGroups 
+declare @Disp int
+select @Disp = ISNULL(MAX(DisplayOrder), 0) from vts_tbQuestionGroups 
 where ParentGroupID = @ParentGroupID
 
 INSERT INTO vts_tbQuestionGroups
@@ -6348,10 +6352,10 @@ INSERT INTO vts_tbQuestionGroups
 	)
 VALUES
 	(@GroupName,	 
-	case when @ParentGroupID=-1 then null else @parentGroupID end,
-	@disp + 1)
+	case when @ParentGroupID=-1 then null else @ParentGroupID end,
+	@Disp + 1)
 
-set @QuestionGroupID = Scope_Identity()
+set @QuestionGroupID = SCOPE_IDENTITY()
 
 -- Updates text
 IF @LanguageCode is not null and @LanguageCode<>''
@@ -6371,7 +6375,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -6401,19 +6405,19 @@ AS
 BEGIN TRAN InsertQuestionGroup
 
 delete from vts_tbMultiLanguageText where
-languagemessagetypeid=10
-and languageitemid in (
-  select id from vts_tbQuestionGroups
-where ID = @QuestionGroupID or ParentGroupId = @QuestionGroupID
+LanguageMessageTypeID=10
+and LanguageItemID in (
+  select ID from vts_tbQuestionGroups
+where ID = @QuestionGroupID or ParentGroupID = @QuestionGroupID
 );
 update vts_tbQuestion 
 set QuestionGroupID = null
 where QuestionGroupID = @QuestionGroupID or
-QuestionGroupId in(Select ID from vts_tbQuestionGroups
-                             where ParentGroupId=@QuestionGroupId);
+QuestionGroupID in(Select ID from vts_tbQuestionGroups
+                             where ParentGroupID=@QuestionGroupID);
 
 delete from vts_tbQuestionGroups
-where ID = @QuestionGroupID or ParentGroupId = @QuestionGroupID
+where ID = @QuestionGroupID or ParentGroupID = @QuestionGroupID
 
 
 COMMIT TRAN InsertQuestionGroup
@@ -6427,7 +6431,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -6451,7 +6455,7 @@ GO
 /// </summary>
 */
 CREATE PROCEDURE [dbo].[vts_spQuestionGroupGetAll]
-@LanguageCode nvarchar(50) = null
+@LanguageCode NVARCHAR(50) = null
 AS
 
 select ID, 
@@ -6461,11 +6465,11 @@ select ID,
 		WHEN '' THEN
 			GroupName 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestionGroups.ID AND
-			LanguageMessageTypeId = 10 AND
-			LanguageCode = isnull(@LanguageCode,'@@@@')), GroupName)		
+			LanguageItemID = vts_tbQuestionGroups.ID AND
+			LanguageMessageTypeID = 10 AND
+			LanguageCode = ISNULL(@LanguageCode,'@@@@')), GroupName)		
 		END as GroupName,
 	ParentGroupID,
 	DisplayOrder from vts_tbQuestionGroups
@@ -6480,7 +6484,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -6504,20 +6508,20 @@ GO
 /// </summary>
 */
 CREATE PROCEDURE [dbo].[vts_spQuestionGroupGetByQuestionID]
-	@QuestionId int
+	@QuestionID int
 AS
-	declare @gid int
-	select @gid = QuestionGroupID from vts_tbQuestion where QuestionId = @QuestionId
+	declare @GID int
+	select @GID = QuestionGroupID from vts_tbQuestion where QuestionID = @QuestionID
 
 	select ID, GroupName,
 		ParentGroupID,
 		DisplayOrder from vts_tbQuestionGroups
-		where ParentGroupID = @gid	
+		where ParentGroupID = @GID	
 	UNION 
 	select ID, GroupName,
 		ParentGroupID,
 		DisplayOrder from vts_tbQuestionGroups
-		where ID = @gid
+		where ID = @GID
 
 
 
@@ -6528,7 +6532,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -6552,17 +6556,17 @@ GO
 /// </summary>
 */
 CREATE PROCEDURE [dbo].[vts_spQuestionGroupUpdate]
-			@GroupName nvarchar(255),			
+			@GroupName NVARCHAR(255),			
 			@QuestionGroupID int,
 			@ParentGroupID int,
-			@LanguageCode nvarchar(50) = null
+			@LanguageCode NVARCHAR(50) = null
 AS
 
 BEGIN TRAN InsertQuestionGroup
 
 UPDATE vts_tbQuestionGroups
 	set
-	ParentGroupId = case when @ParentGroupID=-1 then null else @ParentGroupID End
+	ParentGroupID = case when @ParentGroupID=-1 then null else @ParentGroupID End
 where ID = @QuestionGroupID
 
 -- Updates text
@@ -6589,7 +6593,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -6613,62 +6617,62 @@ GO
 /// </summary>
 */
 CREATE PROCEDURE [dbo].[vts_spQuestionGroupUpdateDisplayID]
-	@QuestionGroupId int,
+	@QuestionGroupID int,
 	@Up int = 0
 AS
 	BEGIN TRAN UpdateQuestionGroup
 
-	declare @parentId int
-	declare @disp int	
-	declare @previd int	
-	declare @prevdisp int
-	declare @way int
-	declare @rid int		
+	declare @ParentID int
+	declare @Disp int	
+	declare @PrevID int	
+	declare @PrevDisp int
+	declare @Way int
+	declare @RID int		
 
-	select @parentId = ParentGroupID from vts_tbQuestionGroups 
-		where ID = @QuestionGroupId	
+	select @ParentID = ParentGroupID from vts_tbQuestionGroups 
+		where ID = @QuestionGroupID	
 	
-	create table #tempQuestionGroups
+	create table #TempQuestionGroups
     (GroupID int, DisplayOrder int, RowID int IDENTITY (1, 1))
     
-	insert #tempQuestionGroups select ID, DisplayOrder from vts_tbQuestionGroups 
-		where ISNULL(ParentGroupID, -1) = ISNULL(@parentId, -1) order by DisplayOrder 
+	insert #TempQuestionGroups select ID, DisplayOrder from vts_tbQuestionGroups 
+		where ISNULL(ParentGroupID, -1) = ISNULL(@ParentID, -1) order by DisplayOrder 
 	
-	set @way = 
+	set @Way = 
 		case (@Up) 
 		when 1 then -1
 		when 0 then 1
 		end
 		
-	select @rid = RowId + @way from #tempQuestionGroups where GroupID = @QuestionGroupId
+	select @RID = RowID + @Way from #TempQuestionGroups where GroupID = @QuestionGroupID
 	
-	if (not exists(select 1 from #tempQuestionGroups where @rid = RowId))
-		select @rid = 
+	if (not exists(select 1 from #TempQuestionGroups where @RID = RowID))
+		select @RID = 
 			case (@Up)
 			when 0 then MAX(RowID)
 			when 1 then MIN(RowID)			
 			end
-			 from #tempQuestionGroups 				 	
+			 from #TempQuestionGroups 				 	
 	
-	select @previd = GroupID from #tempQuestionGroups where RowID = @rid
+	select @PrevID = GroupID from #TempQuestionGroups where RowID = @RID
 	
 	update vts_tbQuestionGroups 
-		set DisplayOrder = tmp.RowId
+		set DisplayOrder = tmp.RowID
 		from vts_tbQuestionGroups as QG
-		inner join #tempQuestionGroups tmp on QG.ID = tmp.GroupID
+		inner join #TempQuestionGroups tmp on QG.ID = tmp.GroupID
 	
-	select @prevdisp = DisplayOrder from vts_tbQuestionGroups where ID = @previd
-	select @disp = DisplayOrder from vts_tbQuestionGroups where ID = @QuestionGroupId
+	select @PrevDisp = DisplayOrder from vts_tbQuestionGroups where ID = @PrevID
+	select @Disp = DisplayOrder from vts_tbQuestionGroups where ID = @QuestionGroupID
 				
 	update vts_tbQuestionGroups 
-		set DisplayOrder = @disp 
-		where ID = @previd
+		set DisplayOrder = @Disp 
+		where ID = @PrevID
 	
 	update vts_tbQuestionGroups 
-		set DisplayOrder = @prevdisp 
-		where ID = @QuestionGroupId	
+		set DisplayOrder = @PrevDisp 
+		where ID = @QuestionGroupID	
 	
-	drop table #tempQuestionGroups	
+	drop table #TempQuestionGroups	
 	
 	
 	COMMIT TRAN UpdateQuestionGroup
@@ -6682,7 +6686,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -6705,13 +6709,13 @@ GO
 /// Get a list from the library of all parent questions that can have any type of answers, except those that have child questions 
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spQuestionLibrarySingleAnswerableListWithoutChilds] @LibraryId int  AS
+CREATE PROCEDURE [dbo].[vts_spQuestionLibrarySingleAnswerableListWithoutChilds] @LibraryID int  AS
 SELECT DISTINCT Q.QuestionID, Q.QuestionText, Q.DisplayOrder 
 FROM vts_tbQuestion Q
 INNER JOIN vts_tbQuestionSelectionMode
 	ON  QuestionSelectionModeID= Q.SelectionModeID
 WHERE 
-	LibraryId = @LibraryId AND 
+	LibraryID = @LibraryID AND 
 	TypeMode & 4 > 1 AND 
 	ParentQuestionID is null
 	AND QuestionID NOT IN (SELECT ParentQuestionID FROM vts_tbQuestion WHERE ParentQuestionID = Q.QuestionID)
@@ -6726,7 +6730,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -6748,7 +6752,7 @@ GO
 /// <summary>
 /// Get a list of all question that have selectable answers
 /// </summary>
-/// <param name="@SurveyID">
+/// <param Name="@SurveyID">
 /// ID of the survey  to retrieve questions
 /// </param>
 /// <returns>
@@ -6757,7 +6761,7 @@ GO
 ///	QuestionText, 
 /// </returns>
 */
-CREATE PROCEDURE [dbo].[vts_spQuestionListWithSelectableAnswers] @SurveyId int  AS
+CREATE PROCEDURE [dbo].[vts_spQuestionListWithSelectableAnswers] @SurveyID int  AS
 SELECT DISTINCT Q.QuestionID, Q.QuestionText, Q.DisplayOrder FROM vts_tbQuestion Q
 INNER JOIN vts_tbAnswer 
 	ON vts_tbAnswer.QuestionID = Q.QuestionID
@@ -6778,7 +6782,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -6800,10 +6804,10 @@ GO
 /// <summary>
 /// Get a list of all question that have selectable answers
 /// </summary>
-/// <param name="@SurveyID">
+/// <param Name="@SurveyID">
 /// ID of the survey  to retrieve questions
 /// </param>
-/// <param name="@SurveyID">
+/// <param Name="@SurveyID">
 /// Page to rertieve question from
 /// </param>
 /// <returns>
@@ -6812,7 +6816,7 @@ GO
 ///	QuestionText, 
 /// </returns>
 */
-CREATE PROCEDURE [dbo].[vts_spQuestionListWithSelectableAnswersForPage] @SurveyId int, @PageNumber int  AS
+CREATE PROCEDURE [dbo].[vts_spQuestionListWithSelectableAnswersForPage] @SurveyID int, @PageNumber int  AS
 SELECT DISTINCT Q.QuestionID, Q.QuestionText, Q.DisplayOrder FROM vts_tbQuestion Q
 INNER JOIN vts_tbAnswer 
 	ON vts_tbAnswer.QuestionID = Q.QuestionID
@@ -6834,7 +6838,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -6856,12 +6860,12 @@ GO
 /// <summary>
 /// Delete all the columns of the given matrix
 /// </summary>
-/// <param name="@ParentQuestionID">
-/// Parent matrix question id to find child questions
+/// <param Name="@ParentQuestionID">
+/// Parent matrix question ID to find child questions
 /// </param>
 */
 CREATE PROCEDURE [dbo].[vts_spQuestionMatrixDeleteAnswers]
-				@ParentQuestionId int
+				@ParentQuestionID int
 AS
 DELETE FROM vts_tbAnswer 
 WHERE AnswerID in 
@@ -6882,7 +6886,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -6904,7 +6908,7 @@ GO
 /// <summary>
 ///  Moves a question positions down 
 /// </summary>
-/// <param name="@QuestionID">
+/// <param Name="@QuestionID">
 /// ID of the questions to move one position down
 /// </param>
 */
@@ -6934,7 +6938,7 @@ WHERE
 	ParentQuestionID is null AND
 	DisplayOrder > @OldDisplayOrder
 	ORDER BY DisplayOrder ASC	
-if @@ROWCOUNT <>0
+if @@RowCount <>0
 BEGIN
 	-- Are we just changing the page or are we moving the question behind another one ?
 	IF @OldPageNumber = @NewPageNumber 
@@ -6969,7 +6973,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -6991,7 +6995,7 @@ GO
 /// <summary>
 ///  Moves a question positions up 
 /// </summary>
-/// <param name="@QuestionID">
+/// <param Name="@QuestionID">
 /// ID of the questions to move one position up
 /// </param>
 */
@@ -7022,7 +7026,7 @@ WHERE
 	DisplayOrder < @OldDisplayOrder
 	ORDER BY DisplayOrder DESC
 -- Is this the first question ?
-IF @@ROWCOUNT <>0
+IF @@RowCount <>0
 BEGIN
 	-- Are we just changing the page or are we moving the question in front of another one ?
 	IF @OldPageNumber = @NewPageNumber 
@@ -7078,38 +7082,38 @@ BEGIN
 	-- interfering with SELECT statements.
 	SET NOCOUNT ON;
 
-declare @NewDisplayOrder int, @LibId int, @OldQuestionId int
-declare @OrderIndex int, @CurrentDisplayOrder int, @MaxOrderId int
+declare @NewDisplayOrder int, @LibID int, @OldQuestionID int
+declare @OrderIndex int, @CurrentDisplayOrder int, @MaxOrderID int
 declare @QID int
 
-select @LibId = LibraryID from vts_tbQuestion where QuestionId = @QuestionID
+select @LibID = LibraryID from vts_tbQuestion where QuestionID = @QuestionID
 
-create table #tempQuestions
-    (QuestionId int, DisplayOrder int)
+create table #TempQuestions
+    (QuestionID int, DisplayOrder int)
 
-insert #tempQuestions select QuestionId, DisplayOrder from vts_tbQuestion where LibraryID = @LibId order by DisplayOrder 
+insert #TempQuestions select QuestionID, DisplayOrder from vts_tbQuestion where LibraryID = @LibID order by DisplayOrder 
 
-DECLARE cursorQuestions CURSOR for
- SELECT QuestionId, DisplayOrder FROM #tempQuestions order by DisplayOrder
+DECLARE CursorQuestions CURSOR for
+ SELECT QuestionID, DisplayOrder FROM #TempQuestions order by DisplayOrder
 
- -- we make reorder of dysplayorder in case of duplicating displayorderid
+ -- we make reorder of dysplayorder in case of duplicating DisplayOrderID
  set @OrderIndex = 0
- OPEN cursorQuestions
- FETCH NEXT FROM cursorQuestions
+ OPEN CursorQuestions
+ FETCH NEXT FROM CursorQuestions
  INTO @QID, @CurrentDisplayOrder
  While @@FETCH_STATUS = 0
  Begin
 	set @OrderIndex = @OrderIndex + 1
-	UPDATE vts_tbQuestion SET DisplayOrder = @OrderIndex WHERE QuestionId = @QID
-	FETCH NEXT FROM cursorQuestions
+	UPDATE vts_tbQuestion SET DisplayOrder = @OrderIndex WHERE QuestionID = @QID
+	FETCH NEXT FROM CursorQuestions
 		INTO @QID, @CurrentDisplayOrder
  End
- CLOSE cursorQuestions;
- DEALLOCATE cursorQuestions;
- drop table #tempQuestions;
+ CLOSE CursorQuestions;
+ DEALLOCATE CursorQuestions;
+ drop table #TempQuestions;
 
- select @MaxOrderId = MAX(DisplayOrder) from vts_tbQuestion where LibraryID = @LibId
- select @CurrentDisplayOrder = DisplayOrder, @LibId = LibraryID from vts_tbQuestion where QuestionId = @QuestionID
+ select @MaxOrderID = MAX(DisplayOrder) from vts_tbQuestion where LibraryID = @LibID
+ select @CurrentDisplayOrder = DisplayOrder, @LibID = LibraryID from vts_tbQuestion where QuestionID = @QuestionID
  
  if @UpdateUp > 0
 	set @NewDisplayOrder = @CurrentDisplayOrder - 1
@@ -7118,16 +7122,16 @@ DECLARE cursorQuestions CURSOR for
        
  if @NewDisplayOrder < 1
 	set @NewDisplayOrder = 1
- if @NewDisplayOrder >= @MaxOrderId
-	set @NewDisplayOrder = @MaxOrderId
+ if @NewDisplayOrder >= @MaxOrderID
+	set @NewDisplayOrder = @MaxOrderID
          
- select @OldQuestionId = QuestionId from vts_tbQuestion where DisplayOrder = @NewDisplayOrder and LibraryID = @LibId
+ select @OldQuestionID = QuestionID from vts_tbQuestion where DisplayOrder = @NewDisplayOrder and LibraryID = @LibID
  
  update vts_tbQuestion set DisplayOrder = @NewDisplayOrder 
-	where QuestionId = @QuestionId 
+	where QuestionID = @QuestionID 
  
  update vts_tbQuestion set DisplayOrder = @CurrentDisplayOrder 
-	where QuestionId = @OldQuestionId 
+	where QuestionID = @OldQuestionID 
   
 END
 
@@ -7139,28 +7143,28 @@ SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER OFF
 GO
-CREATE PROCEDURE [dbo].[vts_spQuestionResetDisplayOrder] @SurveyId int AS
+CREATE PROCEDURE [dbo].[vts_spQuestionResetDisplayOrder] @SurveyID int AS
 
 DECLARE 	@DisplayOrder int,
-		@QuestionId int
+		@QuestionID int
 
 SET @DisplayOrder = 1
 
 DECLARE QuestionsToUpdate CURSOR FOR
 SELECT QuestionID FROM vts_tbQuestion 
-WHERE SurveyID = @SurveyId AND ParentQuestionID is null ORDER BY PageNumber ASC, QuestionId 
+WHERE SurveyID = @SurveyID AND ParentQuestionID is null ORDER BY PageNumber ASC, QuestionID 
 
 OPEN QuestionsToUpdate
 
-FETCH NEXT FROM QuestionsToUpdate into @QuestionId
+FETCH NEXT FROM QuestionsToUpdate into @QuestionID
 
 WHILE @@FETCH_STATUS = 0
 BEGIN
-	UPDATE vts_tbQuestion SET DisplayOrder = @DisplayOrder WHERE QuestionID = @QuestionId
-	UPDATE vts_tbQuestion SET DisplayOrder = @DisplayOrder WHERE ParentQuestionID = @QuestionId
+	UPDATE vts_tbQuestion SET DisplayOrder = @DisplayOrder WHERE QuestionID = @QuestionID
+	UPDATE vts_tbQuestion SET DisplayOrder = @DisplayOrder WHERE ParentQuestionID = @QuestionID
 	
 	SET @DisplayOrder = @DisplayOrder + 1
-	FETCH NEXT FROM QuestionsToUpdate into @QuestionId
+	FETCH NEXT FROM QuestionsToUpdate into @QuestionID
 END
 
 CLOSE QuestionsToUpdate
@@ -7175,7 +7179,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -7197,7 +7201,7 @@ GO
 /// <summary>
 /// Get all questions with their answers
 /// </summary>
-/// <param name="@SurveyID">
+/// <param Name="@SurveyID">
 /// ID of the survey from
 /// </param>
 /// <returns>
@@ -7209,10 +7213,10 @@ AS
 SELECT 
 	QuestionID,
 	ParentQuestionID,
-	SurveyId,
+	SurveyID,
 	QuestionText, 
-	vts_tbQuestion.SelectionModeId,
-	LayoutModeId,
+	vts_tbQuestion.SelectionModeID,
+	LayoutModeID,
 	DisplayOrder,
 	MinSelectionRequired,
 	MaxSelectionAllowed,
@@ -7223,12 +7227,12 @@ FROM vts_tbQuestion
 INNER JOIN vts_tbQuestionSelectionMode 
 	ON vts_tbQuestionSelectionMode.QuestionSelectionModeID = vts_tbQuestion.SelectionModeID
 WHERE 
-	SurveyID=@SurveyId 
+	SurveyID=@SurveyID 
 ORDER BY DisplayOrder ASC
 SELECT 
 	AnswerID,
 	vts_tbAnswer.AnswerTypeID,
-	vts_tbQuestion.QuestionId,
+	vts_tbQuestion.QuestionID,
 	AnswerText,
 	ImageURL, 
 	(SELECT count(*) FROM vts_tbVoterAnswers INNER JOIN vts_tbVoter ON vts_tbVoter.VoterID = vts_tbVoterAnswers.VoterID WHERE  vts_tbVoter.Validated<>0 AND AnswerID = vts_tbAnswer.AnswerID) as VoteCount,
@@ -7248,14 +7252,14 @@ SELECT
 	Mandatory,
 	RegExpression,
 	RegExMessage,
-	vts_tbAnswer.RegularExpressionId
+	vts_tbAnswer.RegularExpressionID
 FROM vts_tbAnswer
 INNER JOIN vts_tbAnswerType 
 	ON vts_tbAnswer.AnswerTypeID = vts_tbAnswerType.AnswerTypeID
 INNER JOIN vts_tbQuestion
 	ON vts_tbQuestion.QuestionID = vts_tbAnswer.QuestionID
 LEFT JOIN vts_tbRegularExpression
-	ON vts_tbAnswer.RegularExpressionId = vts_tbRegularExpression.RegularExpressionId
+	ON vts_tbAnswer.RegularExpressionID = vts_tbRegularExpression.RegularExpressionID
 WHERE SurveyID = @SurveyID
 ORDER BY vts_tbAnswer.DisplayOrder
 
@@ -7268,7 +7272,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -7288,7 +7292,7 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 /// <summary>
-/// adds a new grid answer
+/// adds a new grID answer
 /// </summary>
 */
 CREATE PROCEDURE [dbo].[vts_spQuestionSectionGridAnswerAddNew]
@@ -7297,9 +7301,9 @@ CREATE PROCEDURE [dbo].[vts_spQuestionSectionGridAnswerAddNew]
 			
 AS
 
-SELECT AnswerID FROM vts_tbQuestionSectionGridAnswer WHERE QuestionId = @QuestionID AND AnswerId = @AnswerID
+SELECT AnswerID FROM vts_tbQuestionSectionGridAnswer WHERE QuestionID = @QuestionID AND AnswerID = @AnswerID
 
-IF @@rowcount = 0
+IF @@RowCount = 0
 BEGIN
 	INSERT INTO vts_tbQuestionSectionGridAnswer(QuestionID, AnswerID) VALUES (@QuestionID, @AnswerID)
 END
@@ -7313,7 +7317,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -7333,7 +7337,7 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 /// <summary>
-/// Delete a grid answer
+/// Delete a grID answer
 /// </summary>
 */
 CREATE PROCEDURE [dbo].[vts_spQuestionSectionGridAnswerDelete]
@@ -7342,7 +7346,7 @@ CREATE PROCEDURE [dbo].[vts_spQuestionSectionGridAnswerDelete]
 			
 AS
 
-DELETE FROM vts_tbQuestionSectionGridAnswer WHERE QuestionId = @QuestionID AND AnswerId = @AnswerID
+DELETE FROM vts_tbQuestionSectionGridAnswer WHERE QuestionID = @QuestionID AND AnswerID = @AnswerID
 
 
 
@@ -7353,7 +7357,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -7373,7 +7377,7 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 /// <summary>
-/// returns all answers to be shown in the section grid
+/// returns all answers to be shown in the section grID
 /// </summary>
 */
 CREATE PROCEDURE [dbo].[vts_spQuestionSectionGridAnswerGet]
@@ -7381,7 +7385,7 @@ CREATE PROCEDURE [dbo].[vts_spQuestionSectionGridAnswerGet]
 			
 AS
 
-SELECT AnswerId FROM vts_tbQuestionSectionGridAnswer WHERE QuestionId = @QuestionID
+SELECT AnswerID FROM vts_tbQuestionSectionGridAnswer WHERE QuestionID = @QuestionID
 
 
 
@@ -7392,7 +7396,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -7414,7 +7418,7 @@ GO
 */
 CREATE PROCEDURE [dbo].[vts_spQuestionSectionOptionClone]
 	@QuestionID int,
-	@ClonedQuestionId int  
+	@ClonedQuestionID int  
 AS
 
 BEGIN TRAN CloneSections
@@ -7422,19 +7426,19 @@ BEGIN TRAN CloneSections
 -- Clone the options
 INSERT INTO vts_tbQuestionSectionOption
 	(QuestionID,
-	RepeatableSectionModeId,
+	RepeatableSectionModeID,
 	AddSectionLinkText,
 	DeleteSectionLinkText,
 	MaxSections,
-	UpdateSectionLinktext,
+	UpdateSectionLinkText,
 	EditSectionLinkText)
 SELECT      
 	@ClonedQuestionID, 
-	RepeatableSectionModeId,
+	RepeatableSectionModeID,
 	AddSectionLinkText,
 	DeleteSectionLinkText,
 	MaxSections,
-	UpdateSectionLinktext,
+	UpdateSectionLinkText,
 	EditSectionLinkText
 FROM vts_tbQuestionSectionOption WHERE QuestionID = @QuestionID
 
@@ -7458,21 +7462,21 @@ INSERT INTO vts_tbMultiLanguageText(LanguageItemID, LanguageCode, LanguageMessag
 	FROM vts_tbMultiLanguageText
 	WHERE LanguageItemID = @QuestionID AND LanguageMessageTypeID = 9
 
-IF Exists(select answerid from vts_tbQuestionSectionGridAnswer where questionid = @QuestionID)
+IF Exists(select AnswerID from vts_tbQuestionSectionGridAnswer where QuestionID = @QuestionID)
 BEGIN
-	-- Clone answers to be shown in grid section mode
+	-- Clone answers to be shown in grID section mode
 	INSERT INTO vts_tbQuestionSectionGridAnswer
-		(AnswerId,
-		QuestionId)
+		(AnswerID,
+		QuestionID)
 	SELECT      
-		AnswerId = 
-		(select answerid from vts_tbAnswer WHERE QuestionId = @ClonedQuestionId AND 
-			DisplayOrder = (select DisplayOrder FROM vts_tbAnswer WHERE AnswerId = A.AnswerID)),
-		@ClonedQuestionId 
+		AnswerID = 
+		(select AnswerID from vts_tbAnswer WHERE QuestionID = @ClonedQuestionID AND 
+			DisplayOrder = (select DisplayOrder FROM vts_tbAnswer WHERE AnswerID = A.AnswerID)),
+		@ClonedQuestionID 
 	FROM vts_tbQuestionSectionGridAnswer
 	INNER JOIN vts_tbAnswer A
-		ON vts_tbQuestionSectionGridAnswer.AnswerID = A.AnswerId
-	WHERE vts_tbQuestionSectionGridAnswer.QuestionID = @QuestionID AND vts_tbQuestionSectionGridAnswer.AnswerId is not null
+		ON vts_tbQuestionSectionGridAnswer.AnswerID = A.AnswerID
+	WHERE vts_tbQuestionSectionGridAnswer.QuestionID = @QuestionID AND vts_tbQuestionSectionGridAnswer.AnswerID is not null
 END
 
 COMMIT TRAN CloneSections
@@ -7486,7 +7490,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -7509,7 +7513,7 @@ GO
 /// deletes  the section options for questions
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spQuestionSectionOptionDelete] @QuestionId int  AS
+CREATE PROCEDURE [dbo].[vts_spQuestionSectionOptionDelete] @QuestionID int  AS
 
 -- Delete multi language texts
 DELETE FROM vts_tbMultiLanguageText WHERE LanguageItemID = @QuestionID AND 
@@ -7529,7 +7533,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -7551,14 +7555,14 @@ GO
 /// <summary>
 /// Get the section options for questions
 /// </summary>
-/// <param name="@QuestionID">
+/// <param Name="@QuestionID">
 /// ID of the question to retrieve section options from
 /// </param>
 */
-CREATE PROCEDURE [dbo].[vts_spQuestionSectionOptionGetDetails] @QuestionId int, @LanguageCode nvarchar(50)  AS
+CREATE PROCEDURE [dbo].[vts_spQuestionSectionOptionGetDetails] @QuestionID int, @LanguageCode NVARCHAR(50)  AS
 SELECT 
 	QuestionID,
-	RepeatableSectionModeId,
+	RepeatableSectionModeID,
 	AddSectionLinkText = 
 		CASE @LanguageCode 
 		WHEN null THEN
@@ -7566,10 +7570,10 @@ SELECT
 		WHEN '' THEN
 			AddSectionLinkText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestionSectionOption.QuestionID AND
-			LanguageMessageTypeId = 6 AND
+			LanguageItemID = vts_tbQuestionSectionOption.QuestionID AND
+			LanguageMessageTypeID = 6 AND
 			LanguageCode = @LanguageCode), AddSectionLinkText)	
 		END,
 	DeleteSectionLinkText = 
@@ -7579,10 +7583,10 @@ SELECT
 		WHEN '' THEN
 			DeleteSectionLinkText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestionSectionOption.QuestionID AND
-			LanguageMessageTypeId = 7 AND
+			LanguageItemID = vts_tbQuestionSectionOption.QuestionID AND
+			LanguageMessageTypeID = 7 AND
 			LanguageCode = @LanguageCode), DeleteSectionLinkText)	
 		END,
 
@@ -7593,10 +7597,10 @@ SELECT
 		WHEN '' THEN
 			EditSectionLinkText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestionSectionOption.QuestionID AND
-			LanguageMessageTypeId = 9 AND
+			LanguageItemID = vts_tbQuestionSectionOption.QuestionID AND
+			LanguageMessageTypeID = 9 AND
 			LanguageCode = @LanguageCode), EditSectionLinkText)	
 		END,
 	UpdateSectionLinkText = 
@@ -7606,10 +7610,10 @@ SELECT
 		WHEN '' THEN
 			UpdateSectionLinkText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestionSectionOption.QuestionID AND
-			LanguageMessageTypeId = 8 AND
+			LanguageItemID = vts_tbQuestionSectionOption.QuestionID AND
+			LanguageMessageTypeID = 8 AND
 			LanguageCode = @LanguageCode), UpdateSectionLinkText)
 		END,
 	MaxSections
@@ -7625,7 +7629,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -7647,32 +7651,32 @@ GO
 /// <summary>
 /// Get the section options for questions
 /// </summary>
-/// <param name="@QuestionID">
+/// <param Name="@QuestionID">
 /// ID of the question to retrieve section options from
 /// </param>
 */
 CREATE PROCEDURE [dbo].[vts_spQuestionSectionOptionUpdate] 
-						@QuestionId int, 
-						@RepeatableSectionmodeId int = 0,
-						@AddSectionLinkText nvarchar(255),
-						@DeleteSectionLinkText nvarchar(255),
-						@EditSectionLinkText nvarchar(255),
-						@UpdateSectionLinkText nvarchar(255),
+						@QuestionID int, 
+						@RepeatableSectionModeID int = 0,
+						@AddSectionLinkText NVARCHAR(255),
+						@DeleteSectionLinkText NVARCHAR(255),
+						@EditSectionLinkText NVARCHAR(255),
+						@UpdateSectionLinkText NVARCHAR(255),
 						@MaxSections int,
-						@LanguageCode nvarchar(50)
+						@LanguageCode NVARCHAR(50)
 
 
 AS
 UPDATE vts_tbQuestionSectionOption SET 
-	RepeatableSectionModeId = @RepeatableSectionModeId,
+	RepeatableSectionModeID = @RepeatableSectionModeID,
 	MaxSections = @MaxSections
 WHERE QuestionID = @QuestionID
 
 -- creates new options
-IF @@rowcount = 0
+IF @@RowCount = 0
 BEGIN
-	INSERT INTO vts_tbQuestionSectionOption (QuestionId, RepeatableSectionModeId, MaxSections)
-	VALUES (@QuestionId, @RepeatableSectionModeId, @MaxSections)
+	INSERT INTO vts_tbQuestionSectionOption (QuestionID, RepeatableSectionModeID, MaxSections)
+	VALUES (@QuestionID, @RepeatableSectionModeID, @MaxSections)
 END
 
 -- Updates text
@@ -7705,7 +7709,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -7737,7 +7741,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -7769,7 +7773,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -7791,17 +7795,17 @@ GO
 /// <summary>
 /// Get the questions until next page break
 /// </summary>
-/// <param name="@LibraryID">
+/// <param Name="@LibraryID">
 /// ID of the library  to retrieve questions from
 /// </param>
 */
 CREATE PROCEDURE [dbo].[vts_spQuestionsGetForLibrary]
-			@LibraryId int,@LanguageCode Nvarchar(50)
+			@LibraryID int,@LanguageCode NVARCHAR(50)
 AS
 	SELECT 
 	vts_tbQuestion.QuestionID,
-	SurveyId,
-	LibraryId,
+	SurveyID,
+	LibraryID,
 	QuestionText = 
 		CASE @LanguageCode 
 		WHEN null THEN
@@ -7809,14 +7813,14 @@ AS
 		WHEN '' THEN
 			QuestionText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestion.QuestionID AND
-			LanguageMessageTypeId = 3 AND
+			LanguageItemID = vts_tbQuestion.QuestionID AND
+			LanguageMessageTypeID = 3 AND
 			LanguageCode = @LanguageCode), QuestionText)		
 		END,
-	vts_tbQuestion.SelectionModeId,
-	LayoutModeId,
+	vts_tbQuestion.SelectionModeID,
+	LayoutModeID,
 	DisplayOrder,
 	MinSelectionRequired,
 	MaxSelectionAllowed,
@@ -7827,7 +7831,7 @@ AS
 	PageNumber,
 	ColumnsNumber,
 	QuestionPipeAlias,
-	(ISNULL(RepeatableSectionModeId, 0)) AS RepeatableSectionModeId,
+	(ISNULL(RepeatableSectionModeID, 0)) AS RepeatableSectionModeID,
 	AddSectionLinkText = 
 		CASE @LanguageCode 
 		WHEN null THEN
@@ -7835,10 +7839,10 @@ AS
 		WHEN '' THEN
 			AddSectionLinkText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestionSectionOption.QuestionID AND
-			LanguageMessageTypeId = 6 AND
+			LanguageItemID = vts_tbQuestionSectionOption.QuestionID AND
+			LanguageMessageTypeID = 6 AND
 			LanguageCode = @LanguageCode), AddSectionLinkText)	
 		END,
 	DeleteSectionLinkText = 
@@ -7848,10 +7852,10 @@ AS
 		WHEN '' THEN
 			DeleteSectionLinkText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestionSectionOption.QuestionID AND
-			LanguageMessageTypeId = 7 AND
+			LanguageItemID = vts_tbQuestionSectionOption.QuestionID AND
+			LanguageMessageTypeID = 7 AND
 			LanguageCode = @LanguageCode), DeleteSectionLinkText)	
 		END,
 
@@ -7862,10 +7866,10 @@ AS
 		WHEN '' THEN
 			EditSectionLinkText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestionSectionOption.QuestionID AND
-			LanguageMessageTypeId = 9 AND
+			LanguageItemID = vts_tbQuestionSectionOption.QuestionID AND
+			LanguageMessageTypeID = 9 AND
 			LanguageCode = @LanguageCode), EditSectionLinkText)	
 		END,
 	UpdateSectionLinkText = 
@@ -7875,10 +7879,10 @@ AS
 		WHEN '' THEN
 			UpdateSectionLinkText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestionSectionOption.QuestionID AND
-			LanguageMessageTypeId = 8 AND
+			LanguageItemID = vts_tbQuestionSectionOption.QuestionID AND
+			LanguageMessageTypeID = 8 AND
 			LanguageCode = @LanguageCode), UpdateSectionLinkText)
 		END,
 		HelpText = 
@@ -7888,10 +7892,10 @@ AS
 		WHEN '' THEN
 			HelpText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestion.QuestionID AND
-			LanguageMessageTypeId = 11 AND
+			LanguageItemID = vts_tbQuestion.QuestionID AND
+			LanguageMessageTypeID = 11 AND
 			LanguageCode = @LanguageCode), HelpText)		
 		END,
 	ShowHelpText,
@@ -7902,21 +7906,21 @@ AS
 		WHEN '' THEN
 			Alias
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestion.QuestionID AND
-			LanguageMessageTypeId = 12 AND
+			LanguageItemID = vts_tbQuestion.QuestionID AND
+			LanguageMessageTypeID = 12 AND
 			LanguageCode = @LanguageCode), Alias)		
 		END,
 	(ISNULL(MaxSections, 0)) as MaxSections, 
-	QuestionIdText
+	QuestionIDText
 	FROM vts_tbQuestion
 	LEFT JOIN vts_tbQuestionSectionOption
 		ON vts_tbQuestionSectionOption.QuestionID = vts_tbQuestion.QuestionID
 	INNER JOIN vts_tbQuestionSelectionMode 
 		ON vts_tbQuestionSelectionMode.QuestionSelectionModeID = vts_tbQuestion.SelectionModeID
 	WHERE 
-		LibraryID=@LibraryId AND ParentQuestionID is null
+		LibraryID=@LibraryID AND ParentQuestionID is null
 	ORDER BY vts_tbQuestion.DisplayOrder
 
 
@@ -7928,7 +7932,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -7950,15 +7954,15 @@ GO
 /// <summary>
 /// Get all questions for a survey
 /// </summary>
-/// <param name="@SurveyID">
+/// <param Name="@SurveyID">
 /// ID of the survey  to retrieve questions
 /// </param>
 */
-CREATE PROCEDURE [dbo].[vts_spQuestionsGetForSurvey] @SurveyId int, @LanguageCode nvarchar(50)  AS
+CREATE PROCEDURE [dbo].[vts_spQuestionsGetForSurvey] @SurveyID int, @LanguageCode NVARCHAR(50)  AS
 SELECT 
 	vts_tbQuestion.QuestionID,
-	SurveyId,
-	LibraryId,
+	SurveyID,
+	LibraryID,
 	QuestionText = 
 		CASE @LanguageCode 
 		WHEN null THEN
@@ -7966,14 +7970,14 @@ SELECT
 		WHEN '' THEN
 			QuestionText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestion.QuestionID AND
-			LanguageMessageTypeId = 3 AND
+			LanguageItemID = vts_tbQuestion.QuestionID AND
+			LanguageMessageTypeID = 3 AND
 			LanguageCode = @LanguageCode), QuestionText)		
 		END,
-	vts_tbQuestion.SelectionModeId,
-	LayoutModeId,
+	vts_tbQuestion.SelectionModeID,
+	LayoutModeID,
 	DisplayOrder,
 	MinSelectionRequired,
 	MaxSelectionAllowed,
@@ -7984,7 +7988,7 @@ SELECT
 	PageNumber,
 	ColumnsNumber,
 	QuestionPipeAlias,
-	(ISNULL(RepeatableSectionModeId, 0)) AS RepeatableSectionModeId,
+	(ISNULL(RepeatableSectionModeID, 0)) AS RepeatableSectionModeID,
 	AddSectionLinkText = 
 		CASE @LanguageCode 
 		WHEN null THEN
@@ -7992,10 +7996,10 @@ SELECT
 		WHEN '' THEN
 			AddSectionLinkText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestionSectionOption.QuestionID AND
-			LanguageMessageTypeId = 6 AND
+			LanguageItemID = vts_tbQuestionSectionOption.QuestionID AND
+			LanguageMessageTypeID = 6 AND
 			LanguageCode = @LanguageCode), AddSectionLinkText)	
 		END,
 	DeleteSectionLinkText = 
@@ -8005,10 +8009,10 @@ SELECT
 		WHEN '' THEN
 			DeleteSectionLinkText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestionSectionOption.QuestionID AND
-			LanguageMessageTypeId = 7 AND
+			LanguageItemID = vts_tbQuestionSectionOption.QuestionID AND
+			LanguageMessageTypeID = 7 AND
 			LanguageCode = @LanguageCode), DeleteSectionLinkText)	
 		END,
 
@@ -8019,10 +8023,10 @@ SELECT
 		WHEN '' THEN
 			EditSectionLinkText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestionSectionOption.QuestionID AND
-			LanguageMessageTypeId = 9 AND
+			LanguageItemID = vts_tbQuestionSectionOption.QuestionID AND
+			LanguageMessageTypeID = 9 AND
 			LanguageCode = @LanguageCode), EditSectionLinkText)	
 		END,
 	UpdateSectionLinkText = 
@@ -8032,14 +8036,14 @@ SELECT
 		WHEN '' THEN
 			UpdateSectionLinkText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestionSectionOption.QuestionID AND
-			LanguageMessageTypeId = 8 AND
+			LanguageItemID = vts_tbQuestionSectionOption.QuestionID AND
+			LanguageMessageTypeID = 8 AND
 			LanguageCode = @LanguageCode), UpdateSectionLinkText)
 		END,
 	(ISNULL(MaxSections, 0)) as MaxSections, 
-	QuestionIdText,
+	QuestionIDText,
 	Alias = 
 		CASE @LanguageCode 
 		WHEN null THEN
@@ -8047,10 +8051,10 @@ SELECT
 		WHEN '' THEN
 			Alias
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestion.QuestionID AND
-			LanguageMessageTypeId = 12 AND
+			LanguageItemID = vts_tbQuestion.QuestionID AND
+			LanguageMessageTypeID = 12 AND
 			LanguageCode = @LanguageCode), Alias)
 		END,
 		HelpText = 
@@ -8060,10 +8064,10 @@ SELECT
 		WHEN '' THEN
 			HelpText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestion.QuestionID AND
-			LanguageMessageTypeId = 11 AND
+			LanguageItemID = vts_tbQuestion.QuestionID AND
+			LanguageMessageTypeID = 11 AND
 			LanguageCode = @LanguageCode), HelpText)
 		END,
 		ShowHelpText
@@ -8073,7 +8077,7 @@ LEFT JOIN vts_tbQuestionSectionOption
 INNER JOIN vts_tbQuestionSelectionMode 
 	ON vts_tbQuestionSelectionMode.QuestionSelectionModeID = vts_tbQuestion.SelectionModeID
 WHERE 
-	SurveyID=@SurveyId AND
+	SurveyID=@SurveyID AND
 	ParentQuestionID is null
 ORDER BY PageNumber, DisplayOrder ASC
 
@@ -8086,7 +8090,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -8115,7 +8119,7 @@ SELECT
 QuestionID,
  QuestionText,
  HelpText,
- questionIdText
+ QuestionIDText
 FROM vts_tbQuestion 
 WHERE 
 	LibraryID = @LibraryID
@@ -8129,7 +8133,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -8169,7 +8173,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -8191,14 +8195,14 @@ GO
 /// <summary>
 /// Get all child questions for a matrix questionl
 /// </summary>
-/// <param name="@QuestionID">
+/// <param Name="@QuestionID">
 /// ID of the question to retrieve child questions from
 /// </param>
 /// <returns>
 /// A multiple resultset of questions and answers
 /// </returns>
 */
-CREATE PROCEDURE [dbo].[vts_spQuestionsGetMatrixChilds] @ParentQuestionId int, @LanguageCode nvarchar(50)  AS
+CREATE PROCEDURE [dbo].[vts_spQuestionsGetMatrixChilds] @ParentQuestionID int, @LanguageCode NVARCHAR(50)  AS
 SELECT
 	SurveyID,
 	QuestionID, 
@@ -8209,14 +8213,14 @@ SELECT
 		WHEN '' THEN
 			QuestionText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestion.QuestionID AND
-			LanguageMessageTypeId = 3 AND
+			LanguageItemID = vts_tbQuestion.QuestionID AND
+			LanguageMessageTypeID = 3 AND
 			LanguageCode = @LanguageCode), QuestionText)		
 		END,
-	SelectionModeId,
-	LayoutModeId,
+	SelectionModeID,
+	LayoutModeID,
 	DisplayOrder,
 	QuestionPipeAlias
 FROM vts_tbQuestion
@@ -8225,7 +8229,7 @@ WHERE
 ORDER BY DisplayOrder
 SELECT 
 	AnswerID,
-	vts_tbAnswer.QuestionId,
+	vts_tbAnswer.QuestionID,
 	AnswerText = 
 		CASE @LanguageCode
 		WHEN null THEN
@@ -8233,13 +8237,13 @@ SELECT
 		WHEN '' THEN
 			AnswerText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbAnswer.AnswerID AND
-			LanguageMessageTypeId = 1 AND
+			LanguageItemID = vts_tbAnswer.AnswerID AND
+			LanguageMessageTypeID = 1 AND
 			LanguageCode = @LanguageCode), AnswerText)		
 		END,
-	ImageUrl,
+	ImageURL,
 	(SELECT count(*) FROM vts_tbVoterAnswers WHERE AnswerID = vts_tbAnswer.AnswerID) as VoteCount,
 	FieldWidth,
 	FieldHeight,
@@ -8261,10 +8265,10 @@ SELECT
 		WHEN '' THEN
 			DefaultText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbAnswer.AnswerID AND
-			LanguageMessageTypeId = 2 AND
+			LanguageItemID = vts_tbAnswer.AnswerID AND
+			LanguageMessageTypeID = 2 AND
 			LanguageCode = @LanguageCode), null)		
 		END,
 	Mandatory
@@ -8286,7 +8290,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -8308,30 +8312,30 @@ GO
 /// <summary>
 /// Get the questions until next page break
 /// </summary>
-/// <param name="@SurveyID">
+/// <param Name="@SurveyID">
 /// ID of the survey  to retrieve questions
 /// </param>
-/// <param name="@LastDisplayOrder">
+/// <param Name="@LastDisplayOrder">
 /// Question at which we whish to stop
 /// </param>
 /// <returns>
 /// 	QuestionID, 
 /// 	QuestionText, 
-/// 	QuestionLayoutId,
-///	LayoutModeId,
+/// 	QuestionLayoutID,
+///	LayoutModeID,
 ///	DisplayOrder
 ///	TypeNameSpace,
 ///	TypeAssembly
 /// </returns>
 */
 CREATE PROCEDURE [dbo].[vts_spQuestionsGetPagedForSurvey]
-			@SurveyId int,
+			@SurveyID int,
 			@PageNumber  int = 1,
-			@LanguageCode nvarchar(50)
+			@LanguageCode NVARCHAR(50)
 AS
 	SELECT 
 		vts_tbQuestion.QuestionID,
-		SurveyId,
+		SurveyID,
 		LibraryID,
 		QuestionText = 
 		CASE @LanguageCode 
@@ -8340,14 +8344,14 @@ AS
 		WHEN '' THEN
 			QuestionText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestion.QuestionID AND
-			LanguageMessageTypeId = 3 AND
+			LanguageItemID = vts_tbQuestion.QuestionID AND
+			LanguageMessageTypeID = 3 AND
 			LanguageCode = @LanguageCode), QuestionText)		
 		END,
-		vts_tbQuestion.SelectionModeId,
-		LayoutModeId,
+		vts_tbQuestion.SelectionModeID,
+		LayoutModeID,
 		DisplayOrder,
 		MinSelectionRequired,
 		MaxSelectionAllowed,
@@ -8357,7 +8361,7 @@ AS
 		TypeMode,
 		ColumnsNumber,
 		QuestionPipeAlias,
-		(ISNULL(RepeatableSectionModeId, 0)) as RepeatableSectionModeId,
+		(ISNULL(RepeatableSectionModeID, 0)) as RepeatableSectionModeID,
 	AddSectionLinkText = 
 		CASE @LanguageCode 
 		WHEN null THEN
@@ -8365,10 +8369,10 @@ AS
 		WHEN '' THEN
 			AddSectionLinkText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestionSectionOption.QuestionID AND
-			LanguageMessageTypeId = 6 AND
+			LanguageItemID = vts_tbQuestionSectionOption.QuestionID AND
+			LanguageMessageTypeID = 6 AND
 			LanguageCode = @LanguageCode), AddSectionLinkText)	
 		END,
 	DeleteSectionLinkText = 
@@ -8378,10 +8382,10 @@ AS
 		WHEN '' THEN
 			DeleteSectionLinkText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestionSectionOption.QuestionID AND
-			LanguageMessageTypeId = 7 AND
+			LanguageItemID = vts_tbQuestionSectionOption.QuestionID AND
+			LanguageMessageTypeID = 7 AND
 			LanguageCode = @LanguageCode), DeleteSectionLinkText)	
 		END,
 
@@ -8392,10 +8396,10 @@ AS
 		WHEN '' THEN
 			EditSectionLinkText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestionSectionOption.QuestionID AND
-			LanguageMessageTypeId = 9 AND
+			LanguageItemID = vts_tbQuestionSectionOption.QuestionID AND
+			LanguageMessageTypeID = 9 AND
 			LanguageCode = @LanguageCode), EditSectionLinkText)	
 		END,
 	UpdateSectionLinkText = 
@@ -8405,10 +8409,10 @@ AS
 		WHEN '' THEN
 			UpdateSectionLinkText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestionSectionOption.QuestionID AND
-			LanguageMessageTypeId = 8 AND
+			LanguageItemID = vts_tbQuestionSectionOption.QuestionID AND
+			LanguageMessageTypeID = 8 AND
 			LanguageCode = @LanguageCode), UpdateSectionLinkText)
 		END,
 		(ISNULL(MaxSections, 0)) as MaxSections,
@@ -8419,10 +8423,10 @@ AS
 		WHEN '' THEN
 			HelpText 
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = vts_tbQuestion.QuestionID AND
-			LanguageMessageTypeId = 11 AND
+			LanguageItemID = vts_tbQuestion.QuestionID AND
+			LanguageMessageTypeID = 11 AND
 			LanguageCode = @LanguageCode), HelpText)
 		END,
 		ShowHelpText
@@ -8432,7 +8436,7 @@ AS
 	INNER JOIN vts_tbQuestionSelectionMode 
 		ON vts_tbQuestionSelectionMode.QuestionSelectionModeID = vts_tbQuestion.SelectionModeID
 	WHERE 
-		SurveyID=@SurveyId AND
+		SurveyID=@SurveyID AND
 		PageNumber = @PageNumber AND
 		ParentQuestionID is null
 	ORDER BY DisplayOrder
@@ -8446,7 +8450,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -8468,7 +8472,7 @@ GO
 /// <summary>
 /// Get a list of all questions in the given page range for a survey
 /// </summary>
-/// <param name="@SurveyID">
+/// <param Name="@SurveyID">
 /// ID of the survey  to retrieve questions
 /// </param>
 /// <returns>
@@ -8477,7 +8481,7 @@ GO
 /// </returns>
 */
 CREATE PROCEDURE [dbo].[vts_spQuestionsGetPageRangeForSurvey] 
-			@SurveyId int,
+			@SurveyID int,
 			@StartPage int,
 			@EndPage int
 AS
@@ -8487,7 +8491,7 @@ SELECT
 	QuestionText 
 FROM vts_tbQuestion
 WHERE 
-	SurveyID=@SurveyId AND PageNumber BETWEEN @StartPage AND @EndPage
+	SurveyID=@SurveyID AND PageNumber BETWEEN @StartPage AND @EndPage
 
 
 
@@ -8498,7 +8502,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -8520,7 +8524,7 @@ GO
 /// <summary>
 /// Get a list of all parent questions that can have any type of answers, except those that have child questions 
 /// </summary>
-/// <param name="@SurveyID">
+/// <param Name="@SurveyID">
 /// ID of the survey  to retrieve questions
 /// </param>
 /// <returns>
@@ -8529,13 +8533,13 @@ GO
 ///	QuestionText, 
 /// </returns>
 */
-CREATE PROCEDURE [dbo].[vts_spQuestionSingleAnswerableListWithoutChilds] @SurveyId int  AS
+CREATE PROCEDURE [dbo].[vts_spQuestionSingleAnswerableListWithoutChilds] @SurveyID int  AS
 SELECT DISTINCT Q.QuestionID, Q.QuestionText, Q.DisplayOrder 
 FROM vts_tbQuestion Q
 INNER JOIN vts_tbQuestionSelectionMode
 	ON  QuestionSelectionModeID= Q.SelectionModeID
 WHERE 
-	SurveyID = @SurveyId AND 
+	SurveyID = @SurveyID AND 
 	TypeMode & 4 > 1 AND 
 	ParentQuestionID is null
 	AND QuestionID NOT IN (SELECT ParentQuestionID FROM vts_tbQuestion WHERE ParentQuestionID = Q.QuestionID)
@@ -8550,7 +8554,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -8577,7 +8581,7 @@ CREATE PROCEDURE [dbo].[vts_spQuestionSkipLogicRuleAddNew]
 			@SkipQuestionID int,
 			@QuestionID int,
 			@AnswerID int,
-			@TextFilter nvarchar(4000),
+			@TextFilter NVARCHAR(4000),
 			@ConditionalOperator int,
 			@ExpressionOperator int,
 			@Score	int,
@@ -8602,18 +8606,18 @@ VALUES
 	@TextFilter,
 	@Score,
 	@ScoreMax)
-set @SkipLogicRuleID = scope_identity()
+set @SkipLogicRuleID = SCOPE_IDENTITY()
 
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[vts_spQuestionSkipLogicRuleDeleteById]    Script Date: 19-8-2014 22:01:40 ******/
+/****** Object:  StoredProcedure [dbo].[vts_spQuestionSkipLogicRuleDeleteByID]    Script Date: 19-8-2014 22:01:40 ******/
 SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -8636,7 +8640,7 @@ GO
 /// Deletes the given rule
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spQuestionSkipLogicRuleDeleteById] @SkipLogicRuleID int AS
+CREATE PROCEDURE [dbo].[vts_spQuestionSkipLogicRuleDeleteByID] @SkipLogicRuleID int AS
 DELETE FROM vts_tbSkipLogicRule WHERE SkipLogicRuleID = @SkipLogicRuleID
 
 
@@ -8648,7 +8652,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -8691,7 +8695,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -8713,55 +8717,55 @@ GO
 /// <summary>
 /// Updates a question
 /// </summary>
-/// <param name="QuestionID">
+/// <param Name="QuestionID">
 /// ID of the question to update
 /// </param>
-/// <param name="@QuestionText">
+/// <param Name="@QuestionText">
 /// Question's text
 /// </param>
-/// <param name="@SelectionModeID">
+/// <param Name="@SelectionModeID">
 /// selection type of the question (checkbox, radio, matrix ..)
 /// </param>
-/// <param name="@LayoutModeID">
+/// <param Name="@LayoutModeID">
 /// Layout of the question (horizontal, vertical ..)
 /// </param>
-/// <param name="@MinSelectionRequired">
+/// <param Name="@MinSelectionRequired">
 /// Number of selection that question requires
 /// </param>
-/// <param name="@MaxSelectionRequired">
+/// <param Name="@MaxSelectionRequired">
 /// Number of max selection that question allows
 /// </param>
 */
 CREATE PROCEDURE [dbo].[vts_spQuestionUpdate] 
 			@QuestionID int, 
-			@QuestionText nvarchar(4000),
-			@SelectionModeId int,
-			@LayoutModeId int,
+			@QuestionText NVARCHAR(max),
+			@SelectionModeID int,
+			@LayoutModeID int,
 			@ColumnsNumber int,
 			@MinSelectionRequired int,
 			@MaxSelectionAllowed int,
 			@RandomizeAnswers bit,
 			@RatingEnabled bit,
-			@QuestionPipeAlias nvarchar(255),
-			@LanguageCode nvarchar(50) = null,
-			@QuestionGroupId int, 
+			@QuestionPipeAlias NVARCHAR(255),
+			@LanguageCode NVARCHAR(50) = null,
+			@QuestionGroupID int, 
 			@ShowHelpText	bit,
-			@HelpText	nvarchar(4000),
-			@Alias	nvarchar(255),
-			@QuestionIdText nvarchar(255)
+			@HelpText	NVARCHAR(4000),
+			@Alias	NVARCHAR(255),
+			@QuestionIDText NVARCHAR(255)
 AS
 BEGIN TRAN UpdateQuestion
 
 UPDATE vts_tbQuestion  
-SET 	SelectionModeId=@SelectionModeId,
-	LayoutModeId = @LayoutModeId,
+SET 	SelectionModeID=@SelectionModeID,
+	LayoutModeID = @LayoutModeID,
 	MinSelectionRequired = @MinSelectionRequired,
 	MaxSelectionAllowed = @MaxSelectionAllowed,
 	RandomizeAnswers = @RandomizeAnswers,
 	RatingEnabled = @RatingEnabled,
 	ColumnsNumber = @ColumnsNumber,
 	QuestionPipeAlias = @QuestionPipeAlias,
-	QuestionGroupId =case when  @QuestionGroupId=-1 then null else @QuestionGroupId end,
+	QuestionGroupID =case when  @QuestionGroupID=-1 then null else @QuestionGroupID end,
 	ShowHelpText = @ShowHelpText,
 	QuestionIDText=@QuestionIDText
 WHERE
@@ -8769,8 +8773,8 @@ WHERE
 
 -- Updates Child question's options
 UPDATE vts_tbQuestion  
-SET 	SelectionModeId=@SelectionModeId,
-	LayoutModeId = @LayoutModeId,
+SET 	SelectionModeID=@SelectionModeID,
+	LayoutModeID = @LayoutModeID,
 	MinSelectionRequired = @MinSelectionRequired,
 	MaxSelectionAllowed = @MaxSelectionAllowed,
 	RandomizeAnswers = @RandomizeAnswers,
@@ -8808,7 +8812,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -8846,7 +8850,7 @@ WHERE
 	RegExpression = @RegExpression AND
 	Description = @Description
 
-if @@rowcount = 0
+if @@RowCount = 0
 BEGIN
 	INSERT INTO vts_tbRegularExpression
 		(Description,
@@ -8857,10 +8861,10 @@ BEGIN
 		@RegExpression, 
 		@RegExMessage)
 
-	set @RegularExpressionID = scope_identity()
-	IF @UserId > 0
+	set @RegularExpressionID = SCOPE_IDENTITY()
+	IF @UserID > 0
 	BEGIN
-		exec vts_spUserRegularExpressionAssignUser @RegularExpressionID, @UserId
+		exec vts_spUserRegularExpressionAssignUser @RegularExpressionID, @UserID
 	END
 END
 
@@ -8873,7 +8877,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -8908,7 +8912,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -8928,7 +8932,7 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 /// <summary>
-/// Retrieves all the infos of the given regular expression  id
+/// Retrieves all the infos of the given regular expression  ID
 /// </summary>
 */
 CREATE PROCEDURE [dbo].[vts_spRegularExpressionGetDetails] @RegularExpressionID int AS
@@ -8950,7 +8954,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -8970,7 +8974,7 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 */
-CREATE PROCEDURE [dbo].[vts_spRegularExpressionGetEditableListForUser] @UserId int AS
+CREATE PROCEDURE [dbo].[vts_spRegularExpressionGetEditableListForUser] @UserID int AS
 SELECT 
 	vts_tbRegularExpression.RegularExpressionID,
 	vts_tbRegularExpression.Description
@@ -8989,7 +8993,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -9025,7 +9029,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -9045,7 +9049,7 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 */
-CREATE PROCEDURE [dbo].[vts_spRegularExpressionGetListForUser] @UserId int, @SurveyId int
+CREATE PROCEDURE [dbo].[vts_spRegularExpressionGetListForUser] @UserID int, @SurveyID int
 AS
 
 SELECT 
@@ -9054,14 +9058,14 @@ SELECT
 FROM vts_tbRegularExpression 
 LEFT JOIN vts_tbUserRegularExpression
 	ON vts_tbUserRegularExpression.RegularExpressionID = vts_tbRegularExpression.RegularExpressionID
-WHERE vts_tbUserRegularExpression.UserID = @UserId OR 
+WHERE vts_tbUserRegularExpression.UserID = @UserID OR 
 	BuiltIn<>0 OR 
-	vts_tbRegularExpression.RegularExpressionId in 
-		(SELECT RegularExpressionId 
+	vts_tbRegularExpression.RegularExpressionID in 
+		(SELECT RegularExpressionID 
 		FROM vts_tbAnswer 
 		INNER JOIN vts_tbQuestion 
-			ON vts_tbAnswer.QuestionId = vts_tbQuestion.QuestionId 
-		WHERE SurveyId = @SurveyId)
+			ON vts_tbAnswer.QuestionID = vts_tbQuestion.QuestionID 
+		WHERE SurveyID = @SurveyID)
 ORDER BY Description
 
 
@@ -9073,7 +9077,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -9115,7 +9119,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -9142,7 +9146,7 @@ CREATE PROCEDURE [dbo].[vts_spRegularExpressionUpdate]
 			@RegularExpressionID int, 
 			@Description varchar(255), 
 			@RegExpression varchar(2000),
-			@RegExMessage nvarchar(2000)		
+			@RegExMessage NVARCHAR(2000)		
 AS
 UPDATE vts_tbRegularExpression SET
 	Description = @Description, 
@@ -9150,7 +9154,121 @@ UPDATE vts_tbRegularExpression SET
 	RegExMessage = @RegExMessage
 WHERE RegularExpressionID = @RegularExpressionID
 
+GO
+/****** Object:  StoredProcedure [dbo].[vts_spReportGetScores]    Script Date: 12/29/2017 09:17:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		W3DevPro
+-- Create date: 2017-09-27
+-- Description:	Stored Procedure to get calculated scores for custom reports
+-- =============================================
+CREATE PROCEDURE [dbo].[vts_spReportGetScores] 
 
+	-- Add the parameters for the stored procedure here
+	@SurveyID int,
+	@VoterID int
+
+AS
+BEGIN TRANSACTION CalculateScores
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+/*
+	Start of Custom Calculations 
+	----------------------------------------------------------------------------------
+	-- Nr of output values must match nr of cells in customreport.cs code
+	-- VoterID = mandatory: used as key to datagrid in .aspx file - NEVER LEAVE OUT
+	----------------------------------------------------------------------------------
+
+	Optional use of:
+
+	'blank1' as cell1,
+	'blank2' as cell2,
+	'blank3' as cell3,
+	'blank4' as cell4,
+	'blank5' as cell5,
+
+	If any of these values ('blankx') and/ or fieldsnames (cellx) is used in the right order [1-5]
+	instead of calculated values, it will not show on the datagrid (visilble = false) without having to 
+	adjust the number of cells[x] in the .cs codebehind file.
+*/
+
+-- STEP 1.
+
+select
+	-- VoterID mandatory
+	(select VoterId = @VoterID) as VoterID,
+
+-- STEP 2.
+	-- custom values: must match number of cells in .cs file
+
+	-- Example: values and header visible: not equal to 'blankx' as 'cellx'
+	'test1' as cell01,
+	'test2' as cell02,
+	'test3' as cell03,
+	'test4' as cell04,
+	'test5' as cell05
+
+	-- Example: values and header NOT visible
+	-- 'blank1' as cell1,
+	-- 'blank2' as cell2,
+	-- 'blank3' as cell3,
+	-- 'blank4' as cell4,
+	-- 'blank5' as cell5
+
+-- Finalize calculations
+COMMIT TRANSACTION CalculateScores
+
+GO
+/****** Object:  StoredProcedure [dbo].[vts_spReportSsrsVoterGetAll]    Script Date: 1/1/2018 11:19:55 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		W3DevPro
+-- Create date: 2017-09-27
+-- Description:	Stored Procedure to get all Voter Data for SSRS reports Test
+-- =============================================
+CREATE PROCEDURE [dbo].[vts_spReportSsrsVoterGetAll] 
+
+	-- Add the parameters for the stored procedure here
+	-- @SurveyID int,
+	-- @VoterID int
+
+AS
+BEGIN TRANSACTION GetVoterData
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+/* 	Start of Query to fetch all voterdata */
+-- STEP 1.
+
+SELECT 
+VoterID, 
+UID, 
+SurveyID, 
+ContextUserName, 
+VoteDate, 
+StartDate, 
+IPSource, 
+Validated, 
+ResumeUID, 
+ResumeAtPageNumber, 
+ProgressSaveDate, 
+ResumeQuestionNumber, 
+ResumeHighestPageNumber, 
+LanguageCode 
+
+FROM vts_tbvoter
+
+-- Finalize calculations
+COMMIT TRANSACTION GetVoterData
 
 GO
 /****** Object:  StoredProcedure [dbo].[vts_spResumeModeGetAll]    Script Date: 19-8-2014 22:01:40 ******/
@@ -9159,7 +9277,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -9190,7 +9308,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -9215,14 +9333,14 @@ GO
 */
 CREATE PROCEDURE [dbo].[vts_spRoleAddNew]
 			@RoleID int out,
-			@RoleName nvarchar(255)
+			@RoleName NVARCHAR(255)
 			
 AS
 
 INSERT INTO vts_tbRole (RoleName)
 VALUES (@RoleName)
 
-SELECT @RoleID = scope_identity()
+SELECT @RoleID = SCOPE_IDENTITY()
 
 
 
@@ -9233,7 +9351,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -9272,7 +9390,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -9300,7 +9418,7 @@ AS
 
 SELECT RoleID, RoleName FROM vts_tbRole WHERE RoleID = @RoleID
 
-SELECT SecurityRightId  FROM vts_tbRoleSecurityRight WHERE RoleID = @RoleID
+SELECT SecurityRightID  FROM vts_tbRoleSecurityRight WHERE RoleID = @RoleID
 
 
 
@@ -9311,7 +9429,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -9348,7 +9466,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -9377,9 +9495,9 @@ CREATE PROCEDURE [dbo].[vts_spRoleSecurityRightAddNew]
 			
 AS
 
-SELECT RoleID FROM vts_tbRoleSecurityRight WHERE RoleID = @RoleID AND SecurityRightId = @SecurityRightID
+SELECT RoleID FROM vts_tbRoleSecurityRight WHERE RoleID = @RoleID AND SecurityRightID = @SecurityRightID
 
-IF @@rowcount = 0
+IF @@RowCount = 0
 BEGIN
 	INSERT INTO vts_tbRoleSecurityRight(RoleID, SecurityRightID) VALUES (@RoleID, @SecurityRightID)
 END
@@ -9393,7 +9511,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -9430,7 +9548,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -9455,7 +9573,7 @@ GO
 */
 CREATE PROCEDURE [dbo].[vts_spRoleUpdate]
 			@RoleID int,
-			@RoleName nvarchar(255)
+			@RoleName NVARCHAR(255)
 			
 AS
 
@@ -9470,7 +9588,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -9496,9 +9614,29 @@ GO
 CREATE PROCEDURE [dbo].[vts_spSecurityRightGetList]
 AS
 
-SELECT SecurityRightID, Description FROM vts_tbSecurityRight
+-- SELECT SecurityRightID, Description FROM vts_tbSecurityRight
 
+select
+sr.SecurityRightID,
 
+cast(
+
+cast(m.Code as nchar(4)) + '&nbsp;&nbsp;' +
+m.main +  '/ ' +
+isnull(m.subone, ' - ') + '/ ' +
+isnull(m.subtwo, ' - ') + '/ ' +
+isnull(m.subthree, ' - / ') 
+
+as nchar(100)) +
+
+cast(sr.description as nchar(35)) as [description]
+-- len(sr.description) length
+
+from vts_tbsecurityright sr left join 
+dbo.vts_tbmenusecurityright msr on sr.SecurityRightID = msr.securityrightID
+left join vts_tbmenu m on msr.menuID = m.MenuID
+where msr.securityrightID is not null
+order by m.code
 
 GO
 /****** Object:  StoredProcedure [dbo].[vts_spSurveyAccessPasswordGet]    Script Date: 19-8-2014 22:01:40 ******/
@@ -9507,7 +9645,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -9538,7 +9676,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -9557,7 +9695,7 @@ GO
 	along with this program; if not, write to the Free Software
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
-CREATE PROCEDURE [dbo].[vts_spSurveyAccessPasswordUpdate] @SurveyID int, @AccessPassword nvarchar(255)
+CREATE PROCEDURE [dbo].[vts_spSurveyAccessPasswordUpdate] @SurveyID int, @AccessPassword NVARCHAR(255)
 AS
 UPDATE vts_tbSurvey  SET AccessPassword = @AccessPassword
 WHERE SurveyID = @SurveyID
@@ -9565,13 +9703,13 @@ WHERE SurveyID = @SurveyID
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[vts_spSurveyAddNew]    Script Date: 19-8-2014 22:01:40 ******/
+/****** Object:  StoredProcedure [dbo].[vts_spSurveyAddNew]    Script Date: 1/19/2018 10:19:46 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -9598,8 +9736,8 @@ CREATE PROCEDURE [dbo].[vts_spSurveyAddNew]
 					@CreationDate datetime,
 					@OpenDate datetime,
 					@CloseDate datetime,
-					@Title nvarchar(255),
-					@AccessPassword nvarchar(255) = null,
+					@Title NVARCHAR(255),
+					@AccessPassword NVARCHAR(255) = null,
 					@SurveyDisplayTimes int = 0,
 					@ResultsDisplayTimes int = 0,
 					@Archive bit = 0,
@@ -9607,25 +9745,26 @@ CREATE PROCEDURE [dbo].[vts_spSurveyAddNew]
 					@CookieExpires int = 1440,
 					@IPExpires int = 1440,
 					@OnlyInvited bit = 0,
-					@ProgressDisplayModeId int = 2,
-					@ResumeModeId int = 1,
+					@ProgressDisplayModeID int = 2,
+					@ResumeModeID int = 1,
 					@Scored bit = 0,
 					@NavigationEnabled bit =0,
 					@QuestionNumberingDisabled bit = 0,
-					@FolderId int = null,
-					@MultiLanguageModeId int=null,		
-					@ThankYouMessage nvarchar(4000)=null,			
+					@FolderID int = null,
+					@MultiLanguageModeID int=null,		
+					@ThankYouMessage NVARCHAR(4000)=null,	
+					@UnAuthentifiedUserActionID int = 0,		
 					@SurveyID int out
 AS
-	declare @pid int
+	declare @PID int
 	-- we get home folder
-	select @pid =
-	(case when @FolderId is null or @folderid<=0 then FolderId 
-	else @folderId end )
-	from vts_tbFolders where ParentFolderId IS NULL
+	select @PID =
+	(case when @FolderID is null or @FolderID<=0 then FolderID 
+	else @FolderID end )
+	from vts_tbFolders where ParentFolderID IS NULL
 	
 	if exists(
-          select 1 from vts_tbSurvey where FolderId=@pid and Title =@Title )
+          select 1 from vts_tbSurvey where FolderID=@PID and Title =@Title )
          begin
            raiserror('DUPLICATEFOLDER',16,4);
            return;
@@ -9644,14 +9783,15 @@ INSERT INTO vts_tbSurvey(
 	CookieExpires,
 	Activated,
 	OnlyInvited,
-	ProgressDisplayModeId,
-	ResumeModeId,
+	ProgressDisplayModeID,
+	ResumeModeID,
 	Scored,
 	NavigationEnabled,
 	QuestionNumberingDisabled,
-	FolderId,
-	MultiLanguageModeId,
-	ThankYouMessage) 
+	FolderID,
+	MultiLanguageModeID,
+	ThankYouMessage,
+	UnAuthentifiedUserActionID) 
 VALUES (
 	@CreationDate,
 	@OpenDate,
@@ -9665,18 +9805,17 @@ VALUES (
 	@CookieExpires,
 	@Activated,
 	@OnlyInvited,
-	@ProgressDisplayModeId,
-	@ResumeModeId,
+	@ProgressDisplayModeID,
+	@ResumeModeID,
 	@Scored,
 	@NavigationEnabled,
 	@QuestionNumberingDisabled,
-	@pid,
-	@MultiLanguageModeId,
-	@ThankYouMessage)
+	@PID,
+	@MultiLanguageModeID,
+	@ThankYouMessage,
+	@UnAuthentifiedUserActionID)
 	
-SET @SurveyID = scope_identity()
-
-
+SET @SurveyID = SCOPE_IDENTITY()
 
 GO
 /****** Object:  StoredProcedure [dbo].[vts_spSurveyAllowMultipleASPNetVotes]    Script Date: 19-8-2014 22:01:40 ******/
@@ -9685,7 +9824,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -9716,7 +9855,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -9747,7 +9886,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -9775,7 +9914,7 @@ CREATE PROCEDURE [dbo].[vts_spSurveyBranchingRuleAddNew]
 			@ExpressionOperator int,
 			@QuestionID int,
 			@AnswerID int,
-			@TextFilter nvarchar(4000),
+			@TextFilter NVARCHAR(4000),
 			@TargetPageNumber int,
 			@ConditionalOperator int,
 			@Score	int,
@@ -9802,7 +9941,7 @@ VALUES
 	@TextFilter,
 	@Score,
 	@ScoreMax)
-set @BranchingRuleID = scope_identity()
+set @BranchingRuleID = SCOPE_IDENTITY()
 
 
 
@@ -9813,7 +9952,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -9836,7 +9975,7 @@ GO
 /// clone all branchings of a survey to another
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spSurveyBranchingRuleCopyToSurvey] @SurveyId int, @ClonedSurveyID int AS
+CREATE PROCEDURE [dbo].[vts_spSurveyBranchingRuleCopyToSurvey] @SurveyID int, @ClonedSurveyID int AS
 
 
 DECLARE @ConditionalOperator int,
@@ -9883,16 +10022,16 @@ FETCH BranchingCursor INTO
 WHILE @@FETCH_STATUS = 0
 BEGIN
 
-	-- Get question id that is in the cloned survey
+	-- Get question ID that is in the cloned survey
 	SELECT @ClonedQuestionID =	(select QuestionID  from vts_tbQuestion WHERE SurveyID = @ClonedSurveyID AND QuestionText = (select QuestionText FROM vts_tbQuestion WHERE QuestionID = @QuestionID) AND 
 				DisplayOrder = (select DisplayOrder FROM vts_tbQuestion WHERE QuestionID = @QuestionID)) 
 	
 	IF @AnswerID is not NULL
 	BEGIN
-		-- Get answer id from the cloned survey
-		SELECT @ClonedAnswerId = 
-				(select answerId from vts_tbAnswer WHERE QuestionId = @ClonedQuestionID AND 
-				DisplayOrder = (select DisplayOrder FROM vts_tbAnswer WHERE AnswerId = @AnswerID))
+		-- Get answer ID from the cloned survey
+		SELECT @ClonedAnswerID = 
+				(select AnswerID from vts_tbAnswer WHERE QuestionID = @ClonedQuestionID AND 
+				DisplayOrder = (select DisplayOrder FROM vts_tbAnswer WHERE AnswerID = @AnswerID))
 	END
 	ELSE
 	BEGIN
@@ -9920,13 +10059,13 @@ DEALLOCATE BranchingCursor
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[vts_spSurveyBranchingRuleDeleteById]    Script Date: 19-8-2014 22:01:40 ******/
+/****** Object:  StoredProcedure [dbo].[vts_spSurveyBranchingRuleDeleteByID]    Script Date: 19-8-2014 22:01:40 ******/
 SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -9949,7 +10088,7 @@ GO
 /// Deletes the given rule
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spSurveyBranchingRuleDeleteById] @BranchingRuleID int AS
+CREATE PROCEDURE [dbo].[vts_spSurveyBranchingRuleDeleteByID] @BranchingRuleID int AS
 DELETE FROM vts_tbBranchingRule WHERE BranchingRuleID = @BranchingRuleID
 
 
@@ -9961,7 +10100,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -10003,7 +10142,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -10047,7 +10186,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -10086,7 +10225,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -10110,18 +10249,17 @@ GO
 /// </summary>
 */
 CREATE PROCEDURE [dbo].[vts_spSurveyCheckUserAssigned] @SurveyID int, @UserID int AS
-SELECT SurveyID FROM vts_tbUserSurvey WHERE SurveyID = @SurveyID AND USerID = @UserID
-
+SELECT SurveyID FROM vts_tbUserSurvey WHERE SurveyID = @SurveyID AND UserID = @UserID
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[vts_spSurveyClone]    Script Date: 19-8-2014 22:01:40 ******/
+/****** Object:  StoredProcedure [dbo].[vts_spSurveyClone]    Script Date: 1/24/2018 14:33:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -10143,7 +10281,7 @@ GO
 CREATE PROCEDURE [dbo].[vts_spSurveyClone] @SurveyID int 
 AS
 BEGIN TRANSACTION CloneSurvey
-DECLARE @ClonedSurveyId int
+DECLARE @ClonedSurveyID int
 -- Clone the survey
 INSERT INTO vts_tbSurvey 
 	(CreationDate, 
@@ -10160,17 +10298,18 @@ INSERT INTO vts_tbSurvey
 	IPExpires,
 	CookieExpires,
 	OnlyInvited,
+	UnAuthentifiedUserActionID,	
 	NavigationEnabled,
-	ProgressDisplayModeId,
-	NotificationModeId,
-	ResumeModeId,
+	ProgressDisplayModeID,
+	NotificationModeID,
+	ResumeModeID,
 	Scored,
 	AllowMultipleUserNameSubmissions,
 	QuestionNumberingDisabled,
 	AllowMultipleNSurveySubmissions,
-	MultiLanguageModeId,
+	MultiLanguageModeID,
 	MultiLanguageVariable,
-	FolderId)
+	FolderID)
 SELECT      
 	getdate(), 
 	OpenDate,
@@ -10186,40 +10325,41 @@ SELECT
 	IPExpires,
 	CookieExpires,
 	OnlyInvited,
+	UnAuthentifiedUserActionID,
 	NavigationEnabled,
-	ProgressDisplayModeId,
-	NotificationModeId,
-	ResumeModeId,
+	ProgressDisplayModeID,
+	NotificationModeID,
+	ResumeModeID,
 	Scored,
 	AllowMultipleUserNameSubmissions,
 	QuestionNumberingDisabled,
 	AllowMultipleNSurveySubmissions,
-	MultiLanguageModeId,
+	MultiLanguageModeID,
 	MultiLanguageVariable,
-    FolderId
+    FolderID
 FROM vts_tbSurvey WHERE SurveyID = @SurveyID
 -- Check if the cloned survey was created
-IF @@rowCount <> 0
+IF @@RowCount <> 0
 BEGIN
 	-- Clone the survey's questions
-	set @ClonedSurveyID = Scope_Identity()
-	INSERT INTO vts_tbEmailNotificationSettings(SurveyId, EmailFrom, EmailTo, EmailSubject) 
-		SELECT @ClonedSurveyID as surveyId,EmailFrom, Emailto, EmailSubject 
+	set @ClonedSurveyID = SCOPE_IDENTITY()
+	INSERT INTO vts_tbEmailNotificationSettings(SurveyID, EmailFrom, EmailTo, EmailSubject) 
+		SELECT @ClonedSurveyID as SurveyID,EmailFrom, Emailto, EmailSubject 
 		FROM vts_tbEmailNotificationSettings 
 		WHERE SurveyID = @SurveyID
 	
-	INSERT INTO vts_tbSurveyWebSecurity(WebSecurityAddinId, SurveyID, AddInOrder, Disabled)
-		SELECT WebSecurityAddinId, @ClonedSurveyID as SurveyID, AddInOrder, Disabled
+	INSERT INTO vts_tbSurveyWebSecurity(WebSecurityAddInID, SurveyID, AddInOrder, Disabled)
+		SELECT WebSecurityAddInID, @ClonedSurveyID as SurveyID, AddInOrder, Disabled
 		FROM vts_tbSurveyWebSecurity
 		WHERE SurveyID = @SurveyID
 	
-	INSERT INTO vts_tbPageOption (SurveyId, PageNumber, RandomizeQuestions, EnableSubmitButton)
+	INSERT INTO vts_tbPageOption (SurveyID, PageNumber, RandomizeQuestions, EnableSubmitButton)
 		SELECT @ClonedSurveyID as SurveyID, PageNumber, RandomizeQuestions, EnableSubmitButton
 		FROM vts_tbPageOption
 		WHERE SurveyID = @SurveyID
 	
-	INSERT INTO vts_tbSurveyLanguage(SurveyId, LanguageCode, DefaultLanguage)
-		SELECT @ClonedSurveyID as SurveyId, LanguageCode, DefaultLanguage
+	INSERT INTO vts_tbSurveyLanguage(SurveyID, LanguageCode, DefaultLanguage)
+		SELECT @ClonedSurveyID as SurveyID, LanguageCode, DefaultLanguage
 		FROM vts_tbSurveyLanguage
 		WHERE SurveyID = @SurveyID
 
@@ -10242,7 +10382,6 @@ COMMIT TRANSACTION CloneQuestion
 exec vts_spSurveyGetDetails @ClonedSurveyID, null
 
 
-
 GO
 /****** Object:  StoredProcedure [dbo].[vts_spSurveyCookieExpirationUpdate]    Script Date: 19-8-2014 22:01:40 ******/
 SET ANSI_NULLS OFF
@@ -10250,7 +10389,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -10281,7 +10420,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -10303,7 +10442,7 @@ GO
 /// <summary>
 /// Delete a survey
 /// </summary>
-/// <param name="@iSurveyID">
+/// <param Name="@iSurveyID">
 /// ID of the survey to delete
 /// </param>
 */
@@ -10314,15 +10453,15 @@ BEGIN TRAN DeleteSurvey
 EXEC vts_spMultiLanguageTextDeleteForSurvey @SurveyID
 
 DELETE FROM vts_tbFile WHERE FileID IN (
-	SELECT FileId FROM vts_tbFile INNER JOIN vts_tbVoterAnswers ON 
+	SELECT FileID FROM vts_tbFile INNER JOIN vts_tbVoterAnswers ON 
 		AnswerText like GroupGuid
 	INNER JOIN vts_tbVoter ON
 		vts_tbVoter.VoterID = vts_tbVoterAnswers.VoterID
 	WHERE vts_tbVoter.SurveyID = @SurveyID)
 DELETE FROM vts_tbVoter WHERE SurveyID = @SurveyID
 DELETE FROM vts_tbSurveyLayout WHERE SurveyID = @SurveyID
-DELETE FROM vts_tbSurveyToken WHERE SurveyId=@SurveyId
-DELETE FROM vts_tbSurveyIPrange Where SurveyId=@SurveyId
+DELETE FROM vts_tbSurveyToken WHERE SurveyID=@SurveyID
+DELETE FROM vts_tbSurveyIPRange Where SurveyID=@SurveyID
 DELETE FROM vts_tbSurvey WHERE SurveyID = @SurveyID
 COMMIT TRAN DeleteSurvey
 
@@ -10335,7 +10474,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -10374,7 +10513,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -10397,7 +10536,7 @@ GO
 /// Deletes the entry quota allowed for a survey
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spSurveyEntryDelete] 	@SurveyId int 
+CREATE PROCEDURE [dbo].[vts_spSurveyEntryDelete] 	@SurveyID int 
 
 
 AS
@@ -10412,7 +10551,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -10436,7 +10575,7 @@ GO
 /// </summary>
 */
 CREATE PROCEDURE [dbo].[vts_spSurveyEntryQuotaGetDetails]
-						@SurveyId int 
+						@SurveyID int 
 
 
 AS
@@ -10451,7 +10590,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -10474,7 +10613,7 @@ GO
 /// Updates the entry quota allowed for a survey
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spSurveyEntryQuotaIncreaseEntry] @SurveyId int
+CREATE PROCEDURE [dbo].[vts_spSurveyEntryQuotaIncreaseEntry] @SurveyID int
 
 
 AS
@@ -10490,7 +10629,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -10513,7 +10652,7 @@ GO
 /// Updates the entry quota allowed for a survey
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spSurveyEntryQuotaReset] @SurveyId int
+CREATE PROCEDURE [dbo].[vts_spSurveyEntryQuotaReset] @SurveyID int
 
 
 AS
@@ -10529,7 +10668,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -10553,8 +10692,8 @@ GO
 /// </summary>
 */
 CREATE PROCEDURE [dbo].[vts_spSurveyEntryQuotaUpdate] 
-						@SurveyId int, 
-						@MaxReachedMessage nvarchar(4000),
+						@SurveyID int, 
+						@MaxReachedMessage NVARCHAR(4000),
 						@MaxEntries int
 
 
@@ -10565,9 +10704,9 @@ UPDATE vts_tbSurveyEntryQuota SET
 WHERE SurveyID = @SurveyID
 
 -- creates a new survey quota 
-IF @@rowcount = 0
+IF @@RowCount = 0
 BEGIN
-	INSERT INTO vts_tbSurveyEntryQuota(SurveyId, MaxReachedMessage, MaxEntries) VALUES (@SurveyID, @MaxReachedMessage, @MaxEntries)
+	INSERT INTO vts_tbSurveyEntryQuota(SurveyID, MaxReachedMessage, MaxEntries) VALUES (@SurveyID, @MaxReachedMessage, @MaxEntries)
 END
 
 
@@ -10579,7 +10718,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -10601,15 +10740,15 @@ GO
 /// <summary>
 /// Check if the given survey exists in the DB
 /// </summary>
-/// <param name="@Title">
+/// <param Name="@Title">
 /// Title of the survey to check for
 /// </param>
 */
-CREATE PROCEDURE [dbo].[vts_spSurveyExists] @title nvarchar(255) AS
+CREATE PROCEDURE [dbo].[vts_spSurveyExists] @Title NVARCHAR(255) AS
 SELECT 
 	SurveyID
 FROM vts_tbSurvey 
-WHERE Title = @title
+WHERE Title = @Title
 
 
 
@@ -10620,7 +10759,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -10660,7 +10799,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -10704,9 +10843,9 @@ SELECT
 	CookieExpires,
 	OnlyInvited,
 	NavigationEnabled,
-	ProgressDisplayModeId,
-	NotificationModeId,
-	ResumeModeId,
+	ProgressDisplayModeID,
+	NotificationModeID,
+	ResumeModeID,
 	EmailFrom,
 	EmailTo,
 	EmailSubject,
@@ -10714,7 +10853,7 @@ SELECT
 	AllowMultipleUserNameSubmissions,
 	QuestionNumberingDisabled,
 	AllowMultipleNSurveySubmissions,
-	MultiLanguageModeId,
+	MultiLanguageModeID,
 	MultiLanguageVariable
 FROM vts_tbSurvey
 LEFT JOIN vts_tbEmailNotificationSettings 
@@ -10730,7 +10869,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -10754,15 +10893,15 @@ GO
 /// </summary>
 */
 CREATE PROCEDURE [dbo].[vts_spSurveyGetAssignedListForUser] @UserID int AS
-if exists( select * from vts_tbuserSetting s 
-     where s.userid=@UserID AND (s.IsAdmin=1 OR s.GlobalSurveyAccess=1))
-select SurveyId,Title,DefaultSurvey
+if exists( select * from vts_tbUserSetting s 
+     where s.UserID=@UserID AND (s.IsAdmin=1 OR s.GlobalSurveyAccess=1))
+select SurveyID,Title,DefaultSurvey
 FROM vts_tbSurvey
 ELSE
-SELECT s.SurveyId, Title ,DefaultSurvey
+SELECT s.SurveyID, Title ,DefaultSurvey
 FROM vts_tbSurvey s
 INNER JOIN vts_tbUserSurvey us
-	ON s.SurveyID = us.SurveyId
+	ON s.SurveyID = us.SurveyID
 WHERE 
 	us.UserID=@UserID
 ORDER BY s.SurveyID
@@ -10776,7 +10915,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -10807,7 +10946,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -10829,11 +10968,11 @@ GO
 /// <summary>
 /// Get the details of a survey
 /// </summary>
-/// <param name="@SurveyID">
+/// <param Name="@SurveyID">
 /// ID of the survey to get details of
 /// </param>
 */
-CREATE PROCEDURE [dbo].[vts_spSurveyGetDetails] @SurveyID int, @LanguageCode nvarchar(50)  AS
+CREATE PROCEDURE [dbo].[vts_spSurveyGetDetails] @SurveyID int, @LanguageCode NVARCHAR(50)  AS
 SELECT 
 	vts_tbSurvey.SurveyID,
 	UnAuthentifiedUserActionID,
@@ -10847,10 +10986,10 @@ SELECT
 	WHEN '' THEN
 		RedirectionURL 
 	ELSE
-		IsNull((SELECT ItemText FROM 
+		ISNULL((SELECT ItemText FROM 
 		vts_tbMultiLanguageText WHERE
-		LanguageItemId =vts_tbSurvey.SurveyId AND
-		LanguageMessageTypeId = 5 AND
+		LanguageItemID =vts_tbSurvey.SurveyID AND
+		LanguageMessageTypeID = 5 AND
 		LanguageCode = @LanguageCode), RedirectionURL)		
 	END,
 	OpenDate,
@@ -10871,17 +11010,17 @@ SELECT
 	WHEN '' THEN
 		ThankYouMessage 
 	ELSE
-		IsNull((SELECT ItemText FROM 
+		ISNULL((SELECT ItemText FROM 
 		vts_tbMultiLanguageText WHERE
-		LanguageItemId =vts_tbSurvey.SurveyId AND
-		LanguageMessageTypeId = 4 AND
+		LanguageItemID =vts_tbSurvey.SurveyID AND
+		LanguageMessageTypeID = 4 AND
 		LanguageCode = @LanguageCode), ThankYouMessage)		
 	END,
 	OnlyInvited,
 	NavigationEnabled,
-	ProgressDisplayModeId,
-	NotificationModeId,
-	ResumeModeId,
+	ProgressDisplayModeID,
+	NotificationModeID,
+	ResumeModeID,
 	EmailFrom,
 	EmailTo,
 	EmailSubject,
@@ -10889,14 +11028,14 @@ SELECT
 	AllowMultipleUserNameSubmissions,
 	QuestionNumberingDisabled,
 	AllowMultipleNSurveySubmissions,
-	MultiLanguageModeId,
+	MultiLanguageModeID,
 	MultiLanguageVariable,
 	SurveyGuid,
 	FriendlyName,defaultSurvey
 FROM vts_tbSurvey 
 LEFT JOIN vts_tbEmailNotificationSettings 
 	ON vts_tbSurvey.SurveyID = vts_tbEmailNotificationSettings.SurveyID
-WHERE vts_tbSurvey.SurveyID = @SurveyId
+WHERE vts_tbSurvey.SurveyID = @SurveyID
 
 
 
@@ -10907,7 +11046,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -10927,10 +11066,10 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 /// <summary>
-/// Retrieved the first suvey id available in the DB
+/// Retrieved the first suvey ID available in the DB
 /// </summary>
 /// <returns>
-/// 	SurveyId
+/// 	SurveyID
 /// </returns>
 */
 CREATE PROCEDURE [dbo].[vts_spSurveyGetFirstID] AS
@@ -10946,7 +11085,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -10966,10 +11105,10 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 /// <summary>
-/// Retrieved the first suvey id available in the DB
+/// Retrieved the first suvey ID available in the DB
 /// </summary>
 /// <returns>
-/// 	SurveyId
+/// 	SurveyID
 /// </returns>
 */
 CREATE PROCEDURE [dbo].[vts_spSurveyGetFirstIDForUser] @UserID int AS
@@ -11038,8 +11177,8 @@ SELECT
 	CloseDate,
 	ThankYouMessage,
 	NavigationEnabled,
-	ProgressDisplayModeId,
-	ResumeModeId,
+	ProgressDisplayModeID,
+	ResumeModeID,
 	Scored,
 	Activated,
 	Archive,
@@ -11047,7 +11186,7 @@ SELECT
 	SurveyDisplayTimes,
 	CreationDate,
 	QuestionNumberingDisabled,
-	MultiLanguageModeId,
+	MultiLanguageModeID,
 MultiLanguageVariable
 FROM vts_tbSurvey WHERE SurveyID = @SurveyID
 
@@ -11057,8 +11196,8 @@ SELECT
 	SurveyID,
 	ParentQuestionID,
 	QuestionText, 
-	vts_tbQuestion.SelectionModeId,
-	LayoutModeId,
+	vts_tbQuestion.SelectionModeID,
+	LayoutModeID,
 	MinSelectionRequired,
 	MaxSelectionAllowed,
 	RandomizeAnswers,
@@ -11071,7 +11210,7 @@ SELECT
 	HelpText,
 	Alias,
 	ShowHelpText,
-	QuestionId as OldQuestionId,
+	QuestionID as OldQuestionID,
 	QuestionGroupID
 FROM vts_tbQuestion 
 WHERE SurveyID = @SurveyID AND ParentQuestionID is null
@@ -11088,7 +11227,7 @@ SELECT
 	RatePart,
 	Selected,
 	AnswerTypeID,
-	RegularExpressionId,
+	RegularExpressionID,
 	Mandatory,
 	AnswerIDText,
 	AnswerAlias,
@@ -11098,7 +11237,7 @@ SELECT
 	SliderMax,
 	SliderAnimate,
 	SliderStep,
-    vts_tbAnswer.AnswerID as OldAnswerId,
+    vts_tbAnswer.AnswerID as OldAnswerID,
 	CssClass
 FROM vts_tbAnswer
 INNER JOIN vts_tbQuestion 
@@ -11108,10 +11247,10 @@ WHERE vts_tbQuestion.SurveyID = @SurveyID AND vts_tbQuestion.ParentQuestionID is
 SELECT 
 	PublisherAnswerID,
 	SubscriberAnswerID,
-	vts_tbAnswer.QuestionId
+	vts_tbAnswer.QuestionID
 FROM vts_tbAnswerConnection
 INNER JOIN vts_tbAnswer
-	ON vts_tbAnswer.AnswerId = PublisherAnswerID
+	ON vts_tbAnswer.AnswerID = PublisherAnswerID
 INNER JOIN vts_tbQuestion 
 	ON vts_tbQuestion.QuestionID = vts_tbAnswer.QuestionID  
 WHERE vts_tbQuestion.SurveyID = @SurveyID AND vts_tbQuestion.ParentQuestionID is null
@@ -11123,7 +11262,7 @@ SELECT
 FROM vts_tbQuestion 
 WHERE SurveyID = @SurveyID AND ParentQuestionID is not null
 
-SELECT vts_tbAnswerProperty.AnswerId, Properties
+SELECT vts_tbAnswerProperty.AnswerID, Properties
 FROM vts_tbAnswerProperty
 INNER JOIN vts_tbAnswer
 	ON vts_tbAnswerProperty.AnswerID = vts_tbAnswer.AnswerID  
@@ -11137,9 +11276,9 @@ SELECT
 	EditSectionLinkText,
 	UpdateSectionLinkText,
 	AddSectionLinkText,
-	vts_tbQuestionSectionOption.QuestionId,
+	vts_tbQuestionSectionOption.QuestionID,
 	MaxSections,
-	RepeatableSectionModeId
+	RepeatableSectionModeID
 FROM vts_tbQuestionSectionOption
 INNER JOIN vts_tbQuestion 
 	ON vts_tbQuestion.QuestionID = vts_tbQuestionSectionOption.QuestionID  
@@ -11152,36 +11291,36 @@ INNER JOIN vts_tbQuestion
 	ON vts_tbQuestion.QuestionID = vts_tbQuestionSectionGridAnswer.QuestionID  
 WHERE vts_tbQuestion.SurveyID = @SurveyID AND vts_tbQuestion.ParentQuestionID is null
 
-SELECT SurveyId,LanguageCode,DefaultLanguage 
-FROM  vts_tbSurveyLanguage WHERE surveyId=@SurveyId;
+SELECT SurveyID,LanguageCode,DefaultLanguage 
+FROM  vts_tbSurveyLanguage WHERE SurveyID=@SurveyID;
 
-SELECT [LanguageItemId]
+SELECT [LanguageItemID]
       ,[LanguageCode]
-      ,[LanguageMessageTypeId]
+      ,[LanguageMessageTypeID]
       ,[ItemText]
   FROM [dbo].[vts_tbMultiLanguageText]
   where( 
-   languageMessageTypeId=10 or
-  ([LanguageItemId]=@SurveyID and [LanguageMessageTypeId] in(4,5))
-  OR( [LanguageItemId] in (SELECT questionid from vts_tbQuestion where SurveyId=@SurveyID) and
-  [LanguageMessageTypeId] in(3,11,12))
-  OR( [LanguageItemId] in (SELECT answerid from 
+   LanguageMessageTypeID=10 or
+  ([LanguageItemID]=@SurveyID and [LanguageMessageTypeID] in(4,5))
+  OR( [LanguageItemID] in (SELECT QuestionID from vts_tbQuestion where SurveyID=@SurveyID) and
+  [LanguageMessageTypeID] in(3,11,12))
+  OR( [LanguageItemID] in (SELECT AnswerID from 
   vts_tbQuestion as q inner join 
-  vts_tbAnswer as ans on  q.QuestionId=ans.QuestionId where q.SurveyId=@SurveyID ) and
-  [LanguageMessageTypeId] in(1,2,13)))
+  vts_tbAnswer as ans on  q.QuestionID=ans.QuestionID where q.SurveyID=@SurveyID ) and
+  [LanguageMessageTypeID] in(1,2,13)))
  and len(ItemText) !=0
- or LanguageItemId in(
+ or LanguageItemID in(
   --
   SELECT g.ID
    FROM vts_tbQuestionGroups AS g
   WHERE g.ID  IN(
-  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE SurveyId=@SurveyID)
+  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE SurveyID=@SurveyID)
   UNION
   SELECT g.ID FROM vts_tbQuestionGroups AS g
   WHERE g.ID IN(
   SELECT g.ParentGroupID FROM vts_tbQuestionGroups AS g
   WHERE g.ID  IN(
-  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE SurveyId=@SurveyID)
+  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE SurveyID=@SurveyID)
   )
   
  )
@@ -11189,16 +11328,16 @@ SELECT [LanguageItemId]
   --
   -- Select all required groups and their parent groups
   --
-  SELECT g.ID,g.ParentGroupID,g.GroupName,g.DisplayOrder,g.ID OldId
+  SELECT g.ID,g.ParentGroupID,g.GroupName,g.DisplayOrder,g.ID OldID
    FROM vts_tbQuestionGroups AS g
   WHERE g.ID  IN(
-  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE SurveyId=@SurveyID)
+  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE SurveyID=@SurveyID)
   UNION
-  SELECT g.ID,g.ParentGroupID,g.GroupName,g.DisplayOrder ,g.ID OldId FROM vts_tbQuestionGroups AS g
+  SELECT g.ID,g.ParentGroupID,g.GroupName,g.DisplayOrder ,g.ID OldID FROM vts_tbQuestionGroups AS g
   WHERE g.ID IN(
   SELECT g.ParentGroupID FROM vts_tbQuestionGroups AS g
   WHERE g.ID  IN(
-  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE SurveyId=@SurveyID)
+  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE SurveyID=@SurveyID)
   )
   
 
@@ -11209,7 +11348,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -11229,7 +11368,7 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 /// <summary>
-/// Get all surveys available with only the surveyid and title in the database
+/// Get all surveys available with only the SurveyID and title in the database
 /// </summary>
 */
 CREATE PROCEDURE [dbo].[vts_spSurveyGetLibraryList] @LibraryID int AS
@@ -11248,7 +11387,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -11268,7 +11407,7 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 /// <summary>
-/// Get all surveys available with only the surveyid and title in the database
+/// Get all surveys available with only the SurveyID and title in the database
 /// </summary>
 */
 CREATE PROCEDURE [dbo].[vts_spSurveyGetList] AS
@@ -11287,35 +11426,32 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 -- =============================================
--- Author:		<Author,,Name>
--- Create date: <Create Date,,>
--- Description:	<Description,,>
 /*
 /// <summary>
-/// Get all surveys from specified folder with surveyid, title, folderid and parentFolderId in the database
+/// Get all surveys from specified folder with SurveyID, title, FolderID and ParentFolderID in the database
 /// </summary>
 */
 -- =============================================
 CREATE PROCEDURE [dbo].[vts_spSurveyGetListByTitle] 
 	@SurveyTitle varchar(200),
-	@FolderId int = null,
+	@FolderID int = null,
 	@UserID int 
 AS
 BEGIN
 	SET NOCOUNT ON;
 
-/* JJ  If @folderid is null then select from all folders.select @FolderId = FolderId from vts_tbFolders where @FolderId is null and ParentFolderId is null
+/* JJ  If @FolderID is null then select from all Folders.select @FolderID = FolderID from vts_tbFolders where @FolderID is null and ParentFolderID is null
  * Restrict Surveys by User
  * Recursively get foldera under given folder
 */
     -- Insert statements for procedure here
      with FolderList as (
-    select folderid,parentfolderid from
-    vts_tbfolders where folderId=@folderId
+    select FolderID,ParentFolderID from
+    vts_tbFolders where FolderID=@FolderID
     union all
-    select e.folderid,e.parentfolderid from
-    vTs_tbfolders e inner join FolderList as cte on
-    e.parentfolderid=cte.folderid 
+    select e.FolderID,e.ParentFolderID from
+    vts_tbFolders e inner join FolderList as cte on
+    e.ParentFolderID=cte.FolderID 
     )
     SELECT 	sv.SurveyID,
 	sv.UnAuthentifiedUserActionID,
@@ -11336,9 +11472,9 @@ BEGIN
 	sv.CookieExpires,
 	sv.OnlyInvited,
 	sv.NavigationEnabled,
-	sv.ProgressDisplayModeId,
-	sv.NotificationModeId,
-	sv.ResumeModeId,
+	sv.ProgressDisplayModeID,
+	sv.NotificationModeID,
+	sv.ResumeModeID,
 	em.EmailFrom,
 	em.EmailTo,
 	em.EmailSubject,
@@ -11346,20 +11482,21 @@ BEGIN
 	sv.AllowMultipleUserNameSubmissions,
 	sv.QuestionNumberingDisabled,
 	sv.AllowMultipleNSurveySubmissions,
-	sv.MultiLanguageModeId,
-	sv.MultiLanguageVariable
+	sv.MultiLanguageModeID,
+	sv.MultiLanguageVariable,
+	ISNULL(sv.FriendlyName, '-') as FriendlyName
 	FROM vts_tbSurvey AS sv
 	LEFT JOIN vts_tbEmailNotificationSettings em
 	ON sv.SurveyID = em.SurveyID
 	WHERE sv.Title like '%' + ISNULL(@SurveyTitle, '') + '%'
-	and( sv.FolderId in (select folderid from folderlist) or @FolderId is null)
+	and( sv.FolderID in (select FolderID from folderlist) or @FolderID is null)
 	AND (exists(
 	    select 1 from vts_tbUserSurvey as usr
-	    where usr.surveyId=sv.surveyId and usr.UserId=@UserId )
+	    where usr.SurveyID=sv.SurveyID and usr.UserID=@UserID )
 	    or exists (
 	    select 1 from vts_tbUserSetting st
-	    where st.userid=@userid
-	    and (st.Isadmin=1 or st.GlobalSurveyAccess=1)
+	    where st.UserID=@UserID
+	    and (st.IsAdmin=1 or st.GlobalSurveyAccess=1)
 	    )
 	    )
 	
@@ -11374,7 +11511,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -11400,13 +11537,13 @@ Select max(PageNumber) As TotalPages FROM vts_tbQuestion WHERE SurveyID = @Surve
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[vts_spSurveyGetPipeDataFromQuestionId]    Script Date: 19-8-2014 22:01:40 ******/
+/****** Object:  StoredProcedure [dbo].[vts_spSurveyGetPipeDataFromQuestionID]    Script Date: 19-8-2014 22:01:40 ******/
 SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -11430,42 +11567,42 @@ GO
 /// answer / question piping
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spSurveyGetPipeDataFromQuestionId] @QuestionId int  AS
+CREATE PROCEDURE [dbo].[vts_spSurveyGetPipeDataFromQuestionID] @QuestionID int  AS
 
-DECLARE @SurveyId int 
+DECLARE @SurveyID int 
 
-SELECT @SurveyID = SurveyId FROM vts_tbQuestion WHERE QuestionID = @QuestionID
+SELECT @SurveyID = SurveyID FROM vts_tbQuestion WHERE QuestionID = @QuestionID
 
 SELECT
 	QuestionID, 
 	QuestionPipeAlias
 FROM vts_tbQuestion
 WHERE 
-	SurveyId = @SurveyId AND 
+	SurveyID = @SurveyID AND 
 	QuestionPipeAlias<>'' AND 
 	QuestionPipeAlias is not null
 
 SELECT 
 	AnswerID,
 	AnswerText,
-	vts_tbAnswer.QuestionId,
+	vts_tbAnswer.QuestionID,
 	AnswerPipeAlias
 FROM vts_tbAnswer
 INNER JOIN vts_tbQuestion 
 	ON vts_tbAnswer.QuestionID = vts_tbQuestion.QuestionID
 WHERE 
-	vts_tbQuestion.SurveyID = @SurveyId
+	vts_tbQuestion.SurveyID = @SurveyID
 
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[vts_spSurveyGetSurveyIdFromFriendlyName]    Script Date: 19-8-2014 22:01:40 ******/
+/****** Object:  StoredProcedure [dbo].[vts_spSurveyGetSurveyIDFromFriendlyName]    Script Date: 19-8-2014 22:01:40 ******/
 SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -11484,21 +11621,21 @@ GO
 	along with this program; if not, write to the Free Software
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
-CREATE PROCEDURE [dbo].[vts_spSurveyGetSurveyIdFromFriendlyName]
+CREATE PROCEDURE [dbo].[vts_spSurveyGetSurveyIDFromFriendlyName]
  @FriendlyName as varchar(200)
 AS
-Select max(surveyId) As SurveyId FROM vts_tbSurvey WHERE FriendlyName = @FriendlyName
+Select max(SurveyID) As SurveyID FROM vts_tbSurvey WHERE FriendlyName = @FriendlyName
 
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[vts_spSurveyGetSurveyIdFromGuid]    Script Date: 19-8-2014 22:01:40 ******/
+/****** Object:  StoredProcedure [dbo].[vts_spSurveyGetSurveyIDFromGuid]    Script Date: 19-8-2014 22:01:40 ******/
 SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -11517,9 +11654,9 @@ GO
 	along with this program; if not, write to the Free Software
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
-CREATE PROCEDURE [dbo].[vts_spSurveyGetSurveyIdFromGuid] @SurveyGuID uniqueidentifier
+CREATE PROCEDURE [dbo].[vts_spSurveyGetSurveyIDFromGuid] @SurveyGuid uniqueidentifier
 AS
-Select max(surveyId) As SurveyId FROM vts_tbSurvey WHERE SurveyGuID = @SurveyGuID
+Select max(SurveyID) As SurveyID FROM vts_tbSurvey WHERE SurveyGuid = @SurveyGuid
 
 
 
@@ -11530,7 +11667,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -11555,9 +11692,9 @@ GO
 */
 CREATE PROCEDURE [dbo].[vts_spSurveyGetUnAssignedListForUser] @UserID int AS
 
-SELECT s.SurveyId, Title 
+SELECT s.SurveyID, Title 
 FROM vts_tbSurvey s
-WHERE SurveyID not in (select SurveyId from vts_tbUserSurvey where UserID = @UserId)
+WHERE SurveyID not in (select SurveyID from vts_tbUserSurvey where UserID = @UserID)
 ORDER BY s.SurveyID
 
 
@@ -11569,7 +11706,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -11592,7 +11729,7 @@ GO
 ///  Gets the unauthenticated action
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spSurveyGetUnAuthentifiedUserAction] @SurveyId int
+CREATE PROCEDURE [dbo].[vts_spSurveyGetUnAuthentifiedUserAction] @SurveyID int
 AS
 	SELECT UnAuthentifiedUserActionID FROM vts_tbSurvey WHERE SurveyID = @SurveyID
 
@@ -11605,7 +11742,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -11645,7 +11782,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -11667,19 +11804,19 @@ GO
 /// <summary>
 /// Increments the number of times a survey's results has been displayed
 /// </summary>
-/// <param name="@SurveyID">
+/// <param Name="@SurveyID">
 /// ID of the survey that will increment its results view count
 /// </param>
-/// <param name="@countnumber">
+/// <param Name="@CountNumber">
 /// Increment number
 /// </param>
 */
 CREATE PROCEDURE [dbo].[vts_spSurveyIncrementResultsViews]
 					@SurveyID int, 
-					@countnumber int
+					@CountNumber int
 AS
 UPDATE vts_tbSurvey
-SET ResultsDisplayTimes = ResultsDisplayTimes+@countnumber
+SET ResultsDisplayTimes = ResultsDisplayTimes+@CountNumber
 WHERE SurveyID = @SurveyID
 
 
@@ -11691,7 +11828,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -11713,20 +11850,20 @@ GO
 /// <summary>
 /// Increments the number of times a survey has been displayed
 /// </summary>
-/// <param name="@SurveyID">
+/// <param Name="@SurveyID">
 /// ID of the survey that will increment its view count
 /// </param>
-/// <param name="@CountNumber">
+/// <param Name="@CountNumber">
 /// Increment number
 /// </param>
 */
 CREATE PROCEDURE [dbo].[vts_spSurveyIncrementViews]
-					@surveyId int, 
-					@countnumber int			
+					@SurveyID int, 
+					@CountNumber int			
 AS
 UPDATE vts_tbSurvey
-SET SurveyDisplayTimes = SurveyDisplayTimes+@countnumber
-WHERE surveyID = @SurveyID
+SET SurveyDisplayTimes = SurveyDisplayTimes+@CountNumber
+WHERE SurveyID = @SurveyID
 
 
 
@@ -11737,7 +11874,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -11777,7 +11914,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -11808,7 +11945,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -11844,14 +11981,14 @@ GO
 -- Description:	<Description,,>
 -- =============================================
 CREATE PROCEDURE [dbo].[vts_spSurveyIPRangeAddNew]	
-	@SurveyId int,
+	@SurveyID int,
 	@IPStart varchar(100),
 	@IPEnd  varchar(100)
 AS
 BEGIN
 INSERT INTO vts_tbSurveyIPRange
-(SurveyId,IPStart,IPEnd)
-VALUES (@SurveyId,@IPStart,@IPEnd);
+(SurveyID,IPStart,IPEnd)
+VALUES (@SurveyID,@IPStart,@IPEnd);
 END
 
 
@@ -11868,11 +12005,11 @@ GO
 -- Description:	<Description,,>
 -- =============================================
 CREATE PROCEDURE [dbo].[vts_spSurveyIPRangeDelete]	
-	@SurveyIPRangeId int
+	@SurveyIPRangeID int
 AS
 BEGIN
 DELETE FROM  vts_tbSurveyIPRange
-WHERE surveyIPrangeID=@SurveyIPrangeID;
+WHERE SurveyIPRangeID=@SurveyIPRangeID;
 END
 
 
@@ -11889,8 +12026,8 @@ GO
 -- Description:	<Description,,>
 -- =============================================
 CREATE PROCEDURE [dbo].[vts_spSurveyIPRangeUpdate]	
-    @SurveyIPrangeID int,
-	@SurveyId int,
+    @SurveyIPRangeID int,
+	@SurveyID int,
 	@IPStart varchar(100),
 	@IPEnd  varchar(100)
 AS
@@ -11898,8 +12035,8 @@ BEGIN
 UPDATE vts_tbSurveyIPRange
  SET IPStart=@IPStart,
      IPEnd=@IPEnd
- WHERE SurveyIPRangeID=@SurveyIPrangeId
- AND   SurveyId=@SurveyId
+ WHERE SurveyIPRangeID=@SurveyIPRangeID
+ AND   SurveyID=@SurveyID
 END
 
 
@@ -11911,7 +12048,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -11944,7 +12081,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -11967,10 +12104,10 @@ GO
 /// Gets the settings of the user
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spSurveyLayoutGet] (@SurveyID  int,@LanguageCode as nvarchar(30))
+CREATE PROCEDURE [dbo].[vts_spSurveyLayoutGet] (@SurveyID  int,@LanguageCode as NVARCHAR(30))
  AS
 
-SELECT [SurveyId]
+SELECT [SurveyID]
       ,[SurveyHeaderText]=
 		CASE @LanguageCode 
 		WHEN null THEN
@@ -11978,10 +12115,10 @@ SELECT [SurveyId]
 		WHEN '' THEN
 			[SurveyHeaderText]
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = @SurveyID AND
-			LanguageMessageTypeId = 14 AND
+			LanguageItemID = @SurveyID AND
+			LanguageMessageTypeID = 14 AND
 			LanguageCode = @LanguageCode), [SurveyHeaderText])		
 		END
       ,[SurveyFooterText]=
@@ -11991,10 +12128,10 @@ SELECT [SurveyId]
 		WHEN '' THEN
 			[SurveyFooterText]
 		ELSE
-			IsNull((SELECT ItemText FROM 
+			ISNULL((SELECT ItemText FROM 
 			vts_tbMultiLanguageText WHERE
-			LanguageItemId = @SurveyID AND
-			LanguageMessageTypeId = 15 AND
+			LanguageItemID = @SurveyID AND
+			LanguageMessageTypeID = 15 AND
 			LanguageCode = @LanguageCode), [SurveyFooterText])		
 		END
       ,[SurveyCss]
@@ -12033,20 +12170,20 @@ JJ Created Moving Layout data from User to Survey
     Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 */
 CREATE PROCEDURE [dbo].[vts_spSurveyLayoutUpdate]
-@SurveyId int =null,
-            @SurveyHeaderText nvarchar(max) = null,
-            @SurveyFooterText nvarchar(max) = null,
-            @SurveyCss nvarchar(255) = null,
-            @LanguageCode nvarchar(30)=null
+@SurveyID int =null,
+            @SurveyHeaderText NVARCHAR(max) = null,
+            @SurveyFooterText NVARCHAR(max) = null,
+            @SurveyCss NVARCHAR(255) = null,
+            @LanguageCode NVARCHAR(30)=null
             
 AS
 
-begin transaction
-UPDATE vts_tbsurveylayout
+begin TRANSACTION
+UPDATE vts_tbSurveyLayout
      SET 
-     SurveyCss=@surveycss
-     WHERE surveyId=@surveyId;
-IF(@@ROWCOUNT>0) 
+     SurveyCss=@SurveyCss
+     WHERE SurveyID=@SurveyID;
+IF(@@RowCount>0) 
 BEGIN
      IF @LanguageCode is null OR @LanguageCode='' 
      BEGIN
@@ -12055,7 +12192,7 @@ BEGIN
 		   SurveyHeaderText    =     @SurveyHeaderText,
 	        SurveyFooterText =        @SurveyFooterText
 	  WHERE
-		 SURVEYID = @SURVEYID
+		 SurveyID = @SurveyID
       END 
       ELSE
       BEGIN
@@ -12065,11 +12202,11 @@ BEGIN
 END
 ELSE
 BEGIN
-INSERT INTO vts_tbsurveylayout
-              (SurveyId, SurveyHeaderText, SurveyFooterText, SurveyCss) 
-              VALUES (@surveyId,@surveyHeaderText,@surveyFooterText,@surveyCss)
+INSERT INTO vts_tbSurveyLayout
+              (SurveyID, SurveyHeaderText, SurveyFooterText, SurveyCss) 
+              VALUES (@SurveyID,@SurveyHeaderText,@SurveyFooterText,@SurveyCss)
 END
-commit transaction
+commit TRANSACTION
 
 
 
@@ -12080,7 +12217,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -12104,12 +12241,12 @@ GO
 /// </summary>
 */
 CREATE PROCEDURE [dbo].[vts_spSurveyMessageConditionAddNew] 
-			@SurveyId int,
+			@SurveyID int,
 			@MessageConditionalOperator int,
 			@QuestionID int,
 			@AnswerID int,
-			@TextFilter nvarchar(4000),
-			@ThankYouMessage nvarchar(4000),
+			@TextFilter NVARCHAR(4000),
+			@ThankYouMessage NVARCHAR(4000),
 			@ConditionalOperator int,
 			@ExpressionOperator int,			
 			@Score	int,
@@ -12128,7 +12265,7 @@ INSERT INTO vts_tbMessageCondition
 	Score,
 	ScoreMax)
 VALUES
-	(@SurveyId,
+	(@SurveyID,
 	@MessageConditionalOperator,
 	@QuestionID,
 	@AnswerID,
@@ -12139,7 +12276,7 @@ VALUES
 	@Score,
 	@ScoreMax)
 
-set @MessageConditionID = scope_identity()
+set @MessageConditionID = SCOPE_IDENTITY()
 
 
 
@@ -12150,7 +12287,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -12185,7 +12322,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -12227,7 +12364,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -12263,7 +12400,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -12292,8 +12429,8 @@ CREATE PROCEDURE [dbo].[vts_spSurveyMessageConditionUpdate]
 			@ExpressionOperator int,			
 			@QuestionID int,
 			@AnswerID int,
-			@TextFilter nvarchar(4000),
-			@ThankYouMessage nvarchar(4000),
+			@TextFilter NVARCHAR(4000),
+			@ThankYouMessage NVARCHAR(4000),
 			@ConditionalOperator int,
 			@Score	int,
 			@ScoreMax int
@@ -12320,7 +12457,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -12342,7 +12479,7 @@ GO
 /// <summary>
 ///  Moves a page break down
 /// </summary>
-/// <param name="@SurveyID">
+/// <param Name="@SurveyID">
 /// ID of the survey that contains the page break
 /// </param>
 */
@@ -12364,7 +12501,7 @@ WHERE
 	ParentQuestionID is null AND
 	PageNumber > @PageNumber
 	ORDER BY PageNumber ASC, DisplayOrder ASC
-if @@ROWCOUNT <>0
+if @@RowCount <>0
 BEGIN
 	-- Move page break down from one question
 	IF @PageNumber+1 = @NewPage 
@@ -12378,9 +12515,9 @@ END
 DECLARE @LastPage int
 
 SELECT @LastPage=MAX(PageNumber) 
-FROM vts_tbQuestion WHERE Surveyid=@SurveyId;
+FROM vts_tbQuestion WHERE SurveyID=@SurveyID;
 
-IF @@ROwCount =0 OR @LastPage=@PageNumber  return;
+IF @@RowCount =0 OR @LastPage=@PageNumber  return;
 
 
 UPDATE vts_tbQuestion
@@ -12399,7 +12536,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -12421,7 +12558,7 @@ GO
 /// <summary>
 ///  Moves a page break up
 /// </summary>
-/// <param name="@SurveyID">
+/// <param Name="@SurveyID">
 /// ID of the survey that contains the page break
 /// </param>
 */
@@ -12443,7 +12580,7 @@ WHERE
 	ParentQuestionID is null AND
 	PageNumber < @PageNumber
 	ORDER BY PageNumber DESC, DisplayOrder DESC
-if @@ROWCOUNT <>0
+if @@RowCount <>0
 BEGIN
 	-- Move page break up from one question
 	IF @PageNumber-1 = @NewPage 
@@ -12472,7 +12609,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -12496,12 +12633,12 @@ AS
 
 BEGIN TRAN ClearMultiLanguage
 
-UPDATE vts_tbSurvey  SET MultiLanguageModeId = 0 WHERE SurveyID = @SurveyID
+UPDATE vts_tbSurvey  SET MultiLanguageModeID = 0 WHERE SurveyID = @SurveyID
 
 DELETE FROM vts_tbSurveyLanguage WHERE SurveyID = @SurveyID
-DELETE FROM vts_tbMultiLanguageText WHERE (LanguageMessageTypeId = 1 OR LanguageMessageTypeId = 2) AND 
+DELETE FROM vts_tbMultiLanguageText WHERE (LanguageMessageTypeID = 1 OR LanguageMessageTypeID = 2) AND 
 	LanguageItemID in (SELECT AnswerID FROM vts_tbAnswer A inner join vts_tbQuestion Q ON Q.QuestionID = A.QuestionID Where SurveyID = @SurveyID)
-DELETE FROM vts_tbMultiLanguageText WHERE LanguageMessageTypeId = 3 AND 
+DELETE FROM vts_tbMultiLanguageText WHERE LanguageMessageTypeID = 3 AND 
 	LanguageItemID in (SELECT QuestionID FROM vts_tbQuestion Where SurveyID = @SurveyID)
 
 COMMIT TRAN ClearMultiLanguage
@@ -12515,7 +12652,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -12537,7 +12674,7 @@ GO
 CREATE PROCEDURE [dbo].[vts_spSurveyMultiLanguageModeGet] @SurveyID int
 AS
 
-	SELECT MultiLanguageModeId FROM vts_tbSurvey WHERE SurveyID = @SurveyID
+	SELECT MultiLanguageModeID FROM vts_tbSurvey WHERE SurveyID = @SurveyID
 
 
 
@@ -12548,7 +12685,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -12567,10 +12704,10 @@ GO
 	along with this program; if not, write to the Free Software
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
-CREATE PROCEDURE [dbo].[vts_spSurveyMultiLanguageModeUpdate] @SurveyID int, @MultiLanguageModeId int, @MultiLanguageVariable nvarchar(50)
+CREATE PROCEDURE [dbo].[vts_spSurveyMultiLanguageModeUpdate] @SurveyID int, @MultiLanguageModeID int, @MultiLanguageVariable NVARCHAR(50)
 AS
 
-UPDATE vts_tbSurvey  SET MultiLanguageModeId = @MultiLanguageModeId, MultiLanguageVariable = @MultiLanguageVariable
+UPDATE vts_tbSurvey  SET MultiLanguageModeID = @MultiLanguageModeID, MultiLanguageVariable = @MultiLanguageVariable
 WHERE SurveyID = @SurveyID
 
 
@@ -12582,7 +12719,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -12614,7 +12751,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -12646,7 +12783,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -12678,7 +12815,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -12715,25 +12852,25 @@ GO
 -- Description:	<Description,,>
 -- =============================================
 CREATE PROCEDURE [dbo].[vts_spSurveySetFolder]
-	@ParentFolderId int,
-	@SurveyId int
+	@ParentFolderID int,
+	@SurveyID int
 AS
 BEGIN
 	SET NOCOUNT ON;
-	declare @pid int
+	declare @PID int
 	-- we set parent to point to home folder
-	select @pid = FolderId from vts_tbFolders where ParentFolderId IS NULL
+	select @PID = FolderID from vts_tbFolders where ParentFolderID IS NULL
 	if exists(
-          select 1 from vts_tbSurvey where FolderId=ISNULL(@ParentFolderId, @pid) and 
-          Title =(select Title from vts_tbSurvey where SurveyID=@SurveyId)
-          and SurveyID!=@SurveyId )
+          select 1 from vts_tbSurvey where FolderID=ISNULL(@ParentFolderID, @PID) and 
+          Title =(select Title from vts_tbSurvey where SurveyID=@SurveyID)
+          and SurveyID!=@SurveyID )
          begin
            raiserror('DUPLICATEFOLDER',16,4);
            return;
          end;
     Update vts_tbSurvey
-	set FolderId = ISNULL(@ParentFolderId, @pid)
-	where SurveyID = @SurveyId
+	set FolderID = ISNULL(@ParentFolderID, @PID)
+	where SurveyID = @SurveyID
 	
 END
 
@@ -12746,7 +12883,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -12769,7 +12906,7 @@ GO
 /// clone all branchings of a survey to another
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spSurveySkipLogicRuleCopyToSurvey] @SurveyId int, @ClonedSurveyID int AS
+CREATE PROCEDURE [dbo].[vts_spSurveySkipLogicRuleCopyToSurvey] @SurveyID int, @ClonedSurveyID int AS
 
 
 DECLARE @ConditionalOperator int,
@@ -12814,20 +12951,20 @@ FETCH SkipCursor INTO
 WHILE @@FETCH_STATUS = 0
 BEGIN
 
-	-- Get question id that is in the cloned survey
+	-- Get question ID that is in the cloned survey
 	SELECT @ClonedSkipQuestionID = (select QuestionID  from vts_tbQuestion WHERE SurveyID = @ClonedSurveyID AND QuestionText = (select QuestionText FROM vts_tbQuestion WHERE QuestionID = @SkipQuestionID) AND 
 				DisplayOrder = (select DisplayOrder FROM vts_tbQuestion WHERE QuestionID = @SkipQuestionID)) 
 
-	-- Get question id that is in the cloned survey
+	-- Get question ID that is in the cloned survey
 	SELECT @ClonedQuestionID =	(select QuestionID  from vts_tbQuestion WHERE SurveyID = @ClonedSurveyID AND QuestionText = (select QuestionText FROM vts_tbQuestion WHERE QuestionID = @QuestionID) AND 
 				DisplayOrder = (select DisplayOrder FROM vts_tbQuestion WHERE QuestionID = @QuestionID)) 
 	
 	IF @AnswerID is not NULL
 	BEGIN
-		-- Get answer id from the cloned survey
-		SELECT @ClonedAnswerId = 
-				(select answerId from vts_tbAnswer WHERE QuestionId = @ClonedQuestionID AND 
-				DisplayOrder = (select DisplayOrder FROM vts_tbAnswer WHERE AnswerId = @AnswerID))
+		-- Get answer ID from the cloned survey
+		SELECT @ClonedAnswerID = 
+				(select AnswerID from vts_tbAnswer WHERE QuestionID = @ClonedQuestionID AND 
+				DisplayOrder = (select DisplayOrder FROM vts_tbAnswer WHERE AnswerID = @AnswerID))
 	END
 	ELSE
 	BEGIN
@@ -12860,7 +12997,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE PROCEDURe [dbo].[vts_spSurveyTokenAddMultiple]
- @SurveyId int,
+ @SurveyID int,
  @CreationDate date,
  @tblTokenList VarcharTableType readonly
 	
@@ -12868,8 +13005,8 @@ AS
 BEGIN
 	
 	SET NOCOUNT ON;
-INSERT INTO vts_tbSurveyToken(SurveyId,CreationDate,Token,Used)
-SELECT @SurveyId,@CreationDate,list.value,0
+INSERT INTO vts_tbSurveyToken(SurveyID,CreationDate,Token,Used)
+SELECT @SurveyID,@CreationDate,list.value,0
 FROM @tblTokenList as list;
 
 END
@@ -12883,16 +13020,16 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE PROCEDURe [dbo].[vts_spSurveyTokenDeleteMultiple]
- @tblTokenIdList IntTableType readonly
+ @tblTokenIDList IntTableType readonly
 	
 AS
 BEGIN
 	
 SET NOCOUNT ON;
 DELETE FROM vts_tbSurveyToken
-WHERE TokenId in(
+WHERE TokenID in(
 SELECT value
-FROM @tblTokenIdList 
+FROM @tblTokenIDList 
 );
 END
 
@@ -12905,7 +13042,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -12925,21 +13062,21 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 /// <summary>
-/// Check if the given UId is valid and returns its survey id
+/// Check if the given UID is valID and returns its survey ID
 /// </summary>
-/// <param name="@UID">
-/// UId to check
+/// <param Name="@UID">
+/// UID to check
 /// </param>
 */
 CREATE PROCEDURE [dbo].[vts_spSurveyTokenUpdate] 
-@SurveyId int,@Token varchar(40),
-@VoterId int
+@SurveyID int,@Token varchar(40),
+@VoterID int
 AS
 
 UPDATE vts_tbSurveyToken
-SET used=1,
-    VoterId=case when @voterId<=0 then null else @voterId end
-WHERE SurveyId =@SurveyId
+SET Used=1,
+    VoterID=case when @VoterID<=0 then null else @VoterID end
+WHERE SurveyID =@SurveyID
 AND   Token=@Token
 
 
@@ -12951,7 +13088,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -12971,20 +13108,20 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 /// <summary>
-/// Check if the given UId is valid and returns its survey id
+/// Check if the given UID is valID and returns its survey ID
 /// </summary>
-/// <param name="@UID">
-/// UId to check
+/// <param Name="@UID">
+/// UID to check
 /// </param>
 */
 CREATE PROCEDURE [dbo].[vts_spSurveyTokenValidate] 
-@SurveyId int,@Token varchar(40)
+@SurveyID int,@Token varchar(40)
 AS
 
 select 1 from vts_tbSurveyToken
-WHERE SurveyId =@SurveyId
+WHERE SurveyID =@SurveyID
 AND   Token=@Token
-AND   used=0;
+AND   Used=0;
 
 
 
@@ -12995,7 +13132,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -13023,28 +13160,28 @@ GO
 */
 CREATE PROCEDURE [dbo].[vts_spSurveyUpdate] 
 
-				@LanguageCode nvarchar(50),
+				@LanguageCode NVARCHAR(50),
 				@SurveyID int,
 				@OpenDate datetime,
 				@CloseDate datetime,
-				@Title nvarchar(255),
-				@ThankYouMessage nvarchar(4000),
+				@Title NVARCHAR(255),
+				@ThankYouMessage NVARCHAR(4000),
 				@RedirectionURL varchar(1024),
 				@Archive bit,
 				@Activated bit,
 				@ResumeModeID int,
 				@NavigationEnabled bit,
-				@ProgressDisplayModeId int,
-				@NotificationModeId int,
+				@ProgressDisplayModeID int,
+				@NotificationModeID int,
 				@Scored bit,
 				@QuestionNumberingDisabled bit,
 			    @DefaultSurvey bit=0
 AS
 
 if exists(
-          select 1 from vts_tbSurvey where FolderId=
-          (select folderid from vts_tbsurvey where surveyId=@SurveyID)
-          and Title =@Title  and surveyId!=@SurveyID)
+          select 1 from vts_tbSurvey where FolderID=
+          (select FolderID from vts_tbSurvey where SurveyID=@SurveyID)
+          and Title =@Title  and SurveyID!=@SurveyID)
          begin
     
            raiserror('DUPLICATEFOLDER',16,4);
@@ -13060,8 +13197,8 @@ UPDATE vts_tbSurvey SET DefaultSurvey = 0 WHERE DefaultSurvey<>0
          
 UPDATE vts_tbSurvey 
 SET 
-	ProgressDisplayModeId = @ProgressDisplayModeId,
-	NotificationModeId = @NotificationModeId,
+	ProgressDisplayModeID = @ProgressDisplayModeID,
+	NotificationModeID = @NotificationModeID,
 	ResumeModeID = @ResumeModeID,
 	OpenDate = @OpenDate,
 	CloseDate = @CloseDate,
@@ -13094,8 +13231,8 @@ ELSE
 
 BEGIN
 	-- Updates localized text
-	exec vts_spMultiLanguageTextUpdate @SurveyId, @LanguageCode, 4, @ThankYouMessage
-	exec vts_spMultiLanguageTextUpdate @SurveyId, @LanguageCode, 5, @RedirectionURL
+	exec vts_spMultiLanguageTextUpdate @SurveyID, @LanguageCode, 4, @ThankYouMessage
+	exec vts_spMultiLanguageTextUpdate @SurveyID, @LanguageCode, 5, @RedirectionURL
 END
 
 
@@ -13107,7 +13244,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -13144,18 +13281,29 @@ GO
 -- Description:	<Description,,>
 -- =============================================
 CREATE PROCEDURE [dbo].[vts_spSurveyUpdateFriendlyName]
-	@SurveyId int,
+	@SurveyID int,
 	@FriendlyName varchar(200)
 AS
+
+DECLARE @test int;
+SET @test = 
+(select count(*) 
+from vts_tbSurvey 
+where FriendlyName is not null 
+and FriendlyName = @FriendlyName)  ;
+
 BEGIN
-	SET NOCOUNT ON;
+	--SET NOCOUNT ON;
 	
-	
+	if (@test = 0)	
+	BEGIN
     Update vts_tbSurvey
-	set friendlyname=@friendlyname
-	where SurveyID = @SurveyId
+	set FriendlyName=@FriendlyName
+	where SurveyID = @SurveyID
+	END
 	
 END
+
 
 GO
 /****** Object:  StoredProcedure [dbo].[vts_spSurveyDeleteFriendlyName]    Script Date: 7-2-2017 16:47:31 ******/
@@ -13169,14 +13317,14 @@ GO
 -- Description:	<update to "remove" FriendlyUrl from Survey table i.e. set it to null>
 -- =============================================
 CREATE PROCEDURE [dbo].[vts_spSurveyDeleteFriendlyName]
-	@SurveyId int
+	@SurveyID int
 AS
 BEGIN
 	SET NOCOUNT ON;
 	
     Update vts_tbSurvey
-	set friendlyname= null
-	where SurveyID = @SurveyId
+	set FriendlyName= null
+	where SurveyID = @SurveyID
 	
 END
 
@@ -13188,7 +13336,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -13220,7 +13368,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -13243,7 +13391,7 @@ GO
 ///  Updates the unauthenticated action
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spSurveyUpdateUnAuthentifiedUserAction] @SurveyId int, @UnAuthentifiedUserActionId int
+CREATE PROCEDURE [dbo].[vts_spSurveyUpdateUnAuthentifiedUserAction] @SurveyID int, @UnAuthentifiedUserActionID int
 AS
 	UPDATE vts_tbSurvey SET UnAuthentifiedUserActionID = @UnAuthentifiedUserActionID WHERE SurveyID = @SurveyID
 
@@ -13256,7 +13404,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -13278,14 +13426,14 @@ GO
 /// <summary>
 /// Check if the given password match the survey password that was setup
 /// </summary>
-/// <param name="@SurveyId">
-/// Id of the protected survey
+/// <param Name="@SurveyID">
+/// ID of the protected survey
 /// </param>
-/// <param name="@Password">
-/// Password to validate
+/// <param Name="@Password">
+/// Password to valIDate
 /// </param>
 */
-CREATE PROCEDURE [dbo].[vts_spSurveyValidatePassword]  @SurveyId int, @Password nvarchar(255) AS
+CREATE PROCEDURE [dbo].[vts_spSurveyValidatePassword]  @SurveyID int, @Password NVARCHAR(255) AS
 SELECT 
 	SurveyID
 FROM vts_tbSurvey 
@@ -13300,7 +13448,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -13322,15 +13470,15 @@ GO
 /// <summary>
 /// Get the questions until next page break
 /// </summary>
-/// <param name="@LibraryID">
+/// <param Name="@LibraryID">
 /// ID of the library  to retrieve questions from
 /// </param>
 */
 CREATE PROCEDURE [dbo].[vts_spTokenGetForSurvey]
-			@SurveyId int
+			@SurveyID int
 AS
 	SELECT * from vts_tbSurveyToken
-	WHERE SurveyId=@SurveyId
+	WHERE SurveyID=@SurveyID
 
 
 
@@ -13353,8 +13501,8 @@ BEGIN
 	SET NOCOUNT ON;
 
     -- Insert statements for procedure here
-	SELECT sv.SurveyID, sv.Title, fs.FolderId, fs.ParentFolderId, fs.FolderName FROM vts_tbSurvey AS sv
-	RIGHT OUTER JOIN vts_tbFolders AS fs ON fs.FolderId = sv.FolderId
+	SELECT sv.SurveyID, sv.Title, fs.FolderID, fs.ParentFolderID, fs.FolderName FROM vts_tbSurvey AS sv
+	RIGHT OUTER JOIN vts_tbFolders AS fs ON fs.FolderID = sv.FolderID
 
 END
 
@@ -13374,60 +13522,60 @@ GO
 -- JJ Modified to restrict to Surveys to which the User has access
 --
 CREATE PROCEDURE [dbo].[vts_spTreeNodesGetAll](
-@UserId int)
+@UserID int)
 AS
 BEGIN	
 	SET NOCOUNT ON;
-	WITH CTE As
+	WITH cte As
 	(
 	SELECT sv.FolderID , 
 		 fs.FolderName , 
-		fs.ParentFolderId 
+		fs.ParentFolderID 
 		FROM vts_tbSurvey AS sv
-		JOIN vts_tbFolders AS fs ON fs.FolderId = sv.FolderId 
+		JOIN vts_tbFolders AS fs ON fs.FolderID = sv.FolderID 
 		WHERE exists(
 	    select 1 from vts_tbUserSurvey as usr
-	    where usr.surveyId=sv.surveyId and usr.UserId=@UserId )
+	    where usr.SurveyID=sv.SurveyID and usr.UserID=@UserID )
 	    OR exists(
-	    select 1 from vts_tbusersetting us
-	      where us.userid=@UserId
+	    select 1 from vts_tbUserSetting us
+	      where us.UserID=@UserID
 	      and(us.GlobalSurveyAccess=1 OR us.IsAdmin=1)
 	    )
 	    UNION ALL
-	    SELECT fs.FolderId   , 
+	    SELECT fs.FolderID   , 
 	           fs.FolderName , 
-		       fs.ParentFolderId  
+		       fs.ParentFolderID  
 		from vts_tbFolders as fs JOIN cte 
-		on cte.ParentFolderId=fs.FolderId
-		where cte.parentFolderId IS NOT NULL
+		on cte.ParentFolderID=fs.FolderID
+		where cte.ParentFolderID IS NOT NULL
 	    )
-	SELECT 's' + CONVERT(varchar, sv.SurveyID) as ItemId, 
+	SELECT 's' + CONVERT(varchar, sv.SurveyID) as ItemID, 
 		ISNULL(sv.Title, fs.FolderName) as NodeName, 
-		'f' + CONVERT(varchar, sv.FolderId) as ParentFolderId
+		'f' + CONVERT(varchar, sv.FolderID) as ParentFolderID
 		FROM vts_tbSurvey AS sv 
-		JOIN vts_tbFolders AS fs ON fs.FolderId = sv.FolderId 
+		JOIN vts_tbFolders AS fs ON fs.FolderID = sv.FolderID 
 		WHERE (exists(
 	    select 1 from vts_tbUserSurvey as usr
-	    where usr.surveyId=sv.surveyId and usr.UserId=@UserId )
+	    where usr.SurveyID=sv.SurveyID and usr.UserID=@UserID )
 	    or exists (
 	    select 1 from vts_tbUserSetting st
-	    where st.userid=@userid
-	    and (st.Isadmin=1 or st.GlobalSurveyAccess=1)
+	    where st.UserID=@UserID
+	    and (st.IsAdmin=1 or st.GlobalSurveyAccess=1)
 	    )
 	    )
 	  
 	UNION 
-	SELECT 'f' + CONVERT(varchar, fs.FolderId)  as ItemId , FolderName  as NodeName, 
-		'f' + CONVERT(varchar, fs.ParentFolderId)  as ParentFolderId
+	SELECT 'f' + CONVERT(varchar, fs.FolderID)  as ItemID , FolderName  as NodeName, 
+		'f' + CONVERT(varchar, fs.ParentFolderID)  as ParentFolderID
 		from cte as fs 
      UNION
-	SELECT 'f' + CONVERT(varchar, fs.FolderId)  as ItemId , FolderName  as NodeName, 
-		'f' + CONVERT(varchar, fs.ParentFolderId)  as ParentFolderId
+	SELECT 'f' + CONVERT(varchar, fs.FolderID)  as ItemID , FolderName  as NodeName, 
+		'f' + CONVERT(varchar, fs.ParentFolderID)  as ParentFolderID
 		from vts_tbFolders as fs 
 	WHERE exists(
 	    select 1 from vts_tbUserSetting st
-	    where st.userid=@userid
-	    and (st.Isadmin=1 or st.GlobalSurveyAccess=1))
+	    where st.UserID=@UserID
+	    and (st.IsAdmin=1 or st.GlobalSurveyAccess=1))
 		ORDER BY NodeName		
 END
 
@@ -13440,7 +13588,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -13472,7 +13620,7 @@ SET QUOTED_IDENTIFIER OFF
 GO
 
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -13497,12 +13645,12 @@ GO
 */
 CREATE PROCEDURE [dbo].[vts_spUserAddNew]
 			@UserID int out,
-			@UserName nvarchar(255),
-			@Password nvarchar(255),
-	        @PasswordSalt nvarchar(255),
-			@LastName nvarchar(255),
-			@FirstName nvarchar(255),  
-			@Email nvarchar(255)
+			@UserName NVARCHAR(255),
+			@Password NVARCHAR(255),
+	        @PasswordSalt NVARCHAR(255),
+			@LastName NVARCHAR(255),
+			@FirstName NVARCHAR(255),  
+			@Email NVARCHAR(255)
 			
 AS
 
@@ -13521,7 +13669,7 @@ VALUES (@UserName,
 
 
 
-SELECT @UserID = scope_identity()
+SELECT @UserID = SCOPE_IDENTITY()
 
 
 
@@ -13533,7 +13681,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -13558,8 +13706,8 @@ GO
 */
 CREATE PROCEDURE [dbo].[vts_spUserAnswerTypeAssignUser] @AnswerTypeID int, @UserID int AS
 
-SELECT AnswerTypeId FROM vts_tbUserAnswerType WHERE AnswerTypeID = @AnswerTypeID AND UserID = @UserID
-IF @@rowcount = 0
+SELECT AnswerTypeID FROM vts_tbUserAnswerType WHERE AnswerTypeID = @AnswerTypeID AND UserID = @UserID
+IF @@RowCount = 0
 BEGIN
 	INSERT INTO vts_tbUserAnswerType(AnswerTypeID, UserID) VALUES (@AnswerTypeID, @UserID)
 END
@@ -13573,7 +13721,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -13609,7 +13757,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -13637,10 +13785,10 @@ CREATE PROCEDURE [dbo].[vts_spUserDelete]
 			
 AS
 BEGIN TRAN DeleteUserTran
-DELETE FROM vts_tbUserRole WHERE UserId = @UserID
-DELETE FROM vts_tbUserSurvey WHERE UserId = @UserID
-DELETE FROM vts_tbUserSetting WHERE UserId = @UserID
-DELETE FROM vts_tbUser WHERE UserId = @UserID
+DELETE FROM vts_tbUserRole WHERE UserID = @UserID
+DELETE FROM vts_tbUserSurvey WHERE UserID = @UserID
+DELETE FROM vts_tbUserSetting WHERE UserID = @UserID
+DELETE FROM vts_tbUser WHERE UserID = @UserID
 COMMIT TRAN DeleteUserTran
 
 
@@ -13652,7 +13800,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -13690,7 +13838,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -13713,7 +13861,7 @@ GO
 /// Gets the details of a user
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spUserGetData] @UserName nvarchar(255), @Password nvarchar(255) AS
+CREATE PROCEDURE [dbo].[vts_spUserGetData] @UserName NVARCHAR(255), @Password NVARCHAR(255) AS
 
 SELECT 
 	UserID, UserName, 
@@ -13723,7 +13871,7 @@ SELECT
 FROM vts_tbUser
 WHERE UserName = @UserName AND Password = @Password
 
-IF @@rowcount > 0
+IF @@RowCount > 0
 BEGIN
 	UPDATE vts_tbUser SET
 		LastLogin = getdate() 
@@ -13740,7 +13888,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -13783,7 +13931,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -13840,7 +13988,7 @@ BEGIN
 	SET NOCOUNT ON;
 
 	/****** Script for SelectTopNRows command from SSMS  ******/
-SELECT TOP 1000 u.[UserId]
+SELECT TOP 1000 u.[UserID]
       ,u.[UserName]
       ,u.[Password]
       ,u.[FirstName]
@@ -13850,19 +13998,17 @@ SELECT TOP 1000 u.[UserId]
       ,u.[LastLogin]
       ,us.IsAdmin
   FROM [dbo].[vts_tbUser] u
-  INNER JOIN [dbo].[vts_tbUserSetting] us ON us.UserId = u.[UserId]
+  INNER JOIN [dbo].[vts_tbUserSetting] us ON us.UserID = u.[UserID]
   WHERE (u.UserName LIKE '%'+ ISNULL(@UserName, '') + '%' OR u.UserName is NULL)
   AND (u.FirstName LIKE '%'+ ISNULL(@FirstName, '') +'%' OR u.FirstName IS NULL)
   AND (u.LastName LIKE '%'+ ISNULL(@LastName, '') +'%' OR u.LastName IS NULL)
-  AND (u.Email LIKE '%'+ ISNULL(@Email, '') +'%' or u.email is null)
+  AND (u.Email LIKE '%'+ ISNULL(@Email, '') +'%' or u.Email is null)
   AND (@Administrator is null OR us.IsAdmin = @Administrator)
    Order by u.[UserName]
 END
 
-
-
 GO
-/****** Object:  StoredProcedure [dbo].[vts_spUserGetUserIdFromUserName]    Script Date: 19-8-2014 22:01:40 ******/
+/****** Object:  StoredProcedure [dbo].[vts_spUserGetUserIDFromUserName]    Script Date: 7/31/2017 12:56:54 ******/
 SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER OFF
@@ -13888,16 +14034,24 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 /// <summary>
-/// Returns the user id of the username
+/// Returns the user ID of the username
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spUserGetUserIdFromUserName]
-			@UserName nvarchar(255)
+CREATE PROCEDURE [dbo].[vts_spUserGetUserIDFromUserName]
+			@UserName NVARCHAR(255)
 			
 AS
 
-SELECT UserID FROM vts_tbUser WHERE UserName = @UserName
+select
+Case 
+when count(*) > 0
+then
 
+(SELECT UserID FROM vts_tbUser WHERE UserName = @UserName)
+
+else -2
+end as UserID
+from vts_tbUser 
 
 
 GO
@@ -13907,7 +14061,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -13943,7 +14097,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -13968,10 +14122,10 @@ GO
 */
 CREATE PROCEDURE [dbo].[vts_spUserRegularExpressionAssignUser] @RegularExpressionID int, @UserID int AS
 
-SELECT RegularExpressionId FROM vts_tbUserRegularExpression WHERE RegularExpressionId = @RegularExpressionId AND UserID = @UserID
-IF @@rowcount = 0
+SELECT RegularExpressionID FROM vts_tbUserRegularExpression WHERE RegularExpressionID = @RegularExpressionID AND UserID = @UserID
+IF @@RowCount = 0
 BEGIN
-	INSERT INTO vts_tbUserRegularExpression(RegularExpressionID, UserID) VALUES (@RegularExpressionId, @UserID)
+	INSERT INTO vts_tbUserRegularExpression(RegularExpressionID, UserID) VALUES (@RegularExpressionID, @UserID)
 END
 
 
@@ -13983,7 +14137,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -14009,7 +14163,7 @@ GO
 CREATE PROCEDURE [dbo].[vts_spUserRoleAssignUser] @RoleID int, @UserID int AS
 
 SELECT RoleID FROM vts_tbUserRole WHERE RoleID = @RoleID AND UserID = @UserID
-IF @@rowcount = 0
+IF @@RowCount = 0
 BEGIN
 	INSERT INTO vts_tbUserRole(RoleID, UserID) VALUES (@RoleID, @UserID)
 END
@@ -14023,7 +14177,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -14048,7 +14202,7 @@ GO
 */
 CREATE PROCEDURE [dbo].[vts_spUserRoleGetAssignedList] @UserID int AS
 
-SELECT ur.RoleId, RoleName FROM vts_tbUserRole ur
+SELECT ur.RoleID, RoleName FROM vts_tbUserRole ur
 INNER JOIN vts_tbRole 
 	ON vts_tbRole.RoleID = ur.RoleID 
 WHERE ur.UserID = @UserID
@@ -14062,7 +14216,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -14087,8 +14241,8 @@ GO
 */
 CREATE PROCEDURE [dbo].[vts_spUserRoleGetUnAssignedList] @UserID int AS
 
-SELECT vts_tbRole.RoleId, RoleName FROM vts_tbRole 
-WHERE vts_tbRole.RoleId not in (SELECT RoleID FROM vts_tbUserRole WHERE USerID = @UserID)
+SELECT vts_tbRole.RoleID, RoleName FROM vts_tbRole 
+WHERE vts_tbRole.RoleID not in (SELECT RoleID FROM vts_tbUserRole WHERE UserID = @UserID)
 
 
 
@@ -14099,7 +14253,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -14135,7 +14289,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -14158,10 +14312,10 @@ GO
 /// Gets the details of a user
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spUserSecurityRightGet] @UserId int AS
+CREATE PROCEDURE [dbo].[vts_spUserSecurityRightGet] @UserID int AS
 
--- get rights, if a role forbit a right forbidden right will win 
-SELECT distinct rs.SecurityRightId
+-- get rights, if a role forbit a right forbIDden right will win 
+SELECT distinct rs.SecurityRightID
 FROM vts_tbRoleSecurityRight rs
 INNER JOIN vts_tbUserRole ur
 	ON ur.RoleID = rs.RoleID
@@ -14171,8 +14325,8 @@ WHERE
 	 AND
 	((select count(*) FROM vts_tbUserRole WHERE UserID=@UserID AND vts_tbUserRole.RoleID <> ur.RoleID) = 0 OR 
 		((select count(*) FROM vts_tbUserRole WHERE UserID=@UserID AND vts_tbUserRole.RoleID <> ur.RoleID) > 0 AND 
-	rs.SecurityRightId IN (
-		SELECT distinct SecurityRightId 
+	rs.SecurityRightID IN (
+		SELECT distinct SecurityRightID 
 		FROM vts_tbRoleSecurityRight 
 		INNER JOIN vts_tbUserRole
 			ON vts_tbUserRole.RoleID = vts_tbRoleSecurityRight.RoleID
@@ -14192,7 +14346,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -14217,7 +14371,7 @@ CREATE PROCEDURE [dbo].[vts_spUserSettingAddNew]
 			@GlobalSurveyAccess bit
 AS
 
-INSERT INTO vts_tbUserSetting (UserId, IsAdmin, GlobalSurveyAccess) VALUES (@UserID, @IsAdmin, @GlobalSurveyAccess)
+INSERT INTO vts_tbUserSetting (UserID, IsAdmin, GlobalSurveyAccess) VALUES (@UserID, @IsAdmin, @GlobalSurveyAccess)
 
 
 
@@ -14228,7 +14382,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -14253,7 +14407,7 @@ GO
 */
 CREATE PROCEDURE [dbo].[vts_spUserSettingGet] @UserID int AS
 
-SELECT UserId, IsAdmin, GlobalSurveyAccess
+SELECT UserID, IsAdmin, GlobalSurveyAccess
 FROM vts_tbUserSetting
 WHERE UserID = @UserID
 
@@ -14266,7 +14420,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -14296,7 +14450,7 @@ UPDATE vts_tbUserSetting SET
 	GlobalSurveyAccess = @GlobalSurveyAccess
 WHERE UserID = @UserID
 
-if @@rowcount = 0
+if @@RowCount = 0
 BEGIN
 	exec vts_spUserSettingAddNew @UserID, @IsAdmin, @GlobalSurveyAccess
 END
@@ -14310,7 +14464,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -14336,7 +14490,7 @@ GO
 CREATE PROCEDURE [dbo].[vts_spUserSurveyAssignUser] @SurveyID int, @UserID int AS
 
 SELECT SurveyID FROM vts_tbUserSurvey WHERE SurveyID = @SurveyID AND UserID = @UserID
-IF @@rowcount = 0
+IF @@RowCount = 0
 BEGIN
 	INSERT INTO vts_tbUserSurvey(SurveyID, UserID) VALUES (@SurveyID, @UserID)
 END
@@ -14350,7 +14504,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -14388,12 +14542,12 @@ GO
 
 CREATE PROCEDURE [dbo].[vts_spUserUpdate]
 			@UserID int,
-			@UserName nvarchar(255),
-			@Password nvarchar(255),
-		    @PasswordSalt nvarchar(255),
-			@LastName nvarchar(255),
-			@FirstName nvarchar(255),  
-			@Email nvarchar(255),
+			@UserName NVARCHAR(255),
+			@Password NVARCHAR(255),
+		    @PasswordSalt NVARCHAR(255),
+			@LastName NVARCHAR(255),
+			@FirstName NVARCHAR(255),  
+			@Email NVARCHAR(255),
 			@LastLogin datetime
 			
 AS
@@ -14429,7 +14583,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -14455,7 +14609,7 @@ GO
 
 CREATE PROCEDURE [dbo].[vts_spVoterAddNew]
 			@SurveyID int,
-			@IPSource nvarchar(50),
+			@IPSource NVARCHAR(50),
 			@VoteDate datetime,
 			@StartDate datetime,
 			@UID varchar(50),
@@ -14465,7 +14619,7 @@ CREATE PROCEDURE [dbo].[vts_spVoterAddNew]
 			@ResumeAtPageNumber int ,
 			@ResumeQuestionNumber int,
 			@ResumeHighestPageNumber int,
-			@LanguageCode nvarchar(50),
+			@LanguageCode NVARCHAR(50),
 			@VoterID int OUTPUT
 AS
 INSERT INTO vts_tbVoter
@@ -14495,10 +14649,10 @@ VALUES
 	@ResumeHighestPageNumber,
 	@LanguageCode)
 
-set @VoterID = SCOPE_Identity()
+set @VoterID = SCOPE_IDENTITY()
 if @UID is not null
 BEGIN 
-	exec vts_spVoterUIdAddNew @VoterID, @UId
+	exec vts_spVoterUIDAddNew @VoterID, @UID
 END
 Update vts_tbSurvey set LastEntryDate = GetDate() WHERE SurveyID = @SurveyID
 
@@ -14511,7 +14665,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -14533,13 +14687,13 @@ GO
 /// <summary>
 /// Adds a new answer given by a voter
 /// </summary>
-/// <param name="@VoterID">
+/// <param Name="@VoterID">
 /// Voter's owner of the answer ID
 /// </param>
-/// <param name="@AnswerID">
+/// <param Name="@AnswerID">
 /// Which answer has been answered
 /// </param>
-/// <param name="@AnswerText">
+/// <param Name="@AnswerText">
 /// Text if any entered by the voter
 /// </param>
 */
@@ -14547,7 +14701,7 @@ CREATE PROCEDURE [dbo].[vts_spVoterAnswersAddNew]
 			@VoterID int,
 			@AnswerID int,
 			@SectionNumber int,
-			@AnswerText ntext
+			@AnswerText NVARCHAR(max)
 AS
 INSERT INTO vts_tbVoterAnswers
 	(VoterID , 
@@ -14569,7 +14723,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -14591,42 +14745,42 @@ GO
 /// <summary>
 /// Adds a new answer given by a voter
 /// </summary>
-/// <param name="@VoterID">
+/// <param Name="@VoterID">
 /// Voter's owner of the answer ID
 /// </param>
-/// <param name="@AnswerID">
+/// <param Name="@AnswerID">
 /// Which answer has been answered
 /// </param>
-/// <param name="@AnswerText">
+/// <param Name="@AnswerText">
 /// Text if any entered by the voter
 /// </param>
 */
 CREATE PROCEDURE [dbo].[vts_spVoterAnswersImport]
-            @SurveyId int,-- Ensure Question is in right survey
+            @SurveyID int,-- Ensure Question is in right survey
 			@VoterID int,
 			@SectionNumber int,
-			@VoterAnswer ntext=null,
-		    @Answer nvarchar(400)=null,
-		    @QuestionText nvarchar(4000),
+			@VoterAnswer NVARCHAR(max)=null,
+		    @Answer NVARCHAR(400)=null,
+		    @QuestionText NVARCHAR(max),
 			@QuestionDisplayOrder int,
 			@AnswerDisplayOrder int as
 
-declare @AnswerId int,
-        @AnswerTypeId int
+declare @AnswerID int,
+        @AnswerTypeID int
 BEGIN TRY
 
-SELECT @AnswerId=AnswerId,
-       @AnswerTypeId=AnswerTypeId
+SELECT @AnswerID=AnswerID,
+       @AnswerTypeID=AnswerTypeID
 FROM vts_tbAnswer as a inner Join
      vts_tbQuestion as q
-ON   q.QuestionId=a.QuestionId
+ON   q.QuestionID=a.QuestionID
 WHERE q.DisplayOrder=@QuestionDisplayOrder
-AND   q.SurveyId=@SurveyId
+AND   q.SurveyID=@SurveyID
 AND   replace(dbo.fnStriptags(q.QuestionText),' ','')
              =replace(@QuestionText,' ','')
 AND   a.DisplayOrder=@AnswerDisplayOrder;
 
-IF (@@ROWCOUNT =0) 
+IF (@@RowCount =0) 
 RAISERROR
     (N'No Question / Answer Combination with %d/%d/%s',
     16, -- Severity.
@@ -14644,7 +14798,7 @@ VALUES
 	 (@VoterID,
 	@AnswerID,
 	CASE WHEN
-	  @AnswerTypeId IN(1) THEN NULL
+	  @AnswerTypeID IN(1) THEN NULL
 	ELSE @VoterAnswer END,
 	@SectionNumber)
 
@@ -14673,7 +14827,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -14696,10 +14850,10 @@ GO
 /// Check if the ip has already been registered in a vote 
 /// in the expiration time lapse
 /// </summary>
-/// <param name="@SurveyID">
+/// <param Name="@SurveyID">
 /// ID of the survey to which the ip belongs
 /// </param>
-/// <param name="@IP">
+/// <param Name="@IP">
 /// IP to check for
 /// </param>
 */
@@ -14725,7 +14879,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -14747,10 +14901,10 @@ GO
 /// <summary>
 /// Check if the UID has already been registered in a vote 
 /// </summary>
-/// <param name="@SurveyID">
+/// <param Name="@SurveyID">
 /// ID of the survey to which the ip belongs
 /// </param>
-/// <param name="@UID">
+/// <param Name="@UID">
 /// UID to check for
 /// </param>
 */
@@ -14773,7 +14927,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -14795,8 +14949,8 @@ GO
 /// <summary>
 /// Deletes the voter from the DB
 /// </summary>
-/// <param name="@VoterID">
-/// The id of the voter to delete
+/// <param Name="@VoterID">
+/// The ID of the voter to delete
 /// </param>
 */
 CREATE PROCEDURE [dbo].[vts_spVoterDelete] @VoterID int
@@ -14813,7 +14967,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -14835,16 +14989,31 @@ GO
 /// <summary>
 /// Deletes all voters from the DB
 /// </summary>
-/// <param name="@SurveyID">
-/// Survey id from which to delete the voters
+/// <param Name="@SurveyID">
+/// Survey ID from which to delete the voters
 /// </param>
 */
 CREATE PROCEDURE [dbo].[vts_spVoterDeleteAll] @SurveyID int
 AS
 DELETE FROM vts_tbVoterEmail WHERE VoterID IN (SELECT VoterID FROM vts_tbVoter WHERE SurveyID = @SurveyID)
-DELETE FROM vts_tbVoter WHERE SurveyID = @SurveyID
+-- OLD: DELETE FROM vts_tbVoter WHERE SurveyID = @SurveyID
 
+DECLARE @Deleted_Rows INT;
+SET @Deleted_Rows = 1;
 
+WHILE (@Deleted_Rows > 0) BEGIN
+
+   BEGIN TRANSACTION TestDelete
+
+   -- Delete small batch of rows at a time
+     DELETE TOP (100) vts_tbvoter
+     WHERE SurveyID = @SurveyID
+
+     SET @Deleted_Rows = @@ROWCOUNT;
+
+   COMMIT TRANSACTION
+   CHECKPOINT -- for simple recovery model
+END
 
 GO
 /****** Object:  StoredProcedure [dbo].[vts_spVoterDeleteAnswers]    Script Date: 19-8-2014 22:01:40 ******/
@@ -14853,7 +15022,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -14876,7 +15045,7 @@ GO
 /// Deletes all answers that a voter gave to the survey question
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spVoterDeleteAnswers]  @VoterId int
+CREATE PROCEDURE [dbo].[vts_spVoterDeleteAnswers]  @VoterID int
 AS
 	DELETE FROM vts_tbVoterAnswers WHERE VoterID = @VoterID
 
@@ -14889,7 +15058,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -14912,7 +15081,7 @@ GO
 /// Deletes all answers that a voter gave to the questions of the page
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spVoterDeletePageAnswers]   @SurveyID int, @VoterId int,@PageNumber  int 
+CREATE PROCEDURE [dbo].[vts_spVoterDeletePageAnswers]   @SurveyID int, @VoterID int,@PageNumber  int 
 AS
 	DELETE FROM vts_tbVoterAnswers WHERE VoterID = @VoterID AND AnswerID IN (
 	SELECT AnswerID FROM vts_tbAnswer WHERE QuestionID in 
@@ -14928,7 +15097,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -14951,7 +15120,7 @@ GO
 /// Deletes all answers that a voter gave to the question
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spVoterDeleteQuestionAnswers]  @VoterId int, @QuestionID int 
+CREATE PROCEDURE [dbo].[vts_spVoterDeleteQuestionAnswers]  @VoterID int, @QuestionID int 
 AS
 
 	DELETE FROM vts_tbVoterAnswers WHERE VoterID = @VoterID AND AnswerID IN (
@@ -14968,7 +15137,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -14991,7 +15160,7 @@ GO
 /// Deletes a resume session of a voter from the DB
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spVoterDeleteResumeSession] @SurveyId int, @ResumeUID nvarchar(40) 
+CREATE PROCEDURE [dbo].[vts_spVoterDeleteResumeSession] @SurveyID int, @ResumeUID NVARCHAR(40) 
 AS
 
 DECLARE @VoterID int
@@ -15002,13 +15171,13 @@ DELETE FROM vts_tbVoter WHERE SurveyID = @SurveyID AND ResumeUID = @ResumeUID
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[vts_spVoterDeleteUnvalidated]    Script Date: 19-8-2014 22:01:40 ******/
+/****** Object:  StoredProcedure [dbo].[vts_spVoterDeleteUnValidated]    Script Date: 19-8-2014 22:01:40 ******/
 SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -15029,10 +15198,10 @@ GO
 
 /// <summary>
 /// Deletes all saved progress entries that have not 
-/// been validated
+/// been Validated
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spVoterDeleteUnvalidated]
+CREATE PROCEDURE [dbo].[vts_spVoterDeleteUnValidated]
 				@SurveyID int
 AS
 
@@ -15047,7 +15216,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -15076,39 +15245,39 @@ CREATE PROCEDURE [dbo].[vts_spVoterExportCSVData]
 				@EndDate datetime
 AS
 
-SELECT  SUBSTRING(Q.QuestionText,1,20) as QuestionText,Q.QuestionId,
- AnswerID,SelectionModeId,AnswerTypeId, 
+SELECT  SUBSTRING(Q.QuestionText,1,20) as QuestionText,Q.QuestionID,
+ AnswerID,SelectionModeID,AnswerTypeID, 
 SUBSTRING(Q.QuestionText,1,20)+'...'+' | '+ AnswerText   as ColumnHeader ,
 AnswerText,
 Q.DisplayOrder QuestionDisplayOrder,
-Q.QuestionId,
+Q.QuestionID,
 Q.Alias QuestionAlias,
-Q.QuestionIdText QuestionIdText,
+Q.QuestionIDText QuestionIDText,
 A.DisplayOrder AnswerDisplayOrder,
-A.AnswerId ,
-A.AnswerAlias,Q.ParentQuestionid,
-	case when q.parentQuestionId is null then null
-	else (select count(*)+1 from vts_tbquestion q1 
-	         where q1.parentquestionid=q.parentquestionid
-	         and   q1.questionid<q.questionid
+A.AnswerID ,
+A.AnswerAlias,Q.ParentQuestionID,
+	case when q.ParentQuestionID is null then null
+	else (select count(*)+1 from vts_tbQuestion q1 
+	         where q1.ParentQuestionID=q.ParentQuestionID
+	         and   q1.QuestionID<q.QuestionID
 	         ) 
 	end as roworder,
-	case when q.parentQuestionId is null then null
-	else (select QuestionText from vts_tbquestion q1 
-	         where q1.questionid=q.parentquestionid
+	case when q.ParentQuestionID is null then null
+	else (select QuestionText from vts_tbQuestion q1 
+	         where q1.QuestionID=q.ParentQuestionID
 	         ) 
-	end as ParentQuestiontext,
-	case when q.parentQuestionId is null then null
-	else (select QuestionIdText from vts_tbquestion q1 
-	         where q1.questionid=q.parentquestionid
+	end as ParentQuestionText,
+	case when q.ParentQuestionID is null then null
+	else (select QuestionIDText from vts_tbQuestion q1 
+	         where q1.QuestionID=q.ParentQuestionID
 	         ) 
-	end as ParentQuestionIdtext,
-	case when q.parentQuestionId is null then null
-	else (select ALIAS from vts_tbquestion q1 
-	         where q1.questionid=q.parentquestionid
+	end as ParentQuestionIDText,
+	case when q.ParentQuestionID is null then null
+	else (select Alias from vts_tbQuestion q1 
+	         where q1.QuestionID=q.ParentQuestionID
 	         ) 
 	end as ParentQuestionAliastext,
-A.AnswerIDText AnswerIdText
+A.AnswerIDText AnswerIDText
  FROM vts_tbQuestion Q
 INNER JOIN vts_tbAnswer A
 	ON A.QuestionID = Q.QuestionID
@@ -15121,25 +15290,25 @@ SELECT
 	V.VoteDate,
 	V.StartDate,
 	V.IPSource,
-	V.ContextUserName as username,
+	V.ContextUserName as userName,
 	(SELECT sum(ScorePoint) FROM vts_tbVoter 
 		INNER JOIN vts_tbVoterAnswers
 			ON vts_tbVoterAnswers.VoterID = vts_tbVoter.VoterID
 		INNER JOIN vts_tbAnswer
 			ON vts_tbAnswer.AnswerID = vts_tbVoterAnswers.AnswerID
 		WHERE vts_tbVoter.VoterID = V.VoterID) AS Score,
-	E.Email as email
+	E.Email as Email
 	FROM vts_tbVoter V
 
 		LEFT JOIN vts_tbVoterEmail 
 		ON V.VoterID = vts_tbVoterEmail.VoterID
 	LEFT JOIN vts_tbEmail E
-		ON E.EmailID = vts_tbVoterEmail.EmailId
+		ON E.EmailID = vts_tbVoterEmail.EmailID
 
 	WHERE 
 		V.SurveyID = @SurveyID AND
 		V.Validated <> 0 AND
-		DATEDIFF (d,@startDate,V.VoteDate) >= 0 AND DATEDIFF (d,@endDate,V.VoteDate) <= 0
+		DATEDIFF (d,@StartDate,V.VoteDate) >= 0 AND DATEDIFF (d,@EndDate,V.VoteDate) <= 0
 	ORDER BY V.VoterID DESC
 
 SELECT
@@ -15147,24 +15316,24 @@ SELECT
 	VA.AnswerID,
 	SectionNumber,
 	VA.AnswerText,
-	AnswerTypeId,
-	SelectionModeId,
-	Q.QuestionId,
+	AnswerTypeID,
+	SelectionModeID,
+	Q.QuestionID,
 	A.AnswerText AnswerAnswerText,
 	A.DisplayOrder AnswerDisplayOrder,
 A.AnswerAlias,
-A.AnswerIDText AnswerIdAlias
+A.AnswerIDText AnswerIDAlias
 FROM vts_tbVoterAnswers VA
 INNER JOIN vts_tbVoter V
 	ON V.VoterID = VA.VoterID
 INNER JOIN vts_tbAnswer A
-    ON VA.AnswerId=A.AnswerId
+    ON VA.AnswerID=A.AnswerID
 INNER JOIN vts_tbQuestion Q
-     ON A.QuestionId=Q.QuestionId
+     ON A.QuestionID=Q.QuestionID
 WHERE 
 	V.SurveyID = @SurveyID AND
 	V.Validated <> 0 AND
-	DATEDIFF (d,@startDate,V.VoteDate) >= 0 AND DATEDIFF (d,@endDate,V.VoteDate) <= 0
+	DATEDIFF (d,@StartDate,V.VoteDate) >= 0 AND DATEDIFF (d,@EndDate,V.VoteDate) <= 0
 ORDER BY V.VoterID DESC
 
 
@@ -15176,7 +15345,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -15202,7 +15371,7 @@ CREATE PROCEDURE [dbo].[vts_spVoterFilter]
 			@SortOrder varchar(4) = 'ANS',
 			@StartDate datetime,
 			@EndDate datetime,
-			@LanguageCode nvarchar(50)
+			@LanguageCode NVARCHAR(50)
 AS
 SET NOCOUNT ON
 CREATE TABLE #FilteredVoters (VoterID int )
@@ -15210,7 +15379,7 @@ DECLARE @FilterRuleID int,
 		@FilterAnswerID int,
 		@FilterQuestionID int,
 		@SurveyID int,
-		@TextFilter nvarchar(4000),
+		@TextFilter NVARCHAR(4000),
 		@LogicalOperatorTypeID  int
 SELECT @LogicalOperatorTypeID = vts_tbFilter.LogicalOperatorTypeID FROM vts_tbFilter WHERE FilterID = @FilterID
 -- Get the filters
@@ -15223,7 +15392,7 @@ FROM vts_tbFilterRule
 INNER JOIN vts_tbFilter 
 	ON vts_tbFilterRule.FilterID = vts_tbFilter.FilterID 
 WHERE vts_tbFilter.FilterID=@FilterID ORDER BY vts_tbFilterRule.FilterRuleID
--- CHECKING OF ANSWERID = -1 THEN SELECT VOTERS WITH ANY ANSWER 
+-- CHECKING OF AnswerID = -1 THEN SELECT VOTERS WITH ANY ANSWER 
 OPEN GetRules
 FETCH NEXT FROM GetRules INTO @FilterRuleID,  @FilterAnswerID, @FilterQuestionID, @SurveyID, @TextFilter
 -- Apply the first filter rule
@@ -15320,24 +15489,24 @@ BEGIN
 	ELSE
 		IF @FilterAnswerID is NULL  AND @FilterRuleID is not NULL
 		BEGIN 
-		-- remove voters who did not have answered any answer of the question */
+		-- remove voters who dID not have answered any answer of the question */
              DELETE FROM #FilteredVoters WHERE 
 				VoterID NOT IN (
 				SELECT DISTINCT vts_tbVoterAnswers.VoterID 
 				FROM (SELECT AnswerID FROM vts_tbAnswer WHERE QuestionID=@FilterQuestionID) AS AllAnswers, vts_tbVoterAnswers  WHERE vts_tbVoterAnswers.AnswerID = AllAnswers.AnswerID)
             END 
 		ELSE
-		-- remove voters who did not have answered the right answer of the question */
+		-- remove voters who dID not have answered the right answer of the question */
 		IF @TextFilter is NULL
 		BEGIN
 		-- no filter setup
 			DELETE FROM #FilteredVoters WHERE 
-				VoterID NOT IN (SELECT VoterID FROM vts_tbVoteranswers WHERE vts_tbVoterAnswers.AnswerID = @FilterAnswerID)
+				VoterID NOT IN (SELECT VoterID FROM vts_tbVoterAnswers WHERE vts_tbVoterAnswers.AnswerID = @FilterAnswerID)
 		END
         ELSE           
 		-- filter on
 			DELETE FROM #FilteredVoters WHERE 
-				VoterID NOT IN (SELECT VoterID FROM vts_tbVoteranswers WHERE vts_tbVoterAnswers.AnswerID = @FilterAnswerID AND vts_tbVoterAnswers.AnswerText LIKE '%'+replace(@TextFilter,' ','%')+'%')
+				VoterID NOT IN (SELECT VoterID FROM vts_tbVoterAnswers WHERE vts_tbVoterAnswers.AnswerID = @FilterAnswerID AND vts_tbVoterAnswers.AnswerText LIKE '%'+replace(@TextFilter,' ','%')+'%')
 	FETCH NEXT FROM GetRules INTO @FilterRuleID,  @FilterAnswerID, @FilterQuestionID, @SurveyID, @TextFilter   
 END 
 CLOSE GetRules
@@ -15349,7 +15518,7 @@ SELECT
 	INNER JOIN #FilteredVoters ON vts_tbVoterAnswers.VoterID = #FilteredVoters.VoterID
 	INNER JOIN vts_tbVoter ON vts_tbVoterAnswers.VoterID = vts_tbVoter.VoterID 
 			WHERE Validated<>0 AND AnswerID = vts_tbAnswer.AnswerID AND
-			DATEDIFF (d,@startDate,vts_tbVoter.VoteDate) >= 0 AND DATEDIFF (d,@endDate,vts_tbVoter.VoteDate) <= 0
+			DATEDIFF (d,@StartDate,vts_tbVoter.VoteDate) >= 0 AND DATEDIFF (d,@EndDate,vts_tbVoter.VoteDate) <= 0
 			AND (vts_tbVoter.LanguageCode = @LanguageCode OR
 			 ((@LanguageCode is null OR @LanguageCode = '') AND (LanguageCode is null OR LanguageCode ='')) OR
 			(@LanguageCode = '-1' AND (LanguageCode is not null OR LanguageCode is null)))
@@ -15357,7 +15526,7 @@ SELECT
 	) as VoterCount,
 	vts_tbAnswer.QuestionID,
 	vts_tbAnswer.AnswerTypeID,
-	SelectionModeId,
+	SelectionModeID,
 	TypeMode,
 	RatePart
 FROM vts_tbAnswer
@@ -15366,7 +15535,7 @@ INNER JOIN vts_tbQuestion
 INNER JOIN vts_tbAnswerType
 	ON vts_tbAnswerType.AnswerTypeID = vts_tbAnswer.AnswerTypeID
 WHERE 
-	vts_tbQuestion.QuestionID=@QuestionID OR vts_tbQuestion.parentQuestionID = @QuestionID
+	vts_tbQuestion.QuestionID=@QuestionID OR vts_tbQuestion.ParentQuestionID = @QuestionID
 ORDER BY 
 		case when @SortOrder = 'ANS' then vts_tbAnswer.DisplayOrder end ,
 		case when @SortOrder = 'ASC' then (select count(*) FROM vts_tbVoterAnswers INNER JOIN #FilteredVoters ON vts_tbVoterAnswers.VoterID = #FilteredVoters.VoterID WHERE AnswerID = vts_tbAnswer.AnswerID) end ASC ,
@@ -15381,7 +15550,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -15419,23 +15588,23 @@ AS
 	LEFT JOIN vts_tbVoterEmail 
 		ON vts_tbVoter.VoterID = vts_tbVoterEmail.VoterID
 	LEFT JOIN vts_tbEmail
-		ON vts_tbEmail.EmailID = vts_tbVoterEmail.EmailId
+		ON vts_tbEmail.EmailID = vts_tbVoterEmail.EmailID
 	WHERE 
 		vts_tbVoter.SurveyID = @SurveyID AND
-		DATEDIFF (d,@startDate,vts_tbVoter.VoteDate) >= 0 AND DATEDIFF (d,@endDate,vts_tbVoter.VoteDate) <= 0
+		DATEDIFF (d,@StartDate,vts_tbVoter.VoteDate) >= 0 AND DATEDIFF (d,@EndDate,vts_tbVoter.VoteDate) <= 0
 
 	SELECT DISTINCT va.VoterID, QuestionText, q.QuestionID,
-	                q.QuestionIdText,q.Alias QuestionAlias
+	                q.QuestionIDText,q.Alias QuestionAlias
 	FROM vts_tbVoterAnswers va	
 	INNER JOIN vts_tbAnswer a
 		ON a.AnswerID = va.AnswerID 
 	INNER JOIN vts_tbQuestion q
-		ON q.questionID = a.questionID
+		ON q.QuestionID = a.QuestionID
 	INNER JOIN vts_tbVoter v
 		ON v.VoterID = va.VoterID
 	WHERE 
 		v.SurveyID = @SurveyID AND
-		DATEDIFF (d,@startDate,V.VoteDate) >= 0 AND DATEDIFF (d,@endDate,V.VoteDate) <= 0
+		DATEDIFF (d,@StartDate,V.VoteDate) >= 0 AND DATEDIFF (d,@EndDate,V.VoteDate) <= 0
 
 
 	
@@ -15447,12 +15616,12 @@ AS
 	INNER JOIN vts_tbAnswer a
 		ON a.AnswerID = va.AnswerID 
 	INNER JOIN vts_tbQuestion q
-		ON q.questionID = a.QuestionID
+		ON q.QuestionID = a.QuestionID
 	INNER JOIN vts_tbVoter v
 		ON v.VoterID = va.VoterID
 	WHERE 
 		v.SurveyID = @SurveyID AND
-		DATEDIFF (d,@startDate,V.VoteDate) >= 0 AND DATEDIFF (d,@endDate,V.VoteDate) <= 0
+		DATEDIFF (d,@StartDate,V.VoteDate) >= 0 AND DATEDIFF (d,@EndDate,V.VoteDate) <= 0
 
 
 
@@ -15463,7 +15632,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -15502,7 +15671,7 @@ AS
 	LEFT JOIN vts_tbVoterEmail 
 		ON vts_tbVoter.VoterID = vts_tbVoterEmail.VoterID
 	LEFT JOIN vts_tbEmail
-		ON vts_tbEmail.EmailID = vts_tbVoterEmail.EmailId
+		ON vts_tbEmail.EmailID = vts_tbVoterEmail.EmailID
 	WHERE vts_tbVoter.VoterID = @VoterID
 	
 	SELECT va.VoterID, va.AnswerID, va.SectionNumber, va.AnswerText, a.QuestionID, ast.TypeMode
@@ -15522,7 +15691,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -15542,10 +15711,10 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 /// <summary>
-/// Retrieves the voter id which has the given user name from the DB
+/// Retrieves the voter ID which has the given user name from the DB
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spVoterGetByUserName] @SurveyID int,  @UserName nvarchar(255)
+CREATE PROCEDURE [dbo].[vts_spVoterGetByUserName] @SurveyID int,  @UserName NVARCHAR(255)
 					
 AS
 SELECT VoterID FROM vts_tbVoter WHERE SurveyID = @SurveyID AND ContextUserName = @UserName
@@ -15559,7 +15728,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -15582,7 +15751,7 @@ GO
 /// Returns the number of voters for a given date
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spVoterGetDailyStat] @SurveyId int, @StatDay datetime AS
+CREATE PROCEDURE [dbo].[vts_spVoterGetDailyStat] @SurveyID int, @StatDay datetime AS
 
 SELECT count(*) as TotalCount
 FROM vts_tbVoter V
@@ -15597,8 +15766,12 @@ SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER OFF
 GO
+--~ Deprecated feature 'Table hint without WITH'.  Automatically added WITH for you.
+--~ Deprecated feature 'Table hint without WITH'.  Automatically added WITH for you.
+--~ Deprecated feature 'Table hint without WITH'.  Automatically added WITH for you.
+--~ Deprecated feature 'Table hint without WITH'.  Automatically added WITH for you.
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -15620,13 +15793,13 @@ GO
 /// <summary>
 /// Pivots the voter  entries into a column / row format
 /// </summary>
-/// <param name="@SurveyID">
+/// <param Name="@SurveyID">
 /// ID of the survey to pivot answers
 /// </param>
-/// <param name="@CurrentPage">
+/// <param Name="@CurrentPage">
 /// Current page number
 /// </param>
-/// <param name="@PageSize">
+/// <param Name="@PageSize">
 /// Page size
 /// </param>
 /// <return>
@@ -15646,8 +15819,8 @@ CREATE TABLE #VoterEntries (VoterID int NOT NULL, EndDate dateTime, StartDate da
 INSERT INTO #VoterEntries (VoterID, EndDate, StartDate, IP, Score)  
 	EXEC vts_spVoterGetPaged @SurveyID, @CurrentPage, @PageSize, @StartDate, @EndDate, @TotalRecords output
 -- Start pivot
-DECLARE @AnswerText nvarchar(4000)
-DECLARE @QuestionText nvarchar(4000)
+DECLARE @AnswerText NVARCHAR(4000)
+DECLARE @QuestionText NVARCHAR(max)
 DECLARE @AnswerID varchar(16)
 DECLARE @VoterID varchar(16)
 DECLARE @BuildColumnSQL varchar(4000)
@@ -15669,10 +15842,10 @@ BEGIN
 	SET @BuildColumnSQL = N'ALTER TABLE #VoterEntries ADD ['+@QuestionText+'_'+@AnswerText+'] NVARCHAR(4000)'
 	EXEC (@BuildColumnSQL)
 	-- Assign voters entry to the column
-	SET @UpdateVotersRowSQL =N'UPDATE #VoterEntries SET ['+@QuestionText+'_'+@AnswerText+'] = (SELECT AnswerText FROM vts_tbVoterAnswers (nolock) WHERE AnswerID='+@AnswerID+' AND vts_tbVoterAnswers.VoterID=Voters.VoterID) FROM (SELECT VoterID FROM #VoterEntries (nolock)) as Voters WHERE #VoterEntries.VoterID=Voters.VoterID'
+	SET @UpdateVotersRowSQL =N'UPDATE #VoterEntries SET ['+@QuestionText+'_'+@AnswerText+'] = (SELECT AnswerText FROM vts_tbVoterAnswers  WITH (nolock) WHERE AnswerID='+@AnswerID+' AND vts_tbVoterAnswers.VoterID=Voters.VoterID) FROM (SELECT VoterID FROM #VoterEntries  WITH (nolock)) as Voters WHERE #VoterEntries.VoterID=Voters.VoterID'
 	EXEC (@UpdateVotersRowSQL)
 	-- Assign voters choice
-	SET @UpdateVotersRowSQL =N'UPDATE #VoterEntries SET ['+@QuestionText+'_'+@AnswerText+'] = (SELECT ''1'' FROM vts_tbVoterAnswers (nolock) INNER JOIN vts_tbAnswer ON vts_tbVoterAnswers.AnswerID = vts_tbAnswer.AnswerID WHERE vts_tbVoterAnswers.AnswerText is null AND vts_tbVoterAnswers.AnswerID='+@AnswerID+' AND vts_tbVoterAnswers.VoterID=Voters.VoterID) FROM (SELECT VoterID FROM #VoterEntries (nolock)) as Voters WHERE #VoterEntries.VoterID=Voters.VoterID AND #VoterEntries.['+@QuestionText+'_'+@AnswerText+'] is  null'
+	SET @UpdateVotersRowSQL =N'UPDATE #VoterEntries SET ['+@QuestionText+'_'+@AnswerText+'] = (SELECT ''1'' FROM vts_tbVoterAnswers  WITH (nolock) INNER JOIN vts_tbAnswer ON vts_tbVoterAnswers.AnswerID = vts_tbAnswer.AnswerID WHERE vts_tbVoterAnswers.AnswerText is null AND vts_tbVoterAnswers.AnswerID='+@AnswerID+' AND vts_tbVoterAnswers.VoterID=Voters.VoterID) FROM (SELECT VoterID FROM #VoterEntries  WITH (nolock)) as Voters WHERE #VoterEntries.VoterID=Voters.VoterID AND #VoterEntries.['+@QuestionText+'_'+@AnswerText+'] is  null'
 	EXEC (@UpdateVotersRowSQL)
 	FETCH AnswerColumnCursor INTO @AnswerText, @AnswerID, @QuestionText
 END
@@ -15690,7 +15863,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -15734,7 +15907,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -15756,13 +15929,13 @@ GO
 /// <summary>
 /// Return a paged results of available voters
 /// </summary>
-/// <param name="@SurveyID">
+/// <param Name="@SurveyID">
 /// ID of the survey to pivot answers
 /// </param>
-/// <param name="@CurrentPage">
+/// <param Name="@CurrentPage">
 /// Current page number
 /// </param>
-/// <param name="@PageSize">
+/// <param Name="@PageSize">
 /// Page size
 /// </param>
 */
@@ -15775,7 +15948,7 @@ CREATE PROCEDURE [dbo].[vts_spVoterGetPaged]
 				@TotalRecords int OUTPUT
 AS
 -- Turn off count return.
-Set NoCount On
+Set NOCOUNT On
 -- Declare variables.
 DECLARE @FirstRec int
 DECLARE @LastRec int
@@ -15784,7 +15957,7 @@ SET @FirstRec = (@CurrentPage - 1) * @PageSize
 SET @LastRec = (@CurrentPage * @PageSize + 1)
 -- Create a temp table to hold the current page of data
 -- Add an ID column to count the records
-CREATE TABLE #TempTable (RowId int IDENTITY PRIMARY KEY, VoterID int NOT NULL, [Date] dateTime, StartDate datetime, IP varchar(50), Score int)
+CREATE TABLE #TempTable (RowID int IDENTITY PRIMARY KEY, VoterID int NOT NULL, [Date] dateTime, StartDate datetime, IP varchar(50), Score int)
 --Fill the temp table with the reminders
 INSERT INTO #TempTable (VoterID, [Date], StartDate, IP, Score)
 	SELECT
@@ -15802,7 +15975,7 @@ INSERT INTO #TempTable (VoterID, [Date], StartDate, IP, Score)
 	WHERE 
 		V.SurveyID = @SurveyID AND
 		V.Validated <> 0 AND
-		DATEDIFF (d,@startDate,V.VoteDate) >= 0 AND DATEDIFF (d,@endDate,V.VoteDate) <= 0
+		DATEDIFF (d,@StartDate,V.VoteDate) >= 0 AND DATEDIFF (d,@EndDate,V.VoteDate) <= 0
 	ORDER BY V.VoterID DESC
 SELECT
 	@TotalRecords = count(*)
@@ -15831,15 +16004,212 @@ BEGIN
 		Score
 	FROM #TempTable
 	WHERE 
-		RowId > @FirstRec AND
-		RowId < @LastRec
+		RowID > @FirstRec AND
+		RowID < @LastRec
+END
+DROP TABLE #TempTable
+
+GO
+/****** Object:  StoredProcedure [dbo].[vts_spVoterGetPagedIndiv]    Script Date: 8/6/2017 21:38:52 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+/*
+	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+
+	NSurvey - The web survey and form engine
+	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
+
+	This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License
+	as published by the Free Software Foundation; either version 2
+	of the License, or (at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program; if not, write to the Free Software
+	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+
+/// <summary>
+/// Return a paged results of available voters
+/// </summary>
+/// <param Name="@SurveyID">
+/// ID of the survey to pivot answers
+/// </param>
+/// <param Name="@CurrentPage">
+/// Current page number
+/// </param>
+/// <param Name="@PageSize">
+/// Page size
+/// </param>
+*/
+CREATE PROCEDURE [dbo].[vts_spVoterGetPagedIndiv]
+				@SurveyID int,
+				@UserID int,
+				@CurrentPage int = 1,
+				@PageSize int=10,
+				@StartDate datetime ,
+				@EndDate datetime,
+				@TotalRecords int OUTPUT
+AS
+-- Turn off count return.
+Set NOCOUNT On
+-- Declare variables.
+DECLARE @FirstRec int
+DECLARE @LastRec int
+-- Initialize variables.
+SET @FirstRec = (@CurrentPage - 1) * @PageSize
+SET @LastRec = (@CurrentPage * @PageSize + 1)
+-- Create a temp table to hold the current page of data
+-- Add an ID column to count the records
+CREATE TABLE #TempTable (RowID int IDENTITY PRIMARY KEY, VoterID int NOT NULL, [Date] dateTime, StartDate datetime, IP varchar(50), Score int)
+--Fill the temp table with the reminders
+INSERT INTO #TempTable (VoterID, [Date], StartDate, IP, Score)
+	SELECT
+		V.VoterID,
+		V.VoteDate,
+		V.StartDate,
+		V.IPSource,
+		(SELECT sum(ScorePoint) FROM vts_tbVoter 
+			INNER JOIN vts_tbVoterAnswers
+				ON vts_tbVoterAnswers.VoterID = vts_tbVoter.VoterID
+			INNER JOIN vts_tbAnswer
+				ON vts_tbAnswer.AnswerID = vts_tbVoterAnswers.AnswerID
+			WHERE vts_tbVoter.VoterID = V.VoterID) AS Score
+	FROM vts_tbVoter V
+	WHERE 
+		V.SurveyID = @SurveyID AND
+		V.Validated <> 0 AND
+		DATEDIFF (d,@StartDate,V.VoteDate) >= 0 AND DATEDIFF (d,@EndDate,V.VoteDate) <= 0 AND
+		contextusername = (	select username from vts_tbuser where UserID = @UserID)
+	ORDER BY V.VoterID DESC
+SELECT
+	@TotalRecords = count(*)
+FROM vts_tbVoter
+WHERE 
+	SurveyID = @SurveyID AND
+	Validated<>0 AND
+	StartDate between @StartDate AND @EndDate
+IF @PageSize = -1
+BEGIN
+	SELECT
+		VoterID,
+		[Date],
+		StartDate,
+		IP,
+		Score
+	FROM #TempTable
+END
+ELSE
+BEGIN
+	SELECT
+		VoterID,
+		[Date],
+		StartDate,
+		IP,
+		Score
+	FROM #TempTable
+	WHERE 
+		RowID > @FirstRec AND
+		RowID < @LastRec
 END
 DROP TABLE #TempTable
 
 
-
 GO
 /****** Object:  StoredProcedure [dbo].[vts_spVoterGetPivotTextEntries]    Script Date: 19-8-2014 22:01:40 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+--~ Deprecated feature 'Table hint without WITH'.  Automatically added WITH for you.
+/*
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
+
+	NSurvey - The web survey and form engine
+	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
+
+	This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License
+	as published by the Free Software Foundation; either version 2
+	of the License, or (at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program; if not, write to the Free Software
+	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+
+/// <summary>
+/// Pivots the voter  entries into a column / row format
+/// </summary>
+/// <param Name="@SurveyID">
+/// ID of the survey to pivot answers
+/// </param>
+/// <param Name="@CurrentPage">
+/// Current page number
+/// </param>
+/// <param Name="@PageSize">
+/// Page size
+/// </param>
+/// <return>
+/// returns the paged pivoted resultset
+/// </return>
+*/
+CREATE PROCEDURE [dbo].[vts_spVoterGetPivotTextEntries] 
+				@SurveyID int,
+				@CurrentPage int = 1,
+				@PageSize int=10,
+				@StartDate datetime,
+				@EndDate datetime
+AS
+DECLARE @TotalRecords int
+CREATE TABLE #VoterEntries (VoterID int NOT NULL, [Date] dateTime, StartDate datetime, IP varchar(50), Score int)
+-- Get voter range
+INSERT INTO #VoterEntries (VoterID, [Date], StartDate, IP, Score)  
+	EXEC vts_spVoterGetPaged @SurveyID, @CurrentPage, @PageSize, @StartDate, @EndDate, @TotalRecords output
+-- Start pivot
+DECLARE @AnswerText NVARCHAR(4000)
+DECLARE @AnswerID varchar(16)
+DECLARE @VoterID varchar(16)
+DECLARE @BuildColumnSQL varchar(4000)
+DECLARE @UpdateVotersRowSQL varchar(4000)
+-- Get the fields to generate the column
+DECLARE AnswerColumnCursor  CURSOR FOR
+	SELECT AnswerText, AnswerID FROM vts_tbAnswer
+	INNER JOIN vts_tbQuestion 
+		ON vts_tbQuestion.QuestionID = vts_tbAnswer.QuestionID
+	INNER JOIN vts_tbAnswerType
+		ON vts_tbAnswerType.AnswerTypeID = vts_tbAnswer.AnswerTypeID 
+	WHERE SurveyID = @SurveyID AND (TypeMode & 2 = 2 OR TypeMode & 8 =8 OR TypeMode & 4 =4)
+	ORDER BY vts_tbQuestion.DisplayOrder, vts_tbQuestion.QuestionID, vts_tbAnswer.DisplayOrder
+OPEN AnswerColumnCursor
+FETCH AnswerColumnCursor INTO @AnswerText, @AnswerID
+WHILE @@FETCH_STATUS = 0
+BEGIN
+	-- creates the new column
+	SET @BuildColumnSQL = N'ALTER TABLE #VoterEntries ADD ['+@AnswerText+'_'+@AnswerID+'] NVARCHAR(4000)'
+	EXEC (@BuildColumnSQL)
+	-- Assign voters entry to the column
+	SET @UpdateVotersRowSQL =N'UPDATE #VoterEntries SET ['+@AnswerText+'_'+@AnswerID+'] = (SELECT SUBSTRING(AnswerText,1, 40)  as AnswerText FROM vts_tbVoterAnswers  WHERE AnswerID='+@AnswerID+' AND SectionNumber=0 AND vts_tbVoterAnswers.VoterID=Voters.VoterID) FROM (SELECT VoterID FROM #VoterEntries  WITH (nolock)) as Voters WHERE #VoterEntries.VoterID=Voters.VoterID'
+	EXEC (@UpdateVotersRowSQL)
+	FETCH AnswerColumnCursor INTO @AnswerText, @AnswerID
+END
+CLOSE AnswerColumnCursor
+DEALLOCATE AnswerColumnCursor
+SELECT *, TotalRecords =@TotalRecords FROM #VoterEntries
+DROP TABLE #VoterEntries
+
+GO
+/****** Object:  StoredProcedure [dbo].[vts_spVoterGetPivotTextIndivEntries]    Script Date: 8/6/2017 21:32:33 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -15867,33 +16237,37 @@ GO
 /// <summary>
 /// Pivots the voter  entries into a column / row format
 /// </summary>
-/// <param name="@SurveyID">
+/// <param Name="@SurveyID">
 /// ID of the survey to pivot answers
 /// </param>
-/// <param name="@CurrentPage">
+/// <param Name="@UserID">
+/// ID of the user to to get sp contextusername from votertable
+/// </param>
+/// <param Name="@CurrentPage">
 /// Current page number
 /// </param>
-/// <param name="@PageSize">
+/// <param Name="@PageSize">
 /// Page size
 /// </param>
 /// <return>
 /// returns the paged pivoted resultset
 /// </return>
 */
-CREATE PROCEDURE [dbo].[vts_spVoterGetPivotTextEntries] 
+CREATE PROCEDURE [dbo].[vts_spVoterGetPivotTextIndivEntries] 
 				@SurveyID int,
+				@UserID int,
 				@CurrentPage int = 1,
 				@PageSize int=10,
 				@StartDate datetime,
 				@EndDate datetime
 AS
 DECLARE @TotalRecords int
-CREATE TABLE #VoterEntries (VoterID int NOT NULL, [Date] dateTime, StartDate datetime, IP varchar(50), Score int)
+CREATE TABLE #VoterEntriesIndiv (VoterID int NOT NULL, [Date] dateTime, StartDate datetime, IP varchar(50), Score int)
 -- Get voter range
-INSERT INTO #VoterEntries (VoterID, [Date], StartDate, IP, Score)  
-	EXEC vts_spVoterGetPaged @SurveyID, @CurrentPage, @PageSize, @StartDate, @EndDate, @TotalRecords output
+INSERT INTO #VoterEntriesIndiv (VoterID, [Date], StartDate, IP, Score)  
+	EXEC vts_spVoterGetPagedIndiv @SurveyID, @UserID, @CurrentPage, @PageSize, @StartDate, @EndDate, @TotalRecords output
 -- Start pivot
-DECLARE @AnswerText nvarchar(4000)
+DECLARE @AnswerText NVARCHAR(4000)
 DECLARE @AnswerID varchar(16)
 DECLARE @VoterID varchar(16)
 DECLARE @BuildColumnSQL varchar(4000)
@@ -15912,28 +16286,26 @@ FETCH AnswerColumnCursor INTO @AnswerText, @AnswerID
 WHILE @@FETCH_STATUS = 0
 BEGIN
 	-- creates the new column
-	SET @BuildColumnSQL = N'ALTER TABLE #VoterEntries ADD ['+@AnswerText+'_'+@AnswerID+'] NVARCHAR(4000)'
+	SET @BuildColumnSQL = N'ALTER TABLE #VoterEntriesIndiv ADD ['+@AnswerText+'_'+@AnswerID+'] NVARCHAR(4000)'
 	EXEC (@BuildColumnSQL)
 	-- Assign voters entry to the column
-	SET @UpdateVotersRowSQL =N'UPDATE #VoterEntries SET ['+@AnswerText+'_'+@AnswerID+'] = (SELECT SUBSTRING(AnswerText,1, 40)  as AnswerText FROM vts_tbVoterAnswers  WHERE AnswerID='+@AnswerID+' AND SectionNumber=0 AND vts_tbVoterAnswers.VoterID=Voters.VoterID) FROM (SELECT VoterID FROM #VoterEntries (nolock)) as Voters WHERE #VoterEntries.VoterID=Voters.VoterID'
+	SET @UpdateVotersRowSQL =N'UPDATE #VoterEntriesIndiv SET ['+@AnswerText+'_'+@AnswerID+'] = (SELECT SUBSTRING(AnswerText,1, 40)  as AnswerText FROM vts_tbVoterAnswers  WHERE AnswerID='+@AnswerID+' AND SectionNumber=0 AND vts_tbVoterAnswers.VoterID=Voters.VoterID) FROM (SELECT VoterID FROM #VoterEntriesIndiv WITH (nolock)) as Voters WHERE #VoterEntriesIndiv.VoterID=Voters.VoterID'
 	EXEC (@UpdateVotersRowSQL)
 	FETCH AnswerColumnCursor INTO @AnswerText, @AnswerID
 END
 CLOSE AnswerColumnCursor
 DEALLOCATE AnswerColumnCursor
-SELECT *, TotalRecords =@TotalRecords FROM #VoterEntries
-DROP TABLE #VoterEntries
-
-
+SELECT *, TotalRecords =@TotalRecords FROM #VoterEntriesIndiv
+DROP TABLE #VoterEntriesIndiv
 
 GO
-/****** Object:  StoredProcedure [dbo].[vts_spVoterGetUnvalidatedCount]    Script Date: 19-8-2014 22:01:40 ******/
+/****** Object:  StoredProcedure [dbo].[vts_spVoterGetUnValidatedCount]    Script Date: 19-8-2014 22:01:40 ******/
 SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -15953,15 +16325,15 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 /// <summary>
-///  returns the number of unvalidated entries that 
+///  returns the number of unValidated entries that 
 /// have been saved
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spVoterGetUnvalidatedCount]
+CREATE PROCEDURE [dbo].[vts_spVoterGetUnValidatedCount]
 				@SurveyID int
 AS
 
-SELECT count(voterid) as UnvalidatedCount FROM vts_tbVoter
+SELECT count(VoterID) as UnValidatedCount FROM vts_tbVoter
 WHERE SurveyID = @SurveyID AND Validated = 0
 
 
@@ -15973,7 +16345,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -15999,7 +16371,7 @@ GO
 
 CREATE PROCEDURE [dbo].[vts_spVoterImport]
 			@SurveyID int,
-			@IPSource nvarchar(50),
+			@IPSource NVARCHAR(50),
 			@VoteDate datetime,
 			@StartDate datetime,
 			@UID varchar(50)=null,
@@ -16009,7 +16381,7 @@ CREATE PROCEDURE [dbo].[vts_spVoterImport]
 			@ResumeAtPageNumber int =null,
 			@ResumeQuestionNumber int=null,
 			@ResumeHighestPageNumber int=null,
-			@LanguageCode nvarchar(50)=null,
+			@LanguageCode NVARCHAR(50)=null,
 			@VoterID int OUTPUT
 AS
 INSERT INTO vts_tbVoter
@@ -16039,7 +16411,7 @@ VALUES
 	@ResumeHighestPageNumber,
 	@LanguageCode)
 
-set @VoterID = SCOPE_Identity()
+set @VoterID = SCOPE_IDENTITY()
 
 GO
 /****** Object:  StoredProcedure [dbo].[vts_spVoterInvitationAnsweredGetAll]    Script Date: 04/01/2015 20:59:48 ******/
@@ -16050,7 +16422,7 @@ SET QUOTED_IDENTIFIER OFF
 GO
 
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -16080,7 +16452,7 @@ CREATE PROCEDURE [dbo].[vts_spVoterInvitationAnsweredGetAll]
 				@TotalRecords int OUTPUT
 AS
 -- Turn off count return.
-Set NoCount On
+Set NOCOUNT On
 -- Declare variables.
 DECLARE @FirstRec int
 DECLARE @LastRec int
@@ -16089,9 +16461,9 @@ SET @FirstRec = @PageSize*@CurrentPage
 SET @LastRec= @FirstRec+@PageSize + 1
 -- Create a temp table to hold the current page of data
 -- Add an ID column to count the records
-CREATE TABLE #TempTable (RowId int IDENTITY PRIMARY KEY, SurveyID int NOT NULL, VoterID int NOT NULL, Email varchar(150), VoteDate DateTime)
+CREATE TABLE #TempTable (RowID int IDENTITY PRIMARY KEY, SurveyID int NOT NULL, VoterID int NOT NULL, Email varchar(150), VoteDate DateTime)
 --Fill the temp table with the reminders
-INSERT INTO #TempTable (SurveyId, VoterID, Email, VoteDate)
+INSERT INTO #TempTable (SurveyID, VoterID, Email, VoteDate)
 	SELECT SurveyID, vts_tbVoter.VoterID, Email, VoteDate
 	FROM vts_tbVoter
 	INNER JOIN vts_tbVoterEmail 
@@ -16110,8 +16482,8 @@ WHERE SurveyID = @SurveyID AND Validated<>0
 SELECT SurveyID, VoterID, VoteDate, Email
 FROM #TempTable
 WHERE 
-	RowId > @FirstRec AND
-	RowId < @LastRec
+	RowID > @FirstRec AND
+	RowID < @LastRec
 DROP TABLE #TempTable
 
 
@@ -16122,7 +16494,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -16152,8 +16524,8 @@ CREATE PROCEDURE [dbo].[vts_spVoterInvitationQueueAddNew]
 				@UID varchar(50)
 AS
 DECLARE @EmailID int
-exec vts_spEmailAddNew @email, @EmailID out
-INSERT INTO vts_tbInvitationQueue(surveyId, emailid, uid, anonymousentry) VALUES (@SurveyID, @EmailID, @UID, @AnonymousEntry)
+exec vts_spEmailAddNew @Email, @EmailID out
+INSERT INTO vts_tbInvitationQueue(SurveyID, EmailID, UID, AnonymousEntry) VALUES (@SurveyID, @EmailID, @UID, @AnonymousEntry)
 
 
 
@@ -16164,7 +16536,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -16202,7 +16574,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -16227,7 +16599,7 @@ GO
 */
 CREATE PROCEDURE [dbo].[vts_spVoterInvitationQueueDeleteByEmail]
 				@SurveyID int,
-				@Email nvarchar(155)
+				@Email NVARCHAR(155)
 AS
 DELETE FROM vts_tbInvitationQueue 
 WHERE SurveyID = @SurveyID AND EmailID IN (SELECT EmailID FROM vts_tbEmail WHERE Email = @Email)
@@ -16242,7 +16614,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -16274,7 +16646,7 @@ CREATE PROCEDURE [dbo].[vts_spVoterInvitationQueueGetAll]
 				@PageSize int
 AS
 -- Turn off count return.
-Set NoCount On
+Set NOCOUNT On
 -- Output value.
 
  SELECT  @TotalRecords =  count(*) FROM vts_tbInvitationQueue WHERE SurveyID =@SurveyID
@@ -16287,30 +16659,30 @@ SET @LastRec= @FirstRec+@PageSize + 1
 
 -- Create a temp table to hold the current page of data
 -- Add an ID column to count the records
-CREATE TABLE #TempTable (RowId int IDENTITY PRIMARY KEY, SurveyID int NOT NULL, EmailID int NOT NULL, Email varchar(150), AnonymousEntry bit, UID varchar(50), RequestDate DateTime)
+CREATE TABLE #TempTable (RowID int IDENTITY PRIMARY KEY, SurveyID int NOT NULL, EmailID int NOT NULL, Email varchar(150), AnonymousEntry bit, UID varchar(50), RequestDate DateTime)
 --Fill the temp table with the reminders
-INSERT INTO #TempTable (SurveyId, EmailID, Email, AnonymousEntry, UID, RequestDate)
-	SELECT SurveyId, vts_tbInvitationQueue.EmailID, Email, AnonymousEntry, UID, RequestDate
+INSERT INTO #TempTable (SurveyID, EmailID, Email, AnonymousEntry, UID, RequestDate)
+	SELECT SurveyID, vts_tbInvitationQueue.EmailID, Email, AnonymousEntry, UID, RequestDate
 	FROM vts_tbInvitationQueue
 	INNER JOIN vts_tbEmail
 		ON vts_tbEmail.EmailID = vts_tbInvitationQueue.EmailID
 	WHERE SurveyID =@SurveyID
 	ORDER BY RequestDate DESC
-SELECT SurveyId, EmailID, Email, AnonymousEntry, UID, RequestDate
+SELECT SurveyID, EmailID, Email, AnonymousEntry, UID, RequestDate
 FROM #TempTable
 WHERE 
-	RowId > @FirstRec AND
-	RowId < @LastRec
+	RowID > @FirstRec AND
+	RowID < @LastRec
 DROP TABLE #TempTable
 
 GO
-/****** Object:  StoredProcedure [dbo].[vts_spVoterInvitationQueueGetUId]    Script Date: 19-8-2014 22:01:40 ******/
+/****** Object:  StoredProcedure [dbo].[vts_spVoterInvitationQueueGetUID]    Script Date: 19-8-2014 22:01:40 ******/
 SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -16333,11 +16705,11 @@ GO
 ///  Insert the given email in the invitation queue
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spVoterInvitationQueueGetUId]
+CREATE PROCEDURE [dbo].[vts_spVoterInvitationQueueGetUID]
 				@SurveyID int,
 				@Email varchar(150)
 AS
-SELECT Uid FROM vts_tbInvitationQueue 
+SELECT UID FROM vts_tbInvitationQueue 
 INNER JOIN vts_tbEmail ON vts_tbEmail.EmailID = vts_tbInvitationQueue.EmailID  
 WHERE vts_tbEmail.Email = @Email AND SurveyID = @SurveyID
 
@@ -16350,7 +16722,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -16376,16 +16748,16 @@ GO
 */
 CREATE PROCEDURE [dbo].[vts_spVoterResumeSession] 
 			@SurveyID int, 
-			@ResumeUId nvarchar(40)
+			@ResumeUID NVARCHAR(40)
 AS
 
 DECLARE @VoterID int
 
 	SELECT @VoterID = VoterID
 	FROM vts_tbVoter
-	WHERE SurveyID  = @SurveyID AND ResumeUId = @ResumeUId AND Validated = 0
+	WHERE SurveyID  = @SurveyID AND ResumeUID = @ResumeUID AND Validated = 0
 
-	if @@rowcount > 0
+	if @@RowCount > 0
 	BEGIN
 		exec vts_spVoterGetAnswers @VoterID
 	END
@@ -16399,7 +16771,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -16421,14 +16793,14 @@ GO
 /// <summary>
 /// Delete all  the voters
 /// </summary>
-/// <param name="@SurveyID">
+/// <param Name="@SurveyID">
 /// ID of the survey that will reset its results
 /// </param>
 */
 CREATE PROCEDURE [dbo].[vts_spVotersDeleteForSurvey] @SurveyID int AS
 
 DELETE fROM vts_tbFile WHERE FileID IN (
-	SELECT FileId FROM vts_tbFile INNER JOIN vts_tbVoterAnswers ON 
+	SELECT FileID FROM vts_tbFile INNER JOIN vts_tbVoterAnswers ON 
 		AnswerText like GroupGuid
 	INNER JOIN vts_tbVoter ON
 		vts_tbVoter.VoterID = vts_tbVoterAnswers.VoterID
@@ -16438,13 +16810,13 @@ DELETE FROM vts_tbVoter WHERE SurveyID = @SurveyID
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[vts_spVoterUIdAddNew]    Script Date: 19-8-2014 22:01:40 ******/
+/****** Object:  StoredProcedure [dbo].[vts_spVoterUIDAddNew]    Script Date: 19-8-2014 22:01:40 ******/
 SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -16469,20 +16841,20 @@ GO
 /// its state is not anonymous
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spVoterUIdAddNew] 
+CREATE PROCEDURE [dbo].[vts_spVoterUIDAddNew] 
 				@VoterID int,
-				@UId  varchar(40)
+				@UID  varchar(40)
 AS
 DECLARE @EmailID int
 SELECT @EmailID = EmailID 
 FROM vts_tbInvitationQueue 
 WHERE UID = @UID AND AnonymousEntry = 0
-IF @@ROWCOUNT <> 0
+IF @@RowCount <> 0
 BEGIN 
 	INSERT INTO vts_tbVoterEmail(VoterID, EmailID) VALUES (@VoterID, @EmailID)
-	UPDATE vts_tbVoter SET UId = @UId WHERE VoterID = @VoterID 
+	UPDATE vts_tbVoter SET UID = @UID WHERE VoterID = @VoterID 
 END
-DELETE FROM vts_tbInvitationQueue WHERE UID = @UId
+DELETE FROM vts_tbInvitationQueue WHERE UID = @UID
 
 
 
@@ -16493,7 +16865,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -16513,10 +16885,10 @@ GO
 	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 /// <summary>
-/// Updates the voter id with the given user name
+/// Updates the voter ID with the given user name
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spVoterUpdateUserName] @VoterID int,  @UserName nvarchar(255)
+CREATE PROCEDURE [dbo].[vts_spVoterUpdateUserName] @VoterID int,  @UserName NVARCHAR(255)
 					
 AS
 UPDATE vts_tbVoter SET ContextUserName = @UserName WHERE VoterID = @VoterID
@@ -16530,7 +16902,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -16553,13 +16925,13 @@ GO
 ///  Add a new addin to the survey 
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spWebSecurityAddInsAddForSurvey] @SurveyId int, @AddInId int, @AddInOrder int
+CREATE PROCEDURE [dbo].[vts_spWebSecurityAddInsAddForSurvey] @SurveyID int, @AddInID int, @AddInOrder int
 AS
 BEGIN TRANSACTION AddAddIn
 UPDATE vts_tbSurveyWebSecurity
 SET AddInOrder = AddInOrder + 1 
 WHERE SurveyID = @SurveyID AND AddInOrder >= @AddInOrder
-INSERT INTO vts_tbSurveyWebSecurity (WebSecurityAddInID, SurveyId, AddInOrder, Disabled) VALUES (@AddInId, @SurveyID, @AddInOrder, 0)
+INSERT INTO vts_tbSurveyWebSecurity (WebSecurityAddInID, SurveyID, AddInOrder, Disabled) VALUES (@AddInID, @SurveyID, @AddInOrder, 0)
 COMMIT TRANSACTION AddAddIn
 
 
@@ -16571,7 +16943,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -16594,14 +16966,14 @@ GO
 ///  Deletes an addin from the survey 
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spWebSecurityAddInsDeleteForSurvey] @SurveyId int, @AddInId int
+CREATE PROCEDURE [dbo].[vts_spWebSecurityAddInsDeleteForSurvey] @SurveyID int, @AddInID int
 AS
 DECLARE @AddInOrder int	
 BEGIN TRANSACTION DeleteAddIn
 -- Retrieve the current display order
-SELECT @AddInOrder  = AddInOrder FROM vts_tbSurveyWebSecurity WHERE SurveyID = @SurveyID AND WebSecurityAddInID = @AddInId
+SELECT @AddInOrder  = AddInOrder FROM vts_tbSurveyWebSecurity WHERE SurveyID = @SurveyID AND WebSecurityAddInID = @AddInID
 -- Deletes the addin from the survey
-DELETE FROM vts_tbSurveyWebSecurity WHERE SurveyID = @SurveyID AND WebSecurityAddInID = @AddInId
+DELETE FROM vts_tbSurveyWebSecurity WHERE SurveyID = @SurveyID AND WebSecurityAddInID = @AddInID
 -- Updates the addin display order
 UPDATE vts_tbSurveyWebSecurity
 SET AddInOrder   = AddInOrder   - 1 
@@ -16619,7 +16991,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -16642,7 +17014,7 @@ GO
 ///  Disables an addin from the survey 
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spWebSecurityAddInsDisableForSurvey] @SurveyId int, @AddInId int
+CREATE PROCEDURE [dbo].[vts_spWebSecurityAddInsDisableForSurvey] @SurveyID int, @AddInID int
 AS
 -- Updates the addin status
 UPDATE vts_tbSurveyWebSecurity
@@ -16659,7 +17031,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -16682,7 +17054,7 @@ GO
 ///  Enables an addin from the survey 
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spWebSecurityAddInsEnableForSurvey] @SurveyId int, @AddInId int
+CREATE PROCEDURE [dbo].[vts_spWebSecurityAddInsEnableForSurvey] @SurveyID int, @AddInID int
 AS
 -- Updates the addin status
 UPDATE vts_tbSurveyWebSecurity
@@ -16699,7 +17071,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -16721,7 +17093,7 @@ GO
 CREATE PROCEDURE [dbo].[vts_spWebSecurityAddInsGetAll] @SurveyID int
 AS
 SELECT 
-	vts_tbWebSecurityAddIn.WebSecurityAddInId,
+	vts_tbWebSecurityAddIn.WebSecurityAddInID,
 	SurveyID,
 	Disabled,
 	BuiltIn,
@@ -16733,7 +17105,7 @@ SELECT
 FROM vts_tbWebSecurityAddIn
 INNER JOIN vts_tbSurveyWebSecurity
 	ON vts_tbWebSecurityAddIn.WebSecurityAddInID = vts_tbSurveyWebSecurity.WebSecurityAddInID
-WHERE SurveyID = @SurveyId  ORDER BY AddInOrder
+WHERE SurveyID = @SurveyID  ORDER BY AddInOrder
 
 
 
@@ -16744,7 +17116,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -16765,9 +17137,9 @@ GO
 */
 CREATE PROCEDURE [dbo].[vts_spWebSecurityAddInsGetAvailableList] @SurveyID int
 AS
-SELECT WebSecurityAddInId, Description
+SELECT WebSecurityAddInID, Description
 FROM vts_tbWebSecurityAddIn
-WHERE WebSecurityAddInId NOT IN (Select WebSecurityAddInId FROM vts_tbSurveyWebSecurity WHERE SurveyID = @SurveyID)
+WHERE WebSecurityAddInID NOT IN (Select WebSecurityAddInID FROM vts_tbSurveyWebSecurity WHERE SurveyID = @SurveyID)
 
 
 
@@ -16778,7 +17150,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -16800,7 +17172,7 @@ GO
 CREATE PROCEDURE [dbo].[vts_spWebSecurityAddInsGetEnabled] @SurveyID int
 AS
 SELECT 
-	vts_tbWebSecurityAddIn.WebSecurityAddInId,
+	vts_tbWebSecurityAddIn.WebSecurityAddInID,
 	SurveyID,
 	Disabled,
 	BuiltIn,
@@ -16812,7 +17184,7 @@ SELECT
 FROM vts_tbWebSecurityAddIn
 INNER JOIN vts_tbSurveyWebSecurity
 	ON vts_tbWebSecurityAddIn.WebSecurityAddInID = vts_tbSurveyWebSecurity.WebSecurityAddInID
-WHERE SurveyID = @SurveyId  AND Disabled=0 ORDER BY AddInOrder
+WHERE SurveyID = @SurveyID  AND Disabled=0 ORDER BY AddInOrder
 
 
 
@@ -16823,7 +17195,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -16846,22 +17218,22 @@ GO
 ///  Moves a survey's addin positions down 
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spWebSecurityAddInsMoveDown] @SurveyId int, @AddInId int 
+CREATE PROCEDURE [dbo].[vts_spWebSecurityAddInsMoveDown] @SurveyID int, @AddInID int 
 AS
 DECLARE
 	@OldAddInOrder int,
 	@NewAddInOrder int,
-	@NewAddInId int
+	@NewAddInID int
 SELECT 
 	@OldAddInOrder = AddInOrder
 FROM 
 	vts_tbSurveyWebSecurity
 WHERE
 	SurveyID = @SurveyID AND
-	WebSecurityAddInID = @AddInId
+	WebSecurityAddInID = @AddInID
 SELECT TOP 1  
 	@NewAddInOrder = AddInOrder,
-	@NewAddInId = WebSecurityAddInID
+	@NewAddInID = WebSecurityAddInID
 FROM 
 	vts_tbSurveyWebSecurity
 WHERE
@@ -16869,7 +17241,7 @@ WHERE
 	AddInOrder > @OldAddInOrder
 	ORDER BY AddInOrder ASC
 -- Is this already the last addin
-IF @@ROWCOUNT <>0
+IF @@RowCount <>0
 BEGIN
 	-- Move up previous addin
 	UPDATE vts_tbSurveyWebSecurity
@@ -16877,11 +17249,11 @@ BEGIN
 	WHERE 
 		AddInOrder = @NewAddInOrder AND
 		SurveyID = @SurveyID AND 
-		WebSecurityAddInID = @NewAddInId
+		WebSecurityAddInID = @NewAddInID
 	-- Move down current addin
 	UPDATE vts_tbSurveyWebSecurity
 		set AddInOrder = @NewAddInOrder 
-	WHERE SurveyID = @SurveyID AND WebSecurityAddInID = @AddInId
+	WHERE SurveyID = @SurveyID AND WebSecurityAddInID = @AddInID
 END
 
 
@@ -16893,7 +17265,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -16916,22 +17288,22 @@ GO
 ///  Moves a survey's addin positions up 
 /// </summary>
 */
-CREATE PROCEDURE [dbo].[vts_spWebSecurityAddInsMoveUp] @SurveyId int, @AddInId int 
+CREATE PROCEDURE [dbo].[vts_spWebSecurityAddInsMoveUp] @SurveyID int, @AddInID int 
 AS
 DECLARE
 	@OldAddInOrder int,
 	@NewAddInOrder int,
-	@NewAddInId int
+	@NewAddInID int
 SELECT 
 	@OldAddInOrder = AddInOrder
 FROM 
 	vts_tbSurveyWebSecurity
 WHERE
 	SurveyID = @SurveyID AND
-	WebSecurityAddInID = @AddInId
+	WebSecurityAddInID = @AddInID
 SELECT TOP 1  
 	@NewAddInOrder = AddInOrder,
-	@NewAddInId = WebSecurityAddInID
+	@NewAddInID = WebSecurityAddInID
 FROM 
 	vts_tbSurveyWebSecurity
 WHERE
@@ -16939,7 +17311,7 @@ WHERE
 	AddInOrder < @OldAddInOrder
 	ORDER BY AddInOrder DESC
 -- Is this already the last addin
-IF @@ROWCOUNT <>0
+IF @@RowCount <>0
 BEGIN
 	-- Move up down addin
 	UPDATE vts_tbSurveyWebSecurity
@@ -16947,11 +17319,11 @@ BEGIN
 	WHERE 
 		AddInOrder = @NewAddInOrder AND
 		SurveyID = @SurveyID AND 
-		WebSecurityAddInID = @NewAddInId
+		WebSecurityAddInID = @NewAddInID
 	-- Move up current addin
 	UPDATE vts_tbSurveyWebSecurity
 		set AddInOrder = @NewAddInOrder 
-	WHERE SurveyID = @SurveyID AND WebSecurityAddInID = @AddInId
+	WHERE SurveyID = @SurveyID AND WebSecurityAddInID = @AddInID
 END
 
 
@@ -16963,7 +17335,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -16985,7 +17357,7 @@ GO
 CREATE PROCEDURE [dbo].[vts_spWebSecurityAddInsSurveyGetDetails] @SurveyID int, @AddInID int
 AS
 SELECT 
-	vts_tbWebSecurityAddIn.WebSecurityAddInId,
+	vts_tbWebSecurityAddIn.WebSecurityAddInID,
 	SurveyID,
 	Disabled,
 	BuiltIn,
@@ -16997,7 +17369,7 @@ SELECT
 FROM vts_tbWebSecurityAddIn
 INNER JOIN vts_tbSurveyWebSecurity
 	ON vts_tbWebSecurityAddIn.WebSecurityAddInID = vts_tbSurveyWebSecurity.WebSecurityAddInID
-WHERE SurveyID = @SurveyId AND vts_tbWebSecurityAddIn.WebSecurityAddInID = @AddInId
+WHERE SurveyID = @SurveyID AND vts_tbWebSecurityAddIn.WebSecurityAddInID = @AddInID
 
 
 
@@ -17052,7 +17424,7 @@ AS
 BEGIN
 	DECLARE @ret int;
 
-	SELECT @ret = count(*) from vts_tbFolders where ParentFolderId is null
+	SELECT @ret = count(*) from vts_tbFolders where ParentFolderID is null
 
 	RETURN @ret
 END
@@ -17066,29 +17438,29 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbAnswer](
-	[AnswerId] [int] IDENTITY(1,1) NOT NULL,
-	[QuestionId] [int] NOT NULL,
-	[AnswerTypeId] [smallint] NULL,
-	[RegularExpressionId] [int] NULL,
-	[AnswerText] [nvarchar](4000) NULL,
-	[ImageURL] [nvarchar](255) NULL,
+	[AnswerID] [int] IDENTITY(1,1) NOT NULL,
+	[QuestionID] [int] NOT NULL,
+	[AnswerTypeID] [smallint] NULL,
+	[RegularExpressionID] [int] NULL,
+	[AnswerText] [NVARCHAR](4000) NULL,
+	[ImageURL] [NVARCHAR](255) NULL,
 	[RatePart] [bit] NOT NULL,
 	[DisplayOrder] [int] NULL,
 	[Selected] [bit] NULL,
-	[DefaultText] [nvarchar](4000) NULL,
+	[DefaultText] [NVARCHAR](4000) NULL,
 	[ScorePoint] [int] NULL,
-	[AnswerPipeAlias] [nvarchar](50) NULL,
+	[AnswerPipeAlias] [NVARCHAR](50) NULL,
 	[Mandatory] [bit] NULL,
-	[AnswerIDText] [nvarchar](255) NULL,
-	[AnswerAlias] [nvarchar](255) NULL,
-	[SliderRange] [nvarchar](3) NULL,
+	[AnswerIDText] [NVARCHAR](255) NULL,
+	[AnswerAlias] [NVARCHAR](255) NULL,
+	[SliderRange] [NVARCHAR](3) NULL,
 	[SliderValue] [int] NULL,
 	[SliderMin] [int] NULL,
 	[SliderMax] [int] NULL,
 	[SliderAnimate] [bit] NULL,
 	[SliderStep] [int] NULL,
-	[CssClass] [nvarchar](50) NULL
-) ON [PRIMARY]
+	[CssClass] [NVARCHAR](50) NULL
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbAnswerConnection]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17097,14 +17469,14 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbAnswerConnection](
-	[PublisherAnswerId] [int] NOT NULL,
-	[SubscriberAnswerId] [int] NOT NULL,
+	[PublisherAnswerID] [int] NOT NULL,
+	[SubscriberAnswerID] [int] NOT NULL,
  CONSTRAINT [PK_vts_tbAnswerSubscriber] PRIMARY KEY CLUSTERED 
 (
-	[PublisherAnswerId] ASC,
-	[SubscriberAnswerId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+	[PublisherAnswerID] ASC,
+	[SubscriberAnswerID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbAnswerProperty]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17113,13 +17485,13 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbAnswerProperty](
-	[AnswerId] [int] NOT NULL,
+	[AnswerID] [int] NOT NULL,
 	[Properties] [image] NULL,
  CONSTRAINT [PK_vts_tbAnswerProperty] PRIMARY KEY CLUSTERED 
 (
-	[AnswerId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+	[AnswerID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbAnswerType]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17132,24 +17504,24 @@ GO
 CREATE TABLE [dbo].[vts_tbAnswerType](
 	[AnswerTypeID] [smallint] IDENTITY(1,1) NOT NULL,
 	[BuiltIn] [bit] NULL,
-	[Description] [nvarchar](200) NOT NULL,
+	[Description] [NVARCHAR](200) NOT NULL,
 	[FieldWidth] [int] NULL,
 	[FieldHeight] [int] NULL,
 	[FieldLength] [int] NULL,
 	[TypeMode] [int] NOT NULL,
-	[XMLDataSource] [varchar](200) NULL,
+	[XMLDatasource] [varchar](200) NULL,
 	[PublicFieldResults] [bit] NULL,
 	[JavascriptFunctionName] [varchar](1000) NULL,
 	[JavascriptCode] [varchar](8000) NULL,
 	[JavascriptErrorMessage] [varchar](1000) NULL,
 	[TypeNameSpace] [varchar](200) NOT NULL,
 	[TypeAssembly] [varchar](200) NOT NULL,
-	[DataSource] [nvarchar](4000) NULL,
+	[DataSource] [NVARCHAR](4000) NULL,
  CONSTRAINT [PK_vts_tbAnswerType] PRIMARY KEY CLUSTERED 
 (
 	[AnswerTypeID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 SET ANSI_PADDING OFF
@@ -17175,8 +17547,8 @@ CREATE TABLE [dbo].[vts_tbBranchingRule](
  CONSTRAINT [PK_vts_tbBranchingRule] PRIMARY KEY CLUSTERED 
 (
 	[BranchingRuleID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 SET ANSI_PADDING OFF
@@ -17194,8 +17566,8 @@ CREATE TABLE [dbo].[vts_tbEmail](
  CONSTRAINT [PK_vts_tbEmail] PRIMARY KEY CLUSTERED 
 (
 	[EmailID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 SET ANSI_PADDING OFF
@@ -17206,15 +17578,15 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbEmailNotificationSettings](
-	[SurveyId] [int] NOT NULL,
-	[EmailFrom] [nvarchar](255) NULL,
-	[EmailTo] [nvarchar](255) NULL,
-	[EmailSubject] [nvarchar](255) NULL,
+	[SurveyID] [int] NOT NULL,
+	[EmailFrom] [NVARCHAR](255) NULL,
+	[EmailTo] [NVARCHAR](255) NULL,
+	[EmailSubject] [NVARCHAR](255) NULL,
  CONSTRAINT [PK_vts_tbEmailNotificationSettings] PRIMARY KEY CLUSTERED 
 (
-	[SurveyId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+	[SurveyID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbFile]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17223,19 +17595,19 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbFile](
-	[FileId] [int] IDENTITY(1,1) NOT NULL,
-	[GroupGuid] [nvarchar](40) NOT NULL,
+	[FileID] [int] IDENTITY(1,1) NOT NULL,
+	[GroupGuid] [NVARCHAR](40) NOT NULL,
 	[SaveDate] [datetime] NULL,
-	[FileName] [nvarchar](1024) NOT NULL,
+	[FileName] [NVARCHAR](1024) NOT NULL,
 	[FileSize] [int] NULL,
-	[FileType] [nvarchar](1024) NULL,
+	[FileType] [NVARCHAR](1024) NULL,
 	[FileData] [image] NULL,
  CONSTRAINT [PK_vts_tbFile] PRIMARY KEY CLUSTERED 
 (
 	[GroupGuid] ASC,
-	[FileId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+	[FileID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbFilter]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17254,8 +17626,8 @@ CREATE TABLE [dbo].[vts_tbFilter](
  CONSTRAINT [PK_vts_tbFilter] PRIMARY KEY CLUSTERED 
 (
 	[FilterID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 SET ANSI_PADDING OFF
@@ -17270,12 +17642,12 @@ CREATE TABLE [dbo].[vts_tbFilterRule](
 	[FilterID] [int] NOT NULL,
 	[QuestionID] [int] NULL,
 	[AnswerID] [int] NULL,
-	[TextFilter] [nvarchar](4000) NULL,
+	[TextFilter] [NVARCHAR](4000) NULL,
  CONSTRAINT [PK_vts_tbFilterRule] PRIMARY KEY CLUSTERED 
 (
 	[FilterRuleID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbFolders]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17286,14 +17658,14 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[vts_tbFolders](
-	[FolderId] [int] IDENTITY(1,1) NOT NULL,
+	[FolderID] [int] IDENTITY(1,1) NOT NULL,
 	[FolderName] [varchar](100) NOT NULL,
-	[ParentFolderId] [int] NULL,
+	[ParentFolderID] [int] NULL,
  CONSTRAINT [PK_vts_tbFolders] PRIMARY KEY CLUSTERED 
 (
-	[FolderId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+	[FolderID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 SET ANSI_PADDING OFF
@@ -17304,17 +17676,17 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbInvitationLog](
-	[InvitationLogId] [int] IDENTITY(1,1) NOT NULL,
-	[SurveyId] [int] NULL,
-	[EmailId] [int] NULL,
-	[ExceptionMessage] [nvarchar](1024) NULL,
-	[ExceptionType] [nvarchar](255) NULL,
+	[InvitationLogID] [int] IDENTITY(1,1) NOT NULL,
+	[SurveyID] [int] NULL,
+	[EmailID] [int] NULL,
+	[ExceptionMessage] [NVARCHAR](1024) NULL,
+	[ExceptionType] [NVARCHAR](255) NULL,
 	[ErrorDate] [datetime] NULL,
  CONSTRAINT [PK_vts_InvitationLog] PRIMARY KEY CLUSTERED 
 (
-	[InvitationLogId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+	[InvitationLogID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbInvitationQueue]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17325,15 +17697,15 @@ GO
 CREATE TABLE [dbo].[vts_tbInvitationQueue](
 	[EmailID] [int] NOT NULL,
 	[SurveyID] [int] NOT NULL,
-	[UID] [nvarchar](40) NULL,
+	[UID] [NVARCHAR](40) NULL,
 	[RequestDate] [datetime] NULL,
 	[AnonymousEntry] [bit] NULL,
  CONSTRAINT [PK_vts_tbInvitationQueue] PRIMARY KEY CLUSTERED 
 (
 	[EmailID] ASC,
 	[SurveyID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbLanguageMessageType]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17342,13 +17714,13 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbLanguageMessageType](
-	[LanguageMessageTypeId] [int] NOT NULL,
-	[TypeDescription] [nvarchar](255) NULL,
+	[LanguageMessageTypeID] [int] NOT NULL,
+	[TypeDescription] [NVARCHAR](255) NULL,
  CONSTRAINT [PK_vts_LanguageMessageType] PRIMARY KEY CLUSTERED 
 (
-	[LanguageMessageTypeId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+	[LanguageMessageTypeID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbLayoutMode]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17364,8 +17736,8 @@ CREATE TABLE [dbo].[vts_tbLayoutMode](
  CONSTRAINT [PK_vts_tbLayoutMode] PRIMARY KEY CLUSTERED 
 (
 	[LayoutModeID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 SET ANSI_PADDING OFF
@@ -17376,15 +17748,15 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbLibrary](
-	[LibraryId] [int] IDENTITY(1,1) NOT NULL,
-	[LibraryName] [nvarchar](255) NULL,
-	[Description] [ntext] NULL,
-	[DefaultLanguageCode] [nvarchar](50) NULL,
+	[LibraryID] [int] IDENTITY(1,1) NOT NULL,
+	[LibraryName] [NVARCHAR](255) NULL,
+	[Description] [NVARCHAR](max) NULL,
+	[DefaultLanguageCode] [NVARCHAR](50) NULL,
  CONSTRAINT [PK_vts_tbLibrary] PRIMARY KEY CLUSTERED 
 (
-	[LibraryId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+	[LibraryID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbLibraryLanguage]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17393,15 +17765,15 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbLibraryLanguage](
-	[LibraryId] [int] NOT NULL,
-	[LanguageCode] [nvarchar](50) NOT NULL,
+	[LibraryID] [int] NOT NULL,
+	[LanguageCode] [NVARCHAR](50) NOT NULL,
 	[DefaultLanguage] [bit] NULL,
  CONSTRAINT [PK_vts_tbLibraryLanguages] PRIMARY KEY CLUSTERED 
 (
-	[LibraryId] ASC,
+	[LibraryID] ASC,
 	[LanguageCode] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbMessageCondition]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17413,19 +17785,19 @@ CREATE TABLE [dbo].[vts_tbMessageCondition](
 	[MessageConditionID] [int] IDENTITY(1,1) NOT NULL,
 	[MessageConditionalOperator] [int] NULL,
 	[SurveyID] [int] NULL,
-	[QuestionId] [int] NULL,
+	[QuestionID] [int] NULL,
 	[ConditionalOperator] [int] NULL,
-	[AnswerId] [int] NULL,
-	[TextFilter] [nvarchar](4000) NULL,
-	[ThankYouMessage] [nvarchar](4000) NULL,
+	[AnswerID] [int] NULL,
+	[TextFilter] [NVARCHAR](4000) NULL,
+	[ThankYouMessage] [NVARCHAR](4000) NULL,
 	[Score] [int] NULL,
 	[ScoreMax] [int] NULL,
 	[ExpressionOperator] [int] NULL,
  CONSTRAINT [PK_vts_tbMessageCondition] PRIMARY KEY CLUSTERED 
 (
 	[MessageConditionID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbMultiLanguage]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17434,13 +17806,13 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbMultiLanguage](
-	[LanguageCode] [nvarchar](50) NOT NULL,
-	[LanguageDescription] [nvarchar](255) NULL,
+	[LanguageCode] [NVARCHAR](50) NOT NULL,
+	[LanguageDescription] [NVARCHAR](255) NULL,
  CONSTRAINT [PK_vts_tbMultiLanguage] PRIMARY KEY CLUSTERED 
 (
 	[LanguageCode] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbMultiLanguageMode]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17449,13 +17821,13 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbMultiLanguageMode](
-	[MultiLanguageModeId] [int] NOT NULL,
-	[ModeDescription] [nvarchar](255) NULL,
+	[MultiLanguageModeID] [int] NOT NULL,
+	[ModeDescription] [NVARCHAR](255) NULL,
  CONSTRAINT [PK_vts_MultiLanguageMode] PRIMARY KEY CLUSTERED 
 (
-	[MultiLanguageModeId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+	[MultiLanguageModeID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbMultiLanguageText]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17464,17 +17836,17 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbMultiLanguageText](
-	[LanguageItemId] [int] NOT NULL,
-	[LanguageCode] [nvarchar](50) NOT NULL,
-	[LanguageMessageTypeId] [int] NOT NULL,
-	[ItemText] [nvarchar](4000) NULL,
+	[LanguageItemID] [int] NOT NULL,
+	[LanguageCode] [NVARCHAR](50) NOT NULL,
+	[LanguageMessageTypeID] [int] NOT NULL,
+	[ItemText] [NVARCHAR](max) NULL,
  CONSTRAINT [PK_vts_LanguageText] PRIMARY KEY CLUSTERED 
 (
-	[LanguageItemId] ASC,
+	[LanguageItemID] ASC,
 	[LanguageCode] ASC,
-	[LanguageMessageTypeId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+	[LanguageMessageTypeID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbNotificationMode]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17484,12 +17856,12 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbNotificationMode](
 	[NotificationModeID] [int] NOT NULL,
-	[Description] [nvarchar](50) NULL,
+	[Description] [NVARCHAR](50) NULL,
  CONSTRAINT [PK_vts_tbNotificationMode] PRIMARY KEY CLUSTERED 
 (
 	[NotificationModeID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbPageOption]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17498,16 +17870,16 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbPageOption](
-	[SurveyId] [int] NOT NULL,
+	[SurveyID] [int] NOT NULL,
 	[PageNumber] [int] NOT NULL,
 	[RandomizeQuestions] [bit] NULL,
 	[EnableSubmitButton] [bit] NULL,
  CONSTRAINT [PK_vts_tbPageOptions] PRIMARY KEY CLUSTERED 
 (
-	[SurveyId] ASC,
+	[SurveyID] ASC,
 	[PageNumber] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbProgressDisplayMode]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17516,13 +17888,13 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbProgressDisplayMode](
-	[ProgressDisplayModeId] [int] NOT NULL,
-	[Description] [nvarchar](50) NULL,
+	[ProgressDisplayModeID] [int] NOT NULL,
+	[Description] [NVARCHAR](50) NULL,
  CONSTRAINT [PK_ProgressDisplayMode] PRIMARY KEY CLUSTERED 
 (
-	[ProgressDisplayModeId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+	[ProgressDisplayModeID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbQuestion]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17531,27 +17903,27 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbQuestion](
-	[QuestionId] [int] IDENTITY(1,1) NOT NULL,
-	[ParentQuestionId] [int] NULL,
-	[SurveyId] [int] NULL,
-	[LibraryId] [int] NULL,
-	[LayoutModeId] [tinyint] NULL,
-	[SelectionModeId] [tinyint] NULL,
+	[QuestionID] [int] IDENTITY(1,1) NOT NULL,
+	[ParentQuestionID] [int] NULL,
+	[SurveyID] [int] NULL,
+	[LibraryID] [int] NULL,
+	[LayoutModeID] [tinyint] NULL,
+	[SelectionModeID] [tinyint] NULL,
 	[ColumnsNumber] [int] NULL,
-	[QuestionText] [nvarchar](4000) NULL,
+	[QuestionText] [NVARCHAR](max) NULL,
 	[DisplayOrder] [int] NULL,
 	[MinSelectionRequired] [int] NULL,
 	[MaxSelectionAllowed] [int] NULL,
 	[RatingEnabled] [bit] NOT NULL,
 	[RandomizeAnswers] [bit] NOT NULL,
 	[PageNumber] [int] NULL,
-	[QuestionPipeAlias] [nvarchar](50) NULL,
-	[QuestionIdText] [nvarchar](255) NULL,
-	[HelpText] [nvarchar](4000) NULL,
-	[Alias] [nvarchar](255) NULL,
+	[QuestionPipeAlias] [NVARCHAR](50) NULL,
+	[QuestionIDText] [NVARCHAR](255) NULL,
+	[HelpText] [NVARCHAR](4000) NULL,
+	[Alias] [NVARCHAR](255) NULL,
 	[QuestionGroupID] [int] NULL,
 	[ShowHelpText] [bit] NOT NULL
-) ON [PRIMARY]
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbQuestionGroups]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17561,14 +17933,14 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbQuestionGroups](
 	[ID] [int] IDENTITY(1,1) NOT NULL,
-	[GroupName] [nvarchar](250) NOT NULL,
+	[GroupName] [NVARCHAR](250) NOT NULL,
 	[ParentGroupID] [int] NULL,
 	[DisplayOrder] [int] NOT NULL,
  CONSTRAINT [PK_vts_tbQuestionGroups] PRIMARY KEY CLUSTERED 
 (
 	[ID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbQuestionSectionGridAnswer]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17577,14 +17949,14 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbQuestionSectionGridAnswer](
-	[QuestionId] [int] NOT NULL,
-	[AnswerId] [int] NOT NULL,
+	[QuestionID] [int] NOT NULL,
+	[AnswerID] [int] NOT NULL,
  CONSTRAINT [PK_vts_tbSectionGridAnswers] PRIMARY KEY CLUSTERED 
 (
-	[QuestionId] ASC,
-	[AnswerId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+	[QuestionID] ASC,
+	[AnswerID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbQuestionSectionOption]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17593,18 +17965,18 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbQuestionSectionOption](
-	[QuestionId] [int] NOT NULL,
-	[RepeatableSectionModeId] [int] NOT NULL,
-	[AddSectionLinkText] [nvarchar](255) NULL,
-	[DeleteSectionLinkText] [nvarchar](255) NULL,
-	[EditSectionLinkText] [nvarchar](255) NULL,
-	[UpdateSectionLinkText] [nvarchar](255) NULL,
+	[QuestionID] [int] NOT NULL,
+	[RepeatableSectionModeID] [int] NOT NULL,
+	[AddSectionLinkText] [NVARCHAR](255) NULL,
+	[DeleteSectionLinkText] [NVARCHAR](255) NULL,
+	[EditSectionLinkText] [NVARCHAR](255) NULL,
+	[UpdateSectionLinkText] [NVARCHAR](255) NULL,
 	[MaxSections] [int] NULL,
  CONSTRAINT [PK_vts_tbQuestionSectionOption] PRIMARY KEY CLUSTERED 
 (
-	[QuestionId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+	[QuestionID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbQuestionSelectionMode]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17616,15 +17988,15 @@ SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[vts_tbQuestionSelectionMode](
 	[QuestionSelectionModeID] [tinyint] NOT NULL,
-	[Description] [nvarchar](50) NULL,
+	[Description] [NVARCHAR](50) NULL,
 	[TypeNameSpace] [varchar](200) NOT NULL,
 	[TypeAssembly] [varchar](200) NOT NULL,
 	[TypeMode] [int] NULL,
  CONSTRAINT [PK_vts_tbQuestionSelectionMode] PRIMARY KEY CLUSTERED 
 (
 	[QuestionSelectionModeID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 SET ANSI_PADDING OFF
@@ -17635,16 +18007,16 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbRegularExpression](
-	[RegularExpressionId] [int] IDENTITY(1,1) NOT NULL,
-	[Description] [nvarchar](255) NULL,
-	[RegExpression] [nvarchar](2000) NULL,
-	[RegExMessage] [nvarchar](2000) NULL,
+	[RegularExpressionID] [int] IDENTITY(1,1) NOT NULL,
+	[Description] [NVARCHAR](255) NULL,
+	[RegExpression] [NVARCHAR](2000) NULL,
+	[RegExMessage] [NVARCHAR](2000) NULL,
 	[BuiltIn] [bit] NULL,
  CONSTRAINT [PK_vts_tbRegularExpression] PRIMARY KEY CLUSTERED 
 (
-	[RegularExpressionId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+	[RegularExpressionID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbRepeatableSection]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17655,13 +18027,13 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[vts_tbRepeatableSection](
-	[RepeatableSectionModeId] [int] NOT NULL,
+	[RepeatableSectionModeID] [int] NOT NULL,
 	[ModeDescription] [varchar](255) NULL,
  CONSTRAINT [PK_vts_tbRepeatableSection] PRIMARY KEY CLUSTERED 
 (
-	[RepeatableSectionModeId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+	[RepeatableSectionModeID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 SET ANSI_PADDING OFF
@@ -17673,12 +18045,12 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbResumeMode](
 	[ResumeModeID] [tinyint] NOT NULL,
-	[Description] [nvarchar](50) NULL,
+	[Description] [NVARCHAR](50) NULL,
  CONSTRAINT [PK_tbResumeMode] PRIMARY KEY CLUSTERED 
 (
 	[ResumeModeID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbRole]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17689,13 +18061,13 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[vts_tbRole](
-	[RoleId] [int] IDENTITY(1,1) NOT NULL,
+	[RoleID] [int] IDENTITY(1,1) NOT NULL,
 	[RoleName] [varchar](255) NULL,
  CONSTRAINT [PK_vts_tbRole] PRIMARY KEY CLUSTERED 
 (
-	[RoleId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+	[RoleID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 SET ANSI_PADDING OFF
@@ -17706,14 +18078,14 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbRoleSecurityRight](
-	[RoleId] [int] NOT NULL,
-	[SecurityRightId] [int] NOT NULL,
+	[RoleID] [int] NOT NULL,
+	[SecurityRightID] [int] NOT NULL,
  CONSTRAINT [PK_vts_tbRoleSecurityRight] PRIMARY KEY CLUSTERED 
 (
-	[RoleId] ASC,
-	[SecurityRightId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+	[RoleID] ASC,
+	[SecurityRightID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbSecurityRight]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17722,13 +18094,13 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbSecurityRight](
-	[SecurityRightId] [int] NOT NULL,
-	[Description] [nvarchar](255) NULL,
+	[SecurityRightID] [int] NOT NULL,
+	[Description] [NVARCHAR](255) NULL,
  CONSTRAINT [PK_vts_tbSecurityRights] PRIMARY KEY CLUSTERED 
 (
-	[SecurityRightId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+	[SecurityRightID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbSkipLogicRule]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17739,20 +18111,20 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[vts_tbSkipLogicRule](
-	[SkipLogicRuleId] [int] IDENTITY(1,1) NOT NULL,
-	[SkipQuestionId] [int] NULL,
+	[SkipLogicRuleID] [int] IDENTITY(1,1) NOT NULL,
+	[SkipQuestionID] [int] NULL,
 	[ConditionalOperator] [int] NULL,
 	[ExpressionOperator] [int] NULL,
-	[AnswerId] [int] NULL,
-	[QuestionId] [int] NULL,
+	[AnswerID] [int] NULL,
+	[QuestionID] [int] NULL,
 	[TextFilter] [varchar](4000) NULL,
 	[Score] [int] NULL,
 	[ScoreMax] [int] NULL,
  CONSTRAINT [PK_vts_tbSkipLogicRule] PRIMARY KEY CLUSTERED 
 (
-	[SkipLogicRuleId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+	[SkipLogicRuleID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 SET ANSI_PADDING OFF
@@ -17766,17 +18138,17 @@ SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[vts_tbSurvey](
 	[SurveyID] [int] IDENTITY(1,1) NOT NULL,
-	[ProgressDisplayModeId] [int] NULL,
+	[ProgressDisplayModeID] [int] NULL,
 	[NotificationModeID] [int] NULL,
 	[ResumeModeID] [tinyint] NULL,
 	[CreationDate] [datetime] NOT NULL,
 	[LastEntryDate] [datetime] NULL,
 	[OpenDate] [datetime] NULL,
 	[CloseDate] [datetime] NULL,
-	[Title] [nvarchar](255) NULL,
+	[Title] [NVARCHAR](255) NULL,
 	[RedirectionURL] [varchar](1024) NULL,
-	[ThankYouMessage] [nvarchar](4000) NULL,
-	[AccessPassword] [nvarchar](255) NULL,
+	[ThankYouMessage] [NVARCHAR](4000) NULL,
+	[AccessPassword] [NVARCHAR](255) NULL,
 	[SurveyDisplayTimes] [int] NOT NULL,
 	[ResultsDisplayTimes] [int] NOT NULL,
 	[NavigationEnabled] [bit] NULL,
@@ -17791,13 +18163,13 @@ CREATE TABLE [dbo].[vts_tbSurvey](
 	[AllowMultipleUserNameSubmissions] [bit] NULL,
 	[QuestionNumberingDisabled] [bit] NULL,
 	[AllowMultipleNSurveySubmissions] [bit] NULL,
-	[MultiLanguageModeId] [int] NULL,
-	[MultiLanguageVariable] [nvarchar](50) NULL,
-	[FolderId] [int] NOT NULL,
+	[MultiLanguageModeID] [int] NULL,
+	[MultiLanguageVariable] [NVARCHAR](50) NULL,
+	[FolderID] [int] NOT NULL,
 	[SurveyGuid] [uniqueidentifier] NULL,
-	[FriendlyName] [nvarchar](200) NULL,
+	[FriendlyName] [NVARCHAR](200) NULL,
 	[DefaultSurvey] [bit] NOT NULL
-) ON [PRIMARY]
+)
 
 GO
 SET ANSI_PADDING OFF
@@ -17808,15 +18180,15 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbSurveyAsset](
-	[AssetId] [int] IDENTITY(1,1) NOT NULL,
-	[SurveyId] [int] NOT NULL,
+	[AssetID] [int] IDENTITY(1,1) NOT NULL,
+	[SurveyID] [int] NOT NULL,
 	[AssetType] [nchar](30) NOT NULL,
 	[Name] [nchar](300) NOT NULL,
 PRIMARY KEY CLUSTERED 
 (
-	[AssetId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+	[AssetID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbSurveyEntryQuota]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17825,15 +18197,15 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbSurveyEntryQuota](
-	[SurveyId] [int] NOT NULL,
+	[SurveyID] [int] NOT NULL,
 	[MaxEntries] [int] NULL,
 	[EntryCount] [int] NULL,
-	[MaxReachedMessage] [nvarchar](4000) NULL,
+	[MaxReachedMessage] [NVARCHAR](4000) NULL,
  CONSTRAINT [PK_vts_tbSurveyEntryQuota] PRIMARY KEY CLUSTERED 
 (
-	[SurveyId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+	[SurveyID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbSurveyIPRange]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17844,15 +18216,15 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[vts_tbSurveyIPRange](
-	[SurveyIPRangeId] [int] IDENTITY(1,1) NOT NULL,
-	[SurveyId] [int] NOT NULL,
+	[SurveyIPRangeID] [int] IDENTITY(1,1) NOT NULL,
+	[SurveyID] [int] NOT NULL,
 	[IPStart] [varchar](50) NOT NULL,
 	[IPEnd] [varchar](50) NOT NULL,
  CONSTRAINT [PK_vts_tbSurveyIPRange] PRIMARY KEY CLUSTERED 
 (
-	[SurveyIPRangeId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+	[SurveyIPRangeID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 SET ANSI_PADDING OFF
@@ -17863,15 +18235,15 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbSurveyLanguage](
-	[SurveyId] [int] NOT NULL,
-	[LanguageCode] [nvarchar](50) NOT NULL,
+	[SurveyID] [int] NOT NULL,
+	[LanguageCode] [NVARCHAR](50) NOT NULL,
 	[DefaultLanguage] [bit] NULL,
  CONSTRAINT [PK_vts_tbSurveyLanguage] PRIMARY KEY CLUSTERED 
 (
-	[SurveyId] ASC,
+	[SurveyID] ASC,
 	[LanguageCode] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbSurveyLayout]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17880,15 +18252,15 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbSurveyLayout](
-	[SurveyId] [int] NOT NULL,
-	[SurveyHeaderText] [nvarchar](max) NULL,
-	[SurveyFooterText] [nvarchar](max) NULL,
-	[SurveyCss] [nvarchar](255) NULL,
+	[SurveyID] [int] NOT NULL,
+	[SurveyHeaderText] [NVARCHAR](max) NULL,
+	[SurveyFooterText] [NVARCHAR](max) NULL,
+	[SurveyCss] [NVARCHAR](255) NULL,
  CONSTRAINT [PK_SurveyLayout] PRIMARY KEY CLUSTERED 
 (
-	[SurveyId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+	[SurveyID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbSurveyToken]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17899,17 +18271,17 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[vts_tbSurveyToken](
-	[TokenId] [int] IDENTITY(1,1) NOT NULL,
-	[SurveyId] [int] NOT NULL,
+	[TokenID] [int] IDENTITY(1,1) NOT NULL,
+	[SurveyID] [int] NOT NULL,
 	[Token] [varchar](40) NOT NULL,
 	[CreationDate] [date] NOT NULL,
 	[Used] [bit] NOT NULL,
-	[VoterId] [int] NULL,
+	[VoterID] [int] NULL,
  CONSTRAINT [PK_vts_tbSurveyToken] PRIMARY KEY CLUSTERED 
 (
-	[TokenId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+	[TokenID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 SET ANSI_PADDING OFF
@@ -17928,8 +18300,8 @@ CREATE TABLE [dbo].[vts_tbSurveyWebSecurity](
 (
 	[WebSecurityAddInID] ASC,
 	[SurveyID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbUnAuthentifiedUserAction]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17945,8 +18317,8 @@ CREATE TABLE [dbo].[vts_tbUnAuthentifiedUserAction](
  CONSTRAINT [PK_tbNonAuthentifiedUserAction] PRIMARY KEY CLUSTERED 
 (
 	[UnAuthentifiedUserActionID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 SET ANSI_PADDING OFF
@@ -17957,20 +18329,20 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbUser](
-	[UserId] [int] IDENTITY(1,1) NOT NULL,
-	[UserName] [nvarchar](255) NULL,
-	[Password] [nvarchar](255) NULL,
-	[FirstName] [nvarchar](255) NULL,
-	[LastName] [nvarchar](255) NULL,
-	[Email] [nvarchar](255) NULL,
+	[UserID] [int] IDENTITY(1,1) NOT NULL,
+	[UserName] [NVARCHAR](255) NULL,
+	[Password] [NVARCHAR](255) NULL,
+	[FirstName] [NVARCHAR](255) NULL,
+	[LastName] [NVARCHAR](255) NULL,
+	[Email] [NVARCHAR](255) NULL,
 	[CreationDate] [datetime] NULL,
 	[LastLogin] [datetime] NULL,
-	[PasswordSalt] [nvarchar](255) NULL,
+	[PasswordSalt] [NVARCHAR](255) NULL,
  CONSTRAINT [PK_vts_tbUser] PRIMARY KEY CLUSTERED 
 (
-	[UserId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+	[UserID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbUserAnswerType]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17979,14 +18351,14 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbUserAnswerType](
-	[UserId] [int] NOT NULL,
-	[AnswerTypeId] [smallint] NOT NULL,
+	[UserID] [int] NOT NULL,
+	[AnswerTypeID] [smallint] NOT NULL,
  CONSTRAINT [PK_vts_tbUserAnswerType] PRIMARY KEY CLUSTERED 
 (
-	[UserId] ASC,
-	[AnswerTypeId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+	[UserID] ASC,
+	[AnswerTypeID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbUserRegularExpression]    Script Date: 19-8-2014 22:01:40 ******/
@@ -17995,14 +18367,14 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbUserRegularExpression](
-	[UserId] [int] NOT NULL,
-	[RegularExpressionId] [int] NOT NULL,
+	[UserID] [int] NOT NULL,
+	[RegularExpressionID] [int] NOT NULL,
  CONSTRAINT [PK_vts_tbUserRegularExpression] PRIMARY KEY CLUSTERED 
 (
-	[UserId] ASC,
-	[RegularExpressionId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+	[UserID] ASC,
+	[RegularExpressionID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbUserRole]    Script Date: 19-8-2014 22:01:40 ******/
@@ -18011,14 +18383,14 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbUserRole](
-	[UserId] [int] NOT NULL,
-	[RoleId] [int] NOT NULL,
+	[UserID] [int] NOT NULL,
+	[RoleID] [int] NOT NULL,
  CONSTRAINT [PK_vts_tbUserRole] PRIMARY KEY CLUSTERED 
 (
-	[UserId] ASC,
-	[RoleId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+	[UserID] ASC,
+	[RoleID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbUserSetting]    Script Date: 19-8-2014 22:01:40 ******/
@@ -18027,14 +18399,14 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbUserSetting](
-	[UserId] [int] NOT NULL,
+	[UserID] [int] NOT NULL,
 	[IsAdmin] [bit] NULL,
 	[GlobalSurveyAccess] [bit] NULL,
  CONSTRAINT [PK_vts_tbUserSettings] PRIMARY KEY CLUSTERED 
 (
-	[UserId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+	[UserID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbUserSurvey]    Script Date: 19-8-2014 22:01:40 ******/
@@ -18043,14 +18415,14 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbUserSurvey](
-	[UserId] [int] NOT NULL,
-	[SurveyId] [int] NOT NULL,
+	[UserID] [int] NOT NULL,
+	[SurveyID] [int] NOT NULL,
  CONSTRAINT [PK_vts_tbUserSurvey] PRIMARY KEY CLUSTERED 
 (
-	[UserId] ASC,
-	[SurveyId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+	[UserID] ASC,
+	[SurveyID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbVoter]    Script Date: 19-8-2014 22:01:40 ******/
@@ -18060,24 +18432,24 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[vts_tbVoter](
 	[VoterID] [int] IDENTITY(1,1) NOT NULL,
-	[UID] [nvarchar](40) NULL,
+	[UID] [NVARCHAR](40) NULL,
 	[SurveyID] [int] NULL,
-	[ContextUserName] [nvarchar](255) NULL,
+	[ContextUserName] [NVARCHAR](255) NULL,
 	[VoteDate] [datetime] NULL,
 	[StartDate] [datetime] NULL,
-	[IPSource] [nvarchar](50) NULL,
+	[IPSource] [NVARCHAR](50) NULL,
 	[Validated] [bit] NULL,
-	[ResumeUID] [nvarchar](40) NULL,
+	[ResumeUID] [NVARCHAR](40) NULL,
 	[ResumeAtPageNumber] [int] NULL,
 	[ProgressSaveDate] [datetime] NULL,
 	[ResumeQuestionNumber] [int] NULL,
 	[ResumeHighestPageNumber] [int] NULL,
-	[LanguageCode] [nvarchar](50) NULL,
+	[LanguageCode] [NVARCHAR](50) NULL,
  CONSTRAINT [PK_vts_tbVoter] PRIMARY KEY CLUSTERED 
 (
 	[VoterID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbVoterAnswers]    Script Date: 19-8-2014 22:01:40 ******/
@@ -18089,14 +18461,14 @@ CREATE TABLE [dbo].[vts_tbVoterAnswers](
 	[VoterID] [int] NOT NULL,
 	[AnswerID] [int] NOT NULL,
 	[SectionNumber] [int] NOT NULL,
-	[AnswerText] [ntext] NULL,
+	[AnswerText] [NVARCHAR](max) NULL,
  CONSTRAINT [PK_vts_tbVoterAnswers] PRIMARY KEY CLUSTERED 
 (
 	[VoterID] ASC,
 	[AnswerID] ASC,
 	[SectionNumber] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbVoterEmail]    Script Date: 19-8-2014 22:01:40 ******/
@@ -18111,8 +18483,8 @@ CREATE TABLE [dbo].[vts_tbVoterEmail](
 (
 	[VoterID] ASC,
 	[EmailID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 /****** Object:  Table [dbo].[vts_tbWebSecurityAddIn]    Script Date: 19-8-2014 22:01:40 ******/
@@ -18123,17 +18495,17 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[vts_tbWebSecurityAddIn](
-	[WebSecurityAddInId] [int] IDENTITY(1,1) NOT NULL,
-	[Description] [nvarchar](50) NULL,
+	[WebSecurityAddInID] [int] IDENTITY(1,1) NOT NULL,
+	[Description] [NVARCHAR](50) NULL,
 	[BuiltIn] [bit] NULL,
 	[TypeNameSpace] [varchar](200) NULL,
 	[TypeAssembly] [varchar](50) NULL,
 	[TypeMode] [int] NULL,
  CONSTRAINT [PK_tbSecurityAddIn] PRIMARY KEY CLUSTERED 
 (
-	[WebSecurityAddInId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
+	[WebSecurityAddInID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF)
+)
 
 GO
 SET ANSI_PADDING OFF
@@ -18141,261 +18513,898 @@ GO
 SET IDENTITY_INSERT [dbo].[vts_tbAnswerType] ON 
 
 GO
-INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDataSource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (1, 1, N'SelectionTextType', 0, 0, 0, 1, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerSelectionItem', N'Votations.NSurvey.WebControls', NULL)
+INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDatasource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (1, 1, N'SelectionTextType', 0, 0, 0, 1, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerSelectionItem', N'SurveyProject.WebControls', NULL)
 GO
-INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDataSource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (2, 1, N'SelectionOtherType', 20, 0, 300, 211, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerOtherFieldItem', N'Votations.NSurvey.WebControls', NULL)
+INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDatasource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (2, 1, N'SelectionOtherType', 20, 0, 300, 211, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerOtherFieldItem', N'SurveyProject.WebControls', NULL)
 GO
-INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDataSource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (3, 1, N'FieldBasicType', 20, 1, 100, 210, NULL, 0, N'', N'', N'', N'Votations.NSurvey.WebControls.UI.AnswerFieldItem', N'Votations.NSurvey.WebControls', NULL)
+INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDatasource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (3, 1, N'FieldBasicType', 20, 1, 100, 210, NULL, 0, N'', N'', N'', N'Votations.NSurvey.WebControls.UI.AnswerFieldItem', N'SurveyProject.WebControls', NULL)
 GO
-INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDataSource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (4, 1, N'XMLCountryList', NULL, NULL, NULL, 88, N'countries.xml', 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerXmlListItem', N'Votations.NSurvey.WebControls', NULL)
+INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDatasource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (4, 1, N'XMLCountryList', NULL, NULL, NULL, 88, N'countries.xml', 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerXmlListItem', N'SurveyProject.WebControls', NULL)
 GO
-INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDataSource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (20, 1, N'BooleanType', 0, 0, 0, 20, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerBooleanItem', N'Votations.NSurvey.WebControls', NULL)
+INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDatasource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (5, 1, N'XMLUSStatesList', NULL, NULL, NULL, 88, N'usstates.xml', 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerXmlListItem', N'SurveyProject.WebControls', NULL)
 GO
-INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDataSource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (21, 1, N'FieldRequiredType', 20, 0, 255, 210, NULL, 0, N'isFilled', N'function isFilled(sender)
-{
-if (sender.value.length == 0)
-{
-   sender.focus();
-   return false;
-}
-else
-{
-   return true;
-}
-}', N'FieldRequiredType', N'Votations.NSurvey.WebControls.UI.AnswerFieldItem', N'Votations.NSurvey.WebControls', NULL)
+INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDatasource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (20, 1, N'BooleanType', 0, 0, 0, 20, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerBooleanItem', N'SurveyProject.WebControls', NULL)
 GO
-INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDataSource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (22, 1, N'FieldCalendarType', 10, 0, 10, 86, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerFieldCalendarItem', N'Votations.NSurvey.WebControls', NULL)
+INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDatasource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (22, 1, N'FieldCalendarType', 10, 0, 10, 86, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerFieldCalendarItem', N'SurveyProject.WebControls', NULL)
 GO
-INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDataSource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (24, 1, N'FieldLargeType', 70, 10, 255, 210, NULL, 0, N'', N'', N'', N'Votations.NSurvey.WebControls.UI.AnswerFieldItem', N'Votations.NSurvey.WebControls', NULL)
+INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDatasource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (24, 1, N'FieldLargeType', 70, 10, 255, 210, NULL, 0, N'', N'', N'', N'Votations.NSurvey.WebControls.UI.AnswerFieldItem', N'SurveyProject.WebControls', NULL)
 GO
-INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDataSource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (26, 1, N'FieldEmailType', 20, 0, 255, 210, NULL, 0, N'EmailValid', N'function EmailValid(sender) 
-{
-if (sender.value.length == 0)
-{
-   sender.focus();
-   return false;
-}
-else
-{
-  var emailRegEx = /^[a-zA-Z0-9._-]+@([a-zA-Z0-9.-]+\.)+[a-zA-Z0-9.-]{2,4}$/;
-  if (sender.value.match(emailRegEx) != null)
-  {
-   return true;
-  }
-  else
-  {
-   sender.focus();
-   return false;
-  }
-}
-}', N'JSInvalidEmail', N'Votations.NSurvey.WebControls.UI.AnswerFieldItem', N'Votations.NSurvey.WebControls', NULL)
+INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDatasource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (27, 1, N'FieldHiddenType', 0, 0, 0, 20, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerFieldHIDdenItem', N'SurveyProject.WebControls', NULL)
 GO
-INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDataSource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (27, 1, N'FieldHiddenType', 0, 0, 0, 20, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerFieldHiddenItem', N'Votations.NSurvey.WebControls', NULL)
+INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDatasource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (28, 1, N'FieldPasswordType', 20, 0, 0, 214, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerFieldPasswordItem', N'SurveyProject.WebControls', NULL)
 GO
-INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDataSource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (28, 1, N'FieldPasswordType', 20, 0, 0, 214, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerFieldPasswordItem', N'Votations.NSurvey.WebControls', NULL)
+INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDatasource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (29, 1, N'SubscriberXMLList', 0, 0, 0, 116, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerSubscriberXmlListItem', N'SurveyProject.WebControls', NULL)
 GO
-INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDataSource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (29, 1, N'SubscriberXMLList', 0, 0, 0, 116, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerSubscriberXmlListItem', N'Votations.NSurvey.WebControls', NULL)
+INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDatasource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (30, 1, N'ExtendedFileUploadType', 0, 0, 0, 832, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerUploadItem', N'SurveyProject.WebControls', NULL)
 GO
-INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDataSource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (30, 1, N'ExtendedFileUploadType', 0, 0, 0, 832, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerUploadItem', N'Votations.NSurvey.WebControls', NULL)
+INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDatasource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (31, 1, N'ExtendedFreeTextBoxType', 500, 100, 255, 722, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.ThirdPartyItems.FreeTextBoxAnswerItem', N'SurveyProject.WebControls', NULL)
 GO
-INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDataSource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (31, 1, N'ExtendedFreeTextBoxType', 500, 100, 255, 722, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.ThirdPartyItems.FreeTextBoxAnswerItem', N'Votations.NSurvey.WebControls', NULL)
+INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDatasource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (55, 1, N'FieldAddressType', 20, 0, 100, 210, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerFieldAddressItem', N'SurveyProject.WebControls', NULL)
 GO
-INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDataSource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (55, 1, N'FieldAddressType', 20, 0, 100, 210, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerFieldAddressItem', N'Votations.NSurvey.WebControls', NULL)
-GO
-INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDataSource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (56, 1, N'FieldSliderType', 20, 0, 100, 1090, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerFieldSliderItem', N'Votations.NSurvey.WebControls', NULL)
+INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDatasource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (56, 1, N'FieldSliderType', 20, 0, 100, 1090, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerFieldSliderItem', N'SurveyProject.WebControls', NULL)
 GO
 SET IDENTITY_INSERT [dbo].[vts_tbAnswerType] OFF
 GO
 SET IDENTITY_INSERT [dbo].[vts_tbFolders] ON 
 
 GO
-INSERT [dbo].[vts_tbFolders] ([FolderId], [FolderName], [ParentFolderId]) VALUES (33, N'Root', NULL)
+INSERT [dbo].[vts_tbFolders] ([FolderID], [FolderName], [ParentFolderID]) VALUES (33, N'Root', NULL)
 GO
 SET IDENTITY_INSERT [dbo].[vts_tbFolders] OFF
 GO
-INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeId], [TypeDescription]) VALUES (1, N'Answer text')
+INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeID], [TypeDescription]) VALUES (1, N'Answer text')
 GO
-INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeId], [TypeDescription]) VALUES (2, N'Answer''s default value')
+INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeID], [TypeDescription]) VALUES (2, N'Answer''s default value')
 GO
-INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeId], [TypeDescription]) VALUES (3, N'Question text')
+INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeID], [TypeDescription]) VALUES (3, N'Question text')
 GO
-INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeId], [TypeDescription]) VALUES (4, N'Thank you message')
+INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeID], [TypeDescription]) VALUES (4, N'Thank you message')
 GO
-INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeId], [TypeDescription]) VALUES (5, N'Redirection url')
+INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeID], [TypeDescription]) VALUES (5, N'Redirection url')
 GO
-INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeId], [TypeDescription]) VALUES (6, N'Add section')
+INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeID], [TypeDescription]) VALUES (6, N'Add section')
 GO
-INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeId], [TypeDescription]) VALUES (7, N'Delete section')
+INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeID], [TypeDescription]) VALUES (7, N'Delete section')
 GO
-INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeId], [TypeDescription]) VALUES (8, N'Update section')
+INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeID], [TypeDescription]) VALUES (8, N'Update section')
 GO
-INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeId], [TypeDescription]) VALUES (9, N'Edit section')
+INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeID], [TypeDescription]) VALUES (9, N'Edit section')
 GO
-INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeId], [TypeDescription]) VALUES (10, N'Question Groups')
+INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeID], [TypeDescription]) VALUES (10, N'Question Groups')
 GO
-INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeId], [TypeDescription]) VALUES (11, N'Question Help Text')
+INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeID], [TypeDescription]) VALUES (11, N'Question Help Text')
 GO
-INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeId], [TypeDescription]) VALUES (12, N'Question Alias')
+INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeID], [TypeDescription]) VALUES (12, N'Question Alias')
 GO
-INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeId], [TypeDescription]) VALUES (13, N'AnswerAlias')
+INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeID], [TypeDescription]) VALUES (13, N'AnswerAlias')
 GO
-INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeId], [TypeDescription]) VALUES (14, N'Layout Header')
+INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeID], [TypeDescription]) VALUES (14, N'Layout Header')
 GO
-INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeId], [TypeDescription]) VALUES (15, N'Layout Footer')
+INSERT [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeID], [TypeDescription]) VALUES (15, N'Layout Footer')
 GO
 INSERT [dbo].[vts_tbLayoutMode] ([LayoutModeID], [Description]) VALUES (1, N'VerticalItemText')
 GO
 INSERT [dbo].[vts_tbLayoutMode] ([LayoutModeID], [Description]) VALUES (2, N'HorizontalItemText')
 GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'af-ZA', N'AfrikaansLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'ar-SA', N'ArabicLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'az-AZ-Cyrl', N'AzeriLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'be-BY', N'BelarusianLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'bg-BG', N'BulgarianLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'ca-ES', N'CatalanLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'cs-CZ', N'CzechLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'da-DK', N'DanishLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'de-CH', N'de-CH')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'de-DE', N'GermanLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'div-MV', N'DhivehiLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'el-GR', N'GreekLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'en-US', N'EnglishLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'es-ES', N'SpanishLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'et-EE', N'EstonianLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'eu-ES', N'BasqueLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'fa-IR', N'FarsiLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'fi-FI', N'FinishLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'fo-FO', N'FaroeseLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'fr-FR', N'FrenchLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'gl-ES', N'GalicianLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'gu-IN', N'GujaratiLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'he-IL', N'HebrewLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'hi-IN', N'HindiLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'hr-HR', N'CroatianLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'hu-HU', N'HungarianLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'hy-AM', N'ArmenianLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'id-ID', N'IndonesianLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'is-IS', N'IcelandicLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'it-IT', N'ItalianLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'ja-JP', N'JapaneseLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'ka-GE', N'GeorgianLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'kk-KZ', N'KazakhLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'kn-IN', N'KannadaLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'kok-IN', N'KonkaniLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'ko-KR', N'KoreanLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'ky-KZ', N'KyrgyzLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'LanguageCode', N'LanguageDescription')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'Lt-LT', N'LithuanianLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'lv-LV', N'LatvianLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'mk-ML', N'MacedonianLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'mn-MN', N'MongolianLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'mr-IN', N'MarathiLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'ms-BN', N'MalayLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'nb-NO', N'NorwegianLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'nl-NL', N'DutchLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'pa-IN', N'PunjabiLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'pl-PL', N'PolishLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'pt-PT', N'PortugueseLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'ro-RO', N'RomanianLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'ru-RU', N'RussianLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'sa-IN', N'SanskritLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'sk-SK', N'SlovakLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'sl-SI', N'SlovenianLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'sq-AL', N'AlbanianLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'sr-SP-Latn', N'SerbianLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'sv-FI', N'SwedishLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'sw-KE', N'SwahiliLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'syr-SY', N'SyriacLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'ta-IN', N'TamilLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'te-IN', N'TeluguLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'th-TH', N'ThaiLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'tr-TR', N'TurkishLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'tt-RU', N'TatarLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'uk-UA', N'UkrainianLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'ur-PK', N'UrduLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'uz-UZ-Latn', N'UzbekLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'vi-VN', N'VietnameseLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES (N'zh-CN', N'ChineseLanguage')
-GO
-INSERT [dbo].[vts_tbMultiLanguageMode] ([MultiLanguageModeId], [ModeDescription]) VALUES (0, N'None')
-GO
-INSERT [dbo].[vts_tbMultiLanguageMode] ([MultiLanguageModeId], [ModeDescription]) VALUES (1, N'UserSelectionOption')
-GO
-INSERT [dbo].[vts_tbMultiLanguageMode] ([MultiLanguageModeId], [ModeDescription]) VALUES (2, N'BrowserDetectionOption')
-GO
-INSERT [dbo].[vts_tbMultiLanguageMode] ([MultiLanguageModeId], [ModeDescription]) VALUES (3, N'QueryStringLanguageOption')
-GO
-INSERT [dbo].[vts_tbMultiLanguageMode] ([MultiLanguageModeId], [ModeDescription]) VALUES (4, N'CookieLanguageOption')
-GO
-INSERT [dbo].[vts_tbMultiLanguageMode] ([MultiLanguageModeId], [ModeDescription]) VALUES (5, N'SessionLanguageOption')
+-- NEW LANGUAGE CODES SP25 START --
+INSERT [dbo].[vts_tbMultiLanguage] ([LanguageCode], [LanguageDescription]) VALUES
+(N'aa', N'Afar_aa'),
+(N'aa-DJ', N'Afar_Djibouti_aa-DJ'),
+(N'aa-ER', N'Afar_Eritrea_aa-ER'),
+(N'aa-ET', N'Afar_Ethiopia_aa-ET'),
+(N'af', N'Afrikaans_af'),
+(N'af-NA', N'Afrikaans_Namibia_af-NA'),
+(N'af-ZA', N'Afrikaans_South Africa_af-ZA'),
+(N'agq', N'Aghem_agq'),
+(N'agq-CM', N'Aghem_Cameroon_agq-CM'),
+(N'ak', N'Akan_ak'),
+(N'ak-GH', N'Akan_Ghana_ak-GH'),
+(N'sq', N'Albanian_sq'),
+(N'sq-AL', N'Albanian_Albania_sq-AL'),
+(N'sq-MK', N'Albanian_Macedonia, FYRO_sq-MK'),
+(N'gsw', N'Alsatian_gsw'),
+(N'gsw-FR', N'Alsatian_France_gsw-FR'),
+(N'gsw-LI', N'Alsatian_Liechtenstein_gsw-LI'),
+(N'gsw-CH', N'Alsatian_Switzerland_gsw-CH'),
+(N'am', N'Amharic_am'),
+(N'am-ET', N'Amharic_Ethiopia_am-ET'),
+(N'ar', N'Arabic_ar'),
+(N'ar-DZ', N'Arabic_Algeria_ar-DZ'),
+(N'ar-BH', N'Arabic_Bahrain_ar-BH'),
+(N'ar-TD', N'Arabic_Chad_ar-TD'),
+(N'ar-KM', N'Arabic_Comoros_ar-KM'),
+(N'ar-DJ', N'Arabic_Djibouti_ar-DJ'),
+(N'ar-EG', N'Arabic_Egypt_ar-EG'),
+(N'ar-ER', N'Arabic_Eritrea_ar-ER'),
+(N'ar-IQ', N'Arabic_Iraq_ar-IQ'),
+(N'ar-IL', N'Arabic_Israel_ar-IL'),
+(N'ar-JO', N'Arabic_Jordan_ar-JO'),
+(N'ar-KW', N'Arabic_Kuwait_ar-KW'),
+(N'ar-LB', N'Arabic_Lebanon_ar-LB'),
+(N'ar-LY', N'Arabic_Libya_ar-LY'),
+(N'ar-MR', N'Arabic_Mauritania_ar-MR'),
+(N'ar-MA', N'Arabic_Morocco_ar-MA'),
+(N'ar-OM', N'Arabic_Oman_ar-OM'),
+(N'ar-PS', N'Arabic_Palestinian Authority_ar-PS'),
+(N'ar-QA', N'Arabic_Qatar_ar-QA'),
+(N'ar-SA', N'Arabic_Saudi Arabia_ar-SA'),
+(N'ar-SO', N'Arabic_Somalia_ar-SO'),
+(N'ar-SS', N'Arabic_South Sudan_ar-SS'),
+(N'ar-SD', N'Arabic_Sudan_ar-SD'),
+(N'ar-SY', N'Arabic_Syria_ar-SY'),
+(N'ar-TN', N'Arabic_Tunisia_ar-TN'),
+(N'ar-AE', N'Arabic_U.A.E._ar-AE'),
+(N'ar-001', N'Arabic_World_ar-001'),
+(N'ar-YE', N'Arabic_Yemen_ar-YE'),
+(N'hy', N'Armenian_hy'),
+(N'hy-AM', N'Armenian_Armenia_hy-AM'),
+(N'as', N'Assamese_as'),
+(N'as-IN', N'Assamese_India_as-IN'),
+(N'ast', N'Asturian_ast'),
+(N'ast-ES', N'Asturian_Spain_ast-ES'),
+(N'asa', N'Asu_asa'),
+(N'asa-TZ', N'Asu_Tanzania_asa-TZ'),
+(N'az-Cyrl', N'Azerbaijani (Cyrillic)_az-Cyrl'),
+(N'az-Cyrl-AZ', N'Azerbaijani (Cyrillic)_Azerbaijan_az-Cyrl-AZ'),
+(N'az', N'Azerbaijani (Latin)_az'),
+(N'az-Latn', N'Azerbaijani (Latin)_az-Latn'),
+(N'az-Latn-AZ', N'Azerbaijani (Latin)_Azerbaijan_az-Latn-AZ'),
+(N'ksf', N'Bafia_ksf'),
+(N'ksf-CM', N'Bafia_Cameroon_ksf-CM'),
+(N'bm', N'Bamanankan_bm'),
+(N'bm-Latn-ML', N'Bamanankan (Latin)_Mali_bm-Latn-ML'),
+(N'bn', N'Bangla_bn'),
+(N'bn-BD', N'Bangla_Bangladesh_bn-BD'),
+(N'bn-IN', N'Bangla_India_bn-IN'),
+(N'bas', N'Basaa_bas'),
+(N'bas-CM', N'Basaa_Cameroon_bas-CM'),
+(N'ba', N'Bashkir_ba'),
+(N'ba-RU', N'Bashkir_Russia_ba-RU'),
+(N'eu', N'Basque_eu'),
+(N'eu-ES', N'Basque_Spain_eu-ES'),
+(N'be', N'Belarusian_be'),
+(N'be-BY', N'Belarusian_Belarus_be-BY'),
+(N'bem', N'Bemba_bem'),
+(N'bem-ZM', N'Bemba_Zambia_bem-ZM'),
+(N'bez', N'Bena_bez'),
+(N'bez-TZ', N'Bena_Tanzania_bez-TZ'),
+(N'byn', N'Blin_byn'),
+(N'byn-ER', N'Blin_Eritrea_byn-ER'),
+(N'brx', N'Bodo_brx'),
+(N'brx-IN', N'Bodo_India_brx-IN'),
+(N'bs-Cyrl', N'Bosnian (Cyrillic)_bs-Cyrl'),
+(N'bs-Cyrl-BA', N'Bosnian (Cyrillic)_Bosnia and Herzegovina_bs-Cyrl-BA'),
+(N'bs-Latn', N'Bosnian (Latin)_bs-Latn'),
+(N'bs', N'Bosnian (Latin)_bs'),
+(N'bs-Latn-BA', N'Bosnian (Latin)_Bosnia and Herzegovina_bs-Latn-BA'),
+(N'br', N'Breton_br'),
+(N'br-FR', N'Breton_France_br-FR'),
+(N'bg', N'Bulgarian_bg'),
+(N'bg-BG', N'Bulgarian_Bulgaria_bg-BG'),
+(N'my', N'Burmese_my'),
+(N'my-MM', N'Burmese_Myanmar_my-MM'),
+(N'ca', N'Catalan_ca'),
+(N'ca-AD', N'Catalan_Andorra_ca-AD'),
+(N'ca-FR', N'Catalan_France_ca-FR'),
+(N'ca-IT', N'Catalan_Italy_ca-IT'),
+(N'ca-ES', N'Catalan_Spain_ca-ES'),
+(N'tzm-Latn-MA', N'Central Atlas Tamazight (Latin)_Morocco_tzm-Latn-MA'),
+(N'ku', N'Central Kurdish_ku'),
+(N'ku-Arab', N'Central Kurdish_ku-Arab'),
+(N'ku-Arab-IQ', N'Central Kurdish_Iraq_ku-Arab-IQ'),
+(N'cd-RU', N'Chechen_Russia_cd-RU'),
+(N'chr', N'Cherokee_chr'),
+(N'chr-Cher', N'Cherokee_chr-Cher'),
+(N'chr-Cher-US', N'Cherokee_United States_chr-Cher-US'),
+(N'cgg', N'Chiga_cgg'),
+(N'cgg-UG', N'Chiga_Uganda_cgg-UG'),
+(N'zh-Hans', N'Chinese (Simplified)_zh-Hans'),
+(N'zh', N'Chinese (Simplified)_zh'),
+(N'zh-CN', N'Chinese (Simplified)_People''s Republic of China_zh-CN'),
+(N'zh-SG', N'Chinese (Simplified)_Singapore_zh-SG'),
+(N'zh-Hant', N'Chinese (Traditional)_zh-Hant'),
+(N'zh-HK', N'Chinese (Traditional)_Hong Kong S.A.R._zh-HK'),
+(N'zh-MO', N'Chinese (Traditional)_Macao S.A.R._zh-MO'),
+(N'zh-TW', N'Chinese (Traditional)_Taiwan_zh-TW'),
+(N'cu-RU', N'Church Slavic_Russia_cu-RU'),
+(N'swc', N'Congo Swahili_swc'),
+(N'swc-CD', N'Congo Swahili_Congo DRC_swc-CD'),
+(N'kw', N'Cornish_kw'),
+(N'kw-GB', N'Cornish_United Kingdom_kw-GB'),
+(N'co', N'Corsican_co'),
+(N'co-FR', N'Corsican_France_co-FR'),
+(N'bs, hr, or sr', N'Croatian_bs, hr, or sr'),
+(N'hr-HR', N'Croatian_Croatia_hr-HR'),
+(N'hr-BA', N'Croatian (Latin)_Bosnia and Herzegovina_hr-BA'),
+(N'cs', N'Czech_cs'),
+(N'cs-CZ', N'Czech_Czech Republic_cs-CZ'),
+(N'da', N'Danish_da'),
+(N'da-DK', N'Danish_Denmark_da-DK'),
+(N'da-GL', N'Danish_Greenland_da-GL'),
+(N'prs', N'Dari_prs'),
+(N'prs-AF', N'Dari_Afghanistan_prs-AF'),
+(N'dv', N'Divehi_dv'),
+(N'dv-MV', N'Divehi_Maldives_dv-MV'),
+(N'dua', N'Duala_dua'),
+(N'dua-CM', N'Duala_Cameroon_dua-CM'),
+(N'nl', N'Dutch_nl'),
+(N'nl-AW', N'Dutch_Aruba_nl-AW'),
+(N'nl-BE', N'Dutch_Belgium_nl-BE'),
+(N'nl-BQ', N'Dutch_Bonaire, Sint Eustatius and Saba_nl-BQ'),
+(N'nl-CW', N'Dutch_Curaçao_nl-CW'),
+(N'nl-NL', N'Dutch_Netherlands_nl-NL'),
+(N'nl-SX', N'Dutch_Sint Maarten_nl-SX'),
+(N'nl-SR', N'Dutch_Suriname_nl-SR'),
+(N'dz', N'Dzongkha_dz'),
+(N'dz-BT', N'Dzongkha_Bhutan_dz-BT'),
+(N'ebu', N'Embu_ebu'),
+(N'ebu-KE', N'Embu_Kenya_ebu-KE'),
+(N'en', N'English_en'),
+(N'en-AS', N'English_American Samoa_en-AS'),
+(N'en-AI', N'English_Anguilla_en-AI'),
+(N'en-AG', N'English_Antigua and Barbuda_en-AG'),
+(N'en-AU', N'English_Australia_en-AU'),
+(N'en-AT', N'English_Austria_en-AT'),
+(N'en-BS', N'English_Bahamas_en-BS'),
+(N'en-BB', N'English_Barbados_en-BB'),
+(N'en-BE', N'English_Belgium_en-BE'),
+(N'en-BZ', N'English_Belize_en-BZ'),
+(N'en-BM', N'English_Bermuda_en-BM'),
+(N'en-BW', N'English_Botswana_en-BW'),
+(N'en-IO', N'English_British Indian Ocean Territory_en-IO'),
+(N'en-VG', N'English_British Virgin Islands_en-VG'),
+(N'en-BI', N'English_Burundi_en-BI'),
+(N'en-CM', N'English_Cameroon_en-CM'),
+(N'en-CA', N'English_Canada_en-CA'),
+(N'en-029', N'English_Caribbean_en-029'),
+(N'en-KY', N'English_Cayman Islands_en-KY'),
+(N'en-CX', N'English_Christmas Island_en-CX'),
+(N'en-CC', N'English_Cocos [Keeling] Islands_en-CC'),
+(N'en-CK', N'English_Cook Islands_en-CK'),
+(N'en-CY', N'English_Cyprus_en-CY'),
+(N'en-DK', N'English_Denmark_en-DK'),
+(N'en-DM', N'English_Dominica_en-DM'),
+(N'en-ER', N'English_Eritrea_en-ER'),
+(N'en-150', N'English_Europe_en-150'),
+(N'en-FK', N'English_Falkland Islands_en-FK'),
+(N'en-FI', N'English_Finland_en-FI'),
+(N'en-FJ', N'English_Fiji_en-FJ'),
+(N'en-GM', N'English_Gambia_en-GM'),
+(N'en-DE', N'English_Germany_en-DE'),
+(N'en-GH', N'English_Ghana_en-GH'),
+(N'en-GI', N'English_Gibraltar_en-GI'),
+(N'en-GD', N'English_Grenada_en-GD'),
+(N'en-GU', N'English_Guam_en-GU'),
+(N'en-GG', N'English_Guernsey_en-GG'),
+(N'en-GY', N'English_Guyana_en-GY'),
+(N'en-HK', N'English_Hong Kong_en-HK'),
+(N'en-IN', N'English_India_en-IN'),
+(N'en-IE', N'English_Ireland_en-IE'),
+(N'en-IM', N'English_Isle of Man_en-IM'),
+(N'en-IL', N'English_Israel_en-IL'),
+(N'en-JM', N'English_Jamaica_en-JM'),
+(N'en-JE', N'English_Jersey_en-JE'),
+(N'en-KE', N'English_Kenya_en-KE'),
+(N'en-KI', N'English_Kiribati_en-KI'),
+(N'en-LS', N'English_Lesotho_en-LS'),
+(N'en-LR', N'English_Liberia_en-LR'),
+(N'en-MO', N'English_Macao SAR_en-MO'),
+(N'en-MG', N'English_Madagascar_en-MG'),
+(N'en-MW', N'English_Malawi_en-MW'),
+(N'en-MY', N'English_Malaysia_en-MY'),
+(N'en-MT', N'English_Malta_en-MT'),
+(N'en-MH', N'English_Marshall Islands_en-MH'),
+(N'en-MU', N'English_Mauritius_en-MU'),
+(N'en-FM', N'English_Micronesia_en-FM'),
+(N'en-MS', N'English_Montserrat_en-MS'),
+(N'en-NA', N'English_Namibia_en-NA'),
+(N'en-NR', N'English_Nauru_en-NR'),
+(N'en-NL', N'English_Netherlands_en-NL'),
+(N'en-NZ', N'English_New Zealand_en-NZ'),
+(N'en-NG', N'English_Nigeria_en-NG'),
+(N'en-NU', N'English_Niue_en-NU'),
+(N'en-NF', N'English_Norfolk Island_en-NF'),
+(N'en-MP', N'English_Northern Mariana Islands_en-MP'),
+(N'en-PK', N'English_Pakistan_en-PK'),
+(N'en-PW', N'English_Palau_en-PW'),
+(N'en-PG', N'English_Papua New Guinea_en-PG'),
+(N'en-PN', N'English_Pitcairn Islands_en-PN'),
+(N'en-PR', N'English_Puerto Rico_en-PR'),
+(N'en-PH', N'English_Republic of the Philippines_en-PH'),
+(N'en-RW', N'English_Rwanda_en-RW'),
+(N'en-KN', N'English_Saint Kitts and Nevis_en-KN'),
+(N'en-LC', N'English_Saint Lucia_en-LC'),
+(N'en-VC', N'English_Saint Vincent and the Grenadines_en-VC'),
+(N'en-WS', N'English_Samoa_en-WS'),
+(N'en-SC', N'English_Seychelles_en-SC'),
+(N'en-SL', N'English_Sierra Leone_en-SL'),
+(N'en-SG', N'English_Singapore_en-SG'),
+(N'en-SX', N'English_Sint Maarten_en-SX'),
+(N'en-SI', N'English_Slovenia_en-SI'),
+(N'en-SB', N'English_Solomon Islands_en-SB'),
+(N'en-ZA', N'English_South Africa_en-ZA'),
+(N'en-SS', N'English_South Sudan_en-SS'),
+(N'en-SH', N'English_St Helena, Ascension, Tristan da Cunha_en-SH'),
+(N'en-SD', N'English_Sudan_en-SD'),
+(N'en-SZ', N'English_Swaziland_en-SZ'),
+(N'en-SE', N'English_Sweden_en-SE'),
+(N'en-CH', N'English_Switzerland_en-CH'),
+(N'en-TZ', N'English_Tanzania_en-TZ'),
+(N'en-TK', N'English_Tokelau_en-TK'),
+(N'en-TO', N'English_Tonga_en-TO'),
+(N'en-TT', N'English_TrinIDad and Tobago_en-TT'),
+(N'en-TC', N'English_Turks and Caicos Islands_en-TC'),
+(N'en-TV', N'English_Tuvalu_en-TV'),
+(N'en-UG', N'English_Uganda_en-UG'),
+(N'en-GB', N'English_United Kingdom_en-GB'),
+(N'en-US', N'English_United States_en-US'),
+(N'en-UM', N'English_US Minor Outlying Islands_en-UM'),
+(N'en-VI', N'English_US Virgin Islands_en-VI'),
+(N'en-VU', N'English_Vanuatu_en-VU'),
+(N'en-001', N'English_World_en-001'),
+(N'en-ZM', N'English_Zambia_en-ZM'),
+(N'en-ZW', N'English_Zimbabwe_en-ZW'),
+(N'eo', N'Esperanto_eo'),
+(N'eo-001', N'Esperanto_World_eo-001'),
+(N'et', N'Estonian_et'),
+(N'et-EE', N'Estonian_Estonia_et-EE'),
+(N'ee', N'Ewe_ee'),
+(N'ee-GH', N'Ewe_Ghana_ee-GH'),
+(N'ee-TG', N'Ewe_Togo_ee-TG'),
+(N'ewo', N'Ewondo_ewo'),
+(N'ewo-CM', N'Ewondo_Cameroon_ewo-CM'),
+(N'fo', N'Faroese_fo'),
+(N'fo-DK', N'Faroese_Denmark_fo-DK'),
+(N'fo-FO', N'Faroese_Faroe Islands_fo-FO'),
+(N'fil', N'Filipino_fil'),
+(N'fil-PH', N'Filipino_Philippines_fil-PH'),
+(N'fi', N'Finnish_fi'),
+(N'fi-FI', N'Finnish_Finland_fi-FI'),
+(N'fr', N'French_fr'),
+(N'fr-DZ', N'French_Algeria_fr-DZ'),
+(N'fr-BE', N'French_Belgium_fr-BE'),
+(N'fr-BJ', N'French_Benin_fr-BJ'),
+(N'fr-BF', N'French_Burkina Faso_fr-BF'),
+(N'fr-BI', N'French_Burundi_fr-BI'),
+(N'fr-CM', N'French_Cameroon_fr-CM'),
+(N'fr-CA', N'French_Canada_fr-CA'),
+(N'fr-CF', N'French_Central African Republic_fr-CF'),
+(N'fr-TD', N'French_Chad_fr-TD'),
+(N'fr-KM', N'French_Comoros_fr-KM'),
+(N'fr-CG', N'French_Congo_fr-CG'),
+(N'fr-CD', N'French_Congo, DRC_fr-CD'),
+(N'fr-CI', N'French_Côte d''Ivoire_fr-CI'),
+(N'fr-DJ', N'French_Djibouti_fr-DJ'),
+(N'fr-GQ', N'French_Equatorial Guinea_fr-GQ'),
+(N'fr-FR', N'French_France_fr-FR'),
+(N'fr-GF', N'French_French Guiana_fr-GF'),
+(N'fr-PF', N'French_French Polynesia_fr-PF'),
+(N'fr-GA', N'French_Gabon_fr-GA'),
+(N'fr-GP', N'French_Guadeloupe_fr-GP'),
+(N'fr-GN', N'French_Guinea_fr-GN'),
+(N'fr-HT', N'French_Haiti_fr-HT'),
+(N'fr-LU', N'French_Luxembourg_fr-LU'),
+(N'fr-MG', N'French_Madagascar_fr-MG'),
+(N'fr-ML', N'French_Mali_fr-ML'),
+(N'fr-MQ', N'French_Martinique_fr-MQ'),
+(N'fr-MR', N'French_Mauritania_fr-MR'),
+(N'fr-MU', N'French_Mauritius_fr-MU'),
+(N'fr-YT', N'French_Mayotte_fr-YT'),
+(N'fr-MA', N'French_Morocco_fr-MA'),
+(N'fr-NC', N'French_New Caledonia_fr-NC'),
+(N'fr-NE', N'French_Niger_fr-NE'),
+(N'fr-MC', N'French_Principality of Monaco_fr-MC'),
+(N'fr-RE', N'French_Reunion_fr-RE'),
+(N'fr-RW', N'French_Rwanda_fr-RW'),
+(N'fr-BL', N'French_Saint Barthélemy_fr-BL'),
+(N'fr-MF', N'French_Saint Martin_fr-MF'),
+(N'fr-PM', N'French_Saint Pierre and Miquelon_fr-PM'),
+(N'fr-SN', N'French_Senegal_fr-SN'),
+(N'fr-SC', N'French_Seychelles_fr-SC'),
+(N'fr-CH', N'French_Switzerland_fr-CH'),
+(N'fr-SY', N'French_Syria_fr-SY'),
+(N'fr-TG', N'French_Togo_fr-TG'),
+(N'fr-TN', N'French_Tunisia_fr-TN'),
+(N'fr-VU', N'French_Vanuatu_fr-VU'),
+(N'fr-WF', N'French_Wallis and Futuna_fr-WF'),
+(N'fy', N'Frisian_Frisland_fy'),
+(N'fy-NL', N'Frisian_Netherlands_fy-NL'),
+(N'fur', N'Friulian_fur'),
+(N'fur-IT', N'Friulian_Italy_fur-IT'),
+(N'ff', N'Fulah_ff'),
+(N'ff-Latn', N'Fulah_ff-Latn'),
+(N'ff-CM', N'Fulah_Cameroon_ff-CM'),
+(N'ff-GN', N'Fulah_Guinea_ff-GN'),
+(N'ff-MR', N'Fulah_Mauritania_ff-MR'),
+(N'ff-Latn-SN', N'Fulah_Senegal_ff-Latn-SN'),
+(N'gl', N'Galician_gl'),
+(N'gl-ES', N'Galician_Spain_gl-ES'),
+(N'lg', N'Ganda_lg'),
+(N'lg-UG', N'Ganda_Uganda_lg-UG'),
+(N'ka', N'Georgian_ka'),
+(N'ka-GE', N'Georgian_Georgia_ka-GE'),
+(N'de', N'German_de'),
+(N'de-AT', N'German_Austria_de-AT'),
+(N'de-BE', N'German_Belgium_de-BE'),
+(N'de-DE', N'German_Germany_de-DE'),
+(N'de-IT', N'German_Italy_de-IT'),
+(N'de-LI', N'German_Liechtenstein_de-LI'),
+(N'de-LU', N'German_Luxembourg_de-LU'),
+(N'de-CH', N'German_Switzerland_de-CH'),
+(N'el', N'Greek_el'),
+(N'el-CY', N'Greek_Cyprus_el-CY'),
+(N'el-GR', N'Greek_Greece_el-GR'),
+(N'kl', N'Greenlandic_kl'),
+(N'kl-GL', N'Greenlandic_Greenland_kl-GL'),
+(N'gn', N'Guarani_gn'),
+(N'gn-PY', N'Guarani_Paraguay_gn-PY'),
+(N'gu', N'Gujarati_gu'),
+(N'gu-IN', N'Gujarati_India_gu-IN'),
+(N'guz', N'Gusii_guz'),
+(N'guz-KE', N'Gusii_Kenya_guz-KE'),
+(N'ha', N'Hausa (Latin)_ha'),
+(N'ha-Latn', N'Hausa (Latin)_ha-Latn'),
+(N'ha-Latn-GH', N'Hausa (Latin)_Ghana_ha-Latn-GH'),
+(N'ha-Latn-NE', N'Hausa (Latin)_Niger_ha-Latn-NE'),
+(N'ha-Latn-NG', N'Hausa (Latin)_Nigeria_ha-Latn-NG'),
+(N'haw', N'Hawaiian_haw'),
+(N'haw-US', N'Hawaiian_United States_haw-US'),
+(N'he', N'Hebrew_he'),
+(N'he-IL', N'Hebrew_Israel_he-IL'),
+(N'hi', N'Hindi_hi'),
+(N'hi-IN', N'Hindi_India_hi-IN'),
+(N'hu', N'Hungarian_hu'),
+(N'hu-HU', N'Hungarian_Hungary_hu-HU'),
+(N'is', N'Icelandic_is'),
+(N'is-IS', N'Icelandic_Iceland_is-IS'),
+(N'ig', N'Igbo_ig'),
+(N'ig-NG', N'Igbo_Nigeria_ig-NG'),
+(N'ID', N'Indonesian_ID'),
+(N'ID-ID', N'Indonesian_Indonesia_ID-ID'),
+(N'ia', N'Interlingua_ia'),
+(N'ia-FR', N'Interlingua_France_ia-FR'),
+(N'ia-001', N'Interlingua_World_ia-001'),
+(N'iu', N'Inuktitut (Latin)_iu'),
+(N'iu-Latn', N'Inuktitut (Latin)_iu-Latn'),
+(N'iu-Latn-CA', N'Inuktitut (Latin)_Canada_iu-Latn-CA'),
+(N'iu-Cans', N'Inuktitut (Syllabics)_iu-Cans'),
+(N'iu-Cans-CA', N'Inuktitut (Syllabics)_Canada_iu-Cans-CA'),
+(N'ga', N'Irish_ga'),
+(N'ga-IE', N'Irish_Ireland_ga-IE'),
+(N'it', N'Italian_it'),
+(N'it-IT', N'Italian_Italy_it-IT'),
+(N'it-SM', N'Italian_San Marino_it-SM'),
+(N'it-CH', N'Italian_Switzerland_it-CH'),
+(N'it-VA', N'Italian_Vatican City_it-VA'),
+(N'ja', N'Japanese_ja'),
+(N'ja-JP', N'Japanese_Japan_ja-JP'),
+(N'jv', N'Javanese_jv'),
+(N'jv-Latn', N'Javanese_Latin_jv-Latn'),
+(N'jv-Latn-ID', N'Javanese_Latin, Indonesia_jv-Latn-ID'),
+(N'dyo', N'Jola-Fonyi_dyo'),
+(N'dyo-SN', N'Jola-Fonyi_Senegal_dyo-SN'),
+(N'kea', N'Kabuverdianu_kea'),
+(N'kea-CV', N'Kabuverdianu_Cabo Verde_kea-CV'),
+(N'kab', N'Kabyle_kab'),
+(N'kab-DZ', N'Kabyle_Algeria_kab-DZ'),
+(N'kkj', N'Kako_kkj'),
+(N'kkj-CM', N'Kako_Cameroon_kkj-CM'),
+(N'kln', N'Kalenjin_kln'),
+(N'kln-KE', N'Kalenjin_Kenya_kln-KE'),
+(N'kam', N'Kamba_kam'),
+(N'kam-KE', N'Kamba_Kenya_kam-KE'),
+(N'kn', N'Kannada_kn'),
+(N'kn-IN', N'Kannada_India_kn-IN'),
+(N'ks', N'Kashmiri_ks'),
+(N'ks-Arab', N'Kashmiri_Perso-Arabic_ks-Arab'),
+(N'ks-Arab-IN', N'Kashmiri_Perso-Arabic_ks-Arab-IN'),
+(N'kk', N'Kazakh_kk'),
+(N'kk-KZ', N'Kazakh_Kazakhstan_kk-KZ'),
+(N'km', N'Khmer_km'),
+(N'km-KH', N'Khmer_Cambodia_km-KH'),
+(N'quc', N'K''iche_quc'),
+(N'quc-Latn-GT', N'K''iche_Guatemala_quc-Latn-GT'),
+(N'ki', N'Kikuyu_ki'),
+(N'ki-KE', N'Kikuyu_Kenya_ki-KE'),
+(N'rw', N'Kinyarwanda_rw'),
+(N'rw-RW', N'Kinyarwanda_Rwanda_rw-RW'),
+(N'sw', N'Kiswahili_sw'),
+(N'sw-KE', N'Kiswahili_Kenya_sw-KE'),
+(N'sw-TZ', N'Kiswahili_Tanzania_sw-TZ'),
+(N'sw-UG', N'Kiswahili_Uganda_sw-UG'),
+(N'kok', N'Konkani_kok'),
+(N'kok-IN', N'Konkani_India_kok-IN'),
+(N'ko', N'Korean_ko'),
+(N'ko-KR', N'Korean_Korea_ko-KR'),
+(N'ko-KP', N'Korean_North Korea_ko-KP'),
+(N'khq', N'Koyra Chiini_khq'),
+(N'khq-ML', N'Koyra Chiini_Mali_khq-ML'),
+(N'ses', N'Koyraboro Senni_ses'),
+(N'ses-ML', N'Koyraboro Senni_Mali_ses-ML'),
+(N'nmg', N'Kwasio_nmg'),
+(N'nmg-CM', N'Kwasio_Cameroon_nmg-CM'),
+(N'ky', N'Kyrgyz_ky'),
+(N'ky-KG', N'Kyrgyz_Kyrgyzstan_ky-KG'),
+(N'ku-Arab-IR', N'Kurdish_Perso-Arabic, Iran_ku-Arab-IR'),
+(N'lkt', N'Lakota_lkt'),
+(N'lkt-US', N'Lakota_United States_lkt-US'),
+(N'lag', N'Langi_lag'),
+(N'lag-TZ', N'Langi_Tanzania_lag-TZ'),
+(N'lo', N'Lao_lo'),
+(N'lo-LA', N'Lao_Lao P.D.R._lo-LA'),
+(N'lv', N'Latvian_lv'),
+(N'lv-LV', N'Latvian_Latvia_lv-LV'),
+(N'ln', N'Lingala_ln'),
+(N'ln-AO', N'Lingala_Angola_ln-AO'),
+(N'ln-CF', N'Lingala_Central African Republic_ln-CF'),
+(N'ln-CG', N'Lingala_Congo_ln-CG'),
+(N'ln-CD', N'Lingala_Congo DRC_ln-CD'),
+(N'lt', N'Lithuanian_lt'),
+(N'lt-LT', N'Lithuanian_Lithuania_lt-LT'),
+(N'nds', N'Low German_nds'),
+(N'nds-DE', N'Low German _Germany_nds-DE'),
+(N'nds-NL', N'Low German_Netherlands_nds-NL'),
+(N'dsb', N'Lower Sorbian_dsb'),
+(N'dsb-DE', N'Lower Sorbian_Germany_dsb-DE'),
+(N'lu', N'Luba-Katanga_lu'),
+(N'lu-CD', N'Luba-Katanga_Congo DRC_lu-CD'),
+(N'luo', N'Luo_luo'),
+(N'luo-KE', N'Luo_Kenya_luo-KE'),
+(N'lb', N'Luxembourgish_lb'),
+(N'lb-LU', N'Luxembourgish_Luxembourg_lb-LU'),
+(N'luy', N'Luyia_luy'),
+(N'luy-KE', N'Luyia_Kenya_luy-KE'),
+(N'mk', N'Macedonian_mk'),
+(N'mk-MK', N'Macedonian_Macedonia (Former Yugoslav Republic of Macedonia)_mk-MK'),
+(N'jmc', N'Machame_jmc'),
+(N'jmc-TZ', N'Machame_Tanzania_jmc-TZ'),
+(N'mgh', N'Makhuwa-Meetto_mgh'),
+(N'mgh-MZ', N'Makhuwa-Meetto_Mozambique_mgh-MZ'),
+(N'kde', N'Makonde_kde'),
+(N'kde-TZ', N'Makonde_Tanzania_kde-TZ'),
+(N'mg', N'Malagasy_mg'),
+(N'mg-MG', N'Malagasy_Madagascar_mg-MG'),
+(N'ms', N'Malay_ms'),
+(N'ms-BN', N'Malay_Brunei Darussalam_ms-BN'),
+(N'ms-MY', N'Malay_Malaysia_ms-MY'),
+(N'ml', N'Malayalam_ml'),
+(N'ml-IN', N'Malayalam_India_ml-IN'),
+(N'mt', N'Maltese_mt'),
+(N'mt-MT', N'Maltese_Malta_mt-MT'),
+(N'gv', N'Manx_gv'),
+(N'gv-IM', N'Manx_Isle of Man_gv-IM'),
+(N'mi', N'Maori_mi'),
+(N'mi-NZ', N'Maori_New Zealand_mi-NZ'),
+(N'arn', N'Mapudungun_arn'),
+(N'arn-CL', N'Mapudungun_Chile_arn-CL'),
+(N'mr', N'Marathi_mr'),
+(N'mr-IN', N'Marathi_India_mr-IN'),
+(N'mas', N'Masai_mas'),
+(N'mas-KE', N'Masai_Kenya_mas-KE'),
+(N'mas-TZ', N'Masai_Tanzania_mas-TZ'),
+(N'mzn-IR', N'Mazanderani_Iran_mzn-IR'),
+(N'mer', N'Meru_mer'),
+(N'mer-KE', N'Meru_Kenya_mer-KE'),
+(N'mgo', N'Meta''_mgo'),
+(N'mgo-CM', N'Meta''_Cameroon_mgo-CM'),
+(N'moh', N'Mohawk_moh'),
+(N'moh-CA', N'Mohawk_Canada_moh-CA'),
+(N'mn', N'Mongolian (Cyrillic)_mn'),
+(N'mn-Cyrl', N'Mongolian (Cyrillic)_mn-Cyrl'),
+(N'mn-MN', N'Mongolian (Cyrillic)_Mongolia_mn-MN'),
+(N'mn-Mong', N'Mongolian (Traditional Mongolian)_mn-Mong'),
+(N'mn-Mong-CN', N'Mongolian (Traditional Mongolian)_People''s Republic of China_mn-Mong-CN'),
+(N'mn-Mong-MN', N'Mongolian (Traditional Mongolian)_Mongolia_mn-Mong-MN'),
+(N'mfe', N'Morisyen_mfe'),
+(N'mfe-MU', N'Morisyen_Mauritius_mfe-MU'),
+(N'mua', N'Mundang_mua'),
+(N'mua-CM', N'Mundang_Cameroon_mua-CM'),
+(N'nqo', N'N''ko_nqo'),
+(N'nqo-GN', N'N''ko_Guinea_nqo-GN'),
+(N'naq', N'Nama_naq'),
+(N'naq-NA', N'Nama_Namibia_naq-NA'),
+(N'ne', N'Nepali_ne'),
+(N'ne-IN', N'Nepali_India_ne-IN'),
+(N'ne-NP', N'Nepali_Nepal_ne-NP'),
+(N'nnh', N'Ngiemboon_nnh'),
+(N'nnh-CM', N'Ngiemboon_Cameroon_nnh-CM'),
+(N'jgo', N'Ngomba_jgo'),
+(N'jgo-CM', N'Ngomba_Cameroon_jgo-CM'),
+(N'lrc-IQ', N'Northern Luri_Iraq_lrc-IQ'),
+(N'lrc-IR', N'Northern Luri_Iran_lrc-IR'),
+(N'nd', N'North Ndebele_nd'),
+(N'nd-ZW', N'North Ndebele_Zimbabwe_nd-ZW'),
+(N'no', N'Norwegian (Bokmal)_no'),
+(N'nb', N'Norwegian (Bokmal)_nb'),
+(N'nb-NO', N'Norwegian (Bokmal)_Norway_nb-NO'),
+(N'nn', N'Norwegian (Nynorsk)_nn'),
+(N'nn-NO', N'Norwegian (Nynorsk)_Norway_nn-NO'),
+(N'nb-SJ', N'Norwegian Bokmål_Svalbard and Jan Mayen_nb-SJ'),
+(N'nus', N'Nuer_nus'),
+(N'nus-SD', N'Nuer_Sudan_nus-SD'),
+(N'nyn', N'Nyankole_nyn'),
+(N'nyn-UG', N'Nyankole_Uganda_nyn-UG'),
+(N'oc', N'Occitan_oc'),
+(N'oc-FR', N'Occitan_France_oc-FR'),
+(N'or', N'Odia_or'),
+(N'or-IN', N'Odia_India_or-IN'),
+(N'om', N'Oromo_om'),
+(N'om-ET', N'Oromo_Ethiopia_om-ET'),
+(N'om-KE', N'Oromo_Kenya_om-KE'),
+(N'os', N'Ossetian_os'),
+(N'os-GE', N'Ossetian_Cyrillic, Georgia_os-GE'),
+(N'os-RU', N'Ossetian_Cyrillic, Russia_os-RU'),
+(N'ps', N'Pashto_ps'),
+(N'ps-AF', N'Pashto_Afghanistan_ps-AF'),
+(N'fa', N'Persian_fa'),
+(N'fa-AF', N'Persian_Afghanistan_fa-AF'),
+(N'fa-IR', N'Persian_Iran_fa-IR'),
+(N'pl', N'Polish_pl'),
+(N'pl-PL', N'Polish_Poland_pl-PL'),
+(N'pt', N'Portuguese_pt'),
+(N'pt-AO', N'Portuguese_Angola_pt-AO'),
+(N'pt-BR', N'Portuguese_Brazil_pt-BR'),
+(N'pt-CV', N'Portuguese_Cabo Verde_pt-CV'),
+(N'pt-GQ', N'Portuguese_Equatorial Guinea_pt-GQ'),
+(N'pt-GW', N'Portuguese_Guinea-Bissau_pt-GW'),
+(N'pt-LU', N'Portuguese_Luxembourg_pt-LU'),
+(N'pt-MO', N'Portuguese_Macao SAR_pt-MO'),
+(N'pt-MZ', N'Portuguese_Mozambique_pt-MZ'),
+(N'pt-PT', N'Portuguese_Portugal_pt-PT'),
+(N'pt-ST', N'Portuguese_São Tomé and Príncipe_pt-ST'),
+(N'pt-CH', N'Portuguese_Switzerland_pt-CH'),
+(N'pt-TL', N'Portuguese_Timor-Leste_pt-TL'),
+(N'prg-001', N'Prussian_prg-001'),
+(N'pa', N'Punjabi_pa'),
+(N'pa-Arab', N'Punjabi_pa-Arab'),
+(N'pa-IN', N'Punjabi_India_pa-IN'),
+(N'pa-Arab-PK', N'Punjabi_Islamic Republic of Pakistan_pa-Arab-PK'),
+(N'quz', N'Quechua_quz'),
+(N'quz-BO', N'Quechua_Bolivia_quz-BO'),
+(N'quz-EC', N'Quechua_Ecuador_quz-EC'),
+(N'quz-PE', N'Quechua_Peru_quz-PE'),
+(N'ksh', N'Ripuarian_ksh'),
+(N'ksh-DE', N'Ripuarian_Germany_ksh-DE'),
+(N'ro', N'Romanian_ro'),
+(N'ro-MD', N'Romanian_Moldova_ro-MD'),
+(N'ro-RO', N'Romanian_Romania_ro-RO'),
+(N'rm', N'Romansh_rm'),
+(N'rm-CH', N'Romansh_Switzerland_rm-CH'),
+(N'rof', N'Rombo_rof'),
+(N'rof-TZ', N'Rombo_Tanzania_rof-TZ'),
+(N'rn', N'Rundi_rn'),
+(N'rn-BI', N'Rundi_Burundi_rn-BI'),
+(N'ru', N'Russian_ru'),
+(N'ru-BY', N'Russian_Belarus_ru-BY'),
+(N'ru-KZ', N'Russian_Kazakhstan_ru-KZ'),
+(N'ru-KG', N'Russian_Kyrgyzstan_ru-KG'),
+(N'ru-MD', N'Russian_Moldova_ru-MD'),
+(N'ru-RU', N'Russian_Russia_ru-RU'),
+(N'ru-UA', N'Russian_Ukraine_ru-UA'),
+(N'rwk', N'Rwa_rwk'),
+(N'rwk-TZ', N'Rwa_Tanzania_rwk-TZ'),
+(N'ssy', N'Saho_ssy'),
+(N'ssy-ER', N'Saho_Eritrea_ssy-ER'),
+(N'sah', N'Sakha_sah'),
+(N'sah-RU', N'Sakha_Russia_sah-RU'),
+(N'saq', N'Samburu_saq'),
+(N'saq-KE', N'Samburu_Kenya_saq-KE'),
+(N'smn', N'Sami (Inari)_smn'),
+(N'smn-FI', N'Sami (Inari)_Finland_smn-FI'),
+(N'smj', N'Sami (Lule)_smj'),
+(N'smj-NO', N'Sami (Lule)_Norway_smj-NO'),
+(N'smj-SE', N'Sami (Lule)_Sweden_smj-SE'),
+(N'se', N'Sami (Northern)_se'),
+(N'se-FI', N'Sami (Northern)_Finland_se-FI'),
+(N'se-NO', N'Sami (Northern)_Norway_se-NO'),
+(N'se-SE', N'Sami (Northern)_Sweden_se-SE'),
+(N'sms', N'Sami (Skolt)_sms'),
+(N'sms-FI', N'Sami (Skolt)_Finland_sms-FI'),
+(N'sma', N'Sami (Southern)_sma'),
+(N'sma-NO', N'Sami (Southern)_Norway_sma-NO'),
+(N'sma-SE', N'Sami (Southern)_Sweden_sma-SE'),
+(N'sg', N'Sango_sg'),
+(N'sg-CF', N'Sango_Central African Republic_sg-CF'),
+(N'sbp', N'Sangu_sbp'),
+(N'sbp-TZ', N'Sangu_Tanzania_sbp-TZ'),
+(N'sa', N'Sanskrit_sa'),
+(N'sa-IN', N'Sanskrit_India_sa-IN'),
+(N'gd', N'Scottish Gaelic_gd'),
+(N'gd-GB', N'Scottish Gaelic_United Kingdom_gd-GB'),
+(N'seh', N'Sena_seh'),
+(N'seh-MZ', N'Sena_Mozambique_seh-MZ'),
+(N'sr-Cyrl', N'Serbian (Cyrillic)_sr-Cyrl'),
+(N'sr-Cyrl-BA', N'Serbian (Cyrillic)_Bosnia and Herzegovina_sr-Cyrl-BA'),
+(N'sr-Cyrl-ME', N'Serbian (Cyrillic)_Montenegro_sr-Cyrl-ME'),
+(N'sr-Cyrl-RS', N'Serbian (Cyrillic)_Serbia_sr-Cyrl-RS'),
+(N'sr-Cyrl-CS', N'Serbian (Cyrillic)_Serbia and Montenegro (Former)_sr-Cyrl-CS'),
+(N'sr-Latn', N'Serbian (Latin)_sr-Latn'),
+(N'sr', N'Serbian (Latin)_sr'),
+(N'sr-Latn-BA', N'Serbian (Latin)_Bosnia and Herzegovina_sr-Latn-BA'),
+(N'sr-Latn-ME', N'Serbian (Latin)_Montenegro_sr-Latn-ME'),
+(N'sr-Latn-RS', N'Serbian (Latin)_Serbia_sr-Latn-RS'),
+(N'sr-Latn-CS', N'Serbian (Latin)_Serbia and Montenegro (Former)_sr-Latn-CS'),
+(N'nso', N'Sesotho sa Leboa_nso'),
+(N'nso-ZA', N'Sesotho sa Leboa_South Africa_nso-ZA'),
+(N'tn', N'Setswana_tn'),
+(N'tn-BW', N'Setswana_Botswana_tn-BW'),
+(N'tn-ZA', N'Setswana_South Africa_tn-ZA'),
+(N'ksb', N'Shambala_ksb'),
+(N'ksb-TZ', N'Shambala_Tanzania_ksb-TZ'),
+(N'sn', N'Shona_sn'),
+(N'sn-Latn', N'Shona_Latin_sn-Latn'),
+(N'sn-Latn-ZW', N'Shona_Zimbabwe_sn-Latn-ZW'),
+(N'sd', N'Sindhi_sd'),
+(N'sd-Arab', N'Sindhi_sd-Arab'),
+(N'sd-Arab-PK', N'Sindhi_Islamic Republic of Pakistan_sd-Arab-PK'),
+(N'si', N'Sinhala_si'),
+(N'si-LK', N'Sinhala_Sri Lanka_si-LK'),
+(N'sk', N'Slovak_sk'),
+(N'sk-SK', N'Slovak_Slovakia_sk-SK'),
+(N'sl', N'Slovenian_sl'),
+(N'sl-SI', N'Slovenian_Slovenia_sl-SI'),
+(N'xog', N'Soga_xog'),
+(N'xog-UG', N'Soga_Uganda_xog-UG'),
+(N'so', N'Somali_so'),
+(N'so-DJ', N'Somali_Djibouti_so-DJ'),
+(N'so-ET', N'Somali_Ethiopia_so-ET'),
+(N'so-KE', N'Somali_Kenya_so-KE'),
+(N'so-SO', N'Somali_Somalia_so-SO'),
+(N'st', N'Sotho_st'),
+(N'st-ZA', N'Sotho_South Africa_st-ZA'),
+(N'nr', N'South Ndebele_nr'),
+(N'nr-ZA', N'South Ndebele_South Africa_nr-ZA'),
+(N'st-LS', N'Southern Sotho_Lesotho_st-LS'),
+(N'es', N'Spanish_es'),
+(N'es-AR', N'Spanish_Argentina_es-AR'),
+(N'es-BZ', N'Spanish_Belize_es-BZ'),
+(N'es-VE', N'Spanish_Bolivarian Republic of Venezuela_es-VE'),
+(N'es-BO', N'Spanish_Bolivia_es-BO'),
+(N'es-BR', N'Spanish_Brazil_es-BR'),
+(N'es-CL', N'Spanish_Chile_es-CL'),
+(N'es-CO', N'Spanish_Colombia_es-CO'),
+(N'es-CR', N'Spanish_Costa Rica_es-CR'),
+(N'es-CU', N'Spanish_Cuba_es-CU'),
+(N'es-DO', N'Spanish_Dominican Republic_es-DO'),
+(N'es-EC', N'Spanish_Ecuador_es-EC'),
+(N'es-SV', N'Spanish_El Salvador_es-SV'),
+(N'es-GQ', N'Spanish_Equatorial Guinea_es-GQ'),
+(N'es-GT', N'Spanish_Guatemala_es-GT'),
+(N'es-HN', N'Spanish_Honduras_es-HN'),
+(N'es-419', N'Spanish_Latin America_es-419'),
+(N'es-MX', N'Spanish_Mexico_es-MX'),
+(N'es-NI', N'Spanish_Nicaragua_es-NI'),
+(N'es-PA', N'Spanish_Panama_es-PA'),
+(N'es-PY', N'Spanish_Paraguay_es-PY'),
+(N'es-PE', N'Spanish_Peru_es-PE'),
+(N'es-PH', N'Spanish_Philippines_es-PH'),
+(N'es-PR', N'Spanish_Puerto Rico_es-PR'),
+(N'es-ES_tradnl', N'Spanish_Spain_es-ES_tradnl'),
+(N'es-ES', N'Spanish_Spain_es-ES'),
+(N'es-US', N'Spanish_United States_es-US'),
+(N'es-UY', N'Spanish_Uruguay_es-UY'),
+(N'zgh', N'Standard Moroccan Tamazight_zgh'),
+(N'zgh-Tfng-MA', N'Standard Moroccan Tamazight_Morocco_zgh-Tfng-MA'),
+(N'zgh-Tfng', N'Standard Moroccan Tamazight_Tifinagh_zgh-Tfng'),
+(N'ss', N'Swati_ss'),
+(N'ss-ZA', N'Swati_South Africa_ss-ZA'),
+(N'ss-SZ', N'Swati_Swaziland_ss-SZ'),
+(N'sv', N'Swedish_sv'),
+(N'sv-AX', N'Swedish_Åland Islands_sv-AX'),
+(N'sv-FI', N'Swedish_Finland_sv-FI'),
+(N'sv-SE', N'Swedish_Sweden_sv-SE'),
+(N'syr', N'Syriac_syr'),
+(N'syr-SY', N'Syriac_Syria_syr-SY'),
+(N'shi', N'Tachelhit_shi'),
+(N'shi-Tfng', N'Tachelhit_Tifinagh_shi-Tfng'),
+(N'shi-Tfng-MA', N'Tachelhit_Tifinagh, Morocco_shi-Tfng-MA'),
+(N'shi-Latn', N'Tachelhit (Latin)_shi-Latn'),
+(N'shi-Latn-MA', N'Tachelhit (Latin)_Morocco_shi-Latn-MA'),
+(N'dav', N'Taita_dav'),
+(N'dav-KE', N'Taita_Kenya_dav-KE'),
+(N'tg', N'Tajik (Cyrillic)_tg'),
+(N'tg-Cyrl', N'Tajik (Cyrillic)_tg-Cyrl'),
+(N'tg-Cyrl-TJ', N'Tajik (Cyrillic)_Tajikistan_tg-Cyrl-TJ'),
+(N'tzm', N'Tamazight (Latin)_tzm'),
+(N'tzm-Latn', N'Tamazight (Latin)_tzm-Latn'),
+(N'tzm-Latn-DZ', N'Tamazight (Latin)_Algeria_tzm-Latn-DZ'),
+(N'ta', N'Tamil_ta'),
+(N'ta-IN', N'Tamil_India_ta-IN'),
+(N'ta-MY', N'Tamil_Malaysia_ta-MY'),
+(N'ta-SG', N'Tamil_Singapore_ta-SG'),
+(N'ta-LK', N'Tamil_Sri Lanka_ta-LK'),
+(N'twq', N'Tasawaq_twq'),
+(N'twq-NE', N'Tasawaq_Niger_twq-NE'),
+(N'tt', N'Tatar_tt'),
+(N'tt-RU', N'Tatar_Russia_tt-RU'),
+(N'te', N'Telugu_te'),
+(N'te-IN', N'Telugu_India_te-IN'),
+(N'teo', N'Teso_teo'),
+(N'teo-KE', N'Teso_Kenya_teo-KE'),
+(N'teo-UG', N'Teso_Uganda_teo-UG'),
+(N'th', N'Thai_th'),
+(N'th-TH', N'Thai_Thailand_th-TH'),
+(N'bo', N'Tibetan_bo'),
+(N'bo-IN', N'Tibetan_India_bo-IN'),
+(N'bo-CN', N'Tibetan_People''s Republic of China_bo-CN'),
+(N'tig', N'Tigre_tig'),
+(N'tig-ER', N'Tigre_Eritrea_tig-ER'),
+(N'ti', N'Tigrinya_ti'),
+(N'ti-ER', N'Tigrinya_Eritrea_ti-ER'),
+(N'ti-ET', N'Tigrinya_Ethiopia_ti-ET'),
+(N'to', N'Tongan_to'),
+(N'to-TO', N'Tongan_Tonga_to-TO'),
+(N'ts', N'Tsonga_ts'),
+(N'ts-ZA', N'Tsonga_South Africa_ts-ZA'),
+(N'tr', N'Turkish_tr'),
+(N'tr-CY', N'Turkish_Cyprus_tr-CY'),
+(N'tr-TR', N'Turkish_Turkey_tr-TR'),
+(N'tk', N'Turkmen_tk'),
+(N'tk-TM', N'Turkmen_Turkmenistan_tk-TM'),
+(N'uk', N'Ukrainian_uk'),
+(N'uk-UA', N'Ukrainian_Ukraine_uk-UA'),
+(N'dsb or hsb', N'Upper Sorbian_dsb or hsb'),
+(N'hsb-DE', N'Upper Sorbian_Germany_hsb-DE'),
+(N'ur', N'Urdu_ur'),
+(N'ur-IN', N'Urdu_India_ur-IN'),
+(N'ur-PK', N'Urdu_Islamic Republic of Pakistan_ur-PK'),
+(N'ug', N'Uyghur_ug'),
+(N'ug-CN', N'Uyghur_People''s Republic of China_ug-CN'),
+(N'uz-Arab', N'Uzbek_Perso-Arabic_uz-Arab'),
+(N'uz-Arab-AF', N'Uzbek_Perso-Arabic, Afghanistan_uz-Arab-AF'),
+(N'uz-Cyrl', N'Uzbek (Cyrillic)_uz-Cyrl'),
+(N'uz-Cyrl-UZ', N'Uzbek (Cyrillic)_Uzbekistan_uz-Cyrl-UZ'),
+(N'uz', N'Uzbek (Latin)_uz'),
+(N'uz-Latn', N'Uzbek (Latin)_uz-Latn'),
+(N'uz-Latn-UZ', N'Uzbek (Latin)_Uzbekistan_uz-Latn-UZ'),
+(N'vai', N'Vai_vai'),
+(N'vai-Vaii', N'Vai_vai-Vaii'),
+(N'vai-Vaii-LR', N'Vai_Liberia_vai-Vaii-LR'),
+(N'vai-Latn-LR', N'Vai (Latin)_ Liberia_vai-Latn-LR'),
+(N'vai-Latn', N'Vai (Latin)_vai-Latn'),
+(N'ca-ES-valencia', N'Valencian_Spain_ca-ES-valencia'),
+(N've', N'Venda_ve'),
+(N've-ZA', N'Venda_South Africa_ve-ZA'),
+(N'vi', N'Vietnamese_vi'),
+(N'vi-VN', N'Vietnamese_Vietnam_vi-VN'),
+(N'vo', N'Volapük_vo'),
+(N'vo-001', N'Volapük_World_vo-001'),
+(N'vun', N'Vunjo_vun'),
+(N'vun-TZ', N'Vunjo_Tanzania_vun-TZ'),
+(N'wae', N'Walser_wae'),
+(N'wae-CH', N'Walser_Switzerland_wae-CH'),
+(N'cy', N'Welsh_cy'),
+(N'cy-GB', N'Welsh_United Kingdom_cy-GB'),
+(N'wal', N'Wolaytta_wal'),
+(N'wal-ET', N'Wolaytta_Ethiopia_wal-ET'),
+(N'wo', N'Wolof_wo'),
+(N'wo-SN', N'Wolof_Senegal_wo-SN'),
+(N'xh', N'Xhosa_xh'),
+(N'xh-ZA', N'Xhosa_South Africa_xh-ZA'),
+(N'yav', N'Yangben_yav'),
+(N'yav-CM', N'Yangben_Cameroon_yav-CM'),
+(N'ii', N'Yi_ii'),
+(N'ii-CN', N'Yi_People''s Republic of China_ii-CN'),
+(N'yo', N'Yoruba_yo'),
+(N'yo-BJ', N'Yoruba_Benin_yo-BJ'),
+(N'yo-NG', N'Yoruba_Nigeria_yo-NG'),
+(N'dje', N'Zarma_dje'),
+(N'dje-NE', N'Zarma_Niger_dje-NE'),
+(N'zu', N'Zulu_zu'),
+(N'zu-ZA', N'Zulu_South Africa_zu-ZA')
+-- NEW LANGUAGECODES - END --
+GO
+INSERT [dbo].[vts_tbMultiLanguageMode] ([MultiLanguageModeID], [ModeDescription]) VALUES (0, N'None')
+GO
+INSERT [dbo].[vts_tbMultiLanguageMode] ([MultiLanguageModeID], [ModeDescription]) VALUES (1, N'UserSelectionOption')
+GO
+INSERT [dbo].[vts_tbMultiLanguageMode] ([MultiLanguageModeID], [ModeDescription]) VALUES (2, N'BrowserDetectionOption')
+GO
+INSERT [dbo].[vts_tbMultiLanguageMode] ([MultiLanguageModeID], [ModeDescription]) VALUES (3, N'QueryStringLanguageOption')
+GO
+INSERT [dbo].[vts_tbMultiLanguageMode] ([MultiLanguageModeID], [ModeDescription]) VALUES (4, N'CookieLanguageOption')
+GO
+INSERT [dbo].[vts_tbMultiLanguageMode] ([MultiLanguageModeID], [ModeDescription]) VALUES (5, N'SessionLanguageOption')
 GO
 INSERT [dbo].[vts_tbNotificationMode] ([NotificationModeID], [Description]) VALUES (1, N'NoneNotificationText')
 GO
@@ -18405,44 +19414,49 @@ INSERT [dbo].[vts_tbNotificationMode] ([NotificationModeID], [Description]) VALU
 GO
 INSERT [dbo].[vts_tbNotificationMode] ([NotificationModeID], [Description]) VALUES (4, N'AnswerReportNotificationText')
 GO
-INSERT [dbo].[vts_tbProgressDisplayMode] ([ProgressDisplayModeId], [Description]) VALUES (1, N'NoProgressText')
+INSERT [dbo].[vts_tbProgressDisplayMode] ([ProgressDisplayModeID], [Description]) VALUES (1, N'NoProgressText')
 GO
-INSERT [dbo].[vts_tbProgressDisplayMode] ([ProgressDisplayModeId], [Description]) VALUES (2, N'PageNumberText')
+INSERT [dbo].[vts_tbProgressDisplayMode] ([ProgressDisplayModeID], [Description]) VALUES (2, N'PageNumberText')
 GO
-INSERT [dbo].[vts_tbProgressDisplayMode] ([ProgressDisplayModeId], [Description]) VALUES (3, N'ProgressPercentageText')
+INSERT [dbo].[vts_tbProgressDisplayMode] ([ProgressDisplayModeID], [Description]) VALUES (3, N'ProgressPercentageText')
 GO
-INSERT [dbo].[vts_tbQuestionSelectionMode] ([QuestionSelectionModeID], [Description], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (1, N'RadioButtonSelection', N'Votations.NSurvey.WebControls.UI.RadioButtonQuestion', N'Votations.NSurvey.WebControls', 7)
+INSERT [dbo].[vts_tbQuestionSelectionMode] ([QuestionSelectionModeID], [Description], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (1, N'RadioButtonSelection', N'Votations.NSurvey.WebControls.UI.RadioButtonQuestion', N'SurveyProject.WebControls', 7)
 GO
-INSERT [dbo].[vts_tbQuestionSelectionMode] ([QuestionSelectionModeID], [Description], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (2, N'CheckBoxSelection', N'Votations.NSurvey.WebControls.UI.CheckBoxQuestion', N'Votations.NSurvey.WebControls', 23)
+INSERT [dbo].[vts_tbQuestionSelectionMode] ([QuestionSelectionModeID], [Description], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (2, N'CheckBoxSelection', N'Votations.NSurvey.WebControls.UI.CheckBoxQuestion', N'SurveyProject.WebControls', 23)
 GO
-INSERT [dbo].[vts_tbQuestionSelectionMode] ([QuestionSelectionModeID], [Description], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (3, N'DropDownListSelection', N'Votations.NSurvey.WebControls.UI.DropDownQuestion', N'Votations.NSurvey.WebControls', 7)
+INSERT [dbo].[vts_tbQuestionSelectionMode] ([QuestionSelectionModeID], [Description], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (3, N'DropDownListSelection', N'Votations.NSurvey.WebControls.UI.DropDownQuestion', N'SurveyProject.WebControls', 7)
 GO
-INSERT [dbo].[vts_tbQuestionSelectionMode] ([QuestionSelectionModeID], [Description], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (4, N'MatrixSingleSelection', N'Votations.NSurvey.WebControls.UI.MatrixQuestion', N'Votations.NSurvey.WebControls', 14)
+INSERT [dbo].[vts_tbQuestionSelectionMode] ([QuestionSelectionModeID], [Description], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (4, N'MatrixSingleSelection', N'Votations.NSurvey.WebControls.UI.MatrixQuestion', N'SurveyProject.WebControls', 14)
 GO
-INSERT [dbo].[vts_tbQuestionSelectionMode] ([QuestionSelectionModeID], [Description], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (5, N'StaticTextSelection', N'Votations.NSurvey.WebControls.UI.StaticQuestion', N'Votations.NSurvey.WebControls', 3)
+INSERT [dbo].[vts_tbQuestionSelectionMode] ([QuestionSelectionModeID], [Description], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (5, N'StaticTextSelection', N'Votations.NSurvey.WebControls.UI.StaticQuestion', N'SurveyProject.WebControls', 3)
 GO
-INSERT [dbo].[vts_tbQuestionSelectionMode] ([QuestionSelectionModeID], [Description], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (6, N'MatrixMultipleSelection', N'Votations.NSurvey.WebControls.UI.CheckBoxMatrixQuestion', N'Votations.NSurvey.WebControls', 30)
+INSERT [dbo].[vts_tbQuestionSelectionMode] ([QuestionSelectionModeID], [Description], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (6, N'MatrixMultipleSelection', N'Votations.NSurvey.WebControls.UI.CheckBoxMatrixQuestion', N'SurveyProject.WebControls', 30)
 GO
 SET IDENTITY_INSERT [dbo].[vts_tbRegularExpression] ON 
-
 GO
-INSERT [dbo].[vts_tbRegularExpression] ([RegularExpressionId], [Description], [RegExpression], [RegExMessage], [BuiltIn]) VALUES (1, N'UnsignedIntegerRegEx', N'^\d*$', N'InvalidIntegerRegExMessage', 1)
+INSERT [dbo].[vts_tbRegularExpression] ([RegularExpressionID], [Description], [RegExpression], [RegExMessage], [BuiltIn]) VALUES (1, N'UnsignedIntegerRegEx', N'^\d*$', N'InvalidIntegerRegExMessage', 1)
 GO
-INSERT [dbo].[vts_tbRegularExpression] ([RegularExpressionId], [Description], [RegExpression], [RegExMessage], [BuiltIn]) VALUES (2, N'EmailRegEx', N'^((?>[a-zA-Z\d!#$%&''*+\-/=?^_`{|}~]+\x20*|"((?=[\x01-\x7f])[^"\\]|\\[\x01-\x7f])*"\x20*)*(?<angle><))?((?!\.)(?>\.?[a-zA-Z\d!#$%&''*+\-/=?^_`{|}~]+)+|"((?=[\x01-\x7f])[^"\\]|\\[\x01-\x7f])*")@(((?!-)[a-zA-Z\d\-]+(?<!-)\.)+[a-zA-Z]{2,}|\[(((?(?<!\[)\.)(25[0-5]|2[0-4]\d|[01]?\d?\d)){4}|[a-zA-Z\d\-]*[a-zA-Z\d]:((?=[\x01-\x7f])[^\\\[\]]|\\[\x01-\x7f])+)\])(?(angle)>)$', N'InvalidEmailRegExMessage', 1)
+INSERT [dbo].[vts_tbRegularExpression] ([RegularExpressionID], [Description], [RegExpression], [RegExMessage], [BuiltIn]) VALUES (2, N'EmailRegEx', N'^((?>[a-zA-Z\d!#$%&''*+\-/=?^_`{|}~]+\x20*|"((?=[\x01-\x7f])[^"\\]|\\[\x01-\x7f])*"\x20*)*(?<angle><))?((?!\.)(?>\.?[a-zA-Z\d!#$%&''*+\-/=?^_`{|}~]+)+|"((?=[\x01-\x7f])[^"\\]|\\[\x01-\x7f])*")@(((?!-)[a-zA-Z\d\-]+(?<!-)\.)+[a-zA-Z]{2,}|\[(((?(?<!\[)\.)(25[0-5]|2[0-4]\d|[01]?\d?\d)){4}|[a-zA-Z\d\-]*[a-zA-Z\d]:((?=[\x01-\x7f])[^\\\[\]]|\\[\x01-\x7f])+)\])(?(angle)>)$', N'InvalidEmailRegExMessage', 1)
 GO
-INSERT [dbo].[vts_tbRegularExpression] ([RegularExpressionId], [Description], [RegExpression], [RegExMessage], [BuiltIn]) VALUES (3, N'EuroDateRegEx', N'^(((0[1-9]|[12]\d|3[01])\/(0[13578]|1[02])\/((1[6-9]|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)\/(0[13456789]|1[012])\/((1[6-9]|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])\/02\/((1[6-9]|[2-9]\d)\d{2}))|(29\/02\/((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$', N'InvalidEuroDateRegExMessage', 1)
+INSERT [dbo].[vts_tbRegularExpression] ([RegularExpressionID], [Description], [RegExpression], [RegExMessage], [BuiltIn]) VALUES (3, N'EuroDateRegEx', N'^(((0[1-9]|[12]\d|3[01])\/(0[13578]|1[02])\/((1[6-9]|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)\/(0[13456789]|1[012])\/((1[6-9]|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])\/02\/((1[6-9]|[2-9]\d)\d{2}))|(29\/02\/((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$', N'InvalidEuroDateRegExMessage', 1)
 GO
-INSERT [dbo].[vts_tbRegularExpression] ([RegularExpressionId], [Description], [RegExpression], [RegExMessage], [BuiltIn]) VALUES (4, N'USDateRegEx', N'^(?:(?:(?:0?[13578]|1[02])(\/|-|\.)31)\1|(?:(?:0?[1,3-9]|1[0-2])(\/|-|\.)(?:29|30)\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:0?2(\/|-|\.)29\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:(?:0?[1-9])|(?:1[0-2]))(\/|-|\.)(?:0?[1-9]|1\d|2[0-8])\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$', N'InvalidUSDateRegExMessage', 1)
+INSERT [dbo].[vts_tbRegularExpression] ([RegularExpressionID], [Description], [RegExpression], [RegExMessage], [BuiltIn]) VALUES (4, N'USDateRegEx', N'^(?:(?:(?:0?[13578]|1[02])(\/|-|\.)31)\1|(?:(?:0?[1,3-9]|1[0-2])(\/|-|\.)(?:29|30)\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:0?2(\/|-|\.)29\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:(?:0?[1-9])|(?:1[0-2]))(\/|-|\.)(?:0?[1-9]|1\d|2[0-8])\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$', N'InvalidUSDateRegExMessage', 1)
 GO
-INSERT [dbo].[vts_tbRegularExpression] ([RegularExpressionId], [Description], [RegExpression], [RegExMessage], [BuiltIn]) VALUES (5, N'InternetWebURLRegEx', N'http://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?', N'InvalidInternetUrlRegExMessage', 1)
+INSERT [dbo].[vts_tbRegularExpression] ([RegularExpressionID], [Description], [RegExpression], [RegExMessage], [BuiltIn]) VALUES (5, N'InternetWebURLRegEx', N'http://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?', N'InvalidInternetUrlRegExMessage', 1)
+GO
+INSERT [dbo].[vts_tbRegularExpression] ([RegularExpressionId], [Description], [RegExpression], [RegExMessage], [BuiltIn]) VALUES (6, N'Hours', N'^([0-9]|[1][0-9]|[2][0-4])$', N'0 - 24 hours only', 1)
+GO
+INSERT [dbo].[vts_tbRegularExpression] ([RegularExpressionId], [Description], [RegExpression], [RegExMessage], [BuiltIn]) VALUES (7, N'Minutes', N'^([0-9]|[1-4][0-9]|[5][0-9])$', N'0 - 59 minutes allowed', 1)
+GO
+INSERT [dbo].[vts_tbRegularExpression] ([RegularExpressionId], [Description], [RegExpression], [RegExMessage], [BuiltIn]) VALUES (8, N'WeekDays', N'^([0-7])$', N'0 - 7 days allowed', 1)
 GO
 SET IDENTITY_INSERT [dbo].[vts_tbRegularExpression] OFF
 GO
-INSERT [dbo].[vts_tbRepeatableSection] ([RepeatableSectionModeId], [ModeDescription]) VALUES (0, N'NoRepeatOption')
+INSERT [dbo].[vts_tbRepeatableSection] ([RepeatableSectionModeID], [ModeDescription]) VALUES (0, N'NoRepeatOption')
 GO
-INSERT [dbo].[vts_tbRepeatableSection] ([RepeatableSectionModeId], [ModeDescription]) VALUES (1, N'FullRepeatOption')
+INSERT [dbo].[vts_tbRepeatableSection] ([RepeatableSectionModeID], [ModeDescription]) VALUES (1, N'FullRepeatOption')
 GO
-INSERT [dbo].[vts_tbRepeatableSection] ([RepeatableSectionModeId], [ModeDescription]) VALUES (2, N'GridRepeatOption')
+INSERT [dbo].[vts_tbRepeatableSection] ([RepeatableSectionModeID], [ModeDescription]) VALUES (2, N'GridRepeatOption')
 GO
 INSERT [dbo].[vts_tbResumeMode] ([ResumeModeID], [Description]) VALUES (1, N'ResumeNotAllowedText')
 GO
@@ -18451,182 +19465,207 @@ GO
 INSERT [dbo].[vts_tbResumeMode] ([ResumeModeID], [Description]) VALUES (3, N'ManualResumeText')
 GO
 SET IDENTITY_INSERT [dbo].[vts_tbRole] ON 
-
 GO
-INSERT [dbo].[vts_tbRole] ([RoleId], [RoleName]) VALUES (1, N'Report Viewers')
+INSERT [dbo].[vts_tbRole] ([RoleID], [RoleName]) VALUES (1, N'Report Viewer')
 GO
-INSERT [dbo].[vts_tbRole] ([RoleId], [RoleName]) VALUES (6, N'Survey Respondents')
+INSERT [dbo].[vts_tbRole] ([RoleID], [RoleName]) VALUES (2, N'Survey Respondent')
 GO
-INSERT [dbo].[vts_tbRole] ([RoleId], [RoleName]) VALUES (7, N'Survey Creator')
+INSERT [dbo].[vts_tbRole] ([RoleID], [RoleName]) VALUES (3, N'Survey Creator')
+GO
+INSERT [dbo].[vts_tbRole] ([RoleID], [RoleName]) VALUES (4, N'Registered User')
 GO
 SET IDENTITY_INSERT [dbo].[vts_tbRole] OFF
 GO
-INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (1, 14)
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (1, 14)
 GO
-INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (1, 16)
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (1, 16)
 GO
-INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (1, 19)
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (1, 19)
 GO
-INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (1, 40)
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (1, 40)
 GO
-INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (6, 30)
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (2, 30)
 GO
-INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 1)
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (3, 1)
 GO
-INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 2)
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (3, 2)
 GO
-INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 3)
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (3, 3)
 GO
-INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 4)
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (3, 4)
 GO
-INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 5)
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (3, 5)
 GO
-INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 6)
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (3, 6)
 GO
-INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 7)
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (3, 7)
 GO
-INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 8)
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (3, 8)
 GO
-INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 12)
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (3, 12)
 GO
-INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 22)
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (3, 22)
 GO
-INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 25)
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (3, 25)
 GO
-INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 29)
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (3, 29)
 GO
-INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 34)
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (3, 34)
 GO
-INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 35)
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (3, 35)
 GO
-INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 38)
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (3, 38)
 GO
-INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 39)
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (3, 39)
 GO
-INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleId], [SecurityRightId]) VALUES (7, 40)
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (3, 40)
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (1, N'CreateSurveyRight')
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (4, 16)
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (2, N'DeleteSurveyRight')
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (4, 17)
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (3, N'AccessSurveySettingsRight')
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (4, 23)
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (4, N'ExportSurveyXmlRight')
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (4, 30)
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (5, N'ApplySurveySettingsRight')
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (4, 40)
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (6, N'CloneSurveyRight')
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (4, 41)
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (7, N'AccessPrivacySettingsRight')
+INSERT [dbo].[vts_tbRoleSecurityRight] ([RoleID], [SecurityRightID]) VALUES (4, 43)
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (8, N'AccessSecuritySettingsRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (1, N'CreateSurveyRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (9, N'AccessStatsRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (2, N'DeleteSurveyRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (10, N'ResetVotesRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (3, N'AccessSurveySettingsRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (11, N'DeleteUnvalidateEntriesRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (4, N'ExportSurveyXmlRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (12, N'AccessFormBuilderRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (5, N'ApplySurveySettingsRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (13, N'AccessAnswerTypeEditorRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (6, N'CloneSurveyRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (14, N'AccessReportsRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (7, N'AccessPrivacySettingsRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (15, N'CreateResultsFilterRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (8, N'AccessSecuritySettingsRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (16, N'AccessFieldEntriesRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (9, N'AccessStatsRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (17, N'EditVoterEntriesRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (10, N'ResetVotesRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (18, N'DeleteVoterEntriesRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (11, N'DeleteUnvalidateEntriesRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (19, N'AccessCrossTabRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (12, N'AccessFormBuilderRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (20, N'AccessExportRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (13, N'AccessAnswerTypeEditorRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (21, N'AccessMailingRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (14, N'AccessReportsRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (22, N'AccessASPNetCodeRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (15, N'CreateResultsFilterRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (23, N'AccessUserManagerRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (16, N'AccessFieldEntriesRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (24, N'AccessLibraryRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (17, N'EditVoterEntriesRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (25, N'CopyQuestionFromLibraryRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (18, N'DeleteVoterEntriesRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (26, N'CopyQuestionFromAllSurveyRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (19, N'AccessCrossTabRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (27, N'ManageLibraryRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (20, N'AccessExportRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (28, N'SqlAnswerTypesEditionRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (21, N'AccessMailingRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (29, N'AllowXmlImportRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (22, N'AccessASPNetCodeRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (30, N'TakeSurveyRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (23, N'AccessUserManagerRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (31, N'AccessRegExEditorRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (24, N'AccessLibraryRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (32, N'AccessFileManagerRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (25, N'CopyQuestionFromLibraryRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (33, N'ExportFilesRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (26, N'CopyQuestionFromAllSurveyRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (34, N'AccessMultiLanguagesRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (27, N'ManageLibraryRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (35, N'AccessHelpFiles')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (28, N'SqlAnswerTypesEditionRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (36, N'AccessQuestionGroupRight')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (29, N'AllowXmlImportRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (37, N'DataImport')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (30, N'TakeSurveyRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (38, N'TokenSecurity')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (31, N'AccessRegExEditorRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (39, N'SurveyLayout')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (32, N'AccessFileManagerRight')
 GO
-INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightId], [Description]) VALUES (40, N'AccessSurveyList')
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (33, N'ExportFilesRight')
+GO
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (34, N'AccessMultiLanguagesRight')
+GO
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (35, N'AccessHelpFiles')
+GO
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (36, N'AccessQuestionGroupRight')
+GO
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (37, N'DataImport')
+GO
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (38, N'TokenSecurity')
+GO
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (39, N'SurveyLayout')
+GO
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (40, N'AccessSurveyList')
+GO
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (41, N'AccessUserResponses')
+GO
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (42, N'AccessSsrsReports')
+GO
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (43, N'AccessUserAccount')
+GO
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (44, N'AccessRolesManager')
+GO
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (45, N'AccessImportUsers')
+GO
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (46, N'AllowQuestionXmlImport')
+GO
+INSERT [dbo].[vts_tbSecurityRight] ([SecurityRightID], [Description]) VALUES (47, N'IpFilterSecurityRight')
+GO
+
+INSERT [dbo].[vts_tbUnAuthentifiedUserAction] ([UnAuthentifiedUserActionID], [Description]) VALUES (0, N'SelectSecurityAction')
 GO
 INSERT [dbo].[vts_tbUnAuthentifiedUserAction] ([UnAuthentifiedUserActionID], [Description]) VALUES (1, N'ShowThankYouText')
 GO
 INSERT [dbo].[vts_tbUnAuthentifiedUserAction] ([UnAuthentifiedUserActionID], [Description]) VALUES (2, N'HideSurveyText')
 GO
-SET IDENTITY_INSERT [dbo].[vts_tbUser] ON 
-
-GO
-INSERT [dbo].[vts_tbUser] ([UserId], [UserName], [Password], [FirstName], [LastName], [Email], [CreationDate], [LastLogin], [PasswordSalt]) VALUES (1, N'admin', N'D42F0C00B41782AABA9CDEE44D6B41BCF05F8693', N'Survey Project', N'Administrator', N'', CAST(0x00009EC80144F992 AS DateTime), CAST(0x0000A17F0137E615 AS DateTime), N'imqxFRQ=')
-GO
-SET IDENTITY_INSERT [dbo].[vts_tbUser] OFF
-GO
-INSERT [dbo].[vts_tbUserSetting] ([UserId], [IsAdmin], [GlobalSurveyAccess]) VALUES (1, 1, 1)
+INSERT [dbo].[vts_tbUnAuthentifiedUserAction] ([UnAuthentifiedUserActionID], [Description]) VALUES (3, N'SecurityGeneralWarningText')
 GO
 
 SET IDENTITY_INSERT [dbo].[vts_tbWebSecurityAddIn] ON 
 
 GO
-INSERT [dbo].[vts_tbWebSecurityAddIn] ([WebSecurityAddInId], [Description], [BuiltIn], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (1, N'PasswordProtection', 1, N'Votations.NSurvey.Security.PasswordWebSecurityAddIn', N'Votations.NSurvey.WebControls', 0)
+INSERT [dbo].[vts_tbWebSecurityAddIn] ([WebSecurityAddInID], [Description], [BuiltIn], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (1, N'PasswordProtection', 1, N'Votations.NSurvey.Security.PasswordWebSecurityAddIn', N'SurveyProject.WebControls', 0)
 GO
-INSERT [dbo].[vts_tbWebSecurityAddIn] ([WebSecurityAddInId], [Description], [BuiltIn], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (2, N'IPProtection', 1, N'Votations.NSurvey.Security.IPWebSecurityAddIn', N'Votations.NSurvey.WebControls', 0)
+INSERT [dbo].[vts_tbWebSecurityAddIn] ([WebSecurityAddInID], [Description], [BuiltIn], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (2, N'IPProtection', 1, N'Votations.NSurvey.Security.IPWebSecurityAddIn', N'SurveyProject.WebControls', 0)
 GO
-INSERT [dbo].[vts_tbWebSecurityAddIn] ([WebSecurityAddInId], [Description], [BuiltIn], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (3, N'CookieProtection', 1, N'Votations.NSurvey.Security.CookieWebSecurityAddIn', N'Votations.NSurvey.WebControls', 0)
+INSERT [dbo].[vts_tbWebSecurityAddIn] ([WebSecurityAddInID], [Description], [BuiltIn], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (3, N'CookieProtection', 1, N'Votations.NSurvey.Security.CookieWebSecurityAddIn', N'SurveyProject.WebControls', 0)
 GO
-INSERT [dbo].[vts_tbWebSecurityAddIn] ([WebSecurityAddInId], [Description], [BuiltIn], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (4, N'EmailCodeProtection', 1, N'Votations.NSurvey.Security.EmailWebSecurityAddIn', N'Votations.NSurvey.WebControls', 0)
+INSERT [dbo].[vts_tbWebSecurityAddIn] ([WebSecurityAddInID], [Description], [BuiltIn], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (4, N'EmailCodeProtection', 1, N'Votations.NSurvey.Security.EmailWebSecurityAddIn', N'SurveyProject.WebControls', 0)
 GO
-INSERT [dbo].[vts_tbWebSecurityAddIn] ([WebSecurityAddInId], [Description], [BuiltIn], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (5, N'ASPNETSecurityContextProtection', 1, N'Votations.NSurvey.Security.ASPNetContextSecurityAddIn', N'Votations.NSurvey.WebControls', 0)
+INSERT [dbo].[vts_tbWebSecurityAddIn] ([WebSecurityAddInID], [Description], [BuiltIn], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (5, N'ASPNETSecurityContextProtection', 1, N'Votations.NSurvey.Security.ASPNetContextSecurityAddIn', N'SurveyProject.WebControls', 0)
 GO
-INSERT [dbo].[vts_tbWebSecurityAddIn] ([WebSecurityAddInId], [Description], [BuiltIn], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (6, N'NSurveySecurityContextProtection', 1, N'Votations.NSurvey.Security.NSurveyContextSecurityAddIn', N'Votations.NSurvey.WebControls', 0)
+INSERT [dbo].[vts_tbWebSecurityAddIn] ([WebSecurityAddInID], [Description], [BuiltIn], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (6, N'NSurveySecurityContextProtection', 1, N'Votations.NSurvey.Security.NSurveyContextSecurityAddIn', N'SurveyProject.WebControls', 0)
 GO
-INSERT [dbo].[vts_tbWebSecurityAddIn] ([WebSecurityAddInId], [Description], [BuiltIn], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (7, N'EntryQuotaProtection', 1, N'Votations.NSurvey.Security.EntryQuotaSecurityAddIn', N'Votations.NSurvey.WebControls', 0)
+INSERT [dbo].[vts_tbWebSecurityAddIn] ([WebSecurityAddInID], [Description], [BuiltIn], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (7, N'EntryQuotaProtection', 1, N'Votations.NSurvey.Security.EntryQuotaSecurityAddIn', N'SurveyProject.WebControls', 0)
 GO
-INSERT [dbo].[vts_tbWebSecurityAddIn] ([WebSecurityAddInId], [Description], [BuiltIn], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (8, N'Token Protection', 1, N'Votations.NSurvey.Security.TokenSecurityAddIn', N'Votations.NSurvey.WebControls', 0)
+INSERT [dbo].[vts_tbWebSecurityAddIn] ([WebSecurityAddInID], [Description], [BuiltIn], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (8, N'Token Protection', 1, N'Votations.NSurvey.Security.TokenSecurityAddIn', N'SurveyProject.WebControls', 0)
 GO
-INSERT [dbo].[vts_tbWebSecurityAddIn] ([WebSecurityAddInId], [Description], [BuiltIn], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (9, N'IP Filter', 1, N'Votations.NSurvey.Security.IPRangeSecurityAddIn', N'Votations.NSurvey.WebControls', 0)
+INSERT [dbo].[vts_tbWebSecurityAddIn] ([WebSecurityAddInID], [Description], [BuiltIn], [TypeNameSpace], [TypeAssembly], [TypeMode]) VALUES (9, N'IP Filter', 1, N'Votations.NSurvey.Security.IPRangeSecurityAddIn', N'SurveyProject.WebControls', 0)
 GO
 SET IDENTITY_INSERT [dbo].[vts_tbWebSecurityAddIn] OFF
 GO
 /****** Object:  Index [PK_vts_tbAnswer]    Script Date: 19-8-2014 22:01:40 ******/
 ALTER TABLE [dbo].[vts_tbAnswer] ADD  CONSTRAINT [PK_vts_tbAnswer] PRIMARY KEY NONCLUSTERED 
 (
-	[AnswerId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
+	[AnswerID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF)
 GO
 /****** Object:  Index [IX_Answer]    Script Date: 19-8-2014 22:01:40 ******/
 CREATE NONCLUSTERED INDEX [IX_Answer] ON [dbo].[vts_tbAnswer]
@@ -18634,7 +19673,7 @@ CREATE NONCLUSTERED INDEX [IX_Answer] ON [dbo].[vts_tbAnswer]
 	[DisplayOrder] ASC,
 	[ScorePoint] ASC
 )
-INCLUDE ( 	[AnswerId]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
+INCLUDE ( 	[AnswerID]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF)
 GO
 SET ANSI_PADDING ON
 
@@ -18646,28 +19685,28 @@ CREATE NONCLUSTERED INDEX [IX_AnswerAlias] ON [dbo].[vts_tbAnswer]
 	[DisplayOrder] ASC,
 	[ScorePoint] ASC
 )
-INCLUDE ( 	[AnswerId]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
+INCLUDE ( 	[AnswerID]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF)
 GO
 /****** Object:  Index [IX_QuestionID]    Script Date: 19-8-2014 22:01:40 ******/
 CREATE NONCLUSTERED INDEX [IX_QuestionID] ON [dbo].[vts_tbAnswer]
 (
-	[QuestionId] ASC,
+	[QuestionID] ASC,
 	[DisplayOrder] ASC,
 	[ScorePoint] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF)
 GO
 /****** Object:  Index [IX_Scorepoint]    Script Date: 19-8-2014 22:01:40 ******/
 CREATE NONCLUSTERED INDEX [IX_Scorepoint] ON [dbo].[vts_tbAnswer]
 (
 	[ScorePoint] ASC
 )
-INCLUDE ( 	[AnswerId]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
+INCLUDE ( 	[AnswerID]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF)
 GO
 /****** Object:  Index [PK_vts_tbQuestion]    Script Date: 19-8-2014 22:01:40 ******/
 ALTER TABLE [dbo].[vts_tbQuestion] ADD  CONSTRAINT [PK_vts_tbQuestion] PRIMARY KEY NONCLUSTERED 
 (
-	[QuestionId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
+	[QuestionID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF)
 GO
 SET ANSI_PADDING ON
 
@@ -18676,9 +19715,9 @@ GO
 CREATE NONCLUSTERED INDEX [IX_DisplayOrder] ON [dbo].[vts_tbQuestion]
 (
 	[DisplayOrder] ASC,
-	[QuestionIdText] ASC
+	[QuestionIDText] ASC
 )
-INCLUDE ( 	[QuestionId]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
+INCLUDE ( 	[QuestionID]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF)
 GO
 SET ANSI_PADDING ON
 
@@ -18686,11 +19725,11 @@ GO
 /****** Object:  Index [IX_Question]    Script Date: 19-8-2014 22:01:40 ******/
 CREATE NONCLUSTERED INDEX [IX_Question] ON [dbo].[vts_tbQuestion]
 (
-	[QuestionIdText] ASC,
+	[QuestionIDText] ASC,
 	[QuestionGroupID] ASC,
 	[DisplayOrder] ASC
 )
-INCLUDE ( 	[QuestionId]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
+INCLUDE ( 	[QuestionID]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF)
 GO
 SET ANSI_PADDING ON
 
@@ -18699,16 +19738,16 @@ GO
 CREATE NONCLUSTERED INDEX [IX_QuestionAlias] ON [dbo].[vts_tbQuestion]
 (
 	[Alias] ASC,
-	[QuestionIdText] ASC
+	[QuestionIDText] ASC
 )
-INCLUDE ( 	[QuestionId]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
+INCLUDE ( 	[QuestionID]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF)
 GO
 /****** Object:  Index [IX_QuestionGroupID]    Script Date: 19-8-2014 22:01:40 ******/
 CREATE NONCLUSTERED INDEX [IX_QuestionGroupID] ON [dbo].[vts_tbQuestion]
 (
 	[QuestionGroupID] ASC
 )
-INCLUDE ( 	[QuestionId]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
+INCLUDE ( 	[QuestionID]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF)
 GO
 SET ANSI_PADDING ON
 
@@ -18718,18 +19757,18 @@ CREATE NONCLUSTERED INDEX [IX_RatingEnabled] ON [dbo].[vts_tbQuestion]
 (
 	[RatingEnabled] ASC
 )
-INCLUDE ( 	[QuestionId],
+INCLUDE ( 	[QuestionID],
 	[QuestionText],
 	[DisplayOrder],
-	[QuestionIdText],
+	[QuestionIDText],
 	[Alias],
-	[QuestionGroupID]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+	[QuestionGroupID]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF)
 GO
-/****** Object:  Index [IX_SurveyId]    Script Date: 19-8-2014 22:01:40 ******/
-CREATE NONCLUSTERED INDEX [IX_SurveyId] ON [dbo].[vts_tbQuestion]
+/****** Object:  Index [IX_SurveyID]    Script Date: 19-8-2014 22:01:40 ******/
+CREATE NONCLUSTERED INDEX [IX_SurveyID] ON [dbo].[vts_tbQuestion]
 (
-	[SurveyId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
+	[SurveyID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF)
 GO
 SET ANSI_PADDING ON
 
@@ -18740,27 +19779,27 @@ CREATE NONCLUSTERED INDEX [IX_GroupName] ON [dbo].[vts_tbQuestionGroups]
 	[GroupName] ASC,
 	[ParentGroupID] ASC
 )
-INCLUDE ( 	[ID]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
+INCLUDE ( 	[ID]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF)
 GO
 /****** Object:  Index [IX_ParentGroupID]    Script Date: 19-8-2014 22:01:40 ******/
 CREATE NONCLUSTERED INDEX [IX_ParentGroupID] ON [dbo].[vts_tbQuestionGroups]
 (
 	[ParentGroupID] ASC
 )
-INCLUDE ( 	[ID]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
+INCLUDE ( 	[ID]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF)
 GO
 /****** Object:  Index [IX_QuestionGroups]    Script Date: 19-8-2014 22:01:40 ******/
 CREATE NONCLUSTERED INDEX [IX_QuestionGroups] ON [dbo].[vts_tbQuestionGroups]
 (
 	[DisplayOrder] ASC
 )
-INCLUDE ( 	[ID]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
+INCLUDE ( 	[ID]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF)
 GO
 /****** Object:  Index [PK_vts_tbSurvey]    Script Date: 19-8-2014 22:01:40 ******/
 ALTER TABLE [dbo].[vts_tbSurvey] ADD  CONSTRAINT [PK_vts_tbSurvey] PRIMARY KEY NONCLUSTERED 
 (
 	[SurveyID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF)
 GO
 /****** Object:  Index [IDX_Voter]    Script Date: 19-8-2014 22:01:40 ******/
 CREATE NONCLUSTERED INDEX [IDX_Voter] ON [dbo].[vts_tbVoter]
@@ -18768,7 +19807,7 @@ CREATE NONCLUSTERED INDEX [IDX_Voter] ON [dbo].[vts_tbVoter]
 	[Validated] ASC,
 	[SurveyID] ASC
 )
-INCLUDE ( 	[VoterID]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
+INCLUDE ( 	[VoterID]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF)
 GO
 /****** Object:  Index [IX_SurveyID]    Script Date: 19-8-2014 22:01:40 ******/
 CREATE NONCLUSTERED INDEX [IX_SurveyID] ON [dbo].[vts_tbVoter]
@@ -18776,16 +19815,16 @@ CREATE NONCLUSTERED INDEX [IX_SurveyID] ON [dbo].[vts_tbVoter]
 	[SurveyID] ASC
 )
 INCLUDE ( 	[VoterID],
-	[Validated]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+	[Validated]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF)
 GO
 /****** Object:  Index [IX_Answer]    Script Date: 19-8-2014 22:01:40 ******/
 CREATE NONCLUSTERED INDEX [IX_Answer] ON [dbo].[vts_tbVoterAnswers]
 (
 	[AnswerID] ASC
 )
-INCLUDE ( 	[VoterID]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
+INCLUDE ( 	[VoterID]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF)
 GO
-ALTER TABLE [dbo].[vts_tbAnswer] ADD  CONSTRAINT [DF_vts_tbAnswer_iAnswerTypeId]  DEFAULT ((1)) FOR [AnswerTypeId]
+ALTER TABLE [dbo].[vts_tbAnswer] ADD  CONSTRAINT [DF_vts_tbAnswer_iAnswerTypeID]  DEFAULT ((1)) FOR [AnswerTypeID]
 GO
 ALTER TABLE [dbo].[vts_tbAnswer] ADD  CONSTRAINT [DF_vts_tbAnswer_RatingPart]  DEFAULT ((0)) FOR [RatePart]
 GO
@@ -18823,7 +19862,7 @@ ALTER TABLE [dbo].[vts_tbLibraryLanguage] ADD  CONSTRAINT [DF_vts_tbLibraryLangu
 GO
 ALTER TABLE [dbo].[vts_tbPageOption] ADD  CONSTRAINT [DF_vts_tbPageOptions_RandomizeQuestions]  DEFAULT ((0)) FOR [RandomizeQuestions]
 GO
-ALTER TABLE [dbo].[vts_tbQuestion] ADD  CONSTRAINT [DF_vts_tbQuestion_iQuestionLayoutId]  DEFAULT ((0)) FOR [SelectionModeId]
+ALTER TABLE [dbo].[vts_tbQuestion] ADD  CONSTRAINT [DF_vts_tbQuestion_iQuestionLayoutID]  DEFAULT ((0)) FOR [SelectionModeID]
 GO
 ALTER TABLE [dbo].[vts_tbQuestion] ADD  CONSTRAINT [DF_vts_tbQuestion_ColumnsNumber]  DEFAULT ((0)) FOR [ColumnsNumber]
 GO
@@ -18839,13 +19878,13 @@ ALTER TABLE [dbo].[vts_tbQuestion] ADD  CONSTRAINT [DF_vts_tbQuestion_PageNumber
 GO
 ALTER TABLE [dbo].[vts_tbQuestion] ADD  CONSTRAINT [DF_vts_tbQuestion_ShowHelpText]  DEFAULT ((0)) FOR [ShowHelpText]
 GO
-ALTER TABLE [dbo].[vts_tbQuestionSectionOption] ADD  CONSTRAINT [DF_vts_tbQuestionSectionOption_RepeatableSectionModeId]  DEFAULT ((0)) FOR [RepeatableSectionModeId]
+ALTER TABLE [dbo].[vts_tbQuestionSectionOption] ADD  CONSTRAINT [DF_vts_tbQuestionSectionOption_RepeatableSectionModeID]  DEFAULT ((0)) FOR [RepeatableSectionModeID]
 GO
 ALTER TABLE [dbo].[vts_tbQuestionSectionOption] ADD  CONSTRAINT [DF_vts_tbQuestionSectionOption_MaxSections]  DEFAULT ((0)) FOR [MaxSections]
 GO
 ALTER TABLE [dbo].[vts_tbRegularExpression] ADD  CONSTRAINT [DF_vts_tbRegularExpression_BuiltIn]  DEFAULT ((0)) FOR [BuiltIn]
 GO
-ALTER TABLE [dbo].[vts_tbSurvey] ADD  CONSTRAINT [DF_vts_tbSurvey_ProgressDisplayModeId]  DEFAULT ((2)) FOR [ProgressDisplayModeId]
+ALTER TABLE [dbo].[vts_tbSurvey] ADD  CONSTRAINT [DF_vts_tbSurvey_ProgressDisplayModeID]  DEFAULT ((2)) FOR [ProgressDisplayModeID]
 GO
 ALTER TABLE [dbo].[vts_tbSurvey] ADD  CONSTRAINT [DF_vts_tbSurvey_NotificationModeID]  DEFAULT ((1)) FOR [NotificationModeID]
 GO
@@ -18877,7 +19916,7 @@ ALTER TABLE [dbo].[vts_tbSurvey] ADD  CONSTRAINT [DF_vts_tbSurvey_DisableQuestio
 GO
 ALTER TABLE [dbo].[vts_tbSurvey] ADD  CONSTRAINT [DF_vts_tbSurvey_AllowMultipleNSurveySubmissions]  DEFAULT ((0)) FOR [AllowMultipleNSurveySubmissions]
 GO
-ALTER TABLE [dbo].[vts_tbSurvey] ADD  CONSTRAINT [DF_vts_tbSurvey_MultiLanguageModeId]  DEFAULT ((0)) FOR [MultiLanguageModeId]
+ALTER TABLE [dbo].[vts_tbSurvey] ADD  CONSTRAINT [DF_vts_tbSurvey_MultiLanguageModeID]  DEFAULT ((0)) FOR [MultiLanguageModeID]
 GO
 ALTER TABLE [dbo].[vts_tbSurvey] ADD  CONSTRAINT [DF_vts_tbSurvey_SurveyGuid]  DEFAULT (newid()) FOR [SurveyGuid]
 GO
@@ -18907,51 +19946,51 @@ ALTER TABLE [dbo].[vts_tbVoterAnswers] ADD  CONSTRAINT [DF_vts_tbVoterAnswers_Se
 GO
 ALTER TABLE [dbo].[vts_tbWebSecurityAddIn] ADD  CONSTRAINT [DF_vts_tbWebSecurityAddIn_BuiltIn]  DEFAULT ((0)) FOR [BuiltIn]
 GO
-ALTER TABLE [dbo].[vts_tbAnswer]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbAnswer_vts_tbAnswerType] FOREIGN KEY([AnswerTypeId])
+ALTER TABLE [dbo].[vts_tbAnswer]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbAnswer_vts_tbAnswerType] FOREIGN KEY([AnswerTypeID])
 REFERENCES [dbo].[vts_tbAnswerType] ([AnswerTypeID])
 GO
 ALTER TABLE [dbo].[vts_tbAnswer] CHECK CONSTRAINT [FK_vts_tbAnswer_vts_tbAnswerType]
 GO
-ALTER TABLE [dbo].[vts_tbAnswer]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbAnswer_vts_tbQuestion] FOREIGN KEY([QuestionId])
-REFERENCES [dbo].[vts_tbQuestion] ([QuestionId])
+ALTER TABLE [dbo].[vts_tbAnswer]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbAnswer_vts_tbQuestion] FOREIGN KEY([QuestionID])
+REFERENCES [dbo].[vts_tbQuestion] ([QuestionID])
 ON UPDATE CASCADE
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbAnswer] CHECK CONSTRAINT [FK_vts_tbAnswer_vts_tbQuestion]
 GO
-ALTER TABLE [dbo].[vts_tbAnswer]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbAnswer_vts_tbRegularExpression] FOREIGN KEY([RegularExpressionId])
-REFERENCES [dbo].[vts_tbRegularExpression] ([RegularExpressionId])
+ALTER TABLE [dbo].[vts_tbAnswer]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbAnswer_vts_tbRegularExpression] FOREIGN KEY([RegularExpressionID])
+REFERENCES [dbo].[vts_tbRegularExpression] ([RegularExpressionID])
 ON UPDATE CASCADE
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbAnswer] CHECK CONSTRAINT [FK_vts_tbAnswer_vts_tbRegularExpression]
 GO
-ALTER TABLE [dbo].[vts_tbAnswerConnection]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbAnswerSubscriber_vts_tbAnswer] FOREIGN KEY([SubscriberAnswerId])
-REFERENCES [dbo].[vts_tbAnswer] ([AnswerId])
+ALTER TABLE [dbo].[vts_tbAnswerConnection]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbAnswerSubscriber_vts_tbAnswer] FOREIGN KEY([SubscriberAnswerID])
+REFERENCES [dbo].[vts_tbAnswer] ([AnswerID])
 GO
 ALTER TABLE [dbo].[vts_tbAnswerConnection] CHECK CONSTRAINT [FK_vts_tbAnswerSubscriber_vts_tbAnswer]
 GO
-ALTER TABLE [dbo].[vts_tbAnswerConnection]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbAnswerSubscriber_vts_tbAnswer1] FOREIGN KEY([PublisherAnswerId])
-REFERENCES [dbo].[vts_tbAnswer] ([AnswerId])
+ALTER TABLE [dbo].[vts_tbAnswerConnection]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbAnswerSubscriber_vts_tbAnswer1] FOREIGN KEY([PublisherAnswerID])
+REFERENCES [dbo].[vts_tbAnswer] ([AnswerID])
 ON UPDATE CASCADE
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbAnswerConnection] CHECK CONSTRAINT [FK_vts_tbAnswerSubscriber_vts_tbAnswer1]
 GO
-ALTER TABLE [dbo].[vts_tbAnswerProperty]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbAnswerProperty_vts_tbAnswer] FOREIGN KEY([AnswerId])
-REFERENCES [dbo].[vts_tbAnswer] ([AnswerId])
+ALTER TABLE [dbo].[vts_tbAnswerProperty]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbAnswerProperty_vts_tbAnswer] FOREIGN KEY([AnswerID])
+REFERENCES [dbo].[vts_tbAnswer] ([AnswerID])
 ON UPDATE CASCADE
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbAnswerProperty] CHECK CONSTRAINT [FK_vts_tbAnswerProperty_vts_tbAnswer]
 GO
 ALTER TABLE [dbo].[vts_tbBranchingRule]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbBranchingRule_vts_tbQuestion] FOREIGN KEY([QuestionID])
-REFERENCES [dbo].[vts_tbQuestion] ([QuestionId])
+REFERENCES [dbo].[vts_tbQuestion] ([QuestionID])
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbBranchingRule] CHECK CONSTRAINT [FK_vts_tbBranchingRule_vts_tbQuestion]
 GO
-ALTER TABLE [dbo].[vts_tbEmailNotificationSettings]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbEmailNotificationSettings_vts_tbSurvey] FOREIGN KEY([SurveyId])
+ALTER TABLE [dbo].[vts_tbEmailNotificationSettings]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbEmailNotificationSettings_vts_tbSurvey] FOREIGN KEY([SurveyID])
 REFERENCES [dbo].[vts_tbSurvey] ([SurveyID])
 ON DELETE CASCADE
 GO
@@ -18965,7 +20004,7 @@ GO
 ALTER TABLE [dbo].[vts_tbFilter] CHECK CONSTRAINT [FK_vts_tbFilter_vts_tbSurvey]
 GO
 ALTER TABLE [dbo].[vts_tbFilterRule]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbFilterRule_vts_tbAnswer] FOREIGN KEY([AnswerID])
-REFERENCES [dbo].[vts_tbAnswer] ([AnswerId])
+REFERENCES [dbo].[vts_tbAnswer] ([AnswerID])
 GO
 ALTER TABLE [dbo].[vts_tbFilterRule] CHECK CONSTRAINT [FK_vts_tbFilterRule_vts_tbAnswer]
 GO
@@ -18977,23 +20016,23 @@ GO
 ALTER TABLE [dbo].[vts_tbFilterRule] CHECK CONSTRAINT [FK_vts_tbFilterRule_vts_tbFilter]
 GO
 ALTER TABLE [dbo].[vts_tbFilterRule]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbFilterRule_vts_tbQuestion] FOREIGN KEY([QuestionID])
-REFERENCES [dbo].[vts_tbQuestion] ([QuestionId])
+REFERENCES [dbo].[vts_tbQuestion] ([QuestionID])
 GO
 ALTER TABLE [dbo].[vts_tbFilterRule] CHECK CONSTRAINT [FK_vts_tbFilterRule_vts_tbQuestion]
 GO
-ALTER TABLE [dbo].[vts_tbFolders]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbFolders_vts_tbFolders] FOREIGN KEY([ParentFolderId])
-REFERENCES [dbo].[vts_tbFolders] ([FolderId])
+ALTER TABLE [dbo].[vts_tbFolders]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbFolders_vts_tbFolders] FOREIGN KEY([ParentFolderID])
+REFERENCES [dbo].[vts_tbFolders] ([FolderID])
 GO
 ALTER TABLE [dbo].[vts_tbFolders] CHECK CONSTRAINT [FK_vts_tbFolders_vts_tbFolders]
 GO
-ALTER TABLE [dbo].[vts_tbInvitationLog]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbInvitationLog_vts_tbEmail] FOREIGN KEY([EmailId])
+ALTER TABLE [dbo].[vts_tbInvitationLog]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbInvitationLog_vts_tbEmail] FOREIGN KEY([EmailID])
 REFERENCES [dbo].[vts_tbEmail] ([EmailID])
 ON UPDATE CASCADE
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbInvitationLog] CHECK CONSTRAINT [FK_vts_tbInvitationLog_vts_tbEmail]
 GO
-ALTER TABLE [dbo].[vts_tbInvitationLog]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbInvitationLog_vts_tbSurvey] FOREIGN KEY([SurveyId])
+ALTER TABLE [dbo].[vts_tbInvitationLog]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbInvitationLog_vts_tbSurvey] FOREIGN KEY([SurveyID])
 REFERENCES [dbo].[vts_tbSurvey] ([SurveyID])
 ON UPDATE CASCADE
 ON DELETE CASCADE
@@ -19014,8 +20053,8 @@ ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbInvitationQueue] CHECK CONSTRAINT [FK_vts_tbInvitationQueue_vts_tbSurvey]
 GO
-ALTER TABLE [dbo].[vts_tbLibraryLanguage]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbLibraryLanguage_vts_tbLibrary] FOREIGN KEY([LibraryId])
-REFERENCES [dbo].[vts_tbLibrary] ([LibraryId])
+ALTER TABLE [dbo].[vts_tbLibraryLanguage]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbLibraryLanguage_vts_tbLibrary] FOREIGN KEY([LibraryID])
+REFERENCES [dbo].[vts_tbLibrary] ([LibraryID])
 ON UPDATE CASCADE
 ON DELETE CASCADE
 GO
@@ -19034,26 +20073,26 @@ ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbMessageCondition] CHECK CONSTRAINT [FK_tbMessageCondition_vts_tbSurvey]
 GO
-ALTER TABLE [dbo].[vts_tbMultiLanguageText]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbMultiLanguageText_vts_tbLanguageMessageType] FOREIGN KEY([LanguageMessageTypeId])
-REFERENCES [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeId])
+ALTER TABLE [dbo].[vts_tbMultiLanguageText]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbMultiLanguageText_vts_tbLanguageMessageType] FOREIGN KEY([LanguageMessageTypeID])
+REFERENCES [dbo].[vts_tbLanguageMessageType] ([LanguageMessageTypeID])
 ON UPDATE CASCADE
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbMultiLanguageText] CHECK CONSTRAINT [FK_vts_tbMultiLanguageText_vts_tbLanguageMessageType]
 GO
-ALTER TABLE [dbo].[vts_tbPageOption]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbPageOption_vts_tbSurvey] FOREIGN KEY([SurveyId])
+ALTER TABLE [dbo].[vts_tbPageOption]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbPageOption_vts_tbSurvey] FOREIGN KEY([SurveyID])
 REFERENCES [dbo].[vts_tbSurvey] ([SurveyID])
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbPageOption] CHECK CONSTRAINT [FK_vts_tbPageOption_vts_tbSurvey]
 GO
-ALTER TABLE [dbo].[vts_tbQuestion]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbQuestion_vts_tbLayoutMode] FOREIGN KEY([LayoutModeId])
+ALTER TABLE [dbo].[vts_tbQuestion]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbQuestion_vts_tbLayoutMode] FOREIGN KEY([LayoutModeID])
 REFERENCES [dbo].[vts_tbLayoutMode] ([LayoutModeID])
 GO
 ALTER TABLE [dbo].[vts_tbQuestion] CHECK CONSTRAINT [FK_vts_tbQuestion_vts_tbLayoutMode]
 GO
-ALTER TABLE [dbo].[vts_tbQuestion]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbQuestion_vts_tbLibrary] FOREIGN KEY([LibraryId])
-REFERENCES [dbo].[vts_tbLibrary] ([LibraryId])
+ALTER TABLE [dbo].[vts_tbQuestion]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbQuestion_vts_tbLibrary] FOREIGN KEY([LibraryID])
+REFERENCES [dbo].[vts_tbLibrary] ([LibraryID])
 ON UPDATE CASCADE
 ON DELETE CASCADE
 GO
@@ -19064,68 +20103,68 @@ REFERENCES [dbo].[vts_tbQuestionGroups] ([ID])
 GO
 ALTER TABLE [dbo].[vts_tbQuestion] CHECK CONSTRAINT [FK_vts_tbQuestion_vts_tbQuestionGroups]
 GO
-ALTER TABLE [dbo].[vts_tbQuestion]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbQuestion_vts_tbQuestionSelectionMode] FOREIGN KEY([SelectionModeId])
+ALTER TABLE [dbo].[vts_tbQuestion]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbQuestion_vts_tbQuestionSelectionMode] FOREIGN KEY([SelectionModeID])
 REFERENCES [dbo].[vts_tbQuestionSelectionMode] ([QuestionSelectionModeID])
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbQuestion] CHECK CONSTRAINT [FK_vts_tbQuestion_vts_tbQuestionSelectionMode]
 GO
-ALTER TABLE [dbo].[vts_tbQuestion]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbQuestion_vts_tbSurvey] FOREIGN KEY([SurveyId])
+ALTER TABLE [dbo].[vts_tbQuestion]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbQuestion_vts_tbSurvey] FOREIGN KEY([SurveyID])
 REFERENCES [dbo].[vts_tbSurvey] ([SurveyID])
 ON UPDATE CASCADE
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbQuestion] CHECK CONSTRAINT [FK_vts_tbQuestion_vts_tbSurvey]
 GO
-ALTER TABLE [dbo].[vts_tbQuestionSectionGridAnswer]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbQuestionSectionGridAnswers_vts_tbAnswer] FOREIGN KEY([AnswerId])
-REFERENCES [dbo].[vts_tbAnswer] ([AnswerId])
+ALTER TABLE [dbo].[vts_tbQuestionSectionGridAnswer]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbQuestionSectionGridAnswers_vts_tbAnswer] FOREIGN KEY([AnswerID])
+REFERENCES [dbo].[vts_tbAnswer] ([AnswerID])
 ON UPDATE CASCADE
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbQuestionSectionGridAnswer] CHECK CONSTRAINT [FK_vts_tbQuestionSectionGridAnswers_vts_tbAnswer]
 GO
-ALTER TABLE [dbo].[vts_tbQuestionSectionOption]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbQuestionSectionOption_vts_tbQuestion] FOREIGN KEY([QuestionId])
-REFERENCES [dbo].[vts_tbQuestion] ([QuestionId])
+ALTER TABLE [dbo].[vts_tbQuestionSectionOption]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbQuestionSectionOption_vts_tbQuestion] FOREIGN KEY([QuestionID])
+REFERENCES [dbo].[vts_tbQuestion] ([QuestionID])
 ON UPDATE CASCADE
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbQuestionSectionOption] CHECK CONSTRAINT [FK_vts_tbQuestionSectionOption_vts_tbQuestion]
 GO
-ALTER TABLE [dbo].[vts_tbQuestionSectionOption]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbQuestionSectionOption_vts_tbRepeatableSection] FOREIGN KEY([RepeatableSectionModeId])
-REFERENCES [dbo].[vts_tbRepeatableSection] ([RepeatableSectionModeId])
+ALTER TABLE [dbo].[vts_tbQuestionSectionOption]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbQuestionSectionOption_vts_tbRepeatableSection] FOREIGN KEY([RepeatableSectionModeID])
+REFERENCES [dbo].[vts_tbRepeatableSection] ([RepeatableSectionModeID])
 ON UPDATE CASCADE
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbQuestionSectionOption] CHECK CONSTRAINT [FK_vts_tbQuestionSectionOption_vts_tbRepeatableSection]
 GO
-ALTER TABLE [dbo].[vts_tbRoleSecurityRight]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbRoleSecurityRight_vts_tbRole] FOREIGN KEY([RoleId])
-REFERENCES [dbo].[vts_tbRole] ([RoleId])
+ALTER TABLE [dbo].[vts_tbRoleSecurityRight]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbRoleSecurityRight_vts_tbRole] FOREIGN KEY([RoleID])
+REFERENCES [dbo].[vts_tbRole] ([RoleID])
 ON UPDATE CASCADE
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbRoleSecurityRight] CHECK CONSTRAINT [FK_vts_tbRoleSecurityRight_vts_tbRole]
 GO
-ALTER TABLE [dbo].[vts_tbRoleSecurityRight]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbRoleSecurityRight_vts_tbSecurityRight] FOREIGN KEY([SecurityRightId])
-REFERENCES [dbo].[vts_tbSecurityRight] ([SecurityRightId])
+ALTER TABLE [dbo].[vts_tbRoleSecurityRight]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbRoleSecurityRight_vts_tbSecurityRight] FOREIGN KEY([SecurityRightID])
+REFERENCES [dbo].[vts_tbSecurityRight] ([SecurityRightID])
 ON UPDATE CASCADE
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbRoleSecurityRight] CHECK CONSTRAINT [FK_vts_tbRoleSecurityRight_vts_tbSecurityRight]
 GO
-ALTER TABLE [dbo].[vts_tbSkipLogicRule]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbSkipLogicRule_vts_tbQuestion] FOREIGN KEY([SkipQuestionId])
-REFERENCES [dbo].[vts_tbQuestion] ([QuestionId])
+ALTER TABLE [dbo].[vts_tbSkipLogicRule]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbSkipLogicRule_vts_tbQuestion] FOREIGN KEY([SkipQuestionID])
+REFERENCES [dbo].[vts_tbQuestion] ([QuestionID])
 ON UPDATE CASCADE
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbSkipLogicRule] CHECK CONSTRAINT [FK_vts_tbSkipLogicRule_vts_tbQuestion]
 GO
-ALTER TABLE [dbo].[vts_tbSurvey]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbSurvey_vts_tbFolders] FOREIGN KEY([FolderId])
-REFERENCES [dbo].[vts_tbFolders] ([FolderId])
+ALTER TABLE [dbo].[vts_tbSurvey]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbSurvey_vts_tbFolders] FOREIGN KEY([FolderID])
+REFERENCES [dbo].[vts_tbFolders] ([FolderID])
 GO
 ALTER TABLE [dbo].[vts_tbSurvey] CHECK CONSTRAINT [FK_vts_tbSurvey_vts_tbFolders]
 GO
-ALTER TABLE [dbo].[vts_tbSurvey]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbSurvey_vts_tbMultiLanguageMode] FOREIGN KEY([MultiLanguageModeId])
-REFERENCES [dbo].[vts_tbMultiLanguageMode] ([MultiLanguageModeId])
+ALTER TABLE [dbo].[vts_tbSurvey]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbSurvey_vts_tbMultiLanguageMode] FOREIGN KEY([MultiLanguageModeID])
+REFERENCES [dbo].[vts_tbMultiLanguageMode] ([MultiLanguageModeID])
 ON UPDATE CASCADE
 ON DELETE CASCADE
 GO
@@ -19137,8 +20176,8 @@ ON UPDATE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbSurvey] CHECK CONSTRAINT [FK_vts_tbSurvey_vts_tbNotificationMode]
 GO
-ALTER TABLE [dbo].[vts_tbSurvey]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbSurvey_vts_tbProgressDisplayMode] FOREIGN KEY([ProgressDisplayModeId])
-REFERENCES [dbo].[vts_tbProgressDisplayMode] ([ProgressDisplayModeId])
+ALTER TABLE [dbo].[vts_tbSurvey]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbSurvey_vts_tbProgressDisplayMode] FOREIGN KEY([ProgressDisplayModeID])
+REFERENCES [dbo].[vts_tbProgressDisplayMode] ([ProgressDisplayModeID])
 ON UPDATE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbSurvey] CHECK CONSTRAINT [FK_vts_tbSurvey_vts_tbProgressDisplayMode]
@@ -19155,17 +20194,17 @@ ON UPDATE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbSurvey] CHECK CONSTRAINT [FK_vts_tbSurvey_vts_tbUnAuthentifiedUserAction]
 GO
-ALTER TABLE [dbo].[vts_tbSurveyAsset]  WITH CHECK ADD FOREIGN KEY([SurveyId])
+ALTER TABLE [dbo].[vts_tbSurveyAsset]  WITH CHECK ADD FOREIGN KEY([SurveyID])
 REFERENCES [dbo].[vts_tbSurvey] ([SurveyID])
 GO
-ALTER TABLE [dbo].[vts_tbSurveyEntryQuota]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbSurveyEntryQuota_vts_tbSurvey] FOREIGN KEY([SurveyId])
+ALTER TABLE [dbo].[vts_tbSurveyEntryQuota]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbSurveyEntryQuota_vts_tbSurvey] FOREIGN KEY([SurveyID])
 REFERENCES [dbo].[vts_tbSurvey] ([SurveyID])
 ON UPDATE CASCADE
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbSurveyEntryQuota] CHECK CONSTRAINT [FK_vts_tbSurveyEntryQuota_vts_tbSurvey]
 GO
-ALTER TABLE [dbo].[vts_tbSurveyIPRange]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbSurveyIPRange_vts_tbSurvey] FOREIGN KEY([SurveyId])
+ALTER TABLE [dbo].[vts_tbSurveyIPRange]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbSurveyIPRange_vts_tbSurvey] FOREIGN KEY([SurveyID])
 REFERENCES [dbo].[vts_tbSurvey] ([SurveyID])
 GO
 ALTER TABLE [dbo].[vts_tbSurveyIPRange] CHECK CONSTRAINT [FK_vts_tbSurveyIPRange_vts_tbSurvey]
@@ -19177,19 +20216,19 @@ ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbSurveyLanguage] CHECK CONSTRAINT [FK_vts_tbSurveyLanguage_vts_tbMultiLanguage]
 GO
-ALTER TABLE [dbo].[vts_tbSurveyLanguage]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbSurveyLanguage_vts_tbSurvey] FOREIGN KEY([SurveyId])
+ALTER TABLE [dbo].[vts_tbSurveyLanguage]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbSurveyLanguage_vts_tbSurvey] FOREIGN KEY([SurveyID])
 REFERENCES [dbo].[vts_tbSurvey] ([SurveyID])
 ON UPDATE CASCADE
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbSurveyLanguage] CHECK CONSTRAINT [FK_vts_tbSurveyLanguage_vts_tbSurvey]
 GO
-ALTER TABLE [dbo].[vts_tbSurveyLayout]  WITH CHECK ADD  CONSTRAINT [FK_SurveyLayout_vts_tbSurvey] FOREIGN KEY([SurveyId])
+ALTER TABLE [dbo].[vts_tbSurveyLayout]  WITH CHECK ADD  CONSTRAINT [FK_SurveyLayout_vts_tbSurvey] FOREIGN KEY([SurveyID])
 REFERENCES [dbo].[vts_tbSurvey] ([SurveyID])
 GO
 ALTER TABLE [dbo].[vts_tbSurveyLayout] CHECK CONSTRAINT [FK_SurveyLayout_vts_tbSurvey]
 GO
-ALTER TABLE [dbo].[vts_tbSurveyToken]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbSurveyToken_vts_tbSurvey] FOREIGN KEY([SurveyId])
+ALTER TABLE [dbo].[vts_tbSurveyToken]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbSurveyToken_vts_tbSurvey] FOREIGN KEY([SurveyID])
 REFERENCES [dbo].[vts_tbSurvey] ([SurveyID])
 GO
 ALTER TABLE [dbo].[vts_tbSurveyToken] CHECK CONSTRAINT [FK_vts_tbSurveyToken_vts_tbSurvey]
@@ -19202,27 +20241,27 @@ GO
 ALTER TABLE [dbo].[vts_tbSurveyWebSecurity] CHECK CONSTRAINT [FK_vts_tbSurveyWebSecurity_vts_tbSurvey]
 GO
 ALTER TABLE [dbo].[vts_tbSurveyWebSecurity]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbSurveyWebSecurity_vts_tbWebSecurityAddIn] FOREIGN KEY([WebSecurityAddInID])
-REFERENCES [dbo].[vts_tbWebSecurityAddIn] ([WebSecurityAddInId])
+REFERENCES [dbo].[vts_tbWebSecurityAddIn] ([WebSecurityAddInID])
 ON UPDATE CASCADE
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbSurveyWebSecurity] CHECK CONSTRAINT [FK_vts_tbSurveyWebSecurity_vts_tbWebSecurityAddIn]
 GO
-ALTER TABLE [dbo].[vts_tbUserAnswerType]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbUserAnswerType_vts_tbAnswerType] FOREIGN KEY([AnswerTypeId])
+ALTER TABLE [dbo].[vts_tbUserAnswerType]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbUserAnswerType_vts_tbAnswerType] FOREIGN KEY([AnswerTypeID])
 REFERENCES [dbo].[vts_tbAnswerType] ([AnswerTypeID])
 ON UPDATE CASCADE
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbUserAnswerType] CHECK CONSTRAINT [FK_vts_tbUserAnswerType_vts_tbAnswerType]
 GO
-ALTER TABLE [dbo].[vts_tbUserRegularExpression]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbUserRegularExpression_vts_tbRegularExpression] FOREIGN KEY([RegularExpressionId])
-REFERENCES [dbo].[vts_tbRegularExpression] ([RegularExpressionId])
+ALTER TABLE [dbo].[vts_tbUserRegularExpression]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbUserRegularExpression_vts_tbRegularExpression] FOREIGN KEY([RegularExpressionID])
+REFERENCES [dbo].[vts_tbRegularExpression] ([RegularExpressionID])
 ON UPDATE CASCADE
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbUserRegularExpression] CHECK CONSTRAINT [FK_vts_tbUserRegularExpression_vts_tbRegularExpression]
 GO
-ALTER TABLE [dbo].[vts_tbUserSurvey]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbUserSurvey_vts_tbSurvey] FOREIGN KEY([SurveyId])
+ALTER TABLE [dbo].[vts_tbUserSurvey]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbUserSurvey_vts_tbSurvey] FOREIGN KEY([SurveyID])
 REFERENCES [dbo].[vts_tbSurvey] ([SurveyID])
 ON UPDATE CASCADE
 ON DELETE CASCADE
@@ -19230,7 +20269,7 @@ GO
 ALTER TABLE [dbo].[vts_tbUserSurvey] CHECK CONSTRAINT [FK_vts_tbUserSurvey_vts_tbSurvey]
 GO
 ALTER TABLE [dbo].[vts_tbVoterAnswers]  WITH CHECK ADD  CONSTRAINT [FK_VoterAnswers_vts_tbAnswer] FOREIGN KEY([AnswerID])
-REFERENCES [dbo].[vts_tbAnswer] ([AnswerId])
+REFERENCES [dbo].[vts_tbAnswer] ([AnswerID])
 ON UPDATE CASCADE
 ON DELETE CASCADE
 GO
@@ -19250,7 +20289,279 @@ ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[vts_tbVoterEmail] CHECK CONSTRAINT [FK_vts_tbVoterEmail_vts_tbEmail]
 GO
-ALTER TABLE [dbo].[vts_tbFolders]  WITH CHECK ADD  CONSTRAINT [chk_Folder] CHECK  (([ParentFolderId] IS NULL AND [dbo].[vts_fnGetFolderRootCount]()<(2) OR [ParentFolderId] IS NOT NULL))
+ALTER TABLE [dbo].[vts_tbFolders]  WITH CHECK ADD  CONSTRAINT [chk_Folder] CHECK  (([ParentFolderID] IS NULL AND [dbo].[vts_fnGetFolderRootCount]()<(2) OR [ParentFolderID] IS NOT NULL))
 GO
 ALTER TABLE [dbo].[vts_tbFolders] CHECK CONSTRAINT [chk_Folder]
+GO
+/*ADDTIONS SP 2.5 - Menu MenuSecurityRights */
+/****** Object:  Table [dbo].[vts_tbMenu]    Script Date: 9/12/2018 11:54:30 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[vts_tbMenu](
+	[MenuID] [int] NOT NULL,
+	[Code] [int] NOT NULL,
+	[Main] [nvarchar](50) NOT NULL,
+	[SubOne] [nvarchar](50) NULL,
+	[SubTwo] [nvarchar](50) NULL,
+	[SubThree] [nvarchar](75) NULL,
+ CONSTRAINT [PK_vts_tbMenus] PRIMARY KEY CLUSTERED 
+(
+	[MenuID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[vts_tbMenuSecurityRight]    Script Date: 9/12/2018 11:54:30 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[vts_tbMenuSecurityRight](
+	[MenuID] [int] NOT NULL,
+	[SecurityRightID] [int] NOT NULL,
+ CONSTRAINT [PK_vts_tbMenuSecurityRight] PRIMARY KEY CLUSTERED 
+(
+	[MenuID] ASC,
+	[SecurityRightID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (1, 1000, N'Surveys', NULL, NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (2, 1100, N'Surveys', N'SurveyList', NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (3, 1200, N'Surveys', N'New Survey', NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (4, 1201, N'Surveys', N'New Survey', NULL, N'Button - import survey xml')
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (5, 1300, N'Surveys', N'Statistics', NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (6, 1301, N'Surveys', N'Statistics', NULL, N'Link – reset votes')
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (7, 1302, N'Surveys', N'Statistics', NULL, N'Button - delete unvalidated')
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (8, 1400, N'Surveys', N'Settings', NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (9, 1410, N'Surveys', N'Settings', N'System Settings', NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (10, 1411, N'Surveys', N'Settings', N'System Settings', N'Error Log')
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (11, 1420, N'Surveys', N'Settings', N'Survey Settings', NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (12, 1421, N'Surveys', N'Settings', N'Survey Settings', N'Button - delete survey')
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (13, 1422, N'Surveys', N'Settings', N'Survey Settings', N'Button - export survey')
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (14, 1423, N'Surveys', N'Settings', N'Survey Settings', N'Button - apply changes')
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (15, 1424, N'Surveys', N'Settings', N'Survey Settings', N'Button - clone survey')
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (16, 1430, N'Surveys', N'Settings', N'Multi Language', NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (17, 1440, N'Surveys', N'Settings', N'Completion', NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (18, 1500, N'Surveys', N'Security', NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (19, 1510, N'Surveys', N'Security', N'Form Security', NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (20, 1520, N'Surveys', N'Security', N'Token Security', NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (21, 1530, N'Surveys', N'Security', N'IP Filter Security', NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (22, 2000, N'Designer', NULL, NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (23, 2100, N'Designer', N'Form Builder', NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (24, 2101, N'Designer', N'Form Builder', N'[Insert Question]', N'Copy question from Library')
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (25, 2102, N'Designer', N'Form Builder', N'[Insert Question]', N'Copy question from Survey')
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (26, 2103, N'Designer', N'Form Builder', N'[Insert Question]', N'Button – Import XML')
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (27, 2200, N'Designer', N'Question Libraries', NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (28, 2210, N'Designer', N'Question Libraries', N'Library List', NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (29, 2211, N'Designer', N'Question Libraries', N'Library List', N'Button – Import XML')
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (30, 2220, N'Designer', N'Question Libraries', N'Library New', NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (31, 2300, N'Designer', N'Question Groups', NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (32, 2400, N'Designer', N'Answer Type Editor', NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (33, 2401, N'Designer', N'Answer Type Editor', NULL, N'Button – Create SQL answertype')
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (34, 2500, N'Designer', N'Regular Expressions', NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (35, 2600, N'Designer', N'Layout', NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (36, 3000, N'Results', NULL, NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (37, 3100, N'Results', N'Reports', NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (38, 3101, N'Results', N'Reports', NULL, N'Link – Edit/ create filter link')
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (39, 3102, N'Results', N'Reports', NULL, N'Button – Cross Tabulation Reports')
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (40, 3103, N'Results', N'Reports', NULL, N'Button – SSRS Reports')
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (41, 3110, N'Results', N'Reports', N'Filters', NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (42, 3200, N'Results', N'Individual Responses', NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (43, 3201, N'Results', N'Individual Responses', NULL, N'Filtered Responses List')
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (44, 3202, N'Results', N'Individual Responses', NULL, N'Responses List – Button  - Delete')
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (45, 3203, N'Results', N'Individual Responses', NULL, N'Voter Report – Button – Edit')
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (46, 3300, N'Results', N'File Manager', NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (47, 3301, N'Results', N'File Manager', NULL, N'Button – export files')
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (48, 3400, N'Results', N'Data Export', NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (49, 3500, N'Results', N'Data import', NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (50, 4000, N'Campaigns', NULL, NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (51, 4100, N'Campaigns', N'Preview', NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (52, 4200, N'Campaigns', N'Mailing', NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (53, 4300, N'Campaigns', N'Take Survey', NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (54, 5000, N'Accounts', NULL, NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (55, 5100, N'Accounts', N'UserList', NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (56, 5101, N'Accounts', N'UserList', NULL, N'Users Edit Options')
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (57, 5200, N'Accounts', N'User Roles', NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (58, 5300, N'Accounts', N'Import Users', NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (59, 6000, N'Help', NULL, NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (60, 6100, N'Help', N'Help options', NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (61, 6200, N'Help', N'Help Files', NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (62, 6300, N'Help', N'About SP', NULL, NULL)
+GO
+INSERT [dbo].[vts_tbMenu] ([MenuID], [Code], [Main], [SubOne], [SubTwo], [SubThree]) VALUES (63, 2212, N'Designer', N'Question Libraries', N'Library List', N'Button – Insert Question')
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (2, 40)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (3, 1)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (4, 29)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (5, 9)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (6, 10)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (7, 11)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (11, 3)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (12, 2)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (13, 4)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (14, 5)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (15, 6)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (16, 34)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (17, 7)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (19, 8)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (20, 38)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (21, 47)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (23, 12)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (24, 25)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (25, 26)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (26, 46)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (28, 24)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (29, 46)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (30, 27)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (31, 36)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (32, 13)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (33, 28)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (34, 31)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (35, 39)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (37, 14)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (38, 15)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (39, 19)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (40, 42)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (42, 16)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (43, 41)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (44, 18)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (45, 17)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (46, 32)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (47, 33)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (48, 20)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (49, 37)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (51, 22)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (52, 21)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (53, 30)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (55, 23)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (56, 43)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (57, 44)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (58, 45)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (60, 35)
+GO
+INSERT [dbo].[vts_tbMenuSecurityRight] ([MenuID], [SecurityRightID]) VALUES (63, 12)
+GO
+ALTER TABLE [dbo].[vts_tbMenuSecurityRight]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbMenuSecurityRight_vts_tbMenu] FOREIGN KEY([MenuID])
+REFERENCES [dbo].[vts_tbMenu] ([MenuID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[vts_tbMenuSecurityRight] CHECK CONSTRAINT [FK_vts_tbMenuSecurityRight_vts_tbMenu]
+GO
+ALTER TABLE [dbo].[vts_tbMenuSecurityRight]  WITH CHECK ADD  CONSTRAINT [FK_vts_tbMenuSecurityRight_vts_tbSecurityRight] FOREIGN KEY([SecurityRightID])
+REFERENCES [dbo].[vts_tbSecurityRight] ([SecurityRightID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[vts_tbMenuSecurityRight] CHECK CONSTRAINT [FK_vts_tbMenuSecurityRight_vts_tbSecurityRight]
 GO

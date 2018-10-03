@@ -21,7 +21,11 @@ I.	&nbsp;		&nbsp;		&nbsp;		&nbsp;<strong>	Introduction </strong>	<a name="Introd
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
 II.	&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Management </strong> 	<a name="SurveyManagement" ></a><br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
-2	&nbsp;	0	&nbsp;		&nbsp;		&nbsp;	<a href="InstallationSettings.aspx" title=" System Settings "> System Settings </a>	<br />
+2	&nbsp;	0a	&nbsp;		&nbsp;		&nbsp;	<a href="InstallationSettings.aspx" title=" System Settings "> System Settings </a>	<br />
+2	&nbsp;	0b	&nbsp;		&nbsp;		&nbsp;	<a href="ErrorLog.aspx" title=" Error Logging "> Error Logging </a>	<br /><br />
+
+
+
 2	&nbsp;	1a&nbsp;		&nbsp;&nbsp;<a href="Survey Creation.aspx" title=" Survey Creation "> Survey Creation </a>	<br />
 2	&nbsp;	1b&nbsp;		&nbsp;&nbsp;<a href="SurveyListDirectory.aspx" title=" Survey List & Directory "> Survey List & Directory </a>	<br />
 2	&nbsp;	2	&nbsp;		&nbsp;		&nbsp;	<a href="Survey General Settings.aspx" title=" Survey Settings " > Survey Settings </a>	<br />
@@ -168,7 +172,7 @@ IV.	&nbsp;		&nbsp;		&nbsp;		&nbsp;	 <strong>Survey Publishing & Campaigns <a nam
 5	&nbsp;	1	&nbsp;		&nbsp;		&nbsp;	<a href="new/SD_Introduction.aspx" title=" Survey Campaigns & Publishing Introduction " > Introduction </a>	<br />
 5	&nbsp;	2	&nbsp;		&nbsp;		&nbsp;	<a href="new/Survey Deployement.aspx" title=" Survey Link Deployment " > Survey Link Deployment </a>	<br />
 5	&nbsp;	3	&nbsp;		&nbsp;		&nbsp;	<a href="new/Take Survey.aspx" title=" Take Survey " > Take Survey </a>	<br />
-5	&nbsp;	4	&nbsp;		&nbsp;		&nbsp;	<a href="new/Web Control Deployment.aspx" title=" Web Control Deployment " > Web Control Deployment </a>	
+5	&nbsp;	4	&nbsp;		&nbsp;		&nbsp;	<a href="new/Web Control Deployment.aspx" title="SurveyBox Web Control Deployment " >SurveyBox Web Control Deployment </a>	
     <br />
     <br /><br />
 
@@ -215,6 +219,10 @@ VII.&nbsp;		&nbsp;		&nbsp;		&nbsp;	<strong>Roles & User Management</strong>	<a n
 
 7	&nbsp;	4	&nbsp;		&nbsp;		&nbsp;	<a href="new/Roles Manager.aspx" title=" Roles Manager " > Roles Manager </a>	<br />
 7	&nbsp;	5	&nbsp;		&nbsp;		&nbsp;	<a href="new/User Import.aspx" title=" User Import " > User Import </a>	<br />
+
+7	&nbsp;	6	&nbsp;		&nbsp;		&nbsp;	<a href="new/User_Account.aspx" title=" User Acount Editing" > User Account </a>	<br />
+
+
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
 	&nbsp;		&nbsp;		&nbsp;		&nbsp;		<br />
 

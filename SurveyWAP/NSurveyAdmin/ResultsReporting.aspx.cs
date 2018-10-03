@@ -143,6 +143,8 @@ namespace Votations.NSurvey.WebAdmin
 		{
 			CheckRight(NSurveyRights.AccessReports, true);
 			FilterEditorHyperLink.Visible = CheckRight(NSurveyRights.CreateResultsFilter, false);
+
+            rblReports.Items[1].Enabled = CheckRight(NSurveyRights.AccessCrossTab, false);
             rblReports.Items[2].Enabled = CheckRight(NSurveyRights.AccessSsrsReports, false);
 
 		}

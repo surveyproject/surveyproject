@@ -286,7 +286,9 @@ namespace Votations.NSurvey.WebAdmin
 				VariableNameInfoLabel.Visible = false;
 			}
 
-			new MultiLanguage().UpdateMultiLanguage(SurveyId, ((MultiLanguageMode)int.Parse(MultiLanguagesModeDropDownList.SelectedValue)), null);	
+            MlCodesLiteral.Text = ListMultiLanguages();
+
+            new MultiLanguage().UpdateMultiLanguage(SurveyId, ((MultiLanguageMode)int.Parse(MultiLanguagesModeDropDownList.SelectedValue)), null);	
 		}
 
 		private void DefaultLanguageDropdownlist_SelectedIndexChanged(object sender, System.EventArgs e)
@@ -302,12 +304,16 @@ namespace Votations.NSurvey.WebAdmin
 					new MultiLanguage().UpdateSurveyLanguage(SurveyId, item.Value, false);
 				}
 			}
-		}
+
+            MlCodesLiteral.Text = ListMultiLanguages();
+        }
 
 		private void VariableNameUpdateButton_Click(object sender, System.EventArgs e)
 		{
-			new MultiLanguage().UpdateMultiLanguage(SurveyId, ((MultiLanguageMode)int.Parse(MultiLanguagesModeDropDownList.SelectedValue)), VariableNameTextBox.Text);	
-		}
+			new MultiLanguage().UpdateMultiLanguage(SurveyId, ((MultiLanguageMode)int.Parse(MultiLanguagesModeDropDownList.SelectedValue)), VariableNameTextBox.Text);
+
+            MlCodesLiteral.Text = ListMultiLanguages();
+        }
 
         /// <summary>
         ///  Create string/ list of Activated Language Codes

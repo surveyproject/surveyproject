@@ -70,7 +70,7 @@
 	</data>
 	<data version="2.0" id="3" name="HelpFilesText">
      <value>
-- Integrated helpfiles are part of the Survey Project webapplication: 
+- Integrated helpfiles in English are part of the Survey Project webapplication.  The completion and translation into other languages is a (continuous) 'work in progress'. 
 &lt;br /&gt;&lt;br /&gt;o An index of helpfiles is available at menu Help/ Helpfiles. 
 &lt;br /&gt;o Tooltip [blue questionmark] icons linked to particular helptexts and subjects can be found on different webpages of the webapplication
        &lt;br /&gt;
@@ -248,9 +248,12 @@
   </data>
   <data version="2.4" id="23" name="ResultsReportRedirectHelp">
     <value>
-      &lt;b&gt;Report URL&lt;/b&gt;&lt;br /&gt;o To set the a report URL go to: &lt;br /&gt;Campaigns/ Web/ Deployment URL&lt;br /&gt;
-      o copy the surveyid&lt;br /&gt;o go back to the Completion to add:&lt;br /&gt;o NsurveyReports\[reportfilename].aspx?&lt;br /&gt;
-      o add the surveyid &lt;br /&gt;&lt;br /&gt;Example:&lt;br /&gt;NSurveyReports\[reportfilename].aspx?surveyid=bb058c...&lt;br /&gt;
+      &lt;b&gt;Report URL&lt;/b&gt;&lt;br /&gt;o To set a report URL go to: &lt;br /&gt;
+      &lt;i&gt;Campaigns/ Web/ Deployment URL&lt;/i&gt;
+      &lt;br /&gt;
+      o copy the surveyid&lt;br /&gt;o go back to the Completion to add:
+      &lt;br /&gt;&lt;i&gt;~\NsurveyReports\[reportfilename].aspx?&lt;/i&gt;&lt;br /&gt;
+      o next add the surveyid &lt;br /&gt;&lt;br /&gt;Example:&lt;br /&gt;~\NSurveyReports\[reportfilename].aspx?surveyid=bb058c...&lt;br /&gt;
     </value>
   </data>
   <data version="2.4" id="23" name="AnswerCssClass">

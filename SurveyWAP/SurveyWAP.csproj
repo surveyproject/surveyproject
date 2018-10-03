@@ -133,8 +133,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Code\RowSelectorColumnScript.js" />
-    <Content Include="ADLogon.aspx" />
-    <Content Include="ADStart.aspx" />
     <Content Include="App_Data\ErrorLog.txt" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -251,8 +249,11 @@
     <Content Include="Images\warning-icn.png" />
     <Content Include="Images\yellowwarning_16px.gif" />
     <Content Include="Errors\DefaultRedirectErrorPage.aspx" />
+    <Content Include="NSurveyAdmin\ErrorLog.aspx" />
+    <Content Include="NSurveyAdmin\Help\ErrorLog.aspx" />
     <Content Include="NSurveyAdmin\Help\New\CreateCustomReport.aspx" />
     <Content Include="NSurveyAdmin\Help\New\SsrsReports.aspx" />
+    <Content Include="NSurveyAdmin\Help\New\User_Account.aspx" />
     <Content Include="NSurveyAdmin\ResultsSsrs.aspx" />
     <Content Include="NSurveyForm\KeepSessionAlive.aspx" />
     <Content Include="NSurveyAdmin\AccessDenied.aspx" />
@@ -1104,11 +1105,12 @@
     <Content Include="Scripts\ckeditor\LICENSE.md" />
     <Content Include="Scripts\ckeditor\CHANGES.md" />
     <Content Include="ClassDiagram_SurveyWAP_v1.cd" />
-    <Content Include="articles\toc.md" />
-    <Content Include="articles\intro.md" />
-    <Content Include="articles\diagrams.md" />
+    <Content Include="Content\web.config" />
+    <Content Include="Images\web.config" />
+    <Content Include="fonts\web.config" />
     <None Include="NSurveyReports\SsrsReport.rdlc" />
     <Content Include="NSurveyReports\SsrsSurveyQAPrint.rdlc" />
+    <Content Include="NSurveyReports\web.config" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -1125,6 +1127,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Scripts\web.config" />
     <None Include="Scripts\_references.js" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
@@ -1260,13 +1263,6 @@
     <Content Include="Wap.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ADLogon.aspx.cs">
-      <DependentUpon>ADLogon.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ADLogon.aspx.designer.cs">
-      <DependentUpon>ADLogon.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Code\ASyncMailing.cs" />
     <Compile Include="Code\ASyncMailingReminder.cs" />
     <Compile Include="Code\ASyncMailingState.cs" />
@@ -1319,6 +1315,13 @@
     </Compile>
     <Compile Include="Errors\DefaultRedirectErrorPage.aspx.designer.cs">
       <DependentUpon>DefaultRedirectErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NSurveyAdmin\ErrorLog.aspx.cs">
+      <DependentUpon>ErrorLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NSurveyAdmin\ErrorLog.aspx.designer.cs">
+      <DependentUpon>ErrorLog.aspx</DependentUpon>
     </Compile>
     <Compile Include="NSurveyAdmin\ResultsSsrs.aspx.cs">
       <DependentUpon>ResultsSsrs.aspx</DependentUpon>
@@ -1933,7 +1936,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="articles\images\" />
     <Folder Include="Deployment\" />
     <Folder Include="Images\mscharts_temp\" />
   </ItemGroup>

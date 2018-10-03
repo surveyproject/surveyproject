@@ -23,9 +23,6 @@ namespace Votations.NSurvey.WebAdmin
     public partial class Settings : PageBase
     {
         
-        //Configuration configuration;
-        //CustomErrorsSection section;
-
         string connDev = ConfigurationManager.ConnectionStrings["SurveyProjectDevConnectionString"].ConnectionString;
         string connTest = ConfigurationManager.ConnectionStrings["SurveyProjectTestConnectionString"].ConnectionString;
         string connProd = ConfigurationManager.ConnectionStrings["SurveyProjectProdConnectionString"].ConnectionString;
@@ -40,6 +37,7 @@ namespace Votations.NSurvey.WebAdmin
 
             if (!Page.IsPostBack)
             {
+                txtUICulture.Text = UICulture;
                 txtCulture.Text = Culture;
 
                 txtConnectionStringDev.Text = connDev;
@@ -76,6 +74,7 @@ namespace Votations.NSurvey.WebAdmin
         private void LocalizePage()
         {
             //lblMainTitle.Text = Resources.ResourceManager.GetString("GeneralSettingsTitle");
+            lblUICulture.Text = UICulture;
             lblCulture.Text = Culture;
 
             lblConnectionStringDev.Text = connDev;
@@ -131,41 +130,41 @@ namespace Votations.NSurvey.WebAdmin
 
         }
 
-        protected void btnCreateSqlDb_Click(object sender, EventArgs e)
-        {
-            String str;
-            SqlConnection myConn = new SqlConnection("Server=localhost;Integrated security=SSPI;database=master");
+        //protected void btnCreateSqlDb_Click(object sender, EventArgs e)
+        //{
+        //    String str;
+        //    SqlConnection myConn = new SqlConnection("Server=localhost;Integrated security=SSPI;database=master");
 
-            str = "CREATE DATABASE MyDatabase ON PRIMARY " +
-                "(NAME = MyDatabase_Data, " +
-                "FILENAME = 'C:\\MyDatabaseData.mdf', " +
-                "SIZE = 2MB, MAXSIZE = 10MB, FILEGROWTH = 10%) " +
-                "LOG ON (NAME = MyDatabase_Log, " +
-                "FILENAME = 'C:\\MyDatabaseLog.ldf', " +
-                "SIZE = 1MB, " +
-                "MAXSIZE = 5MB, " +
-                "FILEGROWTH = 10%)";
+        //    str = "CREATE DATABASE MyDatabase ON PRIMARY " +
+        //        "(NAME = MyDatabase_Data, " +
+        //        "FILENAME = 'C:\\MyDatabaseData.mdf', " +
+        //        "SIZE = 2MB, MAXSIZE = 10MB, FILEGROWTH = 10%) " +
+        //        "LOG ON (NAME = MyDatabase_Log, " +
+        //        "FILENAME = 'C:\\MyDatabaseLog.ldf', " +
+        //        "SIZE = 1MB, " +
+        //        "MAXSIZE = 5MB, " +
+        //        "FILEGROWTH = 10%)";
 
-            SqlCommand myCommand = new SqlCommand(str, myConn);
-            try
-            {
-                myConn.Open();
-                myCommand.ExecuteNonQuery();
-                //MessageBox.Show("DataBase is Created Successfully", "MyProgram", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (System.Exception ex)
-            {
-                //MessageBox.Show(ex.ToString(), "MyProgram", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            finally
-            {
-                if (myConn.State == ConnectionState.Open)
-                {
-                    myConn.Close();
-                }
-            }
+        //    SqlCommand myCommand = new SqlCommand(str, myConn);
+        //    try
+        //    {
+        //        myConn.Open();
+        //        myCommand.ExecuteNonQuery();
+        //        //MessageBox.Show("DataBase is Created Successfully", "MyProgram", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //    }
+        //    catch (System.Exception ex)
+        //    {
+        //        //MessageBox.Show(ex.ToString(), "MyProgram", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //    }
+        //    finally
+        //    {
+        //        if (myConn.State == ConnectionState.Open)
+        //        {
+        //            myConn.Close();
+        //        }
+        //    }
 	
-        }
+        //}
 
         protected void btnMiscSettings_Click(object sender, EventArgs e)
         {
@@ -345,8 +344,6 @@ namespace Votations.NSurvey.WebAdmin
         }
 
 
-
-
         protected void btnCulture_Click(object sender, EventArgs e)
         {
 
@@ -355,7 +352,8 @@ namespace Votations.NSurvey.WebAdmin
 
             if (section != null)
             {
-                section.UICulture = txtCulture.Text;
+                section.UICulture = txtUICulture.Text;
+                section.Culture = txtCulture.Text;
 
                 section.SectionInformation.ProtectSection("RsaProtectedConfigurationProvider");
                 section.SectionInformation.ForceSave = true;
@@ -366,7 +364,7 @@ namespace Votations.NSurvey.WebAdmin
                 btnCultureDecript.Visible = true;
 
                 // display a message informing the user that value has changed
-                ((PageBase)Page).ShowNormalMessage(MessageLabel, "Updated:" + section.UICulture.ToString());
+                ((PageBase)Page).ShowNormalMessage(MessageLabel, "Updated UI Culture to: " + section.UICulture.ToString() + " - Culture to: "  + section.Culture.ToString());
                 MessageLabel.Visible = true;
             }
         }
@@ -411,7 +409,7 @@ namespace Votations.NSurvey.WebAdmin
                 btnCultureDecript.Visible = false;
 
                 // display a message informing the user that value has changed
-                ((PageBase)Page).ShowNormalMessage(MessageLabel, "Updated:" + section.UICulture.ToString());
+                ((PageBase)Page).ShowNormalMessage(MessageLabel, "Updated UI Culture to: " + section.UICulture.ToString() + " - Culture to: " + section.Culture.ToString());
                 MessageLabel.Visible = true;
             }
         }
@@ -617,7 +615,7 @@ namespace Votations.NSurvey.WebAdmin
                 }
             }
 
-            public static new string Culture
+            public static new string UICulture
             {
                 get
                 {
@@ -636,7 +634,24 @@ namespace Votations.NSurvey.WebAdmin
                 }
             }
 
+        public static new string Culture
+        {
+            get
+            {
+                string str = null;
 
+                Configuration configuration = WebConfigurationManager.OpenWebConfiguration("~");
+                var config = (GlobalizationSection)configuration.GetSection("system.web/globalization");
+
+                str = Convert.ToString(config.Culture);
+
+                if (str == null)
+                {
+                    return "empty";
+                }
+                return str;
+            }
+        }
 
     }
 }

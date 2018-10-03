@@ -27,7 +27,7 @@
                     <li>
                          <div class="rounded_corners">
                             <asp:DataGrid ID="ValidatedFilesDataGrid" runat="server" Width="100%"  AutoGenerateColumns="False"
-                                AllowCustomPaging="True" PageSize="1">
+                                AllowCustomPaging="True">
                                 <AlternatingItemStyle BackColor="#F4F9FA"></AlternatingItemStyle>
                                 <ItemStyle Font-Size="XX-Small" BackColor="White"></ItemStyle>
                                 <HeaderStyle VerticalAlign="Middle" Font-Size="XX-Small" Font-Bold="True" BackColor="#e2e2e2" BorderColor="#e2e2e2" ForeColor="#5720C6" ></HeaderStyle>
@@ -52,10 +52,13 @@
                              </div>
                                             </li>
                     <li>
-                                <asp:LinkButton ID="PreviousValidatedPageLinkButton" runat="server">&lt;&lt; Previous page</asp:LinkButton>&nbsp;
-                                <asp:LinkButton ID="NextValidatedPageLinkButton" runat="server">Next page >></asp:LinkButton>
-
+                                <div style="left: 30px; position:absolute; ">
+                            <asp:Button ID="PreviousValidatedPageLinkButton" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Previous page" /> &nbsp;&nbsp;
+                          <asp:Button ID="NextValidatedPageLinkButton" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Next Page"></asp:Button>
+                                </div>
+                             <div style="right: 10px;">
                                 <asp:Button ID="DeleteFilesButton" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Delete selected files"></asp:Button>
+                            </div>
                         <br />
                                             </li>
                                                         </ol>

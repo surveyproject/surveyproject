@@ -98,10 +98,21 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 		private void Page_Load(object sender, System.EventArgs e)
 		{
 			MessageLabel.Visible = false;
-			LocalizePage();
-			
-			// Check if any answer type id has been assigned
-			if (UserId == -1)
+
+            LocalizePage();
+
+            if (Session["SessionUserMessage"] != null)
+            {
+                string strMessage = Session["SessionUserMessage"].ToString();
+                ((PageBase)Page).ShowNormalMessage(MessageLabel, strMessage);
+                MessageLabel.Visible = true;
+
+                Session.Remove("SessionUserMessage");
+            }
+
+
+            // Check if any user id has been assigned
+            if (UserId == -1)
 			{
 				SwitchToCreationMode();
 			}
@@ -131,11 +142,10 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 			UserIsAdministratorLabel.Text = ((PageBase)Page).GetPageResource("UserIsAdministratorLabel");
 		}
 
-
-		/// <summary>
-		/// Setup the control in creation mode
-		/// </summary>
-		private void SwitchToCreationMode()
+        /// <summary>
+        /// Setup the control in creation mode
+        /// </summary>
+        private void SwitchToCreationMode()
 		{
 			if (_userProvider is INSurveyUserProvider)
 			{
@@ -168,8 +178,18 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 			CreateNewUserButton.Visible = false;
 			ApplyChangesButton.Visible = true;
 			DeleteUserButton.Visible = !(UserId == ((PageBase)Page).NSurveyUser.Identity.UserId) && _userProvider is INSurveyUserProvider;
-			ExtendedSettingsPlaceHolder.Visible = true;
-			HasSurveyAccessCheckBox.AutoPostBack = true;
+
+            //TODO 2.5
+            if (((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessUserAccount))
+            {
+                UsercheckBoxes.Visible = false;
+                ExtendedSettingsPlaceHolder.Visible = false;
+            }
+            else {
+                ExtendedSettingsPlaceHolder.Visible = true;
+            }
+
+            HasSurveyAccessCheckBox.AutoPostBack = true;
 		}
 		
 		/// <summary>
@@ -328,8 +348,18 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 					userSettings.UserSettings.Rows.Add(newUserSettings);
 					new User().AddUserSettings(userSettings);
 				}
-				UINavigator.NavigateToUserManager(((PageBase)Page).getSurveyId(),((PageBase)Page).MenuIndex);
-			}
+
+                //OnOptionChanged();
+                UserId = -1;
+                //Visible = false;
+                BindFields();
+
+                //MessageLabel.Visible = true;
+                //((PageBase)Page).ShowNormalMessage(MessageLabel, ((PageBase)Page).GetPageResource("UserCreatedConfirmation"));
+                
+                Session["SessionUserMessage"] = ((PageBase)Page).GetPageResource("UserCreatedConfirmation");
+                UINavigator.NavigateToUserManager(((PageBase)Page).getSurveyId(),((PageBase)Page).MenuIndex);
+            }
 
 		}
 
@@ -356,7 +386,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 			if (userNameId != -1 && userNameId != UserId)
 			{
 				MessageLabel.Visible = true;
-                ((PageBase)Page).ShowNormalMessage(MessageLabel,((PageBase)Page).GetPageResource("UserNameTakenMessage"));
+                ((PageBase)Page).ShowErrorMessage(MessageLabel,((PageBase)Page).GetPageResource("UserNameTakenMessage"));
 				RePopulatePasswordBox();
 				return false;
 			}
@@ -451,7 +481,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 
                 BindSurveyDropDownLists();
 				MessageLabel.Visible = true;
-((PageBase)Page).ShowNormalMessage(MessageLabel,((PageBase)Page).GetPageResource("UserUpdatedMessage"));
+                ((PageBase)Page).ShowNormalMessage(MessageLabel,((PageBase)Page).GetPageResource("UserUpdatedMessage"));
 			}
 		}
 
@@ -468,10 +498,13 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 			UserId = -1;
 			Visible = false;
 			OnOptionChanged();
+
+            Session["SessionUserMessage"] = ((PageBase)Page).GetPageResource("UserDeletedConfirmation");
+
             UINavigator.NavigateToUserManager(((PageBase)Page).getSurveyId(), ((PageBase)Page).MenuIndex);
 		}
 
-		private void HasSurveyAccessCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        private void HasSurveyAccessCheckBox_CheckedChanged(object sender, System.EventArgs e)
 		{
 			SurveysListBox.Enabled = !HasSurveyAccessCheckBox.Checked;
 			UserSurveysListBox.Enabled = !HasSurveyAccessCheckBox.Checked;
@@ -481,25 +514,37 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 		{
 			new Survey().AssignUserToSurvey(int.Parse(SurveysListBox.SelectedValue), UserId);
 			BindSurveyDropDownLists();
-		}
+
+            MessageLabel.Visible = true;
+            ((PageBase)Page).ShowNormalMessage(MessageLabel, ((PageBase)Page).GetPageResource("UserUpdatedMessage"));
+        }
 
 		private void UserSurveysListBox_SelectedIndexChanged(object sender, System.EventArgs e)
 		{
 			new Survey().UnAssignUserFromSurvey(int.Parse(UserSurveysListBox.SelectedValue), UserId);
 			BindSurveyDropDownLists();
-		}
+
+            MessageLabel.Visible = true;
+            ((PageBase)Page).ShowNormalMessage(MessageLabel, ((PageBase)Page).GetPageResource("UserUpdatedMessage"));
+        }
 
 		private void RolesListBox_SelectedIndexChanged(object sender, System.EventArgs e)
 		{
 			new Role().AddRoleToUser(int.Parse(RolesListBox.SelectedValue), UserId);
 			BindSurveyDropDownLists();
-		}
+
+            MessageLabel.Visible = true;
+            ((PageBase)Page).ShowNormalMessage(MessageLabel, ((PageBase)Page).GetPageResource("UserUpdatedMessage"));
+        }
 
 		private void UserRolesListBox_SelectedIndexChanged(object sender, System.EventArgs e)
 		{
 			new Role().DeleteUserRole(int.Parse(UserRolesListBox.SelectedValue), UserId);
 			BindSurveyDropDownLists();
-		}
+
+            MessageLabel.Visible = true;
+            ((PageBase)Page).ShowNormalMessage(MessageLabel, ((PageBase)Page).GetPageResource("UserUpdatedMessage"));
+        }
 
 		private IUserProvider _userProvider = UserFactory.Create();
 

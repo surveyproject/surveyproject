@@ -381,7 +381,12 @@ namespace Votations.NSurvey.SQLServerDAL
                 commandParameters.Add(new SqlParameter("@SurveyId", surveyId).SqlValue);
             }
             
-            DbConnection.db.ExecuteNonQuery( "vts_spVoterDeleteAll", commandParameters.ToArray());
+            //DbConnection.db.ExecuteNonQuery( "vts_spVoterDeleteAll", commandParameters.ToArray()) ;
+
+            SqlDatabase db = new SqlDatabase(DbConnection.NewDbConnectionString);
+            System.Data.Common.DbCommand cmd = db.GetStoredProcCommand("vts_spVoterDeleteAll", commandParameters.ToArray());
+            cmd.CommandTimeout = 120; //in sec. - default: 30
+            db.ExecuteNonQuery(cmd);
         }
 
         /// <summary>

@@ -107,6 +107,9 @@ namespace Votations.NSurvey.WebAdmin
         public static readonly string GeneralSettingsLink = AdminRoot + "/Settings.aspx";
         public static readonly string CssXmlHyperLink = AdminRoot + "/EditCssXml.aspx";
 
+        // Survey 2.5 Release Additions
+        public static readonly string ErrorLogLink = AdminRoot + "/ErrorLog.aspx";
+
 
         public static void NavigateToSurveyOptions(int surveyId, int menuIndex)
         {
@@ -261,8 +264,10 @@ namespace Votations.NSurvey.WebAdmin
                 destURL = string.Format("{0}?surveyid={1}&menuindex={2}", LibraryDirectoryHyperLink, surveyId, (int)NavigationMenuItems.TheLibrary);
             else if (user.Identity.IsAdmin || user.HasRight(NSurveyRights.AccessSecuritySettings))
                 destURL = string.Format("{0}?surveyid={1}&menuindex={2}", SurveySecurityLink, surveyId, (int)NavigationMenuItems.SurveySecurity);
+
             else if (user.Identity.IsAdmin || user.HasRight(NSurveyRights.AccessUserManager))
                 destURL = string.Format("{0}?surveyid={1}&menuindex={2}", UsersManagerHyperLink, surveyId, (int)NavigationMenuItems.UsersManager);
+
             else if (user.Identity.IsAdmin || user.HasRight(NSurveyRights.AccessHelpFiles))
                 destURL = string.Format("{0}?surveyid={1}&menuindex={2}", HelpFilesHyperLink, surveyId, (int)NavigationMenuItems.HelpFiles);
             else if (user.Identity.IsAdmin || user.HasRight(NSurveyRights.SurveyLayoutRight))

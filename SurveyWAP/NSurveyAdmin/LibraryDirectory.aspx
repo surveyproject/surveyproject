@@ -97,7 +97,7 @@
                 </fieldset>
                   
                 <uc1:LibraryNew runat="server" ID="lbnEdit" />
-                
+                <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
             </asp:Panel>
         </div>
 

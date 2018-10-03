@@ -24,18 +24,14 @@
 
 namespace Votations.NSurvey.WebAdmin.UserControls
 {
-    using System;
-    using System.Web;
-    using System.Web.UI;
-    using System.Web.UI.WebControls;
-    using System.Resources;
     using Microsoft.VisualBasic;
+    using System;
+    using System.Web.UI;
     using Votations.NSurvey;
+    using Votations.NSurvey.BusinessRules;
     using Votations.NSurvey.Data;
     using Votations.NSurvey.DataAccess;
-    using Votations.NSurvey.BusinessRules;
-    using Votations.NSurvey.Web;
-    using Votations.NSurvey.WebAdmin.NSurveyAdmin;
+
     /// <summary>
     /// Survey data CU methods
     /// </summary>
@@ -111,7 +107,17 @@ namespace Votations.NSurvey.WebAdmin.UserControls
             LocalizePage();
 
             MessageLabel.Visible = false;
-            DeleteButton.Attributes.Add("onClick",
+
+            if (Session["SessionMessage"] != null)
+            {
+                string strMessage = Session["SessionMessage"].ToString();
+                ((PageBase)Page).ShowNormalMessage(MessageLabel, strMessage);
+                MessageLabel.Visible = true;
+
+                Session.Remove("SessionMessage");
+            }
+
+             DeleteButton.Attributes.Add("onClick",
                             "javascript:if(confirm('" + ((PageBase)Page).GetPageResource("DeleteSurveyConfirmationMessage") + "')== false) return false;");
 
 
@@ -231,8 +237,6 @@ namespace Votations.NSurvey.WebAdmin.UserControls
         /// </summary>
         private void BindFields()
         {
-
-
             DateFormatLabel.Text = (DateTime.Now).ToShortDateString();
 
             // Retrieve the survey data
@@ -477,9 +481,15 @@ namespace Votations.NSurvey.WebAdmin.UserControls
                 new Survey().AddSurvey(surveyData);
                 AssignSurveyToUser(surveyData.Surveys[0].SurveyId);
                 ((PageBase)Page).SurveyId = surveyData.Surveys[0].SurveyId;
-                ((Wap)Page.Master).isTreeStale = true;
+
+                //((Wap)Page.Master).isTreeStale = true;
+                ((Wap)this.Page.Master.Master).isTreeStale = true;
                 //This messes up the tree astructure etc so Stay where you are
-                UINavigator.NavigateToSurveyBuilder(surveyRow.SurveyId, 4);
+                //UINavigator.NavigateToSurveyBuilder(surveyRow.SurveyId, 4);
+
+                Session["SessionMessage"] = ((PageBase)Page).GetPageResource("SurveyCreatedMessage");
+                UINavigator.NavigateToSurveyOptions(surveyRow.SurveyId, 4);
+
             }
             catch (SurveyExistsFoundException ex)
             {
@@ -507,10 +517,13 @@ namespace Votations.NSurvey.WebAdmin.UserControls
         {
             // Delete survey from the DB
             new Survey().DeleteSurveyById(SurveyId);
-            ((PageBase)Page).ShowNormalMessage(MessageLabel, ((PageBase)Page).GetPageResource("SurveyDeletedMessage"));
 
-            MessageLabel.Visible = true;
+            //((PageBase)Page).ShowNormalMessage(MessageLabel, ((PageBase)Page).GetPageResource("SurveyDeletedMessage"));
+            //MessageLabel.Visible = true;
+            Session["SessionMessage"] = ((PageBase)Page).GetPageResource("SurveyDeletedMessage");
+
             ((PageBase)Page).SurveyDeleteActions(SurveyId);
+
             UINavigator.NavigateToSurveyOptions(-1, ((PageBase)Page).MenuIndex);
         }
 
@@ -539,6 +552,8 @@ namespace Votations.NSurvey.WebAdmin.UserControls
             // Let the subscribers know that something has changed
             OnOptionChanged();
 
+            ((PageBase)Page).ShowNormalMessage(MessageLabel, ((PageBase)Page).GetPageResource("SurveyClonedMessage"));
+
         }
 
         private void ExportSurveyButton_Click(object sender, System.EventArgs e)
@@ -565,8 +580,8 @@ namespace Votations.NSurvey.WebAdmin.UserControls
                 NSurveyForm importedSurveys = new NSurveyForm();
                 try
                 {
-
                     importedSurveys.ReadXml(ImportFile.PostedFile.InputStream);
+
                     if (importedSurveys.Survey.Rows.Count > 0)
                     {
                         // Prevents SQL injection from custom hand written datasources Sql answer types in the import Xml 
@@ -578,14 +593,22 @@ namespace Votations.NSurvey.WebAdmin.UserControls
                             }
                         }
 
+                        //correction of pre SP 2.5 surveys on import to new assembly names
+                        foreach (NSurveyForm.AnswerTypeRow answerTypes in importedSurveys.AnswerType)
+                        {
+                                answerTypes.TypeAssembly = "SurveyProject.WebControls";
+                        }
+
                         new Survey().ImportSurveys(importedSurveys, ((PageBase)Page).NSurveyUser.Identity.UserId, ((PageBase)Page).SelectedFolderId ?? -1);
                         Surveys srv = new Surveys();
                         srv.SetFolderId(((PageBase)Page).SelectedFolderId, importedSurveys.Survey[0].SurveyID);
 
-                        AssignSurveyToUser(importedSurveys.Survey[0].SurveyID);
                         SurveyId = importedSurveys.Survey[0].SurveyID;
-                        UINavigator.NavigateToSurveyBuilder(importedSurveys.Survey[0].SurveyID, 4);
-                        ((PageBase)Page).ShowNormalMessage(MessageLabel, ((PageBase)Page).GetPageResource("SurveyImported"));
+                        AssignSurveyToUser(SurveyId);
+
+                        Session["SessionMessage"] = ((PageBase)Page).GetPageResource("SurveyImported");
+
+                        UINavigator.NavigateToSurveyOptions(importedSurveys.Survey[0].SurveyID, 4);
                     }
 
                     else ((PageBase)Page).ShowErrorMessage(MessageLabel, ((PageBase)Page).GetPageResource("SurveyNotImported"));
@@ -601,18 +624,22 @@ namespace Votations.NSurvey.WebAdmin.UserControls
                     }
                     else
                     {
-                        ((PageBase)Page).ShowErrorMessage(MessageLabel, ((PageBase)Page).GetPageResource("Exception") + "  " + ex.Message);
-                        Code.ExceptionUtility.LogException(ex, "Survey XML Import Error");
+                        if (ex.Message == "Thread was being aborted.")
+                        {
+                            // do nothing
+                        }
+                        else
+                        {
+                            //((PageBase)Page).ShowErrorMessage(MessageLabel, ((PageBase)Page).GetPageResource("Exception") + "  " + ex.Message);
+                            ((PageBase)Page).ShowErrorMessage(MessageLabel, ((PageBase)Page).GetPageResource("Exception"));
+                            Code.ExceptionUtility.LogException(ex, "Survey XML Import Error");
+                        }
+
                     }
 
                     MessageLabel.Visible = true;
                 }
             }
-        }
-
-        protected void ApplyChangesButton_Click1(object sender, EventArgs e)
-        {
-
         }
     }
 }

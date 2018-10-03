@@ -82,6 +82,16 @@ namespace Votations.NSurvey.WebAdmin
                 }
 
             }
+
+            // add surveymobile CSS
+            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
+            HtmlGenericControl css3 = new HtmlGenericControl("link");
+            css3.Attributes.Add("rel", "stylesheet");
+            css3.Attributes.Add("type", "text/css");
+            css3.Attributes.Add("href", ResolveUrl("~/Content/surveyform/surveymobile.css"));
+            Page.Header.Controls.Add(css3);
+
+
         }
 
         private void InitiateSurvey(int surveyId=-1)

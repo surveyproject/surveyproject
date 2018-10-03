@@ -76,12 +76,30 @@
         <ol>
             <li>
                 <asp:Literal ID="WebControlIntro" runat="server" EnableViewState="false">Introdution to using the custom webcontrol</asp:Literal>
-
+            </li>
+                        <li>
+                <asp:Literal ID="PageDirectiveInfo" runat="server" EnableViewState="False">Include the following directive in the aspx pages that will display the survey :</asp:Literal>
+                <br />
+                <span class="RegisterLiteral">
+                    <asp:Literal ID="TagPrefixInfo" runat="server" EnableViewState="False">
+                        &lt;%@Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="SurveyProject.WebControls" %&gt;
+                    </asp:Literal>
+                </span>
+                &nbsp;
             </li>
             <li>
-        <textarea id="taCode" runat="server" style="width: 685px; border: 10px solid white;" rows="12" cols="85">
+        <textarea id="taCode" runat="server" style="width: 685px; font-size:0.9em; border: 10px solid white;" rows="45" cols="85">
+        &lt;!-- Add a CSS file to the survey by creating a stylesheet link in the webpage header. E.g. --&gt;
+        &lt;head runat="server"&gt;
+        &lt;link href="{0}" type="text/css" rel="stylesheet" /&gt;
+        &lt;/head&gt;
 
-        &lt;vts:SurveyBox ID="SurveyPreview" Surveyid="{0}" CssClass="surveybox" EnableValidation="true" runat="server" &gt;
+        &lt;!-- Minimum code added to webpage body. Set surveyid to id of survey that needs to be shown on the page. --&gt;
+        &lt;!-- SurveyID below is from the currently selected survey. --&gt;
+        &lt;body&gt;
+        &lt;form id="form1" runat=""server""&gt;
+
+        &lt;vts:SurveyBox ID="SurveyControl" Surveyid="{1}" CssClass="surveybox" EnableValidation="true" runat="server" &gt;
 
         &lt;QuestionStyle  CssClass="questionStyle"&gt;&lt;/QuestionStyle&gt;
 
@@ -109,24 +127,13 @@
         &lt;FootStyle CssClass="footStyle" &gt;&lt;/FootStyle&gt;
 
         &lt;/vts:SurveyBox&gt;
+        &lt;/form&gt;
 
+        &lt;!-- Add the following script at the bottom of the page: --&gt;
+       &lt;script src="&lt;%=Page.ResolveUrl("~/Scripts/bootstrap.min.js")%&gt;"&gt;&lt;/script&gt;
+        &lt;/body&gt;
         </textarea>
-
             </li>
-
-            <li>
-                <asp:Literal ID="PageDirectiveInfo" runat="server" EnableViewState="False">You must also include the following directive in the aspx pages that will display the survey :</asp:Literal>
-                <br />
-                <br />
-                <span class="RegisterLiteral">
-                    <asp:Literal ID="TagPrefixInfo" runat="server" EnableViewState="False">&lt;%@Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" 
-            Assembly="SurveyProject.WebControls" %&gt;</asp:Literal>
-                </span>
-                <br />
-                &nbsp;
-            </li>
-
-
         </ol>
         <br />
     </fieldset>

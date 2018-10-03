@@ -207,7 +207,7 @@
      </asp:PlaceHolder>
 
 <br />
-<asp:Button ID="ApplyChangesButton" CssClass="btn btn-primary btn-xs" runat="server" Text="Apply changes" onclick="ApplyChangesButton_Click1"></asp:Button>
+<asp:Button ID="ApplyChangesButton" CssClass="btn btn-primary btn-xs" runat="server" Text="Apply changes"></asp:Button>
 <asp:Button ID="DeleteButton" CssClass="btn btn-primary btn-xs" runat="server" Text="Delete"></asp:Button>
 <asp:Button ID="CloneButton" CssClass="btn btn-primary btn-xs" runat="server" Text="Clone"></asp:Button>
 <asp:Button ID="ExportSurveyButton" CssClass="btn btn-primary btn-xs" runat="server" Text="Export XML"></asp:Button>

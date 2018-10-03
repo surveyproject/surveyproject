@@ -19,7 +19,7 @@ namespace Votations.NSurvey.WebAdmin {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal PreviewSurveyLanguageLabel;
+        protected global::System.Web.UI.WebControls.Label PreviewSurveyLanguageLabel;
         
         /// <summary>
         /// LanguagesDropdownlist control.

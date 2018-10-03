@@ -81,16 +81,8 @@ namespace Votations.NSurvey.WebAdmin.UserControls
             {
                 LogoutButton.Visible = true;
                 LogoutButton.ToolTip = page.GetPageResource("LogOutHyperlink");
-//                LogoutButton.Text = page.NSurveyUser.Identity.Name + page.GetPageResource("LoggedInAs");
-
             }
 
-
- //           if (user.Identity.IsAdmin || user.HasRight(NSurveyRights.AccessHelpFiles))
- //           {
- //                HelpButton.Visible = true;
- //               HelpButton.Text = page.GetPageResource("HelpFilesHyperlink");
- //           }
 
             if (mnuMain.Items.Count > 0) return; // If menu is already populated return
 
@@ -106,18 +98,17 @@ namespace Votations.NSurvey.WebAdmin.UserControls
               || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessMultiLanguages) || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessPrivacySettings)
                 || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.SurveyLayoutRight) || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessSurveyList) ||
                 ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.CreateSurvey) || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessStats)
-                || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessSecuritySettings) || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.TokenSecurityRight))
+                || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessSecuritySettings) || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.TokenSecurityRight) || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.IpFilterSecurityRight))
             {
-                mnuMain.Items.Add(new MenuItem(((PageBase)Page).GetPageResource("SurveysHyperLink"), null, null, string.Empty));
+                //mnuMain.Items.Add(new MenuItem(((PageBase)Page).GetPageResource("SurveysHyperLink"), null, null, string.Empty));
+                mnuMain.Items.Add(new MenuItem { Text = ((PageBase)Page).GetPageResource("SurveysHyperLink"), Enabled = true, Selectable = false });
+
                 if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessSurveyList))
                     mnuMain.Items[menuIndex].ChildItems.Add(new MenuItem(((PageBase)Page).GetPageResource("ListSurveyHyperLink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.ListSurveyLink, SurveyId)));
 
                 if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.CreateSurvey))
                 {
-
-
                     mnuMain.Items[menuIndex].ChildItems.Add(new MenuItem(((PageBase)Page).GetPageResource("NewSurveyHyperLink"), null, null, string.Format("{0}&surveyid={1}", UINavigator.CreateSurveyLink, SurveyId)));
-
                 }
 
                 if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessStats))
@@ -127,11 +118,19 @@ namespace Votations.NSurvey.WebAdmin.UserControls
                   || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessMultiLanguages) || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessPrivacySettings)
                     || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.SurveyLayoutRight))
                 {
-                    mnuMain.Items[menuIndex].ChildItems.Add(new MenuItem(((PageBase)Page).GetPageResource("SurveyOptionsHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.SurveyOptionsLink, SurveyId)));
+                    mnuMain.Items[menuIndex].ChildItems.Add(new MenuItem { Text = ((PageBase)Page).GetPageResource("SurveyOptionsHyperlink"), Enabled = true, Selectable = false });
 
                     if (((PageBase)Page).NSurveyUser.Identity.IsAdmin)
-                        mnuMain.Items[menuIndex].ChildItems[mnuMain.Items[menuIndex].ChildItems.Count - 1].ChildItems.
-                            Add(new MenuItem(((PageBase)Page).GetPageResource("GeneralSettingsHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.GeneralSettingsLink, SurveyId)));
+                    {
+                        mnuMain.Items[menuIndex].ChildItems[mnuMain.Items[menuIndex].ChildItems.Count - 1].ChildItems.Add(new MenuItem(((PageBase)Page).GetPageResource("GeneralSettingsHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.GeneralSettingsLink, SurveyId)));
+
+                        MenuItem itemsub;
+                        itemsub = mnuMain.Items[menuIndex].ChildItems[mnuMain.Items[menuIndex].ChildItems.Count - 1];
+
+                        int submenuIndex = 0;
+                        itemsub.ChildItems[submenuIndex].ChildItems.Add(new MenuItem(((PageBase)Page).GetPageResource("ErrorLogHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.ErrorLogLink, SurveyId)));
+                    }
+
 
                     if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessSurveySettings))
                         mnuMain.Items[menuIndex].ChildItems[mnuMain.Items[menuIndex].ChildItems.Count - 1].ChildItems.
@@ -146,15 +145,15 @@ namespace Votations.NSurvey.WebAdmin.UserControls
                             Add(new MenuItem(((PageBase)Page).GetPageResource("SurveyInfoCompletion"), null, null, string.Format("{0}?surveyid={1}", UINavigator.SurveyPrivacyLink, SurveyId)));
                    
                 }
-                if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessSecuritySettings) || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.TokenSecurityRight))
+                if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessSecuritySettings) || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.TokenSecurityRight) || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.IpFilterSecurityRight))
                 {
-                    mnuMain.Items[menuIndex].ChildItems.Add(new MenuItem(((PageBase)Page).GetPageResource("SurveySecurityHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.SurveySecurityLink, SurveyId)));
+                    mnuMain.Items[menuIndex].ChildItems.Add(new MenuItem { Text = ((PageBase)Page).GetPageResource("SurveySecurityHyperlink"), Enabled = true, Selectable = false });
 
                     if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessSecuritySettings))
                         mnuMain.Items[menuIndex].ChildItems[mnuMain.Items[menuIndex].ChildItems.Count - 1].ChildItems.
                             Add(new MenuItem(((PageBase)Page).GetPageResource("SurveyFormSecurityHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.SurveySecurityLink, SurveyId)));
 
-                    if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.TokenSecurityRight))
+                    if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.TokenSecurityRight) || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.IpFilterSecurityRight))
                         mnuMain.Items[menuIndex].ChildItems[mnuMain.Items[menuIndex].ChildItems.Count - 1].ChildItems.
                             Add(new MenuItem(((PageBase)Page).GetPageResource("SurveyTokenSecurityHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.SurveyTokenSecurityLink, SurveyId)));
                     mnuMain.Items[menuIndex].ChildItems[mnuMain.Items[menuIndex].ChildItems.Count - 1].ChildItems.
@@ -175,7 +174,8 @@ namespace Votations.NSurvey.WebAdmin.UserControls
                 || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessRegExEditor) || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.SurveyLayoutRight)
                 ) 
             {
-                mnuMain.Items.Add(new MenuItem(((PageBase)Page).GetPageResource("DesignerHyperlink"), null, null, String.Empty));
+                mnuMain.Items.Add(new MenuItem {Text=((PageBase)Page).GetPageResource("DesignerHyperlink"), Enabled=true, Selectable=false } );
+
                 if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessFormBuilder))
                     mnuMain.Items[menuIndex].ChildItems.Add(new MenuItem(((PageBase)Page).GetPageResource("SurveyBuilderHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.SurveyContentBuilderLink, SurveyId)));
 
@@ -183,7 +183,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
                 if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessLibrary)
                   || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.ManageLibrary))
                 {
-                    mnuMain.Items[menuIndex].ChildItems.Add(new MenuItem(((PageBase)Page).GetPageResource("LocalLibraryHyperLink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.LibraryDirectoryHyperLink, SurveyId)));
+                    mnuMain.Items[menuIndex].ChildItems.Add(new MenuItem { Text = ((PageBase)Page).GetPageResource("LocalLibraryHyperLink"), Selectable = false });
 
                     if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessLibrary))
                         mnuMain.Items[menuIndex].ChildItems[mnuMain.Items[menuIndex].ChildItems.Count - 1].ChildItems.
@@ -209,7 +209,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 
                     mnuMain.Items[menuIndex].ChildItems.Add(new MenuItem(((PageBase)Page).GetPageResource("SurveyLayoutHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.SurveyLayoutLink, SurveyId)));
 
-                    if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.SurveyLayoutRight))
+                    if (((PageBase)Page).NSurveyUser.Identity.IsAdmin)
                         mnuMain.Items[menuIndex].ChildItems[mnuMain.Items[menuIndex].ChildItems.Count - 1].ChildItems.
                             Add(new MenuItem(((PageBase)Page).GetPageResource("CssXmlHyperLink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.CssXmlHyperLink, SurveyId)));
                 }
@@ -226,7 +226,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
                 || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.DataImportRight) || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessExport) ||
                 ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessFieldEntries) )
             {
-                mnuMain.Items.Add(new MenuItem(((PageBase)Page).GetPageResource("ResultsSMHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.ResultsReportHyperlink, SurveyId)));
+                mnuMain.Items.Add(new MenuItem { Text = ((PageBase)Page).GetPageResource("ResultsSMHyperlink"), Selectable = false });
 
 
                 if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessReports))
@@ -259,7 +259,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
                  || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessASPNetCode) || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessMailing))
             {
                 // mnuMain.Items.Add(new MenuItem(((PageBase)Page).GetPageResource("CampaignSMHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.CampaignPreViewHyperLink, SurveyId)));
-                mnuMain.Items.Add(new MenuItem(((PageBase)Page).GetPageResource("CampaignSMHyperlink"), null, null, String.Empty));
+                mnuMain.Items.Add(new MenuItem { Text = ((PageBase)Page).GetPageResource("CampaignSMHyperlink"), Selectable = false } );
 
                 if (((PageBase)Page).NSurveyUser.Identity.IsAdmin 
                     || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessASPNetCode) )
@@ -284,26 +284,37 @@ namespace Votations.NSurvey.WebAdmin.UserControls
             #endregion
 
             #region Accounts
-            if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessUserManager))
+            if ( ((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessUserManager) || 
+                ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessRolesManager) || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessImportUsers) ||
+                ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessUserAccount) )
             {
+                mnuMain.Items.Add(new MenuItem { Text = ((PageBase)Page).GetPageResource("AccountSMHyperlink"), Enabled = true, Selectable = false });
 
-                mnuMain.Items.Add(new MenuItem(((PageBase)Page).GetPageResource("AccountSMHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.UsersManagerHyperLink, SurveyId)));
+                if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessUserManager) || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessUserAccount))
+                {
+                    mnuMain.Items[menuIndex].ChildItems.Add(new MenuItem(((PageBase)Page).GetPageResource("UsersManagerHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.UsersManagerHyperLink, SurveyId)));
+                }
 
-                mnuMain.Items[menuIndex].ChildItems.Add(new MenuItem(((PageBase)Page).GetPageResource("UsersManagerHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.UsersManagerHyperLink, SurveyId)));
+                if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessRolesManager))
+                {
+                    mnuMain.Items[menuIndex].ChildItems.Add(new MenuItem(((PageBase)Page).GetPageResource("RolesManagerHyperlink"), null, null, string.Format("{0}&surveyid={1}", UINavigator.RolesManagerHyperLink, SurveyId)));
+                }
 
-                mnuMain.Items[menuIndex].ChildItems.Add(new MenuItem(((PageBase)Page).GetPageResource("RolesManagerHyperlink"), null, null, string.Format("{0}&surveyid={1}", UINavigator.RolesManagerHyperLink, SurveyId)));
-
-                mnuMain.Items[menuIndex].ChildItems.Add(new MenuItem(((PageBase)Page).GetPageResource("ImportUsersHyperlink"), null, null, string.Format("{0}&surveyid={1}", UINavigator.ImportUsersHyperLink, SurveyId)));
+                if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessImportUsers))
+                {
+                    mnuMain.Items[menuIndex].ChildItems.Add(new MenuItem(((PageBase)Page).GetPageResource("ImportUsersHyperlink"), null, null, string.Format("{0}&surveyid={1}", UINavigator.ImportUsersHyperLink, SurveyId)));
+                }
 
                 menuIndex++;
             }
+
             #endregion
 
             #region Help
             if (((PageBase)Page).NSurveyUser.Identity.IsAdmin || ((PageBase)Page).NSurveyUser.HasRight(NSurveyRights.AccessHelpFiles))
             {
 
-                mnuMain.Items.Add(new MenuItem(((PageBase)Page).GetPageResource("HelpSMHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.HelpOptionsHyperLink, SurveyId)));
+                mnuMain.Items.Add(new MenuItem { Text = ((PageBase)Page).GetPageResource("HelpSMHyperlink"), Enabled = true, Selectable = false });
 
                 mnuMain.Items[menuIndex].ChildItems.Add(new MenuItem(((PageBase)Page).GetPageResource("HelpOptionsHyperlink"), null, null, string.Format("{0}?surveyid={1}", UINavigator.HelpOptionsHyperLink, SurveyId)));
 

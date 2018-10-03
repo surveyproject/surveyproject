@@ -1,12 +1,12 @@
 ___________________________________________________________________
 
 
-License Agreement for Survey™ Project version 2.4
+License Agreement for Survey™ Project version 2.5
 
 ___________________________________________________________________
 
 Survey™ Project - The open source web survey and form engine
-Copyright (c) 2009/2017 by W3DevPro™ (WDP). (http://www.w3devpro.com)
+Copyright (c) 2009/2018 by W3DevPro™ (WDP). (http://www.w3devpro.com)
 
 NSurvey - The web survey and form engine
 Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)

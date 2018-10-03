@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/NSurveyAdmin/MsterPageTabs.master"
+﻿<%@ Page Title="Survey Layout" Language="C#" MasterPageFile="~/NSurveyAdmin/MsterPageTabs.master"
     AutoEventWireup="true" CodeBehind="SurveyLayout.aspx.cs" Inherits="Votations.NSurvey.WebAdmin.NSurveyAdmin.SurveyLayout" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -40,21 +40,30 @@
  <ol>
      <li>
                     <asp:Label ID="CssLabel" AssociatedControlID="ddlTemplate" runat="server"></asp:Label>
-                <asp:DropDownList runat="server" ID="ddlTemplate" Width="400px" AppendDataBoundItems="True" AutoPostBack="True"  OnSelectedIndexChanged="TemplatesDropdownlist_SelectedIndexChanged">
+                <asp:DropDownList runat="server" ID="ddlTemplate" Width="300px" AppendDataBoundItems="True" AutoPostBack="True"  OnSelectedIndexChanged="TemplatesDropdownlist_SelectedIndexChanged">
                 </asp:DropDownList>
+         <asp:Button CssClass="btn btn-primary btn-xs bw" ID="CssSaveButton" Visible="false" runat="server" Text="" OnCommand="OnSave" />
 
 </li><li>   
         
                             <asp:FileUpload runat="server" ID="fuCss"/>
                             <asp:Button CssClass="btnCssUpload btn btn-primary btn-xs bw" runat="server" Text="Upload" ID="btnCssUpload" OnCommand="OnCssFileUpload" />
-    </li><li id="cssBtnID" runat="server"> 
+    </li>
+     <li id="cssBtnID" runat="server"> 
                             <asp:Button CssClass="btn btn-primary btn-xs bw" runat="server" ID="btnCssDownload" Text="Download" OnClick="btnCssDownload_Click" />
 
                             <asp:Button CssClass="btn btn-primary btn-xs bw" runat="server" ID="btnCssDelete" Text="Delete" OnClick="btnCssDelete_Click" />
 
                             <asp:Button CssClass="btn btn-primary btn-xs bw" runat="server" ID="btnCssEdit" Text="Edit" OnClick="btnCssEdit_Click" />
         <br />
-        </li><li>
+        </li>
+     </ol>
+           <br />
+     <ol>
+
+ <asp:Panel ID="pnlHdrFooter" runat="server">
+
+     <li>
                                 <asp:Label AssociatedControlID="LanguagesDropdownlist" ID="EditionLanguageLabel" runat="server"></asp:Label>
 
                             <asp:DropDownList ID="LanguagesDropdownlist" runat="server" 
@@ -63,11 +72,9 @@
                             </asp:DropDownList>
 
             </li>
-            <!--
-                    <asp:TextBox runat="server" ID="tctEditCxSS" Wrap="true" TextMode="MultiLine" Rows="10" />
-            -->
 
-    <asp:Panel ID="pnlHdrFooter" runat="server">
+
+   
 <li>
 
                         <asp:Label ID="HeaderLabel" AssociatedControlID="txtPageHeader" runat="server"></asp:Label>

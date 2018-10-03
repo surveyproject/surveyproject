@@ -4,15 +4,14 @@
       "src": [
         {
           "files": [
-            ""
+            "*.csproj"
           ],
           "cwd": ".",
           "exclude": [
             "**/obj/**",
             "**/bin/**",
             "_site/**"
-          ],
-          "src": ".."
+          ]
         }
       ],
       "dest": "obj/api"
@@ -30,7 +29,6 @@
         "files": [
           "api/*.md",
           "articles/**.md",
-          "downloads/**.md",
           "toc.yml",
           "*.md"
         ],
@@ -43,8 +41,7 @@
     "resource": [
       {
         "files": [
-          "images/**",
-          "downloads/files/**"
+          "images/**"
         ],
         "exclude": [
           "obj/**",
@@ -64,21 +61,6 @@
       }
     ],
     "dest": "_site",
-    "globalMetadata": {
-      "_enableSearch": true,
-      "_appTitle": "SP Technical Documentation",
-      "_gitContribute": {
-        "repo": "https://github.com/surveyproject/spdocs",
-        "branch": "master",
-        "path": ""
-      },
-      "_appFooter": "Copyright &copy;2017 Survey&trade; Project",
-      "_appLogoPath": "images/splogo.png",
-      "_appFaviconPath": "images/favicon.ico",
-      "_disableBreadcrumb": false,
-      "_disableAffix": false,
-      "_disableContribution": false
-    },
     "template": [
       "default"
     ]

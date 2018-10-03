@@ -27,7 +27,14 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
                 LocalizePage();
                 BindFields();
                 BindLanguages();
-                cssBtnID.Visible = false;
+
+                if (ddlTemplate.SelectedIndex != 0)
+                {
+                    cssBtnID.Visible = true;
+                } else
+                {
+                    cssBtnID.Visible = false;
+                }
 
             }
 
@@ -45,6 +52,7 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
         {
             CheckRight(NSurveyRights.SurveyLayoutRight, true);
         }
+
         private void LocalizePage()
         {
             CssLabel.Text = GetPageResource("CssLabel");
@@ -61,6 +69,8 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
             EditionLanguageLabel.Text = GetPageResource("EditionLanguageLabel");
             SurveyLayoutLegend.Text = GetPageResource("SurveyLayoutLegend");
             LayoutSaveButton.Text = GetPageResource("BtnFriendly");
+
+            CssSaveButton.Text = GetPageResource("BtnFriendly");
 
         }
 
@@ -149,9 +159,19 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
 
                 if (Path.GetExtension(filename).ToLower() == ".css")
                 {
+                    //check if file already exists:
+                     if(!File.Exists(Constants.Constants.GetFilePathCSS(SurveyId) + filename))
+                    {
+                        fuCss.SaveAs(Constants.Constants.GetFilePathCSS(SurveyId) + filename);
 
-                    fuCss.SaveAs(Constants.Constants.GetFilePathCSS(SurveyId) + filename);
-                    cssBtnID.Visible = true;
+                    } else
+                    {
+                        ShowErrorMessage(MessageLabel, "FileName Already Exists");
+                        return;
+                    }
+
+                    //cssBtnID.Visible = true;
+
                     ShowNormalMessage(MessageLabel, GetPageResource("FileUploadedMessage"));
 
                     BindFields();
@@ -160,7 +180,13 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
                 {
                     ShowErrorMessage(MessageLabel, GetPageResource("InvalidFileTypeLayoutMsg"));
                 }
+            } else
+            {
+                    ShowErrorMessage(MessageLabel, GetPageResource("NoFileUploadedMessage"));
             }
+
+
+
         }
 
         /// <summary>
@@ -194,6 +220,9 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
             BindFields();
 
             ddlTemplate.SelectedIndex = 0;
+            EditCssPlaceHolder.Visible = false;
+            pnlHdrFooter.Visible = true;
+
             ShowNormalMessage(MessageLabel, GetPageResource("UploadFileDeletedMessage"));
 
         }
@@ -223,6 +252,7 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
             EditCssTextBox.Visible = false;
             EditCssPlaceHolder.Visible = false;
             pnlHdrFooter.Visible = true;
+            MessageLabel.Visible = false;
         }
 
         protected void EditCssSaveButton_Click(object sender, EventArgs e)
@@ -232,14 +262,19 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
             EditCssPlaceHolder.Visible = false;
             pnlHdrFooter.Visible = true;
 
-            ddlTemplate.SelectedIndex = 0;
             ShowNormalMessage(MessageLabel, GetPageResource("CssFileUpdatedMsg"));
         }
 
         protected void btnCssEdit_Click(object sender, EventArgs e)
         {
+            MessageLabel.Visible = false;
 
-            if (ddlTemplate.SelectedIndex == 0) return;
+            if (ddlTemplate.SelectedIndex == 0)
+            {
+                ShowNormalMessage(MessageLabel, "No file selected");
+                return;
+            }
+
             EditCssTextBox.Visible = true;
             pnlHdrFooter.Visible = false;
             EditCssPlaceHolder.Visible = true;
@@ -256,12 +291,19 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
         {   
             if(ddlTemplate.SelectedIndex != 0)
             {
-            cssBtnID.Visible = true;
+                cssBtnID.Visible = true;
+
             }
             else
             {
                 cssBtnID.Visible = false;
+                EditCssPlaceHolder.Visible = false;
+                pnlHdrFooter.Visible = true;
             }
+
+            MessageLabel.Visible = false;
+            CssSaveButton.Visible = true;
+            EditCssPlaceHolder.Visible = false;
 
         }
 

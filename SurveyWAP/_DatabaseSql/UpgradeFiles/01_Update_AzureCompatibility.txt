@@ -1,2 +1,5 @@
+in case of running SP and the SP database on the MS Azure platform:
 
-Remove from sql script: Use [dbname]
+* Remove from sql script: Use [dbname]
+
+Otherwise script tested on Azure and compatible.

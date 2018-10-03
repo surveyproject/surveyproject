@@ -84,14 +84,11 @@
                    <asp:Literal ID="MlCodesLiteral" runat="server" EnableViewState="False"></asp:Literal>
                
            </li>
-
-
-
                                 </asp:PlaceHolder>
 
             
   </ol>
                     <br />
                     </fieldset>
-
+            <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
 </div></asp:Content>

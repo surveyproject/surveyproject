@@ -71,6 +71,7 @@
             <br /><br />
                 <hr style="color:#e2e2e2;" />
                 <h3>More Information</h3><br />
+                                <a href="ErrorLog.aspx">Error Logging</a><br />
                 <a href="Multi-Languages Settings.aspx">Multi-Language settings</a><br />
 
                     </div>

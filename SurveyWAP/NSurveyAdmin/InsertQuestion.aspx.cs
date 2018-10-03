@@ -116,7 +116,8 @@ namespace Votations.NSurvey.WebAdmin
         private void SetupSecurity()
         {
             CheckRight(NSurveyRights.AccessFormBuilder, true);
-            ImportXmlQuestionPlaceHolder.Visible = CheckRight(NSurveyRights.AllowXmlImport, false);
+
+            ImportXmlQuestionPlaceHolder.Visible = CheckRight(NSurveyRights.AllowQuestionXmlImport, false);
         }
 
         private void LocalizePage()

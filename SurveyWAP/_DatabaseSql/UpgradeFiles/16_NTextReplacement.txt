@@ -1,6 +1,7 @@
+Replace NText (deprecated) by NVARCHAR(max) 
 
-
-Replace NText by NVARCHAR(max)
-
+E.g. on 
 * library
 * voteranswers
+
+See full db script 2016.

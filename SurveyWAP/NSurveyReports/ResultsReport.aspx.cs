@@ -102,9 +102,11 @@ namespace Votations.NSurvey.WebAdmin
             {
                 // Header.SurveyId = SurveyId;
                 SurveyId = id;
+                totalScore();
+                BindData();
             }
 
-            BindData();
+            //BindData();
 
             // jQuery (necessary for Bootstrap's JavaScript plugins) + answerfieldslideritem.cs
             Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
@@ -146,7 +148,7 @@ namespace Votations.NSurvey.WebAdmin
         /// </summary>
         private void BindData()
         {
-            isScored = new Surveys().IsSurveyScored(SurveyId);
+            //isScored = new Surveys().IsSurveyScored(SurveyId);
 
             _voterAnswers = new Voters().GetVoterAnswers(_voterId);
 
@@ -155,11 +157,25 @@ namespace Votations.NSurvey.WebAdmin
             QuestionsDataGrid.DataKeyField = "QuestionId";
             QuestionsDataGrid.DataBind();
 
+            //if (isScored)
+            //{
+            //    VoterScoreTotalLabel.Text = "<span class='totalscore'>Total Voter Score: " + _totalScore.ToString() + "</span>";
+            //}
+        }
+
+
+        private string totalScore()
+        {
+            isScored = new Surveys().IsSurveyScored(SurveyId);
+
             if (isScored)
             {
-                VoterScoreTotalLabel.Text = "<span class='totalscore'>Total Voter Score: " + _totalScore.ToString() + "</span>";
+               VoterScoreTotalLabel.Text = "<span class='totalscore'>Total Voter Score: " + _totalScore.ToString() + "</span>";
             }
+
+            return VoterScoreTotalLabel.Text;
         }
+
 
         private DataView GetParentQuestions()
         {

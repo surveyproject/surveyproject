@@ -127,7 +127,9 @@ namespace Votations.NSurvey.WebControls.UI
         {
             if (((this.EnableValidation && (this.JavascriptCode != null)) && ((this.JavascriptCode.Length != 0) && (this.JavascriptFunctionName != null))) && ((this.JavascriptFunctionName.Length != 0) && !this.Page.ClientScript.IsClientScriptBlockRegistered(this.JavascriptFunctionName)))
             {
-                this.Page.ClientScript.RegisterClientScriptBlock(this.GetType(), this.JavascriptFunctionName, string.Format("<script type=\"text/javascript\" ><!--{0}{1}//--></script>", Environment.NewLine, this.JavascriptCode));
+                //this.Page.ClientScript.RegisterClientScriptBlock(this.GetType(), this.JavascriptFunctionName, string.Format("<script>{0}{1}</script>", Environment.NewLine, this.JavascriptCode));
+                this.Page.ClientScript.RegisterClientScriptBlock(typeof(Page), this.JavascriptFunctionName, string.Format("<script>{0}{1}</script>", Environment.NewLine, this.JavascriptCode));
+
             }
             base.OnPreRender(e);
         }
@@ -150,13 +152,15 @@ namespace Votations.NSurvey.WebControls.UI
             }
             if ((this.RegExpressionErrorMessage != null) && (this.RegExpressionErrorMessage.Length > 0))
             {
-                str = (ResourceManager.GetString(this.RegExpressionErrorMessage, base.LanguageCode) == null) ? this.RegExpressionErrorMessage : ResourceManager.GetString(this.RegExpressionErrorMessage, base.LanguageCode);
+                //str = (ResourceManager.GetString(this.RegExpressionErrorMessage, base.LanguageCode) == null) ? this.RegExpressionErrorMessage : ResourceManager.GetString(this.RegExpressionErrorMessage, base.LanguageCode);
+                str = (ResourceManager.GetString(this.RegExpressionErrorMessage, base.LanguageCode) == null) ? this.RegExpressionErrorMessage : string.Format(ResourceManager.GetString(this.RegExpressionErrorMessage, base.LanguageCode), this._fieldTextBox.Text);
+
             }
             else
             {
-                str = string.Format(ResourceManager.GetString("RegExValidationFailedMessage", base.LanguageCode), this.Text);
+                str = string.Format(ResourceManager.GetString("RegExValidationFailedMessage", base.LanguageCode), this._fieldTextBox.Text);
             }
-            this.OnInvalidAnswer(new AnswerItemInvalidEventArgs(string.Format(str, this.Text)));
+            this.OnInvalidAnswer(new AnswerItemInvalidEventArgs(string.Format(str, this._fieldTextBox.Text)));
             return false;
         }
 

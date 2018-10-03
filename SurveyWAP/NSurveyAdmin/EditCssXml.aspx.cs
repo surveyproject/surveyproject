@@ -29,7 +29,12 @@ namespace Votations.NSurvey.WebAdmin
 
         private void SetupSecurity()
         {
-            CheckRight(NSurveyRights.SurveyLayoutRight, true);
+            //CheckRight(NSurveyRights.SurveyLayoutRight, true);
+
+            if (NSurveyUser.Identity.IsAdmin == false)
+            {
+                UINavigator.NavigateToAccessDenied(getSurveyId(), MenuIndex);
+            }
         }
 
 

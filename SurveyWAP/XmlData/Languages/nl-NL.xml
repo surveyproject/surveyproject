@@ -4,7 +4,7 @@
     <value>Enqu&#234;te Webcontrol: asp.net code</value>
   </data>
   <data version="1.0" id="2" name="PageDirectiveInfo">
-    <value>Neem de volgende code in de aspx paginas op om de enqu&#234;te weer te geven:</value>
+    <value>De volgende code in de aspx paginas opnemen om de enqu&#234;te weer te geven:</value>
   </data>
   <data version="1.0" id="3" name="TagPrefixInfo">
     <value>&lt;%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="SurveyProject.WebControls" %&gt;</value>
@@ -115,7 +115,7 @@
     <value>Exporteer CSV</value>
   </data>
   <data version="1.0" id="39" name="FieldReportTitle">
-    <value>Overzicht Tekstveldgegevens - Pagina</value>
+    <value>Individuele Reacties - Pagina</value>
   </data>
   <data version="1.0" id="40" name="NextPageLinkButton">
     <value>Volgende pagina &gt;&gt;</value>
@@ -352,7 +352,7 @@
     <value>Nieuwe vraag</value>
   </data>
   <data version="1.0" id="118" name="InsertLineBreakButton">
-    <value>Nieuwe lijn</value>
+    <value>HR lijn</value>
   </data>
   <data version="1.0" id="119" name="PageTitle">
     <value>Pag.</value>
@@ -403,7 +403,7 @@
     <value>Naar :</value>
   </data>
   <data version="1.0" id="135" name="FromNameLabel">
-    <value>Van naam:</value>
+    <value>Afzender Naam:</value>
   </data>
   <data version="1.0" id="136" name="SubjectLabel">
     <value>Onderwerp:</value>
@@ -415,10 +415,10 @@
     <value>Achternaam Voornaam</value>
   </data>
   <data version="1.0" id="139" name="EmailInvitationLabel">
-    <value>Email uitnodigingenlijst - komma gescheiden: email@dom.com, email2@dom.com, etc. :</value>
+    <value>Emailadressen verzendlijst - komma-gescheiden: email@dom.com, email2@dom.com, :</value>
   </data>
   <data version="1.0" id="140" name="InvitationMessageLabel">
-    <value>Uitnodiging:</value>
+    <value>Emailbericht en enqu&#234;te link met toegangscode:</value>
   </data>
   <data version="1.0" id="141" name="AnonymousLabel">
     <value>Anoniem versturen:</value>
@@ -458,7 +458,7 @@
     <value>Sluitingsdatum :</value>
   </data>
   <data version="1.0" id="149" name="ActiveSurveyLabel">
-    <value>Actief:</value>
+    <value>Enqu&#234;te Activeren:</value>
   </data>
   <data version="1.0" id="150" name="ArchivedLabel">
     <value>Gearchiveerd:</value>
@@ -476,7 +476,7 @@
     <value>verloopt na</value>
   </data>
   <data version="1.0" id="155" name="MinutesInfo">
-    <value>minuten</value>
+    <value> minuten</value>
   </data>
   <data version="1.0" id="156" name="OnlyInvitedEmailsLabel">
     <value>Alleen deelname indien per mail uitgenodigd:</value>
@@ -485,10 +485,10 @@
     <value>(dit overruled alle beveiligingsinstellingen)</value>
   </data>
   <data version="1.0" id="158" name="PrivacySettingsTitle">
-    <value>Instellingen Voltoo&#239;ng Enqu&#234;te</value>
+    <value>Instellingen Afronding Enqu&#234;te</value>
   </data>
   <data version="1.0" id="159" name="RedirectionURLLabel">
-    <value>Doorverwijzing URL :</value>
+    <value>Doorverwijzing of Rapport URL :</value>
   </data>
   <data version="1.0" id="160" name="ThanksMessageLabel">
     <value>Slotbericht Enqu&#234;te:</value>
@@ -572,7 +572,7 @@
     <value>Javascript functie naam:</value>
   </data>
   <data version="1.0" id="187" name="JavascriptErrorMessageLabel">
-    <value>Fout melding:</value>
+    <value>Javascript fout melding:</value>
   </data>
   <data version="1.0" id="188" name="JavascriptCodeLabel">
     <value>Javascript code :</value>
@@ -629,7 +629,7 @@
     <value>Ingezonden op:</value>
   </data>
   <data version="1.0" id="206" name="TimeToTakeLabel">
-    <value>Tijd voor invullen enqu&#234;te:</value>
+    <value>Tijdsduur beantwoorden:</value>
   </data>
   <data version="1.0" id="207" name="SurveyAnswersTitle">
     <value>Enqu&#234;te antwoorden</value>
@@ -824,7 +824,7 @@
     <value>Vertakkingsregels</value>
   </data>
   <data version="1.0" id="271" name="EvaluationConditionInfo">
-    <value>Eerste voorwaarde waaraan voldaan wordt, vertakt naar de doelpagina</value>
+    <value>Vertakt naar de doelpagina bij voldoen aan voorwaarde(s)</value>
   </data>
   <data version="1.0" id="272" name="AnsweredConditionOption">
     <value>Beantwoord</value>
@@ -881,7 +881,7 @@
     <value>Mailing status</value>
   </data>
   <data version="1.0" id="290" name="ASPNETCodeHyperlink">
-    <value>Web</value>
+    <value>Web Links</value>
   </data>
   <data version="1.0" id="291" name="NSurveyAuthenticationTitle">
     <value>Inloggen </value>
@@ -968,7 +968,7 @@
     <value>Voortgang enqu&#234;te tonen:</value>
   </data>
   <data version="1.2" id="319" name="EnableNavigationLabel">
-    <value>Pagina navigatie:</value>
+    <value>Pagina navigatie (bladeren):</value>
   </data>
   <data version="1.2" id="320" name="EnableResumeLabel">
     <value>Opties voor onderbreken:</value>
@@ -1025,10 +1025,10 @@
     <value>[Kies enqu&#234;te]</value>
   </data>
   <data version="1.2" id="338" name="SaveProgressEntriesLabel">
-    <value>Nog onvolledige enqu&#234;tes:</value>
+    <value>Aantal onafgeronde reacties:</value>
   </data>
   <data version="1.2" id="339" name="DeleteSaveProgressLinkButton">
-    <value>Verwijder alle onvolledige enqu&#234;tes</value>
+    <value>Verwijder onafgeronde reacties</value>
   </data>
   <data version="1.2" id="340" name="PipeHelpLabel">
     <value>
@@ -1040,7 +1040,7 @@
     </value>
   </data>
   <data version="1.3" id="341" name="EnableRandomHyperlink">
-    <value>Aanzetten willekeurig</value>
+    <value>Volgorde willekeurig</value>
   </data>
   <data version="1.3" id="342" name="DisableRandomHyperlink">
     <value>Uitzetten willekeurig</value>
@@ -1181,7 +1181,7 @@
     <value>Type : </value>
   </data>
   <data version="1.4" id="388" name="ScoredLabel">
-    <value>Score :</value>
+    <value>Score Activeren :</value>
   </data>
   <data version="1.4" id="389" name="ScoredEqualConditionOption">
     <value>Score</value>
@@ -1316,7 +1316,7 @@
     <value>SP gebruikersnaam:</value>
   </data>
   <data version="1.4" id="433" name="ContextUserNameDisabled">
-    <value>Uitgezet</value>
+    <value> - </value>
   </data>
   <data version="1.4" id="434" name="ScoreHeader">
     <value>Score</value>
@@ -1574,7 +1574,7 @@
     <value>Rechten voor deze rol:</value>
   </data>
   <data version="1.6" id="519" name="CreateSurveyRight">
-    <value>Enqu&#234;te Aanmaken</value>
+    <value>Nieuwe Enqu&#234;te aanmaken</value>
   </data>
   <data version="1.6" id="520" name="DeleteSurveyRight">
     <value>Enqu&#234;te Verwijderen</value>
@@ -1595,7 +1595,7 @@
     <value>Enqu&#234;te Kopi&#235;ren</value>
   </data>
   <data version="1.6" id="526" name="AccessPrivacySettingsRight" mimetype="">
-    <value>Toegang Voltooien</value>
+    <value>Toegang Afronding Enqu&#234;te</value>
   </data>
   <data version="1.6" id="527" name="AccessSecuritySettingsRight">
     <value>Toegang Beveiliging</value>
@@ -1604,7 +1604,7 @@
     <value>Toegang Statistieken</value>
   </data>
   <data version="1.6" id="529" name="ResetVotesRight">
-    <value>Wis Respondent</value>
+    <value>Wissen Respondenten</value>
   </data>
   <data version="1.6" id="530" name="DeleteUnvalidateEntriesRight">
     <value>Wissen onvolledige enqu&#234;te</value>
@@ -1619,10 +1619,10 @@
     <value>Toegang Rapportages</value>
   </data>
   <data version="1.6" id="534" name="CreateResultsFilterRight">
-    <value>Resultaatfilter maken</value>
+    <value>Rapportage filter maken</value>
   </data>
   <data version="1.6" id="535" name="AccessFieldEntriesRight">
-    <value>Toegang invulgegevens</value>
+    <value>Toegang Individuele Reacties</value>
   </data>
   <data version="1.6" id="536" name="EditVoterEntriesRight">
     <value>Antwoorden bewerken</value>
@@ -1645,7 +1645,7 @@
     </value>
   </data>
   <data version="1.6" id="542" name="AccessASPNetCodeRight">
-    <value>Toegang Preview en Web</value>
+    <value>Toegang Preview en Weblinks</value>
   </data>
   <data version="1.6" id="543" name="AccessUserManagerRight">
     <value>Toegang gebruikersbeheer</value>
@@ -1681,13 +1681,13 @@
     <value>Toevoegen nieuwe logica regel aan deze vraag</value>
   </data>
   <data version="1.6" id="554" name="SkipLogicRulesTitle">
-    <value>Regels verspringen</value>
+    <value>Logica regels Verspringen</value>
   </data>
   <data version="1.6" id="555" name="EditSkipLogicHyperLink">
     <value>Verspring</value>
   </data>
   <data version="1.6" id="556" name="SkipLogicEvaluationConditionInfo">
-    <value>Eerste voorwaarde waaraan wordt voldaan zal deze vraag verbergen</value>
+    <value>Vraag wordt verborgen bij voldoen aan voorwaarde(s)</value>
   </data>
   <data version="1.6" id="557" name="SkipLogicRuleAddedMessage">
     <value>Regel verspringen toegevoegd</value>
@@ -1795,7 +1795,7 @@
     <value>einde enqu&#234;te</value>
   </data>
   <data version="1.7" id="592" name="TakeSurveyRight">
-    <value>Respondent enqu&#234;te</value>
+    <value>Toegang Invullen enqu&#234;te</value>
   </data>
   <data version="1.7" id="593" name="TakeSurveyTitle">
     <value>Enqu&#234;te invullen</value>
@@ -1819,10 +1819,10 @@
     <value>Geen validatie</value>
   </data>
   <data version="1.7" id="600" name="AccessRegExEditorRight">
-    <value>Toegang RegEx</value>
+    <value>Toegang Regular Expressions</value>
   </data>
   <data version="1.7" id="601" name="RegExLibHyperLink">
-    <value>Regex bibliotheek</value>
+    <value>Regular Expressions</value>
   </data>
   <data version="1.7" id="602" name="RegExLibraryTitle">
     <value>Regular expressions bibliotheek</value>
@@ -1939,7 +1939,7 @@
     <value>Importeren</value>
   </data>
   <data version="1.7" id="640" name="UserImportedMessage">
-    <value>Gebruikers zijn opgeslagen in de database</value>
+    <value> gebruiker(s) opgeslagen in de database</value>
   </data>
   <data version="1.7" id="641" name="ImportUserLabel">
     <value>Importeer CSV gegevens:</value>
@@ -1960,7 +1960,7 @@
     <value>Verplicht</value>
   </data>
   <data version="1.8" id="647" name="FileManagerHyperLink">
-    <value>Bestandsbeheer</value>
+    <value>Beheer Bestanden</value>
   </data>
   <data version="1.8" id="648" name="AccessFileManagerRight">
     <value>Toegang bestandsbeheer</value>
@@ -2050,7 +2050,7 @@
     <value>Editor veld :</value>
   </data>
   <data version="1.8" id="677" name="MailingLogHyperlink">
-    <value>Mailing log</value>
+    <value>Mailing fouten</value>
   </data>
   <data version="1.8" id="678" name="DeleteLogsButton">
     <value>Verwijder geselecteerde logs</value>
@@ -2059,7 +2059,7 @@
     <value>Geselecteerde regels definief verwijderen?</value>
   </data>
   <data version="1.8" id="680" name="MailingLogTitle">
-    <value>Mailing log - Pagina</value>
+    <value>Mailing fouten logboek - Pagina</value>
   </data>
   <data version="1.8" id="681" name="BoundColumnLogEmail">
     <value>E-mail</value>
@@ -2155,10 +2155,10 @@
     <value>Toegang helpmenu</value>
   </data>
   <data version="1.9" id="712" name="HelpFilesHyperlink">
-    <value>Help Bestanden</value>
+    <value>Help Paginas</value>
   </data>
   <data version="1.9" id="713" name="MultiLanguagesHyperLink">
-    <value>Meertaligheid Enqu&#234;te</value>
+    <value>Meertalige Enqu&#234;te</value>
   </data>
   <data version="1.9" id="781" name="LanguageDisabledMessage">
     <value>Taal is verwijderd</value>
@@ -2197,7 +2197,11 @@
     <value>Naam variabele:</value>
   </data>
   <data version="1.9" id="793" name="VariableNameInfoLabel">
-    <value>Aan enquete url plakken om taal te bepalen. Bijv. ..?taal=nl-NL</value>
+    <value>
+      &lt;b&gt;Query String&lt;/b&gt; - aan de enquete url toevoegen inclusief een taal om te bepalen welke [geactiveerde!] taal wordt gebruikt. &lt;br /&gt;
+      Bijv. Naam variabele: &lt;b&gt;taal&lt;/b&gt; | Taal waarde: &lt;i&gt;nl&lt;/i&gt; | URL: [enquete URL&amp;GUID]&amp;taal=nl &lt;br /&gt;
+      &lt;b&gt;Cookie&lt;/b&gt; - zie de Help Files.
+    </value>
   </data>
   <data version="1.9" id="794" name="VariableNameUpdateButton">
     <value>Bijwerken</value>
@@ -2284,7 +2288,7 @@
     <value>Gemiddelde score: {0} / {1}</value>
   </data>
   <data version="1.0" id="822" name="TotalOfVotes">
-    <value>Totaal aantal invullers: {0}</value>
+    <value>Respondenten: {0}</value>
   </data>
   <data version="1.0" id="823" name="AlreadyVotedMessage">
     <value>U hebt de enqu&#234;te al ingevuld!</value>
@@ -2444,22 +2448,22 @@
     <value>Ongeldig antwoord gegeven voor {0}</value>
   </data>
   <data version="1.7" id="873" name="InvalidEmailRegExMessage">
-    <value>{0} is geen geldig e-mailadres</value>
+    <value>&quot;{0}&quot; is geen geldig e-mailadres</value>
   </data>
   <data version="1.7" id="874" name="InvalidIntegerRegExMessage">
-    <value>{0} is niet numeriek</value>
+    <value>&quot;{0}&quot; is niet numeriek</value>
   </data>
   <data version="1.7" id="875" name="InvalidEuroDateRegExMessage">
-    <value>{0} is geen geldige datum. dd/mm/jjjj verwacht</value>
+    <value>&quot;{0}&quot; is geen geldige datum. dd/mm/jjjj verwacht</value>
   </data>
   <data version="1.7" id="876" name="InvalidUSDateRegExMessage">
-    <value>{0} is geen geldide datum. mm/dd/jjjj verwacht</value>
+    <value>&quot;{0}&quot; is geen geldide datum. mm/dd/jjjj verwacht</value>
   </data>
   <data version="1.7" id="877" name="InvalidInternetUrlRegExMessage">
-    <value>{0} is geen geldige URL</value>
+    <value>&quot;{0}&quot; is geen geldige URL</value>
   </data>
   <data version="1.8" id="878" name="UploadFileRequiredMessage">
-    <value>{0} vereist dat tenminste 1 bestand wordt geupload</value>
+    <value>&quot;{0}&quot; vereist dat tenminste 1 bestand wordt geupload</value>
   </data>
   <data version="1.8" id="879" name="UploadFileDownloadButton">
     <value>Download</value>
@@ -2570,7 +2574,24 @@
     <value>&lt;b&gt;Survey&#8482; Project Helpbestanden zijn beperkt beschikbaar.&lt;/b&gt; &lt;br /&gt;&lt;br /&gt; Meer informatie over het gebruik van de Survey applicatie is te vinden via &lt;a href="http://www.surveyproject.org" title="Surveyproject Gemeenschapssite" target="_blank"&gt; http://www.surveyproject.org &lt;/a&gt;. Vragen kunnen daar worden gesteld.&lt;br /&gt; &lt;br /&gt; Voor downloads, broncode en technische achtergronden ga naar &lt;a href="http://survey.codeplex.com" title="Survey Project" target="_blank"&gt; http://survey.codeplex.com &lt;/a&gt;. &lt;br /&gt;</value>
   </data>
   <data version="1.2.2" id="915" name="Disclaimer">
-    <value>SURVEY&#8482; PROJECT is een webapplicatie voor online enqu&#234;tes en formulieren gebaseerd op de open source software NSurvey (&lt;a href="http://www.nsurvey.org" target="_blank"&gt;Thomas Zumbrunn&lt;/a&gt;, (c) 2004/2005). Survey&#8482; Project is gepubliceerd onder een GNU GENERAL PUBLIC LICENSE v.3, 29 June 2007. Het vernieuwde SURVEY&#8482; PROJECT is een initiatief van &lt;a href="http://www.w3devpro.com" title="W3DevPro Homepage" target="_blank"&gt;W3DevPro&#8482; &lt;/a&gt;, copyright (c) 2009/2017. SURVEY&#8482; PROJECT is te vinden via &lt;a href="http://www.surveyproject.org" title="Survey Project Community Site" target="_blank"&gt;http://www.surveyproject.org&lt;/a&gt;.</value>
+    <value>
+      SURVEY&#8482; PROJECT is een webapplicatie voor online enqu&#234;tes en
+      formulieren gebaseerd op de open source software NSurvey (&lt;a href="http://www.nsurvey.org" target="_blank"&gt;Thomas Zumbrunn&lt;/a&gt;, (c) 2004/2005).
+      &lt;br /&gt;&lt;br /&gt;
+
+      SURVEY&#8482; PROJECT is een initiatief van &lt;a href="http://www.w3devpro.com" title="W3DevPro Homepage" target="_blank"&gt;W3DevPro&#8482; &lt;/a&gt;, copyright (c)
+      2009/2018.
+      &lt;br /&gt;&lt;br /&gt;
+      Survey&#8482; Project is gepubliceerd onder de &lt;a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.en.html" title="GPL" target="_blank"&gt;GNU GENERAL PUBLIC LICENSE v.3, 29 juni 2007&lt;/a&gt;.
+      Een kopie van alle licenties die van toepassing zijn is te vinden in de map: SurveyWAP\ _Instructions\Licenses van deze applicatie.
+      &lt;br /&gt;&lt;br /&gt;
+      Dit programma wordt verspreid in de hoop dat het nuttig zal zijn, maar ZONDER ENIGE GARANTIE; zonder zelfs de impliciete garantie van VERKOOPBAARHEID of GESCHIKTHEID VOOR EEN BEPAALD DOEL. Zie de GNU General Public License voor meer details.
+
+      &lt;br /&gt;&lt;br /&gt;Alle source code wordt gepubliceerd via &lt;a href="https://github.com/surveyproject" title="Survey Project Sources and Downloads" target="_blank"&gt; GitHub.com/SurveyProject &lt;/a&gt;.
+
+      &lt;br /&gt;&lt;br /&gt;Bezoek de open source SURVEY™ PROJECT Community site via &lt;a href="http://www.surveyproject.org" title="Survey Project Community Site" target="_blank"&gt;http://www.surveyproject.org&lt;/a&gt;.
+
+    </value>
   </data>
   <data version="1.2.2" id="916" name="Introduction">
     <value>
@@ -2593,7 +2614,7 @@
     <value>Actief</value>
   </data>
   <data version="1.2.2" id="919" name="SurveyTitle">
-    <value>Enqu&#234;te &amp; ID</value>
+    <value>Enqu&#234;te titel &amp; ID</value>
   </data>
   <data version="1.2.2" id="920" name="SurveyStatus">
     <value>Status</value>
@@ -2614,7 +2635,7 @@
     <value>Beveiliging</value>
   </data>
   <data version="1.2.2" id="926" name="SurveyEdit">
-    <value>Bewerken</value>
+    <value>Instelling</value>
   </data>
   <data version="1.2.2" id="927" name="UsersTab">
     <value>Gebruikers</value>
@@ -2626,7 +2647,7 @@
     <value>Importeren</value>
   </data>
   <data version="1.2.2" id="930" name="UsersTabUserName">
-    <value>Gebruikersnaam</value>
+    <value>&#160;Gebruikersnaam</value>
   </data>
   <data version="1.2.2" id="931" name="UsersTabFirstName">
     <value>Voornaam</value>
@@ -2638,10 +2659,10 @@
     <value>E-mail</value>
   </data>
   <data version="1.2.2" id="934" name="UsersTabAdministrator">
-    <value>Administrator</value>
+    <value>Beheerder&#160;</value>
   </data>
   <data version="1.2.2" id="935" name="UsersTabEdit">
-    <value>Bewerken</value>
+    <value>Bewerken&#160;</value>
   </data>
   <data version="1.2.2" id="936" name="UsersTabApplyFilter">
     <value>Gebruik filter</value>
@@ -2698,13 +2719,13 @@
     <value>Meertalige Enqu&#234;te</value>
   </data>
   <data version="2.0" id="954" name="SurveyInfoCompletion">
-    <value>Voltoo&#239;ng Enqu&#234;te</value>
+    <value>Afronding Enqu&#234;te</value>
   </data>
   <data version="2.0" id="955" name="SurveyInfoLayout">
     <value>Layout</value>
   </data>
   <data version="2.0" id="956" name="SurveySecurityForm">
-    <value>Formulier Beveiliging</value>
+    <value>Enqu&#234;te Beveiliging</value>
   </data>
   <data version="2.0" id="957" name="SurveySecurityFormToken">
     <value>Token Beveiliging</value>
@@ -2731,7 +2752,7 @@
     <value>Bewerken</value>
   </data>
   <data version="2.0" id="965" name="SurveyFormSecurityHyperlink">
-    <value>Formulier Beveiliging</value>
+    <value>Enqu&#234;te Beveiliging</value>
   </data>
   <data version="2.0" id="966" name="SurveyTokenSecurityHyperlink">
     <value>Token Beveiliging</value>
@@ -2758,7 +2779,7 @@
     <value>Filters</value>
   </data>
   <data version="2.0" id="974" name="FileManagerHyperlink">
-    <value>Bestandsbeheer</value>
+    <value>Beheer Bestanden</value>
   </data>
   <data version="2.0" id="975" name="DataExportHyperlink">
     <value>Data Export</value>
@@ -2842,7 +2863,7 @@
     <value>IP Bereik - Eind</value>
   </data>
   <data version="2.0" id="1002" name="IPRangeFormTitle">
-    <value>IP Filter</value>
+    <value>IP Adres Filter</value>
   </data>
   <data version="2.0" id="1003" name="TokenSecurityFormTitle">
     <value>Token Beveiliging</value>
@@ -2854,16 +2875,16 @@
     <value>Anonieme toegang (antwoorden zijn niet gekoppeld aan een token)</value>
   </data>
   <data version="2.0" id="1006" name="IPRangeSecurityInEffect">
-    <value>IP Filter is actief</value>
+    <value>IP Adres Filter is actief</value>
   </data>
   <data version="2.0" id="1007" name="IPNotInRange">
     <value>Uw IP adres valt niet binnen het acceptabele bereik.</value>
   </data>
   <data version="2.0" id="1008" name="SurveyIPRangeSecurityHyperlink">
-    <value>IP Filter</value>
+    <value>IP Adres Beveiliging</value>
   </data>
   <data version="2.0" id="1009" name="Exception">
-    <value>Er is een fout opgetreden</value>
+    <value>Er is een fout opgetreden. Details gelogged.</value>
   </data>
   <data version="2.0" id="1010" name="msgDeleteSelectedTokens">
     <value>Weet u zeker dat u de geselecteerde tokens wilt verwijderen?</value>
@@ -2992,7 +3013,7 @@
     </value>
   </data>
   <data version="2.0" id="1051" name="AutoFilterQuestion">
-    <value>Filter automatisch aanmaken op basis van vraag:</value>
+    <value>Filter automatisch aanmaken:</value>
   </data>
   <data version="2.0" id="1052" name="AutoFilterQuestionNaming">
     <value>Vraag Naamgeving:</value>
@@ -3025,7 +3046,7 @@
     <value>Weet u zeker dat u deze pagina wilt verwijderen?</value>
   </data>
   <data version="2.0" id="1062" name="FriendlyLabel">
-    <value>Gebruiksvriendelijke URL:</value>
+    <value>Type Gebruiksvriendelijke URL:</value>
   </data>
   <data version="2.0" id="1063" name="FriendlyUrl">
     <value>Opmerking: URL indeling = http:// [UwWebSiteUrl] / surveymobile.aspx / [&lt;b&gt;UwUrlNaam&lt;/b&gt;] </value>
@@ -3166,7 +3187,7 @@
     <value>Klik voor meer Informatie</value>
   </data>
   <data version="1.0" id="1108" name="FromLabelMail">
-    <value>Email van :</value>
+    <value>Afzender Emailadres :</value>
   </data>
   <data version="1.0" id="1109" name="ToLabelMail">
     <value>Email aan :</value>
@@ -3277,7 +3298,7 @@
     <value>Enqu&#234;te Layout</value>
   </data>
   <data version="2.4" id="1145" name="AccessSurveyList">
-    <value>Toegang Enqu&#234;telijst</value>
+    <value>Toegang Overzicht Enqu&#234;tes</value>
   </data>
   <data version="2.4" id="1146" name="HelpLabelHelpfiles">
     <value>Beschikbare Helpbestanden</value>
@@ -3316,7 +3337,10 @@
     <value>Verplicht Antwoord</value>
   </data>
   <data version="2.4" id="1158" name="FriendlyNameDeletedMsg">
-    <value>Gebruiksvriendelijk URL verwijderd</value>
+    <value>Gebruiksvriendelijke URL verwijderd</value>
+  </data>
+  <data version="2.4" id="1159" name="FriendlyUrlLabel">
+    <value>Gebruiksvriendelijke URL: </value>
   </data>
   <data version="2.4" id="1160" name="SurveyLayoutSavedMsg">
     <value>Layout correct opgeslagen</value>
@@ -3329,12 +3353,12 @@
   </data>
   <data version="2.4" id="1163" name="SpFrontPageSlogan">
     <value>
-      Platform voor het ontwikkelen en delen van software&lt;br /&gt; om online gegevens te verzamelen
+      Platform voor het ontwikkelen en delen van&lt;br /&gt; gratis software om online gegevens te verzamelen
     </value>
   </data>
   <data version="2.4" id="1164" name="SpFrontPageTheme">
     <value>
-      De open source webapplicatie om online enqu&#234;tes en webformulieren te maken en te publiceren
+      De open source webapplicatie voor online enqu&#234;tes en webformulieren
     </value>
   </data>
   <data version="2.4" id="1165" name="DisclaimerTitle">
@@ -3343,7 +3367,7 @@
     </value>
   </data>
   <data version="2.4" id="1166" name="IPRanges">
-    <value>IP Ranges</value>
+    <value>IP Adressen</value>
   </data>
   <data version="2.4" id="1167" name="ValidateCredentialsButtonTooltip">
     <value>Toegangsgegevens valideren</value>
@@ -3367,13 +3391,13 @@
     <value>Individuele Reacties</value>
   </data>
   <data version="2.5" id="1174" name="AccessUserResponses">
-    <value>Toegang Gebruiker Reacties</value>
+    <value>Gebruikerstoegang Reacties</value>
   </data>
   <data version="2.5" id="1175" name="FriendlyNameExistsMsg">
     <value>Naam in gebruik. Kies nogmaals.</value>
   </data>
   <data version="2.5" id="1176" name="WebControlIntro">
-    <value>Meer informatie over het gebruik van de SurveyBox Custom Webcontrol .....</value>
+    <value>Lees de Help pagina over het gebruik van de SurveyBox Custom Webcontrol</value>
   </data>
   <data version="2.5" id="1177" name="AdminCreatedMessage">
     <value>Account aangemaakt. Inloggen aub.</value>
@@ -3407,5 +3431,98 @@
   </data>
   <data version="2.5" id="1187" name="SurveyCreatedTooltip">
     <value>Aanmaakdatum Enqu&#234;te</value>
+  </data>
+  <data version="2.5" id="1188" name="AccessSsrsReports">
+    <value>Toegang SSRS Rapporten</value>
+  </data>
+  <data version="2.5" id="1189" name="SsrsPrintSurvey">
+    <value>Rapport met optie om enquete te selecteren via DDL en alle Vragen/Antwoordopties te exporteren/ printen.</value>
+  </data>
+  <data version="2.5" id="1190" name="SsrsReport">
+    <value>Eenvoudig SSRS rapport voorbeeld zoals beschikbaar via SP.</value>
+  </data>
+  <data version="2.5" id="1191" name="SecurityGeneralWarningText">
+    <value>Algemene waarschuwing tonen</value>
+  </data>
+  <data version="2.5" id="1191" name="SecurityGeneralWarning">
+    <value>Toegang niet toegestaan.</value>
+  </data>
+  <data version="2.5" id="1192" name="UsersTabDelete">
+    <value>Verwijder</value>
+  </data>
+  <data version="2.5" id="1193" name="UserImportLinesSubmitted">
+    <value> regels aangeboden; </value>
+  </data>
+  <data version="2.5" id="1194" name="UserImportLinesImported">
+    <value> gebruikers geimporteerd. Niet compleet: </value>
+  </data>
+  <data version="2.5" id="1195" name="UserImportUserExists">
+    <value> gebruiker bestaat al </value>
+  </data>
+  <data version="2.5" id="1196" name="UserImportIncorrectFormat">
+    <value> onjuist formaat regelindeling </value>
+  </data>
+  <data version="2.5" id="1197" name="SelectSecurityAction">
+    <value>Kies een Actie</value>
+  </data>
+  <data version="2.5" id="1198" name="SecurityActionInfo">
+    <value>
+      - Als een optie is geselecteerd uit de keuzelijst wordt deze direct en automatisch opgeslagen.&lt;br /&gt;
+      - De standaard 'Actie bij onjuiste autorisatie' als geen keuze is gemaakt is ingesteld op 'Algemene Waarschuwing tonen".
+    </value>
+  </data>
+  <data version="2.5" id="1199" name="MlCodesLiteral">
+    <value>Geactiveerde Taal Codes</value>
+  </data>
+  <data version="2.5" id="2000" name="UserDeletedConfirmation">
+    <value>Gebruiker Verwijderd</value>
+  </data>
+  <data version="2.5" id="2001" name="UserCreatedConfirmation">
+    <value>Gebruiker Aangemaakt</value>
+  </data>
+  <data version="2.5" id="2002" name="SurveyClonedMessage">
+    <value>Enqu&#234;te Gekopieerd</value>
+  </data>
+  <data version="2.5" id="2003" name="SurveyCreatedMessage">
+    <value>Nieuwe Enqu&#234;te Aangemaakt</value>
+  </data>
+  <data version="2.5" id="2004" name="ErrorLogHyperlink">
+    <value>Fouten Log</value>
+  </data>
+  <data version="2.5" id="2005" name="EditLogTitle">
+    <value>Systeem Fouten Logfile</value>
+  </data>
+  <data version="2.5" id="2006" name="EditLogCancel">
+    <value>Annuleer</value>
+  </data>
+  <data version="2.5" id="2007" name="EditLogSave">
+    <value>Wijzigingen Opslaan</value>
+  </data>
+  <data version="2.5" id="2008" name="LogfileUpdatedMsg">
+    <value>Fouten Logfile Geupdate</value>
+  </data>
+  <data version="2.5" id="2009" name="AccessUserAccount">
+    <value>Wijzigen Gebruiker Account</value>
+  </data>
+  <data version="2.5" id="2010" name="AccessRolesManager">
+    <value>Beheren Rollen</value>
+  </data>
+  <data version="2.5" id="2011" name="AccessImportUsers">
+    <value>Gebruikers Importeren</value>
+  </data>
+  <data version="2.5" id="2012" name="AllowQuestionXmlImport">
+    <value>XML Vragen Importeren</value>
+  </data>
+  <data version="2.5" id="2012" name="IpFilterSecurityRight">
+    <value>IP Filter Beveiliging</value>
+  </data>
+  <data version="2.5" id="2013" name="DataImport">
+    <value>Importeren Enqu&#234;te Gegevens</value>
+  </data>
+  <data version="2.5" id="2014" name="AllowQuestionInsert">
+    <value>Vraag Toevoegen</value>
+  </data>
+  <data version="2.5" id="2015" name="FilesDeletedMessage">
+    <value>Bestanden Verwijderd</value>
   </data>
 </root>

@@ -109,7 +109,7 @@ namespace Votations.NSurvey.WebAdmin
 				totalRecords = 0;
 
             //TODO
-            if (CheckRight(NSurveyRights.AccessUserResponses, true) && (NSurveyUser.Identity.IsAdmin == false) == true)
+            if ( NSurveyUser.HasRight(NSurveyRights.AccessUserResponses) && (NSurveyUser.Identity.IsAdmin == false) == true)
             {
                 int UserId = NSurveyUser.Identity.UserId;
 

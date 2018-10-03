@@ -7,8 +7,10 @@ using System.Web.UI.WebControls;
 using Votations.NSurvey.DataAccess;
 using Votations.NSurvey.Data;
 using Votations.NSurvey.SQLServerDAL;
+using Votations.NSurvey.WebAdmin.UserControls;
+using Votations.NSurvey.WebAdmin.NSurveyAdmin;
 
-namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
+namespace Votations.NSurvey.WebAdmin
 {
     public partial class SurveyList : PageBase
     {
@@ -17,13 +19,21 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
         private int GetDefaultIfApplicable()
         {
             foreach (var survey in new Surveys().GetAssignedSurveysList(((PageBase)Page).NSurveyUser.Identity.UserId).Surveys)
-                if (survey.DefaultSurvey) return survey.SurveyId;
+            {
+                if (survey.DefaultSurvey)
+                { return survey.SurveyId; }
+                return -1;
+            }
             return -1;
 
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (SelectedFolderId ==null  && GetDefaultIfApplicable()>-1){
+
+            UITabList.SetSurveyListTabs((MsterPageTabs)Page.Master, UITabList.SurveyListTabs.List);
+
+            if (SelectedFolderId ==null  && GetDefaultIfApplicable()>-1)
+            {
                 int surveyId = ((PageBase)Page).SurveyId; //  Use default if possible
             }
 
@@ -32,24 +42,42 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
                 string[] idx = Request.Params["tabindex"].Split(',');
                 selectedTabIndex = int.Parse(idx[idx.Length - 1]);
             }
-            if (selectedTabIndex > 0) { SurveyOption.isCreationMode = true; SurveyOption.isListMode = false; SurveyOption.Visible = true; }
+
+            if (selectedTabIndex > 0)
+            {
+                SurveyOption.isCreationMode = true;
+                SurveyOption.isListMode = false;
+                SurveyOption.Visible = true;
+
+                surveyList.Visible = false;
+                UITabList.SetSurveyListTabs((MsterPageTabs)Page.Master, UITabList.SurveyListTabs.New);
+
+            }
             else
-            { SurveyOption.isCreationMode = false; SurveyOption.isListMode = true; }
+            {
+                SurveyOption.isCreationMode = false;
+                SurveyOption.isListMode = true;
+            }
+
+
 
             SetupSecurity();
             LocalizePage();
 
             if (!Page.IsPostBack)
             {
+                //((Wap)Master.Master).HeaderControl.SurveyId = SurveyId;
                 FillGrid();
             }
+
+            
         }
 
         private void LocalizePage()
         {
             btnSearch.Text = GetPageResource("Search");
             SearchTitle.Text = GetPageResource("SearchTitle");
-            SurveyListPageNrLiteral.Text = GetPageResource("SurveyListPageNrLiteral");
+            //SurveyListPageNrLiteral.Text = GetPageResource("SurveyListPageNrLiteral");
 
         }
 
@@ -76,12 +104,12 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
             gridSurveys.PageIndex = e.NewPageIndex;
             FillGrid();
         }
-        
+
         private void SetupSecurity() {
-            if(selectedTabIndex ==0)
+            if (selectedTabIndex == 0)
                 ((PageBase)Page).CheckRight(NSurveyRights.AccessSurveyList, true);
 
-            if(selectedTabIndex==1)
+            if (selectedTabIndex == 1)
                 ((PageBase)Page).CheckRight(NSurveyRights.CreateSurvey, true);
         }
 
@@ -116,17 +144,18 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
         public void OnSurveyDesign(Object sender, CommandEventArgs e)
         {
             SurveyId = int.Parse(e.CommandArgument.ToString());
-            ((Wap)Master).HeaderControl.SurveyId = SurveyId;
+            //((Wap)Master).HeaderControl.SurveyId = SurveyId;
             ((PageBase)Page).SurveyId = SurveyId;
-            Response.Redirect(string.Format("{0}?surveyid={1}&menuindex={2}", UINavigator.SurveyContentBuilderLink, SurveyId, (int)((PageBase)Page).MenuIndex));
+            Response.Redirect(string.Format("{0}?surveyid={1}", UINavigator.SurveyContentBuilderLink, SurveyId));
         }
 
         public void OnSurveyStats(Object sender, CommandEventArgs e)
         {
             SurveyId = int.Parse(e.CommandArgument.ToString());
             ((PageBase)Page).SurveyId = SurveyId;
-            ((Wap)Master).HeaderControl.SurveyId = SurveyId;
-            Response.Redirect(string.Format("{0}?surveyid={1}&menuindex={2}", UINavigator.SurveyStats, SurveyId, (int)((PageBase)Page).MenuIndex));
+            //((Wap)Master).HeaderControl.SurveyId = SurveyId;
+
+            Response.Redirect(string.Format("{0}?surveyid={1}", UINavigator.SurveyStats, SurveyId));
         }
              
 
@@ -134,16 +163,16 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin
         {
             SurveyId = int.Parse(e.CommandArgument.ToString());
             ((PageBase)Page).SurveyId = SurveyId;
-            ((Wap)Master).HeaderControl.SurveyId = SurveyId;            
-            Response.Redirect(string.Format("{0}?surveyid={1}&menuindex={2}", UINavigator.SurveySecurityLink, SurveyId, (int)((PageBase)Page).MenuIndex));
+           // ((Wap)Master).HeaderControl.SurveyId = SurveyId;            
+            Response.Redirect(string.Format("{0}?surveyid={1}", UINavigator.SurveySecurityLink, SurveyId));
         }
 
         public void OnSurveyEdit(Object sender, CommandEventArgs e)
         {
             SurveyId = int.Parse(e.CommandArgument.ToString());
             ((PageBase)Page).SurveyId = SurveyId;
-            ((Wap)Master).HeaderControl.SurveyId = SurveyId;
-            Response.Redirect(string.Format("{0}?surveyid={1}&menuindex={2}", UINavigator.SurveyOptionsLink, SurveyId, (int)((PageBase)Page).MenuIndex));
+           // ((Wap)Master).HeaderControl.SurveyId = SurveyId;
+            Response.Redirect(string.Format("{0}?surveyid={1}", UINavigator.SurveyOptionsLink, SurveyId));
         }
 
         public void OnSurveyFilter(Object sender, EventArgs e)

@@ -83,6 +83,9 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls
             LoginTextBox.ToolTip = ((PageBase)Page).GetPageResource("LoginLabel");
             PasswordTextBox.ToolTip = ((PageBase)Page).GetPageResource("PasswordLabel");
 
+            LoginTextBox.Attributes.Add("placeholder", ((PageBase)Page).GetPageResource("LoginLabel"));
+            PasswordTextBox.Attributes.Add("placeholder", ((PageBase)Page).GetPageResource("PasswordLabel"));
+
             ValidateCredentialsButton.Text = ((PageBase)Page).GetPageResource("ValidateCredentialsButton");
             ValidateCredentialsButton.ToolTip = ((PageBase)Page).GetPageResource("ValidateCredentialsButtonTooltip");
             //Disclaimer.Text = ((PageBase)Page).GetPageResource("Disclaimer");

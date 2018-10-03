@@ -125,6 +125,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
             ShownInResultsLabel.Text = ((PageBase)Page).GetPageResource("ShownInResultsLabel");
             JavascriptFunctionLabel.Text = ((PageBase)Page).GetPageResource("JavascriptFunctionLabel");
             JavascriptCodeLabel.Text = ((PageBase)Page).GetPageResource("JavascriptCodeLabel");
+            JavascriptErrorMessageLabel.Text = ((PageBase)Page).GetPageResource("JavascriptErrorMessageLabel"); 
             CreateTypeButton.Text = ((PageBase)Page).GetPageResource("CreateTypeButton");
             CancelButton.Text = ((PageBase)Page).GetPageResource("CancelText");
             ApplyChangesButton.Text = ((PageBase)Page).GetPageResource("ApplyChangesButton");

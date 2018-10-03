@@ -49,6 +49,15 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin {
         protected global::System.Web.UI.WebControls.DropDownList ddlTemplate;
         
         /// <summary>
+        /// CssSaveButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button CssSaveButton;
+        
+        /// <summary>
         /// fuCss control.
         /// </summary>
         /// <remarks>
@@ -103,6 +112,15 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin {
         protected global::System.Web.UI.WebControls.Button btnCssEdit;
         
         /// <summary>
+        /// pnlHdrFooter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlHdrFooter;
+        
+        /// <summary>
         /// EditionLanguageLabel control.
         /// </summary>
         /// <remarks>
@@ -119,24 +137,6 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList LanguagesDropdownlist;
-        
-        /// <summary>
-        /// tctEditCxSS control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tctEditCxSS;
-        
-        /// <summary>
-        /// pnlHdrFooter control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlHdrFooter;
         
         /// <summary>
         /// HeaderLabel control.

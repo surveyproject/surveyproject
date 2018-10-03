@@ -51,8 +51,8 @@ namespace Votations.NSurvey.WebAdmin
 		protected System.Web.UI.WebControls.Button DeleteFilesButton;
 		protected System.Web.UI.WebControls.Literal UploadedFilesTitle;
 		protected System.Web.UI.WebControls.DataGrid ValidatedFilesDataGrid;
-		protected System.Web.UI.WebControls.LinkButton PreviousValidatedPageLinkButton;
-		protected System.Web.UI.WebControls.LinkButton NextValidatedPageLinkButton;
+		protected System.Web.UI.WebControls.Button PreviousValidatedPageLinkButton;
+		protected System.Web.UI.WebControls.Button NextValidatedPageLinkButton;
 		protected System.Web.UI.WebControls.Literal ExportFilesTitle;
 		protected System.Web.UI.WebControls.Label ServerPathLabel;
 		protected System.Web.UI.WebControls.TextBox ServerPathTextBox;
@@ -76,12 +76,14 @@ namespace Votations.NSurvey.WebAdmin
 				// Header.SurveyId = SurveyId;
                 ((Wap)Master.Master).HeaderControl.SurveyId = SurveyId;
 				ValidatedFilesDataGrid.CurrentPageIndex = 1;
-				PreviousValidatedPageLinkButton.Enabled = false;
+				PreviousValidatedPageLinkButton.Visible = false;
 				BindValidateAnswerFiles();
 				BindData();
 			}
 
-			DeleteFilesButton.Attributes.Add("onClick",
+            //BindValidateAnswerFiles();
+
+            DeleteFilesButton.Attributes.Add("onClick",
 				"javascript:if(confirm('" +GetPageResource("DeleteFilesConfirmationMessage")+ "')== false) return false;");
 
 			ExportFilesButton.Attributes.Add("onClick",
@@ -133,22 +135,24 @@ namespace Votations.NSurvey.WebAdmin
 		private void BindValidateAnswerFiles()
 		{
 			int totalRecords = 0, totalPages = 0;
+
 			ValidatedFilesDataGrid.DataMember = "Files";
 			ValidatedFilesDataGrid.DataKeyField = "FileId";
 			ValidatedFilesDataGrid.DataSource = 
-				new Answers().GetValidatedFileAnswers(SurveyId, ValidatedFilesDataGrid.CurrentPageIndex, 25, out totalRecords);
+				new Answers().GetValidatedFileAnswers(SurveyId, ValidatedFilesDataGrid.CurrentPageIndex, 10, out totalRecords);
 			ValidatedFilesDataGrid.DataBind();
+
 			CurrentPendingPageLabel.Text = ValidatedFilesDataGrid.CurrentPageIndex.ToString();
 
 			if (totalRecords > 0)
 			{
-				if ((totalRecords%25) == 0)
-				{
-					totalPages = totalRecords/25;
+				if ((totalRecords%10) == 0) // calculate remainder ; a - (a / b) * b
+                {
+					totalPages = totalRecords/10;
 				}
 				else
 				{
-					totalPages = (totalRecords/25) + 1;
+					totalPages = (totalRecords/10) + 1;
 				}
 				TotalPendingPagesLabel.Text = totalPages.ToString();
 			}
@@ -161,8 +165,8 @@ namespace Votations.NSurvey.WebAdmin
 			// Should we enable the next link?
 			if (totalPages == 1 || totalRecords == 0)
 			{
-				PreviousValidatedPageLinkButton.Enabled = false;
-				NextValidatedPageLinkButton.Enabled = false;
+				PreviousValidatedPageLinkButton.Visible = false;
+				NextValidatedPageLinkButton.Visible = false;
 			}
 		}
 
@@ -205,7 +209,7 @@ namespace Votations.NSurvey.WebAdmin
 			// Decrement the current page index.
 			if (currentPage > 1)
 			{
-				ValidatedFilesDataGrid.CurrentPageIndex--;
+				ValidatedFilesDataGrid.CurrentPageIndex--; // postfix decrement
 
 				// Get the data for the DataGrid.
 				BindValidateAnswerFiles();
@@ -214,14 +218,14 @@ namespace Votations.NSurvey.WebAdmin
 				if (ValidatedFilesDataGrid.CurrentPageIndex == 1)
 				{
 
-					PreviousValidatedPageLinkButton.Enabled = false;
-				}
+					PreviousValidatedPageLinkButton.Visible = false;
+                }               
 
-				// Should we enable the next link?
-				if (totalPages > 1)
+                // Should we enable the next link?
+                if (totalPages > 1)
 				{
-
-					NextValidatedPageLinkButton.Enabled = true;
+                    NextValidatedPageLinkButton.Visible = true;
+                    NextValidatedPageLinkButton.Enabled = true;
 				}
 			}	
 		}
@@ -244,15 +248,15 @@ namespace Votations.NSurvey.WebAdmin
 				// Should we disable the previous link?
 				if (ValidatedFilesDataGrid.CurrentPageIndex <= totalPages)
 				{
-
-					PreviousValidatedPageLinkButton.Enabled = true;
+                    PreviousValidatedPageLinkButton.Visible = true;
+                    PreviousValidatedPageLinkButton.Enabled = true;
 				}
 
 				// Should we enable the next link?
 				if (ValidatedFilesDataGrid.CurrentPageIndex == totalPages || totalPages == 1)
 				{
 
-					NextValidatedPageLinkButton.Enabled = false;
+					NextValidatedPageLinkButton.Visible = false;
 				}
 			}	
 		}
@@ -268,6 +272,7 @@ namespace Votations.NSurvey.WebAdmin
 		{
 			RowSelectorColumn rsc = ValidatedFilesDataGrid.Columns[0] as RowSelectorColumn;
 			int deletedRows = 0;
+
 			foreach( Int32 selectedIndex in rsc.SelectedIndexes ) 
 			{
 				new Answer().DeleteAnswerFile(int.Parse(ValidatedFilesDataGrid.DataKeys[selectedIndex].ToString()),
@@ -281,7 +286,10 @@ namespace Votations.NSurvey.WebAdmin
 				ValidatedFilesDataGrid.CurrentPageIndex--;
 			}
 
-			BindValidateAnswerFiles();
+            ((PageBase)Page).ShowNormalMessage(MessageLabel, GetPageResource("FilesDeletedMessage"));
+            MessageLabel.Visible = true;
+
+            BindValidateAnswerFiles();
 		}
 
 
@@ -333,6 +341,7 @@ namespace Votations.NSurvey.WebAdmin
 
             ((PageBase)Page).ShowNormalMessage(MessageLabel,string.Format(GetPageResource("FilesWrittenMessage"), 
 				(Math.Round((double)exportedSize/1048576*100000)/100000).ToString("0.##"), ServerPathTextBox.Text));
+
 			MessageLabel.Visible = true;
 		}
 

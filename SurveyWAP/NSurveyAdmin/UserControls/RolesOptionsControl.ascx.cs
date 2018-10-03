@@ -155,7 +155,9 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 			RightsCheckBoxList.DataTextField = "description";
 			RightsCheckBoxList.DataValueField = "SecurityRightId";
 			RightsCheckBoxList.DataBind();
-			((PageBase)Page).TranslateListControl(RightsCheckBoxList);
+
+            // translate db description to xml language file description:
+			((PageBase)Page).TranslateRoleRightsListControl(RightsCheckBoxList);
 		}
 
 
@@ -222,7 +224,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 			if (RoleNameTextBox.Text.Length == 0)
 			{
 				MessageLabel.Visible = true;
-((PageBase)Page).ShowErrorMessage(MessageLabel,((PageBase)Page).GetPageResource("RoleNameRequiredMessage"));
+                ((PageBase)Page).ShowErrorMessage(MessageLabel,((PageBase)Page).GetPageResource("RoleNameRequiredMessage"));
 				return false;
 			}
 
@@ -256,7 +258,7 @@ namespace Votations.NSurvey.WebAdmin.UserControls
 //				// Notifiy containers that data has changed
 				OnOptionChanged();
 				MessageLabel.Visible = true;
-((PageBase)Page).ShowNormalMessage(MessageLabel,((PageBase)Page).GetPageResource("RoleUpdatedMessage"));
+                ((PageBase)Page).ShowNormalMessage(MessageLabel,((PageBase)Page).GetPageResource("RoleUpdatedMessage"));
 			}
 		}
 

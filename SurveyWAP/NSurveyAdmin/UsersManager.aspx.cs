@@ -28,6 +28,7 @@ using Votations.NSurvey.DataAccess;
 using Votations.NSurvey.Data;
 using Votations.NSurvey.UserProvider;
 using Votations.NSurvey.WebAdmin.UserControls;
+using Votations.NSurvey.Web;
 
 namespace Votations.NSurvey.WebAdmin
 {
@@ -43,8 +44,9 @@ namespace Votations.NSurvey.WebAdmin
 
         private void Page_Load(object sender, System.EventArgs e)
 		{
-			SetupSecurity();
-			LocalizePage();
+            SetupSecurity();
+
+            LocalizePage();
 
             // Get selected tab
             if (!string.IsNullOrEmpty(Request.Params["tabindex"]))
@@ -52,30 +54,74 @@ namespace Votations.NSurvey.WebAdmin
                 string[] idx = Request.Params["tabindex"].Split(',');
                 selectedTabIndex = int.Parse(idx[idx.Length - 1]);
             }
-            if (selectedTabIndex > 0) btnBack.Visible = false;
+
+            if (selectedTabIndex > 0)
+            {
+                btnBack.Visible = false;
+            }
+
+            if(selectedTabIndex == 1)
+                rolesManager.Visible = CheckRight(NSurveyRights.AccessRolesManager, true);
+
+            if(selectedTabIndex == 2)
+                userImport.Visible = CheckRight(NSurveyRights.AccessImportUsers, true);
+
+
             UsersData = new Votations.NSurvey.SQLServerDAL.User();
             SwitchModeDependingOnprevTab();
-        
 
             if (!Page.IsPostBack)
             {
-                BindFields();
-            }
-            else BindGrid(); // postback could be import users
+                // Edit User Account Details by SP User
+                if (NSurveyUser.HasRight(NSurveyRights.AccessUserAccount))
+                {
+                    EditUserAccount();
+
+                } else
+                {
+                    // UserManager BF
+                    BindFields();
+                }
+            }    else
+            {
+                BindGrid(); 
+                // postback could be import users
+            } 
 		}
+
         private void SwitchModeDependingOnprevTab()
         {
-            if (ViewState["UMPREVTAB"] != null && Convert.ToInt32(ViewState["UMPREVTAB"])>0 && selectedTabIndex==0) 
-            SwitchToListMode();
+            if (ViewState["UMPREVTAB"] != null && Convert.ToInt32(ViewState["UMPREVTAB"])>0 && selectedTabIndex==0)
+            {
+                if (!NSurveyUser.HasRight(NSurveyRights.AccessUserAccount))
+                { SwitchToListMode(); }
+                else { EditUserAccount(); }
+            }
+            MessageLabel.Visible = false;
             ViewState["UMPREVTAB"] = selectedTabIndex;
         }
 
-       
-		private void SetupSecurity()
-		{
-			CheckRight(NSurveyRights.AccessUserManager, true);
-			IsSingleUserMode(true);
-		}
+        private void SetupSecurity()
+        {
+            // if admin or has right = true else false and redirect
+            if (selectedTabIndex == 0)
+            {
+                CheckRight(NSurveyRights.AccessUserManager, true);
+                IsSingleUserMode(true);
+            }
+
+            if (selectedTabIndex == 1)
+            {
+                CheckRight(NSurveyRights.AccessRolesManager, true);                
+            }
+
+
+            if (selectedTabIndex == 2)
+            { 
+                CheckRight(NSurveyRights.AccessImportUsers, true);                
+            }
+
+        }
 
 		private void LocalizePage()
 		{
@@ -108,10 +154,12 @@ namespace Votations.NSurvey.WebAdmin
             }
 
             ((INSurveyUserProvider)_userProvider).DeleteUserById(UserId);
-            UserId = -1;
-            Visible = false;
-            //OnOptionChanged();
-            UINavigator.NavigateToUserManager(((PageBase)Page).getSurveyId(), ((PageBase)Page).MenuIndex);
+
+            MessageLabel.Visible = true;
+            ((PageBase)Page).ShowNormalMessage(MessageLabel, ((PageBase)Page).GetPageResource("UserDeletedConfirmation"));
+
+            SwitchToListMode();
+
         }
 
 
@@ -128,6 +176,20 @@ namespace Votations.NSurvey.WebAdmin
             BindGrid();
             btnBack.Visible = false;
         }
+
+        // Option to edit the User Account details by the individual SP User
+        private void EditUserAccount()
+        {
+            int userid = ((PageBase)Page).NSurveyUser.Identity.UserId;
+
+            //UserOptionsControl.ascx file
+            UsersOptionsControl1.UserId = userid;
+            UsersOptionsControl1.BindFields();
+
+            phUsersList.Visible = false;
+            btnBack.Visible = false;
+        }
+
 
 		/// <summary>
 		/// Get the current DB data and fill 
@@ -181,6 +243,7 @@ namespace Votations.NSurvey.WebAdmin
 		/// </summary>
 		private void UsersManager_OptionChanged(object sender, EventArgs e)
 		{
+            //UserManager BF
 			BindFields();
 		}
 

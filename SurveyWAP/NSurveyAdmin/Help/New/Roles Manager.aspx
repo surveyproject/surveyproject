@@ -74,7 +74,8 @@ This Roles Manager page is used to create and edit roles that can be assigned to
 <a href="User Creation Tool.aspx" title=" User Creation Tool " > User Creation Tool </a>	<br />
 
 <a href="../UM_Introduction.aspx" title=" User Manager Introduction " > User Manager Introduction </a>	<br />
-<a href="new/User Import.aspx" title=" User Import " > User Import </a>	<br />
+<a href="User Import.aspx" title=" User Import " > User Import </a>	<br />
+                <a href="User_Account.aspx" title=" User Account Editing " > User Account Editing </a>	<br />
                 <br />
             </div>
 <div id="fillerDiv" class="fillerDiv">&nbsp;</div></div></asp:Content>

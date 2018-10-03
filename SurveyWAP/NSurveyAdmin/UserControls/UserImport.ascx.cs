@@ -24,7 +24,7 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls
         {
             LocalizePage();
 
-            SetupSecurity();
+            //SetupSecurity();
 
             if (ShowMessage) ShowMessage = false;
             else MessageLabel.Visible = false;
@@ -44,7 +44,7 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls
             // Check if we can edit extended properties
             if ((_userProvider is INSurveyUserProvider))
             {
-                ((PageBase)Page).CheckRight(NSurveyRights.AccessUserManager, true);
+                ((PageBase)Page).CheckRight(NSurveyRights.AccessImportUsers, true);
             }
             else
             {

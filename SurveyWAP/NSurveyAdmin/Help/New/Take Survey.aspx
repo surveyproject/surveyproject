@@ -9,22 +9,20 @@
                 <h2 style="color:#5720C6;">
                     Take Survey</h2><hr style="color:#e2e2e2;" />
                 <br />
-The Campaigns/ Take Survey webpage is a special page that is used to allow a registered SP
+The Campaigns/ Take Survey webpage is a special page that is used to allow a registered SP&trade;
 User to take a survey once logged into the SP tool. This
-page requires the user to have the &quot;Take survey&quot; right set.<br />
+page requires the user to have the &quot;Take survey&quot; roleright set.<br />
 <br />
-Once the user has logged in to the SP tool and reaches this page it's possible to select the survey that has been assigned through the user manager. 
-Respondents can be restricted to take a survey only one time by activating the proper security options on the survey.<br /><hr style="color:#e2e2e2;" />
-                <br />
-                <br />
+Once the user has logged in to SurveyProject and reaches this page it's possible to select the survey that has been assigned through the user manager. 
+Respondents can be restricted to take a survey only one time by activating the proper security options on the survey.<br />
+                
+                <hr style="color:#e2e2e2;" />
                 <h3>
                     More Information</h3>
-                <br />
-SD_Introduction.html<br />
-Survey%20Deployement.html<br />
-Web%20Control%20Deployment.html<br />
-ED_Introduction.html<br />
-                <br />
+                <a href="SD_Introduction.aspx" title=" Survey Deployment Introduction " > Survey Deployment Introduction </a>	<br />
+                                <a href="Survey Deployement.aspx" title=" Survey Link Deployment " > Survey Link Deployment </a>	<br />
+                <a href="Web Control Deployment.aspx" title=" Web Control Deployment " > SurveyBox Web Control Deployment </a>	<br />
+                <a href="ED_Introduction.aspx" title=" Emailing Introduction " > Emailing Introduction </a>	<br />
             </div>
 <div id="fillerDiv" class="fillerDiv">&nbsp;</div></div></asp:Content>
 

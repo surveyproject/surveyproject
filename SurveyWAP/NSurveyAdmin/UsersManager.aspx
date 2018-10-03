@@ -53,6 +53,10 @@
                 <asp:ImageButton ID="btnBack" Width="16px" ImageUrl="~/Images/back_button.gif" runat="server" CssClass="buttonBack" OnCommand="EditBackButton" Visible="false" ToolTip="Go back to previous" />
             </fieldset>
 
+          <div class="errorDiv">
+                <asp:Label ID="MessageLabel" runat="server" CssClass="errorMessage" Visible="False"></asp:Label>
+            </div>
+
         <div id="tabs-1">
             <uc1:UsersOptionsControl ID="UsersOptionsControl1" runat="server"></uc1:UsersOptionsControl>
 
@@ -162,8 +166,7 @@
                             <HeaderTemplate>
                                 <asp:Label runat="server" Text='<%#GetPageResource("UsersTabDelete") %>' /></HeaderTemplate>
                             <ItemTemplate>
-                            <asp:ImageButton runat="server" ToolTip="Click to Delete" ImageUrl="~/Images/delete.gif" Width="16" Height="16" OnCommand="OnUserDelete"
-                                    CommandName="UserDelete" CommandArgument='<%#(Eval("UserId")) %>' />
+                            <asp:ImageButton runat="server" ToolTip="Click to Delete" ImageUrl="~/Images/delete.gif" Width="16" Height="16" OnCommand="OnUserDelete" CommandName="UserDelete" CommandArgument='<%#(Eval("UserId")) %>' />
                            </ItemTemplate>
                         </asp:TemplateField>
 
@@ -176,11 +179,11 @@
         </div>
 
         <div id="tabs-2">
-            <uc1:RolesManager ID="rolesManager" runat="server"></uc1:RolesManager>
+            <uc1:RolesManager ID="rolesManager" Visible="false" runat="server"></uc1:RolesManager>
         </div>
 
         <div id="tabs-3">
-            <uc1:UserImport ID="userImport" runat="server"></uc1:UserImport>
+            <uc1:UserImport ID="userImport" Visible="false" runat="server"></uc1:UserImport>
         </div>
 
             <div id="fillerDiv" class="fillerDiv">&nbsp;</div>

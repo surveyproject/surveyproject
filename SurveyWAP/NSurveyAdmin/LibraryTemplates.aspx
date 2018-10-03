@@ -26,7 +26,7 @@
                 <ol>
                     <li>
 
-                <asp:Literal ID="PreviewSurveyLanguageLabel" runat="server" Text="Language preview :"></asp:Literal>
+                <asp:Label ID="PreviewSurveyLanguageLabel" AssociatedControlID="LanguagesDropdownlist" runat="server" Text="Language preview :"></asp:Label>
 
                             <asp:DropDownList ID="LanguagesDropdownlist" runat="server" AutoPostBack="True" OnSelectedIndexChanged="LanguagesDropdownlist_SelectedIndexChanged">
                             </asp:DropDownList>
@@ -39,7 +39,7 @@
 
     </li></ol>
    </fieldset>
-
+            <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
 
 </div>
 

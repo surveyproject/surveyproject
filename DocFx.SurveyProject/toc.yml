@@ -1,7 +1,6 @@
-- name: Downloads
-  href: downloads/
+
 - name: Articles
   href: articles/
-- name: API Reference
+- name: API Documentation
   href: obj/api/
   homepage: api/index.md

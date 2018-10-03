@@ -28,6 +28,7 @@ namespace Votations.NSurvey
             this.surveyTree1.RebuildTree();
         }
 
+
         protected void Page_Init(object sender, System.EventArgs e)
         {
 
@@ -146,6 +147,7 @@ namespace Votations.NSurvey
             Disclaimer.Text = ((PageBase)Page).GetPageResource("Disclaimer");
             Theme.InnerHtml = ((PageBase)Page).GetPageResource("SpFrontPageTheme");
             LdTitle.InnerHtml = ((PageBase)Page).GetPageResource("DisclaimerTitle");
+            ldPopupTitle.InnerHtml = ((PageBase)Page).GetPageResource("DisclaimerTitle");
         }
 
         /// <summary>

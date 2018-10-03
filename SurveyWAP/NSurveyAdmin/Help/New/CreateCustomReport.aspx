@@ -14,7 +14,7 @@ Reporting Option</i><br />
                 <br /><br />
 <i>
 General Working</i><br />
-- scores/ results are based on calculations in stored procedure that is triggered on submitting the survey and on opening the customreport<br />
+- scores/ results are based on calculations in a stored procedure that is triggered on submitting the survey and on opening the customreport<br />
 <br />
 <b>
 Steps to Implement</b><br />
@@ -34,8 +34,12 @@ Steps to Implement</b><br />
 - Login to SP and select the survey to work with<br />
 - go to menu Campaigns/ Web and copy the '?surveyid=xxxxx' from the 'Deployment URL' (note: report does not work with friendly url)<br />
 - go to Menu Surveys/ Settings/ Completion<br />
-- add the 'Return URL' : nsurveyreports/customreport.aspx?surveyid=xxxxxxxx (paste surveyid) and save changes<br />
-                <br />
+- add the 'Return URL' : ~\nsurveyreports\customreport.aspx?surveyid=xxxxxxxx (paste surveyid) and save changes<br />
+                <br />Note: the report option does also work with the Friendly URL. Instead of the surveyid the FriendlyUrl namepart must be added.
+                <br /><br />
+                URL Endresult: ~\NSurveyReports\customreport.aspx\MyFriendlyName 
+                <br /><br />
+
     <u>
 3. Submit survey and show custom report</u><br />
                 <br />
@@ -49,7 +53,7 @@ TECHNICAL DETAILS</b><br /><br />
 <u>              
 I. Webpages</u> <br />
 - the customreport pages (.aspx, .cs and .designer.cs) are stored in the 'NsurveyReports' directory<br />
-- the directorypath 'NsurveyReports/' has to be included in the Completion 'Return URL'<br />
+- the directorypath '~\NsurveyReports\' has to be included in the Completion 'Return URL'<br />
 
 <br /><i>
 a. customreport.aspx webpage</i><br />

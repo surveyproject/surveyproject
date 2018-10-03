@@ -14,7 +14,7 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            SetupSecurity();
+            //SetupSecurity();
             LocalizePage();
 
             if (!Page.IsPostBack)
@@ -33,7 +33,7 @@ namespace Votations.NSurvey.WebAdmin.NSurveyAdmin.UserControls
 
         private void SetupSecurity()
         {
-            ((PageBase)Page).CheckRight(NSurveyRights.AccessUserManager, true);
+            ((PageBase)Page).CheckRight(NSurveyRights.AccessRolesManager, true);
             ((PageBase)Page).IsSingleUserMode(true);
         }
 

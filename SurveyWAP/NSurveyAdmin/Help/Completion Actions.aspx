@@ -33,70 +33,54 @@
                 Text/html editor to create (write and style) the message. This is the message that will be shown to the end user once the survey is completed.
                 <br />
                 <br /> <br />
-                <b>URL Redirection</b><br />
+                <u>Redirection or Report URL</u>
+                 <br /> <br />
+                <b>A. Redirection URL</b><br />
                 <br />
-                This action will redirect the user to a specific (web)page or URL once the survey is completed.<br />
-                <br />
-                * Edition Language<br />
-                The language for which the redirection will occur. This is also the language in
-                which the &quot;Thank You&quot; message text is edited and in which language it
+                This action will redirect the respondent to a specific (web)page or website URL once the survey is completed and submitted. If this option is used no "thank you" message
                 will be shown.<br />
-                <br />
-                This feature is only available if survey's <a href="Multi-Languages Settings.aspx" title="Multi Languages">Multi Languages Settings</a>
-                are activated.<br />
-                <br />
-                * Thanks Message<br />
-                This is the message that will be shown to the end user once the survey is completed.
-                This message will only show up if no redirection URL is specified. It is mostly
-                used in case of multiple languages and a redirection is used for one language but
-                not for the others.<br />
                 <br />
                 * Redirection URL<br />
                 This is the URL to which the respondent will be redirected. It must be in following format: http://www.yourdomain.com or 
                 http://www.youdomain.com/yourpage.aspx <br />
                                 <br />
                 <br />
-                <b>Results Report</b><br />
+                <b>B. Report URL</b><br />
                 <br />
-                This action will redirect the user to the Resultsreport webpage once the survey is completed and submitted. 
-                Through the results report the respondent will get an overview of all survey questions, the answers submitted and scores (if set). 
+                This action will redirect the respondent to one of [2] the SP reports once the survey is completed and submitted. 
+                <br /><br />
+                <i>1. Results Report</i>
+                <br />
+                Through the resultsreport the respondent will get an overview of all survey questions, the answers submitted and scores (if set). 
+                
                 An option to print the report is shown on the page. The content and layout of the resultsreport 
                 is based on and similar to the <a href="New/Voter report.aspx" title="Voter Report">Individual Results Report</a>.
-                                <br />
-           
-                <br />
-                * Redirection URL<br />
-                This is used to set the URL to the Individual Resultsreport of the survey where the respondent will be redirected on completing the survey. 
-                                                <br />
-                <br />
-
-                * To set the correct Resultsreport 'redirection URL' go to menuoption 'Campaigns/ Web' go to the 'Deployment URL' <br />
-                * copy the surveyid part of the url (e.g. surveyid=bb058c21-861d-450e-a2a5-4601467a59ca )<br />
-                * go back to the Completion menu<br />
-                * type the following url including questionmark: NSurveyReports\resultsreport.aspx?<br />
-                * paste the surveyid at the end of the typed part<br /><br />
-                URL Endresult: NSurveyReports\resultsreport.aspx?surveyid=bb058c21-861d-450e-a2a5-4601467a59ca 
-                <br />
-                <br />Note: the report option does not work with the Friendly URL
-                <br /> <br /><br />
-                                <b>Custom Results Report</b><br />
-                <br />This action will redirect the user to a Custom Resultsreport webpage once the survey is completed and submitted. 
-                A custom report may contain any customized results or calculated values based on the individual or overall responses to a survey that
-                 are taken from the SP database through a special stored procedure. 
-                <br /><br />
-                See <a href="New\CreateCustomReport.aspx" title="Creating Custom Reports">Creating Custom Reports</a> on how to create/ edit the custom report.
-
                                 <br /><br />
 
-                * To set the correct Resultsreport 'redirection URL' go to menuoption 'Campaigns/ Web' go to the 'Deployment URL' <br />
+                <i>2. Custom Report</i>
+                <br />
+                 The customreport is used to present any data and/ or information based on a customized stored procedure [vts_spReportGetScores] 
+                in the SP database. Through the stored procedure (calculated) values or query results can be send to the customreport webpage that is shown to the repondent after submitting the survey.
+                <br /><br />
+                                See <a href="New\CreateCustomReport.aspx" title="Creating Custom Reports">Creating Custom Reports</a> on how to create/ edit the custom report.
+                                <br /><br />
+
+
+                <u>Results Report - Redirection URL</u><br />
+                <br />
+
+                * To set the correct Resultsreport 'redirection URL' go to menuoption 'Campaigns/ Web' - 'Deployment URL' <br />
                 * copy the surveyid part of the url (e.g. surveyid=bb058c21-861d-450e-a2a5-4601467a59ca )<br />
                 * go back to the Completion menu<br />
-                * type the following url including questionmark: NSurveyReports\customreport.aspx?<br />
+                * type the following url including tilde sign [~] and questionmark [?]: ~\NSurveyReports\resultsreport.aspx?<br />
                 * paste the surveyid at the end of the typed part<br /><br />
-                URL Endresult: NSurveyReports\customreport.aspx?surveyid=bb058c21-861d-450e-a2a5-4601467a59ca 
-                                <br />
-                <br />Note: the report option does not work with the Friendly URL
+                URL Endresult: ~\NSurveyReports\resultsreport.aspx?surveyid=bb058c21-861d-450e-a2a5-4601467a59ca 
                 <br />
+                <br />Note: the report option does also work with the Friendly URL. Instead of the surveyid the FriendlyUrl namepart must be added.
+                <br /><br />
+                URL Endresult: ~\NSurveyReports\resultsreport.aspx\MyFriendlyName 
+                <br /><br />
+
                 <hr style="color:#e2e2e2;" />
                 <h3>
                     More Information</h3>

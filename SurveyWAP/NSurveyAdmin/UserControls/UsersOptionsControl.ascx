@@ -42,7 +42,7 @@
                         <asp:TextBox ID="EmailTextBox" runat="server"></asp:TextBox>
                     </li>
                 </asp:PlaceHolder>
-
+                <asp:PlaceHolder ID="UsercheckBoxes" runat="server">
                     <li>
                         <asp:Label ID="UserIsAdministratorLabel" AssociatedControlID="IsAdminCheckBox" runat="server" EnableViewState="False" Text="Administrator :"></asp:Label>
                         <asp:CheckBox ID="IsAdminCheckBox" runat="server"></asp:CheckBox>
@@ -53,6 +53,7 @@
                         <asp:CheckBox ID="HasSurveyAccessCheckBox" runat="server" AutoPostBack="True"></asp:CheckBox>
 
                     </li>
+                    </asp:PlaceHolder>
   </ol>
                 <asp:Button ID="CreateNewUserButton" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Create user"></asp:Button>
                 <asp:Button ID="ApplyChangesButton" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Apply changes"></asp:Button>
