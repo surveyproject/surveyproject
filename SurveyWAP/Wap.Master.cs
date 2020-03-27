@@ -28,6 +28,16 @@ namespace Votations.NSurvey
             this.surveyTree1.RebuildTree();
         }
 
+        public void LoadJscripts()
+        {
+
+
+
+
+
+        }
+
+
 
         protected void Page_Init(object sender, System.EventArgs e)
         {
@@ -130,9 +140,6 @@ namespace Votations.NSurvey
             Page.Header.Controls.Add(javascriptControl);
             Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
 
-
-
-
        }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -159,10 +166,13 @@ namespace Votations.NSurvey
             {
                 banners.Visible = true;
                 Footercontrol1.Visible = true;
+
                 surveyTree1.Visible = false;
                 return;
             }
 
+                surveyTree1.Visible = true;
+    
                 banners.Visible = false;
                 Footercontrol1.Visible = false;
                 logoText.Attributes.Add("class", "logoTextLogedin");

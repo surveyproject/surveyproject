@@ -90,6 +90,11 @@ select {
 /*ID: Form1*/
 .form-inline{}
 
+.form-inline label
+{
+    display:initial !important;
+}
+
 /*ID: ErrorMessageDiv*/
 .errorMessageDiv{
     position: relative; 

@@ -116,6 +116,7 @@
     <Compile Include="Votations.NSurvey.DataAccess\Surveys.cs" />
     <Compile Include="Votations.NSurvey.DataAccess\Users.cs" />
     <Compile Include="Votations.NSurvey.DataAccess\Voters.cs" />
+    <Compile Include="Votations.NSurvey\RegExInUseException.cs" />
     <Compile Include="Votations.NSurvey\SurveyNotFoundException.cs" />
     <Compile Include="Votations.NSurvey\SurveyExistsFoundException.cs" />
     <Compile Include="Votations.NSurvey\QuestionNotFoundException.cs" />

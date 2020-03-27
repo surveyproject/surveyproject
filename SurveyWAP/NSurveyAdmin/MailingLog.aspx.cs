@@ -51,8 +51,8 @@ namespace Votations.NSurvey.WebAdmin
 		protected System.Web.UI.WebControls.Button DeleteFilesButton;
 		protected System.Web.UI.WebControls.Literal UploadedFilesTitle;
 		protected System.Web.UI.WebControls.DataGrid MailingLogDataGrid;
-		protected System.Web.UI.WebControls.LinkButton PreviousLogPageLinkButton;
-		protected System.Web.UI.WebControls.LinkButton NextLogPageLinkButton;
+		protected System.Web.UI.WebControls.Button PreviousLogPageLinkButton;
+		protected System.Web.UI.WebControls.Button NextLogPageLinkButton;
 		protected System.Web.UI.WebControls.DataGrid ValidatedFilesDataGrid;
 		protected System.Web.UI.WebControls.LinkButton PreviousValidatedPageLinkButton;
 		protected System.Web.UI.WebControls.LinkButton NextValidatedPageLinkButton;
@@ -110,19 +110,19 @@ namespace Votations.NSurvey.WebAdmin
 			MailingLogDataGrid.DataMember = "InvitationLogs";
 			MailingLogDataGrid.DataKeyField = "InvitationLogId";
 			MailingLogDataGrid.DataSource = 
-				new Voters().GetInvitationLogs(SurveyId, MailingLogDataGrid.CurrentPageIndex,25, out totalRecords);
+				new Voters().GetInvitationLogs(SurveyId, MailingLogDataGrid.CurrentPageIndex,10, out totalRecords);
 			MailingLogDataGrid.DataBind();
 			CurrentPendingPageLabel.Text = MailingLogDataGrid.CurrentPageIndex.ToString();
 
 			if (totalRecords > 0)
 			{
-				if ((totalRecords%25) == 0)
+				if ((totalRecords%10) == 0)
 				{
-					totalPages = totalRecords/25;
+					totalPages = totalRecords/10;
 				}
 				else
 				{
-					totalPages = (totalRecords/25) + 1;
+					totalPages = (totalRecords/10) + 1;
 				}
 				TotalPendingPagesLabel.Text = totalPages.ToString();
 			}

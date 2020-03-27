@@ -93,7 +93,9 @@ b* default calculation format
 
 21. Adjusted Stored Procedure to make the menu Filemanager webpage work correctly (paging/ list of files)
 
+22. ...
 
+23. Modified Stored Procedure to correctly apply displayorder value to Matrix child questions
 
 
 

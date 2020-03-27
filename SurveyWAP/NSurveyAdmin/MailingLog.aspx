@@ -30,7 +30,7 @@
 <ol><li>
      <div class="rounded_corners">
     <asp:datagrid id="MailingLogDataGrid" runat="server" Width="100%" 
-                        AutoGenerateColumns="False" AllowCustomPaging="True" PageSize="10">
+                        AutoGenerateColumns="False" AllowCustomPaging="True">
                 <AlternatingItemStyle BackColor="#FFF6BB">
                 </AlternatingItemStyle>
                 
@@ -51,10 +51,13 @@
          </div>
 
 </li><li>
-             <asp:linkbutton id="PreviousLogPageLinkButton" runat="server">&lt;&lt; Previous page</asp:linkbutton> &nbsp;|&nbsp; 
-                <asp:linkbutton id="NextLogPageLinkButton" runat="server">Next page >></asp:linkbutton>
-</li><li>
+                                   <div style="left: 30px; position:absolute; ">
+                          <asp:Button ID="PreviousLogPageLinkButton" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Previous page" /> &nbsp;&nbsp;
+                          <asp:Button ID="NextLogPageLinkButton" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Next Page"></asp:Button>
+                                </div>
+                             <div style="right: 10px;">
                 <asp:button id="DeleteLogsButton" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Delete selected entries"></asp:button> 
+                                 </div>
     <br />
        </li>
 

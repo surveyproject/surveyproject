@@ -90,7 +90,7 @@
     </form>
   </div>
 
-    <!-- Bootstrap JS 3.3.7 - package -->
+    <!-- Bootstrap JS package -->
     <script src="../Scripts/bootstrap.min.js"></script>
     
  <script>

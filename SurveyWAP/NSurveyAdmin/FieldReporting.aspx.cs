@@ -121,7 +121,7 @@ namespace Votations.NSurvey.WebAdmin
 
                 if (textIndivEntries.Tables[0].Rows.Count != 0)
                 {
-                    totalRecords = int.Parse(textIndivEntries.Tables[0].Rows[0]["TotalRecords"].ToString());
+                    totalRecords = int.Parse(textIndivEntries.Tables[0].Rows.Count.ToString());
                     CurrentPageLabel.Text = FieldReportDataGrid.CurrentPageIndex.ToString();
                     if (textIndivEntries.Tables[0].Rows.Count > 0)
                     {

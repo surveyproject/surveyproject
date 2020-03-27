@@ -4,7 +4,8 @@
 
     <div id="logoDiv" runat="server" style="height:79vh;">
         <img class="logoImg" alt="logoImage"  src="Images/splogo.svg" />    
-        <h2 id="Slogan" runat="server" style="color: #e2e2e2; font-size:2.0vw;"></h2>
+        <br /><br />
+        <h3 id="Slogan" runat="server" style="color: #e2e2e2; font-size:2.0vw;"></h3>
     </div>
 
 </asp:content>

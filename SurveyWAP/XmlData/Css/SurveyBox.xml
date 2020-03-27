@@ -64,19 +64,19 @@
     <value>navigationPanel</value>
   </data>
   <data version="2.4" id="ppbB" name="PreviousPageButton">
-    <value>btn btn-primary btn-xs bw</value>
+    <value>btn btn-primary btn-sm bw</value>
   </data>
   <data version="2.4" id="ppBP" name="PreviousPageButtonPanel">
     <value>previousPageButtonPanel</value>
   </data>
   <data version="2.4" id="npSB" name="NextPageSubmitButton">
-    <value>nextPageButtonSubmit btn btn-primary btn-xs bw</value>
+    <value>nextPageButtonSubmit btn btn-primary btn-sm bw</value>
   </data>
   <data version="2.4" id="npSBP" name="NextPageSubmitButtonPanel">
     <value>nextPageSubmitButtonPanel</value>
   </data>
   <data version="2.4" id="RPB" name="ResumeProgressButton">
-    <value>resumeProgressButton btn btn-primary btn-xs bw</value>
+    <value>resumeProgressButton btn btn-primary btn-sm bw</value>
   </data>
   <data version="2.4" id="npRPBP" name="NextPageResumeProgressButtonPanel">
     <value>resumeProgressButtonPanel</value>
@@ -109,7 +109,7 @@
     <value>previousPageButtonPanel</value>
   </data>
   <data version="2.4" id="ssB" name="SurveySubmitButton">
-    <value>surveySubmitButton btn btn-primary btn-xs bw</value>
+    <value>surveySubmitButton btn btn-primary btn-sm bw</value>
   </data>
   <data version="2.4" id="ssbP" name="SurveySubmitButtonPanel">
     <value>surveySubmitButtonPanel</value>

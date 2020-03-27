@@ -16,8 +16,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <meta name="DESCRIPTION" content="SurveyProject&trade;  is a free and open source survey and (data entry) forms webapplication for processing & gathering data online." />
-    <meta name="KEYWORDS" content="surveyproject, survey, webform, questionnaire, nsurvey, w3devpro" />
-    <meta name="COPYRIGHT" content=" 2017 &lt;href='http://www.w3devpro.com'>W3DevPro&lt;/a>" />
+    <meta name="KEYWORDS" content="surveyproject, survey, project, webform, questionnaire, nsurvey, w3devpro" />
+    <meta name="COPYRIGHT" content=" 2018 &lt;href='http://www.w3devpro.com'>W3DevPro&lt;/a>" />
     <meta name="GENERATOR" content="SurveyProject&trade; " />
     <meta name="AUTHOR" content="W3DevPro" />
 
@@ -33,7 +33,7 @@
   <!-- SP Admin tool main CSS file -->
     <link href="Content/surveyadmin/nsurveyadmin.css" rel="stylesheet" />
 
-            <!-- Bootstrap v. 3.3.7 - Package -->
+            <!-- Bootstrap Package -->
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <!-- <link href="Content/bootstrap-theme.min.css" rel="stylesheet" /> -->
 
@@ -54,13 +54,13 @@
         function noContextMenu() {
             return false;
         }
-        //document.onMouseDown = customRightMenu(event);
+       // document.onMouseDown = customRightMenu(event);
 
-        // block the Right Menu mouse option:    
+        // block the Right Menu mouse option:   
         
-        //document.oncontextmenu = function () {
-        //    return false;            
-        //}                
+        document.oncontextmenu = function () {
+            return false;            
+        }                
     </script>
 
         <!-- Part of Bootstrap Installation -->
@@ -84,7 +84,7 @@
 
     <div id="container">
 
-        <form id="MasterForm" runat="server">
+        <form id="MasterForm" runat="server" method="post">
 
             <div id="Top">
 
@@ -108,7 +108,7 @@
 
         <div id="leftNavDiv">
 
-            <uc1:SurveyTree ID="surveyTree1" runat="server"></uc1:SurveyTree>
+            <uc1:SurveyTree ID="surveyTree1" Visible="false" runat="server"></uc1:SurveyTree>
 
             <div id="banners" class="banners" runat="server" visible="true">
 
@@ -121,11 +121,11 @@
                     <a href="http://www.twitter.com/surveyprojects" target="_blank" title="SP Twitter">
                         <span class="fa fa-twitter"></span></a>
                     <a href="http://www.youtube.com/TheSurveyProject" target="_blank" title="SP YouTube">
-                        <span class="fa fa-youtube"></span></a>
+                        <span class="fa fa-youtube"></span></a>                    
                 </div>
 
-
-                <h3 id="Theme" runat="server" style="color: #5bc0de;">The open source webapplication to create and publish surveys and webforms online.</h3>
+                
+                <h5 id="Theme" runat="server" style="color: #5bc0de; margin-top:5px;">The open source webapplication to create and publish surveys and webforms online.</h5>
 
                 <div title="Survey&#8482; Project Login">
 
@@ -156,8 +156,10 @@
                                             <h4 id="ldPopupTitle" runat="server">SP&trade; Licensing &amp; Disclaimer</h4>
                                         </div>
                                         <div class="panel-body">
+                                            <br />
                                             <small>
                                                 <asp:Literal ID="Disclaimer" runat="server" EnableViewState="False">Disclaimer</asp:Literal></small>
+                                            <br /><br />
                                         </div>
                                         <div class="panel-footer" style="text-align: center; border:1px solid #dedbdb; border-radius:5px;">
                                             <a data-toggle="collapse" id="LdClose" runat="server" href="#collapse1" title="Close Disclaimer">[close]</a></div>

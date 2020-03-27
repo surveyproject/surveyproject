@@ -385,6 +385,7 @@ namespace Votations.NSurvey.SQLServerDAL
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add(new SqlParameter("@ParentQuestionId", SqlDbType.Int, 4, "ParentQuestionID"));
             command.Parameters.Add(new SqlParameter("@QuestionText", SqlDbType.NVarChar, 0xfa0, "QuestionText"));
+            command.Parameters.Add(new SqlParameter("@DisplayOrder", SqlDbType.Int, 4, "DisplayOrder"));
             command.Parameters.Add(new SqlParameter("@QuestionID", SqlDbType.Int, 4, "QuestionID"));
             command.Parameters["@QuestionID"].Direction = ParameterDirection.Output;
             return command;

@@ -113,7 +113,7 @@ namespace Votations.NSurvey.WebAdmin
 		private void BindFields()
 		{
 			// Header.SurveyId = SurveyId;
-            ((Wap)Master.Master).HeaderControl.SurveyId = SurveyId;
+            //((Wap)Master.Master).HeaderControl.SurveyId = SurveyId;
 
 			MakeBuiltInRegExButton.Visible = NSurveyUser.Identity.IsAdmin;
 
@@ -354,10 +354,23 @@ namespace Votations.NSurvey.WebAdmin
 
 		private void DeleteRegExButton_Click(object sender, System.EventArgs e)
 		{
-			new RegularExpression().DeleteRegularExpressionById(int.Parse(RegExDropDownList.SelectedValue));
-			ResetUIState();
+            try
+            {
+            new RegularExpression().DeleteRegularExpressionById(int.Parse(RegExDropDownList.SelectedValue));
+
+           ResetUIState();
+
 			MessageLabel.Visible = true;
             ((PageBase)Page).ShowNormalMessage(MessageLabel,((PageBase)Page).GetPageResource("RegExDeleteedMessage"));
+
+            }
+            catch (RegExInUseException)
+            {
+                MessageLabel.Visible = true;
+                ((PageBase)Page).ShowNormalMessage(MessageLabel, ((PageBase)Page).GetPageResource("RegExInUse"));
+            }          
+
+
 		}
 	}
 

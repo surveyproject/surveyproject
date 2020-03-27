@@ -15,7 +15,7 @@ namespace Votations.NSurvey.BusinessRules
     public class Question
     {
         /// <summary>
-        /// Adds a new child question to the parent question specified by the parent questio id in the database
+        /// Adds a new child question to the parent question specified by the parent questionid in the database
         /// </summary>
         /// <param name="newChildQuestion">Question object with information about what to add. Only Id must be ommited</param>
         public void AddChildQuestion(MatrixChildQuestionData newChildQuestion)

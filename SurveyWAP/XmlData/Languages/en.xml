@@ -896,7 +896,7 @@
     <value> &#160;Submit &#160;</value>
   </data>
   <data version="1.0" id="295" name="InvalidLoginPasswordMessage">
-    <value>Invalid Login. Please try again.</value>
+    <value>Invalid Login. Please retry.</value>
   </data>
   <data version="1.0" id="296" name="SurveyBuilderTitle">
     <value>Form builder</value>
@@ -3355,7 +3355,7 @@
     <value>Survey Friendly Link: </value>
   </data>
   <data version="2.4" id="1160" name="SurveyLayoutSavedMsg">
-    <value>All Layout an CSS Changes Saved</value>
+    <value>All Layout and CSS Changes Saved</value>
   </data>
   <data version="2.4" id="1161" name="InvalidFileTypeLayoutMsg">
     <value>Invalid filetype: .CSS only</value>
@@ -3536,5 +3536,11 @@
   </data>
   <data version="2.5" id="2015" name="FilesDeletedMessage">
     <value>Files Deleted</value>
+  </data>
+  <data version="2.5" id="2016" name="AnswerTypeDeletedMessage">
+    <value>AnswerType Deleted</value>
+  </data>
+  <data version="2.5" id="2017" name="RegExInUse">
+    <value>RegEx is used on one or more survey answers and cannot be deleted until removed from the surveyanswers</value>
   </data>
 </root>

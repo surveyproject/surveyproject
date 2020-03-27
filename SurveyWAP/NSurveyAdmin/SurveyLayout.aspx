@@ -47,7 +47,7 @@
 </li><li>   
         
                             <asp:FileUpload runat="server" ID="fuCss"/>
-                            <asp:Button CssClass="btnCssUpload btn btn-primary btn-xs bw" runat="server" Text="Upload" ID="btnCssUpload" OnCommand="OnCssFileUpload" />
+                            <asp:Button CssClass="btn btn-primary btn-xs bw" runat="server" Text="Upload" ID="btnCssUpload" OnCommand="OnCssFileUpload" />
     </li>
      <li id="cssBtnID" runat="server"> 
                             <asp:Button CssClass="btn btn-primary btn-xs bw" runat="server" ID="btnCssDownload" Text="Download" OnClick="btnCssDownload_Click" />

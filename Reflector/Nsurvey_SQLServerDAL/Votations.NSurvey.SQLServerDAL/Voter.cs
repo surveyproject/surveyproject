@@ -77,7 +77,9 @@ namespace Votations.NSurvey.SQLServerDAL
  
             SqlConnection connection = new SqlConnection(DbConnection.NewDbConnectionString);
             connection.Open();
+
             SqlTransaction transaction = connection.BeginTransaction();
+
             for (int voterIndex = 0; voterIndex < voterImport.Voter.Count; voterIndex++)
             {
                 var voter = voterImport.Voter[voterIndex];
@@ -110,12 +112,11 @@ namespace Votations.NSurvey.SQLServerDAL
                 insertCommand.Parameters.Add(new SqlParameter("@VoteDate", SqlDbType.DateTime, 8, "VoteDate"));
                 insertCommand.Parameters.Add(new SqlParameter("@VoterID", SqlDbType.Int, 4, "VoterID"));
                 insertCommand.Parameters.Add(new SqlParameter("@StartDate", SqlDbType.DateTime, 8, "StartDate"));
-
                 insertCommand.Parameters.Add(new SqlParameter("@LanguageCode", SqlDbType.NVarChar, 50, "LanguageCode"));
 
                 insertCommand.Parameters["@VoterID"].Direction = ParameterDirection.Output;
-                SqlCommand command2 = new SqlCommand("vts_spVoterAnswersImport", connection, transaction);
-               
+
+                SqlCommand command2 = new SqlCommand("vts_spVoterAnswersImport", connection, transaction);               
                 command2.CommandType = CommandType.StoredProcedure;
                 command2.Parameters.Add(new SqlParameter("@Answer", SqlDbType.NVarChar, -1, "Answer"));
                 command2.Parameters.Add(new SqlParameter("@VoterAnswer", SqlDbType.NVarChar, -1, "VoterAnswer"));
@@ -125,18 +126,31 @@ namespace Votations.NSurvey.SQLServerDAL
                 command2.Parameters.Add(new SqlParameter("@SectionNumber", SqlDbType.Int, 4, "SectionNumber"));
                 command2.Parameters.Add(new SqlParameter("@SurveyId", SqlDbType.Int, 4, "SurveyId"));
                 command2.Parameters.Add(new SqlParameter("@QuestionText", SqlDbType.NVarChar, -1, "QuestionText"));
+
                 try
                 {
                     DbConnection.db.UpdateDataSet(voterAnswers, "Voter", insertCommand, new SqlCommand(), insertCommand, UpdateBehavior.Transactional);
+
                     int voterId = voterAnswers.Voter[0].VoterID;
                     foreach (var dr in voterAnswers.Answer) dr.VoterId = voterId;
+                    
                     DbConnection.db.UpdateDataSet(voterAnswers, "Answer", command2, new SqlCommand(), command2, UpdateBehavior.Transactional);
-                }
 
-                catch (Exception exception)
+                }
+                catch (SqlException exception)
                 {
-                    transaction.Rollback();
-                    throw exception;
+                    //transaction.Rollback();
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch (Exception ex2)
+                    {
+                        throw ex2;
+                    }
+
+                        //connection.Close();
+                        throw exception;
                 }
             }
             transaction.Commit();
@@ -475,7 +489,7 @@ namespace Votations.NSurvey.SQLServerDAL
                 commandParameters.Add(new SqlParameter("@EndDate", endDate).SqlValue);
             }
             
-            DbConnection.db.LoadDataSet("vts_spVoterForExport ", dataSet, new string[] { "Voter", "Question", "Answer" }, commandParameters.ToArray());
+            DbConnection.db.LoadDataSet("vts_spVoterForExport", dataSet, new string[] { "Voter", "Question", "Answer" }, commandParameters.ToArray());
             return dataSet;
         }
 
@@ -486,27 +500,26 @@ namespace Votations.NSurvey.SQLServerDAL
         {
             InvitationLogData dataSet = new InvitationLogData();
 
-            //SqlParameter[] commandParameters = new SqlParameter[] 
-            //{ new SqlParameter("@SurveyID", surveyId), 
-            //    new SqlParameter("@CurrentPage", pageNumber), 
-            //    new SqlParameter("@PageSize", pageSize), 
-            //    new SqlParameter("@TotalRecords", SqlDbType.Int) };
-            //commandParameters[3].Direction = ParameterDirection.Output;
+            //ArrayList commandParameters = new ArrayList();
+            //{
+            //    commandParameters.Add(new SqlParameter("@SurveyId", surveyId).SqlValue);
+            //    commandParameters.Add(new SqlParameter("@CurrentPage", pageNumber).SqlValue);
+            //    commandParameters.Add(new SqlParameter("@PageSize", pageSize).SqlValue);
+            //    commandParameters.Add(new SqlParameter("@TotalRecords", SqlDbType.Int) { Direction = ParameterDirection.Output }.SqlValue);
+            //}
 
-            ArrayList commandParameters = new ArrayList();
-            {
-                commandParameters.Add(new SqlParameter("@SurveyId", surveyId).SqlValue);
-                commandParameters.Add(new SqlParameter("@CurrentPage", pageNumber).SqlValue);
-                commandParameters.Add(new SqlParameter("@PageSize", pageSize).SqlValue);
-                commandParameters.Add(new SqlParameter("@TotalRecords", SqlDbType.Int) { Direction = ParameterDirection.Output }.SqlValue);
-            }
+            //DbConnection.db.LoadDataSet("vts_spInvitationLogGetAll", dataSet, new string[] { "InvitationLogs" }, commandParameters.ToArray());
+            //totalRecords = dataSet.InvitationLogs.Rows.Count;
 
+            DbCommand dbCommand = DbConnection.db.GetStoredProcCommand("vts_spInvitationLogGetAll");
+            DbConnection.db.AddOutParameter(dbCommand, "@TotalRecords", DbType.Int32, 0);
 
-            DbConnection.db.LoadDataSet("vts_spInvitationLogGetAll", dataSet, new string[] { "InvitationLogs" }, commandParameters.ToArray());
+            DbConnection.db.AddInParameter(dbCommand, "@SurveyID", DbType.Int32, surveyId);
+            DbConnection.db.AddInParameter(dbCommand, "@CurrentPage", DbType.Int32, pageNumber);
+            DbConnection.db.AddInParameter(dbCommand, "@PageSize", DbType.Int32, pageSize);
+            DbConnection.db.LoadDataSet(dbCommand, dataSet, "InvitationLogs");
 
-            //totalRecords = int.Parse(commandParameters[3].ToString());
-
-            totalRecords = dataSet.InvitationLogs.Rows.Count;
+            totalRecords = (int)DbConnection.db.GetParameterValue(dbCommand, "@TotalRecords");
 
             return dataSet;
         }

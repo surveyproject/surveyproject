@@ -619,7 +619,11 @@ namespace Votations.NSurvey.WebAdmin.UserControls
             {
                 new AnswerType().DeleteAnswerType(AnswerTypeId);
                 Visible = false;
+
                 OnOptionChanged();
+
+                //MessageLabel.Visible = true;
+                //((PageBase)Page).ShowNormalMessage(MessageLabel, ((PageBase)Page).GetPageResource("AnswerTypeDeletedMessage"));
             }
             catch (AnswerTypeInUseException)
             {

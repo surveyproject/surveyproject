@@ -53,7 +53,7 @@ namespace Votations.NSurvey.WebAdmin
 			if (!Page.IsPostBack)
 			{
 				// Header.SurveyId = SurveyId;
-                ((Wap)Master.Master).HeaderControl.SurveyId = SurveyId;
+                //((Wap)Master.Master).HeaderControl.SurveyId = SurveyId;
 			}
 		}
 

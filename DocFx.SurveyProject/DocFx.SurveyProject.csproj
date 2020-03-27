@@ -74,17 +74,19 @@
     <Content Include="images\favicon.ico" />
     <Content Include="images\splogo.png" />
     <Content Include="images\splogo.svg" />
-    <Content Include="index.md" />
-    <Content Include="docfx.json" />
-    <Content Include="articles\toc.md" />
-    <Content Include="articles\intro.md" />
-    <Content Include="api\index.md" />
     <Content Include="downloads\intro.md" />
     <Content Include="articles\01WebAppOverview.md" />
     <Content Include="downloads\toc.md" />
     <Content Include="downloads\01classdiagrams.md" />
     <Content Include="downloads\files\SP_Project_SurveyWAP_ClassDiagram_v1.pdf" />
     <Content Include="downloads\02UMLdiagrams.md" />
+    <Content Include="index.md" />
+    <Content Include="docfx.json" />
+    <Content Include="articles\toc.md" />
+    <Content Include="articles\intro.md" />
+    <Content Include="api\index.md" />
+    <Content Include="api\.gitignore" />
+    <Content Include=".gitignore" />
     <None Include="packages.config" />
     <Content Include="toc.yml" />
     <None Include="Web.Debug.config">
@@ -131,10 +133,10 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
-    <Error Condition="!Exists('..\packages\docfx.console.2.30.0\build\docfx.console.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\docfx.console.2.30.0\build\docfx.console.targets'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\docfx.console.2.51.0\build\docfx.console.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\docfx.console.2.51.0\build\docfx.console.targets'))" />
   </Target>
-  <Import Project="..\packages\docfx.console.2.30.0\build\docfx.console.targets" Condition="Exists('..\packages\docfx.console.2.30.0\build\docfx.console.targets')" />
+  <Import Project="..\packages\docfx.console.2.51.0\build\docfx.console.targets" Condition="Exists('..\packages\docfx.console.2.51.0\build\docfx.console.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

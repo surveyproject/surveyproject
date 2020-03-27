@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <data version="1.0" id="1" name="ControlCodeTitle">
-    <value>ASP.NET Web Kontrolü Kodu</value>
+    <value>SurveyBox Custom Webcontrol</value>
   </data>
   <data version="1.0" id="2" name="PageDirectiveInfo">
-    <value>Anketi görüntüleyecek aspx sayfalarına bu sayfa direktifini de eklemelisiniz:</value>
+    <value>Anketi görüntüleyecek aspx sayfalarına bu direktifi ekleyiniz:</value>
   </data>
   <data version="1.0" id="3" name="TagPrefixInfo">
     <value>&lt;%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="Votations.NSurvey.WebControls" %&gt;</value>
   </data>
   <data version="1.0" id="4" name="QuickLinkInfo">
-    <value>Anket için bu bağlantıyı kullanabilirsiniz:</value>
+    <value>Ankete Erişim Adresi:</value>
   </data>
   <data version="1.0" id="5" name="SurveyCodePreviewTitle">
-    <value>Anket Başlangıç Kodu Önizlemesi</value>
+    <value>Anket Önizlemesi</value>
   </data>
   <data version="1.0" id="6" name="EditQuestionTitle">
     <value>Soru Düzenleyici</value>
@@ -97,7 +97,7 @@
     <value>Sıfır</value>
   </data>
   <data version="1.0" id="33" name="SurveyExportTitle">
-    <value>Anketi CSV olarak kaydet</value>
+    <value>Veri Aktarıcı (Dışarı)</value>
   </data>
   <data version="1.0" id="34" name="FieldDelimiterLabel">
     <value>Alan Sınırlayıcısı:</value>
@@ -106,16 +106,16 @@
     <value>Metin Sınırlayıcısı:</value>
   </data>
   <data version="1.0" id="36" name="ExportFromDateLabel">
-    <value>Tarihinden itibaren:</value>
+    <value>Başlangıç Tarihi (itibaren):</value>
   </data>
   <data version="1.0" id="37" name="ExportToDateLabel">
-    <value>Tarihine kadar:</value>
+    <value>Bitiş Tarihi (kadar):</value>
   </data>
   <data version="1.0" id="38" name="ExportDataButton">
     <value>CSV olarak Kaydet</value>
   </data>
   <data version="1.0" id="39" name="FieldReportTitle">
-    <value>Alan Kayıtları Raporu - Sayfa</value>
+    <value>Kayıtlar - Sayfa</value>
   </data>
   <data version="1.0" id="40" name="NextPageLinkButton">
     <value>Sonraki sayfa &gt;&gt;</value>
@@ -130,19 +130,19 @@
     <value>Sil</value>
   </data>
   <data version="1.0" id="44" name="FilterBuilderTitle">
-    <value>Sonuç Filtresi Oluşturma</value>
+    <value>Sonuç Filtresi Oluşturucu</value>
   </data>
   <data version="1.0" id="45" name="SelectFilteraLabel">
-    <value>Düzenleme / görüntüleme için bir sonuç filtresi seçin:</value>
+    <value>Filtre Seçiniz:</value>
   </data>
   <data version="1.0" id="46" name="CreateFilterHyperLink">
     <value>Yeni filtre oluşturmak için tıklayın...</value>
   </data>
   <data version="1.0" id="47" name="SelectFilterMessage">
-    <value>[Bir filtre seçin]</value>
+    <value>[Filtre seçiniz]</value>
   </data>
   <data version="1.0" id="48" name="FilterNameLabel">
-    <value>Filtre ismi:</value>
+    <value>Filtre Adı:</value>
   </data>
   <data version="1.0" id="49" name="RuleOperatorLabel">
     <value>Kural Operatörü:</value>
@@ -154,37 +154,37 @@
     <value>VEYA</value>
   </data>
   <data version="1.0" id="52" name="NewRuleTitle">
-    <value>Filtreye yeni kural ekle</value>
+    <value>Filtreye Yeni Kural Ekleyici</value>
   </data>
   <data version="1.0" id="53" name="AnswerLabel">
     <value>Cevap:</value>
   </data>
   <data version="1.0" id="54" name="FilterText">
-    <value>Metin içinde bulunanlar:</value>
+    <value>Metin İçinde Bulunanlar:</value>
   </data>
   <data version="1.0" id="55" name="FilterRulesTitle">
-    <value>Filtre kuralları</value>
+    <value>Filtre Kuralları:</value>
   </data>
   <data version="1.0" id="56" name="AddRuleButton">
-    <value>Yeni kural ekle</value>
+    <value>Yeni Kural Ekle</value>
   </data>
   <data version="1.0" id="57" name="UpdateFilterButton">
-    <value>Filtreyi güncelle</value>
+    <value>Filtreyi Güncelle</value>
   </data>
   <data version="1.0" id="58" name="DeleteFilterButton">
-    <value>Filtreyi sil</value>
+    <value>Filtreyi Sil</value>
   </data>
   <data version="1.0" id="59" name="CreatefilterButton">
-    <value>Filtre oluştur</value>
+    <value>Filtre Oluştur</value>
   </data>
   <data version="1.0" id="60" name="DeleteRuleInfo">
-    <value>Kuralı sil</value>
+    <value>Kuralı Sil</value>
   </data>
   <data version="1.0" id="61" name="AddNewFilterTitle">
-    <value>Yeni filtre ekle</value>
+    <value>Yeni Filtre Oluşturucu</value>
   </data>
   <data version="1.0" id="62" name="EditFilterTitle">
-    <value>Filtre seçeneklerini düzenle</value>
+    <value>Filtre Seçeneklerini Düzenle</value>
   </data>
   <data version="1.0" id="63" name="TextEntryInfo">
     <value>(Metin girişi)</value>
@@ -193,13 +193,13 @@
     <value>(Seçim)</value>
   </data>
   <data version="1.0" id="65" name="FilterRuleNoAnswer">
-    <value>&lt;b&gt;{0}.&lt;/b&gt; soruya cevap verenler</value>
+    <value>"&lt;b&gt;{0}&lt;/b&gt;" sorusuna cevap verenler</value>
   </data>
   <data version="1.0" id="66" name="FilterRuleAnswer">
-    <value>&lt;b&gt;{0}.&lt;/b&gt; ile &lt;b&gt;{1}.&lt;/b&gt; soruya cevap verenler</value>
+    <value>"&lt;b&gt;{0}&lt;/b&gt;" sorusuna "&lt;b&gt;{1}&lt;/b&gt;" cevabını cevap verenler</value>
   </data>
   <data version="1.0" id="67" name="FilterRuleAnswerWithText">
-    <value>&lt;b&gt;{0}.&lt;/b&gt; ile &lt;b&gt;{1}.&lt;/b&gt; soruya cevap verenler ve giriş değeri olarak &lt;b&gt;{2}&lt;/b&gt; verenler</value>
+    <value>"&lt;b&gt;{0}&lt;/b&gt;" ile "&lt;b&gt;{1}&lt;/b&gt;" sorusuna "&lt;b&gt;{2}&lt;/b&gt;" cevabını verenler</value>
   </data>
   <data version="1.0" id="68" name="AnyAnswerMessage">
     <value>Herhangi bir cevap</value>
@@ -220,37 +220,37 @@
     <value>Filtre güncellendi</value>
   </data>
   <data version="1.0" id="74" name="SelectQuestionMessage">
-    <value>[Bir soru seçin]</value>
+    <value>[Bir soru seçiniz]</value>
   </data>
   <data version="1.0" id="75" name="SurveyStatisticsTitle">
-    <value>Anket istatistikleri</value>
+    <value>İstatistikler</value>
   </data>
   <data version="1.0" id="76" name="SurveyCreationDateLabel">
-    <value>Anket yaratılma tarihi:</value>
+    <value>Anket Oluşturulma Tarihi:</value>
   </data>
   <data version="1.0" id="77" name="LastSurveyEntryLabel">
-    <value>En son cevaplanma zamanı:</value>
+    <value>Son Katılım Tarihi:</value>
   </data>
   <data version="1.0" id="78" name="SurveyDisplayTimesLabel">
-    <value>Gösterim sayısı:</value>
+    <value>Görüntülenme Sayısı:</value>
   </data>
   <data version="1.0" id="79" name="SurveyResultsDisplayTimesLabel">
-    <value>Anket sonucu gösterim sayısı:</value>
+    <value>Anket Sonucu Gösterim Sayısı:</value>
   </data>
   <data version="1.0" id="80" name="SurveyNumberOfVotesLabel">
-    <value>Ankete katılanların sayısı:</value>
+    <value>Ankete Katılım Sayısı:</value>
   </data>
   <data version="1.0" id="81" name="SurveyMonthlyStatsLabel">
-    <value>Aylık istatistikler:</value>
+    <value>Aylık İstatistikler:</value>
   </data>
   <data version="1.0" id="82" name="ResetVotesButton">
-    <value>Oyları Sıfırla</value>
+    <value>Tüm Katılımları Sil</value>
   </data>
   <data version="1.0" id="83" name="ResetVotesConfirmationMessage">
-    <value>Oyları sıfırlamak istediğinize emin misiniz ? Oylar silindikten sonra geri getirilemez</value>
+    <value>Katılımları silmek istediğinize emin misiniz? Geri getirilemez!</value>
   </data>
   <data version="1.0" id="84" name="NoEntriesRecordedInfo">
-    <value>Şu anda herhangi bir kayıt yapılmadı</value>
+    <value>Katılım yok</value>
   </data>
   <data version="1.0" id="85" name="NoEntries">
     <value>Kayıt yapılmadı</value>
@@ -301,25 +301,25 @@
     <value>Tüm davetiyeler gönderildi. Davetiye durum sayfasına devam edebilirsiniz...</value>
   </data>
   <data version="1.0" id="101" name="PendingEmailsTitle">
-    <value>Bekleyen epostalar - Sayfa</value>
+    <value>Katılım "Bekleyen" E-posta Adresleri - Sayfa</value>
   </data>
   <data version="1.0" id="102" name="BoundColumnEmail">
-    <value>Eposta</value>
+    <value>E-posta</value>
   </data>
   <data version="1.0" id="103" name="BoundColumnRequestDate">
     <value>İstek tarihi</value>
   </data>
   <data version="1.0" id="104" name="NoEmailInvitationInfo">
-    <value>Bekleyen eposta davetiyesi yok, isterseniz eposta aracını kullanarak davetiye gönderme işlemine başlayabilirsiniz.</value>
+    <value>Bekleyen e-posta davetiyesi yok. "&lt;b&gt;Postalama&lt;/b&gt;" sekmesi aracılığıyla davetiye gönderebilirsiniz.</value>
   </data>
   <data version="1.0" id="105" name="ValidatedEmailTitle">
-    <value>Onaylanmış eposta cevapları - Sayfa</value>
+    <value>Katılım "Sağlayan" E-posta Adresleri - Sayfa</value>
   </data>
   <data version="1.0" id="106" name="DeleteRequestButton">
     <value>Seçili istekleri sil</value>
   </data>
   <data version="1.0" id="107" name="NoEmailAnswered">
-    <value>Herhangi bir eposta davetinize cevap vermedi.</value>
+    <value>Katılım sağlayan e-posta adresi yok.</value>
   </data>
   <data version="1.0" id="108" name="BoundColumnAnswerDate">
     <value>Cevap tarihi</value>
@@ -337,22 +337,22 @@
     <value>Sonraki sayfa &gt;&gt;</value>
   </data>
   <data version="1.0" id="113" name="DeleteVoterButton">
-    <value>Seçili katılımcıları sil</value>
+    <value>Seçili Katılımcıları Sil</value>
   </data>
   <data version="1.0" id="114" name="ViewReport">
-    <value>Raporu görüntüle</value>
+    <value>Raporu Görüntüle</value>
   </data>
   <data version="1.0" id="115" name="DeleteVoterConfirmationMessage">
-    <value>Bu katılımcıyı ve verdiği tüm oyları silecektir. Katılımcı silindikten sonra geri getirilemez.</value>
+    <value>Bu katılımcı ve verdiği tüm cevaplar silecektir. Katılımcı silindikten sonra geri getirilemez.</value>
   </data>
   <data version="1.0" id="116" name="BranchingHyperLink">
-    <value>Dallanmayı düzenle</value>
+    <value>Dallanmayı Düzenle</value>
   </data>
   <data version="1.0" id="117" name="InsertHyperLink">
-    <value>Soru ekle</value>
+    <value>Soru Ekle</value>
   </data>
   <data version="1.0" id="118" name="InsertLineBreakButton">
-    <value>Satır başı ekle</value>
+    <value>Satır Başı Ekle</value>
   </data>
   <data version="1.0" id="119" name="PageTitle">
     <value>Sayfa</value>
@@ -361,40 +361,40 @@
     <value>Düzenle</value>
   </data>
   <data version="1.0" id="121" name="InsertPageBreakButton">
-    <value>Sayfa sonu ekle</value>
+    <value>Sayfa Sonu Ekle</value>
   </data>
   <data version="1.0" id="122" name="InsertQuestionButton">
-    <value>Yeni/mevcut soru ekle</value>
+    <value>Soru Ekle</value>
   </data>
   <data version="1.0" id="123" name="DeleteQuestionConfirmationMessage">
     <value>Bu soruyu silmek istediğinize emin misiniz?</value>
   </data>
   <data version="1.0" id="124" name="SurveyResultsTitle">
-    <value>Anket sonuçları</value>
+    <value>Anket Sonuçları</value>
   </data>
   <data version="1.0" id="125" name="QuestionsResultsDisplaylabel">
-    <value>Cevapları görüntülenecek soru</value>
+    <value>Cevapları Görüntülenecek Soru</value>
   </data>
   <data version="1.0" id="126" name="ResultsLayoutLabel">
-    <value>Sonuç görüntüsü:</value>
+    <value>Sonuç Görünümü:</value>
   </data>
   <data version="1.0" id="127" name="ColumnChartOption">
-    <value>Sütun grafiği</value>
+    <value>Sütun grafik</value>
   </data>
   <data version="1.0" id="128" name="HTMLChartOption">
-    <value>HTML grafiği</value>
+    <value>HTML grafik</value>
   </data>
   <data version="1.0" id="129" name="ApplyFilterLabel">
-    <value>Uygulanacak filtre:</value>
+    <value>Uygulanacak Filtre:</value>
   </data>
   <data version="1.0" id="130" name="FilterEditorHyperLink">
-    <value>Yeni filtre yaratmak veya varolan filtreyi düzenlemek için tıklayın</value>
+    <value>Yeni filtre oluşturmak veya varolan bir filtreyi düzenlemek için tıklayınız</value>
   </data>
   <data version="1.0" id="131" name="DisplayAllResultsMessage">
     <value>[Tüm cevapları görüntüle (biraz zaman alabilir)]</value>
   </data>
   <data version="1.0" id="132" name="InvitationMailingTitle">
-    <value>Davetiye epostası</value>
+    <value>Davetiye E-postası</value>
   </data>
   <data version="1.0" id="133" name="FromLabel">
     <value>Kimden:</value>
@@ -415,22 +415,22 @@
     <value>Adı Soyadı</value>
   </data>
   <data version="1.0" id="139" name="EmailInvitationLabel">
-    <value>Eposta davetiye listesi (virgül ile ayırarak girilmeli örn.: email@yahoo.com, email2@hotmail.com vs..):</value>
+    <value>E-posta Alıcı Listesi (virgül ile ayırınız. Örn.: email@yahoo.com, email2@hotmail.com):</value>
   </data>
   <data version="1.0" id="140" name="InvitationMessageLabel">
-    <value>Davetiye mesajı:</value>
+    <value>Davetiye Mesajı:</value>
   </data>
   <data version="1.0" id="141" name="AnonymousLabel">
-    <value>Anonim kayıtlar:</value>
+    <value>Anonim Kayıt:</value>
   </data>
   <data version="1.0" id="142" name="SendInvitationButton">
-    <value>Davetiye gönder</value>
+    <value>Davetiye Gönder</value>
   </data>
   <data version="1.0" id="143" name="InvitationMessageTextBox">
     <value>
       Saygıdeğer Beyefendi/Hanımefendi,
       &lt;br /&gt;&lt;br /&gt;
-      Tüm saygımla "{0}" anketine katılmaya davet edildiniz.
+      Sizi "{0}" anketine katılmaya davet ediyorum.
       &lt;br /&gt;&lt;br /&gt;
       Katılım için lütfen aşağıdaki bağlantıya tıklayınız: &lt;br /&gt;
       &lt;a href="{1}"&gt;{1}&lt;/a&gt;
@@ -452,19 +452,19 @@
     <value>Açılış Tarihi:</value>
   </data>
   <data version="1.0" id="147" name="DateForExampleInfo">
-    <value>örn:</value>
+    <value>örnek:</value>
   </data>
   <data version="1.0" id="148" name="CloseDateLabel">
-    <value>Kapanış tarihi:</value>
+    <value>Kapanış Tarihi:</value>
   </data>
   <data version="1.0" id="149" name="ActiveSurveyLabel">
-    <value>Aktif:</value>
+    <value>Ankete Katılım Aktif:</value>
   </data>
   <data version="1.0" id="150" name="ArchivedLabel">
     <value>Arşivlendi:</value>
   </data>
   <data version="1.0" id="151" name="SecuritySettingsTitle">
-    <value>Güvenlik ayarları</value>
+    <value>Güvenlik Ayarları</value>
   </data>
   <data version="1.0" id="152" name="IPBlockingLabel">
     <value>IP engelleme:</value>
@@ -479,7 +479,7 @@
     <value>&#160;&#160;dakika</value>
   </data>
   <data version="1.0" id="156" name="OnlyInvitedEmailsLabel">
-    <value>Sadece davetli epostalar katılabilir:</value>
+    <value>Sadece davetli e-postalar katılabilir:</value>
   </data>
   <data version="1.0" id="157" name="OverrideSecurityInfo">
     <value>(tüm güvenlik ayarlarının üzerinde geçerlidir)</value>
@@ -491,13 +491,13 @@
     <value>Yönlendirilecek URL:</value>
   </data>
   <data version="1.0" id="160" name="ThanksMessageLabel">
-    <value>Teşekkür mesajı:</value>
+    <value>Tamamlama Metni:</value>
   </data>
   <data version="1.0" id="161" name="SurveyPasswordLabel">
-    <value>Anket şifresi:</value>
+    <value>Anket parolası:</value>
   </data>
   <data version="1.0" id="162" name="CreateSurveyButton">
-    <value>Anketi oluştur!</value>
+    <value>Anketi Oluştur!</value>
   </data>
   <data version="1.0" id="163" name="ApplyChangesButton">
     <value>Uygula</value>
@@ -527,61 +527,61 @@
     <value>Cevap Tipi Oluşturucu</value>
   </data>
   <data version="1.0" id="172" name="TypeToEditLabel">
-    <value>İşlem yapmak için bir tip seçiniz:</value>
+    <value>Cevap Tipi Seçiniz:</value>
   </data>
   <data version="1.0" id="173" name="BuiltInTypeNotEditedLabel">
     <value>(standart tipler düzenlenemez)</value>
   </data>
   <data version="1.0" id="174" name="CreateTypeHyperLink">
-    <value>Yeni bir tip oluşturmak için tıklayın ...</value>
+    <value>Yeni Cevap Tipi</value>
   </data>
   <data version="1.0" id="175" name="CreateATypeMessage">
     <value>Lütfen yeni bir tip oluşturun</value>
   </data>
   <data version="1.0" id="176" name="SelectTypeMessage">
-    <value>[Bir tip seçiniz]</value>
+    <value>[Cevap tipi seçiniz]</value>
   </data>
   <data version="1.0" id="177" name="FieldNameLabel">
-    <value>Tip Adı:</value>
+    <value>Cevap Tipi Adı:</value>
   </data>
   <data version="1.0" id="178" name="XMLDataSourceLabel">
     <value>XML veri kaynağı kullan:</value>
   </data>
   <data version="1.0" id="179" name="XmlFileNameLabel">
-    <value>XML dosyasının ismi:</value>
+    <value>XML dosyası ismi:</value>
   </data>
   <data version="1.0" id="180" name="AllowSelectionLabel">
-    <value>Seçime izin ver:</value>
+    <value>Seçime İzin Ver:</value>
   </data>
   <data version="1.0" id="181" name="FieldEntryLabel">
-    <value>Alan girişi:</value>
+    <value>Alan Girişi:</value>
   </data>
   <data version="1.0" id="182" name="FieldWidthLabel">
-    <value>Alan genişliği:</value>
+    <value>Alan Genişliği:</value>
   </data>
   <data version="1.0" id="183" name="FieldHeightLabel">
-    <value>Alan yüksekliği:</value>
+    <value>Alan Yüksekliği:</value>
   </data>
   <data version="1.0" id="184" name="FieldLengthLabel">
-    <value>Alan maksimum uzunluğu:</value>
+    <value>Alan Maksimum Uzunluğu:</value>
   </data>
   <data version="1.0" id="185" name="ShownInResultsLabel">
-    <value>Alan sonuçlarda görüntülensin:</value>
+    <value>Alan Sonuçlarda Görüntülensin:</value>
   </data>
   <data version="1.0" id="186" name="JavascriptFunctionLabel">
-    <value>Javascript fonksiyon ismi:</value>
+    <value>Javascript İşlev Adı:</value>
   </data>
   <data version="1.0" id="187" name="JavascriptErrorMessageLabel">
-    <value>Hata mesajı:</value>
+    <value>Hata Mesajı:</value>
   </data>
   <data version="1.0" id="188" name="JavascriptCodeLabel">
-    <value>Javascript kodu:</value>
+    <value>Javascript Kodu:</value>
   </data>
   <data version="1.0" id="189" name="CreateTypeButton">
-    <value>Cevap tipi oluştur</value>
+    <value>Cevap Tipi Oluştur</value>
   </data>
   <data version="1.0" id="190" name="DeleteTypeButton">
-    <value>Cevap tipi sil</value>
+    <value>Cevap Tipini Sil</value>
   </data>
   <data version="1.0" id="191" name="NewAnswerTypeTitle">
     <value>Cevap Tipi Oluşturucu</value>
@@ -596,16 +596,16 @@
     <value>Lütfen bir tip seçin</value>
   </data>
   <data version="1.0" id="195" name="InvalidFieldLengthMessage">
-    <value>Lütfen alan uzunluğu için sayısal bir değer girin</value>
+    <value>Lütfen alan uzunluğu için sayısal bir değer giriniz</value>
   </data>
   <data version="1.0" id="196" name="AnswerTypeInUse">
-    <value>Cevap tipi bir veya daha fazla cevap tarafından kullanılmakta ve cevap tipi değiştirilmeden silinemez</value>
+    <value>Cevap tipi bir veya daha fazla cevap tarafından kullanılmaktadır. Silinemez.</value>
   </data>
   <data version="1.0" id="197" name="InvalidFieldHeightMessage">
-    <value>Lütfen alan yükseklği için sayısal bir değer girin</value>
+    <value>Lütfen alan yükseklği için sayısal bir değer giriniz</value>
   </data>
   <data version="1.0" id="198" name="InvalidFieldWidthMessage">
-    <value>Lütfen alan genişliği için sayısal bir değer girin</value>
+    <value>Lütfen alan genişliği için sayısal bir değer giriniz</value>
   </data>
   <data version="1.0" id="199" name="MissingXmlDataSourceMessage">
     <value>Lütfen veri kaynağınız için bir dosya ismi giriniz</value>
@@ -617,10 +617,10 @@
     <value>Katılımcı Bilgileri</value>
   </data>
   <data version="1.0" id="202" name="VoterDBIDLabel">
-    <value>Katılımcı DB ID:</value>
+    <value>VoterID:</value>
   </data>
   <data version="1.0" id="203" name="VoterEmailLabel">
-    <value>Katılımcı Eposta Adresi:</value>
+    <value>E-posta Adresi:</value>
   </data>
   <data version="1.0" id="204" name="VoterIPAddressLabel">
     <value>IP Adresi:</value>
@@ -704,7 +704,7 @@
     <value>Alan - Takvim</value>
   </data>
   <data version="1.0" id="231" name="FieldEmailType">
-    <value>Alan - Eposta adresi</value>
+    <value>Alan - E-posta adresi</value>
   </data>
   <data version="1.0" id="232" name="MultipleChoicesMatrixLabel">
     <value>Çoklu seçim matrisi:</value>
@@ -863,25 +863,25 @@
     <value>Anket Oluşturucu</value>
   </data>
   <data version="1.0" id="284" name="TypeBuilderHyperlink">
-    <value>Tip Oluşturma</value>
+    <value>Cevap Tipi Oluşturucu</value>
   </data>
   <data version="1.0" id="285" name="FieldReportHyperLink">
     <value>Alan girişlerini ve diğer raporları görüntülemek için tıklayın.</value>
   </data>
   <data version="1.0" id="286" name="ResultsReportHyperlink">
-    <value>Sonuç Raporları</value>
+    <value>Raporlar</value>
   </data>
   <data version="1.0" id="287" name="ExportDataHyperlink">
     <value>Dışarıya veri aktar</value>
   </data>
   <data version="1.0" id="288" name="MailingHyperlink">
-    <value>Eposta Gönderme</value>
+    <value>E-posta Gönderme</value>
   </data>
   <data version="1.0" id="289" name="MailingStatusHyperlink">
-    <value>Eposta Durumu</value>
+    <value>E-posta Durumu</value>
   </data>
   <data version="1.0" id="290" name="ASPNETCodeHyperlink">
-    <value>ASP.NET Kodu</value>
+    <value>WEB Bilgileri</value>
   </data>
   <data version="1.0" id="291" name="NSurveyAuthenticationTitle">
     <value>Ankete Giriş</value>
@@ -905,19 +905,19 @@
     <value>Alan girişi sonuçları:</value>
   </data>
   <data version="1.0" id="298" name="ResultsOrderLabel">
-    <value>Sonuç sırası:</value>
+    <value>Sonuç Sırası:</value>
   </data>
   <data version="1.0" id="299" name="AnswerOrderOption">
-    <value>Cevap sırası</value>
+    <value>Cevap Sırası</value>
   </data>
   <data version="1.0" id="300" name="AscendingOrderOption">
-    <value>Küçükten büyüğe cevap sayısı</value>
+    <value>Küçükten büyüğe</value>
   </data>
   <data version="1.0" id="301" name="DescendingOrderOption">
-    <value>Büyükten küçüğe cevap sayısı</value>
+    <value>Büyükten küçüğe</value>
   </data>
   <data version="1.0" id="302" name="NoSurveysAvailableMessage">
-    <value>Kayıtlı anket bulunmamaktadır, buraya tıklayarak yeni bir anket oluşturun!</value>
+    <value>Kayıtlı anket bulunmamaktadır, buraya tıklayarak yeni bir anket oluşturunuz!</value>
   </data>
   <data version="1.1" id="303" name="SurveySecurityHyperLink">
     <value>Güvenlik</value>
@@ -938,7 +938,7 @@
     <value>Güvenlik seçeneği ekle</value>
   </data>
   <data version="1.1" id="309" name="DisableAddInLinkButton">
-    <value>Kullanım dışı bırak</value>
+    <value>Devre dışı bırak</value>
   </data>
   <data version="1.1" id="310" name="EnableAddInLinkButton">
     <value>Etkinleştir</value>
@@ -953,7 +953,7 @@
     <value>[Başka seçenek bulunmamaktadır]</value>
   </data>
   <data version="1.1" id="314" name="UnAuthentifiedUserActionLabel">
-    <value>Eğer kullanıcıya güvenlik seçeneklerinden biri tarafından izin verilmezse:</value>
+    <value>Güvenlik tarafından izin verilmezse:</value>
   </data>
   <data version="1.1" id="315" name="ShowThankYouText">
     <value>Teşekkür mesajı göster</value>
@@ -962,52 +962,52 @@
     <value>Anketi gizle</value>
   </data>
   <data version="1.2" id="317" name="EntryNotificationLabel">
-    <value>Giriş uyarı modu:</value>
+    <value>Katılım Bildirim Tipi:</value>
   </data>
   <data version="1.2" id="318" name="ProgressDisplayLabel">
-    <value>Altbaşlık durum gösterimi:</value>
+    <value>İlerleme Göstergesi:</value>
   </data>
   <data version="1.2" id="319" name="EnableNavigationLabel">
-    <value>Önceki/sonraki sayfa yönlendirmesini etkinleştir:</value>
+    <value>"Önceki/Sonraki Sayfa" Butonları:</value>
   </data>
   <data version="1.2" id="320" name="EnableResumeLabel">
-    <value>Durum kaydetme ve kaldığı yerden devam etme seçeneğini etkinleştir:</value>
+    <value>Ankete Devam Edebilme:</value>
   </data>
   <data version="1.2" id="321" name="NoneNotificationText">
-    <value>Uyarı yok</value>
+    <value>Bildirim yok</value>
   </data>
   <data version="1.2" id="322" name="ShortNotificationText">
-    <value>Kısa mesaj</value>
+    <value>Kısa bildirim metni</value>
   </data>
   <data version="1.2" id="323" name="ReportNotificationText">
-    <value>Tam giriş raporu</value>
+    <value>Tam Katılım Raporu</value>
   </data>
   <data version="1.2" id="324" name="NoProgressText">
-    <value>Durum gösterme</value>
+    <value>YOK</value>
   </data>
   <data version="1.2" id="325" name="PageNumberText">
     <value>Sayfa numaralarını göster</value>
   </data>
   <data version="1.2" id="326" name="ProgressPercentageText">
-    <value>Durum yüzdesini göster</value>
+    <value>İlerleme yüzdesi göster</value>
   </data>
   <data version="1.2" id="327" name="InvalidFromEmail">
-    <value>"Kimden eposta adresi" geçerli bir eposta adresi olmalıdır.</value>
+    <value>"Kimden e-posta adresi" geçerli bir e-posta adresi olmalıdır.</value>
   </data>
   <data version="1.2" id="328" name="InvalidToEmail">
-    <value>"Kime eposta adresi" geçerli bir eposta adresi olmalıdır.</value>
+    <value>"Kime e-posta adresi" geçerli bir e-posta adresi olmalıdır.</value>
   </data>
   <data version="1.2" id="329" name="NotificationSettingsTitle">
-    <value>Uyarı ayarları</value>
+    <value>Bildirim Ayarları</value>
   </data>
   <data version="1.2" id="330" name="ToEmailNotificationLabel">
-    <value>Eposta uyarısı gönderilecek adres:</value>
+    <value>E-posta "Gönderilecek" Adres:</value>
   </data>
   <data version="1.2" id="331" name="FromEmailNotificationLabel">
-    <value>Eposta uyarısı kimden adresi:</value>
+    <value>E-posta "Kimden" Adresi:</value>
   </data>
   <data version="1.2" id="332" name="NotificationSubjectLabel">
-    <value>Eposta uyarısı konusu:</value>
+    <value>E-posta Konusu:</value>
   </data>
   <data version="1.2" id="333" name="FieldHiddenType">
     <value>Alan - Gizli</value>
@@ -1025,10 +1025,10 @@
     <value>[Anket seçiniz]</value>
   </data>
   <data version="1.2" id="338" name="SaveProgressEntriesLabel">
-    <value>Onaylanmamış durum kayıtları:</value>
+    <value>Tamamlanmamış Katılım:</value>
   </data>
   <data version="1.2" id="339" name="DeleteSaveProgressLinkButton">
-    <value>Onaylanmamış Kayıtları Sil</value>
+    <value>Tamamlanmamış Katılımları Sil</value>
   </data>
   <data version="1.2" id="340" name="PipeHelpLabel">
     <value>
@@ -1040,10 +1040,10 @@
     </value>
   </data>
   <data version="1.3" id="341" name="EnableRandomHyperlink">
-    <value>Rastgeleyi etkinleştir</value>
+    <value>"Rastgele"yi etkinleştir</value>
   </data>
   <data version="1.3" id="342" name="DisableRandomHyperlink">
-    <value>Rastgeleyi kullanım dışı bırak</value>
+    <value>"Rastgele"yi devre dışı bırak</value>
   </data>
   <data version="1.3" id="343" name="EnableSubmitHyperlink">
     <value>Gönder linkini etkinleştir</value>
@@ -1052,25 +1052,25 @@
     <value>Gönder linkini kullanım dışı bırak</value>
   </data>
   <data version="1.3" id="345" name="CompareQuestionLabel">
-    <value>Karşılaştırma sorusu:</value>
+    <value>Karşılaştırma Sorusu:</value>
   </data>
   <data version="1.3" id="346" name="BaseQuestionLabel">
-    <value>Temel soru:</value>
+    <value>Kaynak Soru:</value>
   </data>
   <data version="1.3" id="347" name="SurveyCrossTabTitle">
-    <value>Anket "crosstab" sonuçları</value>
+    <value>Anket "crosstab" Sonuçları</value>
   </data>
   <data version="1.3" id="348" name="CrossTabNotAnsweredMessage">
-    <value>Cevaplanmadı</value>
+    <value>Cevaplanmamış</value>
   </data>
   <data version="1.3" id="349" name="CrossTabVotesTotalMessage">
     <value>Toplam</value>
   </data>
   <data version="1.3" id="350" name="BaseQuestionChoiceLabel">
-    <value>Lütfen bir temel soru seçin</value>
+    <value>Lütfen bir kaynak soru seçiniz</value>
   </data>
   <data version="1.3" id="351" name="CompareQuestionChoiceLabel">
-    <value>Lütfen bir karşılaştırma sorusu seçin</value>
+    <value>Lütfen bir karşılaştırma sorusu seçiniz</value>
   </data>
   <data version="1.3" id="352" name="CrossTableResultsLiteral">
     <value>Crosstab cevap sonuçları</value>
@@ -1079,13 +1079,13 @@
     <value>Buraya tıklayarak bir "cross tabulation" sonuçları seti oluşturabilirsiniz</value>
   </data>
   <data version="1.4" id="354" name="ResumeNotAllowedText">
-    <value>Devam etme izni yok</value>
+    <value>İzin yok</value>
   </data>
   <data version="1.4" id="355" name="AutomaticResumeText">
-    <value>Otomatik çerez kaydı / devam modu</value>
+    <value>Otomatik çerez kaydı ile devam</value>
   </data>
   <data version="1.4" id="356" name="ManualResumeText">
-    <value>Manuel mode (kullanıcı devam edebilmek için kodunu girmeli)</value>
+    <value>Manuel mod (kullanıcı devam edebilmek için kodunu girmeli)</value>
   </data>
   <data version="1.4" id="357" name="GraphicResultsReportHyperlink">
     <value>grafik raporu</value>
@@ -1175,16 +1175,16 @@
     <value>Vazgeç</value>
   </data>
   <data version="1.4" id="386" name="AnswerTextLabel">
-    <value>Cevap metni:</value>
+    <value>Cevap Metni:</value>
   </data>
   <data version="1.4" id="387" name="AnswerTypeLabel">
     <value>Tip:</value>
   </data>
   <data version="1.4" id="388" name="ScoredLabel">
-    <value>Skor hesaplama:</value>
+    <value>Skor Hesaplama:</value>
   </data>
   <data version="1.4" id="389" name="ScoredEqualConditionOption">
-    <value>Alınan skor</value>
+    <value>Alınan Skor</value>
   </data>
   <data version="1.4" id="390" name="ScoredLessConditionOption">
     <value>Skor ... den/dan düşük</value>
@@ -1199,25 +1199,25 @@
     <value>Skorlar numerik olmak zorunda</value>
   </data>
   <data version="1.4" id="394" name="BranchingRuleScoreEqual">
-    <value>"&lt;b&gt;{1}&lt;/b&gt;" sorusunda "&lt;b&gt;{0}&lt;/b&gt;" skor alanları  &lt;b&gt;{2}&lt;/b&gt;ye/ya yönlendir</value>
+    <value>"&lt;b&gt;{1}&lt;/b&gt;" sorusundan "&lt;b&gt;{0}&lt;/b&gt;" skor alanları  &lt;b&gt;{2}&lt;/b&gt;ye/ya yönlendir</value>
   </data>
   <data version="1.4" id="395" name="BranchingRuleScoreLess">
-    <value>"&lt;b&gt;{1}&lt;/b&gt;" sorusunda "&lt;b&gt;{0}'den/dan düşük&lt;/b&gt;" skor alanları &lt;b&gt;{2}&lt;/b&gt;ye/ya yönlendir</value>
+    <value>"&lt;b&gt;{1}&lt;/b&gt;" sorusundan "&lt;b&gt;{0}'den/dan düşük&lt;/b&gt;" skor alanları &lt;b&gt;{2}&lt;/b&gt;ye/ya yönlendir</value>
   </data>
   <data version="1.4" id="396" name="BranchingRuleScoreGreater">
-    <value>"&lt;b&gt;{1}&lt;/b&gt;" sorusunda "&lt;b&gt;{0}'den/dan yüksek&lt;/b&gt;" skor alanları &lt;b&gt;{2}&lt;/b&gt;ye/ya yönlendir</value>
+    <value>"&lt;b&gt;{1}&lt;/b&gt;" sorusundan "&lt;b&gt;{0}'den/dan yüksek&lt;/b&gt;" skor alanları &lt;b&gt;{2}&lt;/b&gt;ye/ya yönlendir</value>
   </data>
   <data version="1.4" id="397" name="BranchingRuleScoreRange">
-    <value>"&lt;b&gt;{2}&lt;/b&gt;" sorusunda "&lt;b&gt;{0} ile {1} arasında&lt;/b&gt;" skor alanları &lt;b&gt;{3}&lt;/b&gt;ye/ya yönlendir</value>
+    <value>"&lt;b&gt;{2}&lt;/b&gt;" sorusundan "&lt;b&gt;{0} ile {1} arasında&lt;/b&gt;" skor alanları &lt;b&gt;{3}&lt;/b&gt;ye/ya yönlendir</value>
   </data>
   <data version="1.4" id="398" name="VoterScoreTotalLabel">
-    <value>Toplam skor:</value>
+    <value>Toplam Skor:</value>
   </data>
   <data version="1.4" id="399" name="QuestionScoreLabel">
     <value>Skor:</value>
   </data>
   <data version="1.4" id="400" name="SelectQuestionConditionMessage">
-    <value>[Bir gösterim koşulu seç]</value>
+    <value>[Bir koşul seçiniz]</value>
   </data>
   <data version="1.4" id="401" name="SurveyQuestionConditionOption">
     <value>Soru cevabı</value>
@@ -1307,13 +1307,13 @@
     <value>Uygula</value>
   </data>
   <data version="1.4" id="430" name="ThanksMessageConditionTitle">
-    <value>*Koşullara göre teşekkür mesajları</value>
+    <value>Koşullanmış Tamamlama Metinleri</value>
   </data>
   <data version="1.4" id="431" name="AddNewConditionHyperLink">
     <value>Yeni koşul ekle</value>
   </data>
   <data version="1.4" id="432" name="VoterUserNameLabel">
-    <value>ASP.NET's kullanıcı adı:</value>
+    <value>Kullanıcı Adı:</value>
   </data>
   <data version="1.4" id="433" name="ContextUserNameDisabled">
     <value>Devre dışı</value>
@@ -1325,7 +1325,7 @@
     <value>Yeni cevap ekle</value>
   </data>
   <data version="1.4" id="436" name="ScoreRangeLabel">
-    <value>arasında</value>
+    <value>ile</value>
   </data>
   <data version="1.4" id="437" name="ScoreTagLabel">
     <value>Toplam skoru ::score:: etiketi ile iletiniz içinde gösterebilirsiniz</value>
@@ -1433,7 +1433,7 @@
     <value>[Kütüphane seç]</value>
   </data>
   <data version="1.5" id="472" name="AnswerReportNotificationText">
-    <value>Sadece cevaplar raporu</value>
+    <value>Sadece Cevaplar Raporu</value>
   </data>
   <data version="1.5" id="473" name="ExportXMLButton">
     <value>XML Çıkar</value>
@@ -1469,7 +1469,7 @@
     <value>Yeni kullanıcı oluştur</value>
   </data>
   <data version="1.6" id="484" name="InvalidEmailMessage">
-    <value>Geçersiz eposta!</value>
+    <value>Geçersiz e-posta!</value>
   </data>
   <data version="1.6" id="485" name="UserNameRequiredMessage">
     <value>Lütfen bir kullanıcı adı giriniz</value>
@@ -1493,19 +1493,19 @@
     <value>Yeni bir kullanıcı oluşturmak için tıklayınız</value>
   </data>
   <data version="1.6" id="492" name="UserSurveyAssignedLabel">
-    <value>Atanan anketler:</value>
+    <value>Atanan Anketler:</value>
   </data>
   <data version="1.6" id="493" name="UnAssignedSurveysLabel">
-    <value>Atanmayan anketler</value>
+    <value>Atanmayan Anketler</value>
   </data>
   <data version="1.6" id="494" name="AssignedSurveysLabel">
-    <value>Kullanıcıya atanmış</value>
+    <value>Kullanıcıya Atanmış</value>
   </data>
   <data version="1.6" id="495" name="UserNameLabel">
-    <value>Kullanıcı adı:</value>
+    <value>Kullanıcı Adı:</value>
   </data>
   <data version="1.6" id="496" name="UserPasswordLabel">
-    <value>Kullanıcı parolası:</value>
+    <value>Kullanıcı Parolası:</value>
   </data>
   <data version="1.6" id="497" name="UserFirstNameLabel">
     <value>Adı:</value>
@@ -1514,13 +1514,13 @@
     <value>Soyadı:</value>
   </data>
   <data version="1.6" id="499" name="UserEmailLabel">
-    <value>Eposta:</value>
+    <value>E-posta:</value>
   </data>
   <data version="1.6" id="500" name="UserIsAdministratorLabel">
     <value>Yöneticilik:</value>
   </data>
   <data version="1.6" id="501" name="AssignAllSurveysLabel">
-    <value>Tüm Anketleri Yönetim:</value>
+    <value>Tüm Anketleri Yönetme:</value>
   </data>
   <data version="1.6" id="502" name="RolesLabel">
     <value>Yetkiler:</value>
@@ -1535,10 +1535,10 @@
     <value>Yetki Yöneticisi</value>
   </data>
   <data version="1.6" id="506" name="RolesToEditLabel">
-    <value>Görüntüleme/Düzenleme için yetki seçiniz:</value>
+    <value>Yetki Sınıfı Seçiniz:</value>
   </data>
   <data version="1.6" id="507" name="CreateRoleHyperLink">
-    <value>Yeni bir yetki oluşturmak için tıklayınız</value>
+    <value>Yeni Yetki Sınıfı</value>
   </data>
   <data version="1.6" id="508" name="CreateARoleMessage">
     <value>[Önce bir yetki oluşturun]</value>
@@ -1547,22 +1547,22 @@
     <value>[Bir yetki seçin]</value>
   </data>
   <data version="1.6" id="510" name="RoleNameLabel">
-    <value>Yetki adı:</value>
+    <value>Yetki Sınıfı Adı:</value>
   </data>
   <data version="1.6" id="511" name="DeleteRoleConfirmationMessage">
     <value>Bu yetkiyi silmek istediğinize emin misiniz? Bu yetkiye sahip olan kullanıcılar haklarını kaybedeceklerdir</value>
   </data>
   <data version="1.6" id="512" name="DeleteRoleButton">
-    <value>Yetkiyi sil</value>
+    <value>Yetkiyi Sil</value>
   </data>
   <data version="1.6" id="513" name="CreateNewRoleButton">
-    <value>Yeni yetki oluştur</value>
+    <value>Yetki Sınıfı Oluştur</value>
   </data>
   <data version="1.6" id="514" name="NewRoleTitle">
     <value>Yeni Yetki</value>
   </data>
   <data version="1.6" id="515" name="EditRoleTitle">
-    <value>Yetki düzenle</value>
+    <value>Yetki Düzenle</value>
   </data>
   <data version="1.6" id="516" name="RoleNameRequiredMessage">
     <value>Yetki adı gerekiyor!</value>
@@ -1571,7 +1571,7 @@
     <value>Yetki güncellendi</value>
   </data>
   <data version="1.6" id="518" name="RoleRightsLabel">
-    <value>Yetki hakları:</value>
+    <value>Yetkiler</value>
   </data>
   <data version="1.6" id="519" name="CreateSurveyRight">
     <value>Anket oluşturma</value>
@@ -1580,22 +1580,22 @@
     <value>Anket silme</value>
   </data>
   <data version="1.6" id="521" name="ChangeSurveySettingsRight">
-    <value>Anket ayarlarını değiştirme</value>
+    <value>Ayarları değiştirme</value>
   </data>
   <data version="1.6" id="522" name="ApplySurveySettingsRight">
-    <value>Ayar uygulama</value>
+    <value>Ayarları uygulama</value>
   </data>
   <data version="1.6" id="523" name="ExportSurveyXmlRight">
     <value>XML anket çıkarma</value>
   </data>
   <data version="1.6" id="524" name="AccessSurveySettingsRight">
-    <value>Ayarlara erişim</value>
+    <value>Ayarlar'a erişim</value>
   </data>
   <data version="1.6" id="525" name="CloneSurveyRight">
     <value>Anket klonlama</value>
   </data>
   <data version="1.6" id="526" name="AccessPrivacySettingsRight" mimetype="">
-    <value>Anket tamamlama'ya erişim</value>
+    <value>Anket Tamamlama'ya erişim</value>
   </data>
   <data version="1.6" id="527" name="AccessSecuritySettingsRight">
     <value>Güvenlik'e erişim</value>
@@ -1607,34 +1607,34 @@
     <value>Oy sıfırlama</value>
   </data>
   <data version="1.6" id="530" name="DeleteUnvalidateEntriesRight">
-    <value>Geçerli olmayan girişleri silme</value>
+    <value>Onaylanmamış giriş silme</value>
   </data>
   <data version="1.6" id="531" name="AccessFormBuilderRight">
-    <value>Anket oluşturucu'ya erişim</value>
+    <value>Anket Oluşturucu'ya erişim</value>
   </data>
   <data version="1.6" id="532" name="AccessAnswerTypeEditorRight">
-    <value>Cevap tipi oluşturucu'ya erişim</value>
+    <value>Cevap tipi oluşturma</value>
   </data>
   <data version="1.6" id="533" name="AccessReportsRight">
-    <value>Sonuç raporları'na erişim</value>
+    <value>Sonuç Raporları'na erişim</value>
   </data>
   <data version="1.6" id="534" name="CreateResultsFilterRight">
-    <value>Rapor filtreleme'ye erişim</value>
+    <value>Rapor Filtreleme'ye erişim</value>
   </data>
   <data version="1.6" id="535" name="AccessFieldEntriesRight">
-    <value>Alan girişi'ne erişim</value>
+    <value>Alan Girişi'ne erişim</value>
   </data>
   <data version="1.6" id="536" name="EditVoterEntriesRight">
-    <value>Katuılımcı oylarını düzenleme</value>
+    <value>Katılımcı cevabı düzenleme</value>
   </data>
   <data version="1.6" id="537" name="DeleteVoterEntriesRight">
-    <value>Katılımcı oylarını silme</value>
+    <value>Katılımcı cevabı silme</value>
   </data>
   <data version="1.6" id="538" name="AccessCrossTabRight">
     <value>Crosstab'a erişim</value>
   </data>
   <data version="1.6" id="539" name="AccessExportRight">
-    <value>Veri aktarma'ya erişim</value>
+    <value>Veri Aktarma'ya erişim</value>
   </data>
   <data version="1.6" id="540" name="AccessMailingRight">
     <value>Postalama'ya erişim</value>
@@ -1645,13 +1645,13 @@
     </value>
   </data>
   <data version="1.6" id="542" name="AccessASPNetCodeRight">
-    <value>ASP.NET kodu erişimi</value>
+    <value>WEB Bilgileri'ne erişim</value>
   </data>
   <data version="1.6" id="543" name="AccessUserManagerRight">
-    <value>Kullanıcı yöneticisi erişimi</value>
+    <value>Kullanıcılar'a erişim</value>
   </data>
   <data version="1.6" id="544" name="AccessLibraryRight">
-    <value>Kütüphene erişimi</value>
+    <value>Kütüphene'ye erişim</value>
   </data>
   <data version="1.6" id="545" name="NoSurveysAndNoRightMessage">
     <value>Bir anketiniz ve yeni bir anket oluşturma yetkini yok. Lütfen yöneticinize başvurunuz.</value>
@@ -1660,10 +1660,10 @@
     <value>Çıkış</value>
   </data>
   <data version="1.6" id="547" name="CopyQuestionFromLibraryRight">
-    <value>Kütüpheneden soru al</value>
+    <value>Kütüpheneden soru alma</value>
   </data>
   <data version="1.6" id="548" name="CopyQuestionFromAllSurveyRight">
-    <value>Anketten soru al</value>
+    <value>Anketten soru alma</value>
   </data>
   <data version="1.6" id="549" name="MakeBuiltInButton">
     <value>Varsayılan Yap</value>
@@ -1678,19 +1678,19 @@
     <value>Bu varsayılan tipi üzerindeki değişiklikleri uygulamak istediğinize emin misiniz? Değişiklikler diğer kullanıcıları etkilyebilir.</value>
   </data>
   <data version="1.6" id="553" name="AddNewSkipLogicTitle">
-    <value>Bu soruya yeni "atlama fonksiyonu" ekle</value>
+    <value>Bu soruya yeni "Atlama İşlevi" ekle</value>
   </data>
   <data version="1.6" id="554" name="SkipLogicRulesTitle">
-    <value>Atlama fonksiyonu kuralları</value>
+    <value>Atlama İşlevi Kuralları</value>
   </data>
   <data version="1.6" id="555" name="EditSkipLogicHyperLink">
-    <value>Atlama fonksiyonu</value>
+    <value>Atlama İşlevi</value>
   </data>
   <data version="1.6" id="556" name="SkipLogicEvaluationConditionInfo">
     <value>İlk koşul sağlandığında bu soru gizlenecektir</value>
   </data>
   <data version="1.6" id="557" name="SkipLogicRuleAddedMessage">
-    <value>Atlama fonksiyonu eklendi</value>
+    <value>Atlama İşevi Eklendi</value>
   </data>
   <data version="1.6" id="558" name="SkipLogicRuleNoAnswer">
     <value>"&lt;b&gt;{0}&lt;/b&gt;" sorusuna cevap verenlere gizle</value>
@@ -1723,7 +1723,7 @@
     <value>"&lt;b&gt;{2}&lt;/b&gt;" sorusunda "&lt;b&gt;{0} ile {1} arasında&lt;/b&gt; skor alanlara gizle</value>
   </data>
   <data version="1.6" id="568" name="ManageLibraryRight">
-    <value>Kütüphane yönet</value>
+    <value>Kütüphane yönetme</value>
   </data>
   <data version="1.6" id="569" name="EqualsOperator">
     <value>Eşittir</value>
@@ -1741,16 +1741,16 @@
     <value>Değerlendirme Koşulu</value>
   </data>
   <data version="1.6" id="574" name="DisableQuestionNumbering">
-    <value>Soru numaralandırmayı devre dışı bırakDisable questions numbering</value>
+    <value>Soru Numaralandırma Devre dışı</value>
   </data>
   <data version="1.6" id="575" name="DataSourceLabel">
-    <value>Bir veri kaynağı kullan:</value>
+    <value>Veri Kaynağı:</value>
   </data>
   <data version="1.6" id="576" name="XmlDataSourceOption">
     <value>XML dosyası</value>
   </data>
   <data version="1.6" id="577" name="NoneDataSourceOption">
-    <value>Yok</value>
+    <value>YOK</value>
   </data>
   <data version="1.6" id="578" name="SqlDataSourceOption">
     <value>SQL sorgusu</value>
@@ -1759,25 +1759,25 @@
     <value>Seçim gerekiyor:</value>
   </data>
   <data version="1.6" id="580" name="SqlQueryLabel">
-    <value>SQL sorgusu*:</value>
+    <value>SQL Sorgusu:</value>
   </data>
   <data version="1.6" id="581" name="SqlQueryInfoLabel">
-    <value>&lt;br /&gt;*Sorgu sonucunun ilk iki sütunu açılan liste kutusunda değer ve metin olarak kullanılacaktır&lt;br /&gt;**Kayıtlı olan bir prosedürü tekrar çalıştırmak için "exec" anahtarını kullanınız&lt;br /&gt;***Daha önceki sorulardan "kısa lakap" özelliklerini kullanarak değer çekimi yapabilirsiniz</value>
+    <value>&lt;br /&gt;* Sorgu sonucunun ilk iki sütunu açılan liste kutusunda değer ve metin olarak kullanılacaktır&lt;br /&gt;* Kayıtlı olan bir prosedürü tekrar çalıştırmak için "exec" anahtarını kullanınız&lt;br /&gt;* Daha önceki sorulardan "kısa lakap" özelliklerini kullanarak değer çekimi yapabilirsiniz</value>
   </data>
   <data version="1.6" id="582" name="MissingQueryDataSourceMessage">
     <value>SQL sorgusu eksik</value>
   </data>
   <data version="1.6" id="583" name="OnlySelectQueryAllowedMessage">
-    <value>Sadece seçili sorgulara izin var, delete-update-truncate anahtarlarına izi yok</value>
+    <value>Sadece seçili sorgulara izin var, "delete-update-truncate" anahtarlarına izni yok</value>
   </data>
   <data version="1.6" id="584" name="SqlAnswerTypesEditionRight">
-    <value>SQL soru tipleri düzenleme</value>
+    <value>SQL soru tipi düzenleme</value>
   </data>
   <data version="1.6" id="585" name="SqlAnswerTypeAccessDeniedMessage">
     <value>SQL tabanlı soru oluşturma/düzenleme yetkiniz yok</value>
   </data>
   <data version="1.6" id="586" name="AllowXmlImportRight">
-    <value>XML Al</value>
+    <value>XML dosya alma</value>
   </data>
   <data version="1.6" id="587" name="NoAnonymousRightsMessage">
     <value>Bu özellikleri kullanabilmeniz için anket kullanıcısı olarak atanmanız gerekmektedir.</value>
@@ -1795,16 +1795,16 @@
     <value>Anket sonu</value>
   </data>
   <data version="1.7" id="592" name="TakeSurveyRight">
-    <value>Anket doldurucusu</value>
+    <value>Anket Doldurma</value>
   </data>
   <data version="1.7" id="593" name="TakeSurveyTitle">
-    <value>Anket doldur</value>
+    <value>Anket Doldurma</value>
   </data>
   <data version="1.7" id="594" name="TakeSurveyHyperLink">
-    <value>Anket doldurma</value>
+    <value>Anket Doldurma</value>
   </data>
   <data version="1.7" id="595" name="AnswerSubscribedLabel">
-    <value>Abone olundu:</value>
+    <value>Abone Olundu:</value>
   </data>
   <data version="1.7" id="596" name="AnswerPublishersLabel">
     <value>Answer publishers</value>
@@ -1819,7 +1819,7 @@
     <value>Doğrulama yok</value>
   </data>
   <data version="1.7" id="600" name="AccessRegExEditorRight">
-    <value>RegEx düzenleyici erişimi</value>
+    <value>RegEx Düzenleyici'ye erişim</value>
   </data>
   <data version="1.7" id="601" name="RegExLibHyperLink">
     <value>RegEx Kütüphanesi</value>
@@ -1828,13 +1828,13 @@
     <value>RegEx Kütüphanesi</value>
   </data>
   <data version="1.7" id="603" name="CreateRegExHyperLink">
-    <value>Yeni bir RegEx oluşturmak için buraya tıklayınız</value>
+    <value>Yeni RegEx</value>
   </data>
   <data version="1.7" id="604" name="RegExToEditLabel">
     <value>İşlem yapmak için bir RegEx seçiniz:</value>
   </data>
   <data version="1.7" id="605" name="CreateARegExMessage">
-    <value>[RegEx oluştur]</value>
+    <value>[RegEx Oluştur]</value>
   </data>
   <data version="1.7" id="606" name="SelectRegExMessage">
     <value>[Bir RegEx seçiniz]</value>
@@ -1843,19 +1843,19 @@
     <value>RegEx Testi</value>
   </data>
   <data version="1.7" id="608" name="TextRegExButton">
-    <value>İfadeyi test et</value>
+    <value>İfadeyi Test Et</value>
   </data>
   <data version="1.7" id="609" name="RegularExpressionLabel">
     <value>RegEx:</value>
   </data>
   <data version="1.7" id="610" name="TestExpressionValueLabel">
-    <value>Test edilecek değer:</value>
+    <value>Test Edilecek Değer:</value>
   </data>
   <data version="1.7" id="611" name="CreateNewRegExButton">
     <value>RegEx Oluştur</value>
   </data>
   <data version="1.7" id="612" name="RegExErrorMessageLabel">
-    <value>Hata mesajı:</value>
+    <value>Hata Mesajı:</value>
   </data>
   <data version="1.7" id="613" name="DeleteRegExConfirmationMessage">
     <value>Bu RegEx'i silmek istediğinize emin misiniz?</value>
@@ -1882,13 +1882,13 @@
     <value>RegEx başarısız, bir hata mesajı gösterilecek</value>
   </data>
   <data version="1.7" id="621" name="RegExNameLabel">
-    <value>RegEx İsmi:</value>
+    <value>RegEx Adı:</value>
   </data>
   <data version="1.7" id="622" name="RegExNameRequiredMessage">
     <value>Bir isim gerekmektedir</value>
   </data>
   <data version="1.7" id="623" name="MakeBuiltInRegExButton">
-    <value>Varsayılan yap</value>
+    <value>Varsayılan Yap</value>
   </data>
   <data version="1.7" id="624" name="CancelRegExButton">
     <value>İptal</value>
@@ -1924,10 +1924,10 @@
     <value>Tarih (aa/gg/yyyy)</value>
   </data>
   <data version="1.7" id="635" name="EmailRegEx">
-    <value>Eposta</value>
+    <value>E-posta</value>
   </data>
   <data version="1.7" id="636" name="RegExLibComHyperLink">
-    <value>Daha fazla RegEx için http://www.regexlib.com sayfasını ziyaret ediniz</value>
+    <value>Daha fazla RegEx için "http://www.regexlib.com" sayfasını ziyaret ediniz</value>
   </data>
   <data version="1.7" id="637" name="ImportUsersHyperlink">
     <value>Kullanıcı Al</value>
@@ -1951,7 +1951,7 @@
     <value>İçe aktarılacak bilgi virgül ile ayrılmış olmalıdır, her satır kullanıcı bilgilerini içermelidir. Örn:</value>
   </data>
   <data version="1.7" id="644" name="ImportInfo2Label">
-    <value>KullanıcıAdı,Parola,Ad,Soyad,Eposta</value>
+    <value>KullanıcıAdı,Parola,Ad,Soyad,E-posta</value>
   </data>
   <data version="1.7" id="645" name="ImportInfo3Label">
     <value>ya da KullanıcıAdı,Parola,,,</value>
@@ -1963,7 +1963,7 @@
     <value>dosya yöneticisi</value>
   </data>
   <data version="1.8" id="648" name="AccessFileManagerRight">
-    <value>Dosya yöneticisi erişimi</value>
+    <value>Dosya Yöneticisi'ne erişim</value>
   </data>
   <data version="1.8" id="649" name="DeleteFilesButton">
     <value>Seçilen dosyaları sil</value>
@@ -1990,10 +1990,10 @@
     <value>Kimden</value>
   </data>
   <data version="1.8" id="657" name="PreviousValidatedPageLinkButton">
-    <value>&lt;&lt; önceki sayfa</value>
+    <value>&lt;&lt; Önceki Sayfa</value>
   </data>
   <data version="1.8" id="658" name="NextValidatedPageLinkButton">
-    <value>sonraki sayfa &gt;&gt;</value>
+    <value>Sonraki Sayfa &gt;&gt;</value>
   </data>
   <data version="1.8" id="659" name="FileVoterDetailsButton">
     <value>Ayrıntılar</value>
@@ -2002,16 +2002,16 @@
     <value>İndir</value>
   </data>
   <data version="1.8" id="661" name="ExportFilesTitle">
-    <value>Tüm dosyaları sunucuya çıkar</value>
+    <value>Tüm Dosyaları Çıkar</value>
   </data>
   <data version="1.8" id="662" name="ServerPathLabel">
-    <value>Sunucu dizini tam adresi:</value>
+    <value>Dizin Yolu:</value>
   </data>
   <data version="1.8" id="663" name="ExportFilesButton">
-    <value>Dosyaları çıkar</value>
+    <value>Dosyaları Çıkar</value>
   </data>
   <data version="1.8" id="664" name="PathExampleLabel">
-    <value>Mevcut uygulama dizini: {0}</value>
+    <value>Mevcut Uygulama Dizini: {0}</value>
   </data>
   <data version="1.8" id="665" name="PleaseEnterPathMessage">
     <value>Dizin gerekiyor</value>
@@ -2026,19 +2026,19 @@
     <value>Kullanılan IIS sürümünüzün sunucu üzerinde "yazma" yetkisine sahip olduğuna emin olunuz. Çıkartılacak olan dosyalar mevcut olanların üzerine yazılacaktır.</value>
   </data>
   <data version="1.8" id="669" name="CreateGroupsLabel">
-    <value>Dosya grubuna göre dizin oluştur:</value>
+    <value>Dizin Oluşturma:</value>
   </data>
   <data version="1.8" id="670" name="NoSubDirectoryOption">
-    <value>Alt dizin oluşturma</value>
+    <value>YOK</value>
   </data>
   <data version="1.8" id="671" name="VoterSubDirectoryOption">
-    <value>VoterID numarasına göre dizin oluştur</value>
+    <value>VoterID numarasına göre</value>
   </data>
   <data version="1.8" id="672" name="GuidSubDirectoryOption">
-    <value>FileGUID numarasına göre dizin oluştur</value>
+    <value>FileGUID numarasına göre</value>
   </data>
   <data version="1.8" id="673" name="ExportFilesRight">
-    <value>Dosyları sunucuya çıkar</value>
+    <value>Dosyaları sunucuya çıkarma</value>
   </data>
   <data version="1.8" id="674" name="ExtendedFileUploadType">
     <value>Geliştirilmiş - Dosya yükleme</value>
@@ -2047,22 +2047,22 @@
     <value>Alan - Zengin</value>
   </data>
   <data version="1.8" id="676" name="RichFieldLabel">
-    <value>Zengin alan:</value>
+    <value>Zengin Alan:</value>
   </data>
   <data version="1.8" id="677" name="MailingLogHyperlink">
-    <value>Epostalama Hata Kaydı</value>
+    <value>E-posta Hata Günlüğü</value>
   </data>
   <data version="1.8" id="678" name="DeleteLogsButton">
-    <value>Seçilen kayıtları sil</value>
+    <value>Seçilen Kayıtları Sil</value>
   </data>
   <data version="1.8" id="679" name="DeleteLogsButtonConfirmationMessage">
     <value>Seçilen girdileri silmek istediğinize emin misiniz?</value>
   </data>
   <data version="1.8" id="680" name="MailingLogTitle">
-    <value>Postalama Hata Kaydı - Sayfa</value>
+    <value>E-posta Hata Günlüğü - Sayfa</value>
   </data>
   <data version="1.8" id="681" name="BoundColumnLogEmail">
-    <value>Eposta</value>
+    <value>E-posta</value>
   </data>
   <data version="1.8" id="682" name="BoundColumnLogExceptionType">
     <value>Tip</value>
@@ -2074,10 +2074,10 @@
     <value>Giriş yapıldı</value>
   </data>
   <data version="1.8" id="685" name="PreviousLogPageLinkButton">
-    <value>&lt;&lt; önceki sayfa</value>
+    <value>&lt;&lt; Önceki Sayfa</value>
   </data>
   <data version="1.8" id="686" name="NextLogPageLinkButton">
-    <value>sonraki sayfa &gt;&gt;</value>
+    <value>Sonraki Sayfa &gt;&gt;</value>
   </data>
   <data version="1.8" id="687" name="RepeatableSectionsLabel">
     <value>Tekrarlanabilir bölümler</value>
@@ -2137,28 +2137,28 @@
     <value>Extended settings</value>
   </data>
   <data version="1.9" id="706" name="MultiLanguagesTitle">
-    <value>Çoklu lisan seçenekleri</value>
+    <value>Çoklu Lisan Seçenekleri</value>
   </data>
   <data version="1.9" id="707" name="EnableMultiLanguagesLabel">
-    <value>Çoklu lisanı etkinleştir:</value>
+    <value>Çoklu Lisanı Desteği:</value>
   </data>
   <data version="1.9" id="708" name="MultiLanguagesModeLabel">
-    <value>Çoklu lisan modu:</value>
+    <value>Çoklu Lisan modu:</value>
   </data>
   <data version="1.9" id="709" name="EnabledLanguagesLabel">
-    <value>Mevcut lisanlar:</value>
+    <value>Mevcut Lisanlar:</value>
   </data>
   <data version="1.9" id="710" name="AccessMultiLanguagesRight">
-    <value>Çoklu lisan erişimi</value>
+    <value>Çoklu Lisan'a erişim</value>
   </data>
   <data version="1.9" id="711" name="AccessHelpFiles">
-    <value>Yardım erişimi</value>
+    <value>Yardım'a erişim</value>
   </data>
   <data version="1.9" id="712" name="HelpFilesHyperlink">
     <value>Yardım</value>
   </data>
   <data version="1.9" id="713" name="MultiLanguagesHyperLink">
-    <value>Çoklu Lisanlar</value>
+    <value>Çoklu Lisan</value>
   </data>
   <data version="1.9" id="714" name="AfrikaansLanguage">
     <value>Afrikaans</value>
@@ -2368,34 +2368,34 @@
     <value>Lisan etkinleştirildi</value>
   </data>
   <data version="1.9" id="783" name="DefaultLanguageLabel">
-    <value>Varsayılan lisan:</value>
+    <value>Varsayılan Lisan:</value>
   </data>
   <data version="1.9" id="784" name="EditionLanguageLabel">
-    <value>Sürüm lisanı:</value>
+    <value>Sürüm Lisanı:</value>
   </data>
   <data version="1.9" id="785" name="UserSelectionOption">
-    <value>Kullanıcı listesi</value>
+    <value>Kullanıcı Listesi</value>
   </data>
   <data version="1.9" id="786" name="BrowserDetectionOption">
-    <value>Tarayıcıdan algıla</value>
+    <value>Tarayıcıdan Algıla</value>
   </data>
   <data version="1.9" id="787" name="QueryStringLanguageOption">
-    <value>Lisan kodlarından algıla</value>
+    <value>Lisan Kodlarından Algıla</value>
   </data>
   <data version="1.9" id="788" name="CookieLanguageOption">
-    <value>Çerezlerden algıla</value>
+    <value>Çerezlerden Algıla</value>
   </data>
   <data version="1.9" id="789" name="SessionLanguageOption">
-    <value>Oturumdan algıla</value>
+    <value>Oturumdan Algıla</value>
   </data>
   <data version="1.9" id="790" name="LanguageDefaultText">
-    <value>(Varsayılan lisan)</value>
+    <value>(Varsayılan Lisan)</value>
   </data>
   <data version="1.9" id="791" name="OneDefaultLanguageRequiredMessage">
     <value>En az bir varsayılan lisan olmalı</value>
   </data>
   <data version="1.9" id="792" name="VariableNameLabel">
-    <value>Değişken adı:</value>
+    <value>Değişkenler:</value>
   </data>
   <data version="1.9" id="793" name="VariableNameInfoLabel">
     <value>Lisan kodları şu şekilde olmalı: tr-TR, en-US, fr-FR vb.</value>
@@ -2404,25 +2404,25 @@
     <value>Güncelle</value>
   </data>
   <data version="1.9" id="795" name="LanguageUndefined">
-    <value>Varsayılan lisan</value>
+    <value>Varsayılan</value>
   </data>
   <data version="1.9" id="796" name="VoterLanguageLabel">
-    <value>Katılımcı Lisanı:</value>
+    <value>Lisanı:</value>
   </data>
   <data version="1.9" id="797" name="LanguageFilterLabel">
-    <value>Lisan filtresi:</value>
+    <value>Lisan Filtresi:</value>
   </data>
   <data version="1.9" id="798" name="DateRangeLabel">
-    <value>Tarih aralığı:</value>
+    <value>Tarih Aralığı:</value>
   </data>
   <data version="1.9" id="799" name="DateToRangeLabel">
     <value>ila</value>
   </data>
   <data version="1.9" id="800" name="ApplyRangeButton">
-    <value>Aralığı uygula</value>
+    <value>Uygula</value>
   </data>
   <data version="1.9" id="801" name="AllLanguagesFilterOption">
-    <value>Tüm lisanlar</value>
+    <value>Tüm Lisanlar</value>
   </data>
   <data version="1.9" id="802" name="PreviewSurveyLanguageLabel">
     <value>Formu lisanda ön izle:</value>
@@ -2443,16 +2443,16 @@
     <value>"Enter" tuşunu tut</value>
   </data>
   <data version="1.9.1" id="808" name="OnlyReturnOption">
-    <value>Sadece "enter" karakteri</value>
+    <value>Sadece "Enter" karakteri</value>
   </data>
   <data version="1.9.1" id="809" name="UserDefinedCROption">
-    <value>Özel karakter</value>
+    <value>Özel Karakter</value>
   </data>
   <data version="1.9.1" id="810" name="ReplaceCarriageLabel">
     <value>"Enter" tuşunu değiştir:</value>
   </data>
   <data version="1.9.1" id="811" name="ExportTypeLabel">
-    <value>Dışa aktarma dosya biçimi:</value>
+    <value>Dosya Biçimi:</value>
   </data>
   <data version="1.9.1" id="812" name="MessageConditionLabel">
     <value>Koşul:</value>
@@ -2518,7 +2518,7 @@
     <value>{0} alanı hatalıdır. Lütfen geçerli bir tarih girin, örn: {1}!</value>
   </data>
   <data version="1.0" id="833" name="EnterUIdMessage">
-    <value>Lütfen eposta davetiye numaranızı giriniz:</value>
+    <value>Lütfen e-posta davetiye numaranızı giriniz:</value>
   </data>
   <data version="1.0" id="834" name="EnterTokenMessage">
     <value>Lütfen Anket Güvenlik Token'inizi Giriniz:</value>
@@ -2539,10 +2539,10 @@
     <value>Lütfen alanı doldurunuz!</value>
   </data>
   <data version="1.0" id="840" name="JSInvalidEmail">
-    <value>Lütfen eposta adresinizi giriniz!</value>
+    <value>Lütfen e-posta adresinizi giriniz!</value>
   </data>
   <data version="1.1" id="841" name="EmailCodeProtection">
-    <value>Eposta Kod Koruması</value>
+    <value>E-posta Kod Koruması</value>
   </data>
   <data version="1.1" id="842" name="CookieProtection">
     <value>Çerez Koruması</value>
@@ -2579,9 +2579,10 @@
   </data>
   <data version="1.2" id="853" name="ShortNotificationMessage">
     <value>
-      Merhaba,&lt;br /&gt;&lt;br /&gt;
-      Bu size yeni bir kayıt gönderildiğini bildiren otomatik bir mesajdır.&lt;br /&gt;
-      Ayrıntıları görmek için istediğiniz zaman yönetici olarak giriş yapabilrisiniz.&lt;br /&gt;
+      Merhaba,
+	  &lt;br /&gt;&lt;br /&gt;
+      Bu e-posta anketinize yeni bir katılım olduğunu bildiren otomatik bir mesajdır. &lt;br /&gt;
+      Ayrıntıları görmek için istediğiniz zaman yönetici olarak giriş yapabilirsiniz. &lt;br /&gt;
       &lt;br /&gt;
       Teşekkürler
     </value>
@@ -2611,13 +2612,13 @@
     <value>Anket durumunuz kaydedildi, kişisel kodunuz ile istediğiniz zaman devam edebilirsiniz.&lt;br /&gt;Kişisel devam emte kodunuz: "&lt;b&gt;{0}&lt;/b&gt;"</value>
   </data>
   <data version="1.4" id="862" name="ASPNETSecurityContextProtection">
-    <value>ASP.NET güvenlik içeriği</value>
+    <value>WEB güvenlik içeriği</value>
   </data>
   <data version="1.4" id="863" name="MultipleSubmissionsLabel">
     <value>Çoklu oturumlara izin ver</value>
   </data>
   <data version="1.4" id="864" name="ASPNETSecurityAddinDescription">
-    <value>Bu özellik kullanıcının ASP.NET güvenlik içeriği girme durumunu kontrol edecektir.</value>
+    <value>Bu özellik kullanıcının WEB güvenlik içeriği girme durumunu kontrol edecektir.</value>
   </data>
   <data version="1.5" id="865" name="PipeValuesSeparator">
     <value> ve</value>
@@ -2644,7 +2645,7 @@
     <value>"{0}" için geçersiz cevap</value>
   </data>
   <data version="1.7" id="873" name="InvalidEmailRegExMessage">
-    <value>"{0}" geçerli bir eposta adresi değil</value>
+    <value>"{0}" geçerli bir e-posta adresi değil</value>
   </data>
   <data version="1.7" id="874" name="InvalidIntegerRegExMessage">
     <value>"{0}" numerik değil</value>
@@ -2806,10 +2807,10 @@
     <value>Cevaplar</value>
   </data>
   <data version="1.2.2" id="922" name="SurveyCreated">
-    <value>Oluşturuldu</value>
+    <value>Oluşturulma</value>
   </data>
   <data version="1.2.2" id="923" name="SurveyDesign">
-    <value>Tasarım</value>
+    <value>Düzenle</value>
   </data>
   <data version="1.2.2" id="924" name="SurveyDelete">
     <value>Sil</value>
@@ -2818,7 +2819,7 @@
     <value>Güvenlik</value>
   </data>
   <data version="1.2.2" id="926" name="SurveyEdit">
-    <value>Düzenle</value>
+    <value>Ayarlar</value>
   </data>
   <data version="1.2.2" id="927" name="UsersTab">
     <value>Kullanıcılar</value>
@@ -2839,7 +2840,7 @@
     <value>Soyadı</value>
   </data>
   <data version="1.2.2" id="933" name="UsersTabEmail">
-    <value>Eposta</value>
+    <value>E-posta</value>
   </data>
   <data version="1.2.2" id="934" name="UsersTabAdministrator">
     <value>Yönetici</value>
@@ -2869,10 +2870,10 @@
     <value>Açıklama</value>
   </data>
   <data version="1.2.2" id="943" name="LibraryTabNewEnabledLanguages">
-    <value>Mevcut lisanlar:</value>
+    <value>Mevcut Lisanlar:</value>
   </data>
   <data version="1.2.2" id="944" name="LibraryTabNewDefaultLanguage">
-    <value>Varsayılan lisanlar:</value>
+    <value>Varsayılan Lisanlar:</value>
   </data>
   <data version="1.2.2" id="945" name="LibraryTabNewAddLanguage">
     <value>Ekle</value>
@@ -3016,7 +3017,7 @@
     <value>Alt-Grup:</value>
   </data>
   <data version="2.0" id="992" name="CssLabel">
-    <value>Css Taslak Dosyası:</value>
+    <value>CSS Taslak Dosyası:</value>
   </data>
   <data version="2.0" id="993" name="ImageLabel">
     <value>Resim Dosyası:</value>
@@ -3037,7 +3038,7 @@
     <value>Anket listesine git</value>
   </data>
   <data version="2.0" id="999" name="DataImportTitle">
-    <value>Veri Aktar (Al)</value>
+    <value>Veri Aktar (İçeri)</value>
   </data>
   <data version="2.0" id="1000" name="IPRangeStartTitle">
     <value>IP Aralığı - Başlangıç</value>
@@ -3121,10 +3122,10 @@
     <value>Cevap Alanı:</value>
   </data>
   <data version="2.0" id="1027" name="CSVAnswerExportStyle1">
-    <value>Kayıtları satır biçiminde ve soru başına bir sütun ile çıkar</value>
+    <value>Kayıtları satırlar halinde ve soru başına bir sütun ile çıkar</value>
   </data>
   <data version="2.0" id="1028" name="CSVAnswerExportStyle2">
-    <value>Kayıtları satır biçiminde  a Row with one Column per possible answer to each Question</value>
+    <value>Kayıtları satırlar halinde ve sorunun tüm cevapları başına bir sütun ile çıkar</value>
   </data>
   <data version="2.0" id="1029" name="Question">
     <value>Soru</value>
@@ -3145,7 +3146,7 @@
     <value>Cevap</value>
   </data>
   <data version="2.0" id="1035" name="Answer Display Order Number">
-    <value>Cevap GÖrüntüleme Sırası</value>
+    <value>Cevap Görüntülenfme Sırası</value>
   </data>
   <data version="2.0" id="1036" name="Answer ID">
     <value>Cevap ID</value>
@@ -3160,10 +3161,10 @@
     <value>Veri Seçimi</value>
   </data>
   <data version="2.0" id="1040" name="CSVEXPGetAllDates">
-    <value>bütün veri</value>
+    <value>Tüm Veriler</value>
   </data>
   <data version="2.0" id="1041" name="CSVExpGetSelectedDates">
-    <value>belirlenen aralıktaki veri</value>
+    <value>Belirlenmiş Tarihler Arasındaki Veriler</value>
   </data>
   <data version="2.0" id="1042" name="TextIdsMustBePresent">
     <value>İçe aktarılacak dosyada her soru ve cevap için QuestionIdText ve AnswerIdText bulunmalıdır</value>
@@ -3172,22 +3173,22 @@
     <value>Lütfen bir dosya seçiniz</value>
   </data>
   <data version="2.0" id="1044" name="ExportInstructions1">
-    <value>Not: Başka bir Anket kurulumuna veri aktarımı için XML biçimi seçilmelidir.</value>
+    <value>Not: Başka bir ankete veri aktarmak için XML biçimi seçilmelidir.</value>
   </data>
   <data version="2.0" id="1045" name="LayoutLabel">
-    <value> Düzeni Çıkar</value>
+    <value>Çıktı Düzeni</value>
   </data>
   <data version="2.0" id="1046" name="FormatLayout">
     <value>Biçim</value>
   </data>
   <data version="2.0" id="1047" name="MultiSeparator">
-    <value>Çokulu Seçim Ayracı:</value>
+    <value>Çoklu Seçim Ayracı:</value>
   </data>
   <data version="2.0" id="1048" name="ImportSuccessMsg">
     <value>İçe Aktarma Başarılı</value>
   </data>
   <data version="2.0" id="1049" name="AutoFilter">
-    <value>Otomatik-Filtre Oluşturma</value>
+    <value>Otomatik-Filtre Oluşturucu</value>
   </data>
   <data version="2.0" id="1050" name="AutoFilterMessage">
     <value>
@@ -3196,16 +3197,16 @@
     </value>
   </data>
   <data version="2.0" id="1051" name="AutoFilterQuestion">
-    <value>Soru tabanlı Otomatik-Filtre:</value>
+    <value>Soru Tabanlı Otomatik-Filtre:</value>
   </data>
   <data version="2.0" id="1052" name="AutoFilterQuestionNaming">
-    <value>Soru adlandırma:</value>
+    <value>Soru Adlandırma:</value>
   </data>
   <data version="2.0" id="1053" name="AutoFilterAnswerLabel">
-    <value>Cevap adlandırma:</value>
+    <value>Cevap Adlandırma:</value>
   </data>
   <data version="2.0" id="1054" name="autoFilterMsg2">
-    <value>Filtre adlandırma şeması:</value>
+    <value>Filtre Adlandırma Şeması:</value>
   </data>
   <data version="2.0" id="1055" name="btnAutoFilter">
     <value>Filtre Oluştur</value>
@@ -3229,10 +3230,10 @@
     <value>Bu sayfayı silmek istediğinize emin misiniz?</value>
   </data>
   <data version="2.0" id="1062" name="FriendlyLabel">
-    <value>Kısa URL oluştur:</value>
+    <value>Kısa URL:</value>
   </data>
   <data version="2.0" id="1063" name="FriendlyUrl">
-    <value>&lt;br /&gt;Kısa URL biçimi = http:// [İnternetSayfanızınAdresi] / surveymobile.aspx / [&lt;b&gt;KısaURLniz&lt;/b&gt;]</value>
+    <value>&lt;br /&gt;Kısa URL biçimi = http:// [İnternetSayfanız] / surveymobile.aspx / [&lt;b&gt;KısaURLniz&lt;/b&gt;]</value>
   </data>
   <data version="2.0" id="1064" name="BtnFriendly">
     <value>Kaydet</value>
@@ -3244,7 +3245,7 @@
     <value>Filtreler oluşturuldu</value>
   </data>
   <data version="2.0" id="1067" name="SurveyUrl">
-    <value>Ankete Erişim Bağlantıları</value>
+    <value>Erişim Bilgileri</value>
   </data>
   <data version="2.0" id="1068" name="ConditionalEndMessageHyperlink">
     <value>Koşullu Son Mesaj</value>
@@ -3317,12 +3318,12 @@
   </data>
   <data version="2.0" id="1091" name="autofilterInfo2Label">
     <value>
-      Not: Filtre [Soru adlandırma] | [Cevap adlandırma] şeması kullanılarak adlandırıldı.&lt;/b&gt;&lt;br /&gt;
-      Adlandırma için Soru Adlandırma ve Cevap Adlandırma'nın ilk 32 karakteri kullanıldı.
+      Not: Filtre [Soru Adlandırma] | [Cevap Adlandırma] şeması kullanılarak adlandırılmaktadır.&lt;/b&gt;&lt;br /&gt;
+      Adlandırma için Soru Adlandırma ve Cevap Adlandırma'nın ilk 32 karakteri kullanılmaktadır.
     </value>
   </data>
   <data version="2.0" id="1092" name="DefaultSurvey">
-    <value>Varsayılan Ankte</value>
+    <value>Varsayılan Anket</value>
   </data>
   <data version="2.0" id="1093" name="SurveyImported">
     <value>Anket İçe Aktarıldı</value>
@@ -3337,7 +3338,7 @@
     <value>Yeni Kütüphane</value>
   </data>
   <data version="2.0" id="1097" name="QGroupsExplain">
-    <value>Not: Soru Grupları soru reytingini belilemek için kullanılır.</value>
+    <value>Not: Soru Grupları soru reytingini belirlemek için kullanılır.</value>
   </data>
   <data version="2.0" id="1098" name="AddNewGroup">
     <value>Yeni Ekle</value>
@@ -3361,19 +3362,19 @@
     <value>Klasörde aynı isimde bir anket zaten var. Lütfen farklı bir klasöre aktarınız.</value>
   </data>
   <data version="2.0" id="1105" name="DDLSelectValue">
-    <value>--Lütfen bir değer seçiniz--</value>
+    <value>--Seçiniz--</value>
   </data>
   <data version="2.0" id="1106" name="ChooseSurveyLabel">
-    <value>Listeden bir anket seçiniz:</value>
+    <value>Bir Anket Seçiniz:</value>
   </data>
   <data version="2.0" id="1107" name="HelpGifTitle">
     <value>Daha fazla bilgi için tıklarınız</value>
   </data>
   <data version="1.0" id="1108" name="FromLabelMail">
-    <value>Kimden Eposta:</value>
+    <value>E-posta Adresi (Kimden):</value>
   </data>
   <data version="1.0" id="1109" name="ToLabelMail">
-    <value>Kime Eposta:</value>
+    <value>E-posta Adresi (Kime):</value>
   </data>
   <data version="1.0" id="1110" name="SliderRangeTextLabel">
     <value>Kaydırıcı Min/Max Aralığı:</value>
@@ -3406,7 +3407,7 @@
     <value>Lütfen alt-grup için bir isim giriniz</value>
   </data>
   <data version="1.0" id="1120" name="GraphicalReports">
-    <value>Grafik Rapor</value>
+    <value>Grafik Raporu</value>
   </data>
   <data version="1.0" id="1121" name="VoterReports">
     <value>Katılımcı Raporu</value>
@@ -3424,7 +3425,7 @@
     <value>Ayrıntılar</value>
   </data>
   <data version="2.3" id="1126" name="SearchTitle">
-    <value>Anket Listesi Ara</value>
+    <value>Anket Ara</value>
   </data>
   <data version="2.3" id="1127" name="SurveyInformationTitle2">
     <value>Anket Başlığı</value>
@@ -3559,144 +3560,153 @@
     <value>Oluştur</value>
   </data>
   <data version="2.5" id="1171" name="HelpAboutHyperlink">
-    <value>About SP&amp;trade;</value>
+    <value>SP&amp;trade; Hakkında</value>
   </data>
   <data version="2.5" id="1172" name="ReportsSMHyperlink">
-    <value>Reports</value>
+    <value>Raporlar</value>
   </data>
   <data version="2.5" id="1173" name="ResponsesHyperlink">
-    <value>Individual Reponses</value>
+    <value>Katılımcı Cevapları</value>
   </data>
   <data version="2.5" id="1174" name="AccessUserResponses">
-    <value>User Reponses access</value>
+    <value>Katılımcı cevaplarına erişim</value>
   </data>
   <data version="2.5" id="1175" name="FriendlyNameExistsMsg">
-    <value>Name already used, please retry.</value>
+    <value>İsim mevcut, tekrar deneyiniz.</value>
   </data>
   <data version="2.5" id="1176" name="WebControlIntro">
-    <value>Check the Helpfiles on how to use the SurveyBox Custom Webcontrol</value>
+    <value>SurveyBox Custom Webcontrol'ü nasıl kullanacağınızı öğrenmek için Yardım'a bakınız</value>
   </data>
   <data version="2.5" id="1177" name="AdminCreatedMessage">
-    <value>Account created. Please login.</value>
+    <value>Hesap oluşturuldu. Lütfen giriş yapınız.</value>
   </data>
   <data version="2.5" id="1178" name="MultilanguagesStatsLiteral">
-    <value>Active Languages:</value>
+    <value>Aktif Lisanlar:</value>
   </data>
   <data version="2.5" id="1179" name="OpeningCloseDateLiteral">
-    <value>Opening &amp; Closing dates</value>
+    <value>Açılış &amp; Kapanış tarihi</value>
   </data>
   <data version="2.5" id="1180" name="DateNotSet">
-    <value>Not set</value>
+    <value>Belirlenmemiş</value>
   </data>
   <data version="2.5" id="1181" name="PasswordRulesMessage">
-    <value>Password rules not met</value>
+    <value>Parola geçersiz</value>
   </data>
   <data version="2.5" id="1182" name="SSRSReports">
-    <value>SSRS Reports</value>
+    <value>SSRS Raporu</value>
   </data>
   <data version="2.5" id="1183" name="SsrsReportTitle">
     <value>SQL Server Reporting Services - </value>
   </data>
   <data version="2.5" id="1184" name="SurveyTitleTooltip">
-    <value>Click a Title to go Statistics</value>
+    <value>İstatistiklere gitmek için tıklayınız</value>
   </data>
   <data version="2.5" id="1185" name="SurveyStatusTooltip">
-    <value>Survey Activated or not</value>
+    <value>Anket Aktiflik Durumu</value>
   </data>
   <data version="2.5" id="1186" name="SurveyReponsesTooltip">
-    <value>Number of Reponses</value>
+    <value>Kayıt Sayısı</value>
   </data>
   <data version="2.5" id="1187" name="SurveyCreatedTooltip">
-    <value>Survey Creation Date</value>
+    <value>Anket Oluşturulma Tarihi</value>
   </data>
   <data version="2.5" id="1188" name="AccessSsrsReports">
-    <value>SSRS Reports access</value>
+    <value>SSRS Raporlama'ya Erişim</value>
   </data>
   <data version="2.5" id="1189" name="SsrsPrintSurvey">
-    <value>Report to select any of the surveys through a DDL and print/ export all Q/A.</value>
+    <value>Seçtiğiniz anketin tüm soru ve cevapların listeler</value>
   </data>
   <data version="2.5" id="1190" name="SsrsReport">
-    <value>Basic SSRS report example as added to SP.</value>
+    <value>Basit SSRS rapor örneği</value>
   </data>
   <data version="2.5" id="1191" name="SecurityGeneralWarningText">
-    <value>Show General Warning</value>
+    <value>Genel Hata Mesajı Göster</value>
   </data>
   <data version="2.5" id="1191" name="SecurityGeneralWarning">
-    <value>Access not allowed.</value>
+    <value>Erişim red edildi.</value>
   </data>
   <data version="2.5" id="1192" name="UsersTabDelete">
-    <value>Delete</value>
+    <value>Sil</value>
   </data>
   <data version="2.5" id="1193" name="UserImportLinesSubmitted">
-    <value> lines submitted; </value>
+    <value> satır alındı; </value>
   </data>
   <data version="2.5" id="1194" name="UserImportLinesImported">
-    <value> users imported. Not completed: </value>
+    <value> kullanıcı alındı. Tamamlanmayan: </value>
   </data>
   <data version="2.5" id="1195" name="UserImportUserExists">
-    <value> user already exists </value>
+    <value> kullanıcı zaten mevcut</value>
   </data>
   <data version="2.5" id="1196" name="UserImportIncorrectFormat">
-    <value> incorrect delimiting format </value>
+    <value> geçersiz biçim</value>
   </data>
   <data version="2.5" id="1197" name="SelectSecurityAction">
-    <value>Select an Action</value>
+    <value>İşlem Seçiniz</value>
   </data>
   <data version="2.5" id="1198" name="SecurityActionInfo">
     <value>
-      - If an option is selected from the dropdownlist the change is saved instantly and automatically.&lt;br /&gt;
-      - The default 'Action on Invalid Authorisation' if no selection is made is set to "Show the General Warning".
+      - Değişikler anında ve otomatik olarak kaydedilir.&lt;br /&gt;
+      - Herhangi bir seçim yapılmaz ise "Genel Hata Mesajı Göster" geçerli olacaktır.
     </value>
   </data>
   <data version="2.5" id="1199" name="MlCodesLiteral">
-    <value>Active Language Codes</value>
+    <value>Aktif Lisan Kodları:</value>
   </data>
   <data version="2.5" id="2000" name="UserDeletedConfirmation">
-    <value>User Deleted</value>
+    <value>Kullanıcı Silindi</value>
   </data>
   <data version="2.5" id="2001" name="UserCreatedConfirmation">
-    <value>User Created</value>
+    <value>Kullanıcı Oluşturuldu</value>
   </data>
   <data version="2.5" id="2002" name="SurveyClonedMessage">
-    <value>Survey Cloned</value>
+    <value>Anket Klonlandı</value>
   </data>
   <data version="2.5" id="2003" name="SurveyCreatedMessage">
-    <value>New Survey Created</value>
+    <value>Yeni Anket Oluşturuldu</value>
   </data>
   <data version="2.5" id="2004" name="ErrorLogHyperlink">
-    <value>Error Log</value>
+    <value>Hata Günlüğü</value>
   </data>
   <data version="2.5" id="2005" name="EditLogTitle">
-    <value>System Errors Logfile</value>
+    <value>Sistem Hataları Günlüğü</value>
   </data>
   <data version="2.5" id="2006" name="EditLogCancel">
-    <value>Cancel</value>
+    <value>İptal</value>
   </data>
   <data version="2.5" id="2007" name="EditLogSave">
-    <value>Save Changes</value>
+    <value>Değişiklikleri Kaydet</value>
   </data>
   <data version="2.5" id="2008" name="LogfileUpdatedMsg">
-    <value>Error Logfile Updated</value>
+    <value>Hata Günlüğü Güncellendi</value>
   </data>
   <data version="2.5" id="2009" name="AccessUserAccount">
-    <value>User Account access</value>
+    <value>Kullanıcı Hesabı'na erişim</value>
   </data>
   <data version="2.5" id="2010" name="AccessRolesManager">
-    <value>Rolesmanager access</value>
+    <value>Yetkiler'e erişim</value>
   </data>
   <data version="2.5" id="2011" name="AccessImportUsers">
-    <value>Import Users access</value>
+    <value>Kullanıcı alma</value>
   </data>
   <data version="2.5" id="2012" name="AllowQuestionXmlImport">
-    <value>Allow Xml Question import</value>
+    <value>XML soru alma</value>
   </data>
   <data version="2.5" id="2012" name="IpFilterSecurityRight">
-    <value>IP Filter Security</value>
+    <value>IP Filtre Güvenliği</value>
   </data>
   <data version="2.5" id="2013" name="DataImport">
-    <value>Survey Data Import</value>
+    <value>Anket Verisi Alma</value>
   </data>
   <data version="2.5" id="2014" name="AllowQuestionInsert">
-    <value>Allow Question Insert</value>
+    <value>Soru Eklemeye İzin Ver</value>
+  </data>
+  <data version="2.5" id="2015" name="FilesDeletedMessage">
+    <value>Dosya/lar Silindi</value>
+  </data>
+  <data version="2.5" id="2016" name="AnswerTypeDeletedMessage">
+    <value>AnswerType Deleted</value>
+  </data>
+  <data version="2.5" id="2017" name="RegExInUse">
+    <value>RegEx is used on one or more survey answers and cannot be deleted until removed from the surveyanswers</value>
   </data>
 </root>

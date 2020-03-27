@@ -421,6 +421,12 @@ namespace Votations.NSurvey.WebAdmin
                 }
             }
 
+            //correction of pre SP 2.5 surveys on import to new assembly names
+            foreach (NSurveyQuestion.AnswerTypeRow answerTypes in importedQuestions.AnswerType)
+            {
+                answerTypes.TypeAssembly = "SurveyProject.WebControls";
+            }
+
         }
 
         private void SourceDropDownList_SelectedIndexChanged(object sender, System.EventArgs e)

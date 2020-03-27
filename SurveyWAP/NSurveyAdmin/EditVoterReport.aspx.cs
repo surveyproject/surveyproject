@@ -37,6 +37,7 @@ using Votations.NSurvey.WebControls.UI;
 using Votations.NSurvey.WebControlsFactories;
 
 using Votations.NSurvey.WebAdmin.NSurveyAdmin;
+using Votations.NSurvey.WebAdmin.Code;
 
 namespace Votations.NSurvey.WebAdmin
 {
@@ -72,12 +73,23 @@ namespace Votations.NSurvey.WebAdmin
 			LocalizePage();
             UITabList.SetEditVoterReportTabs((MsterPageTabs)Page.Master, UITabList.EditVoterReportTabs.EditVoterReport);
 
+            // decrypt voterid
+            string test = Request["voterid"];
+            string urltest = HttpUtility.UrlEncode(test);
 
-			if (Information.IsNumeric(Request["voterid"]))
-			{
-				_voterId =  int.Parse(Request["voterid"]);
-			}
-			else
+            //int voterIdDec = int.Parse(QueryStringModule.DecryptString(Request["voterid"]));
+            int voterIdDec = int.Parse(QueryStringModule.DecryptString(urltest));
+
+
+            //         if (Information.IsNumeric(Request["voterid"]))
+            //{
+            //	_voterId =  int.Parse(Request["voterid"]);
+            //}
+            if (Information.IsNumeric(voterIdDec))
+            {
+                _voterId = voterIdDec;
+            }
+            else
 			{
 				throw new FormatException("Invalid voter id!");
 			}

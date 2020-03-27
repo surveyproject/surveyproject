@@ -14,6 +14,7 @@ namespace Votations.NSurvey.IDAL
         RegularExpressionData GetEditableRegularExpressionsListOfUser(int userId);
         RegularExpressionData GetRegularExpressionById(int RegularExpressionId);
         RegularExpressionData GetRegularExpressionsOfUser(int userId, int surveyId);
+        bool IsRegExInUse(int regularExpressionId);
         void SetBuiltInRegularExpression(int regularExpressionId);
         void UpdateRegularExpression(RegularExpressionData updatedRegularExpression);
     }

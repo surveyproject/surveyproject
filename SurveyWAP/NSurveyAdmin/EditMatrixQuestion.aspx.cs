@@ -81,6 +81,11 @@ namespace Votations.NSurvey.WebAdmin
         protected System.Web.UI.WebControls.Label ChildsEditionLanguageLabel;
         protected System.Web.UI.WebControls.DropDownList ChildsLanguageDropdownlist;
 
+        public string GetScrollParentQuestionId()
+        {
+            return Request.QueryString[Constants.Constants.ScrollParentQuestionQstr];
+        }
+
         new protected HeaderControl Header;
         int getLibraryId()
         {

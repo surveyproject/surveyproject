@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CustomReport.aspx.cs" Inherits="Votations.NSurvey.WebAdmin.CustomReport" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="CustomReport.aspx.cs" Inherits="Votations.NSurvey.WebAdmin.CustomReport" %>
 
 <%@ Import Namespace = "Votations.NSurvey.Helpers" %>
 <%@ Import Namespace = "Votations.NSurvey.WebControls" %>
@@ -9,7 +9,7 @@
 <head runat="server">
     <title>Survey&trade; Project Custom Results Report</title>
 
-            <!-- Bootstrap v. 3.3.7 - Package -->
+            <!-- Bootstrap Package -->
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Resultsreport CSS -->
@@ -64,7 +64,7 @@
 
 
 
-   <!-- Bootstrap JS 3.3.7 - package -->
+   <!-- Bootstrap JS package -->
     <script src="../Scripts/bootstrap.min.js"></script>
 
     <!-- Print report -->

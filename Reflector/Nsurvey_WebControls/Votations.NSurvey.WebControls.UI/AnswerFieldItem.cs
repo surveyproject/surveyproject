@@ -143,7 +143,7 @@ namespace Votations.NSurvey.WebControls.UI
             bool flag = true;
             if ((this._fieldTextBox.Text.Length == 0) && this.Mandatory)
             {
-                this.OnInvalidAnswer(new AnswerItemInvalidEventArgs(string.Format(ResourceManager.GetString("FieldRequiredMessage", base.LanguageCode), this.Text)));
+                this.OnInvalidAnswer(new AnswerItemInvalidEventArgs(string.Format(ResourceManager.GetString("FieldRequiredMessage", base.LanguageCode), "Answer")));
                 return false;
             }
             if (((this._fieldTextBox.Text.Length <= 0) || (this.RegExpression == null)) || ((this.RegExpression.Length <= 0) || Regex.IsMatch(this._fieldTextBox.Text, this.RegExpression)))

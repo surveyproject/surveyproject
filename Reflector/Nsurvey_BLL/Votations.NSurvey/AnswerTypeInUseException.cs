@@ -9,7 +9,7 @@ namespace Votations.NSurvey
     [Serializable]
     public class AnswerTypeInUseException : ApplicationException
     {
-        public AnswerTypeInUseException() : base("Answer is already in use by an answer!")
+        public AnswerTypeInUseException() : base("AnswerType is in use on a survey answer!")
         {
         }
 

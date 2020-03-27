@@ -1,0 +1,51 @@
+@charset "UTF-8";       
+
+/*ResultsReport CSS file  TEST2*/
+
+fieldset{border:0px solid #ffed7b;border-radius:5px;padding-top:0;-moz-border-radius:5px;-webkit-border-radius:5px}
+fieldset label{background:#7c8fe3;border-radius:5px;color:#fff;float:left;font-weight:700;margin-left:0;margin-right:.7em;padding:2px 2px 2px 5px;text-align:left;width:35%;-moz-border-radius:5px;-webkit-border-radius:5px}
+
+.titleFont{background:#e2e2e2;width:auto;border:1px outset #fff;border-radius:.25em;color:#5720c6;padding:3px 7px;-moz-border-radius:.3em;-webkit-border-radius:.25em}
+.titleLegend{margin: 0px 15px 0 15px; text-align:left;font-size:larger;}
+
+.PrintImage{position:relative;right:20px;width:32px}
+
+.rounded_corners{border:1px solid #b2b2b2;border-radius:5px;overflow:hidden;-moz-border-radius:5px;-webkit-border-radius:5px}
+.rounded_corners table table td{border-style:none}
+.rounded_corners td,.rounded_corners th{border:1px solid #b2b2b2}
+.rounded_corners td{padding:3px}
+
+
+.rrquestion {
+    padding: 0px 10px 0px 10px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+    border: 1px solid #6699CC;
+    display: block;
+
+	color: #000;
+    line-height: 30px;
+    font-size:larger;
+
+}
+
+.innerText{
+        font-size:larger;
+}
+
+.totalscore{
+    color:#00008B;
+}
+
+.questionscore{
+    color:#59ACFF;
+}
+
+.notanswered{
+    color:#FF6A00;
+}
+
+.answerscore{
+    color:#006803;
+}

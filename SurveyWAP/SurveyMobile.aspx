@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" Trace="false" maxPageStateFieldLength="-1"  EnableViewState="true" EnableViewStateMac="true" ViewStateEncryptionMode="Never" AutoEventWireup="true" CodeBehind="SurveyMobile.aspx.cs" Inherits="Votations.NSurvey.WebAdmin.SurveyMobile" %>
+﻿<%@ Page Language="C#" Trace="false" maxPageStateFieldLength="102400"  EnableViewState="true" EnableViewStateMac="true" ViewStateEncryptionMode="Always" AutoEventWireup="true" CodeBehind="SurveyMobile.aspx.cs" Inherits="Votations.NSurvey.WebAdmin.SurveyMobile" %>
 <%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="SurveyProject.WebControls" %>
 <!DOCTYPE html>
 <html>
@@ -23,7 +23,7 @@
     <!-- IE only -->
     <meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)" />
 
-    <!-- Bootstrap v. 3.3.7 - Package -->
+    <!-- Bootstrap Package -->
     <!-- <link href="Content/bootstrap.min.css" rel="stylesheet" /> -->
 
      <!-- Production CSS - minified or full -->
@@ -56,7 +56,7 @@
                             <QuestionValidationMarkStyle CssClass="icon-warning-sign"></QuestionValidationMarkStyle>
                             <ConfirmationMessageStyle CssClass="cmStyle"></ConfirmationMessageStyle>
                             <SectionOptionStyle CssClass="soStyle"></SectionOptionStyle>
-                            <ButtonStyle CssClass="btn btn-primary btn-xs bw"></ButtonStyle>
+                            <ButtonStyle CssClass="btn btn-primary btn-sm bw"></ButtonStyle>
                             <AnswerStyle CssClass="answerStyle"></AnswerStyle>
                             <MatrixStyle CssClass="matrixStyle "></MatrixStyle>
                             <MatrixHeaderStyle CssClass="mhStyle"></MatrixHeaderStyle>
@@ -73,7 +73,7 @@
             </form>
         </section>
 
-    <!-- Bootstrap JS 3.3.7 - package -->
+    <!-- Bootstrap JS package -->
     <script src="<%=Page.ResolveUrl("~/Scripts/bootstrap.min.js")%>"></script>
 
 </body>

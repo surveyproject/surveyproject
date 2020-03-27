@@ -29,6 +29,40 @@ namespace Votations.NSurvey.SQLServerDAL
         }
 
         /// <summary>
+        /// Check if the resular expression is in use by an answer
+        /// </summary>
+        public bool IsRegExInUse(int regularExpressionId)
+        {
+            ArrayList commandParameters = new ArrayList();
+            {
+                commandParameters.Add(new SqlParameter("@RegularExpressionID", regularExpressionId).SqlValue);
+            }
+
+            string test = Convert.ToString(DbConnection.db.ExecuteScalar("vts_spRegularExpressionIsInUse", commandParameters.ToArray()));
+
+            //if (DbConnection.db.ExecuteScalar("vts_spRegularExpressionIsInUse", commandParameters.ToArray()) == null)
+            if (String.IsNullOrEmpty(test))
+            {
+                // if null or empty - not in use -
+                return false;
+            }
+            else
+            {
+                // if ID returned - in use
+                return true;
+            };
+
+            // NEW
+            //if (DbConnection.db.ExecuteScalar("vts_spRegularExpressionIsInUse", new SqlParameter("@RegularExpressionID", regularExpressionId).SqlValue) != null)
+
+            //    return true;
+            //else
+            //    return false;
+
+
+        }
+
+        /// <summary>
         /// Remove the regular expression 
         /// </summary>
         public void DeleteRegularExpressionById(int regularExpressionId)

@@ -111,6 +111,7 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="QuestionText" msprop:Generator_ColumnVarNameInTable="columnQuestionText" msprop:Generator_ColumnPropNameInRow="QuestionText" msprop:Generator_ColumnPropNameInTable="QuestionTextColumn" msprop:Generator_UserColumnName="QuestionText" type="xs:string" minOccurs="0" msdata:Ordinal="1" />
+              <xs:element name="DisplayOrder" msprop:Generator_ColumnVarNameInTable="columnDisplayOrder" msprop:Generator_ColumnPropNameInRow="DisplayOrder" msprop:Generator_ColumnPropNameInTable="DisplayOrderColumn" msprop:Generator_UserColumnName="DisplayOrder" type="xs:int" minOccurs="0" msdata:Ordinal="2" />
             </xs:sequence>
             <xs:attribute name="ParentQuestionId" form="unqualified" msprop:Generator_ColumnVarNameInTable="columnParentQuestionId" msprop:Generator_ColumnPropNameInRow="ParentQuestionId" msprop:Generator_ColumnPropNameInTable="ParentQuestionIdColumn" msprop:Generator_UserColumnName="ParentQuestionId" type="xs:int" />
           </xs:complexType>

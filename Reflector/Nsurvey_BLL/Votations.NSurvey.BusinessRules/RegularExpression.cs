@@ -3,6 +3,7 @@ namespace Votations.NSurvey.BusinessRules
     using System;
     using Votations.NSurvey.DALFactory;
     using Votations.NSurvey.Data;
+    using Votations.NSurvey.IDAL;
 
     /// <summary>
     /// Contains the business rules that are used for a regular expression
@@ -22,8 +23,20 @@ namespace Votations.NSurvey.BusinessRules
         /// </summary>
         public void DeleteRegularExpressionById(int regularExpressionId)
         {
-            RegularExpressionFactory.Create().DeleteRegularExpressionById(regularExpressionId);
+            IRegularExpression type = RegularExpressionFactory.Create();
+            if (type.IsRegExInUse(regularExpressionId)) 
+            {
+                // if true returned by DAL:
+                throw new RegExInUseException();
+            }
+            else
+            {
+                type.DeleteRegularExpressionById(regularExpressionId);
+            }
+
+            //RegularExpressionFactory.Create().DeleteRegularExpressionById(regularExpressionId);
         }
+
 
         /// <summary>
         /// Makes the regular expression as builtin

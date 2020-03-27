@@ -52,7 +52,7 @@
       <InstallInclude Include="**\App_Browsers\**" />
       <InstallInclude Include="**\App_Data\**" />
       <InstallInclude Include="**\Content\**" />
-      <InstallInclude Include="**\Errors\**" />
+      <InstallInclude Include="**\Errors\**" Exclude="*.cs" />
       <InstallInclude Include="**\fonts\**" />
       <InstallInclude Include="**\Images\**" />
       <InstallInclude Include="**\Scripts\**" />

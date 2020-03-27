@@ -12,6 +12,7 @@ namespace Votations.NSurvey.Constants
         public const string VoterExportHeaderSplitChar = "|";
         public const string PreviewPage = "CampaignStart.aspx";
         public const string ScrollQuestionQstr = "ScrollQuestionId";
+        public const string ScrollParentQuestionQstr = "ScrollParentQuestionId";
         public const string QRYSTRGuid = "surveyid";
         public static string GetFilePathCSS(int surveyId)
         {

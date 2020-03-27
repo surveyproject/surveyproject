@@ -25,7 +25,7 @@ using System.Web;
 using Votations.NSurvey.Web;
 using Votations.NSurvey.Data;
 using Votations.NSurvey.Web.Security;
-
+using Votations.NSurvey.WebAdmin.Code;
 
 namespace Votations.NSurvey.WebAdmin
 {
@@ -147,8 +147,12 @@ namespace Votations.NSurvey.WebAdmin
 
         public static void NavigateToVoterReport(int surveyId, int voterId, int menuIndex)
         {
-            HttpContext.Current.Server.Transfer(String.Format("{0}?surveyid={1}&voterid={2}&menuindex={3}", VoterReport, surveyId, voterId, menuIndex));
-            // HttpContext.Current.Response.Redirect(String.Format("{0}?surveyid={1}&voterid={2}&menuindex={3}", VoterReport, surveyId, voterId, menuIndex));
+            //encrypt parameters and urlencode
+            var voterIdEnc = HttpUtility.UrlEncode(QueryStringModule.EncryptString(voterId.ToString()));
+
+            //HttpContext.Current.Server.Transfer(String.Format("{0}", VoterReport), true);            
+            //HttpContext.Current.Server.Transfer(String.Format("{0}?surveyid={1}&voterid={2}&menuindex={3}", VoterReport, surveyId, voterId, menuIndex), false);
+            HttpContext.Current.Response.Redirect(String.Format("{0}?surveyid={1}&voterid={2}&menuindex={3}", VoterReport, surveyId, voterIdEnc, menuIndex));
         }
 
         public static void NavigateToSsrsReport(string fileName, int menuIndex)
@@ -159,7 +163,13 @@ namespace Votations.NSurvey.WebAdmin
 
         public static void NavigateToEditVoterReport(int surveyId, int voterId, int menuIndex)
         {
-            HttpContext.Current.Response.Redirect(String.Format("{0}?surveyid={1}&voterid={2}&menuindex={3}", EditVoterReport, surveyId, voterId, menuIndex));
+            //encrypt parameters
+            var voterIdEnc = HttpUtility.UrlEncode(QueryStringModule.EncryptString(voterId.ToString()));
+
+            HttpContext.Current.Response.Redirect(String.Format("{0}?surveyid={1}&voterid={2}&menuindex={3}", EditVoterReport, surveyId, voterIdEnc, menuIndex));
+            //HttpContext.Current.Response.Redirect(String.Format("{0}?surveyid={1}&voterid={2}&menuindex={3}", EditVoterReport, surveyId, voterId, menuIndex));
+            //HttpContext.Current.Server.Transfer(String.Format("{0}?surveyid={1}&voterid={2}&menuindex={3}", EditVoterReport, surveyId, voterIdEnc, menuIndex), false);
+
         }
 
         public static void NavigateToInsertQuestion(int surveyId, int displayOrder, int page, int libraryId, int menuIndex)
@@ -173,9 +183,9 @@ namespace Votations.NSurvey.WebAdmin
             HttpContext.Current.Response.Redirect(TypeEditor + "?menuindex=" + menuIndex);
         }
 
-        public static void NavigateToTypeCreator(int surveyId, int menuIndex)
+        public static void NavigateToTypeCreator(int menuIndex)
         {
-            HttpContext.Current.Response.Redirect(TypeCreator + "?surveyid" + surveyId + "?menuindex=" + menuIndex);
+            HttpContext.Current.Response.Redirect(TypeCreator + "?menuindex=" + menuIndex);
             
         }
 

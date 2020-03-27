@@ -91,7 +91,7 @@ namespace Votations.NSurvey.WebAdmin
 		private void BindFields()
 		{
 			// Header.SurveyId = SurveyId;
-            ((Wap)Master.Master).HeaderControl.SurveyId = SurveyId;
+            //((Wap)Master.Master).HeaderControl.SurveyId = SurveyId;
            
             //CreateTypeHyperLink.NavigateUrl = UINavigator.TypeCreator + "?surveyid="+SurveyId+"&menuindex=" + MenuIndex;
             if (NSurveyUser.Identity.IsAdmin)
@@ -160,7 +160,8 @@ namespace Votations.NSurvey.WebAdmin
         {
             //CreateTypeHyperLink.PostBackUrl = UINavigator.TypeCreator + "?surveyid=" + SurveyId + "&menuindex=" + MenuIndex;
             
-            UINavigator.NavigateToTypeCreator(((PageBase)Page).getSurveyId(), ((PageBase)Page).MenuIndex);
+           // UINavigator.NavigateToTypeCreator(((PageBase)Page).getSurveyId(), ((PageBase)Page).MenuIndex);
+            UINavigator.NavigateToTypeCreator(((PageBase)Page).MenuIndex);
         }
 
         private void CreateTypeButton_Click(object sender, System.EventArgs e)

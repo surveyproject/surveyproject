@@ -128,13 +128,13 @@
 
 .logoPanel{border:0;border-color:#fff;border-style:none;position:relative;text-align:left;}
 
-.logoIcons {font-size:6.6rem;float: left; margin:10px 0 0 35px}
+.logoIcons {font-size:4.0rem;float: left; margin:10px 0 0 35px}
 
-.logoText {color: white;float: right;font-size:3.6rem;font-weight: 800;margin: 15px 0 0 25px}
+.logoText {color: white;float: right;font-size:3.0rem;font-weight: 800;margin: 10px 0 0 25px}
 .logoTextLogedin {color: white;float: right;font-weight: 800; margin:20px 0 0 30px; font-size: x-large;}
 
 .logouthyperlink{background:#99f;border-radius:0 0 15px;padding:11px 9px 4px;-moz-border-radius:0 0 15px 0;-webkit-border-radius:0 0 15px 0}
-.logoutDiv {float: right;margin: -3px 5px 0 0px}
+.logoutDiv {float: right;}
 
 .maiStyle{background:#f4f9fa;font-size:10pt }
 .matrixStyle{background:#f4f9fa;font-size:10pt ;padding:2px}
@@ -285,7 +285,7 @@ table.TlcFront{background:url(../../images/PenSurvey.JPG) repeat-x center #fff;b
 .chckPrivsLabel{float:right; width:165px; color:blue;}
 .cssXmlAlign{float:left;margin-left:10px}
 
-.disclaimer{position:fixed;top: 27vh;left:36vw; height:auto; width:auto; max-width:45vw; text-align:justify;text-justify:distribute; background-color:white; font-size: 1.0vw;}
+.disclaimer{position:fixed;top: 27vh;left:36vw; height:60vh; width:auto; max-width:45vw; text-align:justify;text-justify:distribute; background-color:white; font-size: 1.0vw;}
 .disclaimer-panel-group{margin: 30px 0 0 15px;border: none;overflow:hidden;width:190px;height:40px; z-index:200;}
 
 @media only screen and (max-width:768px) {.disclaimer{position:relative;text-align:justify;text-justify:distribute;width: 80%;height:100%;} .disclaimer-panel-group{margin: 85px 0 0 15px; border: none; overflow: hidden; width: 190px; height:100%; z-index:200;}}

@@ -29,7 +29,7 @@
             <asp:TextBox Width="625" Rows="4" Height="50" Wrap="true" TextMode="MultiLine" colums="50" ID="txtConnectionStringTest" runat="server"></asp:TextBox><br /><br />
                        3. Production [SurveyProjectProdConnectionString]:<br /><asp:Label ID="lblConnectionStringProd" CssClass="SettingsValueLabel" runat="server"></asp:Label><br />
             <asp:TextBox Width="625" Rows="4" Height="50" Wrap="true" TextMode="MultiLine" colums="50"  ID="txtConnectionStringProd" runat="server"></asp:TextBox><br /><br />
-            <asp:Button ID="btnConnectionStrings" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Submit" />
+            <asp:Button ID="btnConnectionStrings" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Save &amp; Encrypt" />
             <asp:Button ID="btnDecriptConnections" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Decrypt" /><br /><br />
                                             </li>
             <li>
@@ -37,7 +37,7 @@
            <b>Default connection:</b>          <br />
             <asp:Label ID="lblDefaultDbConnection" CssClass="SettingsValueLabel" runat="server" ></asp:Label><br />
             <asp:TextBox Width="350" ID="txtDefaultDbConnection" runat="server"></asp:TextBox>
-            <asp:Button ID="btnDefaultDbConnection" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Submit"/>
+            <asp:Button ID="btnDefaultDbConnection" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Save &amp; Encrypt"/>
             <br /><br />
                                                             </li>
         </ol>
@@ -61,7 +61,7 @@
         <asp:TextBox ID="txtCulture" runat="server"></asp:TextBox>
                 <br />
 
-        <asp:Button ID="btnCulture" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Rename" />
+        <asp:Button ID="btnCulture" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Save &amp; Encrypt" />
         <asp:Button ID="btnCultureDecript" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Decrypt" />
             <br /><br />
                                                             </li>
@@ -85,7 +85,7 @@
             <asp:TextBox Width="350" ID="txtSmtpPassword" runat="server"></asp:TextBox><br /><br />
         SMTP Server Port: <asp:Label ID="lblSmtpServerPort" CssClass="SettingsValueLabel" runat="server"></asp:Label><br />
             <asp:TextBox Width="350" ID="txtSmtpPort" runat="server"></asp:TextBox><br /><br />
-                        <asp:Button ID="btnSmtp" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Submit" /><br />
+                        <asp:Button ID="btnSmtp" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Save &amp; Encrypt" /><br />
                               
                             </li>
             <li>
@@ -99,7 +99,7 @@
             <asp:TextBox Width="350" ID="txtFileDeleteTime" runat="server"></asp:TextBox><br /><br />
             SessionUploadedFileDeleteTimeOut: <asp:Label ID="lblSessionFileDeleteTime" CssClass="SettingsValueLabel" runat="server"></asp:Label><br />
             <asp:TextBox Width="350" ID="txtSessionFileDeleteTime" runat="server"></asp:TextBox><br /><br />
-            <asp:Button ID="btnMiscSettings" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Submit" /><br /><br />
+            <asp:Button ID="btnMiscSettings" CssClass="btn btn-primary btn-xs bw" runat="server" Text="Save &amp; Encrypt" /><br /><br />
                                             </li>
             <li>
             <b>Decrypt the NSurveySettings (smtp & miscellaneous):</b>

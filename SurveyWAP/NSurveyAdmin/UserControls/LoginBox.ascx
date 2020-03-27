@@ -31,8 +31,17 @@
                                             </p>
                                             </div>
 
+                                    <style>
+                                        .loginbtn{
+                                            color:#fff;
+                                            background-color:#0069d9;
+                                            border-color:#0062cc;
+                                            padding:3px 3px;
+                                        }
+                                    </style>
+
                                             <div class="validateButton">
-                                                <asp:Button ID="ValidateCredentialsButton" ToolTip="Validate credentials" CssClass="btn btn-primary bw" runat="server" Text="Validate credentials"></asp:Button>
+                                                <asp:Button ID="ValidateCredentialsButton" ToolTip="Validate credentials" CssClass="btn loginbtn btn-primary bw" runat="server" Text="Validate credentials"></asp:Button>
                                             </div>
                                 </div>                              
                 </div>
