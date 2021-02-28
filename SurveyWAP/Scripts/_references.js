@@ -1,4 +1,4 @@
-﻿/// <reference path="jquery-3.3.1.js" />
+﻿/// <reference path="jquery-3.5.1.js" />
 /// <autosync enabled="true" />
 /// <reference path="../Code/RowSelectorColumnScript.js" />
 /// <reference path="astreeview/astreeview.min.js" />

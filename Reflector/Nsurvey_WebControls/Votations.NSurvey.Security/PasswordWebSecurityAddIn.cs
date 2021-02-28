@@ -78,7 +78,9 @@ namespace Votations.NSurvey.Security
             this._passwordTextBox.Width = Unit.Pixel(150);
             //this._passwordTextBox.Attributes.Add("value", new Surveys().GetSurveyPassword(this.SurveyId));
             this._passwordTextBox.Attributes.Add("value", "password set");
-            this._passwordTextBox.Attributes.Add("MaxLength", "12"); 
+            this._passwordTextBox.Attributes.Add("MaxLength", "12");
+            //show hide password option:
+            this._passwordTextBox.Attributes.Add("class", "reveal pwd");
             this._passwordTextBox.TextMode = TextBoxMode.Password;
 
             cell.Controls.Add(this._passwordTextBox);

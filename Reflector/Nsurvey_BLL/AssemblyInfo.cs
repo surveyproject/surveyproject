@@ -8,7 +8,7 @@
 [assembly: System.Reflection.AssemblyConfiguration("")]
 [assembly: System.Reflection.AssemblyCompany("W3DevPro™")]
 [assembly: System.Reflection.AssemblyProduct("Survey™ Project Webapplication")]
-[assembly: System.Reflection.AssemblyCopyright("(c) W3DevPro™ 2009/2018 - (c) Thomas Zumbrunn 2004")]
+[assembly: System.Reflection.AssemblyCopyright("(c) W3DevPro™ 2009/2021 - (c) Thomas Zumbrunn 2004")]
 [assembly: System.Reflection.AssemblyTrademark("Survey™ Project")]
 [assembly: System.Reflection.AssemblyTitle("SurveyProject Business Logic Layer")]
 [assembly: System.Reflection.AssemblyCulture("")]	

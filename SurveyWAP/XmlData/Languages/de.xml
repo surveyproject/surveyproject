@@ -2551,7 +2551,7 @@
     basiert (&lt;a href="http://www.nsurvey.org" target="_blank"&gt;Thomas Zumbrunn&lt;/a&gt;, (c) 2004/2005).
 &lt;br /&gt;&lt;br /&gt;    
     
-    SURVEY™ PROJECT wurde von &lt;a href="http://www.w3devpro.com" title="W3DevPro Homepage" target="_blank"&gt;W3DevPro™ &lt;/a&gt;- (c) 2009/2018 begonnen. 
+    SURVEY™ PROJECT wurde von &lt;a href="http://www.w3devpro.com" title="W3DevPro Homepage" target="_blank"&gt;W3DevPro™ &lt;/a&gt;- (c) 2009/2020 begonnen. 
     Survey™ Project wird unter der &lt;a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.en.html" title="GPL" target="_blank"&gt;GNU GENERAL PUBLIC LICENSE v.3, 29. Juni 2007&lt;/a&gt;, herausgegeben.
     Eine Kopie aller gültigen Lizenzen finden Sie im Verzeichnis: SurveyWAP \ _Instructions \ Licenses dieser Anwendung.
 &lt;br /&gt;&lt;br /&gt;
@@ -3481,5 +3481,11 @@
   </data>
   <data version="2.5" id="2015" name="FilesDeletedMessage">
     <value>Dateien gelöscht</value>
+  </data>
+  <data version="2.5" id="2016" name="AnswerTypeDeletedMessage">
+    <value>AntwortTyp gelöscht</value>
+  </data>
+  <data version="2.5" id="2017" name="RegExInUse">
+    <value>RegEx wird für eine oder mehrere Umfrageantworten verwendet und kann erst gelöscht werden, wenn es aus den Umfrageantworten entfernt wurde</value>
   </data>
 </root>

@@ -81,6 +81,7 @@ namespace Votations.NSurvey.WebAdmin
             string[] standardPorts = { "80", "443" };
             string conn = "http";
             if (Request.IsSecureConnection) conn = "https";
+
             if (Request.ServerVariables["SERVER_PORT"] != null && !standardPorts.Contains(Request.ServerVariables["SERVER_PORT"]))
             {
                 if (HttpContext.Current.Request.ApplicationPath != "/")

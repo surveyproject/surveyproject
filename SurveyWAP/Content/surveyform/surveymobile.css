@@ -57,6 +57,13 @@
 
 */
 
+/*Override computed CKE Editor CSS */
+.cke_reset
+{
+    width:100% !important;
+    height: 100% !important;
+}
+
 /*SP 2.4 CSS XML selectors*/
 
 /* GENERIC TABLE/ ROW/ CELL CSS*/
@@ -154,6 +161,7 @@ select {
 {   
     width:17vw;
     margin: 15px 15px 15px 0;
+    font-size:initial;
 }
 
 /*ID: SurveyControl_lrlBP*/

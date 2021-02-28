@@ -3544,16 +3544,16 @@
     <value>Licence &amp; Décharge</value>
   </data>
   <data version="2.4" id="1166" name="IPRanges">
-    <value>IP Ranges</value>
+    <value>Plages IP</value>
   </data>
   <data version="2.4" id="1167" name="ValidateCredentialsButtonTooltip">
     <value>Valider les références</value>
   </data>
   <data version="2.4" id="1168" name="Token Protection">
-    <value>Protection Token</value>
+    <value>Jeton de protection</value>
   </data>
   <data version="2.4" id="1169" name="IP Filter">
-    <value>Protection IP Filter</value>
+    <value>Filtre de protection IP</value>
   </data>
   <data version="2.4" id="1170" name="btnGenerate">
     <value>Générer</value>
@@ -3565,31 +3565,31 @@
     <value>Reports</value>
   </data>
   <data version="2.5" id="1173" name="ResponsesHyperlink">
-    <value>Individual Reponses</value>
+    <value>Réponses individuelles</value>
   </data>
   <data version="2.5" id="1174" name="AccessUserResponses">
-    <value>Access User Reponses</value>
+    <value>Accéder aux réponses des utilisateurs</value>
   </data>
   <data version="2.5" id="1175" name="FriendlyNameExistsMsg">
-    <value>Name already used, please retry.</value>
+    <value>Nom déjà utilisé, veuillez réessayer.</value>
   </data>
   <data version="2.5" id="1176" name="WebControlIntro">
-    <value>More information on using the SurveyBox Custom Webcontrol at .....</value>
+    <value>Plus d'informations sur l'utilisation du contrôle Web personnalisé SurveyBox sur .....</value>
   </data>
   <data version="2.5" id="1177" name="AdminCreatedMessage">
-    <value>Account created. Please login.</value>
+    <value>Compte créé. Veuillez vous connecter.</value>
   </data>
   <data version="2.5" id="1178" name="MultilanguagesStatsLiteral">
-    <value>Active Languages:</value>
+    <value>Langues actives:</value>
   </data>
   <data version="2.5" id="1179" name="OpeningCloseDateLiteral">
     <value>Opening &amp; Closing dates</value>
   </data>
   <data version="2.5" id="1180" name="DateNotSet">
-    <value>Not set</value>
+    <value>Pas encore défini</value>
   </data>
   <data version="2.5" id="1181" name="PasswordRulesMessage">
-    <value>Password rules not met</value>
+    <value>Règles de mot de passe non respectées</value>
   </data>
   <data version="2.5" id="1182" name="SSRSReports">
     <value>SSRS Reports</value>
@@ -3701,5 +3701,11 @@
   </data>
   <data version="2.5" id="2015" name="FilesDeletedMessage">
     <value>Files Deleted</value>
+  </data>
+  <data version="2.5" id="2016" name="AnswerTypeDeletedMessage">
+    <value>AnswerType Deleted</value>
+  </data>
+  <data version="2.5" id="2017" name="RegExInUse">
+    <value>RegEx is used on one or more survey answers and cannot be deleted until removed from the surveyanswers</value>
   </data>
 </root>

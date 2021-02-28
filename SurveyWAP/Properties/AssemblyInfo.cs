@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("W3DevPro™")]
 [assembly: AssemblyProduct("Survey™ Project Webapplication")]
-[assembly: AssemblyCopyright("(c) W3DevPro™ 2009/2018 - (c) Thomas Zumbrunn 2004")]
+[assembly: AssemblyCopyright("(c) W3DevPro™ 2009/2021 - (c) Thomas Zumbrunn 2004")]
 [assembly: AssemblyTrademark("Survey™ Project")]
 [assembly: AssemblyCulture("")]
 

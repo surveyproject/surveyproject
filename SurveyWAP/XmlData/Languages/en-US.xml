@@ -848,7 +848,7 @@
     <value>New Survey</value>
   </data>
   <data version="1.0" id="279" name="SurveyOptionsHyperlink">
-    <value>Settings</value>
+    <value>Survey Settings</value>
   </data>
   <data version="1.0" id="280" name="SurveyInformationHyperlink">
     <value>Survey Settings</value>
@@ -857,10 +857,10 @@
     <value>Statistics</value>
   </data>
   <data version="1.0" id="282" name="SurveyLayoutHyperlink">
-    <value>Layout</value>
+    <value>Layout &amp; Design</value>
   </data>
   <data version="1.0" id="283" name="SurveyBuilderHyperlink">
-    <value>Form Builder</value>
+    <value>Survey Form Builder</value>
   </data>
   <data version="1.0" id="284" name="TypeBuilderHyperlink">
     <value>Answer Type Editor</value>
@@ -2579,7 +2579,7 @@
   <data version="1.2.2" id="915" name="Disclaimer">
     <value>SURVEY™ PROJECT is a webapplication for creating and publishing online surveys and webforms. The application is based on the open source software NSurvey. 
     NSurvey was written by &lt;a href="http://www.nsurvey.org" title="Nsurvey" target="_blank"&gt;Thomas Zumbrunn&lt;/a&gt;, (c) 2004/2005. 
-    &lt;br /&gt;&lt;br /&gt;SURVEY™ PROJECT is an initiative of &lt;a href="http://www.w3devpro.com" title="W3DevPro Homepage" target="_blank"&gt;W3DevPro™ &lt;/a&gt;, copyright (c) 2009/2018. 
+    &lt;br /&gt;&lt;br /&gt;SURVEY™ PROJECT is an initiative of &lt;a href="http://www.w3devpro.com" title="W3DevPro Homepage" target="_blank"&gt;W3DevPro™ &lt;/a&gt;, copyright (c) 2009/2021. 
     Survey™ Project is published under the &lt;a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.en.html" title="GPL" target="_blank"&gt;GNU GENERAL PUBLIC LICENSE v.3, 29 June 2007&lt;/a&gt;.
       A copy of all licenses that apply can be found in the directory: SurveyWAP\ _Instructions\ Licenses of this application.
       &lt;br /&gt;&lt;br /&gt;

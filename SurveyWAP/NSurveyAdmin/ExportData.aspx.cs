@@ -181,7 +181,7 @@ namespace Votations.NSurvey.WebAdmin
             Response.Charset = "UTF-8";
             Response.ContentEncoding = System.Text.Encoding.UTF8;
             Response.ContentType = "text/csv";
-            Response.AddHeader("Content-Disposition", "attachment; filename=\"dataexport.csv\"");
+            Response.AddHeader("Content-Disposition", "attachment; filename=\"SP_VoterData.csv\"");
 
             // Writes the UTF 8 header
             byte[] BOM = new byte[] { 0xef, 0xbb, 0xbf };
@@ -568,7 +568,11 @@ namespace Votations.NSurvey.WebAdmin
                     at == AnswerTypeEnum.FieldRequiredType ||
                     at == AnswerTypeEnum.SubscriberXMLList ||
                     at == AnswerTypeEnum.XMLCountryList ||
-                    at == AnswerTypeEnum.SelectionOtherType);
+                    at == AnswerTypeEnum.SelectionOtherType ||
+                    at == AnswerTypeEnum.FieldHiddenType ||
+                    at == AnswerTypeEnum.FieldAddressType ||
+                    at == AnswerTypeEnum.FieldSliderType
+                    );
 
         }
 
@@ -703,9 +707,9 @@ namespace Votations.NSurvey.WebAdmin
         {
             switch (ddlAnswer.SelectedValue)
             {
-                case "Answer": return answerType == AnswerTypeEnum.SelectionTextType ?
+                 case "Answer": return answerType == AnswerTypeEnum.SelectionTextType ?
                     (detail.IsAnswerAnswerTextNull() ? string.Empty : detail.AnswerAnswerText) :
-                   (detail.IsAnswerTextNull() ? string.Empty : detail.AnswerText);
+                    (detail.IsAnswerTextNull() ? string.Empty : detail.AnswerText);
 
                 case "AnswerDisplayOrderNumber":
                     if (isTextAnswer(detail.AnswerTypeId))
@@ -892,7 +896,7 @@ namespace Votations.NSurvey.WebAdmin
 
                                 }
 
-                                //Another change.If the there is Other types get the heading of the orher and add it.
+                                //Another change.If the there is Other types get the heading of the order and add it.
                                 // if ((headerColumn.SelectionModeId == 1 || headerColumn.SelectionModeId == 2) && !string.IsNullOrEmpty(concatenatedOthers))//radiobutton selection
 
                                 if (!string.IsNullOrEmpty(concatenatedOthers))//radiobutton selection

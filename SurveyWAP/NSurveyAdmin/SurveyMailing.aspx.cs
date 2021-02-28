@@ -33,6 +33,7 @@ using Votations.NSurvey.Emailing;
 using Votations.NSurvey.Web;
 using Votations.NSurvey.Web.Security;
 using Votations.NSurvey.WebAdmin.NSurveyAdmin;
+using System.Linq;
 
 namespace Votations.NSurvey.WebAdmin
 {
@@ -142,7 +143,12 @@ namespace Votations.NSurvey.WebAdmin
             string firstNamelastname = GetPageResource("FromNameTextBox");
             var survey = new Surveys().GetSurveyById(SurveyId, null).Surveys[0];
 
-            if (Request.ServerVariables["SERVER_PORT"] != null && Request.ServerVariables["SERVER_PORT"] != "80")
+            string[] standardPorts = { "80", "443" };
+            string conn = "http";
+            if (Request.IsSecureConnection) conn = "https";
+
+            // if (Request.ServerVariables["SERVER_PORT"] != null && Request.ServerVariables["SERVER_PORT"] != "80")
+            if (Request.ServerVariables["SERVER_PORT"] != null && !standardPorts.Contains(Request.ServerVariables["SERVER_PORT"]))
             {
                 if (HttpContext.Current.Request.ApplicationPath != "/")
                 {
@@ -159,12 +165,12 @@ namespace Votations.NSurvey.WebAdmin
             {
                 if (HttpContext.Current.Request.ApplicationPath != "/")
                 {
-                    surveyLink = string.Format("http://{0}{1}/surveymobile.aspx?surveyid={2}&uid=[--invitationid-]",
+                    surveyLink = string.Format(conn + "://{0}{1}/surveymobile.aspx?surveyid={2}&uid=[--invitationid-]",
                         Request.ServerVariables["SERVER_NAME"], HttpContext.Current.Request.ApplicationPath, survey.SurveyGuid);
                 }
                 else
                 {
-                    surveyLink = string.Format("http://{0}/surveymobile.aspx?surveyid={1}&uid=[--invitationid-]",
+                    surveyLink = string.Format(conn + "://{0}/surveymobile.aspx?surveyid={1}&uid=[--invitationid-]",
                         Request.ServerVariables["SERVER_NAME"], survey.SurveyGuid);
                 }
             }

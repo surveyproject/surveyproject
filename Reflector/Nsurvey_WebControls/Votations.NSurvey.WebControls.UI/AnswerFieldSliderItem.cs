@@ -168,7 +168,7 @@ namespace Votations.NSurvey.WebControls.UI
 
                 if (SiteName != "Survey Project")
                 {
-                    javascriptControl.Attributes.Add("src", ResolveUrl(GlobalConfig.ScriptFilesPath + "/jquery-3.3.1.min.js"));
+                    javascriptControl.Attributes.Add("src", ResolveUrl(GlobalConfig.ScriptFilesPath + "/jquery-3.5.1.min.js"));
                 }
 
                 Page.Header.Controls.Add(javascriptControl);

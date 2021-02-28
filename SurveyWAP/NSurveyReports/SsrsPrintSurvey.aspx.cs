@@ -1,12 +1,6 @@
-﻿using Microsoft.Reporting.WebForms;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Votations.NSurvey.Data;
@@ -22,6 +16,16 @@ namespace Votations.NSurvey.WebAdmin.NSurveyReports
     /// </summary>
     public partial class SsrsPrintSurvey : PageBase
     {
+
+        /// <summary>
+        /// reportViewer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected Microsoft.Reporting.WebForms.ReportViewer reportViewer;
+
         /// <summary>
         /// load page and set the conditions to fill and run the SSRS Report Test
         /// </summary>
@@ -53,7 +57,7 @@ namespace Votations.NSurvey.WebAdmin.NSurveyReports
         {
             // SSRS REPORT
             // Set the processing mode for the ReportViewer to Local  
-            reportViewer.ProcessingMode = ProcessingMode.Local;
+            reportViewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
 
             // Reference to .rdl(c) file as created through SSRS and copied to SP directory NSurveyReports/
             // Can be set on the .aspx page as well: reportviewer object
@@ -72,7 +76,7 @@ namespace Votations.NSurvey.WebAdmin.NSurveyReports
 
             // Datasource - name must match .rdlc datasource entry
             // Option A. ds
-            ReportDataSource datasource = new ReportDataSource("dataset", dataset.Tables["ReportData"]);
+            Microsoft.Reporting.WebForms.ReportDataSource datasource = new Microsoft.Reporting.WebForms.ReportDataSource("dataset", dataset.Tables["ReportData"]);
             // Option B. ds
             //ReportDataSource datasource = new ReportDataSource("dataset", dataset.Tables[0]);
 

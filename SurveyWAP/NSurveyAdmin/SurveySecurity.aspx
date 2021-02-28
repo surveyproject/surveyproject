@@ -43,4 +43,17 @@
                     </fieldset>     
     <div id="fillerDiv" class="fillerDiv">&nbsp;</div>
 </div>
+
+    <script>
+        $(".reveal").on('click', function () {
+            var $pwd = $(".pwd");
+            if ($pwd.attr('type') === 'password') {
+                $pwd.attr('type', 'text');
+            } else {
+                $pwd.attr('type', 'password');
+            }
+        });
+
+    </script>
+
 </asp:Content>

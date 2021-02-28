@@ -2773,7 +2773,7 @@
   <data version="1.2.2" id="915" name="Disclaimer">
     <value>
       SURVEY™ PROJECT Çevrim içi veri toplama için anket oluşturma ve yayımlama için geliştirilen WEB tabanlı bir programdır. Bu program NSurvey'in açık kaynak kodu üzerine inşa edilmiştir. NSurvey &lt;a href="http://www.nsurvey.org" title="Nsurvey" target="_blank"&gt;Thomas Zumbrunn&lt;/a&gt; tarafından yazılmıştır, (c) 2004/2005.&lt;br /&gt;&lt;br /&gt;
-      SURVEY™ PROJECT bir &lt;a href="http://www.w3devpro.com" title="W3DevPro Homepage" target="_blank"&gt;W3DevPro™ &lt;/a&gt; girişimidir, (c) 2009/2017. Survey™ Project &lt;a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.en.html" title="GPL" target="_blank"&gt;GNU GENERAL PUBLIC LICENSE v.3, 29 Haziran 2007&lt;/a&gt;lisansı altında yayımlanmaktadır. Tüm lisans örnekleri ve kopyalar uygulamanın SurveyWAP\ _Instructions\ dizininde bulunabilir.&lt;br /&gt;&lt;br /&gt;
+      SURVEY™ PROJECT bir &lt;a href="http://www.w3devpro.com" title="W3DevPro Homepage" target="_blank"&gt;W3DevPro™ &lt;/a&gt; girişimidir, (c) 2009/2020. Survey™ Project &lt;a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.en.html" title="GPL" target="_blank"&gt;GNU GENERAL PUBLIC LICENSE v.3, 29 Haziran 2007&lt;/a&gt;lisansı altında yayımlanmaktadır. Tüm lisans örnekleri ve kopyalar uygulamanın SurveyWAP\ _Instructions\ dizininde bulunabilir.&lt;br /&gt;&lt;br /&gt;
       Bu program yararlı olması ümidiyle dağıtılmaktadır, Kullanım ve/veya herhangi bir uygulamaya uyum GARANTİSİ VERİLMEMEKTEDİR;. See the GNU General Public License for more details.&lt;br /&gt;&lt;br /&gt;
       All sources are published at &lt;a href="https://github.com/surveyproject" title="Survey Project Sources and Downloads" target="_blank"&gt; GitHub &lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;
       Visit the open source SURVEY™ PROJECT Community site at &lt;a href="http://www.surveyproject.org" title="Survey Project Community Site" target="_blank"&gt;http://www.surveyproject.org&lt;/a&gt;.
@@ -3704,9 +3704,9 @@
     <value>Dosya/lar Silindi</value>
   </data>
   <data version="2.5" id="2016" name="AnswerTypeDeletedMessage">
-    <value>AnswerType Deleted</value>
+    <value>Cevap Türü Silindi</value>
   </data>
   <data version="2.5" id="2017" name="RegExInUse">
-    <value>RegEx is used on one or more survey answers and cannot be deleted until removed from the surveyanswers</value>
+    <value>Normal İfade, bir veya daha fazla anket yanıtında kullanılır ve anket cevaplarından kaldırılıncaya kadar silinemez</value>
   </data>
 </root>

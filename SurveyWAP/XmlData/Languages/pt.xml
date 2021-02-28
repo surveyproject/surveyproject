@@ -3707,4 +3707,13 @@
   <data version="2.5" id="2014" name="AllowQuestionInsert">
     <value>Allow Question Insert</value>
   </data>
+  <data version="2.5" id="2015" name="FilesDeletedMessage">
+    <value>Files Deleted</value>
+  </data>
+  <data version="2.5" id="2016" name="AnswerTypeDeletedMessage">
+    <value>AnswerType Deleted</value>
+  </data>
+  <data version="2.5" id="2017" name="RegExInUse">
+    <value>RegEx is used on one or more survey answers and cannot be deleted until removed from the surveyanswers</value>
+  </data>
 </root>

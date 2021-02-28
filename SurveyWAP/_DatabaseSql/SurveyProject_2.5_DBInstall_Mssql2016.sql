@@ -1,4 +1,5 @@
---SURVEY PROJECT v2.5 - MsSql2016 / AZURE compatible DB script - Collation Turkish CI AS
+--SURVEY PROJECT v2.5 - MsSql2016 / AZURE compatible DB script - compatible with: Collation Turkish CI AS
+
 GO
 /****** Object:  UserDefinedTableType [dbo].[IntTableType]    Script Date: 19-8-2014 22:01:40 ******/
 CREATE TYPE [dbo].[IntTableType] AS TABLE(
@@ -399,7 +400,7 @@ SET QUOTED_IDENTIFIER OFF
 GO
 
 /*
-	Survey Project changes: copyright (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)	
+	Survey Project changes: copyright (c) 2016, W3DevPro TM (http://github.com/surveyproject)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -1242,7 +1243,7 @@ SET QUOTED_IDENTIFIER OFF
 GO
 
 /*
-	Survey Project changes: copyright (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)	
+	Survey Project changes: copyright (c) 2016, W3DevPro TM (http://github.com/surveyproject)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -1888,7 +1889,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 /*
-	Survey Project changes: copyright (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)	
+	Survey Project changes: copyright (c) 2016, W3DevPro TM (http://github.com/surveyproject)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -3450,11 +3451,11 @@ GO
 CREATE PROCEDURE [dbo].[vts_spLibraryGetAll] AS
 
 SELECT
-	l.LibraryID,
+	l.LibraryId,
 	l.LibraryName,
 	l.Description,
 	l.DefaultLanguageCode,
-	(select count(q.QuestionID) from vts_tbQuestion q where q.LibraryID=l.LibraryID) as QuestionCnt
+	(select count(q.QuestionId) from vts_tbQuestion q where q.LibraryID=l.LibraryId and q.ParentQuestionId is NULL) as QuestionCnt
  FROM vts_tbLibrary l ORDER BY LibraryName
 
 
@@ -4598,47 +4599,74 @@ GO
 */
 CREATE PROCEDURE [dbo].[vts_spQuestionChildAddNew]
 			@ParentQuestionID int,
-			@QuestionText NVARCHAR(max), 
+			@QuestionText nvarchar(4000), 
+			@DisplayOrder int,
 			@QuestionID int OUTPUT
 AS
--- Get parent default values
+
+BEGIN TRAN InsertChildQuestion
+
+--1a Get parent default values
 DECLARE 
 	@SurveyID int,
-	@DisplayOrder int,
+	-- @DisplayOrder int,
 	@SelectionModeID int,
 	@PageNumber int,
 	@LibraryID int,
 	@RatingEnabled bit
 
-SELECT @SurveyID = SurveyID, @LibraryID = LibraryID, @PageNumber = PageNumber, @DisplayOrder = DisplayOrder, @SelectionModeID = SelectionModeID, @RatingEnabled = RatingEnabled
+--1b parent question values
+SELECT 
+	@SurveyID = SurveyID, 
+	@LibraryID = LibraryID, 
+	@PageNumber = PageNumber, 
+	--@DisplayOrder = DisplayOrder, 
+	@SelectionModeID = SelectionModeID, 
+	@RatingEnabled = RatingEnabled
 FROM vts_tbQuestion WHERE QuestionID = @ParentQuestionID
 
+
+--2a Determine if DisplayOrder is null (new child) or already set (import child)
+if @DisplayOrder is NULL
+
+-- 2b if DisplayOrder is null (new Child) set to max DO
+BEGIN
+--2c Set displayorder to new child
+ select @DisplayOrder = max(ISNULL(DisplayOrder, 0)) + 1 
+ from vts_tbQuestion 
+ where ParentQuestionID = @ParentQuestionID or QuestionID =  @ParentQuestionID
+ END 
+
+--3 insert values
 INSERT INTO vts_tbQuestion
 	(ParentQuestionID,
 	SurveyID,
 	LibraryID,
-	SelectionModeID,
+	SelectionModeId,
 	DisplayOrder,
 	PageNumber,
 	RatingEnabled,
 	QuestionText)
 VALUES
 	( @ParentQuestionID,
-	@SurveyID,
-	@LibraryID,
+	@SurveyId,
+	@LibraryId,
 	@SelectionModeID,
 	@DisplayOrder,
 	@PageNumber,
 	@RatingEnabled,
 	@QuestionText)
-IF @@RowCount<>0
+
+-- 4 add columns(answers) to new row (childquestion)
+IF @@rowcount<>0
 BEGIN
-	set @QuestionID = SCOPE_IDENTITY()
+	set @QuestionID = Scope_Identity()
 	-- Assign the same columns to the row
 	-- as the parent question
-	exec vts_spAnswersCloneByQuestionID @ParentQuestionID,@QuestionID
+	exec vts_spAnswersCloneByQuestionId @ParentQuestionID,@QuestionID
 END
 
+COMMIT TRAN InsertChildQuestion
 
 
 GO
@@ -5035,11 +5063,11 @@ AS
 BEGIN TRANSACTION CopyQuestion
 
 INSERT INTO vts_tbQuestion  
-	(ParentQuestionID, 
+	(ParentQuestionId, 
 	SurveyID,
 	LibraryID,
-	SelectionModeID, 
-	LayoutModeID, 
+	SelectionModeId, 
+	LayoutModeId, 
 	DisplayOrder,
 	PageNumber, 
 	MinSelectionRequired, 
@@ -5052,14 +5080,14 @@ INSERT INTO vts_tbQuestion
 	QuestionIDText,
 	HelpText,
 	Alias,
-	QuestionGroupID,
+	QuestiongroupID,
 	ShowHelpText)
 SELECT      
-	ParentQuestionID, 
+	ParentQuestionId, 
 	@NewSurveyID,
 	null, 
-	SelectionModeID, 
-	LayoutModeID, 
+	SelectionModeId, 
+	LayoutModeId, 
 	@DisplayOrder,
 	@PageNumber, 
 	MinSelectionRequired, 
@@ -5077,35 +5105,40 @@ SELECT
 FROM vts_tbQuestion WHERE QuestionID = @QuestionID
 
 -- Check if the cloned question was created
-IF @@RowCount <> 0
+IF @@rowCount <> 0
 BEGIN
 	-- Clone the question's answers
-	set @QuestionCopyID = SCOPE_IDENTITY()
+	set @QuestionCopyID = Scope_Identity()
+
 	INSERT INTO vts_tbMultiLanguageText(LanguageItemID, LanguageCode, LanguageMessageTypeID, ItemText)
 		SELECT @QuestionCopyID as LanguageItemID, LanguageCode, LanguageMessageTypeID, ItemText
 		FROM vts_tbMultiLanguageText
 		WHERE LanguageItemID = @QuestionID AND LanguageMessageTypeID in(3,10,11,12)	
 
 	exec vts_spQuestionChildsClone @QuestionID, @QuestionCopyID, @NewSurveyID
-	UPDATE vts_tbQuestion SET DisplayOrder = @DisplayOrder, PageNumber = @PageNumber 
-	WHERE SurveyID = @NewSurveyID AND ParentQuestionID = @QuestionCopyID
+	
+	UPDATE vts_tbQuestion 
+		SET -- DisplayOrder = @DisplayOrder, 
+			LibraryID = NULL,
+			PageNumber = @PageNumber 
+	WHERE SurveyID = @NewSurveyID AND ParentQuestionid = @QuestionCopyID
 
-	exec vts_spAnswersCloneByQuestionID @QuestionID, @QuestionCopyID
+	exec vts_spAnswersCloneByQuestionId @QuestionID, @QuestionCopyID
 
-	exec vts_spQuestionSectionOptionClone @QuestionID, @QuestionCopyID
+	exec vts_spQuestionSectionOptionClone @QuestionId, @QuestionCopyId
 
 	-- Update the display order
 	UPDATE vts_tbQuestion 
 	SET DisplayOrder = DisplayOrder + 1 
 	WHERE 
-		SurveyID = @NewSurveyID AND
-		((QuestionID<>@QuestionCopyID AND ParentQuestionID is null) OR
- 		(ParentQuestionID is not null AND ParentQuestionID <> @QuestionCopyID)) AND
- 		DisplayOrder >= @DisplayOrder
+		SurveyID = @NewSurveyID 
+		AND ( (QuestionID<>@QuestionCopyID AND ParentQuestionID is null) 
+		-- OR (ParentQuestionID is not null AND ParentQuestionID <> @QuestionCopyID)
+		) 
+		AND DisplayOrder >= @DisplayOrder
 END
 
 COMMIT TRANSACTION CopyQuestion
-
 
 
 GO
@@ -5458,7 +5491,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 /*
-	Survey Project changes: copyright (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)	
+	Survey Project changes: copyright (c) 2016, W3DevPro TM (http://github.com/surveyproject)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -5941,8 +5974,9 @@ SELECT
 	QuestionID,
 	ParentQuestionID,
 	QuestionText, 
-	vts_tbQuestion.SelectionModeID,
-	LayoutModeID,
+	vts_tbQuestion.DisplayOrder,
+	vts_tbQuestion.SelectionModeId,
+	LayoutModeId,
 	MinSelectionRequired,
 	MaxSelectionAllowed,
 	RandomizeAnswers,
@@ -5951,8 +5985,8 @@ SELECT
 	QuestionPipeAlias,
 	Alias,
 	HelpText,
-	QuestionIDText,
-	QuestionGroupID,
+	QuestionIdText,
+	QuestionGroupId,
 	ShowHelpText
 FROM vts_tbQuestion 
 WHERE QuestionID = @QuestionID AND ParentQuestionID is null
@@ -5969,10 +6003,10 @@ SELECT
 	RatePart,
 	Selected,
 	AnswerTypeID,
-	RegularExpressionID,
+	RegularExpressionId,
 	Mandatory,
-	AnswerAlias,
-	AnswerIDText,
+	Answeralias,
+	answerIdText,
 	SliderRange,
 	SliderValue,
 	SliderMin,
@@ -5980,7 +6014,7 @@ SELECT
 	SliderAnimate,
 	SliderStep,
 	CssClass,
-	vts_tbAnswer.AnswerID OldID
+	vts_tbAnswer.AnswerID OldId
 	
 FROM vts_tbAnswer
 INNER JOIN vts_tbQuestion 
@@ -5990,10 +6024,10 @@ WHERE vts_tbQuestion.QuestionID = @QuestionID AND vts_tbQuestion.ParentQuestionI
 SELECT 
 	PublisherAnswerID,
 	SubscriberAnswerID,
-	vts_tbAnswer.QuestionID
+	vts_tbAnswer.QuestionId
 FROM vts_tbAnswerConnection
 INNER JOIN vts_tbAnswer
-	ON vts_tbAnswer.AnswerID = PublisherAnswerID
+	ON vts_tbAnswer.AnswerId = PublisherAnswerID
 INNER JOIN vts_tbQuestion 
 	ON vts_tbQuestion.QuestionID = vts_tbAnswer.QuestionID  
 WHERE vts_tbQuestion.QuestionID = @QuestionID AND vts_tbQuestion.ParentQuestionID is null
@@ -6001,7 +6035,8 @@ WHERE vts_tbQuestion.QuestionID = @QuestionID AND vts_tbQuestion.ParentQuestionI
 -- Retrieves all child questions and their answers
 SELECT 
 	ParentQuestionID,
-	QuestionText
+	QuestionText, 
+	vts_tbQuestion.DisplayOrder
 FROM vts_tbQuestion 
 WHERE ParentQuestionID = @QuestionID
 
@@ -6021,56 +6056,53 @@ SELECT
 	EditSectionLinkText,
 	UpdateSectionLinkText,
 	AddSectionLinkText,
-	QuestionID,
+	QuestionId,
 	MaxSections,
-	RepeatableSectionModeID
+	RepeatableSectionModeId
 FROM vts_tbQuestionSectionOption
 WHERE QuestionID = @QuestionID
 
 SELECT QuestionID, AnswerID FROM vts_tbQuestionSectionGridAnswer WHERE QuestionID = @QuestionID
 
-SELECT [LanguageItemID]
+SELECT [LanguageItemId]
       ,[LanguageCode]
-      ,[LanguageMessageTypeID]
+      ,[LanguageMessageTypeId]
       ,[ItemText]
   FROM [dbo].[vts_tbMultiLanguageText]
   where
   (
-   LanguageMessageTypeID=10 OR
-  ( [LanguageItemID] =@QuestionID and
-  [LanguageMessageTypeID] in(3,11,12))
-  OR( [LanguageItemID] in (SELECT AnswerID from 
-  vts_tbAnswer as ans  where ans.QuestionID=@QuestionID ) and
-  [LanguageMessageTypeID] in(1,2,13))  )
+   languageMessageTypeId=10 OR
+  ( [LanguageItemId] =@QuestionID and
+  [LanguageMessageTypeId] in(3,11,12))
+  OR( [LanguageItemId] in (SELECT answerid from 
+  vts_tbAnswer as ans  where ans.QuestionId=@QuestionID ) and
+  [LanguageMessageTypeId] in(1,2,13))  )
   and len(ItemText) !=0
-  and LanguageItemID in(
+  and LanguageItemId in(
   SELECT g.ID
    FROM vts_tbQuestionGroups AS g
   WHERE g.ID  IN(
-  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE q.QuestionID=@QuestionID)
+  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE q.QuestionId=@QuestionId)
   UNION
   SELECT g.ID FROM vts_tbQuestionGroups AS g
   WHERE ID IN(
   SELECT g.ParentGroupID FROM vts_tbQuestionGroups AS g
   WHERE g.ID  IN(
-  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE q.QuestionID=@QuestionID)
+  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE q.QuestionId=@QuestionId)
   )
   )
   
-SELECT g.ID,g.ParentGroupID,g.GroupName,g.DisplayOrder,g.ID OldID
+SELECT g.ID,g.ParentGroupID,g.GroupName,g.DisplayOrder,g.ID OldId
    FROM vts_tbQuestionGroups AS g
   WHERE g.ID  IN(
-  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE q.QuestionID=@QuestionID)
+  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE q.QuestionId=@QuestionId)
   UNION
-  SELECT g.ID,g.ParentGroupID,g.GroupName,g.DisplayOrder ,g.ID OldID FROM vts_tbQuestionGroups AS g
+  SELECT g.ID,g.ParentGroupID,g.GroupName,g.DisplayOrder ,g.ID OldId FROM vts_tbQuestionGroups AS g
   WHERE ID IN(
   SELECT g.ParentGroupID FROM vts_tbQuestionGroups AS g
   WHERE g.ID  IN(
-  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE q.QuestionID=@QuestionID)
+  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE q.QuestionId=@QuestionId)
   )
-  
-
-
 
 GO
 /****** Object:  StoredProcedure [dbo].[vts_spQuestionGetHierarchyForSurvey]    Script Date: 19-8-2014 22:01:40 ******/
@@ -6920,6 +6952,7 @@ DECLARE
 	@OldPageNumber int,
 	@NewPageNumber int,
 	@SurveyID int
+
 SELECT 
 	@OldDisplayOrder = DisplayOrder,
 	@OldPageNumber = PageNumber,
@@ -6928,6 +6961,7 @@ FROM
 	vts_tbQuestion
 WHERE
 	QuestionID = @QuestionID
+
 SELECT TOP 1  
 	@NewDisplayOrder = DisplayOrder,
 	@NewPageNumber = PageNumber
@@ -6935,10 +6969,11 @@ FROM
 	vts_tbQuestion
 WHERE
 	SurveyID = @SurveyID AND
-	ParentQuestionID is null AND
+	ParentQuestionID is NULL AND
 	DisplayOrder > @OldDisplayOrder
 	ORDER BY DisplayOrder ASC	
-if @@RowCount <>0
+
+if @@ROWCOUNT <>0
 BEGIN
 	-- Are we just changing the page or are we moving the question behind another one ?
 	IF @OldPageNumber = @NewPageNumber 
@@ -6948,22 +6983,27 @@ BEGIN
 			set DisplayOrder = @OldDisplayOrder 
 		WHERE 
 			DisplayOrder = @NewDisplayOrder AND
-			SurveyID = @SurveyID 
+			SurveyID = @SurveyID AND
+			ParentQuestionID is NULL
+
 		-- Move up current question
-		UPDATE vts_tbQuestion set DisplayOrder = @NewDisplayOrder WHERE QuestionID = @QuestionID OR ParentQuestionID = @QuestionID
+		UPDATE vts_tbQuestion set DisplayOrder = @NewDisplayOrder WHERE QuestionID = @QuestionID AND ParentQuestionID is NULL
 	END
 	ELSE IF @OldPageNumber +1 < @NewPageNumber 
 	BEGIN
 		-- Move one page down
-		UPDATE vts_tbQuestion set PageNumber = PageNumber+1 WHERE QuestionID = @QuestionID OR ParentQuestionID = @QuestionID
+		UPDATE vts_tbQuestion 
+			set PageNumber = PageNumber+1 
+		WHERE QuestionID = @QuestionID AND ParentQuestionID is NULL
 	END 
 	ELSE
 	BEGIN
 		-- Move one page down
-		UPDATE vts_tbQuestion set PageNumber = @NewPageNumber WHERE QuestionID = @QuestionID OR ParentQuestionID = @QuestionID
+		UPDATE vts_tbQuestion 
+			set PageNumber = @NewPageNumber 
+		WHERE QuestionID = @QuestionID AND ParentQuestionID is NULL
 	END
 END
-
 
 
 GO
@@ -7007,6 +7047,7 @@ DECLARE
 	@NewDisplayOrder int,
 	@NewPageNumber int,
 	@SurveyID int
+
 SELECT 
 	@OldDisplayOrder = DisplayOrder,
 	@OldPageNumber = PageNumber,
@@ -7015,6 +7056,7 @@ FROM
 	vts_tbQuestion
 WHERE
 	QuestionID = @QuestionID
+
 SELECT TOP 1  
 	@NewDisplayOrder = DisplayOrder,
 	@NewPageNumber = PageNumber
@@ -7025,8 +7067,9 @@ WHERE
 	ParentQuestionID is null AND
 	DisplayOrder < @OldDisplayOrder
 	ORDER BY DisplayOrder DESC
+
 -- Is this the first question ?
-IF @@RowCount <>0
+IF @@ROWCOUNT <>0
 BEGIN
 	-- Are we just changing the page or are we moving the question in front of another one ?
 	IF @OldPageNumber = @NewPageNumber 
@@ -7036,9 +7079,14 @@ BEGIN
 			set DisplayOrder = @OldDisplayOrder 
 		WHERE 
 			DisplayOrder = @NewDisplayOrder AND
-			SurveyID = @SurveyID
+			SurveyID = @SurveyID AND
+			ParentQuestionID is NULL 
+
 		-- Move up current question
-		UPDATE vts_tbQuestion set DisplayOrder = @NewDisplayOrder WHERE QuestionID = @QuestionID OR ParentQuestionID = @QuestionID
+		UPDATE vts_tbQuestion 
+			set DisplayOrder = @NewDisplayOrder 
+		WHERE 
+			QuestionID = @QuestionID AND ParentQuestionID is NULL
 	END
 	ELSE IF @OldPageNumber - 1 > @NewPageNumber 
 	BEGIN
@@ -7054,13 +7102,14 @@ END
 ELSE
 BEGIN
 	-- Check if there are any page breaks before
-	IF @OldPageNumber>1
+	IF @OldPageNumber > 1
 	BEGIN
-		UPDATE vts_tbQuestion set DisplayOrder = 1, PageNumber = PageNumber-1 WHERE QuestionID = @QuestionID OR ParentQuestionID = @QuestionID
+		UPDATE vts_tbQuestion 
+			set DisplayOrder = 1, PageNumber = PageNumber-1 
+		WHERE 
+		QuestionID = @QuestionID AND ParentQuestionID is NULL
 	END
 END
-
-
 
 GO
 /****** Object:  StoredProcedure [dbo].[vts_spQuestionOrderUpdate]    Script Date: 19-8-2014 22:01:40 ******/
@@ -7068,11 +7117,33 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
--- =============================================
--- Author:		<Author,,Name>
--- Create date: <Create Date,,>
--- Description:	<Description,,>
--- =============================================
+/*
+	Survey Project: (c) 2017, W3DevPro TM (https://github.com/surveyproject)
+
+	NSurvey - The web survey and form engine
+	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
+
+	This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License
+	as published by the Free Software Foundation; either version 2
+	of the License, or (at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program; if not, write to the Free Software
+	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+
+/// <summary>
+///  Reorder question positions in Library 
+/// </summary>
+/// <param Name="@QuestionID">
+/// ID of the questions to move one position up
+/// </param>
+*/
 CREATE PROCEDURE [dbo].[vts_spQuestionOrderUpdate] 
 @QuestionID int, 
 @UpdateUp  bit = 0 -- 1 to move up, or zero to move down
@@ -7082,38 +7153,42 @@ BEGIN
 	-- interfering with SELECT statements.
 	SET NOCOUNT ON;
 
-declare @NewDisplayOrder int, @LibID int, @OldQuestionID int
-declare @OrderIndex int, @CurrentDisplayOrder int, @MaxOrderID int
+declare @NewDisplayOrder int, @LibId int, @OldQuestionId int
+declare @OrderIndex int, @CurrentDisplayOrder int, @MaxOrderId int
 declare @QID int
 
-select @LibID = LibraryID from vts_tbQuestion where QuestionID = @QuestionID
+select @LibId = LibraryID from vts_tbQuestion where QuestionId = @QuestionID
 
-create table #TempQuestions
-    (QuestionID int, DisplayOrder int)
+create table #tempQuestions
+    (QuestionId int, DisplayOrder int)
 
-insert #TempQuestions select QuestionID, DisplayOrder from vts_tbQuestion where LibraryID = @LibID order by DisplayOrder 
+insert #tempQuestions 
+	select QuestionId, DisplayOrder 
+	from vts_tbQuestion 
+	where LibraryID = @LibId AND ParentQuestionId is NULL
+	order by DisplayOrder 
 
-DECLARE CursorQuestions CURSOR for
- SELECT QuestionID, DisplayOrder FROM #TempQuestions order by DisplayOrder
+DECLARE cursorQuestions CURSOR for
+ SELECT QuestionId, DisplayOrder FROM #tempQuestions order by DisplayOrder
 
- -- we make reorder of dysplayorder in case of duplicating DisplayOrderID
+ -- we make reorder of displayorder in case of duplicating displayorderid
  set @OrderIndex = 0
- OPEN CursorQuestions
- FETCH NEXT FROM CursorQuestions
+ OPEN cursorQuestions
+ FETCH NEXT FROM cursorQuestions
  INTO @QID, @CurrentDisplayOrder
  While @@FETCH_STATUS = 0
  Begin
 	set @OrderIndex = @OrderIndex + 1
-	UPDATE vts_tbQuestion SET DisplayOrder = @OrderIndex WHERE QuestionID = @QID
-	FETCH NEXT FROM CursorQuestions
+	UPDATE vts_tbQuestion SET DisplayOrder = @OrderIndex WHERE QuestionId = @QID
+	FETCH NEXT FROM cursorQuestions
 		INTO @QID, @CurrentDisplayOrder
  End
- CLOSE CursorQuestions;
- DEALLOCATE CursorQuestions;
- drop table #TempQuestions;
+ CLOSE cursorQuestions;
+ DEALLOCATE cursorQuestions;
+ drop table #tempQuestions;
 
- select @MaxOrderID = MAX(DisplayOrder) from vts_tbQuestion where LibraryID = @LibID
- select @CurrentDisplayOrder = DisplayOrder, @LibID = LibraryID from vts_tbQuestion where QuestionID = @QuestionID
+ select @MaxOrderId = MAX(DisplayOrder) from vts_tbQuestion where LibraryID = @LibId AND ParentQuestionId is NULL
+ select @CurrentDisplayOrder = DisplayOrder, @LibId = LibraryID from vts_tbQuestion where QuestionId = @QuestionID
  
  if @UpdateUp > 0
 	set @NewDisplayOrder = @CurrentDisplayOrder - 1
@@ -7122,19 +7197,18 @@ DECLARE CursorQuestions CURSOR for
        
  if @NewDisplayOrder < 1
 	set @NewDisplayOrder = 1
- if @NewDisplayOrder >= @MaxOrderID
-	set @NewDisplayOrder = @MaxOrderID
-         
- select @OldQuestionID = QuestionID from vts_tbQuestion where DisplayOrder = @NewDisplayOrder and LibraryID = @LibID
+ if @NewDisplayOrder >= @MaxOrderId
+	set @NewDisplayOrder = @MaxOrderId
+
+ select @OldQuestionId = QuestionId from vts_tbQuestion where DisplayOrder = @NewDisplayOrder and LibraryID = @LibId
  
  update vts_tbQuestion set DisplayOrder = @NewDisplayOrder 
-	where QuestionID = @QuestionID 
+	where QuestionId = @QuestionId 
  
  update vts_tbQuestion set DisplayOrder = @CurrentDisplayOrder 
-	where QuestionID = @OldQuestionID 
+	where QuestionId = @OldQuestionId 
   
 END
-
 
 
 GO
@@ -9067,10 +9141,48 @@ WHERE vts_tbUserRegularExpression.UserID = @UserID OR
 			ON vts_tbAnswer.QuestionID = vts_tbQuestion.QuestionID 
 		WHERE SurveyID = @SurveyID)
 ORDER BY Description
+GO
 
+/****** Object:  StoredProcedure [dbo].[vts_spRegularExpressionIsInUse]    Script Date: 10/12/2018 12:40:09 ******/
+SET ANSI_NULLS ON
+GO
 
+SET QUOTED_IDENTIFIER ON
+GO
+
+/*
+	Survey Project: (c) 2018, W3DevPro TM (http://www.w3devpro.com)
+
+	NSurvey - The web survey and form engine
+	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
+
+	This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License
+	as published by the Free Software Foundation; either version 2
+	of the License, or (at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program; if not, write to the Free Software
+	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+
+/// <summary>
+/// Check if the Regular Expression is in use
+/// by an answer
+/// </summary>
+*/
+CREATE PROCEDURE [dbo].[vts_spRegularExpressionIsInUse] @RegularExpressionID int AS
+SELECT
+(
+SELECT TOP 1 AnswerID FROM vts_tbAnswer WHERE RegularExpressionId = @RegularExpressionID
+) AnswerID
 
 GO
+
 /****** Object:  StoredProcedure [dbo].[vts_spRegularExpressionSetBuiltIn]    Script Date: 19-8-2014 22:01:40 ******/
 SET ANSI_NULLS OFF
 GO
@@ -11128,7 +11240,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 /*
-	Survey Project changes: copyright (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)	
+	Survey Project changes: copyright (c) 2016, W3DevPro TM (http://github.com/surveyproject)	
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -11177,8 +11289,8 @@ SELECT
 	CloseDate,
 	ThankYouMessage,
 	NavigationEnabled,
-	ProgressDisplayModeID,
-	ResumeModeID,
+	ProgressDisplayModeId,
+	ResumeModeId,
 	Scored,
 	Activated,
 	Archive,
@@ -11186,7 +11298,7 @@ SELECT
 	SurveyDisplayTimes,
 	CreationDate,
 	QuestionNumberingDisabled,
-	MultiLanguageModeID,
+	MultiLanguageModeId,
 MultiLanguageVariable
 FROM vts_tbSurvey WHERE SurveyID = @SurveyID
 
@@ -11196,8 +11308,8 @@ SELECT
 	SurveyID,
 	ParentQuestionID,
 	QuestionText, 
-	vts_tbQuestion.SelectionModeID,
-	LayoutModeID,
+	vts_tbQuestion.SelectionModeId,
+	LayoutModeId,
 	MinSelectionRequired,
 	MaxSelectionAllowed,
 	RandomizeAnswers,
@@ -11210,7 +11322,7 @@ SELECT
 	HelpText,
 	Alias,
 	ShowHelpText,
-	QuestionID as OldQuestionID,
+	QuestionId as OldQuestionId,
 	QuestionGroupID
 FROM vts_tbQuestion 
 WHERE SurveyID = @SurveyID AND ParentQuestionID is null
@@ -11227,7 +11339,7 @@ SELECT
 	RatePart,
 	Selected,
 	AnswerTypeID,
-	RegularExpressionID,
+	RegularExpressionId,
 	Mandatory,
 	AnswerIDText,
 	AnswerAlias,
@@ -11237,7 +11349,7 @@ SELECT
 	SliderMax,
 	SliderAnimate,
 	SliderStep,
-    vts_tbAnswer.AnswerID as OldAnswerID,
+    vts_tbAnswer.AnswerID as OldAnswerId,
 	CssClass
 FROM vts_tbAnswer
 INNER JOIN vts_tbQuestion 
@@ -11247,10 +11359,10 @@ WHERE vts_tbQuestion.SurveyID = @SurveyID AND vts_tbQuestion.ParentQuestionID is
 SELECT 
 	PublisherAnswerID,
 	SubscriberAnswerID,
-	vts_tbAnswer.QuestionID
+	vts_tbAnswer.QuestionId
 FROM vts_tbAnswerConnection
 INNER JOIN vts_tbAnswer
-	ON vts_tbAnswer.AnswerID = PublisherAnswerID
+	ON vts_tbAnswer.AnswerId = PublisherAnswerID
 INNER JOIN vts_tbQuestion 
 	ON vts_tbQuestion.QuestionID = vts_tbAnswer.QuestionID  
 WHERE vts_tbQuestion.SurveyID = @SurveyID AND vts_tbQuestion.ParentQuestionID is null
@@ -11258,11 +11370,12 @@ WHERE vts_tbQuestion.SurveyID = @SurveyID AND vts_tbQuestion.ParentQuestionID is
 -- Retrieves all child questions and their answers
 SELECT 
 	ParentQuestionID,
-	QuestionText
+	QuestionText,
+	DisplayOrder
 FROM vts_tbQuestion 
 WHERE SurveyID = @SurveyID AND ParentQuestionID is not null
 
-SELECT vts_tbAnswerProperty.AnswerID, Properties
+SELECT vts_tbAnswerProperty.AnswerId, Properties
 FROM vts_tbAnswerProperty
 INNER JOIN vts_tbAnswer
 	ON vts_tbAnswerProperty.AnswerID = vts_tbAnswer.AnswerID  
@@ -11276,9 +11389,9 @@ SELECT
 	EditSectionLinkText,
 	UpdateSectionLinkText,
 	AddSectionLinkText,
-	vts_tbQuestionSectionOption.QuestionID,
+	vts_tbQuestionSectionOption.QuestionId,
 	MaxSections,
-	RepeatableSectionModeID
+	RepeatableSectionModeId
 FROM vts_tbQuestionSectionOption
 INNER JOIN vts_tbQuestion 
 	ON vts_tbQuestion.QuestionID = vts_tbQuestionSectionOption.QuestionID  
@@ -11291,36 +11404,36 @@ INNER JOIN vts_tbQuestion
 	ON vts_tbQuestion.QuestionID = vts_tbQuestionSectionGridAnswer.QuestionID  
 WHERE vts_tbQuestion.SurveyID = @SurveyID AND vts_tbQuestion.ParentQuestionID is null
 
-SELECT SurveyID,LanguageCode,DefaultLanguage 
-FROM  vts_tbSurveyLanguage WHERE SurveyID=@SurveyID;
+SELECT SurveyId,LanguageCode,DefaultLanguage 
+FROM  vts_tbSurveyLanguage WHERE surveyId=@SurveyId;
 
-SELECT [LanguageItemID]
+SELECT [LanguageItemId]
       ,[LanguageCode]
-      ,[LanguageMessageTypeID]
+      ,[LanguageMessageTypeId]
       ,[ItemText]
   FROM [dbo].[vts_tbMultiLanguageText]
   where( 
-   LanguageMessageTypeID=10 or
-  ([LanguageItemID]=@SurveyID and [LanguageMessageTypeID] in(4,5))
-  OR( [LanguageItemID] in (SELECT QuestionID from vts_tbQuestion where SurveyID=@SurveyID) and
-  [LanguageMessageTypeID] in(3,11,12))
-  OR( [LanguageItemID] in (SELECT AnswerID from 
+   languageMessageTypeId=10 or
+  ([LanguageItemId]=@SurveyID and [LanguageMessageTypeId] in(4,5))
+  OR( [LanguageItemId] in (SELECT questionid from vts_tbQuestion where SurveyId=@SurveyID) and
+  [LanguageMessageTypeId] in(3,11,12))
+  OR( [LanguageItemId] in (SELECT answerid from 
   vts_tbQuestion as q inner join 
-  vts_tbAnswer as ans on  q.QuestionID=ans.QuestionID where q.SurveyID=@SurveyID ) and
-  [LanguageMessageTypeID] in(1,2,13)))
+  vts_tbAnswer as ans on  q.QuestionId=ans.QuestionId where q.SurveyId=@SurveyID ) and
+  [LanguageMessageTypeId] in(1,2,13)))
  and len(ItemText) !=0
- or LanguageItemID in(
+ or LanguageItemId in(
   --
   SELECT g.ID
    FROM vts_tbQuestionGroups AS g
   WHERE g.ID  IN(
-  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE SurveyID=@SurveyID)
+  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE SurveyId=@SurveyID)
   UNION
   SELECT g.ID FROM vts_tbQuestionGroups AS g
   WHERE g.ID IN(
   SELECT g.ParentGroupID FROM vts_tbQuestionGroups AS g
   WHERE g.ID  IN(
-  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE SurveyID=@SurveyID)
+  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE SurveyId=@SurveyID)
   )
   
  )
@@ -11328,16 +11441,16 @@ SELECT [LanguageItemID]
   --
   -- Select all required groups and their parent groups
   --
-  SELECT g.ID,g.ParentGroupID,g.GroupName,g.DisplayOrder,g.ID OldID
+  SELECT g.ID,g.ParentGroupID,g.GroupName,g.DisplayOrder,g.ID OldId
    FROM vts_tbQuestionGroups AS g
   WHERE g.ID  IN(
-  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE SurveyID=@SurveyID)
+  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE SurveyId=@SurveyID)
   UNION
-  SELECT g.ID,g.ParentGroupID,g.GroupName,g.DisplayOrder ,g.ID OldID FROM vts_tbQuestionGroups AS g
+  SELECT g.ID,g.ParentGroupID,g.GroupName,g.DisplayOrder ,g.ID OldId FROM vts_tbQuestionGroups AS g
   WHERE g.ID IN(
   SELECT g.ParentGroupID FROM vts_tbQuestionGroups AS g
   WHERE g.ID  IN(
-  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE SurveyID=@SurveyID)
+  SELECT q.QuestionGroupID FROM vts_tbQuestion AS  q WHERE SurveyId=@SurveyID)
   )
   
 
@@ -12150,7 +12263,7 @@ GO
 
 /*
 JJ Created Moving Layout data from User to Survey
-    Survey changes: copyright (c) 2010, Fryslan Webservices TM (http://survey.codeplex.com)    
+    Survey changes: copyright (c) 2010, W3DevPro TM (http://github.com/surveyproject)    
 
     NSurvey - The web survey and form engine
     Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -14014,7 +14127,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2016, W3DevPro TM (http://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -15575,6 +15688,8 @@ CREATE PROCEDURE [dbo].[vts_spVoterForExport]
 					@EndDate datetime 
 
 AS
+
+-- Voter data:
 	SELECT 
 		vts_tbVoter.VoterID,
 		SurveyID,
@@ -15588,27 +15703,28 @@ AS
 	LEFT JOIN vts_tbVoterEmail 
 		ON vts_tbVoter.VoterID = vts_tbVoterEmail.VoterID
 	LEFT JOIN vts_tbEmail
-		ON vts_tbEmail.EmailID = vts_tbVoterEmail.EmailID
+		ON vts_tbEmail.EmailID = vts_tbVoterEmail.EmailId
 	WHERE 
 		vts_tbVoter.SurveyID = @SurveyID AND
-		DATEDIFF (d,@StartDate,vts_tbVoter.VoteDate) >= 0 AND DATEDIFF (d,@EndDate,vts_tbVoter.VoteDate) <= 0
+		DATEDIFF (d,@startDate,vts_tbVoter.VoteDate) >= 0 AND DATEDIFF (d,@endDate,vts_tbVoter.VoteDate) <= 0
 
+-- QuestionData:
 	SELECT DISTINCT va.VoterID, QuestionText, q.QuestionID,
-	                q.QuestionIDText,q.Alias QuestionAlias
+	                q.QuestionIdText,q.Alias QuestionAlias
 	FROM vts_tbVoterAnswers va	
 	INNER JOIN vts_tbAnswer a
 		ON a.AnswerID = va.AnswerID 
 	INNER JOIN vts_tbQuestion q
-		ON q.QuestionID = a.QuestionID
+		ON q.questionID = a.questionID
 	INNER JOIN vts_tbVoter v
 		ON v.VoterID = va.VoterID
 	WHERE 
 		v.SurveyID = @SurveyID AND
-		DATEDIFF (d,@StartDate,V.VoteDate) >= 0 AND DATEDIFF (d,@EndDate,V.VoteDate) <= 0
+		DATEDIFF (d,@startDate,V.VoteDate) >= 0 AND DATEDIFF (d,@endDate,V.VoteDate) <= 0
 
 
-	
-	SELECT va.VoterID, va.SectionNumber, va.AnswerID, va.AnswerText as VoterAnswer, 
+-- Answer data:	
+	SELECT va.VoterID, va.SectionNumber, va.AnswerID, ISNULL(va.AnswerText, '-' ) as VoterAnswer, 
 	q.QuestionID, q.DisplayOrder as QuestionDisplayOrder,
 	a.AnswerText as Answer,a.DisplayOrder as AnswerDisplayOrder,
 	A.AnswerAlias
@@ -15616,13 +15732,12 @@ AS
 	INNER JOIN vts_tbAnswer a
 		ON a.AnswerID = va.AnswerID 
 	INNER JOIN vts_tbQuestion q
-		ON q.QuestionID = a.QuestionID
+		ON q.questionID = a.QuestionID
 	INNER JOIN vts_tbVoter v
 		ON v.VoterID = va.VoterID
 	WHERE 
 		v.SurveyID = @SurveyID AND
-		DATEDIFF (d,@StartDate,V.VoteDate) >= 0 AND DATEDIFF (d,@EndDate,V.VoteDate) <= 0
-
+		DATEDIFF (d,@startDate,V.VoteDate) >= 0 AND DATEDIFF (d,@endDate,V.VoteDate) <= 0
 
 
 GO
@@ -16016,7 +16131,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2016, W3DevPro TM (http://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -16215,7 +16330,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 /*
-	Survey Project: (c) 2016, Fryslan Webservices TM (http://survey.codeplex.com)
+	Survey Project: (c) 2016, W3DevPro TM (http://github.com/surveyproject)
 
 	NSurvey - The web survey and form engine
 	Copyright (c) 2004, 2005 Thomas Zumbrunn. (http://www.nsurvey.org)
@@ -18529,7 +18644,7 @@ INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [Fiel
 GO
 INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDatasource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (24, 1, N'FieldLargeType', 70, 10, 255, 210, NULL, 0, N'', N'', N'', N'Votations.NSurvey.WebControls.UI.AnswerFieldItem', N'SurveyProject.WebControls', NULL)
 GO
-INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDatasource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (27, 1, N'FieldHiddenType', 0, 0, 0, 20, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerFieldHIDdenItem', N'SurveyProject.WebControls', NULL)
+INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDatasource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (27, 1, N'FieldHiddenType', 0, 0, 0, 20, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerFieldHiddenItem', N'SurveyProject.WebControls', NULL)
 GO
 INSERT [dbo].[vts_tbAnswerType] ([AnswerTypeID], [BuiltIn], [Description], [FieldWidth], [FieldHeight], [FieldLength], [TypeMode], [XMLDatasource], [PublicFieldResults], [JavascriptFunctionName], [JavascriptCode], [JavascriptErrorMessage], [TypeNameSpace], [TypeAssembly], [DataSource]) VALUES (28, 1, N'FieldPasswordType', 20, 0, 0, 214, NULL, 0, NULL, NULL, NULL, N'Votations.NSurvey.WebControls.UI.AnswerFieldPasswordItem', N'SurveyProject.WebControls', NULL)
 GO

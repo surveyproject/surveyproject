@@ -1,20 +1,24 @@
-﻿using Microsoft.Reporting.WebForms;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using Votations.NSurvey.DataAccess;
 using Votations.NSurvey.SQLServerDAL;
+using Microsoft.Reporting.WebForms;
 
 namespace Votations.NSurvey.WebAdmin.NSurveyReports
 {
     public partial class SsrsReport : System.Web.UI.Page
     {
+        /// <summary>
+        /// reportViewer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected ReportViewer reportViewer;
+
         /// <summary>
         /// load page and set the conditions to fill and run the SSRS Report Test
         /// </summary>

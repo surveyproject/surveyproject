@@ -2312,7 +2312,7 @@
     <value>Toegang Enqu&#234;te</value>
   </data>
   <data version="1.0" id="830" name="InvalidPasswordMessage">
-    <value>Foutief wachtwoord!</value>
+    <value>Wachtwoord onjuist</value>
   </data>
   <data version="1.0" id="831" name="FieldRequiredMessage">
     <value>{0} is verplicht!</value>
@@ -2580,7 +2580,7 @@
       &lt;br /&gt;&lt;br /&gt;
 
       SURVEY&#8482; PROJECT is een initiatief van &lt;a href="http://www.w3devpro.com" title="W3DevPro Homepage" target="_blank"&gt;W3DevPro&#8482; &lt;/a&gt;, copyright (c)
-      2009/2018.
+      2009/2020.
       &lt;br /&gt;&lt;br /&gt;
       Survey&#8482; Project is gepubliceerd onder de &lt;a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.en.html" title="GPL" target="_blank"&gt;GNU GENERAL PUBLIC LICENSE v.3, 29 juni 2007&lt;/a&gt;.
       Een kopie van alle licenties die van toepassing zijn is te vinden in de map: SurveyWAP\ _Instructions\Licenses van deze applicatie.
@@ -3524,5 +3524,11 @@
   </data>
   <data version="2.5" id="2015" name="FilesDeletedMessage">
     <value>Bestanden Verwijderd</value>
+  </data>
+  <data version="2.5" id="2016" name="AnswerTypeDeletedMessage">
+    <value>AntwoordType Verwijderd</value>
+  </data>
+  <data version="2.5" id="2017" name="RegExInUse">
+    <value>RegEx in gebruik bij een of meer antwoorden. Om definitief te verwijderen eerst bij enquete antwoord verwijderen</value>
   </data>
 </root>

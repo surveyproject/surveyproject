@@ -9,7 +9,7 @@
       </XmlAnswer>     
       <XmlAnswer>
         <AnswerValue>Dokkum</AnswerValue>
-        <AnswerDescription>Dokkum</AnswerDescription>
+        <AnswerDescription>Dokkum / Dokkum</AnswerDescription>
       </XmlAnswer>
       <XmlAnswer>
         <AnswerValue>Leeuwarden</AnswerValue>
@@ -17,7 +17,7 @@
       </XmlAnswer>
       <XmlAnswer>
         <AnswerValue>Bolsward</AnswerValue>
-        <AnswerDescription>Bolsward</AnswerDescription>
+        <AnswerDescription>Bolsward / Boalserd</AnswerDescription>
       </XmlAnswer>
       <XmlAnswer>
         <AnswerValue>Ijlst</AnswerValue>
@@ -25,31 +25,31 @@
       </XmlAnswer>
       <XmlAnswer>
         <AnswerValue>Stavoren</AnswerValue>
-        <AnswerDescription>Stavoren</AnswerDescription>
+        <AnswerDescription>Stavoren / Starum</AnswerDescription>
       </XmlAnswer>
       <XmlAnswer>
         <AnswerValue>Workum</AnswerValue>
-        <AnswerDescription>Workum</AnswerDescription>
+        <AnswerDescription>Workum / Warkum</AnswerDescription>
       </XmlAnswer>
       <XmlAnswer>
         <AnswerValue>Sloten</AnswerValue>
-        <AnswerDescription>Sloten</AnswerDescription>
+        <AnswerDescription>Sloten / Sleat</AnswerDescription>
       </XmlAnswer>
       <XmlAnswer>
         <AnswerValue>Franeker</AnswerValue>
-        <AnswerDescription>Franeker</AnswerDescription>
+        <AnswerDescription>Franeker / Frentsjert</AnswerDescription>
       </XmlAnswer>
       <XmlAnswer>
         <AnswerValue>Harlingen</AnswerValue>
-        <AnswerDescription>Harlingen</AnswerDescription>
+        <AnswerDescription>Harlingen / Harns</AnswerDescription>
       </XmlAnswer>
       <XmlAnswer>
         <AnswerValue>Sneek</AnswerValue>
-        <AnswerDescription>Sneek</AnswerDescription>
+        <AnswerDescription>Sneek / Snits</AnswerDescription>
       </XmlAnswer>
       <XmlAnswer>
         <AnswerValue>Hindelopen</AnswerValue>
-        <AnswerDescription>Hindelopen</AnswerDescription>
+        <AnswerDescription>Hindelopen / Hylpen</AnswerDescription>
       </XmlAnswer>
     </XmlAnswers>
   </XmlDataSource>

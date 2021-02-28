@@ -48,7 +48,7 @@
                         <span id="LoadMessage" style="display:none;">Load Message Text: multiple clicks not allowed......</span>
                     </header>
 
-                <main id="SurveyBoxDiv" class="container panel panel-default">
+                <main id="SurveyBoxDiv" class="container panel panel-default" style="border:1px #ddd solid !important; border-radius:7px;">
 
                         <vts:SurveyBox ID="SurveyControl" CssClass="surveybox" EnableValidation="false" runat="server">
                             <QuestionStyle CssClass="questionStyle"></QuestionStyle>

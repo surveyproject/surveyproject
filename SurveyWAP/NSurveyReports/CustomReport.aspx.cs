@@ -106,7 +106,7 @@ namespace Votations.NSurvey.WebAdmin
 
                 HtmlGenericControl javascriptControl = new HtmlGenericControl("script");
                 javascriptControl.Attributes.Add("type", "text/Javascript");
-                javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/jquery-3.3.1.min.js"));
+                javascriptControl.Attributes.Add("src", ResolveUrl("~/Scripts/jquery-3.5.1.min.js"));
                 Page.Header.Controls.Add(javascriptControl);
 
                 Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));

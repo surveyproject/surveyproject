@@ -494,7 +494,7 @@ namespace Votations.NSurvey.WebControls
             HtmlGenericControl javascriptControl = new HtmlGenericControl("script");
 
             javascriptControl.Attributes.Add("id", "jq311");
-            javascriptControl.Attributes.Add("src", ResolveUrl(GlobalConfig.ScriptFilesPath + "/jquery-3.3.1.min.js"));
+            javascriptControl.Attributes.Add("src", ResolveUrl(GlobalConfig.ScriptFilesPath + "/jquery-3.5.1.min.js"));
             Page.Header.Controls.Add(javascriptControl);
 
             //For development purposes only: upgrade jquery
