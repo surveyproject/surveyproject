@@ -57,6 +57,13 @@
 
 */
 
+.bw {
+
+    font-size: 0.75em !important; 
+    line-height: 0.8 !important;
+    height: 25px;
+}
+
 /*Override computed CKE Editor CSS */
 .cke_reset
 {
@@ -115,7 +122,7 @@ select {
     background: #e80808;
     color: white;
 	
-	font-size: 0.9em;
+	font-size: 0.8em;
     padding: 5px 15px 7px 15px;
     
     border-radius: 7px;
@@ -241,7 +248,7 @@ select {
 
 /*ID: eicMsg*/
 .emailInvCodeMessage{
-            font-size: 1.2em;
+        /* font-size: 1.2em; */
         padding: 15px 0;
 }
 

@@ -274,7 +274,7 @@ table.TlcFront{background:url(../../images/PenSurvey.JPG) repeat-x center #fff;b
 .btnCssUpload{margin-top: -22px;}
 .buttonBack{float:left;margin:5px 15px}
 .buttonIndex{float:right;margin-right:15px;padding:0}
-.bw{float:right;font-size-adjust:.5;margin-right:10px;width:auto}
+.bw{float:right;font-size-adjust:.5;margin-right:10px;width:auto;line-height: 0.8 !important;height:25px;}
 .chkPrivs input{margin-right:3px}
 .chkPrivs td>input{width:4%}
 .chkPrivs td > label {

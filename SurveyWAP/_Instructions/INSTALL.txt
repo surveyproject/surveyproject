@@ -7,13 +7,13 @@ ________________________________________________________________________________
 1. SYSTEM REQUIREMENTS
 
 Client side:
-- Webbrowsers: tested on MS Edge 38.14393.1066.0 ; Firefox 53.* (32 bit) >; Chrome 58.* 
+- Webbrowsers: tested on MS Edge Version 88.0.705.81 (Official build) (64-bit) ; Firefox v. 86.0 (64-bit) >; Chrome Version 88.0.4324.190 (Official Build) (64-bit)
 
 Serverside:
-- .NET Framework 4.5 or higher must be installed
+- .NET Framework 4.6 or higher must be installed
 - IIS webserver (7.5 or higer)
 - SMTP mailserver account
-- MsSqlserver 2014 database or higher
+- MsSqlserver 2016 database or higher
 - supported Operating Systems are Windows10 or >, Windows Server 2012 or >
 - you must have administrator privileges on your computer 
 
@@ -31,7 +31,7 @@ Free software downloads available at http://www.asp.net/downloads/
 Option 1.
 - create a new Virtual Directory in IIS [e.g. 'SurveyProject'] which points to the fysical directory where the SurveyProject files are unzipped
 - make sure you have default.aspx specified as a Default Document for your Virtual Directory
-- set Asp.NET to version 4.5 (or higher) and "Pipeline mode: Integrated"
+- set Asp.NET to version 4.6 (or higher) and "Pipeline mode: Integrated"
 
 Option 2. 
 - Create a WebApplication in IIS and follow the steps of option 1.
@@ -40,19 +40,19 @@ Option 2.
 
 4. DATABASE
 
-"Existing DB installation"
+"New DB installation"
 
-Version Options 2014 or 2016
-- depending on the MSsqlserver version used select the appropriate Sql file
-- only the 2016 version is fully tested and supported
+Mssqlserver Version 2016
+- select the appropriate Sql file: SurveyProject_2.5_DBInstall_Mssql2016.sql
+- the 2016 version is fully tested and supported (also on Azure)
 
 
 - start MS SQL Server (using MsSqlserver Management Studio or your tool of choice )**
 - create a new empty database
 - open the appropriate Sql file (see version options) from the '_DatabaseSql' SP website directory in a query window
-- change USE [yourdatabasename] command to the name of your database
+- direct querywindow to the new database: USE [yourdatabasename] command to the name of your database
 - run the SQL query
-- check to see if the database was created correctly (warning messages can be ignored)
+- check to see if the database was created correctly without errors (warning messages can be ignored)
 
 *Notes: 
 	o to upgrade an existing SP 2.4 database use the  with the 2.5 scripts in the directory _DatabaseSql\UpgradeFiles
@@ -111,7 +111,7 @@ of the root application directory (this allows the application to create files/f
 
 10. INITIAL LOGIN
 - On first starting the webapplication an initial administrator account is created from the username / password entered into the login textboxes. 
-The password is saved to the database encrypted and cannot be recovered if lost or forgotten. 
+- The password is saved to the database encrypted and cannot be recovered if lost or forgotten. 
 
 ________________________________________________________________________________________________
 
@@ -128,13 +128,12 @@ Webfiles:
 
 
 Database:
-- check the _DatabaseSql/UpgradeFiles24_25 directory for a description of changes and available upgrade files
+- check the _DatabaseSql/UpgradeFiles24_25 directory for a description of changes and available .SQL upgrade files
 
 
 Surveys:
 - Surveys, questions and answers created in 2.4 can be exported to XML and imported into the 2.5 version. 
 - Manual corrections to the XML files may be necessary;
-
 
 
 ________________________________________________________________________________________________
@@ -178,6 +177,7 @@ e. MISCELLANEOUS SETTINGS
 		* Set timeout on Uploaded Files
 		* Set session timeout on uploaded Files
  
+ NOTE:
 	- on submit the NsurveySettings section (including Smtp) of the web.config file will be encrypted
 	- to unencrypt the NsurveySettings section of the web.config file click button Decrypt
 	
@@ -196,11 +196,11 @@ To make changes to the CKEditor or Filemanager settings check the ReadMe.MD file
 
 ________________________________________________________________________________________________
 
-Survey™ Form Samples
+Survey™ Samples
 ________________________________________________________________________________________________
 
 
-- Sample Survey forms can be found in the _SurveySamples directory
+- Sample Surveys can be found in the _SurveySamples directory
 - Import the xml files through the Surveys/Survey New menu options
 
 ________________________________________________________________________________________________

@@ -12,7 +12,7 @@
 
     <meta name="DESCRIPTION" content="SurveyProject&trade;  is a free and open source survey and (data entry) forms webapplication for processing & gathering data online." />
     <meta name="KEYWORDS" content="surveyproject, survey, webform, questionnaire, nsurvey, w3devpro" />
-    <meta name="COPYRIGHT" content=" 2017 &lt;href='http://www.w3devpro.com'>W3DevPro&lt;/a>" />
+    <meta name="COPYRIGHT" content=" 2021 &lt;href='http://www.w3devpro.com'>W3DevPro&lt;/a>" />
     <meta name="GENERATOR" content="SurveyProject&trade; " />
     <meta name="AUTHOR" content="W3DevPro" />
 
@@ -69,7 +69,7 @@
       <br />
 
     <br />
-    <hr style="color:#e2e2e2;"/><br /><br />&copy; W3DevPro&trade; 2018
+    <hr style="color:#e2e2e2;"/><br /><br />&copy; W3DevPro&trade; <%=DateTime.Now.Year%>
   </div>
     </form>
 </body>

@@ -58,6 +58,17 @@ namespace Votations.NSurvey.WebAdmin
                         Response.Redirect("NonexistentPage-NoCatch.aspx/" + new string('x', 500));
                         break;
                     }
+                case "7":
+                    {
+                        //throw new HttpException(403, "HTTP 403 Test Exception");
+
+                        Response.Clear();
+                        Response.StatusCode = 403;
+                        Response.TrySkipIisCustomErrors = true;
+                        Response.End();
+
+                        break;
+                    }
             }
         }
 

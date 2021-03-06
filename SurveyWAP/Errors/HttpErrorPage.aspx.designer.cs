@@ -22,31 +22,31 @@ namespace Votations.NSurvey.WebAdmin {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// InnerErrorPanel control.
+        /// FriendlyErrorMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel InnerErrorPanel;
+        protected global::System.Web.UI.WebControls.Label FriendlyErrorMsg;
         
         /// <summary>
-        /// innerMessage control.
+        /// DetailedErrorPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label innerMessage;
+        protected global::System.Web.UI.WebControls.Panel DetailedErrorPanel;
         
         /// <summary>
-        /// innerTrace control.
+        /// ErrorDetailedMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label innerTrace;
+        protected global::System.Web.UI.WebControls.Label ErrorDetailedMsg;
         
         /// <summary>
         /// ErrorHandler control.
@@ -58,21 +58,21 @@ namespace Votations.NSurvey.WebAdmin {
         protected global::System.Web.UI.WebControls.Label ErrorHandler;
         
         /// <summary>
-        /// exMessage control.
+        /// InnerMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label exMessage;
+        protected global::System.Web.UI.WebControls.Label InnerMessage;
         
         /// <summary>
-        /// exTrace control.
+        /// InnerTrace control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label exTrace;
+        protected global::System.Web.UI.WebControls.Label InnerTrace;
     }
 }

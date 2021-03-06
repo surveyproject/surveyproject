@@ -13,57 +13,81 @@ namespace Votations.NSurvey.WebAdmin
     public partial class HttpErrorPage : System.Web.UI.Page
     {
 
-        protected HttpException ex = null;
+        protected HttpException exc = null;
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
 
-                ex = (HttpException)Server.GetLastError();
-                int httpCode = ex.GetHttpCode();
+            // Create safe error messages.
+            string generalErrorMsg =    "A problem has occurred on this web site. Please try again. " +
+                                        "If this error continues, please contact support.";
+            string httpErrorMsg =       "An HTTP error occurred. Page Not found. Please try again.";
+            string unhandledErrorMsg = "The error was unhandled by application code.";
 
-                // Filter for Error Codes and set text
-                if (httpCode >= 400 && httpCode < 500)
-                    ex = new HttpException
-                        (httpCode, "A HTTP Error occured in the 4xx HTTP code range: Client Error.", ex);
-                else if (httpCode > 499)
-                    ex = new HttpException
-                        (ex.ErrorCode, "A HTTP Error occured in the 5xx HTTP code range: Internal Server Error.", ex);
-                else
-                    ex = new HttpException
-                        (httpCode, "A HTTP Error occured with an unexpected HTTP code.", ex);
+            // Display safe error message.
+            FriendlyErrorMsg.Text = generalErrorMsg;
 
 
             // Determine where error was handled.
             string errorHandler = Request.QueryString["handler"];
             if (errorHandler == null)
             {
-                errorHandler = "Error Page";
+                errorHandler = "Http Error Page";
             }
 
-            // Show where the error was handled.
+            // Get the last error from the server.
+            Exception ex = Server.GetLastError();
+
+            // Get the error number passed as a querystring value.
+            string errorMsg = Request.QueryString["msg"];
+            if (errorMsg == "404")
+            {
+                exc = new HttpException(404, httpErrorMsg, ex);
+                FriendlyErrorMsg.Text = exc.Message;
+            }
+
+            // If the exception no longer exists, create a generic exception.
+            if (exc == null)
+            {
+                exc = new HttpException(unhandledErrorMsg);
+            }
+
+            // Show error details to only you (developer). LOCAL ACCESS ONLY.
+            if (Request.IsLocal)
+            {
+                // Detailed Error Message.
+                ErrorDetailedMsg.Text = exc.Message;
+
+                // Show where the error was handled.
                 ErrorHandler.Text = errorHandler;
 
-            // Fill the page fields
-                exMessage.Text = ex.Message;
-                exTrace.Text = ex.StackTrace;
+                // Show local access details.
+                DetailedErrorPanel.Visible = true;
 
-                // Show Inner Exception fields for local access
-                if (ex.InnerException != null)
+                if (exc.InnerException != null)
                 {
-                    innerTrace.Text = ex.InnerException.StackTrace;
-                    InnerErrorPanel.Visible = Request.IsLocal;
-                    innerMessage.Text = string.Format("HTTP [{0}] CODE: {1}", httpCode, ex.InnerException.Message);
+                    InnerMessage.Text = exc.GetType().ToString() + "<br/>" +
+                        exc.InnerException.Message;
+                    InnerTrace.Text = exc.InnerException.StackTrace;
                 }
-                // Show Trace for local access
-                exTrace.Visible = Request.IsLocal;
+                else
+                {
+                    InnerMessage.Text = exc.GetType().ToString();
+                    if (exc.StackTrace != null)
+                    {
+                        InnerTrace.Text = exc.StackTrace.ToString().TrimStart();
+                    }
+                }
+            }
 
-            // Log the exception and notify system operators
-            ExceptionUtility.LogException(ex, errorHandler + " / HttpCode: " + httpCode);
-            ExceptionUtility.NotifySystemOps(ex);
+            // Log the exception.
+            ExceptionUtility.LogException(exc, errorHandler);
+            ExceptionUtility.NotifySystemOps(exc);
 
-            // Clear the error from the server
+            // Clear the error from the server.
             Server.ClearError();
+
 
         }
     }

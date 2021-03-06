@@ -14,12 +14,12 @@ namespace Votations.NSurvey.WebAdmin.Errors
         {
 
             // Create safe error messages.
-            string generalErrorMsg = "An error or suspicious activity has been detected. Please try again. " +
+            string generalErrorMsg = "An error has been detected. Please try again. " +
                 "If the issue continues for unknown reasons, contact support.";
 
             string httpErrorMsg = "An HTTP error occurred. Page Not found. Please try again.";
 
-            string unhandledErrorMsg = "The (unknown) error was unhandled by application code.";
+            string unhandledErrorMsg = "The (unknown) error was unhandled by the application code.";
 
             // Display safe error message.
             FriendlyErrorMsg.Text = generalErrorMsg;
@@ -28,7 +28,7 @@ namespace Votations.NSurvey.WebAdmin.Errors
             string errorHandler = Request.QueryString["handler"];
             if (errorHandler == null)
             {
-                errorHandler = "Error Page";
+                errorHandler = "Detailed Error Page";
             }
 
             // Get the last error from the server.
@@ -79,6 +79,7 @@ namespace Votations.NSurvey.WebAdmin.Errors
 
             // Log the exception.
             ExceptionUtility.LogException(ex, errorHandler);
+           // ExceptionUtility.NotifySystemOps(ex);
 
             // Clear the error from the server.
             Server.ClearError();

@@ -31,6 +31,7 @@ using Votations.NSurvey.BusinessRules;
 using Votations.NSurvey.WebAdmin.UserControls;
 using MetaBuilders.WebControls;
 using Votations.NSurvey.WebAdmin.NSurveyAdmin;
+using Votations.NSurvey.WebAdmin.Code;
 
 namespace Votations.NSurvey.WebAdmin
 {
@@ -410,10 +411,15 @@ namespace Votations.NSurvey.WebAdmin
 			if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
 			{
 				HyperLink reportLink = new HyperLink();
-				reportLink.NavigateUrl = string.Format("{0}?surveyid={1}&voterid={2}",
-					UINavigator.VoterReport,SurveyId, DataBinder.Eval(e.Item.DataItem,"VoterId"));
-					//reportLink.Text = GetPageResource("ViewReport");
+
+                //encrypt parameters and urlencode
+                var voterIdEnc = HttpUtility.UrlEncode(QueryStringModule.EncryptString(DataBinder.Eval(e.Item.DataItem, "VoterId").ToString()));
+
+                reportLink.NavigateUrl = string.Format("{0}?surveyid={1}&voterid={2}", UINavigator.VoterReport,SurveyId, voterIdEnc);
+
+                //reportLink.Text = GetPageResource("ViewReport");
                 reportLink.Text = "<img src='../Images/view.png'>";
+
 				e.Item.Cells[1].Controls.Add(reportLink);
 			}
 		}

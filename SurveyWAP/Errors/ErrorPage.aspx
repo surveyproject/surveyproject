@@ -12,7 +12,7 @@
 
     <meta name="DESCRIPTION" content="SurveyProject&trade;  is a free and open source survey and (data entry) forms webapplication for processing & gathering data online." />
     <meta name="KEYWORDS" content="surveyproject, survey, webform, questionnaire, nsurvey, w3devpro" />
-    <meta name="COPYRIGHT" content=" 2017 &lt;href='http://www.w3devpro.com'>W3DevPro&lt;/a>" />
+    <meta name="COPYRIGHT" content=" 2021 &lt;href='http://www.w3devpro.com'>W3DevPro&lt;/a>" />
     <meta name="GENERATOR" content="SurveyProject&trade; " />
     <meta name="AUTHOR" content="W3DevPro" />
 
@@ -60,7 +60,7 @@
                 </a>
 
             </div>    <br /><br />
-    <h2>Survey&trade; Project Error Page</h2>
+    <h2>Survey&trade; Project - Error Page</h2>
 
     <p></p>
     <asp:Label ID="FriendlyErrorMsg" runat="server" Text="Label" Font-Size="Large" style="color: red"></asp:Label>
@@ -86,7 +86,7 @@
         </p>
     </asp:Panel>
           <br />
-    <hr style="color:#e2e2e2;"/><br /><br />&copy; W3DevPro&trade; 2018
+    <hr style="color:#e2e2e2;"/><br /><br />&copy; W3DevPro&trade; <%=DateTime.Now.Year%>
         </div>
     </form>
 </body>

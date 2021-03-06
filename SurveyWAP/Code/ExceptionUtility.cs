@@ -5,6 +5,7 @@ using Votations.NSurvey.Data;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Net;
 
 namespace Votations.NSurvey.WebAdmin.Code
 {
@@ -17,9 +18,10 @@ namespace Votations.NSurvey.WebAdmin.Code
         // Log an Exception
         public static void LogException(Exception exc, string source)
         {
-            // Include enterprise logic for logging exceptions
-            // Get the absolute path to the log file
-            string logFile = "~/App_Data/ErrorLog.txt";
+
+                // Include enterprise logic for logging exceptions
+                // Get the absolute path to the log file
+                string logFile = "~/App_Data/ErrorLog.txt";
             logFile = HttpContext.Current.Server.MapPath(logFile);
 
             // Open the log file for append and write the log
@@ -42,13 +44,21 @@ namespace Votations.NSurvey.WebAdmin.Code
             sw.Write("Exception Type: ");
             sw.WriteLine(exc.GetType().ToString());
             sw.WriteLine("Exception Message: " + exc.Message);
-            sw.WriteLine("Source: " + source);
+            sw.WriteLine("Source/ ErrorHandler: " + source);
             sw.WriteLine("Stack Trace: ");
             if (exc.StackTrace != null)
             {
                 sw.WriteLine(exc.StackTrace);
                 sw.WriteLine();
             }
+
+            if (exc.GetType() == typeof(HttpException))
+            {
+                var httpException = exc as HttpException;
+                int statusCode = httpException != null ? httpException.GetHttpCode() : (int)HttpStatusCode.InternalServerError;
+                sw.WriteLine("StatusCode: " + statusCode);
+            }            
+
             sw.Close();
         }
 
@@ -86,14 +96,37 @@ namespace Votations.NSurvey.WebAdmin.Code
             EmailingMessage mail = new EmailingMessage();
             mail.FromEmail = EmailConfig.NSurveySMTPServerAuthUserName;
 
-            mail.Body = "Survey Project Warning Message: Global Page Error details."
+            string iEstacktrace = "no Internal Stacktrace";
+            string eStacktrace = "no Stacktrace";
+
+            if (exc.InnerException != null)
+            {
+
+                if (exc.InnerException.StackTrace != null)
+                    iEstacktrace = exc.InnerException.StackTrace;
+
+                if (exc.StackTrace != null)
+                    eStacktrace = exc.StackTrace;
+
+                mail.Body = "Survey Project Warning Message: Global Page Error details."
                 + "<br /><br />Inner Exception Type: " + exc.InnerException.GetType().ToString()
                 + "<br /><br />Inner Exception: " + exc.InnerException.Message
                 + "<br /><br />Inner Source: " + exc.InnerException.Source
-                + "<br /><br />Inner Stack Trace: " + exc.InnerException.StackTrace
+                + "<br /><br />Inner Stack Trace: " + iEstacktrace
                 + "<br /><br />Exception Type: " + exc.GetType().ToString()
                 + "<br /><br />Exception: " + exc.Message
-                + "<br /><br />Stack Trace: " + exc.StackTrace;
+                + "<br /><br />Stack Trace: " + eStacktrace;
+            }
+            else
+
+               if (exc.StackTrace != null)
+                eStacktrace = exc.StackTrace;
+
+            mail.Body = "Survey Project Warning Message: Global Page Error details."
+                + "<br /><br />Exception Type: " + exc.GetType().ToString()
+                + "<br /><br />Exception: " + exc.Message
+                + "<br /><br />Source: " + exc.Source
+                + "<br /><br />Stack Trace: " + eStacktrace;
 
             mail.Subject = "Survey Project Warning Message: Global Page Error";
             mail.ToEmail = EmailConfig.NSurveySMTPServerAuthUserName;

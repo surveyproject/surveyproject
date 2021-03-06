@@ -46,8 +46,8 @@
                                        </div>
                                          </li><li>
                                            
-                                             <asp:Button CssClass="btn btn-primary btn-xs" ID="PreviousPageButton" runat="server" />&nbsp; &nbsp;
-                                             <asp:Button CssClass="btn btn-primary btn-xs" ID="NextPageButton" runat="server" />
+                                             <asp:Button CssClass="btn bw btn-primary btn-xs" ID="PreviousPageButton" runat="server" />&nbsp; &nbsp;
+                                             <asp:Button CssClass="btn bw btn-primary btn-xs" ID="NextPageButton" runat="server" />
 
 
                                              <br />

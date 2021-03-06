@@ -12,7 +12,7 @@
 
     <meta name="DESCRIPTION" content="SurveyProject&trade;  is a free and open source survey and (data entry) forms webapplication for processing & gathering data online." />
     <meta name="KEYWORDS" content="surveyproject, survey, webform, questionnaire, nsurvey, w3devpro" />
-    <meta name="COPYRIGHT" content=" 2017 &lt;href='http://www.w3devpro.com'>W3DevPro&lt;/a>" />
+    <meta name="COPYRIGHT" content=" 2021 &lt;href='http://www.w3devpro.com'>W3DevPro&lt;/a>" />
     <meta name="GENERATOR" content="SurveyProject&trade; " />
     <meta name="AUTHOR" content="W3DevPro" />
 
@@ -70,27 +70,33 @@
       <br /><br />
       <div>
 
-    <asp:Panel ID="InnerErrorPanel" runat="server" Visible="false">
-      <asp:Label ID="innerMessage" runat="server" Font-Bold="true" Font-Size="Large" /><br /><br />
-      Inner Trace: <code><asp:Label ID="innerTrace" runat="server" /></code>
+    <asp:Label ID="FriendlyErrorMsg" runat="server" Text="Label" Font-Size="Large" style="color: red"></asp:Label>
+
+    <asp:Panel ID="DetailedErrorPanel" runat="server" Visible="false">
+        <p>&nbsp;</p>
+        <h4>Detailed Error:</h4>
+        <p>
+            <asp:Label ID="ErrorDetailedMsg" runat="server" Font-Size="Small" /><br />
+        </p>
 
         <h4>Error Handler:</h4>
         <p>
             <asp:Label ID="ErrorHandler" runat="server" Font-Size="Small" /><br />
         </p>
 
+        <h4>Detailed Error Message:</h4>
+        <p>
+            <asp:Label ID="InnerMessage" runat="server" Font-Size="Small" /><br />
+        </p>
+        <p>
+            <asp:Label ID="InnerTrace" runat="server"  />
+        </p>
     </asp:Panel>
-          <br />
-          <br />
-    Error Message: <asp:Label ID="exMessage" runat="server" Font-Bold="true" Font-Size="Medium" />
-    <pre>
-      <asp:Label ID="exTrace" runat="server" Visible="false" />
-    </pre>
 
   </div>
 
     <br />
-    <hr style="color:#e2e2e2;"/><br /><br />&copy; W3DevPro&trade; 2018
+    <hr style="color:#e2e2e2;"/><br /><br />&copy; W3DevPro&trade; <%=DateTime.Now.Year%>
   </div>
   </form>
 </body>

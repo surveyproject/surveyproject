@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Web;
 using Votations.NSurvey.WebAdmin.Code;
 
@@ -35,66 +36,74 @@ namespace SurveyWAP
         /// <param name="e"></param>
         void Application_Error(object sender, EventArgs e)
         {
-            // https://msdn.microsoft.com/en-us/library/24395wz3.aspx
-            // Code that runs when an unhandled error occurs
+        //    // https://msdn.microsoft.com/en-us/library/24395wz3.aspx
+        //    // Code that runs when an unhandled error occurs
 
-            // Get the exception object.
-            Exception exc = Server.GetLastError();
+        //    // Get the exception object.
+                Exception exc = Server.GetLastError();
 
-            // Handle HTTP errors
+
             if (exc.GetType() == typeof(HttpException))
             {
-                //NOTE: code redirect per httpcode
-                //HttpException ex = (HttpException)Server.GetLastError();
-                //if(ex.GetHttpCode() == 404)
-                //{
-                //    Server.Transfer("~/Errors/ErrorPage.aspx?msg=404&amp;handler=Application_Error%20-HttpError-%20Global.asax", true);
-                //}
+                
+                Server.Transfer("~/Errors/ErrorPage.aspx?handler=Application_Error%20-HttpError-%20Global.asax", true);
 
-                Server.Transfer("~/Errors/HttpErrorPage.aspx?handler=Application_Error%20-HttpError-%20Global.asax", true);
-            }
+               // var httpException = exc as HttpException;
+
+                //Response.Clear();
+                //Response.StatusCode = httpException != null ? httpException.GetHttpCode() : (int)HttpStatusCode.InternalServerError;
+                //Response.End();
+
+
+            } else
+
+                //02 Invalid or illegal Login attempt:
+                if (exc is HttpRequestValidationException)
+                {
+                    Server.Transfer("~/Errors/ErrorPage.aspx?msg=401&amp;handler=Application_Error%20HttpRequestValidationException%20-%20Global.asax", true);
+
+                     //Response.Clear();
+                     //Response.StatusCode = 401;
+                     //Response.End();
+
+            } else
+
+
+                // 03 Handle Invalid Operation exceptions - includes error details
+                if (exc.GetBaseException() is InvalidOperationException)
+                {
+                    Server.Transfer("~/Errors/ErrorPage.aspx?handler=Application_Error%20-%20InvalidOperationException%20-%20Global.asax", true);
+                } else
+
+                // 04 Handle AoR exceptions
+                if (exc.GetBaseException() is ArgumentOutOfRangeException)
+                {
+                    Server.Transfer("~/Errors/ErrorPage.aspx?handler=Application_Error%20AoRException%20-%20Global.asax", true);
+                } else
             
-            //Invalid or illegal Login attempt:
-            if (exc is HttpRequestValidationException)
-            {
-                Server.Transfer("~/Errors/ErrorPage.aspx?handler=Application_Error%20HttpRequestValidationException%20-%20Global.asax", true);
-
-                Response.Clear();
-                Response.StatusCode = 200;
-                Response.End();
-            }
-            
-
-            // Handle Invalid Operation exceptions
-            if (exc.GetBaseException() is InvalidOperationException)
-            {
-
-                Server.Transfer("~/Errors/ErrorPage.aspx?handler=Application_Error%20InvalidOperationException%20-%20Global.asax", true);
-
-            }
-
-            // Handle AoR exceptions
-            if (exc.GetBaseException() is ArgumentOutOfRangeException)
-            {
-                Server.Transfer("~/Errors/ErrorPage.aspx?handler=Application_Error%20AoRException%20-%20Global.asax", true);
-            }
 
             // For all other kinds of errors
-            Server.Transfer("~/Errors/ErrorPage.aspx?handler=Application_Error%20Generic%20-%20Global.asax", true);
+                 Server.Transfer("~/Errors/ErrorPage.aspx?handler=Application_Error%20-%20Generic%20-%20Global.asax", true);
 
-            // Determine where error was handled.
-            string errorHandler = Request.QueryString["handler"];
+            // END of errorpages list
 
-            if (errorHandler == null)
-            {
-                errorHandler = "Application_Error UNKNOWN Global.asax";
-            }
 
-            // Log the exception and notify system operators
-            ExceptionUtility.LogException(exc, errorHandler);
+
+            //    // Determine where error was handled.
+            //    string errorHandler = Request.QueryString["handler"];
+
+            //    if (errorHandler == null)
+            //    {
+            //        errorHandler = "Application_Error UNKNOWN Global.asax";
+            //    }
+
+            //    // Log the exception and notify system operators - see errorpage code
+            //    // ExceptionUtility.LogException(exc, errorHandler);
+
+           // Send mail to Admin account - see errorpage code
             ExceptionUtility.NotifySystemOps(exc);
 
-           // Clear the error from the server
+            //    // Clear the error from the server
             Server.ClearError();
             
 

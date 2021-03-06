@@ -63,6 +63,13 @@
         Text="Button 6" />
     </p>
 
+                <p>
+      Click this button to create an HTTP code XXX error.<br /><br />
+      <asp:Button ID="Button2" runat="server" 
+        CommandArgument="7" OnClick="Submit_Click"
+        Text="Button 7" />
+    </p>
+
         </div>
     </form>
 </body>
