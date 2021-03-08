@@ -89,7 +89,7 @@ b* default calculation format
 
 19. Adjusted Stored procedure: SpVoterDeleteAll - batch delete: adjusted to avoid timeouts and exploding db log files; used when deleting all voters from the statistics page.
 
-20. Delete of two answertypes making use of (deprecated and redundante) javascript
+20. Delete of two answertypes making use of (deprecated and redundant) javascript
 
 21. Adjusted Stored Procedure to make the menu Filemanager webpage work correctly (paging/ list of files)
 
@@ -100,7 +100,7 @@ b* default calculation format
 23. - 31. 
 Modified Stored Procedures to correctly apply displayorder value to Matrix child questions (including export/import etc)
 
-
+32. Batch (100) delete voters through Statistics page to prevent timeout and exponential DB log growth
 
 
 

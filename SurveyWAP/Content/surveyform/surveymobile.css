@@ -136,7 +136,12 @@ select {
 /*ID: SurveyBoxDiv*/
 
 /*ID:SurveyControl */
-.surveybox{}
+.surveybox {
+
+    display: flex;
+    align-items: unset;
+    flex-direction: column-reverse;
+}
 
 /*ID: SurveyControl_bsbQCP*/
 .questionContainerWrapper{}
@@ -619,6 +624,7 @@ span.answerTextRender > div:nth-child(2)
     width: 100%;
     border-radius: 7px;
     margin-bottom: 10px;
+    margin-top: 15px;
 }
 
 /* END RESUME PROGRESS */

@@ -16,7 +16,7 @@ ________________________________________________________________________________
 
 New Features & Fixes:
 
-- Read the PDF document 'SP25_Features&Fixes_v1_20170518.pdf' for a complete and detailed overview of all changes and fixes.
+- Read the PDF document 'SurveyProject_NewFeaturesFixes_Overview_v1_20210308.pdf' for a complete overview of all changes.
 
 For information and questions visit the Survey™ Project community site at http://www.surveyproject.org.
 
@@ -34,7 +34,7 @@ ________________________________________________________________________________
 
 Instructions "Survey™ Project 2.5 Install package" - NEW INSTALLATION/ UPGRADE EXISTING INSTALLATION
 
-- Check the INSTALL.txt file for complete instructions.
+- Check the INSTALL.txt file for complete instructions or use the detailed Installation Guide (pdf).
 
 ________________________________________________________________________________________________
 

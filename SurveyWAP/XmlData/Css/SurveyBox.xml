@@ -99,6 +99,9 @@
   <data version="2.4" id="erUM" name="EnterResumeUIdMessage">
     <value />
   </data>
+    <data version="2.4" id="rcPanel" name="BuildSaveProgressConfirmSubPanel">
+      <value>cmStyle</value>
+  </data>    
   <data version="2.4" id="bsbP" name="BuildSubmitButtonPanel">
     <value>pageButtonRow</value>
   </data>

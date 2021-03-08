@@ -1406,29 +1406,37 @@ namespace Votations.NSurvey.WebControls
             this.VoterAnswers.Voters[0].ResumeQuestionNumber = this.QuestionNumber;
             this.VoterAnswers.Voters[0].ResumeHighestPageNumber = this.HighestPageNumber;
             this.OnSessionSaving(new FormSessionEventArgs(this.VoterAnswers, this.VoterAnswers.Voters[0].ResumeUID));
+
+            // new panel - replace table
+            this._questionPanel = Votations.NSurvey.BE.Votations.NSurvey.Constants.Commons.GetMainPercentagePanel();
+            Panel subpanel = new Panel { CssClass = CssXmlManager.GetString("BuildSaveProgressConfirmSubPanel"), ID = "rcPanel" };
+
             if (this._resumeMode == ResumeMode.Automatic)
             {
                 string text = this.SaveResumeUidToMedium(this.VoterAnswers.Voters[0].ResumeUID);
                 if (text == null)
                 {
                     new Voter().SaveVoterProgress(this.VoterAnswers);
-                    this._questionContainer.Rows[1].ControlStyle.CopyFrom(this.ConfirmationMessageStyle);
-                    this._questionContainer.Rows[1].ID = "rcRow";
-                    this._questionContainer.Rows[1].Cells[0].Controls.Add(new LiteralControl(ResourceManager.GetString("ProgressSaved", this.LanguageCode)));
+
+                    // add to subpanel:
+                     subpanel.Controls.Add(new LiteralControl(ResourceManager.GetString("ProgressSaved", this.LanguageCode)));
+                     Controls.Add(subpanel);
+
                     this.OnSessionSaved(new FormSessionEventArgs(this.VoterAnswers, this.VoterAnswers.Voters[0].ResumeUID));
                 }
                 else
                 {
-                    this._questionContainer.Rows[1].ControlStyle.CopyFrom(this.QuestionValidationMessageStyle);
-                    this._questionContainer.Rows[1].ID = "rcRow";
-                    this._questionContainer.Rows[1].Cells[0].Controls.Add(new LiteralControl(text));
+                    // add to subpanel:
+                    subpanel.Controls.Add(new LiteralControl(text));
+                    Controls.Add(subpanel);
+
                 }
             }
             else
-            {
-                this._questionContainer.Rows[1].ControlStyle.CopyFrom(this.ConfirmationMessageStyle);
-                this._questionContainer.Rows[1].ID = "rcRow";
-                this._questionContainer.Rows[1].Cells[0].Controls.Add(new LiteralControl(string.Format(ResourceManager.GetString("ManualProgressSaved", this.LanguageCode), this.VoterAnswers.Voters[0].ResumeUID)));
+            {   // add to subpanel:
+                subpanel.Controls.Add(new LiteralControl(string.Format(ResourceManager.GetString("ManualProgressSaved", this.LanguageCode), this.VoterAnswers.Voters[0].ResumeUID)));
+                Controls.Add(subpanel);
+
                 new Voter().SaveVoterProgress(this.VoterAnswers);
                 this.OnSessionSaved(new FormSessionEventArgs(this.VoterAnswers, this.VoterAnswers.Voters[0].ResumeUID));
             }
