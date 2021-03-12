@@ -1,7 +1,7 @@
 ﻿_______________________________________________________________________
 
 
-Databasechanges & Update for SP v. 2.4 to SP v. 2.5
+Database changes & updates for SP v. 2.4 to SP v. 2.5
 
 _______________________________________________________________________
 
@@ -94,8 +94,6 @@ b* default calculation format
 21. Adjusted Stored Procedure to make the menu Filemanager webpage work correctly (paging/ list of files)
 
 22. Regular Expression in Use (Answer)
-
---- 2020/03
 
 23. - 31. 
 Modified Stored Procedures to correctly apply displayorder value to Matrix child questions (including export/import etc)

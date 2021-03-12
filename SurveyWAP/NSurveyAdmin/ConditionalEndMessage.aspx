@@ -1,7 +1,6 @@
 ﻿
 <%@ Page language="c#" MasterPageFile="MsterPageTabs.master"   ValidateRequest="false"	AutoEventWireup="false" Inherits="Votations.NSurvey.WebAdmin.ConditionalEndMessage" Codebehind="ConditionalEndMessage.aspx.cs" %>
 
-
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
         <div id="Panel" class="Panel">

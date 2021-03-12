@@ -3351,7 +3351,7 @@
     <value>Lesen Sie die Hilfedateien zur Verwendung von SurveyBox Custom Webcontrol</value>
   </data>
   <data version="2.5" id="1177" name="AdminCreatedMessage">
-    <value>Account erstellt. Bitte einloggen.</value>
+    <value>Account erstellt</value>
   </data>
   <data version="2.5" id="1178" name="MultilanguagesStatsLiteral">
     <value>Aktive Sprachen:</value>

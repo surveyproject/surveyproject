@@ -3577,7 +3577,7 @@
     <value>Plus d'informations sur l'utilisation du contrôle Web personnalisé SurveyBox sur .....</value>
   </data>
   <data version="2.5" id="1177" name="AdminCreatedMessage">
-    <value>Compte créé. Veuillez vous connecter.</value>
+    <value>Compte créé</value>
   </data>
   <data version="2.5" id="1178" name="MultilanguagesStatsLiteral">
     <value>Langues actives:</value>

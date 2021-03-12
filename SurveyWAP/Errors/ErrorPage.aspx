@@ -1,5 +1,4 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ErrorPage.aspx.cs" Inherits="Votations.NSurvey.WebAdmin.Errors.ErrorPage" %>
-
 <!DOCTYPE html>
 <html>
 <head runat="server">

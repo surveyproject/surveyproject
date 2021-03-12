@@ -63,7 +63,7 @@
         }                
     </script>
 
-        <!-- Part of Bootstrap Installation -->
+    <!-- Part of Bootstrap Installation -->
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -73,17 +73,14 @@
 
 </head>
 <body>
-
 <!-- Tooltip Tipsy Jquery script -->
-      <script type="text/javascript">
+   <script type="text/javascript">
           $(function () {
               $('#tooltip [title]').tipsy({ trigger: 'focus', gravity: 'w' });
           });
   </script>
 
-
     <div id="container">
-
         <form id="MasterForm" runat="server" method="post">
 
             <div id="Top">
@@ -112,7 +109,6 @@
 
             <div id="banners" class="banners" runat="server" visible="true">
 
-
                 <div class="Social-Links">
                     <a href="http://www.facebook.com/surveyproject" target="_blank" title="SP Facebook">
                         <span class="fa fa-facebook-square"></span></a>
@@ -124,7 +120,6 @@
                         <span class="fa fa-youtube"></span></a>                    
                 </div>
 
-                
                 <h5 id="Theme" runat="server" style="color: #5bc0de; margin-top:5px;">The open source webapplication to create and publish surveys and webforms online.</h5>
 
                 <div title="Survey&#8482; Project Login">
@@ -177,7 +172,6 @@
         <div id="Default" class="defaultDiv">
 
                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="Server"></asp:ContentPlaceHolder>
-
                <uc1:FooterControl ID="Footercontrol1" runat="server"></uc1:FooterControl>
 
         </div>

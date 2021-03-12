@@ -3578,7 +3578,7 @@
     <value>SurveyBox Custom Webcontrol'ü nasıl kullanacağınızı öğrenmek için Yardım'a bakınız</value>
   </data>
   <data version="2.5" id="1177" name="AdminCreatedMessage">
-    <value>Hesap oluşturuldu. Lütfen giriş yapınız.</value>
+    <value>Hesap oluşturuldu</value>
   </data>
   <data version="2.5" id="1178" name="MultilanguagesStatsLiteral">
     <value>Aktif Lisanlar:</value>

@@ -36,24 +36,21 @@ namespace SurveyWAP
         /// <param name="e"></param>
         void Application_Error(object sender, EventArgs e)
         {
-        //    // https://msdn.microsoft.com/en-us/library/24395wz3.aspx
-        //    // Code that runs when an unhandled error occurs
+            // https://msdn.microsoft.com/en-us/library/24395wz3.aspx
+            // Code that runs when an unhandled error occurs
 
-        //    // Get the exception object.
-                Exception exc = Server.GetLastError();
+            // Get the exception object.
 
+            Exception exc = Server.GetLastError();
 
             if (exc.GetType() == typeof(HttpException))
             {
-                
                 Server.Transfer("~/Errors/ErrorPage.aspx?handler=Application_Error%20-HttpError-%20Global.asax", true);
 
                // var httpException = exc as HttpException;
-
                 //Response.Clear();
                 //Response.StatusCode = httpException != null ? httpException.GetHttpCode() : (int)HttpStatusCode.InternalServerError;
                 //Response.End();
-
 
             } else
 
@@ -67,7 +64,6 @@ namespace SurveyWAP
                      //Response.End();
 
             } else
-
 
                 // 03 Handle Invalid Operation exceptions - includes error details
                 if (exc.GetBaseException() is InvalidOperationException)
@@ -87,8 +83,6 @@ namespace SurveyWAP
 
             // END of errorpages list
 
-
-
             //    // Determine where error was handled.
             //    string errorHandler = Request.QueryString["handler"];
 
@@ -105,7 +99,6 @@ namespace SurveyWAP
 
             //    // Clear the error from the server
             Server.ClearError();
-            
 
         }
 

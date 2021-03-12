@@ -3408,7 +3408,7 @@
     <value>Check the Helpfiles on how to use the SurveyBox Custom Webcontrol</value>
   </data>
   <data version="2.5" id="1177" name="AdminCreatedMessage">
-    <value>Account created. Please login.</value>
+    <value>Account created to login</value>
   </data>
   <data version="2.5" id="1178" name="MultilanguagesStatsLiteral">
     <value>Active Languages:</value>

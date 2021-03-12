@@ -64,4 +64,6 @@ The platform is a collection of websites to support and facilitate the developme
             <b>Survey&trade; Project</b><br />
                     </div>
 
-<div id="fillerDiv" class="fillerDiv">&nbsp;</div></div></asp:Content>
+<div id="fillerDiv" class="fillerDiv">&nbsp;</div></div>
+
+</asp:Content>

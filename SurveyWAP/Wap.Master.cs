@@ -31,13 +31,7 @@ namespace Votations.NSurvey
         public void LoadJscripts()
         {
 
-
-
-
-
         }
-
-
 
         protected void Page_Init(object sender, System.EventArgs e)
         {
@@ -62,7 +56,6 @@ namespace Votations.NSurvey
                 Response.Cache.SetNoStore();//Firefox/Chrome not to cache
                 Response.Cache.SetExpires(DateTime.Now); //for safe measure expire it immediately
             }
-
 
 
             Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
