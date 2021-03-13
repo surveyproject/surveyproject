@@ -1,0 +1,1597 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SurveyList
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SurveyList
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Votations.NSurvey.WebAdmin.SurveyList">
+  
+  
+  <h1 id="Votations_NSurvey_WebAdmin_SurveyList" data-uid="Votations.NSurvey.WebAdmin.SurveyList" class="text-break">Class SurveyList
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">System.Web.UI.Control</span></div>
+    <div class="level2"><span class="xref">System.Web.UI.TemplateControl</span></div>
+    <div class="level3"><span class="xref">System.Web.UI.Page</span></div>
+    <div class="level4"><a class="xref" href="Votations.NSurvey.WebAdmin.PageBase.html">PageBase</a></div>
+    <div class="level5"><span class="xref">SurveyList</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.ComponentModel.IComponent</span></div>
+    <div><span class="xref">System.IDisposable</span></div>
+    <div><span class="xref">System.Web.UI.IParserAccessor</span></div>
+    <div><span class="xref">System.Web.UI.IUrlResolutionService</span></div>
+    <div><span class="xref">System.Web.UI.IDataBindingsAccessor</span></div>
+    <div><span class="xref">System.Web.UI.IControlBuilderAccessor</span></div>
+    <div><span class="xref">System.Web.UI.IControlDesignerAccessor</span></div>
+    <div><span class="xref">System.Web.UI.IExpressionsAccessor</span></div>
+    <div><span class="xref">System.Web.UI.INamingContainer</span></div>
+    <div><span class="xref">System.Web.UI.IFilterResolutionService</span></div>
+    <div><span class="xref">System.Web.IHttpHandler</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebAdmin.PageBase.html#Votations_NSurvey_WebAdmin_PageBase_SelectedFolderId">PageBase.SelectedFolderId</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebAdmin.PageBase.html#Votations_NSurvey_WebAdmin_PageBase_SurveyListOrder">PageBase.SurveyListOrder</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebAdmin.PageBase.html#Votations_NSurvey_WebAdmin_PageBase_SurveyDeleteActions_System_Int32_">PageBase.SurveyDeleteActions(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebAdmin.PageBase.html#Votations_NSurvey_WebAdmin_PageBase_SurveyId">PageBase.SurveyId</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebAdmin.PageBase.html#Votations_NSurvey_WebAdmin_PageBase_SurveyTitle">PageBase.SurveyTitle</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebAdmin.PageBase.html#Votations_NSurvey_WebAdmin_PageBase_LibraryId">PageBase.LibraryId</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebAdmin.PageBase.html#Votations_NSurvey_WebAdmin_PageBase_NSurveyUser">PageBase.NSurveyUser</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebAdmin.PageBase.html#Votations_NSurvey_WebAdmin_PageBase_MenuIndex">PageBase.MenuIndex</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebAdmin.PageBase.html#Votations_NSurvey_WebAdmin_PageBase_GetPageResource_System_String_">PageBase.GetPageResource(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebAdmin.PageBase.html#Votations_NSurvey_WebAdmin_PageBase_GetPageHelpfiles_System_String_">PageBase.GetPageHelpfiles(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebAdmin.PageBase.html#Votations_NSurvey_WebAdmin_PageBase_GetPageLanguageCodes_System_String_">PageBase.GetPageLanguageCodes(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebAdmin.PageBase.html#Votations_NSurvey_WebAdmin_PageBase_TranslateListControl_System_Web_UI_WebControls_ListControl_System_Boolean_">PageBase.TranslateListControl(ListControl, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebAdmin.PageBase.html#Votations_NSurvey_WebAdmin_PageBase_TranslateRoleRightsListControl_System_Web_UI_WebControls_ListControl_System_Boolean_">PageBase.TranslateRoleRightsListControl(ListControl, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebAdmin.PageBase.html#Votations_NSurvey_WebAdmin_PageBase_LanguageTranslateListControl_System_Web_UI_WebControls_ListControl_System_Boolean_">PageBase.LanguageTranslateListControl(ListControl, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebAdmin.PageBase.html#Votations_NSurvey_WebAdmin_PageBase_isEmail_System_String_">PageBase.isEmail(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebAdmin.PageBase.html#Votations_NSurvey_WebAdmin_PageBase_CheckRight_Votations_NSurvey_Data_NSurveyRights_System_Boolean_">PageBase.CheckRight(NSurveyRights, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebAdmin.PageBase.html#Votations_NSurvey_WebAdmin_PageBase_IsSingleUserMode_System_Boolean_">PageBase.IsSingleUserMode(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebAdmin.PageBase.html#Votations_NSurvey_WebAdmin_PageBase_getSurveyId">PageBase.getSurveyId()</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebAdmin.PageBase.html#Votations_NSurvey_WebAdmin_PageBase_ShowNormalMessage_System_Web_UI_WebControls_Label_System_String_">PageBase.ShowNormalMessage(Label, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Votations.NSurvey.WebAdmin.PageBase.html#Votations_NSurvey_WebAdmin_PageBase_ShowErrorMessage_System_Web_UI_WebControls_Label_System_String_">PageBase.ShowErrorMessage(Label, String)</a>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.TryUpdateModel&lt;TModel&gt;(TModel)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.TryUpdateModel&lt;TModel&gt;(TModel, System.Web.ModelBinding.IValueProvider)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.UpdateModel&lt;TModel&gt;(TModel)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.UpdateModel&lt;TModel&gt;(TModel, System.Web.ModelBinding.IValueProvider)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.CreateHtmlTextWriter(System.IO.TextWriter)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.CreateHtmlTextWriterFromType(System.IO.TextWriter, System.Type)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.FindControl(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.DeterminePostBackMode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.DeterminePostBackModeUnvalidated()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.LoadPageStateFromPersistenceMedium()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.SetFocus(System.Web.UI.Control)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.SetFocus(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.GetPostBackEventReference(System.Web.UI.Control)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.GetPostBackEventReference(System.Web.UI.Control, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.GetPostBackClientEvent(System.Web.UI.Control, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.GetPostBackClientHyperlink(System.Web.UI.Control, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.IsClientScriptBlockRegistered(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.IsStartupScriptRegistered(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.RegisterArrayDeclaration(System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.RegisterHiddenField(System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.RegisterClientScriptBlock(System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.RegisterStartupScript(System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.RegisterOnSubmitStatement(System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.RegisterRequiresControlState(System.Web.UI.Control)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.RequiresControlState(System.Web.UI.Control)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.UnregisterRequiresControlState(System.Web.UI.Control)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.RegisterRequiresPostBack(System.Web.UI.Control)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.RaisePostBackEvent(System.Web.UI.IPostBackEventHandler, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.RegisterRequiresRaiseEvent(System.Web.UI.IPostBackEventHandler)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.MapPath(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.OnLoadComplete(System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.OnPreRenderComplete(System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.FrameworkInitialize()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.InitializeCulture()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.OnInit(System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.OnPreInit(System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.OnInitComplete(System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.OnPreLoad(System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.RegisterRequiresViewStateEncryption()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.OnSaveStateComplete(System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.Render(System.Web.UI.HtmlTextWriter)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.RegisterViewStateHandler()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.SavePageStateToPersistenceMedium(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.ExecuteRegisteredAsyncTasks()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.RegisterAsyncTask(System.Web.UI.PageAsyncTask)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.AddOnPreRenderCompleteAsync(System.Web.BeginEventHandler, System.Web.EndEventHandler)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.AddOnPreRenderCompleteAsync(System.Web.BeginEventHandler, System.Web.EndEventHandler, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.Validate()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.Validate(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.GetValidators(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.VerifyRenderingInServerForm(System.Web.UI.Control)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.GetDataItem()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.ModelState</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.ModelBindingExecutionContext</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.UnobtrusiveValidationMode</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.Application</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.Context</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.ClientScript</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.ClientTarget</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.ClientQueryString</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.ErrorPage</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.IsCallback</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.UniqueFilePathSuffix</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.AutoPostBackControl</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.Header</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.MaintainScrollPositionOnPostBack</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.Master</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.MasterPageFile</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.PageStatePersister</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.Trace</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.Request</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.Response</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.RouteData</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.Server</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.Cache</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.Session</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.Title</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.MetaDescription</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.MetaKeywords</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.Theme</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.StyleSheetTheme</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.User</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.IsCrossPagePostBack</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.IsPostBack</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.EnableViewState</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.ViewStateUserKey</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.Visible</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.IsPostBackEventControlRegistered</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.IsValid</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.Validators</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.PreviousPage</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.Culture</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.UICulture</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.AsyncTimeout</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.SmartNavigation</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.IsAsync</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.Form</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.PageAdapter</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.Items</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.LoadComplete</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.PreInit</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.PreLoad</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.PreRenderComplete</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.InitComplete</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Page.SaveStateComplete</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.Construct()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.OnCommitTransaction(System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.OnAbortTransaction(System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.OnError(System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.CreateResourceBasedLiteralControl(System.Int32, System.Int32, System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.TestDeviceFilter(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.LoadControl(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.LoadControl(System.Type, System.Object[])</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.LoadTemplate(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.ParseControl(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.ParseControl(System.String, System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.Eval(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.Eval(System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.XPath(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.XPath(System.String, System.Xml.IXmlNamespaceResolver)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.XPath(System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.XPath(System.String, System.String, System.Xml.IXmlNamespaceResolver)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.XPathSelect(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.XPathSelect(System.String, System.Xml.IXmlNamespaceResolver)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.GetLocalResourceObject(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.GetLocalResourceObject(System.String, System.Type, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.GetGlobalResourceObject(System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.GetGlobalResourceObject(System.String, System.String, System.Type, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.System.Web.UI.IFilterResolutionService.EvaluateFilter(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.System.Web.UI.IFilterResolutionService.CompareFilters(System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.EnableTheming</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.AppRelativeVirtualPath</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.CommitTransaction</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.AbortTransaction</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.TemplateControl.Error</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ResolveAdapter()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.HasEvents()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.GetRouteUrl(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.GetRouteUrl(System.String, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.GetRouteUrl(System.Web.Routing.RouteValueDictionary)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.GetRouteUrl(System.String, System.Web.Routing.RouteValueDictionary)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.GetUniqueIDRelativeTo(System.Web.UI.Control)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ApplyStyleSheetSkin(System.Web.UI.Page)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.OnDataBinding(System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.DataBind()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.DataBind(System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.DataBindChildren()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.AddParsedSubObject(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.EnsureID()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ClearChildState()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ClearChildControlState()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ClearChildViewState()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ClearEffectiveClientIDMode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ClearCachedClientID()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Focus()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.LoadControlState(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.LoadViewState(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.MapPathSecure(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.OpenFile(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.OnLoad(System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.OnPreRender(System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.BuildProfileTree(System.String, System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.SaveControlState()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.SaveViewState()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.RenderChildren(System.Web.UI.HtmlTextWriter)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.RenderControl(System.Web.UI.HtmlTextWriter)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.RenderControl(System.Web.UI.HtmlTextWriter, System.Web.UI.Adapters.ControlAdapter)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.OnUnload(System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Dispose()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.RaiseBubbleEvent(System.Object, System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.OnBubbleEvent(System.Object, System.EventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.AddedControl(System.Web.UI.Control, System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.CreateControlCollection()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.CreateChildControls()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ResolveUrl(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ResolveClientUrl(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.FindControl(System.String, System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.GetDesignModeState()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.HasControls()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.IsLiteralContent()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.TrackViewState()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.EnsureChildControls()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.RemovedControl(System.Web.UI.Control)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.SetDesignModeState(System.Collections.IDictionary)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.SetRenderMethodDelegate(System.Web.UI.RenderMethod)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IParserAccessor.AddParsedSubObject(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IControlDesignerAccessor.GetDesignModeState()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IControlDesignerAccessor.SetDesignModeState(System.Collections.IDictionary)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IControlDesignerAccessor.SetOwnerControl(System.Web.UI.Control)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ClientIDMode</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ClientID</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ClientIDSeparator</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Adapter</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.DesignMode</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Events</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ID</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.IsChildControlStateCleared</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.SkinID</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ViewStateMode</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.IsViewStateEnabled</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.NamingContainer</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.IdSeparator</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.LoadViewStateByID</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Page</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.RenderingCompatibility</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.TemplateControl</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Parent</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.TemplateSourceDirectory</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.AppRelativeTemplateSourceDirectory</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Site</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.UniqueID</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.HasChildViewState</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Controls</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ValidateRequestMode</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ViewState</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ViewStateIgnoresCase</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.ChildControlsCreated</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.IsTrackingViewState</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IDataBindingsAccessor.HasDataBindings</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IDataBindingsAccessor.DataBindings</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IControlDesignerAccessor.UserData</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IControlBuilderAccessor.ControlBuilder</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IExpressionsAccessor.HasExpressions</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.System.Web.UI.IExpressionsAccessor.Expressions</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Disposed</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.DataBinding</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Init</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Load</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.PreRender</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.UI.Control.Unload</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Votations.NSurvey.WebAdmin.html">Votations.NSurvey.WebAdmin</a></h6>
+  <h6><strong>Assembly</strong>: SurveyProject.WebApplication.dll</h6>
+  <h5 id="Votations_NSurvey_WebAdmin_SurveyList_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class SurveyList : PageBase, IComponent, IDisposable, IParserAccessor, IUrlResolutionService, IDataBindingsAccessor, IControlBuilderAccessor, IControlDesignerAccessor, IExpressionsAccessor, INamingContainer, IFilterResolutionService, IHttpHandler</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_SurveyList_btnSearch" data-uid="Votations.NSurvey.WebAdmin.SurveyList.btnSearch">btnSearch</h4>
+  <div class="markdown level1 summary"><p>btnSearch control.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Button btnSearch</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Button</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Votations_NSurvey_WebAdmin_SurveyList_btnSearch_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Auto-generated field.
+To modify move field declaration from designer file to code-behind file.</p>
+</div>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_SurveyList_gridSurveys" data-uid="Votations.NSurvey.WebAdmin.SurveyList.gridSurveys">gridSurveys</h4>
+  <div class="markdown level1 summary"><p>gridSurveys control.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected GridView gridSurveys</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.GridView</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Votations_NSurvey_WebAdmin_SurveyList_gridSurveys_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Auto-generated field.
+To modify move field declaration from designer file to code-behind file.</p>
+</div>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_SurveyList_SearchTitle" data-uid="Votations.NSurvey.WebAdmin.SurveyList.SearchTitle">SearchTitle</h4>
+  <div class="markdown level1 summary"><p>SearchTitle control.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Literal SearchTitle</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.Literal</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Votations_NSurvey_WebAdmin_SurveyList_SearchTitle_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Auto-generated field.
+To modify move field declaration from designer file to code-behind file.</p>
+</div>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_SurveyList_selectedTabIndex" data-uid="Votations.NSurvey.WebAdmin.SurveyList.selectedTabIndex">selectedTabIndex</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected int selectedTabIndex</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_SurveyList_surveyList" data-uid="Votations.NSurvey.WebAdmin.SurveyList.surveyList">surveyList</h4>
+  <div class="markdown level1 summary"><p>surveyList control.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected PlaceHolder surveyList</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.PlaceHolder</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Votations_NSurvey_WebAdmin_SurveyList_surveyList_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Auto-generated field.
+To modify move field declaration from designer file to code-behind file.</p>
+</div>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_SurveyList_SurveyOption" data-uid="Votations.NSurvey.WebAdmin.SurveyList.SurveyOption">SurveyOption</h4>
+  <div class="markdown level1 summary"><p>SurveyOption control.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected SurveyOptionControl SurveyOption</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Votations.NSurvey.WebAdmin.UserControls.SurveyOptionControl.html">SurveyOptionControl</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Votations_NSurvey_WebAdmin_SurveyList_SurveyOption_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Auto-generated field.
+To modify move field declaration from designer file to code-behind file.</p>
+</div>
+  
+  
+  <h4 id="Votations_NSurvey_WebAdmin_SurveyList_txtSearchField" data-uid="Votations.NSurvey.WebAdmin.SurveyList.txtSearchField">txtSearchField</h4>
+  <div class="markdown level1 summary"><p>txtSearchField control.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TextBox txtSearchField</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.TextBox</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Votations_NSurvey_WebAdmin_SurveyList_txtSearchField_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Auto-generated field.
+To modify move field declaration from designer file to code-behind file.</p>
+</div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Votations_NSurvey_WebAdmin_SurveyList_FillGrid_" data-uid="Votations.NSurvey.WebAdmin.SurveyList.FillGrid*"></a>
+  <h4 id="Votations_NSurvey_WebAdmin_SurveyList_FillGrid" data-uid="Votations.NSurvey.WebAdmin.SurveyList.FillGrid">FillGrid()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void FillGrid()</code></pre>
+  </div>
+  
+  
+  <a id="Votations_NSurvey_WebAdmin_SurveyList_GetStatus_" data-uid="Votations.NSurvey.WebAdmin.SurveyList.GetStatus*"></a>
+  <h4 id="Votations_NSurvey_WebAdmin_SurveyList_GetStatus_System_Boolean_" data-uid="Votations.NSurvey.WebAdmin.SurveyList.GetStatus(System.Boolean)">GetStatus(Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetStatus(bool active)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">active</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebAdmin_SurveyList_GetSurveyFriendlyName_" data-uid="Votations.NSurvey.WebAdmin.SurveyList.GetSurveyFriendlyName*"></a>
+  <h4 id="Votations_NSurvey_WebAdmin_SurveyList_GetSurveyFriendlyName_System_Int32_System_String_" data-uid="Votations.NSurvey.WebAdmin.SurveyList.GetSurveyFriendlyName(System.Int32,System.String)">GetSurveyFriendlyName(Int32, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetSurveyFriendlyName(int id, string friendlyname)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">id</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">friendlyname</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebAdmin_SurveyList_GetSurveyLink_" data-uid="Votations.NSurvey.WebAdmin.SurveyList.GetSurveyLink*"></a>
+  <h4 id="Votations_NSurvey_WebAdmin_SurveyList_GetSurveyLink_System_Int32_" data-uid="Votations.NSurvey.WebAdmin.SurveyList.GetSurveyLink(System.Int32)">GetSurveyLink(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetSurveyLink(int id)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">id</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebAdmin_SurveyList_GetSurveyName_" data-uid="Votations.NSurvey.WebAdmin.SurveyList.GetSurveyName*"></a>
+  <h4 id="Votations_NSurvey_WebAdmin_SurveyList_GetSurveyName_System_Int32_System_String_" data-uid="Votations.NSurvey.WebAdmin.SurveyList.GetSurveyName(System.Int32,System.String)">GetSurveyName(Int32, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetSurveyName(int id, string title)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">id</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">title</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebAdmin_SurveyList_gridSurveys_PageIndexChanging_" data-uid="Votations.NSurvey.WebAdmin.SurveyList.gridSurveys_PageIndexChanging*"></a>
+  <h4 id="Votations_NSurvey_WebAdmin_SurveyList_gridSurveys_PageIndexChanging_System_Object_System_Web_UI_WebControls_GridViewPageEventArgs_" data-uid="Votations.NSurvey.WebAdmin.SurveyList.gridSurveys_PageIndexChanging(System.Object,System.Web.UI.WebControls.GridViewPageEventArgs)">gridSurveys_PageIndexChanging(Object, GridViewPageEventArgs)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void gridSurveys_PageIndexChanging(object sender, GridViewPageEventArgs e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">sender</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.GridViewPageEventArgs</span></td>
+        <td><span class="parametername">e</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebAdmin_SurveyList_gvSurveys_Sorting_" data-uid="Votations.NSurvey.WebAdmin.SurveyList.gvSurveys_Sorting*"></a>
+  <h4 id="Votations_NSurvey_WebAdmin_SurveyList_gvSurveys_Sorting_System_Object_System_Web_UI_WebControls_GridViewSortEventArgs_" data-uid="Votations.NSurvey.WebAdmin.SurveyList.gvSurveys_Sorting(System.Object,System.Web.UI.WebControls.GridViewSortEventArgs)">gvSurveys_Sorting(Object, GridViewSortEventArgs)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void gvSurveys_Sorting(object sender, GridViewSortEventArgs e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">sender</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.GridViewSortEventArgs</span></td>
+        <td><span class="parametername">e</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebAdmin_SurveyList_OnSurveyDesign_" data-uid="Votations.NSurvey.WebAdmin.SurveyList.OnSurveyDesign*"></a>
+  <h4 id="Votations_NSurvey_WebAdmin_SurveyList_OnSurveyDesign_System_Object_System_Web_UI_WebControls_CommandEventArgs_" data-uid="Votations.NSurvey.WebAdmin.SurveyList.OnSurveyDesign(System.Object,System.Web.UI.WebControls.CommandEventArgs)">OnSurveyDesign(Object, CommandEventArgs)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnSurveyDesign(object sender, CommandEventArgs e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">sender</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.CommandEventArgs</span></td>
+        <td><span class="parametername">e</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebAdmin_SurveyList_OnSurveyEdit_" data-uid="Votations.NSurvey.WebAdmin.SurveyList.OnSurveyEdit*"></a>
+  <h4 id="Votations_NSurvey_WebAdmin_SurveyList_OnSurveyEdit_System_Object_System_Web_UI_WebControls_CommandEventArgs_" data-uid="Votations.NSurvey.WebAdmin.SurveyList.OnSurveyEdit(System.Object,System.Web.UI.WebControls.CommandEventArgs)">OnSurveyEdit(Object, CommandEventArgs)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnSurveyEdit(object sender, CommandEventArgs e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">sender</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.CommandEventArgs</span></td>
+        <td><span class="parametername">e</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebAdmin_SurveyList_OnSurveyFilter_" data-uid="Votations.NSurvey.WebAdmin.SurveyList.OnSurveyFilter*"></a>
+  <h4 id="Votations_NSurvey_WebAdmin_SurveyList_OnSurveyFilter_System_Object_System_EventArgs_" data-uid="Votations.NSurvey.WebAdmin.SurveyList.OnSurveyFilter(System.Object,System.EventArgs)">OnSurveyFilter(Object, EventArgs)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnSurveyFilter(object sender, EventArgs e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">sender</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.EventArgs</span></td>
+        <td><span class="parametername">e</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebAdmin_SurveyList_OnSurveySecurity_" data-uid="Votations.NSurvey.WebAdmin.SurveyList.OnSurveySecurity*"></a>
+  <h4 id="Votations_NSurvey_WebAdmin_SurveyList_OnSurveySecurity_System_Object_System_Web_UI_WebControls_CommandEventArgs_" data-uid="Votations.NSurvey.WebAdmin.SurveyList.OnSurveySecurity(System.Object,System.Web.UI.WebControls.CommandEventArgs)">OnSurveySecurity(Object, CommandEventArgs)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnSurveySecurity(object sender, CommandEventArgs e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">sender</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.CommandEventArgs</span></td>
+        <td><span class="parametername">e</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebAdmin_SurveyList_OnSurveyStats_" data-uid="Votations.NSurvey.WebAdmin.SurveyList.OnSurveyStats*"></a>
+  <h4 id="Votations_NSurvey_WebAdmin_SurveyList_OnSurveyStats_System_Object_System_Web_UI_WebControls_CommandEventArgs_" data-uid="Votations.NSurvey.WebAdmin.SurveyList.OnSurveyStats(System.Object,System.Web.UI.WebControls.CommandEventArgs)">OnSurveyStats(Object, CommandEventArgs)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnSurveyStats(object sender, CommandEventArgs e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">sender</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Web.UI.WebControls.CommandEventArgs</span></td>
+        <td><span class="parametername">e</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Votations_NSurvey_WebAdmin_SurveyList_Page_Load_" data-uid="Votations.NSurvey.WebAdmin.SurveyList.Page_Load*"></a>
+  <h4 id="Votations_NSurvey_WebAdmin_SurveyList_Page_Load_System_Object_System_EventArgs_" data-uid="Votations.NSurvey.WebAdmin.SurveyList.Page_Load(System.Object,System.EventArgs)">Page_Load(Object, EventArgs)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void Page_Load(object sender, EventArgs e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">sender</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.EventArgs</span></td>
+        <td><span class="parametername">e</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.ComponentModel.IComponent</span>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.UI.IParserAccessor</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.UI.IUrlResolutionService</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.UI.IDataBindingsAccessor</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.UI.IControlBuilderAccessor</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.UI.IControlDesignerAccessor</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.UI.IExpressionsAccessor</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.UI.INamingContainer</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.UI.IFilterResolutionService</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.IHttpHandler</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

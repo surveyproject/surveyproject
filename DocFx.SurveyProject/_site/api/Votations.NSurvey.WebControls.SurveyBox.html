@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class SurveyBox
    ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.56.7.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -514,7 +514,7 @@
   <h6><strong>Assembly</strong>: SurveyProject.WebControls.dll</h6>
   <h5 id="Votations_NSurvey_WebControls_SurveyBox_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[ToolboxBitmap(typeof (Bitmap), &quot;SurveyBox.bmp&quot;)]
+    <pre><code class="lang-csharp hljs">[ToolboxBitmap(typeof(Bitmap), &quot;SurveyBox.bmp&quot;)]
 public class SurveyBox : WebControl, IComponent, IDisposable, IParserAccessor, IUrlResolutionService, IDataBindingsAccessor, IControlBuilderAccessor, IControlDesignerAccessor, IExpressionsAccessor, IAttributeAccessor, INamingContainer</code></pre>
   </div>
   <h3 id="constructors">Constructors
@@ -1428,7 +1428,8 @@ public bool ShowOnlyPercent { get; set; }</code></pre>
   
   <a id="Votations_NSurvey_WebControls_SurveyBox_SurveyId_" data-uid="Votations.NSurvey.WebControls.SurveyBox.SurveyId*"></a>
   <h4 id="Votations_NSurvey_WebControls_SurveyBox_SurveyId" data-uid="Votations.NSurvey.WebControls.SurveyBox.SurveyId">SurveyId</h4>
-  <div class="markdown level1 summary"><p>Id of the survey you wish to render</p>
+  <div class="markdown level1 summary"><p>Id of the survey you wish to render
+and gets or sets it to the viewstate</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1456,7 +1457,8 @@ public int SurveyId { get; set; }</code></pre>
   
   <a id="Votations_NSurvey_WebControls_SurveyBox_TotalPageNumber_" data-uid="Votations.NSurvey.WebControls.SurveyBox.TotalPageNumber*"></a>
   <h4 id="Votations_NSurvey_WebControls_SurveyBox_TotalPageNumber" data-uid="Votations.NSurvey.WebControls.SurveyBox.TotalPageNumber">TotalPageNumber</h4>
-  <div class="markdown level1 summary"><p>Total of questions pages in the survey</p>
+  <div class="markdown level1 summary"><p>Total of questions pages in the survey
+and adds it to the viewstate</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1483,7 +1485,8 @@ public int SurveyId { get; set; }</code></pre>
   <a id="Votations_NSurvey_WebControls_SurveyBox_VoterAnswers_" data-uid="Votations.NSurvey.WebControls.SurveyBox.VoterAnswers*"></a>
   <h4 id="Votations_NSurvey_WebControls_SurveyBox_VoterAnswers" data-uid="Votations.NSurvey.WebControls.SurveyBox.VoterAnswers">VoterAnswers</h4>
   <div class="markdown level1 summary"><p>Contains all the answers to all
-questions given by the current voter</p>
+questions given by the current voter
+and adds the VoterAnswersData Dataset to the viewstate</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1542,7 +1545,8 @@ questions given by the current voter</p>
   
   <a id="Votations_NSurvey_WebControls_SurveyBox_BuildFooterRow_" data-uid="Votations.NSurvey.WebControls.SurveyBox.BuildFooterRow*"></a>
   <h4 id="Votations_NSurvey_WebControls_SurveyBox_BuildFooterRow_System_Web_UI_WebControls_Panel_System_Boolean_" data-uid="Votations.NSurvey.WebControls.SurveyBox.BuildFooterRow(System.Web.UI.WebControls.Panel,System.Boolean)">BuildFooterRow(Panel, Boolean)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Pagenumber and percentage progress shown on page footer of survey</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1561,12 +1565,14 @@ questions given by the current voter</p>
       <tr>
         <td><span class="xref">System.Web.UI.WebControls.Panel</span></td>
         <td><span class="parametername">submitControl</span></td>
-        <td></td>
+        <td><p>SubmitControl</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">enabled</span></td>
-        <td></td>
+        <td><p>enabled</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1581,7 +1587,8 @@ questions given by the current voter</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Web.UI.WebControls.Panel</span></td>
-        <td></td>
+        <td><p>submitControl</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1901,6 +1908,16 @@ questions given by the current voter</p>
       </tr>
     </tbody>
   </table>
+  
+  
+  <a id="Votations_NSurvey_WebControls_SurveyBox_BuildSecurityGeneralWarning_" data-uid="Votations.NSurvey.WebControls.SurveyBox.BuildSecurityGeneralWarning*"></a>
+  <h4 id="Votations_NSurvey_WebControls_SurveyBox_BuildSecurityGeneralWarning" data-uid="Votations.NSurvey.WebControls.SurveyBox.BuildSecurityGeneralWarning">BuildSecurityGeneralWarning()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void BuildSecurityGeneralWarning()</code></pre>
+  </div>
   
   
   <a id="Votations_NSurvey_WebControls_SurveyBox_BuildSubmitButtonRow_" data-uid="Votations.NSurvey.WebControls.SurveyBox.BuildSubmitButtonRow*"></a>
@@ -2273,7 +2290,8 @@ temporary storage</p>
   
   <a id="Votations_NSurvey_WebControls_SurveyBox_OnAnswersSubmit_" data-uid="Votations.NSurvey.WebControls.SurveyBox.OnAnswersSubmit*"></a>
   <h4 id="Votations_NSurvey_WebControls_SurveyBox_OnAnswersSubmit_System_Object_System_EventArgs_" data-uid="Votations.NSurvey.WebControls.SurveyBox.OnAnswersSubmit(System.Object,System.EventArgs)">OnAnswersSubmit(Object, EventArgs)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>On click event of Submit button</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -2292,12 +2310,14 @@ temporary storage</p>
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">sender</span></td>
-        <td></td>
+        <td><p>sender: submitbutton</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.EventArgs</span></td>
         <td><span class="parametername">e</span></td>
-        <td></td>
+        <td><p>raised event</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -3211,10 +3231,11 @@ features if there are enabled</p>
   
   <a id="Votations_NSurvey_WebControls_SurveyBox_SubmitAnswersToDb_" data-uid="Votations.NSurvey.WebControls.SurveyBox.SubmitAnswersToDb*"></a>
   <h4 id="Votations_NSurvey_WebControls_SurveyBox_SubmitAnswersToDb" data-uid="Votations.NSurvey.WebControls.SurveyBox.SubmitAnswersToDb">SubmitAnswersToDb()</h4>
-  <div class="markdown level1 summary"><p>Submits the answers to the database and ends the survey
+  <div class="markdown level1 summary"><p>On clicking the submitbutton and raising the click event:
+Submits the answers to the database and ends the survey
 Depending on notification mode sends email message (3 options) to administrator
 Optionally redirects to new url
-Optionally shows thank you message to surveytaker</p>
+Optionally shows thank you message to surveytaker (buildthankbox)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>

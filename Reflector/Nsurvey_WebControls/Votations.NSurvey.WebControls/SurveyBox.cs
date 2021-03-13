@@ -228,7 +228,7 @@ namespace Votations.NSurvey.WebControls
         }
 
         /// <summary>
-        /// Pagenumber & percentage progress shown on page footer of survey
+        /// Pagenumber and percentage progress shown on page footer of survey
         /// </summary>
         /// <param name="submitControl">SubmitControl</param>
         /// <param name="enabled">enabled</param>

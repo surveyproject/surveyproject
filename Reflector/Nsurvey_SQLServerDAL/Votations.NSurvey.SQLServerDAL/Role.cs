@@ -156,7 +156,7 @@ namespace Votations.NSurvey.SQLServerDAL
         }
 
         /// <summary>
-        /// Retrieves role & securityrights (access) details from the database
+        /// Retrieves role and securityrights - access - details from the database
         /// </summary>
         public SecurityRightData GetSecurityRightList()
         {

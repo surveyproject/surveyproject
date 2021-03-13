@@ -17,23 +17,17 @@ namespace SurveyWAP
         void Application_Start(object sender, EventArgs e)
         {
             // Code that runs on application startup
-
-            //Load Sqlserver Spacial Data Types DLL's - see the ssrs reports codebehind
-            //SqlServerTypes.Utilities.LoadNativeAssemblies(Server.MapPath("~/bin"));
-
         }
 
         void Application_End(object sender, EventArgs e)
         {
             //  Code that runs on application shutdown
-
         }
 
-        /// <summary>
-        /// Errorhandling instructions
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <summary>Errorhandling instructions</summary>
+        /// <remarks>Handle .Net application errors and transfer to errorpage</remarks>
+        /// <param name="sender">sender param</param>
+        /// <param name="e">eventsarg</param>
         void Application_Error(object sender, EventArgs e)
         {
             // https://msdn.microsoft.com/en-us/library/24395wz3.aspx
@@ -47,21 +41,12 @@ namespace SurveyWAP
             {
                 Server.Transfer("~/Errors/ErrorPage.aspx?handler=Application_Error%20-HttpError-%20Global.asax", true);
 
-               // var httpException = exc as HttpException;
-                //Response.Clear();
-                //Response.StatusCode = httpException != null ? httpException.GetHttpCode() : (int)HttpStatusCode.InternalServerError;
-                //Response.End();
-
             } else
 
                 //02 Invalid or illegal Login attempt:
                 if (exc is HttpRequestValidationException)
                 {
                     Server.Transfer("~/Errors/ErrorPage.aspx?msg=401&amp;handler=Application_Error%20HttpRequestValidationException%20-%20Global.asax", true);
-
-                     //Response.Clear();
-                     //Response.StatusCode = 401;
-                     //Response.End();
 
             } else
 
@@ -83,30 +68,20 @@ namespace SurveyWAP
 
             // END of errorpages list
 
-            //    // Determine where error was handled.
-            //    string errorHandler = Request.QueryString["handler"];
-
-            //    if (errorHandler == null)
-            //    {
-            //        errorHandler = "Application_Error UNKNOWN Global.asax";
-            //    }
-
-            //    // Log the exception and notify system operators - see errorpage code
-            //    // ExceptionUtility.LogException(exc, errorHandler);
-
            // Send mail to Admin account - see errorpage code
             ExceptionUtility.NotifySystemOps(exc);
 
-            //    // Clear the error from the server
+            // Clear the error from the server
             Server.ClearError();
 
         }
 
         /// <summary>
-        /// Used to remove the (web) Server details from the Http header - for security reasons
+        /// Application Begin Request code
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        ///<remarks>Used to remove the (web) Server details from the Http header - for security reasons</remarks>
+        /// <param name="sender">sender param</param>
+        /// <param name="e">eventsarg e</param>
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
             var app = sender as HttpApplication;
@@ -162,7 +137,9 @@ namespace SurveyWAP
 
         //}
 
-
+        ///<summary>Session Start - loads spdemosessionvariable</summary>
+        ///<param name="e">eventsarg e</param>
+        ///<param name="sender">sender obj</param>
         void Session_Start(object sender, EventArgs e)
         {
             // Code that runs when a new session is started
