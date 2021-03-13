@@ -12,7 +12,7 @@ At Github you will find the most recent Survey™ Project releases, source code 
 Former releases (up untill v 2.3) and sources can be found at http://survey.codeplex.com
   
 ## Documentation
-Available Guides for SP™ v2.4
+Available Guides for SP™ v2.5
 - Quickstart UserGuide  
 - Installation Guide  
 - Developers Guide  
@@ -40,10 +40,6 @@ The following sites are part of the current project and development platform:
 * test and demo site of the latest SP™ webapplication
 * test and demo of online survey samples
 
-+Survey™ Project Business Services at http://www.surveyproject.biz
-* information on SP™ related services
-* business-to-business only
-
 +Survey™ Project Codeplex at http://survey.codeplex.com
 * former versions of the source code
 * former releases;
@@ -54,14 +50,10 @@ Note: as announced by Microsoft [2017/03/31] the Codeplex site will shutdown. Al
 ## Branches Overview
 *Current*
 - master: initial branche containing the SP v2.3 production source code
-- sp_24_dev: SP v2.4 production source code, current default branche for forking - beware: name is confusing!
+- sp_24_dev: SP v2.4 production source code
 
-- sp_25_dev: project development branche based on sp_24_dev
-- sp_25_pr: branche based on sp_24_dev created for Pull Requests from third parties/ Github members
+- sp_25_dev: SP v2.5 production source code - current default
 
 *Future*
-- sp_25_test: branche to be created based on SP_24_dev to merge sp_25_dev and sp_25_pr into and test all changes
-- sp_25_prod: branche to be created based on sp_25_test once fully tested and accepted for production
-
 - sp_26_dev: branche to be created based on sp_25_prod for project development of SP v. 2.6
-- sp_26_pr: branche to be created based on sp_25_prod for Pull Requests from third parties/ Github Members
+
